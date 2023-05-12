@@ -1236,7 +1236,7 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config.
+     * Returns all Workstations using the specified workstation configuration.
      * </pre>
      */
     default void listWorkstations(
@@ -1251,8 +1251,8 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config on which the caller has
-     * the "workstations.workstations.use" permission.
+     * Returns all workstations using the specified workstation configuration
+     * on which the caller has the "workstations.workstations.use" permission.
      * </pre>
      */
     default void listUsableWorkstations(
@@ -1592,7 +1592,7 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config.
+     * Returns all Workstations using the specified workstation configuration.
      * </pre>
      */
     public void listWorkstations(
@@ -1609,8 +1609,8 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config on which the caller has
-     * the "workstations.workstations.use" permission.
+     * Returns all workstations using the specified workstation configuration
+     * on which the caller has the "workstations.workstations.use" permission.
      * </pre>
      */
     public void listUsableWorkstations(
@@ -1907,7 +1907,7 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config.
+     * Returns all Workstations using the specified workstation configuration.
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.ListWorkstationsResponse listWorkstations(
@@ -1920,8 +1920,8 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config on which the caller has
-     * the "workstations.workstations.use" permission.
+     * Returns all workstations using the specified workstation configuration
+     * on which the caller has the "workstations.workstations.use" permission.
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.ListUsableWorkstationsResponse
@@ -2208,7 +2208,7 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config.
+     * Returns all Workstations using the specified workstation configuration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2222,8 +2222,8 @@ public final class WorkstationsGrpc {
      *
      *
      * <pre>
-     * Returns all Workstations using the specified config on which the caller has
-     * the "workstations.workstations.use" permission.
+     * Returns all workstations using the specified workstation configuration
+     * on which the caller has the "workstations.workstations.use" permission.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -352,7 +352,7 @@ public interface WorkstationOrBuilder
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -365,7 +365,7 @@ public interface WorkstationOrBuilder
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -435,4 +435,62 @@ public interface WorkstationOrBuilder
    * @return The bytes for host.
    */
   com.google.protobuf.ByteString getHostBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  int getEnvCount();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  boolean containsEnv(java.lang.String key);
+  /** Use {@link #getEnvMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getEnv();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getEnvMap();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  /* nullable */
+  java.lang.String getEnvOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  java.lang.String getEnvOrThrow(java.lang.String key);
 }

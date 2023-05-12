@@ -45,6 +45,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     etag_ = "";
     network_ = "";
     subnetwork_ = "";
+    controlPlaneIp_ = "";
     conditions_ = java.util.Collections.emptyList();
   }
 
@@ -2050,7 +2051,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -2074,7 +2075,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -2196,6 +2197,63 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subnetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONTROL_PLANE_IP_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object controlPlaneIp_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The private IP address of the control plane for this cluster.
+   * Workstation VMs need access to this IP address to work with the service, so
+   * make sure that your firewall rules allow egress from the workstation VMs to
+   * this address.
+   * </pre>
+   *
+   * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The controlPlaneIp.
+   */
+  @java.lang.Override
+  public java.lang.String getControlPlaneIp() {
+    java.lang.Object ref = controlPlaneIp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      controlPlaneIp_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The private IP address of the control plane for this cluster.
+   * Workstation VMs need access to this IP address to work with the service, so
+   * make sure that your firewall rules allow egress from the workstation VMs to
+   * this address.
+   * </pre>
+   *
+   * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for controlPlaneIp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getControlPlaneIpBytes() {
+    java.lang.Object ref = controlPlaneIp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      controlPlaneIp_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2415,6 +2473,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 15);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlPlaneIp_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, controlPlaneIp_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2484,6 +2545,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controlPlaneIp_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, controlPlaneIp_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2521,6 +2585,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    if (!getControlPlaneIp().equals(other.getControlPlaneIp())) return false;
     if (hasPrivateClusterConfig() != other.hasPrivateClusterConfig()) return false;
     if (hasPrivateClusterConfig()) {
       if (!getPrivateClusterConfig().equals(other.getPrivateClusterConfig())) return false;
@@ -2572,6 +2637,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetwork().hashCode();
+    hash = (37 * hash) + CONTROL_PLANE_IP_FIELD_NUMBER;
+    hash = (53 * hash) + getControlPlaneIp().hashCode();
     if (hasPrivateClusterConfig()) {
       hash = (37 * hash) + PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateClusterConfig().hashCode();
@@ -2771,6 +2838,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       etag_ = "";
       network_ = "";
       subnetwork_ = "";
+      controlPlaneIp_ = "";
       privateClusterConfig_ = null;
       if (privateClusterConfigBuilder_ != null) {
         privateClusterConfigBuilder_.dispose();
@@ -2783,7 +2851,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -2822,9 +2890,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     private void buildPartialRepeatedFields(
         com.google.cloud.workstations.v1beta.WorkstationCluster result) {
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.conditions_ = conditions_;
       } else {
@@ -2873,12 +2941,15 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         result.subnetwork_ = subnetwork_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.controlPlaneIp_ = controlPlaneIp_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.privateClusterConfig_ =
             privateClusterConfigBuilder_ == null
                 ? privateClusterConfig_
                 : privateClusterConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.degraded_ = degraded_;
       }
     }
@@ -2975,6 +3046,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (!other.getControlPlaneIp().isEmpty()) {
+        controlPlaneIp_ = other.controlPlaneIp_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       if (other.hasPrivateClusterConfig()) {
         mergePrivateClusterConfig(other.getPrivateClusterConfig());
       }
@@ -2985,7 +3061,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -2998,7 +3074,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -3110,13 +3186,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getPrivateClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 104:
               {
                 degraded_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 104
             case 114:
@@ -3143,6 +3219,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000020;
                 break;
               } // case 122
+            case 130:
+              {
+                controlPlaneIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4481,7 +4563,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -4504,7 +4586,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -4527,7 +4609,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -4549,7 +4631,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -4567,7 +4649,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -4813,6 +4895,127 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object controlPlaneIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The private IP address of the control plane for this cluster.
+     * Workstation VMs need access to this IP address to work with the service, so
+     * make sure that your firewall rules allow egress from the workstation VMs to
+     * this address.
+     * </pre>
+     *
+     * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The controlPlaneIp.
+     */
+    public java.lang.String getControlPlaneIp() {
+      java.lang.Object ref = controlPlaneIp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        controlPlaneIp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The private IP address of the control plane for this cluster.
+     * Workstation VMs need access to this IP address to work with the service, so
+     * make sure that your firewall rules allow egress from the workstation VMs to
+     * this address.
+     * </pre>
+     *
+     * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for controlPlaneIp.
+     */
+    public com.google.protobuf.ByteString getControlPlaneIpBytes() {
+      java.lang.Object ref = controlPlaneIp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        controlPlaneIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The private IP address of the control plane for this cluster.
+     * Workstation VMs need access to this IP address to work with the service, so
+     * make sure that your firewall rules allow egress from the workstation VMs to
+     * this address.
+     * </pre>
+     *
+     * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The controlPlaneIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setControlPlaneIp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      controlPlaneIp_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The private IP address of the control plane for this cluster.
+     * Workstation VMs need access to this IP address to work with the service, so
+     * make sure that your firewall rules allow egress from the workstation VMs to
+     * this address.
+     * </pre>
+     *
+     * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearControlPlaneIp() {
+      controlPlaneIp_ = getDefaultInstance().getControlPlaneIp();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The private IP address of the control plane for this cluster.
+     * Workstation VMs need access to this IP address to work with the service, so
+     * make sure that your firewall rules allow egress from the workstation VMs to
+     * this address.
+     * </pre>
+     *
+     * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for controlPlaneIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setControlPlaneIpBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      controlPlaneIp_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig
         privateClusterConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4834,7 +5037,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * @return Whether the privateClusterConfig field is set.
      */
     public boolean hasPrivateClusterConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4881,7 +5084,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       } else {
         privateClusterConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4904,7 +5107,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       } else {
         privateClusterConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4922,7 +5125,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     public Builder mergePrivateClusterConfig(
         com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig value) {
       if (privateClusterConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && privateClusterConfig_ != null
             && privateClusterConfig_
                 != com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig
@@ -4934,7 +5137,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       } else {
         privateClusterConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4950,7 +5153,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearPrivateClusterConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       privateClusterConfig_ = null;
       if (privateClusterConfigBuilder_ != null) {
         privateClusterConfigBuilder_.dispose();
@@ -4972,7 +5175,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig.Builder
         getPrivateClusterConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getPrivateClusterConfigFieldBuilder().getBuilder();
     }
@@ -5063,7 +5266,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     public Builder setDegraded(boolean value) {
 
       degraded_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5081,7 +5284,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDegraded() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       degraded_ = false;
       onChanged();
       return this;
@@ -5090,9 +5293,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     private java.util.List<com.google.rpc.Status> conditions_ = java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.rpc.Status>(conditions_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -5324,7 +5527,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -5455,7 +5658,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
                 com.google.rpc.Status,
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
-                conditions_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
