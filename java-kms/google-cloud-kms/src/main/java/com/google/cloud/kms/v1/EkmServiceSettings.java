@@ -118,6 +118,12 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
     return ((EkmServiceStubSettings) getStubSettings()).updateEkmConfigSettings();
   }
 
+  /** Returns the object with the settings used for calls to verifyConnectivity. */
+  public UnaryCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivitySettings() {
+    return ((EkmServiceStubSettings) getStubSettings()).verifyConnectivitySettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -292,6 +298,12 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
     /** Returns the builder for the settings used for calls to updateEkmConfig. */
     public UnaryCallSettings.Builder<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings() {
       return getStubSettingsBuilder().updateEkmConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConnectivity. */
+    public UnaryCallSettings.Builder<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivitySettings() {
+      return getStubSettingsBuilder().verifyConnectivitySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

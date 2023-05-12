@@ -34,6 +34,8 @@ import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -119,6 +121,17 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConfig.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityMethodDescriptor =
+          MethodDescriptor.<VerifyConnectivityRequest, VerifyConnectivityResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.EkmService/VerifyConnectivity")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyConnectivityRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VerifyConnectivityResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -176,6 +189,8 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
       updateEkmConnectionCallable;
   private final UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable;
   private final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable;
+  private final UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -292,6 +307,17 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivityTransportSettings =
+            GrpcCallSettings.<VerifyConnectivityRequest, VerifyConnectivityResponse>newBuilder()
+                .setMethodDescriptor(verifyConnectivityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -373,6 +399,11 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
     this.updateEkmConfigCallable =
         callableFactory.createUnaryCallable(
             updateEkmConfigTransportSettings, settings.updateEkmConfigSettings(), clientContext);
+    this.verifyConnectivityCallable =
+        callableFactory.createUnaryCallable(
+            verifyConnectivityTransportSettings,
+            settings.verifyConnectivitySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -437,6 +468,12 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
   @Override
   public UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
     return updateEkmConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable() {
+    return verifyConnectivityCallable;
   }
 
   @Override

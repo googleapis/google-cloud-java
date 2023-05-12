@@ -42,6 +42,9 @@
             },
             "UpdateEkmConnection": {
               "methods": ["updateEkmConnection", "updateEkmConnection", "updateEkmConnectionCallable"]
+            },
+            "VerifyConnectivity": {
+              "methods": ["verifyConnectivity", "verifyConnectivity", "verifyConnectivity", "verifyConnectivityCallable"]
             }
           }
         }
