@@ -106,11 +106,24 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Run Tasks as soon as resources are available.
+     * Tasks might be executed in parallel depending on parallelism and
+     * task_count values.
      * </pre>
      *
      * <code>AS_SOON_AS_POSSIBLE = 1;</code>
      */
     AS_SOON_AS_POSSIBLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Run Tasks sequentially with increased task index.
+     * Not yet implemented.
+     * </pre>
+     *
+     * <code>IN_ORDER = 2;</code>
+     */
+    IN_ORDER(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -129,11 +142,24 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Run Tasks as soon as resources are available.
+     * Tasks might be executed in parallel depending on parallelism and
+     * task_count values.
      * </pre>
      *
      * <code>AS_SOON_AS_POSSIBLE = 1;</code>
      */
     public static final int AS_SOON_AS_POSSIBLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Run Tasks sequentially with increased task index.
+     * Not yet implemented.
+     * </pre>
+     *
+     * <code>IN_ORDER = 2;</code>
+     */
+    public static final int IN_ORDER_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -163,6 +189,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
           return SCHEDULING_POLICY_UNSPECIFIED;
         case 1:
           return AS_SOON_AS_POSSIBLE;
+        case 2:
+          return IN_ORDER;
         default:
           return null;
       }
@@ -338,7 +366,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Number of Tasks in the TaskGroup.
-   * default is 1
+   * Default is 1.
    * </pre>
    *
    * <code>int64 task_count = 4;</code>
@@ -358,6 +386,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Max number of tasks that can run in parallel.
    * Default to min(task_count, 1000).
+   * Field parallelism must be 1 if the scheduling_policy is IN_ORDER.
    * </pre>
    *
    * <code>int64 parallelism = 5;</code>
@@ -376,6 +405,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Scheduling policy for Tasks in the TaskGroup.
+   * The default value is AS_SOON_AS_POSSIBLE.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
@@ -391,6 +421,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Scheduling policy for Tasks in the TaskGroup.
+   * The default value is AS_SOON_AS_POSSIBLE.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
@@ -1748,7 +1779,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of Tasks in the TaskGroup.
-     * default is 1
+     * Default is 1.
      * </pre>
      *
      * <code>int64 task_count = 4;</code>
@@ -1764,7 +1795,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of Tasks in the TaskGroup.
-     * default is 1
+     * Default is 1.
      * </pre>
      *
      * <code>int64 task_count = 4;</code>
@@ -1784,7 +1815,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number of Tasks in the TaskGroup.
-     * default is 1
+     * Default is 1.
      * </pre>
      *
      * <code>int64 task_count = 4;</code>
@@ -1805,6 +1836,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Max number of tasks that can run in parallel.
      * Default to min(task_count, 1000).
+     * Field parallelism must be 1 if the scheduling_policy is IN_ORDER.
      * </pre>
      *
      * <code>int64 parallelism = 5;</code>
@@ -1821,6 +1853,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Max number of tasks that can run in parallel.
      * Default to min(task_count, 1000).
+     * Field parallelism must be 1 if the scheduling_policy is IN_ORDER.
      * </pre>
      *
      * <code>int64 parallelism = 5;</code>
@@ -1841,6 +1874,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Max number of tasks that can run in parallel.
      * Default to min(task_count, 1000).
+     * Field parallelism must be 1 if the scheduling_policy is IN_ORDER.
      * </pre>
      *
      * <code>int64 parallelism = 5;</code>
@@ -1860,6 +1894,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
@@ -1875,6 +1910,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
@@ -1893,6 +1929,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
@@ -1912,6 +1949,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>
@@ -1934,6 +1972,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Scheduling policy for Tasks in the TaskGroup.
+     * The default value is AS_SOON_AS_POSSIBLE.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.TaskGroup.SchedulingPolicy scheduling_policy = 6;</code>

@@ -89,6 +89,33 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
+   * Sort results. Supported are "name", "name desc", "create_time",
+   * "create_time desc", and "".
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Sort results. Supported are "name", "name desc", "create_time",
+   * "create_time desc", and "".
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Page size.
    * </pre>
    *
