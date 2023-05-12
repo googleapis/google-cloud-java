@@ -29,7 +29,7 @@ for repository in $(cat repositories.txt); do
     release_please="0"
   fi
 
-  renovate_bot_url=$(curl -s https://raw.githubusercontent.com/googleapis/java-compute/main/renovate.json)
+  renovate_bot_url=$(curl -s https://raw.githubusercontent.com/googleapis/${repository}/main/renovate.json)
   if grep -q "\"enabled\":\s*false" <<<"$renovate_bot_url"; then
     renovate="0"
   else
