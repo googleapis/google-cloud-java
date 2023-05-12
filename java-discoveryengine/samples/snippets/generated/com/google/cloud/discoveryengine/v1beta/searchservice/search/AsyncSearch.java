@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1beta.SearchRequest;
 import com.google.cloud.discoveryengine.v1beta.SearchResponse;
 import com.google.cloud.discoveryengine.v1beta.SearchServiceClient;
 import com.google.cloud.discoveryengine.v1beta.ServingConfigName;
+import com.google.cloud.discoveryengine.v1beta.UserInfo;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +57,7 @@ public class AsyncSearch {
               .setOffset(-1019779949)
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
+              .setUserInfo(UserInfo.newBuilder().build())
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -63,6 +65,8 @@ public class AsyncSearch {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setSafeSearch(true)
+              .putAllUserLabel(new HashMap<String, String>())
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

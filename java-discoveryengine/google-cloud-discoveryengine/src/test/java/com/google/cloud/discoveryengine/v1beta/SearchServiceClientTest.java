@@ -107,6 +107,7 @@ public class SearchServiceClientTest {
             .setOffset(-1019779949)
             .setFilter("filter-1274492040")
             .setOrderBy("orderBy-1207110587")
+            .setUserInfo(UserInfo.newBuilder().build())
             .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .putAllParams(new HashMap<String, Value>())
@@ -114,6 +115,8 @@ public class SearchServiceClientTest {
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setUserPseudoId("userPseudoId-1155274652")
             .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+            .setSafeSearch(true)
+            .putAllUserLabel(new HashMap<String, String>())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -136,6 +139,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
+    Assert.assertEquals(request.getUserInfo(), actualRequest.getUserInfo());
     Assert.assertEquals(request.getFacetSpecsList(), actualRequest.getFacetSpecsList());
     Assert.assertEquals(request.getBoostSpec(), actualRequest.getBoostSpec());
     Assert.assertEquals(request.getParamsMap(), actualRequest.getParamsMap());
@@ -143,6 +147,8 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
+    Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
+    Assert.assertEquals(request.getUserLabelMap(), actualRequest.getUserLabelMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -171,6 +177,7 @@ public class SearchServiceClientTest {
               .setOffset(-1019779949)
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
+              .setUserInfo(UserInfo.newBuilder().build())
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -178,6 +185,8 @@ public class SearchServiceClientTest {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setSafeSearch(true)
+              .putAllUserLabel(new HashMap<String, String>())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

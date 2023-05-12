@@ -254,6 +254,47 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Information about the end user.
+   * Highly recommended for analytics. The user_agent string in UserInfo will
+   * be used to deduce device_type for analytics.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+   *
+   * @return Whether the userInfo field is set.
+   */
+  boolean hasUserInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the end user.
+   * Highly recommended for analytics. The user_agent string in UserInfo will
+   * be used to deduce device_type for analytics.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+   *
+   * @return The userInfo.
+   */
+  com.google.cloud.discoveryengine.v1beta.UserInfo getUserInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the end user.
+   * Highly recommended for analytics. The user_agent string in UserInfo will
+   * be used to deduce device_type for analytics.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder getUserInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
@@ -367,7 +408,6 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -386,7 +426,6 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -408,7 +447,6 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -427,7 +465,6 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -450,7 +487,6 @@ public interface SearchRequestOrBuilder
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -637,4 +673,146 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpecOrBuilder
       getContentSearchSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to turn on safe search. This is only supported for
+   * [ContentConfig.PUBLIC_WEBSITE][].
+   * </pre>
+   *
+   * <code>bool safe_search = 20;</code>
+   *
+   * @return The safeSearch.
+   */
+  boolean getSafeSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  int getUserLabelCount();
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  boolean containsUserLabel(java.lang.String key);
+  /** Use {@link #getUserLabelMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getUserLabel();
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getUserLabelMap();
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  /* nullable */
+  java.lang.String getUserLabelOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  java.lang.String getUserLabelOrThrow(java.lang.String key);
 }

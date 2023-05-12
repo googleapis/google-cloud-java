@@ -104,6 +104,7 @@ public class SearchServiceClientHttpJsonTest {
             .setOffset(-1019779949)
             .setFilter("filter-1274492040")
             .setOrderBy("orderBy-1207110587")
+            .setUserInfo(UserInfo.newBuilder().build())
             .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .putAllParams(new HashMap<String, Value>())
@@ -111,6 +112,8 @@ public class SearchServiceClientHttpJsonTest {
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .setUserPseudoId("userPseudoId-1155274652")
             .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+            .setSafeSearch(true)
+            .putAllUserLabel(new HashMap<String, String>())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -160,6 +163,7 @@ public class SearchServiceClientHttpJsonTest {
               .setOffset(-1019779949)
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
+              .setUserInfo(UserInfo.newBuilder().build())
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -167,6 +171,8 @@ public class SearchServiceClientHttpJsonTest {
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+              .setSafeSearch(true)
+              .putAllUserLabel(new HashMap<String, String>())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

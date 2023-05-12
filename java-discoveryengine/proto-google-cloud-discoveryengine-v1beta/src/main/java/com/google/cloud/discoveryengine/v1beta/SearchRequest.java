@@ -72,6 +72,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 11:
         return internalGetParams();
+      case 22:
+        return internalGetUserLabel();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -11628,6 +11630,62 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int USER_INFO_FIELD_NUMBER = 21;
+  private com.google.cloud.discoveryengine.v1beta.UserInfo userInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Information about the end user.
+   * Highly recommended for analytics. The user_agent string in UserInfo will
+   * be used to deduce device_type for analytics.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+   *
+   * @return Whether the userInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserInfo() {
+    return userInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the end user.
+   * Highly recommended for analytics. The user_agent string in UserInfo will
+   * be used to deduce device_type for analytics.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+   *
+   * @return The userInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.UserInfo getUserInfo() {
+    return userInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()
+        : userInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the end user.
+   * Highly recommended for analytics. The user_agent string in UserInfo will
+   * be used to deduce device_type for analytics.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder getUserInfoOrBuilder() {
+    return userInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()
+        : userInfo_;
+  }
+
   public static final int FACET_SPECS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
@@ -11811,7 +11869,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -11842,7 +11899,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -11864,7 +11920,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -11893,7 +11948,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * `search_type`: double. Default empty. Enables non-webpage searching
    *   depending on the value. The only valid non-default value is 1,
    *   which enables image searching.
-   * This field is ignored for other verticals.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -12173,6 +12227,183 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : contentSearchSpec_;
   }
 
+  public static final int SAFE_SEARCH_FIELD_NUMBER = 20;
+  private boolean safeSearch_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to turn on safe search. This is only supported for
+   * [ContentConfig.PUBLIC_WEBSITE][].
+   * </pre>
+   *
+   * <code>bool safe_search = 20;</code>
+   *
+   * @return The safeSearch.
+   */
+  @java.lang.Override
+  public boolean getSafeSearch() {
+    return safeSearch_;
+  }
+
+  public static final int USER_LABEL_FIELD_NUMBER = 22;
+
+  private static final class UserLabelDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_UserLabelEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabel_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabel() {
+    if (userLabel_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelDefaultEntryHolder.defaultEntry);
+    }
+    return userLabel_;
+  }
+
+  public int getUserLabelCount() {
+    return internalGetUserLabel().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  @java.lang.Override
+  public boolean containsUserLabel(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserLabel().getMap().containsKey(key);
+  }
+  /** Use {@link #getUserLabelMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabel() {
+    return getUserLabelMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelMap() {
+    return internalGetUserLabel().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserLabelOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -12228,6 +12459,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userPseudoId_);
     }
+    if (safeSearch_ != false) {
+      output.writeBool(20, safeSearch_);
+    }
+    if (userInfo_ != null) {
+      output.writeMessage(21, getUserInfo());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserLabel(), UserLabelDefaultEntryHolder.defaultEntry, 22);
     if (contentSearchSpec_ != null) {
       output.writeMessage(24, getContentSearchSpec());
     }
@@ -12290,6 +12529,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userPseudoId_);
     }
+    if (safeSearch_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, safeSearch_);
+    }
+    if (userInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getUserInfo());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabel().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabel__ =
+          UserLabelDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, userLabel__);
+    }
     if (contentSearchSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getContentSearchSpec());
     }
@@ -12317,6 +12572,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (getOffset() != other.getOffset()) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (hasUserInfo() != other.hasUserInfo()) return false;
+    if (hasUserInfo()) {
+      if (!getUserInfo().equals(other.getUserInfo())) return false;
+    }
     if (!getFacetSpecsList().equals(other.getFacetSpecsList())) return false;
     if (hasBoostSpec() != other.hasBoostSpec()) return false;
     if (hasBoostSpec()) {
@@ -12336,6 +12595,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasContentSearchSpec()) {
       if (!getContentSearchSpec().equals(other.getContentSearchSpec())) return false;
     }
+    if (getSafeSearch() != other.getSafeSearch()) return false;
+    if (!internalGetUserLabel().equals(other.internalGetUserLabel())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -12363,6 +12624,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    if (hasUserInfo()) {
+      hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getUserInfo().hashCode();
+    }
     if (getFacetSpecsCount() > 0) {
       hash = (37 * hash) + FACET_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getFacetSpecsList().hashCode();
@@ -12388,6 +12653,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasContentSearchSpec()) {
       hash = (37 * hash) + CONTENT_SEARCH_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getContentSearchSpec().hashCode();
+    }
+    hash = (37 * hash) + SAFE_SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSafeSearch());
+    if (!internalGetUserLabel().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabel().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -12515,6 +12786,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 11:
           return internalGetParams();
+        case 22:
+          return internalGetUserLabel();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -12525,6 +12798,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 11:
           return internalGetMutableParams();
+        case 22:
+          return internalGetMutableUserLabel();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -12559,13 +12834,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       offset_ = 0;
       filter_ = "";
       orderBy_ = "";
+      userInfo_ = null;
+      if (userInfoBuilder_ != null) {
+        userInfoBuilder_.dispose();
+        userInfoBuilder_ = null;
+      }
       if (facetSpecsBuilder_ == null) {
         facetSpecs_ = java.util.Collections.emptyList();
       } else {
         facetSpecs_ = null;
         facetSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -12588,6 +12868,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         contentSearchSpecBuilder_.dispose();
         contentSearchSpecBuilder_ = null;
       }
+      safeSearch_ = false;
+      internalGetMutableUserLabel().clear();
       return this;
     }
 
@@ -12626,9 +12908,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.discoveryengine.v1beta.SearchRequest result) {
       if (facetSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           facetSpecs_ = java.util.Collections.unmodifiableList(facetSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.facetSpecs_ = facetSpecs_;
       } else {
@@ -12662,33 +12944,43 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.orderBy_ = orderBy_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.params_ = internalGetParams();
         result.params_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.queryExpansionSpec_ =
             queryExpansionSpecBuilder_ == null
                 ? queryExpansionSpec_
                 : queryExpansionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.spellCorrectionSpec_ =
             spellCorrectionSpecBuilder_ == null
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.userPseudoId_ = userPseudoId_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.contentSearchSpec_ =
             contentSearchSpecBuilder_ == null
                 ? contentSearchSpec_
                 : contentSearchSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.safeSearch_ = safeSearch_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.userLabel_ = internalGetUserLabel();
+        result.userLabel_.makeImmutable();
       }
     }
 
@@ -12774,11 +13066,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasUserInfo()) {
+        mergeUserInfo(other.getUserInfo());
+      }
       if (facetSpecsBuilder_ == null) {
         if (!other.facetSpecs_.isEmpty()) {
           if (facetSpecs_.isEmpty()) {
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureFacetSpecsIsMutable();
             facetSpecs_.addAll(other.facetSpecs_);
@@ -12791,7 +13086,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             facetSpecsBuilder_.dispose();
             facetSpecsBuilder_ = null;
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             facetSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFacetSpecsFieldBuilder()
@@ -12805,7 +13100,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         mergeBoostSpec(other.getBoostSpec());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       if (other.hasQueryExpansionSpec()) {
         mergeQueryExpansionSpec(other.getQueryExpansionSpec());
       }
@@ -12814,12 +13109,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasContentSearchSpec()) {
         mergeContentSearchSpec(other.getContentSearchSpec());
       }
+      if (other.getSafeSearch() != false) {
+        setSafeSearch(other.getSafeSearch());
+      }
+      internalGetMutableUserLabel().mergeFrom(other.internalGetUserLabel());
+      bitField0_ |= 0x00020000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -12911,7 +13211,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
@@ -12923,34 +13223,58 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(
                     getQueryExpansionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getSpellCorrectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
+            case 160:
+              {
+                safeSearch_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 160
+            case 170:
+              {
+                input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 170
+            case 178:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabel__ =
+                    input.readMessage(
+                        UserLabelDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserLabel()
+                    .getMutableMap()
+                    .put(userLabel__.getKey(), userLabel__.getValue());
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 178
             case 194:
               {
                 input.readMessage(
                     getContentSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 194
             default:
@@ -13846,15 +14170,217 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.UserInfo userInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.UserInfo,
+            com.google.cloud.discoveryengine.v1beta.UserInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder>
+        userInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     *
+     * @return Whether the userInfo field is set.
+     */
+    public boolean hasUserInfo() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     *
+     * @return The userInfo.
+     */
+    public com.google.cloud.discoveryengine.v1beta.UserInfo getUserInfo() {
+      if (userInfoBuilder_ == null) {
+        return userInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()
+            : userInfo_;
+      } else {
+        return userInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    public Builder setUserInfo(com.google.cloud.discoveryengine.v1beta.UserInfo value) {
+      if (userInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userInfo_ = value;
+      } else {
+        userInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    public Builder setUserInfo(
+        com.google.cloud.discoveryengine.v1beta.UserInfo.Builder builderForValue) {
+      if (userInfoBuilder_ == null) {
+        userInfo_ = builderForValue.build();
+      } else {
+        userInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    public Builder mergeUserInfo(com.google.cloud.discoveryengine.v1beta.UserInfo value) {
+      if (userInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && userInfo_ != null
+            && userInfo_ != com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()) {
+          getUserInfoBuilder().mergeFrom(value);
+        } else {
+          userInfo_ = value;
+        }
+      } else {
+        userInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    public Builder clearUserInfo() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      userInfo_ = null;
+      if (userInfoBuilder_ != null) {
+        userInfoBuilder_.dispose();
+        userInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.UserInfo.Builder getUserInfoBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getUserInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder getUserInfoOrBuilder() {
+      if (userInfoBuilder_ != null) {
+        return userInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return userInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()
+            : userInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the end user.
+     * Highly recommended for analytics. The user_agent string in UserInfo will
+     * be used to deduce device_type for analytics.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.UserInfo,
+            com.google.cloud.discoveryengine.v1beta.UserInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder>
+        getUserInfoFieldBuilder() {
+      if (userInfoBuilder_ == null) {
+        userInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.UserInfo,
+                com.google.cloud.discoveryengine.v1beta.UserInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.UserInfoOrBuilder>(
+                getUserInfo(), getParentForChildren(), isClean());
+        userInfo_ = null;
+      }
+      return userInfoBuilder_;
+    }
+
     private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec>
         facetSpecs_ = java.util.Collections.emptyList();
 
     private void ensureFacetSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         facetSpecs_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec>(facetSpecs_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -14112,7 +14638,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFacetSpecs() {
       if (facetSpecsBuilder_ == null) {
         facetSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         facetSpecsBuilder_.clear();
@@ -14263,7 +14789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec,
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.Builder,
                 com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpecOrBuilder>(
-                facetSpecs_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                facetSpecs_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         facetSpecs_ = null;
       }
       return facetSpecsBuilder_;
@@ -14287,7 +14813,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boostSpec field is set.
      */
     public boolean hasBoostSpec() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -14328,7 +14854,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -14348,7 +14874,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -14364,7 +14890,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBoostSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec value) {
       if (boostSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && boostSpec_ != null
             && boostSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec
@@ -14376,7 +14902,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -14390,7 +14916,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
      */
     public Builder clearBoostSpec() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -14410,7 +14936,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec.Builder
         getBoostSpecBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
@@ -14477,7 +15003,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return params_;
     }
@@ -14498,7 +15024,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -14529,7 +15054,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -14551,7 +15075,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -14580,7 +15103,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -14598,7 +15120,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -14615,7 +15137,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -14630,7 +15151,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -14646,7 +15167,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -14659,7 +15179,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableParams().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -14675,14 +15195,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * `search_type`: double. Default empty. Enables non-webpage searching
      *   depending on the value. The only valid non-default value is 1,
      *   which enables image searching.
-     * This field is ignored for other verticals.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
      */
     public Builder putAllParams(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -14708,7 +15227,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryExpansionSpec field is set.
      */
     public boolean hasQueryExpansionSpec() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -14757,7 +15276,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -14781,7 +15300,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -14800,7 +15319,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryExpansionSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec value) {
       if (queryExpansionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && queryExpansionSpec_ != null
             && queryExpansionSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec
@@ -14812,7 +15331,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -14829,7 +15348,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryExpansionSpec() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       queryExpansionSpec_ = null;
       if (queryExpansionSpecBuilder_ != null) {
         queryExpansionSpecBuilder_.dispose();
@@ -14852,7 +15371,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.Builder
         getQueryExpansionSpecBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getQueryExpansionSpecFieldBuilder().getBuilder();
     }
@@ -14930,7 +15449,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spellCorrectionSpec field is set.
      */
     public boolean hasSpellCorrectionSpec() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -14979,7 +15498,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -15003,7 +15522,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -15022,7 +15541,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpellCorrectionSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec value) {
       if (spellCorrectionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && spellCorrectionSpec_ != null
             && spellCorrectionSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec
@@ -15034,7 +15553,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -15051,7 +15570,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpellCorrectionSpec() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       spellCorrectionSpec_ = null;
       if (spellCorrectionSpecBuilder_ != null) {
         spellCorrectionSpecBuilder_.dispose();
@@ -15074,7 +15593,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec.Builder
         getSpellCorrectionSpecBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
@@ -15222,7 +15741,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -15249,7 +15768,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -15281,7 +15800,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -15308,7 +15827,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contentSearchSpec field is set.
      */
     public boolean hasContentSearchSpec() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -15357,7 +15876,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -15381,7 +15900,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -15400,7 +15919,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContentSearchSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec value) {
       if (contentSearchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && contentSearchSpec_ != null
             && contentSearchSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec
@@ -15412,7 +15931,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -15429,7 +15948,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContentSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       contentSearchSpec_ = null;
       if (contentSearchSpecBuilder_ != null) {
         contentSearchSpecBuilder_.dispose();
@@ -15452,7 +15971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.Builder
         getContentSearchSpecBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getContentSearchSpecFieldBuilder().getBuilder();
     }
@@ -15506,6 +16025,325 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         contentSearchSpec_ = null;
       }
       return contentSearchSpecBuilder_;
+    }
+
+    private boolean safeSearch_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to turn on safe search. This is only supported for
+     * [ContentConfig.PUBLIC_WEBSITE][].
+     * </pre>
+     *
+     * <code>bool safe_search = 20;</code>
+     *
+     * @return The safeSearch.
+     */
+    @java.lang.Override
+    public boolean getSafeSearch() {
+      return safeSearch_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to turn on safe search. This is only supported for
+     * [ContentConfig.PUBLIC_WEBSITE][].
+     * </pre>
+     *
+     * <code>bool safe_search = 20;</code>
+     *
+     * @param value The safeSearch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSafeSearch(boolean value) {
+
+      safeSearch_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to turn on safe search. This is only supported for
+     * [ContentConfig.PUBLIC_WEBSITE][].
+     * </pre>
+     *
+     * <code>bool safe_search = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSafeSearch() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      safeSearch_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabel_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserLabel() {
+      if (userLabel_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(UserLabelDefaultEntryHolder.defaultEntry);
+      }
+      return userLabel_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserLabel() {
+      if (userLabel_ == null) {
+        userLabel_ =
+            com.google.protobuf.MapField.newMapField(UserLabelDefaultEntryHolder.defaultEntry);
+      }
+      if (!userLabel_.isMutable()) {
+        userLabel_ = userLabel_.copy();
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return userLabel_;
+    }
+
+    public int getUserLabelCount() {
+      return internalGetUserLabel().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    @java.lang.Override
+    public boolean containsUserLabel(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserLabel().getMap().containsKey(key);
+    }
+    /** Use {@link #getUserLabelMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabel() {
+      return getUserLabelMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelMap() {
+      return internalGetUserLabel().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserLabelOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserLabel() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      internalGetMutableUserLabel().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    public Builder removeUserLabel(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserLabel().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabel() {
+      bitField0_ |= 0x00020000;
+      return internalGetMutableUserLabel().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    public Builder putUserLabel(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserLabel().getMutableMap().put(key, value);
+      bitField0_ |= 0x00020000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     */
+    public Builder putAllUserLabel(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabel().getMutableMap().putAll(values);
+      bitField0_ |= 0x00020000;
+      return this;
     }
 
     @java.lang.Override
