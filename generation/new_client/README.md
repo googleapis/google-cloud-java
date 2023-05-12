@@ -186,15 +186,7 @@ $ python3.9 generation/new_client/new-client.py generate \
   --product-docs="https://cloud.google.com/alloydb/docs" \
   --api-description="AlloyDB for PostgreSQL is an open source-compatible database service that
     provides a powerful option for migrating, modernizing, or building
-    commercial-grade applications. It offers full compatibility with standard
-    PostgreSQL, and is more than 4x faster for transactional workloads and up
-    to 100x faster for analytical queries than standard PostgreSQL in our
-    performance tests. AlloyDB for PostgreSQL offers a 99.99 percent
-    availability SLA inclusive of maintenance. <br><br> AlloyDB is optimized
-    for the most demanding use cases, allowing you to build new applications
-    that require high transaction throughput, large database sizes, or
-    multiple read resources; scale existing PostgreSQL workloads with no
-    application changes; and modernize legacy proprietary databases."
+    commercial-grade applications."
 ```
 
 The command creates changes for
@@ -282,6 +274,8 @@ Sometimes, a library generation requires special handling for
 Maven coordinates or API ID, especially when the library is not
 specific to Google Cloud. Refer to the following command example when we
 generated Google Maps Routes API Java client library.
+
+**Note that for `maps` clients, include `maps` as a prefix to the `api_shortname`.**
 
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
