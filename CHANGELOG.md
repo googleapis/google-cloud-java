@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [0.130.12-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.129.11...v0.130.12-alpha) (2023-05-15)
+
+
+### Bug Fixes
+
+* Fix release tag ([2ec09ff](https://github.com/googleapis/java-logging-logback/commit/2ec09fff140570e0fa36f8994172a22590cfc65f))
+* **java:** Add native image configurations for logging-logback ([#1075](https://github.com/googleapis/java-logging-logback/issues/1075)) ([22bf85d](https://github.com/googleapis/java-logging-logback/commit/22bf85df9d2e94c7d0ce4d51061c2e07334b8b8e))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.15.0 ([#1073](https://github.com/googleapis/java-logging-logback/issues/1073)) ([ff1ed3d](https://github.com/googleapis/java-logging-logback/commit/ff1ed3dfcdf38b4523d993a0a36268add21d1449))
+* Update dependency com.google.cloud:google-cloud-logging to v3.15.1 ([#1079](https://github.com/googleapis/java-logging-logback/issues/1079)) ([3a4ffe3](https://github.com/googleapis/java-logging-logback/commit/3a4ffe345161f9f2586b389452992ca4399c59eb))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.9.0 ([#1074](https://github.com/googleapis/java-logging-logback/issues/1074)) ([503679f](https://github.com/googleapis/java-logging-logback/commit/503679fc71f2f5b26b4bc854b7571bda8bc73b88))
+
 ## [0.129.11](https://github.com/googleapis/java-logging-logback/compare/v0.129.10...v0.129.11) (2023-04-27)
 
 
