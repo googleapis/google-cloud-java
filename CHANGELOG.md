@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.26.0](https://github.com/googleapis/java-bigquery/compare/v2.25.0...v2.26.0) (2023-05-15)
+
+
+### Features
+
+* Add  field in HivePartitioningOptions ([#2678](https://github.com/googleapis/java-bigquery/issues/2678)) ([4165e55](https://github.com/googleapis/java-bigquery/commit/4165e5549d7a8e8e011d7700bc791e9b470c670d))
+* Allow passing autodetect_schema on table update ([#2661](https://github.com/googleapis/java-bigquery/issues/2661)) ([4c01698](https://github.com/googleapis/java-bigquery/commit/4c01698e571d7adbaf914984cdf65f6c35e4edb8))
+
+
+### Bug Fixes
+
+* Move ratio calculation for whether to use read API to avoid NPE with setUseReadAPI(false) ([#2509](https://github.com/googleapis/java-bigquery/issues/2509)) ([e1326c8](https://github.com/googleapis/java-bigquery/commit/e1326c8b615f392f80a09d36a1b4cef79dfea662))
+
+
+### Dependencies
+
+* Update arrow.version to v12 (major) ([#2675](https://github.com/googleapis/java-bigquery/issues/2675)) ([7700cf5](https://github.com/googleapis/java-bigquery/commit/7700cf588d4a6d3b3267d8fd51eaf8aed1752506))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.19.0 ([#2691](https://github.com/googleapis/java-bigquery/issues/2691)) ([1939803](https://github.com/googleapis/java-bigquery/commit/193980319cb743e6b6c67648ddb21432e5e69ff8))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.23.0 ([#2692](https://github.com/googleapis/java-bigquery/issues/2692)) ([f56e541](https://github.com/googleapis/java-bigquery/commit/f56e54161894c3be6e975ac102454afca4c9b058))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.9.0 ([#2685](https://github.com/googleapis/java-bigquery/issues/2685)) ([b74da29](https://github.com/googleapis/java-bigquery/commit/b74da296e2d2739adb481cda417d51569d1acc51))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.22 ([#2687](https://github.com/googleapis/java-bigquery/issues/2687)) ([cf5d758](https://github.com/googleapis/java-bigquery/commit/cf5d758fe6aad4b374c34940aa93f8060f779505))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.22 ([#2688](https://github.com/googleapis/java-bigquery/issues/2688)) ([32ea8ab](https://github.com/googleapis/java-bigquery/commit/32ea8ab19bff86d8183ddd9d6e6d06303eb9d83f))
+* Update github/codeql-action action to v2.3.3 ([#2658](https://github.com/googleapis/java-bigquery/issues/2658)) ([487f207](https://github.com/googleapis/java-bigquery/commit/487f20707c9b320a68100f85b2a1277cad9b37ea))
+
 ## [2.25.0](https://github.com/googleapis/java-bigquery/compare/v2.24.5...v2.25.0) (2023-04-27)
 
 
