@@ -77,8 +77,7 @@ import java.util.Map;
 public class HttpBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
-  private static final String BASE_RESUMABLE_URI =
-      "https://www.googleapis.com/upload/bigquery/v2/projects/";
+  private static final String BASE_RESUMABLE_URI = "upload/bigquery/v2/projects/";
   // see:
   // https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
   private static final int HTTP_RESUME_INCOMPLETE = 308;
@@ -725,7 +724,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public String open(Job loadJob) {
     try {
-      String builder = BASE_RESUMABLE_URI + options.getProjectId() + "/jobs";
+      String builder = options.getHost();
+      if (!builder.endsWith("/")) {
+        builder += "/";
+      }
+      builder += BASE_RESUMABLE_URI + options.getProjectId() + "/jobs";
       GenericUrl url = new GenericUrl(builder);
       url.set("uploadType", "resumable");
       JsonFactory jsonFactory = bigquery.getJsonFactory();
