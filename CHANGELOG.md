@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.37.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.36.1...v2.37.0) (2023-05-12)
+
+
+### Features
+
+* Adding setting KeepAlive to JsonWriter sample ([#2104](https://github.com/googleapis/java-bigquerystorage/issues/2104)) ([a5b95c1](https://github.com/googleapis/java-bigquerystorage/commit/a5b95c10df4ce34d542d3a3e9227522817538d10))
+* Improve client settings ([#2097](https://github.com/googleapis/java-bigquerystorage/issues/2097)) ([4fc2fac](https://github.com/googleapis/java-bigquerystorage/commit/4fc2fac3cc30d4d6f288c82cf1446d19fab95712))
+
+
+### Dependencies
+
+* Update arrow.version to v12 (major) ([#2099](https://github.com/googleapis/java-bigquerystorage/issues/2099)) ([e0c09d5](https://github.com/googleapis/java-bigquerystorage/commit/e0c09d57fdb80e81c3f4047cb845033a8bbe9542))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.25.0 ([#2094](https://github.com/googleapis/java-bigquerystorage/issues/2094)) ([6ca6677](https://github.com/googleapis/java-bigquerystorage/commit/6ca667703f480d50ec009af0b27c651d63bda0b5))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.9.0 ([#2108](https://github.com/googleapis/java-bigquerystorage/issues/2108)) ([af1001b](https://github.com/googleapis/java-bigquerystorage/commit/af1001b5f49e04e5d02057376c98363dbf6f9b9c))
+* Update dependency org.apache.arrow:arrow-memory-netty to v12 ([#2100](https://github.com/googleapis/java-bigquerystorage/issues/2100)) ([df7bda4](https://github.com/googleapis/java-bigquerystorage/commit/df7bda4da70c18fa1565fb261cf5e12820d51f62))
+* Update dependency org.apache.arrow:arrow-vector to v12 ([#2101](https://github.com/googleapis/java-bigquerystorage/issues/2101)) ([25c2682](https://github.com/googleapis/java-bigquerystorage/commit/25c26823ed07b9a77deec8e09a934f68b58813c2))
+
 ## [2.36.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.36.0...v2.36.1) (2023-04-27)
 
 
