@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.15.1](https://github.com/googleapis/java-logging/compare/v3.15.0...v3.15.1) (2023-05-12)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.9.0 ([#1342](https://github.com/googleapis/java-logging/issues/1342)) ([8b14ae1](https://github.com/googleapis/java-logging/commit/8b14ae17514481a5925ae3ff079cc4f1b4ad6d94))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.22 ([#1341](https://github.com/googleapis/java-logging/issues/1341)) ([cfc0106](https://github.com/googleapis/java-logging/commit/cfc0106c359c153031bddcac7dadc292a9bb561e))
+
 ## [3.15.0](https://github.com/googleapis/java-logging/compare/v3.14.9...v3.15.0) (2023-05-06)
 
 
