@@ -124,6 +124,10 @@ $ sudo apt-get install gh
 $ gh auth login
 ```
 
+## Double check that the library does not already exist within `google-cloud-java`!
+
+Some languages require a new request when a new version of a service is created, but Java manages all versions of the service as a single package, so the client library will automatically be updated to include new versions.
+
 ## Run client generation script
 
 You will run new-client.py script with the following parameters.
