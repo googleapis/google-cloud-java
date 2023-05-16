@@ -100,10 +100,10 @@ public final class ExpandedDataSetProto {
           + "stampB\003\340A\003:n\352Ak\n-analyticsadmin.googleap"
           + "is.com/ExpandedDataSet\022:properties/{prop"
           + "erty}/expandedDataSets/{expanded_data_se"
-          + "t}B\201\001\n\"com.google.analytics.admin.v1alph"
-          + "aB\024ExpandedDataSetProtoP\001ZCgoogle.golang"
-          + ".org/genproto/googleapis/analytics/admin"
-          + "/v1alpha;adminb\006proto3"
+          + "t}B|\n\"com.google.analytics.admin.v1alpha"
+          + "B\024ExpandedDataSetProtoP\001Z>cloud.google.c"
+          + "om/go/analytics/admin/apiv1alpha/adminpb"
+          + ";adminpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -51,6 +51,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.GetTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysResponse;
@@ -121,6 +122,7 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
   private final PagedCallSettings<ListTagKeysRequest, ListTagKeysResponse, ListTagKeysPagedResponse>
       listTagKeysSettings;
   private final UnaryCallSettings<GetTagKeyRequest, TagKey> getTagKeySettings;
+  private final UnaryCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeySettings;
   private final UnaryCallSettings<CreateTagKeyRequest, Operation> createTagKeySettings;
   private final OperationCallSettings<CreateTagKeyRequest, TagKey, CreateTagKeyMetadata>
       createTagKeyOperationSettings;
@@ -197,6 +199,11 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
   /** Returns the object with the settings used for calls to getTagKey. */
   public UnaryCallSettings<GetTagKeyRequest, TagKey> getTagKeySettings() {
     return getTagKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNamespacedTagKey. */
+  public UnaryCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeySettings() {
+    return getNamespacedTagKeySettings;
   }
 
   /** Returns the object with the settings used for calls to createTagKey. */
@@ -354,6 +361,7 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
 
     listTagKeysSettings = settingsBuilder.listTagKeysSettings().build();
     getTagKeySettings = settingsBuilder.getTagKeySettings().build();
+    getNamespacedTagKeySettings = settingsBuilder.getNamespacedTagKeySettings().build();
     createTagKeySettings = settingsBuilder.createTagKeySettings().build();
     createTagKeyOperationSettings = settingsBuilder.createTagKeyOperationSettings().build();
     updateTagKeySettings = settingsBuilder.updateTagKeySettings().build();
@@ -372,6 +380,8 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
             ListTagKeysRequest, ListTagKeysResponse, ListTagKeysPagedResponse>
         listTagKeysSettings;
     private final UnaryCallSettings.Builder<GetTagKeyRequest, TagKey> getTagKeySettings;
+    private final UnaryCallSettings.Builder<GetNamespacedTagKeyRequest, TagKey>
+        getNamespacedTagKeySettings;
     private final UnaryCallSettings.Builder<CreateTagKeyRequest, Operation> createTagKeySettings;
     private final OperationCallSettings.Builder<CreateTagKeyRequest, TagKey, CreateTagKeyMetadata>
         createTagKeyOperationSettings;
@@ -394,9 +404,9 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -416,6 +426,8 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -424,8 +436,6 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -438,6 +448,7 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
 
       listTagKeysSettings = PagedCallSettings.newBuilder(LIST_TAG_KEYS_PAGE_STR_FACT);
       getTagKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getNamespacedTagKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagKeyOperationSettings = OperationCallSettings.newBuilder();
       updateTagKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -452,6 +463,7 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listTagKeysSettings,
               getTagKeySettings,
+              getNamespacedTagKeySettings,
               createTagKeySettings,
               updateTagKeySettings,
               deleteTagKeySettings,
@@ -466,6 +478,7 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
 
       listTagKeysSettings = settings.listTagKeysSettings.toBuilder();
       getTagKeySettings = settings.getTagKeySettings.toBuilder();
+      getNamespacedTagKeySettings = settings.getNamespacedTagKeySettings.toBuilder();
       createTagKeySettings = settings.createTagKeySettings.toBuilder();
       createTagKeyOperationSettings = settings.createTagKeyOperationSettings.toBuilder();
       updateTagKeySettings = settings.updateTagKeySettings.toBuilder();
@@ -480,6 +493,7 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listTagKeysSettings,
               getTagKeySettings,
+              getNamespacedTagKeySettings,
               createTagKeySettings,
               updateTagKeySettings,
               deleteTagKeySettings,
@@ -524,6 +538,11 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
           .getTagKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getNamespacedTagKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createTagKeySettings()
@@ -655,6 +674,12 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
     /** Returns the builder for the settings used for calls to getTagKey. */
     public UnaryCallSettings.Builder<GetTagKeyRequest, TagKey> getTagKeySettings() {
       return getTagKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNamespacedTagKey. */
+    public UnaryCallSettings.Builder<GetNamespacedTagKeyRequest, TagKey>
+        getNamespacedTagKeySettings() {
+      return getNamespacedTagKeySettings;
     }
 
     /** Returns the builder for the settings used for calls to createTagKey. */

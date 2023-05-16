@@ -42,6 +42,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
   private BatchRecognizeRequest() {
     recognizer_ = "";
     files_ = java.util.Collections.emptyList();
+    processingStrategy_ = 0;
   }
 
   @java.lang.Override
@@ -68,6 +69,148 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         .ensureFieldAccessorsInitialized(
             com.google.cloud.speech.v2.BatchRecognizeRequest.class,
             com.google.cloud.speech.v2.BatchRecognizeRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible processing strategies for batch requests.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy}
+   */
+  public enum ProcessingStrategy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value for the processing strategy. The request is processed as
+     * soon as its received.
+     * </pre>
+     *
+     * <code>PROCESSING_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    PROCESSING_STRATEGY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * If selected, processes the request during lower utilization periods for a
+     * price discount. The request is fulfilled within 24 hours.
+     * </pre>
+     *
+     * <code>DYNAMIC_BATCHING = 1;</code>
+     */
+    DYNAMIC_BATCHING(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value for the processing strategy. The request is processed as
+     * soon as its received.
+     * </pre>
+     *
+     * <code>PROCESSING_STRATEGY_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROCESSING_STRATEGY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If selected, processes the request during lower utilization periods for a
+     * price discount. The request is fulfilled within 24 hours.
+     * </pre>
+     *
+     * <code>DYNAMIC_BATCHING = 1;</code>
+     */
+    public static final int DYNAMIC_BATCHING_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProcessingStrategy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProcessingStrategy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROCESSING_STRATEGY_UNSPECIFIED;
+        case 1:
+          return DYNAMIC_BATCHING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProcessingStrategy>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProcessingStrategy>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProcessingStrategy>() {
+              public ProcessingStrategy findValueByNumber(int number) {
+                return ProcessingStrategy.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.speech.v2.BatchRecognizeRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ProcessingStrategy[] VALUES = values();
+
+    public static ProcessingStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProcessingStrategy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy)
   }
 
   public static final int RECOGNIZER_FIELD_NUMBER = 1;
@@ -400,6 +543,47 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         : recognitionOutputConfig_;
   }
 
+  public static final int PROCESSING_STRATEGY_FIELD_NUMBER = 7;
+  private int processingStrategy_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Processing strategy to use for this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for processingStrategy.
+   */
+  @java.lang.Override
+  public int getProcessingStrategyValue() {
+    return processingStrategy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Processing strategy to use for this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+   * </code>
+   *
+   * @return The processingStrategy.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy
+      getProcessingStrategy() {
+    com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy result =
+        com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy.forNumber(
+            processingStrategy_);
+    return result == null
+        ? com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -429,6 +613,12 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     if (recognitionOutputConfig_ != null) {
       output.writeMessage(6, getRecognitionOutputConfig());
     }
+    if (processingStrategy_
+        != com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy
+            .PROCESSING_STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, processingStrategy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -453,6 +643,12 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     if (recognitionOutputConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRecognitionOutputConfig());
+    }
+    if (processingStrategy_
+        != com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy
+            .PROCESSING_STRATEGY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, processingStrategy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -484,6 +680,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     if (hasRecognitionOutputConfig()) {
       if (!getRecognitionOutputConfig().equals(other.getRecognitionOutputConfig())) return false;
     }
+    if (processingStrategy_ != other.processingStrategy_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -513,6 +710,8 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + RECOGNITION_OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRecognitionOutputConfig().hashCode();
     }
+    hash = (37 * hash) + PROCESSING_STRATEGY_FIELD_NUMBER;
+    hash = (53 * hash) + processingStrategy_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -677,6 +876,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         recognitionOutputConfigBuilder_.dispose();
         recognitionOutputConfigBuilder_ = null;
       }
+      processingStrategy_ = 0;
       return this;
     }
 
@@ -741,6 +941,9 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
             recognitionOutputConfigBuilder_ == null
                 ? recognitionOutputConfig_
                 : recognitionOutputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.processingStrategy_ = processingStrategy_;
       }
     }
 
@@ -831,6 +1034,9 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
       if (other.hasRecognitionOutputConfig()) {
         mergeRecognitionOutputConfig(other.getRecognitionOutputConfig());
       }
+      if (other.processingStrategy_ != 0) {
+        setProcessingStrategyValue(other.getProcessingStrategyValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -896,6 +1102,12 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 56:
+              {
+                processingStrategy_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2113,6 +2325,111 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         recognitionOutputConfig_ = null;
       }
       return recognitionOutputConfigBuilder_;
+    }
+
+    private int processingStrategy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Processing strategy to use for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for processingStrategy.
+     */
+    @java.lang.Override
+    public int getProcessingStrategyValue() {
+      return processingStrategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Processing strategy to use for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for processingStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProcessingStrategyValue(int value) {
+      processingStrategy_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Processing strategy to use for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+     * </code>
+     *
+     * @return The processingStrategy.
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy
+        getProcessingStrategy() {
+      com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy result =
+          com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy.forNumber(
+              processingStrategy_);
+      return result == null
+          ? com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Processing strategy to use for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+     * </code>
+     *
+     * @param value The processingStrategy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProcessingStrategy(
+        com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      processingStrategy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Processing strategy to use for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProcessingStrategy() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      processingStrategy_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

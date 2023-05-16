@@ -97,11 +97,13 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the logical replication slot that's configured with the
-   * pgoutput plugin.
+   * Required. Immutable. The name of the logical replication slot that's
+   * configured with the pgoutput plugin.
    * </pre>
    *
-   * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The replicationSlot.
    */
@@ -110,11 +112,13 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the logical replication slot that's configured with the
-   * pgoutput plugin.
+   * Required. Immutable. The name of the logical replication slot that's
+   * configured with the pgoutput plugin.
    * </pre>
    *
-   * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for replicationSlot.
    */
@@ -124,8 +128,8 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the publication that includes the set of all tables that are
-   * defined in the stream's include_objects.
+   * Required. The name of the publication that includes the set of all tables
+   * that are defined in the stream's include_objects.
    * </pre>
    *
    * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -137,8 +141,8 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the publication that includes the set of all tables that are
-   * defined in the stream's include_objects.
+   * Required. The name of the publication that includes the set of all tables
+   * that are defined in the stream's include_objects.
    * </pre>
    *
    * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -146,4 +150,19 @@ public interface PostgresqlSourceConfigOrBuilder
    * @return The bytes for publication.
    */
   com.google.protobuf.ByteString getPublicationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent backfill tasks. The number should be non
+   * negative. If not set (or set to 0), the system's default value will be
+   * used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_backfill_tasks = 5;</code>
+   *
+   * @return The maxConcurrentBackfillTasks.
+   */
+  int getMaxConcurrentBackfillTasks();
 }

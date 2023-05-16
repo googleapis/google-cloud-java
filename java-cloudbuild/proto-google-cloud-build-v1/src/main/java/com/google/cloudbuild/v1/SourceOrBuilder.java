@@ -100,6 +100,41 @@ public interface SourceOrBuilder
    *
    *
    * <pre>
+   * If provided, get the source from this Git repository.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+   *
+   * @return Whether the gitSource field is set.
+   */
+  boolean hasGitSource();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this Git repository.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+   *
+   * @return The gitSource.
+   */
+  com.google.cloudbuild.v1.GitSource getGitSource();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this Git repository.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+   */
+  com.google.cloudbuild.v1.GitSourceOrBuilder getGitSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If provided, get the source from this manifest in Google Cloud Storage.
    * This feature is in Preview; see description
    * [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).

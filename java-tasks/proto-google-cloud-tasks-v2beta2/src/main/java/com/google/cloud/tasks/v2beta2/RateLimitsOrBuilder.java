@@ -30,11 +30,14 @@ public interface RateLimitsOrBuilder
    * The maximum rate at which tasks are dispatched from this queue.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum allowed value
+   * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget],
+   * the maximum allowed value
    *   is 500.
-   * * This field is output only   for [pull queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
+   * * This field is output only   for [pull
+   * queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
    *   `max_tasks_dispatched_per_second` limit, a maximum of 10 QPS of
-   *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests are allowed per pull queue.
+   *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests
+   *   are allowed per pull queue.
    * This field has the same meaning as
    * [rate in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
@@ -72,11 +75,11 @@ public interface RateLimitsOrBuilder
    * `queue.yaml/xml`, `max_burst_size` is equal to
    * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
    * If
-   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue without
-   * explicitly setting a value for `max_burst_size`,
+   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called
+   * on a queue without explicitly setting a value for `max_burst_size`,
    * `max_burst_size` value will get updated if
-   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is updating
-   * [max_dispatches_per_second][RateLimits.max_dispatches_per_second].
+   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is
+   * updating [max_dispatches_per_second][RateLimits.max_dispatches_per_second].
    * </pre>
    *
    * <code>int32 max_burst_size = 2;</code>
@@ -97,8 +100,9 @@ public interface RateLimitsOrBuilder
    * default.
    * The maximum allowed value is 5,000.
    * This field is output only for
-   * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which indicates no limit. No other
-   * queue types can have `max_concurrent_tasks` set to -1.
+   * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which
+   * indicates no limit. No other queue types can have `max_concurrent_tasks`
+   * set to -1.
    * This field has the same meaning as
    * [max_concurrent_requests in
    * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).

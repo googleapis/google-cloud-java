@@ -27,9 +27,9 @@ public interface ResourceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use for connect_resources. Defaults to the
-   * latest GKE Connect version. The version must be a currently supported
-   * version, obsolete versions will be rejected.
+   * Optional. The Connect agent version to use for connect_resources. Defaults
+   * to the latest GKE Connect version. The version must be a currently
+   * supported version, obsolete versions will be rejected.
    * </pre>
    *
    * <code>string connect_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +41,9 @@ public interface ResourceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use for connect_resources. Defaults to the
-   * latest GKE Connect version. The version must be a currently supported
-   * version, obsolete versions will be rejected.
+   * Optional. The Connect agent version to use for connect_resources. Defaults
+   * to the latest GKE Connect version. The version must be a currently
+   * supported version, obsolete versions will be rejected.
    * </pre>
    *
    * <code>string connect_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -72,8 +72,8 @@ public interface ResourceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Major version of the Kubernetes cluster. This is only used to determine
-   * which version to use for the CustomResourceDefinition resources,
+   * Optional. Major version of the Kubernetes cluster. This is only used to
+   * determine which version to use for the CustomResourceDefinition resources,
    * `apiextensions/v1beta1` or`apiextensions/v1`.
    * </pre>
    *
@@ -86,8 +86,8 @@ public interface ResourceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Major version of the Kubernetes cluster. This is only used to determine
-   * which version to use for the CustomResourceDefinition resources,
+   * Optional. Major version of the Kubernetes cluster. This is only used to
+   * determine which version to use for the CustomResourceDefinition resources,
    * `apiextensions/v1beta1` or`apiextensions/v1`.
    * </pre>
    *

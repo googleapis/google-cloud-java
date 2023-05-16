@@ -61,12 +61,12 @@ public final class TracingProto {
           + "s/*/spans/*}:\001*\032z\312A\031cloudtrace.googleapi"
           + "s.com\322A[https://www.googleapis.com/auth/"
           + "cloud-platform,https://www.googleapis.co"
-          + "m/auth/trace.appendB\307\001\n!com.google.devto"
-          + "ols.cloudtrace.v2B\014TracingProtoP\001ZGgoogl"
-          + "e.golang.org/genproto/googleapis/devtool"
-          + "s/cloudtrace/v2;cloudtrace\252\002\025Google.Clou"
-          + "d.Trace.V2\312\002\025Google\\Cloud\\Trace\\V2\352\002\030Goo"
-          + "gle::Cloud::Trace::V2b\006proto3"
+          + "m/auth/trace.appendB\257\001\n!com.google.devto"
+          + "ols.cloudtrace.v2B\014TracingProtoP\001Z/cloud"
+          + ".google.com/go/trace/apiv2/tracepb;trace"
+          + "pb\252\002\025Google.Cloud.Trace.V2\312\002\025Google\\Clou"
+          + "d\\Trace\\V2\352\002\030Google::Cloud::Trace::V2b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

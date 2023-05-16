@@ -425,6 +425,7 @@ public class SessionsClient implements BackgroundResource {
    *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
    *           .setOutputAudioConfigMask(FieldMask.newBuilder().build())
    *           .setInputAudio(ByteString.EMPTY)
+   *           .setEnableDebuggingInfo(true)
    *           .build();
    *   bidiStream.send(request);
    *   for (StreamingDetectIntentResponse response : bidiStream) {

@@ -195,6 +195,7 @@ public class SessionsClientTest {
             .setWebhookStatus(Status.newBuilder().build())
             .setOutputAudio(ByteString.EMPTY)
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setDebuggingInfo(CloudConversationDebuggingInfo.newBuilder().build())
             .build();
     mockSessions.addResponse(expectedResponse);
     StreamingDetectIntentRequest request =
@@ -206,6 +207,7 @@ public class SessionsClientTest {
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .setOutputAudioConfigMask(FieldMask.newBuilder().build())
             .setInputAudio(ByteString.EMPTY)
+            .setEnableDebuggingInfo(true)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -236,6 +238,7 @@ public class SessionsClientTest {
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .setOutputAudioConfigMask(FieldMask.newBuilder().build())
             .setInputAudio(ByteString.EMPTY)
+            .setEnableDebuggingInfo(true)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();

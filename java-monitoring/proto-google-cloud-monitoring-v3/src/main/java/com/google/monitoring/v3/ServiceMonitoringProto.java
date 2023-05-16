@@ -217,13 +217,13 @@ public final class ServiceMonitoringProto {
           + "ing.v3.BasicSliH\000\022\021\n\tthreshold\030\002 \001(\001B\006\n\004"
           + "type\032N\n\013MetricRange\022\023\n\013time_series\030\001 \001(\t"
           + "\022*\n\005range\030\004 \001(\0132\033.google.monitoring.v3.R"
-          + "angeB\022\n\020window_criterionB\316\001\n\030com.google."
+          + "angeB\022\n\020window_criterionB\321\001\n\030com.google."
           + "monitoring.v3B\026ServiceMonitoringProtoP\001Z"
-          + ">google.golang.org/genproto/googleapis/m"
-          + "onitoring/v3;monitoring\252\002\032Google.Cloud.M"
-          + "onitoring.V3\312\002\032Google\\Cloud\\Monitoring\\V"
-          + "3\352\002\035Google::Cloud::Monitoring::V3b\006proto"
-          + "3"
+          + "Acloud.google.com/go/monitoring/apiv3/v2"
+          + "/monitoringpb;monitoringpb\252\002\032Google.Clou"
+          + "d.Monitoring.V3\312\002\032Google\\Cloud\\Monitorin"
+          + "g\\V3\352\002\035Google::Cloud::Monitoring::V3b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

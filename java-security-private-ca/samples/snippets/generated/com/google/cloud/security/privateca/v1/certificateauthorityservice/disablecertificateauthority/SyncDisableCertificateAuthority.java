@@ -43,6 +43,7 @@ public class SyncDisableCertificateAuthority {
                           "[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setIgnoreDependentResources(true)
               .build();
       CertificateAuthority response =
           certificateAuthorityServiceClient.disableCertificateAuthorityAsync(request).get();

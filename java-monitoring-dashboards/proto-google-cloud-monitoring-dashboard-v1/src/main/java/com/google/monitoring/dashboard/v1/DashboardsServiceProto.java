@@ -110,14 +110,14 @@ public final class DashboardsServiceProto {
           + "atform,https://www.googleapis.com/auth/m"
           + "onitoring,https://www.googleapis.com/aut"
           + "h/monitoring.read,https://www.googleapis"
-          + ".com/auth/monitoring.writeB\200\002\n\"com.googl"
+          + ".com/auth/monitoring.writeB\377\001\n\"com.googl"
           + "e.monitoring.dashboard.v1B\026DashboardsSer"
-          + "viceProtoP\001ZGgoogle.golang.org/genproto/"
-          + "googleapis/monitoring/dashboard/v1;dashb"
-          + "oard\252\002$Google.Cloud.Monitoring.Dashboard"
-          + ".V1\312\002$Google\\Cloud\\Monitoring\\Dashboard\\"
-          + "V1\352\002(Google::Cloud::Monitoring::Dashboar"
-          + "d::V1b\006proto3"
+          + "viceProtoP\001ZFcloud.google.com/go/monitor"
+          + "ing/dashboard/apiv1/dashboardpb;dashboar"
+          + "dpb\252\002$Google.Cloud.Monitoring.Dashboard."
+          + "V1\312\002$Google\\Cloud\\Monitoring\\Dashboard\\V"
+          + "1\352\002(Google::Cloud::Monitoring::Dashboard"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

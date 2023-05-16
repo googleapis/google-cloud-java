@@ -61,9 +61,9 @@ public final class CheckErrorProto {
           + "G_STATUS_UNAVAILABLE\020\256\002\022/\n*CLOUD_RESOURC"
           + "E_MANAGER_BACKEND_UNAVAILABLE\020\261\002B\352\001\n com"
           + ".google.api.servicecontrol.v1B\017CheckErro"
-          + "rProtoP\001ZJgoogle.golang.org/genproto/goo"
-          + "gleapis/api/servicecontrol/v1;servicecon"
-          + "trol\370\001\001\252\002\036Google.Cloud.ServiceControl.V1"
+          + "rProtoP\001ZJcloud.google.com/go/servicecon"
+          + "trol/apiv1/servicecontrolpb;servicecontr"
+          + "olpb\370\001\001\252\002\036Google.Cloud.ServiceControl.V1"
           + "\312\002\036Google\\Cloud\\ServiceControl\\V1\352\002!Goog"
           + "le::Cloud::ServiceControl::V1b\006proto3"
     };

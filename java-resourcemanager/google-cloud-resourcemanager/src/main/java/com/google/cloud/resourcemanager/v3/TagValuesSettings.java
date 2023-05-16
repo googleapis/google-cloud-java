@@ -93,6 +93,11 @@ public class TagValuesSettings extends ClientSettings<TagValuesSettings> {
     return ((TagValuesStubSettings) getStubSettings()).getTagValueSettings();
   }
 
+  /** Returns the object with the settings used for calls to getNamespacedTagValue. */
+  public UnaryCallSettings<GetNamespacedTagValueRequest, TagValue> getNamespacedTagValueSettings() {
+    return ((TagValuesStubSettings) getStubSettings()).getNamespacedTagValueSettings();
+  }
+
   /** Returns the object with the settings used for calls to createTagValue. */
   public UnaryCallSettings<CreateTagValueRequest, Operation> createTagValueSettings() {
     return ((TagValuesStubSettings) getStubSettings()).createTagValueSettings();
@@ -266,6 +271,12 @@ public class TagValuesSettings extends ClientSettings<TagValuesSettings> {
     /** Returns the builder for the settings used for calls to getTagValue. */
     public UnaryCallSettings.Builder<GetTagValueRequest, TagValue> getTagValueSettings() {
       return getStubSettingsBuilder().getTagValueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNamespacedTagValue. */
+    public UnaryCallSettings.Builder<GetNamespacedTagValueRequest, TagValue>
+        getNamespacedTagValueSettings() {
+      return getStubSettingsBuilder().getNamespacedTagValueSettings();
     }
 
     /** Returns the builder for the settings used for calls to createTagValue. */

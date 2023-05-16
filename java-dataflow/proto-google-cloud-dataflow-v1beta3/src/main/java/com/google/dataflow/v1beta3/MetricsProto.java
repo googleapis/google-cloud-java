@@ -184,12 +184,12 @@ public final class MetricsProto {
           + "oogleapis.com/auth/compute,https://www.g"
           + "oogleapis.com/auth/compute.readonly,http"
           + "s://www.googleapis.com/auth/userinfo.ema"
-          + "ilB\321\001\n\033com.google.dataflow.v1beta3B\014Metr"
-          + "icsProtoP\001Z?google.golang.org/genproto/g"
-          + "oogleapis/dataflow/v1beta3;dataflow\252\002\035Go"
-          + "ogle.Cloud.Dataflow.V1Beta3\312\002\035Google\\Clo"
-          + "ud\\Dataflow\\V1beta3\352\002 Google::Cloud::Dat"
-          + "aflow::V1beta3b\006proto3"
+          + "ilB\317\001\n\033com.google.dataflow.v1beta3B\014Metr"
+          + "icsProtoP\001Z=cloud.google.com/go/dataflow"
+          + "/apiv1beta3/dataflowpb;dataflowpb\252\002\035Goog"
+          + "le.Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud"
+          + "\\Dataflow\\V1beta3\352\002 Google::Cloud::Dataf"
+          + "low::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

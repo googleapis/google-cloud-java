@@ -112,12 +112,12 @@ public final class AlertServiceProto {
           + "https://www.googleapis.com/auth/cloud-pl"
           + "atform,https://www.googleapis.com/auth/m"
           + "onitoring,https://www.googleapis.com/aut"
-          + "h/monitoring.readB\311\001\n\030com.google.monitor"
-          + "ing.v3B\021AlertServiceProtoP\001Z>google.gola"
-          + "ng.org/genproto/googleapis/monitoring/v3"
-          + ";monitoring\252\002\032Google.Cloud.Monitoring.V3"
-          + "\312\002\032Google\\Cloud\\Monitoring\\V3\352\002\035Google::"
-          + "Cloud::Monitoring::V3b\006proto3"
+          + "h/monitoring.readB\314\001\n\030com.google.monitor"
+          + "ing.v3B\021AlertServiceProtoP\001ZAcloud.googl"
+          + "e.com/go/monitoring/apiv3/v2/monitoringp"
+          + "b;monitoringpb\252\002\032Google.Cloud.Monitoring"
+          + ".V3\312\002\032Google\\Cloud\\Monitoring\\V3\352\002\035Googl"
+          + "e::Cloud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

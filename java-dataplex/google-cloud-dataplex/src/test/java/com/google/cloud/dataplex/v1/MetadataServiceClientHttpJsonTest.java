@@ -105,6 +105,8 @@ public class MetadataServiceClientHttpJsonTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -166,6 +168,8 @@ public class MetadataServiceClientHttpJsonTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -228,6 +232,8 @@ public class MetadataServiceClientHttpJsonTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -252,6 +258,8 @@ public class MetadataServiceClientHttpJsonTest {
                     .setSystem(StorageSystem.forNumber(0))
                     .setFormat(StorageFormat.newBuilder().build())
                     .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+                    .setAccess(StorageAccess.newBuilder().build())
+                    .setUid("uid115792")
                     .setSchema(Schema.newBuilder().build())
                     .build())
             .setValidateOnly(true)
@@ -303,6 +311,8 @@ public class MetadataServiceClientHttpJsonTest {
                       .setSystem(StorageSystem.forNumber(0))
                       .setFormat(StorageFormat.newBuilder().build())
                       .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+                      .setAccess(StorageAccess.newBuilder().build())
+                      .setUid("uid115792")
                       .setSchema(Schema.newBuilder().build())
                       .build())
               .setValidateOnly(true)
@@ -415,6 +425,8 @@ public class MetadataServiceClientHttpJsonTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -474,6 +486,8 @@ public class MetadataServiceClientHttpJsonTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);

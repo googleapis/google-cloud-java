@@ -19,6 +19,33 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= CompletionServiceClient =======================
+ *
+ * <p>Service Description: Service for Auto-Completion.
+ *
+ * <p>Sample for CompletionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+ *   CompleteQueryRequest request =
+ *       CompleteQueryRequest.newBuilder()
+ *           .setDataStore(
+ *               DataStoreName.ofProjectLocationDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+ *                   .toString())
+ *           .setQuery("query107944136")
+ *           .setQueryModel("queryModel-184930495")
+ *           .setUserPseudoId("userPseudoId-1155274652")
+ *           .build();
+ *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= DocumentServiceClient =======================
  *
  * <p>Service Description: Service for ingesting
@@ -68,6 +95,73 @@
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RecommendResponse response = recommendationServiceClient.recommend(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SchemaServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Schema][google.cloud.discoveryengine.v1beta.Schema]s.
+ *
+ * <p>Sample for SchemaServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+ *   SchemaName name =
+ *       SchemaName.ofProjectLocationDataStoreSchemaName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SCHEMA]");
+ *   Schema response = schemaServiceClient.getSchema(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SearchServiceClient =======================
+ *
+ * <p>Service Description: Service for search.
+ *
+ * <p>Sample for SearchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
+ *   SearchRequest request =
+ *       SearchRequest.newBuilder()
+ *           .setServingConfig(
+ *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+ *                   .toString())
+ *           .setBranch(
+ *               BranchName.ofProjectLocationDataStoreBranchName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+ *                   .toString())
+ *           .setQuery("query107944136")
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .setOffset(-1019779949)
+ *           .setFilter("filter-1274492040")
+ *           .setOrderBy("orderBy-1207110587")
+ *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+ *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
+ *           .putAllParams(new HashMap<String, Value>())
+ *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
+ *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+ *           .setUserPseudoId("userPseudoId-1155274652")
+ *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+ *           .setSafeSearch(true)
+ *           .putAllUserLabel(new HashMap<String, String>())
+ *           .build();
+ *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
  * }
  * }</pre>
  *

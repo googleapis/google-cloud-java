@@ -22,7 +22,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Allow users to create and manage TagBindings between TagValues and
- * different cloud resources throughout the GCP resource hierarchy.
+ * different Google Cloud resources throughout the GCP resource hierarchy.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -175,6 +175,53 @@ public final class TagBindingsGrpc {
     return getDeleteTagBindingMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest,
+          com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+      getListEffectiveTagsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEffectiveTags",
+      requestType = com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest.class,
+      responseType = com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest,
+          com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+      getListEffectiveTagsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest,
+            com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+        getListEffectiveTagsMethod;
+    if ((getListEffectiveTagsMethod = TagBindingsGrpc.getListEffectiveTagsMethod) == null) {
+      synchronized (TagBindingsGrpc.class) {
+        if ((getListEffectiveTagsMethod = TagBindingsGrpc.getListEffectiveTagsMethod) == null) {
+          TagBindingsGrpc.getListEffectiveTagsMethod =
+              getListEffectiveTagsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest,
+                          com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEffectiveTags"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TagBindingsMethodDescriptorSupplier("ListEffectiveTags"))
+                      .build();
+        }
+      }
+    }
+    return getListEffectiveTagsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static TagBindingsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TagBindingsStub> factory =
@@ -220,7 +267,7 @@ public final class TagBindingsGrpc {
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
-   * different cloud resources throughout the GCP resource hierarchy.
+   * different Google Cloud resources throughout the GCP resource hierarchy.
    * </pre>
    */
   public interface AsyncService {
@@ -229,8 +276,8 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Lists the TagBindings for the given cloud resource, as specified with
-     * `parent`.
+     * Lists the TagBindings for the given Google Cloud resource, as specified
+     * with `parent`.
      * NOTE: The `parent` field is expected to be a full resource name:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -247,8 +294,7 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Creates a TagBinding between a TagValue and a cloud resource
-     * (currently project, folder, or organization).
+     * Creates a TagBinding between a TagValue and a Google Cloud resource.
      * </pre>
      */
     default void createTagBinding(
@@ -271,6 +317,22 @@ public final class TagBindingsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteTagBindingMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a list of effective tags for the given Google Cloud resource, as
+     * specified in `parent`.
+     * </pre>
+     */
+    default void listEffectiveTags(
+        com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEffectiveTagsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -278,7 +340,7 @@ public final class TagBindingsGrpc {
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
-   * different cloud resources throughout the GCP resource hierarchy.
+   * different Google Cloud resources throughout the GCP resource hierarchy.
    * </pre>
    */
   public abstract static class TagBindingsImplBase
@@ -295,7 +357,7 @@ public final class TagBindingsGrpc {
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
-   * different cloud resources throughout the GCP resource hierarchy.
+   * different Google Cloud resources throughout the GCP resource hierarchy.
    * </pre>
    */
   public static final class TagBindingsStub
@@ -313,8 +375,8 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Lists the TagBindings for the given cloud resource, as specified with
-     * `parent`.
+     * Lists the TagBindings for the given Google Cloud resource, as specified
+     * with `parent`.
      * NOTE: The `parent` field is expected to be a full resource name:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -333,8 +395,7 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Creates a TagBinding between a TagValue and a cloud resource
-     * (currently project, folder, or organization).
+     * Creates a TagBinding between a TagValue and a Google Cloud resource.
      * </pre>
      */
     public void createTagBinding(
@@ -361,6 +422,24 @@ public final class TagBindingsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a list of effective tags for the given Google Cloud resource, as
+     * specified in `parent`.
+     * </pre>
+     */
+    public void listEffectiveTags(
+        com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEffectiveTagsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -368,7 +447,7 @@ public final class TagBindingsGrpc {
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
-   * different cloud resources throughout the GCP resource hierarchy.
+   * different Google Cloud resources throughout the GCP resource hierarchy.
    * </pre>
    */
   public static final class TagBindingsBlockingStub
@@ -387,8 +466,8 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Lists the TagBindings for the given cloud resource, as specified with
-     * `parent`.
+     * Lists the TagBindings for the given Google Cloud resource, as specified
+     * with `parent`.
      * NOTE: The `parent` field is expected to be a full resource name:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -403,8 +482,7 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Creates a TagBinding between a TagValue and a cloud resource
-     * (currently project, folder, or organization).
+     * Creates a TagBinding between a TagValue and a Google Cloud resource.
      * </pre>
      */
     public com.google.longrunning.Operation createTagBinding(
@@ -425,6 +503,20 @@ public final class TagBindingsGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTagBindingMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a list of effective tags for the given Google Cloud resource, as
+     * specified in `parent`.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse listEffectiveTags(
+        com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEffectiveTagsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -432,7 +524,7 @@ public final class TagBindingsGrpc {
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
-   * different cloud resources throughout the GCP resource hierarchy.
+   * different Google Cloud resources throughout the GCP resource hierarchy.
    * </pre>
    */
   public static final class TagBindingsFutureStub
@@ -451,8 +543,8 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Lists the TagBindings for the given cloud resource, as specified with
-     * `parent`.
+     * Lists the TagBindings for the given Google Cloud resource, as specified
+     * with `parent`.
      * NOTE: The `parent` field is expected to be a full resource name:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -468,8 +560,7 @@ public final class TagBindingsGrpc {
      *
      *
      * <pre>
-     * Creates a TagBinding between a TagValue and a cloud resource
-     * (currently project, folder, or organization).
+     * Creates a TagBinding between a TagValue and a Google Cloud resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -490,11 +581,27 @@ public final class TagBindingsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTagBindingMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a list of effective tags for the given Google Cloud resource, as
+     * specified in `parent`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>
+        listEffectiveTags(com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEffectiveTagsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_TAG_BINDINGS = 0;
   private static final int METHODID_CREATE_TAG_BINDING = 1;
   private static final int METHODID_DELETE_TAG_BINDING = 2;
+  private static final int METHODID_LIST_EFFECTIVE_TAGS = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -529,6 +636,13 @@ public final class TagBindingsGrpc {
           serviceImpl.deleteTagBinding(
               (com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_EFFECTIVE_TAGS:
+          serviceImpl.listEffectiveTags(
+              (com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -567,6 +681,13 @@ public final class TagBindingsGrpc {
                 new MethodHandlers<
                     com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_TAG_BINDING)))
+        .addMethod(
+            getListEffectiveTagsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest,
+                    com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse>(
+                    service, METHODID_LIST_EFFECTIVE_TAGS)))
         .build();
   }
 
@@ -621,6 +742,7 @@ public final class TagBindingsGrpc {
                       .addMethod(getListTagBindingsMethod())
                       .addMethod(getCreateTagBindingMethod())
                       .addMethod(getDeleteTagBindingMethod())
+                      .addMethod(getListEffectiveTagsMethod())
                       .build();
         }
       }

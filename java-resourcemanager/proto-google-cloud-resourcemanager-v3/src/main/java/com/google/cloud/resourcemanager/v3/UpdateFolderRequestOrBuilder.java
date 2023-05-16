@@ -27,8 +27,8 @@ public interface UpdateFolderRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new definition of the Folder. It must include the `name` field, which
-   * cannot be changed.
+   * Required. The new definition of the Folder. It must include the `name`
+   * field, which cannot be changed.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface UpdateFolderRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new definition of the Folder. It must include the `name` field, which
-   * cannot be changed.
+   * Required. The new definition of the Folder. It must include the `name`
+   * field, which cannot be changed.
    * </pre>
    *
    * <code>
@@ -57,8 +57,8 @@ public interface UpdateFolderRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new definition of the Folder. It must include the `name` field, which
-   * cannot be changed.
+   * Required. The new definition of the Folder. It must include the `name`
+   * field, which cannot be changed.
    * </pre>
    *
    * <code>

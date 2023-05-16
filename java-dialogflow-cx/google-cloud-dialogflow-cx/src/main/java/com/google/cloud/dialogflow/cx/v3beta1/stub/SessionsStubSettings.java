@@ -342,10 +342,10 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_2_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -367,7 +367,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(220000L))
               .setTotalTimeout(Duration.ofMillis(220000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(220000L))
@@ -375,7 +375,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(220000L))
               .setTotalTimeout(Duration.ofMillis(220000L))
               .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("no_retry_3_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -462,8 +462,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .detectIntentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .matchIntentSettings()

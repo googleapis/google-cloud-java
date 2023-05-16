@@ -160,8 +160,8 @@ public interface UpdateStreamRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only validate the stream with the changes, without actually updating it.
-   * The default is false.
+   * Optional. Only validate the stream with the changes, without actually
+   * updating it. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -69,14 +69,14 @@ public final class SettingsProto {
           + "ngsRequest\022S\n\020project_settings\030\002 \001(\01329.g"
           + "oogle.devtools.artifactregistry.v1beta2."
           + "ProjectSettings\022/\n\013update_mask\030\003 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMaskB\224\002\n,com.google."
+          + "oogle.protobuf.FieldMaskB\221\002\n,com.google."
           + "devtools.artifactregistry.v1beta2B\rSetti"
-          + "ngsProtoP\001ZXgoogle.golang.org/genproto/g"
-          + "oogleapis/devtools/artifactregistry/v1be"
-          + "ta2;artifactregistry\252\002%Google.Cloud.Arti"
-          + "factRegistry.V1Beta2\312\002%Google\\Cloud\\Arti"
-          + "factRegistry\\V1beta2\352\002(Google::Cloud::Ar"
-          + "tifactRegistry::V1beta2b\006proto3"
+          + "ngsProtoP\001ZUcloud.google.com/go/artifact"
+          + "registry/apiv1beta2/artifactregistrypb;a"
+          + "rtifactregistrypb\252\002%Google.Cloud.Artifac"
+          + "tRegistry.V1Beta2\312\002%Google\\Cloud\\Artifac"
+          + "tRegistry\\V1beta2\352\002(Google::Cloud::Artif"
+          + "actRegistry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

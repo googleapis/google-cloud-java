@@ -283,7 +283,7 @@ public final class ResourcesProto {
           + "one}/actions/{action}\022aprojects/{project"
           + "}/locations/{location}/lakes/{lake}/zone"
           + "s/{zone}/assets/{asset}/actions/{action}"
-          + "B\t\n\007details\"\342\023\n\005Asset\0223\n\004name\030\001 \001(\tB%\340A\003"
+          + "B\t\n\007details\"\244\025\n\005Asset\0223\n\004name\030\001 \001(\tB%\340A\003"
           + "\372A\037\n\035dataplex.googleapis.com/Asset\022\031\n\014di"
           + "splay_name\030\002 \001(\tB\003\340A\001\022\020\n\003uid\030\003 \001(\tB\003\340A\003\022"
           + "4\n\013create_time\030\004 \001(\0132\032.google.protobuf.T"
@@ -320,38 +320,43 @@ public final class ResourcesProto {
           + "\003\340A\001\022#\n\026disable_type_inference\030\004 \001(\010B\003\340A"
           + "\001\032I\n\013JsonOptions\022\025\n\010encoding\030\001 \001(\tB\003\340A\001\022"
           + "#\n\026disable_type_inference\030\002 \001(\010B\003\340A\001B\t\n\007"
-          + "trigger\032\262\001\n\014ResourceSpec\022\021\n\004name\030\001 \001(\tB\003"
+          + "trigger\032\316\002\n\014ResourceSpec\022\021\n\004name\030\001 \001(\tB\003"
           + "\340A\005\022G\n\004type\030\002 \001(\01621.google.cloud.dataple"
-          + "x.v1.Asset.ResourceSpec.TypeB\006\340A\002\340A\005\"F\n\004"
-          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\022\n\016STORAGE_BU"
-          + "CKET\020\001\022\024\n\020BIGQUERY_DATASET\020\002\032\315\001\n\016Resourc"
-          + "eStatus\022C\n\005state\030\001 \001(\01624.google.cloud.da"
-          + "taplex.v1.Asset.ResourceStatus.State\022\017\n\007"
-          + "message\030\002 \001(\t\022/\n\013update_time\030\003 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\"4\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\t\n\005READY\020\001\022\t\n\005ERROR\020\002\032\364\003\n"
-          + "\017DiscoveryStatus\022D\n\005state\030\001 \001(\01625.google"
-          + ".cloud.dataplex.v1.Asset.DiscoveryStatus"
-          + ".State\022\017\n\007message\030\002 \001(\t\022/\n\013update_time\030\003"
-          + " \001(\0132\032.google.protobuf.Timestamp\0221\n\rlast"
-          + "_run_time\030\004 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022D\n\005stats\030\006 \001(\01325.google.cloud.datapl"
-          + "ex.v1.Asset.DiscoveryStatus.Stats\0224\n\021las"
-          + "t_run_duration\030\007 \001(\0132\031.google.protobuf.D"
-          + "uration\032P\n\005Stats\022\022\n\ndata_items\030\001 \001(\003\022\021\n\t"
-          + "data_size\030\002 \001(\003\022\016\n\006tables\030\003 \001(\003\022\020\n\010files"
-          + "ets\030\004 \001(\003\"X\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
-          + "\000\022\r\n\tSCHEDULED\020\001\022\017\n\013IN_PROGRESS\020\002\022\n\n\006PAU"
-          + "SED\020\003\022\014\n\010DISABLED\020\005\032-\n\013LabelsEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:t\352Aq\n\035dataple"
-          + "x.googleapis.com/Asset\022Pprojects/{projec"
-          + "t}/locations/{location}/lakes/{lake}/zon"
-          + "es/{zone}/assets/{asset}*[\n\005State\022\025\n\021STA"
-          + "TE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING"
-          + "\020\002\022\014\n\010DELETING\020\003\022\023\n\017ACTION_REQUIRED\020\004Bj\n"
-          + "\034com.google.cloud.dataplex.v1B\016Resources"
-          + "ProtoP\001Z8cloud.google.com/go/dataplex/ap"
-          + "iv1/dataplexpb;dataplexpbb\006proto3"
+          + "x.v1.Asset.ResourceSpec.TypeB\006\340A\002\340A\005\022V\n\020"
+          + "read_access_mode\030\005 \001(\01627.google.cloud.da"
+          + "taplex.v1.Asset.ResourceSpec.AccessModeB"
+          + "\003\340A\001\"F\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\022\n\016ST"
+          + "ORAGE_BUCKET\020\001\022\024\n\020BIGQUERY_DATASET\020\002\"B\n\n"
+          + "AccessMode\022\033\n\027ACCESS_MODE_UNSPECIFIED\020\000\022"
+          + "\n\n\006DIRECT\020\001\022\013\n\007MANAGED\020\002\032\363\001\n\016ResourceSta"
+          + "tus\022C\n\005state\030\001 \001(\01624.google.cloud.datapl"
+          + "ex.v1.Asset.ResourceStatus.State\022\017\n\007mess"
+          + "age\030\002 \001(\t\022/\n\013update_time\030\003 \001(\0132\032.google."
+          + "protobuf.Timestamp\022$\n\027managed_access_ide"
+          + "ntity\030\004 \001(\tB\003\340A\003\"4\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\t\n\005READY\020\001\022\t\n\005ERROR\020\002\032\364\003\n\017Disco"
+          + "veryStatus\022D\n\005state\030\001 \001(\01625.google.cloud"
+          + ".dataplex.v1.Asset.DiscoveryStatus.State"
+          + "\022\017\n\007message\030\002 \001(\t\022/\n\013update_time\030\003 \001(\0132\032"
+          + ".google.protobuf.Timestamp\0221\n\rlast_run_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.Timestamp\022D\n"
+          + "\005stats\030\006 \001(\01325.google.cloud.dataplex.v1."
+          + "Asset.DiscoveryStatus.Stats\0224\n\021last_run_"
+          + "duration\030\007 \001(\0132\031.google.protobuf.Duratio"
+          + "n\032P\n\005Stats\022\022\n\ndata_items\030\001 \001(\003\022\021\n\tdata_s"
+          + "ize\030\002 \001(\003\022\016\n\006tables\030\003 \001(\003\022\020\n\010filesets\030\004 "
+          + "\001(\003\"X\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tS"
+          + "CHEDULED\020\001\022\017\n\013IN_PROGRESS\020\002\022\n\n\006PAUSED\020\003\022"
+          + "\014\n\010DISABLED\020\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:t\352Aq\n\035dataplex.goog"
+          + "leapis.com/Asset\022Pprojects/{project}/loc"
+          + "ations/{location}/lakes/{lake}/zones/{zo"
+          + "ne}/assets/{asset}*[\n\005State\022\025\n\021STATE_UNS"
+          + "PECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010CREATING\020\002\022\014\n\010"
+          + "DELETING\020\003\022\023\n\017ACTION_REQUIRED\020\004Bj\n\034com.g"
+          + "oogle.cloud.dataplex.v1B\016ResourcesProtoP"
+          + "\001Z8cloud.google.com/go/dataplex/apiv1/da"
+          + "taplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -630,7 +635,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_Asset_ResourceSpec_descriptor,
             new java.lang.String[] {
-              "Name", "Type",
+              "Name", "Type", "ReadAccessMode",
             });
     internal_static_google_cloud_dataplex_v1_Asset_ResourceStatus_descriptor =
         internal_static_google_cloud_dataplex_v1_Asset_descriptor.getNestedTypes().get(3);
@@ -638,7 +643,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_Asset_ResourceStatus_descriptor,
             new java.lang.String[] {
-              "State", "Message", "UpdateTime",
+              "State", "Message", "UpdateTime", "ManagedAccessIdentity",
             });
     internal_static_google_cloud_dataplex_v1_Asset_DiscoveryStatus_descriptor =
         internal_static_google_cloud_dataplex_v1_Asset_descriptor.getNestedTypes().get(4);

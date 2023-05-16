@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.HttpRule;
@@ -38,6 +39,8 @@ import com.google.cloud.resourcemanager.v3.CreateTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsResponse;
 import com.google.cloud.resourcemanager.v3.TagBinding;
@@ -184,6 +187,42 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsMethodDescriptor =
+          ApiMethodDescriptor.<ListEffectiveTagsRequest, ListEffectiveTagsResponse>newBuilder()
+              .setFullMethodName("google.cloud.resourcemanager.v3.TagBindings/ListEffectiveTags")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListEffectiveTagsRequest>newBuilder()
+                      .setPath(
+                          "/v3/effectiveTags",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEffectiveTagsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEffectiveTagsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "parent", request.getParent());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListEffectiveTagsResponse>newBuilder()
+                      .setDefaultInstance(ListEffectiveTagsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListTagBindingsRequest, ListTagBindingsResponse>
       listTagBindingsCallable;
   private final UnaryCallable<ListTagBindingsRequest, ListTagBindingsPagedResponse>
@@ -194,6 +233,10 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
   private final UnaryCallable<DeleteTagBindingRequest, Operation> deleteTagBindingCallable;
   private final OperationCallable<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationCallable;
+  private final UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsCallable;
+  private final UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -264,6 +307,12 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
             .setMethodDescriptor(deleteTagBindingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+        listEffectiveTagsTransportSettings =
+            HttpJsonCallSettings.<ListEffectiveTagsRequest, ListEffectiveTagsResponse>newBuilder()
+                .setMethodDescriptor(listEffectiveTagsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.listTagBindingsCallable =
         callableFactory.createUnaryCallable(
@@ -289,6 +338,16 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
             settings.deleteTagBindingOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listEffectiveTagsCallable =
+        callableFactory.createUnaryCallable(
+            listEffectiveTagsTransportSettings,
+            settings.listEffectiveTagsSettings(),
+            clientContext);
+    this.listEffectiveTagsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEffectiveTagsTransportSettings,
+            settings.listEffectiveTagsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -300,6 +359,7 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
     methodDescriptors.add(listTagBindingsMethodDescriptor);
     methodDescriptors.add(createTagBindingMethodDescriptor);
     methodDescriptors.add(deleteTagBindingMethodDescriptor);
+    methodDescriptors.add(listEffectiveTagsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -338,6 +398,18 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
   public OperationCallable<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationCallable() {
     return deleteTagBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsCallable() {
+    return listEffectiveTagsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsPagedCallable() {
+    return listEffectiveTagsPagedCallable;
   }
 
   @Override

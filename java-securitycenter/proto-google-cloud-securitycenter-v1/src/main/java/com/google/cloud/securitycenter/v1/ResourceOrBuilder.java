@@ -204,9 +204,9 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -218,9 +218,9 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -232,9 +232,9 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -246,9 +246,9 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -261,9 +261,9 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>

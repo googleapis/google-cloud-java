@@ -68,8 +68,8 @@ public interface CreateTagBindingRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Set to true to perform the validations necessary for creating the resource,
-   * but not actually perform the action.
+   * Optional. Set to true to perform the validations necessary for creating the
+   * resource, but not actually perform the action.
    * </pre>
    *
    * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

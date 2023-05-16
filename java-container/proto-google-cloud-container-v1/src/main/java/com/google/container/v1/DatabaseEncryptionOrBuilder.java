@@ -27,31 +27,6 @@ public interface DatabaseEncryptionOrBuilder
    *
    *
    * <pre>
-   * Denotes the state of etcd encryption.
-   * </pre>
-   *
-   * <code>.google.container.v1.DatabaseEncryption.State state = 2;</code>
-   *
-   * @return The enum numeric value on the wire for state.
-   */
-  int getStateValue();
-  /**
-   *
-   *
-   * <pre>
-   * Denotes the state of etcd encryption.
-   * </pre>
-   *
-   * <code>.google.container.v1.DatabaseEncryption.State state = 2;</code>
-   *
-   * @return The state.
-   */
-  com.google.container.v1.DatabaseEncryption.State getState();
-
-  /**
-   *
-   *
-   * <pre>
    * Name of CloudKMS key to use for the encryption of secrets in etcd.
    * Ex. projects/my-project/locations/global/keyRings/my-ring/cryptoKeys/my-key
    * </pre>
@@ -74,4 +49,29 @@ public interface DatabaseEncryptionOrBuilder
    * @return The bytes for keyName.
    */
   com.google.protobuf.ByteString getKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of etcd encryption.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatabaseEncryption.State state = 2;</code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of etcd encryption.
+   * </pre>
+   *
+   * <code>.google.container.v1.DatabaseEncryption.State state = 2;</code>
+   *
+   * @return The state.
+   */
+  com.google.container.v1.DatabaseEncryption.State getState();
 }

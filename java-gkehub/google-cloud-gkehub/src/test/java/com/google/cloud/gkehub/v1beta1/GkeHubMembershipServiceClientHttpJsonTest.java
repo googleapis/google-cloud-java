@@ -213,6 +213,7 @@ public class GkeHubMembershipServiceClientHttpJsonTest {
             .setExternalId("externalId-1699764666")
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -267,6 +268,7 @@ public class GkeHubMembershipServiceClientHttpJsonTest {
             .setExternalId("externalId-1699764666")
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -321,6 +323,7 @@ public class GkeHubMembershipServiceClientHttpJsonTest {
             .setExternalId("externalId-1699764666")
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -384,6 +387,7 @@ public class GkeHubMembershipServiceClientHttpJsonTest {
             .setExternalId("externalId-1699764666")
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -537,6 +541,7 @@ public class GkeHubMembershipServiceClientHttpJsonTest {
             .setExternalId("externalId-1699764666")
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -600,6 +605,7 @@ public class GkeHubMembershipServiceClientHttpJsonTest {
             .setExternalId("externalId-1699764666")
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

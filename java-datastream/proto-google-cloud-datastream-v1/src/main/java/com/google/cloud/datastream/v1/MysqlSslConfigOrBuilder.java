@@ -111,8 +111,8 @@ public interface MysqlSslConfigOrBuilder
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate of the CA that signed the source database
-   * server's certificate.
+   * Input only. PEM-encoded certificate of the CA that signed the source
+   * database server's certificate.
    * </pre>
    *
    * <code>string ca_certificate = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -124,8 +124,8 @@ public interface MysqlSslConfigOrBuilder
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate of the CA that signed the source database
-   * server's certificate.
+   * Input only. PEM-encoded certificate of the CA that signed the source
+   * database server's certificate.
    * </pre>
    *
    * <code>string ca_certificate = 5 [(.google.api.field_behavior) = INPUT_ONLY];</code>

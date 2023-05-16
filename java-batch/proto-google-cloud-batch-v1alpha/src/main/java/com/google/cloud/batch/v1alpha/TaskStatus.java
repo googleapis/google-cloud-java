@@ -82,7 +82,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * unknown state
+     * Unknown state.
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -138,6 +138,16 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 5;</code>
      */
     SUCCEEDED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The Task has not been executed when the Job finishes.
+     * </pre>
+     *
+     * <code>UNEXECUTED = 6;</code>
+     */
+    UNEXECUTED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -145,7 +155,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * unknown state
+     * Unknown state.
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -201,6 +211,16 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 5;</code>
      */
     public static final int SUCCEEDED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The Task has not been executed when the Job finishes.
+     * </pre>
+     *
+     * <code>UNEXECUTED = 6;</code>
+     */
+    public static final int UNEXECUTED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -238,6 +258,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 5:
           return SUCCEEDED;
+        case 6:
+          return UNEXECUTED;
         default:
           return null;
       }

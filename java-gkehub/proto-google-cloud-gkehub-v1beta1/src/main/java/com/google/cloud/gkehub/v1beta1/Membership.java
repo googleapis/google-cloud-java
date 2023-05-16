@@ -302,8 +302,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The full, unique name of this Membership resource in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+   * Output only. The full, unique name of this Membership resource in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+   * creation.
    * `membership_id` must be a valid RFC 1123 compliant DNS label:
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
@@ -332,8 +333,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The full, unique name of this Membership resource in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+   * Output only. The full, unique name of this Membership resource in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+   * creation.
    * `membership_id` must be a valid RFC 1123 compliant DNS label:
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
@@ -844,9 +846,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. An externally-generated and managed ID for this Membership. This ID may
-   * be modified after creation, but this is not recommended. For GKE clusters,
-   * external_id is managed by the Hub API and updates will be ignored.
+   * Optional. An externally-generated and managed ID for this Membership. This
+   * ID may be modified after creation, but this is not recommended. For GKE
+   * clusters, external_id is managed by the Hub API and updates will be
+   * ignored.
    * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
    * If this Membership represents a Kubernetes cluster, this value should be
    * set to the UID of the `kube-system` namespace object.
@@ -872,9 +875,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. An externally-generated and managed ID for this Membership. This ID may
-   * be modified after creation, but this is not recommended. For GKE clusters,
-   * external_id is managed by the Hub API and updates will be ignored.
+   * Optional. An externally-generated and managed ID for this Membership. This
+   * ID may be modified after creation, but this is not recommended. For GKE
+   * clusters, external_id is managed by the Hub API and updates will be
+   * ignored.
    * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
    * If this Membership represents a Kubernetes cluster, this value should be
    * set to the UID of the `kube-system` namespace object.
@@ -903,10 +907,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. For clusters using Connect, the timestamp of the most recent connection
-   * established with Google Cloud. This time is updated every several minutes,
-   * not continuously. For clusters that do not use GKE Connect, or that have
-   * never connected successfully, this field will be unset.
+   * Output only. For clusters using Connect, the timestamp of the most recent
+   * connection established with Google Cloud. This time is updated every
+   * several minutes, not continuously. For clusters that do not use GKE
+   * Connect, or that have never connected successfully, this field will be
+   * unset.
    * </pre>
    *
    * <code>
@@ -923,10 +928,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. For clusters using Connect, the timestamp of the most recent connection
-   * established with Google Cloud. This time is updated every several minutes,
-   * not continuously. For clusters that do not use GKE Connect, or that have
-   * never connected successfully, this field will be unset.
+   * Output only. For clusters using Connect, the timestamp of the most recent
+   * connection established with Google Cloud. This time is updated every
+   * several minutes, not continuously. For clusters that do not use GKE
+   * Connect, or that have never connected successfully, this field will be
+   * unset.
    * </pre>
    *
    * <code>
@@ -945,10 +951,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. For clusters using Connect, the timestamp of the most recent connection
-   * established with Google Cloud. This time is updated every several minutes,
-   * not continuously. For clusters that do not use GKE Connect, or that have
-   * never connected successfully, this field will be unset.
+   * Output only. For clusters using Connect, the timestamp of the most recent
+   * connection established with Google Cloud. This time is updated every
+   * several minutes, not continuously. For clusters that do not use GKE
+   * Connect, or that have never connected successfully, this field will be
+   * unset.
    * </pre>
    *
    * <code>
@@ -970,8 +977,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Google-generated UUID for this resource. This is unique across all
-   * Membership resources. If a Membership resource is deleted and another
+   * Output only. Google-generated UUID for this resource. This is unique across
+   * all Membership resources. If a Membership resource is deleted and another
    * resource with the same name is created, it gets a different unique_id.
    * </pre>
    *
@@ -995,8 +1002,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Google-generated UUID for this resource. This is unique across all
-   * Membership resources. If a Membership resource is deleted and another
+   * Output only. Google-generated UUID for this resource. This is unique across
+   * all Membership resources. If a Membership resource is deleted and another
    * resource with the same name is created, it gets a different unique_id.
    * </pre>
    *
@@ -1059,6 +1066,62 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int MONITORING_CONFIG_FIELD_NUMBER = 14;
+  private com.google.cloud.gkehub.v1beta1.MonitoringConfig monitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The monitoring config information for this membership.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMonitoringConfig() {
+    return monitoringConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The monitoring config information for this membership.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The monitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.MonitoringConfig getMonitoringConfig() {
+    return monitoringConfig_ == null
+        ? com.google.cloud.gkehub.v1beta1.MonitoringConfig.getDefaultInstance()
+        : monitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The monitoring config information for this membership.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder() {
+    return monitoringConfig_ == null
+        ? com.google.cloud.gkehub.v1beta1.MonitoringConfig.getDefaultInstance()
+        : monitoringConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1113,6 +1176,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             .INFRASTRUCTURE_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(13, infrastructureType_);
+    }
+    if (monitoringConfig_ != null) {
+      output.writeMessage(14, getMonitoringConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1174,6 +1240,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, infrastructureType_);
     }
+    if (monitoringConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getMonitoringConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1220,6 +1289,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getUniqueId().equals(other.getUniqueId())) return false;
     if (infrastructureType_ != other.infrastructureType_) return false;
+    if (hasMonitoringConfig() != other.hasMonitoringConfig()) return false;
+    if (hasMonitoringConfig()) {
+      if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
+    }
     if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 4:
@@ -1277,6 +1350,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUniqueId().hashCode();
     hash = (37 * hash) + INFRASTRUCTURE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + infrastructureType_;
+    if (hasMonitoringConfig()) {
+      hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringConfig().hashCode();
+    }
     switch (typeCase_) {
       case 4:
         hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
@@ -1483,6 +1560,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       uniqueId_ = "";
       infrastructureType_ = 0;
+      monitoringConfig_ = null;
+      if (monitoringConfigBuilder_ != null) {
+        monitoringConfigBuilder_.dispose();
+        monitoringConfigBuilder_ = null;
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1561,6 +1643,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.infrastructureType_ = infrastructureType_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.monitoringConfig_ =
+            monitoringConfigBuilder_ == null ? monitoringConfig_ : monitoringConfigBuilder_.build();
       }
     }
 
@@ -1659,6 +1745,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.infrastructureType_ != 0) {
         setInfrastructureTypeValue(other.getInfrastructureTypeValue());
+      }
+      if (other.hasMonitoringConfig()) {
+        mergeMonitoringConfig(other.getMonitoringConfig());
       }
       switch (other.getTypeCase()) {
         case ENDPOINT:
@@ -1782,6 +1871,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 104
+            case 114:
+              {
+                input.readMessage(
+                    getMonitoringConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1820,8 +1916,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full, unique name of this Membership resource in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     * Output only. The full, unique name of this Membership resource in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+     * creation.
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
@@ -1849,8 +1946,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full, unique name of this Membership resource in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     * Output only. The full, unique name of this Membership resource in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+     * creation.
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
@@ -1878,8 +1976,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full, unique name of this Membership resource in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     * Output only. The full, unique name of this Membership resource in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+     * creation.
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
@@ -1906,8 +2005,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full, unique name of this Membership resource in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     * Output only. The full, unique name of this Membership resource in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+     * creation.
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
@@ -1930,8 +2030,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full, unique name of this Membership resource in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     * Output only. The full, unique name of this Membership resource in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during
+     * creation.
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
@@ -3486,9 +3587,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An externally-generated and managed ID for this Membership. This ID may
-     * be modified after creation, but this is not recommended. For GKE clusters,
-     * external_id is managed by the Hub API and updates will be ignored.
+     * Optional. An externally-generated and managed ID for this Membership. This
+     * ID may be modified after creation, but this is not recommended. For GKE
+     * clusters, external_id is managed by the Hub API and updates will be
+     * ignored.
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
@@ -3513,9 +3615,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An externally-generated and managed ID for this Membership. This ID may
-     * be modified after creation, but this is not recommended. For GKE clusters,
-     * external_id is managed by the Hub API and updates will be ignored.
+     * Optional. An externally-generated and managed ID for this Membership. This
+     * ID may be modified after creation, but this is not recommended. For GKE
+     * clusters, external_id is managed by the Hub API and updates will be
+     * ignored.
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
@@ -3540,9 +3643,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An externally-generated and managed ID for this Membership. This ID may
-     * be modified after creation, but this is not recommended. For GKE clusters,
-     * external_id is managed by the Hub API and updates will be ignored.
+     * Optional. An externally-generated and managed ID for this Membership. This
+     * ID may be modified after creation, but this is not recommended. For GKE
+     * clusters, external_id is managed by the Hub API and updates will be
+     * ignored.
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
@@ -3566,9 +3670,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An externally-generated and managed ID for this Membership. This ID may
-     * be modified after creation, but this is not recommended. For GKE clusters,
-     * external_id is managed by the Hub API and updates will be ignored.
+     * Optional. An externally-generated and managed ID for this Membership. This
+     * ID may be modified after creation, but this is not recommended. For GKE
+     * clusters, external_id is managed by the Hub API and updates will be
+     * ignored.
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
@@ -3588,9 +3693,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An externally-generated and managed ID for this Membership. This ID may
-     * be modified after creation, but this is not recommended. For GKE clusters,
-     * external_id is managed by the Hub API and updates will be ignored.
+     * Optional. An externally-generated and managed ID for this Membership. This
+     * ID may be modified after creation, but this is not recommended. For GKE
+     * clusters, external_id is managed by the Hub API and updates will be
+     * ignored.
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
@@ -3622,10 +3728,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3641,10 +3748,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3666,10 +3774,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3693,10 +3802,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3717,10 +3827,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3747,10 +3858,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3771,10 +3883,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3790,10 +3903,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3813,10 +3927,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. For clusters using Connect, the timestamp of the most recent connection
-     * established with Google Cloud. This time is updated every several minutes,
-     * not continuously. For clusters that do not use GKE Connect, or that have
-     * never connected successfully, this field will be unset.
+     * Output only. For clusters using Connect, the timestamp of the most recent
+     * connection established with Google Cloud. This time is updated every
+     * several minutes, not continuously. For clusters that do not use GKE
+     * Connect, or that have never connected successfully, this field will be
+     * unset.
      * </pre>
      *
      * <code>
@@ -3845,8 +3960,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Google-generated UUID for this resource. This is unique across all
-     * Membership resources. If a Membership resource is deleted and another
+     * Output only. Google-generated UUID for this resource. This is unique across
+     * all Membership resources. If a Membership resource is deleted and another
      * resource with the same name is created, it gets a different unique_id.
      * </pre>
      *
@@ -3869,8 +3984,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Google-generated UUID for this resource. This is unique across all
-     * Membership resources. If a Membership resource is deleted and another
+     * Output only. Google-generated UUID for this resource. This is unique across
+     * all Membership resources. If a Membership resource is deleted and another
      * resource with the same name is created, it gets a different unique_id.
      * </pre>
      *
@@ -3893,8 +4008,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Google-generated UUID for this resource. This is unique across all
-     * Membership resources. If a Membership resource is deleted and another
+     * Output only. Google-generated UUID for this resource. This is unique across
+     * all Membership resources. If a Membership resource is deleted and another
      * resource with the same name is created, it gets a different unique_id.
      * </pre>
      *
@@ -3916,8 +4031,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Google-generated UUID for this resource. This is unique across all
-     * Membership resources. If a Membership resource is deleted and another
+     * Output only. Google-generated UUID for this resource. This is unique across
+     * all Membership resources. If a Membership resource is deleted and another
      * resource with the same name is created, it gets a different unique_id.
      * </pre>
      *
@@ -3935,8 +4050,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Google-generated UUID for this resource. This is unique across all
-     * Membership resources. If a Membership resource is deleted and another
+     * Output only. Google-generated UUID for this resource. This is unique across
+     * all Membership resources. If a Membership resource is deleted and another
      * resource with the same name is created, it gets a different unique_id.
      * </pre>
      *
@@ -4058,6 +4173,210 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       infrastructureType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.gkehub.v1beta1.MonitoringConfig monitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.MonitoringConfig,
+            com.google.cloud.gkehub.v1beta1.MonitoringConfig.Builder,
+            com.google.cloud.gkehub.v1beta1.MonitoringConfigOrBuilder>
+        monitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the monitoringConfig field is set.
+     */
+    public boolean hasMonitoringConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The monitoringConfig.
+     */
+    public com.google.cloud.gkehub.v1beta1.MonitoringConfig getMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        return monitoringConfig_ == null
+            ? com.google.cloud.gkehub.v1beta1.MonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      } else {
+        return monitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMonitoringConfig(com.google.cloud.gkehub.v1beta1.MonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        monitoringConfig_ = value;
+      } else {
+        monitoringConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMonitoringConfig(
+        com.google.cloud.gkehub.v1beta1.MonitoringConfig.Builder builderForValue) {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = builderForValue.build();
+      } else {
+        monitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMonitoringConfig(com.google.cloud.gkehub.v1beta1.MonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && monitoringConfig_ != null
+            && monitoringConfig_
+                != com.google.cloud.gkehub.v1beta1.MonitoringConfig.getDefaultInstance()) {
+          getMonitoringConfigBuilder().mergeFrom(value);
+        } else {
+          monitoringConfig_ = value;
+        }
+      } else {
+        monitoringConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMonitoringConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      monitoringConfig_ = null;
+      if (monitoringConfigBuilder_ != null) {
+        monitoringConfigBuilder_.dispose();
+        monitoringConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1beta1.MonitoringConfig.Builder getMonitoringConfigBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1beta1.MonitoringConfigOrBuilder
+        getMonitoringConfigOrBuilder() {
+      if (monitoringConfigBuilder_ != null) {
+        return monitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return monitoringConfig_ == null
+            ? com.google.cloud.gkehub.v1beta1.MonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The monitoring config information for this membership.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.MonitoringConfig monitoring_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.MonitoringConfig,
+            com.google.cloud.gkehub.v1beta1.MonitoringConfig.Builder,
+            com.google.cloud.gkehub.v1beta1.MonitoringConfigOrBuilder>
+        getMonitoringConfigFieldBuilder() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.v1beta1.MonitoringConfig,
+                com.google.cloud.gkehub.v1beta1.MonitoringConfig.Builder,
+                com.google.cloud.gkehub.v1beta1.MonitoringConfigOrBuilder>(
+                getMonitoringConfig(), getParentForChildren(), isClean());
+        monitoringConfig_ = null;
+      }
+      return monitoringConfigBuilder_;
     }
 
     @java.lang.Override

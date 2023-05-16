@@ -734,5 +734,40 @@ public interface ServiceOrBuilder
    */
   com.google.cloud.metastore.v1beta.TelemetryConfigOrBuilder getTelemetryConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Scaling configuration of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1beta.ScalingConfig scaling_config = 24;</code>
+   *
+   * @return Whether the scalingConfig field is set.
+   */
+  boolean hasScalingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Scaling configuration of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1beta.ScalingConfig scaling_config = 24;</code>
+   *
+   * @return The scalingConfig.
+   */
+  com.google.cloud.metastore.v1beta.ScalingConfig getScalingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Scaling configuration of the metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1beta.ScalingConfig scaling_config = 24;</code>
+   */
+  com.google.cloud.metastore.v1beta.ScalingConfigOrBuilder getScalingConfigOrBuilder();
+
   public com.google.cloud.metastore.v1beta.Service.MetastoreConfigCase getMetastoreConfigCase();
 }

@@ -133,4 +133,18 @@ public interface CreateDataScanRequestOrBuilder
    * @return The bytes for dataScanId.
    */
   com.google.protobuf.ByteString getDataScanIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only validate the request, but do not perform mutations.
+   * The default is `false`.
+   * </pre>
+   *
+   * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

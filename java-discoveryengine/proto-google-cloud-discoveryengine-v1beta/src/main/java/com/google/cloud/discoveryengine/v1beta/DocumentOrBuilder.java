@@ -28,7 +28,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -41,7 +43,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -54,7 +58,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -66,7 +72,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -79,7 +87,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -92,7 +102,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -192,6 +204,47 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
+   * The unstructured data linked to this document. Content must be set if this
+   * document is under a
+   * `CONTENT_REQUIRED` data store.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+   *
+   * @return Whether the content field is set.
+   */
+  boolean hasContent();
+  /**
+   *
+   *
+   * <pre>
+   * The unstructured data linked to this document. Content must be set if this
+   * document is under a
+   * `CONTENT_REQUIRED` data store.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+   *
+   * @return The content.
+   */
+  com.google.cloud.discoveryengine.v1beta.Document.Content getContent();
+  /**
+   *
+   *
+   * <pre>
+   * The unstructured data linked to this document. Content must be set if this
+   * document is under a
+   * `CONTENT_REQUIRED` data store.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder getContentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The identifier of the parent document. Currently supports at most two level
    * document hierarchy.
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
@@ -218,6 +271,50 @@ public interface DocumentOrBuilder
    * @return The bytes for parentDocumentId.
    */
   com.google.protobuf.ByteString getParentDocumentIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is OUTPUT_ONLY.
+   * It contains derived data that are not in the original input document.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the derivedStructData field is set.
+   */
+  boolean hasDerivedStructData();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is OUTPUT_ONLY.
+   * It contains derived data that are not in the original input document.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The derivedStructData.
+   */
+  com.google.protobuf.Struct getDerivedStructData();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is OUTPUT_ONLY.
+   * It contains derived data that are not in the original input document.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder();
 
   public com.google.cloud.discoveryengine.v1beta.Document.DataCase getDataCase();
 }

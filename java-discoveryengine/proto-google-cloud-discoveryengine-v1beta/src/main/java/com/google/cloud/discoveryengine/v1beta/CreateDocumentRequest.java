@@ -200,14 +200,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
    * If the caller does not have permission to create the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-   * whether or not it exists, a PERMISSION_DENIED error is returned.
+   * whether or not it exists, a `PERMISSION_DENIED` error is returned.
    * This field must be unique among all
    * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
    * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-   * Otherwise, an ALREADY_EXISTS error is returned.
+   * Otherwise, an `ALREADY_EXISTS` error is returned.
    * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
+   * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -236,14 +236,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
    * If the caller does not have permission to create the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-   * whether or not it exists, a PERMISSION_DENIED error is returned.
+   * whether or not it exists, a `PERMISSION_DENIED` error is returned.
    * This field must be unique among all
    * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
    * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-   * Otherwise, an ALREADY_EXISTS error is returned.
+   * Otherwise, an `ALREADY_EXISTS` error is returned.
    * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
+   * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1009,14 +1009,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
      * If the caller does not have permission to create the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * This field must be unique among all
      * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
      * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-     * Otherwise, an ALREADY_EXISTS error is returned.
+     * Otherwise, an `ALREADY_EXISTS` error is returned.
      * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters. Otherwise, an
-     * INVALID_ARGUMENT error is returned.
+     * `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1044,14 +1044,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
      * If the caller does not have permission to create the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * This field must be unique among all
      * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
      * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-     * Otherwise, an ALREADY_EXISTS error is returned.
+     * Otherwise, an `ALREADY_EXISTS` error is returned.
      * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters. Otherwise, an
-     * INVALID_ARGUMENT error is returned.
+     * `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1079,14 +1079,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
      * If the caller does not have permission to create the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * This field must be unique among all
      * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
      * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-     * Otherwise, an ALREADY_EXISTS error is returned.
+     * Otherwise, an `ALREADY_EXISTS` error is returned.
      * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters. Otherwise, an
-     * INVALID_ARGUMENT error is returned.
+     * `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1113,14 +1113,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
      * If the caller does not have permission to create the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * This field must be unique among all
      * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
      * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-     * Otherwise, an ALREADY_EXISTS error is returned.
+     * Otherwise, an `ALREADY_EXISTS` error is returned.
      * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters. Otherwise, an
-     * INVALID_ARGUMENT error is returned.
+     * `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1143,14 +1143,14 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
      * If the caller does not have permission to create the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * This field must be unique among all
      * [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
      * [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent].
-     * Otherwise, an ALREADY_EXISTS error is returned.
+     * Otherwise, an `ALREADY_EXISTS` error is returned.
      * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters. Otherwise, an
-     * INVALID_ARGUMENT error is returned.
+     * `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string document_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

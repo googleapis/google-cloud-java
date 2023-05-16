@@ -20,9 +20,12 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -191,6 +194,130 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
+  public void createSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    SecurityHealthAnalyticsCustomModule expectedResponse =
+        SecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .setAncestorModule(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsSettingsName parent =
+        SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+    SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+        SecurityHealthAnalyticsCustomModule.newBuilder().build();
+
+    SecurityHealthAnalyticsCustomModule actualResponse =
+        client.createSecurityHealthAnalyticsCustomModule(
+            parent, securityHealthAnalyticsCustomModule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsSettingsName parent =
+          SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+      SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+          SecurityHealthAnalyticsCustomModule.newBuilder().build();
+      client.createSecurityHealthAnalyticsCustomModule(parent, securityHealthAnalyticsCustomModule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSecurityHealthAnalyticsCustomModuleTest2() throws Exception {
+    SecurityHealthAnalyticsCustomModule expectedResponse =
+        SecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .setAncestorModule(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+    SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+        SecurityHealthAnalyticsCustomModule.newBuilder().build();
+
+    SecurityHealthAnalyticsCustomModule actualResponse =
+        client.createSecurityHealthAnalyticsCustomModule(
+            parent, securityHealthAnalyticsCustomModule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSecurityHealthAnalyticsCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+      SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+          SecurityHealthAnalyticsCustomModule.newBuilder().build();
+      client.createSecurityHealthAnalyticsCustomModule(parent, securityHealthAnalyticsCustomModule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createSourceTest() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
@@ -321,10 +448,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -402,10 +532,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1485,6 +1618,92 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
+  public void deleteSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsCustomModuleName name =
+        SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+            "[ORGANIZATION]", "[CUSTOM_MODULE]");
+
+    client.deleteSecurityHealthAnalyticsCustomModule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsCustomModuleName name =
+          SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+              "[ORGANIZATION]", "[CUSTOM_MODULE]");
+      client.deleteSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSecurityHealthAnalyticsCustomModuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-3280/securityHealthAnalyticsSettings/customModules/customModule-3280";
+
+    client.deleteSecurityHealthAnalyticsCustomModule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSecurityHealthAnalyticsCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-3280/securityHealthAnalyticsSettings/customModules/customModule-3280";
+      client.deleteSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getBigQueryExportTest() throws Exception {
     BigQueryExport expectedResponse =
         BigQueryExport.newBuilder()
@@ -1989,6 +2208,232 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
+  public void getEffectiveSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    EffectiveSecurityHealthAnalyticsCustomModule expectedResponse =
+        EffectiveSecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                EffectiveSecurityHealthAnalyticsCustomModuleName
+                    .ofOrganizationEffectiveCustomModuleName(
+                        "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EffectiveSecurityHealthAnalyticsCustomModuleName name =
+        EffectiveSecurityHealthAnalyticsCustomModuleName.ofOrganizationEffectiveCustomModuleName(
+            "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]");
+
+    EffectiveSecurityHealthAnalyticsCustomModule actualResponse =
+        client.getEffectiveSecurityHealthAnalyticsCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEffectiveSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EffectiveSecurityHealthAnalyticsCustomModuleName name =
+          EffectiveSecurityHealthAnalyticsCustomModuleName.ofOrganizationEffectiveCustomModuleName(
+              "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]");
+      client.getEffectiveSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEffectiveSecurityHealthAnalyticsCustomModuleTest2() throws Exception {
+    EffectiveSecurityHealthAnalyticsCustomModule expectedResponse =
+        EffectiveSecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                EffectiveSecurityHealthAnalyticsCustomModuleName
+                    .ofOrganizationEffectiveCustomModuleName(
+                        "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-9493/securityHealthAnalyticsSettings/effectiveCustomModules/effectiveCustomModule-9493";
+
+    EffectiveSecurityHealthAnalyticsCustomModule actualResponse =
+        client.getEffectiveSecurityHealthAnalyticsCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEffectiveSecurityHealthAnalyticsCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-9493/securityHealthAnalyticsSettings/effectiveCustomModules/effectiveCustomModule-9493";
+      client.getEffectiveSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    SecurityHealthAnalyticsCustomModule expectedResponse =
+        SecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .setAncestorModule(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsCustomModuleName name =
+        SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+            "[ORGANIZATION]", "[CUSTOM_MODULE]");
+
+    SecurityHealthAnalyticsCustomModule actualResponse =
+        client.getSecurityHealthAnalyticsCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsCustomModuleName name =
+          SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+              "[ORGANIZATION]", "[CUSTOM_MODULE]");
+      client.getSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSecurityHealthAnalyticsCustomModuleTest2() throws Exception {
+    SecurityHealthAnalyticsCustomModule expectedResponse =
+        SecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .setAncestorModule(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-3280/securityHealthAnalyticsSettings/customModules/customModule-3280";
+
+    SecurityHealthAnalyticsCustomModule actualResponse =
+        client.getSecurityHealthAnalyticsCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSecurityHealthAnalyticsCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-3280/securityHealthAnalyticsSettings/customModules/customModule-3280";
+      client.getSecurityHealthAnalyticsCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getSourceTest() throws Exception {
     Source expectedResponse =
         Source.newBuilder()
@@ -2320,6 +2765,116 @@ public class SecurityCenterClientHttpJsonTest {
               .setPageSize(883849137)
               .build();
       client.listAssets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDescendantSecurityHealthAnalyticsCustomModulesTest() throws Exception {
+    SecurityHealthAnalyticsCustomModule responsesElement =
+        SecurityHealthAnalyticsCustomModule.newBuilder().build();
+    ListDescendantSecurityHealthAnalyticsCustomModulesResponse expectedResponse =
+        ListDescendantSecurityHealthAnalyticsCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityHealthAnalyticsCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsSettingsName parent =
+        SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse pagedListResponse =
+        client.listDescendantSecurityHealthAnalyticsCustomModules(parent);
+
+    List<SecurityHealthAnalyticsCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSecurityHealthAnalyticsCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDescendantSecurityHealthAnalyticsCustomModulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsSettingsName parent =
+          SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listDescendantSecurityHealthAnalyticsCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDescendantSecurityHealthAnalyticsCustomModulesTest2() throws Exception {
+    SecurityHealthAnalyticsCustomModule responsesElement =
+        SecurityHealthAnalyticsCustomModule.newBuilder().build();
+    ListDescendantSecurityHealthAnalyticsCustomModulesResponse expectedResponse =
+        ListDescendantSecurityHealthAnalyticsCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityHealthAnalyticsCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+
+    ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse pagedListResponse =
+        client.listDescendantSecurityHealthAnalyticsCustomModules(parent);
+
+    List<SecurityHealthAnalyticsCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSecurityHealthAnalyticsCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDescendantSecurityHealthAnalyticsCustomModulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+      client.listDescendantSecurityHealthAnalyticsCustomModules(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2800,6 +3355,228 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
+  public void listEffectiveSecurityHealthAnalyticsCustomModulesTest() throws Exception {
+    EffectiveSecurityHealthAnalyticsCustomModule responsesElement =
+        EffectiveSecurityHealthAnalyticsCustomModule.newBuilder().build();
+    ListEffectiveSecurityHealthAnalyticsCustomModulesResponse expectedResponse =
+        ListEffectiveSecurityHealthAnalyticsCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveSecurityHealthAnalyticsCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsSettingsName parent =
+        SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse pagedListResponse =
+        client.listEffectiveSecurityHealthAnalyticsCustomModules(parent);
+
+    List<EffectiveSecurityHealthAnalyticsCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveSecurityHealthAnalyticsCustomModulesList().get(0),
+        resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEffectiveSecurityHealthAnalyticsCustomModulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsSettingsName parent =
+          SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listEffectiveSecurityHealthAnalyticsCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEffectiveSecurityHealthAnalyticsCustomModulesTest2() throws Exception {
+    EffectiveSecurityHealthAnalyticsCustomModule responsesElement =
+        EffectiveSecurityHealthAnalyticsCustomModule.newBuilder().build();
+    ListEffectiveSecurityHealthAnalyticsCustomModulesResponse expectedResponse =
+        ListEffectiveSecurityHealthAnalyticsCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveSecurityHealthAnalyticsCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+
+    ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse pagedListResponse =
+        client.listEffectiveSecurityHealthAnalyticsCustomModules(parent);
+
+    List<EffectiveSecurityHealthAnalyticsCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveSecurityHealthAnalyticsCustomModulesList().get(0),
+        resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEffectiveSecurityHealthAnalyticsCustomModulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+      client.listEffectiveSecurityHealthAnalyticsCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecurityHealthAnalyticsCustomModulesTest() throws Exception {
+    SecurityHealthAnalyticsCustomModule responsesElement =
+        SecurityHealthAnalyticsCustomModule.newBuilder().build();
+    ListSecurityHealthAnalyticsCustomModulesResponse expectedResponse =
+        ListSecurityHealthAnalyticsCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityHealthAnalyticsCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsSettingsName parent =
+        SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListSecurityHealthAnalyticsCustomModulesPagedResponse pagedListResponse =
+        client.listSecurityHealthAnalyticsCustomModules(parent);
+
+    List<SecurityHealthAnalyticsCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSecurityHealthAnalyticsCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSecurityHealthAnalyticsCustomModulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsSettingsName parent =
+          SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listSecurityHealthAnalyticsCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSecurityHealthAnalyticsCustomModulesTest2() throws Exception {
+    SecurityHealthAnalyticsCustomModule responsesElement =
+        SecurityHealthAnalyticsCustomModule.newBuilder().build();
+    ListSecurityHealthAnalyticsCustomModulesResponse expectedResponse =
+        ListSecurityHealthAnalyticsCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSecurityHealthAnalyticsCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+
+    ListSecurityHealthAnalyticsCustomModulesPagedResponse pagedListResponse =
+        client.listSecurityHealthAnalyticsCustomModules(parent);
+
+    List<SecurityHealthAnalyticsCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSecurityHealthAnalyticsCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSecurityHealthAnalyticsCustomModulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+      client.listSecurityHealthAnalyticsCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listSourcesTest() throws Exception {
     Source responsesElement = Source.newBuilder().build();
     ListSourcesResponse expectedResponse =
@@ -3126,10 +3903,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3209,10 +3989,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3290,10 +4073,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3371,10 +4157,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3702,10 +4491,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -3741,10 +4533,13 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .setModuleName("moduleName-870351081")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
 
@@ -3805,10 +4600,13 @@ public class SecurityCenterClientHttpJsonTest {
               .setExfiltration(Exfiltration.newBuilder().build())
               .addAllIamBindings(new ArrayList<IamBinding>())
               .setNextSteps("nextSteps1206138868")
+              .setModuleName("moduleName-870351081")
               .addAllContainers(new ArrayList<Container>())
               .setKubernetes(Kubernetes.newBuilder().build())
               .setDatabase(Database.newBuilder().build())
               .addAllFiles(new ArrayList<File>())
+              .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+              .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
               .setKernelRootkit(KernelRootkit.newBuilder().build())
               .build();
       client.updateFinding(finding);
@@ -4084,6 +4882,94 @@ public class SecurityCenterClientHttpJsonTest {
                   OrganizationSettings.AssetDiscoveryConfig.newBuilder().build())
               .build();
       client.updateOrganizationSettings(organizationSettings);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    SecurityHealthAnalyticsCustomModule expectedResponse =
+        SecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .setAncestorModule(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+        SecurityHealthAnalyticsCustomModule.newBuilder()
+            .setName(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .setAncestorModule(
+                SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                        "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                    .toString())
+            .setCustomConfig(CustomConfig.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SecurityHealthAnalyticsCustomModule actualResponse =
+        client.updateSecurityHealthAnalyticsCustomModule(
+            securityHealthAnalyticsCustomModule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+          SecurityHealthAnalyticsCustomModule.newBuilder()
+              .setName(
+                  SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                          "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setLastEditor("lastEditor1523898275")
+              .setAncestorModule(
+                  SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                          "[ORGANIZATION]", "[CUSTOM_MODULE]")
+                      .toString())
+              .setCustomConfig(CustomConfig.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSecurityHealthAnalyticsCustomModule(
+          securityHealthAnalyticsCustomModule, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

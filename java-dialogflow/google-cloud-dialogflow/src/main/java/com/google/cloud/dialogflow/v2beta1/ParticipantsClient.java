@@ -1068,6 +1068,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setCxParameters(Struct.newBuilder().build())
    *           .setCxCurrentPage("cxCurrentPage1596907507")
    *           .setEnablePartialAutomatedAgentReply(true)
+   *           .setEnableDebuggingInfo(true)
    *           .build();
    *   bidiStream.send(request);
    *   for (StreamingAnalyzeContentResponse response : bidiStream) {

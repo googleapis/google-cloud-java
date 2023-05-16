@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ option php_namespace = "Google\\Cloud\\AIPlatform\\V1";
 option ruby_package = "Google::Cloud::AIPlatform::V1";
 
 // Represents a hardware accelerator type.
-// NEXT ID: 11.
 enum AcceleratorType {
   // Unspecified accelerator type, which means no accelerator.
   ACCELERATOR_TYPE_UNSPECIFIED = 0;
@@ -47,6 +46,9 @@ enum AcceleratorType {
 
   // Nvidia Tesla A100 GPU.
   NVIDIA_TESLA_A100 = 8;
+
+  // Nvidia L4 GPU.
+  NVIDIA_L4 = 11;
 
   // TPU v2.
   TPU_V2 = 6;

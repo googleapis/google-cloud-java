@@ -27,7 +27,7 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the config to delete.
+   * Required. Name of the workstation configuration to delete.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the config to delete.
+   * Required. Name of the workstation configuration to delete.
    * </pre>
    *
    * <code>
@@ -70,8 +70,8 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the config on
-   * the server does not have this etag.
+   * If set, the request is rejected if the latest version of the
+   * workstation configuration on the server does not have this ETag.
    * </pre>
    *
    * <code>string etag = 3;</code>
@@ -83,8 +83,8 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the config on
-   * the server does not have this etag.
+   * If set, the request is rejected if the latest version of the
+   * workstation configuration on the server does not have this ETag.
    * </pre>
    *
    * <code>string etag = 3;</code>
@@ -97,8 +97,9 @@ public interface DeleteWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * If set, any Workstations in the config will also be deleted. Otherwise,
-   * the request will work only if the config has no workstations.
+   * If set, any workstations in the workstation configuration are also deleted.
+   * Otherwise, the request works only if the workstation configuration has
+   * no workstations.
    * </pre>
    *
    * <code>bool force = 4;</code>

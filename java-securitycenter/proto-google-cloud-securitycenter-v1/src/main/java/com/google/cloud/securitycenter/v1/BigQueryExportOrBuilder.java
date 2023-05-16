@@ -175,7 +175,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the big query export was created.
+   * Output only. The time at which the BigQuery export was created.
    * This field is set by the server and will be ignored if provided on export
    * on creation.
    * </pre>
@@ -190,7 +190,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the big query export was created.
+   * Output only. The time at which the BigQuery export was created.
    * This field is set by the server and will be ignored if provided on export
    * on creation.
    * </pre>
@@ -205,7 +205,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the big query export was created.
+   * Output only. The time at which the BigQuery export was created.
    * This field is set by the server and will be ignored if provided on export
    * on creation.
    * </pre>
@@ -219,7 +219,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The most recent time at which the big export was updated.
+   * Output only. The most recent time at which the BigQuery export was updated.
    * This field is set by the server and will be ignored if provided on export
    * creation or update.
    * </pre>
@@ -234,7 +234,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The most recent time at which the big export was updated.
+   * Output only. The most recent time at which the BigQuery export was updated.
    * This field is set by the server and will be ignored if provided on export
    * creation or update.
    * </pre>
@@ -249,7 +249,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The most recent time at which the big export was updated.
+   * Output only. The most recent time at which the BigQuery export was updated.
    * This field is set by the server and will be ignored if provided on export
    * creation or update.
    * </pre>
@@ -263,7 +263,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. Email address of the user who last edited the big query export.
+   * Output only. Email address of the user who last edited the BigQuery export.
    * This field is set by the server and will be ignored if provided on export
    * creation or update.
    * </pre>
@@ -277,7 +277,7 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. Email address of the user who last edited the big query export.
+   * Output only. Email address of the user who last edited the BigQuery export.
    * This field is set by the server and will be ignored if provided on export
    * creation or update.
    * </pre>
@@ -292,8 +292,8 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account that needs permission to create table, upload data to
-   * the big query dataset.
+   * Output only. The service account that needs permission to create table and
+   * upload data to the BigQuery dataset.
    * </pre>
    *
    * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -305,8 +305,8 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account that needs permission to create table, upload data to
-   * the big query dataset.
+   * Output only. The service account that needs permission to create table and
+   * upload data to the BigQuery dataset.
    * </pre>
    *
    * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

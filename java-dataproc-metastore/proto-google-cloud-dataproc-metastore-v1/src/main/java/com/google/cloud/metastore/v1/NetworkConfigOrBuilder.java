@@ -27,8 +27,8 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -40,8 +40,8 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -53,8 +53,8 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -66,8 +66,8 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -80,8 +80,8 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>

@@ -134,14 +134,14 @@ public final class ResourcesProto {
           + "Status\022\036\n\032ROLLOUT_STATUS_UNSPECIFIED\020\000\022\017"
           + "\n\013IN_PROGRESS\020\001\022\013\n\007SUCCESS\020\002\022\r\n\tCANCELLE"
           + "D\020\003\022\n\n\006FAILED\020\004\022\013\n\007PENDING\020\005\022\026\n\022FAILED_R"
-          + "OLLED_BACK\020\006B\n\n\010strategyB\377\001\n#com.google."
+          + "OLLED_BACK\020\006B\n\n\010strategyB\202\002\n#com.google."
           + "api.servicemanagement.v1B\016ResourcesProto"
-          + "P\001ZPgoogle.golang.org/genproto/googleapi"
-          + "s/api/servicemanagement/v1;servicemanage"
-          + "ment\242\002\004GASM\252\002!Google.Cloud.ServiceManage"
-          + "ment.V1\312\002!Google\\Cloud\\ServiceManagement"
-          + "\\V1\352\002$Google::Cloud::ServiceManagement::"
-          + "V1b\006proto3"
+          + "P\001ZScloud.google.com/go/servicemanagemen"
+          + "t/apiv1/servicemanagementpb;servicemanag"
+          + "ementpb\242\002\004GASM\252\002!Google.Cloud.ServiceMan"
+          + "agement.V1\312\002!Google\\Cloud\\ServiceManagem"
+          + "ent\\V1\352\002$Google::Cloud::ServiceManagemen"
+          + "t::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -73,6 +73,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STORAGE_SOURCE(2),
     REPO_SOURCE(3),
+    GIT_SOURCE(5),
     STORAGE_SOURCE_MANIFEST(8),
     SOURCE_NOT_SET(0);
     private final int value;
@@ -96,6 +97,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           return STORAGE_SOURCE;
         case 3:
           return REPO_SOURCE;
+        case 5:
+          return GIT_SOURCE;
         case 8:
           return STORAGE_SOURCE_MANIFEST;
         case 0:
@@ -219,6 +222,57 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloudbuild.v1.RepoSource.getDefaultInstance();
   }
 
+  public static final int GIT_SOURCE_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this Git repository.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+   *
+   * @return Whether the gitSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitSource() {
+    return sourceCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this Git repository.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+   *
+   * @return The gitSource.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitSource getGitSource() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloudbuild.v1.GitSource) source_;
+    }
+    return com.google.cloudbuild.v1.GitSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this Git repository.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitSourceOrBuilder getGitSourceOrBuilder() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloudbuild.v1.GitSource) source_;
+    }
+    return com.google.cloudbuild.v1.GitSource.getDefaultInstance();
+  }
+
   public static final int STORAGE_SOURCE_MANIFEST_FIELD_NUMBER = 8;
   /**
    *
@@ -297,6 +351,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 3) {
       output.writeMessage(3, (com.google.cloudbuild.v1.RepoSource) source_);
     }
+    if (sourceCase_ == 5) {
+      output.writeMessage(5, (com.google.cloudbuild.v1.GitSource) source_);
+    }
     if (sourceCase_ == 8) {
       output.writeMessage(8, (com.google.cloudbuild.v1.StorageSourceManifest) source_);
     }
@@ -318,6 +375,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloudbuild.v1.RepoSource) source_);
+    }
+    if (sourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloudbuild.v1.GitSource) source_);
     }
     if (sourceCase_ == 8) {
       size +=
@@ -347,6 +409,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       case 3:
         if (!getRepoSource().equals(other.getRepoSource())) return false;
         break;
+      case 5:
+        if (!getGitSource().equals(other.getGitSource())) return false;
+        break;
       case 8:
         if (!getStorageSourceManifest().equals(other.getStorageSourceManifest())) return false;
         break;
@@ -372,6 +437,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + REPO_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getRepoSource().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + GIT_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGitSource().hashCode();
         break;
       case 8:
         hash = (37 * hash) + STORAGE_SOURCE_MANIFEST_FIELD_NUMBER;
@@ -523,6 +592,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (repoSourceBuilder_ != null) {
         repoSourceBuilder_.clear();
       }
+      if (gitSourceBuilder_ != null) {
+        gitSourceBuilder_.clear();
+      }
       if (storageSourceManifestBuilder_ != null) {
         storageSourceManifestBuilder_.clear();
       }
@@ -574,6 +646,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceCase_ == 3 && repoSourceBuilder_ != null) {
         result.source_ = repoSourceBuilder_.build();
+      }
+      if (sourceCase_ == 5 && gitSourceBuilder_ != null) {
+        result.source_ = gitSourceBuilder_.build();
       }
       if (sourceCase_ == 8 && storageSourceManifestBuilder_ != null) {
         result.source_ = storageSourceManifestBuilder_.build();
@@ -636,6 +711,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             mergeRepoSource(other.getRepoSource());
             break;
           }
+        case GIT_SOURCE:
+          {
+            mergeGitSource(other.getGitSource());
+            break;
+          }
         case STORAGE_SOURCE_MANIFEST:
           {
             mergeStorageSourceManifest(other.getStorageSourceManifest());
@@ -684,6 +764,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 sourceCase_ = 3;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(getGitSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 5;
+                break;
+              } // case 42
             case 66:
               {
                 input.readMessage(
@@ -1146,6 +1232,212 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 3;
       onChanged();
       return repoSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitSource,
+            com.google.cloudbuild.v1.GitSource.Builder,
+            com.google.cloudbuild.v1.GitSourceOrBuilder>
+        gitSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     *
+     * @return Whether the gitSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGitSource() {
+      return sourceCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     *
+     * @return The gitSource.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.GitSource getGitSource() {
+      if (gitSourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.google.cloudbuild.v1.GitSource) source_;
+        }
+        return com.google.cloudbuild.v1.GitSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return gitSourceBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v1.GitSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    public Builder setGitSource(com.google.cloudbuild.v1.GitSource value) {
+      if (gitSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        gitSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    public Builder setGitSource(com.google.cloudbuild.v1.GitSource.Builder builderForValue) {
+      if (gitSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        gitSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    public Builder mergeGitSource(com.google.cloudbuild.v1.GitSource value) {
+      if (gitSourceBuilder_ == null) {
+        if (sourceCase_ == 5
+            && source_ != com.google.cloudbuild.v1.GitSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloudbuild.v1.GitSource.newBuilder(
+                      (com.google.cloudbuild.v1.GitSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          gitSourceBuilder_.mergeFrom(value);
+        } else {
+          gitSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    public Builder clearGitSource() {
+      if (gitSourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        gitSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    public com.google.cloudbuild.v1.GitSource.Builder getGitSourceBuilder() {
+      return getGitSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.GitSourceOrBuilder getGitSourceOrBuilder() {
+      if ((sourceCase_ == 5) && (gitSourceBuilder_ != null)) {
+        return gitSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.google.cloudbuild.v1.GitSource) source_;
+        }
+        return com.google.cloudbuild.v1.GitSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, get the source from this Git repository.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitSource git_source = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitSource,
+            com.google.cloudbuild.v1.GitSource.Builder,
+            com.google.cloudbuild.v1.GitSourceOrBuilder>
+        getGitSourceFieldBuilder() {
+      if (gitSourceBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ = com.google.cloudbuild.v1.GitSource.getDefaultInstance();
+        }
+        gitSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.GitSource,
+                com.google.cloudbuild.v1.GitSource.Builder,
+                com.google.cloudbuild.v1.GitSourceOrBuilder>(
+                (com.google.cloudbuild.v1.GitSource) source_, getParentForChildren(), isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();
+      return gitSourceBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -308,11 +308,11 @@ public final class DlpStorage {
           + "IFIED\020\000\022\017\n\013BINARY_FILE\020\001\022\r\n\tTEXT_FILE\020\002\022"
           + "\t\n\005IMAGE\020\003\022\010\n\004WORD\020\005\022\007\n\003PDF\020\006\022\010\n\004AVRO\020\007\022"
           + "\007\n\003CSV\020\010\022\007\n\003TSV\020\t\022\016\n\nPOWERPOINT\020\013\022\t\n\005EXC"
-          + "EL\020\014B\250\001\n\031com.google.privacy.dlp.v2B\nDlpS"
-          + "torageP\001Z8google.golang.org/genproto/goo"
-          + "gleapis/privacy/dlp/v2;dlp\252\002\023Google.Clou"
-          + "d.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Google:"
-          + ":Cloud::Dlp::V2b\006proto3"
+          + "EL\020\014B\231\001\n\031com.google.privacy.dlp.v2B\nDlpS"
+          + "torageP\001Z)cloud.google.com/go/dlp/apiv2/"
+          + "dlppb;dlppb\252\002\023Google.Cloud.Dlp.V2\312\002\023Goog"
+          + "le\\Cloud\\Dlp\\V2\352\002\026Google::Cloud::Dlp::V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

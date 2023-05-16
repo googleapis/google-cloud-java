@@ -352,4 +352,42 @@ public interface SettingsOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfigOrBuilder
       getAnalysisConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Default DLP redaction resources to be applied while ingesting
+   * conversations.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 10;</code>
+   *
+   * @return Whether the redactionConfig field is set.
+   */
+  boolean hasRedactionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Default DLP redaction resources to be applied while ingesting
+   * conversations.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 10;</code>
+   *
+   * @return The redactionConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Default DLP redaction resources to be applied while ingesting
+   * conversations.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 10;</code>
+   */
+  com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder getRedactionConfigOrBuilder();
 }

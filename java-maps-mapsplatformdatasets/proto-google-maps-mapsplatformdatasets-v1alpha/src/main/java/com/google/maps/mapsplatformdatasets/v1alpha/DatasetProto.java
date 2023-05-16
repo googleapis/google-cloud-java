@@ -69,13 +69,13 @@ public final class DatasetProto {
           + "_ASSISTED_DRIVING\020\003*h\n\005State\022\025\n\021STATE_UN"
           + "SPECIFIED\020\000\022\023\n\017STATE_IMPORTING\020\001\022\032\n\026STAT"
           + "E_IMPORT_SUCCEEDED\020\002\022\027\n\023STATE_IMPORT_FAI"
-          + "LED\020\003B\362\001\n,com.google.maps.mapsplatformda"
-          + "tasets.v1alphaB\014DatasetProtoP\001Z\\google.g"
-          + "olang.org/genproto/googleapis/maps/mapsp"
-          + "latformdatasets/v1alpha;mapsplatformdata"
-          + "sets\252\002(Google.Maps.MapsPlatformDatasets."
-          + "V1Alpha\312\002(Google\\Maps\\MapsPlatformDatase"
-          + "ts\\V1alphab\006proto3"
+          + "LED\020\003B\374\001\n,com.google.maps.mapsplatformda"
+          + "tasets.v1alphaB\014DatasetProtoP\001Zfcloud.go"
+          + "ogle.com/go/maps/mapsplatformdatasets/ap"
+          + "iv1alpha/mapsplatformdatasetspb;mapsplat"
+          + "formdatasetspb\252\002(Google.Maps.MapsPlatfor"
+          + "mDatasets.V1Alpha\312\002(Google\\Maps\\MapsPlat"
+          + "formDatasets\\V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

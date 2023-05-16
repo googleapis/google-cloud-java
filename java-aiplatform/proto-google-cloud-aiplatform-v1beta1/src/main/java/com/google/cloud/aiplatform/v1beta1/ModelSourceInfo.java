@@ -117,6 +117,26 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>BQML = 3;</code>
      */
     BQML(3),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Model Garden.
+     * </pre>
+     *
+     * <code>MODEL_GARDEN = 4;</code>
+     */
+    MODEL_GARDEN(4),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Genie.
+     * </pre>
+     *
+     * <code>GENIE = 5;</code>
+     */
+    GENIE(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,6 +180,26 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>BQML = 3;</code>
      */
     public static final int BQML_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Model Garden.
+     * </pre>
+     *
+     * <code>MODEL_GARDEN = 4;</code>
+     */
+    public static final int MODEL_GARDEN_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Genie.
+     * </pre>
+     *
+     * <code>GENIE = 5;</code>
+     */
+    public static final int GENIE_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -193,6 +233,10 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
           return CUSTOM;
         case 3:
           return BQML;
+        case 4:
+          return MODEL_GARDEN;
+        case 5:
+          return GENIE;
         default:
           return null;
       }
@@ -287,6 +331,26 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int COPY_FIELD_NUMBER = 2;
+  private boolean copy_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If this Model is copy of another Model. If true then
+   * [source_type][google.cloud.aiplatform.v1beta1.ModelSourceInfo.source_type]
+   * pertains to the original.
+   * </pre>
+   *
+   * <code>bool copy = 2;</code>
+   *
+   * @return The copy.
+   */
+  @java.lang.Override
+  public boolean getCopy() {
+    return copy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -307,6 +371,9 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(1, sourceType_);
     }
+    if (copy_ != false) {
+      output.writeBool(2, copy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -321,6 +388,9 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
             .MODEL_SOURCE_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, sourceType_);
+    }
+    if (copy_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, copy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -339,6 +409,7 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.aiplatform.v1beta1.ModelSourceInfo) obj;
 
     if (sourceType_ != other.sourceType_) return false;
+    if (getCopy() != other.getCopy()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -352,6 +423,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + sourceType_;
+    hash = (37 * hash) + COPY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCopy());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -492,6 +565,7 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       sourceType_ = 0;
+      copy_ = false;
       return this;
     }
 
@@ -530,6 +604,9 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.sourceType_ = sourceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.copy_ = copy_;
       }
     }
 
@@ -582,6 +659,9 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       if (other.sourceType_ != 0) {
         setSourceTypeValue(other.getSourceTypeValue());
       }
+      if (other.getCopy() != false) {
+        setCopy(other.getCopy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -614,6 +694,12 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                copy_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -728,6 +814,65 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     public Builder clearSourceType() {
       bitField0_ = (bitField0_ & ~0x00000001);
       sourceType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean copy_;
+    /**
+     *
+     *
+     * <pre>
+     * If this Model is copy of another Model. If true then
+     * [source_type][google.cloud.aiplatform.v1beta1.ModelSourceInfo.source_type]
+     * pertains to the original.
+     * </pre>
+     *
+     * <code>bool copy = 2;</code>
+     *
+     * @return The copy.
+     */
+    @java.lang.Override
+    public boolean getCopy() {
+      return copy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this Model is copy of another Model. If true then
+     * [source_type][google.cloud.aiplatform.v1beta1.ModelSourceInfo.source_type]
+     * pertains to the original.
+     * </pre>
+     *
+     * <code>bool copy = 2;</code>
+     *
+     * @param value The copy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCopy(boolean value) {
+
+      copy_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this Model is copy of another Model. If true then
+     * [source_type][google.cloud.aiplatform.v1beta1.ModelSourceInfo.source_type]
+     * pertains to the original.
+     * </pre>
+     *
+     * <code>bool copy = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCopy() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      copy_ = false;
       onChanged();
       return this;
     }

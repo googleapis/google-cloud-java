@@ -45,6 +45,7 @@ public class SyncDeleteCertificateAuthority {
               .setRequestId("requestId693933066")
               .setIgnoreActiveCertificates(true)
               .setSkipGracePeriod(true)
+              .setIgnoreDependentResources(true)
               .build();
       CertificateAuthority response =
           certificateAuthorityServiceClient.deleteCertificateAuthorityAsync(request).get();

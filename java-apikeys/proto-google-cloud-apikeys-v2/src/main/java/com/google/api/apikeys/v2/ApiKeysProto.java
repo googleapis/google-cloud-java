@@ -147,12 +147,11 @@ public final class ApiKeysProto {
           + "eys.googleapis.com\322Aghttps://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
           + "googleapis.com/auth/cloud-platform.read-"
-          + "onlyB\272\001\n\031com.google.api.apikeys.v2B\014ApiK"
-          + "eysProtoP\001Z<google.golang.org/genproto/g"
-          + "oogleapis/api/apikeys/v2;apikeys\252\002\027Googl"
-          + "e.Cloud.ApiKeys.V2\312\002\027Google\\Cloud\\ApiKey"
-          + "s\\V2\352\002\032Google::Cloud::ApiKeys::V2b\006proto"
-          + "3"
+          + "onlyB\263\001\n\031com.google.api.apikeys.v2B\014ApiK"
+          + "eysProtoP\001Z5cloud.google.com/go/apikeys/"
+          + "apiv2/apikeyspb;apikeyspb\252\002\027Google.Cloud"
+          + ".ApiKeys.V2\312\002\027Google\\Cloud\\ApiKeys\\V2\352\002\032"
+          + "Google::Cloud::ApiKeys::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

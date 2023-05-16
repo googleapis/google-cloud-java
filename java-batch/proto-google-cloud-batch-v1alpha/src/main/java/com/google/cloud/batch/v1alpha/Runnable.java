@@ -282,8 +282,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If set to true, external network access to and from container will be
-     * blocked. The container will use the default internal network
-     * 'goog-internal'.
+     * blocked, containers that are with block_external_network as true can
+     * still communicate with each other, network cannot be specified in the
+     * `container.options` field.
      * </pre>
      *
      * <code>bool block_external_network = 9;</code>
@@ -709,8 +710,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If set to true, external network access to and from container will be
-     * blocked. The container will use the default internal network
-     * 'goog-internal'.
+     * blocked, containers that are with block_external_network as true can
+     * still communicate with each other, network cannot be specified in the
+     * `container.options` field.
      * </pre>
      *
      * <code>bool block_external_network = 9;</code>
@@ -2082,8 +2084,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * If set to true, external network access to and from container will be
-       * blocked. The container will use the default internal network
-       * 'goog-internal'.
+       * blocked, containers that are with block_external_network as true can
+       * still communicate with each other, network cannot be specified in the
+       * `container.options` field.
        * </pre>
        *
        * <code>bool block_external_network = 9;</code>
@@ -2099,8 +2102,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * If set to true, external network access to and from container will be
-       * blocked. The container will use the default internal network
-       * 'goog-internal'.
+       * blocked, containers that are with block_external_network as true can
+       * still communicate with each other, network cannot be specified in the
+       * `container.options` field.
        * </pre>
        *
        * <code>bool block_external_network = 9;</code>
@@ -2120,8 +2124,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * If set to true, external network access to and from container will be
-       * blocked. The container will use the default internal network
-       * 'goog-internal'.
+       * blocked, containers that are with block_external_network as true can
+       * still communicate with each other, network cannot be specified in the
+       * `container.options` field.
        * </pre>
        *
        * <code>bool block_external_network = 9;</code>

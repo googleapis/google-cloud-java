@@ -44,6 +44,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     buildStepOutputs_ = java.util.Collections.emptyList();
     pythonPackages_ = java.util.Collections.emptyList();
     mavenArtifacts_ = java.util.Collections.emptyList();
+    npmPackages_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -217,7 +218,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Path to the artifact manifest. Only populated when artifacts are uploaded.
+   * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+   * Storage. Only populated when artifacts are uploaded to Cloud Storage.
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
@@ -240,7 +242,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Path to the artifact manifest. Only populated when artifacts are uploaded.
+   * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+   * Storage. Only populated when artifacts are uploaded to Cloud Storage.
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
@@ -266,7 +269,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Number of artifacts uploaded. Only populated when artifacts are uploaded.
+   * Number of non-container artifacts uploaded to Cloud Storage. Only populated
+   * when artifacts are uploaded to Cloud Storage.
    * </pre>
    *
    * <code>int64 num_artifacts = 5;</code>
@@ -345,7 +349,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time to push all non-container artifacts.
+   * Time to push all non-container artifacts to Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -360,7 +364,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time to push all non-container artifacts.
+   * Time to push all non-container artifacts to Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -377,7 +381,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time to push all non-container artifacts.
+   * Time to push all non-container artifacts to Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -533,6 +537,77 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     return mavenArtifacts_.get(index);
   }
 
+  public static final int NPM_PACKAGES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> npmPackages_;
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> getNpmPackagesList() {
+    return npmPackages_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>
+      getNpmPackagesOrBuilderList() {
+    return npmPackages_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  @java.lang.Override
+  public int getNpmPackagesCount() {
+    return npmPackages_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedNpmPackage getNpmPackages(int index) {
+    return npmPackages_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder getNpmPackagesOrBuilder(int index) {
+    return npmPackages_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -570,6 +645,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < mavenArtifacts_.size(); i++) {
       output.writeMessage(9, mavenArtifacts_.get(i));
+    }
+    for (int i = 0; i < npmPackages_.size(); i++) {
+      output.writeMessage(12, npmPackages_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -615,6 +693,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < mavenArtifacts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, mavenArtifacts_.get(i));
     }
+    for (int i = 0; i < npmPackages_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, npmPackages_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -641,6 +722,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getPythonPackagesList().equals(other.getPythonPackagesList())) return false;
     if (!getMavenArtifactsList().equals(other.getMavenArtifactsList())) return false;
+    if (!getNpmPackagesList().equals(other.getNpmPackagesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -679,6 +761,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (getMavenArtifactsCount() > 0) {
       hash = (37 * hash) + MAVEN_ARTIFACTS_FIELD_NUMBER;
       hash = (53 * hash) + getMavenArtifactsList().hashCode();
+    }
+    if (getNpmPackagesCount() > 0) {
+      hash = (37 * hash) + NPM_PACKAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getNpmPackagesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -849,6 +935,13 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         mavenArtifactsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      if (npmPackagesBuilder_ == null) {
+        npmPackages_ = java.util.Collections.emptyList();
+      } else {
+        npmPackages_ = null;
+        npmPackagesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -920,6 +1013,15 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         result.mavenArtifacts_ = mavenArtifacts_;
       } else {
         result.mavenArtifacts_ = mavenArtifactsBuilder_.build();
+      }
+      if (npmPackagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          npmPackages_ = java.util.Collections.unmodifiableList(npmPackages_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.npmPackages_ = npmPackages_;
+      } else {
+        result.npmPackages_ = npmPackagesBuilder_.build();
       }
     }
 
@@ -1094,6 +1196,33 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (npmPackagesBuilder_ == null) {
+        if (!other.npmPackages_.isEmpty()) {
+          if (npmPackages_.isEmpty()) {
+            npmPackages_ = other.npmPackages_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureNpmPackagesIsMutable();
+            npmPackages_.addAll(other.npmPackages_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.npmPackages_.isEmpty()) {
+          if (npmPackagesBuilder_.isEmpty()) {
+            npmPackagesBuilder_.dispose();
+            npmPackagesBuilder_ = null;
+            npmPackages_ = other.npmPackages_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            npmPackagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNpmPackagesFieldBuilder()
+                    : null;
+          } else {
+            npmPackagesBuilder_.addAllMessages(other.npmPackages_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1191,6 +1320,19 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 74
+            case 98:
+              {
+                com.google.cloudbuild.v1.UploadedNpmPackage m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.UploadedNpmPackage.parser(), extensionRegistry);
+                if (npmPackagesBuilder_ == null) {
+                  ensureNpmPackagesIsMutable();
+                  npmPackages_.add(m);
+                } else {
+                  npmPackagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1740,7 +1882,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the artifact manifest. Only populated when artifacts are uploaded.
+     * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+     * Storage. Only populated when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
@@ -1762,7 +1905,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the artifact manifest. Only populated when artifacts are uploaded.
+     * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+     * Storage. Only populated when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
@@ -1784,7 +1928,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the artifact manifest. Only populated when artifacts are uploaded.
+     * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+     * Storage. Only populated when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
@@ -1805,7 +1950,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the artifact manifest. Only populated when artifacts are uploaded.
+     * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+     * Storage. Only populated when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
@@ -1822,7 +1968,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the artifact manifest. Only populated when artifacts are uploaded.
+     * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+     * Storage. Only populated when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>string artifact_manifest = 4;</code>
@@ -1846,7 +1993,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of artifacts uploaded. Only populated when artifacts are uploaded.
+     * Number of non-container artifacts uploaded to Cloud Storage. Only populated
+     * when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>int64 num_artifacts = 5;</code>
@@ -1861,7 +2009,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of artifacts uploaded. Only populated when artifacts are uploaded.
+     * Number of non-container artifacts uploaded to Cloud Storage. Only populated
+     * when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>int64 num_artifacts = 5;</code>
@@ -1880,7 +2029,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of artifacts uploaded. Only populated when artifacts are uploaded.
+     * Number of non-container artifacts uploaded to Cloud Storage. Only populated
+     * when artifacts are uploaded to Cloud Storage.
      * </pre>
      *
      * <code>int64 num_artifacts = 5;</code>
@@ -2067,7 +2217,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2081,7 +2231,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2101,7 +2251,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2123,7 +2273,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2142,7 +2292,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2167,7 +2317,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2186,7 +2336,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2200,7 +2350,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2218,7 +2368,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time to push all non-container artifacts.
+     * Time to push all non-container artifacts to Cloud Storage.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -2994,6 +3144,357 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         mavenArtifacts_ = null;
       }
       return mavenArtifactsBuilder_;
+    }
+
+    private java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> npmPackages_ =
+        java.util.Collections.emptyList();
+
+    private void ensureNpmPackagesIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        npmPackages_ =
+            new java.util.ArrayList<com.google.cloudbuild.v1.UploadedNpmPackage>(npmPackages_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedNpmPackage,
+            com.google.cloudbuild.v1.UploadedNpmPackage.Builder,
+            com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>
+        npmPackagesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> getNpmPackagesList() {
+      if (npmPackagesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(npmPackages_);
+      } else {
+        return npmPackagesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public int getNpmPackagesCount() {
+      if (npmPackagesBuilder_ == null) {
+        return npmPackages_.size();
+      } else {
+        return npmPackagesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public com.google.cloudbuild.v1.UploadedNpmPackage getNpmPackages(int index) {
+      if (npmPackagesBuilder_ == null) {
+        return npmPackages_.get(index);
+      } else {
+        return npmPackagesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder setNpmPackages(int index, com.google.cloudbuild.v1.UploadedNpmPackage value) {
+      if (npmPackagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNpmPackagesIsMutable();
+        npmPackages_.set(index, value);
+        onChanged();
+      } else {
+        npmPackagesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder setNpmPackages(
+        int index, com.google.cloudbuild.v1.UploadedNpmPackage.Builder builderForValue) {
+      if (npmPackagesBuilder_ == null) {
+        ensureNpmPackagesIsMutable();
+        npmPackages_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        npmPackagesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder addNpmPackages(com.google.cloudbuild.v1.UploadedNpmPackage value) {
+      if (npmPackagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNpmPackagesIsMutable();
+        npmPackages_.add(value);
+        onChanged();
+      } else {
+        npmPackagesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder addNpmPackages(int index, com.google.cloudbuild.v1.UploadedNpmPackage value) {
+      if (npmPackagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNpmPackagesIsMutable();
+        npmPackages_.add(index, value);
+        onChanged();
+      } else {
+        npmPackagesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder addNpmPackages(
+        com.google.cloudbuild.v1.UploadedNpmPackage.Builder builderForValue) {
+      if (npmPackagesBuilder_ == null) {
+        ensureNpmPackagesIsMutable();
+        npmPackages_.add(builderForValue.build());
+        onChanged();
+      } else {
+        npmPackagesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder addNpmPackages(
+        int index, com.google.cloudbuild.v1.UploadedNpmPackage.Builder builderForValue) {
+      if (npmPackagesBuilder_ == null) {
+        ensureNpmPackagesIsMutable();
+        npmPackages_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        npmPackagesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder addAllNpmPackages(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.UploadedNpmPackage> values) {
+      if (npmPackagesBuilder_ == null) {
+        ensureNpmPackagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, npmPackages_);
+        onChanged();
+      } else {
+        npmPackagesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder clearNpmPackages() {
+      if (npmPackagesBuilder_ == null) {
+        npmPackages_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        npmPackagesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public Builder removeNpmPackages(int index) {
+      if (npmPackagesBuilder_ == null) {
+        ensureNpmPackagesIsMutable();
+        npmPackages_.remove(index);
+        onChanged();
+      } else {
+        npmPackagesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public com.google.cloudbuild.v1.UploadedNpmPackage.Builder getNpmPackagesBuilder(int index) {
+      return getNpmPackagesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder getNpmPackagesOrBuilder(int index) {
+      if (npmPackagesBuilder_ == null) {
+        return npmPackages_.get(index);
+      } else {
+        return npmPackagesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>
+        getNpmPackagesOrBuilderList() {
+      if (npmPackagesBuilder_ != null) {
+        return npmPackagesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(npmPackages_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public com.google.cloudbuild.v1.UploadedNpmPackage.Builder addNpmPackagesBuilder() {
+      return getNpmPackagesFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.UploadedNpmPackage.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public com.google.cloudbuild.v1.UploadedNpmPackage.Builder addNpmPackagesBuilder(int index) {
+      return getNpmPackagesFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.UploadedNpmPackage.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Npm packages uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage.Builder>
+        getNpmPackagesBuilderList() {
+      return getNpmPackagesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedNpmPackage,
+            com.google.cloudbuild.v1.UploadedNpmPackage.Builder,
+            com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>
+        getNpmPackagesFieldBuilder() {
+      if (npmPackagesBuilder_ == null) {
+        npmPackagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.UploadedNpmPackage,
+                com.google.cloudbuild.v1.UploadedNpmPackage.Builder,
+                com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>(
+                npmPackages_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+        npmPackages_ = null;
+      }
+      return npmPackagesBuilder_;
     }
 
     @java.lang.Override

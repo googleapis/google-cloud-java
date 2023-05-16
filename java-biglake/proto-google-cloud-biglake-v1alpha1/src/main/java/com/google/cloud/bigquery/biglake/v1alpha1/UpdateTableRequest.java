@@ -72,7 +72,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The table to update.
-   * The table's `name` field is used to identify the database to update.
+   * The table's `name` field is used to identify the table to update.
    * Format:
    * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
@@ -92,7 +92,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The table to update.
-   * The table's `name` field is used to identify the database to update.
+   * The table's `name` field is used to identify the table to update.
    * Format:
    * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
@@ -114,7 +114,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The table to update.
-   * The table's `name` field is used to identify the database to update.
+   * The table's `name` field is used to identify the table to update.
    * Format:
    * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
@@ -580,7 +580,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -599,7 +599,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -624,7 +624,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -651,7 +651,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -676,7 +676,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -706,7 +706,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -730,7 +730,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -749,7 +749,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>
@@ -772,7 +772,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The table to update.
-     * The table's `name` field is used to identify the database to update.
+     * The table's `name` field is used to identify the table to update.
      * Format:
      * projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
      * </pre>

@@ -182,10 +182,10 @@ public final class BatchesProto {
           + "-*+/v1/{name=projects/*/locations/*/batc"
           + "hes/*}\332A\004name\032K\312A\027dataproc.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformBh\n\034com.google.cloud.dataproc."
-          + "v1B\014BatchesProtoP\001Z8cloud.google.com/go/"
-          + "dataproc/apiv1/dataprocpb;dataprocpbb\006pr"
-          + "oto3"
+          + "d-platformBk\n\034com.google.cloud.dataproc."
+          + "v1B\014BatchesProtoP\001Z;cloud.google.com/go/"
+          + "dataproc/v2/apiv1/dataprocpb;dataprocpbb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

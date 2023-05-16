@@ -5,6 +5,18 @@
   "protoPackage": "google.cloud.discoveryengine.v1beta",
   "libraryPackage": "com.google.cloud.discoveryengine.v1beta",
   "services": {
+    "CompletionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompletionServiceClient",
+          "rpcs": {
+            "CompleteQuery": {
+              "methods": ["completeQuery", "completeQueryCallable"]
+            }
+          }
+        }
+      }
+    },
     "DocumentService": {
       "clients": {
         "grpc": {
@@ -25,6 +37,9 @@
             "ListDocuments": {
               "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
             },
+            "PurgeDocuments": {
+              "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
+            },
             "UpdateDocument": {
               "methods": ["updateDocument", "updateDocumentCallable"]
             }
@@ -39,6 +54,42 @@
           "rpcs": {
             "Recommend": {
               "methods": ["recommend", "recommendCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SchemaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SchemaServiceClient",
+          "rpcs": {
+            "CreateSchema": {
+              "methods": ["createSchemaAsync", "createSchemaAsync", "createSchemaAsync", "createSchemaOperationCallable", "createSchemaCallable"]
+            },
+            "DeleteSchema": {
+              "methods": ["deleteSchemaAsync", "deleteSchemaAsync", "deleteSchemaAsync", "deleteSchemaOperationCallable", "deleteSchemaCallable"]
+            },
+            "GetSchema": {
+              "methods": ["getSchema", "getSchema", "getSchema", "getSchemaCallable"]
+            },
+            "ListSchemas": {
+              "methods": ["listSchemas", "listSchemas", "listSchemas", "listSchemasPagedCallable", "listSchemasCallable"]
+            },
+            "UpdateSchema": {
+              "methods": ["updateSchemaAsync", "updateSchemaOperationCallable", "updateSchemaCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchServiceClient",
+          "rpcs": {
+            "Search": {
+              "methods": ["search", "searchPagedCallable", "searchCallable"]
             }
           }
         }

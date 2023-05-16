@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,8 @@ import com.google.cloud.resourcemanager.v3.CreateTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsResponse;
 import com.google.cloud.resourcemanager.v3.TagBinding;
@@ -81,6 +84,17 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsMethodDescriptor =
+          MethodDescriptor.<ListEffectiveTagsRequest, ListEffectiveTagsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.resourcemanager.v3.TagBindings/ListEffectiveTags")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEffectiveTagsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEffectiveTagsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListTagBindingsRequest, ListTagBindingsResponse>
       listTagBindingsCallable;
   private final UnaryCallable<ListTagBindingsRequest, ListTagBindingsPagedResponse>
@@ -91,6 +105,10 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
   private final UnaryCallable<DeleteTagBindingRequest, Operation> deleteTagBindingCallable;
   private final OperationCallable<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationCallable;
+  private final UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsCallable;
+  private final UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -153,6 +171,11 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+        listEffectiveTagsTransportSettings =
+            GrpcCallSettings.<ListEffectiveTagsRequest, ListEffectiveTagsResponse>newBuilder()
+                .setMethodDescriptor(listEffectiveTagsMethodDescriptor)
+                .build();
 
     this.listTagBindingsCallable =
         callableFactory.createUnaryCallable(
@@ -178,6 +201,16 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
             settings.deleteTagBindingOperationSettings(),
             clientContext,
             operationsStub);
+    this.listEffectiveTagsCallable =
+        callableFactory.createUnaryCallable(
+            listEffectiveTagsTransportSettings,
+            settings.listEffectiveTagsSettings(),
+            clientContext);
+    this.listEffectiveTagsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEffectiveTagsTransportSettings,
+            settings.listEffectiveTagsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -218,6 +251,18 @@ public class GrpcTagBindingsStub extends TagBindingsStub {
   public OperationCallable<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationCallable() {
     return deleteTagBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsCallable() {
+    return listEffectiveTagsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsPagedCallable() {
+    return listEffectiveTagsPagedCallable;
   }
 
   @Override

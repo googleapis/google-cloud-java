@@ -82,14 +82,14 @@ public final class FileProto {
           + "\0132).google.devtools.artifactregistry.v1."
           + "File\022\027\n\017next_page_token\030\002 \001(\t\"L\n\016GetFile"
           + "Request\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$artifactr"
-          + "egistry.googleapis.com/FileB\367\001\n\'com.goog"
+          + "egistry.googleapis.com/FileB\364\001\n\'com.goog"
           + "le.devtools.artifactregistry.v1B\tFilePro"
-          + "toP\001ZSgoogle.golang.org/genproto/googlea"
-          + "pis/devtools/artifactregistry/v1;artifac"
-          + "tregistry\252\002 Google.Cloud.ArtifactRegistr"
-          + "y.V1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352"
-          + "\002#Google::Cloud::ArtifactRegistry::V1b\006p"
-          + "roto3"
+          + "toP\001ZPcloud.google.com/go/artifactregist"
+          + "ry/apiv1/artifactregistrypb;artifactregi"
+          + "strypb\252\002 Google.Cloud.ArtifactRegistry.V"
+          + "1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002#G"
+          + "oogle::Cloud::ArtifactRegistry::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

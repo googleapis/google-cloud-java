@@ -22,7 +22,8 @@ package com.google.cloud.redis.v1;
  *
  *
  * <pre>
- * Request for [RescheduleMaintenance][google.cloud.redis.v1.CloudRedis.RescheduleMaintenance].
+ * Request for
+ * [RescheduleMaintenance][google.cloud.redis.v1.CloudRedis.RescheduleMaintenance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.RescheduleMaintenanceRequest}
@@ -316,7 +317,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+   * well.
    * </pre>
    *
    * <code>
@@ -333,7 +335,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+   * well.
    * </pre>
    *
    * <code>
@@ -604,7 +607,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request for [RescheduleMaintenance][google.cloud.redis.v1.CloudRedis.RescheduleMaintenance].
+   * Request for
+   * [RescheduleMaintenance][google.cloud.redis.v1.CloudRedis.RescheduleMaintenance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.RescheduleMaintenanceRequest}
@@ -945,7 +949,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+     * well.
      * </pre>
      *
      * <code>
@@ -962,7 +967,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+     * well.
      * </pre>
      *
      * <code>
@@ -982,7 +988,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+     * well.
      * </pre>
      *
      * <code>
@@ -1005,7 +1012,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+     * well.
      * </pre>
      *
      * <code>
@@ -1029,7 +1037,8 @@ public final class RescheduleMaintenanceRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+     * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+     * well.
      * </pre>
      *
      * <code>

@@ -31,6 +31,10 @@ public final class DocumentProto {
       internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Document_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Document_Content_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -44,25 +48,31 @@ public final class DocumentProto {
           + "cument.proto\022#google.cloud.discoveryengi"
           + "ne.v1beta\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032\034google/pr"
-          + "otobuf/struct.proto\"\303\003\n\010Document\022.\n\013stru"
+          + "otobuf/struct.proto\"\223\005\n\010Document\022.\n\013stru"
           + "ct_data\030\004 \001(\0132\027.google.protobuf.StructH\000"
           + "\022\023\n\tjson_data\030\005 \001(\tH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005"
-          + "\022\017\n\002id\030\002 \001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001(\t\022\032\n\022"
-          + "parent_document_id\030\007 \001(\t:\226\002\352A\222\002\n\'discove"
-          + "ryengine.googleapis.com/Document\022fprojec"
-          + "ts/{project}/locations/{location}/dataSt"
-          + "ores/{data_store}/branches/{branch}/docu"
-          + "ments/{document}\022\177projects/{project}/loc"
-          + "ations/{location}/collections/{collectio"
-          + "n}/dataStores/{data_store}/branches/{bra"
-          + "nch}/documents/{document}B\006\n\004dataB\224\002\n\'co"
-          + "m.google.cloud.discoveryengine.v1betaB\rD"
-          + "ocumentProtoP\001ZQcloud.google.com/go/disc"
-          + "overyengine/apiv1beta/discoveryenginepb;"
-          + "discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#Go"
-          + "ogle.Cloud.DiscoveryEngine.V1Beta\312\002#Goog"
-          + "le\\Cloud\\DiscoveryEngine\\V1beta\352\002&Google"
-          + "::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "\022\017\n\002id\030\002 \001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001(\t\022F\n\007"
+          + "content\030\n \001(\01325.google.cloud.discoveryen"
+          + "gine.v1beta.Document.Content\022\032\n\022parent_d"
+          + "ocument_id\030\007 \001(\t\0229\n\023derived_struct_data\030"
+          + "\006 \001(\0132\027.google.protobuf.StructB\003\340A\003\032K\n\007C"
+          + "ontent\022\023\n\traw_bytes\030\002 \001(\014H\000\022\r\n\003uri\030\003 \001(\t"
+          + "H\000\022\021\n\tmime_type\030\001 \001(\tB\t\n\007content:\226\002\352A\222\002\n"
+          + "\'discoveryengine.googleapis.com/Document"
+          + "\022fprojects/{project}/locations/{location"
+          + "}/dataStores/{data_store}/branches/{bran"
+          + "ch}/documents/{document}\022\177projects/{proj"
+          + "ect}/locations/{location}/collections/{c"
+          + "ollection}/dataStores/{data_store}/branc"
+          + "hes/{branch}/documents/{document}B\006\n\004dat"
+          + "aB\224\002\n\'com.google.cloud.discoveryengine.v"
+          + "1betaB\rDocumentProtoP\001ZQcloud.google.com"
+          + "/go/discoveryengine/apiv1beta/discoverye"
+          + "nginepb;discoveryenginepb\242\002\017DISCOVERYENG"
+          + "INE\252\002#Google.Cloud.DiscoveryEngine.V1Bet"
+          + "a\312\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352"
+          + "\002&Google::Cloud::DiscoveryEngine::V1beta"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,7 +88,25 @@ public final class DocumentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor,
             new java.lang.String[] {
-              "StructData", "JsonData", "Name", "Id", "SchemaId", "ParentDocumentId", "Data",
+              "StructData",
+              "JsonData",
+              "Name",
+              "Id",
+              "SchemaId",
+              "Content",
+              "ParentDocumentId",
+              "DerivedStructData",
+              "Data",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_Document_Content_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor,
+            new java.lang.String[] {
+              "RawBytes", "Uri", "MimeType", "Content",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

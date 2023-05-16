@@ -202,4 +202,17 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The enablePartialResponse.
    */
   boolean getEnablePartialResponse();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, `StreamingDetectIntentResponse.debugging_info` will get populated.
+   * </pre>
+   *
+   * <code>bool enable_debugging_info = 8;</code>
+   *
+   * @return The enableDebuggingInfo.
+   */
+  boolean getEnableDebuggingInfo();
 }

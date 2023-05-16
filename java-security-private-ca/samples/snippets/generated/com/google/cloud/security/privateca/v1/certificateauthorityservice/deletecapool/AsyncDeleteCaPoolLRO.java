@@ -42,6 +42,7 @@ public class AsyncDeleteCaPoolLRO {
           DeleteCaPoolRequest.newBuilder()
               .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
               .setRequestId("requestId693933066")
+              .setIgnoreDependentResources(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           certificateAuthorityServiceClient.deleteCaPoolOperationCallable().futureCall(request);

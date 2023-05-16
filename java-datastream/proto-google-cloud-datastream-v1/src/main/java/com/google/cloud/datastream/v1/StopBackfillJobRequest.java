@@ -76,7 +76,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the stream object resource to stop the backfill job for.
+   * Required. The name of the stream object resource to stop the backfill job
+   * for.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the stream object resource to stop the backfill job for.
+   * Required. The name of the stream object resource to stop the backfill job
+   * for.
    * </pre>
    *
    * <code>
@@ -472,7 +474,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the stream object resource to stop the backfill job for.
+     * Required. The name of the stream object resource to stop the backfill job
+     * for.
      * </pre>
      *
      * <code>
@@ -496,7 +499,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the stream object resource to stop the backfill job for.
+     * Required. The name of the stream object resource to stop the backfill job
+     * for.
      * </pre>
      *
      * <code>
@@ -520,7 +524,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the stream object resource to stop the backfill job for.
+     * Required. The name of the stream object resource to stop the backfill job
+     * for.
      * </pre>
      *
      * <code>
@@ -543,7 +548,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the stream object resource to stop the backfill job for.
+     * Required. The name of the stream object resource to stop the backfill job
+     * for.
      * </pre>
      *
      * <code>
@@ -562,7 +568,8 @@ public final class StopBackfillJobRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the stream object resource to stop the backfill job for.
+     * Required. The name of the stream object resource to stop the backfill job
+     * for.
      * </pre>
      *
      * <code>

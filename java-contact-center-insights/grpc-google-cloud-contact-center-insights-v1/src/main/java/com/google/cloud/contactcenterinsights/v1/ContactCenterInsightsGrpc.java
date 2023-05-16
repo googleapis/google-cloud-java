@@ -86,6 +86,54 @@ public final class ContactCenterInsightsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.UploadConversationRequest,
+          com.google.longrunning.Operation>
+      getUploadConversationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadConversation",
+      requestType = com.google.cloud.contactcenterinsights.v1.UploadConversationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.UploadConversationRequest,
+          com.google.longrunning.Operation>
+      getUploadConversationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.UploadConversationRequest,
+            com.google.longrunning.Operation>
+        getUploadConversationMethod;
+    if ((getUploadConversationMethod = ContactCenterInsightsGrpc.getUploadConversationMethod)
+        == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getUploadConversationMethod = ContactCenterInsightsGrpc.getUploadConversationMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getUploadConversationMethod =
+              getUploadConversationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.UploadConversationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadConversation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.UploadConversationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("UploadConversation"))
+                      .build();
+        }
+      }
+    }
+    return getUploadConversationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest,
           com.google.cloud.contactcenterinsights.v1.Conversation>
       getUpdateConversationMethod;
@@ -1867,6 +1915,22 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Create a longrunning conversation upload operation. This method differs
+     * from CreateConversation by allowing audio transcription and optional DLP
+     * redaction.
+     * </pre>
+     */
+    default void uploadConversation(
+        com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUploadConversationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a conversation.
      * </pre>
      */
@@ -2441,6 +2505,24 @@ public final class ContactCenterInsightsGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateConversationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a longrunning conversation upload operation. This method differs
+     * from CreateConversation by allowing audio transcription and optional DLP
+     * redaction.
+     * </pre>
+     */
+    public void uploadConversation(
+        com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadConversationMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3077,6 +3159,21 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Create a longrunning conversation upload operation. This method differs
+     * from CreateConversation by allowing audio transcription and optional DLP
+     * redaction.
+     * </pre>
+     */
+    public com.google.longrunning.Operation uploadConversation(
+        com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a conversation.
      * </pre>
      */
@@ -3581,6 +3678,22 @@ public final class ContactCenterInsightsGrpc {
             com.google.cloud.contactcenterinsights.v1.CreateConversationRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConversationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a longrunning conversation upload operation. This method differs
+     * from CreateConversation by allowing audio transcription and optional DLP
+     * redaction.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        uploadConversation(
+            com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadConversationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4097,42 +4210,43 @@ public final class ContactCenterInsightsGrpc {
   }
 
   private static final int METHODID_CREATE_CONVERSATION = 0;
-  private static final int METHODID_UPDATE_CONVERSATION = 1;
-  private static final int METHODID_GET_CONVERSATION = 2;
-  private static final int METHODID_LIST_CONVERSATIONS = 3;
-  private static final int METHODID_DELETE_CONVERSATION = 4;
-  private static final int METHODID_CREATE_ANALYSIS = 5;
-  private static final int METHODID_GET_ANALYSIS = 6;
-  private static final int METHODID_LIST_ANALYSES = 7;
-  private static final int METHODID_DELETE_ANALYSIS = 8;
-  private static final int METHODID_BULK_ANALYZE_CONVERSATIONS = 9;
-  private static final int METHODID_INGEST_CONVERSATIONS = 10;
-  private static final int METHODID_EXPORT_INSIGHTS_DATA = 11;
-  private static final int METHODID_CREATE_ISSUE_MODEL = 12;
-  private static final int METHODID_UPDATE_ISSUE_MODEL = 13;
-  private static final int METHODID_GET_ISSUE_MODEL = 14;
-  private static final int METHODID_LIST_ISSUE_MODELS = 15;
-  private static final int METHODID_DELETE_ISSUE_MODEL = 16;
-  private static final int METHODID_DEPLOY_ISSUE_MODEL = 17;
-  private static final int METHODID_UNDEPLOY_ISSUE_MODEL = 18;
-  private static final int METHODID_GET_ISSUE = 19;
-  private static final int METHODID_LIST_ISSUES = 20;
-  private static final int METHODID_UPDATE_ISSUE = 21;
-  private static final int METHODID_DELETE_ISSUE = 22;
-  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 23;
-  private static final int METHODID_CREATE_PHRASE_MATCHER = 24;
-  private static final int METHODID_GET_PHRASE_MATCHER = 25;
-  private static final int METHODID_LIST_PHRASE_MATCHERS = 26;
-  private static final int METHODID_DELETE_PHRASE_MATCHER = 27;
-  private static final int METHODID_UPDATE_PHRASE_MATCHER = 28;
-  private static final int METHODID_CALCULATE_STATS = 29;
-  private static final int METHODID_GET_SETTINGS = 30;
-  private static final int METHODID_UPDATE_SETTINGS = 31;
-  private static final int METHODID_CREATE_VIEW = 32;
-  private static final int METHODID_GET_VIEW = 33;
-  private static final int METHODID_LIST_VIEWS = 34;
-  private static final int METHODID_UPDATE_VIEW = 35;
-  private static final int METHODID_DELETE_VIEW = 36;
+  private static final int METHODID_UPLOAD_CONVERSATION = 1;
+  private static final int METHODID_UPDATE_CONVERSATION = 2;
+  private static final int METHODID_GET_CONVERSATION = 3;
+  private static final int METHODID_LIST_CONVERSATIONS = 4;
+  private static final int METHODID_DELETE_CONVERSATION = 5;
+  private static final int METHODID_CREATE_ANALYSIS = 6;
+  private static final int METHODID_GET_ANALYSIS = 7;
+  private static final int METHODID_LIST_ANALYSES = 8;
+  private static final int METHODID_DELETE_ANALYSIS = 9;
+  private static final int METHODID_BULK_ANALYZE_CONVERSATIONS = 10;
+  private static final int METHODID_INGEST_CONVERSATIONS = 11;
+  private static final int METHODID_EXPORT_INSIGHTS_DATA = 12;
+  private static final int METHODID_CREATE_ISSUE_MODEL = 13;
+  private static final int METHODID_UPDATE_ISSUE_MODEL = 14;
+  private static final int METHODID_GET_ISSUE_MODEL = 15;
+  private static final int METHODID_LIST_ISSUE_MODELS = 16;
+  private static final int METHODID_DELETE_ISSUE_MODEL = 17;
+  private static final int METHODID_DEPLOY_ISSUE_MODEL = 18;
+  private static final int METHODID_UNDEPLOY_ISSUE_MODEL = 19;
+  private static final int METHODID_GET_ISSUE = 20;
+  private static final int METHODID_LIST_ISSUES = 21;
+  private static final int METHODID_UPDATE_ISSUE = 22;
+  private static final int METHODID_DELETE_ISSUE = 23;
+  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 24;
+  private static final int METHODID_CREATE_PHRASE_MATCHER = 25;
+  private static final int METHODID_GET_PHRASE_MATCHER = 26;
+  private static final int METHODID_LIST_PHRASE_MATCHERS = 27;
+  private static final int METHODID_DELETE_PHRASE_MATCHER = 28;
+  private static final int METHODID_UPDATE_PHRASE_MATCHER = 29;
+  private static final int METHODID_CALCULATE_STATS = 30;
+  private static final int METHODID_GET_SETTINGS = 31;
+  private static final int METHODID_UPDATE_SETTINGS = 32;
+  private static final int METHODID_CREATE_VIEW = 33;
+  private static final int METHODID_GET_VIEW = 34;
+  private static final int METHODID_LIST_VIEWS = 35;
+  private static final int METHODID_UPDATE_VIEW = 36;
+  private static final int METHODID_DELETE_VIEW = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4156,6 +4270,11 @@ public final class ContactCenterInsightsGrpc {
               (com.google.cloud.contactcenterinsights.v1.CreateConversationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Conversation>)
                   responseObserver);
+          break;
+        case METHODID_UPLOAD_CONVERSATION:
+          serviceImpl.uploadConversation(
+              (com.google.cloud.contactcenterinsights.v1.UploadConversationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_UPDATE_CONVERSATION:
           serviceImpl.updateConversation(
@@ -4393,6 +4512,12 @@ public final class ContactCenterInsightsGrpc {
                     com.google.cloud.contactcenterinsights.v1.CreateConversationRequest,
                     com.google.cloud.contactcenterinsights.v1.Conversation>(
                     service, METHODID_CREATE_CONVERSATION)))
+        .addMethod(
+            getUploadConversationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contactcenterinsights.v1.UploadConversationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPLOAD_CONVERSATION)))
         .addMethod(
             getUpdateConversationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4681,6 +4806,7 @@ public final class ContactCenterInsightsGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ContactCenterInsightsFileDescriptorSupplier())
                       .addMethod(getCreateConversationMethod())
+                      .addMethod(getUploadConversationMethod())
                       .addMethod(getUpdateConversationMethod())
                       .addMethod(getGetConversationMethod())
                       .addMethod(getListConversationsMethod())

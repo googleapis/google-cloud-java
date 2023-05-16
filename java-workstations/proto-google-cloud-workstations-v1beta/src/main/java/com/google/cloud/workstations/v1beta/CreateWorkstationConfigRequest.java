@@ -132,7 +132,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. ID to use for the config.
+   * Required. ID to use for the workstation configuration.
    * </pre>
    *
    * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,7 +155,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. ID to use for the config.
+   * Required. ID to use for the workstation configuration.
    * </pre>
    *
    * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -804,7 +804,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. ID to use for the config.
+     * Required. ID to use for the workstation configuration.
      * </pre>
      *
      * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -826,7 +826,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. ID to use for the config.
+     * Required. ID to use for the workstation configuration.
      * </pre>
      *
      * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -848,7 +848,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. ID to use for the config.
+     * Required. ID to use for the workstation configuration.
      * </pre>
      *
      * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -869,7 +869,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. ID to use for the config.
+     * Required. ID to use for the workstation configuration.
      * </pre>
      *
      * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,7 +886,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. ID to use for the config.
+     * Required. ID to use for the workstation configuration.
      * </pre>
      *
      * <code>string workstation_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

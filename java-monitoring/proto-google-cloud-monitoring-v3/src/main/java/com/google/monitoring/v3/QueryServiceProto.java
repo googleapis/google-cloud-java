@@ -47,13 +47,13 @@ public final class QueryServiceProto {
           + "googleapis.com\322A\211\001https://www.googleapis"
           + ".com/auth/cloud-platform,https://www.goo"
           + "gleapis.com/auth/monitoring,https://www."
-          + "googleapis.com/auth/monitoring.readB\311\001\n\030"
+          + "googleapis.com/auth/monitoring.readB\314\001\n\030"
           + "com.google.monitoring.v3B\021QueryServicePr"
-          + "otoP\001Z>google.golang.org/genproto/google"
-          + "apis/monitoring/v3;monitoring\252\002\032Google.C"
-          + "loud.Monitoring.V3\312\002\032Google\\Cloud\\Monito"
-          + "ring\\V3\352\002\035Google::Cloud::Monitoring::V3b"
-          + "\006proto3"
+          + "otoP\001ZAcloud.google.com/go/monitoring/ap"
+          + "iv3/v2/monitoringpb;monitoringpb\252\002\032Googl"
+          + "e.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mon"
+          + "itoring\\V3\352\002\035Google::Cloud::Monitoring::"
+          + "V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

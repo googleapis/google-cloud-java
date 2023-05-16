@@ -1605,7 +1605,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param table Required. The table to update.
-   *     <p>The table's `name` field is used to identify the database to update. Format:
+   *     <p>The table's `name` field is used to identify the table to update. Format:
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @param updateMask The list of fields to update.
    *     <p>For the `FieldMask` definition, see
@@ -1674,6 +1674,216 @@ public class MetastoreServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateTableRequest, Table> updateTableCallable() {
     return stub.updateTableCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an existing table specified by the table ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetastoreServiceClient metastoreServiceClient = MetastoreServiceClient.create()) {
+   *   TableName name =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+   *   TableName newName =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+   *   Table response = metastoreServiceClient.renameTable(name, newName);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The table's `name` field is used to identify the table to rename. Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @param newName Required. The new `name` for the specified table, must be in the same database.
+   *     Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Table renameTable(TableName name, TableName newName) {
+    RenameTableRequest request =
+        RenameTableRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewName(newName == null ? null : newName.toString())
+            .build();
+    return renameTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an existing table specified by the table ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetastoreServiceClient metastoreServiceClient = MetastoreServiceClient.create()) {
+   *   TableName name =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+   *   String newName =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]").toString();
+   *   Table response = metastoreServiceClient.renameTable(name, newName);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The table's `name` field is used to identify the table to rename. Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @param newName Required. The new `name` for the specified table, must be in the same database.
+   *     Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Table renameTable(TableName name, String newName) {
+    RenameTableRequest request =
+        RenameTableRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setNewName(newName)
+            .build();
+    return renameTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an existing table specified by the table ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetastoreServiceClient metastoreServiceClient = MetastoreServiceClient.create()) {
+   *   String name =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]").toString();
+   *   TableName newName =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+   *   Table response = metastoreServiceClient.renameTable(name, newName);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The table's `name` field is used to identify the table to rename. Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @param newName Required. The new `name` for the specified table, must be in the same database.
+   *     Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Table renameTable(String name, TableName newName) {
+    RenameTableRequest request =
+        RenameTableRequest.newBuilder()
+            .setName(name)
+            .setNewName(newName == null ? null : newName.toString())
+            .build();
+    return renameTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an existing table specified by the table ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetastoreServiceClient metastoreServiceClient = MetastoreServiceClient.create()) {
+   *   String name =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]").toString();
+   *   String newName =
+   *       TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]").toString();
+   *   Table response = metastoreServiceClient.renameTable(name, newName);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The table's `name` field is used to identify the table to rename. Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @param newName Required. The new `name` for the specified table, must be in the same database.
+   *     Format:
+   *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Table renameTable(String name, String newName) {
+    RenameTableRequest request =
+        RenameTableRequest.newBuilder().setName(name).setNewName(newName).build();
+    return renameTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an existing table specified by the table ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetastoreServiceClient metastoreServiceClient = MetastoreServiceClient.create()) {
+   *   RenameTableRequest request =
+   *       RenameTableRequest.newBuilder()
+   *           .setName(
+   *               TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+   *                   .toString())
+   *           .setNewName(
+   *               TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+   *                   .toString())
+   *           .build();
+   *   Table response = metastoreServiceClient.renameTable(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Table renameTable(RenameTableRequest request) {
+    return renameTableCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames an existing table specified by the table ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetastoreServiceClient metastoreServiceClient = MetastoreServiceClient.create()) {
+   *   RenameTableRequest request =
+   *       RenameTableRequest.newBuilder()
+   *           .setName(
+   *               TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+   *                   .toString())
+   *           .setNewName(
+   *               TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Table> future = metastoreServiceClient.renameTableCallable().futureCall(request);
+   *   // Do something.
+   *   Table response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameTableRequest, Table> renameTableCallable() {
+    return stub.renameTableCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1871,6 +2081,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *               DatabaseName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(TableView.forNumber(0))
    *           .build();
    *   for (Table element : metastoreServiceClient.listTables(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1904,6 +2115,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *               DatabaseName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(TableView.forNumber(0))
    *           .build();
    *   ApiFuture<Table> future =
    *       metastoreServiceClient.listTablesPagedCallable().futureCall(request);
@@ -1937,6 +2149,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *               DatabaseName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(TableView.forNumber(0))
    *           .build();
    *   while (true) {
    *     ListTablesResponse response = metastoreServiceClient.listTablesCallable().call(request);

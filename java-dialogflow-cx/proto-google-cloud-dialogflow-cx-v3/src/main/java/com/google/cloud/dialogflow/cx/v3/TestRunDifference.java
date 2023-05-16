@@ -128,6 +128,16 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>UTTERANCE = 4;</code>
      */
     UTTERANCE(4),
+    /**
+     *
+     *
+     * <pre>
+     * The flow.
+     * </pre>
+     *
+     * <code>FLOW = 5;</code>
+     */
+    FLOW(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -181,6 +191,16 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>UTTERANCE = 4;</code>
      */
     public static final int UTTERANCE_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The flow.
+     * </pre>
+     *
+     * <code>FLOW = 5;</code>
+     */
+    public static final int FLOW_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -216,6 +236,8 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
           return PARAMETERS;
         case 4:
           return UTTERANCE;
+        case 5:
+          return FLOW;
         default:
           return null;
       }

@@ -22,7 +22,8 @@ package com.google.cloud.redis.v1;
  *
  *
  * <pre>
- * Request for [GetInstanceAuthString][google.cloud.redis.v1.CloudRedis.GetInstanceAuthString].
+ * Request for
+ * [GetInstanceAuthString][google.cloud.redis.v1.CloudRedis.GetInstanceAuthString].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.GetInstanceAuthStringRequest}
@@ -290,7 +291,8 @@ public final class GetInstanceAuthStringRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request for [GetInstanceAuthString][google.cloud.redis.v1.CloudRedis.GetInstanceAuthString].
+   * Request for
+   * [GetInstanceAuthString][google.cloud.redis.v1.CloudRedis.GetInstanceAuthString].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.GetInstanceAuthStringRequest}

@@ -451,15 +451,15 @@ public final class AccessContextManagerProto {
           + "rvicePerimeters/*}:testIamPermissions:\001*"
           + "\032W\312A#accesscontextmanager.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\257\002\n+com.google.identity.access"
+          + "-platformB\260\002\n+com.google.identity.access"
           + "contextmanager.v1B\031AccessContextManagerP"
-          + "rotoP\001Z[google.golang.org/genproto/googl"
-          + "eapis/identity/accesscontextmanager/v1;a"
-          + "ccesscontextmanager\242\002\004GACM\252\002\'Google.Iden"
-          + "tity.AccessContextManager.V1\312\002\'Google\\Id"
-          + "entity\\AccessContextManager\\V1\352\002*Google:"
-          + ":Identity::AccessContextManager::V1b\006pro"
-          + "to3"
+          + "rotoP\001Z\\cloud.google.com/go/accesscontex"
+          + "tmanager/apiv1/accesscontextmanagerpb;ac"
+          + "cesscontextmanagerpb\242\002\004GACM\252\002\'Google.Ide"
+          + "ntity.AccessContextManager.V1\312\002\'Google\\I"
+          + "dentity\\AccessContextManager\\V1\352\002*Google"
+          + "::Identity::AccessContextManager::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

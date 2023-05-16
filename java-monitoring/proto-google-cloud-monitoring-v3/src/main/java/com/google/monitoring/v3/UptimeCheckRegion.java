@@ -81,6 +81,39 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>ASIA_PACIFIC = 4;</code>
    */
   ASIA_PACIFIC(4),
+  /**
+   *
+   *
+   * <pre>
+   * Allows checks to run from locations within the western United States of
+   * America
+   * </pre>
+   *
+   * <code>USA_OREGON = 5;</code>
+   */
+  USA_OREGON(5),
+  /**
+   *
+   *
+   * <pre>
+   * Allows checks to run from locations within the central United States of
+   * America
+   * </pre>
+   *
+   * <code>USA_IOWA = 6;</code>
+   */
+  USA_IOWA(6),
+  /**
+   *
+   *
+   * <pre>
+   * Allows checks to run from locations within the eastern United States of
+   * America
+   * </pre>
+   *
+   * <code>USA_VIRGINIA = 7;</code>
+   */
+  USA_VIRGINIA(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -137,6 +170,39 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    * <code>ASIA_PACIFIC = 4;</code>
    */
   public static final int ASIA_PACIFIC_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Allows checks to run from locations within the western United States of
+   * America
+   * </pre>
+   *
+   * <code>USA_OREGON = 5;</code>
+   */
+  public static final int USA_OREGON_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Allows checks to run from locations within the central United States of
+   * America
+   * </pre>
+   *
+   * <code>USA_IOWA = 6;</code>
+   */
+  public static final int USA_IOWA_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Allows checks to run from locations within the eastern United States of
+   * America
+   * </pre>
+   *
+   * <code>USA_VIRGINIA = 7;</code>
+   */
+  public static final int USA_VIRGINIA_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -172,6 +238,12 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
         return SOUTH_AMERICA;
       case 4:
         return ASIA_PACIFIC;
+      case 5:
+        return USA_OREGON;
+      case 6:
+        return USA_IOWA;
+      case 7:
+        return USA_VIRGINIA;
       default:
         return null;
     }

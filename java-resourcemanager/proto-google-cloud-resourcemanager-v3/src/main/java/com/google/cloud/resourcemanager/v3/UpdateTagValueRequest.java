@@ -71,10 +71,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The new definition of the TagValue. Only fields `description` and `etag`
-   * fields can be updated by this request. If the `etag` field is nonempty, it
-   * must match the `etag` field of the existing ControlGroup. Otherwise,
-   * `FAILED_PRECONDITION` will be returned.
+   * Required. The new definition of the TagValue. Only fields `description` and
+   * `etag` fields can be updated by this request. If the `etag` field is
+   * nonempty, it must match the `etag` field of the existing ControlGroup.
+   * Otherwise, `ABORTED` will be returned.
    * </pre>
    *
    * <code>
@@ -91,10 +91,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The new definition of the TagValue. Only fields `description` and `etag`
-   * fields can be updated by this request. If the `etag` field is nonempty, it
-   * must match the `etag` field of the existing ControlGroup. Otherwise,
-   * `FAILED_PRECONDITION` will be returned.
+   * Required. The new definition of the TagValue. Only fields `description` and
+   * `etag` fields can be updated by this request. If the `etag` field is
+   * nonempty, it must match the `etag` field of the existing ControlGroup.
+   * Otherwise, `ABORTED` will be returned.
    * </pre>
    *
    * <code>
@@ -113,10 +113,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The new definition of the TagValue. Only fields `description` and `etag`
-   * fields can be updated by this request. If the `etag` field is nonempty, it
-   * must match the `etag` field of the existing ControlGroup. Otherwise,
-   * `FAILED_PRECONDITION` will be returned.
+   * Required. The new definition of the TagValue. Only fields `description` and
+   * `etag` fields can be updated by this request. If the `etag` field is
+   * nonempty, it must match the `etag` field of the existing ControlGroup.
+   * Otherwise, `ABORTED` will be returned.
    * </pre>
    *
    * <code>
@@ -185,8 +185,8 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. True to perform validations necessary for updating the resource, but not
-   * actually perform the action.
+   * Optional. True to perform validations necessary for updating the resource,
+   * but not actually perform the action.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -611,10 +611,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -630,10 +630,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -655,10 +655,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -682,10 +682,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -707,10 +707,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -737,10 +737,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -761,10 +761,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -780,10 +780,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -803,10 +803,10 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The new definition of the TagValue. Only fields `description` and `etag`
-     * fields can be updated by this request. If the `etag` field is nonempty, it
-     * must match the `etag` field of the existing ControlGroup. Otherwise,
-     * `FAILED_PRECONDITION` will be returned.
+     * Required. The new definition of the TagValue. Only fields `description` and
+     * `etag` fields can be updated by this request. If the `etag` field is
+     * nonempty, it must match the `etag` field of the existing ControlGroup.
+     * Otherwise, `ABORTED` will be returned.
      * </pre>
      *
      * <code>
@@ -1027,8 +1027,8 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. True to perform validations necessary for updating the resource, but not
-     * actually perform the action.
+     * Optional. True to perform validations necessary for updating the resource,
+     * but not actually perform the action.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1043,8 +1043,8 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. True to perform validations necessary for updating the resource, but not
-     * actually perform the action.
+     * Optional. True to perform validations necessary for updating the resource,
+     * but not actually perform the action.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1063,8 +1063,8 @@ public final class UpdateTagValueRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. True to perform validations necessary for updating the resource, but not
-     * actually perform the action.
+     * Optional. True to perform validations necessary for updating the resource,
+     * but not actually perform the action.
      * </pre>
      *
      * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -346,6 +346,54 @@ public final class EndpointServiceGrpc {
     return getUndeployModelMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.MutateDeployedModelRequest,
+          com.google.longrunning.Operation>
+      getMutateDeployedModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MutateDeployedModel",
+      requestType = com.google.cloud.aiplatform.v1.MutateDeployedModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.MutateDeployedModelRequest,
+          com.google.longrunning.Operation>
+      getMutateDeployedModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.MutateDeployedModelRequest,
+            com.google.longrunning.Operation>
+        getMutateDeployedModelMethod;
+    if ((getMutateDeployedModelMethod = EndpointServiceGrpc.getMutateDeployedModelMethod) == null) {
+      synchronized (EndpointServiceGrpc.class) {
+        if ((getMutateDeployedModelMethod = EndpointServiceGrpc.getMutateDeployedModelMethod)
+            == null) {
+          EndpointServiceGrpc.getMutateDeployedModelMethod =
+              getMutateDeployedModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.MutateDeployedModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "MutateDeployedModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.MutateDeployedModelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EndpointServiceMethodDescriptorSupplier("MutateDeployedModel"))
+                      .build();
+        }
+      }
+    }
+    return getMutateDeployedModelMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EndpointServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EndpointServiceStub> factory =
@@ -494,6 +542,23 @@ public final class EndpointServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUndeployModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing deployed model. Updatable fields include
+     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
+     * `disable_container_logging` (v1 only), and `enable_container_logging`
+     * (v1beta1 only).
+     * </pre>
+     */
+    default void mutateDeployedModel(
+        com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMutateDeployedModelMethod(), responseObserver);
     }
   }
 
@@ -644,6 +709,25 @@ public final class EndpointServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing deployed model. Updatable fields include
+     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
+     * `disable_container_logging` (v1 only), and `enable_container_logging`
+     * (v1beta1 only).
+     * </pre>
+     */
+    public void mutateDeployedModel(
+        com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMutateDeployedModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -755,6 +839,22 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1.UndeployModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUndeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing deployed model. Updatable fields include
+     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
+     * `disable_container_logging` (v1 only), and `enable_container_logging`
+     * (v1beta1 only).
+     * </pre>
+     */
+    public com.google.longrunning.Operation mutateDeployedModel(
+        com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMutateDeployedModelMethod(), getCallOptions(), request);
     }
   }
 
@@ -871,6 +971,22 @@ public final class EndpointServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUndeployModelMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing deployed model. Updatable fields include
+     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
+     * `disable_container_logging` (v1 only), and `enable_container_logging`
+     * (v1beta1 only).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        mutateDeployedModel(com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMutateDeployedModelMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENDPOINT = 0;
@@ -880,6 +996,7 @@ public final class EndpointServiceGrpc {
   private static final int METHODID_DELETE_ENDPOINT = 4;
   private static final int METHODID_DEPLOY_MODEL = 5;
   private static final int METHODID_UNDEPLOY_MODEL = 6;
+  private static final int METHODID_MUTATE_DEPLOYED_MODEL = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -934,6 +1051,11 @@ public final class EndpointServiceGrpc {
         case METHODID_UNDEPLOY_MODEL:
           serviceImpl.undeployModel(
               (com.google.cloud.aiplatform.v1.UndeployModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_MUTATE_DEPLOYED_MODEL:
+          serviceImpl.mutateDeployedModel(
+              (com.google.cloud.aiplatform.v1.MutateDeployedModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -997,6 +1119,12 @@ public final class EndpointServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1.UndeployModelRequest,
                     com.google.longrunning.Operation>(service, METHODID_UNDEPLOY_MODEL)))
+        .addMethod(
+            getMutateDeployedModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.MutateDeployedModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_MUTATE_DEPLOYED_MODEL)))
         .build();
   }
 
@@ -1055,6 +1183,7 @@ public final class EndpointServiceGrpc {
                       .addMethod(getDeleteEndpointMethod())
                       .addMethod(getDeployModelMethod())
                       .addMethod(getUndeployModelMethod())
+                      .addMethod(getMutateDeployedModelMethod())
                       .build();
         }
       }

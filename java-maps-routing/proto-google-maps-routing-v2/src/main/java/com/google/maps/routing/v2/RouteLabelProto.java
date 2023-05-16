@@ -39,12 +39,12 @@ public final class RouteLabelProto {
           + "to\022\026google.maps.routing.v2*m\n\nRouteLabel"
           + "\022\033\n\027ROUTE_LABEL_UNSPECIFIED\020\000\022\021\n\rDEFAULT"
           + "_ROUTE\020\001\022\033\n\027DEFAULT_ROUTE_ALTERNATE\020\002\022\022\n"
-          + "\016FUEL_EFFICIENT\020\003B\307\001\n\032com.google.maps.ro"
-          + "uting.v2B\017RouteLabelProtoP\001Z=google.gola"
-          + "ng.org/genproto/googleapis/maps/routing/"
-          + "v2;routing\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Rout"
-          + "ing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Google"
-          + "::Maps::Routing::V2b\006proto3"
+          + "\016FUEL_EFFICIENT\020\003B\304\001\n\032com.google.maps.ro"
+          + "uting.v2B\017RouteLabelProtoP\001Z:cloud.googl"
+          + "e.com/go/maps/routing/apiv2/routingpb;ro"
+          + "utingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing"
+          + ".V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Google::M"
+          + "aps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

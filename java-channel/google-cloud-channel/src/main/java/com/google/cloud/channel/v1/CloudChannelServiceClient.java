@@ -4016,7 +4016,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>customer ID
+   *   <li>Customer ID
    *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
@@ -4075,7 +4075,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>customer ID
+   *   <li>Customer ID
    *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
@@ -4132,7 +4132,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>customer ID
+   *   <li>Customer ID
    *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
@@ -4191,7 +4191,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>customer ID
+   *   <li>Customer ID
    *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
@@ -4250,7 +4250,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>customer ID
+   *   <li>Customer ID
    *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
@@ -5182,7 +5182,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * resources. The data for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>channel partner ID
+   *   <li>Channel Partner ID
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
    * </ul>
@@ -5244,7 +5244,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * resources. The data for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>channel partner ID
+   *   <li>Channel Partner ID
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
    * </ul>
@@ -5303,7 +5303,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * resources. The data for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>channel partner ID
+   *   <li>Channel Partner ID
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
    * </ul>
@@ -5364,7 +5364,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * resources. The data for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>channel partner ID
+   *   <li>Channel Partner ID
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
    * </ul>
@@ -5428,7 +5428,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * resources. The data for each resource is displayed in the ascending order of:
    *
    * <ul>
-   *   <li>channel partner ID
+   *   <li>Channel Partner ID
    *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
    *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
    * </ul>

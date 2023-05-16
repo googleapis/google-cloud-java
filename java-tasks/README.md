@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.11.0</version>
+      <version>26.12.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks</artifactId>
-  <version>2.14.0</version>
+  <version>2.17.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-tasks:2.14.0'
+implementation 'com.google.cloud:google-cloud-tasks:2.17.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "2.14.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "2.17.0"
 ```
 <!-- {x-version-update-end} -->
 

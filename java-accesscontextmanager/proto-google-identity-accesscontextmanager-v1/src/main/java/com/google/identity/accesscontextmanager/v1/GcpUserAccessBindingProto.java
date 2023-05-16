@@ -51,15 +51,15 @@ public final class GcpUserAccessBindingProto {
           + "vel:\214\001\352A\210\001\n8accesscontextmanager.googlea"
           + "pis.com/GcpUserAccessBinding\022Lorganizati"
           + "ons/{organization}/gcpUserAccessBindings"
-          + "/{gcp_user_access_binding}B\257\002\n+com.googl"
+          + "/{gcp_user_access_binding}B\260\002\n+com.googl"
           + "e.identity.accesscontextmanager.v1B\031GcpU"
-          + "serAccessBindingProtoP\001Z[google.golang.o"
-          + "rg/genproto/googleapis/identity/accessco"
-          + "ntextmanager/v1;accesscontextmanager\242\002\004G"
-          + "ACM\252\002\'Google.Identity.AccessContextManag"
-          + "er.V1\312\002\'Google\\Identity\\AccessContextMan"
-          + "ager\\V1\352\002*Google::Identity::AccessContex"
-          + "tManager::V1b\006proto3"
+          + "serAccessBindingProtoP\001Z\\cloud.google.co"
+          + "m/go/accesscontextmanager/apiv1/accessco"
+          + "ntextmanagerpb;accesscontextmanagerpb\242\002\004"
+          + "GACM\252\002\'Google.Identity.AccessContextMana"
+          + "ger.V1\312\002\'Google\\Identity\\AccessContextMa"
+          + "nager\\V1\352\002*Google::Identity::AccessConte"
+          + "xtManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

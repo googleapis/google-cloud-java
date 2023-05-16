@@ -114,6 +114,8 @@ import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
+import com.google.cloud.contactcenterinsights.v1.UploadConversationMetadata;
+import com.google.cloud.contactcenterinsights.v1.UploadConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.View;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -174,6 +176,10 @@ public class ContactCenterInsightsStubSettings
 
   private final UnaryCallSettings<CreateConversationRequest, Conversation>
       createConversationSettings;
+  private final UnaryCallSettings<UploadConversationRequest, Operation> uploadConversationSettings;
+  private final OperationCallSettings<
+          UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationSettings;
   private final UnaryCallSettings<UpdateConversationRequest, Conversation>
       updateConversationSettings;
   private final UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings;
@@ -481,6 +487,17 @@ public class ContactCenterInsightsStubSettings
   /** Returns the object with the settings used for calls to createConversation. */
   public UnaryCallSettings<CreateConversationRequest, Conversation> createConversationSettings() {
     return createConversationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to uploadConversation. */
+  public UnaryCallSettings<UploadConversationRequest, Operation> uploadConversationSettings() {
+    return uploadConversationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to uploadConversation. */
+  public OperationCallSettings<UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationSettings() {
+    return uploadConversationOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to updateConversation. */
@@ -836,6 +853,9 @@ public class ContactCenterInsightsStubSettings
     super(settingsBuilder);
 
     createConversationSettings = settingsBuilder.createConversationSettings().build();
+    uploadConversationSettings = settingsBuilder.uploadConversationSettings().build();
+    uploadConversationOperationSettings =
+        settingsBuilder.uploadConversationOperationSettings().build();
     updateConversationSettings = settingsBuilder.updateConversationSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
@@ -892,6 +912,11 @@ public class ContactCenterInsightsStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<CreateConversationRequest, Conversation>
         createConversationSettings;
+    private final UnaryCallSettings.Builder<UploadConversationRequest, Operation>
+        uploadConversationSettings;
+    private final OperationCallSettings.Builder<
+            UploadConversationRequest, Conversation, UploadConversationMetadata>
+        uploadConversationOperationSettings;
     private final UnaryCallSettings.Builder<UpdateConversationRequest, Conversation>
         updateConversationSettings;
     private final UnaryCallSettings.Builder<GetConversationRequest, Conversation>
@@ -1022,6 +1047,8 @@ public class ContactCenterInsightsStubSettings
       super(clientContext);
 
       createConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      uploadConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      uploadConversationOperationSettings = OperationCallSettings.newBuilder();
       updateConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
@@ -1070,6 +1097,7 @@ public class ContactCenterInsightsStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConversationSettings,
+              uploadConversationSettings,
               updateConversationSettings,
               getConversationSettings,
               listConversationsSettings,
@@ -1113,6 +1141,9 @@ public class ContactCenterInsightsStubSettings
       super(settings);
 
       createConversationSettings = settings.createConversationSettings.toBuilder();
+      uploadConversationSettings = settings.uploadConversationSettings.toBuilder();
+      uploadConversationOperationSettings =
+          settings.uploadConversationOperationSettings.toBuilder();
       updateConversationSettings = settings.updateConversationSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
@@ -1165,6 +1196,7 @@ public class ContactCenterInsightsStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConversationSettings,
+              uploadConversationSettings,
               updateConversationSettings,
               getConversationSettings,
               listConversationsSettings,
@@ -1232,6 +1264,11 @@ public class ContactCenterInsightsStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .createConversationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .uploadConversationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1414,6 +1451,31 @@ public class ContactCenterInsightsStubSettings
           .deleteViewSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .uploadConversationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UploadConversationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Conversation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UploadConversationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
           .createAnalysisOperationSettings()
@@ -1638,6 +1700,21 @@ public class ContactCenterInsightsStubSettings
     public UnaryCallSettings.Builder<CreateConversationRequest, Conversation>
         createConversationSettings() {
       return createConversationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to uploadConversation. */
+    public UnaryCallSettings.Builder<UploadConversationRequest, Operation>
+        uploadConversationSettings() {
+      return uploadConversationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to uploadConversation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UploadConversationRequest, Conversation, UploadConversationMetadata>
+        uploadConversationOperationSettings() {
+      return uploadConversationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateConversation. */

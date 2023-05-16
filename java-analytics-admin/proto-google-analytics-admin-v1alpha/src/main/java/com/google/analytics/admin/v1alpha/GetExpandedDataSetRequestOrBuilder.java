@@ -27,7 +27,7 @@ public interface GetExpandedDataSetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Audience to get.
+   * Required. The name of the ExpandedDataSet to get.
    * Example format: properties/1234/expandedDataSets/5678
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface GetExpandedDataSetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Audience to get.
+   * Required. The name of the ExpandedDataSet to get.
    * Example format: properties/1234/expandedDataSets/5678
    * </pre>
    *

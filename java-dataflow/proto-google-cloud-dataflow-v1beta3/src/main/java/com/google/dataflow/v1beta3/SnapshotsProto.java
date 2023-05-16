@@ -117,12 +117,12 @@ public final class SnapshotsProto {
           + "leapis.com/auth/compute,https://www.goog"
           + "leapis.com/auth/compute.readonly,https:/"
           + "/www.googleapis.com/auth/userinfo.emailB"
-          + "\323\001\n\033com.google.dataflow.v1beta3B\016Snapsho"
-          + "tsProtoP\001Z?google.golang.org/genproto/go"
-          + "ogleapis/dataflow/v1beta3;dataflow\252\002\035Goo"
-          + "gle.Cloud.Dataflow.V1Beta3\312\002\035Google\\Clou"
-          + "d\\Dataflow\\V1beta3\352\002 Google::Cloud::Data"
-          + "flow::V1beta3b\006proto3"
+          + "\321\001\n\033com.google.dataflow.v1beta3B\016Snapsho"
+          + "tsProtoP\001Z=cloud.google.com/go/dataflow/"
+          + "apiv1beta3/dataflowpb;dataflowpb\252\002\035Googl"
+          + "e.Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\"
+          + "Dataflow\\V1beta3\352\002 Google::Cloud::Datafl"
+          + "ow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

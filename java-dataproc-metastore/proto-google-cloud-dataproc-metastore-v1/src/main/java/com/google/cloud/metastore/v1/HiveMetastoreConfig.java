@@ -64,6 +64,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     switch (number) {
       case 2:
         return internalGetConfigOverrides();
+      case 5:
+        return internalGetAuxiliaryVersions();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -312,6 +314,159 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         : kerberosConfig_;
   }
 
+  public static final int AUXILIARY_VERSIONS_FIELD_NUMBER = 5;
+
+  private static final class AuxiliaryVersionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+                    newDefaultInstance(
+                        com.google.cloud.metastore.v1.MetastoreProto
+                            .internal_static_google_cloud_metastore_v1_HiveMetastoreConfig_AuxiliaryVersionsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.metastore.v1.AuxiliaryVersionConfig.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+      auxiliaryVersions_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+      internalGetAuxiliaryVersions() {
+    if (auxiliaryVersions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+    }
+    return auxiliaryVersions_;
+  }
+
+  public int getAuxiliaryVersionsCount() {
+    return internalGetAuxiliaryVersions().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAuxiliaryVersions(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAuxiliaryVersions().getMap().containsKey(key);
+  }
+  /** Use {@link #getAuxiliaryVersionsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+      getAuxiliaryVersions() {
+    return getAuxiliaryVersionsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+      getAuxiliaryVersionsMap() {
+    return internalGetAuxiliaryVersions().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.metastore.v1.AuxiliaryVersionConfig
+      getAuxiliaryVersionsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.metastore.v1.AuxiliaryVersionConfig defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig> map =
+        internalGetAuxiliaryVersions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig> map =
+        internalGetAuxiliaryVersions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -334,6 +489,11 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (kerberosConfig_ != null) {
       output.writeMessage(3, getKerberosConfig());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetAuxiliaryVersions(),
+        AuxiliaryVersionsDefaultEntryHolder.defaultEntry,
+        5);
     getUnknownFields().writeTo(output);
   }
 
@@ -359,6 +519,18 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (kerberosConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getKerberosConfig());
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        entry : internalGetAuxiliaryVersions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+          auxiliaryVersions__ =
+              AuxiliaryVersionsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, auxiliaryVersions__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -381,6 +553,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (hasKerberosConfig()) {
       if (!getKerberosConfig().equals(other.getKerberosConfig())) return false;
     }
+    if (!internalGetAuxiliaryVersions().equals(other.internalGetAuxiliaryVersions())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -401,6 +574,10 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     if (hasKerberosConfig()) {
       hash = (37 * hash) + KERBEROS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKerberosConfig().hashCode();
+    }
+    if (!internalGetAuxiliaryVersions().getMap().isEmpty()) {
+      hash = (37 * hash) + AUXILIARY_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAuxiliaryVersions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -526,6 +703,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       switch (number) {
         case 2:
           return internalGetConfigOverrides();
+        case 5:
+          return internalGetAuxiliaryVersions();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -536,6 +715,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       switch (number) {
         case 2:
           return internalGetMutableConfigOverrides();
+        case 5:
+          return internalGetMutableAuxiliaryVersions();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -569,6 +750,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         kerberosConfigBuilder_.dispose();
         kerberosConfigBuilder_ = null;
       }
+      internalGetMutableAuxiliaryVersions().clear();
       return this;
     }
 
@@ -615,6 +797,10 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.kerberosConfig_ =
             kerberosConfigBuilder_ == null ? kerberosConfig_ : kerberosConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.auxiliaryVersions_ = internalGetAuxiliaryVersions();
+        result.auxiliaryVersions_.makeImmutable();
       }
     }
 
@@ -674,6 +860,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       if (other.hasKerberosConfig()) {
         mergeKerberosConfig(other.getKerberosConfig());
       }
+      internalGetMutableAuxiliaryVersions().mergeFrom(other.internalGetAuxiliaryVersions());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -724,6 +912,20 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+                    auxiliaryVersions__ =
+                        input.readMessage(
+                            AuxiliaryVersionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAuxiliaryVersions()
+                    .getMutableMap()
+                    .put(auxiliaryVersions__.getKey(), auxiliaryVersions__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1263,6 +1465,250 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         kerberosConfig_ = null;
       }
       return kerberosConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        auxiliaryVersions_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        internalGetAuxiliaryVersions() {
+      if (auxiliaryVersions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+      }
+      return auxiliaryVersions_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        internalGetMutableAuxiliaryVersions() {
+      if (auxiliaryVersions_ == null) {
+        auxiliaryVersions_ =
+            com.google.protobuf.MapField.newMapField(
+                AuxiliaryVersionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!auxiliaryVersions_.isMutable()) {
+        auxiliaryVersions_ = auxiliaryVersions_.copy();
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return auxiliaryVersions_;
+    }
+
+    public int getAuxiliaryVersionsCount() {
+      return internalGetAuxiliaryVersions().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAuxiliaryVersions(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAuxiliaryVersions().getMap().containsKey(key);
+    }
+    /** Use {@link #getAuxiliaryVersionsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        getAuxiliaryVersions() {
+      return getAuxiliaryVersionsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        getAuxiliaryVersionsMap() {
+      return internalGetAuxiliaryVersions().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.metastore.v1.AuxiliaryVersionConfig
+        getAuxiliaryVersionsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.metastore.v1.AuxiliaryVersionConfig defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig> map =
+          internalGetAuxiliaryVersions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.metastore.v1.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig> map =
+          internalGetAuxiliaryVersions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAuxiliaryVersions() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internalGetMutableAuxiliaryVersions().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    public Builder removeAuxiliaryVersions(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAuxiliaryVersions().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+        getMutableAuxiliaryVersions() {
+      bitField0_ |= 0x00000008;
+      return internalGetMutableAuxiliaryVersions().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    public Builder putAuxiliaryVersions(
+        java.lang.String key, com.google.cloud.metastore.v1.AuxiliaryVersionConfig value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAuxiliaryVersions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A mapping of Hive metastore version to the auxiliary version
+     * configuration. When specified, a secondary Hive metastore service is
+     * created along with the primary service. All auxiliary versions must be less
+     * than the service's primary version. The key is the auxiliary service name
+     * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+     * means that the first character must be a lowercase letter, and all the
+     * following characters must be hyphens, lowercase letters, or digits, except
+     * the last character, which cannot be a hyphen.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+     * </code>
+     */
+    public Builder putAllAuxiliaryVersions(
+        java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+            values) {
+      internalGetMutableAuxiliaryVersions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
+      return this;
     }
 
     @java.lang.Override

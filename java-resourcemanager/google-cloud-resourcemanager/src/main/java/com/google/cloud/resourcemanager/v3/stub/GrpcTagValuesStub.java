@@ -29,6 +29,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagValueRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest;
 import com.google.cloud.resourcemanager.v3.GetTagValueRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesResponse;
@@ -75,6 +76,16 @@ public class GrpcTagValuesStub extends TagValuesStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTagValueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TagValue.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<GetNamespacedTagValueRequest, TagValue>
+      getNamespacedTagValueMethodDescriptor =
+          MethodDescriptor.<GetNamespacedTagValueRequest, TagValue>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.resourcemanager.v3.TagValues/GetNamespacedTagValue")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNamespacedTagValueRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagValue.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<CreateTagValueRequest, Operation>
       createTagValueMethodDescriptor =
@@ -137,6 +148,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
   private final UnaryCallable<ListTagValuesRequest, ListTagValuesPagedResponse>
       listTagValuesPagedCallable;
   private final UnaryCallable<GetTagValueRequest, TagValue> getTagValueCallable;
+  private final UnaryCallable<GetNamespacedTagValueRequest, TagValue> getNamespacedTagValueCallable;
   private final UnaryCallable<CreateTagValueRequest, Operation> createTagValueCallable;
   private final OperationCallable<CreateTagValueRequest, TagValue, CreateTagValueMetadata>
       createTagValueOperationCallable;
@@ -206,6 +218,11 @@ public class GrpcTagValuesStub extends TagValuesStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetNamespacedTagValueRequest, TagValue>
+        getNamespacedTagValueTransportSettings =
+            GrpcCallSettings.<GetNamespacedTagValueRequest, TagValue>newBuilder()
+                .setMethodDescriptor(getNamespacedTagValueMethodDescriptor)
+                .build();
     GrpcCallSettings<CreateTagValueRequest, Operation> createTagValueTransportSettings =
         GrpcCallSettings.<CreateTagValueRequest, Operation>newBuilder()
             .setMethodDescriptor(createTagValueMethodDescriptor)
@@ -271,6 +288,11 @@ public class GrpcTagValuesStub extends TagValuesStub {
     this.getTagValueCallable =
         callableFactory.createUnaryCallable(
             getTagValueTransportSettings, settings.getTagValueSettings(), clientContext);
+    this.getNamespacedTagValueCallable =
+        callableFactory.createUnaryCallable(
+            getNamespacedTagValueTransportSettings,
+            settings.getNamespacedTagValueSettings(),
+            clientContext);
     this.createTagValueCallable =
         callableFactory.createUnaryCallable(
             createTagValueTransportSettings, settings.createTagValueSettings(), clientContext);
@@ -332,6 +354,11 @@ public class GrpcTagValuesStub extends TagValuesStub {
   @Override
   public UnaryCallable<GetTagValueRequest, TagValue> getTagValueCallable() {
     return getTagValueCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNamespacedTagValueRequest, TagValue> getNamespacedTagValueCallable() {
+    return getNamespacedTagValueCallable;
   }
 
   @Override

@@ -144,13 +144,12 @@ public final class DebuggerProto {
           + "client_version\032\177\312A\034clouddebugger.googlea"
           + "pis.com\322A]https://www.googleapis.com/aut"
           + "h/cloud-platform,https://www.googleapis."
-          + "com/auth/cloud_debuggerB\332\001\n$com.google.d"
+          + "com/auth/cloud_debuggerB\305\001\n$com.google.d"
           + "evtools.clouddebugger.v2B\rDebuggerProtoP"
-          + "\001ZMgoogle.golang.org/genproto/googleapis"
-          + "/devtools/clouddebugger/v2;clouddebugger"
-          + "\252\002\030Google.Cloud.Debugger.V2\312\002\030Google\\Clo"
-          + "ud\\Debugger\\V2\352\002\033Google::Cloud::Debugger"
-          + "::V2b\006proto3"
+          + "\001Z8cloud.google.com/go/debugger/apiv2/de"
+          + "buggerpb;debuggerpb\252\002\030Google.Cloud.Debug"
+          + "ger.V2\312\002\030Google\\Cloud\\Debugger\\V2\352\002\033Goog"
+          + "le::Cloud::Debugger::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

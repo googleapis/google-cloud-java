@@ -45,12 +45,12 @@ public final class LocationProto {
           + "/wrappers.proto\032\030google/type/latlng.prot"
           + "o\"^\n\010Location\022$\n\007lat_lng\030\001 \001(\0132\023.google."
           + "type.LatLng\022,\n\007heading\030\002 \001(\0132\033.google.pr"
-          + "otobuf.Int32ValueB\305\001\n\032com.google.maps.ro"
-          + "uting.v2B\rLocationProtoP\001Z=google.golang"
-          + ".org/genproto/googleapis/maps/routing/v2"
-          + ";routing\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routin"
-          + "g.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Google::"
-          + "Maps::Routing::V2b\006proto3"
+          + "otobuf.Int32ValueB\302\001\n\032com.google.maps.ro"
+          + "uting.v2B\rLocationProtoP\001Z:cloud.google."
+          + "com/go/maps/routing/apiv2/routingpb;rout"
+          + "ingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V"
+          + "2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Google::Map"
+          + "s::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -66,13 +66,13 @@ public final class ScorecardProto {
           + "type\030\001 \001(\0162..google.monitoring.dashboard"
           + ".v1.SparkChartTypeB\003\340A\002\0227\n\024min_alignment"
           + "_period\030\002 \001(\0132\031.google.protobuf.Duration"
-          + "B\013\n\tdata_viewB\370\001\n\"com.google.monitoring."
-          + "dashboard.v1B\016ScorecardProtoP\001ZGgoogle.g"
-          + "olang.org/genproto/googleapis/monitoring"
-          + "/dashboard/v1;dashboard\252\002$Google.Cloud.M"
-          + "onitoring.Dashboard.V1\312\002$Google\\Cloud\\Mo"
-          + "nitoring\\Dashboard\\V1\352\002(Google::Cloud::M"
-          + "onitoring::Dashboard::V1b\006proto3"
+          + "B\013\n\tdata_viewB\367\001\n\"com.google.monitoring."
+          + "dashboard.v1B\016ScorecardProtoP\001ZFcloud.go"
+          + "ogle.com/go/monitoring/dashboard/apiv1/d"
+          + "ashboardpb;dashboardpb\252\002$Google.Cloud.Mo"
+          + "nitoring.Dashboard.V1\312\002$Google\\Cloud\\Mon"
+          + "itoring\\Dashboard\\V1\352\002(Google::Cloud::Mo"
+          + "nitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

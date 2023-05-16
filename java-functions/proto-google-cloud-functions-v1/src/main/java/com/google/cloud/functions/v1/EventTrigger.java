@@ -22,7 +22,7 @@ package com.google.cloud.functions.v1;
  *
  *
  * <pre>
- * Describes EventTrigger, used to request events be sent from another
+ * Describes EventTrigger, used to request that events be sent from another
  * service.
  * </pre>
  *
@@ -89,7 +89,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *    example, the Google Cloud Storage API includes the type `object`.
    * 3. action: The action that generates the event. For example, action for
    *    a Google Cloud Storage Object is 'change'.
-   * These parts are lower case.
+   * These parts are lowercase.
    * </pre>
    *
    * <code>string event_type = 1;</code>
@@ -123,7 +123,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *    example, the Google Cloud Storage API includes the type `object`.
    * 3. action: The action that generates the event. For example, action for
    *    a Google Cloud Storage Object is 'change'.
-   * These parts are lower case.
+   * These parts are lowercase.
    * </pre>
    *
    * <code>string event_type = 1;</code>
@@ -163,7 +163,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *    `event_type` of "google.pubsub.topic.publish" should have a resource
    *    that matches Google Cloud Pub/Sub topics.
    * Additionally, some services may support short names when creating an
-   * `EventTrigger`. These will always be returned in the normalized "long"
+   * `EventTrigger`. These are always returned in the normalized "long"
    * format.
    * See each *service's* documentation for supported formats.
    * </pre>
@@ -200,7 +200,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *    `event_type` of "google.pubsub.topic.publish" should have a resource
    *    that matches Google Cloud Pub/Sub topics.
    * Additionally, some services may support short names when creating an
-   * `EventTrigger`. These will always be returned in the normalized "long"
+   * `EventTrigger`. These are always returned in the normalized "long"
    * format.
    * See each *service's* documentation for supported formats.
    * </pre>
@@ -524,7 +524,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes EventTrigger, used to request events be sent from another
+   * Describes EventTrigger, used to request that events be sent from another
    * service.
    * </pre>
    *
@@ -767,7 +767,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    example, the Google Cloud Storage API includes the type `object`.
      * 3. action: The action that generates the event. For example, action for
      *    a Google Cloud Storage Object is 'change'.
-     * These parts are lower case.
+     * These parts are lowercase.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -800,7 +800,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    example, the Google Cloud Storage API includes the type `object`.
      * 3. action: The action that generates the event. For example, action for
      *    a Google Cloud Storage Object is 'change'.
-     * These parts are lower case.
+     * These parts are lowercase.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -833,7 +833,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    example, the Google Cloud Storage API includes the type `object`.
      * 3. action: The action that generates the event. For example, action for
      *    a Google Cloud Storage Object is 'change'.
-     * These parts are lower case.
+     * These parts are lowercase.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -865,7 +865,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    example, the Google Cloud Storage API includes the type `object`.
      * 3. action: The action that generates the event. For example, action for
      *    a Google Cloud Storage Object is 'change'.
-     * These parts are lower case.
+     * These parts are lowercase.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -893,7 +893,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    example, the Google Cloud Storage API includes the type `object`.
      * 3. action: The action that generates the event. For example, action for
      *    a Google Cloud Storage Object is 'change'.
-     * These parts are lower case.
+     * These parts are lowercase.
      * </pre>
      *
      * <code>string event_type = 1;</code>
@@ -929,7 +929,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
      * Additionally, some services may support short names when creating an
-     * `EventTrigger`. These will always be returned in the normalized "long"
+     * `EventTrigger`. These are always returned in the normalized "long"
      * format.
      * See each *service's* documentation for supported formats.
      * </pre>
@@ -965,7 +965,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
      * Additionally, some services may support short names when creating an
-     * `EventTrigger`. These will always be returned in the normalized "long"
+     * `EventTrigger`. These are always returned in the normalized "long"
      * format.
      * See each *service's* documentation for supported formats.
      * </pre>
@@ -1001,7 +1001,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
      * Additionally, some services may support short names when creating an
-     * `EventTrigger`. These will always be returned in the normalized "long"
+     * `EventTrigger`. These are always returned in the normalized "long"
      * format.
      * See each *service's* documentation for supported formats.
      * </pre>
@@ -1036,7 +1036,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
      * Additionally, some services may support short names when creating an
-     * `EventTrigger`. These will always be returned in the normalized "long"
+     * `EventTrigger`. These are always returned in the normalized "long"
      * format.
      * See each *service's* documentation for supported formats.
      * </pre>
@@ -1067,7 +1067,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
      * Additionally, some services may support short names when creating an
-     * `EventTrigger`. These will always be returned in the normalized "long"
+     * `EventTrigger`. These are always returned in the normalized "long"
      * format.
      * See each *service's* documentation for supported formats.
      * </pre>

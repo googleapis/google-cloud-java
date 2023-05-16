@@ -129,4 +129,20 @@ public interface DeleteCertificateAuthorityRequestOrBuilder
    * @return The skipGracePeriod.
    */
   boolean getSkipGracePeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field allows this ca to be deleted even if it's being
+   * depended on by another resource. However, doing so may result in unintended
+   * and unrecoverable effects on any dependent resource(s) since the CA will
+   * no longer be able to issue certificates.
+   * </pre>
+   *
+   * <code>bool ignore_dependent_resources = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreDependentResources.
+   */
+  boolean getIgnoreDependentResources();
 }

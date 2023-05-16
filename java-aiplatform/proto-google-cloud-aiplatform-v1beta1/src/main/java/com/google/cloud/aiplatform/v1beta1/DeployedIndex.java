@@ -628,11 +628,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If true, private endpoint's access logs are sent to StackDriver
+   * Optional. If true, private endpoint's access logs are sent to Cloud
    * Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each MatchRequest.
-   * Note that Stackdriver logs may incur a cost, especially if the deployed
+   * Note that logs may incur a cost, especially if the deployed
    * index receives a high queries per second rate (QPS).
    * Estimate your costs before enabling this option.
    * </pre>
@@ -716,7 +716,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -737,7 +737,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -758,7 +758,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -780,7 +780,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -3251,11 +3251,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, private endpoint's access logs are sent to StackDriver
+     * Optional. If true, private endpoint's access logs are sent to Cloud
      * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each MatchRequest.
-     * Note that Stackdriver logs may incur a cost, especially if the deployed
+     * Note that logs may incur a cost, especially if the deployed
      * index receives a high queries per second rate (QPS).
      * Estimate your costs before enabling this option.
      * </pre>
@@ -3272,11 +3272,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, private endpoint's access logs are sent to StackDriver
+     * Optional. If true, private endpoint's access logs are sent to Cloud
      * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each MatchRequest.
-     * Note that Stackdriver logs may incur a cost, especially if the deployed
+     * Note that logs may incur a cost, especially if the deployed
      * index receives a high queries per second rate (QPS).
      * Estimate your costs before enabling this option.
      * </pre>
@@ -3297,11 +3297,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, private endpoint's access logs are sent to StackDriver
+     * Optional. If true, private endpoint's access logs are sent to Cloud
      * Logging.
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each MatchRequest.
-     * Note that Stackdriver logs may incur a cost, especially if the deployed
+     * Note that logs may incur a cost, especially if the deployed
      * index receives a high queries per second rate (QPS).
      * Estimate your costs before enabling this option.
      * </pre>
@@ -3544,7 +3544,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3566,7 +3566,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3588,7 +3588,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3611,7 +3611,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3634,7 +3634,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3664,7 +3664,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3693,7 +3693,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3719,7 +3719,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>
@@ -3744,7 +3744,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
-     * The value sohuld be the name of the address
+     * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
      * </pre>

@@ -207,14 +207,14 @@ public final class SharedProto {
           + "NGER\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPPELIN\020\004\022\r\n\tZOOKEE"
           + "PER\020\010*J\n\rFailureAction\022\036\n\032FAILURE_ACTION"
           + "_UNSPECIFIED\020\000\022\r\n\tNO_ACTION\020\001\022\n\n\006DELETE\020"
-          + "\002B\251\002\n\034com.google.cloud.dataproc.v1B\013Shar"
-          + "edProtoP\001Z8cloud.google.com/go/dataproc/"
-          + "apiv1/dataprocpb;dataprocpb\352A^\n containe"
-          + "r.googleapis.com/Cluster\022:projects/{proj"
-          + "ect}/locations/{location}/clusters/{clus"
-          + "ter}\352A^\n metastore.googleapis.com/Servic"
-          + "e\022:projects/{project}/locations/{locatio"
-          + "n}/services/{service}b\006proto3"
+          + "\002B\254\002\n\034com.google.cloud.dataproc.v1B\013Shar"
+          + "edProtoP\001Z;cloud.google.com/go/dataproc/"
+          + "v2/apiv1/dataprocpb;dataprocpb\352A^\n conta"
+          + "iner.googleapis.com/Cluster\022:projects/{p"
+          + "roject}/locations/{location}/clusters/{c"
+          + "luster}\352A^\n metastore.googleapis.com/Ser"
+          + "vice\022:projects/{project}/locations/{loca"
+          + "tion}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

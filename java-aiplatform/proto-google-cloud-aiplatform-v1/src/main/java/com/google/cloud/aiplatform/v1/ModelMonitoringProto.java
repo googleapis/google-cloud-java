@@ -178,13 +178,16 @@ public final class ModelMonitoringProto {
           + "amplingStrategy\022]\n\024random_sample_config\030"
           + "\001 \001(\0132?.google.cloud.aiplatform.v1.Sampl"
           + "ingStrategy.RandomSampleConfig\032)\n\022Random"
-          + "SampleConfig\022\023\n\013sample_rate\030\001 \001(\001B\322\001\n\036co"
+          + "SampleConfig\022\023\n\013sample_rate\030\001 \001(\001B\304\002\n\036co"
           + "m.google.cloud.aiplatform.v1B\024ModelMonit"
           + "oringProtoP\001Z>cloud.google.com/go/aiplat"
           + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
           + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
           + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
-          + "rm::V1b\006proto3"
+          + "rm::V1\352Ao\n-monitoring.googleapis.com/Not"
+          + "ificationChannel\022>projects/{project}/not"
+          + "ificationChannels/{notification_channel}"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -346,6 +349,7 @@ public final class ModelMonitoringProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

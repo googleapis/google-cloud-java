@@ -90,14 +90,13 @@ public final class VersionProto {
           + " \001(\t\022\r\n\005force\030\002 \001(\010\"6\n\033BatchDeleteVersio"
           + "nsMetadata\022\027\n\017failed_versions\030\002 \003(\t*@\n\013V"
           + "ersionView\022\034\n\030VERSION_VIEW_UNSPECIFIED\020\000"
-          + "\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\372\001\n\'com.google.dev"
+          + "\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\367\001\n\'com.google.dev"
           + "tools.artifactregistry.v1B\014VersionProtoP"
-          + "\001ZSgoogle.golang.org/genproto/googleapis"
-          + "/devtools/artifactregistry/v1;artifactre"
-          + "gistry\252\002 Google.Cloud.ArtifactRegistry.V"
-          + "1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002#G"
-          + "oogle::Cloud::ArtifactRegistry::V1b\006prot"
-          + "o3"
+          + "\001ZPcloud.google.com/go/artifactregistry/"
+          + "apiv1/artifactregistrypb;artifactregistr"
+          + "ypb\252\002 Google.Cloud.ArtifactRegistry.V1\312\002"
+          + " Google\\Cloud\\ArtifactRegistry\\V1\352\002#Goog"
+          + "le::Cloud::ArtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

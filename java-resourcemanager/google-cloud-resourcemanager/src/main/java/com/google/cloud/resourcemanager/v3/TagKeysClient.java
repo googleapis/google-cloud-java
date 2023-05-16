@@ -224,8 +224,8 @@ public class TagKeysClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the new TagKey's parent. Must be of the form
-   *     `folders/{folder_id}` or `organizations/{org_id}`.
+   * @param parent Required. The resource name of the TagKey's parent. Must be of the form
+   *     `organizations/{org_id}` or `projects/{project_id}` or `projects/{project_number}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagKeysPagedResponse listTagKeys(ResourceName parent) {
@@ -256,8 +256,8 @@ public class TagKeysClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the new TagKey's parent. Must be of the form
-   *     `folders/{folder_id}` or `organizations/{org_id}`.
+   * @param parent Required. The resource name of the TagKey's parent. Must be of the form
+   *     `organizations/{org_id}` or `projects/{project_id}` or `projects/{project_number}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagKeysPagedResponse listTagKeys(String parent) {
@@ -477,8 +477,127 @@ public class TagKeysClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves a TagKey by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * key does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
+   *   TagKeyName name = TagKeyName.of("[TAG_KEY]");
+   *   TagKey response = tagKeysClient.getNamespacedTagKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A namespaced tag key name in the format `{parentId}/{tagKeyShort}`, such
+   *     as `42/foo` for a key with short name "foo" under the organization with ID 42 or
+   *     `r2-d2/bar` for a key with short name "bar" under the project `r2-d2`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagKey getNamespacedTagKey(TagKeyName name) {
+    GetNamespacedTagKeyRequest request =
+        GetNamespacedTagKeyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNamespacedTagKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a TagKey by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * key does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
+   *   String name = TagKeyName.of("[TAG_KEY]").toString();
+   *   TagKey response = tagKeysClient.getNamespacedTagKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A namespaced tag key name in the format `{parentId}/{tagKeyShort}`, such
+   *     as `42/foo` for a key with short name "foo" under the organization with ID 42 or
+   *     `r2-d2/bar` for a key with short name "bar" under the project `r2-d2`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagKey getNamespacedTagKey(String name) {
+    GetNamespacedTagKeyRequest request =
+        GetNamespacedTagKeyRequest.newBuilder().setName(name).build();
+    return getNamespacedTagKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a TagKey by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * key does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
+   *   GetNamespacedTagKeyRequest request =
+   *       GetNamespacedTagKeyRequest.newBuilder()
+   *           .setName(TagKeyName.of("[TAG_KEY]").toString())
+   *           .build();
+   *   TagKey response = tagKeysClient.getNamespacedTagKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagKey getNamespacedTagKey(GetNamespacedTagKeyRequest request) {
+    return getNamespacedTagKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a TagKey by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * key does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
+   *   GetNamespacedTagKeyRequest request =
+   *       GetNamespacedTagKeyRequest.newBuilder()
+   *           .setName(TagKeyName.of("[TAG_KEY]").toString())
+   *           .build();
+   *   ApiFuture<TagKey> future = tagKeysClient.getNamespacedTagKeyCallable().futureCall(request);
+   *   // Do something.
+   *   TagKey response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyCallable() {
+    return stub.getNamespacedTagKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a new TagKey. If another request with the same parameters is sent while the original
-   * request is in process, the second request will receive an error. A maximum of 300 TagKeys can
+   * request is in process, the second request will receive an error. A maximum of 1000 TagKeys can
    * exist under a parent at any given time.
    *
    * <p>Sample code:
@@ -507,7 +626,7 @@ public class TagKeysClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new TagKey. If another request with the same parameters is sent while the original
-   * request is in process, the second request will receive an error. A maximum of 300 TagKeys can
+   * request is in process, the second request will receive an error. A maximum of 1000 TagKeys can
    * exist under a parent at any given time.
    *
    * <p>Sample code:
@@ -539,7 +658,7 @@ public class TagKeysClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new TagKey. If another request with the same parameters is sent while the original
-   * request is in process, the second request will receive an error. A maximum of 300 TagKeys can
+   * request is in process, the second request will receive an error. A maximum of 1000 TagKeys can
    * exist under a parent at any given time.
    *
    * <p>Sample code:
@@ -571,7 +690,7 @@ public class TagKeysClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new TagKey. If another request with the same parameters is sent while the original
-   * request is in process, the second request will receive an error. A maximum of 300 TagKeys can
+   * request is in process, the second request will receive an error. A maximum of 1000 TagKeys can
    * exist under a parent at any given time.
    *
    * <p>Sample code:
@@ -619,7 +738,7 @@ public class TagKeysClient implements BackgroundResource {
    *
    * @param tagKey Required. The new definition of the TagKey. Only the `description` and `etag`
    *     fields can be updated by this request. If the `etag` field is not empty, it must match the
-   *     `etag` field of the existing tag key. Otherwise, `FAILED_PRECONDITION` will be returned.
+   *     `etag` field of the existing tag key. Otherwise, `ABORTED` will be returned.
    * @param updateMask Fields to be updated. The mask may only contain `description` or `etag`. If
    *     omitted entirely, both `description` and `etag` are assumed to be significant.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

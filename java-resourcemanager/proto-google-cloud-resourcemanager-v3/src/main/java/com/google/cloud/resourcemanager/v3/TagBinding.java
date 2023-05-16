@@ -23,9 +23,8 @@ package com.google.cloud.resourcemanager.v3;
  *
  * <pre>
  * A TagBinding represents a connection between a TagValue and a cloud
- * resource (currently project, folder, or organization). Once a TagBinding is
- * created, the TagValue is applied to all the descendants of the cloud
- * resource.
+ * resource Once a TagBinding is created, the TagValue is applied to all the
+ * descendants of the Google Cloud resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.resourcemanager.v3.TagBinding}
@@ -44,6 +43,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     parent_ = "";
     tagValue_ = "";
+    tagValueNamespacedName_ = "";
   }
 
   @java.lang.Override
@@ -233,6 +233,67 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TAG_VALUE_NAMESPACED_NAME_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tagValueNamespacedName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The namespaced name for the TagValue of the TagBinding.
+   * Must be in the format
+   * `{parent_id}/{tag_key_short_name}/{short_name}`.
+   * For methods that support TagValue namespaced name, only one of
+   * tag_value_namespaced_name or tag_value may be filled. Requests with both
+   * fields will be rejected.
+   * </pre>
+   *
+   * <code>string tag_value_namespaced_name = 4;</code>
+   *
+   * @return The tagValueNamespacedName.
+   */
+  @java.lang.Override
+  public java.lang.String getTagValueNamespacedName() {
+    java.lang.Object ref = tagValueNamespacedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tagValueNamespacedName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The namespaced name for the TagValue of the TagBinding.
+   * Must be in the format
+   * `{parent_id}/{tag_key_short_name}/{short_name}`.
+   * For methods that support TagValue namespaced name, only one of
+   * tag_value_namespaced_name or tag_value may be filled. Requests with both
+   * fields will be rejected.
+   * </pre>
+   *
+   * <code>string tag_value_namespaced_name = 4;</code>
+   *
+   * @return The bytes for tagValueNamespacedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTagValueNamespacedNameBytes() {
+    java.lang.Object ref = tagValueNamespacedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tagValueNamespacedName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -256,6 +317,9 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tagValue_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tagValue_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tagValueNamespacedName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tagValueNamespacedName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -273,6 +337,9 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tagValue_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tagValue_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tagValueNamespacedName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tagValueNamespacedName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -293,6 +360,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getParent().equals(other.getParent())) return false;
     if (!getTagValue().equals(other.getTagValue())) return false;
+    if (!getTagValueNamespacedName().equals(other.getTagValueNamespacedName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -310,6 +378,8 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + TAG_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getTagValue().hashCode();
+    hash = (37 * hash) + TAG_VALUE_NAMESPACED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTagValueNamespacedName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -415,9 +485,8 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A TagBinding represents a connection between a TagValue and a cloud
-   * resource (currently project, folder, or organization). Once a TagBinding is
-   * created, the TagValue is applied to all the descendants of the cloud
-   * resource.
+   * resource Once a TagBinding is created, the TagValue is applied to all the
+   * descendants of the Google Cloud resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.resourcemanager.v3.TagBinding}
@@ -455,6 +524,7 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       parent_ = "";
       tagValue_ = "";
+      tagValueNamespacedName_ = "";
       return this;
     }
 
@@ -499,6 +569,9 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.tagValue_ = tagValue_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tagValueNamespacedName_ = tagValueNamespacedName_;
       }
     }
 
@@ -562,6 +635,11 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getTagValueNamespacedName().isEmpty()) {
+        tagValueNamespacedName_ = other.tagValueNamespacedName_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -606,6 +684,12 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                tagValueNamespacedName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -959,6 +1043,137 @@ public final class TagBinding extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       tagValue_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tagValueNamespacedName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The namespaced name for the TagValue of the TagBinding.
+     * Must be in the format
+     * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     * For methods that support TagValue namespaced name, only one of
+     * tag_value_namespaced_name or tag_value may be filled. Requests with both
+     * fields will be rejected.
+     * </pre>
+     *
+     * <code>string tag_value_namespaced_name = 4;</code>
+     *
+     * @return The tagValueNamespacedName.
+     */
+    public java.lang.String getTagValueNamespacedName() {
+      java.lang.Object ref = tagValueNamespacedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tagValueNamespacedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The namespaced name for the TagValue of the TagBinding.
+     * Must be in the format
+     * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     * For methods that support TagValue namespaced name, only one of
+     * tag_value_namespaced_name or tag_value may be filled. Requests with both
+     * fields will be rejected.
+     * </pre>
+     *
+     * <code>string tag_value_namespaced_name = 4;</code>
+     *
+     * @return The bytes for tagValueNamespacedName.
+     */
+    public com.google.protobuf.ByteString getTagValueNamespacedNameBytes() {
+      java.lang.Object ref = tagValueNamespacedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tagValueNamespacedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The namespaced name for the TagValue of the TagBinding.
+     * Must be in the format
+     * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     * For methods that support TagValue namespaced name, only one of
+     * tag_value_namespaced_name or tag_value may be filled. Requests with both
+     * fields will be rejected.
+     * </pre>
+     *
+     * <code>string tag_value_namespaced_name = 4;</code>
+     *
+     * @param value The tagValueNamespacedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTagValueNamespacedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tagValueNamespacedName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The namespaced name for the TagValue of the TagBinding.
+     * Must be in the format
+     * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     * For methods that support TagValue namespaced name, only one of
+     * tag_value_namespaced_name or tag_value may be filled. Requests with both
+     * fields will be rejected.
+     * </pre>
+     *
+     * <code>string tag_value_namespaced_name = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTagValueNamespacedName() {
+      tagValueNamespacedName_ = getDefaultInstance().getTagValueNamespacedName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The namespaced name for the TagValue of the TagBinding.
+     * Must be in the format
+     * `{parent_id}/{tag_key_short_name}/{short_name}`.
+     * For methods that support TagValue namespaced name, only one of
+     * tag_value_namespaced_name or tag_value may be filled. Requests with both
+     * fields will be rejected.
+     * </pre>
+     *
+     * <code>string tag_value_namespaced_name = 4;</code>
+     *
+     * @param value The bytes for tagValueNamespacedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTagValueNamespacedNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tagValueNamespacedName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

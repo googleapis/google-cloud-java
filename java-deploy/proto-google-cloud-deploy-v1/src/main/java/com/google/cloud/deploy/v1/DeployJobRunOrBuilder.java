@@ -152,4 +152,45 @@ public interface DeployJobRunOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.DeployJobRunMetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The artifact of a deploy job run, if available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the artifact field is set.
+   */
+  boolean hasArtifact();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The artifact of a deploy job run, if available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The artifact.
+   */
+  com.google.cloud.deploy.v1.DeployArtifact getArtifact();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The artifact of a deploy job run, if available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.DeployArtifactOrBuilder getArtifactOrBuilder();
 }

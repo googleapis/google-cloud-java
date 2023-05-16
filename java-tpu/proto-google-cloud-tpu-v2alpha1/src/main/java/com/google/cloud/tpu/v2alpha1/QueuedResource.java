@@ -40,6 +40,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
   private QueuedResource() {
     name_ = "";
+    reservationName_ = "";
   }
 
   @java.lang.Override
@@ -6246,6 +6247,59 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         : state_;
   }
 
+  public static final int RESERVATION_NAME_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservationName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Name of the reservation in which the resource should be provisioned.
+   * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+   * </pre>
+   *
+   * <code>string reservation_name = 8;</code>
+   *
+   * @return The reservationName.
+   */
+  @java.lang.Override
+  public java.lang.String getReservationName() {
+    java.lang.Object ref = reservationName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reservationName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the reservation in which the resource should be provisioned.
+   * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+   * </pre>
+   *
+   * <code>string reservation_name = 8;</code>
+   *
+   * @return The bytes for reservationName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReservationNameBytes() {
+    java.lang.Object ref = reservationName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      reservationName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6277,6 +6331,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
     if (state_ != null) {
       output.writeMessage(6, getState());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservationName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, reservationName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6311,6 +6368,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     if (state_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getState());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservationName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, reservationName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6336,6 +6396,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
     }
+    if (!getReservationName().equals(other.getReservationName())) return false;
     if (!getResourceCase().equals(other.getResourceCase())) return false;
     switch (resourceCase_) {
       case 2:
@@ -6376,6 +6437,8 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
     }
+    hash = (37 * hash) + RESERVATION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getReservationName().hashCode();
     switch (resourceCase_) {
       case 2:
         hash = (37 * hash) + TPU_FIELD_NUMBER;
@@ -6556,6 +6619,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         stateBuilder_.dispose();
         stateBuilder_ = null;
       }
+      reservationName_ = "";
       resourceCase_ = 0;
       resource_ = null;
       tierCase_ = 0;
@@ -6606,6 +6670,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.reservationName_ = reservationName_;
       }
     }
 
@@ -6680,6 +6747,11 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasState()) {
         mergeState(other.getState());
+      }
+      if (!other.getReservationName().isEmpty()) {
+        reservationName_ = other.reservationName_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       switch (other.getResourceCase()) {
         case TPU:
@@ -6770,6 +6842,12 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 66:
+              {
+                reservationName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7954,6 +8032,117 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         state_ = null;
       }
       return stateBuilder_;
+    }
+
+    private java.lang.Object reservationName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the reservation in which the resource should be provisioned.
+     * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+     * </pre>
+     *
+     * <code>string reservation_name = 8;</code>
+     *
+     * @return The reservationName.
+     */
+    public java.lang.String getReservationName() {
+      java.lang.Object ref = reservationName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservationName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the reservation in which the resource should be provisioned.
+     * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+     * </pre>
+     *
+     * <code>string reservation_name = 8;</code>
+     *
+     * @return The bytes for reservationName.
+     */
+    public com.google.protobuf.ByteString getReservationNameBytes() {
+      java.lang.Object ref = reservationName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the reservation in which the resource should be provisioned.
+     * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+     * </pre>
+     *
+     * <code>string reservation_name = 8;</code>
+     *
+     * @param value The reservationName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      reservationName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the reservation in which the resource should be provisioned.
+     * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+     * </pre>
+     *
+     * <code>string reservation_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationName() {
+      reservationName_ = getDefaultInstance().getReservationName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the reservation in which the resource should be provisioned.
+     * Format: projects/{project}/locations/{zone}/reservations/{reservation}
+     * </pre>
+     *
+     * <code>string reservation_name = 8;</code>
+     *
+     * @param value The bytes for reservationName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      reservationName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

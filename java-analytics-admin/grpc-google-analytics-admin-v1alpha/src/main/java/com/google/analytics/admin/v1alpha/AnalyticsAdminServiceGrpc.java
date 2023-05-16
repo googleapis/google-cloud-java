@@ -4965,6 +4965,243 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetChannelGroupRequest,
+          com.google.analytics.admin.v1alpha.ChannelGroup>
+      getGetChannelGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetChannelGroup",
+      requestType = com.google.analytics.admin.v1alpha.GetChannelGroupRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ChannelGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetChannelGroupRequest,
+          com.google.analytics.admin.v1alpha.ChannelGroup>
+      getGetChannelGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetChannelGroupRequest,
+            com.google.analytics.admin.v1alpha.ChannelGroup>
+        getGetChannelGroupMethod;
+    if ((getGetChannelGroupMethod = AnalyticsAdminServiceGrpc.getGetChannelGroupMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetChannelGroupMethod = AnalyticsAdminServiceGrpc.getGetChannelGroupMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetChannelGroupMethod =
+              getGetChannelGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetChannelGroupRequest,
+                          com.google.analytics.admin.v1alpha.ChannelGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetChannelGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetChannelGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetChannelGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetChannelGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListChannelGroupsRequest,
+          com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+      getListChannelGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListChannelGroups",
+      requestType = com.google.analytics.admin.v1alpha.ListChannelGroupsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListChannelGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListChannelGroupsRequest,
+          com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+      getListChannelGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListChannelGroupsRequest,
+            com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+        getListChannelGroupsMethod;
+    if ((getListChannelGroupsMethod = AnalyticsAdminServiceGrpc.getListChannelGroupsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListChannelGroupsMethod = AnalyticsAdminServiceGrpc.getListChannelGroupsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListChannelGroupsMethod =
+              getListChannelGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListChannelGroupsRequest,
+                          com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListChannelGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListChannelGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListChannelGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListChannelGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListChannelGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateChannelGroupRequest,
+          com.google.analytics.admin.v1alpha.ChannelGroup>
+      getCreateChannelGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateChannelGroup",
+      requestType = com.google.analytics.admin.v1alpha.CreateChannelGroupRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ChannelGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateChannelGroupRequest,
+          com.google.analytics.admin.v1alpha.ChannelGroup>
+      getCreateChannelGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateChannelGroupRequest,
+            com.google.analytics.admin.v1alpha.ChannelGroup>
+        getCreateChannelGroupMethod;
+    if ((getCreateChannelGroupMethod = AnalyticsAdminServiceGrpc.getCreateChannelGroupMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateChannelGroupMethod = AnalyticsAdminServiceGrpc.getCreateChannelGroupMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateChannelGroupMethod =
+              getCreateChannelGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateChannelGroupRequest,
+                          com.google.analytics.admin.v1alpha.ChannelGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateChannelGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateChannelGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateChannelGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateChannelGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest,
+          com.google.analytics.admin.v1alpha.ChannelGroup>
+      getUpdateChannelGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateChannelGroup",
+      requestType = com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ChannelGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest,
+          com.google.analytics.admin.v1alpha.ChannelGroup>
+      getUpdateChannelGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest,
+            com.google.analytics.admin.v1alpha.ChannelGroup>
+        getUpdateChannelGroupMethod;
+    if ((getUpdateChannelGroupMethod = AnalyticsAdminServiceGrpc.getUpdateChannelGroupMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateChannelGroupMethod = AnalyticsAdminServiceGrpc.getUpdateChannelGroupMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateChannelGroupMethod =
+              getUpdateChannelGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest,
+                          com.google.analytics.admin.v1alpha.ChannelGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateChannelGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateChannelGroup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateChannelGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest, com.google.protobuf.Empty>
+      getDeleteChannelGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteChannelGroup",
+      requestType = com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest, com.google.protobuf.Empty>
+      getDeleteChannelGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest, com.google.protobuf.Empty>
+        getDeleteChannelGroupMethod;
+    if ((getDeleteChannelGroupMethod = AnalyticsAdminServiceGrpc.getDeleteChannelGroupMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteChannelGroupMethod = AnalyticsAdminServiceGrpc.getDeleteChannelGroupMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteChannelGroupMethod =
+              getDeleteChannelGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteChannelGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteChannelGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteChannelGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
           com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
       getSetAutomatedGa4ConfigurationOptOutMethod;
@@ -5440,6 +5677,59 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getListConnectedSiteTagsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
+          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+      getFetchConnectedGa4PropertyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchConnectedGa4Property",
+      requestType = com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
+          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+      getFetchConnectedGa4PropertyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
+            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+        getFetchConnectedGa4PropertyMethod;
+    if ((getFetchConnectedGa4PropertyMethod =
+            AnalyticsAdminServiceGrpc.getFetchConnectedGa4PropertyMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getFetchConnectedGa4PropertyMethod =
+                AnalyticsAdminServiceGrpc.getFetchConnectedGa4PropertyMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getFetchConnectedGa4PropertyMethod =
+              getFetchConnectedGa4PropertyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
+                          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchConnectedGa4Property"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "FetchConnectedGa4Property"))
+                      .build();
+        }
+      }
+    }
+    return getFetchConnectedGa4PropertyMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -7032,6 +7322,80 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single ChannelGroup.
+     * </pre>
+     */
+    default void getChannelGroup(
+        com.google.analytics.admin.v1alpha.GetChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetChannelGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ChannelGroups on a property.
+     * </pre>
+     */
+    default void listChannelGroups(
+        com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListChannelGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelGroup.
+     * </pre>
+     */
+    default void createChannelGroup(
+        com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateChannelGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelGroup.
+     * </pre>
+     */
+    default void updateChannelGroup(
+        com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateChannelGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ChannelGroup on a property.
+     * </pre>
+     */
+    default void deleteChannelGroup(
+        com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteChannelGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -7177,6 +7541,23 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListConnectedSiteTagsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given a specified UA property, looks up the GA4 property connected to it.
+     * Note: this cannot be used with GA4 properties.
+     * </pre>
+     */
+    default void fetchConnectedGa4Property(
+        com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchConnectedGa4PropertyMethod(), responseObserver);
     }
   }
 
@@ -8956,6 +9337,90 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single ChannelGroup.
+     * </pre>
+     */
+    public void getChannelGroup(
+        com.google.analytics.admin.v1alpha.GetChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetChannelGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ChannelGroups on a property.
+     * </pre>
+     */
+    public void listChannelGroups(
+        com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListChannelGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelGroup.
+     * </pre>
+     */
+    public void createChannelGroup(
+        com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateChannelGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelGroup.
+     * </pre>
+     */
+    public void updateChannelGroup(
+        com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateChannelGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ChannelGroup on a property.
+     * </pre>
+     */
+    public void deleteChannelGroup(
+        com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteChannelGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -9117,6 +9582,25 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConnectedSiteTagsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given a specified UA property, looks up the GA4 property connected to it.
+     * Note: this cannot be used with GA4 properties.
+     * </pre>
+     */
+    public void fetchConnectedGa4Property(
+        com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchConnectedGa4PropertyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -10533,6 +11017,71 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single ChannelGroup.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup(
+        com.google.analytics.admin.v1alpha.GetChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ChannelGroups on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListChannelGroupsResponse listChannelGroups(
+        com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelGroup.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ChannelGroup createChannelGroup(
+        com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelGroup.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ChannelGroup updateChannelGroup(
+        com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ChannelGroup on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteChannelGroup(
+        com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -10662,6 +11211,21 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConnectedSiteTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given a specified UA property, looks up the GA4 property connected to it.
+     * Note: this cannot be used with GA4 properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse
+        fetchConnectedGa4Property(
+            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchConnectedGa4PropertyMethod(), getCallOptions(), request);
     }
   }
 
@@ -12194,6 +12758,75 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Lookup for a single ChannelGroup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ChannelGroup>
+        getChannelGroup(com.google.analytics.admin.v1alpha.GetChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetChannelGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ChannelGroups on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>
+        listChannelGroups(com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListChannelGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelGroup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ChannelGroup>
+        createChannelGroup(com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateChannelGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelGroup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ChannelGroup>
+        updateChannelGroup(com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateChannelGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ChannelGroup on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteChannelGroup(com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteChannelGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Sets the opt out status for the automated GA4 setup process for a UA
      * property.
      * Note: this has no effect on GA4 property.
@@ -12339,6 +12972,22 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConnectedSiteTagsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given a specified UA property, looks up the GA4 property connected to it.
+     * Note: this cannot be used with GA4 properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
+        fetchConnectedGa4Property(
+            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchConnectedGa4PropertyMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -12439,15 +13088,21 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_CREATE_EXPANDED_DATA_SET = 95;
   private static final int METHODID_UPDATE_EXPANDED_DATA_SET = 96;
   private static final int METHODID_DELETE_EXPANDED_DATA_SET = 97;
-  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 98;
-  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 99;
-  private static final int METHODID_GET_BIG_QUERY_LINK = 100;
-  private static final int METHODID_LIST_BIG_QUERY_LINKS = 101;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 102;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 103;
-  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 104;
-  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 105;
-  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 106;
+  private static final int METHODID_GET_CHANNEL_GROUP = 98;
+  private static final int METHODID_LIST_CHANNEL_GROUPS = 99;
+  private static final int METHODID_CREATE_CHANNEL_GROUP = 100;
+  private static final int METHODID_UPDATE_CHANNEL_GROUP = 101;
+  private static final int METHODID_DELETE_CHANNEL_GROUP = 102;
+  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 103;
+  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 104;
+  private static final int METHODID_GET_BIG_QUERY_LINK = 105;
+  private static final int METHODID_LIST_BIG_QUERY_LINKS = 106;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 107;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 108;
+  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 109;
+  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 110;
+  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 111;
+  private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 112;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13095,6 +13750,36 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_GET_CHANNEL_GROUP:
+          serviceImpl.getChannelGroup(
+              (com.google.analytics.admin.v1alpha.GetChannelGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CHANNEL_GROUPS:
+          serviceImpl.listChannelGroups(
+              (com.google.analytics.admin.v1alpha.ListChannelGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CHANNEL_GROUP:
+          serviceImpl.createChannelGroup(
+              (com.google.analytics.admin.v1alpha.CreateChannelGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CHANNEL_GROUP:
+          serviceImpl.updateChannelGroup(
+              (com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ChannelGroup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CHANNEL_GROUP:
+          serviceImpl.deleteChannelGroup(
+              (com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT:
           serviceImpl.setAutomatedGa4ConfigurationOptOut(
               (com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest)
@@ -13157,6 +13842,13 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_CONNECTED_GA4PROPERTY:
+          serviceImpl.fetchConnectedGa4Property(
+              (com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>)
                   responseObserver);
           break;
         default:
@@ -13853,6 +14545,40 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_EXPANDED_DATA_SET)))
         .addMethod(
+            getGetChannelGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetChannelGroupRequest,
+                    com.google.analytics.admin.v1alpha.ChannelGroup>(
+                    service, METHODID_GET_CHANNEL_GROUP)))
+        .addMethod(
+            getListChannelGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListChannelGroupsRequest,
+                    com.google.analytics.admin.v1alpha.ListChannelGroupsResponse>(
+                    service, METHODID_LIST_CHANNEL_GROUPS)))
+        .addMethod(
+            getCreateChannelGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateChannelGroupRequest,
+                    com.google.analytics.admin.v1alpha.ChannelGroup>(
+                    service, METHODID_CREATE_CHANNEL_GROUP)))
+        .addMethod(
+            getUpdateChannelGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest,
+                    com.google.analytics.admin.v1alpha.ChannelGroup>(
+                    service, METHODID_UPDATE_CHANNEL_GROUP)))
+        .addMethod(
+            getDeleteChannelGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CHANNEL_GROUP)))
+        .addMethod(
             getSetAutomatedGa4ConfigurationOptOutMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -13915,6 +14641,13 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
                     com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>(
                     service, METHODID_LIST_CONNECTED_SITE_TAGS)))
+        .addMethod(
+            getFetchConnectedGa4PropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
+                    com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>(
+                    service, METHODID_FETCH_CONNECTED_GA4PROPERTY)))
         .build();
   }
 
@@ -14064,6 +14797,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateExpandedDataSetMethod())
                       .addMethod(getUpdateExpandedDataSetMethod())
                       .addMethod(getDeleteExpandedDataSetMethod())
+                      .addMethod(getGetChannelGroupMethod())
+                      .addMethod(getListChannelGroupsMethod())
+                      .addMethod(getCreateChannelGroupMethod())
+                      .addMethod(getUpdateChannelGroupMethod())
+                      .addMethod(getDeleteChannelGroupMethod())
                       .addMethod(getSetAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getFetchAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getGetBigQueryLinkMethod())
@@ -14073,6 +14811,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateConnectedSiteTagMethod())
                       .addMethod(getDeleteConnectedSiteTagMethod())
                       .addMethod(getListConnectedSiteTagsMethod())
+                      .addMethod(getFetchConnectedGa4PropertyMethod())
                       .build();
         }
       }

@@ -101,13 +101,12 @@ public final class ControllerProto {
           + "point\032\177\312A\034clouddebugger.googleapis.com\322A"
           + "]https://www.googleapis.com/auth/cloud-p"
           + "latform,https://www.googleapis.com/auth/"
-          + "cloud_debuggerB\334\001\n$com.google.devtools.c"
-          + "louddebugger.v2B\017ControllerProtoP\001ZMgoog"
-          + "le.golang.org/genproto/googleapis/devtoo"
-          + "ls/clouddebugger/v2;clouddebugger\252\002\030Goog"
-          + "le.Cloud.Debugger.V2\312\002\030Google\\Cloud\\Debu"
-          + "gger\\V2\352\002\033Google::Cloud::Debugger::V2b\006p"
-          + "roto3"
+          + "cloud_debuggerB\307\001\n$com.google.devtools.c"
+          + "louddebugger.v2B\017ControllerProtoP\001Z8clou"
+          + "d.google.com/go/debugger/apiv2/debuggerp"
+          + "b;debuggerpb\252\002\030Google.Cloud.Debugger.V2\312"
+          + "\002\030Google\\Cloud\\Debugger\\V2\352\002\033Google::Clo"
+          + "ud::Debugger::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

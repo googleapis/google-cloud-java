@@ -27,7 +27,8 @@ public interface GetTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+   * Required. Resource name for TagValue to be fetched in the format
+   * `tagValues/456`.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+   * Required. Resource name for TagValue to be fetched in the format
+   * `tagValues/456`.
    * </pre>
    *
    * <code>

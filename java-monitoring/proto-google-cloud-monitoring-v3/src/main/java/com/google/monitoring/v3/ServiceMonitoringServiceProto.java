@@ -184,12 +184,13 @@ public final class ServiceMonitoringServiceProto {
           + "ps://www.googleapis.com/auth/cloud-platf"
           + "orm,https://www.googleapis.com/auth/moni"
           + "toring,https://www.googleapis.com/auth/m"
-          + "onitoring.readB\325\001\n\030com.google.monitoring"
-          + ".v3B\035ServiceMonitoringServiceProtoP\001Z>go"
-          + "ogle.golang.org/genproto/googleapis/moni"
-          + "toring/v3;monitoring\252\002\032Google.Cloud.Moni"
-          + "toring.V3\312\002\032Google\\Cloud\\Monitoring\\V3\352\002"
-          + "\035Google::Cloud::Monitoring::V3b\006proto3"
+          + "onitoring.readB\330\001\n\030com.google.monitoring"
+          + ".v3B\035ServiceMonitoringServiceProtoP\001ZAcl"
+          + "oud.google.com/go/monitoring/apiv3/v2/mo"
+          + "nitoringpb;monitoringpb\252\002\032Google.Cloud.M"
+          + "onitoring.V3\312\002\032Google\\Cloud\\Monitoring\\V"
+          + "3\352\002\035Google::Cloud::Monitoring::V3b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

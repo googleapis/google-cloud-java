@@ -42,6 +42,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -198,6 +199,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -249,6 +252,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -289,6 +294,112 @@ public class TagKeysClientHttpJsonTest {
   }
 
   @Test
+  public void getNamespacedTagKeyTest() throws Exception {
+    TagKey expectedResponse =
+        TagKey.newBuilder()
+            .setName(TagKeyName.of("[TAG_KEY]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TagKeyName name = TagKeyName.of("[TAG_KEY]");
+
+    TagKey actualResponse = client.getNamespacedTagKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNamespacedTagKeyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TagKeyName name = TagKeyName.of("[TAG_KEY]");
+      client.getNamespacedTagKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNamespacedTagKeyTest2() throws Exception {
+    TagKey expectedResponse =
+        TagKey.newBuilder()
+            .setName(TagKeyName.of("[TAG_KEY]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TagKey actualResponse = client.getNamespacedTagKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNamespacedTagKeyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNamespacedTagKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createTagKeyTest() throws Exception {
     TagKey expectedResponse =
         TagKey.newBuilder()
@@ -300,6 +411,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -356,6 +469,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -375,6 +490,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -414,6 +531,8 @@ public class TagKeysClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setEtag("etag3123477")
+              .setPurpose(Purpose.forNumber(0))
+              .putAllPurposeData(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTagKeyAsync(tagKey, updateMask).get();
@@ -434,6 +553,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -490,6 +611,8 @@ public class TagKeysClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

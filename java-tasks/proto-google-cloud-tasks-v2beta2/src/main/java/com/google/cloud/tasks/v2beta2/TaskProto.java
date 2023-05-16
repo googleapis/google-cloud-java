@@ -77,10 +77,10 @@ public final class TaskProto {
           + "p\0221\n\rdispatch_time\030\002 \001(\0132\032.google.protob"
           + "uf.Timestamp\0221\n\rresponse_time\030\003 \001(\0132\032.go"
           + "ogle.protobuf.Timestamp\022+\n\017response_stat"
-          + "us\030\004 \001(\0132\022.google.rpc.StatusBc\n\036com.goog"
-          + "le.cloud.tasks.v2beta2B\tTaskProtoP\001Z4clo"
-          + "ud.google.com/go/tasks/apiv2beta2/tasksp"
-          + "b;taskspbb\006proto3"
+          + "us\030\004 \001(\0132\022.google.rpc.StatusBr\n\036com.goog"
+          + "le.cloud.tasks.v2beta2B\tTaskProtoP\001ZCclo"
+          + "ud.google.com/go/cloudtasks/apiv2beta2/c"
+          + "loudtaskspb;cloudtaskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

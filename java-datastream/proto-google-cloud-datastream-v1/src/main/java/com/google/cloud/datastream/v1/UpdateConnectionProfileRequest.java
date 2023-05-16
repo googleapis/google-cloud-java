@@ -262,8 +262,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Only validate the connection profile, but don't update any resources.
-   * The default is false.
+   * Optional. Only validate the connection profile, but don't update any
+   * resources. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1342,8 +1342,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only validate the connection profile, but don't update any resources.
-     * The default is false.
+     * Optional. Only validate the connection profile, but don't update any
+     * resources. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1358,8 +1358,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only validate the connection profile, but don't update any resources.
-     * The default is false.
+     * Optional. Only validate the connection profile, but don't update any
+     * resources. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1378,8 +1378,8 @@ public final class UpdateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only validate the connection profile, but don't update any resources.
-     * The default is false.
+     * Optional. Only validate the connection profile, but don't update any
+     * resources. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

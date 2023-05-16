@@ -75,7 +75,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+   * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+   * example:
    * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * Zonal clusters are also supported.
    * </pre>
@@ -100,7 +101,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+   * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+   * example:
    * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * Zonal clusters are also supported.
    * </pre>
@@ -122,6 +124,25 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CLUSTER_MISSING_FIELD_NUMBER = 2;
+  private boolean clusterMissing_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If cluster_missing is set then it denotes that the GKE cluster
+   * no longer exists in the GKE Control Plane.
+   * </pre>
+   *
+   * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterMissing.
+   */
+  @java.lang.Override
+  public boolean getClusterMissing() {
+    return clusterMissing_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -139,6 +160,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceLink_);
     }
+    if (clusterMissing_ != false) {
+      output.writeBool(2, clusterMissing_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -150,6 +174,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceLink_);
+    }
+    if (clusterMissing_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, clusterMissing_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -167,6 +194,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.gkehub.v1.GkeCluster other = (com.google.cloud.gkehub.v1.GkeCluster) obj;
 
     if (!getResourceLink().equals(other.getResourceLink())) return false;
+    if (getClusterMissing() != other.getClusterMissing()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -180,6 +208,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RESOURCE_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getResourceLink().hashCode();
+    hash = (37 * hash) + CLUSTER_MISSING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClusterMissing());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,6 +349,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       resourceLink_ = "";
+      clusterMissing_ = false;
       return this;
     }
 
@@ -357,6 +388,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.resourceLink_ = resourceLink_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterMissing_ = clusterMissing_;
       }
     }
 
@@ -410,6 +444,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getClusterMissing() != false) {
+        setClusterMissing(other.getClusterMissing());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -442,6 +479,12 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                clusterMissing_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -466,7 +509,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+     * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+     * example:
      * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      * </pre>
@@ -490,7 +534,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+     * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+     * example:
      * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      * </pre>
@@ -514,7 +559,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+     * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+     * example:
      * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      * </pre>
@@ -537,7 +583,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+     * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+     * example:
      * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      * </pre>
@@ -556,7 +603,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
+     * Immutable. Self-link of the Google Cloud resource for the GKE cluster. For
+     * example:
      * //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
      * Zonal clusters are also supported.
      * </pre>
@@ -573,6 +621,62 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       resourceLink_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean clusterMissing_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If cluster_missing is set then it denotes that the GKE cluster
+     * no longer exists in the GKE Control Plane.
+     * </pre>
+     *
+     * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterMissing.
+     */
+    @java.lang.Override
+    public boolean getClusterMissing() {
+      return clusterMissing_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If cluster_missing is set then it denotes that the GKE cluster
+     * no longer exists in the GKE Control Plane.
+     * </pre>
+     *
+     * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterMissing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterMissing(boolean value) {
+
+      clusterMissing_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If cluster_missing is set then it denotes that the GKE cluster
+     * no longer exists in the GKE Control Plane.
+     * </pre>
+     *
+     * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterMissing() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      clusterMissing_ = false;
       onChanged();
       return this;
     }

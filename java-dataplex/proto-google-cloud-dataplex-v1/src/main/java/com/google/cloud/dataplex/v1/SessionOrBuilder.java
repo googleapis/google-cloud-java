@@ -118,6 +118,12 @@ public interface SessionOrBuilder
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Output only. State of Session
+   * </pre>
+   *
    * <code>.google.cloud.dataplex.v1.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
@@ -125,6 +131,12 @@ public interface SessionOrBuilder
    */
   int getStateValue();
   /**
+   *
+   *
+   * <pre>
+   * Output only. State of Session
+   * </pre>
+   *
    * <code>.google.cloud.dataplex.v1.State state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *

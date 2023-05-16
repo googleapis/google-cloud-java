@@ -851,6 +851,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 
@@ -901,6 +902,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 
@@ -951,6 +953,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 
@@ -996,6 +999,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 
@@ -1040,6 +1044,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 
@@ -1077,6 +1082,204 @@ public class MetastoreServiceClientTest {
   }
 
   @Test
+  public void renameTableTest() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockMetastoreService.addResponse(expectedResponse);
+
+    TableName name = TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+    TableName newName =
+        TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetastoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RenameTableRequest actualRequest = ((RenameTableRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(newName.toString(), actualRequest.getNewName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void renameTableExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetastoreService.addException(exception);
+
+    try {
+      TableName name =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      TableName newName =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest2() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockMetastoreService.addResponse(expectedResponse);
+
+    TableName name = TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+    String newName = "newName1845020747";
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetastoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RenameTableRequest actualRequest = ((RenameTableRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(newName, actualRequest.getNewName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void renameTableExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetastoreService.addException(exception);
+
+    try {
+      TableName name =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      String newName = "newName1845020747";
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest3() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockMetastoreService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    TableName newName =
+        TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetastoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RenameTableRequest actualRequest = ((RenameTableRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(newName.toString(), actualRequest.getNewName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void renameTableExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetastoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      TableName newName =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest4() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockMetastoreService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String newName = "newName1845020747";
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetastoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RenameTableRequest actualRequest = ((RenameTableRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(newName, actualRequest.getNewName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void renameTableExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetastoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String newName = "newName1845020747";
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getTableTest() throws Exception {
     Table expectedResponse =
         Table.newBuilder()
@@ -1087,6 +1290,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 
@@ -1132,6 +1336,7 @@ public class MetastoreServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockMetastoreService.addResponse(expectedResponse);
 

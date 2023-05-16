@@ -83,13 +83,13 @@ public final class LayoutsProto {
           + "oring.dashboard.v1.ColumnLayout.Column\032Q"
           + "\n\006Column\022\016\n\006weight\030\001 \001(\003\0227\n\007widgets\030\002 \003("
           + "\0132&.google.monitoring.dashboard.v1.Widge"
-          + "tB\366\001\n\"com.google.monitoring.dashboard.v1"
-          + "B\014LayoutsProtoP\001ZGgoogle.golang.org/genp"
-          + "roto/googleapis/monitoring/dashboard/v1;"
-          + "dashboard\252\002$Google.Cloud.Monitoring.Dash"
-          + "board.V1\312\002$Google\\Cloud\\Monitoring\\Dashb"
-          + "oard\\V1\352\002(Google::Cloud::Monitoring::Das"
-          + "hboard::V1b\006proto3"
+          + "tB\365\001\n\"com.google.monitoring.dashboard.v1"
+          + "B\014LayoutsProtoP\001ZFcloud.google.com/go/mo"
+          + "nitoring/dashboard/apiv1/dashboardpb;das"
+          + "hboardpb\252\002$Google.Cloud.Monitoring.Dashb"
+          + "oard.V1\312\002$Google\\Cloud\\Monitoring\\Dashbo"
+          + "ard\\V1\352\002(Google::Cloud::Monitoring::Dash"
+          + "board::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

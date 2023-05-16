@@ -27,7 +27,8 @@ public interface StartBackfillJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the stream object resource to start a backfill job for.
+   * Required. The name of the stream object resource to start a backfill job
+   * for.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface StartBackfillJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the stream object resource to start a backfill job for.
+   * Required. The name of the stream object resource to start a backfill job
+   * for.
    * </pre>
    *
    * <code>

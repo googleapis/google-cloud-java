@@ -120,6 +120,9 @@
             },
             "UpdateView": {
               "methods": ["updateView", "updateView", "updateViewCallable"]
+            },
+            "UploadConversation": {
+              "methods": ["uploadConversationAsync", "uploadConversationOperationCallable", "uploadConversationCallable"]
             }
           }
         }

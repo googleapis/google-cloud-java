@@ -25,6 +25,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagValueRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest;
 import com.google.cloud.resourcemanager.v3.GetTagValueRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesResponse;
@@ -68,6 +69,10 @@ public abstract class TagValuesStub implements BackgroundResource {
 
   public UnaryCallable<GetTagValueRequest, TagValue> getTagValueCallable() {
     throw new UnsupportedOperationException("Not implemented: getTagValueCallable()");
+  }
+
+  public UnaryCallable<GetNamespacedTagValueRequest, TagValue> getNamespacedTagValueCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNamespacedTagValueCallable()");
   }
 
   public OperationCallable<CreateTagValueRequest, TagValue, CreateTagValueMetadata>

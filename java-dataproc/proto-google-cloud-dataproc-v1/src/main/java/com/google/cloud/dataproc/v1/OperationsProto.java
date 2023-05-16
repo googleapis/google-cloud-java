@@ -114,9 +114,10 @@ public final class OperationsProto {
           + "(\t:\0028\001\"s\n\026NodeGroupOperationType\022)\n%NODE"
           + "_GROUP_OPERATION_TYPE_UNSPECIFIED\020\000\022\n\n\006C"
           + "REATE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\022\n\n\006RESIZ"
-          + "E\020\004Bk\n\034com.google.cloud.dataproc.v1B\017Ope"
-          + "rationsProtoP\001Z8cloud.google.com/go/data"
-          + "proc/apiv1/dataprocpb;dataprocpbb\006proto3"
+          + "E\020\004Bn\n\034com.google.cloud.dataproc.v1B\017Ope"
+          + "rationsProtoP\001Z;cloud.google.com/go/data"
+          + "proc/v2/apiv1/dataprocpb;dataprocpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

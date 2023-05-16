@@ -118,12 +118,12 @@ public final class MetricProto {
           + "or.Position\0229\n\016nested_locator\030\004 \001(\0132!.go"
           + "ogle.monitoring.v3.TextLocator\022\026\n\016nestin"
           + "g_reason\030\005 \001(\t\032(\n\010Position\022\014\n\004line\030\001 \001(\005"
-          + "\022\016\n\006column\030\002 \001(\005B\303\001\n\030com.google.monitori"
-          + "ng.v3B\013MetricProtoP\001Z>google.golang.org/"
-          + "genproto/googleapis/monitoring/v3;monito"
-          + "ring\252\002\032Google.Cloud.Monitoring.V3\312\002\032Goog"
-          + "le\\Cloud\\Monitoring\\V3\352\002\035Google::Cloud::"
-          + "Monitoring::V3b\006proto3"
+          + "\022\016\n\006column\030\002 \001(\005B\306\001\n\030com.google.monitori"
+          + "ng.v3B\013MetricProtoP\001ZAcloud.google.com/g"
+          + "o/monitoring/apiv3/v2/monitoringpb;monit"
+          + "oringpb\252\002\032Google.Cloud.Monitoring.V3\312\002\032G"
+          + "oogle\\Cloud\\Monitoring\\V3\352\002\035Google::Clou"
+          + "d::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

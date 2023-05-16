@@ -82,6 +82,63 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+      getCreateSecurityHealthAnalyticsCustomModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSecurityHealthAnalyticsCustomModule",
+      requestType =
+          com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+      getCreateSecurityHealthAnalyticsCustomModuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest,
+            com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+        getCreateSecurityHealthAnalyticsCustomModuleMethod;
+    if ((getCreateSecurityHealthAnalyticsCustomModuleMethod =
+            SecurityCenterGrpc.getCreateSecurityHealthAnalyticsCustomModuleMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getCreateSecurityHealthAnalyticsCustomModuleMethod =
+                SecurityCenterGrpc.getCreateSecurityHealthAnalyticsCustomModuleMethod)
+            == null) {
+          SecurityCenterGrpc.getCreateSecurityHealthAnalyticsCustomModuleMethod =
+              getCreateSecurityHealthAnalyticsCustomModuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .CreateSecurityHealthAnalyticsCustomModuleRequest,
+                          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateSecurityHealthAnalyticsCustomModule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .CreateSecurityHealthAnalyticsCustomModuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "CreateSecurityHealthAnalyticsCustomModule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSecurityHealthAnalyticsCustomModuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.CreateSourceRequest,
           com.google.cloud.securitycenter.v1.Source>
       getCreateSourceMethod;
@@ -364,6 +421,62 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.protobuf.Empty>
+      getDeleteSecurityHealthAnalyticsCustomModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSecurityHealthAnalyticsCustomModule",
+      requestType =
+          com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.protobuf.Empty>
+      getDeleteSecurityHealthAnalyticsCustomModuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest,
+            com.google.protobuf.Empty>
+        getDeleteSecurityHealthAnalyticsCustomModuleMethod;
+    if ((getDeleteSecurityHealthAnalyticsCustomModuleMethod =
+            SecurityCenterGrpc.getDeleteSecurityHealthAnalyticsCustomModuleMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getDeleteSecurityHealthAnalyticsCustomModuleMethod =
+                SecurityCenterGrpc.getDeleteSecurityHealthAnalyticsCustomModuleMethod)
+            == null) {
+          SecurityCenterGrpc.getDeleteSecurityHealthAnalyticsCustomModuleMethod =
+              getDeleteSecurityHealthAnalyticsCustomModuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .DeleteSecurityHealthAnalyticsCustomModuleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteSecurityHealthAnalyticsCustomModule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .DeleteSecurityHealthAnalyticsCustomModuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "DeleteSecurityHealthAnalyticsCustomModule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSecurityHealthAnalyticsCustomModuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.GetBigQueryExportRequest,
           com.google.cloud.securitycenter.v1.BigQueryExport>
       getGetBigQueryExportMethod;
@@ -596,6 +709,125 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule>
+      getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEffectiveSecurityHealthAnalyticsCustomModule",
+      requestType =
+          com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+              .class,
+      responseType =
+          com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule>
+      getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1
+                .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+            com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule>
+        getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod;
+    if ((getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod =
+            SecurityCenterGrpc.getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod =
+                SecurityCenterGrpc.getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod)
+            == null) {
+          SecurityCenterGrpc.getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod =
+              getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+                          com.google.cloud.securitycenter.v1
+                              .EffectiveSecurityHealthAnalyticsCustomModule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetEffectiveSecurityHealthAnalyticsCustomModule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .EffectiveSecurityHealthAnalyticsCustomModule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "GetEffectiveSecurityHealthAnalyticsCustomModule"))
+                      .build();
+        }
+      }
+    }
+    return getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+      getGetSecurityHealthAnalyticsCustomModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSecurityHealthAnalyticsCustomModule",
+      requestType =
+          com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+      getGetSecurityHealthAnalyticsCustomModuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest,
+            com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+        getGetSecurityHealthAnalyticsCustomModuleMethod;
+    if ((getGetSecurityHealthAnalyticsCustomModuleMethod =
+            SecurityCenterGrpc.getGetSecurityHealthAnalyticsCustomModuleMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getGetSecurityHealthAnalyticsCustomModuleMethod =
+                SecurityCenterGrpc.getGetSecurityHealthAnalyticsCustomModuleMethod)
+            == null) {
+          SecurityCenterGrpc.getGetSecurityHealthAnalyticsCustomModuleMethod =
+              getGetSecurityHealthAnalyticsCustomModuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .GetSecurityHealthAnalyticsCustomModuleRequest,
+                          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetSecurityHealthAnalyticsCustomModule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .GetSecurityHealthAnalyticsCustomModuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "GetSecurityHealthAnalyticsCustomModule"))
+                      .build();
+        }
+      }
+    }
+    return getGetSecurityHealthAnalyticsCustomModuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.GetSourceRequest,
           com.google.cloud.securitycenter.v1.Source>
       getGetSourceMethod;
@@ -781,6 +1013,74 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1
+              .ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          com.google.cloud.securitycenter.v1
+              .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      getListDescendantSecurityHealthAnalyticsCustomModulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDescendantSecurityHealthAnalyticsCustomModules",
+      requestType =
+          com.google.cloud.securitycenter.v1
+              .ListDescendantSecurityHealthAnalyticsCustomModulesRequest.class,
+      responseType =
+          com.google.cloud.securitycenter.v1
+              .ListDescendantSecurityHealthAnalyticsCustomModulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1
+              .ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          com.google.cloud.securitycenter.v1
+              .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      getListDescendantSecurityHealthAnalyticsCustomModulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1
+                .ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+            com.google.cloud.securitycenter.v1
+                .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+        getListDescendantSecurityHealthAnalyticsCustomModulesMethod;
+    if ((getListDescendantSecurityHealthAnalyticsCustomModulesMethod =
+            SecurityCenterGrpc.getListDescendantSecurityHealthAnalyticsCustomModulesMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getListDescendantSecurityHealthAnalyticsCustomModulesMethod =
+                SecurityCenterGrpc.getListDescendantSecurityHealthAnalyticsCustomModulesMethod)
+            == null) {
+          SecurityCenterGrpc.getListDescendantSecurityHealthAnalyticsCustomModulesMethod =
+              getListDescendantSecurityHealthAnalyticsCustomModulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                          com.google.cloud.securitycenter.v1
+                              .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListDescendantSecurityHealthAnalyticsCustomModules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .ListDescendantSecurityHealthAnalyticsCustomModulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "ListDescendantSecurityHealthAnalyticsCustomModules"))
+                      .build();
+        }
+      }
+    }
+    return getListDescendantSecurityHealthAnalyticsCustomModulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.ListFindingsRequest,
           com.google.cloud.securitycenter.v1.ListFindingsResponse>
       getListFindingsMethod;
@@ -922,6 +1222,134 @@ public final class SecurityCenterGrpc {
       }
     }
     return getListNotificationConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1
+              .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          com.google.cloud.securitycenter.v1
+              .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      getListEffectiveSecurityHealthAnalyticsCustomModulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEffectiveSecurityHealthAnalyticsCustomModules",
+      requestType =
+          com.google.cloud.securitycenter.v1
+              .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.class,
+      responseType =
+          com.google.cloud.securitycenter.v1
+              .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1
+              .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          com.google.cloud.securitycenter.v1
+              .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      getListEffectiveSecurityHealthAnalyticsCustomModulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1
+                .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+            com.google.cloud.securitycenter.v1
+                .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+        getListEffectiveSecurityHealthAnalyticsCustomModulesMethod;
+    if ((getListEffectiveSecurityHealthAnalyticsCustomModulesMethod =
+            SecurityCenterGrpc.getListEffectiveSecurityHealthAnalyticsCustomModulesMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getListEffectiveSecurityHealthAnalyticsCustomModulesMethod =
+                SecurityCenterGrpc.getListEffectiveSecurityHealthAnalyticsCustomModulesMethod)
+            == null) {
+          SecurityCenterGrpc.getListEffectiveSecurityHealthAnalyticsCustomModulesMethod =
+              getListEffectiveSecurityHealthAnalyticsCustomModulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                          com.google.cloud.securitycenter.v1
+                              .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListEffectiveSecurityHealthAnalyticsCustomModules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "ListEffectiveSecurityHealthAnalyticsCustomModules"))
+                      .build();
+        }
+      }
+    }
+    return getListEffectiveSecurityHealthAnalyticsCustomModulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest,
+          com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse>
+      getListSecurityHealthAnalyticsCustomModulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSecurityHealthAnalyticsCustomModules",
+      requestType =
+          com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest.class,
+      responseType =
+          com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest,
+          com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse>
+      getListSecurityHealthAnalyticsCustomModulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest,
+            com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse>
+        getListSecurityHealthAnalyticsCustomModulesMethod;
+    if ((getListSecurityHealthAnalyticsCustomModulesMethod =
+            SecurityCenterGrpc.getListSecurityHealthAnalyticsCustomModulesMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getListSecurityHealthAnalyticsCustomModulesMethod =
+                SecurityCenterGrpc.getListSecurityHealthAnalyticsCustomModulesMethod)
+            == null) {
+          SecurityCenterGrpc.getListSecurityHealthAnalyticsCustomModulesMethod =
+              getListSecurityHealthAnalyticsCustomModulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .ListSecurityHealthAnalyticsCustomModulesRequest,
+                          com.google.cloud.securitycenter.v1
+                              .ListSecurityHealthAnalyticsCustomModulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListSecurityHealthAnalyticsCustomModules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .ListSecurityHealthAnalyticsCustomModulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .ListSecurityHealthAnalyticsCustomModulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "ListSecurityHealthAnalyticsCustomModules"))
+                      .build();
+        }
+      }
+    }
+    return getListSecurityHealthAnalyticsCustomModulesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1437,6 +1865,63 @@ public final class SecurityCenterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+      getUpdateSecurityHealthAnalyticsCustomModuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSecurityHealthAnalyticsCustomModule",
+      requestType =
+          com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest.class,
+      responseType = com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest,
+          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+      getUpdateSecurityHealthAnalyticsCustomModuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest,
+            com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+        getUpdateSecurityHealthAnalyticsCustomModuleMethod;
+    if ((getUpdateSecurityHealthAnalyticsCustomModuleMethod =
+            SecurityCenterGrpc.getUpdateSecurityHealthAnalyticsCustomModuleMethod)
+        == null) {
+      synchronized (SecurityCenterGrpc.class) {
+        if ((getUpdateSecurityHealthAnalyticsCustomModuleMethod =
+                SecurityCenterGrpc.getUpdateSecurityHealthAnalyticsCustomModuleMethod)
+            == null) {
+          SecurityCenterGrpc.getUpdateSecurityHealthAnalyticsCustomModuleMethod =
+              getUpdateSecurityHealthAnalyticsCustomModuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securitycenter.v1
+                              .UpdateSecurityHealthAnalyticsCustomModuleRequest,
+                          com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "UpdateSecurityHealthAnalyticsCustomModule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1
+                                  .UpdateSecurityHealthAnalyticsCustomModuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecurityCenterMethodDescriptorSupplier(
+                              "UpdateSecurityHealthAnalyticsCustomModule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSecurityHealthAnalyticsCustomModuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securitycenter.v1.UpdateSourceRequest,
           com.google.cloud.securitycenter.v1.Source>
       getUpdateSourceMethod;
@@ -1797,6 +2282,25 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
+     * given CRM parent, and also creates inherited
+     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
+     * parent. These modules are enabled by default.
+     * </pre>
+     */
+    default void createSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSecurityHealthAnalyticsCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -1884,6 +2388,22 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
+     * descendants in the CRM hierarchy. This method is only supported for
+     * resident custom modules.
+     * </pre>
+     */
+    default void deleteSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSecurityHealthAnalyticsCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a BigQuery export.
      * </pre>
      */
@@ -1958,6 +2478,39 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    default void getEffectiveSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    default void getSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSecurityHealthAnalyticsCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a source.
      * </pre>
      */
@@ -2021,6 +2574,25 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
+     * the given CRM parent and all of the parent’s CRM descendants.
+     * </pre>
+     */
+    default void listDescendantSecurityHealthAnalyticsCustomModules(
+        com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1
+                    .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDescendantSecurityHealthAnalyticsCustomModulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
      * Example: /v1/organizations/{organization_id}/sources/-/findings
@@ -2063,6 +2635,44 @@ public final class SecurityCenterGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListNotificationConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
+     * given parent. This includes resident modules defined at the scope of the
+     * parent, and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    default void listEffectiveSecurityHealthAnalyticsCustomModules(
+        com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1
+                    .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
+     * parent. This includes resident modules defined at the scope of the parent,
+     * and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    default void listSecurityHealthAnalyticsCustomModules(
+        com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSecurityHealthAnalyticsCustomModulesMethod(), responseObserver);
     }
 
     /**
@@ -2234,6 +2844,26 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
+     * on the given update mask. Updating the enablement state is supported on
+     * both resident and inherited modules (though resident modules cannot have an
+     * enablement state of "inherited"). Updating the display name and custom
+     * config of a module is supported on resident modules only.
+     * </pre>
+     */
+    default void updateSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSecurityHealthAnalyticsCustomModuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a source.
      * </pre>
      */
@@ -2379,6 +3009,28 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
+     * given CRM parent, and also creates inherited
+     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
+     * parent. These modules are enabled by default.
+     * </pre>
+     */
+    public void createSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getCreateSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -2478,6 +3130,25 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
+     * descendants in the CRM hierarchy. This method is only supported for
+     * resident custom modules.
+     * </pre>
+     */
+    public void deleteSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getDeleteSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a BigQuery export.
      * </pre>
      */
@@ -2562,6 +3233,45 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    public void getEffectiveSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(
+                  getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    public void getSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a source.
      * </pre>
      */
@@ -2631,6 +3341,29 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
+     * the given CRM parent and all of the parent’s CRM descendants.
+     * </pre>
+     */
+    public void listDescendantSecurityHealthAnalyticsCustomModules(
+        com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1
+                    .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(
+                  getListDescendantSecurityHealthAnalyticsCustomModulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
      * Example: /v1/organizations/{organization_id}/sources/-/findings
@@ -2677,6 +3410,51 @@ public final class SecurityCenterGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNotificationConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
+     * given parent. This includes resident modules defined at the scope of the
+     * parent, and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    public void listEffectiveSecurityHealthAnalyticsCustomModules(
+        com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+            request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1
+                    .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(
+                  getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
+     * parent. This includes resident modules defined at the scope of the parent,
+     * and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    public void listSecurityHealthAnalyticsCustomModules(
+        com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getListSecurityHealthAnalyticsCustomModulesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2871,6 +3649,29 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
+     * on the given update mask. Updating the enablement state is supported on
+     * both resident and inherited modules (though resident modules cannot have an
+     * enablement state of "inherited"). Updating the display name and custom
+     * config of a module is supported on resident modules only.
+     * </pre>
+     */
+    public void updateSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getUpdateSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a source.
      * </pre>
      */
@@ -3010,6 +3811,27 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
+     * given CRM parent, and also creates inherited
+     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
+     * parent. These modules are enabled by default.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
+        createSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCreateSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -3089,6 +3911,25 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
+     * descendants in the CRM hierarchy. This method is only supported for
+     * resident custom modules.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSecurityHealthAnalyticsCustomModule(
+        com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDeleteSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a BigQuery export.
      * </pre>
      */
@@ -3153,6 +3994,43 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule
+        getEffectiveSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1
+                    .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
+        getSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a source.
      * </pre>
      */
@@ -3211,6 +4089,27 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
+     * the given CRM parent and all of the parent’s CRM descendants.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1
+            .ListDescendantSecurityHealthAnalyticsCustomModulesResponse
+        listDescendantSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycenter.v1
+                    .ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListDescendantSecurityHealthAnalyticsCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
      * Example: /v1/organizations/{organization_id}/sources/-/findings
@@ -3247,6 +4146,48 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListNotificationConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
+     * given parent. This includes resident modules defined at the scope of the
+     * parent, and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1
+            .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
+        listEffectiveSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycenter.v1
+                    .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
+     * parent. This includes resident modules defined at the scope of the parent,
+     * and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse
+        listSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListSecurityHealthAnalyticsCustomModulesMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -3401,6 +4342,28 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
+     * on the given update mask. Updating the enablement state is supported on
+     * both resident and inherited modules (though resident modules cannot have an
+     * enablement state of "inherited"). Updating the display name and custom
+     * config of a module is supported on resident modules only.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
+        updateSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getUpdateSecurityHealthAnalyticsCustomModuleMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a source.
      * </pre>
      */
@@ -3518,6 +4481,27 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
+     * given CRM parent, and also creates inherited
+     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
+     * parent. These modules are enabled by default.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+        createSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getCreateSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a source.
      * </pre>
      */
@@ -3603,6 +4587,25 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
+     * descendants in the CRM hierarchy. This method is only supported for
+     * resident custom modules.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getDeleteSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a BigQuery export.
      * </pre>
      */
@@ -3674,6 +4677,43 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule>
+        getEffectiveSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1
+                    .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(
+                  getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+        getSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a source.
      * </pre>
      */
@@ -3736,6 +4776,28 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
+     * the given CRM parent and all of the parent’s CRM descendants.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1
+                .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+        listDescendantSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycenter.v1
+                    .ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(
+                  getListDescendantSecurityHealthAnalyticsCustomModulesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists an organization or source's findings.
      * To list across all sources provide a `-` as the source id.
      * Example: /v1/organizations/{organization_id}/sources/-/findings
@@ -3775,6 +4837,49 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNotificationConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
+     * given parent. This includes resident modules defined at the scope of the
+     * parent, and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1
+                .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+        listEffectiveSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycenter.v1
+                    .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(
+                  getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
+     * parent. This includes resident modules defined at the scope of the parent,
+     * and inherited modules, inherited from CRM ancestors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse>
+        listSecurityHealthAnalyticsCustomModules(
+            com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getListSecurityHealthAnalyticsCustomModulesMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -3942,6 +5047,28 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
+     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
+     * on the given update mask. Updating the enablement state is supported on
+     * both resident and inherited modules (though resident modules cannot have an
+     * enablement state of "inherited"). Updating the display name and custom
+     * config of a module is supported on resident modules only.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>
+        updateSecurityHealthAnalyticsCustomModule(
+            com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getUpdateSecurityHealthAnalyticsCustomModuleMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a source.
      * </pre>
      */
@@ -4030,41 +5157,49 @@ public final class SecurityCenterGrpc {
   }
 
   private static final int METHODID_BULK_MUTE_FINDINGS = 0;
-  private static final int METHODID_CREATE_SOURCE = 1;
-  private static final int METHODID_CREATE_FINDING = 2;
-  private static final int METHODID_CREATE_MUTE_CONFIG = 3;
-  private static final int METHODID_CREATE_NOTIFICATION_CONFIG = 4;
-  private static final int METHODID_DELETE_MUTE_CONFIG = 5;
-  private static final int METHODID_DELETE_NOTIFICATION_CONFIG = 6;
-  private static final int METHODID_GET_BIG_QUERY_EXPORT = 7;
-  private static final int METHODID_GET_IAM_POLICY = 8;
-  private static final int METHODID_GET_MUTE_CONFIG = 9;
-  private static final int METHODID_GET_NOTIFICATION_CONFIG = 10;
-  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 11;
-  private static final int METHODID_GET_SOURCE = 12;
-  private static final int METHODID_GROUP_ASSETS = 13;
-  private static final int METHODID_GROUP_FINDINGS = 14;
-  private static final int METHODID_LIST_ASSETS = 15;
-  private static final int METHODID_LIST_FINDINGS = 16;
-  private static final int METHODID_LIST_MUTE_CONFIGS = 17;
-  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 18;
-  private static final int METHODID_LIST_SOURCES = 19;
-  private static final int METHODID_RUN_ASSET_DISCOVERY = 20;
-  private static final int METHODID_SET_FINDING_STATE = 21;
-  private static final int METHODID_SET_MUTE = 22;
-  private static final int METHODID_SET_IAM_POLICY = 23;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 24;
-  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 25;
-  private static final int METHODID_UPDATE_FINDING = 26;
-  private static final int METHODID_UPDATE_MUTE_CONFIG = 27;
-  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 28;
-  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 29;
-  private static final int METHODID_UPDATE_SOURCE = 30;
-  private static final int METHODID_UPDATE_SECURITY_MARKS = 31;
-  private static final int METHODID_CREATE_BIG_QUERY_EXPORT = 32;
-  private static final int METHODID_DELETE_BIG_QUERY_EXPORT = 33;
-  private static final int METHODID_UPDATE_BIG_QUERY_EXPORT = 34;
-  private static final int METHODID_LIST_BIG_QUERY_EXPORTS = 35;
+  private static final int METHODID_CREATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 1;
+  private static final int METHODID_CREATE_SOURCE = 2;
+  private static final int METHODID_CREATE_FINDING = 3;
+  private static final int METHODID_CREATE_MUTE_CONFIG = 4;
+  private static final int METHODID_CREATE_NOTIFICATION_CONFIG = 5;
+  private static final int METHODID_DELETE_MUTE_CONFIG = 6;
+  private static final int METHODID_DELETE_NOTIFICATION_CONFIG = 7;
+  private static final int METHODID_DELETE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 8;
+  private static final int METHODID_GET_BIG_QUERY_EXPORT = 9;
+  private static final int METHODID_GET_IAM_POLICY = 10;
+  private static final int METHODID_GET_MUTE_CONFIG = 11;
+  private static final int METHODID_GET_NOTIFICATION_CONFIG = 12;
+  private static final int METHODID_GET_ORGANIZATION_SETTINGS = 13;
+  private static final int METHODID_GET_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 14;
+  private static final int METHODID_GET_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 15;
+  private static final int METHODID_GET_SOURCE = 16;
+  private static final int METHODID_GROUP_ASSETS = 17;
+  private static final int METHODID_GROUP_FINDINGS = 18;
+  private static final int METHODID_LIST_ASSETS = 19;
+  private static final int METHODID_LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES = 20;
+  private static final int METHODID_LIST_FINDINGS = 21;
+  private static final int METHODID_LIST_MUTE_CONFIGS = 22;
+  private static final int METHODID_LIST_NOTIFICATION_CONFIGS = 23;
+  private static final int METHODID_LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES = 24;
+  private static final int METHODID_LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES = 25;
+  private static final int METHODID_LIST_SOURCES = 26;
+  private static final int METHODID_RUN_ASSET_DISCOVERY = 27;
+  private static final int METHODID_SET_FINDING_STATE = 28;
+  private static final int METHODID_SET_MUTE = 29;
+  private static final int METHODID_SET_IAM_POLICY = 30;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
+  private static final int METHODID_UPDATE_EXTERNAL_SYSTEM = 32;
+  private static final int METHODID_UPDATE_FINDING = 33;
+  private static final int METHODID_UPDATE_MUTE_CONFIG = 34;
+  private static final int METHODID_UPDATE_NOTIFICATION_CONFIG = 35;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 36;
+  private static final int METHODID_UPDATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 37;
+  private static final int METHODID_UPDATE_SOURCE = 38;
+  private static final int METHODID_UPDATE_SECURITY_MARKS = 39;
+  private static final int METHODID_CREATE_BIG_QUERY_EXPORT = 40;
+  private static final int METHODID_DELETE_BIG_QUERY_EXPORT = 41;
+  private static final int METHODID_UPDATE_BIG_QUERY_EXPORT = 42;
+  private static final int METHODID_LIST_BIG_QUERY_EXPORTS = 43;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4087,6 +5222,14 @@ public final class SecurityCenterGrpc {
           serviceImpl.bulkMuteFindings(
               (com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE:
+          serviceImpl.createSecurityHealthAnalyticsCustomModule(
+              (com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>)
+                  responseObserver);
           break;
         case METHODID_CREATE_SOURCE:
           serviceImpl.createSource(
@@ -4122,6 +5265,12 @@ public final class SecurityCenterGrpc {
               (com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_DELETE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE:
+          serviceImpl.deleteSecurityHealthAnalyticsCustomModule(
+              (com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_GET_BIG_QUERY_EXPORT:
           serviceImpl.getBigQueryExport(
               (com.google.cloud.securitycenter.v1.GetBigQueryExportRequest) request,
@@ -4151,6 +5300,24 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.OrganizationSettings>)
                   responseObserver);
           break;
+        case METHODID_GET_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE:
+          serviceImpl.getEffectiveSecurityHealthAnalyticsCustomModule(
+              (com.google.cloud.securitycenter.v1
+                      .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1
+                          .EffectiveSecurityHealthAnalyticsCustomModule>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE:
+          serviceImpl.getSecurityHealthAnalyticsCustomModule(
+              (com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>)
+                  responseObserver);
+          break;
         case METHODID_GET_SOURCE:
           serviceImpl.getSource(
               (com.google.cloud.securitycenter.v1.GetSourceRequest) request,
@@ -4176,6 +5343,16 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.ListAssetsResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES:
+          serviceImpl.listDescendantSecurityHealthAnalyticsCustomModules(
+              (com.google.cloud.securitycenter.v1
+                      .ListDescendantSecurityHealthAnalyticsCustomModulesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1
+                          .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>)
+                  responseObserver);
+          break;
         case METHODID_LIST_FINDINGS:
           serviceImpl.listFindings(
               (com.google.cloud.securitycenter.v1.ListFindingsRequest) request,
@@ -4194,6 +5371,25 @@ public final class SecurityCenterGrpc {
               (com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES:
+          serviceImpl.listEffectiveSecurityHealthAnalyticsCustomModules(
+              (com.google.cloud.securitycenter.v1
+                      .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1
+                          .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES:
+          serviceImpl.listSecurityHealthAnalyticsCustomModules(
+              (com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1
+                          .ListSecurityHealthAnalyticsCustomModulesResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_SOURCES:
@@ -4260,6 +5456,14 @@ public final class SecurityCenterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1.OrganizationSettings>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE:
+          serviceImpl.updateSecurityHealthAnalyticsCustomModule(
+              (com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>)
+                  responseObserver);
+          break;
         case METHODID_UPDATE_SOURCE:
           serviceImpl.updateSource(
               (com.google.cloud.securitycenter.v1.UpdateSourceRequest) request,
@@ -4321,6 +5525,14 @@ public final class SecurityCenterGrpc {
                     com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest,
                     com.google.longrunning.Operation>(service, METHODID_BULK_MUTE_FINDINGS)))
         .addMethod(
+            getCreateSecurityHealthAnalyticsCustomModuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .CreateSecurityHealthAnalyticsCustomModuleRequest,
+                    com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>(
+                    service, METHODID_CREATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE)))
+        .addMethod(
             getCreateSourceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4359,6 +5571,14 @@ public final class SecurityCenterGrpc {
                     com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_NOTIFICATION_CONFIG)))
         .addMethod(
+            getDeleteSecurityHealthAnalyticsCustomModuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .DeleteSecurityHealthAnalyticsCustomModuleRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE)))
+        .addMethod(
             getGetBigQueryExportMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4392,6 +5612,23 @@ public final class SecurityCenterGrpc {
                     com.google.cloud.securitycenter.v1.OrganizationSettings>(
                     service, METHODID_GET_ORGANIZATION_SETTINGS)))
         .addMethod(
+            getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+                    com.google.cloud.securitycenter.v1
+                        .EffectiveSecurityHealthAnalyticsCustomModule>(
+                    service, METHODID_GET_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE)))
+        .addMethod(
+            getGetSecurityHealthAnalyticsCustomModuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .GetSecurityHealthAnalyticsCustomModuleRequest,
+                    com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>(
+                    service, METHODID_GET_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE)))
+        .addMethod(
             getGetSourceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4419,6 +5656,15 @@ public final class SecurityCenterGrpc {
                     com.google.cloud.securitycenter.v1.ListAssetsResponse>(
                     service, METHODID_LIST_ASSETS)))
         .addMethod(
+            getListDescendantSecurityHealthAnalyticsCustomModulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                    com.google.cloud.securitycenter.v1
+                        .ListDescendantSecurityHealthAnalyticsCustomModulesResponse>(
+                    service, METHODID_LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES)))
+        .addMethod(
             getListFindingsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4439,6 +5685,24 @@ public final class SecurityCenterGrpc {
                     com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest,
                     com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse>(
                     service, METHODID_LIST_NOTIFICATION_CONFIGS)))
+        .addMethod(
+            getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                    com.google.cloud.securitycenter.v1
+                        .ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>(
+                    service, METHODID_LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES)))
+        .addMethod(
+            getListSecurityHealthAnalyticsCustomModulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .ListSecurityHealthAnalyticsCustomModulesRequest,
+                    com.google.cloud.securitycenter.v1
+                        .ListSecurityHealthAnalyticsCustomModulesResponse>(
+                    service, METHODID_LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES)))
         .addMethod(
             getListSourcesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4511,6 +5775,14 @@ public final class SecurityCenterGrpc {
                     com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest,
                     com.google.cloud.securitycenter.v1.OrganizationSettings>(
                     service, METHODID_UPDATE_ORGANIZATION_SETTINGS)))
+        .addMethod(
+            getUpdateSecurityHealthAnalyticsCustomModuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1
+                        .UpdateSecurityHealthAnalyticsCustomModuleRequest,
+                    com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule>(
+                    service, METHODID_UPDATE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE)))
         .addMethod(
             getUpdateSourceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4603,24 +5875,31 @@ public final class SecurityCenterGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SecurityCenterFileDescriptorSupplier())
                       .addMethod(getBulkMuteFindingsMethod())
+                      .addMethod(getCreateSecurityHealthAnalyticsCustomModuleMethod())
                       .addMethod(getCreateSourceMethod())
                       .addMethod(getCreateFindingMethod())
                       .addMethod(getCreateMuteConfigMethod())
                       .addMethod(getCreateNotificationConfigMethod())
                       .addMethod(getDeleteMuteConfigMethod())
                       .addMethod(getDeleteNotificationConfigMethod())
+                      .addMethod(getDeleteSecurityHealthAnalyticsCustomModuleMethod())
                       .addMethod(getGetBigQueryExportMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getGetMuteConfigMethod())
                       .addMethod(getGetNotificationConfigMethod())
                       .addMethod(getGetOrganizationSettingsMethod())
+                      .addMethod(getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod())
+                      .addMethod(getGetSecurityHealthAnalyticsCustomModuleMethod())
                       .addMethod(getGetSourceMethod())
                       .addMethod(getGroupAssetsMethod())
                       .addMethod(getGroupFindingsMethod())
                       .addMethod(getListAssetsMethod())
+                      .addMethod(getListDescendantSecurityHealthAnalyticsCustomModulesMethod())
                       .addMethod(getListFindingsMethod())
                       .addMethod(getListMuteConfigsMethod())
                       .addMethod(getListNotificationConfigsMethod())
+                      .addMethod(getListEffectiveSecurityHealthAnalyticsCustomModulesMethod())
+                      .addMethod(getListSecurityHealthAnalyticsCustomModulesMethod())
                       .addMethod(getListSourcesMethod())
                       .addMethod(getRunAssetDiscoveryMethod())
                       .addMethod(getSetFindingStateMethod())
@@ -4632,6 +5911,7 @@ public final class SecurityCenterGrpc {
                       .addMethod(getUpdateMuteConfigMethod())
                       .addMethod(getUpdateNotificationConfigMethod())
                       .addMethod(getUpdateOrganizationSettingsMethod())
+                      .addMethod(getUpdateSecurityHealthAnalyticsCustomModuleMethod())
                       .addMethod(getUpdateSourceMethod())
                       .addMethod(getUpdateSecurityMarksMethod())
                       .addMethod(getCreateBigQueryExportMethod())

@@ -20,9 +20,12 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -66,7 +69,8 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSource to 30 seconds:
+ * <p>For example, to set the total timeout of createSecurityHealthAnalyticsCustomModule to 30
+ * seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -77,10 +81,10 @@ import javax.annotation.Generated;
  * SecurityCenterSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterSettings.newBuilder();
  * securityCenterSettingsBuilder
- *     .createSourceSettings()
+ *     .createSecurityHealthAnalyticsCustomModuleSettings()
  *     .setRetrySettings(
  *         securityCenterSettingsBuilder
- *             .createSourceSettings()
+ *             .createSecurityHealthAnalyticsCustomModuleSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -100,6 +104,17 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   public OperationCallSettings<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).bulkMuteFindingsOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .createSecurityHealthAnalyticsCustomModuleSettings();
   }
 
   /** Returns the object with the settings used for calls to createSource. */
@@ -134,6 +149,16 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).deleteNotificationConfigSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .deleteSecurityHealthAnalyticsCustomModuleSettings();
+  }
+
   /** Returns the object with the settings used for calls to getBigQueryExport. */
   public UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).getBigQueryExportSettings();
@@ -161,6 +186,28 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).getOrganizationSettingsSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * getEffectiveSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .getEffectiveSecurityHealthAnalyticsCustomModuleSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .getSecurityHealthAnalyticsCustomModuleSettings();
+  }
+
   /** Returns the object with the settings used for calls to getSource. */
   public UnaryCallSettings<GetSourceRequest, Source> getSourceSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).getSourceSettings();
@@ -184,6 +231,19 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).listAssetsSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * listDescendantSecurityHealthAnalyticsCustomModules.
+   */
+  public PagedCallSettings<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .listDescendantSecurityHealthAnalyticsCustomModulesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listFindings. */
   public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings() {
@@ -204,6 +264,32 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
           ListNotificationConfigsPagedResponse>
       listNotificationConfigsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).listNotificationConfigsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listEffectiveSecurityHealthAnalyticsCustomModules.
+   */
+  public PagedCallSettings<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .listEffectiveSecurityHealthAnalyticsCustomModulesSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listSecurityHealthAnalyticsCustomModules.
+   */
+  public PagedCallSettings<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .listSecurityHealthAnalyticsCustomModulesSettings();
   }
 
   /** Returns the object with the settings used for calls to listSources. */
@@ -270,6 +356,17 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   public UnaryCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).updateOrganizationSettingsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * updateSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .updateSecurityHealthAnalyticsCustomModuleSettings();
   }
 
   /** Returns the object with the settings used for calls to updateSource. */
@@ -434,6 +531,16 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().bulkMuteFindingsOperationSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * createSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        createSecurityHealthAnalyticsCustomModuleSettings() {
+      return getStubSettingsBuilder().createSecurityHealthAnalyticsCustomModuleSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createSource. */
     public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
       return getStubSettingsBuilder().createSourceSettings();
@@ -467,6 +574,15 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().deleteNotificationConfigSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+        deleteSecurityHealthAnalyticsCustomModuleSettings() {
+      return getStubSettingsBuilder().deleteSecurityHealthAnalyticsCustomModuleSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getBigQueryExport. */
     public UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
         getBigQueryExportSettings() {
@@ -495,6 +611,27 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().getOrganizationSettingsSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * getEffectiveSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+            EffectiveSecurityHealthAnalyticsCustomModule>
+        getEffectiveSecurityHealthAnalyticsCustomModuleSettings() {
+      return getStubSettingsBuilder().getEffectiveSecurityHealthAnalyticsCustomModuleSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        getSecurityHealthAnalyticsCustomModuleSettings() {
+      return getStubSettingsBuilder().getSecurityHealthAnalyticsCustomModuleSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getSource. */
     public UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings() {
       return getStubSettingsBuilder().getSourceSettings();
@@ -520,6 +657,18 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().listAssetsSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * listDescendantSecurityHealthAnalyticsCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+            ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+            ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listDescendantSecurityHealthAnalyticsCustomModulesSettings() {
+      return getStubSettingsBuilder().listDescendantSecurityHealthAnalyticsCustomModulesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listFindings. */
     public PagedCallSettings.Builder<
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
@@ -541,6 +690,30 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
             ListNotificationConfigsPagedResponse>
         listNotificationConfigsSettings() {
       return getStubSettingsBuilder().listNotificationConfigsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listEffectiveSecurityHealthAnalyticsCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listEffectiveSecurityHealthAnalyticsCustomModulesSettings() {
+      return getStubSettingsBuilder().listEffectiveSecurityHealthAnalyticsCustomModulesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listSecurityHealthAnalyticsCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListSecurityHealthAnalyticsCustomModulesRequest,
+            ListSecurityHealthAnalyticsCustomModulesResponse,
+            ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listSecurityHealthAnalyticsCustomModulesSettings() {
+      return getStubSettingsBuilder().listSecurityHealthAnalyticsCustomModulesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSources. */
@@ -610,6 +783,16 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     public UnaryCallSettings.Builder<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsSettings() {
       return getStubSettingsBuilder().updateOrganizationSettingsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updateSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        updateSecurityHealthAnalyticsCustomModuleSettings() {
+      return getStubSettingsBuilder().updateSecurityHealthAnalyticsCustomModuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateSource. */

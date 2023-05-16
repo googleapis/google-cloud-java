@@ -108,7 +108,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * Size of the disk attached to the worker, in GB.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-     * Specify a value of up to 1000. If `0` is specified, Cloud Build will use
+     * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
      * a standard disk size.
      * </pre>
      *
@@ -234,7 +234,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * Size of the disk attached to the worker, in GB.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-     * Specify a value of up to 1000. If `0` is specified, Cloud Build will use
+     * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
      * a standard disk size.
      * </pre>
      *
@@ -746,7 +746,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * Size of the disk attached to the worker, in GB.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-       * Specify a value of up to 1000. If `0` is specified, Cloud Build will use
+       * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
        * a standard disk size.
        * </pre>
        *
@@ -765,7 +765,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * Size of the disk attached to the worker, in GB.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-       * Specify a value of up to 1000. If `0` is specified, Cloud Build will use
+       * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
        * a standard disk size.
        * </pre>
        *
@@ -788,7 +788,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * Size of the disk attached to the worker, in GB.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-       * Specify a value of up to 1000. If `0` is specified, Cloud Build will use
+       * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
        * a standard disk size.
        * </pre>
        *
@@ -943,6 +943,45 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The egressOption.
      */
     com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfig.EgressOption getEgressOption();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Subnet IP range within the peered network. This is specified
+     * in CIDR notation with a slash and the subnet prefix size. You can
+     * optionally specify an IP address before the subnet prefix value. e.g.
+     * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+     * prefix size of 29 bits.
+     * `/16` would specify a prefix size of 16 bits, with an automatically
+     * determined IP within the peered VPC.
+     * If unspecified, a value of `/24` will be used.
+     * </pre>
+     *
+     * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The peeredNetworkIpRange.
+     */
+    java.lang.String getPeeredNetworkIpRange();
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Subnet IP range within the peered network. This is specified
+     * in CIDR notation with a slash and the subnet prefix size. You can
+     * optionally specify an IP address before the subnet prefix value. e.g.
+     * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+     * prefix size of 29 bits.
+     * `/16` would specify a prefix size of 16 bits, with an automatically
+     * determined IP within the peered VPC.
+     * If unspecified, a value of `/24` will be used.
+     * </pre>
+     *
+     * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for peeredNetworkIpRange.
+     */
+    com.google.protobuf.ByteString getPeeredNetworkIpRangeBytes();
   }
   /**
    *
@@ -966,6 +1005,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     private NetworkConfig() {
       peeredNetwork_ = "";
       egressOption_ = 0;
+      peeredNetworkIpRange_ = "";
     }
 
     @java.lang.Override
@@ -1270,6 +1310,71 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
           : result;
     }
 
+    public static final int PEERED_NETWORK_IP_RANGE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object peeredNetworkIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Subnet IP range within the peered network. This is specified
+     * in CIDR notation with a slash and the subnet prefix size. You can
+     * optionally specify an IP address before the subnet prefix value. e.g.
+     * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+     * prefix size of 29 bits.
+     * `/16` would specify a prefix size of 16 bits, with an automatically
+     * determined IP within the peered VPC.
+     * If unspecified, a value of `/24` will be used.
+     * </pre>
+     *
+     * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The peeredNetworkIpRange.
+     */
+    @java.lang.Override
+    public java.lang.String getPeeredNetworkIpRange() {
+      java.lang.Object ref = peeredNetworkIpRange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        peeredNetworkIpRange_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Subnet IP range within the peered network. This is specified
+     * in CIDR notation with a slash and the subnet prefix size. You can
+     * optionally specify an IP address before the subnet prefix value. e.g.
+     * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+     * prefix size of 29 bits.
+     * `/16` would specify a prefix size of 16 bits, with an automatically
+     * determined IP within the peered VPC.
+     * If unspecified, a value of `/24` will be used.
+     * </pre>
+     *
+     * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for peeredNetworkIpRange.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPeeredNetworkIpRangeBytes() {
+      java.lang.Object ref = peeredNetworkIpRange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        peeredNetworkIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1293,6 +1398,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
               .getNumber()) {
         output.writeEnum(2, egressOption_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peeredNetworkIpRange_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, peeredNetworkIpRange_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1310,6 +1418,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
               .EGRESS_OPTION_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, egressOption_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peeredNetworkIpRange_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, peeredNetworkIpRange_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1329,6 +1440,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
       if (!getPeeredNetwork().equals(other.getPeeredNetwork())) return false;
       if (egressOption_ != other.egressOption_) return false;
+      if (!getPeeredNetworkIpRange().equals(other.getPeeredNetworkIpRange())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1344,6 +1456,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + getPeeredNetwork().hashCode();
       hash = (37 * hash) + EGRESS_OPTION_FIELD_NUMBER;
       hash = (53 * hash) + egressOption_;
+      hash = (37 * hash) + PEERED_NETWORK_IP_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPeeredNetworkIpRange().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1488,6 +1602,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         bitField0_ = 0;
         peeredNetwork_ = "";
         egressOption_ = 0;
+        peeredNetworkIpRange_ = "";
         return this;
       }
 
@@ -1531,6 +1646,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.egressOption_ = egressOption_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.peeredNetworkIpRange_ = peeredNetworkIpRange_;
         }
       }
 
@@ -1591,6 +1709,11 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         if (other.egressOption_ != 0) {
           setEgressOptionValue(other.getEgressOptionValue());
         }
+        if (!other.getPeeredNetworkIpRange().isEmpty()) {
+          peeredNetworkIpRange_ = other.peeredNetworkIpRange_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1629,6 +1752,12 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  peeredNetworkIpRange_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1900,6 +2029,147 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       public Builder clearEgressOption() {
         bitField0_ = (bitField0_ & ~0x00000002);
         egressOption_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object peeredNetworkIpRange_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Subnet IP range within the peered network. This is specified
+       * in CIDR notation with a slash and the subnet prefix size. You can
+       * optionally specify an IP address before the subnet prefix value. e.g.
+       * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+       * prefix size of 29 bits.
+       * `/16` would specify a prefix size of 16 bits, with an automatically
+       * determined IP within the peered VPC.
+       * If unspecified, a value of `/24` will be used.
+       * </pre>
+       *
+       * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The peeredNetworkIpRange.
+       */
+      public java.lang.String getPeeredNetworkIpRange() {
+        java.lang.Object ref = peeredNetworkIpRange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          peeredNetworkIpRange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Subnet IP range within the peered network. This is specified
+       * in CIDR notation with a slash and the subnet prefix size. You can
+       * optionally specify an IP address before the subnet prefix value. e.g.
+       * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+       * prefix size of 29 bits.
+       * `/16` would specify a prefix size of 16 bits, with an automatically
+       * determined IP within the peered VPC.
+       * If unspecified, a value of `/24` will be used.
+       * </pre>
+       *
+       * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for peeredNetworkIpRange.
+       */
+      public com.google.protobuf.ByteString getPeeredNetworkIpRangeBytes() {
+        java.lang.Object ref = peeredNetworkIpRange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          peeredNetworkIpRange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Subnet IP range within the peered network. This is specified
+       * in CIDR notation with a slash and the subnet prefix size. You can
+       * optionally specify an IP address before the subnet prefix value. e.g.
+       * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+       * prefix size of 29 bits.
+       * `/16` would specify a prefix size of 16 bits, with an automatically
+       * determined IP within the peered VPC.
+       * If unspecified, a value of `/24` will be used.
+       * </pre>
+       *
+       * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The peeredNetworkIpRange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPeeredNetworkIpRange(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        peeredNetworkIpRange_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Subnet IP range within the peered network. This is specified
+       * in CIDR notation with a slash and the subnet prefix size. You can
+       * optionally specify an IP address before the subnet prefix value. e.g.
+       * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+       * prefix size of 29 bits.
+       * `/16` would specify a prefix size of 16 bits, with an automatically
+       * determined IP within the peered VPC.
+       * If unspecified, a value of `/24` will be used.
+       * </pre>
+       *
+       * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPeeredNetworkIpRange() {
+        peeredNetworkIpRange_ = getDefaultInstance().getPeeredNetworkIpRange();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Subnet IP range within the peered network. This is specified
+       * in CIDR notation with a slash and the subnet prefix size. You can
+       * optionally specify an IP address before the subnet prefix value. e.g.
+       * `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a
+       * prefix size of 29 bits.
+       * `/16` would specify a prefix size of 16 bits, with an automatically
+       * determined IP within the peered VPC.
+       * If unspecified, a value of `/24` will be used.
+       * </pre>
+       *
+       * <code>string peered_network_ip_range = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for peeredNetworkIpRange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPeeredNetworkIpRangeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        peeredNetworkIpRange_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

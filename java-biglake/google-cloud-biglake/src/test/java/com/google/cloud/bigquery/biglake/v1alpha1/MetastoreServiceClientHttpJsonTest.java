@@ -961,6 +961,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1015,6 +1016,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1071,6 +1073,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1122,6 +1125,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1174,6 +1178,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1186,6 +1191,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1224,9 +1230,232 @@ public class MetastoreServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setDeleteTime(Timestamp.newBuilder().build())
               .setExpireTime(Timestamp.newBuilder().build())
+              .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTable(table, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TableName name = TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+    TableName newName =
+        TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameTableExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TableName name =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      TableName newName =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest2() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TableName name = TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+    String newName = "newName1845020747";
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameTableExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TableName name =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      String newName = "newName1845020747";
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest3() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3983/locations/location-3983/catalogs/catalog-3983/databases/database-3983/tables/table-3983";
+    TableName newName =
+        TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameTableExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3983/locations/location-3983/catalogs/catalog-3983/databases/database-3983/tables/table-3983";
+      TableName newName =
+          TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]");
+      client.renameTable(name, newName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameTableTest4() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(
+                TableName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]", "[TABLE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3983/locations/location-3983/catalogs/catalog-3983/databases/database-3983/tables/table-3983";
+    String newName = "newName1845020747";
+
+    Table actualResponse = client.renameTable(name, newName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameTableExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3983/locations/location-3983/catalogs/catalog-3983/databases/database-3983/tables/table-3983";
+      String newName = "newName1845020747";
+      client.renameTable(name, newName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1244,6 +1473,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1295,6 +1525,7 @@ public class MetastoreServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 

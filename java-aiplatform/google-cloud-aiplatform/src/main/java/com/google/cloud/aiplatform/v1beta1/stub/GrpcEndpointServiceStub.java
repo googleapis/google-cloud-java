@@ -38,6 +38,9 @@ import com.google.cloud.aiplatform.v1beta1.Endpoint;
 import com.google.cloud.aiplatform.v1beta1.GetEndpointRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse;
+import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest;
+import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
@@ -137,6 +140,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<MutateDeployedModelRequest, Operation>
+      mutateDeployedModelMethodDescriptor =
+          MethodDescriptor.<MutateDeployedModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.EndpointService/MutateDeployedModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MutateDeployedModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -202,6 +216,12 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   private final OperationCallable<
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationCallable;
+  private final UnaryCallable<MutateDeployedModelRequest, Operation> mutateDeployedModelCallable;
+  private final OperationCallable<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -325,6 +345,16 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<MutateDeployedModelRequest, Operation> mutateDeployedModelTransportSettings =
+        GrpcCallSettings.<MutateDeployedModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(mutateDeployedModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("endpoint", String.valueOf(request.getEndpoint()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -425,6 +455,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
             settings.undeployModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.mutateDeployedModelCallable =
+        callableFactory.createUnaryCallable(
+            mutateDeployedModelTransportSettings,
+            settings.mutateDeployedModelSettings(),
+            clientContext);
+    this.mutateDeployedModelOperationCallable =
+        callableFactory.createOperationCallable(
+            mutateDeployedModelTransportSettings,
+            settings.mutateDeployedModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -518,6 +559,20 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationCallable() {
     return undeployModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MutateDeployedModelRequest, Operation> mutateDeployedModelCallable() {
+    return mutateDeployedModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationCallable() {
+    return mutateDeployedModelOperationCallable;
   }
 
   @Override

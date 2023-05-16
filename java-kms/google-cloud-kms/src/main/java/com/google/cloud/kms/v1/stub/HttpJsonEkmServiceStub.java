@@ -40,6 +40,8 @@ import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -292,6 +294,40 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityMethodDescriptor =
+          ApiMethodDescriptor.<VerifyConnectivityRequest, VerifyConnectivityResponse>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.EkmService/VerifyConnectivity")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<VerifyConnectivityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/ekmConnections/*}:verifyConnectivity",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyConnectivityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyConnectivityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VerifyConnectivityResponse>newBuilder()
+                      .setDefaultInstance(VerifyConnectivityResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -494,6 +530,8 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
       updateEkmConnectionCallable;
   private final UnaryCallable<GetEkmConfigRequest, EkmConfig> getEkmConfigCallable;
   private final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable;
+  private final UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -578,6 +616,12 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
             .setMethodDescriptor(updateEkmConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivityTransportSettings =
+            HttpJsonCallSettings.<VerifyConnectivityRequest, VerifyConnectivityResponse>newBuilder()
+                .setMethodDescriptor(verifyConnectivityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -635,6 +679,11 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
     this.updateEkmConfigCallable =
         callableFactory.createUnaryCallable(
             updateEkmConfigTransportSettings, settings.updateEkmConfigSettings(), clientContext);
+    this.verifyConnectivityCallable =
+        callableFactory.createUnaryCallable(
+            verifyConnectivityTransportSettings,
+            settings.verifyConnectivitySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -669,6 +718,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
     methodDescriptors.add(updateEkmConnectionMethodDescriptor);
     methodDescriptors.add(getEkmConfigMethodDescriptor);
     methodDescriptors.add(updateEkmConfigMethodDescriptor);
+    methodDescriptors.add(verifyConnectivityMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -712,6 +762,12 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
   @Override
   public UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
     return updateEkmConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable() {
+    return verifyConnectivityCallable;
   }
 
   @Override

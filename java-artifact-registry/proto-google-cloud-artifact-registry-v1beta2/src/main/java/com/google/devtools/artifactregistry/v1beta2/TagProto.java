@@ -84,14 +84,14 @@ public final class TagProto {
           + "dateTagRequest\022:\n\003tag\030\001 \001(\0132-.google.dev"
           + "tools.artifactregistry.v1beta2.Tag\022/\n\013up"
           + "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
-          + "ask\" \n\020DeleteTagRequest\022\014\n\004name\030\001 \001(\tB\217\002"
+          + "ask\" \n\020DeleteTagRequest\022\014\n\004name\030\001 \001(\tB\214\002"
           + "\n,com.google.devtools.artifactregistry.v"
-          + "1beta2B\010TagProtoP\001ZXgoogle.golang.org/ge"
-          + "nproto/googleapis/devtools/artifactregis"
-          + "try/v1beta2;artifactregistry\252\002%Google.Cl"
-          + "oud.ArtifactRegistry.V1Beta2\312\002%Google\\Cl"
-          + "oud\\ArtifactRegistry\\V1beta2\352\002(Google::C"
-          + "loud::ArtifactRegistry::V1beta2b\006proto3"
+          + "1beta2B\010TagProtoP\001ZUcloud.google.com/go/"
+          + "artifactregistry/apiv1beta2/artifactregi"
+          + "strypb;artifactregistrypb\252\002%Google.Cloud"
+          + ".ArtifactRegistry.V1Beta2\312\002%Google\\Cloud"
+          + "\\ArtifactRegistry\\V1beta2\352\002(Google::Clou"
+          + "d::ArtifactRegistry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -56,6 +56,9 @@ import com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1beta.ListDocumentsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListDocumentsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -124,6 +127,10 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
   private final OperationCallSettings<
           ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
       importDocumentsOperationSettings;
+  private final UnaryCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsSettings;
+  private final OperationCallSettings<
+          PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+      purgeDocumentsOperationSettings;
 
   private static final PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, Document>
       LIST_DOCUMENTS_PAGE_STR_DESC =
@@ -214,6 +221,18 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
       importDocumentsOperationSettings() {
     return importDocumentsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeDocuments. */
+  public UnaryCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsSettings() {
+    return purgeDocumentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeDocuments. */
+  public OperationCallSettings<
+          PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+      purgeDocumentsOperationSettings() {
+    return purgeDocumentsOperationSettings;
   }
 
   public DocumentServiceStub createStub() throws IOException {
@@ -329,6 +348,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     deleteDocumentSettings = settingsBuilder.deleteDocumentSettings().build();
     importDocumentsSettings = settingsBuilder.importDocumentsSettings().build();
     importDocumentsOperationSettings = settingsBuilder.importDocumentsOperationSettings().build();
+    purgeDocumentsSettings = settingsBuilder.purgeDocumentsSettings().build();
+    purgeDocumentsOperationSettings = settingsBuilder.purgeDocumentsOperationSettings().build();
   }
 
   /** Builder for DocumentServiceStubSettings. */
@@ -346,6 +367,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     private final OperationCallSettings.Builder<
             ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
         importDocumentsOperationSettings;
+    private final UnaryCallSettings.Builder<PurgeDocumentsRequest, Operation>
+        purgeDocumentsSettings;
+    private final OperationCallSettings.Builder<
+            PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+        purgeDocumentsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -405,6 +431,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       deleteDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importDocumentsOperationSettings = OperationCallSettings.newBuilder();
+      purgeDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      purgeDocumentsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -413,7 +441,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               createDocumentSettings,
               updateDocumentSettings,
               deleteDocumentSettings,
-              importDocumentsSettings);
+              importDocumentsSettings,
+              purgeDocumentsSettings);
       initDefaults(this);
     }
 
@@ -427,6 +456,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       deleteDocumentSettings = settings.deleteDocumentSettings.toBuilder();
       importDocumentsSettings = settings.importDocumentsSettings.toBuilder();
       importDocumentsOperationSettings = settings.importDocumentsOperationSettings.toBuilder();
+      purgeDocumentsSettings = settings.purgeDocumentsSettings.toBuilder();
+      purgeDocumentsOperationSettings = settings.purgeDocumentsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -435,7 +466,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               createDocumentSettings,
               updateDocumentSettings,
               deleteDocumentSettings,
-              importDocumentsSettings);
+              importDocumentsSettings,
+              purgeDocumentsSettings);
     }
 
     private static Builder createDefault() {
@@ -496,6 +528,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
+          .purgeDocumentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .importDocumentsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -507,6 +544,30 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               ProtoOperationTransformers.ResponseTransformer.create(ImportDocumentsResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(ImportDocumentsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .purgeDocumentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeDocumentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PurgeDocumentsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PurgeDocumentsMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -576,6 +637,20 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
             ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
         importDocumentsOperationSettings() {
       return importDocumentsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeDocuments. */
+    public UnaryCallSettings.Builder<PurgeDocumentsRequest, Operation> purgeDocumentsSettings() {
+      return purgeDocumentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeDocuments. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+        purgeDocumentsOperationSettings() {
+      return purgeDocumentsOperationSettings;
     }
 
     @Override

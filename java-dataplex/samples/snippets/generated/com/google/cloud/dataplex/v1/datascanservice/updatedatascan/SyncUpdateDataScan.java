@@ -39,6 +39,7 @@ public class SyncUpdateDataScan {
           UpdateDataScanRequest.newBuilder()
               .setDataScan(DataScan.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setValidateOnly(true)
               .build();
       DataScan response = dataScanServiceClient.updateDataScanAsync(request).get();
     }

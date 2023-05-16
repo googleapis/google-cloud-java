@@ -28,10 +28,8 @@ public interface GcsDestinationOrBuilder
    *
    * <pre>
    * Required. The Google Cloud Storage URI for the exported objects. A URI is
-   * of the form:
-   *   gs://bucket/object-name-or-prefix
-   * Whether a full object name, or just a prefix, its usage depends on the
-   * Dialogflow operation.
+   * of the form: `gs://bucket/object-name-or-prefix` Whether a full object
+   * name, or just a prefix, its usage depends on the Dialogflow operation.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,10 +42,8 @@ public interface GcsDestinationOrBuilder
    *
    * <pre>
    * Required. The Google Cloud Storage URI for the exported objects. A URI is
-   * of the form:
-   *   gs://bucket/object-name-or-prefix
-   * Whether a full object name, or just a prefix, its usage depends on the
-   * Dialogflow operation.
+   * of the form: `gs://bucket/object-name-or-prefix` Whether a full object
+   * name, or just a prefix, its usage depends on the Dialogflow operation.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

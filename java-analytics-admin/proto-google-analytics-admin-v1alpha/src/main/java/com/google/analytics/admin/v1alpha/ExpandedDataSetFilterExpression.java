@@ -184,7 +184,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+   * A filter expression to be NOT'ed (that is, inverted, complemented). It
    * must include a dimension_filter. This cannot be set on the
    * top level ExpandedDataSetFilterExpression.
    * </pre>
@@ -202,7 +202,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+   * A filter expression to be NOT'ed (that is, inverted, complemented). It
    * must include a dimension_filter. This cannot be set on the
    * top level ExpandedDataSetFilterExpression.
    * </pre>
@@ -223,7 +223,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+   * A filter expression to be NOT'ed (that is, inverted, complemented). It
    * must include a dimension_filter. This cannot be set on the
    * top level ExpandedDataSetFilterExpression.
    * </pre>
@@ -1024,7 +1024,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1042,7 +1042,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1072,7 +1072,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1098,7 +1098,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1122,7 +1122,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1160,7 +1160,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1188,7 +1188,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1204,7 +1204,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>
@@ -1229,7 +1229,7 @@ public final class ExpandedDataSetFilterExpression extends com.google.protobuf.G
      *
      *
      * <pre>
-     * A filter expression to be NOT'ed (i.e., inverted, complemented). It
+     * A filter expression to be NOT'ed (that is, inverted, complemented). It
      * must include a dimension_filter. This cannot be set on the
      * top level ExpandedDataSetFilterExpression.
      * </pre>

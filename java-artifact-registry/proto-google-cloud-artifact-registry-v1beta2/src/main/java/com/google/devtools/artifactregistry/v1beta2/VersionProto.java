@@ -86,14 +86,14 @@ public final class VersionProto {
           + "w\"3\n\024DeleteVersionRequest\022\014\n\004name\030\001 \001(\t\022"
           + "\r\n\005force\030\002 \001(\010*@\n\013VersionView\022\034\n\030VERSION"
           + "_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002"
-          + "B\223\002\n,com.google.devtools.artifactregistr"
-          + "y.v1beta2B\014VersionProtoP\001ZXgoogle.golang"
-          + ".org/genproto/googleapis/devtools/artifa"
-          + "ctregistry/v1beta2;artifactregistry\252\002%Go"
-          + "ogle.Cloud.ArtifactRegistry.V1Beta2\312\002%Go"
-          + "ogle\\Cloud\\ArtifactRegistry\\V1beta2\352\002(Go"
-          + "ogle::Cloud::ArtifactRegistry::V1beta2b\006"
-          + "proto3"
+          + "B\220\002\n,com.google.devtools.artifactregistr"
+          + "y.v1beta2B\014VersionProtoP\001ZUcloud.google."
+          + "com/go/artifactregistry/apiv1beta2/artif"
+          + "actregistrypb;artifactregistrypb\252\002%Googl"
+          + "e.Cloud.ArtifactRegistry.V1Beta2\312\002%Googl"
+          + "e\\Cloud\\ArtifactRegistry\\V1beta2\352\002(Googl"
+          + "e::Cloud::ArtifactRegistry::V1beta2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -212,11 +212,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * A page token, received from a previous
-   * [TensorboardService.ExportTensorboardTimeSeries][] call.
-   * Provide this to retrieve the subsequent page.
+   * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [TensorboardService.ExportTensorboardTimeSeries][] must
-   * match the call that provided the page token.
+   * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -240,11 +240,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * A page token, received from a previous
-   * [TensorboardService.ExportTensorboardTimeSeries][] call.
-   * Provide this to retrieve the subsequent page.
+   * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [TensorboardService.ExportTensorboardTimeSeries][] must
-   * match the call that provided the page token.
+   * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -1062,11 +1062,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ExportTensorboardTimeSeries][] call.
-     * Provide this to retrieve the subsequent page.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ExportTensorboardTimeSeries][] must
-     * match the call that provided the page token.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1089,11 +1089,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ExportTensorboardTimeSeries][] call.
-     * Provide this to retrieve the subsequent page.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ExportTensorboardTimeSeries][] must
-     * match the call that provided the page token.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1116,11 +1116,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ExportTensorboardTimeSeries][] call.
-     * Provide this to retrieve the subsequent page.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ExportTensorboardTimeSeries][] must
-     * match the call that provided the page token.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1142,11 +1142,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ExportTensorboardTimeSeries][] call.
-     * Provide this to retrieve the subsequent page.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ExportTensorboardTimeSeries][] must
-     * match the call that provided the page token.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1164,11 +1164,11 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ExportTensorboardTimeSeries][] call.
-     * Provide this to retrieve the subsequent page.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ExportTensorboardTimeSeries][] must
-     * match the call that provided the page token.
+     * [ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>

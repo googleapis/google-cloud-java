@@ -27,6 +27,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * 2.  An intent query that specifies which intent to trigger.
  * 3.  Natural language speech audio to be processed.
  * 4.  An event to be triggered.
+ * 5.  DTMF digits to invoke an intent and fill in parameter value.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.QueryInput}
@@ -691,6 +692,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    * 2.  An intent query that specifies which intent to trigger.
    * 3.  Natural language speech audio to be processed.
    * 4.  An event to be triggered.
+   * 5.  DTMF digits to invoke an intent and fill in parameter value.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.QueryInput}

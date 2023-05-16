@@ -2150,6 +2150,112 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getChannelGroup(
+      GetChannelGroupRequest request, StreamObserver<ChannelGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelGroup) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetChannelGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listChannelGroups(
+      ListChannelGroupsRequest request,
+      StreamObserver<ListChannelGroupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListChannelGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListChannelGroupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListChannelGroups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListChannelGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createChannelGroup(
+      CreateChannelGroupRequest request, StreamObserver<ChannelGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelGroup) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateChannelGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateChannelGroup(
+      UpdateChannelGroupRequest request, StreamObserver<ChannelGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelGroup) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateChannelGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteChannelGroup(
+      DeleteChannelGroupRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteChannelGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void setAutomatedGa4ConfigurationOptOut(
       SetAutomatedGa4ConfigurationOptOutRequest request,
       StreamObserver<SetAutomatedGa4ConfigurationOptOutResponse> responseObserver) {
@@ -2341,6 +2447,28 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method ListConnectedSiteTags, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConnectedSiteTagsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchConnectedGa4Property(
+      FetchConnectedGa4PropertyRequest request,
+      StreamObserver<FetchConnectedGa4PropertyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchConnectedGa4PropertyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchConnectedGa4PropertyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchConnectedGa4Property, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchConnectedGa4PropertyResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -327,12 +327,12 @@ public final class TemplatesProto {
           + "m,https://www.googleapis.com/auth/comput"
           + "e,https://www.googleapis.com/auth/comput"
           + "e.readonly,https://www.googleapis.com/au"
-          + "th/userinfo.emailB\323\001\n\033com.google.dataflo"
-          + "w.v1beta3B\016TemplatesProtoP\001Z?google.gola"
-          + "ng.org/genproto/googleapis/dataflow/v1be"
-          + "ta3;dataflow\252\002\035Google.Cloud.Dataflow.V1B"
-          + "eta3\312\002\035Google\\Cloud\\Dataflow\\V1beta3\352\002 G"
-          + "oogle::Cloud::Dataflow::V1beta3b\006proto3"
+          + "th/userinfo.emailB\321\001\n\033com.google.dataflo"
+          + "w.v1beta3B\016TemplatesProtoP\001Z=cloud.googl"
+          + "e.com/go/dataflow/apiv1beta3/dataflowpb;"
+          + "dataflowpb\252\002\035Google.Cloud.Dataflow.V1Bet"
+          + "a3\312\002\035Google\\Cloud\\Dataflow\\V1beta3\352\002 Goo"
+          + "gle::Cloud::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

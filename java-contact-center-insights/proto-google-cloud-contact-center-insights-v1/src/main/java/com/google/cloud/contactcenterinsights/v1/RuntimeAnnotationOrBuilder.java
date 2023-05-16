@@ -220,6 +220,49 @@ public interface RuntimeAnnotationOrBuilder
    *
    *
    * <pre>
+   * Conversation summarization suggestion data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData conversation_summarization_suggestion = 12;
+   * </code>
+   *
+   * @return Whether the conversationSummarizationSuggestion field is set.
+   */
+  boolean hasConversationSummarizationSuggestion();
+  /**
+   *
+   *
+   * <pre>
+   * Conversation summarization suggestion data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData conversation_summarization_suggestion = 12;
+   * </code>
+   *
+   * @return The conversationSummarizationSuggestion.
+   */
+  com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+      getConversationSummarizationSuggestion();
+  /**
+   *
+   *
+   * <pre>
+   * Conversation summarization suggestion data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData conversation_summarization_suggestion = 12;
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionDataOrBuilder
+      getConversationSummarizationSuggestionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The unique identifier of the annotation.
    * Format:
    * projects/{project}/locations/{location}/conversationDatasets/{dataset}/conversationDataItems/{data_item}/conversationAnnotations/{annotation}

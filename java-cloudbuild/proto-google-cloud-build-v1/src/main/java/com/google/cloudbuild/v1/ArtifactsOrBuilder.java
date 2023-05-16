@@ -303,4 +303,81 @@ public interface ArtifactsOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Artifacts.PythonPackageOrBuilder getPythonPackagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of npm packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Npm packages in the specified paths will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any packages fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
+   */
+  java.util.List<com.google.cloudbuild.v1.Artifacts.NpmPackage> getNpmPackagesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of npm packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Npm packages in the specified paths will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any packages fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
+   */
+  com.google.cloudbuild.v1.Artifacts.NpmPackage getNpmPackages(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of npm packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Npm packages in the specified paths will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any packages fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
+   */
+  int getNpmPackagesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of npm packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Npm packages in the specified paths will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any packages fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.Artifacts.NpmPackageOrBuilder>
+      getNpmPackagesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of npm packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Npm packages in the specified paths will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any packages fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.NpmPackage npm_packages = 6;</code>
+   */
+  com.google.cloudbuild.v1.Artifacts.NpmPackageOrBuilder getNpmPackagesOrBuilder(int index);
 }

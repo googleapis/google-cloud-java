@@ -28,7 +28,7 @@ public interface ExportAgentResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
-   * only if `agent_uri` is specified in
+   * if `agent_uri` is specified in
    * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ExportAgentResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
-   * only if `agent_uri` is specified in
+   * if `agent_uri` is specified in
    * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ExportAgentResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
-   * only if `agent_uri` is specified in
+   * if `agent_uri` is specified in
    * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *

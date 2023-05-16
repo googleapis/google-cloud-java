@@ -43,6 +43,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     tensorboard_ = "";
+    experiment_ = "";
+    experimentRun_ = "";
   }
 
   @java.lang.Override
@@ -641,6 +643,124 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     return enableDashboardAccess_;
   }
 
+  public static final int EXPERIMENT_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object experiment_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The experiment.
+   */
+  @java.lang.Override
+  public java.lang.String getExperiment() {
+    java.lang.Object ref = experiment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      experiment_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for experiment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExperimentBytes() {
+    java.lang.Object ref = experiment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      experiment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXPERIMENT_RUN_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object experimentRun_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment Run associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The experimentRun.
+   */
+  @java.lang.Override
+  public java.lang.String getExperimentRun() {
+    java.lang.Object ref = experimentRun_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      experimentRun_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment Run associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for experimentRun.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExperimentRunBytes() {
+    java.lang.Object ref = experimentRun_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      experimentRun_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -681,6 +801,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableDashboardAccess_ != false) {
       output.writeBool(16, enableDashboardAccess_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experiment_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, experiment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experimentRun_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, experimentRun_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -723,6 +849,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (enableDashboardAccess_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, enableDashboardAccess_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experiment_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, experiment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experimentRun_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, experimentRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -754,6 +886,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (!getTensorboard().equals(other.getTensorboard())) return false;
     if (getEnableWebAccess() != other.getEnableWebAccess()) return false;
     if (getEnableDashboardAccess() != other.getEnableDashboardAccess()) return false;
+    if (!getExperiment().equals(other.getExperiment())) return false;
+    if (!getExperimentRun().equals(other.getExperimentRun())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -791,6 +925,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWebAccess());
     hash = (37 * hash) + ENABLE_DASHBOARD_ACCESS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDashboardAccess());
+    hash = (37 * hash) + EXPERIMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getExperiment().hashCode();
+    hash = (37 * hash) + EXPERIMENT_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + getExperimentRun().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -954,6 +1092,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       tensorboard_ = "";
       enableWebAccess_ = false;
       enableDashboardAccess_ = false;
+      experiment_ = "";
+      experimentRun_ = "";
       return this;
     }
 
@@ -1032,6 +1172,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.enableDashboardAccess_ = enableDashboardAccess_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.experiment_ = experiment_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.experimentRun_ = experimentRun_;
       }
     }
 
@@ -1145,6 +1291,16 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableDashboardAccess() != false) {
         setEnableDashboardAccess(other.getEnableDashboardAccess());
       }
+      if (!other.getExperiment().isEmpty()) {
+        experiment_ = other.experiment_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getExperimentRun().isEmpty()) {
+        experimentRun_ = other.experimentRun_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1235,6 +1391,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 128
+            case 138:
+              {
+                experiment_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 138
+            case 146:
+              {
+                experimentRun_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2994,6 +3162,258 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableDashboardAccess() {
       bitField0_ = (bitField0_ & ~0x00000100);
       enableDashboardAccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object experiment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The experiment.
+     */
+    public java.lang.String getExperiment() {
+      java.lang.Object ref = experiment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        experiment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for experiment.
+     */
+    public com.google.protobuf.ByteString getExperimentBytes() {
+      java.lang.Object ref = experiment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        experiment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The experiment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperiment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      experiment_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExperiment() {
+      experiment_ = getDefaultInstance().getExperiment();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for experiment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      experiment_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object experimentRun_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment Run associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The experimentRun.
+     */
+    public java.lang.String getExperimentRun() {
+      java.lang.Object ref = experimentRun_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        experimentRun_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment Run associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for experimentRun.
+     */
+    public com.google.protobuf.ByteString getExperimentRunBytes() {
+      java.lang.Object ref = experimentRun_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        experimentRun_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment Run associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The experimentRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentRun(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      experimentRun_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment Run associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExperimentRun() {
+      experimentRun_ = getDefaultInstance().getExperimentRun();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Experiment Run associated with this job.
+     * Format:
+     * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+     * </pre>
+     *
+     * <code>
+     * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for experimentRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentRunBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      experimentRun_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

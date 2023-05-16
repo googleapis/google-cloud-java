@@ -299,6 +299,7 @@ public class GkeHubClientHttpJsonTest {
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setAuthority(Authority.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -353,6 +354,7 @@ public class GkeHubClientHttpJsonTest {
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setAuthority(Authority.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -513,6 +515,7 @@ public class GkeHubClientHttpJsonTest {
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setAuthority(Authority.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -576,6 +579,7 @@ public class GkeHubClientHttpJsonTest {
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setAuthority(Authority.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -943,6 +947,7 @@ public class GkeHubClientHttpJsonTest {
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setAuthority(Authority.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1006,6 +1011,7 @@ public class GkeHubClientHttpJsonTest {
             .setLastConnectionTime(Timestamp.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setAuthority(Authority.newBuilder().build())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

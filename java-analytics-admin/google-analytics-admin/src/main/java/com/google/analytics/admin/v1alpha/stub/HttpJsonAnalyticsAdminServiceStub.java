@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -66,9 +67,11 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
@@ -91,6 +94,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
@@ -109,12 +113,15 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -144,6 +151,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
@@ -187,6 +196,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -4029,6 +4039,191 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetChannelGroupRequest, ChannelGroup>
+      getChannelGroupMethodDescriptor =
+          ApiMethodDescriptor.<GetChannelGroupRequest, ChannelGroup>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetChannelGroup")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetChannelGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/channelGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ChannelGroup>newBuilder()
+                      .setDefaultInstance(ChannelGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsMethodDescriptor =
+          ApiMethodDescriptor.<ListChannelGroupsRequest, ListChannelGroupsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListChannelGroups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListChannelGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/channelGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListChannelGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListChannelGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListChannelGroupsResponse>newBuilder()
+                      .setDefaultInstance(ListChannelGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateChannelGroupRequest, ChannelGroup>
+      createChannelGroupMethodDescriptor =
+          ApiMethodDescriptor.<CreateChannelGroupRequest, ChannelGroup>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateChannelGroup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateChannelGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/channelGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("channelGroup", request.getChannelGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ChannelGroup>newBuilder()
+                      .setDefaultInstance(ChannelGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateChannelGroupRequest, ChannelGroup>
+      updateChannelGroupMethodDescriptor =
+          ApiMethodDescriptor.<UpdateChannelGroupRequest, ChannelGroup>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateChannelGroup")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateChannelGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{channelGroup.name=properties/*/channelGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "channelGroup.name", request.getChannelGroup().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("channelGroup", request.getChannelGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ChannelGroup>newBuilder()
+                      .setDefaultInstance(ChannelGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteChannelGroupRequest, Empty>
+      deleteChannelGroupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteChannelGroupRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteChannelGroup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteChannelGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/channelGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteChannelGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutMethodDescriptor =
@@ -4389,6 +4584,43 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/FetchConnectedGa4Property")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchConnectedGa4PropertyRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/properties:fetchConnectedGa4Property",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchConnectedGa4PropertyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchConnectedGa4PropertyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "property", request.getProperty());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchConnectedGa4PropertyResponse>newBuilder()
+                      .setDefaultInstance(FetchConnectedGa4PropertyResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -4603,6 +4835,14 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   private final UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
       updateExpandedDataSetCallable;
   private final UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable;
+  private final UnaryCallable<GetChannelGroupRequest, ChannelGroup> getChannelGroupCallable;
+  private final UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsCallable;
+  private final UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsPagedResponse>
+      listChannelGroupsPagedCallable;
+  private final UnaryCallable<CreateChannelGroupRequest, ChannelGroup> createChannelGroupCallable;
+  private final UnaryCallable<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupCallable;
+  private final UnaryCallable<DeleteChannelGroupRequest, Empty> deleteChannelGroupCallable;
   private final UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable;
@@ -4623,6 +4863,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   private final UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable;
   private final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsCallable;
+  private final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -5288,6 +5530,34 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .setMethodDescriptor(deleteExpandedDataSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupTransportSettings =
+        HttpJsonCallSettings.<GetChannelGroupRequest, ChannelGroup>newBuilder()
+            .setMethodDescriptor(getChannelGroupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListChannelGroupsRequest, ListChannelGroupsResponse>
+        listChannelGroupsTransportSettings =
+            HttpJsonCallSettings.<ListChannelGroupsRequest, ListChannelGroupsResponse>newBuilder()
+                .setMethodDescriptor(listChannelGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateChannelGroupRequest, ChannelGroup>
+        createChannelGroupTransportSettings =
+            HttpJsonCallSettings.<CreateChannelGroupRequest, ChannelGroup>newBuilder()
+                .setMethodDescriptor(createChannelGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateChannelGroupRequest, ChannelGroup>
+        updateChannelGroupTransportSettings =
+            HttpJsonCallSettings.<UpdateChannelGroupRequest, ChannelGroup>newBuilder()
+                .setMethodDescriptor(updateChannelGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupTransportSettings =
+        HttpJsonCallSettings.<DeleteChannelGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteChannelGroupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
         setAutomatedGa4ConfigurationOptOutTransportSettings =
@@ -5352,6 +5622,13 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             HttpJsonCallSettings
                 .<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>newBuilder()
                 .setMethodDescriptor(listConnectedSiteTagsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+        fetchConnectedGa4PropertyTransportSettings =
+            HttpJsonCallSettings
+                .<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>newBuilder()
+                .setMethodDescriptor(fetchConnectedGa4PropertyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
 
@@ -5870,6 +6147,34 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             deleteExpandedDataSetTransportSettings,
             settings.deleteExpandedDataSetSettings(),
             clientContext);
+    this.getChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            getChannelGroupTransportSettings, settings.getChannelGroupSettings(), clientContext);
+    this.listChannelGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listChannelGroupsTransportSettings,
+            settings.listChannelGroupsSettings(),
+            clientContext);
+    this.listChannelGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listChannelGroupsTransportSettings,
+            settings.listChannelGroupsSettings(),
+            clientContext);
+    this.createChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            createChannelGroupTransportSettings,
+            settings.createChannelGroupSettings(),
+            clientContext);
+    this.updateChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateChannelGroupTransportSettings,
+            settings.updateChannelGroupSettings(),
+            clientContext);
+    this.deleteChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteChannelGroupTransportSettings,
+            settings.deleteChannelGroupSettings(),
+            clientContext);
     this.setAutomatedGa4ConfigurationOptOutCallable =
         callableFactory.createUnaryCallable(
             setAutomatedGa4ConfigurationOptOutTransportSettings,
@@ -5917,6 +6222,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
         callableFactory.createUnaryCallable(
             listConnectedSiteTagsTransportSettings,
             settings.listConnectedSiteTagsSettings(),
+            clientContext);
+    this.fetchConnectedGa4PropertyCallable =
+        callableFactory.createUnaryCallable(
+            fetchConnectedGa4PropertyTransportSettings,
+            settings.fetchConnectedGa4PropertySettings(),
             clientContext);
 
     this.backgroundResources =
@@ -6024,6 +6334,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(createExpandedDataSetMethodDescriptor);
     methodDescriptors.add(updateExpandedDataSetMethodDescriptor);
     methodDescriptors.add(deleteExpandedDataSetMethodDescriptor);
+    methodDescriptors.add(getChannelGroupMethodDescriptor);
+    methodDescriptors.add(listChannelGroupsMethodDescriptor);
+    methodDescriptors.add(createChannelGroupMethodDescriptor);
+    methodDescriptors.add(updateChannelGroupMethodDescriptor);
+    methodDescriptors.add(deleteChannelGroupMethodDescriptor);
     methodDescriptors.add(setAutomatedGa4ConfigurationOptOutMethodDescriptor);
     methodDescriptors.add(fetchAutomatedGa4ConfigurationOptOutMethodDescriptor);
     methodDescriptors.add(getBigQueryLinkMethodDescriptor);
@@ -6033,6 +6348,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(createConnectedSiteTagMethodDescriptor);
     methodDescriptors.add(deleteConnectedSiteTagMethodDescriptor);
     methodDescriptors.add(listConnectedSiteTagsMethodDescriptor);
+    methodDescriptors.add(fetchConnectedGa4PropertyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -6703,6 +7019,38 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   }
 
   @Override
+  public UnaryCallable<GetChannelGroupRequest, ChannelGroup> getChannelGroupCallable() {
+    return getChannelGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsCallable() {
+    return listChannelGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsPagedResponse>
+      listChannelGroupsPagedCallable() {
+    return listChannelGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateChannelGroupRequest, ChannelGroup> createChannelGroupCallable() {
+    return createChannelGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupCallable() {
+    return updateChannelGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteChannelGroupRequest, Empty> deleteChannelGroupCallable() {
+    return deleteChannelGroupCallable;
+  }
+
+  @Override
   public UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable() {
@@ -6760,6 +7108,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsCallable() {
     return listConnectedSiteTagsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyCallable() {
+    return fetchConnectedGa4PropertyCallable;
   }
 
   @Override

@@ -184,6 +184,26 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     return maxConcurrentCdcTasks_;
   }
 
+  public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 4;
+  private int maxConcurrentBackfillTasks_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent backfill tasks. The number should be non
+   * negative. If not set (or set to 0), the system's default value will be
+   * used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+   *
+   * @return The maxConcurrentBackfillTasks.
+   */
+  @java.lang.Override
+  public int getMaxConcurrentBackfillTasks() {
+    return maxConcurrentBackfillTasks_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -207,6 +227,9 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     if (maxConcurrentCdcTasks_ != 0) {
       output.writeInt32(3, maxConcurrentCdcTasks_);
     }
+    if (maxConcurrentBackfillTasks_ != 0) {
+      output.writeInt32(4, maxConcurrentBackfillTasks_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -224,6 +247,10 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     }
     if (maxConcurrentCdcTasks_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxConcurrentCdcTasks_);
+    }
+    if (maxConcurrentBackfillTasks_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxConcurrentBackfillTasks_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -250,6 +277,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       if (!getExcludeObjects().equals(other.getExcludeObjects())) return false;
     }
     if (getMaxConcurrentCdcTasks() != other.getMaxConcurrentCdcTasks()) return false;
+    if (getMaxConcurrentBackfillTasks() != other.getMaxConcurrentBackfillTasks()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -271,6 +299,8 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxConcurrentCdcTasks();
+    hash = (37 * hash) + MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxConcurrentBackfillTasks();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -421,6 +451,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         excludeObjectsBuilder_ = null;
       }
       maxConcurrentCdcTasks_ = 0;
+      maxConcurrentBackfillTasks_ = 0;
       return this;
     }
 
@@ -467,6 +498,9 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxConcurrentCdcTasks_ = maxConcurrentCdcTasks_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxConcurrentBackfillTasks_ = maxConcurrentBackfillTasks_;
       }
     }
 
@@ -525,6 +559,9 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       if (other.getMaxConcurrentCdcTasks() != 0) {
         setMaxConcurrentCdcTasks(other.getMaxConcurrentCdcTasks());
       }
+      if (other.getMaxConcurrentBackfillTasks() != 0) {
+        setMaxConcurrentBackfillTasks(other.getMaxConcurrentBackfillTasks());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -569,6 +606,12 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                maxConcurrentBackfillTasks_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1008,6 +1051,65 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearMaxConcurrentCdcTasks() {
       bitField0_ = (bitField0_ & ~0x00000004);
       maxConcurrentCdcTasks_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxConcurrentBackfillTasks_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be non
+     * negative. If not set (or set to 0), the system's default value will be
+     * used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+     *
+     * @return The maxConcurrentBackfillTasks.
+     */
+    @java.lang.Override
+    public int getMaxConcurrentBackfillTasks() {
+      return maxConcurrentBackfillTasks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be non
+     * negative. If not set (or set to 0), the system's default value will be
+     * used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+     *
+     * @param value The maxConcurrentBackfillTasks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxConcurrentBackfillTasks(int value) {
+
+      maxConcurrentBackfillTasks_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be non
+     * negative. If not set (or set to 0), the system's default value will be
+     * used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxConcurrentBackfillTasks() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      maxConcurrentBackfillTasks_ = 0;
       onChanged();
       return this;
     }

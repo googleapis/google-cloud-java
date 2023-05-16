@@ -211,15 +211,14 @@ public final class ServiceProto {
           + "s,update_mask\032\214\001\312A\037artifactregistry.goog"
           + "leapis.com\322Aghttps://www.googleapis.com/"
           + "auth/cloud-platform,https://www.googleap"
-          + "is.com/auth/cloud-platform.read-onlyB\223\002\n"
+          + "is.com/auth/cloud-platform.read-onlyB\220\002\n"
           + ",com.google.devtools.artifactregistry.v1"
-          + "beta2B\014ServiceProtoP\001ZXgoogle.golang.org"
-          + "/genproto/googleapis/devtools/artifactre"
-          + "gistry/v1beta2;artifactregistry\252\002%Google"
-          + ".Cloud.ArtifactRegistry.V1Beta2\312\002%Google"
-          + "\\Cloud\\ArtifactRegistry\\V1beta2\352\002(Google"
-          + "::Cloud::ArtifactRegistry::V1beta2b\006prot"
-          + "o3"
+          + "beta2B\014ServiceProtoP\001ZUcloud.google.com/"
+          + "go/artifactregistry/apiv1beta2/artifactr"
+          + "egistrypb;artifactregistrypb\252\002%Google.Cl"
+          + "oud.ArtifactRegistry.V1Beta2\312\002%Google\\Cl"
+          + "oud\\ArtifactRegistry\\V1beta2\352\002(Google::C"
+          + "loud::ArtifactRegistry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

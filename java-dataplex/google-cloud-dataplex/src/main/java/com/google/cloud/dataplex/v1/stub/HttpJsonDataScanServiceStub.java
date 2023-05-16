@@ -105,6 +105,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                             ProtoRestSerializer<CreateDataScanRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "dataScanId", request.getDataScanId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -147,6 +149,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                             ProtoRestSerializer<UpdateDataScanRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

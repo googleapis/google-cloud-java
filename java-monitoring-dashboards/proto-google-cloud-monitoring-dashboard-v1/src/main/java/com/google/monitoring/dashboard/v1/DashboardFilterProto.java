@@ -51,14 +51,14 @@ public final class DashboardFilterProto {
           + "R_TYPE_UNSPECIFIED\020\000\022\022\n\016RESOURCE_LABEL\020\001"
           + "\022\020\n\014METRIC_LABEL\020\002\022\027\n\023USER_METADATA_LABE"
           + "L\020\003\022\031\n\025SYSTEM_METADATA_LABEL\020\004\022\t\n\005GROUP\020"
-          + "\005B\017\n\rdefault_valueB\376\001\n\"com.google.monito"
+          + "\005B\017\n\rdefault_valueB\375\001\n\"com.google.monito"
           + "ring.dashboard.v1B\024DashboardFilterProtoP"
-          + "\001ZGgoogle.golang.org/genproto/googleapis"
-          + "/monitoring/dashboard/v1;dashboard\252\002$Goo"
-          + "gle.Cloud.Monitoring.Dashboard.V1\312\002$Goog"
-          + "le\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Googl"
-          + "e::Cloud::Monitoring::Dashboard::V1b\006pro"
-          + "to3"
+          + "\001ZFcloud.google.com/go/monitoring/dashbo"
+          + "ard/apiv1/dashboardpb;dashboardpb\252\002$Goog"
+          + "le.Cloud.Monitoring.Dashboard.V1\312\002$Googl"
+          + "e\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Google"
+          + "::Cloud::Monitoring::Dashboard::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

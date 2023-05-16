@@ -383,4 +383,21 @@ public interface TensorboardOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Used to indicate if the TensorBoard instance is the default one.
+   * Each project &amp; region can have at most one default TensorBoard instance.
+   * Creation of a default TensorBoard instance and updating an existing
+   * TensorBoard instance to be default will mark all other TensorBoard
+   * instances (if any) as non default.
+   * </pre>
+   *
+   * <code>bool is_default = 12;</code>
+   *
+   * @return The isDefault.
+   */
+  boolean getIsDefault();
 }

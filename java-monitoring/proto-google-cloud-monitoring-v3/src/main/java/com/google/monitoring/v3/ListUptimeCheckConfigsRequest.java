@@ -39,6 +39,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
 
   private ListUptimeCheckConfigsRequest() {
     parent_ = "";
+    filter_ = "";
     pageToken_ = "";
   }
 
@@ -123,6 +124,63 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * If provided, this field specifies the criteria that must be met by
+   * uptime checks to be included in the response.
+   * For more details, see [Filtering
+   * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If provided, this field specifies the criteria that must be met by
+   * uptime checks to be included in the response.
+   * For more details, see [Filtering
+   * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -222,6 +280,9 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+    }
     if (pageSize_ != 0) {
       output.writeInt32(3, pageSize_);
     }
@@ -239,6 +300,9 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
@@ -263,6 +327,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
         (com.google.monitoring.v3.ListUptimeCheckConfigsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -278,6 +343,8 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -423,6 +490,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      filter_ = "";
       pageSize_ = 0;
       pageToken_ = "";
       return this;
@@ -465,9 +533,12 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
         result.parent_ = parent_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.filter_ = filter_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
       }
     }
@@ -523,12 +594,17 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -563,16 +639,22 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -725,6 +807,127 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
       return this;
     }
 
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If provided, this field specifies the criteria that must be met by
+     * uptime checks to be included in the response.
+     * For more details, see [Filtering
+     * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, this field specifies the criteria that must be met by
+     * uptime checks to be included in the response.
+     * For more details, see [Filtering
+     * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, this field specifies the criteria that must be met by
+     * uptime checks to be included in the response.
+     * For more details, see [Filtering
+     * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, this field specifies the criteria that must be met by
+     * uptime checks to be included in the response.
+     * For more details, see [Filtering
+     * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If provided, this field specifies the criteria that must be met by
+     * uptime checks to be included in the response.
+     * For more details, see [Filtering
+     * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private int pageSize_;
     /**
      *
@@ -762,7 +965,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -781,7 +984,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -855,7 +1058,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -874,7 +1077,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -898,7 +1101,7 @@ public final class ListUptimeCheckConfigsRequest extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

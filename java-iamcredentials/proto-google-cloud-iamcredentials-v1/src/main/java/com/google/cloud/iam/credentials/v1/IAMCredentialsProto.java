@@ -62,13 +62,13 @@ public final class IAMCredentialsProto {
           + "{name=projects/*/serviceAccounts/*}:sign"
           + "Jwt:\001*\332A\026name,delegates,payload\032Q\312A\035iamc"
           + "redentials.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\311\001\n#c"
+          + "googleapis.com/auth/cloud-platformB\312\001\n#c"
           + "om.google.cloud.iam.credentials.v1B\023IAMC"
-          + "redentialsProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/iam/credentials/v1;cred"
-          + "entials\370\001\001\252\002\037Google.Cloud.Iam.Credential"
-          + "s.V1\312\002\037Google\\Cloud\\Iam\\Credentials\\V1b\006"
-          + "proto3"
+          + "redentialsProtoP\001ZEcloud.google.com/go/i"
+          + "am/credentials/apiv1/credentialspb;crede"
+          + "ntialspb\370\001\001\252\002\037Google.Cloud.Iam.Credentia"
+          + "ls.V1\312\002\037Google\\Cloud\\Iam\\Credentials\\V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

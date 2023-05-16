@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Kubernetes related attributes.
+ * Kubernetes-related attributes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes}
@@ -5179,8 +5179,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5190,8 +5190,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5201,8 +5201,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5212,8 +5212,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5224,8 +5224,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5443,8 +5443,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5457,8 +5457,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5472,8 +5472,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5486,8 +5486,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -5500,8 +5500,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents the subjects(s) bound to the role. Not always available
-     * for PATCH requests.
+     * Represents one or more subjects that are bound to the role. Not always
+     * available for PATCH requests.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6405,8 +6405,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6423,8 +6423,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6440,8 +6440,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6457,8 +6457,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6481,8 +6481,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6503,8 +6503,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6526,8 +6526,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6550,8 +6550,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6571,8 +6571,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6593,8 +6593,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6615,8 +6615,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6635,8 +6635,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6655,8 +6655,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6669,8 +6669,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6687,8 +6687,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6706,8 +6706,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6720,8 +6720,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -6736,8 +6736,8 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents the subjects(s) bound to the role. Not always available
-       * for PATCH requests.
+       * Represents one or more subjects that are bound to the role. Not always
+       * available for PATCH requests.
        * </pre>
        *
        * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Subject subjects = 4;</code>
@@ -10647,7 +10647,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes related attributes.
+   * Kubernetes-related attributes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes}

@@ -185,8 +185,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User-assigned short name for TagValue. The short name should be
-   * unique for TagValues within the same parent TagKey.
+   * Required. Immutable. User-assigned short name for TagValue. The short name
+   * should be unique for TagValues within the same parent TagKey.
    * The short name must be 63 characters or less, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -214,8 +214,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User-assigned short name for TagValue. The short name should be
-   * unique for TagValues within the same parent TagKey.
+   * Required. Immutable. User-assigned short name for TagValue. The short name
+   * should be unique for TagValues within the same parent TagKey.
    * The short name must be 63 characters or less, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -248,8 +248,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Namespaced name of the TagValue. Must be in the format
-   * `{organization_id}/{tag_key_short_name}/{short_name}`.
+   * Output only. The namespaced name of the TagValue. Can be in the form
+   * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
    * </pre>
    *
    * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -272,8 +274,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Namespaced name of the TagValue. Must be in the format
-   * `{organization_id}/{tag_key_short_name}/{short_name}`.
+   * Output only. The namespaced name of the TagValue. Can be in the form
+   * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
    * </pre>
    *
    * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -454,8 +458,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Entity tag which users can pass to prevent race conditions. This field is
-   * always set in server responses. See UpdateTagValueRequest for details.
+   * Optional. Entity tag which users can pass to prevent race conditions. This
+   * field is always set in server responses. See UpdateTagValueRequest for
+   * details.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -478,8 +483,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Entity tag which users can pass to prevent race conditions. This field is
-   * always set in server responses. See UpdateTagValueRequest for details.
+   * Optional. Entity tag which users can pass to prevent race conditions. This
+   * field is always set in server responses. See UpdateTagValueRequest for
+   * details.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1245,8 +1251,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User-assigned short name for TagValue. The short name should be
-     * unique for TagValues within the same parent TagKey.
+     * Required. Immutable. User-assigned short name for TagValue. The short name
+     * should be unique for TagValues within the same parent TagKey.
      * The short name must be 63 characters or less, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1273,8 +1279,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User-assigned short name for TagValue. The short name should be
-     * unique for TagValues within the same parent TagKey.
+     * Required. Immutable. User-assigned short name for TagValue. The short name
+     * should be unique for TagValues within the same parent TagKey.
      * The short name must be 63 characters or less, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1301,8 +1307,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User-assigned short name for TagValue. The short name should be
-     * unique for TagValues within the same parent TagKey.
+     * Required. Immutable. User-assigned short name for TagValue. The short name
+     * should be unique for TagValues within the same parent TagKey.
      * The short name must be 63 characters or less, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1328,8 +1334,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User-assigned short name for TagValue. The short name should be
-     * unique for TagValues within the same parent TagKey.
+     * Required. Immutable. User-assigned short name for TagValue. The short name
+     * should be unique for TagValues within the same parent TagKey.
      * The short name must be 63 characters or less, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1351,8 +1357,8 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User-assigned short name for TagValue. The short name should be
-     * unique for TagValues within the same parent TagKey.
+     * Required. Immutable. User-assigned short name for TagValue. The short name
+     * should be unique for TagValues within the same parent TagKey.
      * The short name must be 63 characters or less, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1381,8 +1387,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Must be in the format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1404,8 +1412,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Must be in the format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1427,8 +1437,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Must be in the format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1449,8 +1461,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Must be in the format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1467,8 +1481,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Must be in the format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2010,8 +2026,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagValueRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagValueRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2033,8 +2050,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagValueRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagValueRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2056,8 +2074,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagValueRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagValueRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2078,8 +2097,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagValueRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagValueRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2096,8 +2116,9 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagValueRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagValueRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -42,6 +42,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     name_ = "";
     displayName_ = "";
     contentMatchers_ = java.util.Collections.emptyList();
+    checkerType_ = 0;
     selectedRegions_ = java.util.Collections.emptyList();
     internalCheckers_ = java.util.Collections.emptyList();
   }
@@ -62,6 +63,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         .internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 20:
+        return internalGetUserLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -70,6 +82,173 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.monitoring.v3.UptimeCheckConfig.class,
             com.google.monitoring.v3.UptimeCheckConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * What kind of checkers are available to be used by the check.
+   * </pre>
+   *
+   * Protobuf enum {@code google.monitoring.v3.UptimeCheckConfig.CheckerType}
+   */
+  public enum CheckerType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default checker type. Currently converted to `STATIC_IP_CHECKERS`
+     * on creation, the default conversion behavior may change in the future.
+     * </pre>
+     *
+     * <code>CHECKER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CHECKER_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * `STATIC_IP_CHECKERS` are used for uptime checks that perform egress
+     * across the public internet. `STATIC_IP_CHECKERS` use the static IP
+     * addresses returned by `ListUptimeCheckIps`.
+     * </pre>
+     *
+     * <code>STATIC_IP_CHECKERS = 1;</code>
+     */
+    STATIC_IP_CHECKERS(1),
+    /**
+     *
+     *
+     * <pre>
+     * `VPC_CHECKERS` are used for uptime checks that perform egress using
+     * Service Directory and private network access. When using `VPC_CHECKERS`,
+     * the monitored resource type must be `servicedirectory_service`.
+     * </pre>
+     *
+     * <code>VPC_CHECKERS = 3;</code>
+     */
+    VPC_CHECKERS(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default checker type. Currently converted to `STATIC_IP_CHECKERS`
+     * on creation, the default conversion behavior may change in the future.
+     * </pre>
+     *
+     * <code>CHECKER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CHECKER_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * `STATIC_IP_CHECKERS` are used for uptime checks that perform egress
+     * across the public internet. `STATIC_IP_CHECKERS` use the static IP
+     * addresses returned by `ListUptimeCheckIps`.
+     * </pre>
+     *
+     * <code>STATIC_IP_CHECKERS = 1;</code>
+     */
+    public static final int STATIC_IP_CHECKERS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * `VPC_CHECKERS` are used for uptime checks that perform egress using
+     * Service Directory and private network access. When using `VPC_CHECKERS`,
+     * the monitored resource type must be `servicedirectory_service`.
+     * </pre>
+     *
+     * <code>VPC_CHECKERS = 3;</code>
+     */
+    public static final int VPC_CHECKERS_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CheckerType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CheckerType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CHECKER_TYPE_UNSPECIFIED;
+        case 1:
+          return STATIC_IP_CHECKERS;
+        case 3:
+          return VPC_CHECKERS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CheckerType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CheckerType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CheckerType>() {
+          public CheckerType findValueByNumber(int number) {
+            return CheckerType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeCheckConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CheckerType[] VALUES = values();
+
+    public static CheckerType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CheckerType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.CheckerType)
   }
 
   public interface ResourceGroupOrBuilder
@@ -914,6 +1093,555 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface PingConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.PingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+     * </pre>
+     *
+     * <code>int32 pings_count = 1;</code>
+     *
+     * @return The pingsCount.
+     */
+    int getPingsCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information involved in sending ICMP pings alongside public HTTP/TCP
+   * checks. For HTTP, the pings are performed for each part of the redirect
+   * chain.
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.PingConfig}
+   */
+  public static final class PingConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.PingConfig)
+      PingConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PingConfig.newBuilder() to construct.
+    private PingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PingConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PingConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_PingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_PingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig.class,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder.class);
+    }
+
+    public static final int PINGS_COUNT_FIELD_NUMBER = 1;
+    private int pingsCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+     * </pre>
+     *
+     * <code>int32 pings_count = 1;</code>
+     *
+     * @return The pingsCount.
+     */
+    @java.lang.Override
+    public int getPingsCount() {
+      return pingsCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (pingsCount_ != 0) {
+        output.writeInt32(1, pingsCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (pingsCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, pingsCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.PingConfig)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.UptimeCheckConfig.PingConfig other =
+          (com.google.monitoring.v3.UptimeCheckConfig.PingConfig) obj;
+
+      if (getPingsCount() != other.getPingsCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PINGS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPingsCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.monitoring.v3.UptimeCheckConfig.PingConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information involved in sending ICMP pings alongside public HTTP/TCP
+     * checks. For HTTP, the pings are performed for each part of the redirect
+     * chain.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.PingConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.PingConfig)
+        com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_PingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_PingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.UptimeCheckConfig.PingConfig.class,
+                com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.UptimeCheckConfig.PingConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        pingsCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_PingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig getDefaultInstanceForType() {
+        return com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig build() {
+        com.google.monitoring.v3.UptimeCheckConfig.PingConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig buildPartial() {
+        com.google.monitoring.v3.UptimeCheckConfig.PingConfig result =
+            new com.google.monitoring.v3.UptimeCheckConfig.PingConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig.PingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pingsCount_ = pingsCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.PingConfig) {
+          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.PingConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.PingConfig other) {
+        if (other == com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance())
+          return this;
+        if (other.getPingsCount() != 0) {
+          setPingsCount(other.getPingsCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  pingsCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int pingsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+       * </pre>
+       *
+       * <code>int32 pings_count = 1;</code>
+       *
+       * @return The pingsCount.
+       */
+      @java.lang.Override
+      public int getPingsCount() {
+        return pingsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+       * </pre>
+       *
+       * <code>int32 pings_count = 1;</code>
+       *
+       * @param value The pingsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPingsCount(int value) {
+
+        pingsCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+       * </pre>
+       *
+       * <code>int32 pings_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPingsCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pingsCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.PingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.PingConfig)
+    private static final com.google.monitoring.v3.UptimeCheckConfig.PingConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.PingConfig();
+    }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.PingConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PingConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PingConfig>() {
+          @java.lang.Override
+          public PingConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.PingConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface HttpCheckOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.HttpCheck)
@@ -1206,6 +1934,41 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * A user provided content type header to use for the check. The invalid
+     * configurations outlined in the `content_type` field apply to
+     * `custom_content_type`, as well as the following:
+     * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+     * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+     * set.
+     * </pre>
+     *
+     * <code>string custom_content_type = 13;</code>
+     *
+     * @return The customContentType.
+     */
+    java.lang.String getCustomContentType();
+    /**
+     *
+     *
+     * <pre>
+     * A user provided content type header to use for the check. The invalid
+     * configurations outlined in the `content_type` field apply to
+     * `custom_content_type`, as well as the following:
+     * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+     * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+     * set.
+     * </pre>
+     *
+     * <code>string custom_content_type = 13;</code>
+     *
+     * @return The bytes for customContentType.
+     */
+    com.google.protobuf.ByteString getCustomContentTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Boolean specifying whether to include SSL certificate validation as a
      * part of the Uptime check. Only applies to checks where
      * `monitored_resource` is set to `uptime_url`. If `use_ssl` is `false`,
@@ -1226,10 +1989,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
      * provide a `Content-Length` header via the `headers` field or the API will
      * do so. If the `request_method` is `GET` and `body` is not empty, the API
-     * will return an error. The maximum byte size is 1 megabyte. Note: As with
-     * all `bytes` fields, JSON representations are base64 encoded. e.g.:
-     * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
-     * "Zm9vJTI1M0RiYXI=".
+     * will return an error. The maximum byte size is 1 megabyte.
+     * Note: If client libraries aren't used (which performs the conversion
+     * automatically) base64 encode your `body` data since the field is of
+     * `bytes` type.
      * </pre>
      *
      * <code>bytes body = 10;</code>
@@ -1237,6 +2000,118 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return The body.
      */
     com.google.protobuf.ByteString getBody();
+
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    java.util.List<com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>
+        getAcceptedResponseStatusCodesList();
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+        getAcceptedResponseStatusCodes(int index);
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    int getAcceptedResponseStatusCodesCount();
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder>
+        getAcceptedResponseStatusCodesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder
+        getAcceptedResponseStatusCodesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to an HTTP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+     *
+     * @return Whether the pingConfig field is set.
+     */
+    boolean hasPingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to an HTTP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+     *
+     * @return The pingConfig.
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.PingConfig getPingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to an HTTP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder getPingConfigOrBuilder();
   }
   /**
    *
@@ -1261,7 +2136,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       requestMethod_ = 0;
       path_ = "";
       contentType_ = 0;
+      customContentType_ = "";
       body_ = com.google.protobuf.ByteString.EMPTY;
+      acceptedResponseStatusCodes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1493,6 +2370,18 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>URL_ENCODED = 1;</code>
        */
       URL_ENCODED(1),
+      /**
+       *
+       *
+       * <pre>
+       * `body` is in `custom_content_type` form. Equivalent to setting the
+       * `Content-Type` to the contents of `custom_content_type` in the HTTP
+       * request.
+       * </pre>
+       *
+       * <code>USER_PROVIDED = 2;</code>
+       */
+      USER_PROVIDED(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -1517,6 +2406,18 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>URL_ENCODED = 1;</code>
        */
       public static final int URL_ENCODED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * `body` is in `custom_content_type` form. Equivalent to setting the
+       * `Content-Type` to the contents of `custom_content_type` in the HTTP
+       * request.
+       * </pre>
+       *
+       * <code>USER_PROVIDED = 2;</code>
+       */
+      public static final int USER_PROVIDED_VALUE = 2;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -1546,6 +2447,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             return TYPE_UNSPECIFIED;
           case 1:
             return URL_ENCODED;
+          case 2:
+            return USER_PROVIDED;
           default:
             return null;
         }
@@ -2486,6 +3389,1237 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public interface ResponseStatusCodeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * A status code to accept.
+       * </pre>
+       *
+       * <code>int32 status_value = 1;</code>
+       *
+       * @return Whether the statusValue field is set.
+       */
+      boolean hasStatusValue();
+      /**
+       *
+       *
+       * <pre>
+       * A status code to accept.
+       * </pre>
+       *
+       * <code>int32 status_value = 1;</code>
+       *
+       * @return The statusValue.
+       */
+      int getStatusValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * A class of status codes to accept.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+       * </code>
+       *
+       * @return Whether the statusClass field is set.
+       */
+      boolean hasStatusClass();
+      /**
+       *
+       *
+       * <pre>
+       * A class of status codes to accept.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for statusClass.
+       */
+      int getStatusClassValue();
+      /**
+       *
+       *
+       * <pre>
+       * A class of status codes to accept.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+       * </code>
+       *
+       * @return The statusClass.
+       */
+      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+          getStatusClass();
+
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusCodeCase
+          getStatusCodeCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A status to accept. Either a status code class like "2xx", or an integer
+     * status code like "200".
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode}
+     */
+    public static final class ResponseStatusCode extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode)
+        ResponseStatusCodeOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ResponseStatusCode.newBuilder() to construct.
+      private ResponseStatusCode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ResponseStatusCode() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ResponseStatusCode();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ResponseStatusCode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ResponseStatusCode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.class,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+                    .class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An HTTP status code class.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass}
+       */
+      public enum StatusClass implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Default value that matches no status codes.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_UNSPECIFIED = 0;</code>
+         */
+        STATUS_CLASS_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 100 and 199.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_1XX = 100;</code>
+         */
+        STATUS_CLASS_1XX(100),
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 200 and 299.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_2XX = 200;</code>
+         */
+        STATUS_CLASS_2XX(200),
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 300 and 399.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_3XX = 300;</code>
+         */
+        STATUS_CLASS_3XX(300),
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 400 and 499.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_4XX = 400;</code>
+         */
+        STATUS_CLASS_4XX(400),
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 500 and 599.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_5XX = 500;</code>
+         */
+        STATUS_CLASS_5XX(500),
+        /**
+         *
+         *
+         * <pre>
+         * The class of all status codes.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_ANY = 1000;</code>
+         */
+        STATUS_CLASS_ANY(1000),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Default value that matches no status codes.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_UNSPECIFIED = 0;</code>
+         */
+        public static final int STATUS_CLASS_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 100 and 199.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_1XX = 100;</code>
+         */
+        public static final int STATUS_CLASS_1XX_VALUE = 100;
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 200 and 299.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_2XX = 200;</code>
+         */
+        public static final int STATUS_CLASS_2XX_VALUE = 200;
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 300 and 399.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_3XX = 300;</code>
+         */
+        public static final int STATUS_CLASS_3XX_VALUE = 300;
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 400 and 499.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_4XX = 400;</code>
+         */
+        public static final int STATUS_CLASS_4XX_VALUE = 400;
+        /**
+         *
+         *
+         * <pre>
+         * The class of status codes between 500 and 599.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_5XX = 500;</code>
+         */
+        public static final int STATUS_CLASS_5XX_VALUE = 500;
+        /**
+         *
+         *
+         * <pre>
+         * The class of all status codes.
+         * </pre>
+         *
+         * <code>STATUS_CLASS_ANY = 1000;</code>
+         */
+        public static final int STATUS_CLASS_ANY_VALUE = 1000;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static StatusClass valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static StatusClass forNumber(int value) {
+          switch (value) {
+            case 0:
+              return STATUS_CLASS_UNSPECIFIED;
+            case 100:
+              return STATUS_CLASS_1XX;
+            case 200:
+              return STATUS_CLASS_2XX;
+            case 300:
+              return STATUS_CLASS_3XX;
+            case 400:
+              return STATUS_CLASS_4XX;
+            case 500:
+              return STATUS_CLASS_5XX;
+            case 1000:
+              return STATUS_CLASS_ANY;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<StatusClass> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<StatusClass>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<StatusClass>() {
+                  public StatusClass findValueByNumber(int number) {
+                    return StatusClass.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final StatusClass[] VALUES = values();
+
+        public static StatusClass valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private StatusClass(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass)
+      }
+
+      private int statusCodeCase_ = 0;
+      private java.lang.Object statusCode_;
+
+      public enum StatusCodeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        STATUS_VALUE(1),
+        STATUS_CLASS(2),
+        STATUSCODE_NOT_SET(0);
+        private final int value;
+
+        private StatusCodeCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static StatusCodeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static StatusCodeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return STATUS_VALUE;
+            case 2:
+              return STATUS_CLASS;
+            case 0:
+              return STATUSCODE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public StatusCodeCase getStatusCodeCase() {
+        return StatusCodeCase.forNumber(statusCodeCase_);
+      }
+
+      public static final int STATUS_VALUE_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * A status code to accept.
+       * </pre>
+       *
+       * <code>int32 status_value = 1;</code>
+       *
+       * @return Whether the statusValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasStatusValue() {
+        return statusCodeCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A status code to accept.
+       * </pre>
+       *
+       * <code>int32 status_value = 1;</code>
+       *
+       * @return The statusValue.
+       */
+      @java.lang.Override
+      public int getStatusValue() {
+        if (statusCodeCase_ == 1) {
+          return (java.lang.Integer) statusCode_;
+        }
+        return 0;
+      }
+
+      public static final int STATUS_CLASS_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * A class of status codes to accept.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+       * </code>
+       *
+       * @return Whether the statusClass field is set.
+       */
+      public boolean hasStatusClass() {
+        return statusCodeCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A class of status codes to accept.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for statusClass.
+       */
+      public int getStatusClassValue() {
+        if (statusCodeCase_ == 2) {
+          return (java.lang.Integer) statusCode_;
+        }
+        return 0;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A class of status codes to accept.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+       * </code>
+       *
+       * @return The statusClass.
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+          getStatusClass() {
+        if (statusCodeCase_ == 2) {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+              result =
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                      .StatusClass.forNumber((java.lang.Integer) statusCode_);
+          return result == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+                  .UNRECOGNIZED
+              : result;
+        }
+        return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+            .STATUS_CLASS_UNSPECIFIED;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (statusCodeCase_ == 1) {
+          output.writeInt32(1, (int) ((java.lang.Integer) statusCode_));
+        }
+        if (statusCodeCase_ == 2) {
+          output.writeEnum(2, ((java.lang.Integer) statusCode_));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (statusCodeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(
+                  1, (int) ((java.lang.Integer) statusCode_));
+        }
+        if (statusCodeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(
+                  2, ((java.lang.Integer) statusCode_));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode other =
+            (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode) obj;
+
+        if (!getStatusCodeCase().equals(other.getStatusCodeCase())) return false;
+        switch (statusCodeCase_) {
+          case 1:
+            if (getStatusValue() != other.getStatusValue()) return false;
+            break;
+          case 2:
+            if (getStatusClassValue() != other.getStatusClassValue()) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (statusCodeCase_) {
+          case 1:
+            hash = (37 * hash) + STATUS_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getStatusValue();
+            break;
+          case 2:
+            hash = (37 * hash) + STATUS_CLASS_FIELD_NUMBER;
+            hash = (53 * hash) + getStatusClassValue();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A status to accept. Either a status code class like "2xx", or an integer
+       * status code like "200".
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode)
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ResponseStatusCode_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ResponseStatusCode_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.class,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          statusCodeCase_ = 0;
+          statusCode_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_ResponseStatusCode_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode build() {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+            buildPartial() {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode result =
+              new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode result) {
+          result.statusCodeCase_ = statusCodeCase_;
+          result.statusCode_ = this.statusCode_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode) {
+            return mergeFrom(
+                (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode other) {
+          if (other
+              == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                  .getDefaultInstance()) return this;
+          switch (other.getStatusCodeCase()) {
+            case STATUS_VALUE:
+              {
+                setStatusValue(other.getStatusValue());
+                break;
+              }
+            case STATUS_CLASS:
+              {
+                setStatusClassValue(other.getStatusClassValue());
+                break;
+              }
+            case STATUSCODE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    statusCode_ = input.readInt32();
+                    statusCodeCase_ = 1;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    int rawValue = input.readEnum();
+                    statusCodeCase_ = 2;
+                    statusCode_ = rawValue;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int statusCodeCase_ = 0;
+        private java.lang.Object statusCode_;
+
+        public StatusCodeCase getStatusCodeCase() {
+          return StatusCodeCase.forNumber(statusCodeCase_);
+        }
+
+        public Builder clearStatusCode() {
+          statusCodeCase_ = 0;
+          statusCode_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * A status code to accept.
+         * </pre>
+         *
+         * <code>int32 status_value = 1;</code>
+         *
+         * @return Whether the statusValue field is set.
+         */
+        public boolean hasStatusValue() {
+          return statusCodeCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A status code to accept.
+         * </pre>
+         *
+         * <code>int32 status_value = 1;</code>
+         *
+         * @return The statusValue.
+         */
+        public int getStatusValue() {
+          if (statusCodeCase_ == 1) {
+            return (java.lang.Integer) statusCode_;
+          }
+          return 0;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A status code to accept.
+         * </pre>
+         *
+         * <code>int32 status_value = 1;</code>
+         *
+         * @param value The statusValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStatusValue(int value) {
+
+          statusCodeCase_ = 1;
+          statusCode_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A status code to accept.
+         * </pre>
+         *
+         * <code>int32 status_value = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearStatusValue() {
+          if (statusCodeCase_ == 1) {
+            statusCodeCase_ = 0;
+            statusCode_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A class of status codes to accept.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+         * </code>
+         *
+         * @return Whether the statusClass field is set.
+         */
+        @java.lang.Override
+        public boolean hasStatusClass() {
+          return statusCodeCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A class of status codes to accept.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for statusClass.
+         */
+        @java.lang.Override
+        public int getStatusClassValue() {
+          if (statusCodeCase_ == 2) {
+            return ((java.lang.Integer) statusCode_).intValue();
+          }
+          return 0;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A class of status codes to accept.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for statusClass to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStatusClassValue(int value) {
+          statusCodeCase_ = 2;
+          statusCode_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A class of status codes to accept.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+         * </code>
+         *
+         * @return The statusClass.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+            getStatusClass() {
+          if (statusCodeCase_ == 2) {
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+                result =
+                    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                        .StatusClass.forNumber((java.lang.Integer) statusCode_);
+            return result == null
+                ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                    .StatusClass.UNRECOGNIZED
+                : result;
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+              .STATUS_CLASS_UNSPECIFIED;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A class of status codes to accept.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+         * </code>
+         *
+         * @param value The statusClass to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStatusClass(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          statusCodeCase_ = 2;
+          statusCode_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A class of status codes to accept.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass status_class = 2;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearStatusClass() {
+          if (statusCodeCase_ == 2) {
+            statusCodeCase_ = 0;
+            statusCode_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode)
+      private static final com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode();
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ResponseStatusCode> PARSER =
+          new com.google.protobuf.AbstractParser<ResponseStatusCode>() {
+            @java.lang.Override
+            public ResponseStatusCode parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ResponseStatusCode> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ResponseStatusCode> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public static final int REQUEST_METHOD_FIELD_NUMBER = 8;
     private int requestMethod_ = 0;
     /**
@@ -2889,6 +5023,67 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           : result;
     }
 
+    public static final int CUSTOM_CONTENT_TYPE_FIELD_NUMBER = 13;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object customContentType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A user provided content type header to use for the check. The invalid
+     * configurations outlined in the `content_type` field apply to
+     * `custom_content_type`, as well as the following:
+     * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+     * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+     * set.
+     * </pre>
+     *
+     * <code>string custom_content_type = 13;</code>
+     *
+     * @return The customContentType.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomContentType() {
+      java.lang.Object ref = customContentType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customContentType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A user provided content type header to use for the check. The invalid
+     * configurations outlined in the `content_type` field apply to
+     * `custom_content_type`, as well as the following:
+     * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+     * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+     * set.
+     * </pre>
+     *
+     * <code>string custom_content_type = 13;</code>
+     *
+     * @return The bytes for customContentType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCustomContentTypeBytes() {
+      java.lang.Object ref = customContentType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customContentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int VALIDATE_SSL_FIELD_NUMBER = 7;
     private boolean validateSsl_ = false;
     /**
@@ -2920,10 +5115,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
      * provide a `Content-Length` header via the `headers` field or the API will
      * do so. If the `request_method` is `GET` and `body` is not empty, the API
-     * will return an error. The maximum byte size is 1 megabyte. Note: As with
-     * all `bytes` fields, JSON representations are base64 encoded. e.g.:
-     * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
-     * "Zm9vJTI1M0RiYXI=".
+     * will return an error. The maximum byte size is 1 megabyte.
+     * Note: If client libraries aren't used (which performs the conversion
+     * automatically) base64 encode your `body` data since the field is of
+     * `bytes` type.
      * </pre>
      *
      * <code>bytes body = 10;</code>
@@ -2933,6 +5128,153 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.protobuf.ByteString getBody() {
       return body_;
+    }
+
+    public static final int ACCEPTED_RESPONSE_STATUS_CODES_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>
+        acceptedResponseStatusCodes_;
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>
+        getAcceptedResponseStatusCodesList() {
+      return acceptedResponseStatusCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder>
+        getAcceptedResponseStatusCodesOrBuilderList() {
+      return acceptedResponseStatusCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public int getAcceptedResponseStatusCodesCount() {
+      return acceptedResponseStatusCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+        getAcceptedResponseStatusCodes(int index) {
+      return acceptedResponseStatusCodes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, the check will only pass if the HTTP response status code is
+     * in this set of status codes. If empty, the HTTP status code will only
+     * pass if the HTTP status code is 200-299.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder
+        getAcceptedResponseStatusCodesOrBuilder(int index) {
+      return acceptedResponseStatusCodes_.get(index);
+    }
+
+    public static final int PING_CONFIG_FIELD_NUMBER = 12;
+    private com.google.monitoring.v3.UptimeCheckConfig.PingConfig pingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to an HTTP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+     *
+     * @return Whether the pingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPingConfig() {
+      return pingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to an HTTP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+     *
+     * @return The pingConfig.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.PingConfig getPingConfig() {
+      return pingConfig_ == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+          : pingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to an HTTP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder getPingConfigOrBuilder() {
+      return pingConfig_ == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+          : pingConfig_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2981,6 +5323,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       if (!body_.isEmpty()) {
         output.writeBytes(10, body_);
+      }
+      for (int i = 0; i < acceptedResponseStatusCodes_.size(); i++) {
+        output.writeMessage(11, acceptedResponseStatusCodes_.get(i));
+      }
+      if (pingConfig_ != null) {
+        output.writeMessage(12, getPingConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customContentType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, customContentType_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3032,6 +5383,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!body_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream.computeBytesSize(10, body_);
       }
+      for (int i = 0; i < acceptedResponseStatusCodes_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11, acceptedResponseStatusCodes_.get(i));
+      }
+      if (pingConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getPingConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customContentType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, customContentType_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3059,8 +5421,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (getMaskHeaders() != other.getMaskHeaders()) return false;
       if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
       if (contentType_ != other.contentType_) return false;
+      if (!getCustomContentType().equals(other.getCustomContentType())) return false;
       if (getValidateSsl() != other.getValidateSsl()) return false;
       if (!getBody().equals(other.getBody())) return false;
+      if (!getAcceptedResponseStatusCodesList().equals(other.getAcceptedResponseStatusCodesList()))
+        return false;
+      if (hasPingConfig() != other.hasPingConfig()) return false;
+      if (hasPingConfig()) {
+        if (!getPingConfig().equals(other.getPingConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3092,10 +5461,20 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + contentType_;
+      hash = (37 * hash) + CUSTOM_CONTENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomContentType().hashCode();
       hash = (37 * hash) + VALIDATE_SSL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateSsl());
       hash = (37 * hash) + BODY_FIELD_NUMBER;
       hash = (53 * hash) + getBody().hashCode();
+      if (getAcceptedResponseStatusCodesCount() > 0) {
+        hash = (37 * hash) + ACCEPTED_RESPONSE_STATUS_CODES_FIELD_NUMBER;
+        hash = (53 * hash) + getAcceptedResponseStatusCodesList().hashCode();
+      }
+      if (hasPingConfig()) {
+        hash = (37 * hash) + PING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPingConfig().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3270,8 +5649,21 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         maskHeaders_ = false;
         internalGetMutableHeaders().clear();
         contentType_ = 0;
+        customContentType_ = "";
         validateSsl_ = false;
         body_ = com.google.protobuf.ByteString.EMPTY;
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          acceptedResponseStatusCodes_ = java.util.Collections.emptyList();
+        } else {
+          acceptedResponseStatusCodes_ = null;
+          acceptedResponseStatusCodesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000800);
+        pingConfig_ = null;
+        if (pingConfigBuilder_ != null) {
+          pingConfigBuilder_.dispose();
+          pingConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -3299,11 +5691,26 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck buildPartial() {
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result =
             new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)) {
+            acceptedResponseStatusCodes_ =
+                java.util.Collections.unmodifiableList(acceptedResponseStatusCodes_);
+            bitField0_ = (bitField0_ & ~0x00000800);
+          }
+          result.acceptedResponseStatusCodes_ = acceptedResponseStatusCodes_;
+        } else {
+          result.acceptedResponseStatusCodes_ = acceptedResponseStatusCodesBuilder_.build();
+        }
       }
 
       private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result) {
@@ -3334,10 +5741,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           result.contentType_ = contentType_;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.validateSsl_ = validateSsl_;
+          result.customContentType_ = customContentType_;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.validateSsl_ = validateSsl_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.body_ = body_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.pingConfig_ =
+              pingConfigBuilder_ == null ? pingConfig_ : pingConfigBuilder_.build();
         }
       }
 
@@ -3414,11 +5828,47 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (other.contentType_ != 0) {
           setContentTypeValue(other.getContentTypeValue());
         }
+        if (!other.getCustomContentType().isEmpty()) {
+          customContentType_ = other.customContentType_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
         if (other.getValidateSsl() != false) {
           setValidateSsl(other.getValidateSsl());
         }
         if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
           setBody(other.getBody());
+        }
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          if (!other.acceptedResponseStatusCodes_.isEmpty()) {
+            if (acceptedResponseStatusCodes_.isEmpty()) {
+              acceptedResponseStatusCodes_ = other.acceptedResponseStatusCodes_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+            } else {
+              ensureAcceptedResponseStatusCodesIsMutable();
+              acceptedResponseStatusCodes_.addAll(other.acceptedResponseStatusCodes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.acceptedResponseStatusCodes_.isEmpty()) {
+            if (acceptedResponseStatusCodesBuilder_.isEmpty()) {
+              acceptedResponseStatusCodesBuilder_.dispose();
+              acceptedResponseStatusCodesBuilder_ = null;
+              acceptedResponseStatusCodes_ = other.acceptedResponseStatusCodes_;
+              bitField0_ = (bitField0_ & ~0x00000800);
+              acceptedResponseStatusCodesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAcceptedResponseStatusCodesFieldBuilder()
+                      : null;
+            } else {
+              acceptedResponseStatusCodesBuilder_.addAllMessages(
+                  other.acceptedResponseStatusCodes_);
+            }
+          }
+        }
+        if (other.hasPingConfig()) {
+          mergePingConfig(other.getPingConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3491,7 +5941,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               case 56:
                 {
                   validateSsl_ = input.readBool();
-                  bitField0_ |= 0x00000100;
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 56
               case 64:
@@ -3509,9 +5959,36 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               case 82:
                 {
                   body_ = input.readBytes();
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 82
+              case 90:
+                {
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode m =
+                      input.readMessage(
+                          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                              .parser(),
+                          extensionRegistry);
+                  if (acceptedResponseStatusCodesBuilder_ == null) {
+                    ensureAcceptedResponseStatusCodesIsMutable();
+                    acceptedResponseStatusCodes_.add(m);
+                  } else {
+                    acceptedResponseStatusCodesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 90
+              case 98:
+                {
+                  input.readMessage(getPingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 98
+              case 106:
+                {
+                  customContentType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 106
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4505,6 +6982,137 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private java.lang.Object customContentType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A user provided content type header to use for the check. The invalid
+       * configurations outlined in the `content_type` field apply to
+       * `custom_content_type`, as well as the following:
+       * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+       * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+       * set.
+       * </pre>
+       *
+       * <code>string custom_content_type = 13;</code>
+       *
+       * @return The customContentType.
+       */
+      public java.lang.String getCustomContentType() {
+        java.lang.Object ref = customContentType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customContentType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A user provided content type header to use for the check. The invalid
+       * configurations outlined in the `content_type` field apply to
+       * `custom_content_type`, as well as the following:
+       * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+       * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+       * set.
+       * </pre>
+       *
+       * <code>string custom_content_type = 13;</code>
+       *
+       * @return The bytes for customContentType.
+       */
+      public com.google.protobuf.ByteString getCustomContentTypeBytes() {
+        java.lang.Object ref = customContentType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          customContentType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A user provided content type header to use for the check. The invalid
+       * configurations outlined in the `content_type` field apply to
+       * `custom_content_type`, as well as the following:
+       * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+       * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+       * set.
+       * </pre>
+       *
+       * <code>string custom_content_type = 13;</code>
+       *
+       * @param value The customContentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomContentType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customContentType_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A user provided content type header to use for the check. The invalid
+       * configurations outlined in the `content_type` field apply to
+       * `custom_content_type`, as well as the following:
+       * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+       * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+       * set.
+       * </pre>
+       *
+       * <code>string custom_content_type = 13;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomContentType() {
+        customContentType_ = getDefaultInstance().getCustomContentType();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A user provided content type header to use for the check. The invalid
+       * configurations outlined in the `content_type` field apply to
+       * `custom_content_type`, as well as the following:
+       * 1. `content_type` is `URL_ENCODED` and `custom_content_type` is set.
+       * 2. `content_type` is `USER_PROVIDED` and `custom_content_type` is not
+       * set.
+       * </pre>
+       *
+       * <code>string custom_content_type = 13;</code>
+       *
+       * @param value The bytes for customContentType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomContentTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        customContentType_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
       private boolean validateSsl_;
       /**
        *
@@ -4542,7 +7150,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder setValidateSsl(boolean value) {
 
         validateSsl_ = value;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -4561,7 +7169,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearValidateSsl() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         validateSsl_ = false;
         onChanged();
         return this;
@@ -4576,10 +7184,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
        * provide a `Content-Length` header via the `headers` field or the API will
        * do so. If the `request_method` is `GET` and `body` is not empty, the API
-       * will return an error. The maximum byte size is 1 megabyte. Note: As with
-       * all `bytes` fields, JSON representations are base64 encoded. e.g.:
-       * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
-       * "Zm9vJTI1M0RiYXI=".
+       * will return an error. The maximum byte size is 1 megabyte.
+       * Note: If client libraries aren't used (which performs the conversion
+       * automatically) base64 encode your `body` data since the field is of
+       * `bytes` type.
        * </pre>
        *
        * <code>bytes body = 10;</code>
@@ -4598,10 +7206,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
        * provide a `Content-Length` header via the `headers` field or the API will
        * do so. If the `request_method` is `GET` and `body` is not empty, the API
-       * will return an error. The maximum byte size is 1 megabyte. Note: As with
-       * all `bytes` fields, JSON representations are base64 encoded. e.g.:
-       * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
-       * "Zm9vJTI1M0RiYXI=".
+       * will return an error. The maximum byte size is 1 megabyte.
+       * Note: If client libraries aren't used (which performs the conversion
+       * automatically) base64 encode your `body` data since the field is of
+       * `bytes` type.
        * </pre>
        *
        * <code>bytes body = 10;</code>
@@ -4614,7 +7222,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         body_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -4626,10 +7234,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * is `URL_ENCODED`, the body passed in must be URL-encoded. Users can
        * provide a `Content-Length` header via the `headers` field or the API will
        * do so. If the `request_method` is `GET` and `body` is not empty, the API
-       * will return an error. The maximum byte size is 1 megabyte. Note: As with
-       * all `bytes` fields, JSON representations are base64 encoded. e.g.:
-       * "foo=bar" in URL-encoded form is "foo%3Dbar" and in base64 encoding is
-       * "Zm9vJTI1M0RiYXI=".
+       * will return an error. The maximum byte size is 1 megabyte.
+       * Note: If client libraries aren't used (which performs the conversion
+       * automatically) base64 encode your `body` data since the field is of
+       * `bytes` type.
        * </pre>
        *
        * <code>bytes body = 10;</code>
@@ -4637,10 +7245,652 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearBody() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         body_ = getDefaultInstance().getBody();
         onChanged();
         return this;
+      }
+
+      private java.util.List<
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>
+          acceptedResponseStatusCodes_ = java.util.Collections.emptyList();
+
+      private void ensureAcceptedResponseStatusCodesIsMutable() {
+        if (!((bitField0_ & 0x00000800) != 0)) {
+          acceptedResponseStatusCodes_ =
+              new java.util.ArrayList<
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>(
+                  acceptedResponseStatusCodes_);
+          bitField0_ |= 0x00000800;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder>
+          acceptedResponseStatusCodesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>
+          getAcceptedResponseStatusCodesList() {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(acceptedResponseStatusCodes_);
+        } else {
+          return acceptedResponseStatusCodesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public int getAcceptedResponseStatusCodesCount() {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          return acceptedResponseStatusCodes_.size();
+        } else {
+          return acceptedResponseStatusCodesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+          getAcceptedResponseStatusCodes(int index) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          return acceptedResponseStatusCodes_.get(index);
+        } else {
+          return acceptedResponseStatusCodesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder setAcceptedResponseStatusCodes(
+          int index,
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode value) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.set(index, value);
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder setAcceptedResponseStatusCodes(
+          int index,
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+              builderForValue) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder addAcceptedResponseStatusCodes(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode value) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.add(value);
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder addAcceptedResponseStatusCodes(
+          int index,
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode value) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.add(index, value);
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder addAcceptedResponseStatusCodes(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+              builderForValue) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder addAcceptedResponseStatusCodes(
+          int index,
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+              builderForValue) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder addAllAcceptedResponseStatusCodes(
+          java.lang.Iterable<
+                  ? extends com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode>
+              values) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          ensureAcceptedResponseStatusCodesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, acceptedResponseStatusCodes_);
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder clearAcceptedResponseStatusCodes() {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          acceptedResponseStatusCodes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public Builder removeAcceptedResponseStatusCodes(int index) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          ensureAcceptedResponseStatusCodesIsMutable();
+          acceptedResponseStatusCodes_.remove(index);
+          onChanged();
+        } else {
+          acceptedResponseStatusCodesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+          getAcceptedResponseStatusCodesBuilder(int index) {
+        return getAcceptedResponseStatusCodesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder
+          getAcceptedResponseStatusCodesOrBuilder(int index) {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          return acceptedResponseStatusCodes_.get(index);
+        } else {
+          return acceptedResponseStatusCodesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder>
+          getAcceptedResponseStatusCodesOrBuilderList() {
+        if (acceptedResponseStatusCodesBuilder_ != null) {
+          return acceptedResponseStatusCodesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(acceptedResponseStatusCodes_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+          addAcceptedResponseStatusCodesBuilder() {
+        return getAcceptedResponseStatusCodesFieldBuilder()
+            .addBuilder(
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder
+          addAcceptedResponseStatusCodesBuilder(int index) {
+        return getAcceptedResponseStatusCodesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If present, the check will only pass if the HTTP response status code is
+       * in this set of status codes. If empty, the HTTP status code will only
+       * pass if the HTTP status code is 200-299.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode accepted_response_status_codes = 11;
+       * </code>
+       */
+      public java.util.List<
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder>
+          getAcceptedResponseStatusCodesBuilderList() {
+        return getAcceptedResponseStatusCodesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder>
+          getAcceptedResponseStatusCodesFieldBuilder() {
+        if (acceptedResponseStatusCodesBuilder_ == null) {
+          acceptedResponseStatusCodesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.Builder,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCodeOrBuilder>(
+                  acceptedResponseStatusCodes_,
+                  ((bitField0_ & 0x00000800) != 0),
+                  getParentForChildren(),
+                  isClean());
+          acceptedResponseStatusCodes_ = null;
+        }
+        return acceptedResponseStatusCodesBuilder_;
+      }
+
+      private com.google.monitoring.v3.UptimeCheckConfig.PingConfig pingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder>
+          pingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       *
+       * @return Whether the pingConfig field is set.
+       */
+      public boolean hasPingConfig() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       *
+       * @return The pingConfig.
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig getPingConfig() {
+        if (pingConfigBuilder_ == null) {
+          return pingConfig_ == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+              : pingConfig_;
+        } else {
+          return pingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      public Builder setPingConfig(com.google.monitoring.v3.UptimeCheckConfig.PingConfig value) {
+        if (pingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pingConfig_ = value;
+        } else {
+          pingConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      public Builder setPingConfig(
+          com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder builderForValue) {
+        if (pingConfigBuilder_ == null) {
+          pingConfig_ = builderForValue.build();
+        } else {
+          pingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      public Builder mergePingConfig(com.google.monitoring.v3.UptimeCheckConfig.PingConfig value) {
+        if (pingConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) != 0)
+              && pingConfig_ != null
+              && pingConfig_
+                  != com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()) {
+            getPingConfigBuilder().mergeFrom(value);
+          } else {
+            pingConfig_ = value;
+          }
+        } else {
+          pingConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      public Builder clearPingConfig() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        pingConfig_ = null;
+        if (pingConfigBuilder_ != null) {
+          pingConfigBuilder_.dispose();
+          pingConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder getPingConfigBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getPingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder
+          getPingConfigOrBuilder() {
+        if (pingConfigBuilder_ != null) {
+          return pingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return pingConfig_ == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+              : pingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to an HTTP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder>
+          getPingConfigFieldBuilder() {
+        if (pingConfigBuilder_ == null) {
+          pingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.UptimeCheckConfig.PingConfig,
+                  com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder,
+                  com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder>(
+                  getPingConfig(), getParentForChildren(), isClean());
+          pingConfig_ = null;
+        }
+        return pingConfigBuilder_;
       }
 
       @java.lang.Override
@@ -4726,6 +7976,41 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return The port.
      */
     int getPort();
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to a TCP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+     *
+     * @return Whether the pingConfig field is set.
+     */
+    boolean hasPingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to a TCP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+     *
+     * @return The pingConfig.
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.PingConfig getPingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to a TCP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder getPingConfigOrBuilder();
   }
   /**
    *
@@ -4794,6 +8079,56 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return port_;
     }
 
+    public static final int PING_CONFIG_FIELD_NUMBER = 2;
+    private com.google.monitoring.v3.UptimeCheckConfig.PingConfig pingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to a TCP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+     *
+     * @return Whether the pingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPingConfig() {
+      return pingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to a TCP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+     *
+     * @return The pingConfig.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.PingConfig getPingConfig() {
+      return pingConfig_ == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+          : pingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed to add pings to a TCP check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder getPingConfigOrBuilder() {
+      return pingConfig_ == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+          : pingConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4811,6 +8146,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (port_ != 0) {
         output.writeInt32(1, port_);
       }
+      if (pingConfig_ != null) {
+        output.writeMessage(2, getPingConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4822,6 +8160,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       size = 0;
       if (port_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, port_);
+      }
+      if (pingConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPingConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4840,6 +8181,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) obj;
 
       if (getPort() != other.getPort()) return false;
+      if (hasPingConfig() != other.hasPingConfig()) return false;
+      if (hasPingConfig()) {
+        if (!getPingConfig().equals(other.getPingConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4853,6 +8198,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
+      if (hasPingConfig()) {
+        hash = (37 * hash) + PING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPingConfig().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4996,6 +8345,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         super.clear();
         bitField0_ = 0;
         port_ = 0;
+        pingConfig_ = null;
+        if (pingConfigBuilder_ != null) {
+          pingConfigBuilder_.dispose();
+          pingConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -5034,6 +8388,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.port_ = port_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pingConfig_ =
+              pingConfigBuilder_ == null ? pingConfig_ : pingConfigBuilder_.build();
         }
       }
 
@@ -5088,6 +8446,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (other.getPort() != 0) {
           setPort(other.getPort());
         }
+        if (other.hasPingConfig()) {
+          mergePingConfig(other.getPingConfig());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5120,6 +8481,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 18:
+                {
+                  input.readMessage(getPingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5198,6 +8565,192 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private com.google.monitoring.v3.UptimeCheckConfig.PingConfig pingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder>
+          pingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       *
+       * @return Whether the pingConfig field is set.
+       */
+      public boolean hasPingConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       *
+       * @return The pingConfig.
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig getPingConfig() {
+        if (pingConfigBuilder_ == null) {
+          return pingConfig_ == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+              : pingConfig_;
+        } else {
+          return pingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      public Builder setPingConfig(com.google.monitoring.v3.UptimeCheckConfig.PingConfig value) {
+        if (pingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pingConfig_ = value;
+        } else {
+          pingConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      public Builder setPingConfig(
+          com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder builderForValue) {
+        if (pingConfigBuilder_ == null) {
+          pingConfig_ = builderForValue.build();
+        } else {
+          pingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      public Builder mergePingConfig(com.google.monitoring.v3.UptimeCheckConfig.PingConfig value) {
+        if (pingConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && pingConfig_ != null
+              && pingConfig_
+                  != com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()) {
+            getPingConfigBuilder().mergeFrom(value);
+          } else {
+            pingConfig_ = value;
+          }
+        } else {
+          pingConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      public Builder clearPingConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pingConfig_ = null;
+        if (pingConfigBuilder_ != null) {
+          pingConfigBuilder_.dispose();
+          pingConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder getPingConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getPingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder
+          getPingConfigOrBuilder() {
+        if (pingConfigBuilder_ != null) {
+          return pingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return pingConfig_ == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.PingConfig.getDefaultInstance()
+              : pingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contains information needed to add pings to a TCP check.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.UptimeCheckConfig.PingConfig ping_config = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder>
+          getPingConfigFieldBuilder() {
+        if (pingConfigBuilder_ == null) {
+          pingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.UptimeCheckConfig.PingConfig,
+                  com.google.monitoring.v3.UptimeCheckConfig.PingConfig.Builder,
+                  com.google.monitoring.v3.UptimeCheckConfig.PingConfigOrBuilder>(
+                  getPingConfig(), getParentForChildren(), isClean());
+          pingConfig_ = null;
+        }
+        return pingConfigBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5271,8 +8824,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match. Maximum 1024 bytes. An empty `content`
-     * string indicates no content matching is to be performed.
+     * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+     * `content` string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -5284,8 +8837,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match. Maximum 1024 bytes. An empty `content`
-     * string indicates no content matching is to be performed.
+     * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+     * `content` string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -5324,6 +8877,51 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return The matcher.
      */
     com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption getMatcher();
+
+    /**
+     *
+     *
+     * <pre>
+     * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+     * </code>
+     *
+     * @return Whether the jsonPathMatcher field is set.
+     */
+    boolean hasJsonPathMatcher();
+    /**
+     *
+     *
+     * <pre>
+     * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+     * </code>
+     *
+     * @return The jsonPathMatcher.
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher getJsonPathMatcher();
+    /**
+     *
+     *
+     * <pre>
+     * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+     * </code>
+     */
+    com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder
+        getJsonPathMatcherOrBuilder();
+
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.AdditionalMatcherInfoCase
+        getAdditionalMatcherInfoCase();
   }
   /**
    *
@@ -5430,7 +9028,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects regular-expression matching. The match succeeds of the output
+       * Selects regular-expression matching. The match succeeds if the output
        * matches the regular expression specified in the `content` string.
        * Regex matching is only supported for HTTP/HTTPS checks.
        * </pre>
@@ -5451,6 +9049,30 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>NOT_MATCHES_REGEX = 4;</code>
        */
       NOT_MATCHES_REGEX(4),
+      /**
+       *
+       *
+       * <pre>
+       * Selects JSONPath matching. See `JsonPathMatcher` for details on when
+       * the match succeeds. JSONPath matching is only supported for HTTP/HTTPS
+       * checks.
+       * </pre>
+       *
+       * <code>MATCHES_JSON_PATH = 5;</code>
+       */
+      MATCHES_JSON_PATH(5),
+      /**
+       *
+       *
+       * <pre>
+       * Selects JSONPath matching. See `JsonPathMatcher` for details on when
+       * the match succeeds. Succeeds when output does _NOT_ match as specified.
+       * JSONPath is only supported for HTTP/HTTPS checks.
+       * </pre>
+       *
+       * <code>NOT_MATCHES_JSON_PATH = 6;</code>
+       */
+      NOT_MATCHES_JSON_PATH(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -5494,7 +9116,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects regular-expression matching. The match succeeds of the output
+       * Selects regular-expression matching. The match succeeds if the output
        * matches the regular expression specified in the `content` string.
        * Regex matching is only supported for HTTP/HTTPS checks.
        * </pre>
@@ -5515,6 +9137,30 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>NOT_MATCHES_REGEX = 4;</code>
        */
       public static final int NOT_MATCHES_REGEX_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * Selects JSONPath matching. See `JsonPathMatcher` for details on when
+       * the match succeeds. JSONPath matching is only supported for HTTP/HTTPS
+       * checks.
+       * </pre>
+       *
+       * <code>MATCHES_JSON_PATH = 5;</code>
+       */
+      public static final int MATCHES_JSON_PATH_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Selects JSONPath matching. See `JsonPathMatcher` for details on when
+       * the match succeeds. Succeeds when output does _NOT_ match as specified.
+       * JSONPath is only supported for HTTP/HTTPS checks.
+       * </pre>
+       *
+       * <code>NOT_MATCHES_JSON_PATH = 6;</code>
+       */
+      public static final int NOT_MATCHES_JSON_PATH_VALUE = 6;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -5550,6 +9196,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             return MATCHES_REGEX;
           case 4:
             return NOT_MATCHES_REGEX;
+          case 5:
+            return MATCHES_JSON_PATH;
+          case 6:
+            return NOT_MATCHES_JSON_PATH;
           default:
             return null;
         }
@@ -5608,6 +9258,1136 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption)
     }
 
+    public interface JsonPathMatcherOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * JSONPath within the response output pointing to the expected
+       * `ContentMatcher::content` to match against.
+       * </pre>
+       *
+       * <code>string json_path = 1;</code>
+       *
+       * @return The jsonPath.
+       */
+      java.lang.String getJsonPath();
+      /**
+       *
+       *
+       * <pre>
+       * JSONPath within the response output pointing to the expected
+       * `ContentMatcher::content` to match against.
+       * </pre>
+       *
+       * <code>string json_path = 1;</code>
+       *
+       * @return The bytes for jsonPath.
+       */
+      com.google.protobuf.ByteString getJsonPathBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of JSONPath match that will be applied to the JSON output
+       * (`ContentMatcher.content`)
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for jsonMatcher.
+       */
+      int getJsonMatcherValue();
+      /**
+       *
+       *
+       * <pre>
+       * The type of JSONPath match that will be applied to the JSON output
+       * (`ContentMatcher.content`)
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+       * </code>
+       *
+       * @return The jsonMatcher.
+       */
+      com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .JsonPathMatcherOption
+          getJsonMatcher();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information needed to perform a JSONPath content match.
+     * Used for `ContentMatcherOption::MATCHES_JSON_PATH` and
+     * `ContentMatcherOption::NOT_MATCHES_JSON_PATH`.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher}
+     */
+    public static final class JsonPathMatcher extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+        JsonPathMatcherOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use JsonPathMatcher.newBuilder() to construct.
+      private JsonPathMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private JsonPathMatcher() {
+        jsonPath_ = "";
+        jsonMatcher_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new JsonPathMatcher();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_JsonPathMatcher_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_JsonPathMatcher_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.class,
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder
+                    .class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Options to perform JSONPath content matching.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption}
+       */
+      public enum JsonPathMatcherOption implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * No JSONPath matcher type specified (not valid).
+         * </pre>
+         *
+         * <code>JSON_PATH_MATCHER_OPTION_UNSPECIFIED = 0;</code>
+         */
+        JSON_PATH_MATCHER_OPTION_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Selects 'exact string' matching. The match succeeds if the content at
+         * the `json_path` within the output is exactly the same as the
+         * `content` string.
+         * </pre>
+         *
+         * <code>EXACT_MATCH = 1;</code>
+         */
+        EXACT_MATCH(1),
+        /**
+         *
+         *
+         * <pre>
+         * Selects regular-expression matching. The match succeeds if the
+         * content at the `json_path` within the output matches the regular
+         * expression specified in the `content` string.
+         * </pre>
+         *
+         * <code>REGEX_MATCH = 2;</code>
+         */
+        REGEX_MATCH(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * No JSONPath matcher type specified (not valid).
+         * </pre>
+         *
+         * <code>JSON_PATH_MATCHER_OPTION_UNSPECIFIED = 0;</code>
+         */
+        public static final int JSON_PATH_MATCHER_OPTION_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Selects 'exact string' matching. The match succeeds if the content at
+         * the `json_path` within the output is exactly the same as the
+         * `content` string.
+         * </pre>
+         *
+         * <code>EXACT_MATCH = 1;</code>
+         */
+        public static final int EXACT_MATCH_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Selects regular-expression matching. The match succeeds if the
+         * content at the `json_path` within the output matches the regular
+         * expression specified in the `content` string.
+         * </pre>
+         *
+         * <code>REGEX_MATCH = 2;</code>
+         */
+        public static final int REGEX_MATCH_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static JsonPathMatcherOption valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static JsonPathMatcherOption forNumber(int value) {
+          switch (value) {
+            case 0:
+              return JSON_PATH_MATCHER_OPTION_UNSPECIFIED;
+            case 1:
+              return EXACT_MATCH;
+            case 2:
+              return REGEX_MATCH;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<JsonPathMatcherOption>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<JsonPathMatcherOption>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<JsonPathMatcherOption>() {
+                  public JsonPathMatcherOption findValueByNumber(int number) {
+                    return JsonPathMatcherOption.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final JsonPathMatcherOption[] VALUES = values();
+
+        public static JsonPathMatcherOption valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private JsonPathMatcherOption(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption)
+      }
+
+      public static final int JSON_PATH_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object jsonPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * JSONPath within the response output pointing to the expected
+       * `ContentMatcher::content` to match against.
+       * </pre>
+       *
+       * <code>string json_path = 1;</code>
+       *
+       * @return The jsonPath.
+       */
+      @java.lang.Override
+      public java.lang.String getJsonPath() {
+        java.lang.Object ref = jsonPath_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jsonPath_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JSONPath within the response output pointing to the expected
+       * `ContentMatcher::content` to match against.
+       * </pre>
+       *
+       * <code>string json_path = 1;</code>
+       *
+       * @return The bytes for jsonPath.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getJsonPathBytes() {
+        java.lang.Object ref = jsonPath_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jsonPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int JSON_MATCHER_FIELD_NUMBER = 2;
+      private int jsonMatcher_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The type of JSONPath match that will be applied to the JSON output
+       * (`ContentMatcher.content`)
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for jsonMatcher.
+       */
+      @java.lang.Override
+      public int getJsonMatcherValue() {
+        return jsonMatcher_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of JSONPath match that will be applied to the JSON output
+       * (`ContentMatcher.content`)
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+       * </code>
+       *
+       * @return The jsonMatcher.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .JsonPathMatcherOption
+          getJsonMatcher() {
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                .JsonPathMatcherOption
+            result =
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                    .JsonPathMatcherOption.forNumber(jsonMatcher_);
+        return result == null
+            ? com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                .JsonPathMatcherOption.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonPath_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jsonPath_);
+        }
+        if (jsonMatcher_
+            != com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                .JsonPathMatcherOption.JSON_PATH_MATCHER_OPTION_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, jsonMatcher_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonPath_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jsonPath_);
+        }
+        if (jsonMatcher_
+            != com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                .JsonPathMatcherOption.JSON_PATH_MATCHER_OPTION_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, jsonMatcher_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher other =
+            (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher) obj;
+
+        if (!getJsonPath().equals(other.getJsonPath())) return false;
+        if (jsonMatcher_ != other.jsonMatcher_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + JSON_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getJsonPath().hashCode();
+        hash = (37 * hash) + JSON_MATCHER_FIELD_NUMBER;
+        hash = (53 * hash) + jsonMatcher_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information needed to perform a JSONPath content match.
+       * Used for `ContentMatcherOption::MATCHES_JSON_PATH` and
+       * `ContentMatcherOption::NOT_MATCHES_JSON_PATH`.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_JsonPathMatcher_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_JsonPathMatcher_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.class,
+                  com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          jsonPath_ = "";
+          jsonMatcher_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_JsonPathMatcher_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher build() {
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+            buildPartial() {
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher result =
+              new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.jsonPath_ = jsonPath_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.jsonMatcher_ = jsonMatcher_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher) {
+            return mergeFrom(
+                (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher other) {
+          if (other
+              == com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                  .getDefaultInstance()) return this;
+          if (!other.getJsonPath().isEmpty()) {
+            jsonPath_ = other.jsonPath_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.jsonMatcher_ != 0) {
+            setJsonMatcherValue(other.getJsonMatcherValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    jsonPath_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    jsonMatcher_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object jsonPath_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * JSONPath within the response output pointing to the expected
+         * `ContentMatcher::content` to match against.
+         * </pre>
+         *
+         * <code>string json_path = 1;</code>
+         *
+         * @return The jsonPath.
+         */
+        public java.lang.String getJsonPath() {
+          java.lang.Object ref = jsonPath_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            jsonPath_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * JSONPath within the response output pointing to the expected
+         * `ContentMatcher::content` to match against.
+         * </pre>
+         *
+         * <code>string json_path = 1;</code>
+         *
+         * @return The bytes for jsonPath.
+         */
+        public com.google.protobuf.ByteString getJsonPathBytes() {
+          java.lang.Object ref = jsonPath_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            jsonPath_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * JSONPath within the response output pointing to the expected
+         * `ContentMatcher::content` to match against.
+         * </pre>
+         *
+         * <code>string json_path = 1;</code>
+         *
+         * @param value The jsonPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setJsonPath(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          jsonPath_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * JSONPath within the response output pointing to the expected
+         * `ContentMatcher::content` to match against.
+         * </pre>
+         *
+         * <code>string json_path = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearJsonPath() {
+          jsonPath_ = getDefaultInstance().getJsonPath();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * JSONPath within the response output pointing to the expected
+         * `ContentMatcher::content` to match against.
+         * </pre>
+         *
+         * <code>string json_path = 1;</code>
+         *
+         * @param value The bytes for jsonPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setJsonPathBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          jsonPath_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private int jsonMatcher_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The type of JSONPath match that will be applied to the JSON output
+         * (`ContentMatcher.content`)
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for jsonMatcher.
+         */
+        @java.lang.Override
+        public int getJsonMatcherValue() {
+          return jsonMatcher_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of JSONPath match that will be applied to the JSON output
+         * (`ContentMatcher.content`)
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for jsonMatcher to set.
+         * @return This builder for chaining.
+         */
+        public Builder setJsonMatcherValue(int value) {
+          jsonMatcher_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of JSONPath match that will be applied to the JSON output
+         * (`ContentMatcher.content`)
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+         * </code>
+         *
+         * @return The jsonMatcher.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                .JsonPathMatcherOption
+            getJsonMatcher() {
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                  .JsonPathMatcherOption
+              result =
+                  com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                      .JsonPathMatcherOption.forNumber(jsonMatcher_);
+          return result == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                  .JsonPathMatcherOption.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of JSONPath match that will be applied to the JSON output
+         * (`ContentMatcher.content`)
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+         * </code>
+         *
+         * @param value The jsonMatcher to set.
+         * @return This builder for chaining.
+         */
+        public Builder setJsonMatcher(
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                    .JsonPathMatcherOption
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          jsonMatcher_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The type of JSONPath match that will be applied to the JSON output
+         * (`ContentMatcher.content`)
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.JsonPathMatcherOption json_matcher = 2;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearJsonMatcher() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          jsonMatcher_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+      private static final com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher();
+      }
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<JsonPathMatcher> PARSER =
+          new com.google.protobuf.AbstractParser<JsonPathMatcher>() {
+            @java.lang.Override
+            public JsonPathMatcher parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<JsonPathMatcher> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<JsonPathMatcher> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int additionalMatcherInfoCase_ = 0;
+    private java.lang.Object additionalMatcherInfo_;
+
+    public enum AdditionalMatcherInfoCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      JSON_PATH_MATCHER(3),
+      ADDITIONALMATCHERINFO_NOT_SET(0);
+      private final int value;
+
+      private AdditionalMatcherInfoCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AdditionalMatcherInfoCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static AdditionalMatcherInfoCase forNumber(int value) {
+        switch (value) {
+          case 3:
+            return JSON_PATH_MATCHER;
+          case 0:
+            return ADDITIONALMATCHERINFO_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public AdditionalMatcherInfoCase getAdditionalMatcherInfoCase() {
+      return AdditionalMatcherInfoCase.forNumber(additionalMatcherInfoCase_);
+    }
+
     public static final int CONTENT_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -5616,8 +10396,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match. Maximum 1024 bytes. An empty `content`
-     * string indicates no content matching is to be performed.
+     * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+     * `content` string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -5640,8 +10420,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match. Maximum 1024 bytes. An empty `content`
-     * string indicates no content matching is to be performed.
+     * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+     * `content` string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -5707,6 +10487,69 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           : result;
     }
 
+    public static final int JSON_PATH_MATCHER_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+     * </code>
+     *
+     * @return Whether the jsonPathMatcher field is set.
+     */
+    @java.lang.Override
+    public boolean hasJsonPathMatcher() {
+      return additionalMatcherInfoCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+     * </code>
+     *
+     * @return The jsonPathMatcher.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+        getJsonPathMatcher() {
+      if (additionalMatcherInfoCase_ == 3) {
+        return (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+            additionalMatcherInfo_;
+      }
+      return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder
+        getJsonPathMatcherOrBuilder() {
+      if (additionalMatcherInfoCase_ == 3) {
+        return (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+            additionalMatcherInfo_;
+      }
+      return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5730,6 +10573,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               .getNumber()) {
         output.writeEnum(2, matcher_);
       }
+      if (additionalMatcherInfoCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+                additionalMatcherInfo_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5747,6 +10596,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               .CONTENT_MATCHER_OPTION_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, matcher_);
+      }
+      if (additionalMatcherInfoCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+                    additionalMatcherInfo_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5766,6 +10622,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
       if (!getContent().equals(other.getContent())) return false;
       if (matcher_ != other.matcher_) return false;
+      if (!getAdditionalMatcherInfoCase().equals(other.getAdditionalMatcherInfoCase()))
+        return false;
+      switch (additionalMatcherInfoCase_) {
+        case 3:
+          if (!getJsonPathMatcher().equals(other.getJsonPathMatcher())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5781,6 +10646,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getContent().hashCode();
       hash = (37 * hash) + MATCHER_FIELD_NUMBER;
       hash = (53 * hash) + matcher_;
+      switch (additionalMatcherInfoCase_) {
+        case 3:
+          hash = (37 * hash) + JSON_PATH_MATCHER_FIELD_NUMBER;
+          hash = (53 * hash) + getJsonPathMatcher().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5929,6 +10802,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ = 0;
         content_ = "";
         matcher_ = 0;
+        if (jsonPathMatcherBuilder_ != null) {
+          jsonPathMatcherBuilder_.clear();
+        }
+        additionalMatcherInfoCase_ = 0;
+        additionalMatcherInfo_ = null;
         return this;
       }
 
@@ -5959,6 +10837,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
@@ -5970,6 +10849,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.matcher_ = matcher_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher result) {
+        result.additionalMatcherInfoCase_ = additionalMatcherInfoCase_;
+        result.additionalMatcherInfo_ = this.additionalMatcherInfo_;
+        if (additionalMatcherInfoCase_ == 3 && jsonPathMatcherBuilder_ != null) {
+          result.additionalMatcherInfo_ = jsonPathMatcherBuilder_.build();
         }
       }
 
@@ -6029,6 +10917,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (other.matcher_ != 0) {
           setMatcherValue(other.getMatcherValue());
         }
+        switch (other.getAdditionalMatcherInfoCase()) {
+          case JSON_PATH_MATCHER:
+            {
+              mergeJsonPathMatcher(other.getJsonPathMatcher());
+              break;
+            }
+          case ADDITIONALMATCHERINFO_NOT_SET:
+            {
+              break;
+            }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6067,6 +10966,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  input.readMessage(
+                      getJsonPathMatcherFieldBuilder().getBuilder(), extensionRegistry);
+                  additionalMatcherInfoCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6084,6 +10990,20 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
+      private int additionalMatcherInfoCase_ = 0;
+      private java.lang.Object additionalMatcherInfo_;
+
+      public AdditionalMatcherInfoCase getAdditionalMatcherInfoCase() {
+        return AdditionalMatcherInfoCase.forNumber(additionalMatcherInfoCase_);
+      }
+
+      public Builder clearAdditionalMatcherInfo() {
+        additionalMatcherInfoCase_ = 0;
+        additionalMatcherInfo_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
       private java.lang.Object content_ = "";
@@ -6091,8 +11011,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match. Maximum 1024 bytes. An empty `content`
-       * string indicates no content matching is to be performed.
+       * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+       * `content` string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -6114,8 +11034,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match. Maximum 1024 bytes. An empty `content`
-       * string indicates no content matching is to be performed.
+       * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+       * `content` string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -6137,8 +11057,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match. Maximum 1024 bytes. An empty `content`
-       * string indicates no content matching is to be performed.
+       * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+       * `content` string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -6159,8 +11079,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match. Maximum 1024 bytes. An empty `content`
-       * string indicates no content matching is to be performed.
+       * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+       * `content` string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -6177,8 +11097,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match. Maximum 1024 bytes. An empty `content`
-       * string indicates no content matching is to be performed.
+       * String, regex or JSON content to match. Maximum 1024 bytes. An empty
+       * `content` string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -6306,6 +11226,252 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         matcher_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher,
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder>
+          jsonPathMatcherBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       *
+       * @return Whether the jsonPathMatcher field is set.
+       */
+      @java.lang.Override
+      public boolean hasJsonPathMatcher() {
+        return additionalMatcherInfoCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       *
+       * @return The jsonPathMatcher.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+          getJsonPathMatcher() {
+        if (jsonPathMatcherBuilder_ == null) {
+          if (additionalMatcherInfoCase_ == 3) {
+            return (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+                additionalMatcherInfo_;
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .getDefaultInstance();
+        } else {
+          if (additionalMatcherInfoCase_ == 3) {
+            return jsonPathMatcherBuilder_.getMessage();
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      public Builder setJsonPathMatcher(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher value) {
+        if (jsonPathMatcherBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          additionalMatcherInfo_ = value;
+          onChanged();
+        } else {
+          jsonPathMatcherBuilder_.setMessage(value);
+        }
+        additionalMatcherInfoCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      public Builder setJsonPathMatcher(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder
+              builderForValue) {
+        if (jsonPathMatcherBuilder_ == null) {
+          additionalMatcherInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          jsonPathMatcherBuilder_.setMessage(builderForValue.build());
+        }
+        additionalMatcherInfoCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      public Builder mergeJsonPathMatcher(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher value) {
+        if (jsonPathMatcherBuilder_ == null) {
+          if (additionalMatcherInfoCase_ == 3
+              && additionalMatcherInfo_
+                  != com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                      .getDefaultInstance()) {
+            additionalMatcherInfo_ =
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                    .newBuilder(
+                        (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+                            additionalMatcherInfo_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            additionalMatcherInfo_ = value;
+          }
+          onChanged();
+        } else {
+          if (additionalMatcherInfoCase_ == 3) {
+            jsonPathMatcherBuilder_.mergeFrom(value);
+          } else {
+            jsonPathMatcherBuilder_.setMessage(value);
+          }
+        }
+        additionalMatcherInfoCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      public Builder clearJsonPathMatcher() {
+        if (jsonPathMatcherBuilder_ == null) {
+          if (additionalMatcherInfoCase_ == 3) {
+            additionalMatcherInfoCase_ = 0;
+            additionalMatcherInfo_ = null;
+            onChanged();
+          }
+        } else {
+          if (additionalMatcherInfoCase_ == 3) {
+            additionalMatcherInfoCase_ = 0;
+            additionalMatcherInfo_ = null;
+          }
+          jsonPathMatcherBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder
+          getJsonPathMatcherBuilder() {
+        return getJsonPathMatcherFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder
+          getJsonPathMatcherOrBuilder() {
+        if ((additionalMatcherInfoCase_ == 3) && (jsonPathMatcherBuilder_ != null)) {
+          return jsonPathMatcherBuilder_.getMessageOrBuilder();
+        } else {
+          if (additionalMatcherInfoCase_ == 3) {
+            return (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+                additionalMatcherInfo_;
+          }
+          return com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Matcher information for `MATCHES_JSON_PATH` and `NOT_MATCHES_JSON_PATH`
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher json_path_matcher = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher,
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder>
+          getJsonPathMatcherFieldBuilder() {
+        if (jsonPathMatcherBuilder_ == null) {
+          if (!(additionalMatcherInfoCase_ == 3)) {
+            additionalMatcherInfo_ =
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher
+                    .getDefaultInstance();
+          }
+          jsonPathMatcherBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher,
+                  com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher.Builder,
+                  com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher
+                      .JsonPathMatcherOrBuilder>(
+                  (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcher)
+                      additionalMatcherInfo_,
+                  getParentForChildren(),
+                  isClean());
+          additionalMatcherInfo_ = null;
+        }
+        additionalMatcherInfoCase_ = 3;
+        onChanged();
+        return jsonPathMatcherBuilder_;
       }
 
       @java.lang.Override
@@ -6538,8 +11704,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A human-friendly name for the Uptime check configuration. The display name
-   * should be unique within a Stackdriver Workspace in order to make it easier
-   * to identify; however, uniqueness is not enforced. Required.
+   * should be unique within a Cloud Monitoring Workspace in order to make it
+   * easier to identify; however, uniqueness is not enforced. Required.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -6563,8 +11729,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A human-friendly name for the Uptime check configuration. The display name
-   * should be unique within a Stackdriver Workspace in order to make it easier
-   * to identify; however, uniqueness is not enforced. Required.
+   * should be unique within a Cloud Monitoring Workspace in order to make it
+   * easier to identify; however, uniqueness is not enforced. Required.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -6599,6 +11765,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
    *   `k8s_service`
+   *   `servicedirectory_service`
+   *   `cloud_run_revision`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6623,6 +11791,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
    *   `k8s_service`
+   *   `servicedirectory_service`
+   *   `cloud_run_revision`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6650,6 +11820,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
    *   `k8s_service`
+   *   `servicedirectory_service`
+   *   `cloud_run_revision`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7020,6 +12192,43 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     return contentMatchers_.get(index);
   }
 
+  public static final int CHECKER_TYPE_FIELD_NUMBER = 17;
+  private int checkerType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The type of checkers to use to execute the Uptime check.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+   *
+   * @return The enum numeric value on the wire for checkerType.
+   */
+  @java.lang.Override
+  public int getCheckerTypeValue() {
+    return checkerType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of checkers to use to execute the Uptime check.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+   *
+   * @return The checkerType.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.UptimeCheckConfig.CheckerType getCheckerType() {
+    com.google.monitoring.v3.UptimeCheckConfig.CheckerType result =
+        com.google.monitoring.v3.UptimeCheckConfig.CheckerType.forNumber(checkerType_);
+    return result == null
+        ? com.google.monitoring.v3.UptimeCheckConfig.CheckerType.UNRECOGNIZED
+        : result;
+  }
+
   public static final int SELECTED_REGIONS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -7155,7 +12364,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-   *     google/monitoring/v3/uptime.proto;l=359
+   *     google/monitoring/v3/uptime.proto;l=478
    * @return The isInternal.
    */
   @java.lang.Override
@@ -7265,6 +12474,128 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     return internalCheckers_.get(index);
   }
 
+  public static final int USER_LABELS_FIELD_NUMBER = 20;
+
+  private static final class UserLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.monitoring.v3.UptimeProto
+                .internal_static_google_monitoring_v3_UptimeCheckConfig_UserLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
+    if (userLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return userLabels_;
+  }
+
+  public int getUserLabelsCount() {
+    return internalGetUserLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-supplied key/value data to be used for organizing and
+   * identifying the `UptimeCheckConfig` objects.
+   * The field can contain up to 64 entries. Each key and value is limited to
+   * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+   * values can contain only lowercase letters, numerals, underscores, and
+   * dashes. Keys must begin with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 20;</code>
+   */
+  @java.lang.Override
+  public boolean containsUserLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+    return getUserLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-supplied key/value data to be used for organizing and
+   * identifying the `UptimeCheckConfig` objects.
+   * The field can contain up to 64 entries. Each key and value is limited to
+   * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+   * values can contain only lowercase letters, numerals, underscores, and
+   * dashes. Keys must begin with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 20;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+    return internalGetUserLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-supplied key/value data to be used for organizing and
+   * identifying the `UptimeCheckConfig` objects.
+   * The field can contain up to 64 entries. Each key and value is limited to
+   * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+   * values can contain only lowercase letters, numerals, underscores, and
+   * dashes. Keys must begin with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 20;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User-supplied key/value data to be used for organizing and
+   * identifying the `UptimeCheckConfig` objects.
+   * The field can contain up to 64 entries. Each key and value is limited to
+   * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+   * values can contain only lowercase letters, numerals, underscores, and
+   * dashes. Keys must begin with a letter.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 20;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7322,6 +12653,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     if (isInternal_ != false) {
       output.writeBool(15, isInternal_);
     }
+    if (checkerType_
+        != com.google.monitoring.v3.UptimeCheckConfig.CheckerType.CHECKER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, checkerType_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 20);
     getUnknownFields().writeTo(output);
   }
 
@@ -7386,6 +12724,21 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     if (isInternal_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isInternal_);
     }
+    if (checkerType_
+        != com.google.monitoring.v3.UptimeCheckConfig.CheckerType.CHECKER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, checkerType_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, userLabels__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7413,9 +12766,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
     if (!getContentMatchersList().equals(other.getContentMatchersList())) return false;
+    if (checkerType_ != other.checkerType_) return false;
     if (!selectedRegions_.equals(other.selectedRegions_)) return false;
     if (getIsInternal() != other.getIsInternal()) return false;
     if (!getInternalCheckersList().equals(other.getInternalCheckersList())) return false;
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
     if (!getResourceCase().equals(other.getResourceCase())) return false;
     switch (resourceCase_) {
       case 3:
@@ -7465,6 +12820,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + CONTENT_MATCHERS_FIELD_NUMBER;
       hash = (53 * hash) + getContentMatchersList().hashCode();
     }
+    hash = (37 * hash) + CHECKER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + checkerType_;
     if (getSelectedRegionsCount() > 0) {
       hash = (37 * hash) + SELECTED_REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + selectedRegions_.hashCode();
@@ -7474,6 +12831,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     if (getInternalCheckersCount() > 0) {
       hash = (37 * hash) + INTERNAL_CHECKERS_FIELD_NUMBER;
       hash = (53 * hash) + getInternalCheckersList().hashCode();
+    }
+    if (!internalGetUserLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabels().hashCode();
     }
     switch (resourceCase_) {
       case 3:
@@ -7618,6 +12979,26 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           .internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 20:
+          return internalGetUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 20:
+          return internalGetMutableUserLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -7670,8 +13051,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         contentMatchersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000100);
+      checkerType_ = 0;
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       isInternal_ = false;
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
@@ -7679,7 +13061,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         internalCheckers_ = null;
         internalCheckersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
+      internalGetMutableUserLabels().clear();
       resourceCase_ = 0;
       resource_ = null;
       checkRequestTypeCase_ = 0;
@@ -7730,15 +13113,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         result.contentMatchers_ = contentMatchersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.selectedRegions_ = selectedRegions_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
@@ -7760,8 +13143,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.checkerType_ = checkerType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.isInternal_ = isInternal_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
       }
     }
 
@@ -7872,10 +13262,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (other.checkerType_ != 0) {
+        setCheckerTypeValue(other.getCheckerTypeValue());
+      }
       if (!other.selectedRegions_.isEmpty()) {
         if (selectedRegions_.isEmpty()) {
           selectedRegions_ = other.selectedRegions_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureSelectedRegionsIsMutable();
           selectedRegions_.addAll(other.selectedRegions_);
@@ -7889,7 +13282,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -7902,7 +13295,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             internalCheckersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInternalCheckersFieldBuilder()
@@ -7912,6 +13305,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00002000;
       switch (other.getResourceCase()) {
         case MONITORED_RESOURCE:
           {
@@ -8068,9 +13463,27 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             case 120:
               {
                 isInternal_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 120
+            case 136:
+              {
+                checkerType_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 136
+            case 162:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                    input.readMessage(
+                        UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserLabels()
+                    .getMutableMap()
+                    .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8260,8 +13673,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the Uptime check configuration. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced. Required.
+     * should be unique within a Cloud Monitoring Workspace in order to make it
+     * easier to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -8284,8 +13697,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the Uptime check configuration. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced. Required.
+     * should be unique within a Cloud Monitoring Workspace in order to make it
+     * easier to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -8308,8 +13721,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the Uptime check configuration. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced. Required.
+     * should be unique within a Cloud Monitoring Workspace in order to make it
+     * easier to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -8331,8 +13744,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the Uptime check configuration. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced. Required.
+     * should be unique within a Cloud Monitoring Workspace in order to make it
+     * easier to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -8350,8 +13763,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the Uptime check configuration. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced. Required.
+     * should be unique within a Cloud Monitoring Workspace in order to make it
+     * easier to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -8389,6 +13802,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8413,6 +13828,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8447,6 +13864,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8478,6 +13897,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8506,6 +13927,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8547,6 +13970,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8581,6 +14006,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8602,6 +14029,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -8631,6 +14060,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
      *   `k8s_service`
+     *   `servicedirectory_service`
+     *   `cloud_run_revision`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -10147,12 +15578,104 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return contentMatchersBuilder_;
     }
 
+    private int checkerType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of checkers to use to execute the Uptime check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+     *
+     * @return The enum numeric value on the wire for checkerType.
+     */
+    @java.lang.Override
+    public int getCheckerTypeValue() {
+      return checkerType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of checkers to use to execute the Uptime check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+     *
+     * @param value The enum numeric value on the wire for checkerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckerTypeValue(int value) {
+      checkerType_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of checkers to use to execute the Uptime check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+     *
+     * @return The checkerType.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.UptimeCheckConfig.CheckerType getCheckerType() {
+      com.google.monitoring.v3.UptimeCheckConfig.CheckerType result =
+          com.google.monitoring.v3.UptimeCheckConfig.CheckerType.forNumber(checkerType_);
+      return result == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.CheckerType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of checkers to use to execute the Uptime check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+     *
+     * @param value The checkerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckerType(com.google.monitoring.v3.UptimeCheckConfig.CheckerType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      checkerType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of checkers to use to execute the Uptime check.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.UptimeCheckConfig.CheckerType checker_type = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCheckerType() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      checkerType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<java.lang.Integer> selectedRegions_ = java.util.Collections.emptyList();
 
     private void ensureSelectedRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         selectedRegions_ = new java.util.ArrayList<java.lang.Integer>(selectedRegions_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -10305,7 +15828,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelectedRegions() {
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -10430,7 +15953,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=359
+     *     google/monitoring/v3/uptime.proto;l=478
      * @return The isInternal.
      */
     @java.lang.Override
@@ -10451,7 +15974,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=359
+     *     google/monitoring/v3/uptime.proto;l=478
      * @param value The isInternal to set.
      * @return This builder for chaining.
      */
@@ -10459,7 +15982,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder setIsInternal(boolean value) {
 
       isInternal_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10476,12 +15999,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
      * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-     *     google/monitoring/v3/uptime.proto;l=359
+     *     google/monitoring/v3/uptime.proto;l=478
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearIsInternal() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       isInternal_ = false;
       onChanged();
       return this;
@@ -10491,10 +16014,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         internalCheckers_ =
             new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -10776,7 +16299,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -10942,12 +16465,213 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.InternalChecker.Builder,
                 com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;
       }
       return internalCheckersBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserLabels() {
+      if (userLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return userLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserLabels() {
+      if (userLabels_ == null) {
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!userLabels_.isMutable()) {
+        userLabels_ = userLabels_.copy();
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return userLabels_;
+    }
+
+    public int getUserLabelsCount() {
+      return internalGetUserLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    @java.lang.Override
+    public boolean containsUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getUserLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+      return getUserLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+      return internalGetUserLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      internalGetMutableUserLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    public Builder removeUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00002000;
+      return internalGetMutableUserLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User-supplied key/value data to be used for organizing and
+     * identifying the `UptimeCheckConfig` objects.
+     * The field can contain up to 64 entries. Each key and value is limited to
+     * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
+     * values can contain only lowercase letters, numerals, underscores, and
+     * dashes. Keys must begin with a letter.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 20;</code>
+     */
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
+      return this;
     }
 
     @java.lang.Override

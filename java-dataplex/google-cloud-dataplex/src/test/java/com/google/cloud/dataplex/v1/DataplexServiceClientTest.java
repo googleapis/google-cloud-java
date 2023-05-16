@@ -2282,6 +2282,78 @@ public class DataplexServiceClientTest {
   }
 
   @Test
+  public void runTaskTest() throws Exception {
+    RunTaskResponse expectedResponse =
+        RunTaskResponse.newBuilder().setJob(Job.newBuilder().build()).build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]");
+
+    RunTaskResponse actualResponse = client.runTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunTaskRequest actualRequest = ((RunTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runTaskExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]");
+      client.runTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void runTaskTest2() throws Exception {
+    RunTaskResponse expectedResponse =
+        RunTaskResponse.newBuilder().setJob(Job.newBuilder().build()).build();
+    mockDataplexService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RunTaskResponse actualResponse = client.runTask(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataplexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunTaskRequest actualRequest = ((RunTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runTaskExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataplexService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.runTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getJobTest() throws Exception {
     Job expectedResponse =
         Job.newBuilder()

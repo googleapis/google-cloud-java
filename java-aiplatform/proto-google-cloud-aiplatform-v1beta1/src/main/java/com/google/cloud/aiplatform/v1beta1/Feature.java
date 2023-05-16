@@ -476,10 +476,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
-   * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-   * requested by user, sorted by
+   * A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * or
+   * [ImportFeaturesAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis]
+   * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>
@@ -977,10 +978,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
-     * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-     * requested by user, sorted by
+     * A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * or
+     * [ImportFeaturesAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis]
+     * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
      * </pre>
@@ -2034,7 +2036,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=160
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=161
    * @return Whether the monitoringConfig field is set.
    */
   @java.lang.Override
@@ -2064,7 +2066,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=160
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=161
    * @return The monitoringConfig.
    */
   @java.lang.Override
@@ -2135,8 +2137,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Output only. A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
@@ -2155,8 +2157,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Output only. A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
@@ -2175,8 +2177,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Output only. A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
@@ -2194,8 +2196,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Output only. A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
@@ -2213,8 +2215,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Output only. A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
@@ -4159,7 +4161,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature.proto;l=160
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=161
      * @return Whether the monitoringConfig field is set.
      */
     @java.lang.Deprecated
@@ -4188,7 +4190,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature.proto;l=160
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=161
      * @return The monitoringConfig.
      */
     @java.lang.Deprecated
@@ -4531,8 +4533,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4554,8 +4556,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4576,8 +4578,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4598,8 +4600,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4627,8 +4629,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4654,8 +4656,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4683,8 +4685,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4712,8 +4714,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4738,8 +4740,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4765,8 +4767,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4792,8 +4794,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4817,8 +4819,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4842,8 +4844,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4861,8 +4863,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4884,8 +4886,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4908,8 +4910,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4928,8 +4930,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
@@ -4949,8 +4951,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Output only. A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.

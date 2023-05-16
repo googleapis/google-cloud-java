@@ -175,12 +175,20 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
-   * Supported values for imports:
-   * * `user_event` (default): One JSON
-   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
-   * * `document` (default): One JSON
-   * [Document][google.cloud.discoveryengine.v1beta.Document] per line. Each
-   * document must have a valid [document.id][].
+   * Supported values for user event imports:
+   * * `user_event` (default): One
+   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+   * Supported values for document imports:
+   * * `document` (default): One
+   * [Document][google.cloud.discoveryengine.v1beta.Document] format per
+   *   row. Each document must have a valid
+   *   [Document.id][google.cloud.discoveryengine.v1beta.Document.id] and one of
+   *   [Document.json_data][google.cloud.discoveryengine.v1beta.Document.json_data]
+   *   or
+   *   [Document.struct_data][google.cloud.discoveryengine.v1beta.Document.struct_data].
+   * * `custom`: One custom data per row in arbitrary format that conforms the
+   *   defined [Schema][google.cloud.discoveryengine.v1beta.Schema] of the data
+   *   store. This can only be used by the GENERIC Data Store vertical.
    * </pre>
    *
    * <code>string data_schema = 6;</code>
@@ -193,12 +201,20 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
-   * Supported values for imports:
-   * * `user_event` (default): One JSON
-   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
-   * * `document` (default): One JSON
-   * [Document][google.cloud.discoveryengine.v1beta.Document] per line. Each
-   * document must have a valid [document.id][].
+   * Supported values for user event imports:
+   * * `user_event` (default): One
+   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+   * Supported values for document imports:
+   * * `document` (default): One
+   * [Document][google.cloud.discoveryengine.v1beta.Document] format per
+   *   row. Each document must have a valid
+   *   [Document.id][google.cloud.discoveryengine.v1beta.Document.id] and one of
+   *   [Document.json_data][google.cloud.discoveryengine.v1beta.Document.json_data]
+   *   or
+   *   [Document.struct_data][google.cloud.discoveryengine.v1beta.Document.struct_data].
+   * * `custom`: One custom data per row in arbitrary format that conforms the
+   *   defined [Schema][google.cloud.discoveryengine.v1beta.Schema] of the data
+   *   store. This can only be used by the GENERIC Data Store vertical.
    * </pre>
    *
    * <code>string data_schema = 6;</code>

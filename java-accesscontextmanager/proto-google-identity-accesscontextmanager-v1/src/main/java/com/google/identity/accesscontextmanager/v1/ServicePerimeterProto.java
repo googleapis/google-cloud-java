@@ -154,14 +154,14 @@ public final class ServicePerimeterProto {
           + "fig.EgressTo\"n\n\014IdentityType\022\035\n\031IDENTITY"
           + "_TYPE_UNSPECIFIED\020\000\022\020\n\014ANY_IDENTITY\020\001\022\024\n"
           + "\020ANY_USER_ACCOUNT\020\002\022\027\n\023ANY_SERVICE_ACCOU"
-          + "NT\020\003B\253\002\n+com.google.identity.accessconte"
-          + "xtmanager.v1B\025ServicePerimeterProtoP\001Z[g"
-          + "oogle.golang.org/genproto/googleapis/ide"
-          + "ntity/accesscontextmanager/v1;accesscont"
-          + "extmanager\242\002\004GACM\252\002\'Google.Identity.Acce"
-          + "ssContextManager.V1\312\002\'Google\\Identity\\Ac"
-          + "cessContextManager\\V1\352\002*Google::Identity"
-          + "::AccessContextManager::V1b\006proto3"
+          + "NT\020\003B\254\002\n+com.google.identity.accessconte"
+          + "xtmanager.v1B\025ServicePerimeterProtoP\001Z\\c"
+          + "loud.google.com/go/accesscontextmanager/"
+          + "apiv1/accesscontextmanagerpb;accessconte"
+          + "xtmanagerpb\242\002\004GACM\252\002\'Google.Identity.Acc"
+          + "essContextManager.V1\312\002\'Google\\Identity\\A"
+          + "ccessContextManager\\V1\352\002*Google::Identit"
+          + "y::AccessContextManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

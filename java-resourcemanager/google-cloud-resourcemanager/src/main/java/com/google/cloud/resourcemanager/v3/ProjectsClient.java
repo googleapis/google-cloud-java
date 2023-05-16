@@ -345,9 +345,10 @@ public class ProjectsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the parent resource to list projects under.
-   *     <p>For example, setting this field to 'folders/1234' would list all projects directly under
-   *     that folder.
+   * @param parent Required. The name of the parent resource whose projects are being listed. Only
+   *     children of this parent resource are listed; descendants are not listed.
+   *     <p>If the parent is a folder, use the value `folders/{folder_id}`. If the parent is an
+   *     organization, use the value `organizations/{org_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProjectsPagedResponse listProjects(ResourceName parent) {
@@ -382,9 +383,10 @@ public class ProjectsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the parent resource to list projects under.
-   *     <p>For example, setting this field to 'folders/1234' would list all projects directly under
-   *     that folder.
+   * @param parent Required. The name of the parent resource whose projects are being listed. Only
+   *     children of this parent resource are listed; descendants are not listed.
+   *     <p>If the parent is a folder, use the value `folders/{folder_id}`. If the parent is an
+   *     organization, use the value `organizations/{org_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProjectsPagedResponse listProjects(String parent) {
@@ -539,25 +541,25 @@ public class ProjectsClient implements BackgroundResource {
    *
    * @param query Optional. A query string for searching for projects that the caller has
    *     `resourcemanager.projects.get` permission to. If multiple fields are included in the query,
-   *     the it will return results that match any of the fields. Some eligible fields are:
-   *     <p>``` | Field | Description |
-   *     |-------------------------|----------------------------------------------| | displayName,
-   *     name | Filters by displayName. | | parent | Project's parent. (for example: folders/123,
-   *     organizations/&#42;) Prefer parent field over parent.type and parent.id. | | parent.type |
-   *     Parent's type: `folder` or `organization`. | | parent.id | Parent's id number (for example:
-   *     123) | | id, projectId | Filters by projectId. | | state, lifecycleState | Filters by
-   *     state. | | labels | Filters by label name or value. | | labels.&lt;key&gt; (where
-   *     &#42;key&#42; is the name of a label) | Filters by label name. | ```
+   *     then it will return results that match any of the fields. Some eligible fields are:
+   *     <p>- &#42;&#42;`displayName`, `name`&#42;&#42;: Filters by displayName. -
+   *     &#42;&#42;`parent`&#42;&#42;: Project's parent (for example: `folders/123`,
+   *     `organizations/&#42;`). Prefer `parent` field over `parent.type` and `parent.id`. -
+   *     &#42;&#42;`parent.type`&#42;&#42;: Parent's type: `folder` or `organization`. -
+   *     &#42;&#42;`parent.id`&#42;&#42;: Parent's id number (for example: `123`). - &#42;&#42;`id`,
+   *     `projectId`&#42;&#42;: Filters by projectId. - &#42;&#42;`state`,
+   *     `lifecycleState`&#42;&#42;: Filters by state. - &#42;&#42;`labels`&#42;&#42;: Filters by
+   *     label name or value. - &#42;&#42;`labels.&lt;key&gt;` (where `&lt;key&gt;` is the name of a
+   *     label)&#42;&#42;: Filters by label name.
    *     <p>Search expressions are case insensitive.
    *     <p>Some examples queries:
-   *     <p>``` | Query | Description |
-   *     |------------------|-----------------------------------------------------| | name:how&#42;
-   *     | The project's name starts with "how". | | name:Howl | The project's name is `Howl` or
-   *     `howl`. | | name:HOWL | Equivalent to above. | | NAME:howl | Equivalent to above. | |
-   *     labels.color:&#42; | The project has the label `color`. | | labels.color:red | The
-   *     project's label `color` has the value `red`. | | labels.color:red&amp;nbsp;labels.size:big
-   *     | The project's label `color` has the value `red` and its label `size` has the value `big`.
-   *     | ```
+   *     <p>- &#42;&#42;`name:how&#42;`&#42;&#42;: The project's name starts with "how". -
+   *     &#42;&#42;`name:Howl`&#42;&#42;: The project's name is `Howl` or `howl`. -
+   *     &#42;&#42;`name:HOWL`&#42;&#42;: Equivalent to above. - &#42;&#42;`NAME:howl`&#42;&#42;:
+   *     Equivalent to above. - &#42;&#42;`labels.color:&#42;`&#42;&#42;: The project has the label
+   *     `color`. - &#42;&#42;`labels.color:red`&#42;&#42;: The project's label `color` has the
+   *     value `red`. - &#42;&#42;`labels.color:red labels.size:big`&#42;&#42;: The project's label
+   *     `color` has the value `red` or its label `size` has the value `big`.
    *     <p>If no query is specified, the call will return projects for which the user has the
    *     `resourcemanager.projects.get` permission.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -719,7 +721,7 @@ public class ProjectsClient implements BackgroundResource {
    *     <p>Project ID is required. If the requested ID is unavailable, the request fails.
    *     <p>If the `parent` field is set, the `resourcemanager.projects.create` permission is
    *     checked on the parent resource. If no parent is set and the authorization credentials
-   *     belong to an Organziation, the parent will be set to that Organization.
+   *     belong to an Organization, the parent will be set to that Organization.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Project, CreateProjectMetadata> createProjectAsync(Project project) {
@@ -956,8 +958,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -995,8 +1001,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -1034,8 +1044,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -1073,8 +1087,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -1112,8 +1130,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -1148,8 +1170,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -1184,8 +1210,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>Returns an operation which can be used to track the process of the project move workflow.
    * Upon success, the `Operation.response` field will be populated with the moved project.
    *
-   * <p>The caller must have `resourcemanager.projects.update` permission on the project and have
-   * `resourcemanager.projects.move` permission on the project's current and proposed new parent.
+   * <p>The caller must have `resourcemanager.projects.move` permission on the project, on the
+   * project's current and proposed new parent.
+   *
+   * <p>If project has no current parent, or it currently does not have an associated organization
+   * resource, you will also need the `resourcemanager.projects.setIamPolicy` permission in the
+   * project.
    *
    * <p>Sample code:
    *
@@ -1632,8 +1662,9 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the IAM access control policy for the specified project. Permission is denied if the
-   * policy or the resource do not exist.
+   * Returns the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123. Permission is denied if the policy or the
+   * resource do not exist.
    *
    * <p>Sample code:
    *
@@ -1663,8 +1694,9 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the IAM access control policy for the specified project. Permission is denied if the
-   * policy or the resource do not exist.
+   * Returns the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123. Permission is denied if the policy or the
+   * resource do not exist.
    *
    * <p>Sample code:
    *
@@ -1691,8 +1723,9 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the IAM access control policy for the specified project. Permission is denied if the
-   * policy or the resource do not exist.
+   * Returns the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123. Permission is denied if the policy or the
+   * resource do not exist.
    *
    * <p>Sample code:
    *
@@ -1721,8 +1754,9 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the IAM access control policy for the specified project. Permission is denied if the
-   * policy or the resource do not exist.
+   * Returns the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123. Permission is denied if the policy or the
+   * resource do not exist.
    *
    * <p>Sample code:
    *
@@ -1750,7 +1784,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the IAM access control policy for the specified project.
+   * Sets the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123.
    *
    * <p>CAUTION: This method will replace the existing policy, and cannot be used to append
    * additional IAM settings.
@@ -1779,16 +1814,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>+ Invitations to grant the owner role cannot be sent using `setIamPolicy()`; they must be
    * sent only using the Cloud Platform Console.
    *
-   * <p>+ Membership changes that leave the project without any owners that have accepted the Terms
-   * of Service (ToS) will be rejected.
-   *
    * <p>+ If the project is not part of an organization, there must be at least one owner who has
    * accepted the Terms of Service (ToS) agreement in the policy. Calling `setIamPolicy()` to remove
    * the last ToS-accepted owner from the policy will fail. This restriction also applies to legacy
    * projects that no longer have owners who have accepted the ToS. Edits to IAM policies will be
-   * rejected until the lack of a ToS-accepting owner is rectified.
-   *
-   * <p>+ Calling this method requires enabling the App Engine Admin API.
+   * rejected until the lack of a ToS-accepting owner is rectified. If the project is part of an
+   * organization, you can remove all owners, potentially making the organization inaccessible.
    *
    * <p>Sample code:
    *
@@ -1823,7 +1854,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the IAM access control policy for the specified project.
+   * Sets the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123.
    *
    * <p>CAUTION: This method will replace the existing policy, and cannot be used to append
    * additional IAM settings.
@@ -1852,16 +1884,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>+ Invitations to grant the owner role cannot be sent using `setIamPolicy()`; they must be
    * sent only using the Cloud Platform Console.
    *
-   * <p>+ Membership changes that leave the project without any owners that have accepted the Terms
-   * of Service (ToS) will be rejected.
-   *
    * <p>+ If the project is not part of an organization, there must be at least one owner who has
    * accepted the Terms of Service (ToS) agreement in the policy. Calling `setIamPolicy()` to remove
    * the last ToS-accepted owner from the policy will fail. This restriction also applies to legacy
    * projects that no longer have owners who have accepted the ToS. Edits to IAM policies will be
-   * rejected until the lack of a ToS-accepting owner is rectified.
-   *
-   * <p>+ Calling this method requires enabling the App Engine Admin API.
+   * rejected until the lack of a ToS-accepting owner is rectified. If the project is part of an
+   * organization, you can remove all owners, potentially making the organization inaccessible.
    *
    * <p>Sample code:
    *
@@ -1893,7 +1921,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the IAM access control policy for the specified project.
+   * Sets the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123.
    *
    * <p>CAUTION: This method will replace the existing policy, and cannot be used to append
    * additional IAM settings.
@@ -1922,16 +1951,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>+ Invitations to grant the owner role cannot be sent using `setIamPolicy()`; they must be
    * sent only using the Cloud Platform Console.
    *
-   * <p>+ Membership changes that leave the project without any owners that have accepted the Terms
-   * of Service (ToS) will be rejected.
-   *
    * <p>+ If the project is not part of an organization, there must be at least one owner who has
    * accepted the Terms of Service (ToS) agreement in the policy. Calling `setIamPolicy()` to remove
    * the last ToS-accepted owner from the policy will fail. This restriction also applies to legacy
    * projects that no longer have owners who have accepted the ToS. Edits to IAM policies will be
-   * rejected until the lack of a ToS-accepting owner is rectified.
-   *
-   * <p>+ Calling this method requires enabling the App Engine Admin API.
+   * rejected until the lack of a ToS-accepting owner is rectified. If the project is part of an
+   * organization, you can remove all owners, potentially making the organization inaccessible.
    *
    * <p>Sample code:
    *
@@ -1961,7 +1986,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the IAM access control policy for the specified project.
+   * Sets the IAM access control policy for the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123.
    *
    * <p>CAUTION: This method will replace the existing policy, and cannot be used to append
    * additional IAM settings.
@@ -1990,16 +2016,12 @@ public class ProjectsClient implements BackgroundResource {
    * <p>+ Invitations to grant the owner role cannot be sent using `setIamPolicy()`; they must be
    * sent only using the Cloud Platform Console.
    *
-   * <p>+ Membership changes that leave the project without any owners that have accepted the Terms
-   * of Service (ToS) will be rejected.
-   *
    * <p>+ If the project is not part of an organization, there must be at least one owner who has
    * accepted the Terms of Service (ToS) agreement in the policy. Calling `setIamPolicy()` to remove
    * the last ToS-accepted owner from the policy will fail. This restriction also applies to legacy
    * projects that no longer have owners who have accepted the ToS. Edits to IAM policies will be
-   * rejected until the lack of a ToS-accepting owner is rectified.
-   *
-   * <p>+ Calling this method requires enabling the App Engine Admin API.
+   * rejected until the lack of a ToS-accepting owner is rectified. If the project is part of an
+   * organization, you can remove all owners, potentially making the organization inaccessible.
    *
    * <p>Sample code:
    *
@@ -2028,7 +2050,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified project.
+   * Returns permissions that a caller has on the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123..
    *
    * <p>Sample code:
    *
@@ -2065,7 +2088,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified project.
+   * Returns permissions that a caller has on the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123..
    *
    * <p>Sample code:
    *
@@ -2102,7 +2126,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified project.
+   * Returns permissions that a caller has on the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123..
    *
    * <p>Sample code:
    *
@@ -2131,7 +2156,8 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns permissions that a caller has on the specified project.
+   * Returns permissions that a caller has on the specified project, in the format
+   * `projects/{ProjectIdOrNumber}` e.g. projects/123..
    *
    * <p>Sample code:
    *

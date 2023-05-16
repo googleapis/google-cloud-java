@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.support.v2",
+  "libraryPackage": "com.google.cloud.support.v2",
+  "services": {
+    "CaseAttachmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CaseAttachmentServiceClient",
+          "rpcs": {
+            "ListAttachments": {
+              "methods": ["listAttachments", "listAttachments", "listAttachments", "listAttachmentsPagedCallable", "listAttachmentsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CaseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CaseServiceClient",
+          "rpcs": {
+            "CloseCase": {
+              "methods": ["closeCase", "closeCaseCallable"]
+            },
+            "CreateCase": {
+              "methods": ["createCase", "createCase", "createCase", "createCase", "createCaseCallable"]
+            },
+            "EscalateCase": {
+              "methods": ["escalateCase", "escalateCaseCallable"]
+            },
+            "GetCase": {
+              "methods": ["getCase", "getCase", "getCase", "getCaseCallable"]
+            },
+            "ListCases": {
+              "methods": ["listCases", "listCases", "listCases", "listCases", "listCasesPagedCallable", "listCasesCallable"]
+            },
+            "SearchCaseClassifications": {
+              "methods": ["searchCaseClassifications", "searchCaseClassificationsPagedCallable", "searchCaseClassificationsCallable"]
+            },
+            "SearchCases": {
+              "methods": ["searchCases", "searchCasesPagedCallable", "searchCasesCallable"]
+            },
+            "UpdateCase": {
+              "methods": ["updateCase", "updateCase", "updateCaseCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CommentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CommentServiceClient",
+          "rpcs": {
+            "CreateComment": {
+              "methods": ["createComment", "createComment", "createComment", "createCommentCallable"]
+            },
+            "ListComments": {
+              "methods": ["listComments", "listComments", "listComments", "listCommentsPagedCallable", "listCommentsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

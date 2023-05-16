@@ -42,6 +42,7 @@ public class AsyncCreateDataScan {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setDataScan(DataScan.newBuilder().build())
               .setDataScanId("dataScanId1260787906")
+              .setValidateOnly(true)
               .build();
       ApiFuture<Operation> future =
           dataScanServiceClient.createDataScanCallable().futureCall(request);

@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -105,6 +106,13 @@ public class TagBindingsSettings extends ClientSettings<TagBindingsSettings> {
   public OperationCallSettings<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationSettings() {
     return ((TagBindingsStubSettings) getStubSettings()).deleteTagBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEffectiveTags. */
+  public PagedCallSettings<
+          ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsSettings() {
+    return ((TagBindingsStubSettings) getStubSettings()).listEffectiveTagsSettings();
   }
 
   public static final TagBindingsSettings create(TagBindingsStubSettings stub) throws IOException {
@@ -251,6 +259,13 @@ public class TagBindingsSettings extends ClientSettings<TagBindingsSettings> {
     public OperationCallSettings.Builder<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
         deleteTagBindingOperationSettings() {
       return getStubSettingsBuilder().deleteTagBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEffectiveTags. */
+    public PagedCallSettings.Builder<
+            ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+        listEffectiveTagsSettings() {
+      return getStubSettingsBuilder().listEffectiveTagsSettings();
     }
 
     @Override

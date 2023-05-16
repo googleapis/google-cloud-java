@@ -51,14 +51,14 @@ public final class PolicyProto {
           + "protobuf.Timestamp\022\014\n\004etag\030\006 \001(\t:U\352AR\n0a"
           + "ccesscontextmanager.googleapis.com/Acces"
           + "sPolicy\022\036accessPolicies/{access_policy}B"
-          + "\241\002\n+com.google.identity.accesscontextman"
-          + "ager.v1B\013PolicyProtoP\001Z[google.golang.or"
-          + "g/genproto/googleapis/identity/accesscon"
-          + "textmanager/v1;accesscontextmanager\242\002\004GA"
-          + "CM\252\002\'Google.Identity.AccessContextManage"
-          + "r.V1\312\002\'Google\\Identity\\AccessContextMana"
-          + "ger\\V1\352\002*Google::Identity::AccessContext"
-          + "Manager::V1b\006proto3"
+          + "\242\002\n+com.google.identity.accesscontextman"
+          + "ager.v1B\013PolicyProtoP\001Z\\cloud.google.com"
+          + "/go/accesscontextmanager/apiv1/accesscon"
+          + "textmanagerpb;accesscontextmanagerpb\242\002\004G"
+          + "ACM\252\002\'Google.Identity.AccessContextManag"
+          + "er.V1\312\002\'Google\\Identity\\AccessContextMan"
+          + "ager\\V1\352\002*Google::Identity::AccessContex"
+          + "tManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

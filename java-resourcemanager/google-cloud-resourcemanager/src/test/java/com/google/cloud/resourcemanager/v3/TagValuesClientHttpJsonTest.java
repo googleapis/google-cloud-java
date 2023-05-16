@@ -289,6 +289,108 @@ public class TagValuesClientHttpJsonTest {
   }
 
   @Test
+  public void getNamespacedTagValueTest() throws Exception {
+    TagValue expectedResponse =
+        TagValue.newBuilder()
+            .setName(TagValueName.of("[TAG_VALUE]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TagValueName name = TagValueName.of("[TAG_VALUE]");
+
+    TagValue actualResponse = client.getNamespacedTagValue(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNamespacedTagValueExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TagValueName name = TagValueName.of("[TAG_VALUE]");
+      client.getNamespacedTagValue(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNamespacedTagValueTest2() throws Exception {
+    TagValue expectedResponse =
+        TagValue.newBuilder()
+            .setName(TagValueName.of("[TAG_VALUE]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TagValue actualResponse = client.getNamespacedTagValue(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getNamespacedTagValueExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNamespacedTagValue(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createTagValueTest() throws Exception {
     TagValue expectedResponse =
         TagValue.newBuilder()

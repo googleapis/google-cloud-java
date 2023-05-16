@@ -33,6 +33,9 @@ import com.google.cloud.aiplatform.v1.Endpoint;
 import com.google.cloud.aiplatform.v1.GetEndpointRequest;
 import com.google.cloud.aiplatform.v1.ListEndpointsRequest;
 import com.google.cloud.aiplatform.v1.ListEndpointsResponse;
+import com.google.cloud.aiplatform.v1.MutateDeployedModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.MutateDeployedModelRequest;
+import com.google.cloud.aiplatform.v1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1.UndeployModelResponse;
@@ -116,6 +119,19 @@ public abstract class EndpointServiceStub implements BackgroundResource {
 
   public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     throw new UnsupportedOperationException("Not implemented: undeployModelCallable()");
+  }
+
+  public OperationCallable<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: mutateDeployedModelOperationCallable()");
+  }
+
+  public UnaryCallable<MutateDeployedModelRequest, Operation> mutateDeployedModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: mutateDeployedModelCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

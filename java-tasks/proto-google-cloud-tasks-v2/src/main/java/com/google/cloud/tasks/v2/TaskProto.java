@@ -71,10 +71,10 @@ public final class TaskProto {
           + "imestamp\0221\n\rdispatch_time\030\002 \001(\0132\032.google"
           + ".protobuf.Timestamp\0221\n\rresponse_time\030\003 \001"
           + "(\0132\032.google.protobuf.Timestamp\022+\n\017respon"
-          + "se_status\030\004 \001(\0132\022.google.rpc.StatusBY\n\031c"
-          + "om.google.cloud.tasks.v2B\tTaskProtoP\001Z/c"
-          + "loud.google.com/go/tasks/apiv2/taskspb;t"
-          + "askspbb\006proto3"
+          + "se_status\030\004 \001(\0132\022.google.rpc.StatusBh\n\031c"
+          + "om.google.cloud.tasks.v2B\tTaskProtoP\001Z>c"
+          + "loud.google.com/go/cloudtasks/apiv2/clou"
+          + "dtaskspb;cloudtaskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

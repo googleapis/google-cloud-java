@@ -102,4 +102,29 @@ public interface ListTablesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The view for the returned tables.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.biglake.v1alpha1.TableView view = 4;</code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * The view for the returned tables.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.biglake.v1alpha1.TableView view = 4;</code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.bigquery.biglake.v1alpha1.TableView getView();
 }

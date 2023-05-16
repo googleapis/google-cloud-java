@@ -60,9 +60,13 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
- *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
- *   Source source = Source.newBuilder().build();
- *   Source response = securityCenterClient.createSource(parent, source);
+ *   SecurityHealthAnalyticsSettingsName parent =
+ *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+ *   SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+ *       SecurityHealthAnalyticsCustomModule.newBuilder().build();
+ *   SecurityHealthAnalyticsCustomModule response =
+ *       securityCenterClient.createSecurityHealthAnalyticsCustomModule(
+ *           parent, securityHealthAnalyticsCustomModule);
  * }
  * }</pre>
  *
@@ -371,6 +375,169 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable() {
     return stub.bulkMuteFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
+   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
+   * given parent. These modules are enabled by default.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsSettingsName parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+   *       SecurityHealthAnalyticsCustomModule.newBuilder().build();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.createSecurityHealthAnalyticsCustomModule(
+   *           parent, securityHealthAnalyticsCustomModule);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new custom module's parent. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @param securityHealthAnalyticsCustomModule Required. SecurityHealthAnalytics custom module to
+   *     create. The provided name is ignored and reset with provided parent information and
+   *     server-generated ID.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
+      SecurityHealthAnalyticsSettingsName parent,
+      SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule) {
+    CreateSecurityHealthAnalyticsCustomModuleRequest request =
+        CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSecurityHealthAnalyticsCustomModule(securityHealthAnalyticsCustomModule)
+            .build();
+    return createSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
+   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
+   * given parent. These modules are enabled by default.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+   *   SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+   *       SecurityHealthAnalyticsCustomModule.newBuilder().build();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.createSecurityHealthAnalyticsCustomModule(
+   *           parent, securityHealthAnalyticsCustomModule);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new custom module's parent. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @param securityHealthAnalyticsCustomModule Required. SecurityHealthAnalytics custom module to
+   *     create. The provided name is ignored and reset with provided parent information and
+   *     server-generated ID.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
+      String parent, SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule) {
+    CreateSecurityHealthAnalyticsCustomModuleRequest request =
+        CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setParent(parent)
+            .setSecurityHealthAnalyticsCustomModule(securityHealthAnalyticsCustomModule)
+            .build();
+    return createSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
+   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
+   * given parent. These modules are enabled by default.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   CreateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setSecurityHealthAnalyticsCustomModule(
+   *               SecurityHealthAnalyticsCustomModule.newBuilder().build())
+   *           .build();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.createSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
+      CreateSecurityHealthAnalyticsCustomModuleRequest request) {
+    return createSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent,
+   * and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the
+   * given parent. These modules are enabled by default.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   CreateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setSecurityHealthAnalyticsCustomModule(
+   *               SecurityHealthAnalyticsCustomModule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient
+   *           .createSecurityHealthAnalyticsCustomModuleCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SecurityHealthAnalyticsCustomModule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.createSecurityHealthAnalyticsCustomModuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1599,6 +1766,144 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
+   * hierarchy. This method is only supported for resident custom modules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsCustomModuleName name =
+   *       SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *           "[ORGANIZATION]", "[CUSTOM_MODULE]");
+   *   securityCenterClient.deleteSecurityHealthAnalyticsCustomModule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the custom module to delete. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   *     "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or
+   *     "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSecurityHealthAnalyticsCustomModule(
+      SecurityHealthAnalyticsCustomModuleName name) {
+    DeleteSecurityHealthAnalyticsCustomModuleRequest request =
+        DeleteSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
+   * hierarchy. This method is only supported for resident custom modules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *               "[ORGANIZATION]", "[CUSTOM_MODULE]")
+   *           .toString();
+   *   securityCenterClient.deleteSecurityHealthAnalyticsCustomModule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the custom module to delete. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   *     "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or
+   *     "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSecurityHealthAnalyticsCustomModule(String name) {
+    DeleteSecurityHealthAnalyticsCustomModuleRequest request =
+        DeleteSecurityHealthAnalyticsCustomModuleRequest.newBuilder().setName(name).build();
+    deleteSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
+   * hierarchy. This method is only supported for resident custom modules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   DeleteSecurityHealthAnalyticsCustomModuleRequest request =
+   *       DeleteSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setName(
+   *               SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *                       "[ORGANIZATION]", "[CUSTOM_MODULE]")
+   *                   .toString())
+   *           .build();
+   *   securityCenterClient.deleteSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSecurityHealthAnalyticsCustomModule(
+      DeleteSecurityHealthAnalyticsCustomModuleRequest request) {
+    deleteSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its descendants in the CRM
+   * hierarchy. This method is only supported for resident custom modules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   DeleteSecurityHealthAnalyticsCustomModuleRequest request =
+   *       DeleteSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setName(
+   *               SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *                       "[ORGANIZATION]", "[CUSTOM_MODULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       securityCenterClient
+   *           .deleteSecurityHealthAnalyticsCustomModuleCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.deleteSecurityHealthAnalyticsCustomModuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets a BigQuery export.
    *
    * <p>Sample code:
@@ -2203,6 +2508,289 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   EffectiveSecurityHealthAnalyticsCustomModuleName name =
+   *       EffectiveSecurityHealthAnalyticsCustomModuleName.ofOrganizationEffectiveCustomModuleName(
+   *           "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]");
+   *   EffectiveSecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.getEffectiveSecurityHealthAnalyticsCustomModule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the effective custom module to get. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
+   *     "folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
+   *     or
+   *     "projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EffectiveSecurityHealthAnalyticsCustomModule
+      getEffectiveSecurityHealthAnalyticsCustomModule(
+          EffectiveSecurityHealthAnalyticsCustomModuleName name) {
+    GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request =
+        GetEffectiveSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getEffectiveSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       EffectiveSecurityHealthAnalyticsCustomModuleName.ofOrganizationEffectiveCustomModuleName(
+   *               "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]")
+   *           .toString();
+   *   EffectiveSecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.getEffectiveSecurityHealthAnalyticsCustomModule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the effective custom module to get. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
+   *     "folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}",
+   *     or
+   *     "projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EffectiveSecurityHealthAnalyticsCustomModule
+      getEffectiveSecurityHealthAnalyticsCustomModule(String name) {
+    GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request =
+        GetEffectiveSecurityHealthAnalyticsCustomModuleRequest.newBuilder().setName(name).build();
+    return getEffectiveSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request =
+   *       GetEffectiveSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setName(
+   *               EffectiveSecurityHealthAnalyticsCustomModuleName
+   *                   .ofOrganizationEffectiveCustomModuleName(
+   *                       "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]")
+   *                   .toString())
+   *           .build();
+   *   EffectiveSecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.getEffectiveSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EffectiveSecurityHealthAnalyticsCustomModule
+      getEffectiveSecurityHealthAnalyticsCustomModule(
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request) {
+    return getEffectiveSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request =
+   *       GetEffectiveSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setName(
+   *               EffectiveSecurityHealthAnalyticsCustomModuleName
+   *                   .ofOrganizationEffectiveCustomModuleName(
+   *                       "[ORGANIZATION]", "[EFFECTIVE_CUSTOM_MODULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<EffectiveSecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient
+   *           .getEffectiveSecurityHealthAnalyticsCustomModuleCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   EffectiveSecurityHealthAnalyticsCustomModule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.getEffectiveSecurityHealthAnalyticsCustomModuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsCustomModuleName name =
+   *       SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *           "[ORGANIZATION]", "[CUSTOM_MODULE]");
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.getSecurityHealthAnalyticsCustomModule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the custom module to get. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   *     "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or
+   *     "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule getSecurityHealthAnalyticsCustomModule(
+      SecurityHealthAnalyticsCustomModuleName name) {
+    GetSecurityHealthAnalyticsCustomModuleRequest request =
+        GetSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String name =
+   *       SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *               "[ORGANIZATION]", "[CUSTOM_MODULE]")
+   *           .toString();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.getSecurityHealthAnalyticsCustomModule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the custom module to get. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}",
+   *     "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or
+   *     "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule getSecurityHealthAnalyticsCustomModule(
+      String name) {
+    GetSecurityHealthAnalyticsCustomModuleRequest request =
+        GetSecurityHealthAnalyticsCustomModuleRequest.newBuilder().setName(name).build();
+    return getSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetSecurityHealthAnalyticsCustomModuleRequest request =
+   *       GetSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setName(
+   *               SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *                       "[ORGANIZATION]", "[CUSTOM_MODULE]")
+   *                   .toString())
+   *           .build();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.getSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule getSecurityHealthAnalyticsCustomModule(
+      GetSecurityHealthAnalyticsCustomModuleRequest request) {
+    return getSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a SecurityHealthAnalyticsCustomModule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GetSecurityHealthAnalyticsCustomModuleRequest request =
+   *       GetSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setName(
+   *               SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+   *                       "[ORGANIZATION]", "[CUSTOM_MODULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient.getSecurityHealthAnalyticsCustomModuleCallable().futureCall(request);
+   *   // Do something.
+   *   SecurityHealthAnalyticsCustomModule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.getSecurityHealthAnalyticsCustomModuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets a source.
    *
    * <p>Sample code:
@@ -2785,6 +3373,215 @@ public class SecurityCenterClient implements BackgroundResource {
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return stub.listAssetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
+   * and all of the parent’s CRM descendants.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsSettingsName parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   for (SecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient
+   *           .listDescendantSecurityHealthAnalyticsCustomModules(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list descendant custom modules. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
+      listDescendantSecurityHealthAnalyticsCustomModules(
+          SecurityHealthAnalyticsSettingsName parent) {
+    ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
+        ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDescendantSecurityHealthAnalyticsCustomModules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
+   * and all of the parent’s CRM descendants.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+   *   for (SecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient
+   *           .listDescendantSecurityHealthAnalyticsCustomModules(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list descendant custom modules. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
+      listDescendantSecurityHealthAnalyticsCustomModules(String parent) {
+    ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
+        ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+            .setParent(parent)
+            .build();
+    return listDescendantSecurityHealthAnalyticsCustomModules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
+   * and all of the parent’s CRM descendants.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient
+   *           .listDescendantSecurityHealthAnalyticsCustomModules(request)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
+      listDescendantSecurityHealthAnalyticsCustomModules(
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest request) {
+    return listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
+   * and all of the parent’s CRM descendants.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient
+   *           .listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SecurityHealthAnalyticsCustomModule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return stub.listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
+   * and all of the parent’s CRM descendants.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListDescendantSecurityHealthAnalyticsCustomModulesResponse response =
+   *         securityCenterClient
+   *             .listDescendantSecurityHealthAnalyticsCustomModulesCallable()
+   *             .call(request);
+   *     for (SecurityHealthAnalyticsCustomModule element :
+   *         response.getSecurityHealthAnalyticsCustomModulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesCallable() {
+    return stub.listDescendantSecurityHealthAnalyticsCustomModulesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3389,6 +4186,423 @@ public class SecurityCenterClient implements BackgroundResource {
   public final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsCallable() {
     return stub.listNotificationConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
+   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
+   * from CRM ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsSettingsName parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   for (EffectiveSecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient
+   *           .listEffectiveSecurityHealthAnalyticsCustomModules(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list effective custom modules. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
+      listEffectiveSecurityHealthAnalyticsCustomModules(
+          SecurityHealthAnalyticsSettingsName parent) {
+    ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
+        ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEffectiveSecurityHealthAnalyticsCustomModules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
+   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
+   * from CRM ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+   *   for (EffectiveSecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient
+   *           .listEffectiveSecurityHealthAnalyticsCustomModules(parent)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list effective custom modules. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
+      listEffectiveSecurityHealthAnalyticsCustomModules(String parent) {
+    ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
+        ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+            .setParent(parent)
+            .build();
+    return listEffectiveSecurityHealthAnalyticsCustomModules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
+   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
+   * from CRM ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EffectiveSecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient
+   *           .listEffectiveSecurityHealthAnalyticsCustomModules(request)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
+      listEffectiveSecurityHealthAnalyticsCustomModules(
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request) {
+    return listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
+   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
+   * from CRM ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EffectiveSecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient
+   *           .listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (EffectiveSecurityHealthAnalyticsCustomModule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return stub.listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the given parent. This
+   * includes resident modules defined at the scope of the parent, and inherited modules, inherited
+   * from CRM ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response =
+   *         securityCenterClient
+   *             .listEffectiveSecurityHealthAnalyticsCustomModulesCallable()
+   *             .call(request);
+   *     for (EffectiveSecurityHealthAnalyticsCustomModule element :
+   *         response.getEffectiveSecurityHealthAnalyticsCustomModulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesCallable() {
+    return stub.listEffectiveSecurityHealthAnalyticsCustomModulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
+   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
+   * ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsSettingsName parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   for (SecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient.listSecurityHealthAnalyticsCustomModules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list custom modules. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
+      listSecurityHealthAnalyticsCustomModules(SecurityHealthAnalyticsSettingsName parent) {
+    ListSecurityHealthAnalyticsCustomModulesRequest request =
+        ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSecurityHealthAnalyticsCustomModules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
+   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
+   * ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent =
+   *       SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+   *   for (SecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient.listSecurityHealthAnalyticsCustomModules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of parent to list custom modules. Its format is
+   *     "organizations/{organization}/securityHealthAnalyticsSettings",
+   *     "folders/{folder}/securityHealthAnalyticsSettings", or
+   *     "projects/{project}/securityHealthAnalyticsSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
+      listSecurityHealthAnalyticsCustomModules(String parent) {
+    ListSecurityHealthAnalyticsCustomModulesRequest request =
+        ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder().setParent(parent).build();
+    return listSecurityHealthAnalyticsCustomModules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
+   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
+   * ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SecurityHealthAnalyticsCustomModule element :
+   *       securityCenterClient.listSecurityHealthAnalyticsCustomModules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
+      listSecurityHealthAnalyticsCustomModules(
+          ListSecurityHealthAnalyticsCustomModulesRequest request) {
+    return listSecurityHealthAnalyticsCustomModulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
+   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
+   * ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient
+   *           .listSecurityHealthAnalyticsCustomModulesPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SecurityHealthAnalyticsCustomModule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return stub.listSecurityHealthAnalyticsCustomModulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of all SecurityHealthAnalyticsCustomModules for the given parent. This includes
+   * resident modules defined at the scope of the parent, and inherited modules, inherited from CRM
+   * ancestors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListSecurityHealthAnalyticsCustomModulesRequest request =
+   *       ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
+   *           .setParent(
+   *               SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSecurityHealthAnalyticsCustomModulesResponse response =
+   *         securityCenterClient.listSecurityHealthAnalyticsCustomModulesCallable().call(request);
+   *     for (SecurityHealthAnalyticsCustomModule element :
+   *         response.getSecurityHealthAnalyticsCustomModulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesCallable() {
+    return stub.listSecurityHealthAnalyticsCustomModulesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4823,6 +6037,119 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update
+   * mask. Updating the enablement state is supported on both resident and inherited modules (though
+   * resident modules cannot have an enablement state of "inherited"). Updating the display name and
+   * custom config of a module is supported on resident modules only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule =
+   *       SecurityHealthAnalyticsCustomModule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.updateSecurityHealthAnalyticsCustomModule(
+   *           securityHealthAnalyticsCustomModule, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param securityHealthAnalyticsCustomModule Required. The SecurityHealthAnalytics custom module
+   *     to update.
+   * @param updateMask The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule updateSecurityHealthAnalyticsCustomModule(
+      SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule,
+      FieldMask updateMask) {
+    UpdateSecurityHealthAnalyticsCustomModuleRequest request =
+        UpdateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setSecurityHealthAnalyticsCustomModule(securityHealthAnalyticsCustomModule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update
+   * mask. Updating the enablement state is supported on both resident and inherited modules (though
+   * resident modules cannot have an enablement state of "inherited"). Updating the display name and
+   * custom config of a module is supported on resident modules only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       UpdateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setSecurityHealthAnalyticsCustomModule(
+   *               SecurityHealthAnalyticsCustomModule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SecurityHealthAnalyticsCustomModule response =
+   *       securityCenterClient.updateSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityHealthAnalyticsCustomModule updateSecurityHealthAnalyticsCustomModule(
+      UpdateSecurityHealthAnalyticsCustomModuleRequest request) {
+    return updateSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the SecurityHealthAnalyticsCustomModule under the given name based on the given update
+   * mask. Updating the enablement state is supported on both resident and inherited modules (though
+   * resident modules cannot have an enablement state of "inherited"). Updating the display name and
+   * custom config of a module is supported on resident modules only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   UpdateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       UpdateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setSecurityHealthAnalyticsCustomModule(
+   *               SecurityHealthAnalyticsCustomModule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SecurityHealthAnalyticsCustomModule> future =
+   *       securityCenterClient
+   *           .updateSecurityHealthAnalyticsCustomModuleCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SecurityHealthAnalyticsCustomModule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.updateSecurityHealthAnalyticsCustomModuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates a source.
    *
    * <p>Sample code:
@@ -5945,6 +7272,112 @@ public class SecurityCenterClient implements BackgroundResource {
     }
   }
 
+  public static class ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPage,
+          ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
+
+    public static ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+        createAsync(
+            PageContext<
+                    ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                    ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+                    SecurityHealthAnalyticsCustomModule>
+                context,
+            ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+      ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesPage> futurePage =
+          ListDescendantSecurityHealthAnalyticsCustomModulesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse(
+        ListDescendantSecurityHealthAnalyticsCustomModulesPage page) {
+      super(
+          page,
+          ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+              .createEmptyCollection());
+    }
+  }
+
+  public static class ListDescendantSecurityHealthAnalyticsCustomModulesPage
+      extends AbstractPage<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPage> {
+
+    private ListDescendantSecurityHealthAnalyticsCustomModulesPage(
+        PageContext<
+                ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ListDescendantSecurityHealthAnalyticsCustomModulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListDescendantSecurityHealthAnalyticsCustomModulesPage createEmptyPage() {
+      return new ListDescendantSecurityHealthAnalyticsCustomModulesPage(null, null);
+    }
+
+    @Override
+    protected ListDescendantSecurityHealthAnalyticsCustomModulesPage createPage(
+        PageContext<
+                ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ListDescendantSecurityHealthAnalyticsCustomModulesResponse response) {
+      return new ListDescendantSecurityHealthAnalyticsCustomModulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesPage> createPageAsync(
+        PageContext<
+                ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPage,
+          ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
+
+    private ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
+        List<ListDescendantSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+        createEmptyCollection() {
+      return new ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+        createCollection(
+            List<ListDescendantSecurityHealthAnalyticsCustomModulesPage> pages,
+            int collectionSize) {
+      return new ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
+          pages, collectionSize);
+    }
+  }
+
   public static class ListFindingsPagedResponse
       extends AbstractPagedListResponse<
           ListFindingsRequest,
@@ -6194,6 +7627,211 @@ public class SecurityCenterClient implements BackgroundResource {
     protected ListNotificationConfigsFixedSizeCollection createCollection(
         List<ListNotificationConfigsPage> pages, int collectionSize) {
       return new ListNotificationConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          EffectiveSecurityHealthAnalyticsCustomModule,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPage,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
+
+    public static ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+        createAsync(
+            PageContext<
+                    ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                    ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+                    EffectiveSecurityHealthAnalyticsCustomModule>
+                context,
+            ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+      ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> futurePage =
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse(
+        ListEffectiveSecurityHealthAnalyticsCustomModulesPage page) {
+      super(
+          page,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+              .createEmptyCollection());
+    }
+  }
+
+  public static class ListEffectiveSecurityHealthAnalyticsCustomModulesPage
+      extends AbstractPage<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          EffectiveSecurityHealthAnalyticsCustomModule,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPage> {
+
+    private ListEffectiveSecurityHealthAnalyticsCustomModulesPage(
+        PageContext<
+                ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+                EffectiveSecurityHealthAnalyticsCustomModule>
+            context,
+        ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListEffectiveSecurityHealthAnalyticsCustomModulesPage createEmptyPage() {
+      return new ListEffectiveSecurityHealthAnalyticsCustomModulesPage(null, null);
+    }
+
+    @Override
+    protected ListEffectiveSecurityHealthAnalyticsCustomModulesPage createPage(
+        PageContext<
+                ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+                EffectiveSecurityHealthAnalyticsCustomModule>
+            context,
+        ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response) {
+      return new ListEffectiveSecurityHealthAnalyticsCustomModulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> createPageAsync(
+        PageContext<
+                ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+                EffectiveSecurityHealthAnalyticsCustomModule>
+            context,
+        ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          EffectiveSecurityHealthAnalyticsCustomModule,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPage,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
+
+    private ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
+        List<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+        createEmptyCollection() {
+      return new ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection createCollection(
+        List<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+      return new ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
+          pages, collectionSize);
+    }
+  }
+
+  public static class ListSecurityHealthAnalyticsCustomModulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule,
+          ListSecurityHealthAnalyticsCustomModulesPage,
+          ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
+
+    public static ApiFuture<ListSecurityHealthAnalyticsCustomModulesPagedResponse> createAsync(
+        PageContext<
+                ListSecurityHealthAnalyticsCustomModulesRequest,
+                ListSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ApiFuture<ListSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+      ApiFuture<ListSecurityHealthAnalyticsCustomModulesPage> futurePage =
+          ListSecurityHealthAnalyticsCustomModulesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSecurityHealthAnalyticsCustomModulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSecurityHealthAnalyticsCustomModulesPagedResponse(
+        ListSecurityHealthAnalyticsCustomModulesPage page) {
+      super(
+          page,
+          ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSecurityHealthAnalyticsCustomModulesPage
+      extends AbstractPage<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule,
+          ListSecurityHealthAnalyticsCustomModulesPage> {
+
+    private ListSecurityHealthAnalyticsCustomModulesPage(
+        PageContext<
+                ListSecurityHealthAnalyticsCustomModulesRequest,
+                ListSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ListSecurityHealthAnalyticsCustomModulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSecurityHealthAnalyticsCustomModulesPage createEmptyPage() {
+      return new ListSecurityHealthAnalyticsCustomModulesPage(null, null);
+    }
+
+    @Override
+    protected ListSecurityHealthAnalyticsCustomModulesPage createPage(
+        PageContext<
+                ListSecurityHealthAnalyticsCustomModulesRequest,
+                ListSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ListSecurityHealthAnalyticsCustomModulesResponse response) {
+      return new ListSecurityHealthAnalyticsCustomModulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSecurityHealthAnalyticsCustomModulesPage> createPageAsync(
+        PageContext<
+                ListSecurityHealthAnalyticsCustomModulesRequest,
+                ListSecurityHealthAnalyticsCustomModulesResponse,
+                SecurityHealthAnalyticsCustomModule>
+            context,
+        ApiFuture<ListSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule,
+          ListSecurityHealthAnalyticsCustomModulesPage,
+          ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
+
+    private ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
+        List<ListSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection
+        createEmptyCollection() {
+      return new ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection createCollection(
+        List<ListSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+      return new ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection(pages, collectionSize);
     }
   }
 

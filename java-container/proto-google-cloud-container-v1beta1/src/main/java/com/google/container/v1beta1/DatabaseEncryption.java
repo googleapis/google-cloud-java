@@ -38,8 +38,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   }
 
   private DatabaseEncryption() {
-    state_ = 0;
     keyName_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -227,43 +227,6 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.container.v1beta1.DatabaseEncryption.State)
   }
 
-  public static final int STATE_FIELD_NUMBER = 2;
-  private int state_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * Denotes the state of etcd encryption.
-   * </pre>
-   *
-   * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-   *
-   * @return The enum numeric value on the wire for state.
-   */
-  @java.lang.Override
-  public int getStateValue() {
-    return state_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Denotes the state of etcd encryption.
-   * </pre>
-   *
-   * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-   *
-   * @return The state.
-   */
-  @java.lang.Override
-  public com.google.container.v1beta1.DatabaseEncryption.State getState() {
-    com.google.container.v1beta1.DatabaseEncryption.State result =
-        com.google.container.v1beta1.DatabaseEncryption.State.forNumber(state_);
-    return result == null
-        ? com.google.container.v1beta1.DatabaseEncryption.State.UNRECOGNIZED
-        : result;
-  }
-
   public static final int KEY_NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -317,6 +280,43 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int STATE_FIELD_NUMBER = 2;
+  private int state_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of etcd encryption.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired state of etcd encryption.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.DatabaseEncryption.State getState() {
+    com.google.container.v1beta1.DatabaseEncryption.State result =
+        com.google.container.v1beta1.DatabaseEncryption.State.forNumber(state_);
+    return result == null
+        ? com.google.container.v1beta1.DatabaseEncryption.State.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -368,8 +368,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     com.google.container.v1beta1.DatabaseEncryption other =
         (com.google.container.v1beta1.DatabaseEncryption) obj;
 
-    if (state_ != other.state_) return false;
     if (!getKeyName().equals(other.getKeyName())) return false;
+    if (state_ != other.state_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -381,10 +381,10 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + state_;
     hash = (37 * hash) + KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKeyName().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -524,8 +524,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      state_ = 0;
       keyName_ = "";
+      state_ = 0;
       return this;
     }
 
@@ -563,10 +563,10 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     private void buildPartial0(com.google.container.v1beta1.DatabaseEncryption result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.state_ = state_;
+        result.keyName_ = keyName_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.keyName_ = keyName_;
+        result.state_ = state_;
       }
     }
 
@@ -616,13 +616,13 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.container.v1beta1.DatabaseEncryption other) {
       if (other == com.google.container.v1beta1.DatabaseEncryption.getDefaultInstance())
         return this;
-      if (other.state_ != 0) {
-        setStateValue(other.getStateValue());
-      }
       if (!other.getKeyName().isEmpty()) {
         keyName_ = other.keyName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -653,13 +653,13 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 keyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -680,98 +680,6 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     }
 
     private int bitField0_;
-
-    private int state_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Denotes the state of etcd encryption.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-     *
-     * @return The enum numeric value on the wire for state.
-     */
-    @java.lang.Override
-    public int getStateValue() {
-      return state_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Denotes the state of etcd encryption.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-     *
-     * @param value The enum numeric value on the wire for state to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStateValue(int value) {
-      state_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Denotes the state of etcd encryption.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-     *
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.container.v1beta1.DatabaseEncryption.State getState() {
-      com.google.container.v1beta1.DatabaseEncryption.State result =
-          com.google.container.v1beta1.DatabaseEncryption.State.forNumber(state_);
-      return result == null
-          ? com.google.container.v1beta1.DatabaseEncryption.State.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Denotes the state of etcd encryption.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-     *
-     * @param value The state to set.
-     * @return This builder for chaining.
-     */
-    public Builder setState(com.google.container.v1beta1.DatabaseEncryption.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      state_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Denotes the state of etcd encryption.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      state_ = 0;
-      onChanged();
-      return this;
-    }
 
     private java.lang.Object keyName_ = "";
     /**
@@ -838,7 +746,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       keyName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -856,7 +764,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearKeyName() {
       keyName_ = getDefaultInstance().getKeyName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -879,7 +787,99 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       keyName_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of etcd encryption.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of etcd encryption.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of etcd encryption.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.DatabaseEncryption.State getState() {
+      com.google.container.v1beta1.DatabaseEncryption.State result =
+          com.google.container.v1beta1.DatabaseEncryption.State.forNumber(state_);
+      return result == null
+          ? com.google.container.v1beta1.DatabaseEncryption.State.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of etcd encryption.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.container.v1beta1.DatabaseEncryption.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired state of etcd encryption.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.DatabaseEncryption.State state = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      state_ = 0;
       onChanged();
       return this;
     }

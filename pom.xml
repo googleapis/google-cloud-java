@@ -53,7 +53,9 @@
     <module>java-channel</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
+    <module>java-cloudsupport</module>
     <module>java-compute</module>
+    <module>java-confidentialcomputing</module>
     <module>java-contact-center-insights</module>
     <module>java-containeranalysis</module>
     <module>java-container</module>
@@ -145,6 +147,7 @@
     <module>java-service-usage</module>
     <module>java-shell</module>
     <module>java-speech</module>
+    <module>java-storageinsights</module>
     <module>java-storage-transfer</module>
     <module>java-talent</module>
     <module>java-tasks</module>

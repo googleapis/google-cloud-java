@@ -70,6 +70,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         return internalGetAnnotations();
       case 13:
         return internalGetLabels();
+      case 12:
+        return internalGetEnv();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -827,7 +829,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -851,7 +853,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -971,6 +973,108 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENV_FIELD_NUMBER = 12;
+
+  private static final class EnvDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.workstations.v1beta.WorkstationsProto
+                .internal_static_google_cloud_workstations_v1beta_Workstation_EnvEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> env_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEnv() {
+    if (env_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(EnvDefaultEntryHolder.defaultEntry);
+    }
+    return env_;
+  }
+
+  public int getEnvCount() {
+    return internalGetEnv().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  @java.lang.Override
+  public boolean containsEnv(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetEnv().getMap().containsKey(key);
+  }
+  /** Use {@link #getEnvMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getEnv() {
+    return getEnvMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
+    return internalGetEnv().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getEnvOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables passed to the workstation container's entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getEnvOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1018,6 +1122,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, host_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetEnv(), EnvDefaultEntryHolder.defaultEntry, 12);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 13);
     getUnknownFields().writeTo(output);
@@ -1071,6 +1177,16 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, host_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetEnv().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> env__ =
+          EnvDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, env__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
           LabelsDefaultEntryHolder.defaultEntry
@@ -1117,6 +1233,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     if (!getEtag().equals(other.getEtag())) return false;
     if (state_ != other.state_) return false;
     if (!getHost().equals(other.getHost())) return false;
+    if (!internalGetEnv().equals(other.internalGetEnv())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1162,6 +1279,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + HOST_FIELD_NUMBER;
     hash = (53 * hash) + getHost().hashCode();
+    if (!internalGetEnv().getMap().isEmpty()) {
+      hash = (37 * hash) + ENV_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetEnv().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1287,6 +1408,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
           return internalGetAnnotations();
         case 13:
           return internalGetLabels();
+        case 12:
+          return internalGetEnv();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1299,6 +1422,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableAnnotations();
         case 13:
           return internalGetMutableLabels();
+        case 12:
+          return internalGetMutableEnv();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1349,6 +1474,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       etag_ = "";
       state_ = 0;
       host_ = "";
+      internalGetMutableEnv().clear();
       return this;
     }
 
@@ -1422,6 +1548,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.env_ = internalGetEnv();
+        result.env_.makeImmutable();
       }
     }
 
@@ -1515,6 +1645,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      internalGetMutableEnv().mergeFrom(other.internalGetEnv());
+      bitField0_ |= 0x00001000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1613,6 +1745,15 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> env__ =
+                    input.readMessage(
+                        EnvDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableEnv().getMutableMap().put(env__.getKey(), env__.getValue());
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 98
             case 106:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -2963,7 +3104,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -2986,7 +3127,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3009,7 +3150,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3031,7 +3172,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3049,7 +3190,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3293,6 +3434,169 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       host_ = value;
       bitField0_ |= 0x00000800;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> env_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEnv() {
+      if (env_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(EnvDefaultEntryHolder.defaultEntry);
+      }
+      return env_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableEnv() {
+      if (env_ == null) {
+        env_ = com.google.protobuf.MapField.newMapField(EnvDefaultEntryHolder.defaultEntry);
+      }
+      if (!env_.isMutable()) {
+        env_ = env_.copy();
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return env_;
+    }
+
+    public int getEnvCount() {
+      return internalGetEnv().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    @java.lang.Override
+    public boolean containsEnv(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetEnv().getMap().containsKey(key);
+    }
+    /** Use {@link #getEnvMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getEnv() {
+      return getEnvMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
+      return internalGetEnv().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getEnvOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getEnvOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearEnv() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      internalGetMutableEnv().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    public Builder removeEnv(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableEnv().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableEnv() {
+      bitField0_ |= 0x00001000;
+      return internalGetMutableEnv().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    public Builder putEnv(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableEnv().getMutableMap().put(key, value);
+      bitField0_ |= 0x00001000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables passed to the workstation container's entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12;</code>
+     */
+    public Builder putAllEnv(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableEnv().getMutableMap().putAll(values);
+      bitField0_ |= 0x00001000;
       return this;
     }
 

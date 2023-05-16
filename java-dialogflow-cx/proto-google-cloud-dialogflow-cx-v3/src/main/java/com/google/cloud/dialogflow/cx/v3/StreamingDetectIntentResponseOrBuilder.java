@@ -95,6 +95,45 @@ public interface StreamingDetectIntentResponseOrBuilder
   com.google.cloud.dialogflow.cx.v3.DetectIntentResponseOrBuilder
       getDetectIntentResponseOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;</code>
+   *
+   * @return Whether the debuggingInfo field is set.
+   */
+  boolean hasDebuggingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;</code>
+   *
+   * @return The debuggingInfo.
+   */
+  com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo getDebuggingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder
+      getDebuggingInfoOrBuilder();
+
   public com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse.ResponseCase
       getResponseCase();
 }

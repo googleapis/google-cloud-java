@@ -163,8 +163,8 @@ public interface UpdateConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only validate the connection profile, but don't update any resources.
-   * The default is false.
+   * Optional. Only validate the connection profile, but don't update any
+   * resources. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

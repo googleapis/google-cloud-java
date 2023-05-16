@@ -154,7 +154,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+   * Output only. Duration of the maintenance window. The current window is
+   * fixed at 1 hour.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -170,7 +171,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+   * Output only. Duration of the maintenance window. The current window is
+   * fixed at 1 hour.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -186,7 +188,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+   * Output only. Duration of the maintenance window. The current window is
+   * fixed at 1 hour.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -878,7 +881,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -893,7 +897,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -912,7 +917,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -935,7 +941,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -955,7 +962,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -981,7 +989,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1001,7 +1010,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1016,7 +1026,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1033,7 +1044,8 @@ public final class WeeklyMaintenanceWindow extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Duration of the maintenance window. The current window is fixed at 1 hour.
+     * Output only. Duration of the maintenance window. The current window is
+     * fixed at 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration duration = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

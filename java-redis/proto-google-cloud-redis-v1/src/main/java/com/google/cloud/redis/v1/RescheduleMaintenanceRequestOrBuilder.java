@@ -60,7 +60,8 @@ public interface RescheduleMaintenanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+   * well.
    * </pre>
    *
    * <code>
@@ -74,7 +75,8 @@ public interface RescheduleMaintenanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as well.
+   * Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time as
+   * well.
    * </pre>
    *
    * <code>

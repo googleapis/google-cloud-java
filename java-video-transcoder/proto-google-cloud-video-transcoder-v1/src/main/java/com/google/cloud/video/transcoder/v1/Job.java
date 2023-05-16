@@ -42,6 +42,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     inputUri_ = "";
     outputUri_ = "";
     state_ = 0;
+    mode_ = 0;
   }
 
   @java.lang.Override
@@ -286,6 +287,169 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.Job.ProcessingState)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The processing mode of the job.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.video.transcoder.v1.Job.ProcessingMode}
+   */
+  public enum ProcessingMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The job processing mode is not specified.
+     * </pre>
+     *
+     * <code>PROCESSING_MODE_UNSPECIFIED = 0;</code>
+     */
+    PROCESSING_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The job processing mode is interactive mode.
+     * Interactive job will either be ran or rejected if quota does not allow
+     * for it.
+     * </pre>
+     *
+     * <code>PROCESSING_MODE_INTERACTIVE = 1;</code>
+     */
+    PROCESSING_MODE_INTERACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The job processing mode is batch mode.
+     * Batch mode allows queuing of jobs.
+     * </pre>
+     *
+     * <code>PROCESSING_MODE_BATCH = 2;</code>
+     */
+    PROCESSING_MODE_BATCH(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The job processing mode is not specified.
+     * </pre>
+     *
+     * <code>PROCESSING_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROCESSING_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The job processing mode is interactive mode.
+     * Interactive job will either be ran or rejected if quota does not allow
+     * for it.
+     * </pre>
+     *
+     * <code>PROCESSING_MODE_INTERACTIVE = 1;</code>
+     */
+    public static final int PROCESSING_MODE_INTERACTIVE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The job processing mode is batch mode.
+     * Batch mode allows queuing of jobs.
+     * </pre>
+     *
+     * <code>PROCESSING_MODE_BATCH = 2;</code>
+     */
+    public static final int PROCESSING_MODE_BATCH_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProcessingMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProcessingMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROCESSING_MODE_UNSPECIFIED;
+        case 1:
+          return PROCESSING_MODE_INTERACTIVE;
+        case 2:
+          return PROCESSING_MODE_BATCH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProcessingMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProcessingMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ProcessingMode>() {
+          public ProcessingMode findValueByNumber(int number) {
+            return ProcessingMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.Job.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ProcessingMode[] VALUES = values();
+
+    public static ProcessingMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProcessingMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.video.transcoder.v1.Job.ProcessingMode)
+  }
+
   private int jobConfigCase_ = 0;
   private java.lang.Object jobConfig_;
 
@@ -512,11 +676,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
-   * The default is `preset/web-hd`.
-   * Preset Transcoder templates:
-   * - `preset/{preset_id}`
-   * - User defined JobTemplate:
-   *   `{job_template_id}`
+   * The default is `preset/web-hd`, which is the only supported preset.
+   * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
    * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -531,11 +692,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
-   * The default is `preset/web-hd`.
-   * Preset Transcoder templates:
-   * - `preset/{preset_id}`
-   * - User defined JobTemplate:
-   *   `{job_template_id}`
+   * The default is `preset/web-hd`, which is the only supported preset.
+   * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
    * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -563,11 +721,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
-   * The default is `preset/web-hd`.
-   * Preset Transcoder templates:
-   * - `preset/{preset_id}`
-   * - User defined JobTemplate:
-   *   `{job_template_id}`
+   * The default is `preset/web-hd`, which is the only supported preset.
+   * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
    * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1005,6 +1160,45 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
+  public static final int MODE_FIELD_NUMBER = 20;
+  private int mode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The processing mode of the job.
+   * The default is `PROCESSING_MODE_INTERACTIVE`.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  @java.lang.Override
+  public int getModeValue() {
+    return mode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The processing mode of the job.
+   * The default is `PROCESSING_MODE_INTERACTIVE`.
+   * </pre>
+   *
+   * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+   *
+   * @return The mode.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.Job.ProcessingMode getMode() {
+    com.google.cloud.video.transcoder.v1.Job.ProcessingMode result =
+        com.google.cloud.video.transcoder.v1.Job.ProcessingMode.forNumber(mode_);
+    return result == null
+        ? com.google.cloud.video.transcoder.v1.Job.ProcessingMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1055,6 +1249,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 16);
     if (error_ != null) {
       output.writeMessage(17, getError());
+    }
+    if (mode_
+        != com.google.cloud.video.transcoder.v1.Job.ProcessingMode.PROCESSING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(20, mode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1112,6 +1311,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getError());
     }
+    if (mode_
+        != com.google.cloud.video.transcoder.v1.Job.ProcessingMode.PROCESSING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, mode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1149,6 +1353,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
     }
+    if (mode_ != other.mode_) return false;
     if (!getJobConfigCase().equals(other.getJobConfigCase())) return false;
     switch (jobConfigCase_) {
       case 4:
@@ -1201,6 +1406,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
     }
+    hash = (37 * hash) + MODE_FIELD_NUMBER;
+    hash = (53 * hash) + mode_;
     switch (jobConfigCase_) {
       case 4:
         hash = (37 * hash) + TEMPLATE_ID_FIELD_NUMBER;
@@ -1401,6 +1608,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         errorBuilder_.dispose();
         errorBuilder_ = null;
       }
+      mode_ = 0;
       jobConfigCase_ = 0;
       jobConfig_ = null;
       return this;
@@ -1470,6 +1678,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.mode_ = mode_;
       }
     }
 
@@ -1560,6 +1771,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       if (other.hasError()) {
         mergeError(other.getError());
+      }
+      if (other.mode_ != 0) {
+        setModeValue(other.getModeValue());
       }
       switch (other.getJobConfigCase()) {
         case TEMPLATE_ID:
@@ -1684,6 +1898,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 138
+            case 160:
+              {
+                mode_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2090,11 +2310,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
-     * The default is `preset/web-hd`.
-     * Preset Transcoder templates:
-     * - `preset/{preset_id}`
-     * - User defined JobTemplate:
-     *   `{job_template_id}`
+     * The default is `preset/web-hd`, which is the only supported preset.
+     * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
      * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2110,11 +2327,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
-     * The default is `preset/web-hd`.
-     * Preset Transcoder templates:
-     * - `preset/{preset_id}`
-     * - User defined JobTemplate:
-     *   `{job_template_id}`
+     * The default is `preset/web-hd`, which is the only supported preset.
+     * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
      * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2143,11 +2357,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
-     * The default is `preset/web-hd`.
-     * Preset Transcoder templates:
-     * - `preset/{preset_id}`
-     * - User defined JobTemplate:
-     *   `{job_template_id}`
+     * The default is `preset/web-hd`, which is the only supported preset.
+     * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
      * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2176,11 +2387,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
-     * The default is `preset/web-hd`.
-     * Preset Transcoder templates:
-     * - `preset/{preset_id}`
-     * - User defined JobTemplate:
-     *   `{job_template_id}`
+     * The default is `preset/web-hd`, which is the only supported preset.
+     * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
      * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2202,11 +2410,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
-     * The default is `preset/web-hd`.
-     * Preset Transcoder templates:
-     * - `preset/{preset_id}`
-     * - User defined JobTemplate:
-     *   `{job_template_id}`
+     * The default is `preset/web-hd`, which is the only supported preset.
+     * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
      * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2226,11 +2431,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
-     * The default is `preset/web-hd`.
-     * Preset Transcoder templates:
-     * - `preset/{preset_id}`
-     * - User defined JobTemplate:
-     *   `{job_template_id}`
+     * The default is `preset/web-hd`, which is the only supported preset.
+     * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
      * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3556,6 +3758,103 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         error_ = null;
       }
       return errorBuilder_;
+    }
+
+    private int mode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The processing mode of the job.
+     * The default is `PROCESSING_MODE_INTERACTIVE`.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The processing mode of the job.
+     * The default is `PROCESSING_MODE_INTERACTIVE`.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModeValue(int value) {
+      mode_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The processing mode of the job.
+     * The default is `PROCESSING_MODE_INTERACTIVE`.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.Job.ProcessingMode getMode() {
+      com.google.cloud.video.transcoder.v1.Job.ProcessingMode result =
+          com.google.cloud.video.transcoder.v1.Job.ProcessingMode.forNumber(mode_);
+      return result == null
+          ? com.google.cloud.video.transcoder.v1.Job.ProcessingMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The processing mode of the job.
+     * The default is `PROCESSING_MODE_INTERACTIVE`.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMode(com.google.cloud.video.transcoder.v1.Job.ProcessingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      mode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The processing mode of the job.
+     * The default is `PROCESSING_MODE_INTERACTIVE`.
+     * </pre>
+     *
+     * <code>.google.cloud.video.transcoder.v1.Job.ProcessingMode mode = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      mode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

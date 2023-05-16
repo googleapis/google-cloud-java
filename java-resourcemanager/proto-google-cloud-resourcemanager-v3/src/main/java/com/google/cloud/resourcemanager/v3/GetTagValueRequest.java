@@ -75,7 +75,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+   * Required. Resource name for TagValue to be fetched in the format
+   * `tagValues/456`.
    * </pre>
    *
    * <code>
@@ -100,7 +101,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+   * Required. Resource name for TagValue to be fetched in the format
+   * `tagValues/456`.
    * </pre>
    *
    * <code>
@@ -470,7 +472,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+     * Required. Resource name for TagValue to be fetched in the format
+     * `tagValues/456`.
      * </pre>
      *
      * <code>
@@ -494,7 +497,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+     * Required. Resource name for TagValue to be fetched in the format
+     * `tagValues/456`.
      * </pre>
      *
      * <code>
@@ -518,7 +522,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+     * Required. Resource name for TagValue to be fetched in the format
+     * `tagValues/456`.
      * </pre>
      *
      * <code>
@@ -541,7 +546,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+     * Required. Resource name for TagValue to be fetched in the format
+     * `tagValues/456`.
      * </pre>
      *
      * <code>
@@ -560,7 +566,8 @@ public final class GetTagValueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
+     * Required. Resource name for TagValue to be fetched in the format
+     * `tagValues/456`.
      * </pre>
      *
      * <code>

@@ -65,14 +65,14 @@ public final class VPCSCConfigProto {
           + "ig\"\223\001\n\030UpdateVPCSCConfigRequest\022F\n\014vpcsc"
           + "_config\030\001 \001(\01320.google.devtools.artifact"
           + "registry.v1.VPCSCConfig\022/\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\376\001\n\'com"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\373\001\n\'com"
           + ".google.devtools.artifactregistry.v1B\020VP"
-          + "CSCConfigProtoP\001ZSgoogle.golang.org/genp"
-          + "roto/googleapis/devtools/artifactregistr"
-          + "y/v1;artifactregistry\252\002 Google.Cloud.Art"
-          + "ifactRegistry.V1\312\002 Google\\Cloud\\Artifact"
-          + "Registry\\V1\352\002#Google::Cloud::ArtifactReg"
-          + "istry::V1b\006proto3"
+          + "CSCConfigProtoP\001ZPcloud.google.com/go/ar"
+          + "tifactregistry/apiv1/artifactregistrypb;"
+          + "artifactregistrypb\252\002 Google.Cloud.Artifa"
+          + "ctRegistry.V1\312\002 Google\\Cloud\\ArtifactReg"
+          + "istry\\V1\352\002#Google::Cloud::ArtifactRegist"
+          + "ry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

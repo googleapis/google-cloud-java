@@ -1443,6 +1443,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   CertificateAuthority response =
    *       certificateAuthorityServiceClient.disableCertificateAuthorityAsync(request).get();
@@ -1478,6 +1479,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   OperationFuture<CertificateAuthority, OperationMetadata> future =
    *       certificateAuthorityServiceClient
@@ -1515,6 +1517,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       certificateAuthorityServiceClient
@@ -2489,6 +2492,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setIgnoreActiveCertificates(true)
    *           .setSkipGracePeriod(true)
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   CertificateAuthority response =
    *       certificateAuthorityServiceClient.deleteCertificateAuthorityAsync(request).get();
@@ -2526,6 +2530,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setIgnoreActiveCertificates(true)
    *           .setSkipGracePeriod(true)
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   OperationFuture<CertificateAuthority, OperationMetadata> future =
    *       certificateAuthorityServiceClient
@@ -2565,6 +2570,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setIgnoreActiveCertificates(true)
    *           .setSkipGracePeriod(true)
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       certificateAuthorityServiceClient
@@ -3402,6 +3408,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *       DeleteCaPoolRequest.newBuilder()
    *           .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   certificateAuthorityServiceClient.deleteCaPoolAsync(request).get();
    * }
@@ -3433,6 +3440,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *       DeleteCaPoolRequest.newBuilder()
    *           .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       certificateAuthorityServiceClient.deleteCaPoolOperationCallable().futureCall(request);
@@ -3464,6 +3472,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *       DeleteCaPoolRequest.newBuilder()
    *           .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setIgnoreDependentResources(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       certificateAuthorityServiceClient.deleteCaPoolCallable().futureCall(request);

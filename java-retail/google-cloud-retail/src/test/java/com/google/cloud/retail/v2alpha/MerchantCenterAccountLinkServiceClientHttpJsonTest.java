@@ -192,19 +192,7 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
 
     CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
     MerchantCenterAccountLink merchantCenterAccountLink =
-        MerchantCenterAccountLink.newBuilder()
-            .setName(
-                MerchantCenterAccountLinkName.of(
-                        "[PROJECT]", "[LOCATION]", "[CATALOG]", "[MERCHANT_CENTER_ACCOUNT_LINK]")
-                    .toString())
-            .setId("id3355")
-            .setMerchantCenterAccountId(-1368465440)
-            .setBranchId("branchId-25407907")
-            .setFeedLabel("feedLabel-1661895690")
-            .setLanguageCode("languageCode-2092349083")
-            .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
-            .setProjectId("projectId-894832108")
-            .build();
+        MerchantCenterAccountLink.newBuilder().build();
 
     MerchantCenterAccountLink actualResponse =
         client.createMerchantCenterAccountLinkAsync(parent, merchantCenterAccountLink).get();
@@ -235,20 +223,7 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
     try {
       CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
       MerchantCenterAccountLink merchantCenterAccountLink =
-          MerchantCenterAccountLink.newBuilder()
-              .setName(
-                  MerchantCenterAccountLinkName.of(
-                          "[PROJECT]", "[LOCATION]", "[CATALOG]", "[MERCHANT_CENTER_ACCOUNT_LINK]")
-                      .toString())
-              .setId("id3355")
-              .setMerchantCenterAccountId(-1368465440)
-              .setBranchId("branchId-25407907")
-              .setFeedLabel("feedLabel-1661895690")
-              .setLanguageCode("languageCode-2092349083")
-              .addAllFeedFilters(
-                  new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
-              .setProjectId("projectId-894832108")
-              .build();
+          MerchantCenterAccountLink.newBuilder().build();
       client.createMerchantCenterAccountLinkAsync(parent, merchantCenterAccountLink).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -279,21 +254,9 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-6267/locations/location-6267/catalogs/catalog-6267";
     MerchantCenterAccountLink merchantCenterAccountLink =
-        MerchantCenterAccountLink.newBuilder()
-            .setName(
-                MerchantCenterAccountLinkName.of(
-                        "[PROJECT]", "[LOCATION]", "[CATALOG]", "[MERCHANT_CENTER_ACCOUNT_LINK]")
-                    .toString())
-            .setId("id3355")
-            .setMerchantCenterAccountId(-1368465440)
-            .setBranchId("branchId-25407907")
-            .setFeedLabel("feedLabel-1661895690")
-            .setLanguageCode("languageCode-2092349083")
-            .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
-            .setProjectId("projectId-894832108")
-            .build();
+        MerchantCenterAccountLink.newBuilder().build();
 
     MerchantCenterAccountLink actualResponse =
         client.createMerchantCenterAccountLinkAsync(parent, merchantCenterAccountLink).get();
@@ -322,22 +285,9 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-6267/locations/location-6267/catalogs/catalog-6267";
       MerchantCenterAccountLink merchantCenterAccountLink =
-          MerchantCenterAccountLink.newBuilder()
-              .setName(
-                  MerchantCenterAccountLinkName.of(
-                          "[PROJECT]", "[LOCATION]", "[CATALOG]", "[MERCHANT_CENTER_ACCOUNT_LINK]")
-                      .toString())
-              .setId("id3355")
-              .setMerchantCenterAccountId(-1368465440)
-              .setBranchId("branchId-25407907")
-              .setFeedLabel("feedLabel-1661895690")
-              .setLanguageCode("languageCode-2092349083")
-              .addAllFeedFilters(
-                  new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
-              .setProjectId("projectId-894832108")
-              .build();
+          MerchantCenterAccountLink.newBuilder().build();
       client.createMerchantCenterAccountLinkAsync(parent, merchantCenterAccountLink).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {

@@ -20,9 +20,12 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -35,16 +38,21 @@ import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
@@ -54,12 +62,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
@@ -67,6 +81,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
@@ -77,6 +92,7 @@ import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -115,6 +131,13 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: bulkMuteFindingsCallable()");
   }
 
+  public UnaryCallable<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createSecurityHealthAnalyticsCustomModuleCallable()");
+  }
+
   public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     throw new UnsupportedOperationException("Not implemented: createSourceCallable()");
   }
@@ -140,6 +163,12 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteNotificationConfigCallable()");
   }
 
+  public UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSecurityHealthAnalyticsCustomModuleCallable()");
+  }
+
   public UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable() {
     throw new UnsupportedOperationException("Not implemented: getBigQueryExportCallable()");
   }
@@ -160,6 +189,21 @@ public abstract class SecurityCenterStub implements BackgroundResource {
   public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: getOrganizationSettingsCallable()");
+  }
+
+  public UnaryCallable<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getEffectiveSecurityHealthAnalyticsCustomModuleCallable()");
+  }
+
+  public UnaryCallable<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSecurityHealthAnalyticsCustomModuleCallable()");
   }
 
   public UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
@@ -191,6 +235,22 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listAssetsCallable()");
   }
 
+  public UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDescendantSecurityHealthAnalyticsCustomModulesCallable()");
+  }
+
   public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listFindingsPagedCallable()");
   }
@@ -217,6 +277,38 @@ public abstract class SecurityCenterStub implements BackgroundResource {
   public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsResponse>
       listNotificationConfigsCallable() {
     throw new UnsupportedOperationException("Not implemented: listNotificationConfigsCallable()");
+  }
+
+  public UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listEffectiveSecurityHealthAnalyticsCustomModulesCallable()");
+  }
+
+  public UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSecurityHealthAnalyticsCustomModulesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSecurityHealthAnalyticsCustomModulesCallable()");
   }
 
   public UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse> listSourcesPagedCallable() {
@@ -275,6 +367,13 @@ public abstract class SecurityCenterStub implements BackgroundResource {
       updateOrganizationSettingsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateOrganizationSettingsCallable()");
+  }
+
+  public UnaryCallable<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSecurityHealthAnalyticsCustomModuleCallable()");
   }
 
   public UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable() {

@@ -108,6 +108,23 @@ jobs:
     - run: python3 --version
     - run: python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
+  gapic-libraries-bom:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - name: Install Maven modules to local Maven repository
+      run: |
+        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+    - name: Validate gapic-libraries-bom
+      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.13.0
+      with:
+        bom-path: gapic-libraries-bom/pom.xml
+
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
 #    runs-on: ubuntu-latest

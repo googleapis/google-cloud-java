@@ -128,8 +128,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-   * exists in the GKE Control Plane.
+   * Output only. If cluster_missing is set then it denotes that the GKE cluster
+   * no longer exists in the GKE Control Plane.
    * </pre>
    *
    * <code>bool cluster_missing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -625,8 +625,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that the GKE cluster
+     * no longer exists in the GKE Control Plane.
      * </pre>
      *
      * <code>bool cluster_missing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -641,8 +641,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that the GKE cluster
+     * no longer exists in the GKE Control Plane.
      * </pre>
      *
      * <code>bool cluster_missing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -661,8 +661,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that the GKE cluster
+     * no longer exists in the GKE Control Plane.
      * </pre>
      *
      * <code>bool cluster_missing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

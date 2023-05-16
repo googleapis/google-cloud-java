@@ -77,7 +77,7 @@
  * <p>======================= TagBindingsClient =======================
  *
  * <p>Service Description: Allow users to create and manage TagBindings between TagValues and
- * different cloud resources throughout the GCP resource hierarchy.
+ * different Google Cloud resources throughout the GCP resource hierarchy.
  *
  * <p>Sample for TagBindingsClient:
  *
@@ -92,6 +92,29 @@
  *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
+ * }
+ * }</pre>
+ *
+ * <p>======================= TagHoldsClient =======================
+ *
+ * <p>Service Description: Allow users to create and manage TagHolds for TagValues. TagHolds
+ * represent the use of a Tag Value that is not captured by TagBindings but should still block
+ * TagValue deletion (such as a reference in a policy condition). This service provides isolated
+ * failure domains by cloud location so that TagHolds can be managed in the same location as their
+ * usage.
+ *
+ * <p>Sample for TagHoldsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (TagHoldsClient tagHoldsClient = TagHoldsClient.create()) {
+ *   TagValueName parent = TagValueName.of("[TAG_VALUE]");
+ *   TagHold tagHold = TagHold.newBuilder().build();
+ *   TagHold response = tagHoldsClient.createTagHoldAsync(parent, tagHold).get();
  * }
  * }</pre>
  *

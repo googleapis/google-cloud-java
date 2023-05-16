@@ -117,6 +117,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -192,6 +193,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -267,6 +269,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -333,6 +336,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -499,6 +503,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -533,6 +538,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
 
@@ -586,6 +592,7 @@ public class JobsClientHttpJsonTest {
               .setExecutionCount(1646136616)
               .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
               .setReconciling(true)
+              .setSatisfiesPzs(true)
               .setEtag("etag3123477")
               .build();
       client.updateJobAsync(job).get();
@@ -620,6 +627,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -691,6 +699,7 @@ public class JobsClientHttpJsonTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -765,6 +774,7 @@ public class JobsClientHttpJsonTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -839,6 +849,7 @@ public class JobsClientHttpJsonTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

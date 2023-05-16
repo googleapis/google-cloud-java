@@ -273,6 +273,98 @@ public class TagValuesClientTest {
   }
 
   @Test
+  public void getNamespacedTagValueTest() throws Exception {
+    TagValue expectedResponse =
+        TagValue.newBuilder()
+            .setName(TagValueName.of("[TAG_VALUE]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockTagValues.addResponse(expectedResponse);
+
+    TagValueName name = TagValueName.of("[TAG_VALUE]");
+
+    TagValue actualResponse = client.getNamespacedTagValue(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTagValues.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNamespacedTagValueRequest actualRequest =
+        ((GetNamespacedTagValueRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNamespacedTagValueExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTagValues.addException(exception);
+
+    try {
+      TagValueName name = TagValueName.of("[TAG_VALUE]");
+      client.getNamespacedTagValue(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNamespacedTagValueTest2() throws Exception {
+    TagValue expectedResponse =
+        TagValue.newBuilder()
+            .setName(TagValueName.of("[TAG_VALUE]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockTagValues.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TagValue actualResponse = client.getNamespacedTagValue(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTagValues.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNamespacedTagValueRequest actualRequest =
+        ((GetNamespacedTagValueRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNamespacedTagValueExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTagValues.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNamespacedTagValue(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createTagValueTest() throws Exception {
     TagValue expectedResponse =
         TagValue.newBuilder()

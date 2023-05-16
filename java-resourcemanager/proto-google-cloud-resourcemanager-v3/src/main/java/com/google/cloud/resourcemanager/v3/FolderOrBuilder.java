@@ -269,9 +269,9 @@ public interface FolderOrBuilder
    *
    *
    * <pre>
-   * Output only. A checksum computed by the server based on the current value of the folder
-   * resource. This may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * Output only. A checksum computed by the server based on the current value
+   * of the folder resource. This may be sent on update and delete requests to
+   * ensure the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -283,9 +283,9 @@ public interface FolderOrBuilder
    *
    *
    * <pre>
-   * Output only. A checksum computed by the server based on the current value of the folder
-   * resource. This may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * Output only. A checksum computed by the server based on the current value
+   * of the folder resource. This may be sent on update and delete requests to
+   * ensure the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

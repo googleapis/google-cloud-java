@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -66,9 +67,11 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
@@ -91,6 +94,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
@@ -109,12 +113,15 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -144,6 +151,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
@@ -187,6 +196,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -1407,6 +1417,62 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetChannelGroupRequest, ChannelGroup>
+      getChannelGroupMethodDescriptor =
+          MethodDescriptor.<GetChannelGroupRequest, ChannelGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetChannelGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetChannelGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ChannelGroup.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsMethodDescriptor =
+          MethodDescriptor.<ListChannelGroupsRequest, ListChannelGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListChannelGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListChannelGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListChannelGroupsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateChannelGroupRequest, ChannelGroup>
+      createChannelGroupMethodDescriptor =
+          MethodDescriptor.<CreateChannelGroupRequest, ChannelGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateChannelGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateChannelGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ChannelGroup.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateChannelGroupRequest, ChannelGroup>
+      updateChannelGroupMethodDescriptor =
+          MethodDescriptor.<UpdateChannelGroupRequest, ChannelGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateChannelGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateChannelGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ChannelGroup.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteChannelGroupRequest, Empty>
+      deleteChannelGroupMethodDescriptor =
+          MethodDescriptor.<DeleteChannelGroupRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteChannelGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteChannelGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutMethodDescriptor =
@@ -1530,6 +1596,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListConnectedSiteTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectedSiteTagsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyMethodDescriptor =
+          MethodDescriptor
+              .<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/FetchConnectedGa4Property")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchConnectedGa4PropertyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchConnectedGa4PropertyResponse.getDefaultInstance()))
               .build();
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
@@ -1746,6 +1826,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<UpdateExpandedDataSetRequest, ExpandedDataSet>
       updateExpandedDataSetCallable;
   private final UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable;
+  private final UnaryCallable<GetChannelGroupRequest, ChannelGroup> getChannelGroupCallable;
+  private final UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsCallable;
+  private final UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsPagedResponse>
+      listChannelGroupsPagedCallable;
+  private final UnaryCallable<CreateChannelGroupRequest, ChannelGroup> createChannelGroupCallable;
+  private final UnaryCallable<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupCallable;
+  private final UnaryCallable<DeleteChannelGroupRequest, Empty> deleteChannelGroupCallable;
   private final UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable;
@@ -1766,6 +1854,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable;
   private final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsCallable;
+  private final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -2890,6 +2980,58 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupTransportSettings =
+        GrpcCallSettings.<GetChannelGroupRequest, ChannelGroup>newBuilder()
+            .setMethodDescriptor(getChannelGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListChannelGroupsRequest, ListChannelGroupsResponse>
+        listChannelGroupsTransportSettings =
+            GrpcCallSettings.<ListChannelGroupsRequest, ListChannelGroupsResponse>newBuilder()
+                .setMethodDescriptor(listChannelGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateChannelGroupRequest, ChannelGroup> createChannelGroupTransportSettings =
+        GrpcCallSettings.<CreateChannelGroupRequest, ChannelGroup>newBuilder()
+            .setMethodDescriptor(createChannelGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupTransportSettings =
+        GrpcCallSettings.<UpdateChannelGroupRequest, ChannelGroup>newBuilder()
+            .setMethodDescriptor(updateChannelGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "channel_group.name", String.valueOf(request.getChannelGroup().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupTransportSettings =
+        GrpcCallSettings.<DeleteChannelGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteChannelGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
         setAutomatedGa4ConfigurationOptOutTransportSettings =
@@ -2971,6 +3113,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings
                 .<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>newBuilder()
                 .setMethodDescriptor(listConnectedSiteTagsMethodDescriptor)
+                .build();
+    GrpcCallSettings<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+        fetchConnectedGa4PropertyTransportSettings =
+            GrpcCallSettings
+                .<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>newBuilder()
+                .setMethodDescriptor(fetchConnectedGa4PropertyMethodDescriptor)
                 .build();
 
     this.getAccountCallable =
@@ -3488,6 +3636,34 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             deleteExpandedDataSetTransportSettings,
             settings.deleteExpandedDataSetSettings(),
             clientContext);
+    this.getChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            getChannelGroupTransportSettings, settings.getChannelGroupSettings(), clientContext);
+    this.listChannelGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listChannelGroupsTransportSettings,
+            settings.listChannelGroupsSettings(),
+            clientContext);
+    this.listChannelGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listChannelGroupsTransportSettings,
+            settings.listChannelGroupsSettings(),
+            clientContext);
+    this.createChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            createChannelGroupTransportSettings,
+            settings.createChannelGroupSettings(),
+            clientContext);
+    this.updateChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateChannelGroupTransportSettings,
+            settings.updateChannelGroupSettings(),
+            clientContext);
+    this.deleteChannelGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteChannelGroupTransportSettings,
+            settings.deleteChannelGroupSettings(),
+            clientContext);
     this.setAutomatedGa4ConfigurationOptOutCallable =
         callableFactory.createUnaryCallable(
             setAutomatedGa4ConfigurationOptOutTransportSettings,
@@ -3535,6 +3711,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             listConnectedSiteTagsTransportSettings,
             settings.listConnectedSiteTagsSettings(),
+            clientContext);
+    this.fetchConnectedGa4PropertyCallable =
+        callableFactory.createUnaryCallable(
+            fetchConnectedGa4PropertyTransportSettings,
+            settings.fetchConnectedGa4PropertySettings(),
             clientContext);
 
     this.backgroundResources =
@@ -4212,6 +4393,38 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
+  public UnaryCallable<GetChannelGroupRequest, ChannelGroup> getChannelGroupCallable() {
+    return getChannelGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsCallable() {
+    return listChannelGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsPagedResponse>
+      listChannelGroupsPagedCallable() {
+    return listChannelGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateChannelGroupRequest, ChannelGroup> createChannelGroupCallable() {
+    return createChannelGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupCallable() {
+    return updateChannelGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteChannelGroupRequest, Empty> deleteChannelGroupCallable() {
+    return deleteChannelGroupCallable;
+  }
+
+  @Override
   public UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable() {
@@ -4269,6 +4482,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsCallable() {
     return listConnectedSiteTagsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyCallable() {
+    return fetchConnectedGa4PropertyCallable;
   }
 
   @Override

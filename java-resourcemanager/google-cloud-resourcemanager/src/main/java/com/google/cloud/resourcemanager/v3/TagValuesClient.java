@@ -225,8 +225,7 @@ public class TagValuesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name for TagKey, parent of the TagValues to be listed, in the
-   *     format `tagKeys/123`.
+   * @param parent Required.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagValuesPagedResponse listTagValues(ResourceName parent) {
@@ -257,8 +256,7 @@ public class TagValuesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name for TagKey, parent of the TagValues to be listed, in the
-   *     format `tagKeys/123`.
+   * @param parent Required.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagValuesPagedResponse listTagValues(String parent) {
@@ -370,8 +368,8 @@ public class TagValuesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves TagValue. If the TagValue or namespaced name does not exist, or if the user does not
-   * have permission to view it, this method will return `PERMISSION_DENIED`.
+   * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the value does not exist
+   * or the user does not have permission to view it.
    *
    * <p>Sample code:
    *
@@ -398,8 +396,8 @@ public class TagValuesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves TagValue. If the TagValue or namespaced name does not exist, or if the user does not
-   * have permission to view it, this method will return `PERMISSION_DENIED`.
+   * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the value does not exist
+   * or the user does not have permission to view it.
    *
    * <p>Sample code:
    *
@@ -425,8 +423,8 @@ public class TagValuesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves TagValue. If the TagValue or namespaced name does not exist, or if the user does not
-   * have permission to view it, this method will return `PERMISSION_DENIED`.
+   * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the value does not exist
+   * or the user does not have permission to view it.
    *
    * <p>Sample code:
    *
@@ -454,8 +452,8 @@ public class TagValuesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves TagValue. If the TagValue or namespaced name does not exist, or if the user does not
-   * have permission to view it, this method will return `PERMISSION_DENIED`.
+   * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the value does not exist
+   * or the user does not have permission to view it.
    *
    * <p>Sample code:
    *
@@ -482,9 +480,134 @@ public class TagValuesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves a TagValue by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * value does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
+   *   TagValueName name = TagValueName.of("[TAG_VALUE]");
+   *   TagValue response = tagValuesClient.getNamespacedTagValue(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A namespaced tag value name in the following format:
+   *     <p>`{parentId}/{tagKeyShort}/{tagValueShort}`
+   *     <p>Examples: - `42/foo/abc` for a value with short name "abc" under the key with short name
+   *     "foo" under the organization with ID 42 - `r2-d2/bar/xyz` for a value with short name "xyz"
+   *     under the key with short name "bar" under the project with ID "r2-d2"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagValue getNamespacedTagValue(TagValueName name) {
+    GetNamespacedTagValueRequest request =
+        GetNamespacedTagValueRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNamespacedTagValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a TagValue by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * value does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
+   *   String name = TagValueName.of("[TAG_VALUE]").toString();
+   *   TagValue response = tagValuesClient.getNamespacedTagValue(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A namespaced tag value name in the following format:
+   *     <p>`{parentId}/{tagKeyShort}/{tagValueShort}`
+   *     <p>Examples: - `42/foo/abc` for a value with short name "abc" under the key with short name
+   *     "foo" under the organization with ID 42 - `r2-d2/bar/xyz` for a value with short name "xyz"
+   *     under the key with short name "bar" under the project with ID "r2-d2"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagValue getNamespacedTagValue(String name) {
+    GetNamespacedTagValueRequest request =
+        GetNamespacedTagValueRequest.newBuilder().setName(name).build();
+    return getNamespacedTagValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a TagValue by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * value does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
+   *   GetNamespacedTagValueRequest request =
+   *       GetNamespacedTagValueRequest.newBuilder()
+   *           .setName(TagValueName.of("[TAG_VALUE]").toString())
+   *           .build();
+   *   TagValue response = tagValuesClient.getNamespacedTagValue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TagValue getNamespacedTagValue(GetNamespacedTagValueRequest request) {
+    return getNamespacedTagValueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a TagValue by its namespaced name. This method will return `PERMISSION_DENIED` if the
+   * value does not exist or the user does not have permission to view it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
+   *   GetNamespacedTagValueRequest request =
+   *       GetNamespacedTagValueRequest.newBuilder()
+   *           .setName(TagValueName.of("[TAG_VALUE]").toString())
+   *           .build();
+   *   ApiFuture<TagValue> future =
+   *       tagValuesClient.getNamespacedTagValueCallable().futureCall(request);
+   *   // Do something.
+   *   TagValue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNamespacedTagValueRequest, TagValue>
+      getNamespacedTagValueCallable() {
+    return stub.getNamespacedTagValueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a TagValue as a child of the specified TagKey. If a another request with the same
    * parameters is sent while the original request is in process the second request will receive an
-   * error. A maximum of 300 TagValues can exist under a TagKey at any given time.
+   * error. A maximum of 1000 TagValues can exist under a TagKey at any given time.
    *
    * <p>Sample code:
    *
@@ -515,7 +638,7 @@ public class TagValuesClient implements BackgroundResource {
   /**
    * Creates a TagValue as a child of the specified TagKey. If a another request with the same
    * parameters is sent while the original request is in process the second request will receive an
-   * error. A maximum of 300 TagValues can exist under a TagKey at any given time.
+   * error. A maximum of 1000 TagValues can exist under a TagKey at any given time.
    *
    * <p>Sample code:
    *
@@ -547,7 +670,7 @@ public class TagValuesClient implements BackgroundResource {
   /**
    * Creates a TagValue as a child of the specified TagKey. If a another request with the same
    * parameters is sent while the original request is in process the second request will receive an
-   * error. A maximum of 300 TagValues can exist under a TagKey at any given time.
+   * error. A maximum of 1000 TagValues can exist under a TagKey at any given time.
    *
    * <p>Sample code:
    *
@@ -579,7 +702,7 @@ public class TagValuesClient implements BackgroundResource {
   /**
    * Creates a TagValue as a child of the specified TagKey. If a another request with the same
    * parameters is sent while the original request is in process the second request will receive an
-   * error. A maximum of 300 TagValues can exist under a TagKey at any given time.
+   * error. A maximum of 1000 TagValues can exist under a TagKey at any given time.
    *
    * <p>Sample code:
    *
@@ -626,8 +749,7 @@ public class TagValuesClient implements BackgroundResource {
    *
    * @param tagValue Required. The new definition of the TagValue. Only fields `description` and
    *     `etag` fields can be updated by this request. If the `etag` field is nonempty, it must
-   *     match the `etag` field of the existing ControlGroup. Otherwise, `FAILED_PRECONDITION` will
-   *     be returned.
+   *     match the `etag` field of the existing ControlGroup. Otherwise, `ABORTED` will be returned.
    * @param updateMask Optional. Fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

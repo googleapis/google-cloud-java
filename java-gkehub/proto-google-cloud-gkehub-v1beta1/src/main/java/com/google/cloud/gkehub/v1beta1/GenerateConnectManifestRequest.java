@@ -24,7 +24,6 @@ package com.google.cloud.gkehub.v1beta1;
  * <pre>
  * Request message for `GkeHubMembershipService.GenerateConnectManifest`
  * method.
- * .
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest}
@@ -81,8 +80,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The Membership resource name the Agent will associate with, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+   * Required. The Membership resource name the Agent will associate with, in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
    * <code>
@@ -107,8 +106,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The Membership resource name the Agent will associate with, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+   * Required. The Membership resource name the Agent will associate with, in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
    * <code>
@@ -194,7 +193,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use. Defaults to the most current version.
+   * Optional. The Connect agent version to use. Defaults to the most current
+   * version.
    * </pre>
    *
    * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -217,7 +217,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use. Defaults to the most current version.
+   * Optional. The Connect agent version to use. Defaults to the most current
+   * version.
    * </pre>
    *
    * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -544,7 +545,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    * <pre>
    * Request message for `GkeHubMembershipService.GenerateConnectManifest`
    * method.
-   * .
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest}
@@ -805,8 +805,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>
@@ -830,8 +830,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>
@@ -855,8 +855,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>
@@ -879,8 +879,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>
@@ -899,8 +899,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The Membership resource name the Agent will associate with, in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+     * Required. The Membership resource name the Agent will associate with, in
+     * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
      * </pre>
      *
      * <code>
@@ -1128,7 +1128,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1150,7 +1151,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1172,7 +1174,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1193,7 +1196,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1210,7 +1214,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The Connect agent version to use. Defaults to the most current version.
+     * Optional. The Connect agent version to use. Defaults to the most current
+     * version.
      * </pre>
      *
      * <code>string version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -133,6 +133,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "MutateDeployedModel": {
+              "methods": ["mutateDeployedModelAsync", "mutateDeployedModelAsync", "mutateDeployedModelAsync", "mutateDeployedModelOperationCallable", "mutateDeployedModelCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -671,6 +674,33 @@
         }
       }
     },
+    "ModelGardenService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelGardenServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPublisherModel": {
+              "methods": ["getPublisherModel", "getPublisherModel", "getPublisherModel", "getPublisherModelCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "ModelService": {
       "clients": {
         "grpc": {
@@ -866,7 +896,7 @@
               "methods": ["pauseSchedule", "pauseSchedule", "pauseSchedule", "pauseScheduleCallable"]
             },
             "ResumeSchedule": {
-              "methods": ["resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeScheduleCallable"]
+              "methods": ["resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeScheduleCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

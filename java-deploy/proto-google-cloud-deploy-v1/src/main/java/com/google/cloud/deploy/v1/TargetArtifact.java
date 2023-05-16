@@ -135,6 +135,33 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for manifestPath.
      */
     com.google.protobuf.ByteString getManifestPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. File path of the directory of rendered job manifests
+     * relative to the URI. This is only set if it is applicable.
+     * </pre>
+     *
+     * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobManifestsPath.
+     */
+    java.lang.String getJobManifestsPath();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. File path of the directory of rendered job manifests
+     * relative to the URI. This is only set if it is applicable.
+     * </pre>
+     *
+     * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobManifestsPath.
+     */
+    com.google.protobuf.ByteString getJobManifestsPathBytes();
   }
   /**
    *
@@ -158,6 +185,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     private PhaseArtifact() {
       skaffoldConfigPath_ = "";
       manifestPath_ = "";
+      jobManifestsPath_ = "";
     }
 
     @java.lang.Override
@@ -290,6 +318,59 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int JOB_MANIFESTS_PATH_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobManifestsPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. File path of the directory of rendered job manifests
+     * relative to the URI. This is only set if it is applicable.
+     * </pre>
+     *
+     * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobManifestsPath.
+     */
+    @java.lang.Override
+    public java.lang.String getJobManifestsPath() {
+      java.lang.Object ref = jobManifestsPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobManifestsPath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. File path of the directory of rendered job manifests
+     * relative to the URI. This is only set if it is applicable.
+     * </pre>
+     *
+     * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobManifestsPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJobManifestsPathBytes() {
+      java.lang.Object ref = jobManifestsPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobManifestsPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -310,6 +391,9 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manifestPath_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, manifestPath_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobManifestsPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jobManifestsPath_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -324,6 +408,9 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(manifestPath_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, manifestPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobManifestsPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jobManifestsPath_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -343,6 +430,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
       if (!getSkaffoldConfigPath().equals(other.getSkaffoldConfigPath())) return false;
       if (!getManifestPath().equals(other.getManifestPath())) return false;
+      if (!getJobManifestsPath().equals(other.getJobManifestsPath())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -358,6 +446,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getSkaffoldConfigPath().hashCode();
       hash = (37 * hash) + MANIFEST_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getManifestPath().hashCode();
+      hash = (37 * hash) + JOB_MANIFESTS_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getJobManifestsPath().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -502,6 +592,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         skaffoldConfigPath_ = "";
         manifestPath_ = "";
+        jobManifestsPath_ = "";
         return this;
       }
 
@@ -543,6 +634,9 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.manifestPath_ = manifestPath_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.jobManifestsPath_ = jobManifestsPath_;
         }
       }
 
@@ -604,6 +698,11 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getJobManifestsPath().isEmpty()) {
+          jobManifestsPath_ = other.jobManifestsPath_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -642,6 +741,12 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 26
+              case 34:
+                {
+                  jobManifestsPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -874,6 +979,117 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         manifestPath_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobManifestsPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. File path of the directory of rendered job manifests
+       * relative to the URI. This is only set if it is applicable.
+       * </pre>
+       *
+       * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The jobManifestsPath.
+       */
+      public java.lang.String getJobManifestsPath() {
+        java.lang.Object ref = jobManifestsPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobManifestsPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. File path of the directory of rendered job manifests
+       * relative to the URI. This is only set if it is applicable.
+       * </pre>
+       *
+       * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for jobManifestsPath.
+       */
+      public com.google.protobuf.ByteString getJobManifestsPathBytes() {
+        java.lang.Object ref = jobManifestsPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jobManifestsPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. File path of the directory of rendered job manifests
+       * relative to the URI. This is only set if it is applicable.
+       * </pre>
+       *
+       * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The jobManifestsPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobManifestsPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobManifestsPath_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. File path of the directory of rendered job manifests
+       * relative to the URI. This is only set if it is applicable.
+       * </pre>
+       *
+       * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJobManifestsPath() {
+        jobManifestsPath_ = getDefaultInstance().getJobManifestsPath();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. File path of the directory of rendered job manifests
+       * relative to the URI. This is only set if it is applicable.
+       * </pre>
+       *
+       * <code>string job_manifests_path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for jobManifestsPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobManifestsPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        jobManifestsPath_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

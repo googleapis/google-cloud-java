@@ -274,5 +274,36 @@ public interface TableOrBuilder
    */
   com.google.cloud.bigquery.biglake.v1alpha1.Table.Type getType();
 
+  /**
+   *
+   *
+   * <pre>
+   * The checksum of a table object computed by the server based on the value of
+   * other fields. It may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding. It is only checked for update table
+   * operations.
+   * </pre>
+   *
+   * <code>string etag = 8;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * The checksum of a table object computed by the server based on the value of
+   * other fields. It may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding. It is only checked for update table
+   * operations.
+   * </pre>
+   *
+   * <code>string etag = 8;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
   public com.google.cloud.bigquery.biglake.v1alpha1.Table.OptionsCase getOptionsCase();
 }

@@ -3763,6 +3763,117 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Run an on demand execution of a Task.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]");
+   *   RunTaskResponse response = dataplexServiceClient.runTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the task:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunTaskResponse runTask(TaskName name) {
+    RunTaskRequest request =
+        RunTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return runTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Run an on demand execution of a Task.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   String name = TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString();
+   *   RunTaskResponse response = dataplexServiceClient.runTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the task:
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunTaskResponse runTask(String name) {
+    RunTaskRequest request = RunTaskRequest.newBuilder().setName(name).build();
+    return runTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Run an on demand execution of a Task.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   RunTaskRequest request =
+   *       RunTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString())
+   *           .build();
+   *   RunTaskResponse response = dataplexServiceClient.runTask(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunTaskResponse runTask(RunTaskRequest request) {
+    return runTaskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Run an on demand execution of a Task.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   RunTaskRequest request =
+   *       RunTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString())
+   *           .build();
+   *   ApiFuture<RunTaskResponse> future =
+   *       dataplexServiceClient.runTaskCallable().futureCall(request);
+   *   // Do something.
+   *   RunTaskResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable() {
+    return stub.runTaskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Get job resource.
    *
    * <p>Sample code:

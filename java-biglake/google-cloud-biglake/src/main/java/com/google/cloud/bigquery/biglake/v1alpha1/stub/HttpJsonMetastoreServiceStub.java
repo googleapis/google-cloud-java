@@ -56,6 +56,7 @@ import com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.Lock;
+import com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.Table;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest;
@@ -515,6 +516,42 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<RenameTableRequest, Table> renameTableMethodDescriptor =
+      ApiMethodDescriptor.<RenameTableRequest, Table>newBuilder()
+          .setFullMethodName("google.cloud.bigquery.biglake.v1alpha1.MetastoreService/RenameTable")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<RenameTableRequest>newBuilder()
+                  .setPath(
+                      "/v1alpha1/{name=projects/*/locations/*/catalogs/*/databases/*/tables/*}:rename",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<RenameTableRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<RenameTableRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Table>newBuilder()
+                  .setDefaultInstance(Table.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
   private static final ApiMethodDescriptor<GetTableRequest, Table> getTableMethodDescriptor =
       ApiMethodDescriptor.<GetTableRequest, Table>newBuilder()
           .setFullMethodName("google.cloud.bigquery.biglake.v1alpha1.MetastoreService/GetTable")
@@ -573,6 +610,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -742,6 +780,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
   private final UnaryCallable<CreateTableRequest, Table> createTableCallable;
   private final UnaryCallable<DeleteTableRequest, Table> deleteTableCallable;
   private final UnaryCallable<UpdateTableRequest, Table> updateTableCallable;
+  private final UnaryCallable<RenameTableRequest, Table> renameTableCallable;
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable;
@@ -854,6 +893,11 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
             .setMethodDescriptor(updateTableMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<RenameTableRequest, Table> renameTableTransportSettings =
+        HttpJsonCallSettings.<RenameTableRequest, Table>newBuilder()
+            .setMethodDescriptor(renameTableMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<GetTableRequest, Table> getTableTransportSettings =
         HttpJsonCallSettings.<GetTableRequest, Table>newBuilder()
             .setMethodDescriptor(getTableMethodDescriptor)
@@ -927,6 +971,9 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
     this.updateTableCallable =
         callableFactory.createUnaryCallable(
             updateTableTransportSettings, settings.updateTableSettings(), clientContext);
+    this.renameTableCallable =
+        callableFactory.createUnaryCallable(
+            renameTableTransportSettings, settings.renameTableSettings(), clientContext);
     this.getTableCallable =
         callableFactory.createUnaryCallable(
             getTableTransportSettings, settings.getTableSettings(), clientContext);
@@ -971,6 +1018,7 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
     methodDescriptors.add(createTableMethodDescriptor);
     methodDescriptors.add(deleteTableMethodDescriptor);
     methodDescriptors.add(updateTableMethodDescriptor);
+    methodDescriptors.add(renameTableMethodDescriptor);
     methodDescriptors.add(getTableMethodDescriptor);
     methodDescriptors.add(listTablesMethodDescriptor);
     methodDescriptors.add(createLockMethodDescriptor);
@@ -1049,6 +1097,11 @@ public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
   @Override
   public UnaryCallable<UpdateTableRequest, Table> updateTableCallable() {
     return updateTableCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameTableRequest, Table> renameTableCallable() {
+    return renameTableCallable;
   }
 
   @Override

@@ -2816,10 +2816,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Specifies EntityType grouping Features to read values of and
-   * settings. Each EntityType referenced in
-   * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in the EntityType in
-   * [BatchReadFeatureValuesRequest.request][] .
+   * settings.
    * </pre>
    *
    * <code>
@@ -2836,10 +2833,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Specifies EntityType grouping Features to read values of and
-   * settings. Each EntityType referenced in
-   * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in the EntityType in
-   * [BatchReadFeatureValuesRequest.request][] .
+   * settings.
    * </pre>
    *
    * <code>
@@ -2858,10 +2852,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Specifies EntityType grouping Features to read values of and
-   * settings. Each EntityType referenced in
-   * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in the EntityType in
-   * [BatchReadFeatureValuesRequest.request][] .
+   * settings.
    * </pre>
    *
    * <code>
@@ -2877,10 +2868,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Specifies EntityType grouping Features to read values of and
-   * settings. Each EntityType referenced in
-   * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in the EntityType in
-   * [BatchReadFeatureValuesRequest.request][] .
+   * settings.
    * </pre>
    *
    * <code>
@@ -2897,10 +2885,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. Specifies EntityType grouping Features to read values of and
-   * settings. Each EntityType referenced in
-   * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-   * specifying entity IDs in the EntityType in
-   * [BatchReadFeatureValuesRequest.request][] .
+   * settings.
    * </pre>
    *
    * <code>
@@ -5058,10 +5043,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5082,10 +5064,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5104,10 +5083,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5127,10 +5103,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5157,10 +5130,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5185,10 +5155,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5214,10 +5181,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5244,10 +5208,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5271,10 +5232,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5299,10 +5257,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5328,10 +5283,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5353,10 +5305,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5378,10 +5327,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5397,10 +5343,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5420,10 +5363,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5446,10 +5386,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5468,10 +5405,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>
@@ -5491,10 +5425,7 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. Specifies EntityType grouping Features to read values of and
-     * settings. Each EntityType referenced in
-     * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in the EntityType in
-     * [BatchReadFeatureValuesRequest.request][] .
+     * settings.
      * </pre>
      *
      * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
+ * Request message for
+ * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.PauseQueueRequest}
@@ -287,7 +288,8 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
+   * Request message for
+   * [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.PauseQueueRequest}

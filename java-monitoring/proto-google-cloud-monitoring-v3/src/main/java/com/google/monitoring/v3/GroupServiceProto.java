@@ -130,13 +130,13 @@ public final class GroupServiceProto {
           + "oogleapis.com\322A\211\001https://www.googleapis."
           + "com/auth/cloud-platform,https://www.goog"
           + "leapis.com/auth/monitoring,https://www.g"
-          + "oogleapis.com/auth/monitoring.readB\311\001\n\030c"
+          + "oogleapis.com/auth/monitoring.readB\314\001\n\030c"
           + "om.google.monitoring.v3B\021GroupServicePro"
-          + "toP\001Z>google.golang.org/genproto/googlea"
-          + "pis/monitoring/v3;monitoring\252\002\032Google.Cl"
-          + "oud.Monitoring.V3\312\002\032Google\\Cloud\\Monitor"
-          + "ing\\V3\352\002\035Google::Cloud::Monitoring::V3b\006"
-          + "proto3"
+          + "toP\001ZAcloud.google.com/go/monitoring/api"
+          + "v3/v2/monitoringpb;monitoringpb\252\002\032Google"
+          + ".Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Moni"
+          + "toring\\V3\352\002\035Google::Cloud::Monitoring::V"
+          + "3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

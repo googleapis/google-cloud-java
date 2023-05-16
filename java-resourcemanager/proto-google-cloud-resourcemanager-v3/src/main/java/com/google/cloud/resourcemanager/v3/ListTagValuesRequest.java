@@ -23,6 +23,8 @@ package com.google.cloud.resourcemanager.v3;
  *
  * <pre>
  * The request message for listing TagValues for the specified TagKey.
+ * Resource name for TagKey, parent of the TagValues to be listed,
+ * in the format `tagKeys/123`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.resourcemanager.v3.ListTagValuesRequest}
@@ -76,8 +78,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Resource name for TagKey, parent of the TagValues to be listed,
-   * in the format `tagKeys/123`.
+   * Required.
    * </pre>
    *
    * <code>
@@ -102,8 +103,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Resource name for TagKey, parent of the TagValues to be listed,
-   * in the format `tagKeys/123`.
+   * Required.
    * </pre>
    *
    * <code>
@@ -131,9 +131,9 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of TagValues to return in the response. The server
-   * allows a maximum of 300 TagValues to return. If unspecified, the server
-   * will use 100 as the default.
+   * Optional. The maximum number of TagValues to return in the response. The
+   * server allows a maximum of 300 TagValues to return. If unspecified, the
+   * server will use 100 as the default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -153,8 +153,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A pagination token returned from a previous call to `ListTagValues`
-   * that indicates where this listing should continue from.
+   * Optional. A pagination token returned from a previous call to
+   * `ListTagValues` that indicates where this listing should continue from.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,8 +177,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A pagination token returned from a previous call to `ListTagValues`
-   * that indicates where this listing should continue from.
+   * Optional. A pagination token returned from a previous call to
+   * `ListTagValues` that indicates where this listing should continue from.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -381,6 +381,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The request message for listing TagValues for the specified TagKey.
+   * Resource name for TagKey, parent of the TagValues to be listed,
+   * in the format `tagKeys/123`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.resourcemanager.v3.ListTagValuesRequest}
@@ -592,8 +594,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name for TagKey, parent of the TagValues to be listed,
-     * in the format `tagKeys/123`.
+     * Required.
      * </pre>
      *
      * <code>
@@ -617,8 +618,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name for TagKey, parent of the TagValues to be listed,
-     * in the format `tagKeys/123`.
+     * Required.
      * </pre>
      *
      * <code>
@@ -642,8 +642,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name for TagKey, parent of the TagValues to be listed,
-     * in the format `tagKeys/123`.
+     * Required.
      * </pre>
      *
      * <code>
@@ -666,8 +665,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name for TagKey, parent of the TagValues to be listed,
-     * in the format `tagKeys/123`.
+     * Required.
      * </pre>
      *
      * <code>
@@ -686,8 +684,7 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Resource name for TagKey, parent of the TagValues to be listed,
-     * in the format `tagKeys/123`.
+     * Required.
      * </pre>
      *
      * <code>
@@ -713,9 +710,9 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of TagValues to return in the response. The server
-     * allows a maximum of 300 TagValues to return. If unspecified, the server
-     * will use 100 as the default.
+     * Optional. The maximum number of TagValues to return in the response. The
+     * server allows a maximum of 300 TagValues to return. If unspecified, the
+     * server will use 100 as the default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -730,9 +727,9 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of TagValues to return in the response. The server
-     * allows a maximum of 300 TagValues to return. If unspecified, the server
-     * will use 100 as the default.
+     * Optional. The maximum number of TagValues to return in the response. The
+     * server allows a maximum of 300 TagValues to return. If unspecified, the
+     * server will use 100 as the default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -751,9 +748,9 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of TagValues to return in the response. The server
-     * allows a maximum of 300 TagValues to return. If unspecified, the server
-     * will use 100 as the default.
+     * Optional. The maximum number of TagValues to return in the response. The
+     * server allows a maximum of 300 TagValues to return. If unspecified, the
+     * server will use 100 as the default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -772,8 +769,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `ListTagValues`
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * `ListTagValues` that indicates where this listing should continue from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -795,8 +792,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `ListTagValues`
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * `ListTagValues` that indicates where this listing should continue from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -818,8 +815,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `ListTagValues`
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * `ListTagValues` that indicates where this listing should continue from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -840,8 +837,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `ListTagValues`
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * `ListTagValues` that indicates where this listing should continue from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -858,8 +855,8 @@ public final class ListTagValuesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `ListTagValues`
-     * that indicates where this listing should continue from.
+     * Optional. A pagination token returned from a previous call to
+     * `ListTagValues` that indicates where this listing should continue from.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

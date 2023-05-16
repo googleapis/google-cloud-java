@@ -432,8 +432,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If a [DTMF][DTMFInput] was provided as input, this field will contain
-   * a copy of the [DTMFInput][].
+   * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+   * input, this field will contain a copy of the
+   * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -448,8 +449,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If a [DTMF][DTMFInput] was provided as input, this field will contain
-   * a copy of the [DTMFInput][].
+   * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+   * input, this field will contain a copy of the
+   * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -467,8 +469,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If a [DTMF][DTMFInput] was provided as input, this field will contain
-   * a copy of the [DTMFInput][].
+   * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+   * input, this field will contain a copy of the
+   * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -938,7 +941,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=644
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
    * @return Whether the intent field is set.
    */
   @java.lang.Override
@@ -961,7 +964,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=644
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
    * @return The intent.
    */
   @java.lang.Override
@@ -1013,7 +1016,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=655
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -2759,8 +2762,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2775,8 +2779,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2801,8 +2806,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2824,8 +2830,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2845,8 +2852,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2878,8 +2886,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2904,8 +2913,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2917,8 +2927,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -2938,8 +2949,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If a [DTMF][DTMFInput] was provided as input, this field will contain
-     * a copy of the [DTMFInput][].
+     * If a [DTMF][google.cloud.dialogflow.cx.v3beta1.DtmfInput] was provided as
+     * input, this field will contain a copy of the
+     * [DtmfInput][google.cloud.dialogflow.cx.v3beta1.DtmfInput].
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.DtmfInput dtmf = 23;</code>
@@ -4768,7 +4780,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=644
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
@@ -4790,7 +4802,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=644
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=718
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -5007,7 +5019,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=655
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -5033,7 +5045,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=655
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -5063,7 +5075,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=655
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -42,6 +42,7 @@ public class AsyncDeleteMembershipLRO {
           DeleteMembershipRequest.newBuilder()
               .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           gkeHubMembershipServiceClient.deleteMembershipOperationCallable().futureCall(request);

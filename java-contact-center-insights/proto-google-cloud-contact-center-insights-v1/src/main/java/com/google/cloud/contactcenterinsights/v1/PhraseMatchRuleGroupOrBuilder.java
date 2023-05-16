@@ -56,7 +56,7 @@ public interface PhraseMatchRuleGroupOrBuilder
    *
    *
    * <pre>
-   * A list of phase match rules that are included in this group.
+   * A list of phrase match rules that are included in this group.
    * </pre>
    *
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatchRule phrase_match_rules = 2;
@@ -68,7 +68,7 @@ public interface PhraseMatchRuleGroupOrBuilder
    *
    *
    * <pre>
-   * A list of phase match rules that are included in this group.
+   * A list of phrase match rules that are included in this group.
    * </pre>
    *
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatchRule phrase_match_rules = 2;
@@ -79,7 +79,7 @@ public interface PhraseMatchRuleGroupOrBuilder
    *
    *
    * <pre>
-   * A list of phase match rules that are included in this group.
+   * A list of phrase match rules that are included in this group.
    * </pre>
    *
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatchRule phrase_match_rules = 2;
@@ -90,7 +90,7 @@ public interface PhraseMatchRuleGroupOrBuilder
    *
    *
    * <pre>
-   * A list of phase match rules that are included in this group.
+   * A list of phrase match rules that are included in this group.
    * </pre>
    *
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatchRule phrase_match_rules = 2;
@@ -102,7 +102,7 @@ public interface PhraseMatchRuleGroupOrBuilder
    *
    *
    * <pre>
-   * A list of phase match rules that are included in this group.
+   * A list of phrase match rules that are included in this group.
    * </pre>
    *
    * <code>repeated .google.cloud.contactcenterinsights.v1.PhraseMatchRule phrase_match_rules = 2;

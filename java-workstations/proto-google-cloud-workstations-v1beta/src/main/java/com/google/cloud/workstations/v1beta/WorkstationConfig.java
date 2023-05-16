@@ -45,6 +45,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     uid_ = "";
     etag_ = "";
     persistentDirectories_ = java.util.Collections.emptyList();
+    readinessChecks_ = java.util.Collections.emptyList();
     conditions_ = java.util.Collections.emptyList();
   }
 
@@ -214,10 +215,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -229,10 +231,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -300,7 +303,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Number of instances to pool for faster workstation starup.
+       * Number of instances to pool for faster workstation startup.
        * </pre>
        *
        * <code>int32 pool_size = 5;</code>
@@ -308,6 +311,20 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The poolSize.
        */
       int getPoolSize();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of instances currently available in the pool for
+       * faster workstation startup.
+       * </pre>
+       *
+       * <code>int32 pooled_instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The pooledInstances.
+       */
+      int getPooledInstances();
 
       /**
        *
@@ -416,7 +433,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Size of the boot disk in GB.
+       * Size of the boot disk in GB. Defaults to 50.
        * </pre>
        *
        * <code>int32 boot_disk_size_gb = 9;</code>
@@ -424,6 +441,80 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The bootDiskSizeGb.
        */
       int getBootDiskSizeGb();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator>
+          getAcceleratorsList();
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+          getAccelerators(int index);
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      int getAcceleratorsCount();
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                      .AcceleratorOrBuilder>
+          getAcceleratorsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.AcceleratorOrBuilder
+          getAcceleratorsOrBuilder(int index);
     }
     /**
      *
@@ -448,6 +539,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         machineType_ = "";
         serviceAccount_ = "";
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        accelerators_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -1937,6 +2029,831 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
       }
 
+      public interface AcceleratorOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Type of accelerator resource to attach to the instance, for example,
+         * "nvidia-tesla-p100".
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The type.
+         */
+        java.lang.String getType();
+        /**
+         *
+         *
+         * <pre>
+         * Type of accelerator resource to attach to the instance, for example,
+         * "nvidia-tesla-p100".
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The bytes for type.
+         */
+        com.google.protobuf.ByteString getTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Number of accelerator cards exposed to the instance.
+         * </pre>
+         *
+         * <code>int32 count = 2;</code>
+         *
+         * @return The count.
+         */
+        int getCount();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An accelerator card attached to the instance.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator}
+       */
+      public static final class Accelerator extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator)
+          AcceleratorOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Accelerator.newBuilder() to construct.
+        private Accelerator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Accelerator() {
+          type_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Accelerator();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.workstations.v1beta.WorkstationsProto
+              .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_Host_GceInstance_Accelerator_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.workstations.v1beta.WorkstationsProto
+              .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_Host_GceInstance_Accelerator_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                      .Accelerator.class,
+                  com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                      .Accelerator.Builder.class);
+        }
+
+        public static final int TYPE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object type_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Type of accelerator resource to attach to the instance, for example,
+         * "nvidia-tesla-p100".
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The type.
+         */
+        @java.lang.Override
+        public java.lang.String getType() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            type_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of accelerator resource to attach to the instance, for example,
+         * "nvidia-tesla-p100".
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The bytes for type.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTypeBytes() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            type_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int COUNT_FIELD_NUMBER = 2;
+        private int count_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Number of accelerator cards exposed to the instance.
+         * </pre>
+         *
+         * <code>int32 count = 2;</code>
+         *
+         * @return The count.
+         */
+        @java.lang.Override
+        public int getCount() {
+          return count_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+          }
+          if (count_ != 0) {
+            output.writeInt32(2, count_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+          }
+          if (count_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, count_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                  .Accelerator)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+              other =
+                  (com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                          .Accelerator)
+                      obj;
+
+          if (!getType().equals(other.getType())) return false;
+          if (getCount() != other.getCount()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getType().hashCode();
+          hash = (37 * hash) + COUNT_FIELD_NUMBER;
+          hash = (53 * hash) + getCount();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An accelerator card attached to the instance.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator)
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .AcceleratorOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.workstations.v1beta.WorkstationsProto
+                .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_Host_GceInstance_Accelerator_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.workstations.v1beta.WorkstationsProto
+                .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_Host_GceInstance_Accelerator_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .Accelerator.class,
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .Accelerator.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            type_ = "";
+            count_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.workstations.v1beta.WorkstationsProto
+                .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_Host_GceInstance_Accelerator_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+              getDefaultInstanceForType() {
+            return com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+              build() {
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+              buildPartial() {
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                result =
+                    new com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .Accelerator(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.type_ = type_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.count_ = count_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                    .Accelerator) {
+              return mergeFrom(
+                  (com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                          .Accelerator)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                  other) {
+            if (other
+                == com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                    .Accelerator.getDefaultInstance()) return this;
+            if (!other.getType().isEmpty()) {
+              type_ = other.type_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (other.getCount() != 0) {
+              setCount(other.getCount());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      type_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 16:
+                    {
+                      count_ = input.readInt32();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object type_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Type of accelerator resource to attach to the instance, for example,
+           * "nvidia-tesla-p100".
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @return The type.
+           */
+          public java.lang.String getType() {
+            java.lang.Object ref = type_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              type_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of accelerator resource to attach to the instance, for example,
+           * "nvidia-tesla-p100".
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @return The bytes for type.
+           */
+          public com.google.protobuf.ByteString getTypeBytes() {
+            java.lang.Object ref = type_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              type_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of accelerator resource to attach to the instance, for example,
+           * "nvidia-tesla-p100".
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @param value The type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            type_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of accelerator resource to attach to the instance, for example,
+           * "nvidia-tesla-p100".
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearType() {
+            type_ = getDefaultInstance().getType();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of accelerator resource to attach to the instance, for example,
+           * "nvidia-tesla-p100".
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @param value The bytes for type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            type_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private int count_;
+          /**
+           *
+           *
+           * <pre>
+           * Number of accelerator cards exposed to the instance.
+           * </pre>
+           *
+           * <code>int32 count = 2;</code>
+           *
+           * @return The count.
+           */
+          @java.lang.Override
+          public int getCount() {
+            return count_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Number of accelerator cards exposed to the instance.
+           * </pre>
+           *
+           * <code>int32 count = 2;</code>
+           *
+           * @param value The count to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCount(int value) {
+
+            count_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Number of accelerator cards exposed to the instance.
+           * </pre>
+           *
+           * <code>int32 count = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCount() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            count_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator)
+        private static final com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                  .Accelerator();
+        }
+
+        public static com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .Accelerator
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Accelerator> PARSER =
+            new com.google.protobuf.AbstractParser<Accelerator>() {
+              @java.lang.Override
+              public Accelerator parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Accelerator> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Accelerator> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -1996,10 +2913,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -2022,10 +2940,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -2118,7 +3037,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Number of instances to pool for faster workstation starup.
+       * Number of instances to pool for faster workstation startup.
        * </pre>
        *
        * <code>int32 pool_size = 5;</code>
@@ -2128,6 +3047,25 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public int getPoolSize() {
         return poolSize_;
+      }
+
+      public static final int POOLED_INSTANCES_FIELD_NUMBER = 12;
+      private int pooledInstances_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of instances currently available in the pool for
+       * faster workstation startup.
+       * </pre>
+       *
+       * <code>int32 pooled_instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The pooledInstances.
+       */
+      @java.lang.Override
+      public int getPooledInstances() {
+        return pooledInstances_;
       }
 
       public static final int DISABLE_PUBLIC_IP_ADDRESSES_FIELD_NUMBER = 6;
@@ -2282,7 +3220,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Size of the boot disk in GB.
+       * Size of the boot disk in GB. Defaults to 50.
        * </pre>
        *
        * <code>int32 boot_disk_size_gb = 9;</code>
@@ -2292,6 +3230,102 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public int getBootDiskSizeGb() {
         return bootDiskSizeGb_;
+      }
+
+      public static final int ACCELERATORS_FIELD_NUMBER = 11;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator>
+          accelerators_;
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator>
+          getAcceleratorsList() {
+        return accelerators_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                      .AcceleratorOrBuilder>
+          getAcceleratorsOrBuilderList() {
+        return accelerators_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public int getAcceleratorsCount() {
+        return accelerators_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+          getAccelerators(int index) {
+        return accelerators_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of the type and count of accelerator cards attached to the
+       * instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+              .AcceleratorOrBuilder
+          getAcceleratorsOrBuilder(int index) {
+        return accelerators_.get(index);
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2331,6 +3365,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         if (confidentialInstanceConfig_ != null) {
           output.writeMessage(10, getConfidentialInstanceConfig());
+        }
+        for (int i = 0; i < accelerators_.size(); i++) {
+          output.writeMessage(11, accelerators_.get(i));
+        }
+        if (pooledInstances_ != 0) {
+          output.writeInt32(12, pooledInstances_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -2375,6 +3415,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   10, getConfidentialInstanceConfig());
         }
+        for (int i = 0; i < accelerators_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(11, accelerators_.get(i));
+        }
+        if (pooledInstances_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, pooledInstances_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -2396,6 +3443,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         if (!getServiceAccount().equals(other.getServiceAccount())) return false;
         if (!getTagsList().equals(other.getTagsList())) return false;
         if (getPoolSize() != other.getPoolSize()) return false;
+        if (getPooledInstances() != other.getPooledInstances()) return false;
         if (getDisablePublicIpAddresses() != other.getDisablePublicIpAddresses()) return false;
         if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
         if (hasShieldedInstanceConfig()) {
@@ -2407,6 +3455,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return false;
         }
         if (getBootDiskSizeGb() != other.getBootDiskSizeGb()) return false;
+        if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -2428,6 +3477,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         hash = (37 * hash) + POOL_SIZE_FIELD_NUMBER;
         hash = (53 * hash) + getPoolSize();
+        hash = (37 * hash) + POOLED_INSTANCES_FIELD_NUMBER;
+        hash = (53 * hash) + getPooledInstances();
         hash = (37 * hash) + DISABLE_PUBLIC_IP_ADDRESSES_FIELD_NUMBER;
         hash =
             (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisablePublicIpAddresses());
@@ -2441,6 +3492,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         hash = (37 * hash) + BOOT_DISK_SIZE_GB_FIELD_NUMBER;
         hash = (53 * hash) + getBootDiskSizeGb();
+        if (getAcceleratorsCount() > 0) {
+          hash = (37 * hash) + ACCELERATORS_FIELD_NUMBER;
+          hash = (53 * hash) + getAcceleratorsList().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2598,6 +3653,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000004);
           poolSize_ = 0;
+          pooledInstances_ = 0;
           disablePublicIpAddresses_ = false;
           shieldedInstanceConfig_ = null;
           if (shieldedInstanceConfigBuilder_ != null) {
@@ -2610,6 +3666,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             confidentialInstanceConfigBuilder_ = null;
           }
           bootDiskSizeGb_ = 0;
+          if (acceleratorsBuilder_ == null) {
+            accelerators_ = java.util.Collections.emptyList();
+          } else {
+            accelerators_ = null;
+            acceleratorsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000200);
           return this;
         }
 
@@ -2656,6 +3719,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.tags_ = tags_;
+          if (acceleratorsBuilder_ == null) {
+            if (((bitField0_ & 0x00000200) != 0)) {
+              accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
+              bitField0_ = (bitField0_ & ~0x00000200);
+            }
+            result.accelerators_ = accelerators_;
+          } else {
+            result.accelerators_ = acceleratorsBuilder_.build();
+          }
         }
 
         private void buildPartial0(
@@ -2671,21 +3743,24 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             result.poolSize_ = poolSize_;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
-            result.disablePublicIpAddresses_ = disablePublicIpAddresses_;
+            result.pooledInstances_ = pooledInstances_;
           }
           if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.disablePublicIpAddresses_ = disablePublicIpAddresses_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
             result.shieldedInstanceConfig_ =
                 shieldedInstanceConfigBuilder_ == null
                     ? shieldedInstanceConfig_
                     : shieldedInstanceConfigBuilder_.build();
           }
-          if (((from_bitField0_ & 0x00000040) != 0)) {
+          if (((from_bitField0_ & 0x00000080) != 0)) {
             result.confidentialInstanceConfig_ =
                 confidentialInstanceConfigBuilder_ == null
                     ? confidentialInstanceConfig_
                     : confidentialInstanceConfigBuilder_.build();
           }
-          if (((from_bitField0_ & 0x00000080) != 0)) {
+          if (((from_bitField0_ & 0x00000100) != 0)) {
             result.bootDiskSizeGb_ = bootDiskSizeGb_;
           }
         }
@@ -2765,6 +3840,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           if (other.getPoolSize() != 0) {
             setPoolSize(other.getPoolSize());
           }
+          if (other.getPooledInstances() != 0) {
+            setPooledInstances(other.getPooledInstances());
+          }
           if (other.getDisablePublicIpAddresses() != false) {
             setDisablePublicIpAddresses(other.getDisablePublicIpAddresses());
           }
@@ -2776,6 +3854,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           if (other.getBootDiskSizeGb() != 0) {
             setBootDiskSizeGb(other.getBootDiskSizeGb());
+          }
+          if (acceleratorsBuilder_ == null) {
+            if (!other.accelerators_.isEmpty()) {
+              if (accelerators_.isEmpty()) {
+                accelerators_ = other.accelerators_;
+                bitField0_ = (bitField0_ & ~0x00000200);
+              } else {
+                ensureAcceleratorsIsMutable();
+                accelerators_.addAll(other.accelerators_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.accelerators_.isEmpty()) {
+              if (acceleratorsBuilder_.isEmpty()) {
+                acceleratorsBuilder_.dispose();
+                acceleratorsBuilder_ = null;
+                accelerators_ = other.accelerators_;
+                bitField0_ = (bitField0_ & ~0x00000200);
+                acceleratorsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getAcceleratorsFieldBuilder()
+                        : null;
+              } else {
+                acceleratorsBuilder_.addAllMessages(other.accelerators_);
+              }
+            }
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -2831,20 +3936,20 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 case 48:
                   {
                     disablePublicIpAddresses_ = input.readBool();
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 48
                 case 66:
                   {
                     input.readMessage(
                         getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000020;
+                    bitField0_ |= 0x00000040;
                     break;
                   } // case 66
                 case 72:
                   {
                     bootDiskSizeGb_ = input.readInt32();
-                    bitField0_ |= 0x00000080;
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 72
                 case 82:
@@ -2852,9 +3957,32 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     input.readMessage(
                         getConfidentialInstanceConfigFieldBuilder().getBuilder(),
                         extensionRegistry);
-                    bitField0_ |= 0x00000040;
+                    bitField0_ |= 0x00000080;
                     break;
                   } // case 82
+                case 90:
+                  {
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                            .Accelerator
+                        m =
+                            input.readMessage(
+                                com.google.cloud.workstations.v1beta.WorkstationConfig.Host
+                                    .GceInstance.Accelerator.parser(),
+                                extensionRegistry);
+                    if (acceleratorsBuilder_ == null) {
+                      ensureAcceleratorsIsMutable();
+                      accelerators_.add(m);
+                    } else {
+                      acceleratorsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 90
+                case 96:
+                  {
+                    pooledInstances_ = input.readInt32();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 96
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2985,10 +4113,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3010,10 +4139,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3035,10 +4165,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3059,10 +4190,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3079,10 +4211,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3283,7 +4416,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Number of instances to pool for faster workstation starup.
+         * Number of instances to pool for faster workstation startup.
          * </pre>
          *
          * <code>int32 pool_size = 5;</code>
@@ -3298,7 +4431,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Number of instances to pool for faster workstation starup.
+         * Number of instances to pool for faster workstation startup.
          * </pre>
          *
          * <code>int32 pool_size = 5;</code>
@@ -3317,7 +4450,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Number of instances to pool for faster workstation starup.
+         * Number of instances to pool for faster workstation startup.
          * </pre>
          *
          * <code>int32 pool_size = 5;</code>
@@ -3327,6 +4460,62 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder clearPoolSize() {
           bitField0_ = (bitField0_ & ~0x00000008);
           poolSize_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int pooledInstances_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Number of instances currently available in the pool for
+         * faster workstation startup.
+         * </pre>
+         *
+         * <code>int32 pooled_instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The pooledInstances.
+         */
+        @java.lang.Override
+        public int getPooledInstances() {
+          return pooledInstances_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Number of instances currently available in the pool for
+         * faster workstation startup.
+         * </pre>
+         *
+         * <code>int32 pooled_instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The pooledInstances to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPooledInstances(int value) {
+
+          pooledInstances_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Number of instances currently available in the pool for
+         * faster workstation startup.
+         * </pre>
+         *
+         * <code>int32 pooled_instances = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPooledInstances() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          pooledInstances_ = 0;
           onChanged();
           return this;
         }
@@ -3362,7 +4551,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setDisablePublicIpAddresses(boolean value) {
 
           disablePublicIpAddresses_ = value;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -3378,7 +4567,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearDisablePublicIpAddresses() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           disablePublicIpAddresses_ = false;
           onChanged();
           return this;
@@ -3409,7 +4598,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return Whether the shieldedInstanceConfig field is set.
          */
         public boolean hasShieldedInstanceConfig() {
-          return ((bitField0_ & 0x00000020) != 0);
+          return ((bitField0_ & 0x00000040) != 0);
         }
         /**
          *
@@ -3459,7 +4648,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             shieldedInstanceConfigBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -3483,7 +4672,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -3503,7 +4692,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     .GceShieldedInstanceConfig
                 value) {
           if (shieldedInstanceConfigBuilder_ == null) {
-            if (((bitField0_ & 0x00000020) != 0)
+            if (((bitField0_ & 0x00000040) != 0)
                 && shieldedInstanceConfig_ != null
                 && shieldedInstanceConfig_
                     != com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
@@ -3515,7 +4704,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             shieldedInstanceConfigBuilder_.mergeFrom(value);
           }
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -3531,7 +4720,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * </code>
          */
         public Builder clearShieldedInstanceConfig() {
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           shieldedInstanceConfig_ = null;
           if (shieldedInstanceConfigBuilder_ != null) {
             shieldedInstanceConfigBuilder_.dispose();
@@ -3554,7 +4743,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
                 .GceShieldedInstanceConfig.Builder
             getShieldedInstanceConfigBuilder() {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return getShieldedInstanceConfigFieldBuilder().getBuilder();
         }
@@ -3640,7 +4829,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return Whether the confidentialInstanceConfig field is set.
          */
         public boolean hasConfidentialInstanceConfig() {
-          return ((bitField0_ & 0x00000040) != 0);
+          return ((bitField0_ & 0x00000080) != 0);
         }
         /**
          *
@@ -3690,7 +4879,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             confidentialInstanceConfigBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -3714,7 +4903,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             confidentialInstanceConfigBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -3734,7 +4923,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     .GceConfidentialInstanceConfig
                 value) {
           if (confidentialInstanceConfigBuilder_ == null) {
-            if (((bitField0_ & 0x00000040) != 0)
+            if (((bitField0_ & 0x00000080) != 0)
                 && confidentialInstanceConfig_ != null
                 && confidentialInstanceConfig_
                     != com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
@@ -3746,7 +4935,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             confidentialInstanceConfigBuilder_.mergeFrom(value);
           }
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -3762,7 +4951,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * </code>
          */
         public Builder clearConfidentialInstanceConfig() {
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           confidentialInstanceConfig_ = null;
           if (confidentialInstanceConfigBuilder_ != null) {
             confidentialInstanceConfigBuilder_.dispose();
@@ -3785,7 +4974,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
                 .GceConfidentialInstanceConfig.Builder
             getConfidentialInstanceConfigBuilder() {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return getConfidentialInstanceConfigFieldBuilder().getBuilder();
         }
@@ -3851,7 +5040,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the boot disk in GB.
+         * Size of the boot disk in GB. Defaults to 50.
          * </pre>
          *
          * <code>int32 boot_disk_size_gb = 9;</code>
@@ -3866,7 +5055,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the boot disk in GB.
+         * Size of the boot disk in GB. Defaults to 50.
          * </pre>
          *
          * <code>int32 boot_disk_size_gb = 9;</code>
@@ -3877,7 +5066,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setBootDiskSizeGb(int value) {
 
           bootDiskSizeGb_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -3885,7 +5074,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the boot disk in GB.
+         * Size of the boot disk in GB. Defaults to 50.
          * </pre>
          *
          * <code>int32 boot_disk_size_gb = 9;</code>
@@ -3893,10 +5082,469 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearBootDiskSizeGb() {
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           bootDiskSizeGb_ = 0;
           onChanged();
           return this;
+        }
+
+        private java.util.List<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator>
+            accelerators_ = java.util.Collections.emptyList();
+
+        private void ensureAcceleratorsIsMutable() {
+          if (!((bitField0_ & 0x00000200) != 0)) {
+            accelerators_ =
+                new java.util.ArrayList<
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .Accelerator>(accelerators_);
+            bitField0_ |= 0x00000200;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                    .Builder,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                    .AcceleratorOrBuilder>
+            acceleratorsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator>
+            getAcceleratorsList() {
+          if (acceleratorsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(accelerators_);
+          } else {
+            return acceleratorsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public int getAcceleratorsCount() {
+          if (acceleratorsBuilder_ == null) {
+            return accelerators_.size();
+          } else {
+            return acceleratorsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+            getAccelerators(int index) {
+          if (acceleratorsBuilder_ == null) {
+            return accelerators_.get(index);
+          } else {
+            return acceleratorsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder setAccelerators(
+            int index,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                value) {
+          if (acceleratorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAcceleratorsIsMutable();
+            accelerators_.set(index, value);
+            onChanged();
+          } else {
+            acceleratorsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder setAccelerators(
+            int index,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                    .Builder
+                builderForValue) {
+          if (acceleratorsBuilder_ == null) {
+            ensureAcceleratorsIsMutable();
+            accelerators_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            acceleratorsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder addAccelerators(
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                value) {
+          if (acceleratorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAcceleratorsIsMutable();
+            accelerators_.add(value);
+            onChanged();
+          } else {
+            acceleratorsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder addAccelerators(
+            int index,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                value) {
+          if (acceleratorsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAcceleratorsIsMutable();
+            accelerators_.add(index, value);
+            onChanged();
+          } else {
+            acceleratorsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder addAccelerators(
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                    .Builder
+                builderForValue) {
+          if (acceleratorsBuilder_ == null) {
+            ensureAcceleratorsIsMutable();
+            accelerators_.add(builderForValue.build());
+            onChanged();
+          } else {
+            acceleratorsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder addAccelerators(
+            int index,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                    .Builder
+                builderForValue) {
+          if (acceleratorsBuilder_ == null) {
+            ensureAcceleratorsIsMutable();
+            accelerators_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            acceleratorsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder addAllAccelerators(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                            .Accelerator>
+                values) {
+          if (acceleratorsBuilder_ == null) {
+            ensureAcceleratorsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accelerators_);
+            onChanged();
+          } else {
+            acceleratorsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder clearAccelerators() {
+          if (acceleratorsBuilder_ == null) {
+            accelerators_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000200);
+            onChanged();
+          } else {
+            acceleratorsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public Builder removeAccelerators(int index) {
+          if (acceleratorsBuilder_ == null) {
+            ensureAcceleratorsIsMutable();
+            accelerators_.remove(index);
+            onChanged();
+          } else {
+            acceleratorsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                .Builder
+            getAcceleratorsBuilder(int index) {
+          return getAcceleratorsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                .AcceleratorOrBuilder
+            getAcceleratorsOrBuilder(int index) {
+          if (acceleratorsBuilder_ == null) {
+            return accelerators_.get(index);
+          } else {
+            return acceleratorsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .AcceleratorOrBuilder>
+            getAcceleratorsOrBuilderList() {
+          if (acceleratorsBuilder_ != null) {
+            return acceleratorsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(accelerators_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                .Builder
+            addAcceleratorsBuilder() {
+          return getAcceleratorsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                      .Accelerator.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                .Builder
+            addAcceleratorsBuilder(int index) {
+          return getAcceleratorsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                      .Accelerator.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of the type and count of accelerator cards attached to the
+         * instance.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator accelerators = 11;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                    .Builder>
+            getAcceleratorsBuilderList() {
+          return getAcceleratorsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance.Accelerator
+                    .Builder,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                    .AcceleratorOrBuilder>
+            getAcceleratorsFieldBuilder() {
+          if (acceleratorsBuilder_ == null) {
+            acceleratorsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .Accelerator,
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .Accelerator.Builder,
+                    com.google.cloud.workstations.v1beta.WorkstationConfig.Host.GceInstance
+                        .AcceleratorOrBuilder>(
+                    accelerators_,
+                    ((bitField0_ & 0x00000200) != 0),
+                    getParentForChildren(),
+                    isClean());
+            accelerators_ = null;
+          }
+          return acceleratorsBuilder_;
         }
 
         @java.lang.Override
@@ -4914,6 +6562,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Size of the disk in GB. Must be empty if source_snapshot is set.
+       * Defaults to 200.
        * </pre>
        *
        * <code>int32 size_gb = 1;</code>
@@ -4928,7 +6577,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Type of file system that the disk should be formatted with. The
        * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set.
+       * if source_snapshot is set. Defaults to ext4.
        * </pre>
        *
        * <code>string fs_type = 2;</code>
@@ -4942,7 +6591,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Type of file system that the disk should be formatted with. The
        * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set.
+       * if source_snapshot is set. Defaults to ext4.
        * </pre>
        *
        * <code>string fs_type = 2;</code>
@@ -4955,7 +6604,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use.
+       * Type of the disk to use. Defaults to pd-standard.
        * </pre>
        *
        * <code>string disk_type = 3;</code>
@@ -4967,7 +6616,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use.
+       * Type of the disk to use. Defaults to pd-standard.
        * </pre>
        *
        * <code>string disk_type = 3;</code>
@@ -5268,6 +6917,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Size of the disk in GB. Must be empty if source_snapshot is set.
+       * Defaults to 200.
        * </pre>
        *
        * <code>int32 size_gb = 1;</code>
@@ -5289,7 +6939,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Type of file system that the disk should be formatted with. The
        * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set.
+       * if source_snapshot is set. Defaults to ext4.
        * </pre>
        *
        * <code>string fs_type = 2;</code>
@@ -5314,7 +6964,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * <pre>
        * Type of file system that the disk should be formatted with. The
        * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set.
+       * if source_snapshot is set. Defaults to ext4.
        * </pre>
        *
        * <code>string fs_type = 2;</code>
@@ -5342,7 +6992,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use.
+       * Type of the disk to use. Defaults to pd-standard.
        * </pre>
        *
        * <code>string disk_type = 3;</code>
@@ -5365,7 +7015,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use.
+       * Type of the disk to use. Defaults to pd-standard.
        * </pre>
        *
        * <code>string disk_type = 3;</code>
@@ -5998,6 +7648,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * Size of the disk in GB. Must be empty if source_snapshot is set.
+         * Defaults to 200.
          * </pre>
          *
          * <code>int32 size_gb = 1;</code>
@@ -6013,6 +7664,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * Size of the disk in GB. Must be empty if source_snapshot is set.
+         * Defaults to 200.
          * </pre>
          *
          * <code>int32 size_gb = 1;</code>
@@ -6032,6 +7684,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * Size of the disk in GB. Must be empty if source_snapshot is set.
+         * Defaults to 200.
          * </pre>
          *
          * <code>int32 size_gb = 1;</code>
@@ -6052,7 +7705,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <pre>
          * Type of file system that the disk should be formatted with. The
          * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set.
+         * if source_snapshot is set. Defaults to ext4.
          * </pre>
          *
          * <code>string fs_type = 2;</code>
@@ -6076,7 +7729,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <pre>
          * Type of file system that the disk should be formatted with. The
          * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set.
+         * if source_snapshot is set. Defaults to ext4.
          * </pre>
          *
          * <code>string fs_type = 2;</code>
@@ -6100,7 +7753,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <pre>
          * Type of file system that the disk should be formatted with. The
          * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set.
+         * if source_snapshot is set. Defaults to ext4.
          * </pre>
          *
          * <code>string fs_type = 2;</code>
@@ -6123,7 +7776,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <pre>
          * Type of file system that the disk should be formatted with. The
          * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set.
+         * if source_snapshot is set. Defaults to ext4.
          * </pre>
          *
          * <code>string fs_type = 2;</code>
@@ -6142,7 +7795,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <pre>
          * Type of file system that the disk should be formatted with. The
          * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set.
+         * if source_snapshot is set. Defaults to ext4.
          * </pre>
          *
          * <code>string fs_type = 2;</code>
@@ -6166,7 +7819,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use.
+         * Type of the disk to use. Defaults to pd-standard.
          * </pre>
          *
          * <code>string disk_type = 3;</code>
@@ -6188,7 +7841,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use.
+         * Type of the disk to use. Defaults to pd-standard.
          * </pre>
          *
          * <code>string disk_type = 3;</code>
@@ -6210,7 +7863,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use.
+         * Type of the disk to use. Defaults to pd-standard.
          * </pre>
          *
          * <code>string disk_type = 3;</code>
@@ -6231,7 +7884,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use.
+         * Type of the disk to use. Defaults to pd-standard.
          * </pre>
          *
          * <code>string disk_type = 3;</code>
@@ -6248,7 +7901,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use.
+         * Type of the disk to use. Defaults to pd-standard.
          * </pre>
          *
          * <code>string disk_type = 3;</code>
@@ -7620,7 +9273,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Docker image defining the container. This image must be accessible by the
-     * config's service account.
+     * service account specified in the workstation configuration.
      * </pre>
      *
      * <code>string image = 1;</code>
@@ -7633,7 +9286,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Docker image defining the container. This image must be accessible by the
-     * config's service account.
+     * service account specified in the workstation configuration.
      * </pre>
      *
      * <code>string image = 1;</code>
@@ -7748,7 +9401,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -7758,7 +9411,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -7771,7 +9424,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -7781,7 +9434,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -7795,7 +9448,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -7912,7 +9565,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Docker image defining the container. This image must be accessible by the
-     * config's service account.
+     * service account specified in the workstation configuration.
      * </pre>
      *
      * <code>string image = 1;</code>
@@ -7936,7 +9589,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Docker image defining the container. This image must be accessible by the
-     * config's service account.
+     * service account specified in the workstation configuration.
      * </pre>
      *
      * <code>string image = 1;</code>
@@ -8112,7 +9765,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -8134,7 +9787,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -8147,7 +9800,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -8167,7 +9820,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container.
+     * Environment variables passed to the container's entrypoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 4;</code>
@@ -8798,7 +10451,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Docker image defining the container. This image must be accessible by the
-       * config's service account.
+       * service account specified in the workstation configuration.
        * </pre>
        *
        * <code>string image = 1;</code>
@@ -8821,7 +10474,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Docker image defining the container. This image must be accessible by the
-       * config's service account.
+       * service account specified in the workstation configuration.
        * </pre>
        *
        * <code>string image = 1;</code>
@@ -8844,7 +10497,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Docker image defining the container. This image must be accessible by the
-       * config's service account.
+       * service account specified in the workstation configuration.
        * </pre>
        *
        * <code>string image = 1;</code>
@@ -8866,7 +10519,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Docker image defining the container. This image must be accessible by the
-       * config's service account.
+       * service account specified in the workstation configuration.
        * </pre>
        *
        * <code>string image = 1;</code>
@@ -8884,7 +10537,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Docker image defining the container. This image must be accessible by the
-       * config's service account.
+       * service account specified in the workstation configuration.
        * </pre>
        *
        * <code>string image = 1;</code>
@@ -9268,7 +10921,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9290,7 +10943,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9303,7 +10956,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9323,7 +10976,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9349,7 +11002,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9371,7 +11024,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9391,7 +11044,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container.
+       * Environment variables passed to the container's entrypoint.
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 4;</code>
@@ -9637,11 +11290,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Google Cloud KMS encryption key. For example,
+     * Immutable. The name of the Google Cloud KMS encryption key. For example,
      * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
      * </pre>
      *
-     * <code>string kms_key = 1;</code>
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The kmsKey.
      */
@@ -9650,11 +11303,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Google Cloud KMS encryption key. For example,
+     * Immutable. The name of the Google Cloud KMS encryption key. For example,
      * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
      * </pre>
      *
-     * <code>string kms_key = 1;</code>
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for kmsKey.
      */
@@ -9664,7 +11317,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The service account to use with the specified
+     * Immutable. The service account to use with the specified
      * KMS key. We recommend that you use a separate service account
      * and follow KMS best practices. For more information, see
      * [Separation of
@@ -9673,7 +11326,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
      * </pre>
      *
-     * <code>string kms_key_service_account = 2;</code>
+     * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The kmsKeyServiceAccount.
      */
@@ -9682,7 +11335,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The service account to use with the specified
+     * Immutable. The service account to use with the specified
      * KMS key. We recommend that you use a separate service account
      * and follow KMS best practices. For more information, see
      * [Separation of
@@ -9691,7 +11344,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
      * </pre>
      *
-     * <code>string kms_key_service_account = 2;</code>
+     * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for kmsKeyServiceAccount.
      */
@@ -9757,11 +11410,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Google Cloud KMS encryption key. For example,
+     * Immutable. The name of the Google Cloud KMS encryption key. For example,
      * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
      * </pre>
      *
-     * <code>string kms_key = 1;</code>
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The kmsKey.
      */
@@ -9781,11 +11434,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of the Google Cloud KMS encryption key. For example,
+     * Immutable. The name of the Google Cloud KMS encryption key. For example,
      * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
      * </pre>
      *
-     * <code>string kms_key = 1;</code>
+     * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for kmsKey.
      */
@@ -9810,7 +11463,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The service account to use with the specified
+     * Immutable. The service account to use with the specified
      * KMS key. We recommend that you use a separate service account
      * and follow KMS best practices. For more information, see
      * [Separation of
@@ -9819,7 +11472,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
      * </pre>
      *
-     * <code>string kms_key_service_account = 2;</code>
+     * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The kmsKeyServiceAccount.
      */
@@ -9839,7 +11492,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The service account to use with the specified
+     * Immutable. The service account to use with the specified
      * KMS key. We recommend that you use a separate service account
      * and follow KMS best practices. For more information, see
      * [Separation of
@@ -9848,7 +11501,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
      * </pre>
      *
-     * <code>string kms_key_service_account = 2;</code>
+     * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for kmsKeyServiceAccount.
      */
@@ -10263,11 +11916,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the Google Cloud KMS encryption key. For example,
+       * Immutable. The name of the Google Cloud KMS encryption key. For example,
        * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
        * </pre>
        *
-       * <code>string kms_key = 1;</code>
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return The kmsKey.
        */
@@ -10286,11 +11939,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the Google Cloud KMS encryption key. For example,
+       * Immutable. The name of the Google Cloud KMS encryption key. For example,
        * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
        * </pre>
        *
-       * <code>string kms_key = 1;</code>
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return The bytes for kmsKey.
        */
@@ -10309,11 +11962,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the Google Cloud KMS encryption key. For example,
+       * Immutable. The name of the Google Cloud KMS encryption key. For example,
        * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
        * </pre>
        *
-       * <code>string kms_key = 1;</code>
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @param value The kmsKey to set.
        * @return This builder for chaining.
@@ -10331,11 +11984,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the Google Cloud KMS encryption key. For example,
+       * Immutable. The name of the Google Cloud KMS encryption key. For example,
        * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
        * </pre>
        *
-       * <code>string kms_key = 1;</code>
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return This builder for chaining.
        */
@@ -10349,11 +12002,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the Google Cloud KMS encryption key. For example,
+       * Immutable. The name of the Google Cloud KMS encryption key. For example,
        * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
        * </pre>
        *
-       * <code>string kms_key = 1;</code>
+       * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @param value The bytes for kmsKey to set.
        * @return This builder for chaining.
@@ -10374,7 +12027,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The service account to use with the specified
+       * Immutable. The service account to use with the specified
        * KMS key. We recommend that you use a separate service account
        * and follow KMS best practices. For more information, see
        * [Separation of
@@ -10383,7 +12036,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
        * </pre>
        *
-       * <code>string kms_key_service_account = 2;</code>
+       * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return The kmsKeyServiceAccount.
        */
@@ -10402,7 +12055,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The service account to use with the specified
+       * Immutable. The service account to use with the specified
        * KMS key. We recommend that you use a separate service account
        * and follow KMS best practices. For more information, see
        * [Separation of
@@ -10411,7 +12064,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
        * </pre>
        *
-       * <code>string kms_key_service_account = 2;</code>
+       * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return The bytes for kmsKeyServiceAccount.
        */
@@ -10430,7 +12083,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The service account to use with the specified
+       * Immutable. The service account to use with the specified
        * KMS key. We recommend that you use a separate service account
        * and follow KMS best practices. For more information, see
        * [Separation of
@@ -10439,7 +12092,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
        * </pre>
        *
-       * <code>string kms_key_service_account = 2;</code>
+       * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @param value The kmsKeyServiceAccount to set.
        * @return This builder for chaining.
@@ -10457,7 +12110,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The service account to use with the specified
+       * Immutable. The service account to use with the specified
        * KMS key. We recommend that you use a separate service account
        * and follow KMS best practices. For more information, see
        * [Separation of
@@ -10466,7 +12119,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
        * </pre>
        *
-       * <code>string kms_key_service_account = 2;</code>
+       * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return This builder for chaining.
        */
@@ -10480,7 +12133,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The service account to use with the specified
+       * Immutable. The service account to use with the specified
        * KMS key. We recommend that you use a separate service account
        * and follow KMS best practices. For more information, see
        * [Separation of
@@ -10489,7 +12142,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * [`--member`](https://cloud.google.com/sdk/gcloud/reference/kms/keys/add-iam-policy-binding#--member).
        * </pre>
        *
-       * <code>string kms_key_service_account = 2;</code>
+       * <code>string kms_key_service_account = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @param value The bytes for kmsKeyServiceAccount to set.
        * @return This builder for chaining.
@@ -10569,6 +12222,774 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public com.google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ReadinessCheckOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     *
+     *
+     * <pre>
+     * Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Port to which the request should be sent.
+     * </pre>
+     *
+     * <code>int32 port = 2;</code>
+     *
+     * @return The port.
+     */
+    int getPort();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A readiness check to be performed on a workstation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck}
+   */
+  public static final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck)
+      ReadinessCheckOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReadinessCheck.newBuilder() to construct.
+    private ReadinessCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReadinessCheck() {
+      path_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadinessCheck();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workstations.v1beta.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_ReadinessCheck_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workstations.v1beta.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_ReadinessCheck_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.class,
+              com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder.class);
+    }
+
+    public static final int PATH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Port to which the request should be sent.
+     * </pre>
+     *
+     * <code>int32 port = 2;</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+      }
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, port_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck other =
+          (com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck) obj;
+
+      if (!getPath().equals(other.getPath())) return false;
+      if (getPort() != other.getPort()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A readiness check to be performed on a workstation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck)
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_ReadinessCheck_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_ReadinessCheck_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.class,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        path_ = "";
+        port_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationConfig_ReadinessCheck_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+          getDefaultInstanceForType() {
+        return com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck build() {
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck buildPartial() {
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck result =
+            new com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.port_ = port_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck) {
+          return mergeFrom(
+              (com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck other) {
+        if (other
+            == com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+                .getDefaultInstance()) return this;
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  path_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  port_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object path_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int port_;
+      /**
+       *
+       *
+       * <pre>
+       * Port to which the request should be sent.
+       * </pre>
+       *
+       * <code>int32 port = 2;</code>
+       *
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Port to which the request should be sent.
+       * </pre>
+       *
+       * <code>int32 port = 2;</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+
+        port_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Port to which the request should be sent.
+       * </pre>
+       *
+       * <code>int32 port = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck)
+    private static final com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck();
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReadinessCheck> PARSER =
+        new com.google.protobuf.AbstractParser<ReadinessCheck>() {
+          @java.lang.Override
+          public ReadinessCheck parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReadinessCheck> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReadinessCheck> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11111,7 +13532,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -11135,7 +13556,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -11464,7 +13885,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
+   * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -11477,10 +13898,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * Otherwise, data on the persistent disk will be lost.
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the encryptionKey field is set.
@@ -11493,7 +13915,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
+   * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -11506,10 +13928,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * Otherwise, data on the persistent disk will be lost.
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The encryptionKey.
@@ -11526,7 +13949,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
+   * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -11539,10 +13962,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * Otherwise, data on the persistent disk will be lost.
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -11552,6 +13976,102 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey
             .getDefaultInstance()
         : encryptionKey_;
+  }
+
+  public static final int READINESS_CHECKS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>
+      readinessChecks_;
+  /**
+   *
+   *
+   * <pre>
+   * Readiness checks to perform when starting a workstation using this
+   * workstation configuration. Mark a workstation as running only after all
+   * specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>
+      getReadinessChecksList() {
+    return readinessChecks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Readiness checks to perform when starting a workstation using this
+   * workstation configuration. Mark a workstation as running only after all
+   * specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder>
+      getReadinessChecksOrBuilderList() {
+    return readinessChecks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Readiness checks to perform when starting a workstation using this
+   * workstation configuration. Mark a workstation as running only after all
+   * specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public int getReadinessChecksCount() {
+    return readinessChecks_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Readiness checks to perform when starting a workstation using this
+   * workstation configuration. Mark a workstation as running only after all
+   * specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck getReadinessChecks(
+      int index) {
+    return readinessChecks_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Readiness checks to perform when starting a workstation using this
+   * workstation configuration. Mark a workstation as running only after all
+   * specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder
+      getReadinessChecksOrBuilder(int index) {
+    return readinessChecks_.get(index);
   }
 
   public static final int DEGRADED_FIELD_NUMBER = 15;
@@ -11649,6 +14169,28 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     return conditions_.get(index);
   }
 
+  public static final int ENABLE_AUDIT_AGENT_FIELD_NUMBER = 20;
+  private boolean enableAuditAgent_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to enable linux auditd logging on the workstation. When enabled, a
+   * service account must also be specified that has logging.buckets.write
+   * permission on the project. Operating system audit logging is distinct from
+   * [Cloud Audit
+   * Logs](https://cloud.google.com/workstations/docs/audit-logging).
+   * </pre>
+   *
+   * <code>bool enable_audit_agent = 20;</code>
+   *
+   * @return The enableAuditAgent.
+   */
+  @java.lang.Override
+  public boolean getEnableAuditAgent() {
+    return enableAuditAgent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -11715,6 +14257,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 18);
+    for (int i = 0; i < readinessChecks_.size(); i++) {
+      output.writeMessage(19, readinessChecks_.get(i));
+    }
+    if (enableAuditAgent_ != false) {
+      output.writeBool(20, enableAuditAgent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -11794,6 +14342,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, labels__);
     }
+    for (int i = 0; i < readinessChecks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, readinessChecks_.get(i));
+    }
+    if (enableAuditAgent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, enableAuditAgent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -11850,8 +14404,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     if (hasEncryptionKey()) {
       if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
     }
+    if (!getReadinessChecksList().equals(other.getReadinessChecksList())) return false;
     if (getDegraded() != other.getDegraded()) return false;
     if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (getEnableAuditAgent() != other.getEnableAuditAgent()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -11917,12 +14473,18 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionKey().hashCode();
     }
+    if (getReadinessChecksCount() > 0) {
+      hash = (37 * hash) + READINESS_CHECKS_FIELD_NUMBER;
+      hash = (53 * hash) + getReadinessChecksList().hashCode();
+    }
     hash = (37 * hash) + DEGRADED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDegraded());
     if (getConditionsCount() > 0) {
       hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getConditionsList().hashCode();
     }
+    hash = (37 * hash) + ENABLE_AUDIT_AGENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAuditAgent());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -12143,6 +14705,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         encryptionKeyBuilder_.dispose();
         encryptionKeyBuilder_ = null;
       }
+      if (readinessChecksBuilder_ == null) {
+        readinessChecks_ = java.util.Collections.emptyList();
+      } else {
+        readinessChecks_ = null;
+        readinessChecksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
       degraded_ = false;
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
@@ -12150,7 +14719,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
+      enableAuditAgent_ = false;
       return this;
     }
 
@@ -12197,10 +14767,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       } else {
         result.persistentDirectories_ = persistentDirectoriesBuilder_.build();
       }
+      if (readinessChecksBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          readinessChecks_ = java.util.Collections.unmodifiableList(readinessChecks_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.readinessChecks_ = readinessChecks_;
+      } else {
+        result.readinessChecks_ = readinessChecksBuilder_.build();
+      }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.conditions_ = conditions_;
       } else {
@@ -12260,8 +14839,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         result.encryptionKey_ =
             encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.degraded_ = degraded_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.enableAuditAgent_ = enableAuditAgent_;
       }
     }
 
@@ -12389,6 +14971,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasEncryptionKey()) {
         mergeEncryptionKey(other.getEncryptionKey());
       }
+      if (readinessChecksBuilder_ == null) {
+        if (!other.readinessChecks_.isEmpty()) {
+          if (readinessChecks_.isEmpty()) {
+            readinessChecks_ = other.readinessChecks_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureReadinessChecksIsMutable();
+            readinessChecks_.addAll(other.readinessChecks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.readinessChecks_.isEmpty()) {
+          if (readinessChecksBuilder_.isEmpty()) {
+            readinessChecksBuilder_.dispose();
+            readinessChecksBuilder_ = null;
+            readinessChecks_ = other.readinessChecks_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            readinessChecksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReadinessChecksFieldBuilder()
+                    : null;
+          } else {
+            readinessChecksBuilder_.addAllMessages(other.readinessChecks_);
+          }
+        }
+      }
       if (other.getDegraded() != false) {
         setDegraded(other.getDegraded());
       }
@@ -12396,7 +15005,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -12409,7 +15018,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -12418,6 +15027,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             conditionsBuilder_.addAllMessages(other.conditions_);
           }
         }
+      }
+      if (other.getEnableAuditAgent() != false) {
+        setEnableAuditAgent(other.getEnableAuditAgent());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -12547,7 +15159,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             case 120:
               {
                 degraded_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 120
             case 130:
@@ -12580,6 +15192,27 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 146
+            case 154:
+              {
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck m =
+                    input.readMessage(
+                        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+                            .parser(),
+                        extensionRegistry);
+                if (readinessChecksBuilder_ == null) {
+                  ensureReadinessChecksIsMutable();
+                  readinessChecks_.add(m);
+                } else {
+                  readinessChecksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
+            case 160:
+              {
+                enableAuditAgent_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13918,7 +16551,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -13941,7 +16574,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -13964,7 +16597,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -13986,7 +16619,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -14004,7 +16637,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -15252,7 +17885,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15265,10 +17898,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the encryptionKey field is set.
@@ -15280,7 +17914,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15293,10 +17927,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The encryptionKey.
@@ -15316,7 +17951,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15329,10 +17964,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setEncryptionKey(
@@ -15353,7 +17989,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15366,10 +18002,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setEncryptionKey(
@@ -15388,7 +18025,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15401,10 +18038,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeEncryptionKey(
@@ -15430,7 +18068,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15443,10 +18081,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearEncryptionKey() {
@@ -15463,7 +18102,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15476,10 +18115,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey.Builder
@@ -15492,7 +18132,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15505,10 +18145,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKeyOrBuilder
@@ -15526,7 +18167,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Encrypts resources of this workstation configuration using a
+     * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15539,10 +18180,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * Otherwise, data on the persistent disk will be lost.
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     * Immutable after the workstation configuration is created.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+     * .google.cloud.workstations.v1beta.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -15562,6 +18204,458 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         encryptionKey_ = null;
       }
       return encryptionKeyBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>
+        readinessChecks_ = java.util.Collections.emptyList();
+
+    private void ensureReadinessChecksIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        readinessChecks_ =
+            new java.util.ArrayList<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>(
+                readinessChecks_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder>
+        readinessChecksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>
+        getReadinessChecksList() {
+      if (readinessChecksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(readinessChecks_);
+      } else {
+        return readinessChecksBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public int getReadinessChecksCount() {
+      if (readinessChecksBuilder_ == null) {
+        return readinessChecks_.size();
+      } else {
+        return readinessChecksBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck getReadinessChecks(
+        int index) {
+      if (readinessChecksBuilder_ == null) {
+        return readinessChecks_.get(index);
+      } else {
+        return readinessChecksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder setReadinessChecks(
+        int index, com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck value) {
+      if (readinessChecksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.set(index, value);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder setReadinessChecks(
+        int index,
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+            builderForValue) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        readinessChecksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck value) {
+      if (readinessChecksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(value);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        int index, com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck value) {
+      if (readinessChecksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(index, value);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+            builderForValue) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        int index,
+        com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+            builderForValue) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder addAllReadinessChecks(
+        java.lang.Iterable<
+                ? extends com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck>
+            values) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, readinessChecks_);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder clearReadinessChecks() {
+      if (readinessChecksBuilder_ == null) {
+        readinessChecks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public Builder removeReadinessChecks(int index) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.remove(index);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+        getReadinessChecksBuilder(int index) {
+      return getReadinessChecksFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder
+        getReadinessChecksOrBuilder(int index) {
+      if (readinessChecksBuilder_ == null) {
+        return readinessChecks_.get(index);
+      } else {
+        return readinessChecksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder>
+        getReadinessChecksOrBuilderList() {
+      if (readinessChecksBuilder_ != null) {
+        return readinessChecksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(readinessChecks_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+        addReadinessChecksBuilder() {
+      return getReadinessChecksFieldBuilder()
+          .addBuilder(
+              com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder
+        addReadinessChecksBuilder(int index) {
+      return getReadinessChecksFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Readiness checks to perform when starting a workstation using this
+     * workstation configuration. Mark a workstation as running only after all
+     * specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck readiness_checks = 19;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder>
+        getReadinessChecksBuilderList() {
+      return getReadinessChecksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder,
+            com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder>
+        getReadinessChecksFieldBuilder() {
+      if (readinessChecksBuilder_ == null) {
+        readinessChecksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheck.Builder,
+                com.google.cloud.workstations.v1beta.WorkstationConfig.ReadinessCheckOrBuilder>(
+                readinessChecks_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        readinessChecks_ = null;
+      }
+      return readinessChecksBuilder_;
     }
 
     private boolean degraded_;
@@ -15599,7 +18693,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public Builder setDegraded(boolean value) {
 
       degraded_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -15617,7 +18711,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDegraded() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       degraded_ = false;
       onChanged();
       return this;
@@ -15626,9 +18720,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     private java.util.List<com.google.rpc.Status> conditions_ = java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.rpc.Status>(conditions_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -15860,7 +18954,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -15991,10 +19085,75 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 com.google.rpc.Status,
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
-                conditions_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00040000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
+    }
+
+    private boolean enableAuditAgent_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable linux auditd logging on the workstation. When enabled, a
+     * service account must also be specified that has logging.buckets.write
+     * permission on the project. Operating system audit logging is distinct from
+     * [Cloud Audit
+     * Logs](https://cloud.google.com/workstations/docs/audit-logging).
+     * </pre>
+     *
+     * <code>bool enable_audit_agent = 20;</code>
+     *
+     * @return The enableAuditAgent.
+     */
+    @java.lang.Override
+    public boolean getEnableAuditAgent() {
+      return enableAuditAgent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable linux auditd logging on the workstation. When enabled, a
+     * service account must also be specified that has logging.buckets.write
+     * permission on the project. Operating system audit logging is distinct from
+     * [Cloud Audit
+     * Logs](https://cloud.google.com/workstations/docs/audit-logging).
+     * </pre>
+     *
+     * <code>bool enable_audit_agent = 20;</code>
+     *
+     * @param value The enableAuditAgent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableAuditAgent(boolean value) {
+
+      enableAuditAgent_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable linux auditd logging on the workstation. When enabled, a
+     * service account must also be specified that has logging.buckets.write
+     * permission on the project. Operating system audit logging is distinct from
+     * [Cloud Audit
+     * Logs](https://cloud.google.com/workstations/docs/audit-logging).
+     * </pre>
+     *
+     * <code>bool enable_audit_agent = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableAuditAgent() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      enableAuditAgent_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

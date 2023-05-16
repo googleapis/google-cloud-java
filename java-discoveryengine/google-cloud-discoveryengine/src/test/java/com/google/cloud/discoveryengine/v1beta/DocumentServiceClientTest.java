@@ -31,6 +31,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -95,7 +96,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -143,7 +146,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -279,7 +284,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -333,7 +340,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -383,7 +392,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -556,6 +567,71 @@ public class DocumentServiceClientTest {
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
               .build();
       client.importDocumentsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void purgeDocumentsTest() throws Exception {
+    PurgeDocumentsResponse expectedResponse =
+        PurgeDocumentsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeDocumentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentService.addResponse(resultOperation);
+
+    PurgeDocumentsRequest request =
+        PurgeDocumentsRequest.newBuilder()
+            .setParent(
+                BranchName.ofProjectLocationDataStoreBranchName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                    .toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeDocumentsResponse actualResponse = client.purgeDocumentsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PurgeDocumentsRequest actualRequest = ((PurgeDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void purgeDocumentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      PurgeDocumentsRequest request =
+          PurgeDocumentsRequest.newBuilder()
+              .setParent(
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeDocumentsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

@@ -27,7 +27,7 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * An email address e.g. "person123&#64;company.com"
+   * An email address. For example, "`person123&#64;company.com`".
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -39,7 +39,7 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * An email address e.g. "person123&#64;company.com"
+   * An email address. For example, "`person123&#64;company.com`".
    * </pre>
    *
    * <code>string email = 1;</code>

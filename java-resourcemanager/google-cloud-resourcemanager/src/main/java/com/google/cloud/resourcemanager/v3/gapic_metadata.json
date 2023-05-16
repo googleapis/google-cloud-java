@@ -124,8 +124,29 @@
             "DeleteTagBinding": {
               "methods": ["deleteTagBindingAsync", "deleteTagBindingAsync", "deleteTagBindingAsync", "deleteTagBindingOperationCallable", "deleteTagBindingCallable"]
             },
+            "ListEffectiveTags": {
+              "methods": ["listEffectiveTags", "listEffectiveTags", "listEffectiveTagsPagedCallable", "listEffectiveTagsCallable"]
+            },
             "ListTagBindings": {
               "methods": ["listTagBindings", "listTagBindings", "listTagBindings", "listTagBindingsPagedCallable", "listTagBindingsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TagHolds": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TagHoldsClient",
+          "rpcs": {
+            "CreateTagHold": {
+              "methods": ["createTagHoldAsync", "createTagHoldAsync", "createTagHoldAsync", "createTagHoldOperationCallable", "createTagHoldCallable"]
+            },
+            "DeleteTagHold": {
+              "methods": ["deleteTagHoldAsync", "deleteTagHoldAsync", "deleteTagHoldAsync", "deleteTagHoldOperationCallable", "deleteTagHoldCallable"]
+            },
+            "ListTagHolds": {
+              "methods": ["listTagHolds", "listTagHolds", "listTagHolds", "listTagHoldsPagedCallable", "listTagHoldsCallable"]
             }
           }
         }
@@ -144,6 +165,9 @@
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetNamespacedTagKey": {
+              "methods": ["getNamespacedTagKey", "getNamespacedTagKey", "getNamespacedTagKey", "getNamespacedTagKeyCallable"]
             },
             "GetTagKey": {
               "methods": ["getTagKey", "getTagKey", "getTagKey", "getTagKeyCallable"]
@@ -177,6 +201,9 @@
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetNamespacedTagValue": {
+              "methods": ["getNamespacedTagValue", "getNamespacedTagValue", "getNamespacedTagValue", "getNamespacedTagValueCallable"]
             },
             "GetTagValue": {
               "methods": ["getTagValue", "getTagValue", "getTagValue", "getTagValueCallable"]

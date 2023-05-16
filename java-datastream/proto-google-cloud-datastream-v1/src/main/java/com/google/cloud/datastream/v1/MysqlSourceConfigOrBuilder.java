@@ -106,4 +106,19 @@ public interface MysqlSourceConfigOrBuilder
    * @return The maxConcurrentCdcTasks.
    */
   int getMaxConcurrentCdcTasks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent backfill tasks. The number should be non
+   * negative. If not set (or set to 0), the system's default value will be
+   * used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+   *
+   * @return The maxConcurrentBackfillTasks.
+   */
+  int getMaxConcurrentBackfillTasks();
 }

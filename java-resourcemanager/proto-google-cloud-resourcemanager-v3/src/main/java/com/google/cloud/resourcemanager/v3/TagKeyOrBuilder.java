@@ -56,8 +56,11 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the new TagKey's parent.
-   * Must be of the form `organizations/{org_id}`.
+   * Immutable. The resource name of the TagKey's parent. A TagKey can be
+   * parented by an Organization or a Project. For a TagKey parented by an
+   * Organization, its parent must be in the form `organizations/{org_id}`. For
+   * a TagKey parented by a Project, its parent can be in the form
+   * `projects/{project_id}` or `projects/{project_number}`.
    * </pre>
    *
    * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -69,8 +72,11 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the new TagKey's parent.
-   * Must be of the form `organizations/{org_id}`.
+   * Immutable. The resource name of the TagKey's parent. A TagKey can be
+   * parented by an Organization or a Project. For a TagKey parented by an
+   * Organization, its parent must be in the form `organizations/{org_id}`. For
+   * a TagKey parented by a Project, its parent can be in the form
+   * `projects/{project_id}` or `projects/{project_number}`.
    * </pre>
    *
    * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -83,8 +89,8 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The user friendly name for a TagKey. The short name should be
-   * unique for TagKeys within the same tag namespace.
+   * Required. Immutable. The user friendly name for a TagKey. The short name
+   * should be unique for TagKeys within the same tag namespace.
    * The short name must be 1-63 characters, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -101,8 +107,8 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The user friendly name for a TagKey. The short name should be
-   * unique for TagKeys within the same tag namespace.
+   * Required. Immutable. The user friendly name for a TagKey. The short name
+   * should be unique for TagKeys within the same tag namespace.
    * The short name must be 1-63 characters, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -149,7 +155,8 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+   * Optional. User-assigned description of the TagKey. Must not exceed 256
+   * characters.
    * Read-write.
    * </pre>
    *
@@ -162,7 +169,8 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+   * Optional. User-assigned description of the TagKey. Must not exceed 256
+   * characters.
    * Read-write.
    * </pre>
    *
@@ -252,8 +260,9 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Optional. Entity tag which users can pass to prevent race conditions. This field is
-   * always set in server responses. See UpdateTagKeyRequest for details.
+   * Optional. Entity tag which users can pass to prevent race conditions. This
+   * field is always set in server responses. See UpdateTagKeyRequest for
+   * details.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -265,8 +274,9 @@ public interface TagKeyOrBuilder
    *
    *
    * <pre>
-   * Optional. Entity tag which users can pass to prevent race conditions. This field is
-   * always set in server responses. See UpdateTagKeyRequest for details.
+   * Optional. Entity tag which users can pass to prevent race conditions. This
+   * field is always set in server responses. See UpdateTagKeyRequest for
+   * details.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -274,4 +284,116 @@ public interface TagKeyOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A purpose denotes that this Tag is intended for use in policies
+   * of a specific policy engine, and will involve that policy engine in
+   * management operations involving this Tag. A purpose does not grant a
+   * policy engine exclusive rights to the Tag, and it may be referenced by
+   * other policy engines.
+   * A purpose cannot be changed once set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for purpose.
+   */
+  int getPurposeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A purpose denotes that this Tag is intended for use in policies
+   * of a specific policy engine, and will involve that policy engine in
+   * management operations involving this Tag. A purpose does not grant a
+   * policy engine exclusive rights to the Tag, and it may be referenced by
+   * other policy engines.
+   * A purpose cannot be changed once set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The purpose.
+   */
+  com.google.cloud.resourcemanager.v3.Purpose getPurpose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPurposeDataCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsPurposeData(java.lang.String key);
+  /** Use {@link #getPurposeDataMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getPurposeData();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getPurposeDataMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getPurposeDataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getPurposeDataOrThrow(java.lang.String key);
 }

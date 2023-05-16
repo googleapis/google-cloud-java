@@ -201,6 +201,27 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
     }
   }
 
+  public static final int IGNORE_DEPENDENT_RESOURCES_FIELD_NUMBER = 3;
+  private boolean ignoreDependentResources_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field allows this CA to be disabled even if it's being
+   * depended on by another resource. However, doing so may result in unintended
+   * and unrecoverable effects on any dependent resource(s) since the CA will
+   * no longer be able to issue certificates.
+   * </pre>
+   *
+   * <code>bool ignore_dependent_resources = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreDependentResources.
+   */
+  @java.lang.Override
+  public boolean getIgnoreDependentResources() {
+    return ignoreDependentResources_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -221,6 +242,9 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestId_);
     }
+    if (ignoreDependentResources_ != false) {
+      output.writeBool(3, ignoreDependentResources_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -235,6 +259,9 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestId_);
+    }
+    if (ignoreDependentResources_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, ignoreDependentResources_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -255,6 +282,7 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (getIgnoreDependentResources() != other.getIgnoreDependentResources()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -270,6 +298,8 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + IGNORE_DEPENDENT_RESOURCES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreDependentResources());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -416,6 +446,7 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
       bitField0_ = 0;
       name_ = "";
       requestId_ = "";
+      ignoreDependentResources_ = false;
       return this;
     }
 
@@ -462,6 +493,9 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ignoreDependentResources_ = ignoreDependentResources_;
       }
     }
 
@@ -525,6 +559,9 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getIgnoreDependentResources() != false) {
+        setIgnoreDependentResources(other.getIgnoreDependentResources());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -563,6 +600,12 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                ignoreDependentResources_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -860,6 +903,68 @@ public final class DisableCertificateAuthorityRequest extends com.google.protobu
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean ignoreDependentResources_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field allows this CA to be disabled even if it's being
+     * depended on by another resource. However, doing so may result in unintended
+     * and unrecoverable effects on any dependent resource(s) since the CA will
+     * no longer be able to issue certificates.
+     * </pre>
+     *
+     * <code>bool ignore_dependent_resources = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ignoreDependentResources.
+     */
+    @java.lang.Override
+    public boolean getIgnoreDependentResources() {
+      return ignoreDependentResources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field allows this CA to be disabled even if it's being
+     * depended on by another resource. However, doing so may result in unintended
+     * and unrecoverable effects on any dependent resource(s) since the CA will
+     * no longer be able to issue certificates.
+     * </pre>
+     *
+     * <code>bool ignore_dependent_resources = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ignoreDependentResources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreDependentResources(boolean value) {
+
+      ignoreDependentResources_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field allows this CA to be disabled even if it's being
+     * depended on by another resource. However, doing so may result in unintended
+     * and unrecoverable effects on any dependent resource(s) since the CA will
+     * no longer be able to issue certificates.
+     * </pre>
+     *
+     * <code>bool ignore_dependent_resources = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreDependentResources() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ignoreDependentResources_ = false;
       onChanged();
       return this;
     }

@@ -5,6 +5,3592 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "531cf24c1ca1a3e5a63106f732ae1329aac30620",
+          "message": "[cloudsupport] new module for cloudsupport",
+          "issues": [
+            "9399"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudsupport",
+      "id": "a1a27028-b96d-4d0a-8948-3811d4139d24",
+      "createTime": "2023-05-10T18:30:04.129Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "270cc239a39a488084255711c8a62d9ec0f7f6bd",
+          "message": "[texttospeech] update documentation to require certain fields",
+          "issues": [
+            "9417"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-texttospeech",
+      "id": "26c2fac5-d89f-4ef9-9d1b-0aac72fe0ea3",
+      "createTime": "2023-05-10T18:30:04.126Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add basic http authentication",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add json path matching capabilities",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add httpStatusCode",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add individual USA regions",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "[monitoring] Add ICMP pings",
+          "issues": [
+            "9409"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring",
+      "id": "c6c50838-995d-4226-9bf2-7915c4081b4d",
+      "createTime": "2023-05-10T18:30:04.124Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "253ad50f1e08461cee744ea276f601ec184ded33",
+          "message": "[datastream] Max concurrent backfill tasks",
+          "issues": [
+            "9414"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastream",
+      "id": "5ba6ca8a-b4bc-4772-a785-6dfd6d252795",
+      "createTime": "2023-05-10T18:30:04.122Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "27d613374dcf2a0fd858adc7f9b61b6e16bdc04c",
+          "message": "[jobs] change timeout settings for SearchJobsForAlert",
+          "issues": [
+            "9401"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-talent",
+      "id": "dd57a377-63ce-4cf7-9718-d2a3059b06c6",
+      "createTime": "2023-05-10T18:30:04.119Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added debug info to StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added dtmf digits to WebhookRequest",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added FLOW as a new DiffType in TestRunDifference",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "[dialogflow-cx] extended CreateAgent timeout to 180 seconds",
+          "issues": [
+            "9412"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added debug info to StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added dtmf digits to WebhookRequest",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added FLOW as a new DiffType in TestRunDifference",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "[dialogflow-cx] extended CreateAgent timeout to 180 seconds",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "7668e47e-4389-45b6-bf4a-ab3317b553f8",
+      "createTime": "2023-05-10T18:30:04.116Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "eeea875d7a13920aef5ec3be6a30d9891bbf6677",
+          "message": "[container] add a new feature for fleet registration via cluster update in v1alpha1, v1beta1, v1",
+          "issues": [
+            "9408"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "eeea875d7a13920aef5ec3be6a30d9891bbf6677",
+          "message": "[container] support fleet registration via cluster update",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "a6269c61-aa4c-403d-a1be-500dbd651177",
+      "createTime": "2023-05-10T18:30:04.114Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "a980e4dd693ed75c403329a52dcc8190e5f6237a",
+          "message": "[run] Adds support for Startup CPU Boost (GA)",
+          "issues": [
+            "9397"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "c8b25d98-b11f-441a-b58f-bb63f7f363e0",
+      "createTime": "2023-05-10T18:30:04.111Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "3c9e001fd1619a8af96269d0e5084b73c4c1c726",
+          "message": "[tpu] restrict the visibility of an API",
+          "issues": [
+            "9406"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "63036999-7424-420b-9a91-1aec64671095",
+      "createTime": "2023-05-10T18:30:04.109Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "9cf11de74686dff35e78cdce4e74d1444e4097c0",
+          "message": "Add documentation for additional acceptable formats for `namespaced_tag_key` and `namespaced_tag_value`in `EffectiveTag`, `parent` in `ListTagKeysRequest`, `parent` in `TagKey`, and `namespaced_name` in `TagValue`",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "9cf11de74686dff35e78cdce4e74d1444e4097c0",
+          "message": "[cloudresourcemanager] Update formatting for `Purpose` class documentation",
+          "issues": [
+            "9395"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "9cf11de74686dff35e78cdce4e74d1444e4097c0",
+          "message": "[cloudresourcemanager] Update the table format in SearchProjects docs",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "e3b789fd-83e2-4414-8387-02b6b1d1734b",
+      "createTime": "2023-05-10T18:30:04.107Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "78e1e172b763673fee873971d6ebc7d53bd40002",
+          "message": "[servicecontrol] add a proto message used for batch mode resource info for ServiceController V2",
+          "issues": [
+            "9387"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-control",
+      "id": "4ab9bda5-6890-4451-a42d-8696f235f7c2",
+      "createTime": "2023-05-10T18:30:04.104Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "b7c785a6e7552e75697536a4d9a100de38d856b1",
+          "message": "updated comments for multiple Dataplex APIs",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "b7c785a6e7552e75697536a4d9a100de38d856b1",
+          "message": "[dataplex] added new Dataplex APIs and new features for existing APIs (e.g. DataScans)",
+          "issues": [
+            "9402"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "b0d174c9-14cf-4ac3-bbd6-62fb5ddf063b",
+      "createTime": "2023-05-10T18:30:04.102Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bc3cddf37545cc4ccca589ac4f1c7710294503c1",
+          "message": "added support for in cluster verification",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "bc3cddf37545cc4ccca589ac4f1c7710294503c1",
+          "message": "[clouddeploy] added support for DeployArtifacts",
+          "issues": [
+            "9398"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "1958ffc8-18a6-4b04-9ab3-de2cdb1c47ee",
+      "createTime": "2023-05-10T18:30:04.100Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d8410942f9461ce2d6cd86450310afed0031a2aa",
+          "message": "[cloudchannel] Add billing account to entitlement definitions for Cloud Channel API",
+          "issues": [
+            "9410"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "3f715760-5092-44b3-9b91-f857943c01a7",
+      "createTime": "2023-05-10T18:30:04.097Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bc46b1b3f34dd721a322fded47107fde331dee4c",
+          "message": "[contactcenterinsights] support for generating summaries during conversation analysis",
+          "issues": [
+            "9391"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "7ef9c375-0ea1-4844-a1e0-d0bb3544801e",
+      "createTime": "2023-05-10T18:30:04.093Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "23b1396e8b3efe2df7b6687277f10551cd41975d",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "23b1396e8b3efe2df7b6687277f10551cd41975d",
+          "message": "[discoveryengine] add document purge API",
+          "issues": [
+            "9396"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "25757f16-8e66-4016-9736-4ffc7f59effd",
+      "createTime": "2023-05-10T18:30:04.091Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add example_gcs_source to Examples in aiplatform v1beta1 explanation.proto",
+          "issues": [
+            "9392"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add model_garden_service.proto and publisher_model.proto to BUILD.bazel",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] support for Model Garden -- A single place to search, discover, and interact with a wide variety of foundation models from Google and Google partners, available on Vertex AI",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add experiment and experiment_run to CustomJobSpec",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add MutateDeployedModel RPC to endpoint_service",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add GENIE to ModelSourceType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add last_scheduled_run_response to Schedule",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add NVIDIA_L4 to AcceleratorType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add experiment and experiment_run to CustomJobSpec",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add MutateDeployedModel RPC to endpoint_service",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add offline_storage_ttl_days to EntityType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add online_storage_ttl_days to FeatureStore",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add GENIE to ModelSourceType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add NVIDIA_L4 to AcceleratorType",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "5874a6e1-933b-45ba-9459-0868c63686cc",
+      "createTime": "2023-05-10T18:30:04.089Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "5e425bc3949df8ac94f28442b166f611372490c8",
+          "message": "[speech] add processing strategy to batch recognition requests",
+          "issues": [
+            "9424"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "3b40816f-64af-4ac5-896e-50328e2e360b",
+      "createTime": "2023-05-10T18:30:04.086Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "0ebf4af22c0f4269cfe5fa9cfc5a10005389b1f5",
+          "message": "clarified that vpcConnector shortname is only returned if the connector is in the same project as the function",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "0ebf4af22c0f4269cfe5fa9cfc5a10005389b1f5",
+          "message": "applied general style guide updates to descriptions",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0ebf4af22c0f4269cfe5fa9cfc5a10005389b1f5",
+          "message": "[cloudfunctions] added helper methods for long running operations, IAM, and locations",
+          "issues": [
+            "9421"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "62c28c26-b804-44c1-ac43-7d91253834d3",
+      "createTime": "2023-05-10T18:30:04.084Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e9944c5ded6890e6b97f3bce90740b19623e42b2",
+          "message": "[dialogflow] add baseline model configuration for conversation summarization",
+          "issues": [
+            "9423"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "e9944c5ded6890e6b97f3bce90740b19623e42b2",
+          "message": "[dialogflow] add baseline model configuration for conversation summarization",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added debug info for StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added GenerateStatelessSummary method",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "[dialogflow] extended StreamingListCallCompanionEvents timeout to 600 seconds",
+          "issues": [
+            "9415"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added debug info for StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added GenerateStatelessSummary method",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "[dialogflow] extended StreamingListCallCompanionEvents timeout to 600 seconds",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "1dca0205-8a04-4482-9756-1cb69c6c042b",
+      "createTime": "2023-05-10T18:30:04.082Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "487e38d8c4184c98fa714618274a295f677a3b98",
+          "message": "add output field for the number of pooled instances",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "487e38d8c4184c98fa714618274a295f677a3b98",
+          "message": "adjust documentation wording",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "487e38d8c4184c98fa714618274a295f677a3b98",
+          "message": "[workstations] add output field for the control plane IP address",
+          "issues": [
+            "9422"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "52a12ef7-8dee-4d1c-a44e-cf24039a6c81",
+      "createTime": "2023-05-10T18:30:04.079Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "6bec5191f4b4af615f1c94f4d047c3e46b62068c",
+          "message": "[container] Operation.Type is now documented in detail",
+          "issues": [
+            "9351"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "5640bc1e-ea8b-40db-877b-eb73f9fa9fd4",
+      "createTime": "2023-04-26T17:10:14.314Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3aeb0df96fdb98c17dab2cc807a960583ef92c37",
+          "message": "[cloudbuild] Add PeeredNetworkIpRange to NetworkConfigs message",
+          "issues": [
+            "9358"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "ba5f453e-b284-47e9-892f-3fce3572fce7",
+      "createTime": "2023-04-26T17:10:14.312Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "73e9031d446216da337edd19873d6cdaf793b7d3",
+          "message": "add unstructured document support (PDF/HTML)",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "73e9031d446216da337edd19873d6cdaf793b7d3",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "73e9031d446216da337edd19873d6cdaf793b7d3",
+          "message": "[discoveryengine] add search, autocomplete and schema services",
+          "issues": [
+            "9374"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "97985ad3-6ea7-4476-a9df-0ec5f00a0f4d",
+      "createTime": "2023-04-26T17:10:14.310Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "5c470613686222a6fd11aeaca4b433396a32c122",
+          "message": "[networkmanagement] Update comments in Connectivity Test protos",
+          "issues": [
+            "9362"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "48d01e3c-51c8-455a-b526-65ecd6bfb4e3",
+      "createTime": "2023-04-26T17:10:14.308Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "472532484ae5127ec40da1f95495db159374ddff",
+          "message": "[retail] fix the HTTP format for merchant center link service",
+          "issues": [
+            "9360"
+          ],
+          "breakingChangeNote": "[retail] fix the HTTP format for merchant center link service ([#9360](https://github.com/googleapis/google-cloud-java/issues/9360))"
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-retail",
+      "id": "94250cd3-15cf-4b35-82fa-81413f0cbed3",
+      "createTime": "2023-04-26T17:10:14.306Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b47972a741efd27b55ef99835eb77a624670b35d",
+          "message": "[cloudresourcemanager] add TagHolds, GetNamespacedTagKey, and GetNamespacedTagValue APIs. Adds support for project parented tags",
+          "issues": [
+            "9369"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "fc53b3c0-13f2-4374-b2ec-b43d794aedee",
+      "createTime": "2023-04-26T17:10:14.304Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9e1a89d916134d9d3ed41b17138f7b3918d110e8",
+          "message": "[securitycenter] add cloud_dlp_inspection and cloud_dlp_data_profile fields to finding's list of attributes",
+          "issues": [
+            "9371"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "c320417c-cec4-4ffb-b6ea-4bc9eb5286ea",
+      "createTime": "2023-04-26T17:10:14.302Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f3c56a90254731d8edb3785ae2af27be4f4eb56a",
+          "message": "[analyticsadmin] add `FetchConnectedGa4Property` method to the Admin API v1alpha",
+          "issues": [
+            "9378"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "0bbcc05c-b406-40d7-809f-a0f9d59c4def",
+      "createTime": "2023-04-26T17:10:14.300Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "fd4b0987edbfe089d692caddd648928e254b4207",
+          "message": "[tpu] make reservation_name parameter generally visible in QueuedResource message",
+          "issues": [
+            "9353"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "7599ac63-1ffc-48aa-9101-6a3f4afb3d92",
+      "createTime": "2023-04-26T17:10:14.296Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "d6c0174c4888d057fed99df5b75c5c35bdd812f2",
+          "message": "[maps-addressvalidation] Update description of the postal address",
+          "issues": [
+            "9354"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-addressvalidation",
+      "id": "790c6e0b-7937-496e-8eb2-919c2b69050e",
+      "createTime": "2023-04-26T17:10:14.294Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3074871c8b1a4ef1d081940041a566bb187c928a",
+          "message": "[aiplatform] add is_default to Tensorboard in aiplatform v1 tensorboard.proto and v1beta1 tensorboard.proto",
+          "issues": [
+            "9355"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "ea384d91-4087-42c4-a8bd-9f4bbdab36d2",
+      "createTime": "2023-04-26T17:10:14.292Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "80e0262b3e57bf4db785f3d58d00e1fde2e0e1b3",
+          "message": "[gkehub] add `monitoring_config` field",
+          "issues": [
+            "9370"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gkehub",
+      "id": "490976f5-c213-4bb4-aa76-a61a2e350241",
+      "createTime": "2023-04-26T17:10:14.290Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "083a96b6f7e687a57e3f30e72f9f10692e6e3c45",
+          "message": "[orchestration-airflow] add airflow_byoid_uri field to Cloud Composer API",
+          "issues": [
+            "9383"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "3e382f58-2ebb-4d9a-b341-49eec2deb806",
+      "createTime": "2023-04-26T17:10:14.288Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b76174e3d2da090a80010ceeb507d751ad7618e1",
+          "message": "[dataproc] update go_package to v2 in google.cloud.dataproc.v1",
+          "issues": [
+            "9361"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "150da3fe-5d2e-48c8-a68a-f0fbddd69e70",
+      "createTime": "2023-04-26T17:10:14.286Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "149aef940ad2a555c733301e78f86190bb64b01a",
+          "message": "[storageinsights] new module for storageinsights",
+          "issues": [
+            "9367"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storageinsights",
+      "id": "6455f953-e5b3-4c80-8f42-be3197ccbb21",
+      "createTime": "2023-04-26T17:10:14.284Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8174107daa84abed6e138daa4b25748e020d3302",
+          "message": "[metastore] added ScalingConfig (v1)",
+          "issues": [
+            "9350"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "86d0a2ad-47aa-47fe-a69f-b077faf094b7",
+      "createTime": "2023-04-26T17:10:14.281Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflows",
+      "id": "dced83f2-8968-41e3-93a0-bd9485509b12",
+      "createTime": "2023-04-13T17:37:33.273Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflow-executions",
+      "id": "f726a6c7-eb8c-4b81-8177-2f8ccafeff06",
+      "createTime": "2023-04-13T17:37:33.271Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-websecurityscanner",
+      "id": "5fa170e4-79f5-4f1d-bf12-014320189dc0",
+      "createTime": "2023-04-13T17:37:33.270Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-webrisk",
+      "id": "a72f9255-f022-4e0b-8edb-39906fe9adab",
+      "createTime": "2023-04-13T17:37:33.266Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vpcaccess",
+      "id": "c729d7f1-ebab-47ab-b892-8e88c9c9fa62",
+      "createTime": "2023-04-13T17:37:33.264Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "19f38c6f-1eb2-4157-a4df-c889847547ab",
+      "createTime": "2023-04-13T17:37:33.262Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmmigration",
+      "id": "32ae35ad-9ec8-4ad1-8765-8a4dfd40cf57",
+      "createTime": "2023-04-13T17:37:33.261Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vision",
+      "id": "ddc27548-db01-4e90-b0c1-24839a05335a",
+      "createTime": "2023-04-13T17:37:33.259Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-stitcher",
+      "id": "13cee94f-1e7e-4f7a-b859-2c27c0495ee9",
+      "createTime": "2023-04-13T17:37:33.257Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-live-stream",
+      "id": "ea69e956-a728-4260-8941-ab3a1ac2ccc5",
+      "createTime": "2023-04-13T17:37:33.255Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-intelligence",
+      "id": "c7df932a-c721-4202-bed7-99559d641962",
+      "createTime": "2023-04-13T17:37:33.253Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-translate",
+      "id": "0b821007-49a9-4137-8122-1be66e6d1f33",
+      "createTime": "2023-04-13T17:37:33.252Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-trace",
+      "id": "64727a57-515f-47e0-a699-823780b44e5e",
+      "createTime": "2023-04-13T17:37:33.250Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "9f753e8b-c8b9-48cc-a1a0-27bf7b3026fa",
+      "createTime": "2023-04-13T17:37:33.248Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-texttospeech",
+      "id": "6ae71adb-9b40-4563-8175-804f0d85095b",
+      "createTime": "2023-04-13T17:37:33.245Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tasks",
+      "id": "a1d641d1-2d6f-46c0-88e0-b6428fde46d2",
+      "createTime": "2023-04-13T17:37:33.243Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-talent",
+      "id": "cf5c9684-8478-457c-beda-29a021a15d32",
+      "createTime": "2023-04-13T17:37:33.242Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage-transfer",
+      "id": "b4731db7-5d5e-4059-9942-34f82f9e2076",
+      "createTime": "2023-04-13T17:37:33.240Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "6ca255b9-cb8f-4fb8-971e-dacfd8d58654",
+      "createTime": "2023-04-13T17:37:33.238Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-shell",
+      "id": "071a15e0-de20-4e5e-9c10-cc3ee4883296",
+      "createTime": "2023-04-13T17:37:33.236Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-servicedirectory",
+      "id": "ecf999f1-39d2-4c93-9a5b-56d188333dc4",
+      "createTime": "2023-04-13T17:37:33.234Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-usage",
+      "id": "627f9244-35bc-40a6-98b4-c7439dd2aef8",
+      "createTime": "2023-04-13T17:37:33.232Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-management",
+      "id": "0f2a69d5-a9e2-432e-baa5-3cc5b263c256",
+      "createTime": "2023-04-13T17:37:33.231Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-control",
+      "id": "cf8d29c3-631a-45d8-9004-e1335256ecea",
+      "createTime": "2023-04-13T17:37:33.229Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter-settings",
+      "id": "f2c82c05-1d3b-4016-bd63-38b672857245",
+      "createTime": "2023-04-13T17:37:33.227Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-secretmanager",
+      "id": "605c0688-88e8-466c-b2f9-91fd944e7072",
+      "createTime": "2023-04-13T17:37:33.224Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-scheduler",
+      "id": "5ac4fc1a-da25-4a67-a3db-45ba724377a7",
+      "createTime": "2023-04-13T17:37:33.222Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "76a0d5cb-bb35-41c0-9744-c8ebdec379e8",
+      "createTime": "2023-04-13T17:37:33.221Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "6d53ca10-eef2-4db7-9310-ebee2e3f043b",
+      "createTime": "2023-04-13T17:37:33.219Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resource-settings",
+      "id": "adea793d-60fa-492f-ac17-cd9bd82b040a",
+      "createTime": "2023-04-13T17:37:33.217Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-redis",
+      "id": "1d62a8fd-6507-4971-8179-c877a5d83346",
+      "createTime": "2023-04-13T17:37:33.216Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recommender",
+      "id": "9e82805d-3369-4db8-bb25-16546085be09",
+      "createTime": "2023-04-13T17:37:33.214Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recommendations-ai",
+      "id": "a662b0f2-0e85-4565-a813-c87c36c32ef0",
+      "createTime": "2023-04-13T17:37:33.212Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recaptchaenterprise",
+      "id": "e3cc5157-fc56-43bd-927a-6f13eb09c8f3",
+      "createTime": "2023-04-13T17:37:33.210Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-publicca",
+      "id": "5d584774-4a9d-4d6b-935a-b956c54cd2ec",
+      "createTime": "2023-04-13T17:37:33.208Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-profiler",
+      "id": "3836a70b-2339-49da-93e2-abb466f55d7d",
+      "createTime": "2023-04-13T17:37:33.197Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-private-catalog",
+      "id": "cc5a976b-f272-4138-896e-778b4b0006de",
+      "createTime": "2023-04-13T17:37:33.195Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policy-troubleshooter",
+      "id": "4df62b4b-b395-471c-9369-5d61fa773c39",
+      "createTime": "2023-04-13T17:37:33.193Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-phishingprotection",
+      "id": "83573fd0-642a-4015-b93d-553dcdd59a11",
+      "createTime": "2023-04-13T17:37:33.192Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-os-login",
+      "id": "c8c8d6c1-1a1b-48a8-9723-da47bc2935c6",
+      "createTime": "2023-04-13T17:37:33.190Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-os-config",
+      "id": "9fda6b1e-57d4-48b7-8549-3ced6755033d",
+      "createTime": "2023-04-13T17:37:33.188Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orgpolicy",
+      "id": "dbd54bab-b362-4966-b8ed-9e0c9d2026fd",
+      "createTime": "2023-04-13T17:37:33.187Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "82262a6e-8267-4d1f-bf80-9d1bd0a37d11",
+      "createTime": "2023-04-13T17:37:33.185Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "2e7443b1-8392-4553-a9a5-93fe21532e24",
+      "createTime": "2023-04-13T17:37:33.183Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-notification",
+      "id": "4dac0165-98a2-4524-8528-02a2fa1b2224",
+      "createTime": "2023-04-13T17:37:33.181Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-notebooks",
+      "id": "14ac3fe9-bf38-479d-bbd4-16d48d363d5f",
+      "createTime": "2023-04-13T17:37:33.180Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkconnectivity",
+      "id": "2f2b9589-706a-40db-86a0-24e47f268f29",
+      "createTime": "2023-04-13T17:37:33.178Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-security",
+      "id": "154b482b-2d07-407c-858f-82143f748188",
+      "createTime": "2023-04-13T17:37:33.175Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "220ff61f-f06e-40d9-adb9-b8e166dfc1cc",
+      "createTime": "2023-04-13T17:37:33.173Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring",
+      "id": "be529c59-0431-4178-946c-01519fd848f5",
+      "createTime": "2023-04-13T17:37:33.172Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring-metricsscope",
+      "id": "fcfa0223-6d1e-48ff-a516-e1facbc1aee5",
+      "createTime": "2023-04-13T17:37:33.170Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring-dashboard",
+      "id": "0b3a1439-c998-4335-8d03-d813ff124862",
+      "createTime": "2023-04-13T17:37:33.169Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-memcache",
+      "id": "12b8cc7e-406d-4b42-8e2b-69a805d5809a",
+      "createTime": "2023-04-13T17:37:33.167Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-mediatranslation",
+      "id": "526777b7-a48a-4881-a8b5-c90a9345ba4d",
+      "createTime": "2023-04-13T17:37:33.165Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-routing",
+      "id": "a56b1c02-9270-4e96-9471-07ef355891fd",
+      "createTime": "2023-04-13T17:37:33.164Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-mapsplatformdatasets",
+      "id": "483866f5-7941-412d-b106-5cff179b6c8d",
+      "createTime": "2023-04-13T17:37:33.162Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-managed-identities",
+      "id": "e561b9d1-dfa4-4d8c-8bbf-4eb1a43f8da2",
+      "createTime": "2023-04-13T17:37:33.160Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-life-sciences",
+      "id": "2150f6ee-6acc-4043-9b88-0cb8efc6a983",
+      "createTime": "2023-04-13T17:37:33.159Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-language",
+      "id": "848beafa-a69f-4fdf-b1a6-bcd990677674",
+      "createTime": "2023-04-13T17:37:33.157Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kmsinventory",
+      "id": "47470dc2-26e2-46ab-8e56-daddfad859ca",
+      "createTime": "2023-04-13T17:37:33.154Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "2489b6c5-3e7a-42fd-be4f-3973996aac3f",
+      "createTime": "2023-04-13T17:37:33.152Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iot",
+      "id": "91fcc144-685b-4708-8174-279d767a0e16",
+      "createTime": "2023-04-13T17:37:33.150Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-ids",
+      "id": "d9106ed9-55b3-4f4d-a440-dc28d1743893",
+      "createTime": "2023-04-13T17:37:33.149Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iamcredentials",
+      "id": "2d695d38-8fd0-4e5d-9c4d-2c0f1239049e",
+      "createTime": "2023-04-13T17:37:33.147Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-iam-policy",
+      "id": "1d20cf3c-c0d2-4bac-907b-0880d07dc0e5",
+      "createTime": "2023-04-13T17:37:33.146Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-iam-admin",
+      "id": "33264b9c-389a-4e9b-9314-b03452bad7fa",
+      "createTime": "2023-04-13T17:37:33.144Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gsuite-addons",
+      "id": "a4851ca4-dad1-4dc6-ac63-41005b32e9ed",
+      "createTime": "2023-04-13T17:37:33.143Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gkehub",
+      "id": "239e2968-c2e2-4a76-b389-2bff8fb9f228",
+      "createTime": "2023-04-13T17:37:33.141Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-multi-cloud",
+      "id": "1625f8a7-e524-4c06-9e86-ce4fe2ad2676",
+      "createTime": "2023-04-13T17:37:33.140Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-connect-gateway",
+      "id": "05d8b4ab-a3cc-48d0-a000-b1b3c595147c",
+      "createTime": "2023-04-13T17:37:33.138Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-backup",
+      "id": "915b824c-1ab6-4bd5-a1fc-f835eb5173d4",
+      "createTime": "2023-04-13T17:37:33.136Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-game-servers",
+      "id": "be142cbe-be38-47ba-be21-c4b53e66ee46",
+      "createTime": "2023-04-13T17:37:33.133Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "6fcedeaf-4d28-4316-a24e-fa6d558ddd29",
+      "createTime": "2023-04-13T17:37:33.132Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-filestore",
+      "id": "cd39b8af-25df-49b6-82eb-b4e6edf0c1d0",
+      "createTime": "2023-04-13T17:37:33.130Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-eventarc",
+      "id": "7c9a97b7-13e7-4957-a41d-0273cd0e4b1f",
+      "createTime": "2023-04-13T17:37:33.129Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-eventarc-publishing",
+      "id": "133e8197-6ea7-4adb-9ace-9f2d8b6c0916",
+      "createTime": "2023-04-13T17:37:33.127Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-essential-contacts",
+      "id": "504863d5-83b7-43be-b9bf-10b637c756ec",
+      "createTime": "2023-04-13T17:37:33.126Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-errorreporting",
+      "id": "6873799c-ae3b-476b-acd7-5db83ff7634d",
+      "createTime": "2023-04-13T17:37:33.124Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-enterpriseknowledgegraph",
+      "id": "52463886-c734-4ce0-baf3-e8fc1bd8eb20",
+      "createTime": "2023-04-13T17:37:33.123Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-domains",
+      "id": "c275290b-0965-437d-8913-38e2e1db61d0",
+      "createTime": "2023-04-13T17:37:33.121Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "92ecb290-7397-4000-a1b8-eddfbad36bbe",
+      "createTime": "2023-04-13T17:37:33.120Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dns",
+      "id": "757878b6-d0b5-443d-90b9-ea1c70a8e9b2",
+      "createTime": "2023-04-13T17:37:33.118Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dms",
+      "id": "9ba38c82-337e-4302-9f95-88e132cbc2af",
+      "createTime": "2023-04-13T17:37:33.117Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dlp",
+      "id": "6d57bfa1-fe60-4944-a476-64ebefbd2aee",
+      "createTime": "2023-04-13T17:37:33.114Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-distributedcloudedge",
+      "id": "37a5276e-c2e9-42d6-a826-bbfee682be87",
+      "createTime": "2023-04-13T17:37:33.112Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "704cf39b-c839-4f6b-bdb1-003b41acd789",
+      "createTime": "2023-04-13T17:37:33.111Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "a2aa017e-7cfd-44c0-8526-561d41daf710",
+      "createTime": "2023-04-13T17:37:33.109Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "92a84bdb-c058-49f3-8705-56a75e1e4910",
+      "createTime": "2023-04-13T17:37:33.108Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "02dbb331-5f27-4b63-9d41-fb9de1370a33",
+      "createTime": "2023-04-13T17:37:33.103Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-debugger-client",
+      "id": "75d6baf6-bdbc-40b3-9f25-40f1d2ef4926",
+      "createTime": "2023-04-13T17:37:33.102Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastream",
+      "id": "cea1452e-dcbc-472b-aaf4-cc853895d6b7",
+      "createTime": "2023-04-13T17:37:33.100Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "389440dc-7b70-469b-b314-270caf27d278",
+      "createTime": "2023-04-13T17:37:33.099Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "86e9bab9-d3a3-40a6-b816-4d6ebf66dc6f",
+      "createTime": "2023-04-13T17:37:33.097Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "4f843bfa-e67a-4003-9e59-202b28be23fc",
+      "createTime": "2023-04-13T17:37:33.096Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalineage",
+      "id": "f3131f7f-7752-477a-845f-32f14f6e7bb8",
+      "createTime": "2023-04-13T17:37:33.094Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalabeling",
+      "id": "d8ba0a78-aa32-435b-a876-8a07d5fd80d2",
+      "createTime": "2023-04-13T17:37:33.093Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataform",
+      "id": "c08b065e-ed64-4712-ba1f-d0a626150a7d",
+      "createTime": "2023-04-13T17:37:33.091Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataflow",
+      "id": "2b3c8831-44c8-498e-9954-f6097eff5ac0",
+      "createTime": "2023-04-13T17:37:33.089Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datacatalog",
+      "id": "942c65c4-202f-4b51-8fa9-339de4f9917f",
+      "createTime": "2023-04-13T17:37:33.087Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-data-fusion",
+      "id": "de55016e-58d6-4a09-aa3c-8e0cc602b372",
+      "createTime": "2023-04-13T17:37:33.086Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-containeranalysis",
+      "id": "20d62f16-1dfc-4458-a1fd-761e047099ae",
+      "createTime": "2023-04-13T17:37:33.084Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "2240b105-3e33-4a6e-87e4-b5745e2b9e74",
+      "createTime": "2023-04-13T17:37:33.083Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudcommerceconsumerprocurement",
+      "id": "0acd33fb-a42f-433a-a8ef-f9a664c8b26e",
+      "createTime": "2023-04-13T17:37:33.081Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "f9e8d209-2052-4c4f-a432-259226de24b7",
+      "createTime": "2023-04-13T17:37:33.080Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "d78349b5-1397-4226-accb-0d7726920878",
+      "createTime": "2023-04-13T17:37:33.079Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-certificate-manager",
+      "id": "431d446e-d2ff-4924-a87b-0030a9a4fafe",
+      "createTime": "2023-04-13T17:37:33.077Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-binary-authorization",
+      "id": "8f36da12-c6f1-447a-a128-723abfc3f28a",
+      "createTime": "2023-04-13T17:37:33.076Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billingbudgets",
+      "id": "7297bece-6fb8-4804-8beb-987d85ea8298",
+      "createTime": "2023-04-13T17:37:33.075Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "d2723b94-815c-403b-95a4-63f316190a24",
+      "createTime": "2023-04-13T17:37:33.072Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryreservation",
+      "id": "079bebb0-13ac-4464-8037-b6528b2b15cd",
+      "createTime": "2023-04-13T17:37:33.071Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerymigration",
+      "id": "99bcc0e2-6eaa-479a-8667-cacabe8b2a92",
+      "createTime": "2023-04-13T17:37:33.070Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatatransfer",
+      "id": "af890023-15d7-4a2e-9e94-9656f4cec867",
+      "createTime": "2023-04-13T17:37:33.069Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatapolicy",
+      "id": "9bd00832-12f8-4664-b851-58c29ee21503",
+      "createTime": "2023-04-13T17:37:33.068Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryconnection",
+      "id": "7bdc6d14-82cb-4975-aacf-ba48beb41861",
+      "createTime": "2023-04-13T17:37:33.066Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-data-exchange",
+      "id": "acd404b4-d9a0-4f21-bb0f-3a1394353354",
+      "createTime": "2023-04-13T17:37:33.065Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-clientgateways",
+      "id": "5060650d-c74d-4e3d-86f7-d7bad3e722d0",
+      "createTime": "2023-04-13T17:37:33.063Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-clientconnectorservices",
+      "id": "424b6eab-7c2d-431f-8e8d-5b277a20d3f3",
+      "createTime": "2023-04-13T17:37:33.062Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-appgateways",
+      "id": "dde27168-3f7f-4989-8960-3d50c200343d",
+      "createTime": "2023-04-13T17:37:33.060Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-appconnectors",
+      "id": "cc5095f7-76ca-42c5-9a44-9efe14369d91",
+      "createTime": "2023-04-13T17:37:33.059Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-beyondcorp-appconnections",
+      "id": "bf166cfc-e29a-4ad4-aae6-6f776e2c6de8",
+      "createTime": "2023-04-13T17:37:33.058Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "bf536a2c-a0c1-4cd1-aa77-4eccaa2f9975",
+      "createTime": "2023-04-13T17:37:33.057Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bare-metal-solution",
+      "id": "7ff519e5-1a1b-4dba-a00f-ed563967d2cc",
+      "createTime": "2023-04-13T17:37:33.056Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-automl",
+      "id": "31a71cbc-6536-460a-b7f6-7a914c422819",
+      "createTime": "2023-04-13T17:37:33.055Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-assured-workloads",
+      "id": "1cdfdfac-546f-408c-af96-418656e42655",
+      "createTime": "2023-04-13T17:37:33.054Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-artifact-registry",
+      "id": "e00b87f5-4034-45f9-b144-69ab44ef07b7",
+      "createTime": "2023-04-13T17:37:33.051Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.area120:google-area120-tables",
+      "id": "e8f1c5fb-3dd0-44af-a04d-481b293483c1",
+      "createTime": "2023-04-13T17:37:33.050Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apikeys",
+      "id": "06565e0e-ef9e-47cb-9a05-81ac5769b16b",
+      "createTime": "2023-04-13T17:37:33.049Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apigee-registry",
+      "id": "ba1319ed-2480-46dd-84f4-3b57601fb8fa",
+      "createTime": "2023-04-13T17:37:33.048Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apigee-connect",
+      "id": "74a596e2-4060-401d-afde-94ee9ac4fe7e",
+      "createTime": "2023-04-13T17:37:33.047Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-api-gateway",
+      "id": "9a99add4-44eb-48b0-b916-a569fb779837",
+      "createTime": "2023-04-13T17:37:33.045Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-analyticshub",
+      "id": "612348cc-d183-4c13-b041-66841fe76e8a",
+      "createTime": "2023-04-13T17:37:33.044Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-data",
+      "id": "18836a70-1e4f-441f-b970-92310aedb0d3",
+      "createTime": "2023-04-13T17:37:33.043Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "dd35fa9f-d2a2-4809-b119-5a9454dd6cb3",
+      "createTime": "2023-04-13T17:37:33.042Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "36970879-165f-4569-9b48-69a63c15f01d",
+      "createTime": "2023-04-13T17:37:33.041Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-advisorynotifications",
+      "id": "0104dac3-b382-494e-9c89-caf789838e0b",
+      "createTime": "2023-04-13T17:37:33.040Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-identity-accesscontextmanager",
+      "id": "31706281-9b1f-4496-9641-8bf5a99fd046",
+      "createTime": "2023-04-13T17:37:33.037Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-accessapproval",
+      "id": "b708cb63-98ea-40aa-9772-c6dd5cd905e4",
+      "createTime": "2023-04-13T17:37:33.036Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "30a8c33ac1ef00596fa08ccc37847f2ea65f1cbd",
+          "message": "[retail] add merchant center link service",
+          "issues": [
+            "9328"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-retail",
+      "id": "e6212b35-2eb1-491a-a2c1-4a9af1dfa497",
+      "createTime": "2023-04-13T17:37:33.035Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "b7d1d45761cb6eb9a1d8ad331a2e2adceda384b1",
+          "message": "[maps-addressvalidation] Update some Address Validation API proto descriptions to improve clarity",
+          "issues": [
+            "9327"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-addressvalidation",
+      "id": "34493bcb-eb1f-4a40-be7f-2d2184b272a8",
+      "createTime": "2023-04-13T17:37:33.033Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7275b365e6b4063939649db531c5dda15171255",
+          "message": "add php, csharp, ruby client library API support",
+          "issues": [
+            "9310"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contentwarehouse",
+      "id": "60aa1bf9-fd03-47e2-ba3b-023fbdfc1bc4",
+      "createTime": "2023-04-13T17:37:33.032Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "98cfd14b5022a4a7adf3ff5453dcc59b438d6e41",
+          "message": "[appengine] point to Search Console for domain ownership verification",
+          "issues": [
+            "9302"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-appengine-admin",
+      "id": "12e589db-950d-4533-b435-df916fefacec",
+      "createTime": "2023-04-13T17:37:33.031Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e8cd90c11ac336b819a40f645aa0f306b3214864",
+          "message": "[container] Add support for updating additional pod IPv4 ranges for Standard and Autopilot clusters",
+          "issues": [
+            "9303"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "fd0fd5f7-ae11-488e-9f54-21c4f64fbbe7",
+      "createTime": "2023-04-13T17:37:33.030Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1e500627a9b05313ae66d94c2ac0770eb5ce5182",
+          "message": "[cloudasset] Add client library support for AssetService v1 AnalyzeOrgPolicies API",
+          "issues": [
+            "9296"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-asset",
+      "id": "24e35cb4-ff46-458a-a7e7-974da9fdea4c",
+      "createTime": "2023-04-13T17:37:33.029Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "30618bd6db6f6b0cb7c22914e699388344509fbe",
+          "message": "[aiplatform] add notification_channels in aiplatform v1beta1 model_monitoring.proto",
+          "issues": [
+            "9295"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "1bedd744-099b-4256-8a60-ce6706a4f559",
+      "createTime": "2023-04-13T17:37:33.028Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "287315c2bb62b05b7e8d0ffd40333131f4a3c7b2",
+          "message": "[securitycenter] released securitycenter/v1 SHA custom modules cloud libraries: Create, Get, List, Update, Delete",
+          "issues": [
+            "9331"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "70b3bfe2-37e7-4e79-9223-e0593cf05572",
+      "createTime": "2023-04-13T17:37:33.023Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "87dc1fcceb23e0245b59648c986aa5b086539cc4",
+          "message": "[privateca] added ignore_dependent_resources to DeleteCaPoolRequest, DeleteCertificateAuthorityRequest, DisableCertificateAuthorityRequest",
+          "issues": [
+            "9317"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-security-private-ca",
+      "id": "4df4d183-d5fd-424a-a007-42c7d713d9b3",
+      "createTime": "2023-04-13T17:37:33.022Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9dade7a7c212cc31e5cc4723935fcf7e71706131",
+          "message": "[contactcenterinsights] Launch UploadConversation endpoint",
+          "issues": [
+            "9319"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "136eecde-4e74-4c5f-9096-42dfd17374ad",
+      "createTime": "2023-04-13T17:37:33.021Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "4b824ccf54704ac7223dcfa6fb3d16e5bdc41672",
+          "message": "[confidentialcomputing] new module for confidentialcomputing",
+          "issues": [
+            "9335"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-confidentialcomputing",
+      "id": "59cc0749-8d0d-4d8e-9c05-290a45326280",
+      "createTime": "2023-04-13T17:37:33.020Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "121a9a91b6c1451b41ab4efba96f0ea538d23fe3",
+          "message": "[containeranalysis] add enum for grafeas v1 cvss to support both cvss v2 and v3",
+          "issues": [
+            "9341"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "io.grafeas:grafeas",
+      "id": "eb8ee185-2ca2-4a17-a03b-f9e9f40ea307",
+      "createTime": "2023-04-13T17:37:33.019Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1f6ad2fd3fec18c82b2b107bd12be65919a49405",
+          "message": "[transcoder] add support for batch processing mode",
+          "issues": [
+            "9339"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-transcoder",
+      "id": "c75045f9-d06b-4066-bd1f-19cd7b62ea23",
+      "createTime": "2023-04-13T17:37:33.017Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "cb475f3ba6711eefeb2b5fe408abb63fbacba0e0",
+          "message": "[workstations] Adjust wording around service accounts and control planes",
+          "issues": [
+            "9321"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "b6fc2ba5-40bd-4901-8694-51be4e393aff",
+      "createTime": "2023-04-13T17:37:33.016Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "af5fdfc854a42d851d66976b18ade44e34605986",
+          "message": "[biglake] add BigQuery BigLake v1 API",
+          "issues": [
+            "9318"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
+          "message": "README.md to have Libraries BOM usage guide",
+          "issues": [
+            "9301"
+          ]
+        }
+      ],
+      "version": "1.9.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-biglake",
+      "id": "1c51acae-29ca-4d30-8082-d05f5737fc7e",
+      "createTime": "2023-04-13T17:37:33.014Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "3c73dee1834ae21fc6dc1b6d4638ba6c0b7d4715",
           "message": "[advisorynotifications] updating Cloud Client Libraries with new field NotificationType for advisorynotifications.googleapis.com",
           "issues": [
@@ -3466,5 +7052,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-03-30T15:24:12.890Z"
+  "updateTime": "2023-05-10T18:30:04.129Z"
 }

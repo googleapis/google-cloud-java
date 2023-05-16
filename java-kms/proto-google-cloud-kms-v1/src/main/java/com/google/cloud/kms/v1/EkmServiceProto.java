@@ -71,6 +71,14 @@ public final class EkmServiceProto {
       internal_static_google_cloud_kms_v1_EkmConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_kms_v1_EkmConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -141,7 +149,10 @@ public final class EkmServiceProto {
           + "n\030\002 \001(\tB-\340A\001\372A\'\n%cloudkms.googleapis.com"
           + "/EkmConnection:Y\352AV\n!cloudkms.googleapis"
           + ".com/EkmConfig\0221projects/{project}/locat"
-          + "ions/{location}/ekmConfig2\216\n\n\nEkmService"
+          + "ions/{location}/ekmConfig\"X\n\031VerifyConne"
+          + "ctivityRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%cl"
+          + "oudkms.googleapis.com/EkmConnection\"\034\n\032V"
+          + "erifyConnectivityResponse2\334\013\n\nEkmService"
           + "\022\272\001\n\022ListEkmConnections\022..google.cloud.k"
           + "ms.v1.ListEkmConnectionsRequest\032/.google"
           + ".cloud.kms.v1.ListEkmConnectionsResponse"
@@ -171,16 +182,21 @@ public final class EkmServiceProto {
           + ".cloud.kms.v1.EkmConfig\"c\202\323\344\223\002D26/v1/{ek"
           + "m_config.name=projects/*/locations/*/ekm"
           + "Config}:\nekm_config\332A\026ekm_config,update_"
-          + "mask\032t\312A\027cloudkms.googleapis.com\322AWhttps"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/cloudk"
-          + "msB\205\002\n\027com.google.cloud.kms.v1B\017EkmServi"
-          + "ceProtoP\001Z)cloud.google.com/go/kms/apiv1"
-          + "/kmspb;kmspb\370\001\001\252\002\023Google.Cloud.Kms.V1\312\002\023"
-          + "Google\\Cloud\\Kms\\V1\352A|\n\'servicedirectory"
-          + ".googleapis.com/Service\022Qprojects/{proje"
-          + "ct}/locations/{location}/namespaces/{nam"
-          + "espace}/services/{service}b\006proto3"
+          + "mask\022\313\001\n\022VerifyConnectivity\022..google.clo"
+          + "ud.kms.v1.VerifyConnectivityRequest\032/.go"
+          + "ogle.cloud.kms.v1.VerifyConnectivityResp"
+          + "onse\"T\202\323\344\223\002G\022E/v1/{name=projects/*/locat"
+          + "ions/*/ekmConnections/*}:verifyConnectiv"
+          + "ity\332A\004name\032t\312A\027cloudkms.googleapis.com\322A"
+          + "Whttps://www.googleapis.com/auth/cloud-p"
+          + "latform,https://www.googleapis.com/auth/"
+          + "cloudkmsB\205\002\n\027com.google.cloud.kms.v1B\017Ek"
+          + "mServiceProtoP\001Z)cloud.google.com/go/kms"
+          + "/apiv1/kmspb;kmspb\370\001\001\252\002\023Google.Cloud.Kms"
+          + ".V1\312\002\023Google\\Cloud\\Kms\\V1\352A|\n\'servicedir"
+          + "ectory.googleapis.com/Service\022Qprojects/"
+          + "{project}/locations/{location}/namespace"
+          + "s/{namespace}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -294,6 +310,20 @@ public final class EkmServiceProto {
             new java.lang.String[] {
               "Name", "DefaultEkmConnection",
             });
+    internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_VerifyConnectivityRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_kms_v1_VerifyConnectivityResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

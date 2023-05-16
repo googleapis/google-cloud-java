@@ -89,13 +89,13 @@ public final class YumArtifactProto {
           + "1.YumArtifact\022P\n\006errors\030\002 \003(\0132@.google.d"
           + "evtools.artifactregistry.v1.ImportYumArt"
           + "ifactsErrorInfo\"\034\n\032ImportYumArtifactsMet"
-          + "adataB\376\001\n\'com.google.devtools.artifactre"
-          + "gistry.v1B\020YumArtifactProtoP\001ZSgoogle.go"
-          + "lang.org/genproto/googleapis/devtools/ar"
-          + "tifactregistry/v1;artifactregistry\252\002 Goo"
-          + "gle.Cloud.ArtifactRegistry.V1\312\002 Google\\C"
-          + "loud\\ArtifactRegistry\\V1\352\002#Google::Cloud"
-          + "::ArtifactRegistry::V1b\006proto3"
+          + "adataB\373\001\n\'com.google.devtools.artifactre"
+          + "gistry.v1B\020YumArtifactProtoP\001ZPcloud.goo"
+          + "gle.com/go/artifactregistry/apiv1/artifa"
+          + "ctregistrypb;artifactregistrypb\252\002 Google"
+          + ".Cloud.ArtifactRegistry.V1\312\002 Google\\Clou"
+          + "d\\ArtifactRegistry\\V1\352\002#Google::Cloud::A"
+          + "rtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

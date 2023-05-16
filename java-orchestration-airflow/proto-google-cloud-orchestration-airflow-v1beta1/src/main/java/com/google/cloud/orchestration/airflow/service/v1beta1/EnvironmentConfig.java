@@ -41,6 +41,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     gkeCluster_ = "";
     dagGcsPrefix_ = "";
     airflowUri_ = "";
+    airflowByoidUri_ = "";
     environmentSize_ = 0;
   }
 
@@ -804,6 +805,65 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int AIRFLOW_BYOID_URI_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object airflowByoidUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The 'bring your own identity' variant of the URI of the Apache
+   * Airflow Web UI hosted within this environment, to be accessed with external
+   * identities using workforce identity federation (see [Access environments
+   * with workforce identity
+   * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+   * </pre>
+   *
+   * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The airflowByoidUri.
+   */
+  @java.lang.Override
+  public java.lang.String getAirflowByoidUri() {
+    java.lang.Object ref = airflowByoidUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      airflowByoidUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The 'bring your own identity' variant of the URI of the Apache
+   * Airflow Web UI hosted within this environment, to be accessed with external
+   * identities using workforce identity federation (see [Access environments
+   * with workforce identity
+   * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+   * </pre>
+   *
+   * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for airflowByoidUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAirflowByoidUriBytes() {
+    java.lang.Object ref = airflowByoidUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      airflowByoidUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 12;
   private com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig encryptionConfig_;
   /**
@@ -1281,6 +1341,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     if (recoveryConfig_ != null) {
       output.writeMessage(18, getRecoveryConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowByoidUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, airflowByoidUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1347,6 +1410,9 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     if (recoveryConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getRecoveryConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(airflowByoidUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, airflowByoidUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1394,6 +1460,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (!getWebServerConfig().equals(other.getWebServerConfig())) return false;
     }
     if (!getAirflowUri().equals(other.getAirflowUri())) return false;
+    if (!getAirflowByoidUri().equals(other.getAirflowByoidUri())) return false;
     if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
     if (hasEncryptionConfig()) {
       if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
@@ -1460,6 +1527,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + AIRFLOW_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAirflowUri().hashCode();
+    hash = (37 * hash) + AIRFLOW_BYOID_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getAirflowByoidUri().hashCode();
     if (hasEncryptionConfig()) {
       hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionConfig().hashCode();
@@ -1659,6 +1728,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         webServerConfigBuilder_ = null;
       }
       airflowUri_ = "";
+      airflowByoidUri_ = "";
       encryptionConfig_ = null;
       if (encryptionConfigBuilder_ != null) {
         encryptionConfigBuilder_.dispose();
@@ -1765,29 +1835,32 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         result.airflowUri_ = airflowUri_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.airflowByoidUri_ = airflowByoidUri_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.encryptionConfig_ =
             encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.maintenanceWindow_ =
             maintenanceWindowBuilder_ == null
                 ? maintenanceWindow_
                 : maintenanceWindowBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.workloadsConfig_ =
             workloadsConfigBuilder_ == null ? workloadsConfig_ : workloadsConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.environmentSize_ = environmentSize_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.masterAuthorizedNetworksConfig_ =
             masterAuthorizedNetworksConfigBuilder_ == null
                 ? masterAuthorizedNetworksConfig_
                 : masterAuthorizedNetworksConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.recoveryConfig_ =
             recoveryConfigBuilder_ == null ? recoveryConfig_ : recoveryConfigBuilder_.build();
       }
@@ -1877,6 +1950,11 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (!other.getAirflowUri().isEmpty()) {
         airflowUri_ = other.airflowUri_;
         bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getAirflowByoidUri().isEmpty()) {
+        airflowByoidUri_ = other.airflowByoidUri_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasEncryptionConfig()) {
@@ -1989,26 +2067,26 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getMaintenanceWindowFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 122:
               {
                 input.readMessage(getWorkloadsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 128:
               {
                 environmentSize_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 128
             case 138:
@@ -2016,15 +2094,21 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
                 input.readMessage(
                     getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getRecoveryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 146
+            case 170:
+              {
+                airflowByoidUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3766,6 +3850,132 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private java.lang.Object airflowByoidUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The 'bring your own identity' variant of the URI of the Apache
+     * Airflow Web UI hosted within this environment, to be accessed with external
+     * identities using workforce identity federation (see [Access environments
+     * with workforce identity
+     * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+     * </pre>
+     *
+     * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The airflowByoidUri.
+     */
+    public java.lang.String getAirflowByoidUri() {
+      java.lang.Object ref = airflowByoidUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        airflowByoidUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The 'bring your own identity' variant of the URI of the Apache
+     * Airflow Web UI hosted within this environment, to be accessed with external
+     * identities using workforce identity federation (see [Access environments
+     * with workforce identity
+     * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+     * </pre>
+     *
+     * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for airflowByoidUri.
+     */
+    public com.google.protobuf.ByteString getAirflowByoidUriBytes() {
+      java.lang.Object ref = airflowByoidUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        airflowByoidUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The 'bring your own identity' variant of the URI of the Apache
+     * Airflow Web UI hosted within this environment, to be accessed with external
+     * identities using workforce identity federation (see [Access environments
+     * with workforce identity
+     * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+     * </pre>
+     *
+     * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The airflowByoidUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAirflowByoidUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      airflowByoidUri_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The 'bring your own identity' variant of the URI of the Apache
+     * Airflow Web UI hosted within this environment, to be accessed with external
+     * identities using workforce identity federation (see [Access environments
+     * with workforce identity
+     * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+     * </pre>
+     *
+     * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAirflowByoidUri() {
+      airflowByoidUri_ = getDefaultInstance().getAirflowByoidUri();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The 'bring your own identity' variant of the URI of the Apache
+     * Airflow Web UI hosted within this environment, to be accessed with external
+     * identities using workforce identity federation (see [Access environments
+     * with workforce identity
+     * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+     * </pre>
+     *
+     * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for airflowByoidUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAirflowByoidUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      airflowByoidUri_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig
         encryptionConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3788,7 +3998,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3837,7 +4047,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         encryptionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3861,7 +4071,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         encryptionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3880,7 +4090,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeEncryptionConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig value) {
       if (encryptionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && encryptionConfig_ != null
             && encryptionConfig_
                 != com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig
@@ -3892,7 +4102,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         encryptionConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3909,7 +4119,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearEncryptionConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       encryptionConfig_ = null;
       if (encryptionConfigBuilder_ != null) {
         encryptionConfigBuilder_.dispose();
@@ -3932,7 +4142,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig.Builder
         getEncryptionConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
@@ -4019,7 +4229,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the maintenanceWindow field is set.
      */
     public boolean hasMaintenanceWindow() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4086,7 +4296,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         maintenanceWindowBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4119,7 +4329,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         maintenanceWindowBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4147,7 +4357,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeMaintenanceWindow(
         com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow value) {
       if (maintenanceWindowBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && maintenanceWindow_ != null
             && maintenanceWindow_
                 != com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow
@@ -4159,7 +4369,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         maintenanceWindowBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4185,7 +4395,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearMaintenanceWindow() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       maintenanceWindow_ = null;
       if (maintenanceWindowBuilder_ != null) {
         maintenanceWindowBuilder_.dispose();
@@ -4217,7 +4427,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow.Builder
         getMaintenanceWindowBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getMaintenanceWindowFieldBuilder().getBuilder();
     }
@@ -4315,7 +4525,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the workloadsConfig field is set.
      */
     public boolean hasWorkloadsConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4370,7 +4580,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         workloadsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4397,7 +4607,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         workloadsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4419,7 +4629,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeWorkloadsConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig value) {
       if (workloadsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && workloadsConfig_ != null
             && workloadsConfig_
                 != com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig
@@ -4431,7 +4641,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         workloadsConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4451,7 +4661,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearWorkloadsConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       workloadsConfig_ = null;
       if (workloadsConfigBuilder_ != null) {
         workloadsConfigBuilder_.dispose();
@@ -4477,7 +4687,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.Builder
         getWorkloadsConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getWorkloadsConfigFieldBuilder().getBuilder();
     }
@@ -4577,7 +4787,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder setEnvironmentSizeValue(int value) {
       environmentSize_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4630,7 +4840,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       environmentSize_ = value.getNumber();
       onChanged();
       return this;
@@ -4651,7 +4861,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnvironmentSize() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       environmentSize_ = 0;
       onChanged();
       return this;
@@ -4684,7 +4894,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the masterAuthorizedNetworksConfig field is set.
      */
     public boolean hasMasterAuthorizedNetworksConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4740,7 +4950,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         masterAuthorizedNetworksConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4768,7 +4978,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         masterAuthorizedNetworksConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4791,7 +5001,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
             value) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && masterAuthorizedNetworksConfig_ != null
             && masterAuthorizedNetworksConfig_
                 != com.google.cloud.orchestration.airflow.service.v1beta1
@@ -4803,7 +5013,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         masterAuthorizedNetworksConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4823,7 +5033,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearMasterAuthorizedNetworksConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       masterAuthorizedNetworksConfig_ = null;
       if (masterAuthorizedNetworksConfigBuilder_ != null) {
         masterAuthorizedNetworksConfigBuilder_.dispose();
@@ -4850,7 +5060,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
             .Builder
         getMasterAuthorizedNetworksConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
     }
@@ -4940,7 +5150,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the recoveryConfig field is set.
      */
     public boolean hasRecoveryConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4991,7 +5201,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         recoveryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5016,7 +5226,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         recoveryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5036,7 +5246,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeRecoveryConfig(
         com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig value) {
       if (recoveryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && recoveryConfig_ != null
             && recoveryConfig_
                 != com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig
@@ -5048,7 +5258,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         recoveryConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5066,7 +5276,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRecoveryConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       recoveryConfig_ = null;
       if (recoveryConfigBuilder_ != null) {
         recoveryConfigBuilder_.dispose();
@@ -5090,7 +5300,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder
         getRecoveryConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getRecoveryConfigFieldBuilder().getBuilder();
     }

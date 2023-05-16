@@ -84,13 +84,13 @@ public final class TagProto {
           + "g\030\001 \001(\0132(.google.devtools.artifactregist"
           + "ry.v1.Tag\022/\n\013update_mask\030\002 \001(\0132\032.google."
           + "protobuf.FieldMask\" \n\020DeleteTagRequest\022\014"
-          + "\n\004name\030\001 \001(\tB\366\001\n\'com.google.devtools.art"
-          + "ifactregistry.v1B\010TagProtoP\001ZSgoogle.gol"
-          + "ang.org/genproto/googleapis/devtools/art"
-          + "ifactregistry/v1;artifactregistry\252\002 Goog"
-          + "le.Cloud.ArtifactRegistry.V1\312\002 Google\\Cl"
-          + "oud\\ArtifactRegistry\\V1\352\002#Google::Cloud:"
-          + ":ArtifactRegistry::V1b\006proto3"
+          + "\n\004name\030\001 \001(\tB\363\001\n\'com.google.devtools.art"
+          + "ifactregistry.v1B\010TagProtoP\001ZPcloud.goog"
+          + "le.com/go/artifactregistry/apiv1/artifac"
+          + "tregistrypb;artifactregistrypb\252\002 Google."
+          + "Cloud.ArtifactRegistry.V1\312\002 Google\\Cloud"
+          + "\\ArtifactRegistry\\V1\352\002#Google::Cloud::Ar"
+          + "tifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

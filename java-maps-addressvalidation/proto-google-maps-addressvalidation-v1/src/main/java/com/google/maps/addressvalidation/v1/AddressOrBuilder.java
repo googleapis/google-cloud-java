@@ -54,7 +54,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * The validated address represented as a postal address.
+   * The post-processed address represented as a postal address.
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 3;</code>
@@ -66,7 +66,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * The validated address represented as a postal address.
+   * The post-processed address represented as a postal address.
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 3;</code>
@@ -78,7 +78,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * The validated address represented as a postal address.
+   * The post-processed address represented as a postal address.
    * </pre>
    *
    * <code>.google.type.PostalAddress postal_address = 3;</code>

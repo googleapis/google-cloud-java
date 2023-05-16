@@ -98,4 +98,19 @@ public interface DeleteMembershipRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, any subresource from this Membership will also be
+   * deleted. Otherwise, the request will only work if the Membership has no
+   * subresource.
+   * </pre>
+   *
+   * <code>bool force = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

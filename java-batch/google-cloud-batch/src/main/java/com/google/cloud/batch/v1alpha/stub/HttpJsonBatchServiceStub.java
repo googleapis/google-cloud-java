@@ -208,6 +208,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             ProtoRestSerializer<ListJobsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -278,6 +279,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             ProtoRestSerializer<ListTasksRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -423,16 +425,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
             callableFactory,
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
-                .put(
-                    "google.longrunning.Operations.CancelOperation",
-                    HttpRule.newBuilder()
-                        .setPost("/v1alpha/{name=projects/*/locations/*/operations/*}:cancel")
-                        .build())
-                .put(
-                    "google.longrunning.Operations.DeleteOperation",
-                    HttpRule.newBuilder()
-                        .setDelete("/v1alpha/{name=projects/*/locations/*/operations/*}")
-                        .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()

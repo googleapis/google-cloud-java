@@ -43,13 +43,13 @@ public final class LogsPanelProto {
       "\n/google/monitoring/dashboard/v1/logs_pa"
           + "nel.proto\022\036google.monitoring.dashboard.v"
           + "1\"3\n\tLogsPanel\022\016\n\006filter\030\001 \001(\t\022\026\n\016resour"
-          + "ce_names\030\002 \003(\tB\370\001\n\"com.google.monitoring"
-          + ".dashboard.v1B\016LogsPanelProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/dashboard/v1;dashboard\252\002$Google.Cloud."
-          + "Monitoring.Dashboard.V1\312\002$Google\\Cloud\\M"
-          + "onitoring\\Dashboard\\V1\352\002(Google::Cloud::"
-          + "Monitoring::Dashboard::V1b\006proto3"
+          + "ce_names\030\002 \003(\tB\367\001\n\"com.google.monitoring"
+          + ".dashboard.v1B\016LogsPanelProtoP\001ZFcloud.g"
+          + "oogle.com/go/monitoring/dashboard/apiv1/"
+          + "dashboardpb;dashboardpb\252\002$Google.Cloud.M"
+          + "onitoring.Dashboard.V1\312\002$Google\\Cloud\\Mo"
+          + "nitoring\\Dashboard\\V1\352\002(Google::Cloud::M"
+          + "onitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

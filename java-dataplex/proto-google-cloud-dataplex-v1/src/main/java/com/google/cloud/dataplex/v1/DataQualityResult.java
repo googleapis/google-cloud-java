@@ -94,7 +94,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -108,7 +108,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -122,7 +122,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -135,7 +135,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -148,7 +148,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -906,7 +906,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -923,7 +923,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -939,7 +939,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -955,7 +955,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -978,7 +978,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -999,7 +999,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1021,7 +1021,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1044,7 +1044,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1064,7 +1064,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1085,7 +1085,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1106,7 +1106,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1125,7 +1125,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1144,7 +1144,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1157,7 +1157,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1174,7 +1174,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1192,7 +1192,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1205,7 +1205,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -1220,7 +1220,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension-level.
+     * A list of results at the dimension level.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>

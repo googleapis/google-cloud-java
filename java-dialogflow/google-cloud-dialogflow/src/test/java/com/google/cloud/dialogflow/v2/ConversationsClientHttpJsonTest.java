@@ -38,6 +38,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -813,6 +814,81 @@ public class ConversationsClientHttpJsonTest {
     try {
       String conversation = "projects/project-5228/conversations/conversation-5228";
       client.suggestConversationSummary(conversation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateStatelessSummaryTest() throws Exception {
+    GenerateStatelessSummaryResponse expectedResponse =
+        GenerateStatelessSummaryResponse.newBuilder()
+            .setSummary(GenerateStatelessSummaryResponse.Summary.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GenerateStatelessSummaryRequest request =
+        GenerateStatelessSummaryRequest.newBuilder()
+            .setStatelessConversation(
+                GenerateStatelessSummaryRequest.MinimalConversation.newBuilder()
+                    .addAllMessages(new ArrayList<Message>())
+                    .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+                    .build())
+            .setConversationProfile(ConversationProfile.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setMaxContextSize(-1134084212)
+            .build();
+
+    GenerateStatelessSummaryResponse actualResponse = client.generateStatelessSummary(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateStatelessSummaryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GenerateStatelessSummaryRequest request =
+          GenerateStatelessSummaryRequest.newBuilder()
+              .setStatelessConversation(
+                  GenerateStatelessSummaryRequest.MinimalConversation.newBuilder()
+                      .addAllMessages(new ArrayList<Message>())
+                      .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+                      .build())
+              .setConversationProfile(ConversationProfile.newBuilder().build())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .setMaxContextSize(-1134084212)
+              .build();
+      client.generateStatelessSummary(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

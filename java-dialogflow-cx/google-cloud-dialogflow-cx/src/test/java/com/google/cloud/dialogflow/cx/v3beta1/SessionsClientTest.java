@@ -160,7 +160,9 @@ public class SessionsClientTest {
   @Test
   public void streamingDetectIntentTest() throws Exception {
     StreamingDetectIntentResponse expectedResponse =
-        StreamingDetectIntentResponse.newBuilder().build();
+        StreamingDetectIntentResponse.newBuilder()
+            .setDebuggingInfo(CloudConversationDebuggingInfo.newBuilder().build())
+            .build();
     mockSessions.addResponse(expectedResponse);
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
@@ -172,6 +174,7 @@ public class SessionsClientTest {
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .setEnablePartialResponse(true)
+            .setEnableDebuggingInfo(true)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -203,6 +206,7 @@ public class SessionsClientTest {
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .setEnablePartialResponse(true)
+            .setEnableDebuggingInfo(true)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();

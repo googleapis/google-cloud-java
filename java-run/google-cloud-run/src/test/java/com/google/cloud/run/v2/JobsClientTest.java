@@ -124,6 +124,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -198,6 +199,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -272,6 +274,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockJobs.addResponse(expectedResponse);
@@ -332,6 +335,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockJobs.addResponse(expectedResponse);
@@ -480,6 +484,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -548,6 +553,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -616,6 +622,7 @@ public class JobsClientTest {
             .setExecutionCount(1646136616)
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -687,6 +694,7 @@ public class JobsClientTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -758,6 +766,7 @@ public class JobsClientTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

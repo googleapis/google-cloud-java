@@ -901,8 +901,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the JPEG image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+     * Required. URI of the image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -914,8 +914,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the JPEG image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+     * Required. URI of the image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -987,7 +987,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Overlaid jpeg image.
+   * Overlaid image.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.Overlay.Image}
@@ -1040,8 +1040,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the JPEG image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+     * Required. URI of the image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1064,8 +1064,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URI of the JPEG image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+     * Required. URI of the image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1355,7 +1355,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Overlaid jpeg image.
+     * Overlaid image.
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.transcoder.v1.Overlay.Image}
@@ -1573,8 +1573,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. URI of the JPEG image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+       * Required. URI of the image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1596,8 +1596,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. URI of the JPEG image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+       * Required. URI of the image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1619,8 +1619,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. URI of the JPEG image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+       * Required. URI of the image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1641,8 +1641,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. URI of the JPEG image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+       * Required. URI of the image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1659,8 +1659,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. URI of the JPEG image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+       * Required. URI of the image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

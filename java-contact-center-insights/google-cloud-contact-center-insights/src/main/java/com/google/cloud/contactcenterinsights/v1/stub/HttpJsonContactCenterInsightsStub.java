@@ -101,6 +101,8 @@ import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
+import com.google.cloud.contactcenterinsights.v1.UploadConversationMetadata;
+import com.google.cloud.contactcenterinsights.v1.UploadConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.View;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -129,6 +131,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           .add(Analysis.getDescriptor())
           .add(IngestConversationsResponse.getDescriptor())
           .add(CreateIssueModelMetadata.getDescriptor())
+          .add(UploadConversationMetadata.getDescriptor())
           .add(ExportInsightsDataMetadata.getDescriptor())
           .add(IssueModel.getDescriptor())
           .add(IngestConversationsMetadata.getDescriptor())
@@ -137,6 +140,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           .add(CreateAnalysisOperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(BulkAnalyzeConversationsMetadata.getDescriptor())
+          .add(Conversation.getDescriptor())
           .add(ExportInsightsDataResponse.getDescriptor())
           .add(UndeployIssueModelResponse.getDescriptor())
           .add(UndeployIssueModelMetadata.getDescriptor())
@@ -181,6 +185,47 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setDefaultInstance(Conversation.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UploadConversationRequest, Operation>
+      uploadConversationMethodDescriptor =
+          ApiMethodDescriptor.<UploadConversationRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UploadConversation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UploadConversationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/conversations:upload",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UploadConversationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UploadConversationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UploadConversationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<UpdateConversationRequest, Conversation>
@@ -1528,6 +1573,10 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           .build();
 
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
+  private final UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable;
+  private final OperationCallable<
+          UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationCallable;
   private final UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable;
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsResponse>
@@ -1675,6 +1724,11 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                 .setMethodDescriptor(createConversationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<UploadConversationRequest, Operation> uploadConversationTransportSettings =
+        HttpJsonCallSettings.<UploadConversationRequest, Operation>newBuilder()
+            .setMethodDescriptor(uploadConversationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<UpdateConversationRequest, Conversation>
         updateConversationTransportSettings =
             HttpJsonCallSettings.<UpdateConversationRequest, Conversation>newBuilder()
@@ -1872,6 +1926,17 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
             createConversationTransportSettings,
             settings.createConversationSettings(),
             clientContext);
+    this.uploadConversationCallable =
+        callableFactory.createUnaryCallable(
+            uploadConversationTransportSettings,
+            settings.uploadConversationSettings(),
+            clientContext);
+    this.uploadConversationOperationCallable =
+        callableFactory.createOperationCallable(
+            uploadConversationTransportSettings,
+            settings.uploadConversationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.updateConversationCallable =
         callableFactory.createUnaryCallable(
             updateConversationTransportSettings,
@@ -2077,6 +2142,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createConversationMethodDescriptor);
+    methodDescriptors.add(uploadConversationMethodDescriptor);
     methodDescriptors.add(updateConversationMethodDescriptor);
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(listConversationsMethodDescriptor);
@@ -2123,6 +2189,17 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   @Override
   public UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable() {
     return createConversationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable() {
+    return uploadConversationCallable;
+  }
+
+  @Override
+  public OperationCallable<UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationCallable() {
+    return uploadConversationOperationCallable;
   }
 
   @Override

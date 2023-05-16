@@ -389,7 +389,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Immutable. A logical expression of ExpandedDataSet filters applied to
    * dimension included in the ExpandedDataSet. This filter is used to reduce
-   * the number of rows and thus the change of encountering `other row`.
+   * the number of rows and thus the chance of encountering `other` row.
    * </pre>
    *
    * <code>
@@ -408,7 +408,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Immutable. A logical expression of ExpandedDataSet filters applied to
    * dimension included in the ExpandedDataSet. This filter is used to reduce
-   * the number of rows and thus the change of encountering `other row`.
+   * the number of rows and thus the chance of encountering `other` row.
    * </pre>
    *
    * <code>
@@ -430,7 +430,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Immutable. A logical expression of ExpandedDataSet filters applied to
    * dimension included in the ExpandedDataSet. This filter is used to reduce
-   * the number of rows and thus the change of encountering `other row`.
+   * the number of rows and thus the chance of encountering `other` row.
    * </pre>
    *
    * <code>
@@ -1789,7 +1789,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1807,7 +1807,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1833,7 +1833,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1860,7 +1860,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1885,7 +1885,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1917,7 +1917,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1940,7 +1940,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1959,7 +1959,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>
@@ -1983,7 +1983,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Immutable. A logical expression of ExpandedDataSet filters applied to
      * dimension included in the ExpandedDataSet. This filter is used to reduce
-     * the number of rows and thus the change of encountering `other row`.
+     * the number of rows and thus the chance of encountering `other` row.
      * </pre>
      *
      * <code>

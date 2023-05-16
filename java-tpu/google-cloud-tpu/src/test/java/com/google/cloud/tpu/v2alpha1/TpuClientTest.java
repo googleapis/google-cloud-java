@@ -831,6 +831,7 @@ public class TpuClientTest {
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -873,6 +874,7 @@ public class TpuClientTest {
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -914,6 +916,7 @@ public class TpuClientTest {
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -971,6 +974,7 @@ public class TpuClientTest {
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1028,6 +1032,7 @@ public class TpuClientTest {
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1079,6 +1084,7 @@ public class TpuClientTest {
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

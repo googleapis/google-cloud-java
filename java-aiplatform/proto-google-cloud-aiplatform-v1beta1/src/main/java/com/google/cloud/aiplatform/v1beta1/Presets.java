@@ -83,7 +83,6 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * More precise neighbors as a trade-off against slower response.
-     * This is also the default value (field-number 0).
      * </pre>
      *
      * <code>PRECISE = 0;</code>
@@ -107,7 +106,6 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * More precise neighbors as a trade-off against slower response.
-     * This is also the default value (field-number 0).
      * </pre>
      *
      * <code>PRECISE = 0;</code>
@@ -391,7 +389,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset option controlling parameters for query speed-precision trade-off
+   * Preset option controlling parameters for speed-precision trade-off when
+   * querying for examples. If omitted, defaults to `PRECISE`.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -406,7 +405,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset option controlling parameters for query speed-precision trade-off
+   * Preset option controlling parameters for speed-precision trade-off when
+   * querying for examples. If omitted, defaults to `PRECISE`.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -421,7 +421,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset option controlling parameters for query speed-precision trade-off
+   * Preset option controlling parameters for speed-precision trade-off when
+   * querying for examples. If omitted, defaults to `PRECISE`.
    * </pre>
    *
    * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -441,7 +442,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset option controlling parameters for different modalities
+   * The modality of the uploaded model, which automatically configures the
+   * distance measurement and feature normalization for the underlying example
+   * index and queries. If your model does not precisely fit one of these types,
+   * it is okay to choose the closest type.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>
@@ -456,7 +460,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset option controlling parameters for different modalities
+   * The modality of the uploaded model, which automatically configures the
+   * distance measurement and feature normalization for the underlying example
+   * index and queries. If your model does not precisely fit one of these types,
+   * it is okay to choose the closest type.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>
@@ -848,7 +855,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for query speed-precision trade-off
+     * Preset option controlling parameters for speed-precision trade-off when
+     * querying for examples. If omitted, defaults to `PRECISE`.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -863,7 +871,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for query speed-precision trade-off
+     * Preset option controlling parameters for speed-precision trade-off when
+     * querying for examples. If omitted, defaults to `PRECISE`.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -878,7 +887,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for query speed-precision trade-off
+     * Preset option controlling parameters for speed-precision trade-off when
+     * querying for examples. If omitted, defaults to `PRECISE`.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -896,7 +906,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for query speed-precision trade-off
+     * Preset option controlling parameters for speed-precision trade-off when
+     * querying for examples. If omitted, defaults to `PRECISE`.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -915,7 +926,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for query speed-precision trade-off
+     * Preset option controlling parameters for speed-precision trade-off when
+     * querying for examples. If omitted, defaults to `PRECISE`.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -936,7 +948,8 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for query speed-precision trade-off
+     * Preset option controlling parameters for speed-precision trade-off when
+     * querying for examples. If omitted, defaults to `PRECISE`.
      * </pre>
      *
      * <code>optional .google.cloud.aiplatform.v1beta1.Presets.Query query = 1;</code>
@@ -955,7 +968,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for different modalities
+     * The modality of the uploaded model, which automatically configures the
+     * distance measurement and feature normalization for the underlying example
+     * index and queries. If your model does not precisely fit one of these types,
+     * it is okay to choose the closest type.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>
@@ -970,7 +986,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for different modalities
+     * The modality of the uploaded model, which automatically configures the
+     * distance measurement and feature normalization for the underlying example
+     * index and queries. If your model does not precisely fit one of these types,
+     * it is okay to choose the closest type.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>
@@ -988,7 +1007,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for different modalities
+     * The modality of the uploaded model, which automatically configures the
+     * distance measurement and feature normalization for the underlying example
+     * index and queries. If your model does not precisely fit one of these types,
+     * it is okay to choose the closest type.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>
@@ -1007,7 +1029,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for different modalities
+     * The modality of the uploaded model, which automatically configures the
+     * distance measurement and feature normalization for the underlying example
+     * index and queries. If your model does not precisely fit one of these types,
+     * it is okay to choose the closest type.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>
@@ -1028,7 +1053,10 @@ public final class Presets extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset option controlling parameters for different modalities
+     * The modality of the uploaded model, which automatically configures the
+     * distance measurement and feature normalization for the underlying example
+     * index and queries. If your model does not precisely fit one of these types,
+     * it is okay to choose the closest type.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets.Modality modality = 2;</code>

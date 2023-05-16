@@ -87,14 +87,14 @@ public final class XyChartProto {
           + "\020\001\022\t\n\005LOG10\020\002\"\216\001\n\014ChartOptions\022?\n\004mode\030\001"
           + " \001(\01621.google.monitoring.dashboard.v1.Ch"
           + "artOptions.Mode\"=\n\004Mode\022\024\n\020MODE_UNSPECIF"
-          + "IED\020\000\022\t\n\005COLOR\020\001\022\t\n\005X_RAY\020\002\022\t\n\005STATS\020\003B\366"
+          + "IED\020\000\022\t\n\005COLOR\020\001\022\t\n\005X_RAY\020\002\022\t\n\005STATS\020\003B\365"
           + "\001\n\"com.google.monitoring.dashboard.v1B\014X"
-          + "yChartProtoP\001ZGgoogle.golang.org/genprot"
-          + "o/googleapis/monitoring/dashboard/v1;das"
-          + "hboard\252\002$Google.Cloud.Monitoring.Dashboa"
-          + "rd.V1\312\002$Google\\Cloud\\Monitoring\\Dashboar"
-          + "d\\V1\352\002(Google::Cloud::Monitoring::Dashbo"
-          + "ard::V1b\006proto3"
+          + "yChartProtoP\001ZFcloud.google.com/go/monit"
+          + "oring/dashboard/apiv1/dashboardpb;dashbo"
+          + "ardpb\252\002$Google.Cloud.Monitoring.Dashboar"
+          + "d.V1\312\002$Google\\Cloud\\Monitoring\\Dashboard"
+          + "\\V1\352\002(Google::Cloud::Monitoring::Dashboa"
+          + "rd::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

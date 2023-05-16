@@ -66,9 +66,9 @@ public final class MetricValueSetProto {
           + " \001(\t\022@\n\rmetric_values\030\002 \003(\0132).google.api"
           + ".servicecontrol.v1.MetricValueB\356\001\n com.g"
           + "oogle.api.servicecontrol.v1B\023MetricValue"
-          + "SetProtoP\001ZJgoogle.golang.org/genproto/g"
-          + "oogleapis/api/servicecontrol/v1;servicec"
-          + "ontrol\370\001\001\252\002\036Google.Cloud.ServiceControl."
+          + "SetProtoP\001ZJcloud.google.com/go/servicec"
+          + "ontrol/apiv1/servicecontrolpb;servicecon"
+          + "trolpb\370\001\001\252\002\036Google.Cloud.ServiceControl."
           + "V1\312\002\036Google\\Cloud\\ServiceControl\\V1\352\002!Go"
           + "ogle::Cloud::ServiceControl::V1b\006proto3"
     };

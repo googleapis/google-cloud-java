@@ -474,4 +474,51 @@ public interface IndexEndpointOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
       getPrivateServiceConnectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the deployed index will be accessible through public
+   * endpoint.
+   * </pre>
+   *
+   * <code>bool public_endpoint_enabled = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The publicEndpointEnabled.
+   */
+  boolean getPublicEndpointEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If
+   * [public_endpoint_enabled][google.cloud.aiplatform.v1beta1.IndexEndpoint.public_endpoint_enabled]
+   * is true, this field will be populated with the domain name to use for this
+   * index endpoint.
+   * </pre>
+   *
+   * <code>string public_endpoint_domain_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The publicEndpointDomainName.
+   */
+  java.lang.String getPublicEndpointDomainName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If
+   * [public_endpoint_enabled][google.cloud.aiplatform.v1beta1.IndexEndpoint.public_endpoint_enabled]
+   * is true, this field will be populated with the domain name to use for this
+   * index endpoint.
+   * </pre>
+   *
+   * <code>string public_endpoint_domain_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for publicEndpointDomainName.
+   */
+  com.google.protobuf.ByteString getPublicEndpointDomainNameBytes();
 }

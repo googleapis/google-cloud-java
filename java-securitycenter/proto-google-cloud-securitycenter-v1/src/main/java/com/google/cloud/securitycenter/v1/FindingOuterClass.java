@@ -56,7 +56,10 @@ public final class FindingOuterClass {
           + ".proto\022\036google.cloud.securitycenter.v1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032+google/cloud/securit"
-          + "ycenter/v1/access.proto\032/google/cloud/se"
+          + "ycenter/v1/access.proto\032;google/cloud/se"
+          + "curitycenter/v1/cloud_dlp_data_profile.p"
+          + "roto\0329google/cloud/securitycenter/v1/clo"
+          + "ud_dlp_inspection.proto\032/google/cloud/se"
           + "curitycenter/v1/compliance.proto\032/google"
           + "/cloud/securitycenter/v1/connection.prot"
           + "o\0324google/cloud/securitycenter/v1/contac"
@@ -78,7 +81,7 @@ public final class FindingOuterClass {
           + "ks.proto\0322google/cloud/securitycenter/v1"
           + "/vulnerability.proto\032\034google/protobuf/st"
           + "ruct.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\242\025\n\007Finding\022\014\n\004name\030\001 \001(\t\022\016\n\006parent\030"
+          + "oto\"\336\026\n\007Finding\022\014\n\004name\030\001 \001(\t\022\016\n\006parent\030"
           + "\002 \001(\t\022\025\n\rresource_name\030\003 \001(\t\022<\n\005state\030\004 "
           + "\001(\0162-.google.cloud.securitycenter.v1.Fin"
           + "ding.State\022\020\n\010category\030\005 \001(\t\022\024\n\014external"
@@ -117,41 +120,46 @@ public final class FindingOuterClass {
           + ".google.cloud.securitycenter.v1.Exfiltra"
           + "tion\022@\n\014iam_bindings\030\' \003(\0132*.google.clou"
           + "d.securitycenter.v1.IamBinding\022\022\n\nnext_s"
-          + "teps\030( \001(\t\022=\n\ncontainers\030* \003(\0132).google."
-          + "cloud.securitycenter.v1.Container\022>\n\nkub"
-          + "ernetes\030+ \001(\0132*.google.cloud.securitycen"
-          + "ter.v1.Kubernetes\022:\n\010database\030, \001(\0132(.go"
-          + "ogle.cloud.securitycenter.v1.Database\0223\n"
-          + "\005files\030. \003(\0132$.google.cloud.securitycent"
-          + "er.v1.File\022E\n\016kernel_rootkit\0302 \001(\0132-.goo"
-          + "gle.cloud.securitycenter.v1.KernelRootki"
-          + "t\032O\n\025SourcePropertiesEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "%\n\005value\030\002 \001(\0132\026.google.protobuf.Value:\002"
-          + "8\001\032f\n\024ExternalSystemsEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "=\n\005value\030\002 \001(\0132..google.cloud.securityce"
-          + "nter.v1.ExternalSystem:\0028\001\032_\n\rContactsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022=\n\005value\030\002 \001(\0132..google"
-          + ".cloud.securitycenter.v1.ContactDetails:"
-          + "\0028\001\"8\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006A"
-          + "CTIVE\020\001\022\014\n\010INACTIVE\020\002\"Q\n\010Severity\022\030\n\024SEV"
-          + "ERITY_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\010\n\004HIG"
-          + "H\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003LOW\020\004\"C\n\004Mute\022\024\n\020MUTE"
-          + "_UNSPECIFIED\020\000\022\t\n\005MUTED\020\001\022\013\n\007UNMUTED\020\002\022\r"
-          + "\n\tUNDEFINED\020\004\"\202\001\n\014FindingClass\022\035\n\031FINDIN"
-          + "G_CLASS_UNSPECIFIED\020\000\022\n\n\006THREAT\020\001\022\021\n\rVUL"
-          + "NERABILITY\020\002\022\024\n\020MISCONFIGURATION\020\003\022\017\n\013OB"
-          + "SERVATION\020\004\022\r\n\tSCC_ERROR\020\005:\333\001\352A\327\001\n%secur"
-          + "itycenter.googleapis.com/Finding\022@organi"
-          + "zations/{organization}/sources/{source}/"
-          + "findings/{finding}\0224folders/{folder}/sou"
-          + "rces/{source}/findings/{finding}\0226projec"
-          + "ts/{project}/sources/{source}/findings/{"
-          + "finding}B\330\001\n\"com.google.cloud.securityce"
-          + "nter.v1P\001ZJcloud.google.com/go/securityc"
-          + "enter/apiv1/securitycenterpb;securitycen"
-          + "terpb\252\002\036Google.Cloud.SecurityCenter.V1\312\002"
-          + "\036Google\\Cloud\\SecurityCenter\\V1\352\002!Google"
-          + "::Cloud::SecurityCenter::V1b\006proto3"
+          + "teps\030( \001(\t\022\023\n\013module_name\030) \001(\t\022=\n\nconta"
+          + "iners\030* \003(\0132).google.cloud.securitycente"
+          + "r.v1.Container\022>\n\nkubernetes\030+ \001(\0132*.goo"
+          + "gle.cloud.securitycenter.v1.Kubernetes\022:"
+          + "\n\010database\030, \001(\0132(.google.cloud.security"
+          + "center.v1.Database\0223\n\005files\030. \003(\0132$.goog"
+          + "le.cloud.securitycenter.v1.File\022P\n\024cloud"
+          + "_dlp_inspection\0300 \001(\01322.google.cloud.sec"
+          + "uritycenter.v1.CloudDlpInspection\022S\n\026clo"
+          + "ud_dlp_data_profile\0301 \001(\01323.google.cloud"
+          + ".securitycenter.v1.CloudDlpDataProfile\022E"
+          + "\n\016kernel_rootkit\0302 \001(\0132-.google.cloud.se"
+          + "curitycenter.v1.KernelRootkit\032O\n\025SourceP"
+          + "ropertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001"
+          + "(\0132\026.google.protobuf.Value:\0028\001\032f\n\024Extern"
+          + "alSystemsEntry\022\013\n\003key\030\001 \001(\t\022=\n\005value\030\002 \001"
+          + "(\0132..google.cloud.securitycenter.v1.Exte"
+          + "rnalSystem:\0028\001\032_\n\rContactsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022=\n\005value\030\002 \001(\0132..google.cloud.secur"
+          + "itycenter.v1.ContactDetails:\0028\001\"8\n\005State"
+          + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010I"
+          + "NACTIVE\020\002\"Q\n\010Severity\022\030\n\024SEVERITY_UNSPEC"
+          + "IFIED\020\000\022\014\n\010CRITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDIU"
+          + "M\020\003\022\007\n\003LOW\020\004\"C\n\004Mute\022\024\n\020MUTE_UNSPECIFIED"
+          + "\020\000\022\t\n\005MUTED\020\001\022\013\n\007UNMUTED\020\002\022\r\n\tUNDEFINED\020"
+          + "\004\"\202\001\n\014FindingClass\022\035\n\031FINDING_CLASS_UNSP"
+          + "ECIFIED\020\000\022\n\n\006THREAT\020\001\022\021\n\rVULNERABILITY\020\002"
+          + "\022\024\n\020MISCONFIGURATION\020\003\022\017\n\013OBSERVATION\020\004\022"
+          + "\r\n\tSCC_ERROR\020\005:\333\001\352A\327\001\n%securitycenter.go"
+          + "ogleapis.com/Finding\022@organizations/{org"
+          + "anization}/sources/{source}/findings/{fi"
+          + "nding}\0224folders/{folder}/sources/{source"
+          + "}/findings/{finding}\0226projects/{project}"
+          + "/sources/{source}/findings/{finding}B\330\001\n"
+          + "\"com.google.cloud.securitycenter.v1P\001ZJc"
+          + "loud.google.com/go/securitycenter/apiv1/"
+          + "securitycenterpb;securitycenterpb\252\002\036Goog"
+          + "le.Cloud.SecurityCenter.V1\312\002\036Google\\Clou"
+          + "d\\SecurityCenter\\V1\352\002!Google::Cloud::Sec"
+          + "urityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -160,6 +168,8 @@ public final class FindingOuterClass {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.AccessProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.CloudDlpDataProfileProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.CloudDlpInspectionProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.ComplianceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.ConnectionProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.ContactDetailsProto.getDescriptor(),
@@ -215,10 +225,13 @@ public final class FindingOuterClass {
               "Exfiltration",
               "IamBindings",
               "NextSteps",
+              "ModuleName",
               "Containers",
               "Kubernetes",
               "Database",
               "Files",
+              "CloudDlpInspection",
+              "CloudDlpDataProfile",
               "KernelRootkit",
             });
     internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor =
@@ -254,6 +267,8 @@ public final class FindingOuterClass {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.AccessProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.CloudDlpDataProfileProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.CloudDlpInspectionProto.getDescriptor();
     com.google.cloud.securitycenter.v1.ComplianceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.ConnectionProto.getDescriptor();
     com.google.cloud.securitycenter.v1.ContactDetailsProto.getDescriptor();

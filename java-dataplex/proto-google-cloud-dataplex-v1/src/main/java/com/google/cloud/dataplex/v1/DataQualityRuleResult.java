@@ -22,8 +22,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * DataQualityRuleResult provides a more detailed, per-rule level view of the
- * results.
+ * DataQualityRuleResult provides a more detailed, per-rule view of the results.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRuleResult}
@@ -142,12 +141,13 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The number of rows a rule was evaluated against.
-   * This field is only valid for ColumnMap type rules.
+   * The number of rows a rule was evaluated against. This field is only valid
+   * for ColumnMap type rules.
    * Evaluated count can be configured to either
-   * (1) include all rows (default) - with null rows automatically failing rule
-   * evaluation  OR (2) exclude null rows from the evaluated_count, by setting
-   * ignore_nulls = true
+   * * include all rows (default) - with `null` rows automatically failing rule
+   * evaluation, or
+   * * exclude `null` rows from the `evaluated_count`, by setting
+   * `ignore_nulls = true`.
    * </pre>
    *
    * <code>int64 evaluated_count = 9;</code>
@@ -202,7 +202,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The ratio of passed_count / evaluated_count.
+   * The ratio of **passed_count / evaluated_count**.
    * This field is only valid for ColumnMap type rules.
    * </pre>
    *
@@ -494,8 +494,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * DataQualityRuleResult provides a more detailed, per-rule level view of the
-   * results.
+   * DataQualityRuleResult provides a more detailed, per-rule view of the results.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRuleResult}
@@ -997,12 +996,13 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against.
-     * This field is only valid for ColumnMap type rules.
+     * The number of rows a rule was evaluated against. This field is only valid
+     * for ColumnMap type rules.
      * Evaluated count can be configured to either
-     * (1) include all rows (default) - with null rows automatically failing rule
-     * evaluation  OR (2) exclude null rows from the evaluated_count, by setting
-     * ignore_nulls = true
+     * * include all rows (default) - with `null` rows automatically failing rule
+     * evaluation, or
+     * * exclude `null` rows from the `evaluated_count`, by setting
+     * `ignore_nulls = true`.
      * </pre>
      *
      * <code>int64 evaluated_count = 9;</code>
@@ -1017,12 +1017,13 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against.
-     * This field is only valid for ColumnMap type rules.
+     * The number of rows a rule was evaluated against. This field is only valid
+     * for ColumnMap type rules.
      * Evaluated count can be configured to either
-     * (1) include all rows (default) - with null rows automatically failing rule
-     * evaluation  OR (2) exclude null rows from the evaluated_count, by setting
-     * ignore_nulls = true
+     * * include all rows (default) - with `null` rows automatically failing rule
+     * evaluation, or
+     * * exclude `null` rows from the `evaluated_count`, by setting
+     * `ignore_nulls = true`.
      * </pre>
      *
      * <code>int64 evaluated_count = 9;</code>
@@ -1041,12 +1042,13 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against.
-     * This field is only valid for ColumnMap type rules.
+     * The number of rows a rule was evaluated against. This field is only valid
+     * for ColumnMap type rules.
      * Evaluated count can be configured to either
-     * (1) include all rows (default) - with null rows automatically failing rule
-     * evaluation  OR (2) exclude null rows from the evaluated_count, by setting
-     * ignore_nulls = true
+     * * include all rows (default) - with `null` rows automatically failing rule
+     * evaluation, or
+     * * exclude `null` rows from the `evaluated_count`, by setting
+     * `ignore_nulls = true`.
      * </pre>
      *
      * <code>int64 evaluated_count = 9;</code>
@@ -1174,7 +1176,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ratio of passed_count / evaluated_count.
+     * The ratio of **passed_count / evaluated_count**.
      * This field is only valid for ColumnMap type rules.
      * </pre>
      *
@@ -1190,7 +1192,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ratio of passed_count / evaluated_count.
+     * The ratio of **passed_count / evaluated_count**.
      * This field is only valid for ColumnMap type rules.
      * </pre>
      *
@@ -1210,7 +1212,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The ratio of passed_count / evaluated_count.
+     * The ratio of **passed_count / evaluated_count**.
      * This field is only valid for ColumnMap type rules.
      * </pre>
      *

@@ -108,6 +108,7 @@ public class ContactCenterInsightsClientTest {
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
             .setLatestAnalysis(Analysis.newBuilder().build())
+            .setLatestSummary(ConversationSummarizationSuggestionData.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
             .setObfuscatedUserId("obfuscatedUserId971552298")
@@ -166,6 +167,7 @@ public class ContactCenterInsightsClientTest {
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
             .setLatestAnalysis(Analysis.newBuilder().build())
+            .setLatestSummary(ConversationSummarizationSuggestionData.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
             .setObfuscatedUserId("obfuscatedUserId971552298")
@@ -209,6 +211,82 @@ public class ContactCenterInsightsClientTest {
   }
 
   @Test
+  public void uploadConversationTest() throws Exception {
+    Conversation expectedResponse =
+        Conversation.newBuilder()
+            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setDataSource(ConversationDataSource.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setAgentId("agentId-1060987136")
+            .putAllLabels(new HashMap<String, String>())
+            .setTranscript(Conversation.Transcript.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setTurnCount(428155597)
+            .setLatestAnalysis(Analysis.newBuilder().build())
+            .setLatestSummary(ConversationSummarizationSuggestionData.newBuilder().build())
+            .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
+            .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
+            .setObfuscatedUserId("obfuscatedUserId971552298")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("uploadConversationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    UploadConversationRequest request =
+        UploadConversationRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setConversation(Conversation.newBuilder().build())
+            .setConversationId("conversationId-1676095234")
+            .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .build();
+
+    Conversation actualResponse = client.uploadConversationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UploadConversationRequest actualRequest = ((UploadConversationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getConversation(), actualRequest.getConversation());
+    Assert.assertEquals(request.getConversationId(), actualRequest.getConversationId());
+    Assert.assertEquals(request.getRedactionConfig(), actualRequest.getRedactionConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void uploadConversationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      UploadConversationRequest request =
+          UploadConversationRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setConversation(Conversation.newBuilder().build())
+              .setConversationId("conversationId-1676095234")
+              .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .build();
+      client.uploadConversationAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void updateConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
@@ -224,6 +302,7 @@ public class ContactCenterInsightsClientTest {
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
             .setLatestAnalysis(Analysis.newBuilder().build())
+            .setLatestSummary(ConversationSummarizationSuggestionData.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
             .setObfuscatedUserId("obfuscatedUserId971552298")
@@ -279,6 +358,7 @@ public class ContactCenterInsightsClientTest {
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
             .setLatestAnalysis(Analysis.newBuilder().build())
+            .setLatestSummary(ConversationSummarizationSuggestionData.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
             .setObfuscatedUserId("obfuscatedUserId971552298")
@@ -331,6 +411,7 @@ public class ContactCenterInsightsClientTest {
             .setDuration(Duration.newBuilder().build())
             .setTurnCount(428155597)
             .setLatestAnalysis(Analysis.newBuilder().build())
+            .setLatestSummary(ConversationSummarizationSuggestionData.newBuilder().build())
             .addAllRuntimeAnnotations(new ArrayList<RuntimeAnnotation>())
             .putAllDialogflowIntents(new HashMap<String, DialogflowIntent>())
             .setObfuscatedUserId("obfuscatedUserId971552298")
@@ -2577,6 +2658,7 @@ public class ContactCenterInsightsClientTest {
             .setConversationTtl(Duration.newBuilder().build())
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
+            .setRedactionConfig(RedactionConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2621,6 +2703,7 @@ public class ContactCenterInsightsClientTest {
             .setConversationTtl(Duration.newBuilder().build())
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
+            .setRedactionConfig(RedactionConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2665,6 +2748,7 @@ public class ContactCenterInsightsClientTest {
             .setConversationTtl(Duration.newBuilder().build())
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
+            .setRedactionConfig(RedactionConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 

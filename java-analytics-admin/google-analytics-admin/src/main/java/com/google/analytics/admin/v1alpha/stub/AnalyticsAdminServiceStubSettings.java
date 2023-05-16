@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -69,9 +70,11 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
+import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
@@ -94,6 +97,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
@@ -112,12 +116,15 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -147,6 +154,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
@@ -190,6 +199,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -508,6 +518,15 @@ public class AnalyticsAdminServiceStubSettings
       updateExpandedDataSetSettings;
   private final UnaryCallSettings<DeleteExpandedDataSetRequest, Empty>
       deleteExpandedDataSetSettings;
+  private final UnaryCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupSettings;
+  private final PagedCallSettings<
+          ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+      listChannelGroupsSettings;
+  private final UnaryCallSettings<CreateChannelGroupRequest, ChannelGroup>
+      createChannelGroupSettings;
+  private final UnaryCallSettings<UpdateChannelGroupRequest, ChannelGroup>
+      updateChannelGroupSettings;
+  private final UnaryCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupSettings;
   private final UnaryCallSettings<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutSettings;
@@ -530,6 +549,9 @@ public class AnalyticsAdminServiceStubSettings
       deleteConnectedSiteTagSettings;
   private final UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsSettings;
+  private final UnaryCallSettings<
+          FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertySettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1314,6 +1336,46 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup>
+      LIST_CHANNEL_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListChannelGroupsRequest injectToken(
+                ListChannelGroupsRequest payload, String token) {
+              return ListChannelGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListChannelGroupsRequest injectPageSize(
+                ListChannelGroupsRequest payload, int pageSize) {
+              return ListChannelGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListChannelGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListChannelGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ChannelGroup> extractResources(ListChannelGroupsResponse payload) {
+              return payload.getChannelGroupsList() == null
+                  ? ImmutableList.<ChannelGroup>of()
+                  : payload.getChannelGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListBigQueryLinksRequest, ListBigQueryLinksResponse, BigQueryLink>
       LIST_BIG_QUERY_LINKS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -1786,6 +1848,27 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_EXPANDED_DATA_SETS_PAGE_STR_DESC, request, context);
               return ListExpandedDataSetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+      LIST_CHANNEL_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListChannelGroupsRequest,
+              ListChannelGroupsResponse,
+              ListChannelGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListChannelGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse> callable,
+                ListChannelGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListChannelGroupsResponse> futureResponse) {
+              PageContext<ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CHANNEL_GROUPS_PAGE_STR_DESC, request, context);
+              return ListChannelGroupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -2424,6 +2507,33 @@ public class AnalyticsAdminServiceStubSettings
     return deleteExpandedDataSetSettings;
   }
 
+  /** Returns the object with the settings used for calls to getChannelGroup. */
+  public UnaryCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupSettings() {
+    return getChannelGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listChannelGroups. */
+  public PagedCallSettings<
+          ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+      listChannelGroupsSettings() {
+    return listChannelGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createChannelGroup. */
+  public UnaryCallSettings<CreateChannelGroupRequest, ChannelGroup> createChannelGroupSettings() {
+    return createChannelGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateChannelGroup. */
+  public UnaryCallSettings<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupSettings() {
+    return updateChannelGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelGroup. */
+  public UnaryCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupSettings() {
+    return deleteChannelGroupSettings;
+  }
+
   /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
   public UnaryCallSettings<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
@@ -2479,6 +2589,12 @@ public class AnalyticsAdminServiceStubSettings
   public UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsSettings() {
     return listConnectedSiteTagsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchConnectedGa4Property. */
+  public UnaryCallSettings<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertySettings() {
+    return fetchConnectedGa4PropertySettings;
   }
 
   public AnalyticsAdminServiceStub createStub() throws IOException {
@@ -2704,6 +2820,11 @@ public class AnalyticsAdminServiceStubSettings
     createExpandedDataSetSettings = settingsBuilder.createExpandedDataSetSettings().build();
     updateExpandedDataSetSettings = settingsBuilder.updateExpandedDataSetSettings().build();
     deleteExpandedDataSetSettings = settingsBuilder.deleteExpandedDataSetSettings().build();
+    getChannelGroupSettings = settingsBuilder.getChannelGroupSettings().build();
+    listChannelGroupsSettings = settingsBuilder.listChannelGroupsSettings().build();
+    createChannelGroupSettings = settingsBuilder.createChannelGroupSettings().build();
+    updateChannelGroupSettings = settingsBuilder.updateChannelGroupSettings().build();
+    deleteChannelGroupSettings = settingsBuilder.deleteChannelGroupSettings().build();
     setAutomatedGa4ConfigurationOptOutSettings =
         settingsBuilder.setAutomatedGa4ConfigurationOptOutSettings().build();
     fetchAutomatedGa4ConfigurationOptOutSettings =
@@ -2717,6 +2838,7 @@ public class AnalyticsAdminServiceStubSettings
     createConnectedSiteTagSettings = settingsBuilder.createConnectedSiteTagSettings().build();
     deleteConnectedSiteTagSettings = settingsBuilder.deleteConnectedSiteTagSettings().build();
     listConnectedSiteTagsSettings = settingsBuilder.listConnectedSiteTagsSettings().build();
+    fetchConnectedGa4PropertySettings = settingsBuilder.fetchConnectedGa4PropertySettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -2963,6 +3085,17 @@ public class AnalyticsAdminServiceStubSettings
         updateExpandedDataSetSettings;
     private final UnaryCallSettings.Builder<DeleteExpandedDataSetRequest, Empty>
         deleteExpandedDataSetSettings;
+    private final UnaryCallSettings.Builder<GetChannelGroupRequest, ChannelGroup>
+        getChannelGroupSettings;
+    private final PagedCallSettings.Builder<
+            ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+        listChannelGroupsSettings;
+    private final UnaryCallSettings.Builder<CreateChannelGroupRequest, ChannelGroup>
+        createChannelGroupSettings;
+    private final UnaryCallSettings.Builder<UpdateChannelGroupRequest, ChannelGroup>
+        updateChannelGroupSettings;
+    private final UnaryCallSettings.Builder<DeleteChannelGroupRequest, Empty>
+        deleteChannelGroupSettings;
     private final UnaryCallSettings.Builder<
             SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
         setAutomatedGa4ConfigurationOptOutSettings;
@@ -2989,6 +3122,9 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
         listConnectedSiteTagsSettings;
+    private final UnaryCallSettings.Builder<
+            FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+        fetchConnectedGa4PropertySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -3153,6 +3289,11 @@ public class AnalyticsAdminServiceStubSettings
       createExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteExpandedDataSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getChannelGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listChannelGroupsSettings = PagedCallSettings.newBuilder(LIST_CHANNEL_GROUPS_PAGE_STR_FACT);
+      createChannelGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateChannelGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteChannelGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setAutomatedGa4ConfigurationOptOutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchAutomatedGa4ConfigurationOptOutSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -3163,6 +3304,7 @@ public class AnalyticsAdminServiceStubSettings
       createConnectedSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConnectedSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConnectedSiteTagsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchConnectedGa4PropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3264,6 +3406,11 @@ public class AnalyticsAdminServiceStubSettings
               createExpandedDataSetSettings,
               updateExpandedDataSetSettings,
               deleteExpandedDataSetSettings,
+              getChannelGroupSettings,
+              listChannelGroupsSettings,
+              createChannelGroupSettings,
+              updateChannelGroupSettings,
+              deleteChannelGroupSettings,
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
               getBigQueryLinkSettings,
@@ -3272,7 +3419,8 @@ public class AnalyticsAdminServiceStubSettings
               updateEnhancedMeasurementSettingsSettings,
               createConnectedSiteTagSettings,
               deleteConnectedSiteTagSettings,
-              listConnectedSiteTagsSettings);
+              listConnectedSiteTagsSettings,
+              fetchConnectedGa4PropertySettings);
       initDefaults(this);
     }
 
@@ -3396,6 +3544,11 @@ public class AnalyticsAdminServiceStubSettings
       createExpandedDataSetSettings = settings.createExpandedDataSetSettings.toBuilder();
       updateExpandedDataSetSettings = settings.updateExpandedDataSetSettings.toBuilder();
       deleteExpandedDataSetSettings = settings.deleteExpandedDataSetSettings.toBuilder();
+      getChannelGroupSettings = settings.getChannelGroupSettings.toBuilder();
+      listChannelGroupsSettings = settings.listChannelGroupsSettings.toBuilder();
+      createChannelGroupSettings = settings.createChannelGroupSettings.toBuilder();
+      updateChannelGroupSettings = settings.updateChannelGroupSettings.toBuilder();
+      deleteChannelGroupSettings = settings.deleteChannelGroupSettings.toBuilder();
       setAutomatedGa4ConfigurationOptOutSettings =
           settings.setAutomatedGa4ConfigurationOptOutSettings.toBuilder();
       fetchAutomatedGa4ConfigurationOptOutSettings =
@@ -3409,6 +3562,7 @@ public class AnalyticsAdminServiceStubSettings
       createConnectedSiteTagSettings = settings.createConnectedSiteTagSettings.toBuilder();
       deleteConnectedSiteTagSettings = settings.deleteConnectedSiteTagSettings.toBuilder();
       listConnectedSiteTagsSettings = settings.listConnectedSiteTagsSettings.toBuilder();
+      fetchConnectedGa4PropertySettings = settings.fetchConnectedGa4PropertySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3510,6 +3664,11 @@ public class AnalyticsAdminServiceStubSettings
               createExpandedDataSetSettings,
               updateExpandedDataSetSettings,
               deleteExpandedDataSetSettings,
+              getChannelGroupSettings,
+              listChannelGroupsSettings,
+              createChannelGroupSettings,
+              updateChannelGroupSettings,
+              deleteChannelGroupSettings,
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
               getBigQueryLinkSettings,
@@ -3518,7 +3677,8 @@ public class AnalyticsAdminServiceStubSettings
               updateEnhancedMeasurementSettingsSettings,
               createConnectedSiteTagSettings,
               deleteConnectedSiteTagSettings,
-              listConnectedSiteTagsSettings);
+              listConnectedSiteTagsSettings,
+              fetchConnectedGa4PropertySettings);
     }
 
     private static Builder createDefault() {
@@ -4039,6 +4199,31 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getChannelGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listChannelGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createChannelGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateChannelGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteChannelGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .setAutomatedGa4ConfigurationOptOutSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -4080,6 +4265,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .listConnectedSiteTagsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchConnectedGa4PropertySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4750,6 +4940,37 @@ public class AnalyticsAdminServiceStubSettings
       return deleteExpandedDataSetSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getChannelGroup. */
+    public UnaryCallSettings.Builder<GetChannelGroupRequest, ChannelGroup>
+        getChannelGroupSettings() {
+      return getChannelGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listChannelGroups. */
+    public PagedCallSettings.Builder<
+            ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+        listChannelGroupsSettings() {
+      return listChannelGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createChannelGroup. */
+    public UnaryCallSettings.Builder<CreateChannelGroupRequest, ChannelGroup>
+        createChannelGroupSettings() {
+      return createChannelGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateChannelGroup. */
+    public UnaryCallSettings.Builder<UpdateChannelGroupRequest, ChannelGroup>
+        updateChannelGroupSettings() {
+      return updateChannelGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannelGroup. */
+    public UnaryCallSettings.Builder<DeleteChannelGroupRequest, Empty>
+        deleteChannelGroupSettings() {
+      return deleteChannelGroupSettings;
+    }
+
     /**
      * Returns the builder for the settings used for calls to setAutomatedGa4ConfigurationOptOut.
      */
@@ -4812,6 +5033,13 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
         listConnectedSiteTagsSettings() {
       return listConnectedSiteTagsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchConnectedGa4Property. */
+    public UnaryCallSettings.Builder<
+            FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+        fetchConnectedGa4PropertySettings() {
+      return fetchConnectedGa4PropertySettings;
     }
 
     @Override

@@ -39,6 +39,7 @@ public class AsyncListUptimeCheckConfigs {
       ListUptimeCheckConfigsRequest request =
           ListUptimeCheckConfigsRequest.newBuilder()
               .setParent(ProjectName.of("[PROJECT]").toString())
+              .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

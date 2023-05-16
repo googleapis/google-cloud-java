@@ -47,4 +47,19 @@ public interface ModelSourceInfoOrBuilder
    * @return The sourceType.
    */
   com.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType getSourceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Model is copy of another Model. If true then
+   * [source_type][google.cloud.aiplatform.v1.ModelSourceInfo.source_type]
+   * pertains to the original.
+   * </pre>
+   *
+   * <code>bool copy = 2;</code>
+   *
+   * @return The copy.
+   */
+  boolean getCopy();
 }
