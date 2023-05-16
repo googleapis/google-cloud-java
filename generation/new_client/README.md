@@ -143,11 +143,11 @@ Example: `alloydb`
 
 ### Proto path
 
-The script takes "proto path" parameter. This is path from google3's root (`google3/third_party/googleapis/stable/`) to the
+The script takes "proto path" parameter. This is path from `googleapis/googleapis/blob/master`' root to the
 directory that contains versions (e.g., "v1" or "v2"). For example, if we
 have 
 
-> Link to protos: http://google3/third_party/googleapis/stable/google/cloud/alloydb/v1/service.proto.
+> Link to protos: https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/service.proto.
 
 then the "proto path" value we supply to the command is `google/cloud/alloydb`.
 We will publish a single module for a service that includes all versions in this path. Once the module has been published once, any future additional versions will automatically be generated via OwlBot.
