@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.26.1](https://github.com/googleapis/java-bigquery/compare/v2.26.0...v2.26.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* Custom host  for resumable uploads ([#2696](https://github.com/googleapis/java-bigquery/issues/2696)) ([2b4eff1](https://github.com/googleapis/java-bigquery/commit/2b4eff1fed8b1ac9bf24bd69440377e904bc66e1))
+
 ## [2.26.0](https://github.com/googleapis/java-bigquery/compare/v2.25.0...v2.26.0) (2023-05-15)
 
 
