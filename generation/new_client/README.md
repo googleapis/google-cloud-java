@@ -132,7 +132,7 @@ Some languages require a new request when a new version of a service is created,
 
 You will run new-client.py script with the following parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
-The example in this README will AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
+The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
 ### API short name
 
@@ -143,14 +143,16 @@ Example: `alloydb`
 
 ### Proto path
 
-The script takes "proto path" parameter. This is path from `googleapis/googleapis/blob/master`' root to the
-directory that contains versions (e.g., "v1" or "v2"). For example, if we
-have 
+The script takes "proto path" parameter. This is path from the internal `google3/third_party/googleapis/stable` root to the
+directory that contains versions (e.g., "v1" or "v2").
+For example, if the buganizer ticket includes:
 
-> Link to protos: https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/service.proto.
+> Link to protos: `http://depot/google3/third_party/googleapis/stable/google/cloud/alloydb/v1alpha/alloydb_v1alpha.yaml`.
 
 then the "proto path" value we supply to the command is `google/cloud/alloydb`.
+
 We will publish a single module for a service that includes all versions in this path. Once the module has been published once, any future additional versions will automatically be generated via OwlBot.
+Note that the internal `google3/third_party/googleapis/stable` directory is mirrored in https://github.com/googleapis/googleapis/blob/master/.
 
 ### Name pretty
 
