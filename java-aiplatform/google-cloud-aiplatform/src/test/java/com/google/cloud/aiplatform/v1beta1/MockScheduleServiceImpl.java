@@ -183,4 +183,25 @@ public class MockScheduleServiceImpl extends ScheduleServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void updateSchedule(
+      UpdateScheduleRequest request, StreamObserver<Schedule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Schedule) {
+      requests.add(request);
+      responseObserver.onNext(((Schedule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSchedule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Schedule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }
