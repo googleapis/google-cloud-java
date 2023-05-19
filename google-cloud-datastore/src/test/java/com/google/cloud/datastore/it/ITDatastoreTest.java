@@ -29,6 +29,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.Tuple;
 import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.Batch;
 import com.google.cloud.datastore.BooleanValue;
@@ -335,57 +336,82 @@ public class ITDatastoreTest {
   }
 
   @Test
-  public void testTransactionWithRead() {
-    Transaction transaction = DATASTORE.newTransaction();
-    assertNull(transaction.get(KEY3));
-    transaction.add(ENTITY3);
-    transaction.commit();
+  public void testTransactionWithRead() throws Exception {
+    StatementExecutor statementExecutor = new StatementExecutor();
+    Transaction baseTransaction = DATASTORE.newTransaction();
+    assertNull(baseTransaction.get(KEY3));
+    baseTransaction.add(ENTITY3);
+    baseTransaction.commit();
     assertEquals(ENTITY3, DATASTORE.get(KEY3));
 
-    transaction = DATASTORE.newTransaction();
-    assertEquals(ENTITY3, transaction.get(KEY3));
-    // update entity3 during the transaction
-    DATASTORE.put(Entity.newBuilder(ENTITY2).clear().set("from", "datastore").build());
-    transaction.update(Entity.newBuilder(ENTITY2).clear().set("from", "transaction").build());
-    try {
-      transaction.commit();
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertEquals("ABORTED", expected.getReason());
-    }
+    Transaction transaction = DATASTORE.newTransaction();
+    statementExecutor.execute(
+        Tuple.of("T1", () -> assertEquals(ENTITY3, transaction.get(KEY3))),
+        // update entity3 during the transaction, will be blocked in case of pessimistic concurrency
+        Tuple.of(
+            "T2",
+            () ->
+                DATASTORE.put(Entity.newBuilder(ENTITY3).clear().set("from", "datastore").build())),
+        Tuple.of(
+            "T1",
+            () ->
+                transaction.update(
+                    Entity.newBuilder(ENTITY3).clear().set("from", "transaction").build())),
+        Tuple.of("T1", transaction::commit) // T1 will throw error in case of optimistic concurrency
+        );
+
+    boolean t1AllPassed = statementExecutor.didAllPass("T1");
+    boolean t2AllPassed = statementExecutor.didAllPass("T2");
+    // If two transactions conflict with each other, the database guarantees that only
+    // one can commit successfully at a time. Please refer to StatementExecutor class for more info.
+    // Using XOR to ensure that only one of transaction group is successful,
+    boolean onlyOneTransactionIsSuccessful = t1AllPassed ^ t2AllPassed;
+
+    assertThat(onlyOneTransactionIsSuccessful).isTrue();
   }
 
   @Test
-  public void testTransactionWithQuery() {
+  public void testTransactionWithQuery() throws Exception {
+    StatementExecutor statementExecutor = new StatementExecutor();
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(KIND2)
             .setFilter(PropertyFilter.hasAncestor(KEY2))
             .setNamespace(NAMESPACE)
             .build();
-    Transaction transaction = DATASTORE.newTransaction();
-    QueryResults<Entity> results = transaction.run(query);
-    assertTrue(results.hasNext());
-    assertEquals(ENTITY2, results.next());
-    assertFalse(results.hasNext());
-    transaction.add(ENTITY3);
-    transaction.commit();
+    Transaction baseTransaction = DATASTORE.newTransaction();
+    QueryResults<Entity> baseResults = baseTransaction.run(query);
+    assertTrue(baseResults.hasNext());
+    assertEquals(ENTITY2, baseResults.next());
+    assertFalse(baseResults.hasNext());
+    baseTransaction.add(ENTITY3);
+    baseTransaction.commit();
     assertEquals(ENTITY3, DATASTORE.get(KEY3));
 
-    transaction = DATASTORE.newTransaction();
-    results = transaction.run(query);
-    assertTrue(results.hasNext());
-    assertEquals(ENTITY2, results.next());
-    assertFalse(results.hasNext());
-    transaction.delete(ENTITY3.getKey());
-    // update entity2 during the transaction
-    DATASTORE.put(Entity.newBuilder(ENTITY2).clear().build());
-    try {
-      transaction.commit();
-      fail("Expecting a failure");
-    } catch (DatastoreException expected) {
-      assertEquals("ABORTED", expected.getReason());
-    }
+    Transaction transaction = DATASTORE.newTransaction();
+    statementExecutor.execute(
+        Tuple.of(
+            "T1",
+            () -> {
+              QueryResults<Entity> results = transaction.run(query);
+              assertTrue(results.hasNext());
+              assertEquals(ENTITY2, results.next());
+              assertFalse(results.hasNext());
+            }),
+        Tuple.of("T1", () -> transaction.delete(ENTITY3.getKey())),
+        // update entity2 during the transaction, will be blocked in case of pessimistic concurrency
+        Tuple.of("T2", () -> DATASTORE.put(Entity.newBuilder(ENTITY2).clear().build())),
+        Tuple.of("T1", transaction::commit) // T1 will throw error in case of optimistic concurrency
+        );
+
+    boolean t1AllPassed = statementExecutor.didAllPass("T1");
+    boolean t2AllPassed = statementExecutor.didAllPass("T2");
+    // If two transactions conflict with each other, the database guarantees that only
+    // one can commit successfully at a time. Please refer to StatementExecutor class for more info.
+    // Using XOR to ensure that only one of transaction group is successful,
+    boolean onlyOneTransactionIsSuccessful = t1AllPassed ^ t2AllPassed;
+
+    assertThat(onlyOneTransactionIsSuccessful).isTrue();
   }
 
   @Test
