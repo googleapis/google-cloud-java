@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 LIBRARY_GEN_OUT=$(pwd)/../library_gen_out
-GOOGLEAPIS_ROOT="$(pwd)/../googleapis"
+
 mkdir -p "${LIBRARY_GEN_OUT}"/gapic_generator_java/rules_java_gapic
 mkdir -p "${LIBRARY_GEN_OUT}"/com_google_protobuf/descriptor_proto
 mkdir -p "${LIBRARY_GEN_OUT}"/com_google_protobuf/duration_proto
@@ -23,7 +23,22 @@ mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring
 ##################### Section 0 #####################
 # prepare tooling
 #####################################################
+# proto files from googleapis repository
+REPO_ROOT=$(pwd)/..
+cd "${REPO_ROOT}" || exit
+git clone git@github.com:googleapis/googleapis.git
+GOOGLEAPIS_ROOT=$(pwd)/../googleapis
+cd "${GOOGLEAPIS_ROOT}" || exit
+git pull
+git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
 # proto files from protobuf repository
+cd "${REPO_ROOT}" || exit
+git clone git@github.com:protocolbuffers/protobuf.git
+mkdir -p googleapis/google/protobuf
+find protobuf/src/google/protobuf/ -type f -name "*.proto" -print0 | while IFS= read -r -d '' proto_src; do
+    cp "${proto_src}" googleapis/google/protobuf
+done
+rm -rf protobuf
 # protoc
 # grpc plugin
 # gapic-generator-java
