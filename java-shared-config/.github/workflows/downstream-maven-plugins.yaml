@@ -16,9 +16,6 @@ jobs:
       matrix:
         java: [8, 11]
         repo:
-        # GAPIC library
-        - java-trace
-        # Handwritten library
         - java-bigquery
         job-type:
         - test  # maven-surefire-plugin
