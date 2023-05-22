@@ -65,8 +65,9 @@ public interface MySqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -78,8 +79,9 @@ public interface MySqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,9 +94,10 @@ public interface MySqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -108,9 +111,10 @@ public interface MySqlConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>

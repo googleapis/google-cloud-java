@@ -282,6 +282,58 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>CANT_RESTART_RUNNING_MIGRATION = 21;</code>
      */
     CANT_RESTART_RUNNING_MIGRATION(21),
+    /**
+     *
+     *
+     * <pre>
+     * The source has tables with limited support.
+     * E.g. PostgreSQL tables without primary keys.
+     * </pre>
+     *
+     * <code>TABLES_WITH_LIMITED_SUPPORT = 24;</code>
+     */
+    TABLES_WITH_LIMITED_SUPPORT(24),
+    /**
+     *
+     *
+     * <pre>
+     * The source uses an unsupported locale.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_DATABASE_LOCALE = 25;</code>
+     */
+    UNSUPPORTED_DATABASE_LOCALE(25),
+    /**
+     *
+     *
+     * <pre>
+     * The source uses an unsupported Foreign Data Wrapper configuration.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_DATABASE_FDW_CONFIG = 26;</code>
+     */
+    UNSUPPORTED_DATABASE_FDW_CONFIG(26),
+    /**
+     *
+     *
+     * <pre>
+     * There was an underlying RDBMS error.
+     * </pre>
+     *
+     * <code>ERROR_RDBMS = 27;</code>
+     */
+    ERROR_RDBMS(27),
+    /**
+     *
+     *
+     * <pre>
+     * The source DB size in Bytes exceeds a certain threshold. The migration
+     * might require an increase of quota, or might not be supported.
+     * </pre>
+     *
+     * <code>SOURCE_SIZE_EXCEEDS_THRESHOLD = 28;</code>
+     */
+    SOURCE_SIZE_EXCEEDS_THRESHOLD(28),
     UNRECOGNIZED(-1),
     ;
 
@@ -488,6 +540,58 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>CANT_RESTART_RUNNING_MIGRATION = 21;</code>
      */
     public static final int CANT_RESTART_RUNNING_MIGRATION_VALUE = 21;
+    /**
+     *
+     *
+     * <pre>
+     * The source has tables with limited support.
+     * E.g. PostgreSQL tables without primary keys.
+     * </pre>
+     *
+     * <code>TABLES_WITH_LIMITED_SUPPORT = 24;</code>
+     */
+    public static final int TABLES_WITH_LIMITED_SUPPORT_VALUE = 24;
+    /**
+     *
+     *
+     * <pre>
+     * The source uses an unsupported locale.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_DATABASE_LOCALE = 25;</code>
+     */
+    public static final int UNSUPPORTED_DATABASE_LOCALE_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
+     * The source uses an unsupported Foreign Data Wrapper configuration.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_DATABASE_FDW_CONFIG = 26;</code>
+     */
+    public static final int UNSUPPORTED_DATABASE_FDW_CONFIG_VALUE = 26;
+    /**
+     *
+     *
+     * <pre>
+     * There was an underlying RDBMS error.
+     * </pre>
+     *
+     * <code>ERROR_RDBMS = 27;</code>
+     */
+    public static final int ERROR_RDBMS_VALUE = 27;
+    /**
+     *
+     *
+     * <pre>
+     * The source DB size in Bytes exceeds a certain threshold. The migration
+     * might require an increase of quota, or might not be supported.
+     * </pre>
+     *
+     * <code>SOURCE_SIZE_EXCEEDS_THRESHOLD = 28;</code>
+     */
+    public static final int SOURCE_SIZE_EXCEEDS_THRESHOLD_VALUE = 28;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -553,6 +657,16 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
           return UNSUPPORTED_DEFINER;
         case 21:
           return CANT_RESTART_RUNNING_MIGRATION;
+        case 24:
+          return TABLES_WITH_LIMITED_SUPPORT;
+        case 25:
+          return UNSUPPORTED_DATABASE_LOCALE;
+        case 26:
+          return UNSUPPORTED_DATABASE_FDW_CONFIG;
+        case 27:
+          return ERROR_RDBMS;
+        case 28:
+          return SOURCE_SIZE_EXCEEDS_THRESHOLD;
         default:
           return null;
       }
@@ -657,7 +771,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Output only. A formatted message with further details about the error and a CTA.
+   * Output only. A formatted message with further details about the error and a
+   * CTA.
    * </pre>
    *
    * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -680,7 +795,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Output only. A formatted message with further details about the error and a CTA.
+   * Output only. A formatted message with further details about the error and a
+   * CTA.
    * </pre>
    *
    * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1255,7 +1371,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Output only. A formatted message with further details about the error and a CTA.
+     * Output only. A formatted message with further details about the error and a
+     * CTA.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1277,7 +1394,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Output only. A formatted message with further details about the error and a CTA.
+     * Output only. A formatted message with further details about the error and a
+     * CTA.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1299,7 +1417,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Output only. A formatted message with further details about the error and a CTA.
+     * Output only. A formatted message with further details about the error and a
+     * CTA.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1320,7 +1439,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Output only. A formatted message with further details about the error and a CTA.
+     * Output only. A formatted message with further details about the error and a
+     * CTA.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1337,7 +1457,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Output only. A formatted message with further details about the error and a CTA.
+     * Output only. A formatted message with further details about the error and a
+     * CTA.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -56,10 +56,10 @@ public interface DeleteMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * A unique id used to identify the request. If the server receives two
-   * requests with the same id, then the second request will be ignored.
+   * A unique ID used to identify the request. If the server receives two
+   * requests with the same ID, then the second request is ignored.
    * It is recommended to always set this value to a UUID.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
@@ -72,10 +72,10 @@ public interface DeleteMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * A unique id used to identify the request. If the server receives two
-   * requests with the same id, then the second request will be ignored.
+   * A unique ID used to identify the request. If the server receives two
+   * requests with the same ID, then the second request is ignored.
    * It is recommended to always set this value to a UUID.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *

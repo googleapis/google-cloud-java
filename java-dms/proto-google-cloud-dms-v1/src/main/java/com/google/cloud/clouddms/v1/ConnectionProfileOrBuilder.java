@@ -28,7 +28,7 @@ public interface ConnectionProfileOrBuilder
    *
    * <pre>
    * The name of this connection profile resource in the form of
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface ConnectionProfileOrBuilder
    *
    * <pre>
    * The name of this connection profile resource in the form of
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -335,6 +335,41 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
+   * An Oracle database connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+   *
+   * @return Whether the oracle field is set.
+   */
+  boolean hasOracle();
+  /**
+   *
+   *
+   * <pre>
+   * An Oracle database connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+   *
+   * @return The oracle.
+   */
+  com.google.cloud.clouddms.v1.OracleConnectionProfile getOracle();
+  /**
+   *
+   *
+   * <pre>
+   * An Oracle database connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.OracleConnectionProfile oracle = 104;</code>
+   */
+  com.google.cloud.clouddms.v1.OracleConnectionProfileOrBuilder getOracleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A CloudSQL database connection profile.
    * </pre>
    *
@@ -365,6 +400,41 @@ public interface ConnectionProfileOrBuilder
    * <code>.google.cloud.clouddms.v1.CloudSqlConnectionProfile cloudsql = 102;</code>
    */
   com.google.cloud.clouddms.v1.CloudSqlConnectionProfileOrBuilder getCloudsqlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * An AlloyDB cluster connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+   *
+   * @return Whether the alloydb field is set.
+   */
+  boolean hasAlloydb();
+  /**
+   *
+   *
+   * <pre>
+   * An AlloyDB cluster connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+   *
+   * @return The alloydb.
+   */
+  com.google.cloud.clouddms.v1.AlloyDbConnectionProfile getAlloydb();
+  /**
+   *
+   *
+   * <pre>
+   * An AlloyDB cluster connection profile.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.AlloyDbConnectionProfile alloydb = 105;</code>
+   */
+  com.google.cloud.clouddms.v1.AlloyDbConnectionProfileOrBuilder getAlloydbOrBuilder();
 
   /**
    *

@@ -46,6 +46,8 @@ public class AsyncCreateConnectionProfileLRO {
               .setConnectionProfileId("connectionProfileId597575526")
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setValidateOnly(true)
+              .setSkipValidation(true)
               .build();
       OperationFuture<ConnectionProfile, OperationMetadata> future =
           dataMigrationServiceClient.createConnectionProfileOperationCallable().futureCall(request);

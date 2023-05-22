@@ -116,9 +116,113 @@ public final class ClouddmsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_clouddms_v1_DeleteConnectionProfileRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_CreatePrivateConnectionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_CreatePrivateConnectionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_DeletePrivateConnectionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_DeletePrivateConnectionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_GetPrivateConnectionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_GetPrivateConnectionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_clouddms_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_clouddms_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_GetConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_GetConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_CreateConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_CreateConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_UpdateConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_UpdateConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_DeleteConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_DeleteConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_CommitConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_CommitConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_RollbackConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_RollbackConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ApplyConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ApplyConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_SeedConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_SeedConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ConvertConversionWorkspaceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ConvertConversionWorkspaceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_RulesFile_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_RulesFile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_FetchStaticIpsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_FetchStaticIpsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_clouddms_v1_FetchStaticIpsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_clouddms_v1_FetchStaticIpsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -133,192 +237,421 @@ public final class ClouddmsProto {
           + "annotations.proto\032\027google/api/client.pro"
           + "to\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\0321google/cloud/clo"
-          + "uddms/v1/clouddms_resources.proto\032#googl"
-          + "e/longrunning/operations.proto\032 google/p"
-          + "rotobuf/field_mask.proto\032\037google/protobu"
-          + "f/timestamp.proto\"\246\001\n\030ListMigrationJobsR"
-          + "equest\022A\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)datamigr"
-          + "ation.googleapis.com/MigrationJob\022\021\n\tpag"
-          + "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filt"
-          + "er\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\211\001\n\031ListMigra"
-          + "tionJobsResponse\022>\n\016migration_jobs\030\001 \003(\013"
-          + "2&.google.cloud.clouddms.v1.MigrationJob"
-          + "\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable"
-          + "\030\003 \003(\t\"Y\n\026GetMigrationJobRequest\022?\n\004name"
-          + "\030\001 \001(\tB1\340A\002\372A+\n)datamigration.googleapis"
-          + ".com/MigrationJob\"\325\001\n\031CreateMigrationJob"
-          + "Request\022A\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)datamig"
-          + "ration.googleapis.com/MigrationJob\022\035\n\020mi"
-          + "gration_job_id\030\002 \001(\tB\003\340A\002\022B\n\rmigration_j"
-          + "ob\030\003 \001(\0132&.google.cloud.clouddms.v1.Migr"
-          + "ationJobB\003\340A\002\022\022\n\nrequest_id\030\004 \001(\t\"\251\001\n\031Up"
-          + "dateMigrationJobRequest\0224\n\013update_mask\030\001"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022B\n"
-          + "\rmigration_job\030\002 \001(\0132&.google.cloud.clou"
-          + "ddms.v1.MigrationJobB\003\340A\002\022\022\n\nrequest_id\030"
-          + "\003 \001(\t\"\177\n\031DeleteMigrationJobRequest\022?\n\004na"
-          + "me\030\001 \001(\tB1\340A\002\372A+\n)datamigration.googleap"
-          + "is.com/MigrationJob\022\022\n\nrequest_id\030\002 \001(\t\022"
-          + "\r\n\005force\030\003 \001(\010\"X\n\030StartMigrationJobReque"
-          + "st\022<\n\004name\030\001 \001(\tB.\372A+\n)datamigration.goo"
-          + "gleapis.com/MigrationJob\"W\n\027StopMigratio"
-          + "nJobRequest\022<\n\004name\030\001 \001(\tB.\372A+\n)datamigr"
-          + "ation.googleapis.com/MigrationJob\"Y\n\031Res"
-          + "umeMigrationJobRequest\022<\n\004name\030\001 \001(\tB.\372A"
-          + "+\n)datamigration.googleapis.com/Migratio"
-          + "nJob\"Z\n\032PromoteMigrationJobRequest\022<\n\004na"
-          + "me\030\001 \001(\tB.\372A+\n)datamigration.googleapis."
-          + "com/MigrationJob\"Y\n\031VerifyMigrationJobRe"
-          + "quest\022<\n\004name\030\001 \001(\tB.\372A+\n)datamigration."
-          + "googleapis.com/MigrationJob\"Z\n\032RestartMi"
-          + "grationJobRequest\022<\n\004name\030\001 \001(\tB.\372A+\n)da"
+          + "uddms/v1/clouddms_resources.proto\032<googl"
+          + "e/cloud/clouddms/v1/conversionworkspace_"
+          + "resources.proto\032#google/longrunning/oper"
+          + "ations.proto\032 google/protobuf/field_mask"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
+          + "\246\001\n\030ListMigrationJobsRequest\022A\n\006parent\030\001"
+          + " \001(\tB1\340A\002\372A+\022)datamigration.googleapis.c"
+          + "om/MigrationJob\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa"
+          + "ge_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_"
+          + "by\030\005 \001(\t\"\211\001\n\031ListMigrationJobsResponse\022>"
+          + "\n\016migration_jobs\030\001 \003(\0132&.google.cloud.cl"
+          + "ouddms.v1.MigrationJob\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"Y\n\026GetMigra"
+          + "tionJobRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)da"
           + "tamigration.googleapis.com/MigrationJob\""
-          + "\246\002\n\030GenerateSshScriptRequest\022E\n\rmigratio"
-          + "n_job\030\001 \001(\tB.\372A+\n)datamigration.googleap"
-          + "is.com/MigrationJob\022\017\n\002vm\030\002 \001(\tB\003\340A\002\022H\n\022"
-          + "vm_creation_config\030d \001(\0132*.google.cloud."
-          + "clouddms.v1.VmCreationConfigH\000\022J\n\023vm_sel"
-          + "ection_config\030e \001(\0132+.google.cloud.cloud"
-          + "dms.v1.VmSelectionConfigH\000\022\017\n\007vm_port\030\003 "
-          + "\001(\005B\013\n\tvm_config\"Q\n\020VmCreationConfig\022\034\n\017"
-          + "vm_machine_type\030\001 \001(\tB\003\340A\002\022\017\n\007vm_zone\030\002 "
-          + "\001(\t\022\016\n\006subnet\030\003 \001(\t\")\n\021VmSelectionConfig"
-          + "\022\024\n\007vm_zone\030\001 \001(\tB\003\340A\002\"\033\n\tSshScript\022\016\n\006s"
-          + "cript\030\001 \001(\t\"\260\001\n\035ListConnectionProfilesRe"
-          + "quest\022F\n\006parent\030\001 \001(\tB6\340A\002\372A0\022.datamigra"
-          + "tion.googleapis.com/ConnectionProfile\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006"
-          + "filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\230\001\n\036ListC"
-          + "onnectionProfilesResponse\022H\n\023connection_"
-          + "profiles\030\001 \003(\0132+.google.cloud.clouddms.v"
-          + "1.ConnectionProfile\022\027\n\017next_page_token\030\002"
-          + " \001(\t\022\023\n\013unreachable\030\003 \003(\t\"c\n\033GetConnecti"
-          + "onProfileRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n."
-          + "datamigration.googleapis.com/ConnectionP"
-          + "rofile\"\356\001\n\036CreateConnectionProfileReques"
-          + "t\022F\n\006parent\030\001 \001(\tB6\340A\002\372A0\n.datamigration"
-          + ".googleapis.com/ConnectionProfile\022\"\n\025con"
-          + "nection_profile_id\030\002 \001(\tB\003\340A\002\022L\n\022connect"
-          + "ion_profile\030\003 \001(\0132+.google.cloud.clouddm"
-          + "s.v1.ConnectionProfileB\003\340A\002\022\022\n\nrequest_i"
-          + "d\030\004 \001(\t\"\270\001\n\036UpdateConnectionProfileReque"
-          + "st\0224\n\013update_mask\030\001 \001(\0132\032.google.protobu"
-          + "f.FieldMaskB\003\340A\002\022L\n\022connection_profile\030\002"
-          + " \001(\0132+.google.cloud.clouddms.v1.Connecti"
-          + "onProfileB\003\340A\002\022\022\n\nrequest_id\030\003 \001(\t\"\211\001\n\036D"
-          + "eleteConnectionProfileRequest\022D\n\004name\030\001 "
-          + "\001(\tB6\340A\002\372A0\n.datamigration.googleapis.co"
-          + "m/ConnectionProfile\022\022\n\nrequest_id\030\002 \001(\t\022"
-          + "\r\n\005force\030\003 \001(\010\"\200\002\n\021OperationMetadata\0224\n\013"
-          + "create_time\030\001 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340"
-          + "A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030"
-          + "\005 \001(\tB\003\340A\003\022#\n\026requested_cancellation\030\006 \001"
-          + "(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\0032\310\036\n\024Da"
-          + "taMigrationService\022\300\001\n\021ListMigrationJobs"
-          + "\0222.google.cloud.clouddms.v1.ListMigratio"
-          + "nJobsRequest\0323.google.cloud.clouddms.v1."
-          + "ListMigrationJobsResponse\"B\202\323\344\223\0023\0221/v1/{"
-          + "parent=projects/*/locations/*}/migration"
-          + "Jobs\332A\006parent\022\255\001\n\017GetMigrationJob\0220.goog"
-          + "le.cloud.clouddms.v1.GetMigrationJobRequ"
-          + "est\032&.google.cloud.clouddms.v1.Migration"
-          + "Job\"@\202\323\344\223\0023\0221/v1/{name=projects/*/locati"
-          + "ons/*/migrationJobs/*}\332A\004name\022\377\001\n\022Create"
-          + "MigrationJob\0223.google.cloud.clouddms.v1."
-          + "CreateMigrationJobRequest\032\035.google.longr"
-          + "unning.Operation\"\224\001\202\323\344\223\002B\"1/v1/{parent=p"
-          + "rojects/*/locations/*}/migrationJobs:\rmi"
-          + "gration_job\332A%parent,migration_job,migra"
-          + "tion_job_id\312A!\n\014MigrationJob\022\021OperationM"
-          + "etadata\022\201\002\n\022UpdateMigrationJob\0223.google."
-          + "cloud.clouddms.v1.UpdateMigrationJobRequ"
-          + "est\032\035.google.longrunning.Operation\"\226\001\202\323\344"
-          + "\223\002P2?/v1/{migration_job.name=projects/*/"
-          + "locations/*/migrationJobs/*}:\rmigration_"
-          + "job\332A\031migration_job,update_mask\312A!\n\014Migr"
-          + "ationJob\022\021OperationMetadata\022\327\001\n\022DeleteMi"
-          + "grationJob\0223.google.cloud.clouddms.v1.De"
-          + "leteMigrationJobRequest\032\035.google.longrun"
-          + "ning.Operation\"m\202\323\344\223\0023*1/v1/{name=projec"
-          + "ts/*/locations/*/migrationJobs/*}\332A\004name"
+          + "\325\001\n\031CreateMigrationJobRequest\022A\n\006parent\030"
+          + "\001 \001(\tB1\340A\002\372A+\022)datamigration.googleapis."
+          + "com/MigrationJob\022\035\n\020migration_job_id\030\002 \001"
+          + "(\tB\003\340A\002\022B\n\rmigration_job\030\003 \001(\0132&.google."
+          + "cloud.clouddms.v1.MigrationJobB\003\340A\002\022\022\n\nr"
+          + "equest_id\030\004 \001(\t\"\251\001\n\031UpdateMigrationJobRe"
+          + "quest\0224\n\013update_mask\030\001 \001(\0132\032.google.prot"
+          + "obuf.FieldMaskB\003\340A\002\022B\n\rmigration_job\030\002 \001"
+          + "(\0132&.google.cloud.clouddms.v1.MigrationJ"
+          + "obB\003\340A\002\022\022\n\nrequest_id\030\003 \001(\t\"\177\n\031DeleteMig"
+          + "rationJobRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)"
+          + "datamigration.googleapis.com/MigrationJo"
+          + "b\022\022\n\nrequest_id\030\002 \001(\t\022\r\n\005force\030\003 \001(\010\"X\n\030"
+          + "StartMigrationJobRequest\022<\n\004name\030\001 \001(\tB."
+          + "\372A+\n)datamigration.googleapis.com/Migrat"
+          + "ionJob\"W\n\027StopMigrationJobRequest\022<\n\004nam"
+          + "e\030\001 \001(\tB.\372A+\n)datamigration.googleapis.c"
+          + "om/MigrationJob\"Y\n\031ResumeMigrationJobReq"
+          + "uest\022<\n\004name\030\001 \001(\tB.\372A+\n)datamigration.g"
+          + "oogleapis.com/MigrationJob\"Z\n\032PromoteMig"
+          + "rationJobRequest\022<\n\004name\030\001 \001(\tB.\372A+\n)dat"
+          + "amigration.googleapis.com/MigrationJob\"Y"
+          + "\n\031VerifyMigrationJobRequest\022<\n\004name\030\001 \001("
+          + "\tB.\372A+\n)datamigration.googleapis.com/Mig"
+          + "rationJob\"Z\n\032RestartMigrationJobRequest\022"
+          + "<\n\004name\030\001 \001(\tB.\372A+\n)datamigration.google"
+          + "apis.com/MigrationJob\"\246\002\n\030GenerateSshScr"
+          + "iptRequest\022E\n\rmigration_job\030\001 \001(\tB.\372A+\n)"
+          + "datamigration.googleapis.com/MigrationJo"
+          + "b\022\017\n\002vm\030\002 \001(\tB\003\340A\002\022H\n\022vm_creation_config"
+          + "\030d \001(\0132*.google.cloud.clouddms.v1.VmCrea"
+          + "tionConfigH\000\022J\n\023vm_selection_config\030e \001("
+          + "\0132+.google.cloud.clouddms.v1.VmSelection"
+          + "ConfigH\000\022\017\n\007vm_port\030\003 \001(\005B\013\n\tvm_config\"Q"
+          + "\n\020VmCreationConfig\022\034\n\017vm_machine_type\030\001 "
+          + "\001(\tB\003\340A\002\022\017\n\007vm_zone\030\002 \001(\t\022\016\n\006subnet\030\003 \001("
+          + "\t\")\n\021VmSelectionConfig\022\024\n\007vm_zone\030\001 \001(\tB"
+          + "\003\340A\002\"\033\n\tSshScript\022\016\n\006script\030\001 \001(\t\"\260\001\n\035Li"
+          + "stConnectionProfilesRequest\022F\n\006parent\030\001 "
+          + "\001(\tB6\340A\002\372A0\022.datamigration.googleapis.co"
+          + "m/ConnectionProfile\022\021\n\tpage_size\030\002 \001(\005\022\022"
+          + "\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010or"
+          + "der_by\030\005 \001(\t\"\230\001\n\036ListConnectionProfilesR"
+          + "esponse\022H\n\023connection_profiles\030\001 \003(\0132+.g"
+          + "oogle.cloud.clouddms.v1.ConnectionProfil"
+          + "e\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachabl"
+          + "e\030\003 \003(\t\"c\n\033GetConnectionProfileRequest\022D"
+          + "\n\004name\030\001 \001(\tB6\340A\002\372A0\n.datamigration.goog"
+          + "leapis.com/ConnectionProfile\"\255\002\n\036CreateC"
+          + "onnectionProfileRequest\022F\n\006parent\030\001 \001(\tB"
+          + "6\340A\002\372A0\n.datamigration.googleapis.com/Co"
+          + "nnectionProfile\022\"\n\025connection_profile_id"
+          + "\030\002 \001(\tB\003\340A\002\022L\n\022connection_profile\030\003 \001(\0132"
+          + "+.google.cloud.clouddms.v1.ConnectionPro"
+          + "fileB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rva"
+          + "lidate_only\030\005 \001(\010B\003\340A\001\022\034\n\017skip_validatio"
+          + "n\030\006 \001(\010B\003\340A\001\"\367\001\n\036UpdateConnectionProfile"
+          + "Request\0224\n\013update_mask\030\001 \001(\0132\032.google.pr"
+          + "otobuf.FieldMaskB\003\340A\002\022L\n\022connection_prof"
+          + "ile\030\002 \001(\0132+.google.cloud.clouddms.v1.Con"
+          + "nectionProfileB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB"
+          + "\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\034\n\017skip"
+          + "_validation\030\005 \001(\010B\003\340A\001\"\211\001\n\036DeleteConnect"
+          + "ionProfileRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".datamigration.googleapis.com/Connection"
+          + "Profile\022\022\n\nrequest_id\030\002 \001(\t\022\r\n\005force\030\003 \001"
+          + "(\010\"\221\002\n\036CreatePrivateConnectionRequest\022F\n"
+          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.datamigration.goo"
+          + "gleapis.com/PrivateConnection\022\"\n\025private"
+          + "_connection_id\030\002 \001(\tB\003\340A\002\022L\n\022private_con"
+          + "nection\030\003 \001(\0132+.google.cloud.clouddms.v1"
+          + ".PrivateConnectionB\003\340A\002\022\027\n\nrequest_id\030\004 "
+          + "\001(\tB\003\340A\001\022\034\n\017skip_validation\030\005 \001(\010B\003\340A\001\"\260"
+          + "\001\n\035ListPrivateConnectionsRequest\022F\n\006pare"
+          + "nt\030\001 \001(\tB6\340A\002\372A0\022.datamigration.googleap"
+          + "is.com/PrivateConnection\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022"
+          + "\020\n\010order_by\030\005 \001(\t\"\230\001\n\036ListPrivateConnect"
+          + "ionsResponse\022H\n\023private_connections\030\001 \003("
+          + "\0132+.google.cloud.clouddms.v1.PrivateConn"
+          + "ection\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
+          + "chable\030\003 \003(\t\"\177\n\036DeletePrivateConnectionR"
+          + "equest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.datamigrat"
+          + "ion.googleapis.com/PrivateConnection\022\027\n\n"
+          + "request_id\030\002 \001(\tB\003\340A\001\"c\n\033GetPrivateConne"
+          + "ctionRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.data"
+          + "migration.googleapis.com/PrivateConnecti"
+          + "on\"\200\002\n\021OperationMetadata\0224\n\013create_time\030"
+          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221"
+          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004"
+          + " \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#"
+          + "\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013a"
+          + "pi_version\030\007 \001(\tB\003\340A\003\"\242\001\n\037ListConversion"
+          + "WorkspacesRequest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A"
+          + "2\0220datamigration.googleapis.com/Conversi"
+          + "onWorkspace\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
+          + "oken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\236\001\n ListConve"
+          + "rsionWorkspacesResponse\022L\n\025conversion_wo"
+          + "rkspaces\030\001 \003(\0132-.google.cloud.clouddms.v"
+          + "1.ConversionWorkspace\022\027\n\017next_page_token"
+          + "\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"g\n\035GetConver"
+          + "sionWorkspaceRequest\022F\n\004name\030\001 \001(\tB8\340A\002\372"
+          + "A2\n0datamigration.googleapis.com/Convers"
+          + "ionWorkspace\"\370\001\n CreateConversionWorkspa"
+          + "ceRequest\022H\n\006parent\030\001 \001(\tB8\340A\002\372A2\0220datam"
+          + "igration.googleapis.com/ConversionWorksp"
+          + "ace\022$\n\027conversion_workspace_id\030\002 \001(\tB\003\340A"
+          + "\002\022P\n\024conversion_workspace\030\003 \001(\0132-.google"
+          + ".cloud.clouddms.v1.ConversionWorkspaceB\003"
+          + "\340A\002\022\022\n\nrequest_id\030\004 \001(\t\"\276\001\n UpdateConver"
+          + "sionWorkspaceRequest\0224\n\013update_mask\030\001 \001("
+          + "\0132\032.google.protobuf.FieldMaskB\003\340A\002\022P\n\024co"
+          + "nversion_workspace\030\002 \001(\0132-.google.cloud."
+          + "clouddms.v1.ConversionWorkspaceB\003\340A\002\022\022\n\n"
+          + "request_id\030\003 \001(\t\"~\n DeleteConversionWork"
+          + "spaceRequest\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0data"
+          + "migration.googleapis.com/ConversionWorks"
+          + "pace\022\022\n\nrequest_id\030\002 \001(\t\"\204\001\n CommitConve"
+          + "rsionWorkspaceRequest\022F\n\004name\030\001 \001(\tB8\340A\002"
+          + "\372A2\n0datamigration.googleapis.com/Conver"
+          + "sionWorkspace\022\030\n\013commit_name\030\002 \001(\tB\003\340A\001\""
+          + "l\n\"RollbackConversionWorkspaceRequest\022F\n"
+          + "\004name\030\001 \001(\tB8\340A\002\372A2\n0datamigration.googl"
+          + "eapis.com/ConversionWorkspace\"\246\001\n\037ApplyC"
+          + "onversionWorkspaceRequest\022F\n\004name\030\001 \001(\tB"
+          + "8\340A\002\372A2\n0datamigration.googleapis.com/Co"
+          + "nversionWorkspace\022\016\n\006filter\030\002 \001(\t\022\034\n\022con"
+          + "nection_profile\030d \001(\tH\000B\r\n\013destination\"\326"
+          + "\001\n\036SeedConversionWorkspaceRequest\022C\n\004nam"
+          + "e\030\001 \001(\tB5\372A2\n0datamigration.googleapis.c"
+          + "om/ConversionWorkspace\022\023\n\013auto_commit\030\002 "
+          + "\001(\010\022#\n\031source_connection_profile\030d \001(\tH\000"
+          + "\022(\n\036destination_connection_profile\030e \001(\t"
+          + "H\000B\013\n\tseed_from\"\215\001\n!ConvertConversionWor"
+          + "kspaceRequest\022C\n\004name\030\001 \001(\tB5\372A2\n0datami"
+          + "gration.googleapis.com/ConversionWorkspa"
+          + "ce\022\023\n\013auto_commit\030\004 \001(\010\022\016\n\006filter\030\005 \001(\t\""
+          + "\330\002\n\031ImportMappingRulesRequest\022H\n\006parent\030"
+          + "\001 \001(\tB8\340A\002\372A2\n0datamigration.googleapis."
+          + "com/ConversionWorkspace\022E\n\014rules_format\030"
+          + "\002 \001(\0162/.google.cloud.clouddms.v1.ImportR"
+          + "ulesFileFormat\022R\n\013rules_files\030\003 \003(\0132=.go"
+          + "ogle.cloud.clouddms.v1.ImportMappingRule"
+          + "sRequest.RulesFile\022\023\n\013auto_commit\030\006 \001(\010\032"
+          + "A\n\tRulesFile\022\035\n\025rules_source_filename\030\001 "
+          + "\001(\t\022\025\n\rrules_content\030\002 \001(\t\"\217\003\n\037DescribeD"
+          + "atabaseEntitiesRequest\022V\n\024conversion_wor"
+          + "kspace\030\001 \001(\tB8\340A\002\372A2\n0datamigration.goog"
+          + "leapis.com/ConversionWorkspace\022\021\n\tpage_s"
+          + "ize\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022R\n\004tree\030\006 "
+          + "\001(\0162D.google.cloud.clouddms.v1.DescribeD"
+          + "atabaseEntitiesRequest.DBTreeType\022\023\n\013unc"
+          + "ommitted\030\013 \001(\010\022\021\n\tcommit_id\030\014 \001(\t\022\016\n\006fil"
+          + "ter\030\r \001(\t\"a\n\nDBTreeType\022\034\n\030DB_TREE_TYPE_"
+          + "UNSPECIFIED\020\000\022\017\n\013SOURCE_TREE\020\001\022\016\n\nDRAFT_"
+          + "TREE\020\002\022\024\n\020DESTINATION_TREE\020\003\"\200\001\n Describ"
+          + "eDatabaseEntitiesResponse\022C\n\021database_en"
+          + "tities\030\001 \003(\0132(.google.cloud.clouddms.v1."
+          + "DatabaseEntity\022\027\n\017next_page_token\030\002 \001(\t\""
+          + "\371\001\n\033SearchBackgroundJobsRequest\022V\n\024conve"
+          + "rsion_workspace\030\001 \001(\tB8\340A\002\372A2\n0datamigra"
+          + "tion.googleapis.com/ConversionWorkspace\022"
+          + ",\n\037return_most_recent_per_job_type\030\002 \001(\010"
+          + "B\003\340A\001\022\025\n\010max_size\030\003 \001(\005B\003\340A\001\022=\n\024complete"
+          + "d_until_time\030\004 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\001\"]\n\034SearchBackgroundJobsRespo"
+          + "nse\022=\n\004jobs\030\001 \003(\0132/.google.cloud.clouddm"
+          + "s.v1.BackgroundJobLogEntry\"\235\001\n+DescribeC"
+          + "onversionWorkspaceRevisionsRequest\022V\n\024co"
+          + "nversion_workspace\030\001 \001(\tB8\340A\002\372A2\n0datami"
+          + "gration.googleapis.com/ConversionWorkspa"
+          + "ce\022\026\n\tcommit_id\030\002 \001(\tB\003\340A\001\"p\n,DescribeCo"
+          + "nversionWorkspaceRevisionsResponse\022@\n\tre"
+          + "visions\030\001 \003(\0132-.google.cloud.clouddms.v1"
+          + ".ConversionWorkspace\"w\n\025FetchStaticIpsRe"
+          + "quest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!locations.g"
+          + "oogleapis.com/Location\022\021\n\tpage_size\030\002 \001("
+          + "\005\022\022\n\npage_token\030\003 \001(\t\"E\n\026FetchStaticIpsR"
+          + "esponse\022\022\n\nstatic_ips\030\001 \003(\t\022\027\n\017next_page"
+          + "_token\030\002 \001(\t2\351B\n\024DataMigrationService\022\300\001"
+          + "\n\021ListMigrationJobs\0222.google.cloud.cloud"
+          + "dms.v1.ListMigrationJobsRequest\0323.google"
+          + ".cloud.clouddms.v1.ListMigrationJobsResp"
+          + "onse\"B\202\323\344\223\0023\0221/v1/{parent=projects/*/loc"
+          + "ations/*}/migrationJobs\332A\006parent\022\255\001\n\017Get"
+          + "MigrationJob\0220.google.cloud.clouddms.v1."
+          + "GetMigrationJobRequest\032&.google.cloud.cl"
+          + "ouddms.v1.MigrationJob\"@\202\323\344\223\0023\0221/v1/{nam"
+          + "e=projects/*/locations/*/migrationJobs/*"
+          + "}\332A\004name\022\377\001\n\022CreateMigrationJob\0223.google"
+          + ".cloud.clouddms.v1.CreateMigrationJobReq"
+          + "uest\032\035.google.longrunning.Operation\"\224\001\202\323"
+          + "\344\223\002B\"1/v1/{parent=projects/*/locations/*"
+          + "}/migrationJobs:\rmigration_job\332A%parent,"
+          + "migration_job,migration_job_id\312A!\n\014Migra"
+          + "tionJob\022\021OperationMetadata\022\201\002\n\022UpdateMig"
+          + "rationJob\0223.google.cloud.clouddms.v1.Upd"
+          + "ateMigrationJobRequest\032\035.google.longrunn"
+          + "ing.Operation\"\226\001\202\323\344\223\002P2?/v1/{migration_j"
+          + "ob.name=projects/*/locations/*/migration"
+          + "Jobs/*}:\rmigration_job\332A\031migration_job,u"
+          + "pdate_mask\312A!\n\014MigrationJob\022\021OperationMe"
+          + "tadata\022\327\001\n\022DeleteMigrationJob\0223.google.c"
+          + "loud.clouddms.v1.DeleteMigrationJobReque"
+          + "st\032\035.google.longrunning.Operation\"m\202\323\344\223\002"
+          + "3*1/v1/{name=projects/*/locations/*/migr"
+          + "ationJobs/*}\332A\004name\312A*\n\025google.protobuf."
+          + "Empty\022\021OperationMetadata\022\316\001\n\021StartMigrat"
+          + "ionJob\0222.google.cloud.clouddms.v1.StartM"
+          + "igrationJobRequest\032\035.google.longrunning."
+          + "Operation\"f\202\323\344\223\002<\"7/v1/{name=projects/*/"
+          + "locations/*/migrationJobs/*}:start:\001*\312A!"
+          + "\n\014MigrationJob\022\021OperationMetadata\022\313\001\n\020St"
+          + "opMigrationJob\0221.google.cloud.clouddms.v"
+          + "1.StopMigrationJobRequest\032\035.google.longr"
+          + "unning.Operation\"e\202\323\344\223\002;\"6/v1/{name=proj"
+          + "ects/*/locations/*/migrationJobs/*}:stop"
+          + ":\001*\312A!\n\014MigrationJob\022\021OperationMetadata\022"
+          + "\321\001\n\022ResumeMigrationJob\0223.google.cloud.cl"
+          + "ouddms.v1.ResumeMigrationJobRequest\032\035.go"
+          + "ogle.longrunning.Operation\"g\202\323\344\223\002=\"8/v1/"
+          + "{name=projects/*/locations/*/migrationJo"
+          + "bs/*}:resume:\001*\312A!\n\014MigrationJob\022\021Operat"
+          + "ionMetadata\022\324\001\n\023PromoteMigrationJob\0224.go"
+          + "ogle.cloud.clouddms.v1.PromoteMigrationJ"
+          + "obRequest\032\035.google.longrunning.Operation"
+          + "\"h\202\323\344\223\002>\"9/v1/{name=projects/*/locations"
+          + "/*/migrationJobs/*}:promote:\001*\312A!\n\014Migra"
+          + "tionJob\022\021OperationMetadata\022\321\001\n\022VerifyMig"
+          + "rationJob\0223.google.cloud.clouddms.v1.Ver"
+          + "ifyMigrationJobRequest\032\035.google.longrunn"
+          + "ing.Operation\"g\202\323\344\223\002=\"8/v1/{name=project"
+          + "s/*/locations/*/migrationJobs/*}:verify:"
+          + "\001*\312A!\n\014MigrationJob\022\021OperationMetadata\022\324"
+          + "\001\n\023RestartMigrationJob\0224.google.cloud.cl"
+          + "ouddms.v1.RestartMigrationJobRequest\032\035.g"
+          + "oogle.longrunning.Operation\"h\202\323\344\223\002>\"9/v1"
+          + "/{name=projects/*/locations/*/migrationJ"
+          + "obs/*}:restart:\001*\312A!\n\014MigrationJob\022\021Oper"
+          + "ationMetadata\022\305\001\n\021GenerateSshScript\0222.go"
+          + "ogle.cloud.clouddms.v1.GenerateSshScript"
+          + "Request\032#.google.cloud.clouddms.v1.SshSc"
+          + "ript\"W\202\323\344\223\002Q\"L/v1/{migration_job=project"
+          + "s/*/locations/*/migrationJobs/*}:generat"
+          + "eSshScript:\001*\022\324\001\n\026ListConnectionProfiles"
+          + "\0227.google.cloud.clouddms.v1.ListConnecti"
+          + "onProfilesRequest\0328.google.cloud.clouddm"
+          + "s.v1.ListConnectionProfilesResponse\"G\202\323\344"
+          + "\223\0028\0226/v1/{parent=projects/*/locations/*}"
+          + "/connectionProfiles\332A\006parent\022\301\001\n\024GetConn"
+          + "ectionProfile\0225.google.cloud.clouddms.v1"
+          + ".GetConnectionProfileRequest\032+.google.cl"
+          + "oud.clouddms.v1.ConnectionProfile\"E\202\323\344\223\002"
+          + "8\0226/v1/{name=projects/*/locations/*/conn"
+          + "ectionProfiles/*}\332A\004name\022\242\002\n\027CreateConne"
+          + "ctionProfile\0228.google.cloud.clouddms.v1."
+          + "CreateConnectionProfileRequest\032\035.google."
+          + "longrunning.Operation\"\255\001\202\323\344\223\002L\"6/v1/{par"
+          + "ent=projects/*/locations/*}/connectionPr"
+          + "ofiles:\022connection_profile\332A/parent,conn"
+          + "ection_profile,connection_profile_id\312A&\n"
+          + "\021ConnectionProfile\022\021OperationMetadata\022\244\002"
+          + "\n\027UpdateConnectionProfile\0228.google.cloud"
+          + ".clouddms.v1.UpdateConnectionProfileRequ"
+          + "est\032\035.google.longrunning.Operation\"\257\001\202\323\344"
+          + "\223\002_2I/v1/{connection_profile.name=projec"
+          + "ts/*/locations/*/connectionProfiles/*}:\022"
+          + "connection_profile\332A\036connection_profile,"
+          + "update_mask\312A&\n\021ConnectionProfile\022\021Opera"
+          + "tionMetadata\022\346\001\n\027DeleteConnectionProfile"
+          + "\0228.google.cloud.clouddms.v1.DeleteConnec"
+          + "tionProfileRequest\032\035.google.longrunning."
+          + "Operation\"r\202\323\344\223\0028*6/v1/{name=projects/*/"
+          + "locations/*/connectionProfiles/*}\332A\004name"
           + "\312A*\n\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\022\316\001\n\021StartMigrationJob\0222.google.clo"
-          + "ud.clouddms.v1.StartMigrationJobRequest\032"
-          + "\035.google.longrunning.Operation\"f\202\323\344\223\002<\"7"
-          + "/v1/{name=projects/*/locations/*/migrati"
-          + "onJobs/*}:start:\001*\312A!\n\014MigrationJob\022\021Ope"
-          + "rationMetadata\022\313\001\n\020StopMigrationJob\0221.go"
-          + "ogle.cloud.clouddms.v1.StopMigrationJobR"
-          + "equest\032\035.google.longrunning.Operation\"e\202"
-          + "\323\344\223\002;\"6/v1/{name=projects/*/locations/*/"
-          + "migrationJobs/*}:stop:\001*\312A!\n\014MigrationJo"
-          + "b\022\021OperationMetadata\022\321\001\n\022ResumeMigration"
-          + "Job\0223.google.cloud.clouddms.v1.ResumeMig"
-          + "rationJobRequest\032\035.google.longrunning.Op"
-          + "eration\"g\202\323\344\223\002=\"8/v1/{name=projects/*/lo"
-          + "cations/*/migrationJobs/*}:resume:\001*\312A!\n"
-          + "\014MigrationJob\022\021OperationMetadata\022\324\001\n\023Pro"
-          + "moteMigrationJob\0224.google.cloud.clouddms"
-          + ".v1.PromoteMigrationJobRequest\032\035.google."
-          + "longrunning.Operation\"h\202\323\344\223\002>\"9/v1/{name"
-          + "=projects/*/locations/*/migrationJobs/*}"
-          + ":promote:\001*\312A!\n\014MigrationJob\022\021OperationM"
-          + "etadata\022\321\001\n\022VerifyMigrationJob\0223.google."
-          + "cloud.clouddms.v1.VerifyMigrationJobRequ"
-          + "est\032\035.google.longrunning.Operation\"g\202\323\344\223"
-          + "\002=\"8/v1/{name=projects/*/locations/*/mig"
-          + "rationJobs/*}:verify:\001*\312A!\n\014MigrationJob"
-          + "\022\021OperationMetadata\022\324\001\n\023RestartMigration"
-          + "Job\0224.google.cloud.clouddms.v1.RestartMi"
-          + "grationJobRequest\032\035.google.longrunning.O"
-          + "peration\"h\202\323\344\223\002>\"9/v1/{name=projects/*/l"
-          + "ocations/*/migrationJobs/*}:restart:\001*\312A"
-          + "!\n\014MigrationJob\022\021OperationMetadata\022\305\001\n\021G"
-          + "enerateSshScript\0222.google.cloud.clouddms"
-          + ".v1.GenerateSshScriptRequest\032#.google.cl"
-          + "oud.clouddms.v1.SshScript\"W\202\323\344\223\002Q\"L/v1/{"
-          + "migration_job=projects/*/locations/*/mig"
-          + "rationJobs/*}:generateSshScript:\001*\022\324\001\n\026L"
-          + "istConnectionProfiles\0227.google.cloud.clo"
-          + "uddms.v1.ListConnectionProfilesRequest\0328"
-          + ".google.cloud.clouddms.v1.ListConnection"
-          + "ProfilesResponse\"G\202\323\344\223\0028\0226/v1/{parent=pr"
-          + "ojects/*/locations/*}/connectionProfiles"
-          + "\332A\006parent\022\301\001\n\024GetConnectionProfile\0225.goo"
-          + "gle.cloud.clouddms.v1.GetConnectionProfi"
-          + "leRequest\032+.google.cloud.clouddms.v1.Con"
-          + "nectionProfile\"E\202\323\344\223\0028\0226/v1/{name=projec"
-          + "ts/*/locations/*/connectionProfiles/*}\332A"
-          + "\004name\022\242\002\n\027CreateConnectionProfile\0228.goog"
-          + "le.cloud.clouddms.v1.CreateConnectionPro"
-          + "fileRequest\032\035.google.longrunning.Operati"
+          + "adata\022\242\002\n\027CreatePrivateConnection\0228.goog"
+          + "le.cloud.clouddms.v1.CreatePrivateConnec"
+          + "tionRequest\032\035.google.longrunning.Operati"
           + "on\"\255\001\202\323\344\223\002L\"6/v1/{parent=projects/*/loca"
-          + "tions/*}/connectionProfiles:\022connection_"
-          + "profile\332A/parent,connection_profile,conn"
-          + "ection_profile_id\312A&\n\021ConnectionProfile\022"
-          + "\021OperationMetadata\022\244\002\n\027UpdateConnectionP"
-          + "rofile\0228.google.cloud.clouddms.v1.Update"
-          + "ConnectionProfileRequest\032\035.google.longru"
-          + "nning.Operation\"\257\001\202\323\344\223\002_2I/v1/{connectio"
-          + "n_profile.name=projects/*/locations/*/co"
-          + "nnectionProfiles/*}:\022connection_profile\332"
-          + "A\036connection_profile,update_mask\312A&\n\021Con"
-          + "nectionProfile\022\021OperationMetadata\022\346\001\n\027De"
-          + "leteConnectionProfile\0228.google.cloud.clo"
-          + "uddms.v1.DeleteConnectionProfileRequest\032"
-          + "\035.google.longrunning.Operation\"r\202\323\344\223\0028*6"
-          + "/v1/{name=projects/*/locations/*/connect"
-          + "ionProfiles/*}\332A\004name\312A*\n\025google.protobu"
-          + "f.Empty\022\021OperationMetadata\032P\312A\034datamigra"
-          + "tion.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\275\001\n\034com.goo"
-          + "gle.cloud.clouddms.v1B\rClouddmsProtoP\001Z8"
-          + "cloud.google.com/go/clouddms/apiv1/cloud"
-          + "dmspb;clouddmspb\252\002\030Google.Cloud.CloudDms"
-          + ".V1\312\002\030Google\\Cloud\\CloudDms\\V1\352\002\033Google:"
-          + ":Cloud::CloudDMS::V1b\006proto3"
+          + "tions/*}/privateConnections:\022private_con"
+          + "nection\332A/parent,private_connection,priv"
+          + "ate_connection_id\312A&\n\021PrivateConnection\022"
+          + "\021OperationMetadata\022\301\001\n\024GetPrivateConnect"
+          + "ion\0225.google.cloud.clouddms.v1.GetPrivat"
+          + "eConnectionRequest\032+.google.cloud.cloudd"
+          + "ms.v1.PrivateConnection\"E\202\323\344\223\0028\0226/v1/{na"
+          + "me=projects/*/locations/*/privateConnect"
+          + "ions/*}\332A\004name\022\324\001\n\026ListPrivateConnection"
+          + "s\0227.google.cloud.clouddms.v1.ListPrivate"
+          + "ConnectionsRequest\0328.google.cloud.cloudd"
+          + "ms.v1.ListPrivateConnectionsResponse\"G\202\323"
+          + "\344\223\0028\0226/v1/{parent=projects/*/locations/*"
+          + "}/privateConnections\332A\006parent\022\346\001\n\027Delete"
+          + "PrivateConnection\0228.google.cloud.clouddm"
+          + "s.v1.DeletePrivateConnectionRequest\032\035.go"
+          + "ogle.longrunning.Operation\"r\202\323\344\223\0028*6/v1/"
+          + "{name=projects/*/locations/*/privateConn"
+          + "ections/*}\332A\004name\312A*\n\025google.protobuf.Em"
+          + "pty\022\021OperationMetadata\022\311\001\n\026GetConversion"
+          + "Workspace\0227.google.cloud.clouddms.v1.Get"
+          + "ConversionWorkspaceRequest\032-.google.clou"
+          + "d.clouddms.v1.ConversionWorkspace\"G\202\323\344\223\002"
+          + ":\0228/v1/{name=projects/*/locations/*/conv"
+          + "ersionWorkspaces/*}\332A\004name\022\334\001\n\030ListConve"
+          + "rsionWorkspaces\0229.google.cloud.clouddms."
+          + "v1.ListConversionWorkspacesRequest\032:.goo"
+          + "gle.cloud.clouddms.v1.ListConversionWork"
+          + "spacesResponse\"I\202\323\344\223\002:\0228/v1/{parent=proj"
+          + "ects/*/locations/*}/conversionWorkspaces"
+          + "\332A\006parent\022\260\002\n\031CreateConversionWorkspace\022"
+          + ":.google.cloud.clouddms.v1.CreateConvers"
+          + "ionWorkspaceRequest\032\035.google.longrunning"
+          + ".Operation\"\267\001\202\323\344\223\002P\"8/v1/{parent=project"
+          + "s/*/locations/*}/conversionWorkspaces:\024c"
+          + "onversion_workspace\332A3parent,conversion_"
+          + "workspace,conversion_workspace_id\312A(\n\023Co"
+          + "nversionWorkspace\022\021OperationMetadata\022\262\002\n"
+          + "\031UpdateConversionWorkspace\022:.google.clou"
+          + "d.clouddms.v1.UpdateConversionWorkspaceR"
+          + "equest\032\035.google.longrunning.Operation\"\271\001"
+          + "\202\323\344\223\002e2M/v1/{conversion_workspace.name=p"
+          + "rojects/*/locations/*/conversionWorkspac"
+          + "es/*}:\024conversion_workspace\332A conversion"
+          + "_workspace,update_mask\312A(\n\023ConversionWor"
+          + "kspace\022\021OperationMetadata\022\354\001\n\031DeleteConv"
+          + "ersionWorkspace\022:.google.cloud.clouddms."
+          + "v1.DeleteConversionWorkspaceRequest\032\035.go"
+          + "ogle.longrunning.Operation\"t\202\323\344\223\002:*8/v1/"
+          + "{name=projects/*/locations/*/conversionW"
+          + "orkspaces/*}\332A\004name\312A*\n\025google.protobuf."
+          + "Empty\022\021OperationMetadata\022\347\001\n\027SeedConvers"
+          + "ionWorkspace\0228.google.cloud.clouddms.v1."
+          + "SeedConversionWorkspaceRequest\032\035.google."
+          + "longrunning.Operation\"s\202\323\344\223\002B\"=/v1/{name"
+          + "=projects/*/locations/*/conversionWorksp"
+          + "aces/*}:seed:\001*\312A(\n\023ConversionWorkspace\022"
+          + "\021OperationMetadata\022\357\001\n\022ImportMappingRule"
+          + "s\0223.google.cloud.clouddms.v1.ImportMappi"
+          + "ngRulesRequest\032\035.google.longrunning.Oper"
+          + "ation\"\204\001\202\323\344\223\002S\"N/v1/{parent=projects/*/l"
+          + "ocations/*/conversionWorkspaces/*}/mappi"
+          + "ngRules:import:\001*\312A(\n\023ConversionWorkspac"
+          + "e\022\021OperationMetadata\022\360\001\n\032ConvertConversi"
+          + "onWorkspace\022;.google.cloud.clouddms.v1.C"
+          + "onvertConversionWorkspaceRequest\032\035.googl"
+          + "e.longrunning.Operation\"v\202\323\344\223\002E\"@/v1/{na"
+          + "me=projects/*/locations/*/conversionWork"
+          + "spaces/*}:convert:\001*\312A(\n\023ConversionWorks"
+          + "pace\022\021OperationMetadata\022\355\001\n\031CommitConver"
+          + "sionWorkspace\022:.google.cloud.clouddms.v1"
+          + ".CommitConversionWorkspaceRequest\032\035.goog"
+          + "le.longrunning.Operation\"u\202\323\344\223\002D\"?/v1/{n"
+          + "ame=projects/*/locations/*/conversionWor"
+          + "kspaces/*}:commit:\001*\312A(\n\023ConversionWorks"
+          + "pace\022\021OperationMetadata\022\363\001\n\033RollbackConv"
+          + "ersionWorkspace\022<.google.cloud.clouddms."
+          + "v1.RollbackConversionWorkspaceRequest\032\035."
+          + "google.longrunning.Operation\"w\202\323\344\223\002F\"A/v"
+          + "1/{name=projects/*/locations/*/conversio"
+          + "nWorkspaces/*}:rollback:\001*\312A(\n\023Conversio"
+          + "nWorkspace\022\021OperationMetadata\022\352\001\n\030ApplyC"
+          + "onversionWorkspace\0229.google.cloud.cloudd"
+          + "ms.v1.ApplyConversionWorkspaceRequest\032\035."
+          + "google.longrunning.Operation\"t\202\323\344\223\002C\">/v"
+          + "1/{name=projects/*/locations/*/conversio"
+          + "nWorkspaces/*}:apply:\001*\312A(\n\023ConversionWo"
+          + "rkspace\022\021OperationMetadata\022\374\001\n\030DescribeD"
+          + "atabaseEntities\0229.google.cloud.clouddms."
+          + "v1.DescribeDatabaseEntitiesRequest\032:.goo"
+          + "gle.cloud.clouddms.v1.DescribeDatabaseEn"
+          + "titiesResponse\"i\202\323\344\223\002c\022a/v1/{conversion_"
+          + "workspace=projects/*/locations/*/convers"
+          + "ionWorkspaces/*}:describeDatabaseEntitie"
+          + "s\022\354\001\n\024SearchBackgroundJobs\0225.google.clou"
+          + "d.clouddms.v1.SearchBackgroundJobsReques"
+          + "t\0326.google.cloud.clouddms.v1.SearchBackg"
+          + "roundJobsResponse\"e\202\323\344\223\002_\022]/v1/{conversi"
+          + "on_workspace=projects/*/locations/*/conv"
+          + "ersionWorkspaces/*}:searchBackgroundJobs",
+      "\022\254\002\n$DescribeConversionWorkspaceRevision"
+          + "s\022E.google.cloud.clouddms.v1.DescribeCon"
+          + "versionWorkspaceRevisionsRequest\032F.googl"
+          + "e.cloud.clouddms.v1.DescribeConversionWo"
+          + "rkspaceRevisionsResponse\"u\202\323\344\223\002o\022m/v1/{c"
+          + "onversion_workspace=projects/*/locations"
+          + "/*/conversionWorkspaces/*}:describeConve"
+          + "rsionWorkspaceRevisions\022\264\001\n\016FetchStaticI"
+          + "ps\022/.google.cloud.clouddms.v1.FetchStati"
+          + "cIpsRequest\0320.google.cloud.clouddms.v1.F"
+          + "etchStaticIpsResponse\"?\202\323\344\223\0022\0220/v1/{name"
+          + "=projects/*/locations/*}:fetchStaticIps\332"
+          + "A\004name\032P\312A\034datamigration.googleapis.com\322"
+          + "A.https://www.googleapis.com/auth/cloud-"
+          + "platformB\275\001\n\034com.google.cloud.clouddms.v"
+          + "1B\rClouddmsProtoP\001Z8cloud.google.com/go/"
+          + "clouddms/apiv1/clouddmspb;clouddmspb\252\002\030G"
+          + "oogle.Cloud.CloudDms.V1\312\002\030Google\\Cloud\\C"
+          + "loudDms\\V1\352\002\033Google::Cloud::CloudDMS::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -329,6 +662,7 @@ public final class ClouddmsProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.clouddms.v1.ClouddmsResourcesProto.getDescriptor(),
+              com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -491,7 +825,12 @@ public final class ClouddmsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_clouddms_v1_CreateConnectionProfileRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "ConnectionProfileId", "ConnectionProfile", "RequestId",
+              "Parent",
+              "ConnectionProfileId",
+              "ConnectionProfile",
+              "RequestId",
+              "ValidateOnly",
+              "SkipValidation",
             });
     internal_static_google_cloud_clouddms_v1_UpdateConnectionProfileRequest_descriptor =
         getDescriptor().getMessageTypes().get(20);
@@ -499,7 +838,7 @@ public final class ClouddmsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_clouddms_v1_UpdateConnectionProfileRequest_descriptor,
             new java.lang.String[] {
-              "UpdateMask", "ConnectionProfile", "RequestId",
+              "UpdateMask", "ConnectionProfile", "RequestId", "ValidateOnly", "SkipValidation",
             });
     internal_static_google_cloud_clouddms_v1_DeleteConnectionProfileRequest_descriptor =
         getDescriptor().getMessageTypes().get(21);
@@ -509,8 +848,48 @@ public final class ClouddmsProto {
             new java.lang.String[] {
               "Name", "RequestId", "Force",
             });
-    internal_static_google_cloud_clouddms_v1_OperationMetadata_descriptor =
+    internal_static_google_cloud_clouddms_v1_CreatePrivateConnectionRequest_descriptor =
         getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_clouddms_v1_CreatePrivateConnectionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_CreatePrivateConnectionRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PrivateConnectionId", "PrivateConnection", "RequestId", "SkipValidation",
+            });
+    internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ListPrivateConnectionsResponse_descriptor,
+            new java.lang.String[] {
+              "PrivateConnections", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_clouddms_v1_DeletePrivateConnectionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_clouddms_v1_DeletePrivateConnectionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_DeletePrivateConnectionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_clouddms_v1_GetPrivateConnectionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_clouddms_v1_GetPrivateConnectionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_GetPrivateConnectionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_clouddms_v1_OperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_clouddms_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_clouddms_v1_OperationMetadata_descriptor,
@@ -522,6 +901,186 @@ public final class ClouddmsProto {
               "StatusMessage",
               "RequestedCancellation",
               "ApiVersion",
+            });
+    internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(28);
+    internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ListConversionWorkspacesResponse_descriptor,
+            new java.lang.String[] {
+              "ConversionWorkspaces", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_clouddms_v1_GetConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_clouddms_v1_GetConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_GetConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_clouddms_v1_CreateConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_clouddms_v1_CreateConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_CreateConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ConversionWorkspaceId", "ConversionWorkspace", "RequestId",
+            });
+    internal_static_google_cloud_clouddms_v1_UpdateConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_clouddms_v1_UpdateConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_UpdateConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "ConversionWorkspace", "RequestId",
+            });
+    internal_static_google_cloud_clouddms_v1_DeleteConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_clouddms_v1_DeleteConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_DeleteConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_clouddms_v1_CommitConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_clouddms_v1_CommitConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_CommitConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "CommitName",
+            });
+    internal_static_google_cloud_clouddms_v1_RollbackConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_clouddms_v1_RollbackConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_RollbackConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_clouddms_v1_ApplyConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_clouddms_v1_ApplyConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ApplyConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Filter", "ConnectionProfile", "Destination",
+            });
+    internal_static_google_cloud_clouddms_v1_SeedConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_clouddms_v1_SeedConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_SeedConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "AutoCommit",
+              "SourceConnectionProfile",
+              "DestinationConnectionProfile",
+              "SeedFrom",
+            });
+    internal_static_google_cloud_clouddms_v1_ConvertConversionWorkspaceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_clouddms_v1_ConvertConversionWorkspaceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ConvertConversionWorkspaceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "AutoCommit", "Filter",
+            });
+    internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "RulesFormat", "RulesFiles", "AutoCommit",
+            });
+    internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_RulesFile_descriptor =
+        internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_RulesFile_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_ImportMappingRulesRequest_RulesFile_descriptor,
+            new java.lang.String[] {
+              "RulesSourceFilename", "RulesContent",
+            });
+    internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesRequest_descriptor,
+            new java.lang.String[] {
+              "ConversionWorkspace",
+              "PageSize",
+              "PageToken",
+              "Tree",
+              "Uncommitted",
+              "CommitId",
+              "Filter",
+            });
+    internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_DescribeDatabaseEntitiesResponse_descriptor,
+            new java.lang.String[] {
+              "DatabaseEntities", "NextPageToken",
+            });
+    internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsRequest_descriptor,
+            new java.lang.String[] {
+              "ConversionWorkspace", "ReturnMostRecentPerJobType", "MaxSize", "CompletedUntilTime",
+            });
+    internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_SearchBackgroundJobsResponse_descriptor,
+            new java.lang.String[] {
+              "Jobs",
+            });
+    internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(44);
+    internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsRequest_descriptor,
+            new java.lang.String[] {
+              "ConversionWorkspace", "CommitId",
+            });
+    internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(45);
+    internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsResponse_descriptor,
+            new java.lang.String[] {
+              "Revisions",
+            });
+    internal_static_google_cloud_clouddms_v1_FetchStaticIpsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(46);
+    internal_static_google_cloud_clouddms_v1_FetchStaticIpsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_FetchStaticIpsRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_clouddms_v1_FetchStaticIpsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(47);
+    internal_static_google_cloud_clouddms_v1_FetchStaticIpsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_clouddms_v1_FetchStaticIpsResponse_descriptor,
+            new java.lang.String[] {
+              "StaticIps", "NextPageToken",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -539,6 +1098,7 @@ public final class ClouddmsProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.clouddms.v1.ClouddmsResourcesProto.getDescriptor();
+    com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

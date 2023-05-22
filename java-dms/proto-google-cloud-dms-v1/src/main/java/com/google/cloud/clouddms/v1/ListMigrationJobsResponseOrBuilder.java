@@ -79,7 +79,7 @@ public interface ListMigrationJobsResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as `page_token` to retrieve the next page.
+   * A token which can be sent as `page_token` to retrieve the next page.
    * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
@@ -92,7 +92,7 @@ public interface ListMigrationJobsResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as `page_token` to retrieve the next page.
+   * A token which can be sent as `page_token` to retrieve the next page.
    * If this field is omitted, there are no subsequent pages.
    * </pre>
    *

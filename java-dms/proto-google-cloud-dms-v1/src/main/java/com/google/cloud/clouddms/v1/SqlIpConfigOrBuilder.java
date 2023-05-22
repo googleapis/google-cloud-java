@@ -93,6 +93,41 @@ public interface SqlIpConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The name of the allocated IP address range for the private IP
+   * Cloud SQL instance. This name refers to an already allocated IP range
+   * address. If set, the instance IP address will be created in the allocated
+   * range. Note that this IP address range can't be modified after the instance
+   * is created. If you change the VPC when configuring connectivity settings
+   * for the migration job, this field is not relevant.
+   * </pre>
+   *
+   * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allocatedIpRange.
+   */
+  java.lang.String getAllocatedIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the allocated IP address range for the private IP
+   * Cloud SQL instance. This name refers to an already allocated IP range
+   * address. If set, the instance IP address will be created in the allocated
+   * range. Note that this IP address range can't be modified after the instance
+   * is created. If you change the VPC when configuring connectivity settings
+   * for the migration job, this field is not relevant.
+   * </pre>
+   *
+   * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for allocatedIpRange.
+   */
+  com.google.protobuf.ByteString getAllocatedIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether SSL connections over IP should be enforced or not.
    * </pre>
    *

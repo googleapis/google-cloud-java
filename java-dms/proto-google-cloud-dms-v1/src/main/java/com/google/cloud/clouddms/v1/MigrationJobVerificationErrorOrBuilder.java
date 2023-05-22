@@ -56,7 +56,8 @@ public interface MigrationJobVerificationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. A formatted message with further details about the error and a CTA.
+   * Output only. A formatted message with further details about the error and a
+   * CTA.
    * </pre>
    *
    * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -68,7 +69,8 @@ public interface MigrationJobVerificationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. A formatted message with further details about the error and a CTA.
+   * Output only. A formatted message with further details about the error and a
+   * CTA.
    * </pre>
    *
    * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

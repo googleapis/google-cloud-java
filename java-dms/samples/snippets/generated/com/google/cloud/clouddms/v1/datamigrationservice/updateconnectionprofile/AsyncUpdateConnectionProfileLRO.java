@@ -43,6 +43,8 @@ public class AsyncUpdateConnectionProfileLRO {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setValidateOnly(true)
+              .setSkipValidation(true)
               .build();
       OperationFuture<ConnectionProfile, OperationMetadata> future =
           dataMigrationServiceClient.updateConnectionProfileOperationCallable().futureCall(request);

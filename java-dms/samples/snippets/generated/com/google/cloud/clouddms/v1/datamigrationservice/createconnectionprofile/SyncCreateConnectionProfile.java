@@ -44,6 +44,8 @@ public class SyncCreateConnectionProfile {
               .setConnectionProfileId("connectionProfileId597575526")
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setValidateOnly(true)
+              .setSkipValidation(true)
               .build();
       ConnectionProfile response =
           dataMigrationServiceClient.createConnectionProfileAsync(request).get();

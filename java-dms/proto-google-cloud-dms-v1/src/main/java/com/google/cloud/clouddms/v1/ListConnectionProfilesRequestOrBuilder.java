@@ -27,7 +27,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of connection profiles.
+   * Required. The parent which owns this collection of connection profiles.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of connection profiles.
+   * Required. The parent which owns this collection of connection profiles.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    * <pre>
    * The maximum number of connection profiles to return. The service may return
    * fewer than this value. If unspecified, at most 50 connection profiles will
-   * be returned. The maximum value is 1000; values above 1000 will be coerced
+   * be returned. The maximum value is 1000; values above 1000 are coerced
    * to 1000.
    * </pre>
    *
@@ -144,7 +144,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * the order by fields for the result.
+   * A comma-separated list of fields to order results according to.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -156,7 +156,7 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * the order by fields for the result.
+   * A comma-separated list of fields to order results according to.
    * </pre>
    *
    * <code>string order_by = 5;</code>

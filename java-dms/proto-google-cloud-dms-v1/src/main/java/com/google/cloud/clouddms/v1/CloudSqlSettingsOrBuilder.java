@@ -456,7 +456,7 @@ public interface CloudSqlSettingsOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+   * The Google Cloud Platform zone where your Cloud SQL database instance is
    * located.
    * </pre>
    *
@@ -469,7 +469,7 @@ public interface CloudSqlSettingsOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+   * The Google Cloud Platform zone where your Cloud SQL database instance is
    * located.
    * </pre>
    *
@@ -478,6 +478,35 @@ public interface CloudSqlSettingsOrBuilder
    * @return The bytes for zone.
    */
   com.google.protobuf.ByteString getZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+   * database instance is located. Used when the Cloud SQL database availability
+   * type is REGIONAL (i.e. multiple zones / highly available).
+   * </pre>
+   *
+   * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The secondaryZone.
+   */
+  java.lang.String getSecondaryZone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+   * database instance is located. Used when the Cloud SQL database availability
+   * type is REGIONAL (i.e. multiple zones / highly available).
+   * </pre>
+   *
+   * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for secondaryZone.
+   */
+  com.google.protobuf.ByteString getSecondaryZoneBytes();
 
   /**
    *
@@ -570,4 +599,66 @@ public interface CloudSqlSettingsOrBuilder
    * @return The bytes for collation.
    */
   com.google.protobuf.ByteString getCollationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The KMS key name used for the csql instance.
+   * </pre>
+   *
+   * <code>string cmek_key_name = 16;</code>
+   *
+   * @return The cmekKeyName.
+   */
+  java.lang.String getCmekKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * The KMS key name used for the csql instance.
+   * </pre>
+   *
+   * <code>string cmek_key_name = 16;</code>
+   *
+   * @return The bytes for cmekKeyName.
+   */
+  com.google.protobuf.ByteString getCmekKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Availability type. Potential values:
+   * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+   * zone affect data availability.
+   * *  `REGIONAL`: The instance can serve data from more than one zone in a
+   * region (it is highly available).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for availabilityType.
+   */
+  int getAvailabilityTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Availability type. Potential values:
+   * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+   * zone affect data availability.
+   * *  `REGIONAL`: The instance can serve data from more than one zone in a
+   * region (it is highly available).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The availabilityType.
+   */
+  com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType getAvailabilityType();
 }

@@ -16,8 +16,12 @@
 
 package com.google.cloud.clouddms.v1.stub;
 
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDatabaseEntitiesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -26,27 +30,54 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.CommitConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
+import com.google.cloud.clouddms.v1.ConversionWorkspace;
+import com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.CreateMigrationJobRequest;
+import com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.DeleteMigrationJobRequest;
+import com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest;
+import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest;
+import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsResponse;
+import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest;
+import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesResponse;
+import com.google.cloud.clouddms.v1.FetchStaticIpsRequest;
+import com.google.cloud.clouddms.v1.FetchStaticIpsResponse;
 import com.google.cloud.clouddms.v1.GenerateSshScriptRequest;
 import com.google.cloud.clouddms.v1.GetConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.GetMigrationJobRequest;
+import com.google.cloud.clouddms.v1.GetPrivateConnectionRequest;
+import com.google.cloud.clouddms.v1.ImportMappingRulesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesResponse;
+import com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest;
+import com.google.cloud.clouddms.v1.ListConversionWorkspacesResponse;
 import com.google.cloud.clouddms.v1.ListMigrationJobsRequest;
 import com.google.cloud.clouddms.v1.ListMigrationJobsResponse;
+import com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest;
+import com.google.cloud.clouddms.v1.ListPrivateConnectionsResponse;
 import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.OperationMetadata;
+import com.google.cloud.clouddms.v1.PrivateConnection;
 import com.google.cloud.clouddms.v1.PromoteMigrationJobRequest;
 import com.google.cloud.clouddms.v1.RestartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.ResumeMigrationJobRequest;
+import com.google.cloud.clouddms.v1.RollbackConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.SearchBackgroundJobsRequest;
+import com.google.cloud.clouddms.v1.SearchBackgroundJobsResponse;
+import com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.SshScript;
 import com.google.cloud.clouddms.v1.StartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.StopMigrationJobRequest;
 import com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest;
+import com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.UpdateMigrationJobRequest;
 import com.google.cloud.clouddms.v1.VerifyMigrationJobRequest;
 import com.google.common.collect.ImmutableMap;
@@ -248,6 +279,232 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionMethodDescriptor =
+          MethodDescriptor.<CreatePrivateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/CreatePrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreatePrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionMethodDescriptor =
+          MethodDescriptor.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/GetPrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PrivateConnection.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsMethodDescriptor =
+          MethodDescriptor
+              .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/ListPrivateConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPrivateConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPrivateConnectionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionMethodDescriptor =
+          MethodDescriptor.<DeletePrivateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/DeletePrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeletePrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetConversionWorkspaceRequest, ConversionWorkspace>
+      getConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<GetConversionWorkspaceRequest, ConversionWorkspace>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/GetConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ConversionWorkspace.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>
+      listConversionWorkspacesMethodDescriptor =
+          MethodDescriptor
+              .<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/ListConversionWorkspaces")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListConversionWorkspacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListConversionWorkspacesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateConversionWorkspaceRequest, Operation>
+      createConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<CreateConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/CreateConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateConversionWorkspaceRequest, Operation>
+      updateConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<UpdateConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/UpdateConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteConversionWorkspaceRequest, Operation>
+      deleteConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<DeleteConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/DeleteConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SeedConversionWorkspaceRequest, Operation>
+      seedConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<SeedConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/SeedConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SeedConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportMappingRulesRequest, Operation>
+      importMappingRulesMethodDescriptor =
+          MethodDescriptor.<ImportMappingRulesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.clouddms.v1.DataMigrationService/ImportMappingRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportMappingRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ConvertConversionWorkspaceRequest, Operation>
+      convertConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<ConvertConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/ConvertConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ConvertConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CommitConversionWorkspaceRequest, Operation>
+      commitConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<CommitConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/CommitConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CommitConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RollbackConversionWorkspaceRequest, Operation>
+      rollbackConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<RollbackConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/RollbackConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RollbackConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ApplyConversionWorkspaceRequest, Operation>
+      applyConversionWorkspaceMethodDescriptor =
+          MethodDescriptor.<ApplyConversionWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/ApplyConversionWorkspace")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ApplyConversionWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>
+      describeDatabaseEntitiesMethodDescriptor =
+          MethodDescriptor
+              .<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/DescribeDatabaseEntities")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DescribeDatabaseEntitiesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DescribeDatabaseEntitiesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+      searchBackgroundJobsMethodDescriptor =
+          MethodDescriptor.<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/SearchBackgroundJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchBackgroundJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchBackgroundJobsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          DescribeConversionWorkspaceRevisionsRequest, DescribeConversionWorkspaceRevisionsResponse>
+      describeConversionWorkspaceRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<DescribeConversionWorkspaceRevisionsRequest,
+                  DescribeConversionWorkspaceRevisionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/DescribeConversionWorkspaceRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DescribeConversionWorkspaceRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      DescribeConversionWorkspaceRevisionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<FetchStaticIpsRequest, FetchStaticIpsResponse>
+      fetchStaticIpsMethodDescriptor =
+          MethodDescriptor.<FetchStaticIpsRequest, FetchStaticIpsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.clouddms.v1.DataMigrationService/FetchStaticIps")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchStaticIpsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchStaticIpsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListMigrationJobsRequest, ListMigrationJobsResponse>
       listMigrationJobsCallable;
   private final UnaryCallable<ListMigrationJobsRequest, ListMigrationJobsPagedResponse>
@@ -301,6 +558,83 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
       deleteConnectionProfileCallable;
   private final OperationCallable<DeleteConnectionProfileRequest, Empty, OperationMetadata>
       deleteConnectionProfileOperationCallable;
+  private final UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable;
+  private final OperationCallable<
+          CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable;
+  private final UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable;
+  private final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable;
+  private final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable;
+  private final UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable;
+  private final OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable;
+  private final UnaryCallable<GetConversionWorkspaceRequest, ConversionWorkspace>
+      getConversionWorkspaceCallable;
+  private final UnaryCallable<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>
+      listConversionWorkspacesCallable;
+  private final UnaryCallable<
+          ListConversionWorkspacesRequest, ListConversionWorkspacesPagedResponse>
+      listConversionWorkspacesPagedCallable;
+  private final UnaryCallable<CreateConversionWorkspaceRequest, Operation>
+      createConversionWorkspaceCallable;
+  private final OperationCallable<
+          CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      createConversionWorkspaceOperationCallable;
+  private final UnaryCallable<UpdateConversionWorkspaceRequest, Operation>
+      updateConversionWorkspaceCallable;
+  private final OperationCallable<
+          UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      updateConversionWorkspaceOperationCallable;
+  private final UnaryCallable<DeleteConversionWorkspaceRequest, Operation>
+      deleteConversionWorkspaceCallable;
+  private final OperationCallable<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+      deleteConversionWorkspaceOperationCallable;
+  private final UnaryCallable<SeedConversionWorkspaceRequest, Operation>
+      seedConversionWorkspaceCallable;
+  private final OperationCallable<
+          SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      seedConversionWorkspaceOperationCallable;
+  private final UnaryCallable<ImportMappingRulesRequest, Operation> importMappingRulesCallable;
+  private final OperationCallable<ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+      importMappingRulesOperationCallable;
+  private final UnaryCallable<ConvertConversionWorkspaceRequest, Operation>
+      convertConversionWorkspaceCallable;
+  private final OperationCallable<
+          ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      convertConversionWorkspaceOperationCallable;
+  private final UnaryCallable<CommitConversionWorkspaceRequest, Operation>
+      commitConversionWorkspaceCallable;
+  private final OperationCallable<
+          CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      commitConversionWorkspaceOperationCallable;
+  private final UnaryCallable<RollbackConversionWorkspaceRequest, Operation>
+      rollbackConversionWorkspaceCallable;
+  private final OperationCallable<
+          RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      rollbackConversionWorkspaceOperationCallable;
+  private final UnaryCallable<ApplyConversionWorkspaceRequest, Operation>
+      applyConversionWorkspaceCallable;
+  private final OperationCallable<
+          ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      applyConversionWorkspaceOperationCallable;
+  private final UnaryCallable<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>
+      describeDatabaseEntitiesCallable;
+  private final UnaryCallable<
+          DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesPagedResponse>
+      describeDatabaseEntitiesPagedCallable;
+  private final UnaryCallable<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+      searchBackgroundJobsCallable;
+  private final UnaryCallable<
+          DescribeConversionWorkspaceRevisionsRequest, DescribeConversionWorkspaceRevisionsResponse>
+      describeConversionWorkspaceRevisionsCallable;
+  private final UnaryCallable<FetchStaticIpsRequest, FetchStaticIpsResponse> fetchStaticIpsCallable;
+  private final UnaryCallable<FetchStaticIpsRequest, FetchStaticIpsPagedResponse>
+      fetchStaticIpsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -526,6 +860,227 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionTransportSettings =
+            GrpcCallSettings.<CreatePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createPrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionTransportSettings =
+            GrpcCallSettings.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
+                .setMethodDescriptor(getPrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+        listPrivateConnectionsTransportSettings =
+            GrpcCallSettings
+                .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listPrivateConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionTransportSettings =
+            GrpcCallSettings.<DeletePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deletePrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetConversionWorkspaceRequest, ConversionWorkspace>
+        getConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<GetConversionWorkspaceRequest, ConversionWorkspace>newBuilder()
+                .setMethodDescriptor(getConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>
+        listConversionWorkspacesTransportSettings =
+            GrpcCallSettings
+                .<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>newBuilder()
+                .setMethodDescriptor(listConversionWorkspacesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateConversionWorkspaceRequest, Operation>
+        createConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<CreateConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(createConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateConversionWorkspaceRequest, Operation>
+        updateConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<UpdateConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversion_workspace.name",
+                          String.valueOf(request.getConversionWorkspace().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteConversionWorkspaceRequest, Operation>
+        deleteConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<DeleteConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<SeedConversionWorkspaceRequest, Operation>
+        seedConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<SeedConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(seedConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ImportMappingRulesRequest, Operation> importMappingRulesTransportSettings =
+        GrpcCallSettings.<ImportMappingRulesRequest, Operation>newBuilder()
+            .setMethodDescriptor(importMappingRulesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ConvertConversionWorkspaceRequest, Operation>
+        convertConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<ConvertConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(convertConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CommitConversionWorkspaceRequest, Operation>
+        commitConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<CommitConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(commitConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<RollbackConversionWorkspaceRequest, Operation>
+        rollbackConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<RollbackConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rollbackConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ApplyConversionWorkspaceRequest, Operation>
+        applyConversionWorkspaceTransportSettings =
+            GrpcCallSettings.<ApplyConversionWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(applyConversionWorkspaceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>
+        describeDatabaseEntitiesTransportSettings =
+            GrpcCallSettings
+                .<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>newBuilder()
+                .setMethodDescriptor(describeDatabaseEntitiesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversion_workspace", String.valueOf(request.getConversionWorkspace()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+        searchBackgroundJobsTransportSettings =
+            GrpcCallSettings.<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>newBuilder()
+                .setMethodDescriptor(searchBackgroundJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversion_workspace", String.valueOf(request.getConversionWorkspace()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            DescribeConversionWorkspaceRevisionsRequest,
+            DescribeConversionWorkspaceRevisionsResponse>
+        describeConversionWorkspaceRevisionsTransportSettings =
+            GrpcCallSettings
+                .<DescribeConversionWorkspaceRevisionsRequest,
+                    DescribeConversionWorkspaceRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(describeConversionWorkspaceRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "conversion_workspace", String.valueOf(request.getConversionWorkspace()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
+        fetchStaticIpsTransportSettings =
+            GrpcCallSettings.<FetchStaticIpsRequest, FetchStaticIpsResponse>newBuilder()
+                .setMethodDescriptor(fetchStaticIpsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.listMigrationJobsCallable =
         callableFactory.createUnaryCallable(
@@ -690,6 +1245,183 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             settings.deleteConnectionProfileOperationSettings(),
             clientContext,
             operationsStub);
+    this.createPrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createPrivateConnectionTransportSettings,
+            settings.createPrivateConnectionSettings(),
+            clientContext);
+    this.createPrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createPrivateConnectionTransportSettings,
+            settings.createPrivateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getPrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getPrivateConnectionTransportSettings,
+            settings.getPrivateConnectionSettings(),
+            clientContext);
+    this.listPrivateConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listPrivateConnectionsTransportSettings,
+            settings.listPrivateConnectionsSettings(),
+            clientContext);
+    this.listPrivateConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPrivateConnectionsTransportSettings,
+            settings.listPrivateConnectionsSettings(),
+            clientContext);
+    this.deletePrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deletePrivateConnectionTransportSettings,
+            settings.deletePrivateConnectionSettings(),
+            clientContext);
+    this.deletePrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePrivateConnectionTransportSettings,
+            settings.deletePrivateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            getConversionWorkspaceTransportSettings,
+            settings.getConversionWorkspaceSettings(),
+            clientContext);
+    this.listConversionWorkspacesCallable =
+        callableFactory.createUnaryCallable(
+            listConversionWorkspacesTransportSettings,
+            settings.listConversionWorkspacesSettings(),
+            clientContext);
+    this.listConversionWorkspacesPagedCallable =
+        callableFactory.createPagedCallable(
+            listConversionWorkspacesTransportSettings,
+            settings.listConversionWorkspacesSettings(),
+            clientContext);
+    this.createConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            createConversionWorkspaceTransportSettings,
+            settings.createConversionWorkspaceSettings(),
+            clientContext);
+    this.createConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            createConversionWorkspaceTransportSettings,
+            settings.createConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            updateConversionWorkspaceTransportSettings,
+            settings.updateConversionWorkspaceSettings(),
+            clientContext);
+    this.updateConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateConversionWorkspaceTransportSettings,
+            settings.updateConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            deleteConversionWorkspaceTransportSettings,
+            settings.deleteConversionWorkspaceSettings(),
+            clientContext);
+    this.deleteConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteConversionWorkspaceTransportSettings,
+            settings.deleteConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.seedConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            seedConversionWorkspaceTransportSettings,
+            settings.seedConversionWorkspaceSettings(),
+            clientContext);
+    this.seedConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            seedConversionWorkspaceTransportSettings,
+            settings.seedConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importMappingRulesCallable =
+        callableFactory.createUnaryCallable(
+            importMappingRulesTransportSettings,
+            settings.importMappingRulesSettings(),
+            clientContext);
+    this.importMappingRulesOperationCallable =
+        callableFactory.createOperationCallable(
+            importMappingRulesTransportSettings,
+            settings.importMappingRulesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.convertConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            convertConversionWorkspaceTransportSettings,
+            settings.convertConversionWorkspaceSettings(),
+            clientContext);
+    this.convertConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            convertConversionWorkspaceTransportSettings,
+            settings.convertConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.commitConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            commitConversionWorkspaceTransportSettings,
+            settings.commitConversionWorkspaceSettings(),
+            clientContext);
+    this.commitConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            commitConversionWorkspaceTransportSettings,
+            settings.commitConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.rollbackConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            rollbackConversionWorkspaceTransportSettings,
+            settings.rollbackConversionWorkspaceSettings(),
+            clientContext);
+    this.rollbackConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            rollbackConversionWorkspaceTransportSettings,
+            settings.rollbackConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.applyConversionWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            applyConversionWorkspaceTransportSettings,
+            settings.applyConversionWorkspaceSettings(),
+            clientContext);
+    this.applyConversionWorkspaceOperationCallable =
+        callableFactory.createOperationCallable(
+            applyConversionWorkspaceTransportSettings,
+            settings.applyConversionWorkspaceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.describeDatabaseEntitiesCallable =
+        callableFactory.createUnaryCallable(
+            describeDatabaseEntitiesTransportSettings,
+            settings.describeDatabaseEntitiesSettings(),
+            clientContext);
+    this.describeDatabaseEntitiesPagedCallable =
+        callableFactory.createPagedCallable(
+            describeDatabaseEntitiesTransportSettings,
+            settings.describeDatabaseEntitiesSettings(),
+            clientContext);
+    this.searchBackgroundJobsCallable =
+        callableFactory.createUnaryCallable(
+            searchBackgroundJobsTransportSettings,
+            settings.searchBackgroundJobsSettings(),
+            clientContext);
+    this.describeConversionWorkspaceRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            describeConversionWorkspaceRevisionsTransportSettings,
+            settings.describeConversionWorkspaceRevisionsSettings(),
+            clientContext);
+    this.fetchStaticIpsCallable =
+        callableFactory.createUnaryCallable(
+            fetchStaticIpsTransportSettings, settings.fetchStaticIpsSettings(), clientContext);
+    this.fetchStaticIpsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchStaticIpsTransportSettings, settings.fetchStaticIpsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -872,6 +1604,211 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
   public OperationCallable<DeleteConnectionProfileRequest, Empty, OperationMetadata>
       deleteConnectionProfileOperationCallable() {
     return deleteConnectionProfileOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable() {
+    return createPrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable() {
+    return createPrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable() {
+    return getPrivateConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable() {
+    return listPrivateConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable() {
+    return listPrivateConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable() {
+    return deletePrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable() {
+    return deletePrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConversionWorkspaceRequest, ConversionWorkspace>
+      getConversionWorkspaceCallable() {
+    return getConversionWorkspaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConversionWorkspacesRequest, ListConversionWorkspacesResponse>
+      listConversionWorkspacesCallable() {
+    return listConversionWorkspacesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConversionWorkspacesRequest, ListConversionWorkspacesPagedResponse>
+      listConversionWorkspacesPagedCallable() {
+    return listConversionWorkspacesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateConversionWorkspaceRequest, Operation>
+      createConversionWorkspaceCallable() {
+    return createConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      createConversionWorkspaceOperationCallable() {
+    return createConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversionWorkspaceRequest, Operation>
+      updateConversionWorkspaceCallable() {
+    return updateConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      updateConversionWorkspaceOperationCallable() {
+    return updateConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConversionWorkspaceRequest, Operation>
+      deleteConversionWorkspaceCallable() {
+    return deleteConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
+      deleteConversionWorkspaceOperationCallable() {
+    return deleteConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SeedConversionWorkspaceRequest, Operation>
+      seedConversionWorkspaceCallable() {
+    return seedConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      seedConversionWorkspaceOperationCallable() {
+    return seedConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportMappingRulesRequest, Operation> importMappingRulesCallable() {
+    return importMappingRulesCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
+      importMappingRulesOperationCallable() {
+    return importMappingRulesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConvertConversionWorkspaceRequest, Operation>
+      convertConversionWorkspaceCallable() {
+    return convertConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      convertConversionWorkspaceOperationCallable() {
+    return convertConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CommitConversionWorkspaceRequest, Operation>
+      commitConversionWorkspaceCallable() {
+    return commitConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      commitConversionWorkspaceOperationCallable() {
+    return commitConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RollbackConversionWorkspaceRequest, Operation>
+      rollbackConversionWorkspaceCallable() {
+    return rollbackConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      rollbackConversionWorkspaceOperationCallable() {
+    return rollbackConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ApplyConversionWorkspaceRequest, Operation>
+      applyConversionWorkspaceCallable() {
+    return applyConversionWorkspaceCallable;
+  }
+
+  @Override
+  public OperationCallable<ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
+      applyConversionWorkspaceOperationCallable() {
+    return applyConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesResponse>
+      describeDatabaseEntitiesCallable() {
+    return describeDatabaseEntitiesCallable;
+  }
+
+  @Override
+  public UnaryCallable<DescribeDatabaseEntitiesRequest, DescribeDatabaseEntitiesPagedResponse>
+      describeDatabaseEntitiesPagedCallable() {
+    return describeDatabaseEntitiesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchBackgroundJobsRequest, SearchBackgroundJobsResponse>
+      searchBackgroundJobsCallable() {
+    return searchBackgroundJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          DescribeConversionWorkspaceRevisionsRequest, DescribeConversionWorkspaceRevisionsResponse>
+      describeConversionWorkspaceRevisionsCallable() {
+    return describeConversionWorkspaceRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchStaticIpsRequest, FetchStaticIpsResponse> fetchStaticIpsCallable() {
+    return fetchStaticIpsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchStaticIpsRequest, FetchStaticIpsPagedResponse>
+      fetchStaticIpsPagedCallable() {
+    return fetchStaticIpsPagedCallable;
   }
 
   @Override

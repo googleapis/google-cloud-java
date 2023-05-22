@@ -417,4 +417,408 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createPrivateConnection(
+      CreatePrivateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPrivateConnection(
+      GetPrivateConnectionRequest request, StreamObserver<PrivateConnection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PrivateConnection) {
+      requests.add(request);
+      responseObserver.onNext(((PrivateConnection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PrivateConnection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPrivateConnections(
+      ListPrivateConnectionsRequest request,
+      StreamObserver<ListPrivateConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPrivateConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPrivateConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPrivateConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deletePrivateConnection(
+      DeletePrivateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getConversionWorkspace(
+      GetConversionWorkspaceRequest request, StreamObserver<ConversionWorkspace> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConversionWorkspace) {
+      requests.add(request);
+      responseObserver.onNext(((ConversionWorkspace) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConversionWorkspace.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listConversionWorkspaces(
+      ListConversionWorkspacesRequest request,
+      StreamObserver<ListConversionWorkspacesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListConversionWorkspacesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListConversionWorkspacesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListConversionWorkspaces, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListConversionWorkspacesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createConversionWorkspace(
+      CreateConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateConversionWorkspace(
+      UpdateConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteConversionWorkspace(
+      DeleteConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void seedConversionWorkspace(
+      SeedConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SeedConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importMappingRules(
+      ImportMappingRulesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportMappingRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void convertConversionWorkspace(
+      ConvertConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ConvertConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void commitConversionWorkspace(
+      CommitConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CommitConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rollbackConversionWorkspace(
+      RollbackConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RollbackConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void applyConversionWorkspace(
+      ApplyConversionWorkspaceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ApplyConversionWorkspace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void describeDatabaseEntities(
+      DescribeDatabaseEntitiesRequest request,
+      StreamObserver<DescribeDatabaseEntitiesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DescribeDatabaseEntitiesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DescribeDatabaseEntitiesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DescribeDatabaseEntities, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DescribeDatabaseEntitiesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchBackgroundJobs(
+      SearchBackgroundJobsRequest request,
+      StreamObserver<SearchBackgroundJobsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchBackgroundJobsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchBackgroundJobsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchBackgroundJobs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchBackgroundJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void describeConversionWorkspaceRevisions(
+      DescribeConversionWorkspaceRevisionsRequest request,
+      StreamObserver<DescribeConversionWorkspaceRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DescribeConversionWorkspaceRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DescribeConversionWorkspaceRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DescribeConversionWorkspaceRevisions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DescribeConversionWorkspaceRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchStaticIps(
+      FetchStaticIpsRequest request, StreamObserver<FetchStaticIpsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchStaticIpsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchStaticIpsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchStaticIps, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchStaticIpsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -41,6 +41,8 @@ public class SyncUpdateConnectionProfile {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setValidateOnly(true)
+              .setSkipValidation(true)
               .build();
       ConnectionProfile response =
           dataMigrationServiceClient.updateConnectionProfileAsync(request).get();

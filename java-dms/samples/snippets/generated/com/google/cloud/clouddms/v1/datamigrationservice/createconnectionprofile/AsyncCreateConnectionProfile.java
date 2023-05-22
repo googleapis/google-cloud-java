@@ -46,6 +46,8 @@ public class AsyncCreateConnectionProfile {
               .setConnectionProfileId("connectionProfileId597575526")
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setValidateOnly(true)
+              .setSkipValidation(true)
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.createConnectionProfileCallable().futureCall(request);
