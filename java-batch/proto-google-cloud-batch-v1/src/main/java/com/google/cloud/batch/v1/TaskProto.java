@@ -60,6 +60,10 @@ public final class TaskProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1_Runnable_Barrier_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_Runnable_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_Runnable_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_batch_v1_TaskSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1_TaskSpec_fieldAccessorTable;
@@ -117,67 +121,70 @@ public final class TaskProto {
           + "loud.batch.v1.TaskExecution\022;\n\ntask_stat"
           + "e\030\005 \001(\0162\'.google.cloud.batch.v1.TaskStat"
           + "us.State\"\"\n\rTaskExecution\022\021\n\texit_code\030\001"
-          + " \001(\005\"\342\001\n\nTaskStatus\0226\n\005state\030\001 \001(\0162\'.goo"
+          + " \001(\005\"\362\001\n\nTaskStatus\0226\n\005state\030\001 \001(\0162\'.goo"
           + "gle.cloud.batch.v1.TaskStatus.State\0229\n\rs"
           + "tatus_events\030\002 \003(\0132\".google.cloud.batch."
-          + "v1.StatusEvent\"a\n\005State\022\025\n\021STATE_UNSPECI"
+          + "v1.StatusEvent\"q\n\005State\022\025\n\021STATE_UNSPECI"
           + "FIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010ASSIGNED\020\002\022\013\n\007RUN"
-          + "NING\020\003\022\n\n\006FAILED\020\004\022\r\n\tSUCCEEDED\020\005\"\362\004\n\010Ru"
-          + "nnable\022>\n\tcontainer\030\001 \001(\0132).google.cloud"
-          + ".batch.v1.Runnable.ContainerH\000\0228\n\006script"
-          + "\030\002 \001(\0132&.google.cloud.batch.v1.Runnable."
-          + "ScriptH\000\022:\n\007barrier\030\006 \001(\0132\'.google.cloud"
-          + ".batch.v1.Runnable.BarrierH\000\022\032\n\022ignore_e"
-          + "xit_status\030\003 \001(\010\022\022\n\nbackground\030\004 \001(\010\022\022\n\n"
-          + "always_run\030\005 \001(\010\0227\n\013environment\030\007 \001(\0132\"."
-          + "google.cloud.batch.v1.Environment\022*\n\007tim"
-          + "eout\030\010 \001(\0132\031.google.protobuf.Duration\032\252\001"
-          + "\n\tContainer\022\021\n\timage_uri\030\001 \001(\t\022\020\n\010comman"
-          + "ds\030\002 \003(\t\022\022\n\nentrypoint\030\003 \001(\t\022\017\n\007volumes\030"
-          + "\007 \003(\t\022\017\n\007options\030\010 \001(\t\022\036\n\026block_external"
-          + "_network\030\t \001(\010\022\020\n\010username\030\n \001(\t\022\020\n\010pass"
-          + "word\030\013 \001(\t\0323\n\006Script\022\016\n\004path\030\001 \001(\tH\000\022\016\n\004"
-          + "text\030\002 \001(\tH\000B\t\n\007command\032\027\n\007Barrier\022\014\n\004na"
-          + "me\030\001 \001(\tB\014\n\nexecutable\"\375\003\n\010TaskSpec\0222\n\tr"
-          + "unnables\030\010 \003(\0132\037.google.cloud.batch.v1.R"
-          + "unnable\022@\n\020compute_resource\030\003 \001(\0132&.goog"
-          + "le.cloud.batch.v1.ComputeResource\0223\n\020max"
-          + "_run_duration\030\004 \001(\0132\031.google.protobuf.Du"
-          + "ration\022\027\n\017max_retry_count\030\005 \001(\005\022B\n\022lifec"
-          + "ycle_policies\030\t \003(\0132&.google.cloud.batch"
-          + ".v1.LifecyclePolicy\022K\n\014environments\030\006 \003("
-          + "\01321.google.cloud.batch.v1.TaskSpec.Envir"
-          + "onmentsEntryB\002\030\001\022.\n\007volumes\030\007 \003(\0132\035.goog"
-          + "le.cloud.batch.v1.Volume\0227\n\013environment\030"
-          + "\n \001(\0132\".google.cloud.batch.v1.Environmen"
-          + "t\0323\n\021EnvironmentsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\"\212\002\n\017LifecyclePolicy\022=\n\006ac"
-          + "tion\030\001 \001(\0162-.google.cloud.batch.v1.Lifec"
-          + "yclePolicy.Action\022P\n\020action_condition\030\002 "
-          + "\001(\01326.google.cloud.batch.v1.LifecyclePol"
-          + "icy.ActionCondition\032%\n\017ActionCondition\022\022"
-          + "\n\nexit_codes\030\001 \003(\005\"?\n\006Action\022\026\n\022ACTION_U"
-          + "NSPECIFIED\020\000\022\016\n\nRETRY_TASK\020\001\022\r\n\tFAIL_TAS"
-          + "K\020\002\"\300\001\n\004Task\022\014\n\004name\030\001 \001(\t\0221\n\006status\030\002 \001"
-          + "(\0132!.google.cloud.batch.v1.TaskStatus:w\352"
-          + "At\n\031batch.googleapis.com/Task\022Wprojects/"
-          + "{project}/locations/{location}/jobs/{job"
-          + "}/taskGroups/{task_group}/tasks/{task}\"\217"
-          + "\003\n\013Environment\022D\n\tvariables\030\001 \003(\01321.goog"
-          + "le.cloud.batch.v1.Environment.VariablesE"
-          + "ntry\022Q\n\020secret_variables\030\002 \003(\01327.google."
-          + "cloud.batch.v1.Environment.SecretVariabl"
-          + "esEntry\022I\n\023encrypted_variables\030\003 \001(\0132,.g"
-          + "oogle.cloud.batch.v1.Environment.KMSEnvM"
-          + "ap\0322\n\tKMSEnvMap\022\020\n\010key_name\030\001 \001(\t\022\023\n\013cip"
-          + "her_text\030\002 \001(\t\0320\n\016VariablesEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0326\n\024SecretVariab"
-          + "lesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "B\252\001\n\031com.google.cloud.batch.v1B\tTaskProt"
-          + "oP\001Z/cloud.google.com/go/batch/apiv1/bat"
-          + "chpb;batchpb\242\002\003GCB\252\002\025Google.Cloud.Batch."
-          + "V1\312\002\025Google\\Cloud\\Batch\\V1\352\002\030Google::Clo"
-          + "ud::Batch::V1b\006proto3"
+          + "NING\020\003\022\n\n\006FAILED\020\004\022\r\n\tSUCCEEDED\020\005\022\016\n\nUNE"
+          + "XECUTED\020\006\"\336\005\n\010Runnable\022>\n\tcontainer\030\001 \001("
+          + "\0132).google.cloud.batch.v1.Runnable.Conta"
+          + "inerH\000\0228\n\006script\030\002 \001(\0132&.google.cloud.ba"
+          + "tch.v1.Runnable.ScriptH\000\022:\n\007barrier\030\006 \001("
+          + "\0132\'.google.cloud.batch.v1.Runnable.Barri"
+          + "erH\000\022\032\n\022ignore_exit_status\030\003 \001(\010\022\022\n\nback"
+          + "ground\030\004 \001(\010\022\022\n\nalways_run\030\005 \001(\010\0227\n\013envi"
+          + "ronment\030\007 \001(\0132\".google.cloud.batch.v1.En"
+          + "vironment\022*\n\007timeout\030\010 \001(\0132\031.google.prot"
+          + "obuf.Duration\022;\n\006labels\030\t \003(\0132+.google.c"
+          + "loud.batch.v1.Runnable.LabelsEntry\032\252\001\n\tC"
+          + "ontainer\022\021\n\timage_uri\030\001 \001(\t\022\020\n\010commands\030"
+          + "\002 \003(\t\022\022\n\nentrypoint\030\003 \001(\t\022\017\n\007volumes\030\007 \003"
+          + "(\t\022\017\n\007options\030\010 \001(\t\022\036\n\026block_external_ne"
+          + "twork\030\t \001(\010\022\020\n\010username\030\n \001(\t\022\020\n\010passwor"
+          + "d\030\013 \001(\t\0323\n\006Script\022\016\n\004path\030\001 \001(\tH\000\022\016\n\004tex"
+          + "t\030\002 \001(\tH\000B\t\n\007command\032\027\n\007Barrier\022\014\n\004name\030"
+          + "\001 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001B\014\n\nexecutable\"\375\003\n\010TaskSpec\022"
+          + "2\n\trunnables\030\010 \003(\0132\037.google.cloud.batch."
+          + "v1.Runnable\022@\n\020compute_resource\030\003 \001(\0132&."
+          + "google.cloud.batch.v1.ComputeResource\0223\n"
+          + "\020max_run_duration\030\004 \001(\0132\031.google.protobu"
+          + "f.Duration\022\027\n\017max_retry_count\030\005 \001(\005\022B\n\022l"
+          + "ifecycle_policies\030\t \003(\0132&.google.cloud.b"
+          + "atch.v1.LifecyclePolicy\022K\n\014environments\030"
+          + "\006 \003(\01321.google.cloud.batch.v1.TaskSpec.E"
+          + "nvironmentsEntryB\002\030\001\022.\n\007volumes\030\007 \003(\0132\035."
+          + "google.cloud.batch.v1.Volume\0227\n\013environm"
+          + "ent\030\n \001(\0132\".google.cloud.batch.v1.Enviro"
+          + "nment\0323\n\021EnvironmentsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\"\212\002\n\017LifecyclePolicy\022="
+          + "\n\006action\030\001 \001(\0162-.google.cloud.batch.v1.L"
+          + "ifecyclePolicy.Action\022P\n\020action_conditio"
+          + "n\030\002 \001(\01326.google.cloud.batch.v1.Lifecycl"
+          + "ePolicy.ActionCondition\032%\n\017ActionConditi"
+          + "on\022\022\n\nexit_codes\030\001 \003(\005\"?\n\006Action\022\026\n\022ACTI"
+          + "ON_UNSPECIFIED\020\000\022\016\n\nRETRY_TASK\020\001\022\r\n\tFAIL"
+          + "_TASK\020\002\"\300\001\n\004Task\022\014\n\004name\030\001 \001(\t\0221\n\006status"
+          + "\030\002 \001(\0132!.google.cloud.batch.v1.TaskStatu"
+          + "s:w\352At\n\031batch.googleapis.com/Task\022Wproje"
+          + "cts/{project}/locations/{location}/jobs/"
+          + "{job}/taskGroups/{task_group}/tasks/{tas"
+          + "k}\"\217\003\n\013Environment\022D\n\tvariables\030\001 \003(\01321."
+          + "google.cloud.batch.v1.Environment.Variab"
+          + "lesEntry\022Q\n\020secret_variables\030\002 \003(\01327.goo"
+          + "gle.cloud.batch.v1.Environment.SecretVar"
+          + "iablesEntry\022I\n\023encrypted_variables\030\003 \001(\013"
+          + "2,.google.cloud.batch.v1.Environment.KMS"
+          + "EnvMap\0322\n\tKMSEnvMap\022\020\n\010key_name\030\001 \001(\t\022\023\n"
+          + "\013cipher_text\030\002 \001(\t\0320\n\016VariablesEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0326\n\024SecretVa"
+          + "riablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001B\252\001\n\031com.google.cloud.batch.v1B\tTask"
+          + "ProtoP\001Z/cloud.google.com/go/batch/apiv1"
+          + "/batchpb;batchpb\242\002\003GCB\252\002\025Google.Cloud.Ba"
+          + "tch.V1\312\002\025Google\\Cloud\\Batch\\V1\352\002\030Google:"
+          + ":Cloud::Batch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -234,6 +241,7 @@ public final class TaskProto {
               "AlwaysRun",
               "Environment",
               "Timeout",
+              "Labels",
               "Executable",
             });
     internal_static_google_cloud_batch_v1_Runnable_Container_descriptor =
@@ -266,6 +274,14 @@ public final class TaskProto {
             internal_static_google_cloud_batch_v1_Runnable_Barrier_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_cloud_batch_v1_Runnable_LabelsEntry_descriptor =
+        internal_static_google_cloud_batch_v1_Runnable_descriptor.getNestedTypes().get(3);
+    internal_static_google_cloud_batch_v1_Runnable_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_Runnable_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_batch_v1_TaskSpec_descriptor =
         getDescriptor().getMessageTypes().get(5);

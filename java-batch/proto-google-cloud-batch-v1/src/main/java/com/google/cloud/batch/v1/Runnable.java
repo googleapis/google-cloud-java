@@ -56,6 +56,17 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_batch_v1_Runnable_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 9:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -271,8 +282,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If set to true, external network access to and from container will be
-     * blocked. The container will use the default internal network
-     * 'goog-internal'.
+     * blocked, containers that are with block_external_network as true can
+     * still communicate with each other, network cannot be specified in the
+     * `container.options` field.
      * </pre>
      *
      * <code>bool block_external_network = 9;</code>
@@ -698,8 +710,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If set to true, external network access to and from container will be
-     * blocked. The container will use the default internal network
-     * 'goog-internal'.
+     * blocked, containers that are with block_external_network as true can
+     * still communicate with each other, network cannot be specified in the
+     * `container.options` field.
      * </pre>
      *
      * <code>bool block_external_network = 9;</code>
@@ -2069,8 +2082,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * If set to true, external network access to and from container will be
-       * blocked. The container will use the default internal network
-       * 'goog-internal'.
+       * blocked, containers that are with block_external_network as true can
+       * still communicate with each other, network cannot be specified in the
+       * `container.options` field.
        * </pre>
        *
        * <code>bool block_external_network = 9;</code>
@@ -2086,8 +2100,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * If set to true, external network access to and from container will be
-       * blocked. The container will use the default internal network
-       * 'goog-internal'.
+       * blocked, containers that are with block_external_network as true can
+       * still communicate with each other, network cannot be specified in the
+       * `container.options` field.
        * </pre>
        *
        * <code>bool block_external_network = 9;</code>
@@ -2107,8 +2122,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * If set to true, external network access to and from container will be
-       * blocked. The container will use the default internal network
-       * 'goog-internal'.
+       * blocked, containers that are with block_external_network as true can
+       * still communicate with each other, network cannot be specified in the
+       * `container.options` field.
        * </pre>
        *
        * <code>bool block_external_network = 9;</code>
@@ -4640,6 +4656,108 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
+  public static final int LABELS_FIELD_NUMBER = 9;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.batch.v1.TaskProto
+                .internal_static_google_cloud_batch_v1_Runnable_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this Runnable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this Runnable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this Runnable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this Runnable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4678,6 +4796,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     if (timeout_ != null) {
       output.writeMessage(8, getTimeout());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
     getUnknownFields().writeTo(output);
   }
 
@@ -4717,6 +4837,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     if (timeout_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTimeout());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4743,6 +4873,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     if (hasTimeout()) {
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getExecutableCase().equals(other.getExecutableCase())) return false;
     switch (executableCase_) {
       case 1:
@@ -4781,6 +4912,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     if (hasTimeout()) {
       hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getTimeout().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     switch (executableCase_) {
       case 1:
@@ -4916,6 +5051,26 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_batch_v1_Runnable_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 9:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 9:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -4959,6 +5114,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       executableCase_ = 0;
       executable_ = null;
       return this;
@@ -5012,6 +5168,10 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
     }
 
@@ -5089,6 +5249,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTimeout()) {
         mergeTimeout(other.getTimeout());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       switch (other.getExecutableCase()) {
         case CONTAINER:
           {
@@ -5184,6 +5346,18 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6397,6 +6571,169 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         timeout_ = null;
       }
       return timeoutBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this Runnable.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 9;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
+      return this;
     }
 
     @java.lang.Override

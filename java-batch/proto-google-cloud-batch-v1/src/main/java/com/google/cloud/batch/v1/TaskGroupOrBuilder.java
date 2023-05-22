@@ -97,7 +97,7 @@ public interface TaskGroupOrBuilder
    *
    * <pre>
    * Number of Tasks in the TaskGroup.
-   * default is 1
+   * Default is 1.
    * </pre>
    *
    * <code>int64 task_count = 4;</code>
@@ -112,6 +112,7 @@ public interface TaskGroupOrBuilder
    * <pre>
    * Max number of tasks that can run in parallel.
    * Default to min(task_count, 1000).
+   * Field parallelism must be 1 if the scheduling_policy is IN_ORDER.
    * </pre>
    *
    * <code>int64 parallelism = 5;</code>

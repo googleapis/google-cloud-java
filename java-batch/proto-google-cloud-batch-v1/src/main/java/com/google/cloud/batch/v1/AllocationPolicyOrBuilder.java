@@ -280,4 +280,39 @@ public interface AllocationPolicyOrBuilder
    * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
    */
   com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicyOrBuilder getNetworkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   *
+   * @return Whether the placement field is set.
+   */
+  boolean hasPlacement();
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   *
+   * @return The placement.
+   */
+  com.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy getPlacement();
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   */
+  com.google.cloud.batch.v1.AllocationPolicy.PlacementPolicyOrBuilder getPlacementOrBuilder();
 }
