@@ -43,7 +43,8 @@ public interface SearchHashesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -57,7 +58,8 @@ public interface SearchHashesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -71,7 +73,8 @@ public interface SearchHashesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -86,7 +89,8 @@ public interface SearchHashesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -100,7 +104,8 @@ public interface SearchHashesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>

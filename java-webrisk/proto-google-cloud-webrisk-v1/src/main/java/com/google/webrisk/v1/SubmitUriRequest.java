@@ -22,29 +22,29 @@ package com.google.webrisk.v1;
  *
  *
  * <pre>
- * Request to send a potentially phishy URI to WebRisk.
+ * Request to send a potentially malicious URI to WebRisk.
  * </pre>
  *
- * Protobuf type {@code google.cloud.webrisk.v1.CreateSubmissionRequest}
+ * Protobuf type {@code google.cloud.webrisk.v1.SubmitUriRequest}
  */
-public final class CreateSubmissionRequest extends com.google.protobuf.GeneratedMessageV3
+public final class SubmitUriRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.CreateSubmissionRequest)
-    CreateSubmissionRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.SubmitUriRequest)
+    SubmitUriRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use CreateSubmissionRequest.newBuilder() to construct.
-  private CreateSubmissionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SubmitUriRequest.newBuilder() to construct.
+  private SubmitUriRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private CreateSubmissionRequest() {
+  private SubmitUriRequest() {
     parent_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new CreateSubmissionRequest();
+    return new SubmitUriRequest();
   }
 
   @java.lang.Override
@@ -54,17 +54,17 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1.WebRiskProto
-        .internal_static_google_cloud_webrisk_v1_CreateSubmissionRequest_descriptor;
+        .internal_static_google_cloud_webrisk_v1_SubmitUriRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.webrisk.v1.WebRiskProto
-        .internal_static_google_cloud_webrisk_v1_CreateSubmissionRequest_fieldAccessorTable
+        .internal_static_google_cloud_webrisk_v1_SubmitUriRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.webrisk.v1.CreateSubmissionRequest.class,
-            com.google.webrisk.v1.CreateSubmissionRequest.Builder.class);
+            com.google.webrisk.v1.SubmitUriRequest.class,
+            com.google.webrisk.v1.SubmitUriRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -130,7 +130,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The submission that contains the content of the phishing report.
+   * Required. The submission that contains the URI to be scanned.
    * </pre>
    *
    * <code>
@@ -147,7 +147,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The submission that contains the content of the phishing report.
+   * Required. The submission that contains the URI to be scanned.
    * </pre>
    *
    * <code>
@@ -166,7 +166,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The submission that contains the content of the phishing report.
+   * Required. The submission that contains the URI to be scanned.
    * </pre>
    *
    * <code>
@@ -178,6 +178,106 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     return submission_ == null
         ? com.google.webrisk.v1.Submission.getDefaultInstance()
         : submission_;
+  }
+
+  public static final int THREAT_INFO_FIELD_NUMBER = 3;
+  private com.google.webrisk.v1.ThreatInfo threatInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about the submission.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+   *
+   * @return Whether the threatInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasThreatInfo() {
+    return threatInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about the submission.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+   *
+   * @return The threatInfo.
+   */
+  @java.lang.Override
+  public com.google.webrisk.v1.ThreatInfo getThreatInfo() {
+    return threatInfo_ == null
+        ? com.google.webrisk.v1.ThreatInfo.getDefaultInstance()
+        : threatInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about the submission.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.webrisk.v1.ThreatInfoOrBuilder getThreatInfoOrBuilder() {
+    return threatInfo_ == null
+        ? com.google.webrisk.v1.ThreatInfo.getDefaultInstance()
+        : threatInfo_;
+  }
+
+  public static final int THREAT_DISCOVERY_FIELD_NUMBER = 4;
+  private com.google.webrisk.v1.ThreatDiscovery threatDiscovery_;
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about how the submission was discovered.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+   *
+   * @return Whether the threatDiscovery field is set.
+   */
+  @java.lang.Override
+  public boolean hasThreatDiscovery() {
+    return threatDiscovery_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about how the submission was discovered.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+   *
+   * @return The threatDiscovery.
+   */
+  @java.lang.Override
+  public com.google.webrisk.v1.ThreatDiscovery getThreatDiscovery() {
+    return threatDiscovery_ == null
+        ? com.google.webrisk.v1.ThreatDiscovery.getDefaultInstance()
+        : threatDiscovery_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about how the submission was discovered.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.webrisk.v1.ThreatDiscoveryOrBuilder getThreatDiscoveryOrBuilder() {
+    return threatDiscovery_ == null
+        ? com.google.webrisk.v1.ThreatDiscovery.getDefaultInstance()
+        : threatDiscovery_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -200,6 +300,12 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     if (submission_ != null) {
       output.writeMessage(2, getSubmission());
     }
+    if (threatInfo_ != null) {
+      output.writeMessage(3, getThreatInfo());
+    }
+    if (threatDiscovery_ != null) {
+      output.writeMessage(4, getThreatDiscovery());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -215,6 +321,12 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     if (submission_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSubmission());
     }
+    if (threatInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getThreatInfo());
+    }
+    if (threatDiscovery_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getThreatDiscovery());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -225,16 +337,23 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.webrisk.v1.CreateSubmissionRequest)) {
+    if (!(obj instanceof com.google.webrisk.v1.SubmitUriRequest)) {
       return super.equals(obj);
     }
-    com.google.webrisk.v1.CreateSubmissionRequest other =
-        (com.google.webrisk.v1.CreateSubmissionRequest) obj;
+    com.google.webrisk.v1.SubmitUriRequest other = (com.google.webrisk.v1.SubmitUriRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
     if (hasSubmission() != other.hasSubmission()) return false;
     if (hasSubmission()) {
       if (!getSubmission().equals(other.getSubmission())) return false;
+    }
+    if (hasThreatInfo() != other.hasThreatInfo()) return false;
+    if (hasThreatInfo()) {
+      if (!getThreatInfo().equals(other.getThreatInfo())) return false;
+    }
+    if (hasThreatDiscovery() != other.hasThreatDiscovery()) return false;
+    if (hasThreatDiscovery()) {
+      if (!getThreatDiscovery().equals(other.getThreatDiscovery())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -253,76 +372,84 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       hash = (37 * hash) + SUBMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getSubmission().hashCode();
     }
+    if (hasThreatInfo()) {
+      hash = (37 * hash) + THREAT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getThreatInfo().hashCode();
+    }
+    if (hasThreatDiscovery()) {
+      hash = (37 * hash) + THREAT_DISCOVERY_FIELD_NUMBER;
+      hash = (53 * hash) + getThreatDiscovery().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(byte[] data)
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(java.io.InputStream input)
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.webrisk.v1.SubmitUriRequest parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseDelimitedFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest parseFrom(
+  public static com.google.webrisk.v1.SubmitUriRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -339,7 +466,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.webrisk.v1.CreateSubmissionRequest prototype) {
+  public static Builder newBuilder(com.google.webrisk.v1.SubmitUriRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -357,31 +484,31 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request to send a potentially phishy URI to WebRisk.
+   * Request to send a potentially malicious URI to WebRisk.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.webrisk.v1.CreateSubmissionRequest}
+   * Protobuf type {@code google.cloud.webrisk.v1.SubmitUriRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.webrisk.v1.CreateSubmissionRequest)
-      com.google.webrisk.v1.CreateSubmissionRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.webrisk.v1.SubmitUriRequest)
+      com.google.webrisk.v1.SubmitUriRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.webrisk.v1.WebRiskProto
-          .internal_static_google_cloud_webrisk_v1_CreateSubmissionRequest_descriptor;
+          .internal_static_google_cloud_webrisk_v1_SubmitUriRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.webrisk.v1.WebRiskProto
-          .internal_static_google_cloud_webrisk_v1_CreateSubmissionRequest_fieldAccessorTable
+          .internal_static_google_cloud_webrisk_v1_SubmitUriRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.webrisk.v1.CreateSubmissionRequest.class,
-              com.google.webrisk.v1.CreateSubmissionRequest.Builder.class);
+              com.google.webrisk.v1.SubmitUriRequest.class,
+              com.google.webrisk.v1.SubmitUriRequest.Builder.class);
     }
 
-    // Construct using com.google.webrisk.v1.CreateSubmissionRequest.newBuilder()
+    // Construct using com.google.webrisk.v1.SubmitUriRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -398,23 +525,33 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         submissionBuilder_.dispose();
         submissionBuilder_ = null;
       }
+      threatInfo_ = null;
+      if (threatInfoBuilder_ != null) {
+        threatInfoBuilder_.dispose();
+        threatInfoBuilder_ = null;
+      }
+      threatDiscovery_ = null;
+      if (threatDiscoveryBuilder_ != null) {
+        threatDiscoveryBuilder_.dispose();
+        threatDiscoveryBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.webrisk.v1.WebRiskProto
-          .internal_static_google_cloud_webrisk_v1_CreateSubmissionRequest_descriptor;
+          .internal_static_google_cloud_webrisk_v1_SubmitUriRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.webrisk.v1.CreateSubmissionRequest getDefaultInstanceForType() {
-      return com.google.webrisk.v1.CreateSubmissionRequest.getDefaultInstance();
+    public com.google.webrisk.v1.SubmitUriRequest getDefaultInstanceForType() {
+      return com.google.webrisk.v1.SubmitUriRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.webrisk.v1.CreateSubmissionRequest build() {
-      com.google.webrisk.v1.CreateSubmissionRequest result = buildPartial();
+    public com.google.webrisk.v1.SubmitUriRequest build() {
+      com.google.webrisk.v1.SubmitUriRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -422,9 +559,9 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    public com.google.webrisk.v1.CreateSubmissionRequest buildPartial() {
-      com.google.webrisk.v1.CreateSubmissionRequest result =
-          new com.google.webrisk.v1.CreateSubmissionRequest(this);
+    public com.google.webrisk.v1.SubmitUriRequest buildPartial() {
+      com.google.webrisk.v1.SubmitUriRequest result =
+          new com.google.webrisk.v1.SubmitUriRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -432,13 +569,20 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       return result;
     }
 
-    private void buildPartial0(com.google.webrisk.v1.CreateSubmissionRequest result) {
+    private void buildPartial0(com.google.webrisk.v1.SubmitUriRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.submission_ = submissionBuilder_ == null ? submission_ : submissionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.threatInfo_ = threatInfoBuilder_ == null ? threatInfo_ : threatInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.threatDiscovery_ =
+            threatDiscoveryBuilder_ == null ? threatDiscovery_ : threatDiscoveryBuilder_.build();
       }
     }
 
@@ -477,16 +621,16 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.webrisk.v1.CreateSubmissionRequest) {
-        return mergeFrom((com.google.webrisk.v1.CreateSubmissionRequest) other);
+      if (other instanceof com.google.webrisk.v1.SubmitUriRequest) {
+        return mergeFrom((com.google.webrisk.v1.SubmitUriRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.webrisk.v1.CreateSubmissionRequest other) {
-      if (other == com.google.webrisk.v1.CreateSubmissionRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.webrisk.v1.SubmitUriRequest other) {
+      if (other == com.google.webrisk.v1.SubmitUriRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         bitField0_ |= 0x00000001;
@@ -494,6 +638,12 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       }
       if (other.hasSubmission()) {
         mergeSubmission(other.getSubmission());
+      }
+      if (other.hasThreatInfo()) {
+        mergeThreatInfo(other.getThreatInfo());
+      }
+      if (other.hasThreatDiscovery()) {
+        mergeThreatDiscovery(other.getThreatDiscovery());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -533,6 +683,18 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getThreatInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getThreatDiscoveryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -683,7 +845,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -699,7 +861,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -721,7 +883,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -745,7 +907,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -766,7 +928,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -793,7 +955,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -814,7 +976,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -830,7 +992,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -850,7 +1012,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The submission that contains the content of the phishing report.
+     * Required. The submission that contains the URI to be scanned.
      * </pre>
      *
      * <code>
@@ -874,6 +1036,373 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       return submissionBuilder_;
     }
 
+    private com.google.webrisk.v1.ThreatInfo threatInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.webrisk.v1.ThreatInfo,
+            com.google.webrisk.v1.ThreatInfo.Builder,
+            com.google.webrisk.v1.ThreatInfoOrBuilder>
+        threatInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     *
+     * @return Whether the threatInfo field is set.
+     */
+    public boolean hasThreatInfo() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     *
+     * @return The threatInfo.
+     */
+    public com.google.webrisk.v1.ThreatInfo getThreatInfo() {
+      if (threatInfoBuilder_ == null) {
+        return threatInfo_ == null
+            ? com.google.webrisk.v1.ThreatInfo.getDefaultInstance()
+            : threatInfo_;
+      } else {
+        return threatInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    public Builder setThreatInfo(com.google.webrisk.v1.ThreatInfo value) {
+      if (threatInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        threatInfo_ = value;
+      } else {
+        threatInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    public Builder setThreatInfo(com.google.webrisk.v1.ThreatInfo.Builder builderForValue) {
+      if (threatInfoBuilder_ == null) {
+        threatInfo_ = builderForValue.build();
+      } else {
+        threatInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    public Builder mergeThreatInfo(com.google.webrisk.v1.ThreatInfo value) {
+      if (threatInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && threatInfo_ != null
+            && threatInfo_ != com.google.webrisk.v1.ThreatInfo.getDefaultInstance()) {
+          getThreatInfoBuilder().mergeFrom(value);
+        } else {
+          threatInfo_ = value;
+        }
+      } else {
+        threatInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    public Builder clearThreatInfo() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      threatInfo_ = null;
+      if (threatInfoBuilder_ != null) {
+        threatInfoBuilder_.dispose();
+        threatInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    public com.google.webrisk.v1.ThreatInfo.Builder getThreatInfoBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getThreatInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    public com.google.webrisk.v1.ThreatInfoOrBuilder getThreatInfoOrBuilder() {
+      if (threatInfoBuilder_ != null) {
+        return threatInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return threatInfo_ == null
+            ? com.google.webrisk.v1.ThreatInfo.getDefaultInstance()
+            : threatInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about the submission.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.webrisk.v1.ThreatInfo,
+            com.google.webrisk.v1.ThreatInfo.Builder,
+            com.google.webrisk.v1.ThreatInfoOrBuilder>
+        getThreatInfoFieldBuilder() {
+      if (threatInfoBuilder_ == null) {
+        threatInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.webrisk.v1.ThreatInfo,
+                com.google.webrisk.v1.ThreatInfo.Builder,
+                com.google.webrisk.v1.ThreatInfoOrBuilder>(
+                getThreatInfo(), getParentForChildren(), isClean());
+        threatInfo_ = null;
+      }
+      return threatInfoBuilder_;
+    }
+
+    private com.google.webrisk.v1.ThreatDiscovery threatDiscovery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.webrisk.v1.ThreatDiscovery,
+            com.google.webrisk.v1.ThreatDiscovery.Builder,
+            com.google.webrisk.v1.ThreatDiscoveryOrBuilder>
+        threatDiscoveryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     *
+     * @return Whether the threatDiscovery field is set.
+     */
+    public boolean hasThreatDiscovery() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     *
+     * @return The threatDiscovery.
+     */
+    public com.google.webrisk.v1.ThreatDiscovery getThreatDiscovery() {
+      if (threatDiscoveryBuilder_ == null) {
+        return threatDiscovery_ == null
+            ? com.google.webrisk.v1.ThreatDiscovery.getDefaultInstance()
+            : threatDiscovery_;
+      } else {
+        return threatDiscoveryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    public Builder setThreatDiscovery(com.google.webrisk.v1.ThreatDiscovery value) {
+      if (threatDiscoveryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        threatDiscovery_ = value;
+      } else {
+        threatDiscoveryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    public Builder setThreatDiscovery(
+        com.google.webrisk.v1.ThreatDiscovery.Builder builderForValue) {
+      if (threatDiscoveryBuilder_ == null) {
+        threatDiscovery_ = builderForValue.build();
+      } else {
+        threatDiscoveryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    public Builder mergeThreatDiscovery(com.google.webrisk.v1.ThreatDiscovery value) {
+      if (threatDiscoveryBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && threatDiscovery_ != null
+            && threatDiscovery_ != com.google.webrisk.v1.ThreatDiscovery.getDefaultInstance()) {
+          getThreatDiscoveryBuilder().mergeFrom(value);
+        } else {
+          threatDiscovery_ = value;
+        }
+      } else {
+        threatDiscoveryBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    public Builder clearThreatDiscovery() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      threatDiscovery_ = null;
+      if (threatDiscoveryBuilder_ != null) {
+        threatDiscoveryBuilder_.dispose();
+        threatDiscoveryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    public com.google.webrisk.v1.ThreatDiscovery.Builder getThreatDiscoveryBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getThreatDiscoveryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    public com.google.webrisk.v1.ThreatDiscoveryOrBuilder getThreatDiscoveryOrBuilder() {
+      if (threatDiscoveryBuilder_ != null) {
+        return threatDiscoveryBuilder_.getMessageOrBuilder();
+      } else {
+        return threatDiscovery_ == null
+            ? com.google.webrisk.v1.ThreatDiscovery.getDefaultInstance()
+            : threatDiscovery_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides additional information about how the submission was discovered.
+     * </pre>
+     *
+     * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.webrisk.v1.ThreatDiscovery,
+            com.google.webrisk.v1.ThreatDiscovery.Builder,
+            com.google.webrisk.v1.ThreatDiscoveryOrBuilder>
+        getThreatDiscoveryFieldBuilder() {
+      if (threatDiscoveryBuilder_ == null) {
+        threatDiscoveryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.webrisk.v1.ThreatDiscovery,
+                com.google.webrisk.v1.ThreatDiscovery.Builder,
+                com.google.webrisk.v1.ThreatDiscoveryOrBuilder>(
+                getThreatDiscovery(), getParentForChildren(), isClean());
+        threatDiscovery_ = null;
+      }
+      return threatDiscoveryBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -885,24 +1414,24 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.webrisk.v1.CreateSubmissionRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.webrisk.v1.SubmitUriRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.webrisk.v1.CreateSubmissionRequest)
-  private static final com.google.webrisk.v1.CreateSubmissionRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.webrisk.v1.SubmitUriRequest)
+  private static final com.google.webrisk.v1.SubmitUriRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.webrisk.v1.CreateSubmissionRequest();
+    DEFAULT_INSTANCE = new com.google.webrisk.v1.SubmitUriRequest();
   }
 
-  public static com.google.webrisk.v1.CreateSubmissionRequest getDefaultInstance() {
+  public static com.google.webrisk.v1.SubmitUriRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateSubmissionRequest> PARSER =
-      new com.google.protobuf.AbstractParser<CreateSubmissionRequest>() {
+  private static final com.google.protobuf.Parser<SubmitUriRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SubmitUriRequest>() {
         @java.lang.Override
-        public CreateSubmissionRequest parsePartialFrom(
+        public SubmitUriRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -921,17 +1450,17 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         }
       };
 
-  public static com.google.protobuf.Parser<CreateSubmissionRequest> parser() {
+  public static com.google.protobuf.Parser<SubmitUriRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateSubmissionRequest> getParserForType() {
+  public com.google.protobuf.Parser<SubmitUriRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.webrisk.v1.CreateSubmissionRequest getDefaultInstanceForType() {
+  public com.google.webrisk.v1.SubmitUriRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

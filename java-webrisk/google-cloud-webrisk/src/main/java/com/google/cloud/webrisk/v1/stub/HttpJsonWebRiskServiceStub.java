@@ -16,18 +16,24 @@
 
 package com.google.cloud.webrisk.v1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1.ComputeThreatListDiffResponse;
@@ -37,6 +43,8 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriMetadata;
+import com.google.webrisk.v1.SubmitUriRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +62,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 @BetaApi
 public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(Submission.getDescriptor())
+          .add(SubmitUriMetadata.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<
           ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
@@ -206,13 +218,56 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SubmitUriRequest, Operation> submitUriMethodDescriptor =
+      ApiMethodDescriptor.<SubmitUriRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.webrisk.v1.WebRiskService/SubmitUri")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<SubmitUriRequest>newBuilder()
+                  .setPath(
+                      "/v1/{parent=projects/*}/uris:submit",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<SubmitUriRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "parent", request.getParent());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<SubmitUriRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearParent().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (SubmitUriRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
+
   private final UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffCallable;
   private final UnaryCallable<SearchUrisRequest, SearchUrisResponse> searchUrisCallable;
   private final UnaryCallable<SearchHashesRequest, SearchHashesResponse> searchHashesCallable;
   private final UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable;
+  private final UnaryCallable<SubmitUriRequest, Operation> submitUriCallable;
+  private final OperationCallable<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonWebRiskServiceStub create(WebRiskServiceStubSettings settings)
@@ -253,6 +308,27 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder().setDelete("/v1/{name=projects/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/{name=projects/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/{name=projects/*}/operations").build())
+                .build());
 
     HttpJsonCallSettings<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
         computeThreatListDiffTransportSettings =
@@ -276,6 +352,11 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
             .setMethodDescriptor(createSubmissionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SubmitUriRequest, Operation> submitUriTransportSettings =
+        HttpJsonCallSettings.<SubmitUriRequest, Operation>newBuilder()
+            .setMethodDescriptor(submitUriMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.computeThreatListDiffCallable =
         callableFactory.createUnaryCallable(
@@ -291,6 +372,15 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
     this.createSubmissionCallable =
         callableFactory.createUnaryCallable(
             createSubmissionTransportSettings, settings.createSubmissionSettings(), clientContext);
+    this.submitUriCallable =
+        callableFactory.createUnaryCallable(
+            submitUriTransportSettings, settings.submitUriSettings(), clientContext);
+    this.submitUriOperationCallable =
+        callableFactory.createOperationCallable(
+            submitUriTransportSettings,
+            settings.submitUriOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -303,7 +393,12 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
     methodDescriptors.add(searchUrisMethodDescriptor);
     methodDescriptors.add(searchHashesMethodDescriptor);
     methodDescriptors.add(createSubmissionMethodDescriptor);
+    methodDescriptors.add(submitUriMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -325,6 +420,17 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
   @Override
   public UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable() {
     return createSubmissionCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitUriRequest, Operation> submitUriCallable() {
+    return submitUriCallable;
+  }
+
+  @Override
+  public OperationCallable<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationCallable() {
+    return submitUriOperationCallable;
   }
 
   @Override

@@ -52,7 +52,8 @@ public interface SearchUrisRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -66,7 +67,8 @@ public interface SearchUrisRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -80,7 +82,8 @@ public interface SearchUrisRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -95,7 +98,8 @@ public interface SearchUrisRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>
@@ -109,7 +113,8 @@ public interface SearchUrisRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   * Required. The ThreatLists to search in. Multiple ThreatLists may be
+   * specified.
    * </pre>
    *
    * <code>

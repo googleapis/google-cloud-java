@@ -18,9 +18,9 @@
 
 package com.google.webrisk.v1;
 
-public interface CreateSubmissionRequestOrBuilder
+public interface SubmitUriRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.webrisk.v1.CreateSubmissionRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.webrisk.v1.SubmitUriRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -58,7 +58,7 @@ public interface CreateSubmissionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The submission that contains the content of the phishing report.
+   * Required. The submission that contains the URI to be scanned.
    * </pre>
    *
    * <code>
@@ -72,7 +72,7 @@ public interface CreateSubmissionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The submission that contains the content of the phishing report.
+   * Required. The submission that contains the URI to be scanned.
    * </pre>
    *
    * <code>
@@ -86,7 +86,7 @@ public interface CreateSubmissionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The submission that contains the content of the phishing report.
+   * Required. The submission that contains the URI to be scanned.
    * </pre>
    *
    * <code>
@@ -94,4 +94,74 @@ public interface CreateSubmissionRequestOrBuilder
    * </code>
    */
   com.google.webrisk.v1.SubmissionOrBuilder getSubmissionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about the submission.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+   *
+   * @return Whether the threatInfo field is set.
+   */
+  boolean hasThreatInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about the submission.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+   *
+   * @return The threatInfo.
+   */
+  com.google.webrisk.v1.ThreatInfo getThreatInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about the submission.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatInfo threat_info = 3;</code>
+   */
+  com.google.webrisk.v1.ThreatInfoOrBuilder getThreatInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about how the submission was discovered.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+   *
+   * @return Whether the threatDiscovery field is set.
+   */
+  boolean hasThreatDiscovery();
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about how the submission was discovered.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+   *
+   * @return The threatDiscovery.
+   */
+  com.google.webrisk.v1.ThreatDiscovery getThreatDiscovery();
+  /**
+   *
+   *
+   * <pre>
+   * Provides additional information about how the submission was discovered.
+   * </pre>
+   *
+   * <code>.google.cloud.webrisk.v1.ThreatDiscovery threat_discovery = 4;</code>
+   */
+  com.google.webrisk.v1.ThreatDiscoveryOrBuilder getThreatDiscoveryOrBuilder();
 }
