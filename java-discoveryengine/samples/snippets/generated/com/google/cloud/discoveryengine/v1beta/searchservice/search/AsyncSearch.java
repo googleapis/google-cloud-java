@@ -66,7 +66,7 @@ public class AsyncSearch {
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
               .setSafeSearch(true)
-              .putAllUserLabel(new HashMap<String, String>())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

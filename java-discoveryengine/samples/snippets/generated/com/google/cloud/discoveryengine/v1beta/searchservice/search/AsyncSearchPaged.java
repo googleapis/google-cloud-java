@@ -66,7 +66,7 @@ public class AsyncSearchPaged {
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
               .setSafeSearch(true)
-              .putAllUserLabel(new HashMap<String, String>())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

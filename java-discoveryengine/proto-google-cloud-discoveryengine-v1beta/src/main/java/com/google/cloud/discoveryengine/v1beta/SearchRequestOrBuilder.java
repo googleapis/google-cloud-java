@@ -709,9 +709,9 @@ public interface SearchRequestOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
-  int getUserLabelCount();
+  int getUserLabelsCount();
   /**
    *
    *
@@ -733,12 +733,12 @@ public interface SearchRequestOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
-  boolean containsUserLabel(java.lang.String key);
-  /** Use {@link #getUserLabelMap()} instead. */
+  boolean containsUserLabels(java.lang.String key);
+  /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getUserLabel();
+  java.util.Map<java.lang.String, java.lang.String> getUserLabels();
   /**
    *
    *
@@ -760,9 +760,9 @@ public interface SearchRequestOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String> getUserLabelMap();
+  java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
   /**
    *
    *
@@ -784,10 +784,10 @@ public interface SearchRequestOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   /* nullable */
-  java.lang.String getUserLabelOrDefault(
+  java.lang.String getUserLabelsOrDefault(
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
@@ -812,7 +812,7 @@ public interface SearchRequestOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
-  java.lang.String getUserLabelOrThrow(java.lang.String key);
+  java.lang.String getUserLabelsOrThrow(java.lang.String key);
 }

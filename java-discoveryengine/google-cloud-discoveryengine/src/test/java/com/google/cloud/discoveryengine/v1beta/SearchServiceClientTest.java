@@ -116,7 +116,7 @@ public class SearchServiceClientTest {
             .setUserPseudoId("userPseudoId-1155274652")
             .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
             .setSafeSearch(true)
-            .putAllUserLabel(new HashMap<String, String>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -148,7 +148,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
-    Assert.assertEquals(request.getUserLabelMap(), actualRequest.getUserLabelMap());
+    Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -186,7 +186,7 @@ public class SearchServiceClientTest {
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
               .setSafeSearch(true)
-              .putAllUserLabel(new HashMap<String, String>())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

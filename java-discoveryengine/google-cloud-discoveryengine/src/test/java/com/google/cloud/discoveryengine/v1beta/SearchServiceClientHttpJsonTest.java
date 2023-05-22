@@ -113,7 +113,7 @@ public class SearchServiceClientHttpJsonTest {
             .setUserPseudoId("userPseudoId-1155274652")
             .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
             .setSafeSearch(true)
-            .putAllUserLabel(new HashMap<String, String>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -172,7 +172,7 @@ public class SearchServiceClientHttpJsonTest {
               .setUserPseudoId("userPseudoId-1155274652")
               .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
               .setSafeSearch(true)
-              .putAllUserLabel(new HashMap<String, String>())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

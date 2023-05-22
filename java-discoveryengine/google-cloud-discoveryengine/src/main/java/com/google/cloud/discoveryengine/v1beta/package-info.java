@@ -157,7 +157,7 @@
  *           .setUserPseudoId("userPseudoId-1155274652")
  *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
  *           .setSafeSearch(true)
- *           .putAllUserLabel(new HashMap<String, String>())
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

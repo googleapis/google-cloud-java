@@ -73,7 +73,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       case 11:
         return internalGetParams();
       case 22:
-        return internalGetUserLabel();
+        return internalGetUserLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -12246,13 +12246,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return safeSearch_;
   }
 
-  public static final int USER_LABEL_FIELD_NUMBER = 22;
+  public static final int USER_LABELS_FIELD_NUMBER = 22;
 
-  private static final class UserLabelDefaultEntryHolder {
+  private static final class UserLabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
         com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
             com.google.cloud.discoveryengine.v1beta.SearchServiceProto
-                .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_UserLabelEntry_descriptor,
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_UserLabelsEntry_descriptor,
             com.google.protobuf.WireFormat.FieldType.STRING,
             "",
             com.google.protobuf.WireFormat.FieldType.STRING,
@@ -12260,17 +12260,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabel_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
 
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabel() {
-    if (userLabel_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(UserLabelDefaultEntryHolder.defaultEntry);
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
+    if (userLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
     }
-    return userLabel_;
+    return userLabels_;
   }
 
-  public int getUserLabelCount() {
-    return internalGetUserLabel().getMap().size();
+  public int getUserLabelsCount() {
+    return internalGetUserLabels().getMap().size();
   }
   /**
    *
@@ -12293,20 +12293,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   @java.lang.Override
-  public boolean containsUserLabel(java.lang.String key) {
+  public boolean containsUserLabels(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
-    return internalGetUserLabel().getMap().containsKey(key);
+    return internalGetUserLabels().getMap().containsKey(key);
   }
-  /** Use {@link #getUserLabelMap()} instead. */
+  /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getUserLabel() {
-    return getUserLabelMap();
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+    return getUserLabelsMap();
   }
   /**
    *
@@ -12329,11 +12329,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getUserLabelMap() {
-    return internalGetUserLabel().getMap();
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+    return internalGetUserLabels().getMap();
   }
   /**
    *
@@ -12356,17 +12356,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   @java.lang.Override
-  public /* nullable */ java.lang.String getUserLabelOrDefault(
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
@@ -12390,14 +12390,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; user_label = 22;</code>
+   * <code>map&lt;string, string&gt; user_labels = 22;</code>
    */
   @java.lang.Override
-  public java.lang.String getUserLabelOrThrow(java.lang.String key) {
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -12466,7 +12466,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(21, getUserInfo());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetUserLabel(), UserLabelDefaultEntryHolder.defaultEntry, 22);
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 22);
     if (contentSearchSpec_ != null) {
       output.writeMessage(24, getContentSearchSpec());
     }
@@ -12536,14 +12536,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getUserInfo());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetUserLabel().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabel__ =
-          UserLabelDefaultEntryHolder.defaultEntry
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
               .newBuilderForType()
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, userLabel__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, userLabels__);
     }
     if (contentSearchSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getContentSearchSpec());
@@ -12596,7 +12596,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getContentSearchSpec().equals(other.getContentSearchSpec())) return false;
     }
     if (getSafeSearch() != other.getSafeSearch()) return false;
-    if (!internalGetUserLabel().equals(other.internalGetUserLabel())) return false;
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -12656,9 +12656,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SAFE_SEARCH_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSafeSearch());
-    if (!internalGetUserLabel().getMap().isEmpty()) {
-      hash = (37 * hash) + USER_LABEL_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetUserLabel().hashCode();
+    if (!internalGetUserLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabels().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -12787,7 +12787,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         case 11:
           return internalGetParams();
         case 22:
-          return internalGetUserLabel();
+          return internalGetUserLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -12799,7 +12799,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         case 11:
           return internalGetMutableParams();
         case 22:
-          return internalGetMutableUserLabel();
+          return internalGetMutableUserLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -12869,7 +12869,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         contentSearchSpecBuilder_ = null;
       }
       safeSearch_ = false;
-      internalGetMutableUserLabel().clear();
+      internalGetMutableUserLabels().clear();
       return this;
     }
 
@@ -12979,8 +12979,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.safeSearch_ = safeSearch_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.userLabel_ = internalGetUserLabel();
-        result.userLabel_.makeImmutable();
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
       }
     }
 
@@ -13118,7 +13118,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.getSafeSearch() != false) {
         setSafeSearch(other.getSafeSearch());
       }
-      internalGetMutableUserLabel().mergeFrom(other.internalGetUserLabel());
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
       bitField0_ |= 0x00020000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -13260,13 +13260,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               } // case 170
             case 178:
               {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabel__ =
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
                     input.readMessage(
-                        UserLabelDefaultEntryHolder.defaultEntry.getParserForType(),
+                        UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
                         extensionRegistry);
-                internalGetMutableUserLabel()
+                internalGetMutableUserLabels()
                     .getMutableMap()
-                    .put(userLabel__.getKey(), userLabel__.getValue());
+                    .put(userLabels__.getKey(), userLabels__.getValue());
                 bitField0_ |= 0x00020000;
                 break;
               } // case 178
@@ -16083,32 +16083,33 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabel_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetUserLabel() {
-      if (userLabel_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(UserLabelDefaultEntryHolder.defaultEntry);
+        internalGetUserLabels() {
+      if (userLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserLabelsDefaultEntryHolder.defaultEntry);
       }
-      return userLabel_;
+      return userLabels_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableUserLabel() {
-      if (userLabel_ == null) {
-        userLabel_ =
-            com.google.protobuf.MapField.newMapField(UserLabelDefaultEntryHolder.defaultEntry);
+        internalGetMutableUserLabels() {
+      if (userLabels_ == null) {
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
       }
-      if (!userLabel_.isMutable()) {
-        userLabel_ = userLabel_.copy();
+      if (!userLabels_.isMutable()) {
+        userLabels_ = userLabels_.copy();
       }
       bitField0_ |= 0x00020000;
       onChanged();
-      return userLabel_;
+      return userLabels_;
     }
 
-    public int getUserLabelCount() {
-      return internalGetUserLabel().getMap().size();
+    public int getUserLabelsCount() {
+      return internalGetUserLabels().getMap().size();
     }
     /**
      *
@@ -16131,20 +16132,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
     @java.lang.Override
-    public boolean containsUserLabel(java.lang.String key) {
+    public boolean containsUserLabels(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
-      return internalGetUserLabel().getMap().containsKey(key);
+      return internalGetUserLabels().getMap().containsKey(key);
     }
-    /** Use {@link #getUserLabelMap()} instead. */
+    /** Use {@link #getUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getUserLabel() {
-      return getUserLabelMap();
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+      return getUserLabelsMap();
     }
     /**
      *
@@ -16167,11 +16168,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getUserLabelMap() {
-      return internalGetUserLabel().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+      return internalGetUserLabels().getMap();
     }
     /**
      *
@@ -16194,17 +16195,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
     @java.lang.Override
-    public /* nullable */ java.lang.String getUserLabelOrDefault(
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
@@ -16228,23 +16229,23 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
     @java.lang.Override
-    public java.lang.String getUserLabelOrThrow(java.lang.String key) {
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabel().getMap();
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public Builder clearUserLabel() {
+    public Builder clearUserLabels() {
       bitField0_ = (bitField0_ & ~0x00020000);
-      internalGetMutableUserLabel().getMutableMap().clear();
+      internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
     /**
@@ -16268,20 +16269,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
-    public Builder removeUserLabel(java.lang.String key) {
+    public Builder removeUserLabels(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
-      internalGetMutableUserLabel().getMutableMap().remove(key);
+      internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
     }
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabel() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
       bitField0_ |= 0x00020000;
-      return internalGetMutableUserLabel().getMutableMap();
+      return internalGetMutableUserLabels().getMutableMap();
     }
     /**
      *
@@ -16304,16 +16305,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
-    public Builder putUserLabel(java.lang.String key, java.lang.String value) {
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
       if (value == null) {
         throw new NullPointerException("map value");
       }
-      internalGetMutableUserLabel().getMutableMap().put(key, value);
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
       bitField0_ |= 0x00020000;
       return this;
     }
@@ -16338,10 +16339,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; user_label = 22;</code>
+     * <code>map&lt;string, string&gt; user_labels = 22;</code>
      */
-    public Builder putAllUserLabel(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableUserLabel().getMutableMap().putAll(values);
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00020000;
       return this;
     }
