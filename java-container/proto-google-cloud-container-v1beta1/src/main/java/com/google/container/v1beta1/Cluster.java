@@ -2240,7 +2240,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -2255,7 +2260,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -2272,7 +2282,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Release channel configuration.
+   * Release channel configuration. If left unspecified on cluster creation and
+   * a version is specified, the cluster is enrolled in the most mature release
+   * channel where the version is available (first checking STABLE, then
+   * REGULAR, and finally RAPID). Otherwise, if no release channel
+   * configuration and no version is specified, the cluster is enrolled in the
+   * REGULAR channel with its default version.
    * </pre>
    *
    * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -2867,7 +2882,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1920
+   *     google/container/v1beta1/cluster_service.proto;l=1925
    * @return The zone.
    */
   @java.lang.Override
@@ -2895,7 +2910,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1920
+   *     google/container/v1beta1/cluster_service.proto;l=1925
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -3111,7 +3126,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1953
+   *     google/container/v1beta1/cluster_service.proto;l=1958
    * @return The currentNodeVersion.
    */
   @java.lang.Override
@@ -3141,7 +3156,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1953
+   *     google/container/v1beta1/cluster_service.proto;l=1958
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Override
@@ -3262,7 +3277,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1965
+   *     google/container/v1beta1/cluster_service.proto;l=1970
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -3290,7 +3305,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1965
+   *     google/container/v1beta1/cluster_service.proto;l=1970
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -3401,7 +3416,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1981
+   *     google/container/v1beta1/cluster_service.proto;l=1986
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3418,7 +3433,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1981
+   *     google/container/v1beta1/cluster_service.proto;l=1986
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3435,7 +3450,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1981
+   *     google/container/v1beta1/cluster_service.proto;l=1986
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -3453,7 +3468,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1981
+   *     google/container/v1beta1/cluster_service.proto;l=1986
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -3475,7 +3490,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>int32 current_node_count = 112 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1985
+   *     google/container/v1beta1/cluster_service.proto;l=1990
    * @return The currentNodeCount.
    */
   @java.lang.Override
@@ -12687,7 +12702,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12701,7 +12721,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12721,7 +12746,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12743,7 +12773,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12763,7 +12798,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12789,7 +12829,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12808,7 +12853,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12822,7 +12872,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -12840,7 +12895,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Release channel configuration.
+     * Release channel configuration. If left unspecified on cluster creation and
+     * a version is specified, the cluster is enrolled in the most mature release
+     * channel where the version is available (first checking STABLE, then
+     * REGULAR, and finally RAPID). Otherwise, if no release channel
+     * configuration and no version is specified, the cluster is enrolled in the
+     * REGULAR channel with its default version.
      * </pre>
      *
      * <code>.google.container.v1beta1.ReleaseChannel release_channel = 41;</code>
@@ -14883,7 +14943,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1920
+     *     google/container/v1beta1/cluster_service.proto;l=1925
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -14910,7 +14970,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1920
+     *     google/container/v1beta1/cluster_service.proto;l=1925
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -14937,7 +14997,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1920
+     *     google/container/v1beta1/cluster_service.proto;l=1925
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -14963,7 +15023,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1920
+     *     google/container/v1beta1/cluster_service.proto;l=1925
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -14985,7 +15045,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 101 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1920
+     *     google/container/v1beta1/cluster_service.proto;l=1925
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -15404,7 +15464,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1958
      * @return The currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -15433,7 +15493,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1958
      * @return The bytes for currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -15462,7 +15522,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1958
      * @param value The currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -15490,7 +15550,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1958
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15514,7 +15574,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string current_node_version = 105 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1958
      * @param value The bytes for currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -15744,7 +15804,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1965
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -15771,7 +15831,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1965
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -15798,7 +15858,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1965
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -15824,7 +15884,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1965
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15846,7 +15906,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 108 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1965
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -16069,7 +16129,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @return A list containing the instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -16086,7 +16146,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @return The count of instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -16103,7 +16163,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @param index The index of the element to return.
      * @return The instanceGroupUrls at the given index.
      */
@@ -16121,7 +16181,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @param index The index of the value to return.
      * @return The bytes of the instanceGroupUrls at the given index.
      */
@@ -16139,7 +16199,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @param index The index to set the value at.
      * @param value The instanceGroupUrls to set.
      * @return This builder for chaining.
@@ -16164,7 +16224,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @param value The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -16188,7 +16248,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @param values The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -16209,7 +16269,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16229,7 +16289,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1981
+     *     google/container/v1beta1/cluster_service.proto;l=1986
      * @param value The bytes of the instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -16257,7 +16317,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 current_node_count = 112 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1985
+     *     google/container/v1beta1/cluster_service.proto;l=1990
      * @return The currentNodeCount.
      */
     @java.lang.Override
@@ -16276,7 +16336,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 current_node_count = 112 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1985
+     *     google/container/v1beta1/cluster_service.proto;l=1990
      * @param value The currentNodeCount to set.
      * @return This builder for chaining.
      */
@@ -16299,7 +16359,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 current_node_count = 112 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1985
+     *     google/container/v1beta1/cluster_service.proto;l=1990
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

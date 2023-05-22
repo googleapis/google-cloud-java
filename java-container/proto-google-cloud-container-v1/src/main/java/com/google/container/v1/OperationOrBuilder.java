@@ -60,7 +60,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2240
+   *     google/container/v1/cluster_service.proto;l=2245
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -77,7 +77,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2240
+   *     google/container/v1/cluster_service.proto;l=2245
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -171,7 +171,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2253
+   *     google/container/v1/cluster_service.proto;l=2258
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -189,7 +189,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2253
+   *     google/container/v1/cluster_service.proto;l=2258
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -231,12 +231,12 @@ public interface OperationOrBuilder
    * For node pool repairs, there may be multiple nodes being repaired, but only
    * one will be the target.
    * Examples:
-   *   -
-   *   `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
-   *   -
-   *   `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-   *   -
-   *   `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+   * -
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
    * </pre>
    *
    * <code>string target_link = 7;</code>
@@ -253,12 +253,12 @@ public interface OperationOrBuilder
    * For node pool repairs, there may be multiple nodes being repaired, but only
    * one will be the target.
    * Examples:
-   *   -
-   *   `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
-   *   -
-   *   `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-   *   -
-   *   `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+   * -
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
    * </pre>
    *
    * <code>string target_link = 7;</code>

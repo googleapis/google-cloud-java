@@ -956,7 +956,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2501
+   *     google/container/v1beta1/cluster_service.proto;l=2506
    * @return The zone.
    */
   @java.lang.Override
@@ -984,7 +984,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2501
+   *     google/container/v1beta1/cluster_service.proto;l=2506
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -1139,7 +1139,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2514
+   *     google/container/v1beta1/cluster_service.proto;l=2519
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -1168,7 +1168,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2514
+   *     google/container/v1beta1/cluster_service.proto;l=2519
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -1251,12 +1251,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * For node pool repairs, there may be multiple nodes being repaired, but only
    * one will be the target.
    * Examples:
-   *   -
-   *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-   *   -
-   *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-   *   -
-   *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+   * -
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
    * </pre>
    *
    * <code>string target_link = 7;</code>
@@ -1284,12 +1284,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * For node pool repairs, there may be multiple nodes being repaired, but only
    * one will be the target.
    * Examples:
-   *   -
-   *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-   *   -
-   *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-   *   -
-   *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+   * -
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+   * ##
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+   * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
    * </pre>
    *
    * <code>string target_link = 7;</code>
@@ -2660,7 +2660,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2501
+     *     google/container/v1beta1/cluster_service.proto;l=2506
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2687,7 +2687,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2501
+     *     google/container/v1beta1/cluster_service.proto;l=2506
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2714,7 +2714,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2501
+     *     google/container/v1beta1/cluster_service.proto;l=2506
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2740,7 +2740,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2501
+     *     google/container/v1beta1/cluster_service.proto;l=2506
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2762,7 +2762,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2501
+     *     google/container/v1beta1/cluster_service.proto;l=2506
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3078,7 +3078,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2514
+     *     google/container/v1beta1/cluster_service.proto;l=2519
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -3106,7 +3106,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2514
+     *     google/container/v1beta1/cluster_service.proto;l=2519
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -3134,7 +3134,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2514
+     *     google/container/v1beta1/cluster_service.proto;l=2519
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -3161,7 +3161,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2514
+     *     google/container/v1beta1/cluster_service.proto;l=2519
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3184,7 +3184,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2514
+     *     google/container/v1beta1/cluster_service.proto;l=2519
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -3321,12 +3321,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * For node pool repairs, there may be multiple nodes being repaired, but only
      * one will be the target.
      * Examples:
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+     * -
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
      * </pre>
      *
      * <code>string target_link = 7;</code>
@@ -3353,12 +3353,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * For node pool repairs, there may be multiple nodes being repaired, but only
      * one will be the target.
      * Examples:
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+     * -
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
      * </pre>
      *
      * <code>string target_link = 7;</code>
@@ -3385,12 +3385,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * For node pool repairs, there may be multiple nodes being repaired, but only
      * one will be the target.
      * Examples:
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+     * -
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
      * </pre>
      *
      * <code>string target_link = 7;</code>
@@ -3416,12 +3416,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * For node pool repairs, there may be multiple nodes being repaired, but only
      * one will be the target.
      * Examples:
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+     * -
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
      * </pre>
      *
      * <code>string target_link = 7;</code>
@@ -3443,12 +3443,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * For node pool repairs, there may be multiple nodes being repaired, but only
      * one will be the target.
      * Examples:
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/locations/us-central1/clusters/my-cluster`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
-     *   -
-     *   `https://container.googleapis.com/v1beta1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+     * -
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster`
+     * ##
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np`
+     * `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
      * </pre>
      *
      * <code>string target_link = 7;</code>
