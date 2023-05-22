@@ -903,6 +903,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateSchedule": {
+              "methods": ["updateSchedule", "updateSchedule", "updateScheduleCallable"]
             }
           }
         }

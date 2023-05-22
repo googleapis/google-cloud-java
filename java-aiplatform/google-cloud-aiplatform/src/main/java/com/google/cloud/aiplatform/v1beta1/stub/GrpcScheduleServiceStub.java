@@ -36,6 +36,7 @@ import com.google.cloud.aiplatform.v1beta1.ListSchedulesResponse;
 import com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest;
 import com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest;
 import com.google.cloud.aiplatform.v1beta1.Schedule;
+import com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -121,6 +122,16 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateScheduleRequest, Schedule>
+      updateScheduleMethodDescriptor =
+          MethodDescriptor.<UpdateScheduleRequest, Schedule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.ScheduleService/UpdateSchedule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateScheduleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Schedule.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -177,6 +188,7 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
       listSchedulesPagedCallable;
   private final UnaryCallable<PauseScheduleRequest, Empty> pauseScheduleCallable;
   private final UnaryCallable<ResumeScheduleRequest, Empty> resumeScheduleCallable;
+  private final UnaryCallable<UpdateScheduleRequest, Schedule> updateScheduleCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -290,6 +302,16 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<UpdateScheduleRequest, Schedule> updateScheduleTransportSettings =
+        GrpcCallSettings.<UpdateScheduleRequest, Schedule>newBuilder()
+            .setMethodDescriptor(updateScheduleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("schedule.name", String.valueOf(request.getSchedule().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -369,6 +391,9 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
     this.resumeScheduleCallable =
         callableFactory.createUnaryCallable(
             resumeScheduleTransportSettings, settings.resumeScheduleSettings(), clientContext);
+    this.updateScheduleCallable =
+        callableFactory.createUnaryCallable(
+            updateScheduleTransportSettings, settings.updateScheduleSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -438,6 +463,11 @@ public class GrpcScheduleServiceStub extends ScheduleServiceStub {
   @Override
   public UnaryCallable<ResumeScheduleRequest, Empty> resumeScheduleCallable() {
     return resumeScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateScheduleRequest, Schedule> updateScheduleCallable() {
+    return updateScheduleCallable;
   }
 
   @Override

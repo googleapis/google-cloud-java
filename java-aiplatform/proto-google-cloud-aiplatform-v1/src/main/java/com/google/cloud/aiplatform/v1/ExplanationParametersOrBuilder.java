@@ -179,6 +179,44 @@ public interface ExplanationParametersOrBuilder
    *
    *
    * <pre>
+   * Example-based explanations that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+   *
+   * @return Whether the examples field is set.
+   */
+  boolean hasExamples();
+  /**
+   *
+   *
+   * <pre>
+   * Example-based explanations that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+   *
+   * @return The examples.
+   */
+  com.google.cloud.aiplatform.v1.Examples getExamples();
+  /**
+   *
+   *
+   * <pre>
+   * Example-based explanations that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+   */
+  com.google.cloud.aiplatform.v1.ExamplesOrBuilder getExamplesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If populated, returns attributions for top K indices of outputs
    * (defaults to 1). Only applies to Models that predicts more than one outputs
    * (e,g, multi-class Models). When set to -1, returns explanations for all

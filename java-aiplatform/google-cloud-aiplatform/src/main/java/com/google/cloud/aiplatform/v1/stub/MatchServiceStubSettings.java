@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.v1beta1.stub;
+package com.google.cloud.aiplatform.v1.stub;
 
-import static com.google.cloud.aiplatform.v1beta1.ScheduleServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.aiplatform.v1beta1.ScheduleServiceClient.ListSchedulesPagedResponse;
+import static com.google.cloud.aiplatform.v1.MatchServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -28,14 +27,10 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.grpc.ProtoOperationTransformers;
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -45,16 +40,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.aiplatform.v1beta1.CreateScheduleRequest;
-import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.DeleteScheduleRequest;
-import com.google.cloud.aiplatform.v1beta1.GetScheduleRequest;
-import com.google.cloud.aiplatform.v1beta1.ListSchedulesRequest;
-import com.google.cloud.aiplatform.v1beta1.ListSchedulesResponse;
-import com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest;
-import com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest;
-import com.google.cloud.aiplatform.v1beta1.Schedule;
-import com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest;
+import com.google.cloud.aiplatform.v1.FindNeighborsRequest;
+import com.google.cloud.aiplatform.v1.FindNeighborsResponse;
+import com.google.cloud.aiplatform.v1.ReadIndexDatapointsRequest;
+import com.google.cloud.aiplatform.v1.ReadIndexDatapointsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -68,16 +57,13 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Settings class to configure an instance of {@link ScheduleServiceStub}.
+ * Settings class to configure an instance of {@link MatchServiceStub}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -90,7 +76,7 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSchedule to 30 seconds:
+ * <p>For example, to set the total timeout of findNeighbors to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -98,38 +84,30 @@ import org.threeten.bp.Duration;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * ScheduleServiceStubSettings.Builder scheduleServiceSettingsBuilder =
- *     ScheduleServiceStubSettings.newBuilder();
- * scheduleServiceSettingsBuilder
- *     .createScheduleSettings()
+ * MatchServiceStubSettings.Builder matchServiceSettingsBuilder =
+ *     MatchServiceStubSettings.newBuilder();
+ * matchServiceSettingsBuilder
+ *     .findNeighborsSettings()
  *     .setRetrySettings(
- *         scheduleServiceSettingsBuilder
- *             .createScheduleSettings()
+ *         matchServiceSettingsBuilder
+ *             .findNeighborsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * ScheduleServiceStubSettings scheduleServiceSettings = scheduleServiceSettingsBuilder.build();
+ * MatchServiceStubSettings matchServiceSettings = matchServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
-public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStubSettings> {
+public class MatchServiceStubSettings extends StubSettings<MatchServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<CreateScheduleRequest, Schedule> createScheduleSettings;
-  private final UnaryCallSettings<DeleteScheduleRequest, Operation> deleteScheduleSettings;
-  private final OperationCallSettings<DeleteScheduleRequest, Empty, DeleteOperationMetadata>
-      deleteScheduleOperationSettings;
-  private final UnaryCallSettings<GetScheduleRequest, Schedule> getScheduleSettings;
-  private final PagedCallSettings<
-          ListSchedulesRequest, ListSchedulesResponse, ListSchedulesPagedResponse>
-      listSchedulesSettings;
-  private final UnaryCallSettings<PauseScheduleRequest, Empty> pauseScheduleSettings;
-  private final UnaryCallSettings<ResumeScheduleRequest, Empty> resumeScheduleSettings;
-  private final UnaryCallSettings<UpdateScheduleRequest, Schedule> updateScheduleSettings;
+  private final UnaryCallSettings<FindNeighborsRequest, FindNeighborsResponse>
+      findNeighborsSettings;
+  private final UnaryCallSettings<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
+      readIndexDatapointsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -138,42 +116,6 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
-
-  private static final PagedListDescriptor<ListSchedulesRequest, ListSchedulesResponse, Schedule>
-      LIST_SCHEDULES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSchedulesRequest, ListSchedulesResponse, Schedule>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSchedulesRequest injectToken(ListSchedulesRequest payload, String token) {
-              return ListSchedulesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSchedulesRequest injectPageSize(ListSchedulesRequest payload, int pageSize) {
-              return ListSchedulesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSchedulesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSchedulesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Schedule> extractResources(ListSchedulesResponse payload) {
-              return payload.getSchedulesList() == null
-                  ? ImmutableList.<Schedule>of()
-                  : payload.getSchedulesList();
-            }
-          };
 
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
@@ -212,23 +154,6 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
           };
 
   private static final PagedListResponseFactory<
-          ListSchedulesRequest, ListSchedulesResponse, ListSchedulesPagedResponse>
-      LIST_SCHEDULES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSchedulesRequest, ListSchedulesResponse, ListSchedulesPagedResponse>() {
-            @Override
-            public ApiFuture<ListSchedulesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSchedulesRequest, ListSchedulesResponse> callable,
-                ListSchedulesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSchedulesResponse> futureResponse) {
-              PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> pageContext =
-                  PageContext.create(callable, LIST_SCHEDULES_PAGE_STR_DESC, request, context);
-              return ListSchedulesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -245,46 +170,15 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
             }
           };
 
-  /** Returns the object with the settings used for calls to createSchedule. */
-  public UnaryCallSettings<CreateScheduleRequest, Schedule> createScheduleSettings() {
-    return createScheduleSettings;
+  /** Returns the object with the settings used for calls to findNeighbors. */
+  public UnaryCallSettings<FindNeighborsRequest, FindNeighborsResponse> findNeighborsSettings() {
+    return findNeighborsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteSchedule. */
-  public UnaryCallSettings<DeleteScheduleRequest, Operation> deleteScheduleSettings() {
-    return deleteScheduleSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteSchedule. */
-  public OperationCallSettings<DeleteScheduleRequest, Empty, DeleteOperationMetadata>
-      deleteScheduleOperationSettings() {
-    return deleteScheduleOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getSchedule. */
-  public UnaryCallSettings<GetScheduleRequest, Schedule> getScheduleSettings() {
-    return getScheduleSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listSchedules. */
-  public PagedCallSettings<ListSchedulesRequest, ListSchedulesResponse, ListSchedulesPagedResponse>
-      listSchedulesSettings() {
-    return listSchedulesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to pauseSchedule. */
-  public UnaryCallSettings<PauseScheduleRequest, Empty> pauseScheduleSettings() {
-    return pauseScheduleSettings;
-  }
-
-  /** Returns the object with the settings used for calls to resumeSchedule. */
-  public UnaryCallSettings<ResumeScheduleRequest, Empty> resumeScheduleSettings() {
-    return resumeScheduleSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateSchedule. */
-  public UnaryCallSettings<UpdateScheduleRequest, Schedule> updateScheduleSettings() {
-    return updateScheduleSettings;
+  /** Returns the object with the settings used for calls to readIndexDatapoints. */
+  public UnaryCallSettings<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
+      readIndexDatapointsSettings() {
+    return readIndexDatapointsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -314,11 +208,11 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     return testIamPermissionsSettings;
   }
 
-  public ScheduleServiceStub createStub() throws IOException {
+  public MatchServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcScheduleServiceStub.create(this);
+      return GrpcMatchServiceStub.create(this);
     }
     throw new UnsupportedOperationException(
         String.format(
@@ -366,7 +260,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(ScheduleServiceStubSettings.class))
+            "gapic", GaxProperties.getLibraryVersion(MatchServiceStubSettings.class))
         .setTransportToken(
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
@@ -386,17 +280,11 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     return new Builder(this);
   }
 
-  protected ScheduleServiceStubSettings(Builder settingsBuilder) throws IOException {
+  protected MatchServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    createScheduleSettings = settingsBuilder.createScheduleSettings().build();
-    deleteScheduleSettings = settingsBuilder.deleteScheduleSettings().build();
-    deleteScheduleOperationSettings = settingsBuilder.deleteScheduleOperationSettings().build();
-    getScheduleSettings = settingsBuilder.getScheduleSettings().build();
-    listSchedulesSettings = settingsBuilder.listSchedulesSettings().build();
-    pauseScheduleSettings = settingsBuilder.pauseScheduleSettings().build();
-    resumeScheduleSettings = settingsBuilder.resumeScheduleSettings().build();
-    updateScheduleSettings = settingsBuilder.updateScheduleSettings().build();
+    findNeighborsSettings = settingsBuilder.findNeighborsSettings().build();
+    readIndexDatapointsSettings = settingsBuilder.readIndexDatapointsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -404,22 +292,13 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  /** Builder for ScheduleServiceStubSettings. */
-  public static class Builder extends StubSettings.Builder<ScheduleServiceStubSettings, Builder> {
+  /** Builder for MatchServiceStubSettings. */
+  public static class Builder extends StubSettings.Builder<MatchServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final UnaryCallSettings.Builder<CreateScheduleRequest, Schedule> createScheduleSettings;
-    private final UnaryCallSettings.Builder<DeleteScheduleRequest, Operation>
-        deleteScheduleSettings;
-    private final OperationCallSettings.Builder<
-            DeleteScheduleRequest, Empty, DeleteOperationMetadata>
-        deleteScheduleOperationSettings;
-    private final UnaryCallSettings.Builder<GetScheduleRequest, Schedule> getScheduleSettings;
-    private final PagedCallSettings.Builder<
-            ListSchedulesRequest, ListSchedulesResponse, ListSchedulesPagedResponse>
-        listSchedulesSettings;
-    private final UnaryCallSettings.Builder<PauseScheduleRequest, Empty> pauseScheduleSettings;
-    private final UnaryCallSettings.Builder<ResumeScheduleRequest, Empty> resumeScheduleSettings;
-    private final UnaryCallSettings.Builder<UpdateScheduleRequest, Schedule> updateScheduleSettings;
+    private final UnaryCallSettings.Builder<FindNeighborsRequest, FindNeighborsResponse>
+        findNeighborsSettings;
+    private final UnaryCallSettings.Builder<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
+        readIndexDatapointsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -455,14 +334,8 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      createScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteScheduleOperationSettings = OperationCallSettings.newBuilder();
-      getScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listSchedulesSettings = PagedCallSettings.newBuilder(LIST_SCHEDULES_PAGE_STR_FACT);
-      pauseScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      resumeScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      findNeighborsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      readIndexDatapointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -471,13 +344,8 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createScheduleSettings,
-              deleteScheduleSettings,
-              getScheduleSettings,
-              listSchedulesSettings,
-              pauseScheduleSettings,
-              resumeScheduleSettings,
-              updateScheduleSettings,
+              findNeighborsSettings,
+              readIndexDatapointsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -486,17 +354,11 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
       initDefaults(this);
     }
 
-    protected Builder(ScheduleServiceStubSettings settings) {
+    protected Builder(MatchServiceStubSettings settings) {
       super(settings);
 
-      createScheduleSettings = settings.createScheduleSettings.toBuilder();
-      deleteScheduleSettings = settings.deleteScheduleSettings.toBuilder();
-      deleteScheduleOperationSettings = settings.deleteScheduleOperationSettings.toBuilder();
-      getScheduleSettings = settings.getScheduleSettings.toBuilder();
-      listSchedulesSettings = settings.listSchedulesSettings.toBuilder();
-      pauseScheduleSettings = settings.pauseScheduleSettings.toBuilder();
-      resumeScheduleSettings = settings.resumeScheduleSettings.toBuilder();
-      updateScheduleSettings = settings.updateScheduleSettings.toBuilder();
+      findNeighborsSettings = settings.findNeighborsSettings.toBuilder();
+      readIndexDatapointsSettings = settings.readIndexDatapointsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -505,13 +367,8 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createScheduleSettings,
-              deleteScheduleSettings,
-              getScheduleSettings,
-              listSchedulesSettings,
-              pauseScheduleSettings,
-              resumeScheduleSettings,
-              updateScheduleSettings,
+              findNeighborsSettings,
+              readIndexDatapointsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -534,37 +391,12 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
 
     private static Builder initDefaults(Builder builder) {
       builder
-          .createScheduleSettings()
+          .findNeighborsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-          .deleteScheduleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .getScheduleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .listSchedulesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .pauseScheduleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .resumeScheduleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .updateScheduleSettings()
+          .readIndexDatapointsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -593,30 +425,6 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
-      builder
-          .deleteScheduleOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<DeleteScheduleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
       return builder;
     }
 
@@ -635,49 +443,16 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createSchedule. */
-    public UnaryCallSettings.Builder<CreateScheduleRequest, Schedule> createScheduleSettings() {
-      return createScheduleSettings;
+    /** Returns the builder for the settings used for calls to findNeighbors. */
+    public UnaryCallSettings.Builder<FindNeighborsRequest, FindNeighborsResponse>
+        findNeighborsSettings() {
+      return findNeighborsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteSchedule. */
-    public UnaryCallSettings.Builder<DeleteScheduleRequest, Operation> deleteScheduleSettings() {
-      return deleteScheduleSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSchedule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<DeleteScheduleRequest, Empty, DeleteOperationMetadata>
-        deleteScheduleOperationSettings() {
-      return deleteScheduleOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getSchedule. */
-    public UnaryCallSettings.Builder<GetScheduleRequest, Schedule> getScheduleSettings() {
-      return getScheduleSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listSchedules. */
-    public PagedCallSettings.Builder<
-            ListSchedulesRequest, ListSchedulesResponse, ListSchedulesPagedResponse>
-        listSchedulesSettings() {
-      return listSchedulesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to pauseSchedule. */
-    public UnaryCallSettings.Builder<PauseScheduleRequest, Empty> pauseScheduleSettings() {
-      return pauseScheduleSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to resumeSchedule. */
-    public UnaryCallSettings.Builder<ResumeScheduleRequest, Empty> resumeScheduleSettings() {
-      return resumeScheduleSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateSchedule. */
-    public UnaryCallSettings.Builder<UpdateScheduleRequest, Schedule> updateScheduleSettings() {
-      return updateScheduleSettings;
+    /** Returns the builder for the settings used for calls to readIndexDatapoints. */
+    public UnaryCallSettings.Builder<ReadIndexDatapointsRequest, ReadIndexDatapointsResponse>
+        readIndexDatapointsSettings() {
+      return readIndexDatapointsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
@@ -709,8 +484,8 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     }
 
     @Override
-    public ScheduleServiceStubSettings build() throws IOException {
-      return new ScheduleServiceStubSettings(this);
+    public MatchServiceStubSettings build() throws IOException {
+      return new MatchServiceStubSettings(this);
     }
   }
 }

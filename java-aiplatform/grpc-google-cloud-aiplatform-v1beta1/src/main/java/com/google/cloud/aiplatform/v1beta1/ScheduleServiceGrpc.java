@@ -307,6 +307,52 @@ public final class ScheduleServiceGrpc {
     return getResumeScheduleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest,
+          com.google.cloud.aiplatform.v1beta1.Schedule>
+      getUpdateScheduleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSchedule",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.Schedule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest,
+          com.google.cloud.aiplatform.v1beta1.Schedule>
+      getUpdateScheduleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest,
+            com.google.cloud.aiplatform.v1beta1.Schedule>
+        getUpdateScheduleMethod;
+    if ((getUpdateScheduleMethod = ScheduleServiceGrpc.getUpdateScheduleMethod) == null) {
+      synchronized (ScheduleServiceGrpc.class) {
+        if ((getUpdateScheduleMethod = ScheduleServiceGrpc.getUpdateScheduleMethod) == null) {
+          ScheduleServiceGrpc.getUpdateScheduleMethod =
+              getUpdateScheduleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest,
+                          com.google.cloud.aiplatform.v1beta1.Schedule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSchedule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.Schedule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ScheduleServiceMethodDescriptorSupplier("UpdateSchedule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateScheduleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ScheduleServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ScheduleServiceStub> factory =
@@ -453,6 +499,26 @@ public final class ScheduleServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResumeScheduleMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an active or paused Schedule.
+     * When the Schedule is updated, new runs will be scheduled starting from the
+     * updated next execution time after the update time based on the
+     * time_specification in the updated Schedule. All unstarted runs before the
+     * update time will be skipped while already created runs will NOT be paused
+     * or canceled.
+     * </pre>
+     */
+    default void updateSchedule(
+        com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Schedule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateScheduleMethod(), responseObserver);
+    }
   }
 
   /**
@@ -598,6 +664,28 @@ public final class ScheduleServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an active or paused Schedule.
+     * When the Schedule is updated, new runs will be scheduled starting from the
+     * updated next execution time after the update time based on the
+     * time_specification in the updated Schedule. All unstarted runs before the
+     * update time will be skipped while already created runs will NOT be paused
+     * or canceled.
+     * </pre>
+     */
+    public void updateSchedule(
+        com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Schedule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateScheduleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -705,6 +793,24 @@ public final class ScheduleServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResumeScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an active or paused Schedule.
+     * When the Schedule is updated, new runs will be scheduled starting from the
+     * updated next execution time after the update time based on the
+     * time_specification in the updated Schedule. All unstarted runs before the
+     * update time will be skipped while already created runs will NOT be paused
+     * or canceled.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule updateSchedule(
+        com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateScheduleMethod(), getCallOptions(), request);
     }
   }
 
@@ -817,6 +923,25 @@ public final class ScheduleServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResumeScheduleMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an active or paused Schedule.
+     * When the Schedule is updated, new runs will be scheduled starting from the
+     * updated next execution time after the update time based on the
+     * time_specification in the updated Schedule. All unstarted runs before the
+     * update time will be skipped while already created runs will NOT be paused
+     * or canceled.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.Schedule>
+        updateSchedule(com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateScheduleMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_SCHEDULE = 0;
@@ -825,6 +950,7 @@ public final class ScheduleServiceGrpc {
   private static final int METHODID_LIST_SCHEDULES = 3;
   private static final int METHODID_PAUSE_SCHEDULE = 4;
   private static final int METHODID_RESUME_SCHEDULE = 5;
+  private static final int METHODID_UPDATE_SCHEDULE = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -876,6 +1002,12 @@ public final class ScheduleServiceGrpc {
           serviceImpl.resumeSchedule(
               (com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_SCHEDULE:
+          serviceImpl.updateSchedule(
+              (com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Schedule>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -933,6 +1065,13 @@ public final class ScheduleServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest,
                     com.google.protobuf.Empty>(service, METHODID_RESUME_SCHEDULE)))
+        .addMethod(
+            getUpdateScheduleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest,
+                    com.google.cloud.aiplatform.v1beta1.Schedule>(
+                    service, METHODID_UPDATE_SCHEDULE)))
         .build();
   }
 
@@ -990,6 +1129,7 @@ public final class ScheduleServiceGrpc {
                       .addMethod(getListSchedulesMethod())
                       .addMethod(getPauseScheduleMethod())
                       .addMethod(getResumeScheduleMethod())
+                      .addMethod(getUpdateScheduleMethod())
                       .build();
         }
       }
