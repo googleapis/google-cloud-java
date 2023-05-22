@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
@@ -29,6 +30,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -43,6 +45,7 @@ import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AccountSummary;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
+import com.google.analytics.admin.v1alpha.AdSenseLink;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
@@ -73,6 +76,7 @@ import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
+import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
@@ -83,6 +87,7 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
@@ -97,12 +102,14 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
@@ -113,6 +120,7 @@ import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
+import com.google.analytics.admin.v1alpha.EventCreateRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -121,6 +129,7 @@ import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
@@ -134,6 +143,7 @@ import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -150,6 +160,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest;
+import com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
@@ -170,6 +182,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest;
+import com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
@@ -206,6 +220,7 @@ import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
@@ -552,6 +567,25 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<
           FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
       fetchConnectedGa4PropertySettings;
+  private final UnaryCallSettings<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkSettings;
+  private final UnaryCallSettings<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkSettings;
+  private final UnaryCallSettings<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkSettings;
+  private final PagedCallSettings<
+          ListAdSenseLinksRequest, ListAdSenseLinksResponse, ListAdSenseLinksPagedResponse>
+      listAdSenseLinksSettings;
+  private final UnaryCallSettings<GetEventCreateRuleRequest, EventCreateRule>
+      getEventCreateRuleSettings;
+  private final PagedCallSettings<
+          ListEventCreateRulesRequest,
+          ListEventCreateRulesResponse,
+          ListEventCreateRulesPagedResponse>
+      listEventCreateRulesSettings;
+  private final UnaryCallSettings<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleSettings;
+  private final UnaryCallSettings<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleSettings;
+  private final UnaryCallSettings<DeleteEventCreateRuleRequest, Empty>
+      deleteEventCreateRuleSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1415,6 +1449,87 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAdSenseLinksRequest, ListAdSenseLinksResponse, AdSenseLink>
+      LIST_AD_SENSE_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdSenseLinksRequest, ListAdSenseLinksResponse, AdSenseLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdSenseLinksRequest injectToken(
+                ListAdSenseLinksRequest payload, String token) {
+              return ListAdSenseLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdSenseLinksRequest injectPageSize(
+                ListAdSenseLinksRequest payload, int pageSize) {
+              return ListAdSenseLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdSenseLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdSenseLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdSenseLink> extractResources(ListAdSenseLinksResponse payload) {
+              return payload.getAdsenseLinksList() == null
+                  ? ImmutableList.<AdSenseLink>of()
+                  : payload.getAdsenseLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEventCreateRulesRequest, ListEventCreateRulesResponse, EventCreateRule>
+      LIST_EVENT_CREATE_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEventCreateRulesRequest, ListEventCreateRulesResponse, EventCreateRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEventCreateRulesRequest injectToken(
+                ListEventCreateRulesRequest payload, String token) {
+              return ListEventCreateRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEventCreateRulesRequest injectPageSize(
+                ListEventCreateRulesRequest payload, int pageSize) {
+              return ListEventCreateRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEventCreateRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEventCreateRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EventCreateRule> extractResources(
+                ListEventCreateRulesResponse payload) {
+              return payload.getEventCreateRulesList() == null
+                  ? ImmutableList.<EventCreateRule>of()
+                  : payload.getEventCreateRulesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -1890,6 +2005,49 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_BIG_QUERY_LINKS_PAGE_STR_DESC, request, context);
               return ListBigQueryLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdSenseLinksRequest, ListAdSenseLinksResponse, ListAdSenseLinksPagedResponse>
+      LIST_AD_SENSE_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdSenseLinksRequest, ListAdSenseLinksResponse, ListAdSenseLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdSenseLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksResponse> callable,
+                ListAdSenseLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdSenseLinksResponse> futureResponse) {
+              PageContext<ListAdSenseLinksRequest, ListAdSenseLinksResponse, AdSenseLink>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AD_SENSE_LINKS_PAGE_STR_DESC, request, context);
+              return ListAdSenseLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEventCreateRulesRequest,
+          ListEventCreateRulesResponse,
+          ListEventCreateRulesPagedResponse>
+      LIST_EVENT_CREATE_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEventCreateRulesRequest,
+              ListEventCreateRulesResponse,
+              ListEventCreateRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEventCreateRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesResponse> callable,
+                ListEventCreateRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEventCreateRulesResponse> futureResponse) {
+              PageContext<
+                      ListEventCreateRulesRequest, ListEventCreateRulesResponse, EventCreateRule>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EVENT_CREATE_RULES_PAGE_STR_DESC, request, context);
+              return ListEventCreateRulesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -2597,6 +2755,60 @@ public class AnalyticsAdminServiceStubSettings
     return fetchConnectedGa4PropertySettings;
   }
 
+  /** Returns the object with the settings used for calls to getAdSenseLink. */
+  public UnaryCallSettings<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkSettings() {
+    return getAdSenseLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAdSenseLink. */
+  public UnaryCallSettings<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkSettings() {
+    return createAdSenseLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdSenseLink. */
+  public UnaryCallSettings<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkSettings() {
+    return deleteAdSenseLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdSenseLinks. */
+  public PagedCallSettings<
+          ListAdSenseLinksRequest, ListAdSenseLinksResponse, ListAdSenseLinksPagedResponse>
+      listAdSenseLinksSettings() {
+    return listAdSenseLinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEventCreateRule. */
+  public UnaryCallSettings<GetEventCreateRuleRequest, EventCreateRule>
+      getEventCreateRuleSettings() {
+    return getEventCreateRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEventCreateRules. */
+  public PagedCallSettings<
+          ListEventCreateRulesRequest,
+          ListEventCreateRulesResponse,
+          ListEventCreateRulesPagedResponse>
+      listEventCreateRulesSettings() {
+    return listEventCreateRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEventCreateRule. */
+  public UnaryCallSettings<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleSettings() {
+    return createEventCreateRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEventCreateRule. */
+  public UnaryCallSettings<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleSettings() {
+    return updateEventCreateRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEventCreateRule. */
+  public UnaryCallSettings<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleSettings() {
+    return deleteEventCreateRuleSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -2839,6 +3051,15 @@ public class AnalyticsAdminServiceStubSettings
     deleteConnectedSiteTagSettings = settingsBuilder.deleteConnectedSiteTagSettings().build();
     listConnectedSiteTagsSettings = settingsBuilder.listConnectedSiteTagsSettings().build();
     fetchConnectedGa4PropertySettings = settingsBuilder.fetchConnectedGa4PropertySettings().build();
+    getAdSenseLinkSettings = settingsBuilder.getAdSenseLinkSettings().build();
+    createAdSenseLinkSettings = settingsBuilder.createAdSenseLinkSettings().build();
+    deleteAdSenseLinkSettings = settingsBuilder.deleteAdSenseLinkSettings().build();
+    listAdSenseLinksSettings = settingsBuilder.listAdSenseLinksSettings().build();
+    getEventCreateRuleSettings = settingsBuilder.getEventCreateRuleSettings().build();
+    listEventCreateRulesSettings = settingsBuilder.listEventCreateRulesSettings().build();
+    createEventCreateRuleSettings = settingsBuilder.createEventCreateRuleSettings().build();
+    updateEventCreateRuleSettings = settingsBuilder.updateEventCreateRuleSettings().build();
+    deleteEventCreateRuleSettings = settingsBuilder.deleteEventCreateRuleSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -3125,6 +3346,28 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
         fetchConnectedGa4PropertySettings;
+    private final UnaryCallSettings.Builder<GetAdSenseLinkRequest, AdSenseLink>
+        getAdSenseLinkSettings;
+    private final UnaryCallSettings.Builder<CreateAdSenseLinkRequest, AdSenseLink>
+        createAdSenseLinkSettings;
+    private final UnaryCallSettings.Builder<DeleteAdSenseLinkRequest, Empty>
+        deleteAdSenseLinkSettings;
+    private final PagedCallSettings.Builder<
+            ListAdSenseLinksRequest, ListAdSenseLinksResponse, ListAdSenseLinksPagedResponse>
+        listAdSenseLinksSettings;
+    private final UnaryCallSettings.Builder<GetEventCreateRuleRequest, EventCreateRule>
+        getEventCreateRuleSettings;
+    private final PagedCallSettings.Builder<
+            ListEventCreateRulesRequest,
+            ListEventCreateRulesResponse,
+            ListEventCreateRulesPagedResponse>
+        listEventCreateRulesSettings;
+    private final UnaryCallSettings.Builder<CreateEventCreateRuleRequest, EventCreateRule>
+        createEventCreateRuleSettings;
+    private final UnaryCallSettings.Builder<UpdateEventCreateRuleRequest, EventCreateRule>
+        updateEventCreateRuleSettings;
+    private final UnaryCallSettings.Builder<DeleteEventCreateRuleRequest, Empty>
+        deleteEventCreateRuleSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -3305,6 +3548,16 @@ public class AnalyticsAdminServiceStubSettings
       deleteConnectedSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConnectedSiteTagsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchConnectedGa4PropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAdSenseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAdSenseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAdSenseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAdSenseLinksSettings = PagedCallSettings.newBuilder(LIST_AD_SENSE_LINKS_PAGE_STR_FACT);
+      getEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEventCreateRulesSettings =
+          PagedCallSettings.newBuilder(LIST_EVENT_CREATE_RULES_PAGE_STR_FACT);
+      createEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3420,7 +3673,16 @@ public class AnalyticsAdminServiceStubSettings
               createConnectedSiteTagSettings,
               deleteConnectedSiteTagSettings,
               listConnectedSiteTagsSettings,
-              fetchConnectedGa4PropertySettings);
+              fetchConnectedGa4PropertySettings,
+              getAdSenseLinkSettings,
+              createAdSenseLinkSettings,
+              deleteAdSenseLinkSettings,
+              listAdSenseLinksSettings,
+              getEventCreateRuleSettings,
+              listEventCreateRulesSettings,
+              createEventCreateRuleSettings,
+              updateEventCreateRuleSettings,
+              deleteEventCreateRuleSettings);
       initDefaults(this);
     }
 
@@ -3563,6 +3825,15 @@ public class AnalyticsAdminServiceStubSettings
       deleteConnectedSiteTagSettings = settings.deleteConnectedSiteTagSettings.toBuilder();
       listConnectedSiteTagsSettings = settings.listConnectedSiteTagsSettings.toBuilder();
       fetchConnectedGa4PropertySettings = settings.fetchConnectedGa4PropertySettings.toBuilder();
+      getAdSenseLinkSettings = settings.getAdSenseLinkSettings.toBuilder();
+      createAdSenseLinkSettings = settings.createAdSenseLinkSettings.toBuilder();
+      deleteAdSenseLinkSettings = settings.deleteAdSenseLinkSettings.toBuilder();
+      listAdSenseLinksSettings = settings.listAdSenseLinksSettings.toBuilder();
+      getEventCreateRuleSettings = settings.getEventCreateRuleSettings.toBuilder();
+      listEventCreateRulesSettings = settings.listEventCreateRulesSettings.toBuilder();
+      createEventCreateRuleSettings = settings.createEventCreateRuleSettings.toBuilder();
+      updateEventCreateRuleSettings = settings.updateEventCreateRuleSettings.toBuilder();
+      deleteEventCreateRuleSettings = settings.deleteEventCreateRuleSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3678,7 +3949,16 @@ public class AnalyticsAdminServiceStubSettings
               createConnectedSiteTagSettings,
               deleteConnectedSiteTagSettings,
               listConnectedSiteTagsSettings,
-              fetchConnectedGa4PropertySettings);
+              fetchConnectedGa4PropertySettings,
+              getAdSenseLinkSettings,
+              createAdSenseLinkSettings,
+              deleteAdSenseLinkSettings,
+              listAdSenseLinksSettings,
+              getEventCreateRuleSettings,
+              listEventCreateRulesSettings,
+              createEventCreateRuleSettings,
+              updateEventCreateRuleSettings,
+              deleteEventCreateRuleSettings);
     }
 
     private static Builder createDefault() {
@@ -4270,6 +4550,51 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .fetchConnectedGa4PropertySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAdSenseLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAdSenseLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteAdSenseLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAdSenseLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEventCreateRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listEventCreateRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEventCreateRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateEventCreateRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteEventCreateRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -5040,6 +5365,62 @@ public class AnalyticsAdminServiceStubSettings
             FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
         fetchConnectedGa4PropertySettings() {
       return fetchConnectedGa4PropertySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAdSenseLink. */
+    public UnaryCallSettings.Builder<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkSettings() {
+      return getAdSenseLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAdSenseLink. */
+    public UnaryCallSettings.Builder<CreateAdSenseLinkRequest, AdSenseLink>
+        createAdSenseLinkSettings() {
+      return createAdSenseLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdSenseLink. */
+    public UnaryCallSettings.Builder<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkSettings() {
+      return deleteAdSenseLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdSenseLinks. */
+    public PagedCallSettings.Builder<
+            ListAdSenseLinksRequest, ListAdSenseLinksResponse, ListAdSenseLinksPagedResponse>
+        listAdSenseLinksSettings() {
+      return listAdSenseLinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEventCreateRule. */
+    public UnaryCallSettings.Builder<GetEventCreateRuleRequest, EventCreateRule>
+        getEventCreateRuleSettings() {
+      return getEventCreateRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEventCreateRules. */
+    public PagedCallSettings.Builder<
+            ListEventCreateRulesRequest,
+            ListEventCreateRulesResponse,
+            ListEventCreateRulesPagedResponse>
+        listEventCreateRulesSettings() {
+      return listEventCreateRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEventCreateRule. */
+    public UnaryCallSettings.Builder<CreateEventCreateRuleRequest, EventCreateRule>
+        createEventCreateRuleSettings() {
+      return createEventCreateRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEventCreateRule. */
+    public UnaryCallSettings.Builder<UpdateEventCreateRuleRequest, EventCreateRule>
+        updateEventCreateRuleSettings() {
+      return updateEventCreateRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEventCreateRule. */
+    public UnaryCallSettings.Builder<DeleteEventCreateRuleRequest, Empty>
+        deleteEventCreateRuleSettings() {
+      return deleteEventCreateRuleSettings;
     }
 
     @Override

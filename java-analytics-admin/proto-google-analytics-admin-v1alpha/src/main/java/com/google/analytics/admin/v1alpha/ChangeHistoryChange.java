@@ -783,6 +783,111 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder
         getEnhancedMeasurementSettingsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an AdSenseLink resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+     *
+     * @return Whether the adsenseLink field is set.
+     */
+    boolean hasAdsenseLink();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an AdSenseLink resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+     *
+     * @return The adsenseLink.
+     */
+    com.google.analytics.admin.v1alpha.AdSenseLink getAdsenseLink();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an AdSenseLink resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+     */
+    com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder getAdsenseLinkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an Audience resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+     *
+     * @return Whether the audience field is set.
+     */
+    boolean hasAudience();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an Audience resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+     *
+     * @return The audience.
+     */
+    com.google.analytics.admin.v1alpha.Audience getAudience();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an Audience resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+     */
+    com.google.analytics.admin.v1alpha.AudienceOrBuilder getAudienceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an EventCreateRule resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+     *
+     * @return Whether the eventCreateRule field is set.
+     */
+    boolean hasEventCreateRule();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an EventCreateRule resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+     *
+     * @return The eventCreateRule.
+     */
+    com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an EventCreateRule resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+     */
+    com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder getEventCreateRuleOrBuilder();
+
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -861,6 +966,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       CHANNEL_GROUP(22),
       BIGQUERY_LINK(23),
       ENHANCED_MEASUREMENT_SETTINGS(24),
+      ADSENSE_LINK(27),
+      AUDIENCE(28),
+      EVENT_CREATE_RULE(29),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -917,6 +1025,12 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return BIGQUERY_LINK;
           case 24:
             return ENHANCED_MEASUREMENT_SETTINGS;
+          case 27:
+            return ADSENSE_LINK;
+          case 28:
+            return AUDIENCE;
+          case 29:
+            return EVENT_CREATE_RULE;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1955,6 +2069,160 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
     }
 
+    public static final int ADSENSE_LINK_FIELD_NUMBER = 27;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an AdSenseLink resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+     *
+     * @return Whether the adsenseLink field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdsenseLink() {
+      return resourceCase_ == 27;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an AdSenseLink resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+     *
+     * @return The adsenseLink.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AdSenseLink getAdsenseLink() {
+      if (resourceCase_ == 27) {
+        return (com.google.analytics.admin.v1alpha.AdSenseLink) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an AdSenseLink resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder getAdsenseLinkOrBuilder() {
+      if (resourceCase_ == 27) {
+        return (com.google.analytics.admin.v1alpha.AdSenseLink) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
+    }
+
+    public static final int AUDIENCE_FIELD_NUMBER = 28;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an Audience resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+     *
+     * @return Whether the audience field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudience() {
+      return resourceCase_ == 28;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an Audience resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+     *
+     * @return The audience.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.Audience getAudience() {
+      if (resourceCase_ == 28) {
+        return (com.google.analytics.admin.v1alpha.Audience) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an Audience resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AudienceOrBuilder getAudienceOrBuilder() {
+      if (resourceCase_ == 28) {
+        return (com.google.analytics.admin.v1alpha.Audience) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
+    }
+
+    public static final int EVENT_CREATE_RULE_FIELD_NUMBER = 29;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an EventCreateRule resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+     *
+     * @return Whether the eventCreateRule field is set.
+     */
+    @java.lang.Override
+    public boolean hasEventCreateRule() {
+      return resourceCase_ == 29;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an EventCreateRule resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+     *
+     * @return The eventCreateRule.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule() {
+      if (resourceCase_ == 29) {
+        return (com.google.analytics.admin.v1alpha.EventCreateRule) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of an EventCreateRule resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder
+        getEventCreateRuleOrBuilder() {
+      if (resourceCase_ == 29) {
+        return (com.google.analytics.admin.v1alpha.EventCreateRule) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2032,6 +2300,15 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (resourceCase_ == 24) {
         output.writeMessage(
             24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
+      }
+      if (resourceCase_ == 27) {
+        output.writeMessage(27, (com.google.analytics.admin.v1alpha.AdSenseLink) resource_);
+      }
+      if (resourceCase_ == 28) {
+        output.writeMessage(28, (com.google.analytics.admin.v1alpha.Audience) resource_);
+      }
+      if (resourceCase_ == 29) {
+        output.writeMessage(29, (com.google.analytics.admin.v1alpha.EventCreateRule) resource_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2139,6 +2416,21 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
       }
+      if (resourceCase_ == 27) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                27, (com.google.analytics.admin.v1alpha.AdSenseLink) resource_);
+      }
+      if (resourceCase_ == 28) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                28, (com.google.analytics.admin.v1alpha.Audience) resource_);
+      }
+      if (resourceCase_ == 29) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                29, (com.google.analytics.admin.v1alpha.EventCreateRule) resource_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2219,6 +2511,15 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 24:
           if (!getEnhancedMeasurementSettings().equals(other.getEnhancedMeasurementSettings()))
             return false;
+          break;
+        case 27:
+          if (!getAdsenseLink().equals(other.getAdsenseLink())) return false;
+          break;
+        case 28:
+          if (!getAudience().equals(other.getAudience())) return false;
+          break;
+        case 29:
+          if (!getEventCreateRule().equals(other.getEventCreateRule())) return false;
           break;
         case 0:
         default:
@@ -2310,6 +2611,18 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 24:
           hash = (37 * hash) + ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getEnhancedMeasurementSettings().hashCode();
+          break;
+        case 27:
+          hash = (37 * hash) + ADSENSE_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getAdsenseLink().hashCode();
+          break;
+        case 28:
+          hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
+          hash = (53 * hash) + getAudience().hashCode();
+          break;
+        case 29:
+          hash = (37 * hash) + EVENT_CREATE_RULE_FIELD_NUMBER;
+          hash = (53 * hash) + getEventCreateRule().hashCode();
           break;
         case 0:
         default:
@@ -2523,6 +2836,15 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (enhancedMeasurementSettingsBuilder_ != null) {
           enhancedMeasurementSettingsBuilder_.clear();
         }
+        if (adsenseLinkBuilder_ != null) {
+          adsenseLinkBuilder_.clear();
+        }
+        if (audienceBuilder_ != null) {
+          audienceBuilder_.clear();
+        }
+        if (eventCreateRuleBuilder_ != null) {
+          eventCreateRuleBuilder_.clear();
+        }
         resourceCase_ = 0;
         resource_ = null;
         return this;
@@ -2629,6 +2951,15 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 24 && enhancedMeasurementSettingsBuilder_ != null) {
           result.resource_ = enhancedMeasurementSettingsBuilder_.build();
+        }
+        if (resourceCase_ == 27 && adsenseLinkBuilder_ != null) {
+          result.resource_ = adsenseLinkBuilder_.build();
+        }
+        if (resourceCase_ == 28 && audienceBuilder_ != null) {
+          result.resource_ = audienceBuilder_.build();
+        }
+        if (resourceCase_ == 29 && eventCreateRuleBuilder_ != null) {
+          result.resource_ = eventCreateRuleBuilder_.build();
         }
       }
 
@@ -2780,6 +3111,21 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case ENHANCED_MEASUREMENT_SETTINGS:
             {
               mergeEnhancedMeasurementSettings(other.getEnhancedMeasurementSettings());
+              break;
+            }
+          case ADSENSE_LINK:
+            {
+              mergeAdsenseLink(other.getAdsenseLink());
+              break;
+            }
+          case AUDIENCE:
+            {
+              mergeAudience(other.getAudience());
+              break;
+            }
+          case EVENT_CREATE_RULE:
+            {
+              mergeEventCreateRule(other.getEventCreateRule());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -2940,6 +3286,25 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 24;
                   break;
                 } // case 194
+              case 218:
+                {
+                  input.readMessage(getAdsenseLinkFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 27;
+                  break;
+                } // case 218
+              case 226:
+                {
+                  input.readMessage(getAudienceFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 28;
+                  break;
+                } // case 226
+              case 234:
+                {
+                  input.readMessage(
+                      getEventCreateRuleFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 29;
+                  break;
+                } // case 234
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7142,6 +7507,637 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 24;
         onChanged();
         return enhancedMeasurementSettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.AdSenseLink,
+              com.google.analytics.admin.v1alpha.AdSenseLink.Builder,
+              com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder>
+          adsenseLinkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       *
+       * @return Whether the adsenseLink field is set.
+       */
+      @java.lang.Override
+      public boolean hasAdsenseLink() {
+        return resourceCase_ == 27;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       *
+       * @return The adsenseLink.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.AdSenseLink getAdsenseLink() {
+        if (adsenseLinkBuilder_ == null) {
+          if (resourceCase_ == 27) {
+            return (com.google.analytics.admin.v1alpha.AdSenseLink) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 27) {
+            return adsenseLinkBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      public Builder setAdsenseLink(com.google.analytics.admin.v1alpha.AdSenseLink value) {
+        if (adsenseLinkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          adsenseLinkBuilder_.setMessage(value);
+        }
+        resourceCase_ = 27;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      public Builder setAdsenseLink(
+          com.google.analytics.admin.v1alpha.AdSenseLink.Builder builderForValue) {
+        if (adsenseLinkBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          adsenseLinkBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 27;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      public Builder mergeAdsenseLink(com.google.analytics.admin.v1alpha.AdSenseLink value) {
+        if (adsenseLinkBuilder_ == null) {
+          if (resourceCase_ == 27
+              && resource_ != com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.AdSenseLink.newBuilder(
+                        (com.google.analytics.admin.v1alpha.AdSenseLink) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 27) {
+            adsenseLinkBuilder_.mergeFrom(value);
+          } else {
+            adsenseLinkBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 27;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      public Builder clearAdsenseLink() {
+        if (adsenseLinkBuilder_ == null) {
+          if (resourceCase_ == 27) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 27) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          adsenseLinkBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      public com.google.analytics.admin.v1alpha.AdSenseLink.Builder getAdsenseLinkBuilder() {
+        return getAdsenseLinkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder getAdsenseLinkOrBuilder() {
+        if ((resourceCase_ == 27) && (adsenseLinkBuilder_ != null)) {
+          return adsenseLinkBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 27) {
+            return (com.google.analytics.admin.v1alpha.AdSenseLink) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an AdSenseLink resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AdSenseLink adsense_link = 27;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.AdSenseLink,
+              com.google.analytics.admin.v1alpha.AdSenseLink.Builder,
+              com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder>
+          getAdsenseLinkFieldBuilder() {
+        if (adsenseLinkBuilder_ == null) {
+          if (!(resourceCase_ == 27)) {
+            resource_ = com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
+          }
+          adsenseLinkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.AdSenseLink,
+                  com.google.analytics.admin.v1alpha.AdSenseLink.Builder,
+                  com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.AdSenseLink) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 27;
+        onChanged();
+        return adsenseLinkBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.Audience,
+              com.google.analytics.admin.v1alpha.Audience.Builder,
+              com.google.analytics.admin.v1alpha.AudienceOrBuilder>
+          audienceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       *
+       * @return Whether the audience field is set.
+       */
+      @java.lang.Override
+      public boolean hasAudience() {
+        return resourceCase_ == 28;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       *
+       * @return The audience.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.Audience getAudience() {
+        if (audienceBuilder_ == null) {
+          if (resourceCase_ == 28) {
+            return (com.google.analytics.admin.v1alpha.Audience) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 28) {
+            return audienceBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      public Builder setAudience(com.google.analytics.admin.v1alpha.Audience value) {
+        if (audienceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          audienceBuilder_.setMessage(value);
+        }
+        resourceCase_ = 28;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      public Builder setAudience(
+          com.google.analytics.admin.v1alpha.Audience.Builder builderForValue) {
+        if (audienceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          audienceBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 28;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      public Builder mergeAudience(com.google.analytics.admin.v1alpha.Audience value) {
+        if (audienceBuilder_ == null) {
+          if (resourceCase_ == 28
+              && resource_ != com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.Audience.newBuilder(
+                        (com.google.analytics.admin.v1alpha.Audience) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 28) {
+            audienceBuilder_.mergeFrom(value);
+          } else {
+            audienceBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 28;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      public Builder clearAudience() {
+        if (audienceBuilder_ == null) {
+          if (resourceCase_ == 28) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 28) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          audienceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      public com.google.analytics.admin.v1alpha.Audience.Builder getAudienceBuilder() {
+        return getAudienceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.AudienceOrBuilder getAudienceOrBuilder() {
+        if ((resourceCase_ == 28) && (audienceBuilder_ != null)) {
+          return audienceBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 28) {
+            return (com.google.analytics.admin.v1alpha.Audience) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an Audience resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.Audience audience = 28;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.Audience,
+              com.google.analytics.admin.v1alpha.Audience.Builder,
+              com.google.analytics.admin.v1alpha.AudienceOrBuilder>
+          getAudienceFieldBuilder() {
+        if (audienceBuilder_ == null) {
+          if (!(resourceCase_ == 28)) {
+            resource_ = com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
+          }
+          audienceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.Audience,
+                  com.google.analytics.admin.v1alpha.Audience.Builder,
+                  com.google.analytics.admin.v1alpha.AudienceOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.Audience) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 28;
+        onChanged();
+        return audienceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.EventCreateRule,
+              com.google.analytics.admin.v1alpha.EventCreateRule.Builder,
+              com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder>
+          eventCreateRuleBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       *
+       * @return Whether the eventCreateRule field is set.
+       */
+      @java.lang.Override
+      public boolean hasEventCreateRule() {
+        return resourceCase_ == 29;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       *
+       * @return The eventCreateRule.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule() {
+        if (eventCreateRuleBuilder_ == null) {
+          if (resourceCase_ == 29) {
+            return (com.google.analytics.admin.v1alpha.EventCreateRule) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 29) {
+            return eventCreateRuleBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      public Builder setEventCreateRule(com.google.analytics.admin.v1alpha.EventCreateRule value) {
+        if (eventCreateRuleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          eventCreateRuleBuilder_.setMessage(value);
+        }
+        resourceCase_ = 29;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      public Builder setEventCreateRule(
+          com.google.analytics.admin.v1alpha.EventCreateRule.Builder builderForValue) {
+        if (eventCreateRuleBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          eventCreateRuleBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 29;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      public Builder mergeEventCreateRule(
+          com.google.analytics.admin.v1alpha.EventCreateRule value) {
+        if (eventCreateRuleBuilder_ == null) {
+          if (resourceCase_ == 29
+              && resource_
+                  != com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.EventCreateRule.newBuilder(
+                        (com.google.analytics.admin.v1alpha.EventCreateRule) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 29) {
+            eventCreateRuleBuilder_.mergeFrom(value);
+          } else {
+            eventCreateRuleBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 29;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      public Builder clearEventCreateRule() {
+        if (eventCreateRuleBuilder_ == null) {
+          if (resourceCase_ == 29) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 29) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          eventCreateRuleBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      public com.google.analytics.admin.v1alpha.EventCreateRule.Builder
+          getEventCreateRuleBuilder() {
+        return getEventCreateRuleFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder
+          getEventCreateRuleOrBuilder() {
+        if ((resourceCase_ == 29) && (eventCreateRuleBuilder_ != null)) {
+          return eventCreateRuleBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 29) {
+            return (com.google.analytics.admin.v1alpha.EventCreateRule) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of an EventCreateRule resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.EventCreateRule event_create_rule = 29;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.EventCreateRule,
+              com.google.analytics.admin.v1alpha.EventCreateRule.Builder,
+              com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder>
+          getEventCreateRuleFieldBuilder() {
+        if (eventCreateRuleBuilder_ == null) {
+          if (!(resourceCase_ == 29)) {
+            resource_ = com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
+          }
+          eventCreateRuleBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.EventCreateRule,
+                  com.google.analytics.admin.v1alpha.EventCreateRule.Builder,
+                  com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.EventCreateRule) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 29;
+        onChanged();
+        return eventCreateRuleBuilder_;
       }
 
       @java.lang.Override

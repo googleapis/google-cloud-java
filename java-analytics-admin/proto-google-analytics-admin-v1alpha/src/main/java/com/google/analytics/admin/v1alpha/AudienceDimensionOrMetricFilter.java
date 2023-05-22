@@ -5825,7 +5825,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Immutable. The dimension name or metric name to filter.
+   * Required. Immutable. The dimension name or metric name to filter. If the
+   * field name refers to a custom dimension or metric, a scope prefix will be
+   * added to the front of the custom dimensions or metric name. For more on
+   * scope prefixes or custom dimensions/metrics, reference the [Google
+   * Analytics Data API documentation]
+   * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
    * </pre>
    *
    * <code>
@@ -5850,7 +5855,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Immutable. The dimension name or metric name to filter.
+   * Required. Immutable. The dimension name or metric name to filter. If the
+   * field name refers to a custom dimension or metric, a scope prefix will be
+   * added to the front of the custom dimensions or metric name. For more on
+   * scope prefixes or custom dimensions/metrics, reference the [Google
+   * Analytics Data API documentation]
+   * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
    * </pre>
    *
    * <code>
@@ -5903,7 +5913,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    * <pre>
    * Optional. If set, specifies the time window for which to evaluate data in
    * number of days. If not set, then audience data is evaluated against
-   * lifetime data (i.e., infinite time window).
+   * lifetime data (For example, infinite time window).
    * For example, if set to 1 day, only the current day's data is evaluated. The
    * reference point is the current day when at_any_point_in_time is unset or
    * false.
@@ -7528,7 +7538,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Immutable. The dimension name or metric name to filter.
+     * Required. Immutable. The dimension name or metric name to filter. If the
+     * field name refers to a custom dimension or metric, a scope prefix will be
+     * added to the front of the custom dimensions or metric name. For more on
+     * scope prefixes or custom dimensions/metrics, reference the [Google
+     * Analytics Data API documentation]
+     * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
      * </pre>
      *
      * <code>
@@ -7552,7 +7567,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Immutable. The dimension name or metric name to filter.
+     * Required. Immutable. The dimension name or metric name to filter. If the
+     * field name refers to a custom dimension or metric, a scope prefix will be
+     * added to the front of the custom dimensions or metric name. For more on
+     * scope prefixes or custom dimensions/metrics, reference the [Google
+     * Analytics Data API documentation]
+     * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
      * </pre>
      *
      * <code>
@@ -7576,7 +7596,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Immutable. The dimension name or metric name to filter.
+     * Required. Immutable. The dimension name or metric name to filter. If the
+     * field name refers to a custom dimension or metric, a scope prefix will be
+     * added to the front of the custom dimensions or metric name. For more on
+     * scope prefixes or custom dimensions/metrics, reference the [Google
+     * Analytics Data API documentation]
+     * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
      * </pre>
      *
      * <code>
@@ -7599,7 +7624,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Immutable. The dimension name or metric name to filter.
+     * Required. Immutable. The dimension name or metric name to filter. If the
+     * field name refers to a custom dimension or metric, a scope prefix will be
+     * added to the front of the custom dimensions or metric name. For more on
+     * scope prefixes or custom dimensions/metrics, reference the [Google
+     * Analytics Data API documentation]
+     * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
      * </pre>
      *
      * <code>
@@ -7618,7 +7648,12 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Immutable. The dimension name or metric name to filter.
+     * Required. Immutable. The dimension name or metric name to filter. If the
+     * field name refers to a custom dimension or metric, a scope prefix will be
+     * added to the front of the custom dimensions or metric name. For more on
+     * scope prefixes or custom dimensions/metrics, reference the [Google
+     * Analytics Data API documentation]
+     * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
      * </pre>
      *
      * <code>
@@ -7714,7 +7749,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * <pre>
      * Optional. If set, specifies the time window for which to evaluate data in
      * number of days. If not set, then audience data is evaluated against
-     * lifetime data (i.e., infinite time window).
+     * lifetime data (For example, infinite time window).
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
@@ -7736,7 +7771,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * <pre>
      * Optional. If set, specifies the time window for which to evaluate data in
      * number of days. If not set, then audience data is evaluated against
-     * lifetime data (i.e., infinite time window).
+     * lifetime data (For example, infinite time window).
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
@@ -7762,7 +7797,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * <pre>
      * Optional. If set, specifies the time window for which to evaluate data in
      * number of days. If not set, then audience data is evaluated against
-     * lifetime data (i.e., infinite time window).
+     * lifetime data (For example, infinite time window).
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.

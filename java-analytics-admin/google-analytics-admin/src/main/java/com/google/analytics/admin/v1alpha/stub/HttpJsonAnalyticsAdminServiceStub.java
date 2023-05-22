@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
@@ -29,6 +30,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
@@ -42,6 +44,7 @@ import com.google.analytics.admin.v1alpha.AccessBinding;
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
+import com.google.analytics.admin.v1alpha.AdSenseLink;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
@@ -70,6 +73,7 @@ import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkPro
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
+import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
@@ -80,6 +84,7 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
@@ -94,12 +99,14 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
@@ -110,6 +117,7 @@ import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
+import com.google.analytics.admin.v1alpha.EventCreateRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -118,6 +126,7 @@ import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
@@ -131,6 +140,7 @@ import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -147,6 +157,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest;
+import com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
@@ -167,6 +179,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest;
+import com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
@@ -203,6 +217,7 @@ import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
@@ -4621,6 +4636,340 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetAdSenseLinkRequest, AdSenseLink>
+      getAdSenseLinkMethodDescriptor =
+          ApiMethodDescriptor.<GetAdSenseLinkRequest, AdSenseLink>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAdSenseLink")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAdSenseLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/adSenseLinks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAdSenseLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAdSenseLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdSenseLink>newBuilder()
+                      .setDefaultInstance(AdSenseLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAdSenseLinkRequest, AdSenseLink>
+      createAdSenseLinkMethodDescriptor =
+          ApiMethodDescriptor.<CreateAdSenseLinkRequest, AdSenseLink>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAdSenseLink")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAdSenseLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/adSenseLinks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAdSenseLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAdSenseLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("adsenseLink", request.getAdsenseLink(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdSenseLink>newBuilder()
+                      .setDefaultInstance(AdSenseLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAdSenseLinkRequest, Empty>
+      deleteAdSenseLinkMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAdSenseLinkRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteAdSenseLink")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAdSenseLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/adSenseLinks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAdSenseLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAdSenseLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+      listAdSenseLinksMethodDescriptor =
+          ApiMethodDescriptor.<ListAdSenseLinksRequest, ListAdSenseLinksResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAdSenseLinks")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAdSenseLinksRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/adSenseLinks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdSenseLinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdSenseLinksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAdSenseLinksResponse>newBuilder()
+                      .setDefaultInstance(ListAdSenseLinksResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetEventCreateRuleRequest, EventCreateRule>
+      getEventCreateRuleMethodDescriptor =
+          ApiMethodDescriptor.<GetEventCreateRuleRequest, EventCreateRule>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetEventCreateRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEventCreateRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/dataStreams/*/eventCreateRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EventCreateRule>newBuilder()
+                      .setDefaultInstance(EventCreateRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+      listEventCreateRulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListEventCreateRulesRequest, ListEventCreateRulesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListEventCreateRules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListEventCreateRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*/dataStreams/*}/eventCreateRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEventCreateRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEventCreateRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListEventCreateRulesResponse>newBuilder()
+                      .setDefaultInstance(ListEventCreateRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleMethodDescriptor =
+          ApiMethodDescriptor.<CreateEventCreateRuleRequest, EventCreateRule>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateEventCreateRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateEventCreateRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*/dataStreams/*}/eventCreateRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("eventCreateRule", request.getEventCreateRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EventCreateRule>newBuilder()
+                      .setDefaultInstance(EventCreateRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateEventCreateRuleRequest, EventCreateRule>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEventCreateRule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateEventCreateRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{eventCreateRule.name=properties/*/dataStreams/*/eventCreateRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "eventCreateRule.name",
+                                request.getEventCreateRule().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("eventCreateRule", request.getEventCreateRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EventCreateRule>newBuilder()
+                      .setDefaultInstance(EventCreateRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteEventCreateRuleRequest, Empty>
+      deleteEventCreateRuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteEventCreateRuleRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteEventCreateRule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteEventCreateRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/dataStreams/*/eventCreateRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteEventCreateRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -4865,6 +5214,24 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       listConnectedSiteTagsCallable;
   private final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
       fetchConnectedGa4PropertyCallable;
+  private final UnaryCallable<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkCallable;
+  private final UnaryCallable<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkCallable;
+  private final UnaryCallable<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkCallable;
+  private final UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+      listAdSenseLinksCallable;
+  private final UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksPagedResponse>
+      listAdSenseLinksPagedCallable;
+  private final UnaryCallable<GetEventCreateRuleRequest, EventCreateRule>
+      getEventCreateRuleCallable;
+  private final UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+      listEventCreateRulesCallable;
+  private final UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesPagedResponse>
+      listEventCreateRulesPagedCallable;
+  private final UnaryCallable<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleCallable;
+  private final UnaryCallable<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleCallable;
+  private final UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -5631,6 +5998,58 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .setMethodDescriptor(fetchConnectedGa4PropertyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkTransportSettings =
+        HttpJsonCallSettings.<GetAdSenseLinkRequest, AdSenseLink>newBuilder()
+            .setMethodDescriptor(getAdSenseLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkTransportSettings =
+        HttpJsonCallSettings.<CreateAdSenseLinkRequest, AdSenseLink>newBuilder()
+            .setMethodDescriptor(createAdSenseLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkTransportSettings =
+        HttpJsonCallSettings.<DeleteAdSenseLinkRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAdSenseLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+        listAdSenseLinksTransportSettings =
+            HttpJsonCallSettings.<ListAdSenseLinksRequest, ListAdSenseLinksResponse>newBuilder()
+                .setMethodDescriptor(listAdSenseLinksMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetEventCreateRuleRequest, EventCreateRule>
+        getEventCreateRuleTransportSettings =
+            HttpJsonCallSettings.<GetEventCreateRuleRequest, EventCreateRule>newBuilder()
+                .setMethodDescriptor(getEventCreateRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+        listEventCreateRulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListEventCreateRulesRequest, ListEventCreateRulesResponse>newBuilder()
+                .setMethodDescriptor(listEventCreateRulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateEventCreateRuleRequest, EventCreateRule>
+        createEventCreateRuleTransportSettings =
+            HttpJsonCallSettings.<CreateEventCreateRuleRequest, EventCreateRule>newBuilder()
+                .setMethodDescriptor(createEventCreateRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateEventCreateRuleRequest, EventCreateRule>
+        updateEventCreateRuleTransportSettings =
+            HttpJsonCallSettings.<UpdateEventCreateRuleRequest, EventCreateRule>newBuilder()
+                .setMethodDescriptor(updateEventCreateRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteEventCreateRuleRequest, Empty>
+        deleteEventCreateRuleTransportSettings =
+            HttpJsonCallSettings.<DeleteEventCreateRuleRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteEventCreateRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -6228,6 +6647,55 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             fetchConnectedGa4PropertyTransportSettings,
             settings.fetchConnectedGa4PropertySettings(),
             clientContext);
+    this.getAdSenseLinkCallable =
+        callableFactory.createUnaryCallable(
+            getAdSenseLinkTransportSettings, settings.getAdSenseLinkSettings(), clientContext);
+    this.createAdSenseLinkCallable =
+        callableFactory.createUnaryCallable(
+            createAdSenseLinkTransportSettings,
+            settings.createAdSenseLinkSettings(),
+            clientContext);
+    this.deleteAdSenseLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteAdSenseLinkTransportSettings,
+            settings.deleteAdSenseLinkSettings(),
+            clientContext);
+    this.listAdSenseLinksCallable =
+        callableFactory.createUnaryCallable(
+            listAdSenseLinksTransportSettings, settings.listAdSenseLinksSettings(), clientContext);
+    this.listAdSenseLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdSenseLinksTransportSettings, settings.listAdSenseLinksSettings(), clientContext);
+    this.getEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            getEventCreateRuleTransportSettings,
+            settings.getEventCreateRuleSettings(),
+            clientContext);
+    this.listEventCreateRulesCallable =
+        callableFactory.createUnaryCallable(
+            listEventCreateRulesTransportSettings,
+            settings.listEventCreateRulesSettings(),
+            clientContext);
+    this.listEventCreateRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEventCreateRulesTransportSettings,
+            settings.listEventCreateRulesSettings(),
+            clientContext);
+    this.createEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            createEventCreateRuleTransportSettings,
+            settings.createEventCreateRuleSettings(),
+            clientContext);
+    this.updateEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateEventCreateRuleTransportSettings,
+            settings.updateEventCreateRuleSettings(),
+            clientContext);
+    this.deleteEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventCreateRuleTransportSettings,
+            settings.deleteEventCreateRuleSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -6349,6 +6817,15 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(deleteConnectedSiteTagMethodDescriptor);
     methodDescriptors.add(listConnectedSiteTagsMethodDescriptor);
     methodDescriptors.add(fetchConnectedGa4PropertyMethodDescriptor);
+    methodDescriptors.add(getAdSenseLinkMethodDescriptor);
+    methodDescriptors.add(createAdSenseLinkMethodDescriptor);
+    methodDescriptors.add(deleteAdSenseLinkMethodDescriptor);
+    methodDescriptors.add(listAdSenseLinksMethodDescriptor);
+    methodDescriptors.add(getEventCreateRuleMethodDescriptor);
+    methodDescriptors.add(listEventCreateRulesMethodDescriptor);
+    methodDescriptors.add(createEventCreateRuleMethodDescriptor);
+    methodDescriptors.add(updateEventCreateRuleMethodDescriptor);
+    methodDescriptors.add(deleteEventCreateRuleMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -7114,6 +7591,67 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
       fetchConnectedGa4PropertyCallable() {
     return fetchConnectedGa4PropertyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkCallable() {
+    return getAdSenseLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkCallable() {
+    return createAdSenseLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkCallable() {
+    return deleteAdSenseLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+      listAdSenseLinksCallable() {
+    return listAdSenseLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksPagedResponse>
+      listAdSenseLinksPagedCallable() {
+    return listAdSenseLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEventCreateRuleRequest, EventCreateRule> getEventCreateRuleCallable() {
+    return getEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+      listEventCreateRulesCallable() {
+    return listEventCreateRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesPagedResponse>
+      listEventCreateRulesPagedCallable() {
+    return listEventCreateRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleCallable() {
+    return createEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleCallable() {
+    return updateEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable() {
+    return deleteEventCreateRuleCallable;
   }
 
   @Override

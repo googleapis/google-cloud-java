@@ -125,7 +125,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. When set, this step must be satisfied within the
-     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
      * constraint_duration). If not set, there is no duration requirement (the
      * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
@@ -142,7 +142,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. When set, this step must be satisfied within the
-     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
      * constraint_duration). If not set, there is no duration requirement (the
      * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
@@ -159,7 +159,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. When set, this step must be satisfied within the
-     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
      * constraint_duration). If not set, there is no duration requirement (the
      * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
@@ -337,7 +337,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. When set, this step must be satisfied within the
-     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
      * constraint_duration). If not set, there is no duration requirement (the
      * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
@@ -357,7 +357,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. When set, this step must be satisfied within the
-     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
      * constraint_duration). If not set, there is no duration requirement (the
      * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
@@ -379,7 +379,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. When set, this step must be satisfied within the
-     * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+     * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
      * constraint_duration). If not set, there is no duration requirement (the
      * duration is effectively unlimited). It is ignored for the first step.
      * </pre>
@@ -1103,7 +1103,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1122,7 +1122,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1147,7 +1147,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1174,7 +1174,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1198,7 +1198,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1228,7 +1228,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1252,7 +1252,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1271,7 +1271,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>
@@ -1294,7 +1294,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. When set, this step must be satisfied within the
-       * constraint_duration of the previous step (i.e., t[i] - t[i-1] &lt;=
+       * constraint_duration of the previous step (For example,  t[i] - t[i-1] &lt;=
        * constraint_duration). If not set, there is no duration requirement (the
        * duration is effectively unlimited). It is ignored for the first step.
        * </pre>

@@ -58,6 +58,9 @@
             "CreateAccessBinding": {
               "methods": ["createAccessBinding", "createAccessBinding", "createAccessBinding", "createAccessBinding", "createAccessBindingCallable"]
             },
+            "CreateAdSenseLink": {
+              "methods": ["createAdSenseLink", "createAdSenseLink", "createAdSenseLink", "createAdSenseLinkCallable"]
+            },
             "CreateAudience": {
               "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
             },
@@ -84,6 +87,9 @@
             },
             "CreateDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposal", "createDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
+            "CreateEventCreateRule": {
+              "methods": ["createEventCreateRule", "createEventCreateRule", "createEventCreateRule", "createEventCreateRuleCallable"]
             },
             "CreateExpandedDataSet": {
               "methods": ["createExpandedDataSet", "createExpandedDataSet", "createExpandedDataSet", "createExpandedDataSetCallable"]
@@ -112,6 +118,9 @@
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
             },
+            "DeleteAdSenseLink": {
+              "methods": ["deleteAdSenseLink", "deleteAdSenseLink", "deleteAdSenseLink", "deleteAdSenseLinkCallable"]
+            },
             "DeleteChannelGroup": {
               "methods": ["deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroupCallable"]
             },
@@ -129,6 +138,9 @@
             },
             "DeleteDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposal", "deleteDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
+            "DeleteEventCreateRule": {
+              "methods": ["deleteEventCreateRule", "deleteEventCreateRule", "deleteEventCreateRule", "deleteEventCreateRuleCallable"]
             },
             "DeleteExpandedDataSet": {
               "methods": ["deleteExpandedDataSet", "deleteExpandedDataSet", "deleteExpandedDataSet", "deleteExpandedDataSetCallable"]
@@ -162,6 +174,9 @@
             },
             "GetAccount": {
               "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
+            },
+            "GetAdSenseLink": {
+              "methods": ["getAdSenseLink", "getAdSenseLink", "getAdSenseLink", "getAdSenseLinkCallable"]
             },
             "GetAttributionSettings": {
               "methods": ["getAttributionSettings", "getAttributionSettings", "getAttributionSettings", "getAttributionSettingsCallable"]
@@ -202,6 +217,9 @@
             "GetEnhancedMeasurementSettings": {
               "methods": ["getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettingsCallable"]
             },
+            "GetEventCreateRule": {
+              "methods": ["getEventCreateRule", "getEventCreateRule", "getEventCreateRule", "getEventCreateRuleCallable"]
+            },
             "GetExpandedDataSet": {
               "methods": ["getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSetCallable"]
             },
@@ -232,6 +250,9 @@
             "ListAccounts": {
               "methods": ["listAccounts", "listAccountsPagedCallable", "listAccountsCallable"]
             },
+            "ListAdSenseLinks": {
+              "methods": ["listAdSenseLinks", "listAdSenseLinks", "listAdSenseLinks", "listAdSenseLinksPagedCallable", "listAdSenseLinksCallable"]
+            },
             "ListAudiences": {
               "methods": ["listAudiences", "listAudiences", "listAudiences", "listAudiencesPagedCallable", "listAudiencesCallable"]
             },
@@ -261,6 +282,9 @@
             },
             "ListDisplayVideo360AdvertiserLinks": {
               "methods": ["listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinks", "listDisplayVideo360AdvertiserLinksPagedCallable", "listDisplayVideo360AdvertiserLinksCallable"]
+            },
+            "ListEventCreateRules": {
+              "methods": ["listEventCreateRules", "listEventCreateRules", "listEventCreateRules", "listEventCreateRulesPagedCallable", "listEventCreateRulesCallable"]
             },
             "ListExpandedDataSets": {
               "methods": ["listExpandedDataSets", "listExpandedDataSets", "listExpandedDataSets", "listExpandedDataSetsPagedCallable", "listExpandedDataSetsCallable"]
@@ -327,6 +351,9 @@
             },
             "UpdateEnhancedMeasurementSettings": {
               "methods": ["updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettingsCallable"]
+            },
+            "UpdateEventCreateRule": {
+              "methods": ["updateEventCreateRule", "updateEventCreateRule", "updateEventCreateRuleCallable"]
             },
             "UpdateExpandedDataSet": {
               "methods": ["updateExpandedDataSet", "updateExpandedDataSet", "updateExpandedDataSetCallable"]

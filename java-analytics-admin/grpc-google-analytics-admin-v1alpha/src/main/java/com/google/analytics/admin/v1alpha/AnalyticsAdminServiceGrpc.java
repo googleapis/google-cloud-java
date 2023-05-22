@@ -5732,6 +5732,448 @@ public final class AnalyticsAdminServiceGrpc {
     return getFetchConnectedGa4PropertyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest,
+          com.google.analytics.admin.v1alpha.AdSenseLink>
+      getGetAdSenseLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAdSenseLink",
+      requestType = com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AdSenseLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest,
+          com.google.analytics.admin.v1alpha.AdSenseLink>
+      getGetAdSenseLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest,
+            com.google.analytics.admin.v1alpha.AdSenseLink>
+        getGetAdSenseLinkMethod;
+    if ((getGetAdSenseLinkMethod = AnalyticsAdminServiceGrpc.getGetAdSenseLinkMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetAdSenseLinkMethod = AnalyticsAdminServiceGrpc.getGetAdSenseLinkMethod) == null) {
+          AnalyticsAdminServiceGrpc.getGetAdSenseLinkMethod =
+              getGetAdSenseLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest,
+                          com.google.analytics.admin.v1alpha.AdSenseLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAdSenseLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetAdSenseLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetAdSenseLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest,
+          com.google.analytics.admin.v1alpha.AdSenseLink>
+      getCreateAdSenseLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAdSenseLink",
+      requestType = com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AdSenseLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest,
+          com.google.analytics.admin.v1alpha.AdSenseLink>
+      getCreateAdSenseLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest,
+            com.google.analytics.admin.v1alpha.AdSenseLink>
+        getCreateAdSenseLinkMethod;
+    if ((getCreateAdSenseLinkMethod = AnalyticsAdminServiceGrpc.getCreateAdSenseLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateAdSenseLinkMethod = AnalyticsAdminServiceGrpc.getCreateAdSenseLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateAdSenseLinkMethod =
+              getCreateAdSenseLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest,
+                          com.google.analytics.admin.v1alpha.AdSenseLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAdSenseLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateAdSenseLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAdSenseLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest, com.google.protobuf.Empty>
+      getDeleteAdSenseLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAdSenseLink",
+      requestType = com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest, com.google.protobuf.Empty>
+      getDeleteAdSenseLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest, com.google.protobuf.Empty>
+        getDeleteAdSenseLinkMethod;
+    if ((getDeleteAdSenseLinkMethod = AnalyticsAdminServiceGrpc.getDeleteAdSenseLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteAdSenseLinkMethod = AnalyticsAdminServiceGrpc.getDeleteAdSenseLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteAdSenseLinkMethod =
+              getDeleteAdSenseLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAdSenseLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteAdSenseLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAdSenseLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest,
+          com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+      getListAdSenseLinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAdSenseLinks",
+      requestType = com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest,
+          com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+      getListAdSenseLinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest,
+            com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+        getListAdSenseLinksMethod;
+    if ((getListAdSenseLinksMethod = AnalyticsAdminServiceGrpc.getListAdSenseLinksMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListAdSenseLinksMethod = AnalyticsAdminServiceGrpc.getListAdSenseLinksMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListAdSenseLinksMethod =
+              getListAdSenseLinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest,
+                          com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAdSenseLinks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListAdSenseLinks"))
+                      .build();
+        }
+      }
+    }
+    return getListAdSenseLinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest,
+          com.google.analytics.admin.v1alpha.EventCreateRule>
+      getGetEventCreateRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEventCreateRule",
+      requestType = com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EventCreateRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest,
+          com.google.analytics.admin.v1alpha.EventCreateRule>
+      getGetEventCreateRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest,
+            com.google.analytics.admin.v1alpha.EventCreateRule>
+        getGetEventCreateRuleMethod;
+    if ((getGetEventCreateRuleMethod = AnalyticsAdminServiceGrpc.getGetEventCreateRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetEventCreateRuleMethod = AnalyticsAdminServiceGrpc.getGetEventCreateRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetEventCreateRuleMethod =
+              getGetEventCreateRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest,
+                          com.google.analytics.admin.v1alpha.EventCreateRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEventCreateRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EventCreateRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetEventCreateRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetEventCreateRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest,
+          com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+      getListEventCreateRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEventCreateRules",
+      requestType = com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest,
+          com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+      getListEventCreateRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest,
+            com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+        getListEventCreateRulesMethod;
+    if ((getListEventCreateRulesMethod = AnalyticsAdminServiceGrpc.getListEventCreateRulesMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListEventCreateRulesMethod =
+                AnalyticsAdminServiceGrpc.getListEventCreateRulesMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListEventCreateRulesMethod =
+              getListEventCreateRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest,
+                          com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListEventCreateRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListEventCreateRules"))
+                      .build();
+        }
+      }
+    }
+    return getListEventCreateRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest,
+          com.google.analytics.admin.v1alpha.EventCreateRule>
+      getCreateEventCreateRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEventCreateRule",
+      requestType = com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EventCreateRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest,
+          com.google.analytics.admin.v1alpha.EventCreateRule>
+      getCreateEventCreateRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest,
+            com.google.analytics.admin.v1alpha.EventCreateRule>
+        getCreateEventCreateRuleMethod;
+    if ((getCreateEventCreateRuleMethod = AnalyticsAdminServiceGrpc.getCreateEventCreateRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateEventCreateRuleMethod =
+                AnalyticsAdminServiceGrpc.getCreateEventCreateRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateEventCreateRuleMethod =
+              getCreateEventCreateRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest,
+                          com.google.analytics.admin.v1alpha.EventCreateRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateEventCreateRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EventCreateRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateEventCreateRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEventCreateRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest,
+          com.google.analytics.admin.v1alpha.EventCreateRule>
+      getUpdateEventCreateRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEventCreateRule",
+      requestType = com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EventCreateRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest,
+          com.google.analytics.admin.v1alpha.EventCreateRule>
+      getUpdateEventCreateRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest,
+            com.google.analytics.admin.v1alpha.EventCreateRule>
+        getUpdateEventCreateRuleMethod;
+    if ((getUpdateEventCreateRuleMethod = AnalyticsAdminServiceGrpc.getUpdateEventCreateRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateEventCreateRuleMethod =
+                AnalyticsAdminServiceGrpc.getUpdateEventCreateRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateEventCreateRuleMethod =
+              getUpdateEventCreateRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest,
+                          com.google.analytics.admin.v1alpha.EventCreateRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateEventCreateRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EventCreateRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateEventCreateRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEventCreateRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest,
+          com.google.protobuf.Empty>
+      getDeleteEventCreateRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEventCreateRule",
+      requestType = com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest,
+          com.google.protobuf.Empty>
+      getDeleteEventCreateRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest,
+            com.google.protobuf.Empty>
+        getDeleteEventCreateRuleMethod;
+    if ((getDeleteEventCreateRuleMethod = AnalyticsAdminServiceGrpc.getDeleteEventCreateRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteEventCreateRuleMethod =
+                AnalyticsAdminServiceGrpc.getDeleteEventCreateRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteEventCreateRuleMethod =
+              getDeleteEventCreateRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteEventCreateRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteEventCreateRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEventCreateRuleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -7558,6 +8000,139 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchConnectedGa4PropertyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single AdSenseLink.
+     * </pre>
+     */
+    default void getAdSenseLink(
+        com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AdSenseLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAdSenseLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an AdSenseLink.
+     * </pre>
+     */
+    default void createAdSenseLink(
+        com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AdSenseLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAdSenseLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdSenseLink.
+     * </pre>
+     */
+    default void deleteAdSenseLink(
+        com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAdSenseLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AdSenseLinks on a property.
+     * </pre>
+     */
+    default void listAdSenseLinks(
+        com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAdSenseLinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventCreateRule.
+     * </pre>
+     */
+    default void getEventCreateRule(
+        com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEventCreateRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventCreateRules on a web data stream.
+     * </pre>
+     */
+    default void listEventCreateRules(
+        com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEventCreateRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventCreateRule.
+     * </pre>
+     */
+    default void createEventCreateRule(
+        com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEventCreateRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventCreateRule.
+     * </pre>
+     */
+    default void updateEventCreateRule(
+        com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEventCreateRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventCreateRule.
+     * </pre>
+     */
+    default void deleteEventCreateRule(
+        com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEventCreateRuleMethod(), responseObserver);
     }
   }
 
@@ -9604,6 +10179,157 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single AdSenseLink.
+     * </pre>
+     */
+    public void getAdSenseLink(
+        com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AdSenseLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAdSenseLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an AdSenseLink.
+     * </pre>
+     */
+    public void createAdSenseLink(
+        com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AdSenseLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAdSenseLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdSenseLink.
+     * </pre>
+     */
+    public void deleteAdSenseLink(
+        com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAdSenseLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AdSenseLinks on a property.
+     * </pre>
+     */
+    public void listAdSenseLinks(
+        com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAdSenseLinksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventCreateRule.
+     * </pre>
+     */
+    public void getEventCreateRule(
+        com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEventCreateRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventCreateRules on a web data stream.
+     * </pre>
+     */
+    public void listEventCreateRules(
+        com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEventCreateRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventCreateRule.
+     * </pre>
+     */
+    public void createEventCreateRule(
+        com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEventCreateRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventCreateRule.
+     * </pre>
+     */
+    public void updateEventCreateRule(
+        com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEventCreateRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventCreateRule.
+     * </pre>
+     */
+    public void deleteEventCreateRule(
+        com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEventCreateRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -11226,6 +11952,123 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchConnectedGa4PropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single AdSenseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AdSenseLink getAdSenseLink(
+        com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdSenseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an AdSenseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AdSenseLink createAdSenseLink(
+        com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdSenseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdSenseLink.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAdSenseLink(
+        com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdSenseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AdSenseLinks on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse listAdSenseLinks(
+        com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdSenseLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventCreateRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule(
+        com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventCreateRules on a web data stream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse listEventCreateRules(
+        com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventCreateRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventCreateRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventCreateRule createEventCreateRule(
+        com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventCreateRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventCreateRule updateEventCreateRule(
+        com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventCreateRule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEventCreateRule(
+        com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEventCreateRuleMethod(), getCallOptions(), request);
     }
   }
 
@@ -12988,6 +13831,134 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchConnectedGa4PropertyMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single AdSenseLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AdSenseLink>
+        getAdSenseLink(com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAdSenseLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an AdSenseLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AdSenseLink>
+        createAdSenseLink(com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAdSenseLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdSenseLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAdSenseLink(com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAdSenseLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AdSenseLinks on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>
+        listAdSenseLinks(com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAdSenseLinksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventCreateRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EventCreateRule>
+        getEventCreateRule(com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEventCreateRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventCreateRules on a web data stream.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>
+        listEventCreateRules(
+            com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEventCreateRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventCreateRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EventCreateRule>
+        createEventCreateRule(
+            com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEventCreateRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventCreateRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EventCreateRule>
+        updateEventCreateRule(
+            com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEventCreateRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventCreateRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteEventCreateRule(
+            com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEventCreateRuleMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -13103,6 +14074,15 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 110;
   private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 111;
   private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 112;
+  private static final int METHODID_GET_AD_SENSE_LINK = 113;
+  private static final int METHODID_CREATE_AD_SENSE_LINK = 114;
+  private static final int METHODID_DELETE_AD_SENSE_LINK = 115;
+  private static final int METHODID_LIST_AD_SENSE_LINKS = 116;
+  private static final int METHODID_GET_EVENT_CREATE_RULE = 117;
+  private static final int METHODID_LIST_EVENT_CREATE_RULES = 118;
+  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 119;
+  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 120;
+  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 121;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13850,6 +14830,60 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>)
                   responseObserver);
+          break;
+        case METHODID_GET_AD_SENSE_LINK:
+          serviceImpl.getAdSenseLink(
+              (com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AdSenseLink>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_AD_SENSE_LINK:
+          serviceImpl.createAdSenseLink(
+              (com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AdSenseLink>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_AD_SENSE_LINK:
+          serviceImpl.deleteAdSenseLink(
+              (com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_AD_SENSE_LINKS:
+          serviceImpl.listAdSenseLinks(
+              (com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_EVENT_CREATE_RULE:
+          serviceImpl.getEventCreateRule(
+              (com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_EVENT_CREATE_RULES:
+          serviceImpl.listEventCreateRules(
+              (com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_EVENT_CREATE_RULE:
+          serviceImpl.createEventCreateRule(
+              (com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_EVENT_CREATE_RULE:
+          serviceImpl.updateEventCreateRule(
+              (com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventCreateRule>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_EVENT_CREATE_RULE:
+          serviceImpl.deleteEventCreateRule(
+              (com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -14648,6 +15682,67 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
                     com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>(
                     service, METHODID_FETCH_CONNECTED_GA4PROPERTY)))
+        .addMethod(
+            getGetAdSenseLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest,
+                    com.google.analytics.admin.v1alpha.AdSenseLink>(
+                    service, METHODID_GET_AD_SENSE_LINK)))
+        .addMethod(
+            getCreateAdSenseLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest,
+                    com.google.analytics.admin.v1alpha.AdSenseLink>(
+                    service, METHODID_CREATE_AD_SENSE_LINK)))
+        .addMethod(
+            getDeleteAdSenseLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_AD_SENSE_LINK)))
+        .addMethod(
+            getListAdSenseLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse>(
+                    service, METHODID_LIST_AD_SENSE_LINKS)))
+        .addMethod(
+            getGetEventCreateRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest,
+                    com.google.analytics.admin.v1alpha.EventCreateRule>(
+                    service, METHODID_GET_EVENT_CREATE_RULE)))
+        .addMethod(
+            getListEventCreateRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest,
+                    com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse>(
+                    service, METHODID_LIST_EVENT_CREATE_RULES)))
+        .addMethod(
+            getCreateEventCreateRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest,
+                    com.google.analytics.admin.v1alpha.EventCreateRule>(
+                    service, METHODID_CREATE_EVENT_CREATE_RULE)))
+        .addMethod(
+            getUpdateEventCreateRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest,
+                    com.google.analytics.admin.v1alpha.EventCreateRule>(
+                    service, METHODID_UPDATE_EVENT_CREATE_RULE)))
+        .addMethod(
+            getDeleteEventCreateRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_EVENT_CREATE_RULE)))
         .build();
   }
 
@@ -14812,6 +15907,15 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteConnectedSiteTagMethod())
                       .addMethod(getListConnectedSiteTagsMethod())
                       .addMethod(getFetchConnectedGa4PropertyMethod())
+                      .addMethod(getGetAdSenseLinkMethod())
+                      .addMethod(getCreateAdSenseLinkMethod())
+                      .addMethod(getDeleteAdSenseLinkMethod())
+                      .addMethod(getListAdSenseLinksMethod())
+                      .addMethod(getGetEventCreateRuleMethod())
+                      .addMethod(getListEventCreateRulesMethod())
+                      .addMethod(getCreateEventCreateRuleMethod())
+                      .addMethod(getUpdateEventCreateRuleMethod())
+                      .addMethod(getDeleteEventCreateRuleMethod())
                       .build();
         }
       }

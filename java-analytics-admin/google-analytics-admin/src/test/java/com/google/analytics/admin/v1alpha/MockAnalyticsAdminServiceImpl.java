@@ -2472,4 +2472,194 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getAdSenseLink(
+      GetAdSenseLinkRequest request, StreamObserver<AdSenseLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AdSenseLink) {
+      requests.add(request);
+      responseObserver.onNext(((AdSenseLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdSenseLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AdSenseLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAdSenseLink(
+      CreateAdSenseLinkRequest request, StreamObserver<AdSenseLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AdSenseLink) {
+      requests.add(request);
+      responseObserver.onNext(((AdSenseLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAdSenseLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AdSenseLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAdSenseLink(
+      DeleteAdSenseLinkRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAdSenseLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAdSenseLinks(
+      ListAdSenseLinksRequest request, StreamObserver<ListAdSenseLinksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAdSenseLinksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAdSenseLinksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAdSenseLinks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAdSenseLinksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEventCreateRule(
+      GetEventCreateRuleRequest request, StreamObserver<EventCreateRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EventCreateRule) {
+      requests.add(request);
+      responseObserver.onNext(((EventCreateRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEventCreateRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EventCreateRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listEventCreateRules(
+      ListEventCreateRulesRequest request,
+      StreamObserver<ListEventCreateRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEventCreateRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListEventCreateRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEventCreateRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEventCreateRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createEventCreateRule(
+      CreateEventCreateRuleRequest request, StreamObserver<EventCreateRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EventCreateRule) {
+      requests.add(request);
+      responseObserver.onNext(((EventCreateRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEventCreateRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EventCreateRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEventCreateRule(
+      UpdateEventCreateRuleRequest request, StreamObserver<EventCreateRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EventCreateRule) {
+      requests.add(request);
+      responseObserver.onNext(((EventCreateRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEventCreateRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EventCreateRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEventCreateRule(
+      DeleteEventCreateRuleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEventCreateRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

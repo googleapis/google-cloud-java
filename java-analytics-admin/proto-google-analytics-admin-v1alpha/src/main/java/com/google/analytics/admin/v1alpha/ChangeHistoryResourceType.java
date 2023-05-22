@@ -218,6 +218,36 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
    */
   ENHANCED_MEASUREMENT_SETTINGS(24),
+  /**
+   *
+   *
+   * <pre>
+   * AdSenseLink resource
+   * </pre>
+   *
+   * <code>ADSENSE_LINK = 27;</code>
+   */
+  ADSENSE_LINK(27),
+  /**
+   *
+   *
+   * <pre>
+   * Audience resource
+   * </pre>
+   *
+   * <code>AUDIENCE = 28;</code>
+   */
+  AUDIENCE(28),
+  /**
+   *
+   *
+   * <pre>
+   * EventCreateRule resource
+   * </pre>
+   *
+   * <code>EVENT_CREATE_RULE = 29;</code>
+   */
+  EVENT_CREATE_RULE(29),
   UNRECOGNIZED(-1),
   ;
 
@@ -411,6 +441,36 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
    */
   public static final int ENHANCED_MEASUREMENT_SETTINGS_VALUE = 24;
+  /**
+   *
+   *
+   * <pre>
+   * AdSenseLink resource
+   * </pre>
+   *
+   * <code>ADSENSE_LINK = 27;</code>
+   */
+  public static final int ADSENSE_LINK_VALUE = 27;
+  /**
+   *
+   *
+   * <pre>
+   * Audience resource
+   * </pre>
+   *
+   * <code>AUDIENCE = 28;</code>
+   */
+  public static final int AUDIENCE_VALUE = 28;
+  /**
+   *
+   *
+   * <pre>
+   * EventCreateRule resource
+   * </pre>
+   *
+   * <code>EVENT_CREATE_RULE = 29;</code>
+   */
+  public static final int EVENT_CREATE_RULE_VALUE = 29;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -474,6 +534,12 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CHANNEL_GROUP;
       case 24:
         return ENHANCED_MEASUREMENT_SETTINGS;
+      case 27:
+        return ADSENSE_LINK;
+      case 28:
+        return AUDIENCE;
+      case 29:
+        return EVENT_CREATE_RULE;
       default:
         return null;
     }

@@ -106,9 +106,9 @@ public interface AudienceFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -120,9 +120,9 @@ public interface AudienceFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -134,9 +134,9 @@ public interface AudienceFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>

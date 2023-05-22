@@ -23,9 +23,9 @@ package com.google.analytics.admin.v1alpha;
  *
  * <pre>
  * A clause for defining either a simple or sequence filter. A filter can be
- * inclusive (i.e., users satisfying the filter clause are included in the
- * Audience) or exclusive (i.e., users satisfying the filter clause are
- * excluded from the Audience).
+ * inclusive (For example, users satisfying the filter clause are included in
+ * the Audience) or exclusive (For example, users satisfying the filter clause
+ * are excluded from the Audience).
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.AudienceFilterClause}
@@ -639,9 +639,9 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A clause for defining either a simple or sequence filter. A filter can be
-   * inclusive (i.e., users satisfying the filter clause are included in the
-   * Audience) or exclusive (i.e., users satisfying the filter clause are
-   * excluded from the Audience).
+   * inclusive (For example, users satisfying the filter clause are included in
+   * the Audience) or exclusive (For example, users satisfying the filter clause
+   * are excluded from the Audience).
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.AudienceFilterClause}
