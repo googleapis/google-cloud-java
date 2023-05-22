@@ -41,6 +41,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   private FetchReportResultsRequest() {
     reportJob_ = "";
     pageToken_ = "";
+    partitionKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -213,6 +214,73 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     }
   }
 
+  public static final int PARTITION_KEYS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList partitionKeys_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the partitionKeys.
+   */
+  public com.google.protobuf.ProtocolStringList getPartitionKeysList() {
+    return partitionKeys_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of partitionKeys.
+   */
+  public int getPartitionKeysCount() {
+    return partitionKeys_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The partitionKeys at the given index.
+   */
+  public java.lang.String getPartitionKeys(int index) {
+    return partitionKeys_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the partitionKeys at the given index.
+   */
+  public com.google.protobuf.ByteString getPartitionKeysBytes(int index) {
+    return partitionKeys_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -236,6 +304,9 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    for (int i = 0; i < partitionKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, partitionKeys_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -253,6 +324,14 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < partitionKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(partitionKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPartitionKeysList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -273,6 +352,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     if (!getReportJob().equals(other.getReportJob())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getPartitionKeysList().equals(other.getPartitionKeysList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -290,6 +370,10 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (getPartitionKeysCount() > 0) {
+      hash = (37 * hash) + PARTITION_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getPartitionKeysList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -434,6 +518,8 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       reportJob_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      partitionKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -461,11 +547,21 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public com.google.cloud.channel.v1.FetchReportResultsRequest buildPartial() {
       com.google.cloud.channel.v1.FetchReportResultsRequest result =
           new com.google.cloud.channel.v1.FetchReportResultsRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.channel.v1.FetchReportResultsRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        partitionKeys_ = partitionKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.partitionKeys_ = partitionKeys_;
     }
 
     private void buildPartial0(com.google.cloud.channel.v1.FetchReportResultsRequest result) {
@@ -540,6 +636,16 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.partitionKeys_.isEmpty()) {
+        if (partitionKeys_.isEmpty()) {
+          partitionKeys_ = other.partitionKeys_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensurePartitionKeysIsMutable();
+          partitionKeys_.addAll(other.partitionKeys_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -584,6 +690,13 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePartitionKeysIsMutable();
+                partitionKeys_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -926,6 +1039,183 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList partitionKeys_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensurePartitionKeysIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        partitionKeys_ = new com.google.protobuf.LazyStringArrayList(partitionKeys_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the partitionKeys.
+     */
+    public com.google.protobuf.ProtocolStringList getPartitionKeysList() {
+      return partitionKeys_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of partitionKeys.
+     */
+    public int getPartitionKeysCount() {
+      return partitionKeys_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The partitionKeys at the given index.
+     */
+    public java.lang.String getPartitionKeys(int index) {
+      return partitionKeys_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the partitionKeys at the given index.
+     */
+    public com.google.protobuf.ByteString getPartitionKeysBytes(int index) {
+      return partitionKeys_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The partitionKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartitionKeys(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePartitionKeysIsMutable();
+      partitionKeys_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The partitionKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPartitionKeys(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePartitionKeysIsMutable();
+      partitionKeys_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The partitionKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPartitionKeys(java.lang.Iterable<java.lang.String> values) {
+      ensurePartitionKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partitionKeys_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPartitionKeys() {
+      partitionKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of keys specifying which report partitions to return.
+     * If empty, returns all partitions.
+     * </pre>
+     *
+     * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the partitionKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPartitionKeysBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePartitionKeysIsMutable();
+      partitionKeys_.add(value);
       onChanged();
       return this;
     }

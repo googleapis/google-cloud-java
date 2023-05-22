@@ -1119,8 +1119,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * - num_units: The total commitment for commitment-based offers
    * The response may additionally include the following output-only Parameters:
    * - assigned_units: The number of licenses assigned to users.
-   * For GCP billing subaccounts, the following Parameter may be accepted as
-   * input:
+   * For Google Cloud billing subaccounts, the following Parameter may be
+   * accepted as input:
    * - display_name: The display name of the billing subaccount.
    * </pre>
    *
@@ -1143,8 +1143,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * - num_units: The total commitment for commitment-based offers
    * The response may additionally include the following output-only Parameters:
    * - assigned_units: The number of licenses assigned to users.
-   * For GCP billing subaccounts, the following Parameter may be accepted as
-   * input:
+   * For Google Cloud billing subaccounts, the following Parameter may be
+   * accepted as input:
    * - display_name: The display name of the billing subaccount.
    * </pre>
    *
@@ -1168,8 +1168,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * - num_units: The total commitment for commitment-based offers
    * The response may additionally include the following output-only Parameters:
    * - assigned_units: The number of licenses assigned to users.
-   * For GCP billing subaccounts, the following Parameter may be accepted as
-   * input:
+   * For Google Cloud billing subaccounts, the following Parameter may be
+   * accepted as input:
    * - display_name: The display name of the billing subaccount.
    * </pre>
    *
@@ -1192,8 +1192,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * - num_units: The total commitment for commitment-based offers
    * The response may additionally include the following output-only Parameters:
    * - assigned_units: The number of licenses assigned to users.
-   * For GCP billing subaccounts, the following Parameter may be accepted as
-   * input:
+   * For Google Cloud billing subaccounts, the following Parameter may be
+   * accepted as input:
    * - display_name: The display name of the billing subaccount.
    * </pre>
    *
@@ -1216,8 +1216,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * - num_units: The total commitment for commitment-based offers
    * The response may additionally include the following output-only Parameters:
    * - assigned_units: The number of licenses assigned to users.
-   * For GCP billing subaccounts, the following Parameter may be accepted as
-   * input:
+   * For Google Cloud billing subaccounts, the following Parameter may be
+   * accepted as input:
    * - display_name: The display name of the billing subaccount.
    * </pre>
    *
@@ -3989,8 +3989,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4016,8 +4016,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4043,8 +4043,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4070,8 +4070,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4103,8 +4103,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4134,8 +4134,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4167,8 +4167,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4200,8 +4200,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4230,8 +4230,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4261,8 +4261,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4292,8 +4292,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4322,8 +4322,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4352,8 +4352,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4375,8 +4375,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4402,8 +4402,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4430,8 +4430,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4454,8 +4454,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *
@@ -4478,8 +4478,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * - num_units: The total commitment for commitment-based offers
      * The response may additionally include the following output-only Parameters:
      * - assigned_units: The number of licenses assigned to users.
-     * For GCP billing subaccounts, the following Parameter may be accepted as
-     * input:
+     * For Google Cloud billing subaccounts, the following Parameter may be
+     * accepted as input:
      * - display_name: The display name of the billing subaccount.
      * </pre>
      *

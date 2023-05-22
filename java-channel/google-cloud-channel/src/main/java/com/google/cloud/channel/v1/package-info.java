@@ -22,8 +22,8 @@
  * <p>======================= CloudChannelReportsServiceClient =======================
  *
  * <p>Service Description: CloudChannelReportsService lets Google Cloud resellers and distributors
- * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud
- * Platform (GCP), Google Voice, and Google Workspace.)
+ * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud,
+ * Google Voice, and Google Workspace.)
  *
  * <p>Sample for CloudChannelReportsServiceClient:
  *

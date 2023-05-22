@@ -23,8 +23,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * CloudChannelReportsService lets Google Cloud resellers and
  * distributors retrieve and combine a variety of data in Cloud Channel for
- * multiple products (Google Cloud Platform (GCP), Google Voice, and
- * Google Workspace.)
+ * multiple products (Google Cloud, Google Voice, and Google Workspace.)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -224,8 +223,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public interface AsyncService {
@@ -302,8 +300,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public abstract static class CloudChannelReportsServiceImplBase
@@ -321,8 +318,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public static final class CloudChannelReportsServiceStub
@@ -416,8 +412,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public static final class CloudChannelReportsServiceBlockingStub
@@ -501,8 +496,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public static final class CloudChannelReportsServiceFutureStub

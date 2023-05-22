@@ -23,7 +23,8 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * The ID and description of a report that was used to generate report data.
- * For example, "GCP Daily Spend", "Google Workspace License Activity", etc.
+ * For example, "Google Cloud Daily Spend", "Google Workspace License Activity",
+ * etc.
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.Report}
@@ -501,7 +502,8 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The ID and description of a report that was used to generate report data.
-   * For example, "GCP Daily Spend", "Google Workspace License Activity", etc.
+   * For example, "Google Cloud Daily Spend", "Google Workspace License Activity",
+   * etc.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.Report}

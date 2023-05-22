@@ -265,7 +265,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Reseller Billing account to charge after an offer transaction.
-   * Only present for Google Cloud Platform offers.
+   * Only present for Google Cloud offers.
    * </pre>
    *
    * <code>string billing_account = 5;</code>
@@ -289,7 +289,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Reseller Billing account to charge after an offer transaction.
-   * Only present for Google Cloud Platform offers.
+   * Only present for Google Cloud offers.
    * </pre>
    *
    * <code>string billing_account = 5;</code>
@@ -1365,7 +1365,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reseller Billing account to charge after an offer transaction.
-     * Only present for Google Cloud Platform offers.
+     * Only present for Google Cloud offers.
      * </pre>
      *
      * <code>string billing_account = 5;</code>
@@ -1388,7 +1388,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reseller Billing account to charge after an offer transaction.
-     * Only present for Google Cloud Platform offers.
+     * Only present for Google Cloud offers.
      * </pre>
      *
      * <code>string billing_account = 5;</code>
@@ -1411,7 +1411,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reseller Billing account to charge after an offer transaction.
-     * Only present for Google Cloud Platform offers.
+     * Only present for Google Cloud offers.
      * </pre>
      *
      * <code>string billing_account = 5;</code>
@@ -1433,7 +1433,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reseller Billing account to charge after an offer transaction.
-     * Only present for Google Cloud Platform offers.
+     * Only present for Google Cloud offers.
      * </pre>
      *
      * <code>string billing_account = 5;</code>
@@ -1451,7 +1451,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reseller Billing account to charge after an offer transaction.
-     * Only present for Google Cloud Platform offers.
+     * Only present for Google Cloud offers.
      * </pre>
      *
      * <code>string billing_account = 5;</code>

@@ -78,8 +78,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-   * is the underlying Subscription ID. For Google Cloud Platform, this is the
-   * Billing Account ID of the billing subaccount."
+   * is the underlying Subscription ID. For Google Cloud, this is the Billing
+   * Account ID of the billing subaccount."
    * </pre>
    *
    * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -103,8 +103,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-   * is the underlying Subscription ID. For Google Cloud Platform, this is the
-   * Billing Account ID of the billing subaccount."
+   * is the underlying Subscription ID. For Google Cloud, this is the Billing
+   * Account ID of the billing subaccount."
    * </pre>
    *
    * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -625,8 +625,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-     * is the underlying Subscription ID. For Google Cloud Platform, this is the
-     * Billing Account ID of the billing subaccount."
+     * is the underlying Subscription ID. For Google Cloud, this is the Billing
+     * Account ID of the billing subaccount."
      * </pre>
      *
      * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -649,8 +649,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-     * is the underlying Subscription ID. For Google Cloud Platform, this is the
-     * Billing Account ID of the billing subaccount."
+     * is the underlying Subscription ID. For Google Cloud, this is the Billing
+     * Account ID of the billing subaccount."
      * </pre>
      *
      * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -673,8 +673,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-     * is the underlying Subscription ID. For Google Cloud Platform, this is the
-     * Billing Account ID of the billing subaccount."
+     * is the underlying Subscription ID. For Google Cloud, this is the Billing
+     * Account ID of the billing subaccount."
      * </pre>
      *
      * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -696,8 +696,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-     * is the underlying Subscription ID. For Google Cloud Platform, this is the
-     * Billing Account ID of the billing subaccount."
+     * is the underlying Subscription ID. For Google Cloud, this is the Billing
+     * Account ID of the billing subaccount."
      * </pre>
      *
      * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -715,8 +715,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-     * is the underlying Subscription ID. For Google Cloud Platform, this is the
-     * Billing Account ID of the billing subaccount."
+     * is the underlying Subscription ID. For Google Cloud, this is the Billing
+     * Account ID of the billing subaccount."
      * </pre>
      *
      * <code>string provisioning_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

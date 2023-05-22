@@ -109,4 +109,59 @@ public interface FetchReportResultsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the partitionKeys.
+   */
+  java.util.List<java.lang.String> getPartitionKeysList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of partitionKeys.
+   */
+  int getPartitionKeysCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The partitionKeys at the given index.
+   */
+  java.lang.String getPartitionKeys(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of keys specifying which report partitions to return.
+   * If empty, returns all partitions.
+   * </pre>
+   *
+   * <code>repeated string partition_keys = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the partitionKeys at the given index.
+   */
+  com.google.protobuf.ByteString getPartitionKeysBytes(int index);
 }
