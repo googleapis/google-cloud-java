@@ -37,12 +37,16 @@ GOOGLEAPIS_ROOT=$(pwd)/../googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
 # proto files and protoc from protobuf repository
-curl -L -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v23.1/protoc-23.1-osx-aarch_64.zip
+cd "${REPO_ROOT}"
+curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-osx-aarch_64.zip
 unzip -o -q protobuf.zip -d protobuf/
 cp -r protobuf/include/ googleapis
 PROTOC_ROOT=${REPO_ROOT}/protobuf/bin
 echo "protoc version: $("${PROTOC_ROOT}"/protoc --version)"
-# grpc plugin
+# pull protoc-gen-grpc-java plugin from maven central
+cd "${LIBRARY_GEN_OUT}"
+curl -LJ -o protoc-gen-grpc-java https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.1/protoc-gen-grpc-java-1.54.1-osx-aarch_64.exe
+chmod +x protoc-gen-grpc-java
 # gapic-generator-java
 
 ##################### Section 1 ##################### 
@@ -370,7 +374,7 @@ google/cloud/common_resources.proto
 ##################### Section 2 #####################
 # generate grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
-"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/grpc_java_plugin" \
+"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" \
 "--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" \
 --descriptor_set_in "${LIBRARY_GEN_OUT}"/google/api/http_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/descriptor_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/annotations_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/launch_stage_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/duration_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/client_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/any_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/timestamp_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/distribution_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/field_behavior_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/label_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/metric_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/struct_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/monitored_resource_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/resource_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/rpc/status_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/type/calendar_period_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/empty_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/field_mask_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/wrappers_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_proto-descriptor-set.proto.bin \
 google/monitoring/v3/alert.proto \
