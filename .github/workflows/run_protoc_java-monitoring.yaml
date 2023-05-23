@@ -1,0 +1,14 @@
+on:
+  pull_request:
+jobs:
+  run-protoc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run run_protoc.sh
+      shell: bash
+      run: |
+        cd java-monitoring
+        sh -x run_protoc.sh
+        echo "Code generation finished"
+
