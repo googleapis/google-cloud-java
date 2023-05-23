@@ -28,13 +28,16 @@ mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring
 # proto files from googleapis repository
 REPO_ROOT=$(pwd)/..
 cd "${REPO_ROOT}"
-git clone git@github.com:googleapis/googleapis.git
+
+if [ ! -d googleapis ]; then
+  git clone https://github.com/googleapis/googleapis.git
+fi
+
 GOOGLEAPIS_ROOT=$(pwd)/../googleapis
 cd "${GOOGLEAPIS_ROOT}"
-git pull
 git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
 # proto files and protoc from protobuf repository
-curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v23.1/protoc-23.1-osx-aarch_64.zip
+curl -L -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v23.1/protoc-23.1-osx-aarch_64.zip
 unzip -o -q protobuf.zip -d protobuf/
 cp -r protobuf/include/ googleapis
 PROTOC_ROOT=${REPO_ROOT}/protobuf/bin
