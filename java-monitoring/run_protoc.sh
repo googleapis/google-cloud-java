@@ -31,15 +31,12 @@ GOOGLEAPIS_ROOT=$(pwd)/../googleapis
 cd "${GOOGLEAPIS_ROOT}" || exit
 git pull
 git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
-# proto files from protobuf repository
-cd "${REPO_ROOT}" || exit
-git clone git@github.com:protocolbuffers/protobuf.git
-mkdir -p googleapis/google/protobuf
-find protobuf/src/google/protobuf/ -type f -name "*.proto" -print0 | while IFS= read -r -d '' proto_src; do
-    cp "${proto_src}" googleapis/google/protobuf
-done
-rm -rf protobuf
-# protoc
+# proto files and protoc from protobuf repository
+curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v23.1/protoc-23.1-osx-aarch_64.zip
+unzip -o -q protobuf.zip -d protobuf/
+cp -r protobuf/include/ googleapis
+PROTOC_ROOT=${REPO_ROOT}/protobuf/bin
+echo "protoc version: $("${PROTOC_ROOT}"/protoc --version)"
 # grpc plugin
 # gapic-generator-java
 
@@ -48,7 +45,7 @@ rm -rf protobuf
 #####################################################
 cd "${GOOGLEAPIS_ROOT}" || exit
 # http.proto is a transitive dependency of google/api/annotations.proto, which is from monitoring_proto in google/monitoring/v3:BUILD
-protoc --direct_dependencies google/api/http.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/http.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:http_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/http_proto-descriptor-set.proto.bin" \
 --include_source_info \
@@ -56,7 +53,7 @@ protoc --direct_dependencies google/api/http.proto \
 "-Igoogle/api/http.proto=google/api/http.proto" \
 google/api/http.proto
 
-protoc --direct_dependencies google/protobuf/any.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/any.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:any_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/any_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/any_proto" \
@@ -65,7 +62,7 @@ protoc --direct_dependencies google/protobuf/any.proto \
 "-Igoogle/protobuf/any.proto=google/protobuf/any.proto" \
 google/protobuf/any.proto
 
-protoc --direct_dependencies google/protobuf/descriptor.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/descriptor.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:descriptor_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -74,14 +71,14 @@ protoc --direct_dependencies google/protobuf/descriptor.proto \
 "-Igoogle/protobuf/descriptor.proto=google/protobuf/descriptor.proto" \
 google/protobuf/descriptor.proto
 
-protoc --direct_dependencies google/protobuf/duration.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/duration.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:duration_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/duration_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/duration_proto" \
 "-Igoogle/protobuf/duration.proto=google/protobuf/duration.proto" \
 google/protobuf/duration.proto
 
-protoc --direct_dependencies google/protobuf/empty.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/empty.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:empty_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/empty_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/empty_proto" \
@@ -90,14 +87,14 @@ protoc --direct_dependencies google/protobuf/empty.proto \
 "-Igoogle/protobuf/empty.proto=google/protobuf/empty.proto" \
 google/protobuf/empty.proto
 
-protoc --direct_dependencies google/protobuf/field_mask.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/field_mask.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:field_mask_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/field_mask_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/field_mask_proto" \
 "-Igoogle/protobuf/field_mask.proto=google/protobuf/field_mask.proto" \
 google/protobuf/field_mask.proto
 
-protoc --direct_dependencies google/protobuf/struct.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/struct.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:struct_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/struct_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/struct_proto" \
@@ -106,7 +103,7 @@ protoc --direct_dependencies google/protobuf/struct.proto \
 "-Igoogle/protobuf/struct.proto=google/protobuf/struct.proto" \
 google/protobuf/struct.proto
 
-protoc --direct_dependencies google/protobuf/timestamp.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/timestamp.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:timestamp_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/timestamp_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/timestamp_proto" \
@@ -115,20 +112,20 @@ protoc --direct_dependencies google/protobuf/timestamp.proto \
 "-Igoogle/protobuf/timestamp.proto=google/protobuf/timestamp.proto" \
 google/protobuf/timestamp.proto
 
-protoc --direct_dependencies google/protobuf/wrappers.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/wrappers.proto \
 "--direct_dependencies_violation_msg=%s is imported, but @com_google_protobuf//:wrappers_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/com_google_protobuf/wrappers_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/wrappers_proto" \
 "-Igoogle/protobuf/wrappers.proto=google/protobuf/wrappers.proto" \
 google/protobuf/wrappers.proto
 
-protoc --direct_dependencies google/api/launch_stage.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/launch_stage.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:launch_stage_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/launch_stage_proto-descriptor-set.proto.bin" \
 "-Igoogle/api/launch_stage.proto=google/api/launch_stage.proto" \
 google/api/launch_stage.proto
 
-protoc --direct_dependencies google/api/http.proto:google/protobuf/descriptor.proto:google/api/annotations.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/http.proto:google/protobuf/descriptor.proto:google/api/annotations.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:annotations_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/annotations_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -137,7 +134,7 @@ protoc --direct_dependencies google/api/http.proto:google/protobuf/descriptor.pr
 "-Igoogle/protobuf/descriptor.proto=google/protobuf/descriptor.proto" \
 google/api/annotations.proto
 
-protoc --direct_dependencies google/api/launch_stage.proto:google/protobuf/descriptor.proto:google/protobuf/duration.proto:google/api/client.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/launch_stage.proto:google/protobuf/descriptor.proto:google/protobuf/duration.proto:google/api/client.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:client_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/client_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -148,7 +145,7 @@ protoc --direct_dependencies google/api/launch_stage.proto:google/protobuf/descr
 "-Igoogle/protobuf/duration.proto=google/protobuf/duration.proto" \
 google/api/client.proto
 
-protoc --direct_dependencies google/api/annotations.proto:google/protobuf/any.proto:google/protobuf/timestamp.proto:google/api/distribution.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/annotations.proto:google/protobuf/any.proto:google/protobuf/timestamp.proto:google/api/distribution.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:distribution_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/distribution_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -162,7 +159,7 @@ protoc --direct_dependencies google/api/annotations.proto:google/protobuf/any.pr
 "-Igoogle/protobuf/timestamp.proto=google/protobuf/timestamp.proto" \
 google/api/distribution.proto
 
-protoc --direct_dependencies google/protobuf/descriptor.proto:google/api/field_behavior.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/descriptor.proto:google/api/field_behavior.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:field_behavior_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/field_behavior_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -170,7 +167,7 @@ protoc --direct_dependencies google/protobuf/descriptor.proto:google/api/field_b
 "-Igoogle/protobuf/descriptor.proto=google/protobuf/descriptor.proto" \
 google/api/field_behavior.proto
 
-protoc --direct_dependencies google/api/label.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/label.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:label_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/label_proto-descriptor-set.proto.bin" \
 --include_source_info \
@@ -178,13 +175,13 @@ protoc --direct_dependencies google/api/label.proto \
 "-Igoogle/api/label.proto=google/api/label.proto" \
 google/api/label.proto
 
-protoc --direct_dependencies google/api/launch_stage.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/launch_stage.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:launch_stage_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/launch_stage_proto-descriptor-set.proto.bin" \
 "-Igoogle/api/launch_stage.proto=google/api/launch_stage.proto" \
 google/api/launch_stage.proto
 
-protoc --direct_dependencies google/api/label.proto:google/api/launch_stage.proto:google/protobuf/duration.proto:google/api/metric.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/label.proto:google/api/launch_stage.proto:google/protobuf/duration.proto:google/api/metric.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:metric_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/metric_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/duration_proto" \
@@ -194,7 +191,7 @@ protoc --direct_dependencies google/api/label.proto:google/api/launch_stage.prot
 "-Igoogle/protobuf/duration.proto=google/protobuf/duration.proto" \
 google/api/metric.proto
 
-protoc --direct_dependencies google/api/label.proto:google/api/launch_stage.proto:google/protobuf/struct.proto:google/api/monitored_resource.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/label.proto:google/api/launch_stage.proto:google/protobuf/struct.proto:google/api/monitored_resource.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:monitored_resource_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/monitored_resource_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/struct_proto" \
@@ -204,7 +201,7 @@ protoc --direct_dependencies google/api/label.proto:google/api/launch_stage.prot
 "-Igoogle/protobuf/struct.proto=google/protobuf/struct.proto" \
 google/api/monitored_resource.proto
 
-protoc --direct_dependencies google/protobuf/descriptor.proto:google/api/resource.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/descriptor.proto:google/api/resource.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/api:resource_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/api/resource_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -212,7 +209,7 @@ protoc --direct_dependencies google/protobuf/descriptor.proto:google/api/resourc
 "-Igoogle/protobuf/descriptor.proto=google/protobuf/descriptor.proto" \
 google/api/resource.proto
 
-protoc --direct_dependencies google/protobuf/any.proto:google/rpc/status.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/protobuf/any.proto:google/rpc/status.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/rpc:status_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/rpc/status_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/any_proto" \
@@ -220,14 +217,14 @@ protoc --direct_dependencies google/protobuf/any.proto:google/rpc/status.proto \
 "-Igoogle/protobuf/any.proto=google/protobuf/any.proto" \
 google/rpc/status.proto
 
-protoc --direct_dependencies google/type/calendar_period.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/type/calendar_period.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/type:calendar_period_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/type/calendar_period_proto-descriptor-set.proto.bin" \
 "-Igoogle/type/calendar_period.proto=google/type/calendar_period.proto" \
 google/type/calendar_period.proto
 
 # use all proto files to generate ${WORKING_DIR}/google/monitoring/v3/monitoring_proto-descriptor-set.proto.bin
-protoc --direct_dependencies google/api/annotations.proto:google/api/client.proto:google/api/distribution.proto:google/api/field_behavior.proto:google/api/label.proto:google/api/launch_stage.proto:google/api/metric.proto:google/api/monitored_resource.proto:google/api/resource.proto:google/rpc/status.proto:google/type/calendar_period.proto:google/protobuf/duration.proto:google/protobuf/empty.proto:google/protobuf/field_mask.proto:google/protobuf/timestamp.proto:google/protobuf/wrappers.proto:google/monitoring/v3/alert.proto:google/monitoring/v3/alert_service.proto:google/monitoring/v3/common.proto:google/monitoring/v3/dropped_labels.proto:google/monitoring/v3/group.proto:google/monitoring/v3/group_service.proto:google/monitoring/v3/metric.proto:google/monitoring/v3/metric_service.proto:google/monitoring/v3/mutation_record.proto:google/monitoring/v3/notification.proto:google/monitoring/v3/notification_service.proto:google/monitoring/v3/query_service.proto:google/monitoring/v3/service.proto:google/monitoring/v3/service_service.proto:google/monitoring/v3/snooze.proto:google/monitoring/v3/snooze_service.proto:google/monitoring/v3/span_context.proto:google/monitoring/v3/uptime.proto:google/monitoring/v3/uptime_service.proto \
+"${PROTOC_ROOT}"/protoc --direct_dependencies google/api/annotations.proto:google/api/client.proto:google/api/distribution.proto:google/api/field_behavior.proto:google/api/label.proto:google/api/launch_stage.proto:google/api/metric.proto:google/api/monitored_resource.proto:google/api/resource.proto:google/rpc/status.proto:google/type/calendar_period.proto:google/protobuf/duration.proto:google/protobuf/empty.proto:google/protobuf/field_mask.proto:google/protobuf/timestamp.proto:google/protobuf/wrappers.proto:google/monitoring/v3/alert.proto:google/monitoring/v3/alert_service.proto:google/monitoring/v3/common.proto:google/monitoring/v3/dropped_labels.proto:google/monitoring/v3/group.proto:google/monitoring/v3/group_service.proto:google/monitoring/v3/metric.proto:google/monitoring/v3/metric_service.proto:google/monitoring/v3/mutation_record.proto:google/monitoring/v3/notification.proto:google/monitoring/v3/notification_service.proto:google/monitoring/v3/query_service.proto:google/monitoring/v3/service.proto:google/monitoring/v3/service_service.proto:google/monitoring/v3/snooze.proto:google/monitoring/v3/snooze_service.proto:google/monitoring/v3/span_context.proto:google/monitoring/v3/uptime.proto:google/monitoring/v3/uptime_service.proto \
 "--direct_dependencies_violation_msg=%s is imported, but //google/monitoring/v3:monitoring_proto doesn'\''t directly depend on a proto_library that '\''srcs'\'' it." \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-descriptor-set.proto.bin" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
@@ -300,7 +297,7 @@ google/monitoring/v3/uptime_service.proto
 ##################### Section 2 #####################
 # generate descriptor files (proto_library_with_info)
 #####################################################
-protoc --include_imports \
+"${PROTOC_ROOT}"/protoc --include_imports \
 --include_source_info \
 --experimental_allow_proto3_optional \
 "--descriptor_set_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto_with_info-set.proto.bin" \
@@ -368,7 +365,7 @@ google/cloud/common_resources.proto
 ##################### Section 2 #####################
 # generate grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
-protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/grpc_java_plugin" \
+"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/grpc_java_plugin" \
 "--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" \
 --descriptor_set_in "${LIBRARY_GEN_OUT}"/google/api/http_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/descriptor_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/annotations_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/launch_stage_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/duration_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/client_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/any_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/timestamp_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/distribution_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/field_behavior_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/label_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/metric_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/struct_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/monitored_resource_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/api/resource_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/rpc/status_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/type/calendar_period_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/empty_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/field_mask_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/com_google_protobuf/wrappers_proto-descriptor-set.proto.bin:"${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_proto-descriptor-set.proto.bin \
 google/monitoring/v3/alert.proto \
@@ -421,7 +418,7 @@ mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-jav
 ##################### Section 3 #####################
 # generate gapic-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
-protoc --experimental_allow_proto3_optional \
+"${PROTOC_ROOT}"/protoc --experimental_allow_proto3_optional \
 "--plugin=protoc-gen-java_gapic=${LIBRARY_GEN_OUT}/protoc-gen-java_gapic" \
 "--java_gapic_out=metadata:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar_raw.srcjar.zip" \
 "--java_gapic_opt=transport=grpc,rest-numeric-enums,grpc-service-config=google/monitoring/v3/monitoring_grpc_service_config.json,gapic-config=google/monitoring/v3/monitoring_gapic.yaml,api-service-config=google/monitoring/v3/monitoring.yaml" \
@@ -576,7 +573,7 @@ mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-ja
 # generate proto-google-cloud-monitoring-v3-java-resources.tar.gz
 #####################################################
 cd "${GOOGLEAPIS_ROOT}" || exit
-protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" \
+"${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/duration_proto" \
 "--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/any_proto" \
