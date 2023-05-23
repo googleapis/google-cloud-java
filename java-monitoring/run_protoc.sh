@@ -33,7 +33,7 @@ if [ ! -d googleapis ]; then
   git clone https://github.com/googleapis/googleapis.git
 fi
 
-GOOGLEAPIS_ROOT=$(pwd)/../googleapis
+GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
 # proto files and protoc from protobuf repository
