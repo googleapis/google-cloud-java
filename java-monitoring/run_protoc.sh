@@ -36,16 +36,17 @@ fi
 GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
-# proto files and protoc from protobuf repository
+# pull proto files and protoc from protobuf repository
+# maven central doesn't have proto files
 cd "${REPO_ROOT}"
-curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-osx-aarch_64.zip
+curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip
 unzip -o -q protobuf.zip -d protobuf/
-cp -r protobuf/include/ googleapis
+cp -r protobuf/include/google "${GOOGLEAPIS_ROOT}"
 PROTOC_ROOT=${REPO_ROOT}/protobuf/bin
 echo "protoc version: $("${PROTOC_ROOT}"/protoc --version)"
 # pull protoc-gen-grpc-java plugin from maven central
 cd "${LIBRARY_GEN_OUT}"
-curl -LJ -o protoc-gen-grpc-java https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.1/protoc-gen-grpc-java-1.54.1-osx-aarch_64.exe
+curl -LJ -o protoc-gen-grpc-java https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.1/protoc-gen-grpc-java-1.54.1-linux-x86_64.exe
 chmod +x protoc-gen-grpc-java
 # gapic-generator-java
 
