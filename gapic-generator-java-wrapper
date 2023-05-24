@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+JAR_PATH=$(pwd)
+CLASSPATH="."
+mkdir -p ../library_gen_out/dependencies
+
+while IFS="" read -r jar_file_url
+do
+  jar_file=${jar_file_url##*/} # greedy match everything until the last "/".
+  curl -LJ -o "${jar_file}" "${jar_file_url}"
+  mv "${jar_file}" ../library_gen_out/dependencies/
+  CLASSPATH=${CLASSPATH}:${JAR_PATH}/../library_gen_out/dependencies/${jar_file}
+done < ../dependency_list
+
+exec java -classpath "${CLASSPATH}" -XX:ErrorFile=/dev/stderr com.google.api.generator.Main

@@ -429,7 +429,7 @@ mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-jav
 # generate gapic-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
 "${PROTOC_ROOT}"/protoc --experimental_allow_proto3_optional \
-"--plugin=protoc-gen-java_gapic=${LIBRARY_GEN_OUT}/protoc-gen-java_gapic" \
+"--plugin=protoc-gen-java_gapic=${REPO_ROOT}/gapic-generator-java-wrapper" \
 "--java_gapic_out=metadata:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar_raw.srcjar.zip" \
 "--java_gapic_opt=transport=grpc,rest-numeric-enums,grpc-service-config=google/monitoring/v3/monitoring_grpc_service_config.json,gapic-config=google/monitoring/v3/monitoring_gapic.yaml,api-service-config=google/monitoring/v3/monitoring.yaml" \
 "-Igoogle/monitoring/v3/alert.proto=google/monitoring/v3/alert.proto" \
