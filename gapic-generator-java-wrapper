@@ -2,16 +2,9 @@
 
 set -e
 
+# the script is running in google-cloud-java/googleapis.
 JAR_PATH=$(pwd)
-CLASSPATH="."
-mkdir -p ../library_gen_out/dependencies
+cd "${JAR_PATH}"/../library_gen_out
+curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/api/gapic-generator-java/2.19.0/gapic-generator-java-2.19.0.jar
 
-while IFS="" read -r jar_file_url
-do
-  jar_file=${jar_file_url##*/} # greedy match everything until the last "/".
-  curl -LJ -o "${jar_file}" "${jar_file_url}"
-  mv "${jar_file}" ../library_gen_out/dependencies/
-  CLASSPATH=${CLASSPATH}:${JAR_PATH}/../library_gen_out/dependencies/${jar_file}
-done < ../dependency_list
-
-exec java -classpath "${CLASSPATH}" -XX:ErrorFile=/dev/stderr com.google.api.generator.Main
+exec java -classpath "${JAR_PATH}"/../library_gen_out/gapic-generator-java.jar com.google.api.generator.Main
