@@ -195,5 +195,5 @@ public interface GerritSourceContextOrBuilder
    */
   com.google.devtools.source.v1.AliasContextOrBuilder getAliasContextOrBuilder();
 
-  public com.google.devtools.source.v1.GerritSourceContext.RevisionCase getRevisionCase();
+  com.google.devtools.source.v1.GerritSourceContext.RevisionCase getRevisionCase();
 }
