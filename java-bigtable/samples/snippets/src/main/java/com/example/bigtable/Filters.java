@@ -27,8 +27,10 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 
 public class Filters {
 
@@ -46,6 +48,7 @@ public class Filters {
   public static void filterLimitRowSample(String projectId, String instanceId, String tableId) {
     // A filter that matches cells from a row with probability .75
     Filter filter = FILTERS.key().sample(.75);
+    readRowFilter(projectId, instanceId, tableId, filter);
     readFilter(projectId, instanceId, tableId, filter);
   }
   // [END bigtable_filters_limit_row_sample]
@@ -67,6 +70,7 @@ public class Filters {
   // [END bigtable_filters_limit_row_regex]
 
   // [START bigtable_filters_limit_cells_per_col]
+  // [START bigtable_hw_create_filter]
   public static void filterLimitCellsPerCol() {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
@@ -80,6 +84,7 @@ public class Filters {
     Filter filter = FILTERS.limit().cellsPerColumn(2);
     readFilter(projectId, instanceId, tableId, filter);
   }
+  // [END bigtable_hw_create_filter]
   // [END bigtable_filters_limit_cells_per_col]
 
   // [START bigtable_filters_limit_cells_per_row]
@@ -354,6 +359,25 @@ public class Filters {
   // [END bigtable_filters_composing_condition]
   // [END_EXCLUDE]
 
+  // [START bigtable_hw_get_with_filter]
+  private static void readRowFilter(
+      String projectId, String instanceId, String tableId, Filter filter) {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests.
+    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
+      String rowKey =
+          Base64.getEncoder().encodeToString("greeting0".getBytes(StandardCharsets.UTF_8));
+      Row row = dataClient.readRow(tableId, rowKey, filter);
+      printRow(row);
+      System.out.println("Row filter completed.");
+    } catch (IOException e) {
+      System.out.println(
+          "Unable to initialize service client, as a network error occurred: \n" + e);
+    }
+  }
+  // [END bigtable_hw_get_with_filter]
+
+  // [START bigtable_hw_scan_with_filter]
   private static void readFilter(
       String projectId, String instanceId, String tableId, Filter filter) {
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -365,13 +389,19 @@ public class Filters {
       for (Row row : rows) {
         printRow(row);
       }
+      System.out.println("Table filter completed.");
     } catch (IOException e) {
       System.out.println(
-          "Unable to initialize service client, as a network error occurred: \n" + e.toString());
+          "Unable to initialize service client, as a network error occurred: \n" + e);
     }
   }
+  // [END bigtable_hw_scan_with_filter]
 
+  // [START bigtable_print_row]
   private static void printRow(Row row) {
+    if (row == null) {
+      return;
+    }
     System.out.printf("Reading data for %s%n", row.getKey().toStringUtf8());
     String colFamily = "";
     for (RowCell cell : row.getCells()) {
@@ -390,5 +420,6 @@ public class Filters {
     }
     System.out.println();
   }
+  // [END bigtable_print_row]
 }
 // [END bigtable_filters_print]
