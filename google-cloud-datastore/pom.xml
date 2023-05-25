@@ -159,4 +159,16 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>native</id>
+      <properties>
+        <!--
+        Override the default match pattern for native image tests since we have a custom
+        test specifically for native image validation.
+        -->
+        <test>com.google.cloud.datastore.it.ITDatastoreConceptsTest</test>
+      </properties>
+    </profile>
+  </profiles>
 </project>

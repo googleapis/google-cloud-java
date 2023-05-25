@@ -121,4 +121,14 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>native</id>
+      <properties>
+        <!-- skip native tests for this module, it will be tested in google-cloud-datastore-->
+        <skipTests>true</skipTests>
+      </properties>
+    </profile>
+  </profiles>
+
 </project>
