@@ -4,7 +4,5 @@ set -e
 
 # the script is running in google-cloud-java/googleapis.
 JAR_PATH=$(pwd)
-cd "${JAR_PATH}"/../library_gen_out
-curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/api/gapic-generator-java/2.19.0/gapic-generator-java-2.19.0.jar
 
 exec java -classpath "${JAR_PATH}"/../library_gen_out/gapic-generator-java.jar com.google.api.generator.Main

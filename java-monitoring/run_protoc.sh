@@ -31,11 +31,11 @@ fi
 
 GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
-git checkout 00165a9d5124e8d399908ea4c940680adf49c6eb
+git checkout 53a0be29c4a95a1d3b4c0d3a7a2ac8b52af2a3c0
 # pull proto files and protoc from protobuf repository
 # maven central doesn't have proto files
 cd "${REPO_ROOT}"
-curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v23.1/protoc-23.1-linux-x86_64.zip
+curl -LJ -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip
 unzip -o -q protobuf.zip -d protobuf/
 cp -r protobuf/include/google "${GOOGLEAPIS_ROOT}"
 PROTOC_ROOT=${REPO_ROOT}/protobuf/bin
@@ -45,7 +45,7 @@ cd "${LIBRARY_GEN_OUT}"
 curl -LJ -o protoc-gen-grpc-java https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.54.1/protoc-gen-grpc-java-1.54.1-linux-x86_64.exe
 chmod +x protoc-gen-grpc-java
 # gapic-generator-java
-
+curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/api/gapic-generator-java/2.19.0/gapic-generator-java-2.19.0.jar
 ##################### Section 1 #####################
 # generate descriptor files
 #####################################################
