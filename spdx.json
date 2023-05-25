@@ -1,0 +1,230 @@
+{
+ "spdxVersion": "SPDX-2.3",
+ "dataLicense": "CC0-1.0",
+ "SPDXID": "SPDXRef-DOCUMENT",
+ "name": "java-accessapproval/google-cloud-accessapproval/target",
+ "documentNamespace": "https://anchore.com/syft/dir/java-accessapproval/google-cloud-accessapproval/target-56a00e92-163a-4097-9b04-018e97471e5c",
+ "creationInfo": {
+  "licenseListVersion": "3.20",
+  "creators": [
+   "Organization: Anchore, Inc",
+   "Tool: syft-0.73.0"
+  ],
+  "created": "2023-03-01T23:35:16Z"
+ },
+ "packages": [
+  {
+   "name": "google-cloud-accessapproval",
+   "SPDXID": "SPDXRef-Package-java-archive-google-cloud-accessapproval-5a2cfe96765d3c1b",
+   "versionInfo": "2.13.0",
+   "downloadLocation": "NOASSERTION",
+   "checksums": [
+    {
+     "algorithm": "SHA1",
+     "checksumValue": "7b9e4da12fb938ba62ed08b0d42232556fc242bc"
+    }
+   ],
+   "sourceInfo": "acquired package info from installed java archive: google-cloud-accessapproval-2.13.0-tests.jar",
+   "licenseConcluded": "NONE",
+   "licenseDeclared": "NONE",
+   "copyrightText": "NOASSERTION",
+   "externalRefs": [
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud-accessapproval:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud-accessapproval:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud_accessapproval:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud_accessapproval:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-llc:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-llc:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_llc:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_llc:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:cloud:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:cloud:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "PACKAGE-MANAGER",
+     "referenceType": "purl",
+     "referenceLocator": "pkg:maven/com.google.cloud/google-cloud-accessapproval@2.13.0"
+    }
+   ]
+  },
+  {
+   "name": "google-cloud-accessapproval",
+   "SPDXID": "SPDXRef-Package-java-archive-google-cloud-accessapproval-6977c14b384a9b7e",
+   "versionInfo": "2.13.0",
+   "downloadLocation": "NOASSERTION",
+   "checksums": [
+    {
+     "algorithm": "SHA1",
+     "checksumValue": "59b26ecd0eccd3d3bba28055f9c81cf9862ad5cf"
+    }
+   ],
+   "sourceInfo": "acquired package info from installed java archive: google-cloud-accessapproval-2.13.0.jar",
+   "licenseConcluded": "NONE",
+   "licenseDeclared": "NONE",
+   "copyrightText": "NOASSERTION",
+   "externalRefs": [
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud-accessapproval:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud-accessapproval:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud_accessapproval:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud_accessapproval:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-cloud:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_cloud:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-llc:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google-llc:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_llc:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google_llc:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:google:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:cloud:google-cloud-accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "SECURITY",
+     "referenceType": "cpe23Type",
+     "referenceLocator": "cpe:2.3:a:cloud:google_cloud_accessapproval:2.13.0:*:*:*:*:*:*:*"
+    },
+    {
+     "referenceCategory": "PACKAGE-MANAGER",
+     "referenceType": "purl",
+     "referenceLocator": "pkg:maven/com.google.cloud/google-cloud-accessapproval@2.13.0"
+    }
+   ]
+  }
+ ],
+ "relationships": [
+  {
+   "spdxElementId": "SPDXRef-DOCUMENT",
+   "relatedSpdxElement": "SPDXRef-DOCUMENT",
+   "relationshipType": "DESCRIBES"
+  }
+ ]
+}
