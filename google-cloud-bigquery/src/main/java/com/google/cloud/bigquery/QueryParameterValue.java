@@ -349,7 +349,11 @@ public abstract class QueryParameterValue implements Serializable {
   public static <T> QueryParameterValue array(T[] array, StandardSQLTypeName type) {
     List<QueryParameterValue> listValues = new ArrayList<>();
     for (T obj : array) {
-      listValues.add(QueryParameterValue.of(obj, type));
+      if (type == StandardSQLTypeName.STRUCT) {
+        listValues.add((QueryParameterValue) obj);
+      } else {
+        listValues.add(QueryParameterValue.of(obj, type));
+      }
     }
     return QueryParameterValue.newBuilder()
         .setArrayValues(listValues)
@@ -522,9 +526,15 @@ public abstract class QueryParameterValue implements Serializable {
     QueryParameterType typePb = new QueryParameterType();
     typePb.setType(getType().toString());
     if (getArrayType() != null) {
-      QueryParameterType arrayTypePb = new QueryParameterType();
-      arrayTypePb.setType(getArrayType().toString());
-      typePb.setArrayType(arrayTypePb);
+      List<QueryParameterValue> values = getArrayValues();
+      if (getArrayType() == StandardSQLTypeName.STRUCT && values != null && values.size() != 0) {
+        QueryParameterType structType = values.get(0).toTypePb();
+        typePb.setArrayType(structType);
+      } else {
+        QueryParameterType arrayTypePb = new QueryParameterType();
+        arrayTypePb.setType(getArrayType().toString());
+        typePb.setArrayType(arrayTypePb);
+      }
     }
     if (getStructTypes() != null) {
       List<QueryParameterType.StructTypes> structTypes = new ArrayList<>();

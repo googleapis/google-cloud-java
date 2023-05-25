@@ -28,6 +28,7 @@ import com.google.gson.JsonObject;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -561,6 +562,48 @@ public class QueryParameterValueTest {
         .containsAtLeastEntriesIn(recordField.getStructValues());
     assertThat(nestedRecordField.getStructTypes().size()).isEqualTo(structValue.size());
     assertThat(nestedRecordField.getStructValues().size()).isEqualTo(structValue.size());
+  }
+
+  @Test
+  public void testStructArray() {
+    Boolean[] boolValues = new Boolean[] {true, false};
+    Integer[] intValues = new Integer[] {15, 20};
+    String[] stringValues = new String[] {"test-string", "test-string2"};
+    List<ImmutableMap<String, QueryParameterValue>> fieldMaps = new ArrayList<>();
+    List<QueryParameterValue> tuples = new ArrayList<>();
+    for (int i = 0; i < 2; i++) {
+      QueryParameterValue booleanField = QueryParameterValue.bool(boolValues[i]);
+      QueryParameterValue integerField = QueryParameterValue.int64(intValues[i]);
+      QueryParameterValue stringField = QueryParameterValue.string(stringValues[i]);
+      ImmutableMap<String, QueryParameterValue> fieldMap =
+          ImmutableMap.of(
+              "booleanField",
+              booleanField,
+              "integerField",
+              integerField,
+              "stringField",
+              stringField);
+      fieldMaps.add(fieldMap);
+      QueryParameterValue recordField = QueryParameterValue.struct(fieldMap);
+      tuples.add(recordField);
+    }
+    QueryParameterValue repeatedRecordField =
+        QueryParameterValue.array(tuples.toArray(), StandardSQLTypeName.STRUCT);
+    com.google.api.services.bigquery.model.QueryParameterValue parameterValue =
+        repeatedRecordField.toValuePb();
+    QueryParameterType parameterType = repeatedRecordField.toTypePb();
+    QueryParameterValue queryParameterValue =
+        QueryParameterValue.fromPb(parameterValue, parameterType);
+    assertThat(queryParameterValue.getValue()).isNull();
+    assertThat(queryParameterValue.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
+    assertThat(queryParameterValue.getArrayType()).isEqualTo(StandardSQLTypeName.STRUCT);
+    assertThat(queryParameterValue.getArrayValues().size()).isEqualTo(2);
+    for (int i = 0; i < 2; i++) {
+      QueryParameterValue record = queryParameterValue.getArrayValues().get(i);
+      assertThat(record.getType()).isEqualTo(StandardSQLTypeName.STRUCT);
+      assertThat(record.getStructTypes()).isNotNull();
+      assertThat(record.getStructValues()).isEqualTo(fieldMaps.get(i));
+    }
   }
 
   private static void assertArrayDataEquals(

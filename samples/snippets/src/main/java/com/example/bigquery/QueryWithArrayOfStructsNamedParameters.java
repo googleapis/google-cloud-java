@@ -53,7 +53,7 @@ public class QueryWithArrayOfStructsNamedParameters {
               .setUseLegacySql(false)
               .addNamedParameter(
                   "arrayOfStructField",
-                  QueryParameterValue.array(arrayOfStructs.toArray(), StandardSQLTypeName.STRING))
+                  QueryParameterValue.array(arrayOfStructs.toArray(), StandardSQLTypeName.STRUCT))
               .build();
       TableResult results = bigquery.query(queryConfig);
       results

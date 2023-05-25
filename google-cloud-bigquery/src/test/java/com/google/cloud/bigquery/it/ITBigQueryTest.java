@@ -156,6 +156,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -230,6 +231,31 @@ public class ITBigQueryTest {
               BYTES_FIELD_SCHEMA)
           .setMode(Field.Mode.REQUIRED)
           .setDescription("RecordDescription")
+          .build();
+
+  private static final Field REPEATED_RECORD_FIELD_SCHEMA =
+      Field.newBuilder(
+              "Addresses",
+              LegacySQLTypeName.RECORD,
+              Field.newBuilder("Status", LegacySQLTypeName.STRING)
+                  .setMode(Field.Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("Address", LegacySQLTypeName.STRING)
+                  .setMode(Field.Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("City", LegacySQLTypeName.STRING)
+                  .setMode(Field.Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("State", LegacySQLTypeName.STRING)
+                  .setMode(Field.Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("Zip", LegacySQLTypeName.STRING)
+                  .setMode(Field.Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("NumberOfYears", LegacySQLTypeName.STRING)
+                  .setMode(Field.Mode.NULLABLE)
+                  .build())
+          .setMode(Field.Mode.REPEATED)
           .build();
   private static final Field INTEGER_FIELD_SCHEMA =
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
@@ -421,6 +447,18 @@ public class ITBigQueryTest {
           Field.newBuilder("deaths", LegacySQLTypeName.INTEGER)
               .setMode(Field.Mode.NULLABLE)
               .build());
+
+  private static final Schema REPEATED_RECORD_TABLE_SCHEMA =
+      Schema.of(
+          Field.newBuilder("ID", LegacySQLTypeName.STRING).setMode(Field.Mode.NULLABLE).build(),
+          Field.newBuilder("FirstName", LegacySQLTypeName.STRING)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("LastName", LegacySQLTypeName.STRING)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("DOB", LegacySQLTypeName.DATE).setMode(Field.Mode.NULLABLE).build(),
+          REPEATED_RECORD_FIELD_SCHEMA);
 
   private static final Schema SIMPLE_SCHEMA = Schema.of(STRING_FIELD_SCHEMA);
   private static final Schema QUERY_RESULT_SCHEMA =
@@ -4059,6 +4097,214 @@ public class ITBigQueryTest {
       for (FieldValue value : values) {
         assertsFieldValue(value);
       }
+    }
+  }
+
+  @Test
+  public void testRepeatedRecordNamedQueryParameters() throws InterruptedException {
+    String[] stringValues = new String[] {"test-stringField", "test-stringField2"};
+    List<QueryParameterValue> tuples = new ArrayList<>();
+    for (int i = 0; i < 2; i++) {
+      QueryParameterValue stringValue = QueryParameterValue.string(stringValues[i]);
+      Map<String, QueryParameterValue> struct = new HashMap<>();
+      struct.put("stringField", stringValue);
+      QueryParameterValue recordValue = QueryParameterValue.struct(struct);
+      tuples.add(recordValue);
+    }
+
+    QueryParameterValue repeatedRecord =
+        QueryParameterValue.array(tuples.toArray(), StandardSQLTypeName.STRUCT);
+    String query = "SELECT @repeatedRecordField AS repeatedRecord";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DATASET)
+            .setUseLegacySql(false)
+            .addNamedParameter("repeatedRecordField", repeatedRecord)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertEquals(1, Iterables.size(result.getValues()));
+
+    FieldList subSchema = result.getSchema().getFields().get("repeatedRecord").getSubFields();
+    for (FieldValueList values : result.iterateAll()) {
+      for (FieldValue value : values) {
+        assertEquals(FieldValue.Attribute.REPEATED, value.getAttribute());
+        assertEquals(2, value.getRepeatedValue().size());
+        for (int i = 0; i < 2; i++) {
+          FieldValue record = value.getRepeatedValue().get(i);
+          assertEquals(FieldValue.Attribute.RECORD, record.getAttribute());
+          FieldValueList recordValue = record.getRecordValue();
+          assertEquals(
+              stringValues[i],
+              FieldValueList.of(recordValue, subSchema).get("stringField").getValue());
+        }
+      }
+    }
+  }
+
+  @Test
+  public void testUnnestRepeatedRecordNamedQueryParameter() throws InterruptedException {
+    Boolean[] boolValues = new Boolean[] {true, false};
+    List<QueryParameterValue> tuples = new ArrayList<>();
+    for (int i = 0; i < 2; i++) {
+      QueryParameterValue boolValue = QueryParameterValue.bool(boolValues[i]);
+      Map<String, QueryParameterValue> struct = new HashMap<>();
+      struct.put("boolField", boolValue);
+      QueryParameterValue recordValue = QueryParameterValue.struct(struct);
+      tuples.add(recordValue);
+    }
+
+    QueryParameterValue repeatedRecord =
+        QueryParameterValue.array(tuples.toArray(), StandardSQLTypeName.STRUCT);
+    String query =
+        "SELECT * FROM (SELECT STRUCT("
+            + boolValues[0]
+            + " AS boolField) AS repeatedRecord) WHERE repeatedRecord IN UNNEST(@repeatedRecordField)";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DATASET)
+            .setUseLegacySql(false)
+            .addNamedParameter("repeatedRecordField", repeatedRecord)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertEquals(1, Iterables.size(result.getValues()));
+
+    FieldList subSchema = result.getSchema().getFields().get("repeatedRecord").getSubFields();
+    for (FieldValueList values : result.iterateAll()) {
+      for (FieldValue value : values) {
+        assertEquals(FieldValue.Attribute.RECORD, value.getAttribute());
+        FieldValueList recordValue = value.getRecordValue();
+        assertEquals(
+            boolValues[0],
+            FieldValueList.of(recordValue, subSchema).get("boolField").getBooleanValue());
+      }
+    }
+  }
+
+  @Test
+  public void testUnnestRepeatedRecordNamedQueryParameterFromDataset() throws InterruptedException {
+    TableId tableId = TableId.of(DATASET, "test_repeated_record_table");
+    setUpRepeatedRecordTable(tableId);
+
+    List<QueryParameterValue> tuples = new ArrayList<>();
+    QueryParameterValue statusValue = QueryParameterValue.string("single");
+    QueryParameterValue addressValue = QueryParameterValue.string("123 this lane");
+    QueryParameterValue cityValue = QueryParameterValue.string("Toronto");
+    QueryParameterValue stateValue = QueryParameterValue.string("ON");
+    QueryParameterValue zipValue = QueryParameterValue.string("1h2j34");
+    QueryParameterValue numberOfYearsValue = QueryParameterValue.string("3");
+
+    Map<String, QueryParameterValue> struct = new LinkedHashMap<>();
+    struct.put("statusValue", statusValue);
+    struct.put("addressValue", addressValue);
+    struct.put("cityValue", cityValue);
+    struct.put("stateValue", stateValue);
+    struct.put("zipValue", zipValue);
+    struct.put("numberOfYearsValue", numberOfYearsValue);
+    QueryParameterValue recordValue = QueryParameterValue.struct(struct);
+    tuples.add(recordValue);
+
+    QueryParameterValue repeatedRecord =
+        QueryParameterValue.array(tuples.toArray(), StandardSQLTypeName.STRUCT);
+
+    String query =
+        "SELECT * FROM "
+            + tableId.getTable()
+            + ", UNNEST(@repeatedRecord) AS TEMP where TEMP IN UNNEST(addresses);";
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DATASET)
+            .setUseLegacySql(false)
+            .addNamedParameter("repeatedRecord", repeatedRecord)
+            .build();
+    TableResult results = bigquery.query(queryConfig);
+
+    assertEquals(1, Iterables.size(results.getValues()));
+    for (FieldValueList values : results.iterateAll()) {
+      assertEquals("1", values.get("ID").getStringValue());
+      assertEquals("first_name1", values.get("FirstName").getStringValue());
+      assertEquals(2, values.get("Addresses").getRecordValue().size());
+    }
+  }
+
+  private void setUpRepeatedRecordTable(TableId tableId) {
+    StandardTableDefinition tableDefinition =
+        StandardTableDefinition.of(REPEATED_RECORD_TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(tableId, tableDefinition);
+    bigquery.create(tableInfo);
+
+    ImmutableMap.Builder<String, Object> builder1 = ImmutableMap.builder();
+    builder1.put("ID", "1");
+    builder1.put("FirstName", "first_name1");
+    builder1.put("LastName", "last_name1");
+    builder1.put("DOB", "1995-08-09");
+    builder1.put(
+        "Addresses",
+        ImmutableList.of(
+            ImmutableMap.of(
+                "Status", "single",
+                "Address", "123 this lane",
+                "City", "Toronto",
+                "State", "ON",
+                "Zip", "1h2j34",
+                "NumberOfYears", "3"),
+            ImmutableMap.of(
+                "Status", "couple",
+                "Address", "345 that lane",
+                "City", "Maple",
+                "State", "ON",
+                "Zip", "1h2j34",
+                "NumberOfYears", "5")));
+
+    ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
+    builder2.put("ID", "2");
+    builder2.put("FirstName", "first_name2");
+    builder2.put("LastName", "last_name2");
+    builder2.put("DOB", "1992-03-19");
+    builder2.put(
+        "Addresses",
+        ImmutableList.of(
+            ImmutableMap.of(
+                "Status", "single",
+                "Address", "97 Kota lane",
+                "City", "Ottawa",
+                "State", "ON",
+                "Zip", "1h2j34",
+                "NumberOfYears", "3"),
+            ImmutableMap.of(
+                "Status", "couple",
+                "Address", "75 Malta lane",
+                "City", "Victoria",
+                "State", "AL",
+                "Zip", "1h2j34",
+                "NumberOfYears", "5")));
+
+    InsertAllRequest request =
+        InsertAllRequest.newBuilder(tableInfo.getTableId())
+            .addRow(builder1.build())
+            .addRow(builder2.build())
+            .build();
+    bigquery.insertAll(request);
+  }
+
+  @Test
+  public void testEmptyRepeatedRecordNamedQueryParameters() throws InterruptedException {
+    QueryParameterValue[] tuples = {};
+
+    QueryParameterValue repeatedRecord =
+        QueryParameterValue.array(tuples, StandardSQLTypeName.STRUCT);
+    String query =
+        "SELECT * FROM (SELECT STRUCT(false AS boolField) AS repeatedRecord) WHERE repeatedRecord IN UNNEST(@repeatedRecordField)";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DATASET)
+            .setUseLegacySql(false)
+            .addNamedParameter("repeatedRecordField", repeatedRecord)
+            .build();
+    try {
+      bigquery.query(config);
+      fail("an empty array of struct query parameter shouldn't work with 'IN UNNEST'");
+    } catch (BigQueryException e) {
+      // Nothing to do
     }
   }
 
