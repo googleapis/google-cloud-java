@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.37.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.37.0...v2.37.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* Bug fix for streamWriter & jsonStreamWriter ([#2122](https://github.com/googleapis/java-bigquerystorage/issues/2122)) ([36964a3](https://github.com/googleapis/java-bigquerystorage/commit/36964a39e0f2a7ede8c55c43313a32922c06fe15))
+
 ## [2.37.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.36.1...v2.37.0) (2023-05-12)
 
 
