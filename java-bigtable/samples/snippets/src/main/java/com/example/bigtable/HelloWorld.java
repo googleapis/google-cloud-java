@@ -17,6 +17,9 @@
 package com.example.bigtable;
 
 // [START bigtable_hw_imports]
+
+import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
+
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -24,12 +27,15 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 // [END bigtable_hw_imports]
@@ -53,6 +59,8 @@ public class HelloWorld {
   private static final String COLUMN_QUALIFIER_GREETING = "greeting";
   private static final String COLUMN_QUALIFIER_NAME = "name";
   private static final String ROW_KEY_PREFIX = "rowKey";
+  private final String projectId;
+  private final String instanceId;
   private final String tableId;
   private final BigtableDataClient dataClient;
   private final BigtableTableAdminClient adminClient;
@@ -72,6 +80,8 @@ public class HelloWorld {
 
   public HelloWorld(String projectId, String instanceId, String tableId) throws IOException {
     this.tableId = tableId;
+    this.projectId = projectId;
+    this.instanceId = instanceId;
 
     // [START bigtable_hw_connect]
     // Creates the settings to configure a bigtable data client.
@@ -99,6 +109,7 @@ public class HelloWorld {
     readSingleRow();
     readSpecificCells();
     readTable();
+    filterLimitCellsPerCol(this.projectId, this.instanceId, tableId);
     deleteTable();
     close();
   }
@@ -209,6 +220,52 @@ public class HelloWorld {
     // [END bigtable_hw_scan_all]
   }
 
+  // [START bigtable_hw_create_filter]
+  public static void filterLimitCellsPerCol(String projectId, String instanceId, String tableId) {
+    // A filter that matches only the most recent cell within each column
+    Filter filter = FILTERS.limit().cellsPerColumn(1);
+    readRowFilter(projectId, instanceId, tableId, filter);
+    readFilter(projectId, instanceId, tableId, filter);
+  }
+  // [END bigtable_hw_create_filter]
+
+  // [START bigtable_hw_get_with_filter]
+  private static void readRowFilter(
+      String projectId, String instanceId, String tableId, Filter filter) {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests.
+    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
+      String rowKey =
+          Base64.getEncoder().encodeToString("greeting0".getBytes(StandardCharsets.UTF_8));
+      Row row = dataClient.readRow(tableId, rowKey, filter);
+      printRow(row);
+      System.out.println("Row filter completed.");
+    } catch (IOException e) {
+      System.out.println(
+          "Unable to initialize service client, as a network error occurred: \n" + e);
+    }
+  }
+  // [END bigtable_hw_get_with_filter]
+
+  // [START bigtable_hw_scan_with_filter]
+  private static void readFilter(
+      String projectId, String instanceId, String tableId, Filter filter) {
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests.
+    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
+      Query query = Query.create(tableId).filter(filter);
+      ServerStream<Row> rows = dataClient.readRows(query);
+      for (Row row : rows) {
+        printRow(row);
+      }
+      System.out.println("Table filter completed.");
+    } catch (IOException e) {
+      System.out.println(
+          "Unable to initialize service client, as a network error occurred: \n" + e);
+    }
+  }
+  // [END bigtable_hw_scan_with_filter]
+
   /** Demonstrates how to delete a table. */
   public void deleteTable() {
     // [START bigtable_hw_delete_table]
@@ -221,4 +278,29 @@ public class HelloWorld {
     }
     // [END bigtable_hw_delete_table]
   }
+
+  // [START bigtable_print_row]
+  private static void printRow(Row row) {
+    if (row == null) {
+      return;
+    }
+    System.out.printf("Reading data for %s%n", row.getKey().toStringUtf8());
+    String colFamily = "";
+    for (RowCell cell : row.getCells()) {
+      if (!cell.getFamily().equals(colFamily)) {
+        colFamily = cell.getFamily();
+        System.out.printf("Column Family %s%n", colFamily);
+      }
+      String labels =
+          cell.getLabels().size() == 0 ? "" : " [" + String.join(",", cell.getLabels()) + "]";
+      System.out.printf(
+          "\t%s: %s @%s%s%n",
+          cell.getQualifier().toStringUtf8(),
+          cell.getValue().toStringUtf8(),
+          cell.getTimestamp(),
+          labels);
+    }
+    System.out.println();
+  }
+  // [END bigtable_print_row]
 }
