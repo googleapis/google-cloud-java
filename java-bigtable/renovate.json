@@ -71,14 +71,6 @@
       ],
       "groupName": "jackson dependencies"
     },
-    {
-      "packagePatterns": [
-        "^com.google.cloud:google-cloud-shared-dependencies",
-        "^com.google.protobuf:protoc",
-        "^io.grpc:protoc-gen-grpc-java"
-      ],
-      "groupName": "shared dependencies"
-    }
   ],
   "regexManagers": [
     {
