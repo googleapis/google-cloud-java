@@ -785,7 +785,7 @@ public class ITBigQueryWriteManualClientTest {
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema()).build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), client).build()) {
       // write the 1st row
       JSONObject foo = new JSONObject();
       foo.put("col1", "aaa");
@@ -895,7 +895,7 @@ public class ITBigQueryWriteManualClientTest {
 
     // Start writing using the JsonWriter
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema()).build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), client).build()) {
       int numberOfThreads = 5;
       ExecutorService streamTaskExecutor = Executors.newFixedThreadPool(5);
       CountDownLatch latch = new CountDownLatch(numberOfThreads);

@@ -349,7 +349,7 @@ class ConnectionWorker implements AutoCloseable {
 
   /** Schedules the writing of rows at given offset. */
   ApiFuture<AppendRowsResponse> append(StreamWriter streamWriter, ProtoRows rows, long offset) {
-    if (this.location != null && this.location != streamWriter.getLocation()) {
+    if (this.location != null && !this.location.equals(streamWriter.getLocation())) {
       throw new StatusRuntimeException(
           Status.fromCode(Code.INVALID_ARGUMENT)
               .withDescription(
@@ -357,7 +357,7 @@ class ConnectionWorker implements AutoCloseable {
                       + streamWriter.getLocation()
                       + " is scheduled to use a connection with location "
                       + this.location));
-    } else if (this.location == null && streamWriter.getStreamName() != this.streamName) {
+    } else if (this.location == null && !streamWriter.getStreamName().equals(this.streamName)) {
       // Location is null implies this is non-multiplexed connection.
       throw new StatusRuntimeException(
           Status.fromCode(Code.INVALID_ARGUMENT)

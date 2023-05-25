@@ -54,6 +54,10 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
   private TableSchema tableSchema;
   private ProtoSchema protoSchema;
 
+  // During some sitaution we want to skip stream writer refresh for updated schema. e.g. when
+  // the user provides the table schema, we should always use that schema.
+  private final boolean skipRefreshStreamWriter;
+
   /**
    * Constructs the SchemaAwareStreamWriter
    *
@@ -87,6 +91,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     this.tableSchema = builder.tableSchema;
     this.toProtoConverter = builder.toProtoConverter;
     this.ignoreUnknownFields = builder.ignoreUnknownFields;
+    this.skipRefreshStreamWriter = builder.skipRefreshStreamWriter;
   }
 
   /**
@@ -125,6 +130,10 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       return this.toProtoConverter.convertToProtoMessage(
           this.descriptor, this.tableSchema, item, ignoreUnknownFields);
     } catch (Exceptions.DataHasUnknownFieldException ex) {
+      // Directly return error when stream writer refresh is disabled.
+      if (this.skipRefreshStreamWriter) {
+        throw ex;
+      }
       LOG.warning(
           "Saw unknown field "
               + ex.getFieldName()
@@ -157,7 +166,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     // Handle schema updates in a Thread-safe way by locking down the operation
     synchronized (this) {
       // Create a new stream writer internally if a new updated schema is reported from backend.
-      if (this.streamWriter.getUpdatedSchema() != null) {
+      if (!this.skipRefreshStreamWriter && this.streamWriter.getUpdatedSchema() != null) {
         refreshWriter(this.streamWriter.getUpdatedSchema());
       }
 
@@ -404,6 +413,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     private final BigQueryWriteClient client;
     private final TableSchema tableSchema;
 
+    private final boolean skipRefreshStreamWriter;
+
     private final ToProtoConverter<T> toProtoConverter;
     private TransportChannelProvider channelProvider;
     private CredentialsProvider credentialsProvider;
@@ -459,11 +470,12 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
                 .build();
 
         WriteStream writeStream = this.client.getWriteStream(writeStreamRequest);
-
         this.tableSchema = writeStream.getTableSchema();
         this.location = writeStream.getLocation();
+        this.skipRefreshStreamWriter = false;
       } else {
         this.tableSchema = tableSchema;
+        this.skipRefreshStreamWriter = true;
       }
       this.toProtoConverter = toProtoConverter;
     }
