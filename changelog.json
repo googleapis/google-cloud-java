@@ -5,6 +5,365 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "add output field for the number of pooled instances",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "add support for accelerators",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "add support for readiness checks",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "add auditd support",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "add support for workstation-level environment variables",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "adjust documentation wording",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "3cba89a945b5b5d85c5690bb500d078c351e90a1",
+          "message": "[workstations] add output field for the control plane IP address",
+          "issues": [
+            "9430"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "5ac08d6f-b1bf-44d5-8717-1c32fb259dfd",
+      "createTime": "2023-05-26T19:48:20.668Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "81b9849a7d0145a5bd202de877f61e3fb4cfdf7d",
+          "message": "[cloudkms] added VerifyConnectivity RPC",
+          "issues": [
+            "9429"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "27523d68-cf94-4303-b2eb-20618ff081b3",
+      "createTime": "2023-05-26T19:48:20.666Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dd5ddbaa668f90cd6698ffd0accfde1168f64b6d",
+          "message": "[webrisk] add SubmitUri endpoint",
+          "issues": [
+            "9443"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-webrisk",
+      "id": "b0ba72ee-401f-41ca-bd0c-70dead9c22f7",
+      "createTime": "2023-05-26T19:48:20.664Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d3ca29ba6abcd21d7f276749d99b42cf2284bcd7",
+          "message": "[datamigration] add Oracle to PostgreSQL migration APIs",
+          "issues": [
+            "9442"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dms",
+      "id": "85b6edfc-3c00-4fff-ac59-4c2bfcabff8d",
+      "createTime": "2023-05-26T19:48:20.661Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "a9e8b908d37ddede098a102af25587b7de4b2305",
+          "message": "[container] clarified release channel defaulting behavior for create cluster requests when release channel is unspecified",
+          "issues": [
+            "9441"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "55dd7719-aee8-44f6-b705-8f28e2ad1721",
+      "createTime": "2023-05-26T19:48:20.659Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "eea58838dfb351a853e4c639e690051d36456362",
+          "message": "[discoveryengine] fix the field name typo for search service user_labels",
+          "issues": [
+            "9440"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "7b673de22a253b4faeb995b46581208343f84abb",
+          "message": "allow users to provide user info in search",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7b673de22a253b4faeb995b46581208343f84abb",
+          "message": "allow users to provide additional labels in search",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7b673de22a253b4faeb995b46581208343f84abb",
+          "message": "[discoveryengine] enable safe search feature for site search",
+          "issues": [
+            "9428"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "74895b6c-6d94-48c9-8404-9ffe301c9899",
+      "createTime": "2023-05-26T19:48:20.657Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f30b899f2b58945a33438fc35a207c51e4bf44a0",
+          "message": "[batch] add support for placement policies",
+          "issues": [
+            "9439"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "per-Runnable labels",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "[batch] support order_by in ListJobs and ListTasks requests",
+          "issues": [
+            "9359"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "[batch] support order_by in ListJobs and ListTasks requests",
+          "issues": [
+            "21"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "per-Runnable labels",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "[batch] support order_by in ListJobs and ListTasks requests",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "add scheduling_policy IN_ORDER enum to support sequential task executions",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "update comments on boot disk fields for clearer usage scope",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "add support for placement policies",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "update block_external_network field comment to reduce confusion",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "update disk and network field comment for better readability",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "fix `book disk` typo",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "Update reservation field API doc",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "720796b7e1218b9517a3f2ebcacd3119448e2e9c",
+          "message": "[batch] add TaskStatus's new terminated state UNEXECUTED",
+          "issues": []
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "d27ec521-962f-4b61-b057-d60c57d1ad5f",
+      "createTime": "2023-05-26T19:48:20.654Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "4ab7b4fd466bf488a646ac0ee8a019ca78c42efe",
+          "message": "[aiplatform] add match service in aiplatform v1",
+          "issues": [
+            "9438"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "2327cb2c-3bd9-4405-8761-ee81f8ce586a",
+      "createTime": "2023-05-26T19:48:20.650Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0857e33e233232ac6e41de7ba3433036bdd0a2f6",
+          "message": "[cloudchannel] added partition_keys field to filter results from FetchReportResults",
+          "issues": [
+            "9437"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "40fb82e3-7564-4d44-bf82-2715891b9f6d",
+      "createTime": "2023-05-26T19:48:20.648Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d9f948ef915cf1a118085a783c3e072ba0b54ccc",
+          "message": "[analyticsadmin] add `GetAdSenseLink`, `CreateAdSenseLink`, `DeleteAdSenseLink`, `ListAdSenseLinks` methods to the Admin API v1alpha",
+          "issues": [
+            "9434"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "db2b8b57-961a-4167-ba32-6a7bb3a5c46a",
+      "createTime": "2023-05-26T19:48:20.646Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "14fea7158fa442bbd8df98e76972cbe5b508157f",
+          "message": "[language] Added client library support for ModerateText in the Natural Language API (V1)",
+          "issues": [
+            "9463"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-language",
+      "id": "74bdf665-6fe9-4c7e-8819-951379abf1dc",
+      "createTime": "2023-05-26T19:48:20.643Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d945618f4001d6e1853b84ab6964fcd026319c52",
+          "message": "[cloudfunctions] ListFunctions now include metadata which indicates whether a function is a `GEN_1` or `GEN_2` function",
+          "issues": [
+            "9462"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "289da72b-7222-4952-a6f9-8c906be20d22",
+      "createTime": "2023-05-26T19:48:20.641Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0123f56bbc025baac61b2e220f28db29a688c29c",
+          "message": "[rapidmigrationassessment] new module for rapidmigrationassessment",
+          "issues": [
+            "9467"
+          ]
+        }
+      ],
+      "version": "1.12.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-rapidmigrationassessment",
+      "id": "b55e844c-37ab-457c-88f4-242417868a04",
+      "createTime": "2023-05-26T19:48:20.638Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "531cf24c1ca1a3e5a63106f732ae1329aac30620",
           "message": "[cloudsupport] new module for cloudsupport",
           "issues": [
@@ -7052,5 +7411,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-05-10T18:30:04.129Z"
+  "updateTime": "2023-05-26T19:48:20.668Z"
 }
