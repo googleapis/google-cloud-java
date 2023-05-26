@@ -17,11 +17,20 @@
 package com.google.cloud.datastore;
 
 import java.util.List;
+import javax.annotation.concurrent.NotThreadSafe;
 
 /**
  * An interface to represent a batch of write operations. All write operation for a batch writer
  * will be applied to the Datastore in one RPC call.
+ *
+ * <p><b> WARNING: This class maintains an internal state in terms of {@link
+ * java.util.LinkedHashMap} and {@link java.util.LinkedHashSet} which gets updated on every method
+ * call performing CRUD operations to record the mutations. Since {@link java.util.LinkedHashMap} is
+ * not thread safe as per its <a
+ * href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html">documentation</a>,
+ * This class too should not be treated as a thread safe class. </b>
  */
+@NotThreadSafe
 public interface DatastoreBatchWriter extends DatastoreWriter {
 
   /**
