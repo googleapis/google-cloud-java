@@ -128,6 +128,7 @@
     <module>java-private-catalog</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
+    <module>java-rapidmigrationassessment</module>
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
