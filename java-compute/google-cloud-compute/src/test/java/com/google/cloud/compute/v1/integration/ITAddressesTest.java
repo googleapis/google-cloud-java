@@ -81,7 +81,6 @@ public class ITAddressesTest extends BaseTest {
         presented = true;
       }
     }
-    System.out.println(presented);
     Assert.assertTrue(presented);
   }
 
@@ -103,7 +102,6 @@ public class ITAddressesTest extends BaseTest {
     Assert.assertTrue(presented);
   }
 
-  @Ignore("Non ascii symbols are not converted correctly, b/188905787")
   @Test
   public void testNonAscii() {
     insertAddress("тест");
