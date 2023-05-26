@@ -96,5 +96,5 @@ public interface SourceOrBuilder
    */
   com.google.cloud.functions.v2alpha.RepoSourceOrBuilder getRepoSourceOrBuilder();
 
-  public com.google.cloud.functions.v2alpha.Source.SourceCase getSourceCase();
+  com.google.cloud.functions.v2alpha.Source.SourceCase getSourceCase();
 }

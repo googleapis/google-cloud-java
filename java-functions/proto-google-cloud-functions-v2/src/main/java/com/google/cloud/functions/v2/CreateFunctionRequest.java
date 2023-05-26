@@ -48,11 +48,6 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
     return new CreateFunctionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2.FunctionsProto
         .internal_static_google_cloud_functions_v2_CreateFunctionRequest_descriptor;
@@ -191,6 +186,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -217,6 +213,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -511,39 +508,6 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.functionId_ = functionId_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -964,6 +928,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -989,6 +954,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1014,6 +980,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1038,6 +1005,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1058,6 +1026,7 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The ID to use for the function, which will become the final component of
      * the function's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>

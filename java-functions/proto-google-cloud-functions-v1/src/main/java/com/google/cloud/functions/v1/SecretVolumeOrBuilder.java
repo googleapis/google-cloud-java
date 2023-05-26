@@ -31,6 +31,7 @@ public interface SecretVolumeOrBuilder
    * setting the mount_path as `/etc/secrets` mounts the secret value files
    * under the `/etc/secrets` directory. This directory is also completely
    * shadowed and unavailable to mount any other secrets.
+   *
    * Recommended mount paths: /etc/secrets
    * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
    * </pre>
@@ -48,6 +49,7 @@ public interface SecretVolumeOrBuilder
    * setting the mount_path as `/etc/secrets` mounts the secret value files
    * under the `/etc/secrets` directory. This directory is also completely
    * shadowed and unavailable to mount any other secrets.
+   *
    * Recommended mount paths: /etc/secrets
    * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
    * </pre>

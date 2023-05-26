@@ -53,11 +53,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     return new BuildConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2.FunctionsProto
         .internal_static_google_cloud_functions_v2_BuildConfig_descriptor;
@@ -544,6 +539,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -577,6 +573,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -713,18 +710,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Docker Registry to use for this deployment. This configuration is
-   * only applicable to 1st Gen functions, 2nd Gen functions can only use
-   * Artifact Registry.
+   * Docker Registry to use for this deployment. This configuration is only
+   * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+   * Registry.
+   *
    * If `docker_repository` field is specified, this field will be automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
    * </pre>
    *
-   * <code>
-   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
    *
    * @return The enum numeric value on the wire for dockerRegistry.
    */
@@ -736,18 +732,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Docker Registry to use for this deployment. This configuration is
-   * only applicable to 1st Gen functions, 2nd Gen functions can only use
-   * Artifact Registry.
+   * Docker Registry to use for this deployment. This configuration is only
+   * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+   * Registry.
+   *
    * If `docker_repository` field is specified, this field will be automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
    * </pre>
    *
-   * <code>
-   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
    *
    * @return The dockerRegistry.
    */
@@ -768,13 +763,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally with a
-   * customer managed encryption key. This is the repository to which the
+   * User managed repository created in Artifact Registry optionally
+   * with a customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -800,13 +797,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User managed repository created in Artifact Registry optionally with a
-   * customer managed encryption key. This is the repository to which the
+   * User managed repository created in Artifact Registry optionally
+   * with a customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -1228,39 +1227,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.dockerRepository_ = dockerRepository_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2193,6 +2159,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2225,6 +2192,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2257,6 +2225,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2288,6 +2257,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2315,6 +2285,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2513,18 +2484,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Docker Registry to use for this deployment. This configuration is
-     * only applicable to 1st Gen functions, 2nd Gen functions can only use
-     * Artifact Registry.
+     * Docker Registry to use for this deployment. This configuration is only
+     * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+     * Registry.
+     *
      * If `docker_repository` field is specified, this field will be automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
      * </pre>
      *
-     * <code>
-     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
      *
      * @return The enum numeric value on the wire for dockerRegistry.
      */
@@ -2536,18 +2506,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Docker Registry to use for this deployment. This configuration is
-     * only applicable to 1st Gen functions, 2nd Gen functions can only use
-     * Artifact Registry.
+     * Docker Registry to use for this deployment. This configuration is only
+     * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+     * Registry.
+     *
      * If `docker_repository` field is specified, this field will be automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
      * </pre>
      *
-     * <code>
-     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
      *
      * @param value The enum numeric value on the wire for dockerRegistry to set.
      * @return This builder for chaining.
@@ -2562,18 +2531,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Docker Registry to use for this deployment. This configuration is
-     * only applicable to 1st Gen functions, 2nd Gen functions can only use
-     * Artifact Registry.
+     * Docker Registry to use for this deployment. This configuration is only
+     * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+     * Registry.
+     *
      * If `docker_repository` field is specified, this field will be automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
      * </pre>
      *
-     * <code>
-     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
      *
      * @return The dockerRegistry.
      */
@@ -2589,18 +2557,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Docker Registry to use for this deployment. This configuration is
-     * only applicable to 1st Gen functions, 2nd Gen functions can only use
-     * Artifact Registry.
+     * Docker Registry to use for this deployment. This configuration is only
+     * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+     * Registry.
+     *
      * If `docker_repository` field is specified, this field will be automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
      * </pre>
      *
-     * <code>
-     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
      *
      * @param value The dockerRegistry to set.
      * @return This builder for chaining.
@@ -2619,18 +2586,17 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Docker Registry to use for this deployment. This configuration is
-     * only applicable to 1st Gen functions, 2nd Gen functions can only use
-     * Artifact Registry.
+     * Docker Registry to use for this deployment. This configuration is only
+     * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
+     * Registry.
+     *
      * If `docker_repository` field is specified, this field will be automatically
      * set as `ARTIFACT_REGISTRY`.
      * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
      * This field may be overridden by the backend for eligible deployments.
      * </pre>
      *
-     * <code>
-     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
      *
      * @return This builder for chaining.
      */
@@ -2646,13 +2612,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. This is the repository to which the
+     * User managed repository created in Artifact Registry optionally
+     * with a customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2677,13 +2645,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. This is the repository to which the
+     * User managed repository created in Artifact Registry optionally
+     * with a customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2708,13 +2678,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. This is the repository to which the
+     * User managed repository created in Artifact Registry optionally
+     * with a customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2738,13 +2710,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. This is the repository to which the
+     * User managed repository created in Artifact Registry optionally
+     * with a customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2764,13 +2738,15 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User managed repository created in Artifact Registry optionally with a
-     * customer managed encryption key. This is the repository to which the
+     * User managed repository created in Artifact Registry optionally
+     * with a customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.

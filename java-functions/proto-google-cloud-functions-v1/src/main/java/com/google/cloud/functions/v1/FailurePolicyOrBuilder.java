@@ -58,5 +58,5 @@ public interface FailurePolicyOrBuilder
    */
   com.google.cloud.functions.v1.FailurePolicy.RetryOrBuilder getRetryOrBuilder();
 
-  public com.google.cloud.functions.v1.FailurePolicy.ActionCase getActionCase();
+  com.google.cloud.functions.v1.FailurePolicy.ActionCase getActionCase();
 }

@@ -52,11 +52,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     return new BuildConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2alpha.FunctionsProto
         .internal_static_google_cloud_functions_v2alpha_BuildConfig_descriptor;
@@ -381,6 +376,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -414,6 +410,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -557,8 +554,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -591,8 +590,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -999,39 +1000,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.dockerRepository_ = dockerRepository_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1958,6 +1926,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -1990,6 +1959,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2022,6 +1992,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2053,6 +2024,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2080,6 +2052,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * {project} and {region} are the project id and region respectively where the
      * worker pool is defined and {workerPool} is the short name of the worker
      * pool.
+     *
      * If the project id is not the same as the function, then the Cloud
      * Functions Service Agent
      * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -2283,8 +2256,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2316,8 +2291,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2349,8 +2326,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2381,8 +2360,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
@@ -2409,8 +2390,10 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
      * for every deployed region.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
+     *
      * Cross-project repositories are not supported.
      * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.

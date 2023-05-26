@@ -170,11 +170,13 @@ public interface ServiceConfigOrBuilder
    * <pre>
    * The limit on the maximum number of function instances that may coexist at a
    * given time.
+   *
    * In some cases, such as rapid traffic surges, Cloud Functions may, for a
    * short period of time, create more instances than the specified max
    * instances limit. If your function cannot tolerate this temporary behavior,
    * you may want to factor in a safety margin and set a lower max instances
    * value than your function can tolerate.
+   *
    * See the [Max
    * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
    * more details.
@@ -192,6 +194,7 @@ public interface ServiceConfigOrBuilder
    * <pre>
    * The limit on the minimum number of function instances that may coexist at a
    * given time.
+   *
    * Function instances are kept in idle state for a short period after they
    * finished executing the request to reduce cold start time for subsequent
    * requests. Setting a minimum instance count will ensure that the given

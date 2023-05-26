@@ -54,31 +54,6 @@ public interface FunctionOrBuilder
    *
    *
    * <pre>
-   * Describe whether the function is 1st Gen or 2nd Gen.
-   * </pre>
-   *
-   * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
-   *
-   * @return The enum numeric value on the wire for environment.
-   */
-  int getEnvironmentValue();
-  /**
-   *
-   *
-   * <pre>
-   * Describe whether the function is 1st Gen or 2nd Gen.
-   * </pre>
-   *
-   * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
-   *
-   * @return The environment.
-   */
-  com.google.cloud.functions.v2.Environment getEnvironment();
-
-  /**
-   *
-   *
-   * <pre>
    * User-provided description of a function.
    * </pre>
    *
@@ -405,32 +380,26 @@ public interface FunctionOrBuilder
    *
    *
    * <pre>
-   * Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt function resources.
-   * It must match the pattern
-   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * Describe whether the function is 1st Gen or 2nd Gen.
    * </pre>
    *
-   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
    *
-   * @return The kmsKeyName.
+   * @return The enum numeric value on the wire for environment.
    */
-  java.lang.String getKmsKeyName();
+  int getEnvironmentValue();
   /**
    *
    *
    * <pre>
-   * Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt function resources.
-   * It must match the pattern
-   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * Describe whether the function is 1st Gen or 2nd Gen.
    * </pre>
    *
-   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
    *
-   * @return The bytes for kmsKeyName.
+   * @return The environment.
    */
-  com.google.protobuf.ByteString getKmsKeyNameBytes();
+  com.google.cloud.functions.v2.Environment getEnvironment();
 
   /**
    *
@@ -456,4 +425,37 @@ public interface FunctionOrBuilder
    * @return The bytes for url.
    */
   com.google.protobuf.ByteString getUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
 }

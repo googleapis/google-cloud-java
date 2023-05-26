@@ -57,9 +57,11 @@ public interface GenerateUploadUrlResponseOrBuilder
    *
    * <pre>
    * The location of the source code in the upload bucket.
+   *
    * Once the archive is uploaded using the `upload_url` use this field to
    * set the `function.build_config.source.storage_source`
    * during CreateFunction and UpdateFunction.
+   *
    * Generation defaults to 0, as Cloud Storage provides a new generation only
    * upon uploading a new object or version of an object.
    * </pre>
@@ -74,9 +76,11 @@ public interface GenerateUploadUrlResponseOrBuilder
    *
    * <pre>
    * The location of the source code in the upload bucket.
+   *
    * Once the archive is uploaded using the `upload_url` use this field to
    * set the `function.build_config.source.storage_source`
    * during CreateFunction and UpdateFunction.
+   *
    * Generation defaults to 0, as Cloud Storage provides a new generation only
    * upon uploading a new object or version of an object.
    * </pre>
@@ -91,9 +95,11 @@ public interface GenerateUploadUrlResponseOrBuilder
    *
    * <pre>
    * The location of the source code in the upload bucket.
+   *
    * Once the archive is uploaded using the `upload_url` use this field to
    * set the `function.build_config.source.storage_source`
    * during CreateFunction and UpdateFunction.
+   *
    * Generation defaults to 0, as Cloud Storage provides a new generation only
    * upon uploading a new object or version of an object.
    * </pre>

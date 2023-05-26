@@ -47,11 +47,6 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
     return new GenerateUploadUrlResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2.FunctionsProto
         .internal_static_google_cloud_functions_v2_GenerateUploadUrlResponse_descriptor;
@@ -129,9 +124,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The location of the source code in the upload bucket.
+   *
    * Once the archive is uploaded using the `upload_url` use this field to
    * set the `function.build_config.source.storage_source`
    * during CreateFunction and UpdateFunction.
+   *
    * Generation defaults to 0, as Cloud Storage provides a new generation only
    * upon uploading a new object or version of an object.
    * </pre>
@@ -149,9 +146,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The location of the source code in the upload bucket.
+   *
    * Once the archive is uploaded using the `upload_url` use this field to
    * set the `function.build_config.source.storage_source`
    * during CreateFunction and UpdateFunction.
+   *
    * Generation defaults to 0, as Cloud Storage provides a new generation only
    * upon uploading a new object or version of an object.
    * </pre>
@@ -171,9 +170,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The location of the source code in the upload bucket.
+   *
    * Once the archive is uploaded using the `upload_url` use this field to
    * set the `function.build_config.source.storage_source`
    * during CreateFunction and UpdateFunction.
+   *
    * Generation defaults to 0, as Cloud Storage provides a new generation only
    * upon uploading a new object or version of an object.
    * </pre>
@@ -452,39 +453,6 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.functions.v2.GenerateUploadUrlResponse) {
         return mergeFrom((com.google.cloud.functions.v2.GenerateUploadUrlResponse) other);
@@ -689,9 +657,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -708,9 +678,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -733,9 +705,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -760,9 +734,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -785,9 +761,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -815,9 +793,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -839,9 +819,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -858,9 +840,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>
@@ -881,9 +865,11 @@ public final class GenerateUploadUrlResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The location of the source code in the upload bucket.
+     *
      * Once the archive is uploaded using the `upload_url` use this field to
      * set the `function.build_config.source.storage_source`
      * during CreateFunction and UpdateFunction.
+     *
      * Generation defaults to 0, as Cloud Storage provides a new generation only
      * upon uploading a new object or version of an object.
      * </pre>

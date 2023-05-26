@@ -57,6 +57,7 @@ public interface StorageSourceOrBuilder
    *
    * <pre>
    * Google Cloud Storage object containing the source.
+   *
    * This object must be a gzipped archive file (`.tar.gz`) containing source to
    * build.
    * </pre>
@@ -71,6 +72,7 @@ public interface StorageSourceOrBuilder
    *
    * <pre>
    * Google Cloud Storage object containing the source.
+   *
    * This object must be a gzipped archive file (`.tar.gz`) containing source to
    * build.
    * </pre>

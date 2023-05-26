@@ -101,6 +101,7 @@ public interface CreateFunctionRequestOrBuilder
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -116,6 +117,7 @@ public interface CreateFunctionRequestOrBuilder
    * <pre>
    * The ID to use for the function, which will become the final component of
    * the function's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

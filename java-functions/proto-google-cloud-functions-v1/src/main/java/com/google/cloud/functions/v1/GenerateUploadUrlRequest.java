@@ -48,11 +48,6 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
     return new GenerateUploadUrlRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v1.FunctionsProto
         .internal_static_google_cloud_functions_v1_GenerateUploadUrlRequest_descriptor;
@@ -135,8 +130,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    * gets copied to a staging Cloud Storage bucket in an internal regional
    * project. The source code is then copied to a versioned directory in the
    * sources bucket in the consumer project during the function deployment.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * The Google Cloud Functions service account
    * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
    * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -172,8 +169,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    * gets copied to a staging Cloud Storage bucket in an internal regional
    * project. The source code is then copied to a versioned directory in the
    * sources bucket in the consumer project during the function deployment.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
    * The Google Cloud Functions service account
    * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
    * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -455,39 +454,6 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.functions.v1.GenerateUploadUrlRequest) {
         return mergeFrom((com.google.cloud.functions.v1.GenerateUploadUrlRequest) other);
@@ -689,8 +655,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      * gets copied to a staging Cloud Storage bucket in an internal regional
      * project. The source code is then copied to a versioned directory in the
      * sources bucket in the consumer project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -725,8 +693,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      * gets copied to a staging Cloud Storage bucket in an internal regional
      * project. The source code is then copied to a versioned directory in the
      * sources bucket in the consumer project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -761,8 +731,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      * gets copied to a staging Cloud Storage bucket in an internal regional
      * project. The source code is then copied to a versioned directory in the
      * sources bucket in the consumer project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -796,8 +768,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      * gets copied to a staging Cloud Storage bucket in an internal regional
      * project. The source code is then copied to a versioned directory in the
      * sources bucket in the consumer project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
@@ -827,8 +801,10 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      * gets copied to a staging Cloud Storage bucket in an internal regional
      * project. The source code is then copied to a versioned directory in the
      * sources bucket in the consumer project during the function deployment.
+     *
      * It must match the pattern
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     *
      * The Google Cloud Functions service account
      * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
      * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter

@@ -49,11 +49,6 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
     return new SourceRepository();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v1.FunctionsProto
         .internal_static_google_cloud_functions_v1_SourceRepository_descriptor;
@@ -80,6 +75,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
    * The URL pointing to the hosted repository where the function is defined.
    * There are supported Cloud Source Repository URLs in the following
    * formats:
+   *
    * To refer to a specific commit:
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
    * To refer to a moveable alias (branch):
@@ -87,6 +83,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
    * In particular, to refer to HEAD use `master` moveable alias.
    * To refer to a specific fixed alias (tag):
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+   *
    * You can omit `paths/&#42;` if you want to use the main directory.
    * </pre>
    *
@@ -113,6 +110,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
    * The URL pointing to the hosted repository where the function is defined.
    * There are supported Cloud Source Repository URLs in the following
    * formats:
+   *
    * To refer to a specific commit:
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
    * To refer to a moveable alias (branch):
@@ -120,6 +118,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
    * In particular, to refer to HEAD use `master` moveable alias.
    * To refer to a specific fixed alias (tag):
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+   *
    * You can omit `paths/&#42;` if you want to use the main directory.
    * </pre>
    *
@@ -450,39 +449,6 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.functions.v1.SourceRepository) {
         return mergeFrom((com.google.cloud.functions.v1.SourceRepository) other);
@@ -569,6 +535,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * The URL pointing to the hosted repository where the function is defined.
      * There are supported Cloud Source Repository URLs in the following
      * formats:
+     *
      * To refer to a specific commit:
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
      * To refer to a moveable alias (branch):
@@ -576,6 +543,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+     *
      * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
@@ -601,6 +569,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * The URL pointing to the hosted repository where the function is defined.
      * There are supported Cloud Source Repository URLs in the following
      * formats:
+     *
      * To refer to a specific commit:
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
      * To refer to a moveable alias (branch):
@@ -608,6 +577,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+     *
      * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
@@ -633,6 +603,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * The URL pointing to the hosted repository where the function is defined.
      * There are supported Cloud Source Repository URLs in the following
      * formats:
+     *
      * To refer to a specific commit:
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
      * To refer to a moveable alias (branch):
@@ -640,6 +611,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+     *
      * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
@@ -664,6 +636,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * The URL pointing to the hosted repository where the function is defined.
      * There are supported Cloud Source Repository URLs in the following
      * formats:
+     *
      * To refer to a specific commit:
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
      * To refer to a moveable alias (branch):
@@ -671,6 +644,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+     *
      * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
@@ -691,6 +665,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * The URL pointing to the hosted repository where the function is defined.
      * There are supported Cloud Source Repository URLs in the following
      * formats:
+     *
      * To refer to a specific commit:
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;revisions/&#42;&#47;paths/&#42;`
      * To refer to a moveable alias (branch):
@@ -698,6 +673,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
+     *
      * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *

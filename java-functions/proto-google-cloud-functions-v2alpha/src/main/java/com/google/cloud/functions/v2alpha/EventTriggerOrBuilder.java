@@ -173,6 +173,7 @@ public interface EventTriggerOrBuilder
    * Optional. The name of a Pub/Sub topic in the same project that will be used
    * as the transport topic for the event delivery. Format:
    * `projects/{project}/topics/{topic}`.
+   *
    * This is only valid for events of type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
    * will not be deleted at function deletion.
@@ -192,6 +193,7 @@ public interface EventTriggerOrBuilder
    * Optional. The name of a Pub/Sub topic in the same project that will be used
    * as the transport topic for the event delivery. Format:
    * `projects/{project}/topics/{topic}`.
+   *
    * This is only valid for events of type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
    * will not be deleted at function deletion.

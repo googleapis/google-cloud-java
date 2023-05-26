@@ -55,11 +55,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     return new EventTrigger();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v2.FunctionsProto
         .internal_static_google_cloud_functions_v2_EventTrigger_descriptor;
@@ -486,6 +481,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * Optional. The name of a Pub/Sub topic in the same project that will be used
    * as the transport topic for the event delivery. Format:
    * `projects/{project}/topics/{topic}`.
+   *
    * This is only valid for events of type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
    * will not be deleted at function deletion.
@@ -516,6 +512,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * Optional. The name of a Pub/Sub topic in the same project that will be used
    * as the transport topic for the event delivery. Format:
    * `projects/{project}/topics/{topic}`.
+   *
    * This is only valid for events of type
    * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
    * will not be deleted at function deletion.
@@ -1053,39 +1050,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.channel_ = channel_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1977,6 +1941,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2006,6 +1971,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2035,6 +2001,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2063,6 +2030,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.
@@ -2087,6 +2055,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Optional. The name of a Pub/Sub topic in the same project that will be used
      * as the transport topic for the event delivery. Format:
      * `projects/{project}/topics/{topic}`.
+     *
      * This is only valid for events of type
      * `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here
      * will not be deleted at function deletion.

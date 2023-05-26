@@ -208,6 +208,7 @@ public interface BuildConfigOrBuilder
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -230,6 +231,7 @@ public interface BuildConfigOrBuilder
    * {project} and {region} are the project id and region respectively where the
    * worker pool is defined and {workerPool} is the short name of the worker
    * pool.
+   *
    * If the project id is not the same as the function, then the Cloud
    * Functions Service Agent
    * (service-&lt;project_number&gt;&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
@@ -310,8 +312,10 @@ public interface BuildConfigOrBuilder
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
@@ -333,8 +337,10 @@ public interface BuildConfigOrBuilder
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
    * for every deployed region.
+   *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
+   *
    * Cross-project repositories are not supported.
    * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.

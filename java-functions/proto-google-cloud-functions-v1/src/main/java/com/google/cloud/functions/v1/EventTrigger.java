@@ -50,11 +50,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     return new EventTrigger();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v1.FunctionsProto
         .internal_static_google_cloud_functions_v1_EventTrigger_descriptor;
@@ -81,8 +76,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * Required. The type of event to observe. For example:
    * `providers/cloud.storage/eventTypes/object.change` and
    * `providers/cloud.pubsub/eventTypes/topic.publish`.
+   *
    * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
    * The pattern contains:
+   *
    * 1. namespace: For example, `cloud.storage` and
    *    `google.firebase.analytics`.
    * 2. resource type: The type of resource on which event occurs. For
@@ -115,8 +112,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * Required. The type of event to observe. For example:
    * `providers/cloud.storage/eventTypes/object.change` and
    * `providers/cloud.pubsub/eventTypes/topic.publish`.
+   *
    * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
    * The pattern contains:
+   *
    * 1. namespace: For example, `cloud.storage` and
    *    `google.firebase.analytics`.
    * 2. resource type: The type of resource on which event occurs. For
@@ -153,8 +152,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource(s) from which to observe events, for example,
    * `projects/_/buckets/myBucket`.
+   *
    * Not all syntactically correct values are accepted by all services. For
    * example:
+   *
    * 1. The authorization model must support it. Google Cloud Functions
    *    only allows EventTriggers to be deployed that observe resources in the
    *    same project as the `CloudFunction`.
@@ -162,9 +163,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *    `event_type`. For example, an `EventTrigger` that has an
    *    `event_type` of "google.pubsub.topic.publish" should have a resource
    *    that matches Google Cloud Pub/Sub topics.
+   *
    * Additionally, some services may support short names when creating an
    * `EventTrigger`. These are always returned in the normalized "long"
    * format.
+   *
    * See each *service's* documentation for supported formats.
    * </pre>
    *
@@ -190,8 +193,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource(s) from which to observe events, for example,
    * `projects/_/buckets/myBucket`.
+   *
    * Not all syntactically correct values are accepted by all services. For
    * example:
+   *
    * 1. The authorization model must support it. Google Cloud Functions
    *    only allows EventTriggers to be deployed that observe resources in the
    *    same project as the `CloudFunction`.
@@ -199,9 +204,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *    `event_type`. For example, an `EventTrigger` that has an
    *    `event_type` of "google.pubsub.topic.publish" should have a resource
    *    that matches Google Cloud Pub/Sub topics.
+   *
    * Additionally, some services may support short names when creating an
    * `EventTrigger`. These are always returned in the normalized "long"
    * format.
+   *
    * See each *service's* documentation for supported formats.
    * </pre>
    *
@@ -231,6 +238,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The hostname of the service that should be observed.
+   *
    * If no string is provided, the default service implementing the API will
    * be used. For example, `storage.googleapis.com` is the default for all
    * event types in the `google.storage` namespace.
@@ -257,6 +265,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The hostname of the service that should be observed.
+   *
    * If no string is provided, the default service implementing the API will
    * be used. For example, `storage.googleapis.com` is the default for all
    * event types in the `google.storage` namespace.
@@ -620,39 +629,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.functions.v1.EventTrigger) {
         return mergeFrom((com.google.cloud.functions.v1.EventTrigger) other);
@@ -759,8 +735,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of event to observe. For example:
      * `providers/cloud.storage/eventTypes/object.change` and
      * `providers/cloud.pubsub/eventTypes/topic.publish`.
+     *
      * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
      * The pattern contains:
+     *
      * 1. namespace: For example, `cloud.storage` and
      *    `google.firebase.analytics`.
      * 2. resource type: The type of resource on which event occurs. For
@@ -792,8 +770,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of event to observe. For example:
      * `providers/cloud.storage/eventTypes/object.change` and
      * `providers/cloud.pubsub/eventTypes/topic.publish`.
+     *
      * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
      * The pattern contains:
+     *
      * 1. namespace: For example, `cloud.storage` and
      *    `google.firebase.analytics`.
      * 2. resource type: The type of resource on which event occurs. For
@@ -825,8 +805,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of event to observe. For example:
      * `providers/cloud.storage/eventTypes/object.change` and
      * `providers/cloud.pubsub/eventTypes/topic.publish`.
+     *
      * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
      * The pattern contains:
+     *
      * 1. namespace: For example, `cloud.storage` and
      *    `google.firebase.analytics`.
      * 2. resource type: The type of resource on which event occurs. For
@@ -857,8 +839,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of event to observe. For example:
      * `providers/cloud.storage/eventTypes/object.change` and
      * `providers/cloud.pubsub/eventTypes/topic.publish`.
+     *
      * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
      * The pattern contains:
+     *
      * 1. namespace: For example, `cloud.storage` and
      *    `google.firebase.analytics`.
      * 2. resource type: The type of resource on which event occurs. For
@@ -885,8 +869,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of event to observe. For example:
      * `providers/cloud.storage/eventTypes/object.change` and
      * `providers/cloud.pubsub/eventTypes/topic.publish`.
+     *
      * Event types match pattern `providers/&#42;&#47;eventTypes/&#42;.*`.
      * The pattern contains:
+     *
      * 1. namespace: For example, `cloud.storage` and
      *    `google.firebase.analytics`.
      * 2. resource type: The type of resource on which event occurs. For
@@ -919,8 +905,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource(s) from which to observe events, for example,
      * `projects/_/buckets/myBucket`.
+     *
      * Not all syntactically correct values are accepted by all services. For
      * example:
+     *
      * 1. The authorization model must support it. Google Cloud Functions
      *    only allows EventTriggers to be deployed that observe resources in the
      *    same project as the `CloudFunction`.
@@ -928,9 +916,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type`. For example, an `EventTrigger` that has an
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
+     *
      * Additionally, some services may support short names when creating an
      * `EventTrigger`. These are always returned in the normalized "long"
      * format.
+     *
      * See each *service's* documentation for supported formats.
      * </pre>
      *
@@ -955,8 +945,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource(s) from which to observe events, for example,
      * `projects/_/buckets/myBucket`.
+     *
      * Not all syntactically correct values are accepted by all services. For
      * example:
+     *
      * 1. The authorization model must support it. Google Cloud Functions
      *    only allows EventTriggers to be deployed that observe resources in the
      *    same project as the `CloudFunction`.
@@ -964,9 +956,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type`. For example, an `EventTrigger` that has an
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
+     *
      * Additionally, some services may support short names when creating an
      * `EventTrigger`. These are always returned in the normalized "long"
      * format.
+     *
      * See each *service's* documentation for supported formats.
      * </pre>
      *
@@ -991,8 +985,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource(s) from which to observe events, for example,
      * `projects/_/buckets/myBucket`.
+     *
      * Not all syntactically correct values are accepted by all services. For
      * example:
+     *
      * 1. The authorization model must support it. Google Cloud Functions
      *    only allows EventTriggers to be deployed that observe resources in the
      *    same project as the `CloudFunction`.
@@ -1000,9 +996,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type`. For example, an `EventTrigger` that has an
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
+     *
      * Additionally, some services may support short names when creating an
      * `EventTrigger`. These are always returned in the normalized "long"
      * format.
+     *
      * See each *service's* documentation for supported formats.
      * </pre>
      *
@@ -1026,8 +1024,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource(s) from which to observe events, for example,
      * `projects/_/buckets/myBucket`.
+     *
      * Not all syntactically correct values are accepted by all services. For
      * example:
+     *
      * 1. The authorization model must support it. Google Cloud Functions
      *    only allows EventTriggers to be deployed that observe resources in the
      *    same project as the `CloudFunction`.
@@ -1035,9 +1035,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type`. For example, an `EventTrigger` that has an
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
+     *
      * Additionally, some services may support short names when creating an
      * `EventTrigger`. These are always returned in the normalized "long"
      * format.
+     *
      * See each *service's* documentation for supported formats.
      * </pre>
      *
@@ -1057,8 +1059,10 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource(s) from which to observe events, for example,
      * `projects/_/buckets/myBucket`.
+     *
      * Not all syntactically correct values are accepted by all services. For
      * example:
+     *
      * 1. The authorization model must support it. Google Cloud Functions
      *    only allows EventTriggers to be deployed that observe resources in the
      *    same project as the `CloudFunction`.
@@ -1066,9 +1070,11 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *    `event_type`. For example, an `EventTrigger` that has an
      *    `event_type` of "google.pubsub.topic.publish" should have a resource
      *    that matches Google Cloud Pub/Sub topics.
+     *
      * Additionally, some services may support short names when creating an
      * `EventTrigger`. These are always returned in the normalized "long"
      * format.
+     *
      * See each *service's* documentation for supported formats.
      * </pre>
      *
@@ -1094,6 +1100,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The hostname of the service that should be observed.
+     *
      * If no string is provided, the default service implementing the API will
      * be used. For example, `storage.googleapis.com` is the default for all
      * event types in the `google.storage` namespace.
@@ -1119,6 +1126,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The hostname of the service that should be observed.
+     *
      * If no string is provided, the default service implementing the API will
      * be used. For example, `storage.googleapis.com` is the default for all
      * event types in the `google.storage` namespace.
@@ -1144,6 +1152,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The hostname of the service that should be observed.
+     *
      * If no string is provided, the default service implementing the API will
      * be used. For example, `storage.googleapis.com` is the default for all
      * event types in the `google.storage` namespace.
@@ -1168,6 +1177,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The hostname of the service that should be observed.
+     *
      * If no string is provided, the default service implementing the API will
      * be used. For example, `storage.googleapis.com` is the default for all
      * event types in the `google.storage` namespace.
@@ -1188,6 +1198,7 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The hostname of the service that should be observed.
+     *
      * If no string is provided, the default service implementing the API will
      * be used. For example, `storage.googleapis.com` is the default for all
      * event types in the `google.storage` namespace.
