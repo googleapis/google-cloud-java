@@ -700,3 +700,10 @@ tar -zchpf google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.g
 cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java.tar.gz
 rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java/google-cloud-monitoring-v3-java
+
+##################### Section 9 #####################
+# compare source code with googleapis-gen
+#####################################################
+echo "Compare source code with googleapis-gen"
+cd "${REPO_ROOT}"
+./compare.sh
