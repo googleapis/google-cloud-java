@@ -301,74 +301,6 @@ google/monitoring/v3/uptime.proto \
 google/monitoring/v3/uptime_service.proto
 
 ##################### Section 2 #####################
-# generate descriptor files (proto_library_with_info)
-#####################################################
-"${PROTOC_ROOT}"/protoc --include_imports \
---include_source_info \
---experimental_allow_proto3_optional \
-"--descriptor_set_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto_with_info-set.proto.bin" \
-"-Igoogle/monitoring/v3/alert.proto=google/monitoring/v3/alert.proto" \
-"-Igoogle/monitoring/v3/alert_service.proto=google/monitoring/v3/alert_service.proto" \
-"-Igoogle/monitoring/v3/common.proto=google/monitoring/v3/common.proto" \
-"-Igoogle/monitoring/v3/dropped_labels.proto=google/monitoring/v3/dropped_labels.proto" \
-"-Igoogle/monitoring/v3/group.proto=google/monitoring/v3/group.proto" \
-"-Igoogle/monitoring/v3/group_service.proto=google/monitoring/v3/group_service.proto" \
-"-Igoogle/monitoring/v3/metric.proto=google/monitoring/v3/metric.proto" \
-"-Igoogle/monitoring/v3/metric_service.proto=google/monitoring/v3/metric_service.proto" \
-"-Igoogle/monitoring/v3/mutation_record.proto=google/monitoring/v3/mutation_record.proto" \
-"-Igoogle/monitoring/v3/notification.proto=google/monitoring/v3/notification.proto" \
-"-Igoogle/monitoring/v3/notification_service.proto=google/monitoring/v3/notification_service.proto" \
-"-Igoogle/monitoring/v3/query_service.proto=google/monitoring/v3/query_service.proto" \
-"-Igoogle/monitoring/v3/service.proto=google/monitoring/v3/service.proto" \
-"-Igoogle/monitoring/v3/service_service.proto=google/monitoring/v3/service_service.proto" \
-"-Igoogle/monitoring/v3/snooze.proto=google/monitoring/v3/snooze.proto" \
-"-Igoogle/monitoring/v3/snooze_service.proto=google/monitoring/v3/snooze_service.proto" \
-"-Igoogle/monitoring/v3/span_context.proto=google/monitoring/v3/span_context.proto" \
-"-Igoogle/monitoring/v3/uptime.proto=google/monitoring/v3/uptime.proto" \
-"-Igoogle/monitoring/v3/uptime_service.proto=google/monitoring/v3/uptime_service.proto" \
-"-Igoogle/api/annotations.proto=google/api/annotations.proto" \
-"-Igoogle/api/http.proto=google/api/http.proto" \
-"-Igoogle/protobuf/descriptor.proto=google/protobuf/descriptor.proto" \
-"-Igoogle/api/client.proto=google/api/client.proto" \
-"-Igoogle/api/launch_stage.proto=google/api/launch_stage.proto" \
-"-Igoogle/protobuf/duration.proto=google/protobuf/duration.proto" \
-"-Igoogle/api/distribution.proto=google/api/distribution.proto" \
-"-Igoogle/protobuf/any.proto=google/protobuf/any.proto" \
-"-Igoogle/protobuf/timestamp.proto=google/protobuf/timestamp.proto" \
-"-Igoogle/api/field_behavior.proto=google/api/field_behavior.proto" \
-"-Igoogle/api/label.proto=google/api/label.proto" \
-"-Igoogle/api/metric.proto=google/api/metric.proto" \
-"-Igoogle/api/monitored_resource.proto=google/api/monitored_resource.proto" \
-"-Igoogle/protobuf/struct.proto=google/protobuf/struct.proto" \
-"-Igoogle/api/resource.proto=google/api/resource.proto" \
-"-Igoogle/rpc/status.proto=google/rpc/status.proto" \
-"-Igoogle/type/calendar_period.proto=google/type/calendar_period.proto" \
-"-Igoogle/protobuf/empty.proto=google/protobuf/empty.proto" \
-"-Igoogle/protobuf/field_mask.proto=google/protobuf/field_mask.proto" \
-"-Igoogle/protobuf/wrappers.proto=google/protobuf/wrappers.proto" \
-"-Igoogle/cloud/common_resources.proto=google/cloud/common_resources.proto" \
-google/monitoring/v3/alert.proto \
-google/monitoring/v3/alert_service.proto \
-google/monitoring/v3/common.proto \
-google/monitoring/v3/dropped_labels.proto \
-google/monitoring/v3/group.proto \
-google/monitoring/v3/group_service.proto \
-google/monitoring/v3/metric.proto \
-google/monitoring/v3/metric_service.proto \
-google/monitoring/v3/mutation_record.proto \
-google/monitoring/v3/notification.proto \
-google/monitoring/v3/notification_service.proto \
-google/monitoring/v3/query_service.proto \
-google/monitoring/v3/service.proto \
-google/monitoring/v3/service_service.proto \
-google/monitoring/v3/snooze.proto \
-google/monitoring/v3/snooze_service.proto \
-google/monitoring/v3/span_context.proto \
-google/monitoring/v3/uptime.proto \
-google/monitoring/v3/uptime_service.proto \
-google/cloud/common_resources.proto
-
-##################### Section 2 #####################
 # generate grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
 "${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" \
@@ -681,55 +613,8 @@ for s in ; do
 done
 
 mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/proto-google-cloud-monitoring-v3-java
-#for templ in ${LIBRARY_GEN_OUT}/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/build.gradle; do
-#    cp "${templ}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/proto-google-cloud-monitoring-v3-java/
-#done
-#chmod 644 "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/proto-google-cloud-monitoring-v3-java/*
-#cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/proto-google-cloud-monitoring-v3-java/..
-#tar -zchpf proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz proto-google-cloud-monitoring-v3-java/*
-#cd - > /dev/null
-#mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-resources.tar.gz
 
-###################### Section 5 #####################
-## generate google-cloud-monitoring-v3-java-resources.tar.gz
-######################################################
-#mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/google-cloud-monitoring-v3-java-resources
-#for templ in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/build.gradle ${LIBRARY_GEN_OUT}/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/settings.gradle; do
-#    cp "${templ}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/google-cloud-monitoring-v3-java-resources/
-#done
-#chmod 644 "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/google-cloud-monitoring-v3-java-resources/*
-#cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/google-cloud-monitoring-v3-java-resources/.
-#tar -zchpf ./google-cloud-monitoring-v3-java-resources.tar.gz ./*
-#cd - > /dev/null
-#mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources/google-cloud-monitoring-v3-java-resources/google-cloud-monitoring-v3-java-resources.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/google-cloud-monitoring-v3-java-resources.tar.gz
-
-###################### Section 6 #####################
-## generate gapic-google-cloud-monitoring-v3-java-resources.tar.gz
-######################################################
-#mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources/gapic-google-cloud-monitoring-v3-java
-#for templ in ${LIBRARY_GEN_OUT}/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources/build.gradle; do
-#    cp "${templ}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources/gapic-google-cloud-monitoring-v3-java/
-#done
-#chmod 644 "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources/gapic-google-cloud-monitoring-v3-java/*
-#cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources/gapic-google-cloud-monitoring-v3-java/..
-#tar -zchpf gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java.tar.gz gapic-google-cloud-monitoring-v3-java/*
-#cd - > /dev/null
-#mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java-resources.tar.gz
-
-###################### Section 7 #####################
-## generate grpc-google-cloud-monitoring-v3-java-resources.tar.gz
-######################################################
-#mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources/grpc-google-cloud-monitoring-v3-java
-#for templ in ${LIBRARY_GEN_OUT}/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources/build.gradle; do
-#    cp "${templ}" "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources/grpc-google-cloud-monitoring-v3-java/
-#done
-#chmod 644 "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources/grpc-google-cloud-monitoring-v3-java/*
-#cd "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources/grpc-google-cloud-monitoring-v3-java/..
-#tar -zchpf grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz grpc-google-cloud-monitoring-v3-java/*
-#cd - > /dev/null
-#mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-resources.tar.gz
-
-##################### Section 8 #####################
+##################### Section 5 #####################
 # generate grpc-google-cloud-monitoring-v3-java.tar.gz
 #####################################################
 for s in ; do
@@ -748,7 +633,7 @@ cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java.tar.gz
 rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java/grpc-google-cloud-monitoring-v3-java
 
-##################### Section 9 #####################
+##################### Section 6 #####################
 # generate proto-google-cloud-monitoring-v3-java.tar.gz
 #####################################################
 mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
@@ -762,7 +647,7 @@ cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java.tar.gz
 rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java/proto-google-cloud-monitoring-v3-java
 
-##################### Section 10 #####################
+##################### Section 7 #####################
 # generate gapic-google-cloud-monitoring-v3-java.tar.gz
 #####################################################
 for s in ; do
@@ -781,7 +666,7 @@ cd - > /dev/null
 mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java.tar.gz "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java.tar.gz
 rm -rf "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-java/gapic-google-cloud-monitoring-v3-java
 
-##################### Section 11 #####################
+##################### Section 8 #####################
 # generate google-cloud-monitoring-v3-java.tar.gz
 #####################################################
 for s in "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_samples-samples.srcjar; do
