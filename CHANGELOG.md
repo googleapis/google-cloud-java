@@ -1,5 +1,58 @@
 # Changelog
 
+## [1.12.0](https://github.com/googleapis/google-cloud-java/compare/v1.11.0...v1.12.0) (2023-05-26)
+
+
+### Features
+
+* [aiplatform] add match service in aiplatform v1 ([#9438](https://github.com/googleapis/google-cloud-java/issues/9438)) ([4ab7b4f](https://github.com/googleapis/google-cloud-java/commit/4ab7b4fd466bf488a646ac0ee8a019ca78c42efe))
+* [analyticsadmin] add `GetAdSenseLink`, `CreateAdSenseLink`, `DeleteAdSenseLink`, `ListAdSenseLinks` methods to the Admin API v1alpha ([#9434](https://github.com/googleapis/google-cloud-java/issues/9434)) ([d9f948e](https://github.com/googleapis/google-cloud-java/commit/d9f948ef915cf1a118085a783c3e072ba0b54ccc))
+* [batch] add support for placement policies ([#9439](https://github.com/googleapis/google-cloud-java/issues/9439)) ([f30b899](https://github.com/googleapis/google-cloud-java/commit/f30b899f2b58945a33438fc35a207c51e4bf44a0))
+* [batch] add TaskStatus's new terminated state UNEXECUTED ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* [batch] support order_by in ListJobs and ListTasks requests ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* [batch] support order_by in ListJobs and ListTasks requests ([#21](https://github.com/googleapis/google-cloud-java/issues/21)) ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* [batch] support order_by in ListJobs and ListTasks requests ([#9359](https://github.com/googleapis/google-cloud-java/issues/9359)) ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* [cloudchannel] added partition_keys field to filter results from FetchReportResults ([#9437](https://github.com/googleapis/google-cloud-java/issues/9437)) ([0857e33](https://github.com/googleapis/google-cloud-java/commit/0857e33e233232ac6e41de7ba3433036bdd0a2f6))
+* [cloudfunctions] ListFunctions now include metadata which indicates whether a function is a `GEN_1` or `GEN_2` function ([#9462](https://github.com/googleapis/google-cloud-java/issues/9462)) ([d945618](https://github.com/googleapis/google-cloud-java/commit/d945618f4001d6e1853b84ab6964fcd026319c52))
+* [cloudkms] added VerifyConnectivity RPC ([#9429](https://github.com/googleapis/google-cloud-java/issues/9429)) ([81b9849](https://github.com/googleapis/google-cloud-java/commit/81b9849a7d0145a5bd202de877f61e3fb4cfdf7d))
+* [datamigration] add Oracle to PostgreSQL migration APIs ([#9442](https://github.com/googleapis/google-cloud-java/issues/9442)) ([d3ca29b](https://github.com/googleapis/google-cloud-java/commit/d3ca29ba6abcd21d7f276749d99b42cf2284bcd7))
+* [discoveryengine] enable safe search feature for site search ([#9428](https://github.com/googleapis/google-cloud-java/issues/9428)) ([7b673de](https://github.com/googleapis/google-cloud-java/commit/7b673de22a253b4faeb995b46581208343f84abb))
+* [language] Added client library support for ModerateText in the Natural Language API (V1) ([#9463](https://github.com/googleapis/google-cloud-java/issues/9463)) ([14fea71](https://github.com/googleapis/google-cloud-java/commit/14fea7158fa442bbd8df98e76972cbe5b508157f))
+* [rapidmigrationassessment] new module for rapidmigrationassessment ([#9467](https://github.com/googleapis/google-cloud-java/issues/9467)) ([0123f56](https://github.com/googleapis/google-cloud-java/commit/0123f56bbc025baac61b2e220f28db29a688c29c))
+* [webrisk] add SubmitUri endpoint ([#9443](https://github.com/googleapis/google-cloud-java/issues/9443)) ([dd5ddba](https://github.com/googleapis/google-cloud-java/commit/dd5ddbaa668f90cd6698ffd0accfde1168f64b6d))
+* [workstations] add output field for the control plane IP address ([#9430](https://github.com/googleapis/google-cloud-java/issues/9430)) ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* add auditd support ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* add output field for the number of pooled instances ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* add scheduling_policy IN_ORDER enum to support sequential task executions ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* add support for accelerators ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* add support for placement policies ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* add support for readiness checks ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* add support for workstation-level environment variables ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* allow users to provide additional labels in search ([7b673de](https://github.com/googleapis/google-cloud-java/commit/7b673de22a253b4faeb995b46581208343f84abb))
+* allow users to provide user info in search ([7b673de](https://github.com/googleapis/google-cloud-java/commit/7b673de22a253b4faeb995b46581208343f84abb))
+* per-Runnable labels ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* per-Runnable labels ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+
+
+### Bug Fixes
+
+* [discoveryengine] fix the field name typo for search service user_labels ([#9440](https://github.com/googleapis/google-cloud-java/issues/9440)) ([eea5883](https://github.com/googleapis/google-cloud-java/commit/eea58838dfb351a853e4c639e690051d36456362))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.12 ([#9436](https://github.com/googleapis/google-cloud-java/issues/9436)) ([5df87b6](https://github.com/googleapis/google-cloud-java/commit/5df87b6be61c2892d07b1963512c15e64ededf27))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.0 ([#9461](https://github.com/googleapis/google-cloud-java/issues/9461)) ([d9fd655](https://github.com/googleapis/google-cloud-java/commit/d9fd6551394a5e19a7ab6e1c881e9ffc5ec77660))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.1 ([#9468](https://github.com/googleapis/google-cloud-java/issues/9468)) ([75847f7](https://github.com/googleapis/google-cloud-java/commit/75847f79ee79999fae3813d5189d33eeb7b1ab4a))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.22.2 ([#9426](https://github.com/googleapis/google-cloud-java/issues/9426)) ([57a66df](https://github.com/googleapis/google-cloud-java/commit/57a66dfe16771ef3e995110715b5da5ff2104d9e))
+
+
+### Documentation
+
+* [container] clarified release channel defaulting behavior for create cluster requests when release channel is unspecified ([#9441](https://github.com/googleapis/google-cloud-java/issues/9441)) ([a9e8b90](https://github.com/googleapis/google-cloud-java/commit/a9e8b908d37ddede098a102af25587b7de4b2305))
+* adjust documentation wording ([3cba89a](https://github.com/googleapis/google-cloud-java/commit/3cba89a945b5b5d85c5690bb500d078c351e90a1))
+* fix `book disk` typo ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* update block_external_network field comment to reduce confusion ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* update comments on boot disk fields for clearer usage scope ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* update disk and network field comment for better readability ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+* Update reservation field API doc ([720796b](https://github.com/googleapis/google-cloud-java/commit/720796b7e1218b9517a3f2ebcacd3119448e2e9c))
+
 ## [1.11.0](https://github.com/googleapis/google-cloud-java/compare/v1.10.0...v1.11.0) (2023-05-10)
 
 
