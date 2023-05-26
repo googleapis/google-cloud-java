@@ -49,11 +49,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     return new AnalyzeEntitySentimentResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.language.v1beta2.LanguageServiceProto
         .internal_static_google_cloud_language_v1beta2_AnalyzeEntitySentimentResponse_descriptor;
@@ -150,7 +145,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language]
+   * field for more details.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -175,7 +171,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1beta2.Document.language]
+   * field for more details.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -468,39 +465,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.language_ = language_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -970,7 +934,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -994,7 +959,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -1018,7 +984,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -1041,7 +1008,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -1060,7 +1028,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
-     * See [Document.language][google.cloud.language.v1beta2.Document.language] field for more details.
+     * See [Document.language][google.cloud.language.v1beta2.Document.language]
+     * field for more details.
      * </pre>
      *
      * <code>string language = 2;</code>

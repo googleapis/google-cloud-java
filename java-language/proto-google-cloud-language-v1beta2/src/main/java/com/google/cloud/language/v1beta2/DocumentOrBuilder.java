@@ -233,5 +233,5 @@ public interface DocumentOrBuilder
    */
   com.google.cloud.language.v1beta2.Document.BoilerplateHandling getBoilerplateHandling();
 
-  public com.google.cloud.language.v1beta2.Document.SourceCase getSourceCase();
+  com.google.cloud.language.v1beta2.Document.SourceCase getSourceCase();
 }

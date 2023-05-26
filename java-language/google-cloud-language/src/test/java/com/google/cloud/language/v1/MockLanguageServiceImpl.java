@@ -165,6 +165,27 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   }
 
   @Override
+  public void moderateText(
+      ModerateTextRequest request, StreamObserver<ModerateTextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ModerateTextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ModerateTextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModerateText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ModerateTextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void annotateText(
       AnnotateTextRequest request, StreamObserver<AnnotateTextResponse> responseObserver) {
     Object response = responses.poll();

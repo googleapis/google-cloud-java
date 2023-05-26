@@ -27,8 +27,7 @@ public interface ClassificationCategoryOrBuilder
    *
    *
    * <pre>
-   * The name of the category representing the document, from the [predefined
-   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+   * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,8 +39,7 @@ public interface ClassificationCategoryOrBuilder
    *
    *
    * <pre>
-   * The name of the category representing the document, from the [predefined
-   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+   * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>

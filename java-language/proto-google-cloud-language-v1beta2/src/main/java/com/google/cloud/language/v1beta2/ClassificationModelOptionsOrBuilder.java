@@ -104,6 +104,5 @@ public interface ClassificationModelOptionsOrBuilder
   com.google.cloud.language.v1beta2.ClassificationModelOptions.V2ModelOrBuilder
       getV2ModelOrBuilder();
 
-  public com.google.cloud.language.v1beta2.ClassificationModelOptions.ModelTypeCase
-      getModelTypeCase();
+  com.google.cloud.language.v1beta2.ClassificationModelOptions.ModelTypeCase getModelTypeCase();
 }

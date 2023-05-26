@@ -101,6 +101,11 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
     return ((LanguageServiceStubSettings) getStubSettings()).classifyTextSettings();
   }
 
+  /** Returns the object with the settings used for calls to moderateText. */
+  public UnaryCallSettings<ModerateTextRequest, ModerateTextResponse> moderateTextSettings() {
+    return ((LanguageServiceStubSettings) getStubSettings()).moderateTextSettings();
+  }
+
   /** Returns the object with the settings used for calls to annotateText. */
   public UnaryCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings() {
     return ((LanguageServiceStubSettings) getStubSettings()).annotateTextSettings();
@@ -249,6 +254,12 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
     public UnaryCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
         classifyTextSettings() {
       return getStubSettingsBuilder().classifyTextSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moderateText. */
+    public UnaryCallSettings.Builder<ModerateTextRequest, ModerateTextResponse>
+        moderateTextSettings() {
+      return getStubSettingsBuilder().moderateTextSettings();
     }
 
     /** Returns the builder for the settings used for calls to annotateText. */

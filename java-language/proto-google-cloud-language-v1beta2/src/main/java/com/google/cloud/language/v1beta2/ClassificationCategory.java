@@ -47,11 +47,6 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     return new ClassificationCategory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.language.v1beta2.LanguageServiceProto
         .internal_static_google_cloud_language_v1beta2_ClassificationCategory_descriptor;
@@ -75,8 +70,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the category representing the document, from the [predefined
-   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+   * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -99,8 +93,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name of the category representing the document, from the [predefined
-   * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+   * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -395,39 +388,6 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1beta2.ClassificationCategory) {
         return mergeFrom((com.google.cloud.language.v1beta2.ClassificationCategory) other);
@@ -510,8 +470,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -533,8 +492,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -556,8 +514,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -578,8 +535,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -596,8 +552,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name of the category representing the document, from the [predefined
-     * taxonomy](https://cloud.google.com/natural-language/docs/categories).
+     * The name of the category representing the document.
      * </pre>
      *
      * <code>string name = 1;</code>

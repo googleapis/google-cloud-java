@@ -275,6 +275,53 @@ public final class LanguageServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.language.v1beta2.ModerateTextRequest,
+          com.google.cloud.language.v1beta2.ModerateTextResponse>
+      getModerateTextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModerateText",
+      requestType = com.google.cloud.language.v1beta2.ModerateTextRequest.class,
+      responseType = com.google.cloud.language.v1beta2.ModerateTextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.language.v1beta2.ModerateTextRequest,
+          com.google.cloud.language.v1beta2.ModerateTextResponse>
+      getModerateTextMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.language.v1beta2.ModerateTextRequest,
+            com.google.cloud.language.v1beta2.ModerateTextResponse>
+        getModerateTextMethod;
+    if ((getModerateTextMethod = LanguageServiceGrpc.getModerateTextMethod) == null) {
+      synchronized (LanguageServiceGrpc.class) {
+        if ((getModerateTextMethod = LanguageServiceGrpc.getModerateTextMethod) == null) {
+          LanguageServiceGrpc.getModerateTextMethod =
+              getModerateTextMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.language.v1beta2.ModerateTextRequest,
+                          com.google.cloud.language.v1beta2.ModerateTextResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ModerateText"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.language.v1beta2.ModerateTextRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.language.v1beta2.ModerateTextResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LanguageServiceMethodDescriptorSupplier("ModerateText"))
+                      .build();
+        }
+      }
+    }
+    return getModerateTextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.language.v1beta2.AnnotateTextRequest,
           com.google.cloud.language.v1beta2.AnnotateTextResponse>
       getAnnotateTextMethod;
@@ -408,8 +455,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     default void analyzeEntitySentiment(
@@ -451,6 +500,21 @@ public final class LanguageServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getClassifyTextMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moderates a document for harmful and sensitive categories.
+     * </pre>
+     */
+    default void moderateText(
+        com.google.cloud.language.v1beta2.ModerateTextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ModerateTextResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModerateTextMethod(), responseObserver);
     }
 
     /**
@@ -546,8 +610,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public void analyzeEntitySentiment(
@@ -593,6 +659,23 @@ public final class LanguageServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getClassifyTextMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moderates a document for harmful and sensitive categories.
+     * </pre>
+     */
+    public void moderateText(
+        com.google.cloud.language.v1beta2.ModerateTextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ModerateTextResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModerateTextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -668,8 +751,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse analyzeEntitySentiment(
@@ -704,6 +789,19 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1beta2.ClassifyTextRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getClassifyTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moderates a document for harmful and sensitive categories.
+     * </pre>
+     */
+    public com.google.cloud.language.v1beta2.ModerateTextResponse moderateText(
+        com.google.cloud.language.v1beta2.ModerateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModerateTextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -775,8 +873,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -821,6 +921,20 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
+     * Moderates a document for harmful and sensitive categories.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.language.v1beta2.ModerateTextResponse>
+        moderateText(com.google.cloud.language.v1beta2.ModerateTextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModerateTextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * A convenience method that provides all syntax, sentiment, entity, and
      * classification features in one call.
      * </pre>
@@ -838,7 +952,8 @@ public final class LanguageServiceGrpc {
   private static final int METHODID_ANALYZE_ENTITY_SENTIMENT = 2;
   private static final int METHODID_ANALYZE_SYNTAX = 3;
   private static final int METHODID_CLASSIFY_TEXT = 4;
-  private static final int METHODID_ANNOTATE_TEXT = 5;
+  private static final int METHODID_MODERATE_TEXT = 5;
+  private static final int METHODID_ANNOTATE_TEXT = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -888,6 +1003,12 @@ public final class LanguageServiceGrpc {
           serviceImpl.classifyText(
               (com.google.cloud.language.v1beta2.ClassifyTextRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ClassifyTextResponse>)
+                  responseObserver);
+          break;
+        case METHODID_MODERATE_TEXT:
+          serviceImpl.moderateText(
+              (com.google.cloud.language.v1beta2.ModerateTextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ModerateTextResponse>)
                   responseObserver);
           break;
         case METHODID_ANNOTATE_TEXT:
@@ -949,6 +1070,13 @@ public final class LanguageServiceGrpc {
                     com.google.cloud.language.v1beta2.ClassifyTextRequest,
                     com.google.cloud.language.v1beta2.ClassifyTextResponse>(
                     service, METHODID_CLASSIFY_TEXT)))
+        .addMethod(
+            getModerateTextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.ModerateTextRequest,
+                    com.google.cloud.language.v1beta2.ModerateTextResponse>(
+                    service, METHODID_MODERATE_TEXT)))
         .addMethod(
             getAnnotateTextMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1012,6 +1140,7 @@ public final class LanguageServiceGrpc {
                       .addMethod(getAnalyzeEntitySentimentMethod())
                       .addMethod(getAnalyzeSyntaxMethod())
                       .addMethod(getClassifyTextMethod())
+                      .addMethod(getModerateTextMethod())
                       .addMethod(getAnnotateTextMethod())
                       .build();
         }

@@ -175,5 +175,5 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.ByteString getLanguageBytes();
 
-  public com.google.cloud.language.v1.Document.SourceCase getSourceCase();
+  com.google.cloud.language.v1.Document.SourceCase getSourceCase();
 }

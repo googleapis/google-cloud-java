@@ -51,11 +51,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     return new Entity();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.language.v1.LanguageServiceProto
         .internal_static_google_cloud_language_v1_Entity_descriptor;
@@ -180,8 +175,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Phone number
+     *
      * The metadata lists the phone number, formatted according to local
      * convention, plus whichever additional elements appear in the text:
+     *
      * * `number` - the actual number, broken down into sections as per local
      * convention
      * * `national_prefix` - country code, if detected
@@ -198,8 +195,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Address
+     *
      * The metadata identifies the street number and locality plus whichever
      * additional elements appear in the text:
+     *
      * * `street_number` - street number
      * * `locality` - city or town
      * * `street_name` - street/route name, if detected
@@ -220,7 +219,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Date
+     *
      * The metadata identifies the components of the date:
+     *
      * * `year` - four digit year, if detected
      * * `month` - two digit month number, if detected
      * * `day` - two digit day number, if detected
@@ -234,6 +235,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number
+     *
      * The metadata is the number itself.
      * </pre>
      *
@@ -245,6 +247,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price
+     *
      * The metadata identifies the `value` and `currency`.
      * </pre>
      *
@@ -339,8 +342,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Phone number
+     *
      * The metadata lists the phone number, formatted according to local
      * convention, plus whichever additional elements appear in the text:
+     *
      * * `number` - the actual number, broken down into sections as per local
      * convention
      * * `national_prefix` - country code, if detected
@@ -357,8 +362,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Address
+     *
      * The metadata identifies the street number and locality plus whichever
      * additional elements appear in the text:
+     *
      * * `street_number` - street number
      * * `locality` - city or town
      * * `street_name` - street/route name, if detected
@@ -379,7 +386,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Date
+     *
      * The metadata identifies the components of the date:
+     *
      * * `year` - four digit year, if detected
      * * `month` - two digit month number, if detected
      * * `day` - two digit day number, if detected
@@ -393,6 +402,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Number
+     *
      * The metadata is the number itself.
      * </pre>
      *
@@ -404,6 +414,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price
+     *
      * The metadata identifies the `value` and `currency`.
      * </pre>
      *
@@ -631,6 +642,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -656,6 +668,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -672,6 +685,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -695,6 +709,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -721,6 +736,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The salience score associated with the entity in the [0, 1.0] range.
+   *
    * The salience score for an entity provides information about the
    * importance or centrality of that entity to the entire document text.
    * Scores closer to 0 are less salient, while scores closer to 1.0 are highly
@@ -1233,39 +1249,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1.Entity) {
         return mergeFrom((com.google.cloud.language.v1.Entity) other);
@@ -1641,6 +1624,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1666,6 +1650,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1682,6 +1667,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1705,6 +1691,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1734,6 +1721,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1759,6 +1747,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1782,6 +1771,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
+     *
      * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
      * and Knowledge Graph MID (`mid`), if they are available. For the metadata
      * associated with other entity types, see the Type table below.
@@ -1801,6 +1791,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The salience score associated with the entity in the [0, 1.0] range.
+     *
      * The salience score for an entity provides information about the
      * importance or centrality of that entity to the entire document text.
      * Scores closer to 0 are less salient, while scores closer to 1.0 are highly
@@ -1820,6 +1811,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The salience score associated with the entity in the [0, 1.0] range.
+     *
      * The salience score for an entity provides information about the
      * importance or centrality of that entity to the entire document text.
      * Scores closer to 0 are less salient, while scores closer to 1.0 are highly
@@ -1843,6 +1835,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The salience score associated with the entity in the [0, 1.0] range.
+     *
      * The salience score for an entity provides information about the
      * importance or centrality of that entity to the entire document text.
      * Scores closer to 0 are less salient, while scores closer to 1.0 are highly
