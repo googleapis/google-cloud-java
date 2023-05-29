@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.14.7](https://github.com/googleapis/java-datastore/compare/v2.14.6...v2.14.7) (2023-05-29)
+
+
+### Documentation
+
+* Marking Transaction, Batch and DatastoreBatchWriter class with 'NotThreadSafe' annotation ([#1082](https://github.com/googleapis/java-datastore/issues/1082)) ([9e96650](https://github.com/googleapis/java-datastore/commit/9e966506c1e860f10e82d34bd6a705c1cae71764))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.0 ([#1085](https://github.com/googleapis/java-datastore/issues/1085)) ([47df1b8](https://github.com/googleapis/java-datastore/commit/47df1b8a4b54eae0bb42e261e02d64aee7b95e7a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.1 ([#1086](https://github.com/googleapis/java-datastore/issues/1086)) ([e3ad866](https://github.com/googleapis/java-datastore/commit/e3ad86614a2462054bfb800613f2456f6f98102d))
+* Update dependency com.google.errorprone:error_prone_core to v2.19.1 ([#1069](https://github.com/googleapis/java-datastore/issues/1069)) ([2390016](https://github.com/googleapis/java-datastore/commit/239001682bd1284be39d4646ce0594274070c143))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.22 ([#1074](https://github.com/googleapis/java-datastore/issues/1074)) ([c0cc456](https://github.com/googleapis/java-datastore/commit/c0cc4565cc0e34098f5bc97c031ae671af44fcf3))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.22 ([#1075](https://github.com/googleapis/java-datastore/issues/1075)) ([a4db895](https://github.com/googleapis/java-datastore/commit/a4db89502e9611bf5f9760bfceb1025cc99a9830))
+
 ## [2.14.6](https://github.com/googleapis/java-datastore/compare/v2.14.5...v2.14.6) (2023-05-09)
 
 
