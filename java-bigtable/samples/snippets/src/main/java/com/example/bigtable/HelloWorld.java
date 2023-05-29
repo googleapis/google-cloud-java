@@ -59,8 +59,6 @@ public class HelloWorld {
   private static final String COLUMN_QUALIFIER_GREETING = "greeting";
   private static final String COLUMN_QUALIFIER_NAME = "name";
   private static final String ROW_KEY_PREFIX = "rowKey";
-  private final String projectId;
-  private final String instanceId;
   private final String tableId;
   private final BigtableDataClient dataClient;
   private final BigtableTableAdminClient adminClient;
@@ -80,8 +78,6 @@ public class HelloWorld {
 
   public HelloWorld(String projectId, String instanceId, String tableId) throws IOException {
     this.tableId = tableId;
-    this.projectId = projectId;
-    this.instanceId = instanceId;
 
     // [START bigtable_hw_connect]
     // Creates the settings to configure a bigtable data client.
@@ -109,7 +105,7 @@ public class HelloWorld {
     readSingleRow();
     readSpecificCells();
     readTable();
-    filterLimitCellsPerCol(this.projectId, this.instanceId, tableId);
+    filterLimitCellsPerCol(tableId);
     deleteTable();
     close();
   }
@@ -221,48 +217,32 @@ public class HelloWorld {
   }
 
   // [START bigtable_hw_create_filter]
-  public static void filterLimitCellsPerCol(String projectId, String instanceId, String tableId) {
+  public void filterLimitCellsPerCol(String tableId) {
     // A filter that matches only the most recent cell within each column
     Filter filter = FILTERS.limit().cellsPerColumn(1);
-    readRowFilter(projectId, instanceId, tableId, filter);
-    readFilter(projectId, instanceId, tableId, filter);
+    readRowFilter(tableId, filter);
+    readFilter(tableId, filter);
   }
   // [END bigtable_hw_create_filter]
 
   // [START bigtable_hw_get_with_filter]
-  private static void readRowFilter(
-      String projectId, String instanceId, String tableId, Filter filter) {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests.
-    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      String rowKey =
-          Base64.getEncoder().encodeToString("greeting0".getBytes(StandardCharsets.UTF_8));
-      Row row = dataClient.readRow(tableId, rowKey, filter);
-      printRow(row);
-      System.out.println("Row filter completed.");
-    } catch (IOException e) {
-      System.out.println(
-          "Unable to initialize service client, as a network error occurred: \n" + e);
-    }
+  private void readRowFilter(String tableId, Filter filter) {
+    String rowKey =
+        Base64.getEncoder().encodeToString("greeting0".getBytes(StandardCharsets.UTF_8));
+    Row row = dataClient.readRow(tableId, rowKey, filter);
+    printRow(row);
+    System.out.println("Row filter completed.");
   }
   // [END bigtable_hw_get_with_filter]
 
   // [START bigtable_hw_scan_with_filter]
-  private static void readFilter(
-      String projectId, String instanceId, String tableId, Filter filter) {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests.
-    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      Query query = Query.create(tableId).filter(filter);
-      ServerStream<Row> rows = dataClient.readRows(query);
-      for (Row row : rows) {
-        printRow(row);
-      }
-      System.out.println("Table filter completed.");
-    } catch (IOException e) {
-      System.out.println(
-          "Unable to initialize service client, as a network error occurred: \n" + e);
+  private void readFilter(String tableId, Filter filter) {
+    Query query = Query.create(tableId).filter(filter);
+    ServerStream<Row> rows = dataClient.readRows(query);
+    for (Row row : rows) {
+      printRow(row);
     }
+    System.out.println("Table filter completed.");
   }
   // [END bigtable_hw_scan_with_filter]
 
