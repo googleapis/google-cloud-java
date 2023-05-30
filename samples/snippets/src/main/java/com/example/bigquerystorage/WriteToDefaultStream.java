@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.storage.v1.JsonStreamWriter;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import io.grpc.Status;
 import io.grpc.Status.Code;
@@ -59,6 +60,24 @@ public class WriteToDefaultStream {
     writeToDefaultStream(projectId, datasetName, tableName);
   }
 
+  private static ByteString buildByteString() {
+    byte[] bytes = new byte[] {1, 2, 3, 4, 5};
+    return ByteString.copyFrom(bytes);
+  }
+
+  // Create a JSON object that is compatible with the table schema.
+  private static JSONObject buildRecord(int i, int j) {
+    JSONObject record = new JSONObject();
+    StringBuilder sbSuffix = new StringBuilder();
+    for (int k = 0; k < j; k++) {
+      sbSuffix.append(k);
+    }
+    record.put("test_string", String.format("record %03d-%03d %s", i, j, sbSuffix.toString()));
+    ByteString byteString = buildByteString();
+    record.put("test_bytes", byteString);
+    return record;
+  }
+
   public static void writeToDefaultStream(String projectId, String datasetName, String tableName)
       throws DescriptorValidationException, InterruptedException, IOException {
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
@@ -71,15 +90,9 @@ public class WriteToDefaultStream {
     // batched up to the maximum request size:
     // https://cloud.google.com/bigquery/quotas#write-api-limits
     for (int i = 0; i < 2; i++) {
-      // Create a JSON object that is compatible with the table schema.
       JSONArray jsonArr = new JSONArray();
       for (int j = 0; j < 10; j++) {
-        JSONObject record = new JSONObject();
-        StringBuilder sbSuffix = new StringBuilder();
-        for (int k = 0; k < j; k++) {
-          sbSuffix.append(k);
-        }
-        record.put("test_string", String.format("record %03d-%03d %s", i, j, sbSuffix.toString()));
+        JSONObject record = buildRecord(i, j);
         jsonArr.put(record);
       }
 

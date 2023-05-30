@@ -76,6 +76,8 @@ public class WriteToDefaultStreamIT {
         Schema.of(
             com.google.cloud.bigquery.Field.newBuilder("test_string", StandardSQLTypeName.STRING)
                 .setMaxLength(20L)
+                .build(),
+            com.google.cloud.bigquery.Field.newBuilder("test_bytes", StandardSQLTypeName.BYTES)
                 .build());
     bigquery.create(DatasetInfo.newBuilder(datasetName).build());
     TableInfo tableInfo =
