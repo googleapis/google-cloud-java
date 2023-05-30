@@ -781,6 +781,12 @@
           <artifactId>opentest4j</artifactId>
           <version>1.2.0</version>
         </dependency>
+        <dependency>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+          <version>5.9.2</version>
+          <scope>test</scope>
+        </dependency>
       </dependencies>
       <build>
         <plugins>
