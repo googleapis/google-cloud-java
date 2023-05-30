@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.37.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.37.1...v2.37.2) (2023-05-30)
+
+
+### Bug Fixes
+
+* Pass the parameter value of enableConnectionPool instead of true always ([#2096](https://github.com/googleapis/java-bigquerystorage/issues/2096)) ([253678d](https://github.com/googleapis/java-bigquerystorage/commit/253678df630c717fbcf7018b3245aa56b5f22660))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.26.0 ([#2114](https://github.com/googleapis/java-bigquerystorage/issues/2114)) ([8b44534](https://github.com/googleapis/java-bigquerystorage/commit/8b4453476b17dcbb10faaa52c6a2b06506d89d62))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.26.1 ([#2128](https://github.com/googleapis/java-bigquerystorage/issues/2128)) ([62afd46](https://github.com/googleapis/java-bigquerystorage/commit/62afd46bb4cad09886c49bac88a2052c8754f8fe))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.1 ([#2121](https://github.com/googleapis/java-bigquerystorage/issues/2121)) ([3fabc5d](https://github.com/googleapis/java-bigquerystorage/commit/3fabc5d467becd3d9b816f9545e8a1e6dd09f682))
+* Update dependency com.google.http-client:google-http-client to v1.43.2 ([#2109](https://github.com/googleapis/java-bigquerystorage/issues/2109)) ([0d57daf](https://github.com/googleapis/java-bigquerystorage/commit/0d57daff0d113089ba1957753febeed92024e4c2))
+* Update dependency com.google.truth:truth to v1.1.4 ([#2126](https://github.com/googleapis/java-bigquerystorage/issues/2126)) ([a0be7ad](https://github.com/googleapis/java-bigquerystorage/commit/a0be7ad59b1604972b190befe2e4befd2e2c6431))
+
 ## [2.37.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.37.0...v2.37.1) (2023-05-25)
 
 
