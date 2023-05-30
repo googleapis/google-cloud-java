@@ -23,6 +23,7 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -146,49 +147,32 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
    */
   private static BigtableDataSettings.Builder overrideTimeoutSetting(
       Duration newTimeout, BigtableDataSettings.Builder settingsBuilder) {
-    // TODO(developer): remove the initialRpcTimeout update below by updating the client library.
-    Duration initialRpcTimeout =
-        settingsBuilder
-            .stubSettings()
-            .bulkMutateRowsSettings()
-            .getRetrySettings()
-            .getInitialRpcTimeout();
-    if (initialRpcTimeout.compareTo(newTimeout) > 0) {
-      // Total timeout is smaller than initialRpcTimeout, which will cause deadline-related problem.
-      initialRpcTimeout = newTimeout;
-    }
-    settingsBuilder
-        .stubSettings()
-        .bulkMutateRowsSettings()
-        .retrySettings()
-        .setTotalTimeout(newTimeout)
-        .setInitialRpcTimeout(initialRpcTimeout);
 
-    settingsBuilder.stubSettings().mutateRowSettings().retrySettings().setTotalTimeout(newTimeout);
-
-    settingsBuilder.stubSettings().readRowSettings().retrySettings().setTotalTimeout(newTimeout);
-
-    settingsBuilder.stubSettings().readRowsSettings().retrySettings().setTotalTimeout(newTimeout);
-
-    settingsBuilder
-        .stubSettings()
-        .sampleRowKeysSettings()
-        .retrySettings()
-        .setTotalTimeout(newTimeout);
-
-    settingsBuilder
-        .stubSettings()
-        .checkAndMutateRowSettings()
-        .retrySettings()
-        .setTotalTimeout(newTimeout);
-
-    settingsBuilder
-        .stubSettings()
-        .readModifyWriteRowSettings()
-        .retrySettings()
-        .setTotalTimeout(newTimeout);
+    updateTimeout(
+        settingsBuilder.stubSettings().bulkMutateRowsSettings().retrySettings(), newTimeout);
+    updateTimeout(settingsBuilder.stubSettings().mutateRowSettings().retrySettings(), newTimeout);
+    updateTimeout(settingsBuilder.stubSettings().readRowSettings().retrySettings(), newTimeout);
+    updateTimeout(settingsBuilder.stubSettings().readRowsSettings().retrySettings(), newTimeout);
+    updateTimeout(
+        settingsBuilder.stubSettings().checkAndMutateRowSettings().retrySettings(), newTimeout);
+    updateTimeout(
+        settingsBuilder.stubSettings().readModifyWriteRowSettings().retrySettings(), newTimeout);
+    updateTimeout(
+        settingsBuilder.stubSettings().sampleRowKeysSettings().retrySettings(), newTimeout);
 
     return settingsBuilder;
+  }
+
+  private static void updateTimeout(RetrySettings.Builder settings, Duration newTimeout) {
+    Duration rpcTimeout = settings.getInitialRpcTimeout();
+
+    // TODO: this should happen in gax
+    // Clamp the rpcTimeout to the overall timeout
+    if (rpcTimeout != null && rpcTimeout.compareTo(newTimeout) > 0) {
+      settings.setInitialRpcTimeout(newTimeout).setMaxRpcTimeout(newTimeout);
+    }
+
+    settings.setTotalTimeout(newTimeout);
   }
 
   /** Helper method to get a client object by its id. */
