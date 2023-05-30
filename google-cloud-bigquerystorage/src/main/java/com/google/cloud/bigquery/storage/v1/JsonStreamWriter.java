@@ -320,7 +320,7 @@ public class JsonStreamWriter implements AutoCloseable {
      * @return Builder
      */
     public Builder setEnableConnectionPool(boolean enableConnectionPool) {
-      this.schemaAwareStreamWriterBuilder.setEnableConnectionPool(true);
+      this.schemaAwareStreamWriterBuilder.setEnableConnectionPool(enableConnectionPool);
       return this;
     }
 
