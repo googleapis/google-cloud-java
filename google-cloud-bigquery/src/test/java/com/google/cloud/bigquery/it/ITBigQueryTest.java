@@ -28,6 +28,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.client.util.IOUtils;
 import com.google.api.gax.paging.Page;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -60,6 +61,7 @@ import com.google.cloud.bigquery.Connection;
 import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.ConnectionSettings;
 import com.google.cloud.bigquery.CopyJobConfiguration;
+import com.google.cloud.bigquery.CsvOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -141,9 +143,13 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -710,6 +716,36 @@ public class ITBigQueryTest {
       ConnectionProperty.newBuilder().setKey(KEY).setValue(VALUE).build();
   private static final List<ConnectionProperty> CONNECTION_PROPERTIES =
       ImmutableList.of(CONNECTION_PROPERTY);
+
+  private static final Field ID_SCHEMA =
+      Field.newBuilder("id", LegacySQLTypeName.STRING)
+          .setMode(Mode.REQUIRED)
+          .setDescription("id")
+          .build();
+  private static final Field FIRST_NAME_SCHEMA =
+      Field.newBuilder("firstname", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("First Name")
+          .build();
+  private static final Field LAST_NAME_SCHEMA =
+      Field.newBuilder("lastname", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("LAST NAME")
+          .build();
+  private static final Field EMAIL_SCHEMA =
+      Field.newBuilder("email", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("email")
+          .build();
+  private static final Field PROFESSION_SCHEMA =
+      Field.newBuilder("profession", LegacySQLTypeName.STRING)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("profession")
+          .build();
+  private static final Schema SESSION_TABLE_SCHEMA =
+      Schema.of(ID_SCHEMA, FIRST_NAME_SCHEMA, LAST_NAME_SCHEMA, EMAIL_SCHEMA, PROFESSION_SCHEMA);
+  private static final Path csvPath =
+      FileSystems.getDefault().getPath("src/test/resources", "sessionTest.csv").toAbsolutePath();
 
   private static final Set<String> PUBLIC_DATASETS =
       ImmutableSet.of("github_repos", "hacker_news", "noaa_gsod", "samples", "usa_names");
@@ -3731,6 +3767,80 @@ public class ITBigQueryTest {
     Job queryJobWithSession = bigquery.getJob(remoteJobWithSession.getJobId());
     QueryStatistics statisticsWithSession = queryJobWithSession.getStatistics();
     assertEquals(sessionId, statisticsWithSession.getSessionInfo().getSessionId());
+  }
+
+  @Test
+  public void testLoadSessionSupportWriteChannelConfiguration() throws InterruptedException {
+    TableId sessionTableId = TableId.of("_SESSION", "test_temp_destination_table_from_file");
+
+    WriteChannelConfiguration configuration =
+        WriteChannelConfiguration.newBuilder(sessionTableId)
+            .setFormatOptions(CsvOptions.newBuilder().setFieldDelimiter(",").build())
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(SESSION_TABLE_SCHEMA)
+            .setCreateSession(true)
+            .build();
+    String jobName = "jobId_" + UUID.randomUUID().toString();
+    JobId jobId = JobId.newBuilder().setLocation("us").setJob(jobName).build();
+    String sessionId;
+
+    // Imports a local file into a table.
+    try (TableDataWriteChannel writer = bigquery.writer(jobId, configuration);
+        OutputStream stream = Channels.newOutputStream(writer)) {
+      InputStream inputStream =
+          ITBigQueryTest.class.getClassLoader().getResourceAsStream("sessionTest.csv");
+      // Can use `Files.copy(csvPath, stream);` instead.
+      // Using IOUtils here because graalvm can't handle resource files.
+      IOUtils.copy(inputStream, stream);
+
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+    Job loadJob = bigquery.getJob(jobId);
+    Job completedJob = loadJob.waitFor();
+
+    assertNotNull(completedJob);
+    assertEquals(jobId.getJob(), completedJob.getJobId().getJob());
+    JobStatistics.LoadStatistics statistics = completedJob.getStatistics();
+
+    sessionId = statistics.getSessionInfo().getSessionId();
+    assertNotNull(sessionId);
+
+    // Load job in the same session.
+    // Should load the data to a temp table.
+    ConnectionProperty sessionConnectionProperty =
+        ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+    WriteChannelConfiguration sessionConfiguration =
+        WriteChannelConfiguration.newBuilder(sessionTableId)
+            .setConnectionProperties(ImmutableList.of(sessionConnectionProperty))
+            .setFormatOptions(CsvOptions.newBuilder().setFieldDelimiter(",").build())
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(SESSION_TABLE_SCHEMA)
+            .build();
+    String sessionJobName = "jobId_" + UUID.randomUUID().toString();
+    JobId sessionJobId = JobId.newBuilder().setLocation("us").setJob(sessionJobName).build();
+    try (TableDataWriteChannel writer = bigquery.writer(sessionJobId, sessionConfiguration);
+        OutputStream stream = Channels.newOutputStream(writer)) {
+      InputStream inputStream =
+          ITBigQueryTest.class.getClassLoader().getResourceAsStream("sessionTest.csv");
+      IOUtils.copy(inputStream, stream);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+    Job queryJobWithSession = bigquery.getJob(sessionJobId);
+    queryJobWithSession = queryJobWithSession.waitFor();
+    LoadStatistics statisticsWithSession = queryJobWithSession.getStatistics();
+    assertNotNull(statisticsWithSession.getSessionInfo().getSessionId());
+
+    // Checking if the data loaded to the temp table in the session
+    String queryTempTable = "SELECT * FROM _SESSION.test_temp_destination_table_from_file;";
+    QueryJobConfiguration queryJobConfigurationWithSession =
+        QueryJobConfiguration.newBuilder(queryTempTable)
+            .setConnectionProperties(ImmutableList.of(sessionConnectionProperty))
+            .build();
+    Job queryTempTableJob = bigquery.create(JobInfo.of(queryJobConfigurationWithSession));
+    queryTempTableJob = queryTempTableJob.waitFor();
+    assertNotNull(queryTempTableJob.getQueryResults());
   }
 
   @Test

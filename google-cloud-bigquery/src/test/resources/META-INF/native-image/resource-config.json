@@ -1,3 +1,4 @@
 {
-  "resources":[{"pattern": ".*.csv"}]
+  "resources":[{"pattern": ".*.csv"},
+    {"pattern":  ".*src/test/resources/sessionTest.csv"}]
 }
