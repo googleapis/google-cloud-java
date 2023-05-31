@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.23.2](https://github.com/googleapis/java-bigtable/compare/v2.23.1...v2.23.2) (2023-05-30)
+
+
+### Documentation
+
+* **samples:** Add bigtable filter snippet ([#1762](https://github.com/googleapis/java-bigtable/issues/1762)) ([48a6ed0](https://github.com/googleapis/java-bigtable/commit/48a6ed028a56302d6dc6554b2ecdabc8fbdb68cf))
+* **samples:** Remove client initialization as the snippets are not used standalone ([#1768](https://github.com/googleapis/java-bigtable/issues/1768)) ([a6ac97c](https://github.com/googleapis/java-bigtable/commit/a6ac97c08a851977a76e82fddb16690cff17a1fe))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.19.0 ([#1769](https://github.com/googleapis/java-bigtable/issues/1769)) ([956c851](https://github.com/googleapis/java-bigtable/commit/956c851b5d7dadb44c589a3f982e603d0a768105))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.1 ([#1767](https://github.com/googleapis/java-bigtable/issues/1767)) ([901b88f](https://github.com/googleapis/java-bigtable/commit/901b88f56c7b97bc08826604ed80120f07f04a64))
+* Update dependency com.google.truth.extensions:truth-proto-extension to v1.1.4 ([#1770](https://github.com/googleapis/java-bigtable/issues/1770)) ([a94a522](https://github.com/googleapis/java-bigtable/commit/a94a522a1fa4c67245f1827d8f8137cbfdbd5a45))
+* Update doclet version to v1.9.0 ([#1761](https://github.com/googleapis/java-bigtable/issues/1761)) ([a5d4215](https://github.com/googleapis/java-bigtable/commit/a5d42159643c652a9625fee620fe5ee8dee7fa2e))
+
 ## [2.23.1](https://github.com/googleapis/java-bigtable/compare/v2.23.0...v2.23.1) (2023-05-11)
 
 
