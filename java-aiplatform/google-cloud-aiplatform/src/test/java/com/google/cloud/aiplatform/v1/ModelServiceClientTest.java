@@ -229,6 +229,8 @@ public class ModelServiceClientTest {
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
             .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
@@ -296,6 +298,8 @@ public class ModelServiceClientTest {
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
             .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
@@ -539,6 +543,8 @@ public class ModelServiceClientTest {
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
             .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
@@ -777,6 +783,8 @@ public class ModelServiceClientTest {
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
             .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
@@ -847,6 +855,8 @@ public class ModelServiceClientTest {
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
                     .toString())
+            .setPipelineJob(
+                PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setContainerSpec(ModelContainerSpec.newBuilder().build())
             .setArtifactUri("artifactUri-1130062278")
             .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
