@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.27.0](https://github.com/googleapis/java-bigquery/compare/v2.26.1...v2.27.0) (2023-05-30)
+
+
+### Features
+
+* Add support for session id on TableDataWriteChannel ([#2715](https://github.com/googleapis/java-bigquery/issues/2715)) ([42851d8](https://github.com/googleapis/java-bigquery/commit/42851d818ee825d7c4141d40d116e1da43c11f14))
+
+
+### Bug Fixes
+
+* Add support for repeated record query parameters ([#2698](https://github.com/googleapis/java-bigquery/issues/2698)) ([51aff50](https://github.com/googleapis/java-bigquery/commit/51aff502215d69bd0151030421cd18646c6ead36))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.20.0 ([#2720](https://github.com/googleapis/java-bigquery/issues/2720)) ([4962cac](https://github.com/googleapis/java-bigquery/commit/4962cac8fb3fe8d77a136eaf1b579cd79304acfb))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230506-2.0.0 ([#2707](https://github.com/googleapis/java-bigquery/issues/2707)) ([4d2ec07](https://github.com/googleapis/java-bigquery/commit/4d2ec0716287e9624949cbcdf6605c127c209be4))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230520-2.0.0 ([#2723](https://github.com/googleapis/java-bigquery/issues/2723)) ([5c64797](https://github.com/googleapis/java-bigquery/commit/5c64797c603343408849535b2dbf8080cd11ca32))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v2.37.2 ([#2726](https://github.com/googleapis/java-bigquery/issues/2726)) ([052c47a](https://github.com/googleapis/java-bigquery/commit/052c47aa43b0f50414db3031914e8a775ae98925))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.24.0 ([#2721](https://github.com/googleapis/java-bigquery/issues/2721)) ([7c357fb](https://github.com/googleapis/java-bigquery/commit/7c357fb414d45fde734c09c88ee3023d8d8f5822))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.10.1 ([#2713](https://github.com/googleapis/java-bigquery/issues/2713)) ([744e83a](https://github.com/googleapis/java-bigquery/commit/744e83a3da5323bc2cff2bcc6368a3eec39f392e))
+
 ## [2.26.1](https://github.com/googleapis/java-bigquery/compare/v2.26.0...v2.26.1) (2023-05-16)
 
 
