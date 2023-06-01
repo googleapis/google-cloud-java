@@ -150,5 +150,5 @@ public interface GerritSourceContextOrBuilder
    */
   io.grafeas.v1.AliasContextOrBuilder getAliasContextOrBuilder();
 
-  public io.grafeas.v1.GerritSourceContext.RevisionCase getRevisionCase();
+  io.grafeas.v1.GerritSourceContext.RevisionCase getRevisionCase();
 }

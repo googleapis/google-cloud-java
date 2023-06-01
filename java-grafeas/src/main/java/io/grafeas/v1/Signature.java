@@ -28,6 +28,7 @@ package io.grafeas.v1;
  * Typically this means that the verifier has been configured with a map from
  * `public_key_id` to public key material (and any required parameters, e.g.
  * signing algorithm).
+ *
  * In particular, verification implementations MUST NOT treat the signature
  * `public_key_id` as anything more than a key lookup hint. The `public_key_id`
  * DOES NOT validate or authenticate a public key; it only provides a mechanism
@@ -37,6 +38,7 @@ package io.grafeas.v1;
  *   * The `public_key_id` is not recognized by the verifier.
  *   * The public key that `public_key_id` refers to does not verify the
  *     signature with respect to the payload.
+ *
  * The `signature` contents SHOULD NOT be "attached" (where the payload is
  * included with the serialized `signature` bytes). Verifiers MUST ignore any
  * "attached" payload and only verify signatures with respect to explicitly
@@ -66,11 +68,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Signature();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -121,11 +118,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
    *   * When possible, the `public_key_id` SHOULD be an immutable reference,
    *     such as a cryptographic digest.
+   *
    * Examples of valid `public_key_id`s:
+   *
    * OpenPGP V4 public key fingerprint:
    *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
    * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
    * details on this scheme.
+   *
    * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
    * serialization):
    *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -157,11 +157,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
    *   * When possible, the `public_key_id` SHOULD be an immutable reference,
    *     such as a cryptographic digest.
+   *
    * Examples of valid `public_key_id`s:
+   *
    * OpenPGP V4 public key fingerprint:
    *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
    * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
    * details on this scheme.
+   *
    * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
    * serialization):
    *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -360,6 +363,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * Typically this means that the verifier has been configured with a map from
    * `public_key_id` to public key material (and any required parameters, e.g.
    * signing algorithm).
+   *
    * In particular, verification implementations MUST NOT treat the signature
    * `public_key_id` as anything more than a key lookup hint. The `public_key_id`
    * DOES NOT validate or authenticate a public key; it only provides a mechanism
@@ -369,6 +373,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *   * The `public_key_id` is not recognized by the verifier.
    *   * The public key that `public_key_id` refers to does not verify the
    *     signature with respect to the payload.
+   *
    * The `signature` contents SHOULD NOT be "attached" (where the payload is
    * included with the serialized `signature` bytes). Verifiers MUST ignore any
    * "attached" payload and only verify signatures with respect to explicitly
@@ -640,11 +645,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
+     *
      * Examples of valid `public_key_id`s:
+     *
      * OpenPGP V4 public key fingerprint:
      *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
      * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
      * details on this scheme.
+     *
      * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
      * serialization):
      *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -675,11 +683,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
+     *
      * Examples of valid `public_key_id`s:
+     *
      * OpenPGP V4 public key fingerprint:
      *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
      * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
      * details on this scheme.
+     *
      * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
      * serialization):
      *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -710,11 +721,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
+     *
      * Examples of valid `public_key_id`s:
+     *
      * OpenPGP V4 public key fingerprint:
      *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
      * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
      * details on this scheme.
+     *
      * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
      * serialization):
      *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -744,11 +758,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
+     *
      * Examples of valid `public_key_id`s:
+     *
      * OpenPGP V4 public key fingerprint:
      *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
      * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
      * details on this scheme.
+     *
      * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
      * serialization):
      *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
@@ -774,11 +791,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      *   * The `public_key_id` SHOULD be an RFC3986 conformant URI.
      *   * When possible, the `public_key_id` SHOULD be an immutable reference,
      *     such as a cryptographic digest.
+     *
      * Examples of valid `public_key_id`s:
+     *
      * OpenPGP V4 public key fingerprint:
      *   * "openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA"
      * See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr for more
      * details on this scheme.
+     *
      * RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER
      * serialization):
      *   * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"

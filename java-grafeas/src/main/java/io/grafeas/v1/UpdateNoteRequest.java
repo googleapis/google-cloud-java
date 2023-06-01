@@ -48,11 +48,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
     return new UpdateNoteRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_UpdateNoteRequest_descriptor;
   }
