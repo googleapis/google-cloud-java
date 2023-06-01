@@ -131,5 +131,5 @@ public interface CloudRepoSourceContextOrBuilder
    */
   io.grafeas.v1.AliasContextOrBuilder getAliasContextOrBuilder();
 
-  public io.grafeas.v1.CloudRepoSourceContext.RevisionCase getRevisionCase();
+  io.grafeas.v1.CloudRepoSourceContext.RevisionCase getRevisionCase();
 }

@@ -39,18 +39,13 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   private DeploymentNote() {
-    resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourceUri_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeploymentNote();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,7 +63,8 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
   public static final int RESOURCE_URI_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourceUri_;
+  private com.google.protobuf.LazyStringArrayList resourceUri_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -328,8 +324,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      resourceUri_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -355,7 +350,6 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.DeploymentNote buildPartial() {
       io.grafeas.v1.DeploymentNote result = new io.grafeas.v1.DeploymentNote(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -363,16 +357,12 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(io.grafeas.v1.DeploymentNote result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        resourceUri_ = resourceUri_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.resourceUri_ = resourceUri_;
-    }
-
     private void buildPartial0(io.grafeas.v1.DeploymentNote result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        resourceUri_.makeImmutable();
+        result.resourceUri_ = resourceUri_;
+      }
     }
 
     @java.lang.Override
@@ -423,7 +413,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
       if (!other.resourceUri_.isEmpty()) {
         if (resourceUri_.isEmpty()) {
           resourceUri_ = other.resourceUri_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureResourceUriIsMutable();
           resourceUri_.addAll(other.resourceUri_);
@@ -482,14 +472,14 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList resourceUri_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourceUri_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourceUriIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!resourceUri_.isModifiable()) {
         resourceUri_ = new com.google.protobuf.LazyStringArrayList(resourceUri_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -503,7 +493,8 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the resourceUri.
      */
     public com.google.protobuf.ProtocolStringList getResourceUriList() {
-      return resourceUri_.getUnmodifiableView();
+      resourceUri_.makeImmutable();
+      return resourceUri_;
     }
     /**
      *
@@ -568,6 +559,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourceUriIsMutable();
       resourceUri_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -589,6 +581,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourceUriIsMutable();
       resourceUri_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -607,6 +600,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllResourceUri(java.lang.Iterable<java.lang.String> values) {
       ensureResourceUriIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceUri_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,8 +616,9 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
-      resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceUri_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -646,6 +641,7 @@ public final class DeploymentNote extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureResourceUriIsMutable();
       resourceUri_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

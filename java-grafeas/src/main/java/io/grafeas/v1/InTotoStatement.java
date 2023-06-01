@@ -53,11 +53,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     return new InTotoStatement();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_descriptor;
   }
@@ -72,6 +67,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   private int predicateCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object predicate_;
 
   public enum PredicateCase

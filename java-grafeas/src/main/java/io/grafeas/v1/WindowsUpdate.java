@@ -45,7 +45,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     title_ = "";
     description_ = "";
     categories_ = java.util.Collections.emptyList();
-    kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    kbArticleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     supportUrl_ = "";
   }
 
@@ -53,11 +53,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WindowsUpdate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,11 +137,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Identity();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -902,11 +892,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Category();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1893,7 +1878,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int KB_ARTICLE_IDS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList kbArticleIds_;
+  private com.google.protobuf.LazyStringArrayList kbArticleIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2342,8 +2328,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         categoriesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      kbArticleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       supportUrl_ = "";
       lastPublishedTimestamp_ = null;
       if (lastPublishedTimestampBuilder_ != null) {
@@ -2393,11 +2378,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.categories_ = categoriesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        kbArticleIds_ = kbArticleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.kbArticleIds_ = kbArticleIds_;
     }
 
     private void buildPartial0(io.grafeas.v1.WindowsUpdate result) {
@@ -2410,6 +2390,10 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        kbArticleIds_.makeImmutable();
+        result.kbArticleIds_ = kbArticleIds_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.supportUrl_ = supportUrl_;
@@ -2510,7 +2494,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!other.kbArticleIds_.isEmpty()) {
         if (kbArticleIds_.isEmpty()) {
           kbArticleIds_ = other.kbArticleIds_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureKbArticleIdsIsMutable();
           kbArticleIds_.addAll(other.kbArticleIds_);
@@ -3364,14 +3348,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return categoriesBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList kbArticleIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList kbArticleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureKbArticleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!kbArticleIds_.isModifiable()) {
         kbArticleIds_ = new com.google.protobuf.LazyStringArrayList(kbArticleIds_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -3386,7 +3370,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the kbArticleIds.
      */
     public com.google.protobuf.ProtocolStringList getKbArticleIdsList() {
-      return kbArticleIds_.getUnmodifiableView();
+      kbArticleIds_.makeImmutable();
+      return kbArticleIds_;
     }
     /**
      *
@@ -3455,6 +3440,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureKbArticleIdsIsMutable();
       kbArticleIds_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3477,6 +3463,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureKbArticleIdsIsMutable();
       kbArticleIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3496,6 +3483,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllKbArticleIds(java.lang.Iterable<java.lang.String> values) {
       ensureKbArticleIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kbArticleIds_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3512,8 +3500,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKbArticleIds() {
-      kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kbArticleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -3537,6 +3526,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureKbArticleIdsIsMutable();
       kbArticleIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

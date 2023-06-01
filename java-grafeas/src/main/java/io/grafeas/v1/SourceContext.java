@@ -47,11 +47,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     return new SourceContext();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_SourceContext_descriptor;
   }
@@ -76,6 +71,8 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int contextCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object context_;
 
   public enum ContextCase

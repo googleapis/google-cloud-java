@@ -47,11 +47,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     return new CloudRepoSourceContext();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_CloudRepoSourceContext_descriptor;
   }
@@ -67,6 +62,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   }
 
   private int revisionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object revision_;
 
   public enum RevisionCase
