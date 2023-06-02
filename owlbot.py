@@ -32,20 +32,26 @@ java.common_templates(excludes=[
 # Modify test configs
 # --------------------------------------------------------------------------
 
-# add shared environment variables to test configs
-s.move(
-    ".kokoro/common_env_vars.cfg",
-    ".kokoro/common.cfg",
-    merge=lambda src, dst, _, : f"{dst}\n{src}",
+def _append_if_not_contained(src: str, dest: str, file: str):
+    if src in dest:
+        return dest
+    return f"{dest}\n{src}"
+
+def append_new_content(src: str, dest: str):
+    # add shared environment variables to test configs
+    s.move(
+        src,
+        dest,
+        merge=_append_if_not_contained,
+
 )
+
+append_new_content(".kokoro/common_env_vars.cfg", ".kokoro/common.cfg")
+
 tracked_subdirs = ["continuous", "presubmit", "release", "nightly"]
 for subdir in tracked_subdirs:
     for path, subdirs, files in os.walk(f".kokoro/{subdir}"):
         for name in files:
             if name == "common.cfg":
                 file_path = os.path.join(path, name)
-                s.move(
-                    ".kokoro/common_env_vars.cfg",
-                    file_path,
-                    merge=lambda src, dst, _, : f"{dst}\n{src}",
-                )
+                append_new_content(".kokoro/common_env_vars.cfg", file_path)
