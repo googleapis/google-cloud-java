@@ -28,6 +28,9 @@ java.common_templates(
         ".github/workflows/auto-release.yaml",
         ".github/workflows/samples.yaml",
         "samples/*",
-        "renovate.json"
+        "renovate.json",
+        ".kokoro/presubmit/graalvm-native.cfg",
+        ".kokoro/presubmit/graalvm-native-17.cfg",
+        ".kokoro/presubmit/common.cfg"
     ]
 )
