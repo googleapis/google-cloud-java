@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.5.6](https://github.com/googleapis/java-shared-config/compare/v1.5.5...v1.5.6) (2023-06-02)
+
+
+### Bug Fixes
+
+* Add junit-vintage dep to avoid skipping post-compilation native tests ([#586](https://github.com/googleapis/java-shared-config/issues/586)) ([f6e6f69](https://github.com/googleapis/java-shared-config/commit/f6e6f690d58e2a86db721926049b0132310724bf))
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-shared-config/issues/1744)) ([#556](https://github.com/googleapis/java-shared-config/issues/556)) ([cc433c2](https://github.com/googleapis/java-shared-config/commit/cc433c246f1b6edbc093e6af37aced652d884a65))
+* Remove java-trace checks ([#612](https://github.com/googleapis/java-shared-config/issues/612)) ([cfcdba8](https://github.com/googleapis/java-shared-config/commit/cfcdba834f27b6bb03460cd09f076068f67a892b))
+
+
+### Dependencies
+
+* Update dependency com.google.auto.service:auto-service-annotations to v1.1.0 ([#610](https://github.com/googleapis/java-shared-config/issues/610)) ([aeefcbe](https://github.com/googleapis/java-shared-config/commit/aeefcbec212dc102bd15027984895a4ba51d045f))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.10.0 ([#598](https://github.com/googleapis/java-shared-config/issues/598)) ([29309c3](https://github.com/googleapis/java-shared-config/commit/29309c36cb6ffe2aea221d3cc8cde036441d21b1))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.11.0 ([#602](https://github.com/googleapis/java-shared-config/issues/602)) ([61b9c5f](https://github.com/googleapis/java-shared-config/commit/61b9c5f04422bc8edf8a249e3dfb7290bd188a8d))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.12.0 ([#614](https://github.com/googleapis/java-shared-config/issues/614)) ([8559d0d](https://github.com/googleapis/java-shared-config/commit/8559d0dc634e238ee640d68439839f50a938ce76))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.6.0 ([#554](https://github.com/googleapis/java-shared-config/issues/554)) ([44a77b0](https://github.com/googleapis/java-shared-config/commit/44a77b0faf5b4f3f9208117ccab0a3717d059efd))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.7.0 ([#563](https://github.com/googleapis/java-shared-config/issues/563)) ([5c51e07](https://github.com/googleapis/java-shared-config/commit/5c51e07af8e37019d462211d47307155c630adb9))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.8.1 ([#573](https://github.com/googleapis/java-shared-config/issues/573)) ([e5c6e54](https://github.com/googleapis/java-shared-config/commit/e5c6e5406488c0a204ef2afcbe8582176fa373e4))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.9.2 ([#579](https://github.com/googleapis/java-shared-config/issues/579)) ([a67a7c8](https://github.com/googleapis/java-shared-config/commit/a67a7c8d05bab4c8dbeaf5b5874170084e75abb7))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.9.3 ([#582](https://github.com/googleapis/java-shared-config/issues/582)) ([c87ff96](https://github.com/googleapis/java-shared-config/commit/c87ff962304efd82e2f79458976c627d1ff622d8))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.21 ([#593](https://github.com/googleapis/java-shared-config/issues/593)) ([12ac165](https://github.com/googleapis/java-shared-config/commit/12ac165f36b6b5257f7928f8a2c21ae936af3794))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.22 ([#603](https://github.com/googleapis/java-shared-config/issues/603)) ([9ea7833](https://github.com/googleapis/java-shared-config/commit/9ea783312cc9e136f8bdb6f4dae5591221e42773))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.2 ([#560](https://github.com/googleapis/java-shared-config/issues/560)) ([60a80bd](https://github.com/googleapis/java-shared-config/commit/60a80bd272dd7483db8e4a5773125a9c57b9899e))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.3 ([#597](https://github.com/googleapis/java-shared-config/issues/597)) ([61064b9](https://github.com/googleapis/java-shared-config/commit/61064b9c767c528139b025e3d629d12fc64d7809))
+* Update doclet version to 1.9.0 ([#611](https://github.com/googleapis/java-shared-config/issues/611)) ([cd8c762](https://github.com/googleapis/java-shared-config/commit/cd8c76208ab3d10ab451545a180474c6270368d3))
+* Update graalvm native-image dependencies to v0.9.19 ([#550](https://github.com/googleapis/java-shared-config/issues/550)) ([3313229](https://github.com/googleapis/java-shared-config/commit/3313229155be704b50e499379936e16598a348a6))
+* Update graalvm native-image dependencies to v0.9.20 ([#568](https://github.com/googleapis/java-shared-config/issues/568)) ([79d7b4b](https://github.com/googleapis/java-shared-config/commit/79d7b4be908cc9e24a48d89eeb97b0c6155493d1))
+
 ## [1.5.5](https://github.com/googleapis/java-shared-config/compare/v1.5.4...v1.5.5) (2022-11-28)
 
 
