@@ -47,7 +47,6 @@ branchProtectionRules:
     - "build (11, java-bigquery, test)"
     - "build (11, java-bigquery, lint)"
     - "build (11, java-bigquery, clirr)"
-    - "graalvm (11, java-orgpolicy)"
     - "cla/google"
 - pattern: java7
   # Can admins overwrite branch protection.
