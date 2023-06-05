@@ -502,14 +502,6 @@ mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-ja
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
 "${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/descriptor_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/duration_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/any_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/timestamp_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/struct_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/empty_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/field_mask_proto" \
-"--proto_path=${LIBRARY_GEN_OUT}/com_google_protobuf/wrappers_proto" \
 "-Igoogle/monitoring/v3/alert.proto=google/monitoring/v3/alert.proto" \
 "-Igoogle/monitoring/v3/alert_service.proto=google/monitoring/v3/alert_service.proto" \
 "-Igoogle/monitoring/v3/common.proto=google/monitoring/v3/common.proto" \
