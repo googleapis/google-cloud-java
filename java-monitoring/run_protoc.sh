@@ -4,6 +4,7 @@ set -e
 
 LIBRARY_GEN_OUT=$(pwd)/../library_gen_out
 
+mkdir -p "${LIBRARY_GEN_OUT}"/com_google_protobuf
 mkdir -p "${LIBRARY_GEN_OUT}"/google/api
 mkdir -p "${LIBRARY_GEN_OUT}"/google/rpc
 mkdir -p "${LIBRARY_GEN_OUT}"/google/type
