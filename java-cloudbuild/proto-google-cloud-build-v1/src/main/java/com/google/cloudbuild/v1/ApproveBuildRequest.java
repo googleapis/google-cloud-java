@@ -47,11 +47,6 @@ public final class ApproveBuildRequest extends com.google.protobuf.GeneratedMess
     return new ApproveBuildRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_ApproveBuildRequest_descriptor;

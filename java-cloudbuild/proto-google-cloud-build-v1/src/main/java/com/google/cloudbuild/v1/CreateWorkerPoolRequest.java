@@ -48,11 +48,6 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
     return new CreateWorkerPoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor;
@@ -191,6 +186,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. Immutable. The ID to use for the `WorkerPool`, which will become
    * the final component of the resource name.
+   *
    * This value should be 1-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -219,6 +215,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. Immutable. The ID to use for the `WorkerPool`, which will become
    * the final component of the resource name.
+   *
    * This value should be 1-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -1009,6 +1006,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Immutable. The ID to use for the `WorkerPool`, which will become
      * the final component of the resource name.
+     *
      * This value should be 1-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1036,6 +1034,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Immutable. The ID to use for the `WorkerPool`, which will become
      * the final component of the resource name.
+     *
      * This value should be 1-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1063,6 +1062,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Immutable. The ID to use for the `WorkerPool`, which will become
      * the final component of the resource name.
+     *
      * This value should be 1-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1089,6 +1089,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Immutable. The ID to use for the `WorkerPool`, which will become
      * the final component of the resource name.
+     *
      * This value should be 1-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1111,6 +1112,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Immutable. The ID to use for the `WorkerPool`, which will become
      * the final component of the resource name.
+     *
      * This value should be 1-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>

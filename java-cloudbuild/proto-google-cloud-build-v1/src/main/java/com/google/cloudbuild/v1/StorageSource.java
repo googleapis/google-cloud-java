@@ -48,11 +48,6 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     return new StorageSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_StorageSource_descriptor;
@@ -132,6 +127,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Google Cloud Storage object containing the source.
+   *
    * This object must be a gzipped archive file (`.tar.gz`) containing source to
    * build.
    * </pre>
@@ -157,6 +153,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Google Cloud Storage object containing the source.
+   *
    * This object must be a gzipped archive file (`.tar.gz`) containing source to
    * build.
    * </pre>
@@ -705,6 +702,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Cloud Storage object containing the source.
+     *
      * This object must be a gzipped archive file (`.tar.gz`) containing source to
      * build.
      * </pre>
@@ -729,6 +727,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Cloud Storage object containing the source.
+     *
      * This object must be a gzipped archive file (`.tar.gz`) containing source to
      * build.
      * </pre>
@@ -753,6 +752,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Cloud Storage object containing the source.
+     *
      * This object must be a gzipped archive file (`.tar.gz`) containing source to
      * build.
      * </pre>
@@ -776,6 +776,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Cloud Storage object containing the source.
+     *
      * This object must be a gzipped archive file (`.tar.gz`) containing source to
      * build.
      * </pre>
@@ -795,6 +796,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Google Cloud Storage object containing the source.
+     *
      * This object must be a gzipped archive file (`.tar.gz`) containing source to
      * build.
      * </pre>

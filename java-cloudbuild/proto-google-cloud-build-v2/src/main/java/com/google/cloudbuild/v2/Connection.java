@@ -49,11 +49,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return new Connection();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v2.RepositoryManagerProto
         .internal_static_google_devtools_cloudbuild_v2_Connection_descriptor;
@@ -81,6 +76,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int connectionConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectionConfig_;
 
   public enum ConnectionConfigCase

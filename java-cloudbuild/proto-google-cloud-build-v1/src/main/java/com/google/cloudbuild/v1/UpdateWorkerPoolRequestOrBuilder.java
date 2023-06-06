@@ -28,6 +28,7 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    * <pre>
    * Required. The `WorkerPool` to update.
+   *
    * The `name` field is used to identify the `WorkerPool` to update.
    * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    * <pre>
    * Required. The `WorkerPool` to update.
+   *
    * The `name` field is used to identify the `WorkerPool` to update.
    * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    * <pre>
    * Required. The `WorkerPool` to update.
+   *
    * The `name` field is used to identify the `WorkerPool` to update.
    * Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>

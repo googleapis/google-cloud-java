@@ -172,5 +172,5 @@ public interface SourceOrBuilder
    */
   com.google.cloudbuild.v1.StorageSourceManifestOrBuilder getStorageSourceManifestOrBuilder();
 
-  public com.google.cloudbuild.v1.Source.SourceCase getSourceCase();
+  com.google.cloudbuild.v1.Source.SourceCase getSourceCase();
 }

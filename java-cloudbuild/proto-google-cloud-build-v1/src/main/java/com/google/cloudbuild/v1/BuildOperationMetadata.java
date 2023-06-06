@@ -45,11 +45,6 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
     return new BuildOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_BuildOperationMetadata_descriptor;

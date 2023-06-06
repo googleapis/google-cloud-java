@@ -165,5 +165,5 @@ public interface GitHubEventsConfigOrBuilder
    */
   com.google.cloudbuild.v1.PushFilterOrBuilder getPushOrBuilder();
 
-  public com.google.cloudbuild.v1.GitHubEventsConfig.EventCase getEventCase();
+  com.google.cloudbuild.v1.GitHubEventsConfig.EventCase getEventCase();
 }

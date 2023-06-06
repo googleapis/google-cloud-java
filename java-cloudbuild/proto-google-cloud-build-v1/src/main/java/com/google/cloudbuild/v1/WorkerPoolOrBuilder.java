@@ -387,5 +387,5 @@ public interface WorkerPoolOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloudbuild.v1.WorkerPool.ConfigCase getConfigCase();
+  com.google.cloudbuild.v1.WorkerPool.ConfigCase getConfigCase();
 }

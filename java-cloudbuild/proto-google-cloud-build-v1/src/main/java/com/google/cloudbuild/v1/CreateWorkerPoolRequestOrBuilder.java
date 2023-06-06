@@ -101,6 +101,7 @@ public interface CreateWorkerPoolRequestOrBuilder
    * <pre>
    * Required. Immutable. The ID to use for the `WorkerPool`, which will become
    * the final component of the resource name.
+   *
    * This value should be 1-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -118,6 +119,7 @@ public interface CreateWorkerPoolRequestOrBuilder
    * <pre>
    * Required. Immutable. The ID to use for the `WorkerPool`, which will become
    * the final component of the resource name.
+   *
    * This value should be 1-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

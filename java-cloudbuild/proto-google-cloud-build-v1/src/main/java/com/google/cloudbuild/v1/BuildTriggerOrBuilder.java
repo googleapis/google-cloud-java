@@ -108,6 +108,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * User-assigned name of the trigger. Must be unique within the project.
    * Trigger names must meet the following requirements:
+   *
    * + They must contain only alphanumeric characters and dashes.
    * + They can be 1-64 characters long.
    * + They must begin and end with an alphanumeric character.
@@ -124,6 +125,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * User-assigned name of the trigger. Must be unique within the project.
    * Trigger names must meet the following requirements:
+   *
    * + They must contain only alphanumeric characters and dashes.
    * + They can be 1-64 characters long.
    * + They must begin and end with an alphanumeric character.
@@ -191,9 +193,11 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -207,9 +211,11 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -223,9 +229,11 @@ public interface BuildTriggerOrBuilder
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -239,6 +247,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -253,6 +262,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -267,6 +277,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -356,10 +367,12 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * Autodetect build configuration.  The following precedence is used (case
    * insensitive):
+   *
    * 1. cloudbuild.yaml
    * 2. cloudbuild.yml
    * 3. cloudbuild.json
    * 4. Dockerfile
+   *
    * Currently only available for GitHub App Triggers.
    * </pre>
    *
@@ -374,10 +387,12 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * Autodetect build configuration.  The following precedence is used (case
    * insensitive):
+   *
    * 1. cloudbuild.yaml
    * 2. cloudbuild.yml
    * 3. cloudbuild.json
    * 4. Dockerfile
+   *
    * Currently only available for GitHub App Triggers.
    * </pre>
    *
@@ -582,8 +597,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -600,8 +617,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -618,8 +637,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -637,8 +658,10 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -658,6 +681,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -676,6 +700,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -694,6 +719,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -713,6 +739,7 @@ public interface BuildTriggerOrBuilder
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -784,5 +811,5 @@ public interface BuildTriggerOrBuilder
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
 
-  public com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
+  com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
 }

@@ -49,11 +49,6 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
     return new ListBuildTriggersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersRequest_descriptor;

@@ -176,6 +176,7 @@ public interface ResultsOrBuilder
    * <pre>
    * List of build step outputs, produced by builder images, in the order
    * corresponding to build step indices.
+   *
    * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
    * can produce this output by writing to `$BUILDER_OUTPUT/output`.
    * Only the first 4KB of data is stored.
@@ -192,6 +193,7 @@ public interface ResultsOrBuilder
    * <pre>
    * List of build step outputs, produced by builder images, in the order
    * corresponding to build step indices.
+   *
    * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
    * can produce this output by writing to `$BUILDER_OUTPUT/output`.
    * Only the first 4KB of data is stored.
@@ -208,6 +210,7 @@ public interface ResultsOrBuilder
    * <pre>
    * List of build step outputs, produced by builder images, in the order
    * corresponding to build step indices.
+   *
    * [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders)
    * can produce this output by writing to `$BUILDER_OUTPUT/output`.
    * Only the first 4KB of data is stored.

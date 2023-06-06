@@ -356,5 +356,5 @@ public interface ConnectionOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloudbuild.v2.Connection.ConnectionConfigCase getConnectionConfigCase();
+  com.google.cloudbuild.v2.Connection.ConnectionConfigCase getConnectionConfigCase();
 }

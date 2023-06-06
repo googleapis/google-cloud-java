@@ -49,11 +49,6 @@ public final class OAuthCredential extends com.google.protobuf.GeneratedMessageV
     return new OAuthCredential();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v2.RepositoryManagerProto
         .internal_static_google_devtools_cloudbuild_v2_OAuthCredential_descriptor;

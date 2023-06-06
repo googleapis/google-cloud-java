@@ -49,11 +49,6 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
     return new GetBuildRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_GetBuildRequest_descriptor;

@@ -93,5 +93,5 @@ public interface WebhookConfigOrBuilder
    */
   com.google.cloudbuild.v1.WebhookConfig.State getState();
 
-  public com.google.cloudbuild.v1.WebhookConfig.AuthMethodCase getAuthMethodCase();
+  com.google.cloudbuild.v1.WebhookConfig.AuthMethodCase getAuthMethodCase();
 }

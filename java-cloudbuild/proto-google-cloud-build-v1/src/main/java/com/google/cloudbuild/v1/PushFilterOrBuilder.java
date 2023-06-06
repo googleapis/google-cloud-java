@@ -28,6 +28,7 @@ public interface PushFilterOrBuilder
    *
    * <pre>
    * Regexes matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -42,6 +43,7 @@ public interface PushFilterOrBuilder
    *
    * <pre>
    * Regexes matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -56,6 +58,7 @@ public interface PushFilterOrBuilder
    *
    * <pre>
    * Regexes matching branches to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -71,6 +74,7 @@ public interface PushFilterOrBuilder
    *
    * <pre>
    * Regexes matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -85,6 +89,7 @@ public interface PushFilterOrBuilder
    *
    * <pre>
    * Regexes matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -99,6 +104,7 @@ public interface PushFilterOrBuilder
    *
    * <pre>
    * Regexes matching tags to build.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -123,5 +129,5 @@ public interface PushFilterOrBuilder
    */
   boolean getInvertRegex();
 
-  public com.google.cloudbuild.v1.PushFilter.GitRefCase getGitRefCase();
+  com.google.cloudbuild.v1.PushFilter.GitRefCase getGitRefCase();
 }

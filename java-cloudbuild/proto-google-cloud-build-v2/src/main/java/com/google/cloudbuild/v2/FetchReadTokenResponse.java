@@ -47,11 +47,6 @@ public final class FetchReadTokenResponse extends com.google.protobuf.GeneratedM
     return new FetchReadTokenResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v2.RepositoryManagerProto
         .internal_static_google_devtools_cloudbuild_v2_FetchReadTokenResponse_descriptor;

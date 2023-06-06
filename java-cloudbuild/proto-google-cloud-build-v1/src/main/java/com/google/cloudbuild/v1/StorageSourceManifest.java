@@ -50,11 +50,6 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
     return new StorageSourceManifest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_StorageSourceManifest_descriptor;
@@ -134,6 +129,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Google Cloud Storage object containing the source manifest.
+   *
    * This object must be a JSON file.
    * </pre>
    *
@@ -158,6 +154,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Google Cloud Storage object containing the source manifest.
+   *
    * This object must be a JSON file.
    * </pre>
    *
@@ -708,6 +705,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Google Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -731,6 +729,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Google Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -754,6 +753,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Google Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -776,6 +776,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Google Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *
@@ -794,6 +795,7 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Google Cloud Storage object containing the source manifest.
+     *
      * This object must be a JSON file.
      * </pre>
      *

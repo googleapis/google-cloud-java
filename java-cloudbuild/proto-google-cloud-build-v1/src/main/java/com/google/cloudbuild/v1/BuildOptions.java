@@ -45,8 +45,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     logStreamingOption_ = 0;
     workerPool_ = "";
     logging_ = 0;
-    env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    env_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
     volumes_ = java.util.Collections.emptyList();
     defaultLogsBucketBehavior_ = 0;
   }
@@ -55,11 +55,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BuildOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1101,6 +1096,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * The `WorkerPool` resource to execute the build on.
      * You must have `cloudbuild.workerpools.use` on the project hosting the
      * WorkerPool.
+     *
      * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
      * </pre>
      *
@@ -1116,6 +1112,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * The `WorkerPool` resource to execute the build on.
      * You must have `cloudbuild.workerpools.use` on the project hosting the
      * WorkerPool.
+     *
      * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
      * </pre>
      *
@@ -1130,6 +1127,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Details about how a build should be executed on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -1155,11 +1153,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PoolOption();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1188,6 +1181,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * The `WorkerPool` resource to execute the build on.
      * You must have `cloudbuild.workerpools.use` on the project hosting the
      * WorkerPool.
+     *
      * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
      * </pre>
      *
@@ -1214,6 +1208,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * The `WorkerPool` resource to execute the build on.
      * You must have `cloudbuild.workerpools.use` on the project hosting the
      * WorkerPool.
+     *
      * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
      * </pre>
      *
@@ -1399,6 +1394,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Details about how a build should be executed on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -1591,6 +1587,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
        * The `WorkerPool` resource to execute the build on.
        * You must have `cloudbuild.workerpools.use` on the project hosting the
        * WorkerPool.
+       *
        * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
        * </pre>
        *
@@ -1616,6 +1613,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
        * The `WorkerPool` resource to execute the build on.
        * You must have `cloudbuild.workerpools.use` on the project hosting the
        * WorkerPool.
+       *
        * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
        * </pre>
        *
@@ -1641,6 +1639,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
        * The `WorkerPool` resource to execute the build on.
        * You must have `cloudbuild.workerpools.use` on the project hosting the
        * WorkerPool.
+       *
        * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
        * </pre>
        *
@@ -1665,6 +1664,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
        * The `WorkerPool` resource to execute the build on.
        * You must have `cloudbuild.workerpools.use` on the project hosting the
        * WorkerPool.
+       *
        * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
        * </pre>
        *
@@ -1685,6 +1685,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
        * The `WorkerPool` resource to execute the build on.
        * You must have `cloudbuild.workerpools.use` on the project hosting the
        * WorkerPool.
+       *
        * Format projects/{project}/locations/{location}/workerPools/{workerPoolId}
        * </pre>
        *
@@ -1971,6 +1972,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Option to specify behavior when there is an error in the substitution
    * checks.
+   *
    * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
    * be overridden in the build configuration file.
    * </pre>
@@ -1990,6 +1992,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Option to specify behavior when there is an error in the substitution
    * checks.
+   *
    * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
    * be overridden in the build configuration file.
    * </pre>
@@ -2016,6 +2019,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Option to specify whether or not to apply bash style string
    * operations to the substitutions.
+   *
    * NOTE: this is always enabled for triggered builds and cannot be
    * overridden in the build configuration file.
    * </pre>
@@ -2134,6 +2138,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Specification for execution on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -2154,6 +2159,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Specification for execution on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -2176,6 +2182,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Specification for execution on a `WorkerPool`.
+   *
    * See [running builds in a private
    * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
    * for more information.
@@ -2232,7 +2239,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   public static final int ENV_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList env_;
+  private com.google.protobuf.LazyStringArrayList env_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2240,6 +2248,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -2258,6 +2267,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -2276,6 +2286,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -2295,6 +2306,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * A list of global environment variable definitions that will exist for all
    * build steps in this build. If a variable is defined in both globally and in
    * a build step, the variable will use the build step value.
+   *
    * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
    * being given the value "VALUE".
    * </pre>
@@ -2311,7 +2323,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
   public static final int SECRET_ENV_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList secretEnv_;
+  private com.google.protobuf.LazyStringArrayList secretEnv_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2392,10 +2405,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -2411,10 +2426,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -2431,10 +2448,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -2450,10 +2469,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -2469,10 +2490,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Global list of volumes to mount for ALL build steps
+   *
    * Each volume is created as an empty volume prior to starting the build
    * process. Upon completion of the build, volumes and their contents are
    * discarded. Global volume names and paths cannot conflict with the volumes
    * defined a build step.
+   *
    * Using a global volume in a build with only one step is not valid as
    * it is indicative of a build request with an incorrect configuration.
    * </pre>
@@ -2908,10 +2931,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         poolBuilder_ = null;
       }
       logging_ = 0;
-      env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
-      secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      env_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
@@ -2961,16 +2982,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.sourceProvenanceHash_ = sourceProvenanceHash_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        env_ = env_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.env_ = env_;
-      if (((bitField0_ & 0x00000800) != 0)) {
-        secretEnv_ = secretEnv_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.secretEnv_ = secretEnv_;
       if (volumesBuilder_ == null) {
         if (((bitField0_ & 0x00001000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
@@ -3010,6 +3021,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.logging_ = logging_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        env_.makeImmutable();
+        result.env_ = env_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        secretEnv_.makeImmutable();
+        result.secretEnv_ = secretEnv_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.defaultLogsBucketBehavior_ = defaultLogsBucketBehavior_;
@@ -3103,7 +3122,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -3113,7 +3132,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       if (!other.secretEnv_.isEmpty()) {
         if (secretEnv_.isEmpty()) {
           secretEnv_ = other.secretEnv_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ |= 0x00000800;
         } else {
           ensureSecretEnvIsMutable();
           secretEnv_.addAll(other.secretEnv_);
@@ -3800,6 +3819,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify behavior when there is an error in the substitution
      * checks.
+     *
      * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
      * be overridden in the build configuration file.
      * </pre>
@@ -3819,6 +3839,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify behavior when there is an error in the substitution
      * checks.
+     *
      * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
      * be overridden in the build configuration file.
      * </pre>
@@ -3841,6 +3862,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify behavior when there is an error in the substitution
      * checks.
+     *
      * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
      * be overridden in the build configuration file.
      * </pre>
@@ -3864,6 +3886,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify behavior when there is an error in the substitution
      * checks.
+     *
      * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
      * be overridden in the build configuration file.
      * </pre>
@@ -3890,6 +3913,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify behavior when there is an error in the substitution
      * checks.
+     *
      * NOTE: this is always set to ALLOW_LOOSE for triggered builds and cannot
      * be overridden in the build configuration file.
      * </pre>
@@ -3913,6 +3937,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify whether or not to apply bash style string
      * operations to the substitutions.
+     *
      * NOTE: this is always enabled for triggered builds and cannot be
      * overridden in the build configuration file.
      * </pre>
@@ -3931,6 +3956,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify whether or not to apply bash style string
      * operations to the substitutions.
+     *
      * NOTE: this is always enabled for triggered builds and cannot be
      * overridden in the build configuration file.
      * </pre>
@@ -3953,6 +3979,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Option to specify whether or not to apply bash style string
      * operations to the substitutions.
+     *
      * NOTE: this is always enabled for triggered builds and cannot be
      * overridden in the build configuration file.
      * </pre>
@@ -4208,6 +4235,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4227,6 +4255,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4252,6 +4281,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4279,6 +4309,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4304,6 +4335,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4334,6 +4366,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4358,6 +4391,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4377,6 +4411,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4400,6 +4435,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Specification for execution on a `WorkerPool`.
+     *
      * See [running builds in a private
      * pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool)
      * for more information.
@@ -4523,13 +4559,14 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList env_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!env_.isModifiable()) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -4538,6 +4575,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4547,7 +4585,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the env.
      */
     public com.google.protobuf.ProtocolStringList getEnvList() {
-      return env_.getUnmodifiableView();
+      env_.makeImmutable();
+      return env_;
     }
     /**
      *
@@ -4556,6 +4595,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4574,6 +4614,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4593,6 +4634,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4612,6 +4654,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4628,6 +4671,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnvIsMutable();
       env_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4638,6 +4682,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4653,6 +4698,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnvIsMutable();
       env_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4663,6 +4709,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4675,6 +4722,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEnv(java.lang.Iterable<java.lang.String> values) {
       ensureEnvIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, env_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4685,6 +4733,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4694,8 +4743,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnv() {
-      env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      env_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -4706,6 +4756,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * A list of global environment variable definitions that will exist for all
      * build steps in this build. If a variable is defined in both globally and in
      * a build step, the variable will use the build step value.
+     *
      * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
      * being given the value "VALUE".
      * </pre>
@@ -4722,18 +4773,19 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEnvIsMutable();
       env_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList secretEnv_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList secretEnv_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSecretEnvIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!secretEnv_.isModifiable()) {
         secretEnv_ = new com.google.protobuf.LazyStringArrayList(secretEnv_);
-        bitField0_ |= 0x00000800;
       }
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -4750,7 +4802,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the secretEnv.
      */
     public com.google.protobuf.ProtocolStringList getSecretEnvList() {
-      return secretEnv_.getUnmodifiableView();
+      secretEnv_.makeImmutable();
+      return secretEnv_;
     }
     /**
      *
@@ -4827,6 +4880,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecretEnvIsMutable();
       secretEnv_.set(index, value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4851,6 +4905,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSecretEnvIsMutable();
       secretEnv_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4872,6 +4927,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSecretEnv(java.lang.Iterable<java.lang.String> values) {
       ensureSecretEnvIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secretEnv_);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4890,8 +4946,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecretEnv() {
-      secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000800);
+      ;
       onChanged();
       return this;
     }
@@ -4917,6 +4974,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSecretEnvIsMutable();
       secretEnv_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4942,10 +5000,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -4964,10 +5024,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -4986,10 +5048,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5008,10 +5072,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5036,10 +5102,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5061,10 +5129,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5089,10 +5159,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5117,10 +5189,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5142,10 +5216,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5167,10 +5243,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5193,10 +5271,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5218,10 +5298,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5243,10 +5325,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5261,10 +5345,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5283,10 +5369,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5306,10 +5394,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5325,10 +5415,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>
@@ -5344,10 +5436,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Global list of volumes to mount for ALL build steps
+     *
      * Each volume is created as an empty volume prior to starting the build
      * process. Upon completion of the build, volumes and their contents are
      * discarded. Global volume names and paths cannot conflict with the volumes
      * defined a build step.
+     *
      * Using a global volume in a build with only one step is not valid as
      * it is indicative of a build request with an incorrect configuration.
      * </pre>

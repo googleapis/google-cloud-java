@@ -43,9 +43,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     description_ = "";
     name_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    ignoredFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    includedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
     filter_ = "";
     serviceAccount_ = "";
   }
@@ -54,11 +54,6 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BuildTrigger();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -88,6 +83,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int buildTemplateCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object buildTemplate_;
 
   public enum BuildTemplateCase
@@ -304,6 +301,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-assigned name of the trigger. Must be unique within the project.
    * Trigger names must meet the following requirements:
+   *
    * + They must contain only alphanumeric characters and dashes.
    * + They can be 1-64 characters long.
    * + They must begin and end with an alphanumeric character.
@@ -331,6 +329,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-assigned name of the trigger. Must be unique within the project.
    * Trigger names must meet the following requirements:
+   *
    * + They must contain only alphanumeric characters and dashes.
    * + They can be 1-64 characters long.
    * + They must begin and end with an alphanumeric character.
@@ -356,7 +355,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 19;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -423,9 +423,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -442,9 +444,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -463,9 +467,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Template describing the types of source changes to trigger a build.
+   *
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   *
    * Mutually exclusive with `github`.
    * </pre>
    *
@@ -486,6 +492,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -503,6 +510,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -522,6 +530,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   *
    * Mutually exclusive with `trigger_template`.
    * </pre>
    *
@@ -647,10 +656,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Autodetect build configuration.  The following precedence is used (case
    * insensitive):
+   *
    * 1. cloudbuild.yaml
    * 2. cloudbuild.yml
    * 3. cloudbuild.json
    * 4. Dockerfile
+   *
    * Currently only available for GitHub App Triggers.
    * </pre>
    *
@@ -668,10 +679,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Autodetect build configuration.  The following precedence is used (case
    * insensitive):
+   *
    * 1. cloudbuild.yaml
    * 2. cloudbuild.yml
    * 3. cloudbuild.json
    * 4. Dockerfile
+   *
    * Currently only available for GitHub App Triggers.
    * </pre>
    *
@@ -989,15 +1002,18 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
   public static final int IGNORED_FILES_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ignoredFiles_;
+  private com.google.protobuf.LazyStringArrayList ignoredFiles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -1016,8 +1032,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -1036,8 +1054,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -1057,8 +1077,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ignored_files and included_files are file glob matches using
    * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+   *
    * If ignored_files and changed files are both empty, then they are
    * not used to determine whether or not to trigger a build.
+   *
    * If ignored_files is not empty, then we ignore any files that match
    * any of the ignored_file globs. If the change has no files that are
    * outside of the ignored_files globs, then we do not trigger a build.
@@ -1076,7 +1098,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
   public static final int INCLUDED_FILES_FIELD_NUMBER = 16;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList includedFiles_;
+  private com.google.protobuf.LazyStringArrayList includedFiles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1084,6 +1107,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -1104,6 +1128,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -1124,6 +1149,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -1145,6 +1171,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is empty, then as far as this filter is
    * concerned, we should trigger the build.
+   *
    * If any of the files altered in the commit pass the ignored_files
    * filter and included_files is not empty, then we make sure that at
    * least one of those files matches a included_files glob. If not,
@@ -1732,8 +1759,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       id_ = "";
       description_ = "";
       name_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       triggerTemplate_ = null;
       if (triggerTemplateBuilder_ != null) {
         triggerTemplateBuilder_.dispose();
@@ -1764,10 +1790,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       disabled_ = false;
       internalGetMutableSubstitutions().clear();
-      ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00008000);
-      includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      ignoredFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       filter_ = "";
       serviceAccount_ = "";
       buildTemplateCase_ = 0;
@@ -1799,31 +1823,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.BuildTrigger buildPartial() {
       com.google.cloudbuild.v1.BuildTrigger result =
           new com.google.cloudbuild.v1.BuildTrigger(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloudbuild.v1.BuildTrigger result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.tags_ = tags_;
-      if (((bitField0_ & 0x00008000) != 0)) {
-        ignoredFiles_ = ignoredFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00008000);
-      }
-      result.ignoredFiles_ = ignoredFiles_;
-      if (((bitField0_ & 0x00010000) != 0)) {
-        includedFiles_ = includedFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00010000);
-      }
-      result.includedFiles_ = includedFiles_;
     }
 
     private void buildPartial0(com.google.cloudbuild.v1.BuildTrigger result) {
@@ -1839,6 +1844,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.triggerTemplate_ =
@@ -1864,6 +1873,14 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.substitutions_ = internalGetSubstitutions();
         result.substitutions_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        ignoredFiles_.makeImmutable();
+        result.ignoredFiles_ = ignoredFiles_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        includedFiles_.makeImmutable();
+        result.includedFiles_ = includedFiles_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.filter_ = filter_;
@@ -1949,7 +1966,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1979,7 +1996,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.ignoredFiles_.isEmpty()) {
         if (ignoredFiles_.isEmpty()) {
           ignoredFiles_ = other.ignoredFiles_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ |= 0x00008000;
         } else {
           ensureIgnoredFilesIsMutable();
           ignoredFiles_.addAll(other.ignoredFiles_);
@@ -1989,7 +2006,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.includedFiles_.isEmpty()) {
         if (includedFiles_.isEmpty()) {
           includedFiles_ = other.includedFiles_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ |= 0x00010000;
         } else {
           ensureIncludedFilesIsMutable();
           includedFiles_.addAll(other.includedFiles_);
@@ -2547,6 +2564,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-assigned name of the trigger. Must be unique within the project.
      * Trigger names must meet the following requirements:
+     *
      * + They must contain only alphanumeric characters and dashes.
      * + They can be 1-64 characters long.
      * + They must begin and end with an alphanumeric character.
@@ -2573,6 +2591,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-assigned name of the trigger. Must be unique within the project.
      * Trigger names must meet the following requirements:
+     *
      * + They must contain only alphanumeric characters and dashes.
      * + They can be 1-64 characters long.
      * + They must begin and end with an alphanumeric character.
@@ -2599,6 +2618,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-assigned name of the trigger. Must be unique within the project.
      * Trigger names must meet the following requirements:
+     *
      * + They must contain only alphanumeric characters and dashes.
      * + They can be 1-64 characters long.
      * + They must begin and end with an alphanumeric character.
@@ -2624,6 +2644,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-assigned name of the trigger. Must be unique within the project.
      * Trigger names must meet the following requirements:
+     *
      * + They must contain only alphanumeric characters and dashes.
      * + They can be 1-64 characters long.
      * + They must begin and end with an alphanumeric character.
@@ -2645,6 +2666,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-assigned name of the trigger. Must be unique within the project.
      * Trigger names must meet the following requirements:
+     *
      * + They must contain only alphanumeric characters and dashes.
      * + They can be 1-64 characters long.
      * + They must begin and end with an alphanumeric character.
@@ -2666,14 +2688,14 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2687,7 +2709,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -2752,6 +2775,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2773,6 +2797,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2791,6 +2816,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2806,8 +2832,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2830,6 +2857,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2845,9 +2873,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -2863,9 +2893,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -2887,9 +2919,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -2913,9 +2947,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -2936,9 +2972,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -2965,9 +3003,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -2988,9 +3028,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -3006,9 +3048,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -3028,9 +3072,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Template describing the types of source changes to trigger a build.
+     *
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     *
      * Mutually exclusive with `github`.
      * </pre>
      *
@@ -3065,6 +3111,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3081,6 +3128,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3103,6 +3151,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3127,6 +3176,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3148,6 +3198,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3175,6 +3226,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3196,6 +3248,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3212,6 +3265,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3232,6 +3286,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     *
      * Mutually exclusive with `trigger_template`.
      * </pre>
      *
@@ -3645,10 +3700,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Autodetect build configuration.  The following precedence is used (case
      * insensitive):
+     *
      * 1. cloudbuild.yaml
      * 2. cloudbuild.yml
      * 3. cloudbuild.json
      * 4. Dockerfile
+     *
      * Currently only available for GitHub App Triggers.
      * </pre>
      *
@@ -3665,10 +3722,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Autodetect build configuration.  The following precedence is used (case
      * insensitive):
+     *
      * 1. cloudbuild.yaml
      * 2. cloudbuild.yml
      * 3. cloudbuild.json
      * 4. Dockerfile
+     *
      * Currently only available for GitHub App Triggers.
      * </pre>
      *
@@ -3688,10 +3747,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Autodetect build configuration.  The following precedence is used (case
      * insensitive):
+     *
      * 1. cloudbuild.yaml
      * 2. cloudbuild.yml
      * 3. cloudbuild.json
      * 4. Dockerfile
+     *
      * Currently only available for GitHub App Triggers.
      * </pre>
      *
@@ -3713,10 +3774,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Autodetect build configuration.  The following precedence is used (case
      * insensitive):
+     *
      * 1. cloudbuild.yaml
      * 2. cloudbuild.yml
      * 3. cloudbuild.json
      * 4. Dockerfile
+     *
      * Currently only available for GitHub App Triggers.
      * </pre>
      *
@@ -4506,14 +4569,14 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ignoredFiles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ignoredFiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIgnoredFilesIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!ignoredFiles_.isModifiable()) {
         ignoredFiles_ = new com.google.protobuf.LazyStringArrayList(ignoredFiles_);
-        bitField0_ |= 0x00008000;
       }
+      bitField0_ |= 0x00008000;
     }
     /**
      *
@@ -4521,8 +4584,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4533,7 +4598,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ignoredFiles.
      */
     public com.google.protobuf.ProtocolStringList getIgnoredFilesList() {
-      return ignoredFiles_.getUnmodifiableView();
+      ignoredFiles_.makeImmutable();
+      return ignoredFiles_;
     }
     /**
      *
@@ -4541,8 +4607,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4561,8 +4629,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4582,8 +4652,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4603,8 +4675,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4622,6 +4696,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIgnoredFilesIsMutable();
       ignoredFiles_.set(index, value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4631,8 +4706,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4649,6 +4726,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIgnoredFilesIsMutable();
       ignoredFiles_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4658,8 +4736,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4673,6 +4753,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIgnoredFiles(java.lang.Iterable<java.lang.String> values) {
       ensureIgnoredFilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ignoredFiles_);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4682,8 +4763,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4694,8 +4777,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIgnoredFiles() {
-      ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ignoredFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00008000);
+      ;
       onChanged();
       return this;
     }
@@ -4705,8 +4789,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ignored_files and included_files are file glob matches using
      * https://golang.org/pkg/path/filepath/#Match extended with support for "**".
+     *
      * If ignored_files and changed files are both empty, then they are
      * not used to determine whether or not to trigger a build.
+     *
      * If ignored_files is not empty, then we ignore any files that match
      * any of the ignored_file globs. If the change has no files that are
      * outside of the ignored_files globs, then we do not trigger a build.
@@ -4724,18 +4810,19 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIgnoredFilesIsMutable();
       ignoredFiles_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList includedFiles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList includedFiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIncludedFilesIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!includedFiles_.isModifiable()) {
         includedFiles_ = new com.google.protobuf.LazyStringArrayList(includedFiles_);
-        bitField0_ |= 0x00010000;
       }
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -4744,6 +4831,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4755,7 +4843,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the includedFiles.
      */
     public com.google.protobuf.ProtocolStringList getIncludedFilesList() {
-      return includedFiles_.getUnmodifiableView();
+      includedFiles_.makeImmutable();
+      return includedFiles_;
     }
     /**
      *
@@ -4764,6 +4853,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4784,6 +4874,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4805,6 +4896,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4826,6 +4918,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4844,6 +4937,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludedFilesIsMutable();
       includedFiles_.set(index, value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4854,6 +4948,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4871,6 +4966,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludedFilesIsMutable();
       includedFiles_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4881,6 +4977,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4895,6 +4992,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIncludedFiles(java.lang.Iterable<java.lang.String> values) {
       ensureIncludedFilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedFiles_);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4905,6 +5003,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4916,8 +5015,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludedFiles() {
-      includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00010000);
+      ;
       onChanged();
       return this;
     }
@@ -4928,6 +5028,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is empty, then as far as this filter is
      * concerned, we should trigger the build.
+     *
      * If any of the files altered in the commit pass the ignored_files
      * filter and included_files is not empty, then we make sure that at
      * least one of those files matches a included_files glob. If not,
@@ -4946,6 +5047,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIncludedFilesIsMutable();
       includedFiles_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

@@ -57,6 +57,7 @@ public interface StorageSourceManifestOrBuilder
    *
    * <pre>
    * Google Cloud Storage object containing the source manifest.
+   *
    * This object must be a JSON file.
    * </pre>
    *
@@ -70,6 +71,7 @@ public interface StorageSourceManifestOrBuilder
    *
    * <pre>
    * Google Cloud Storage object containing the source manifest.
+   *
    * This object must be a JSON file.
    * </pre>
    *

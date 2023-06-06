@@ -47,11 +47,6 @@ public final class GetConnectionRequest extends com.google.protobuf.GeneratedMes
     return new GetConnectionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v2.RepositoryManagerProto
         .internal_static_google_devtools_cloudbuild_v2_GetConnectionRequest_descriptor;

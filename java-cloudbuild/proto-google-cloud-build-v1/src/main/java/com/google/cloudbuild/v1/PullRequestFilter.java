@@ -48,11 +48,6 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
     return new PullRequestFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_PullRequestFilter_descriptor;
@@ -230,6 +225,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
   }
 
   private int gitRefCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object gitRef_;
 
   public enum GitRefCase
@@ -279,6 +276,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Regex of branches to match.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -295,6 +293,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Regex of branches to match.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -324,6 +323,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Regex of branches to match.
+   *
    * The syntax of the regular expressions accepted is the syntax accepted by
    * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
@@ -843,6 +843,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Regex of branches to match.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -860,6 +861,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Regex of branches to match.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -890,6 +892,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Regex of branches to match.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -920,6 +923,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Regex of branches to match.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -943,6 +947,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Regex of branches to match.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>
@@ -964,6 +969,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Regex of branches to match.
+     *
      * The syntax of the regular expressions accepted is the syntax accepted by
      * RE2 and described at https://github.com/google/re2/wiki/Syntax
      * </pre>

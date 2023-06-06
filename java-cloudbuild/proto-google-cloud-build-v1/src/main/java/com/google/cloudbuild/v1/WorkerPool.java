@@ -23,9 +23,11 @@ package com.google.cloudbuild.v1;
  *
  * <pre>
  * Configuration for a `WorkerPool`.
+ *
  * Cloud Build owns and maintains a pool of workers for general use and have no
  * access to a project's private network. By default, builds submitted to
  * Cloud Build will use a worker from this pool.
+ *
  * If your build needs access to resources on a private network,
  * create and use a `WorkerPool` to run your builds. Private `WorkerPool`s give
  * your builds access to any single VPC network that you
@@ -59,11 +61,6 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WorkerPool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -294,6 +291,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase
@@ -1189,9 +1188,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for a `WorkerPool`.
+   *
    * Cloud Build owns and maintains a pool of workers for general use and have no
    * access to a project's private network. By default, builds submitted to
    * Cloud Build will use a worker from this pool.
+   *
    * If your build needs access to resources on a private network,
    * create and use a `WorkerPool` to run your builds. Private `WorkerPool`s give
    * your builds access to any single VPC network that you
