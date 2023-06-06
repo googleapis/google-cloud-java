@@ -131,9 +131,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .setMaxRetryDelay(Duration.ofMinutes(1))
           .setMaxAttempts(10)
           .setJittered(true)
-          .setInitialRpcTimeout(Duration.ofMinutes(5))
+          .setInitialRpcTimeout(Duration.ofMinutes(30))
           .setRpcTimeoutMultiplier(2.0)
-          .setMaxRpcTimeout(Duration.ofMinutes(5))
+          .setMaxRpcTimeout(Duration.ofMinutes(30))
           .setTotalTimeout(Duration.ofHours(12))
           .build();
 
@@ -352,17 +352,21 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <ul>
    *   <li>{@link ServerStreamingCallSettings.Builder#setIdleTimeout Default idle timeout} is set to
-   *       5 mins.
+   *       5 mins. Idle timeout is how long to wait before considering the stream orphaned by the
+   *       user and closing it.
+   *   <li>{@link ServerStreamingCallSettings.Builder#setWaitTimeout Default wait timeout} is set to
+   *       5 mins. Wait timeout is the maximum amount of time to wait for the next message from the
+   *       server.
    *   <li>Retry {@link ServerStreamingCallSettings.Builder#setRetryableCodes error codes} are:
    *       {@link Code#DEADLINE_EXCEEDED}, {@link Code#UNAVAILABLE} and {@link Code#ABORTED}.
    *   <li>RetryDelay between failed attempts {@link RetrySettings.Builder#setInitialRetryDelay
    *       starts} at 10ms and {@link RetrySettings.Builder#setRetryDelayMultiplier increases
    *       exponentially} by a factor of 2 until a {@link RetrySettings.Builder#setMaxRetryDelay
    *       maximum of} 1 minute.
-   *   <li>The default read timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each row} in a
-   *       response stream is 5 minutes with {@link RetrySettings.Builder#setMaxAttempts maximum
-   *       attempt} count of 10 times and the timeout to read the {@link
-   *       RetrySettings.Builder#setTotalTimeout entire stream} is 12 hours.
+   *   <li>The default read timeout for {@link RetrySettings.Builder#setMaxRpcTimeout each attempt}
+   *       is 30 minutes with {@link RetrySettings.Builder#setMaxAttempts maximum attempt} count of
+   *       10 times and the timeout to read the {@link RetrySettings.Builder#setTotalTimeout entire
+   *       stream} is 12 hours.
    * </ul>
    */
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
@@ -638,7 +642,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readRowsSettings
           .setRetryableCodes(READ_ROWS_RETRY_CODES)
           .setRetrySettings(READ_ROWS_RETRY_SETTINGS)
-          .setIdleTimeout(Duration.ofMinutes(5));
+          .setIdleTimeout(Duration.ofMinutes(5))
+          .setWaitTimeout(Duration.ofMinutes(5));
 
       // Point reads should use same defaults as streaming reads, but with a shorter timeout
       readRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
