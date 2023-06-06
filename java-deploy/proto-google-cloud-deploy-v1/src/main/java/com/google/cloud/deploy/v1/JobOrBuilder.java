@@ -297,5 +297,5 @@ public interface JobOrBuilder
    */
   com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder getAdvanceChildRolloutJobOrBuilder();
 
-  public com.google.cloud.deploy.v1.Job.JobTypeCase getJobTypeCase();
+  com.google.cloud.deploy.v1.Job.JobTypeCase getJobTypeCase();
 }

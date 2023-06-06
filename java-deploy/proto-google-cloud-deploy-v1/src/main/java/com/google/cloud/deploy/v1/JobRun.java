@@ -23,6 +23,7 @@ package com.google.cloud.deploy.v1;
  *
  * <pre>
  * A `JobRun` resource in the Google Cloud Deploy API.
+ *
  * A `JobRun` contains information of a single `Rollout` job evaluation.
  * </pre>
  *
@@ -51,11 +52,6 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobRun();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -297,6 +293,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobRunCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobRun_;
 
   public enum JobRunCase
@@ -1350,6 +1348,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A `JobRun` resource in the Google Cloud Deploy API.
+   *
    * A `JobRun` contains information of a single `Rollout` job evaluation.
    * </pre>
    *

@@ -99,5 +99,5 @@ public interface StrategyOrBuilder
    */
   com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder();
 
-  public com.google.cloud.deploy.v1.Strategy.DeploymentStrategyCase getDeploymentStrategyCase();
+  com.google.cloud.deploy.v1.Strategy.DeploymentStrategyCase getDeploymentStrategyCase();
 }

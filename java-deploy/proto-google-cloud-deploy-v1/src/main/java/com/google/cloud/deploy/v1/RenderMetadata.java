@@ -45,11 +45,6 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
     return new RenderMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_RenderMetadata_descriptor;

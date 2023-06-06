@@ -74,6 +74,7 @@ public interface ListJobRunsRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListJobRuns` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters match the call that provided
    * the page token.
    * </pre>
@@ -89,6 +90,7 @@ public interface ListJobRunsRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListJobRuns` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters match the call that provided
    * the page token.
    * </pre>

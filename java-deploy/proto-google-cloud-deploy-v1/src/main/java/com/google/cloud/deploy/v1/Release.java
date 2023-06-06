@@ -23,6 +23,7 @@ package com.google.cloud.deploy.v1;
  *
  * <pre>
  * A `Release` resource in the Google Cloud Deploy API.
+ *
  * A `Release` defines a specific Skaffold configuration instance
  * that can be deployed.
  * </pre>
@@ -56,11 +57,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Release();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -470,11 +466,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TargetRender();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2338,11 +2329,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       return new ReleaseReadyCondition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.deploy.v1.CloudDeployProto
           .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_descriptor;
@@ -3000,11 +2986,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SkaffoldSupportedCondition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4343,11 +4324,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       return new ReleaseCondition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.deploy.v1.CloudDeployProto
           .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_descriptor;
@@ -5663,12 +5639,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
    * constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -5694,12 +5672,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
    * constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -5716,12 +5696,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
    * constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -5745,12 +5727,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
    * constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -6366,6 +6350,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    * The Skaffold version to use when operating on this release, such as
    * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
    * specific set of versions.
+   *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
@@ -6392,6 +6377,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    * The Skaffold version to use when operating on this release, such as
    * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
    * specific set of versions.
+   *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
    *
@@ -7121,6 +7107,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A `Release` resource in the Google Cloud Deploy API.
+   *
    * A `Release` defines a specific Skaffold configuration instance
    * that can be deployed.
    * </pre>
@@ -8281,12 +8268,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8312,12 +8301,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8334,12 +8325,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8363,12 +8356,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8398,12 +8393,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8429,12 +8426,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -8458,12 +8457,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
      * constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -10525,6 +10526,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * The Skaffold version to use when operating on this release, such as
      * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
      * specific set of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10550,6 +10552,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * The Skaffold version to use when operating on this release, such as
      * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
      * specific set of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10575,6 +10578,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * The Skaffold version to use when operating on this release, such as
      * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
      * specific set of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10599,6 +10603,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * The Skaffold version to use when operating on this release, such as
      * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
      * specific set of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *
@@ -10619,6 +10624,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * The Skaffold version to use when operating on this release, such as
      * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
      * specific set of versions.
+     *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
      *

@@ -50,11 +50,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     return new Phase();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_Phase_descriptor;
@@ -315,6 +310,8 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobs_;
 
   public enum JobsCase

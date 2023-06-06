@@ -186,5 +186,5 @@ public interface PhaseOrBuilder
    */
   com.google.cloud.deploy.v1.ChildRolloutJobsOrBuilder getChildRolloutJobsOrBuilder();
 
-  public com.google.cloud.deploy.v1.Phase.JobsCase getJobsCase();
+  com.google.cloud.deploy.v1.Phase.JobsCase getJobsCase();
 }

@@ -39,7 +39,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
 
   private CloudRunMetadata() {
     service_ = "";
-    serviceUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    serviceUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     revision_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudRunMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,7 +126,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
   public static final int SERVICE_URLS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceUrls_;
+  private com.google.protobuf.LazyStringArrayList serviceUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -470,8 +466,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       service_ = "";
-      serviceUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      serviceUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       revision_ = "";
       return this;
     }
@@ -500,7 +495,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.deploy.v1.CloudRunMetadata buildPartial() {
       com.google.cloud.deploy.v1.CloudRunMetadata result =
           new com.google.cloud.deploy.v1.CloudRunMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -508,18 +502,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.CloudRunMetadata result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        serviceUrls_ = serviceUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.serviceUrls_ = serviceUrls_;
-    }
-
     private void buildPartial0(com.google.cloud.deploy.v1.CloudRunMetadata result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.service_ = service_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        serviceUrls_.makeImmutable();
+        result.serviceUrls_ = serviceUrls_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.revision_ = revision_;
@@ -579,7 +569,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       if (!other.serviceUrls_.isEmpty()) {
         if (serviceUrls_.isEmpty()) {
           serviceUrls_ = other.serviceUrls_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureServiceUrlsIsMutable();
           serviceUrls_.addAll(other.serviceUrls_);
@@ -781,14 +771,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceUrls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!serviceUrls_.isModifiable()) {
         serviceUrls_ = new com.google.protobuf.LazyStringArrayList(serviceUrls_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -803,7 +793,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      * @return A list containing the serviceUrls.
      */
     public com.google.protobuf.ProtocolStringList getServiceUrlsList() {
-      return serviceUrls_.getUnmodifiableView();
+      serviceUrls_.makeImmutable();
+      return serviceUrls_;
     }
     /**
      *
@@ -872,6 +863,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       }
       ensureServiceUrlsIsMutable();
       serviceUrls_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,6 +886,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       }
       ensureServiceUrlsIsMutable();
       serviceUrls_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -913,6 +906,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     public Builder addAllServiceUrls(java.lang.Iterable<java.lang.String> values) {
       ensureServiceUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceUrls_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -929,8 +923,9 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServiceUrls() {
-      serviceUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -954,6 +949,7 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureServiceUrlsIsMutable();
       serviceUrls_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

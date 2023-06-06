@@ -46,11 +46,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     return new RuntimeConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_RuntimeConfig_descriptor;
@@ -67,6 +62,8 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int runtimeConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object runtimeConfig_;
 
   public enum RuntimeConfigCase

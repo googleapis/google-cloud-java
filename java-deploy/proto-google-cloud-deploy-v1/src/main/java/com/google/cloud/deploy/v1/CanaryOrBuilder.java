@@ -146,5 +146,5 @@ public interface CanaryOrBuilder
    */
   com.google.cloud.deploy.v1.CustomCanaryDeploymentOrBuilder getCustomCanaryDeploymentOrBuilder();
 
-  public com.google.cloud.deploy.v1.Canary.ModeCase getModeCase();
+  com.google.cloud.deploy.v1.Canary.ModeCase getModeCase();
 }

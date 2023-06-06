@@ -45,11 +45,6 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     return new KubernetesConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_KubernetesConfig_descriptor;
@@ -176,11 +171,6 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GatewayServiceMesh();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1198,6 +1188,22 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The bytes for deployment.
      */
     com.google.protobuf.ByteString getDeploymentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable Pod overprovisioning. If Pod
+     * overprovisioning is disabled then Cloud Deploy will limit the number of
+     * total Pods used for the deployment strategy to the number of Pods the
+     * Deployment has on the cluster.
+     * </pre>
+     *
+     * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disablePodOverprovisioning.
+     */
+    boolean getDisablePodOverprovisioning();
   }
   /**
    *
@@ -1227,11 +1233,6 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ServiceNetworking();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1353,6 +1354,27 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int DISABLE_POD_OVERPROVISIONING_FIELD_NUMBER = 3;
+    private boolean disablePodOverprovisioning_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable Pod overprovisioning. If Pod
+     * overprovisioning is disabled then Cloud Deploy will limit the number of
+     * total Pods used for the deployment strategy to the number of Pods the
+     * Deployment has on the cluster.
+     * </pre>
+     *
+     * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disablePodOverprovisioning.
+     */
+    @java.lang.Override
+    public boolean getDisablePodOverprovisioning() {
+      return disablePodOverprovisioning_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1373,6 +1395,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployment_);
       }
+      if (disablePodOverprovisioning_ != false) {
+        output.writeBool(3, disablePodOverprovisioning_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1387,6 +1412,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployment_);
+      }
+      if (disablePodOverprovisioning_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, disablePodOverprovisioning_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1406,6 +1435,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
       if (!getService().equals(other.getService())) return false;
       if (!getDeployment().equals(other.getDeployment())) return false;
+      if (getDisablePodOverprovisioning() != other.getDisablePodOverprovisioning()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1421,6 +1451,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + DEPLOYMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDeployment().hashCode();
+      hash = (37 * hash) + DISABLE_POD_OVERPROVISIONING_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisablePodOverprovisioning());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1565,6 +1598,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         service_ = "";
         deployment_ = "";
+        disablePodOverprovisioning_ = false;
         return this;
       }
 
@@ -1608,6 +1642,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.deployment_ = deployment_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.disablePodOverprovisioning_ = disablePodOverprovisioning_;
         }
       }
 
@@ -1671,6 +1708,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getDisablePodOverprovisioning() != false) {
+          setDisablePodOverprovisioning(other.getDisablePodOverprovisioning());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1709,6 +1749,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 24:
+                {
+                  disablePodOverprovisioning_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1945,6 +1991,71 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean disablePodOverprovisioning_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable Pod overprovisioning. If Pod
+       * overprovisioning is disabled then Cloud Deploy will limit the number of
+       * total Pods used for the deployment strategy to the number of Pods the
+       * Deployment has on the cluster.
+       * </pre>
+       *
+       * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The disablePodOverprovisioning.
+       */
+      @java.lang.Override
+      public boolean getDisablePodOverprovisioning() {
+        return disablePodOverprovisioning_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable Pod overprovisioning. If Pod
+       * overprovisioning is disabled then Cloud Deploy will limit the number of
+       * total Pods used for the deployment strategy to the number of Pods the
+       * Deployment has on the cluster.
+       * </pre>
+       *
+       * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The disablePodOverprovisioning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisablePodOverprovisioning(boolean value) {
+
+        disablePodOverprovisioning_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable Pod overprovisioning. If Pod
+       * overprovisioning is disabled then Cloud Deploy will limit the number of
+       * total Pods used for the deployment strategy to the number of Pods the
+       * Deployment has on the cluster.
+       * </pre>
+       *
+       * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisablePodOverprovisioning() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        disablePodOverprovisioning_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2013,6 +2124,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int serviceDefinitionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object serviceDefinition_;
 
   public enum ServiceDefinitionCase

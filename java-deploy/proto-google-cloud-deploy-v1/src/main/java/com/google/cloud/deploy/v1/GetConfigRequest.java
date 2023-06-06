@@ -47,11 +47,6 @@ public final class GetConfigRequest extends com.google.protobuf.GeneratedMessage
     return new GetConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_GetConfigRequest_descriptor;

@@ -39,18 +39,13 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
 
   private Stage() {
     targetId_ = "";
-    profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Stage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,7 +126,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
   public static final int PROFILES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList profiles_;
+  private com.google.protobuf.LazyStringArrayList profiles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -471,8 +467,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       targetId_ = "";
-      profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       strategy_ = null;
       if (strategyBuilder_ != null) {
         strategyBuilder_.dispose();
@@ -504,7 +499,6 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.deploy.v1.Stage buildPartial() {
       com.google.cloud.deploy.v1.Stage result = new com.google.cloud.deploy.v1.Stage(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -512,18 +506,14 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Stage result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        profiles_ = profiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.profiles_ = profiles_;
-    }
-
     private void buildPartial0(com.google.cloud.deploy.v1.Stage result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.targetId_ = targetId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        profiles_.makeImmutable();
+        result.profiles_ = profiles_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.strategy_ = strategyBuilder_ == null ? strategy_ : strategyBuilder_.build();
@@ -583,7 +573,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       if (!other.profiles_.isEmpty()) {
         if (profiles_.isEmpty()) {
           profiles_ = other.profiles_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureProfilesIsMutable();
           profiles_.addAll(other.profiles_);
@@ -788,14 +778,14 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList profiles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList profiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!profiles_.isModifiable()) {
         profiles_ = new com.google.protobuf.LazyStringArrayList(profiles_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -810,7 +800,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the profiles.
      */
     public com.google.protobuf.ProtocolStringList getProfilesList() {
-      return profiles_.getUnmodifiableView();
+      profiles_.makeImmutable();
+      return profiles_;
     }
     /**
      *
@@ -879,6 +870,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProfilesIsMutable();
       profiles_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -901,6 +893,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProfilesIsMutable();
       profiles_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -920,6 +913,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllProfiles(java.lang.Iterable<java.lang.String> values) {
       ensureProfilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, profiles_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +930,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProfiles() {
-      profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -961,6 +956,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureProfilesIsMutable();
       profiles_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

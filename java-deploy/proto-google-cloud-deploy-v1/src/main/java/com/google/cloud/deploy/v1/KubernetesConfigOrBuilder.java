@@ -98,6 +98,5 @@ public interface KubernetesConfigOrBuilder
   com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworkingOrBuilder
       getServiceNetworkingOrBuilder();
 
-  public com.google.cloud.deploy.v1.KubernetesConfig.ServiceDefinitionCase
-      getServiceDefinitionCase();
+  com.google.cloud.deploy.v1.KubernetesConfig.ServiceDefinitionCase getServiceDefinitionCase();
 }

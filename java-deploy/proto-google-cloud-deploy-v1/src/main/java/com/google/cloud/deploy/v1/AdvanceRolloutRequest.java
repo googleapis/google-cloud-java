@@ -48,11 +48,6 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
     return new AdvanceRolloutRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_AdvanceRolloutRequest_descriptor;

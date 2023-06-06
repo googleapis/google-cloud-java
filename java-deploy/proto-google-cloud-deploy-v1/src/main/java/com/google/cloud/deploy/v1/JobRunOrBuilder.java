@@ -467,5 +467,5 @@ public interface JobRunOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloud.deploy.v1.JobRun.JobRunCase getJobRunCase();
+  com.google.cloud.deploy.v1.JobRun.JobRunCase getJobRunCase();
 }

@@ -189,5 +189,5 @@ public interface TargetArtifactOrBuilder
   com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact getPhaseArtifactsOrThrow(
       java.lang.String key);
 
-  public com.google.cloud.deploy.v1.TargetArtifact.UriCase getUriCase();
+  com.google.cloud.deploy.v1.TargetArtifact.UriCase getUriCase();
 }

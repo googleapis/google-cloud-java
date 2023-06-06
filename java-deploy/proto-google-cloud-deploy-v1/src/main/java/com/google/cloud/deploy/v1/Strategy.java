@@ -45,11 +45,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     return new Strategy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_Strategy_descriptor;
@@ -66,6 +61,8 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int deploymentStrategyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object deploymentStrategy_;
 
   public enum DeploymentStrategyCase

@@ -54,11 +54,6 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     return new RolloutNotificationEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.RolloutNotificationPayloadProto
         .internal_static_google_cloud_deploy_v1_RolloutNotificationEvent_descriptor;

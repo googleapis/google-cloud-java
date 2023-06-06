@@ -48,11 +48,6 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     return new CustomCanaryDeployment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_CustomCanaryDeployment_descriptor;
@@ -213,18 +208,13 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
 
     private PhaseConfig() {
       phaseId_ = "";
-      profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PhaseConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -322,7 +312,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
     public static final int PROFILES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList profiles_;
+    private com.google.protobuf.LazyStringArrayList profiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -646,8 +637,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         bitField0_ = 0;
         phaseId_ = "";
         percentage_ = 0;
-        profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
         verify_ = false;
         return this;
       }
@@ -677,21 +667,11 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig buildPartial() {
         com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig result =
             new com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.deploy.v1.CustomCanaryDeployment.PhaseConfig result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          profiles_ = profiles_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.profiles_ = profiles_;
       }
 
       private void buildPartial0(
@@ -702,6 +682,10 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.percentage_ = percentage_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          profiles_.makeImmutable();
+          result.profiles_ = profiles_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.verify_ = verify_;
@@ -769,7 +753,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         if (!other.profiles_.isEmpty()) {
           if (profiles_.isEmpty()) {
             profiles_ = other.profiles_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureProfilesIsMutable();
             profiles_.addAll(other.profiles_);
@@ -1028,14 +1012,14 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         return this;
       }
 
-      private com.google.protobuf.LazyStringList profiles_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList profiles_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureProfilesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!profiles_.isModifiable()) {
           profiles_ = new com.google.protobuf.LazyStringArrayList(profiles_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1051,7 +1035,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        * @return A list containing the profiles.
        */
       public com.google.protobuf.ProtocolStringList getProfilesList() {
-        return profiles_.getUnmodifiableView();
+        profiles_.makeImmutable();
+        return profiles_;
       }
       /**
        *
@@ -1124,6 +1109,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         ensureProfilesIsMutable();
         profiles_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1147,6 +1133,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         }
         ensureProfilesIsMutable();
         profiles_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1167,6 +1154,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
       public Builder addAllProfiles(java.lang.Iterable<java.lang.String> values) {
         ensureProfilesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, profiles_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1184,8 +1172,9 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearProfiles() {
-        profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        profiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1210,6 +1199,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
         checkByteStringIsUtf8(value);
         ensureProfilesIsMutable();
         profiles_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

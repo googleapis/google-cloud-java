@@ -76,6 +76,7 @@ public interface ListReleasesRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListReleases` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters match
    * the call that provided the page token.
    * </pre>
@@ -91,6 +92,7 @@ public interface ListReleasesRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListReleases` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters match
    * the call that provided the page token.
    * </pre>

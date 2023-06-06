@@ -321,6 +321,5 @@ public interface ExecutionConfigOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder();
 
-  public com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentCase
-      getExecutionEnvironmentCase();
+  com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentCase getExecutionEnvironmentCase();
 }

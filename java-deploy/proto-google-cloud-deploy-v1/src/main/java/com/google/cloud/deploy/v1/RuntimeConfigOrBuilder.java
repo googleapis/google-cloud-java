@@ -93,5 +93,5 @@ public interface RuntimeConfigOrBuilder
    */
   com.google.cloud.deploy.v1.CloudRunConfigOrBuilder getCloudRunOrBuilder();
 
-  public com.google.cloud.deploy.v1.RuntimeConfig.RuntimeConfigCase getRuntimeConfigCase();
+  com.google.cloud.deploy.v1.RuntimeConfig.RuntimeConfigCase getRuntimeConfigCase();
 }

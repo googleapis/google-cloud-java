@@ -49,11 +49,6 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
     return new RetryJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_RetryJobRequest_descriptor;

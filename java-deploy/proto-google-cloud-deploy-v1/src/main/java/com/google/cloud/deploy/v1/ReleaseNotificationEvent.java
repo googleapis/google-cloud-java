@@ -51,11 +51,6 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     return new ReleaseNotificationEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.ReleaseNotificationPayloadProto
         .internal_static_google_cloud_deploy_v1_ReleaseNotificationEvent_descriptor;

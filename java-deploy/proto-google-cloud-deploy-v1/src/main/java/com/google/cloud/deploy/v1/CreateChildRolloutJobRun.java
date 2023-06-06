@@ -49,11 +49,6 @@ public final class CreateChildRolloutJobRun extends com.google.protobuf.Generate
     return new CreateChildRolloutJobRun();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_CreateChildRolloutJobRun_descriptor;

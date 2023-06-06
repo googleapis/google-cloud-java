@@ -49,11 +49,6 @@ public final class ReleaseRenderEvent extends com.google.protobuf.GeneratedMessa
     return new ReleaseRenderEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.ReleaseRenderPayloadProto
         .internal_static_google_cloud_deploy_v1_ReleaseRenderEvent_descriptor;
