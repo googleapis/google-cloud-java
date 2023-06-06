@@ -117,5 +117,5 @@ public interface BudgetAmountOrBuilder
    */
   com.google.cloud.billing.budgets.v1.LastPeriodAmountOrBuilder getLastPeriodAmountOrBuilder();
 
-  public com.google.cloud.billing.budgets.v1.BudgetAmount.BudgetAmountCase getBudgetAmountCase();
+  com.google.cloud.billing.budgets.v1.BudgetAmount.BudgetAmountCase getBudgetAmountCase();
 }

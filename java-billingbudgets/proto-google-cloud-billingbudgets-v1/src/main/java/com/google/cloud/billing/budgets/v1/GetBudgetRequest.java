@@ -47,11 +47,6 @@ public final class GetBudgetRequest extends com.google.protobuf.GeneratedMessage
     return new GetBudgetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.budgets.v1.BudgetServiceProto
         .internal_static_google_cloud_billing_budgets_v1_GetBudgetRequest_descriptor;

@@ -76,7 +76,8 @@ public interface BudgetAmountOrBuilder
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
    * LastPeriodAmount can only be set when the budget's time period is a
-   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]. It cannot be set in combination with
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+   * It cannot be set in combination with
    * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
@@ -91,7 +92,8 @@ public interface BudgetAmountOrBuilder
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
    * LastPeriodAmount can only be set when the budget's time period is a
-   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]. It cannot be set in combination with
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+   * It cannot be set in combination with
    * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
@@ -106,7 +108,8 @@ public interface BudgetAmountOrBuilder
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
    * LastPeriodAmount can only be set when the budget's time period is a
-   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period]. It cannot be set in combination with
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+   * It cannot be set in combination with
    * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
@@ -114,6 +117,5 @@ public interface BudgetAmountOrBuilder
    */
   com.google.cloud.billing.budgets.v1beta1.LastPeriodAmountOrBuilder getLastPeriodAmountOrBuilder();
 
-  public com.google.cloud.billing.budgets.v1beta1.BudgetAmount.BudgetAmountCase
-      getBudgetAmountCase();
+  com.google.cloud.billing.budgets.v1beta1.BudgetAmount.BudgetAmountCase getBudgetAmountCase();
 }

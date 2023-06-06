@@ -45,11 +45,6 @@ public final class CustomPeriod extends com.google.protobuf.GeneratedMessageV3
     return new CustomPeriod();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.budgets.v1.BudgetModelProto
         .internal_static_google_cloud_billing_budgets_v1_CustomPeriod_descriptor;

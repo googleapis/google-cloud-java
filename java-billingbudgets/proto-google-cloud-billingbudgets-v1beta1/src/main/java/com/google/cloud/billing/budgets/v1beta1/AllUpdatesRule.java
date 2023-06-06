@@ -41,18 +41,13 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   private AllUpdatesRule() {
     pubsubTopic_ = "";
     schemaVersion_ = "";
-    monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AllUpdatesRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,10 +73,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of the Pub/Sub topic where budget related messages will be
-   * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic.
-   * The topic needs to be created before the budget is created; see
+   * Optional. The name of the Pub/Sub topic where budget related messages will
+   * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Updates are sent at regular intervals to the topic. The topic needs to be
+   * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
    * for more details.
    * Caller is expected to have
@@ -111,10 +106,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of the Pub/Sub topic where budget related messages will be
-   * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic.
-   * The topic needs to be created before the budget is created; see
+   * Optional. The name of the Pub/Sub topic where budget related messages will
+   * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+   * Updates are sent at regular intervals to the topic. The topic needs to be
+   * created before the budget is created; see
    * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
    * for more details.
    * Caller is expected to have
@@ -149,9 +144,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-   * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-   * accepted. It represents the JSON schema as defined in
+   * Optional. Required when
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+   * is set. The schema version of the notification sent to
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+   * Only "1.0" is accepted. It represents the JSON schema as defined in
    * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
    * </pre>
    *
@@ -175,9 +172,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-   * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-   * accepted. It represents the JSON schema as defined in
+   * Optional. Required when
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+   * is set. The schema version of the notification sent to
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+   * Only "1.0" is accepted. It represents the JSON schema as defined in
    * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
    * </pre>
    *
@@ -201,15 +200,16 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
   public static final int MONITORING_NOTIFICATION_CHANNELS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList monitoringNotificationChannels_;
+  private com.google.protobuf.LazyStringArrayList monitoringNotificationChannels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-   * addition to default recipients who have billing account IAM roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
    * channels are allowed. See
    * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -229,10 +229,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-   * addition to default recipients who have billing account IAM roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
    * channels are allowed. See
    * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -252,10 +252,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-   * addition to default recipients who have billing account IAM roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
    * channels are allowed. See
    * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -276,10 +276,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-   * addition to default recipients who have billing account IAM roles.
-   * The value is the full REST resource name of a monitoring notification
-   * channel with the form
+   * Optional. Targets to send notifications to when a threshold is exceeded.
+   * This is in addition to default recipients who have billing account IAM
+   * roles. The value is the full REST resource name of a monitoring
+   * notification channel with the form
    * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
    * channels are allowed. See
    * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -303,9 +303,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. When set to true, disables default notifications sent when a threshold is
-   * exceeded. Default notifications are sent to those with Billing Account
-   * Administrator and Billing Account User IAM roles for the target account.
+   * Optional. When set to true, disables default notifications sent when a
+   * threshold is exceeded. Default notifications are sent to those with Billing
+   * Account Administrator and Billing Account User IAM roles for the target
+   * account.
    * </pre>
    *
    * <code>bool disable_default_iam_recipients = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -556,8 +557,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       pubsubTopic_ = "";
       schemaVersion_ = "";
-      monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       disableDefaultIamRecipients_ = false;
       return this;
     }
@@ -586,21 +586,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result =
           new com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        monitoringNotificationChannels_ = monitoringNotificationChannels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.monitoringNotificationChannels_ = monitoringNotificationChannels_;
     }
 
     private void buildPartial0(com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule result) {
@@ -610,6 +600,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.schemaVersion_ = schemaVersion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        monitoringNotificationChannels_.makeImmutable();
+        result.monitoringNotificationChannels_ = monitoringNotificationChannels_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.disableDefaultIamRecipients_ = disableDefaultIamRecipients_;
@@ -675,7 +669,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       if (!other.monitoringNotificationChannels_.isEmpty()) {
         if (monitoringNotificationChannels_.isEmpty()) {
           monitoringNotificationChannels_ = other.monitoringNotificationChannels_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureMonitoringNotificationChannelsIsMutable();
           monitoringNotificationChannels_.addAll(other.monitoringNotificationChannels_);
@@ -760,10 +754,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Optional. The name of the Pub/Sub topic where budget related messages will
+     * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
      * for more details.
      * Caller is expected to have
@@ -792,10 +786,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Optional. The name of the Pub/Sub topic where budget related messages will
+     * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
      * for more details.
      * Caller is expected to have
@@ -824,10 +818,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Optional. The name of the Pub/Sub topic where budget related messages will
+     * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
      * for more details.
      * Caller is expected to have
@@ -855,10 +849,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Optional. The name of the Pub/Sub topic where budget related messages will
+     * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
      * for more details.
      * Caller is expected to have
@@ -882,10 +876,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of the Pub/Sub topic where budget related messages will be
-     * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic.
-     * The topic needs to be created before the budget is created; see
+     * Optional. The name of the Pub/Sub topic where budget related messages will
+     * be published, in the form `projects/{project_id}/topics/{topic_id}`.
+     * Updates are sent at regular intervals to the topic. The topic needs to be
+     * created before the budget is created; see
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications
      * for more details.
      * Caller is expected to have
@@ -916,9 +910,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-     * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-     * accepted. It represents the JSON schema as defined in
+     * Optional. Required when
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+     * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      * </pre>
      *
@@ -941,9 +937,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-     * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-     * accepted. It represents the JSON schema as defined in
+     * Optional. Required when
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+     * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      * </pre>
      *
@@ -966,9 +964,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-     * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-     * accepted. It represents the JSON schema as defined in
+     * Optional. Required when
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+     * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      * </pre>
      *
@@ -990,9 +990,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-     * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-     * accepted. It represents the JSON schema as defined in
+     * Optional. Required when
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+     * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      * </pre>
      *
@@ -1010,9 +1012,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required when [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic] is set. The schema version of
-     * the notification sent to [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]. Only "1.0" is
-     * accepted. It represents the JSON schema as defined in
+     * Optional. Required when
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+     * is set. The schema version of the notification sent to
+     * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
+     * Only "1.0" is accepted. It represents the JSON schema as defined in
      * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
      * </pre>
      *
@@ -1032,24 +1036,24 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList monitoringNotificationChannels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList monitoringNotificationChannels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMonitoringNotificationChannelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!monitoringNotificationChannels_.isModifiable()) {
         monitoringNotificationChannels_ =
             new com.google.protobuf.LazyStringArrayList(monitoringNotificationChannels_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1063,16 +1067,17 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the monitoringNotificationChannels.
      */
     public com.google.protobuf.ProtocolStringList getMonitoringNotificationChannelsList() {
-      return monitoringNotificationChannels_.getUnmodifiableView();
+      monitoringNotificationChannels_.makeImmutable();
+      return monitoringNotificationChannels_;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1092,10 +1097,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1116,10 +1121,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1140,10 +1145,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1164,6 +1169,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMonitoringNotificationChannelsIsMutable();
       monitoringNotificationChannels_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1171,10 +1177,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1194,6 +1200,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMonitoringNotificationChannelsIsMutable();
       monitoringNotificationChannels_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1201,10 +1208,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1223,6 +1230,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       ensureMonitoringNotificationChannelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, monitoringNotificationChannels_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1230,10 +1238,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1247,8 +1255,9 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMonitoringNotificationChannels() {
-      monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1256,10 +1265,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Targets to send notifications to when a threshold is exceeded. This is in
-     * addition to default recipients who have billing account IAM roles.
-     * The value is the full REST resource name of a monitoring notification
-     * channel with the form
+     * Optional. Targets to send notifications to when a threshold is exceeded.
+     * This is in addition to default recipients who have billing account IAM
+     * roles. The value is the full REST resource name of a monitoring
+     * notification channel with the form
      * `projects/{project_id}/notificationChannels/{channel_id}`. A maximum of 5
      * channels are allowed. See
      * https://cloud.google.com/billing/docs/how-to/budgets-notification-recipients
@@ -1280,6 +1289,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMonitoringNotificationChannelsIsMutable();
       monitoringNotificationChannels_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1289,9 +1299,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When set to true, disables default notifications sent when a threshold is
-     * exceeded. Default notifications are sent to those with Billing Account
-     * Administrator and Billing Account User IAM roles for the target account.
+     * Optional. When set to true, disables default notifications sent when a
+     * threshold is exceeded. Default notifications are sent to those with Billing
+     * Account Administrator and Billing Account User IAM roles for the target
+     * account.
      * </pre>
      *
      * <code>bool disable_default_iam_recipients = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1307,9 +1318,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When set to true, disables default notifications sent when a threshold is
-     * exceeded. Default notifications are sent to those with Billing Account
-     * Administrator and Billing Account User IAM roles for the target account.
+     * Optional. When set to true, disables default notifications sent when a
+     * threshold is exceeded. Default notifications are sent to those with Billing
+     * Account Administrator and Billing Account User IAM roles for the target
+     * account.
      * </pre>
      *
      * <code>bool disable_default_iam_recipients = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1329,9 +1341,10 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When set to true, disables default notifications sent when a threshold is
-     * exceeded. Default notifications are sent to those with Billing Account
-     * Administrator and Billing Account User IAM roles for the target account.
+     * Optional. When set to true, disables default notifications sent when a
+     * threshold is exceeded. Default notifications are sent to those with Billing
+     * Account Administrator and Billing Account User IAM roles for the target
+     * account.
      * </pre>
      *
      * <code>bool disable_default_iam_recipients = 4 [(.google.api.field_behavior) = OPTIONAL];

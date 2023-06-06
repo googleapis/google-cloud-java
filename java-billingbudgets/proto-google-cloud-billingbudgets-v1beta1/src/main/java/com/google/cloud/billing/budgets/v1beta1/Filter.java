@@ -38,22 +38,18 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Filter() {
-    projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    projects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    resourceAncestors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    creditTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     creditTypesTreatment_ = 0;
-    services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    services_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    subaccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Filter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -263,6 +259,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int usagePeriodCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object usagePeriod_;
 
   public enum UsagePeriodCase
@@ -312,7 +310,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public static final int PROJECTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList projects_;
+  private com.google.protobuf.LazyStringArrayList projects_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -321,7 +320,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -339,7 +337,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -357,7 +354,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -376,7 +372,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * specifying that usage from only this set of projects should be
    * included in the budget. If omitted, the report will include all usage for
    * the billing account, regardless of which project the usage occurred on.
-   * Only zero or one project can be specified currently.
    * </pre>
    *
    * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -388,21 +383,105 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     return projects_.getByteString(index);
   }
 
-  public static final int CREDIT_TYPES_FIELD_NUMBER = 7;
+  public static final int RESOURCE_ANCESTORS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList creditTypes_;
+  private com.google.protobuf.LazyStringArrayList resourceAncestors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-   * a list of credit types to be subtracted from gross cost to determine the
-   * spend for threshold calculations. See
-   * [a list of acceptable credit type
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the report includes all usage for all
+   * organizations, regardless of which organization the usage occurred on.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the resourceAncestors.
+   */
+  public com.google.protobuf.ProtocolStringList getResourceAncestorsList() {
+    return resourceAncestors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the report includes all usage for all
+   * organizations, regardless of which organization the usage occurred on.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of resourceAncestors.
+   */
+  public int getResourceAncestorsCount() {
+    return resourceAncestors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the report includes all usage for all
+   * organizations, regardless of which organization the usage occurred on.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceAncestors at the given index.
+   */
+  public java.lang.String getResourceAncestors(int index) {
+    return resourceAncestors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of folder and organization names of the form
+   * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+   * usage from only this set of folders and organizations should be included in
+   * the budget. If omitted, the report includes all usage for all
+   * organizations, regardless of which organization the usage occurred on.
+   * </pre>
+   *
+   * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceAncestors at the given index.
+   */
+  public com.google.protobuf.ByteString getResourceAncestorsBytes(int index) {
+    return resourceAncestors_.getByteString(index);
+  }
+
+  public static final int CREDIT_TYPES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList creditTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-   * this field must be empty.
+   *
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -416,13 +495,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-   * a list of credit types to be subtracted from gross cost to determine the
-   * spend for threshold calculations. See
-   * [a list of acceptable credit type
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-   * this field must be empty.
+   *
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -436,13 +518,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-   * a list of credit types to be subtracted from gross cost to determine the
-   * spend for threshold calculations. See
-   * [a list of acceptable credit type
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-   * this field must be empty.
+   *
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -457,13 +542,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-   * a list of credit types to be subtracted from gross cost to determine the
-   * spend for threshold calculations. See
-   * [a list of acceptable credit type
+   * Optional. If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+   * subtracted from gross cost to determine the spend for threshold
+   * calculations. See [a list of acceptable credit type
    * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-   * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-   * this field must be empty.
+   *
+   * If
+   * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+   * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
    * </pre>
    *
    * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -521,7 +609,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public static final int SERVICES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList services_;
+  private com.google.protobuf.LazyStringArrayList services_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -604,14 +693,15 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public static final int SUBACCOUNTS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subaccounts_;
+  private com.google.protobuf.LazyStringArrayList subaccounts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-   * that usage from only this set of subaccounts should be included in the
-   * budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+   * specifying that usage from only this set of subaccounts should be included
+   * in the budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -628,9 +718,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-   * that usage from only this set of subaccounts should be included in the
-   * budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+   * specifying that usage from only this set of subaccounts should be included
+   * in the budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -647,9 +737,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-   * that usage from only this set of subaccounts should be included in the
-   * budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+   * specifying that usage from only this set of subaccounts should be included
+   * in the budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -667,9 +757,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-   * that usage from only this set of subaccounts should be included in the
-   * budget. If a subaccount is set to the name of the parent account,
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+   * specifying that usage from only this set of subaccounts should be included
+   * in the budget. If a subaccount is set to the name of the parent account,
    * usage from the parent account will be included. If omitted, the
    * report will include usage from the parent account and all
    * subaccounts, if they exist.
@@ -717,11 +807,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only this set of
-   * labeled resources should be included in the budget. If omitted, the
-   * report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report will include all labeled and unlabeled usage.
+   *
    * An object containing a single `"key": value` pair. Example: `{ "name":
    * "wrench" }`.
+   *
    *  _Currently, multiple entries or multiple values per entry are not
    *  allowed._
    * </pre>
@@ -747,11 +839,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only this set of
-   * labeled resources should be included in the budget. If omitted, the
-   * report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report will include all labeled and unlabeled usage.
+   *
    * An object containing a single `"key": value` pair. Example: `{ "name":
    * "wrench" }`.
+   *
    *  _Currently, multiple entries or multiple values per entry are not
    *  allowed._
    * </pre>
@@ -768,11 +862,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only this set of
-   * labeled resources should be included in the budget. If omitted, the
-   * report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report will include all labeled and unlabeled usage.
+   *
    * An object containing a single `"key": value` pair. Example: `{ "name":
    * "wrench" }`.
+   *
    *  _Currently, multiple entries or multiple values per entry are not
    *  allowed._
    * </pre>
@@ -797,11 +893,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A single label and value pair specifying that usage from only this set of
-   * labeled resources should be included in the budget. If omitted, the
-   * report will include all labeled and unlabeled usage.
+   * Optional. A single label and value pair specifying that usage from only
+   * this set of labeled resources should be included in the budget. If omitted,
+   * the report will include all labeled and unlabeled usage.
+   *
    * An object containing a single `"key": value` pair. Example: `{ "name":
    * "wrench" }`.
+   *
    *  _Currently, multiple entries or multiple values per entry are not
    *  allowed._
    * </pre>
@@ -904,8 +1002,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies to track usage from any start date (required) to any end date
-   * (optional). This time period is static, it does not recur.
+   * Optional. Specifies to track usage from any start date (required) to any
+   * end date (optional). This time period is static, it does not recur.
    * </pre>
    *
    * <code>
@@ -922,8 +1020,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies to track usage from any start date (required) to any end date
-   * (optional). This time period is static, it does not recur.
+   * Optional. Specifies to track usage from any start date (required) to any
+   * end date (optional). This time period is static, it does not recur.
    * </pre>
    *
    * <code>
@@ -943,8 +1041,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specifies to track usage from any start date (required) to any end date
-   * (optional). This time period is static, it does not recur.
+   * Optional. Specifies to track usage from any start date (required) to any
+   * end date (optional). This time period is static, it does not recur.
    * </pre>
    *
    * <code>
@@ -975,6 +1073,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < projects_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projects_.getRaw(i));
+    }
+    for (int i = 0; i < resourceAncestors_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceAncestors_.getRaw(i));
     }
     for (int i = 0; i < services_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, services_.getRaw(i));
@@ -1015,6 +1116,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 1 * getProjectsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < resourceAncestors_.size(); i++) {
+        dataSize += computeStringSizeNoTag(resourceAncestors_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getResourceAncestorsList().size();
     }
     {
       int dataSize = 0;
@@ -1083,6 +1192,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.billing.budgets.v1beta1.Filter) obj;
 
     if (!getProjectsList().equals(other.getProjectsList())) return false;
+    if (!getResourceAncestorsList().equals(other.getResourceAncestorsList())) return false;
     if (!getCreditTypesList().equals(other.getCreditTypesList())) return false;
     if (creditTypesTreatment_ != other.creditTypesTreatment_) return false;
     if (!getServicesList().equals(other.getServicesList())) return false;
@@ -1113,6 +1223,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     if (getProjectsCount() > 0) {
       hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
       hash = (53 * hash) + getProjectsList().hashCode();
+    }
+    if (getResourceAncestorsCount() > 0) {
+      hash = (37 * hash) + RESOURCE_ANCESTORS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceAncestorsList().hashCode();
     }
     if (getCreditTypesCount() > 0) {
       hash = (37 * hash) + CREDIT_TYPES_FIELD_NUMBER;
@@ -1303,15 +1417,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      projects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      resourceAncestors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      creditTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       creditTypesTreatment_ = 0;
-      services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      services_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      subaccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableLabels().clear();
       if (customPeriodBuilder_ != null) {
         customPeriodBuilder_.clear();
@@ -1345,7 +1456,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1beta1.Filter buildPartial() {
       com.google.cloud.billing.budgets.v1beta1.Filter result =
           new com.google.cloud.billing.budgets.v1beta1.Filter(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1354,36 +1464,32 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.billing.budgets.v1beta1.Filter result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        projects_ = projects_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.projects_ = projects_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        creditTypes_ = creditTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.creditTypes_ = creditTypes_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        services_ = services_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.services_ = services_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        subaccounts_ = subaccounts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.subaccounts_ = subaccounts_;
-    }
-
     private void buildPartial0(com.google.cloud.billing.budgets.v1beta1.Filter result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        projects_.makeImmutable();
+        result.projects_ = projects_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        resourceAncestors_.makeImmutable();
+        result.resourceAncestors_ = resourceAncestors_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        creditTypes_.makeImmutable();
+        result.creditTypes_ = creditTypes_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.creditTypesTreatment_ = creditTypesTreatment_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        services_.makeImmutable();
+        result.services_ = services_;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        subaccounts_.makeImmutable();
+        result.subaccounts_ = subaccounts_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
@@ -1446,17 +1552,27 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.projects_.isEmpty()) {
         if (projects_.isEmpty()) {
           projects_ = other.projects_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureProjectsIsMutable();
           projects_.addAll(other.projects_);
         }
         onChanged();
       }
+      if (!other.resourceAncestors_.isEmpty()) {
+        if (resourceAncestors_.isEmpty()) {
+          resourceAncestors_ = other.resourceAncestors_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureResourceAncestorsIsMutable();
+          resourceAncestors_.addAll(other.resourceAncestors_);
+        }
+        onChanged();
+      }
       if (!other.creditTypes_.isEmpty()) {
         if (creditTypes_.isEmpty()) {
           creditTypes_ = other.creditTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000004;
         } else {
           ensureCreditTypesIsMutable();
           creditTypes_.addAll(other.creditTypes_);
@@ -1469,7 +1585,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.services_.isEmpty()) {
         if (services_.isEmpty()) {
           services_ = other.services_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000010;
         } else {
           ensureServicesIsMutable();
           services_.addAll(other.services_);
@@ -1479,7 +1595,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.subaccounts_.isEmpty()) {
         if (subaccounts_.isEmpty()) {
           subaccounts_ = other.subaccounts_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000020;
         } else {
           ensureSubaccountsIsMutable();
           subaccounts_.addAll(other.subaccounts_);
@@ -1487,7 +1603,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       switch (other.getUsagePeriodCase()) {
         case CALENDAR_PERIOD:
           {
@@ -1537,6 +1653,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                 projects_.add(s);
                 break;
               } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureResourceAncestorsIsMutable();
+                resourceAncestors_.add(s);
+                break;
+              } // case 18
             case 26:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1547,7 +1670,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 creditTypesTreatment_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -1567,7 +1690,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1623,14 +1746,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList projects_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList projects_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProjectsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!projects_.isModifiable()) {
         projects_ = new com.google.protobuf.LazyStringArrayList(projects_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1640,7 +1763,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1648,7 +1770,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the projects.
      */
     public com.google.protobuf.ProtocolStringList getProjectsList() {
-      return projects_.getUnmodifiableView();
+      projects_.makeImmutable();
+      return projects_;
     }
     /**
      *
@@ -1658,7 +1781,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1676,7 +1798,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1695,7 +1816,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1714,7 +1834,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1729,6 +1848,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsIsMutable();
       projects_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1740,7 +1860,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1754,6 +1873,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsIsMutable();
       projects_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1765,7 +1885,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1776,6 +1895,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllProjects(java.lang.Iterable<java.lang.String> values) {
       ensureProjectsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projects_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1787,7 +1907,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1795,8 +1914,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjects() {
-      projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      projects_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1808,7 +1928,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * specifying that usage from only this set of projects should be
      * included in the budget. If omitted, the report will include all usage for
      * the billing account, regardless of which project the usage occurred on.
-     * Only zero or one project can be specified currently.
      * </pre>
      *
      * <code>repeated string projects = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1823,30 +1942,253 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureProjectsIsMutable();
       projects_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList creditTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourceAncestors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
-    private void ensureCreditTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        creditTypes_ = new com.google.protobuf.LazyStringArrayList(creditTypes_);
-        bitField0_ |= 0x00000002;
+    private void ensureResourceAncestorsIsMutable() {
+      if (!resourceAncestors_.isModifiable()) {
+        resourceAncestors_ = new com.google.protobuf.LazyStringArrayList(resourceAncestors_);
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the resourceAncestors.
+     */
+    public com.google.protobuf.ProtocolStringList getResourceAncestorsList() {
+      resourceAncestors_.makeImmutable();
+      return resourceAncestors_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of resourceAncestors.
+     */
+    public int getResourceAncestorsCount() {
+      return resourceAncestors_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceAncestors at the given index.
+     */
+    public java.lang.String getResourceAncestors(int index) {
+      return resourceAncestors_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceAncestors at the given index.
+     */
+    public com.google.protobuf.ByteString getResourceAncestorsBytes(int index) {
+      return resourceAncestors_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceAncestors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceAncestors(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceAncestorsIsMutable();
+      resourceAncestors_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The resourceAncestors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceAncestors(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceAncestorsIsMutable();
+      resourceAncestors_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The resourceAncestors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResourceAncestors(java.lang.Iterable<java.lang.String> values) {
+      ensureResourceAncestorsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceAncestors_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceAncestors() {
+      resourceAncestors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of folder and organization names of the form
+     * `folders/{folderId}` or `organizations/{organizationId}`, specifying that
+     * usage from only this set of folders and organizations should be included in
+     * the budget. If omitted, the report includes all usage for all
+     * organizations, regardless of which organization the usage occurred on.
+     * </pre>
+     *
+     * <code>repeated string resource_ancestors = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the resourceAncestors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceAncestorsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureResourceAncestorsIsMutable();
+      resourceAncestors_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList creditTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureCreditTypesIsMutable() {
+      if (!creditTypes_.isModifiable()) {
+        creditTypes_ = new com.google.protobuf.LazyStringArrayList(creditTypes_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1854,19 +2196,23 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the creditTypes.
      */
     public com.google.protobuf.ProtocolStringList getCreditTypesList() {
-      return creditTypes_.getUnmodifiableView();
+      creditTypes_.makeImmutable();
+      return creditTypes_;
     }
     /**
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1880,13 +2226,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1901,13 +2250,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1922,13 +2274,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1943,6 +2298,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCreditTypesIsMutable();
       creditTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1950,13 +2306,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1970,6 +2329,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCreditTypesIsMutable();
       creditTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1977,13 +2337,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1994,6 +2357,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCreditTypes(java.lang.Iterable<java.lang.String> values) {
       ensureCreditTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, creditTypes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2001,13 +2365,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2015,8 +2382,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreditTypes() {
-      creditTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      creditTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2024,13 +2392,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is INCLUDE_SPECIFIED_CREDITS, this is
-     * a list of credit types to be subtracted from gross cost to determine the
-     * spend for threshold calculations. See
-     * [a list of acceptable credit type
+     * Optional. If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is INCLUDE_SPECIFIED_CREDITS, this is a list of credit types to be
+     * subtracted from gross cost to determine the spend for threshold
+     * calculations. See [a list of acceptable credit type
      * values](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables#credits-type).
-     * If [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment] is **not** INCLUDE_SPECIFIED_CREDITS,
-     * this field must be empty.
+     *
+     * If
+     * [Filter.credit_types_treatment][google.cloud.billing.budgets.v1beta1.Filter.credit_types_treatment]
+     * is **not** INCLUDE_SPECIFIED_CREDITS, this field must be empty.
      * </pre>
      *
      * <code>repeated string credit_types = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2045,6 +2416,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCreditTypesIsMutable();
       creditTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2083,7 +2455,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setCreditTypesTreatmentValue(int value) {
       creditTypesTreatment_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2129,7 +2501,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       creditTypesTreatment_ = value.getNumber();
       onChanged();
       return this;
@@ -2148,20 +2520,20 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreditTypesTreatment() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       creditTypesTreatment_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList services_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList services_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServicesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!services_.isModifiable()) {
         services_ = new com.google.protobuf.LazyStringArrayList(services_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2180,7 +2552,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the services.
      */
     public com.google.protobuf.ProtocolStringList getServicesList() {
-      return services_.getUnmodifiableView();
+      services_.makeImmutable();
+      return services_;
     }
     /**
      *
@@ -2265,6 +2638,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServicesIsMutable();
       services_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2291,6 +2665,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServicesIsMutable();
       services_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2314,6 +2689,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllServices(java.lang.Iterable<java.lang.String> values) {
       ensureServicesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, services_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2334,8 +2710,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServices() {
-      services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      services_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2363,26 +2740,27 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureServicesIsMutable();
       services_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subaccounts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subaccounts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubaccountsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!subaccounts_.isModifiable()) {
         subaccounts_ = new com.google.protobuf.LazyStringArrayList(subaccounts_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2393,15 +2771,16 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the subaccounts.
      */
     public com.google.protobuf.ProtocolStringList getSubaccountsList() {
-      return subaccounts_.getUnmodifiableView();
+      subaccounts_.makeImmutable();
+      return subaccounts_;
     }
     /**
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2418,9 +2797,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2438,9 +2817,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2458,9 +2837,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2478,6 +2857,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubaccountsIsMutable();
       subaccounts_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2485,9 +2865,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2504,6 +2884,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSubaccountsIsMutable();
       subaccounts_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2511,9 +2892,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2527,6 +2908,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSubaccounts(java.lang.Iterable<java.lang.String> values) {
       ensureSubaccountsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subaccounts_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2534,9 +2916,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2547,8 +2929,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubaccounts() {
-      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      subaccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2556,9 +2939,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
-     * that usage from only this set of subaccounts should be included in the
-     * budget. If a subaccount is set to the name of the parent account,
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`,
+     * specifying that usage from only this set of subaccounts should be included
+     * in the budget. If a subaccount is set to the name of the parent account,
      * usage from the parent account will be included. If omitted, the
      * report will include usage from the parent account and all
      * subaccounts, if they exist.
@@ -2576,6 +2959,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSubaccountsIsMutable();
       subaccounts_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2598,7 +2982,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return labels_;
     }
@@ -2610,11 +2994,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2640,11 +3026,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2661,11 +3049,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2690,11 +3080,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2717,7 +3109,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2725,11 +3117,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2748,18 +3142,20 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getMutableLabels() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2776,18 +3172,20 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. A single label and value pair specifying that usage from only this set of
-     * labeled resources should be included in the budget. If omitted, the
-     * report will include all labeled and unlabeled usage.
+     * Optional. A single label and value pair specifying that usage from only
+     * this set of labeled resources should be included in the budget. If omitted,
+     * the report will include all labeled and unlabeled usage.
+     *
      * An object containing a single `"key": value` pair. Example: `{ "name":
      * "wrench" }`.
+     *
      *  _Currently, multiple entries or multiple values per entry are not
      *  allowed._
      * </pre>
@@ -2799,7 +3197,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(
         java.util.Map<java.lang.String, com.google.protobuf.ListValue> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2970,8 +3368,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -2988,8 +3386,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3016,8 +3414,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3041,8 +3439,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3064,8 +3462,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3100,8 +3498,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3128,8 +3526,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3143,8 +3541,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
@@ -3167,8 +3565,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specifies to track usage from any start date (required) to any end date
-     * (optional). This time period is static, it does not recur.
+     * Optional. Specifies to track usage from any start date (required) to any
+     * end date (optional). This time period is static, it does not recur.
      * </pre>
      *
      * <code>
