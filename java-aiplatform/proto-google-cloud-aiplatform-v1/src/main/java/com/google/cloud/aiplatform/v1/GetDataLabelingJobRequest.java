@@ -48,11 +48,6 @@ public final class GetDataLabelingJobRequest extends com.google.protobuf.Generat
     return new GetDataLabelingJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.JobServiceProto
         .internal_static_google_cloud_aiplatform_v1_GetDataLabelingJobRequest_descriptor;

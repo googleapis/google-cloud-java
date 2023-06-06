@@ -47,11 +47,6 @@ public final class CreateDatasetOperationMetadata extends com.google.protobuf.Ge
     return new CreateDatasetOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.DatasetServiceProto
         .internal_static_google_cloud_aiplatform_v1_CreateDatasetOperationMetadata_descriptor;

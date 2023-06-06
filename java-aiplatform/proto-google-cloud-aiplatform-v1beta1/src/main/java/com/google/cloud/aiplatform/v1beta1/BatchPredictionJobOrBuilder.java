@@ -82,6 +82,7 @@ public interface BatchPredictionJobOrBuilder
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   *
    * The model resource name may contain version id or version alias to specify
    * the version.
    *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
@@ -104,6 +105,7 @@ public interface BatchPredictionJobOrBuilder
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   *
    * The model resource name may contain version id or version alias to specify
    * the version.
    *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
@@ -455,6 +457,7 @@ public interface BatchPredictionJobOrBuilder
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
    * enough permission to access other Google Cloud resources.
+   *
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -472,6 +475,7 @@ public interface BatchPredictionJobOrBuilder
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
    * enough permission to access other Google Cloud resources.
+   *
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -538,10 +542,12 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * Generate explanation with the batch prediction results.
+   *
    * When set to `true`, the batch prediction output changes based on the
    * `predictions_format` field of the
    * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config]
    * object:
+   *
    *  * `bigquery`: output includes a column named `explanation`. The value
    *    is a struct that conforms to the
    *    [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
@@ -550,6 +556,7 @@ public interface BatchPredictionJobOrBuilder
    *    conforms to the
    *    [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
    *  * `csv`: Generating explanations for CSV format is not supported.
+   *
    * If this field is set to true, either the
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
    * or
@@ -571,6 +578,7 @@ public interface BatchPredictionJobOrBuilder
    * specified only if
    * [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
    * is set to `true`.
+   *
    * This value overrides the value of
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec].
    * All fields of
@@ -595,6 +603,7 @@ public interface BatchPredictionJobOrBuilder
    * specified only if
    * [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
    * is set to `true`.
+   *
    * This value overrides the value of
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec].
    * All fields of
@@ -619,6 +628,7 @@ public interface BatchPredictionJobOrBuilder
    * specified only if
    * [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
    * is set to `true`.
+   *
    * This value overrides the value of
    * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec].
    * All fields of
@@ -826,6 +836,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Information about resources that had been consumed by this
    * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   *
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
    * </pre>
@@ -844,6 +855,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Information about resources that had been consumed by this
    * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   *
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
    * </pre>
@@ -862,6 +874,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Information about resources that had been consumed by this
    * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
+   *
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
    * </pre>
@@ -1076,9 +1089,11 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1090,9 +1105,11 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1107,9 +1124,11 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1121,9 +1140,11 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1139,9 +1160,11 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize BatchPredictionJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -1351,6 +1374,7 @@ public interface BatchPredictionJobOrBuilder
    * Cloud Logging by default. Please note that the logs incur cost,
    * which are subject to [Cloud Logging
    * pricing](https://cloud.google.com/logging/pricing).
+   *
    * User can disable container logging by setting this flag to true.
    * </pre>
    *

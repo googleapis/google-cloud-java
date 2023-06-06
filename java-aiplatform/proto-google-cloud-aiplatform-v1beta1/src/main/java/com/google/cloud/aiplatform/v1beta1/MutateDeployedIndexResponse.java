@@ -46,11 +46,6 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
     return new MutateDeployedIndexResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.IndexEndpointServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedIndexResponse_descriptor;

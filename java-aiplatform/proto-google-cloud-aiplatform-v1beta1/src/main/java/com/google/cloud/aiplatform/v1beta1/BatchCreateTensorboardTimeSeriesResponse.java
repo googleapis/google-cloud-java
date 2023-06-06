@@ -50,11 +50,6 @@ public final class BatchCreateTensorboardTimeSeriesResponse
     return new BatchCreateTensorboardTimeSeriesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.TensorboardServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_BatchCreateTensorboardTimeSeriesResponse_descriptor;

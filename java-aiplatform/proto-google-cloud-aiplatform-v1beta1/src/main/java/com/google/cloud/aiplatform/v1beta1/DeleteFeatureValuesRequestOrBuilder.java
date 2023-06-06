@@ -144,6 +144,6 @@ public interface DeleteFeatureValuesRequestOrBuilder
    */
   com.google.protobuf.ByteString getEntityTypeBytes();
 
-  public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.DeleteOptionCase
+  com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.DeleteOptionCase
       getDeleteOptionCase();
 }

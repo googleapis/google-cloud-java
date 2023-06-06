@@ -47,11 +47,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     return new CreateEndpointOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.EndpointServiceProto
         .internal_static_google_cloud_aiplatform_v1_CreateEndpointOperationMetadata_descriptor;

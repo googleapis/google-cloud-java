@@ -47,11 +47,6 @@ public final class CopyModelOperationMetadata extends com.google.protobuf.Genera
     return new CopyModelOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1_CopyModelOperationMetadata_descriptor;

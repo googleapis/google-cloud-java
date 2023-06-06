@@ -48,11 +48,6 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     return new AutoMlVideoActionRecognition();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLVideoActionRecognitionProto

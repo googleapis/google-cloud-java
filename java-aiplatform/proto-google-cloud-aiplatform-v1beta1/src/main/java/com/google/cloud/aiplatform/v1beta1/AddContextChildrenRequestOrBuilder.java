@@ -28,6 +28,7 @@ public interface AddContextChildrenRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
@@ -44,6 +45,7 @@ public interface AddContextChildrenRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>

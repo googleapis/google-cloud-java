@@ -51,11 +51,6 @@ public final class ListAnnotationsRequest extends com.google.protobuf.GeneratedM
     return new ListAnnotationsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.DatasetServiceProto
         .internal_static_google_cloud_aiplatform_v1_ListAnnotationsRequest_descriptor;

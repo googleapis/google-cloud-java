@@ -53,11 +53,6 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     return new TensorboardTimeSeries();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesProto
         .internal_static_google_cloud_aiplatform_v1beta1_TensorboardTimeSeries_descriptor;
@@ -362,11 +357,6 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Metadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

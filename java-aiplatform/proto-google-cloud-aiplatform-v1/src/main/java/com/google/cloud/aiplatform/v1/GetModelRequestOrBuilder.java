@@ -29,6 +29,7 @@ public interface GetModelRequestOrBuilder
    * <pre>
    * Required. The name of the Model resource.
    * Format: `projects/{project}/locations/{location}/models/{model}`
+   *
    * In order to retrieve a specific version of the model, also provide
    * the version ID or version alias.
    *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
@@ -53,6 +54,7 @@ public interface GetModelRequestOrBuilder
    * <pre>
    * Required. The name of the Model resource.
    * Format: `projects/{project}/locations/{location}/models/{model}`
+   *
    * In order to retrieve a specific version of the model, also provide
    * the version ID or version alias.
    *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`

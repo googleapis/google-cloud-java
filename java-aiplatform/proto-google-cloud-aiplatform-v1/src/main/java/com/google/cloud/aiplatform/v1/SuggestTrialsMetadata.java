@@ -47,11 +47,6 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
     return new SuggestTrialsMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.VizierServiceProto
         .internal_static_google_cloud_aiplatform_v1_SuggestTrialsMetadata_descriptor;
@@ -127,6 +122,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The identifier of the client that is requesting the suggestion.
+   *
    * If multiple SuggestTrialsRequests have the same `client_id`,
    * the service will return the identical suggested Trial if the Trial is
    * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -153,6 +149,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The identifier of the client that is requesting the suggestion.
+   *
    * If multiple SuggestTrialsRequests have the same `client_id`,
    * the service will return the identical suggested Trial if the Trial is
    * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -744,6 +741,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -769,6 +767,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -794,6 +793,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -818,6 +818,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -838,6 +839,7 @@ public final class SuggestTrialsMetadata extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The identifier of the client that is requesting the suggestion.
+     *
      * If multiple SuggestTrialsRequests have the same `client_id`,
      * the service will return the identical suggested Trial if the Trial is
      * pending, and provide a new Trial if the last suggested Trial was completed.

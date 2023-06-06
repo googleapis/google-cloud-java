@@ -46,11 +46,6 @@ public final class ImportDataResponse extends com.google.protobuf.GeneratedMessa
     return new ImportDataResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ImportDataResponse_descriptor;

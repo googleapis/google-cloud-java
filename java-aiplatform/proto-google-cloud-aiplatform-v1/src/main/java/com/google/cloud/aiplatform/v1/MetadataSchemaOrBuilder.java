@@ -84,6 +84,7 @@ public interface MetadataSchemaOrBuilder
    * Required. The raw YAML string representation of the MetadataSchema. The
    * combination of [MetadataSchema.version] and the schema name given by
    * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+   *
    * The schema is defined as an OpenAPI 3.0.2
    * [MetadataSchema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
@@ -101,6 +102,7 @@ public interface MetadataSchemaOrBuilder
    * Required. The raw YAML string representation of the MetadataSchema. The
    * combination of [MetadataSchema.version] and the schema name given by
    * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+   *
    * The schema is defined as an OpenAPI 3.0.2
    * [MetadataSchema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)

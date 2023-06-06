@@ -49,11 +49,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
     return new FeatureNoiseSigma();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1_FeatureNoiseSigma_descriptor;
@@ -148,11 +143,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NoiseSigmaForFeature();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

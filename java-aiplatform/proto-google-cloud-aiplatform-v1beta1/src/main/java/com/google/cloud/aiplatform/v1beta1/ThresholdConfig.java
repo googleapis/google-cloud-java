@@ -45,11 +45,6 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
     return new ThresholdConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto
         .internal_static_google_cloud_aiplatform_v1beta1_ThresholdConfig_descriptor;
@@ -66,6 +61,8 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int thresholdCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object threshold_;
 
   public enum ThresholdCase

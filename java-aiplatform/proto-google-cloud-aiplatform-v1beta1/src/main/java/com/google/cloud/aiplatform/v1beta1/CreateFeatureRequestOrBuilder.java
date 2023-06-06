@@ -103,8 +103,10 @@ public interface CreateFeatureRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Feature, which will become the final
    * component of the Feature's resource name.
+   *
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
+   *
    * The value must be unique within an EntityType.
    * </pre>
    *
@@ -119,8 +121,10 @@ public interface CreateFeatureRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Feature, which will become the final
    * component of the Feature's resource name.
+   *
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
+   *
    * The value must be unique within an EntityType.
    * </pre>
    *

@@ -855,7 +855,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1beta1.SuggestTrialsResponse].
      * </pre>
      */
     default void suggestTrials(
@@ -1127,7 +1128,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1beta1.SuggestTrialsResponse].
      * </pre>
      */
     public void suggestTrials(
@@ -1384,7 +1386,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1beta1.SuggestTrialsResponse].
      * </pre>
      */
     public com.google.longrunning.Operation suggestTrials(
@@ -1619,7 +1622,8 @@ public final class VizierServiceGrpc {
      * suggested by Vertex AI Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
-     * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
+     * a
+     * [SuggestTrialsResponse][google.cloud.aiplatform.v1beta1.SuggestTrialsResponse].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

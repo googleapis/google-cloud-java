@@ -44,11 +44,6 @@ public final class AutoMlImageClassificationMetadata extends com.google.protobuf
     return new AutoMlImageClassificationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLImageClassificationProto

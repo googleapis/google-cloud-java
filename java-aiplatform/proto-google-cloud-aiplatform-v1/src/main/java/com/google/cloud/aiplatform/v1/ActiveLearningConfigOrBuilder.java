@@ -152,6 +152,6 @@ public interface ActiveLearningConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.TrainingConfigOrBuilder getTrainingConfigOrBuilder();
 
-  public com.google.cloud.aiplatform.v1.ActiveLearningConfig.HumanLabelingBudgetCase
+  com.google.cloud.aiplatform.v1.ActiveLearningConfig.HumanLabelingBudgetCase
       getHumanLabelingBudgetCase();
 }

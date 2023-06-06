@@ -48,11 +48,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     return new ExportDataConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DatasetProto
         .internal_static_google_cloud_aiplatform_v1beta1_ExportDataConfig_descriptor;
@@ -69,6 +64,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -113,6 +110,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int splitCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object split_;
 
   public enum SplitCase

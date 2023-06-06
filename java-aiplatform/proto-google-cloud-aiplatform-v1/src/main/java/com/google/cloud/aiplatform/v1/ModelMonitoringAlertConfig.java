@@ -37,11 +37,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     return new ModelMonitoringAlertConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelMonitoringProto
         .internal_static_google_cloud_aiplatform_v1_ModelMonitoringAlertConfig_descriptor;
@@ -133,18 +128,13 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     }
 
     private EmailAlertConfig() {
-      userEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      userEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EmailAlertConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -166,7 +156,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     public static final int USER_EMAILS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList userEmails_;
+    private com.google.protobuf.LazyStringArrayList userEmails_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -443,8 +434,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        userEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        userEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -476,7 +466,6 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig result =
             new com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -484,18 +473,13 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          userEmails_ = userEmails_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.userEmails_ = userEmails_;
-      }
-
       private void buildPartial0(
           com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.EmailAlertConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          userEmails_.makeImmutable();
+          result.userEmails_ = userEmails_;
+        }
       }
 
       @java.lang.Override
@@ -553,7 +537,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         if (!other.userEmails_.isEmpty()) {
           if (userEmails_.isEmpty()) {
             userEmails_ = other.userEmails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureUserEmailsIsMutable();
             userEmails_.addAll(other.userEmails_);
@@ -612,14 +596,14 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList userEmails_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList userEmails_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureUserEmailsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!userEmails_.isModifiable()) {
           userEmails_ = new com.google.protobuf.LazyStringArrayList(userEmails_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -633,7 +617,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
        * @return A list containing the userEmails.
        */
       public com.google.protobuf.ProtocolStringList getUserEmailsList() {
-        return userEmails_.getUnmodifiableView();
+        userEmails_.makeImmutable();
+        return userEmails_;
       }
       /**
        *
@@ -698,6 +683,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         }
         ensureUserEmailsIsMutable();
         userEmails_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -719,6 +705,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         }
         ensureUserEmailsIsMutable();
         userEmails_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -737,6 +724,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       public Builder addAllUserEmails(java.lang.Iterable<java.lang.String> values) {
         ensureUserEmailsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, userEmails_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -752,8 +740,9 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearUserEmails() {
-        userEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        userEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -776,6 +765,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         checkByteStringIsUtf8(value);
         ensureUserEmailsIsMutable();
         userEmails_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -849,6 +839,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
   }
 
   private int alertCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object alert_;
 
   public enum AlertCase

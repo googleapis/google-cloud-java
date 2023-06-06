@@ -50,11 +50,6 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
     return new ListModelEvaluationSlicesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesResponse_descriptor;

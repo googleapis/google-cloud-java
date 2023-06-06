@@ -49,11 +49,6 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
     return new ListTrainingPipelinesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.PipelineServiceProto
         .internal_static_google_cloud_aiplatform_v1_ListTrainingPipelinesResponse_descriptor;

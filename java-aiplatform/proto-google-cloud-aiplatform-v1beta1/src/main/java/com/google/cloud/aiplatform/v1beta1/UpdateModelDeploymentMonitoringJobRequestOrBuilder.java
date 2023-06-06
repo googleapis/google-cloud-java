@@ -83,7 +83,9 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    * model_deployment_monitoring_objective_configs or any combination of its
    * nested fields, such as:
    * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   *
    * Updatable fields:
+   *
    *   * `display_name`
    *   * `model_deployment_monitoring_schedule_config`
    *   * `model_monitoring_alert_config`
@@ -119,7 +121,9 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    * model_deployment_monitoring_objective_configs or any combination of its
    * nested fields, such as:
    * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   *
    * Updatable fields:
+   *
    *   * `display_name`
    *   * `model_deployment_monitoring_schedule_config`
    *   * `model_monitoring_alert_config`
@@ -155,7 +159,9 @@ public interface UpdateModelDeploymentMonitoringJobRequestOrBuilder
    * model_deployment_monitoring_objective_configs or any combination of its
    * nested fields, such as:
    * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   *
    * Updatable fields:
+   *
    *   * `display_name`
    *   * `model_deployment_monitoring_schedule_config`
    *   * `model_monitoring_alert_config`

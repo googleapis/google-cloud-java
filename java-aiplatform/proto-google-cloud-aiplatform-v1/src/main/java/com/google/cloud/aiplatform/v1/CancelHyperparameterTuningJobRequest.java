@@ -50,11 +50,6 @@ public final class CancelHyperparameterTuningJobRequest
     return new CancelHyperparameterTuningJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.JobServiceProto
         .internal_static_google_cloud_aiplatform_v1_CancelHyperparameterTuningJobRequest_descriptor;

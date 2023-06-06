@@ -28,7 +28,9 @@ public interface EvaluatedAnnotationExplanationOrBuilder
    *
    * <pre>
    * Explanation type.
+   *
    * For AutoML Image Classification models, possible values are:
+   *
    *   * `image-integrated-gradients`
    *   * `image-xrai`
    * </pre>
@@ -43,7 +45,9 @@ public interface EvaluatedAnnotationExplanationOrBuilder
    *
    * <pre>
    * Explanation type.
+   *
    * For AutoML Image Classification models, possible values are:
+   *
    *   * `image-integrated-gradients`
    *   * `image-xrai`
    * </pre>

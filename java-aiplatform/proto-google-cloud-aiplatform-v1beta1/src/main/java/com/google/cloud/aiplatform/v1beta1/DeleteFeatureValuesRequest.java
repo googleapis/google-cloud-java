@@ -48,11 +48,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     return new DeleteFeatureValuesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor;
@@ -144,11 +139,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SelectEntity();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1023,11 +1013,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SelectTimeRangeAndFeature();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2184,6 +2169,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   private int deleteOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object deleteOption_;
 
   public enum DeleteOptionCase

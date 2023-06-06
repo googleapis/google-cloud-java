@@ -50,11 +50,6 @@ public final class ModelDeploymentMonitoringObjectiveConfig
     return new ModelDeploymentMonitoringObjectiveConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobProto
         .internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringObjectiveConfig_descriptor;

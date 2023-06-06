@@ -62,5 +62,5 @@ public interface ThresholdConfigOrBuilder
    */
   double getValue();
 
-  public com.google.cloud.aiplatform.v1.ThresholdConfig.ThresholdCase getThresholdCase();
+  com.google.cloud.aiplatform.v1.ThresholdConfig.ThresholdCase getThresholdCase();
 }

@@ -45,11 +45,6 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
     return new ExplanationSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1_ExplanationSpec_descriptor;

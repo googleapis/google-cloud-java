@@ -48,11 +48,6 @@ public final class CancelCustomJobRequest extends com.google.protobuf.GeneratedM
     return new CancelCustomJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.JobServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CancelCustomJobRequest_descriptor;

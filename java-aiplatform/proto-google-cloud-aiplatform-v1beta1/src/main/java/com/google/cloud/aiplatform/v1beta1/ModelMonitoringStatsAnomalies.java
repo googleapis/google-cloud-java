@@ -49,11 +49,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     return new ModelMonitoringStatsAnomalies();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJobProto
         .internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringStatsAnomalies_descriptor;
@@ -264,11 +259,6 @@ public final class ModelMonitoringStatsAnomalies extends com.google.protobuf.Gen
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FeatureHistoricStatsAnomalies();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

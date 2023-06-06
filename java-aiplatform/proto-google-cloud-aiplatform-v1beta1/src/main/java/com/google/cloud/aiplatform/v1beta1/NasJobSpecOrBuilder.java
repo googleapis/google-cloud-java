@@ -122,6 +122,5 @@ public interface NasJobSpecOrBuilder
    */
   com.google.protobuf.ByteString getSearchSpaceSpecBytes();
 
-  public com.google.cloud.aiplatform.v1beta1.NasJobSpec.NasAlgorithmSpecCase
-      getNasAlgorithmSpecCase();
+  com.google.cloud.aiplatform.v1beta1.NasJobSpec.NasAlgorithmSpecCase getNasAlgorithmSpecCase();
 }

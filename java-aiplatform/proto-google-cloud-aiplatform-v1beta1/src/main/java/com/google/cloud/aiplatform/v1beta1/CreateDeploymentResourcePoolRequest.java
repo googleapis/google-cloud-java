@@ -50,11 +50,6 @@ public final class CreateDeploymentResourcePoolRequest
     return new CreateDeploymentResourcePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DeploymentResourcePoolServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CreateDeploymentResourcePoolRequest_descriptor;
@@ -195,6 +190,7 @@ public final class CreateDeploymentResourcePoolRequest
    * Required. The ID to use for the DeploymentResourcePool, which
    * will become the final component of the DeploymentResourcePool's resource
    * name.
+   *
    * The maximum length is 63 characters, and valid characters
    * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * </pre>
@@ -222,6 +218,7 @@ public final class CreateDeploymentResourcePoolRequest
    * Required. The ID to use for the DeploymentResourcePool, which
    * will become the final component of the DeploymentResourcePool's resource
    * name.
+   *
    * The maximum length is 63 characters, and valid characters
    * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * </pre>
@@ -995,6 +992,7 @@ public final class CreateDeploymentResourcePoolRequest
      * Required. The ID to use for the DeploymentResourcePool, which
      * will become the final component of the DeploymentResourcePool's resource
      * name.
+     *
      * The maximum length is 63 characters, and valid characters
      * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
@@ -1022,6 +1020,7 @@ public final class CreateDeploymentResourcePoolRequest
      * Required. The ID to use for the DeploymentResourcePool, which
      * will become the final component of the DeploymentResourcePool's resource
      * name.
+     *
      * The maximum length is 63 characters, and valid characters
      * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
@@ -1049,6 +1048,7 @@ public final class CreateDeploymentResourcePoolRequest
      * Required. The ID to use for the DeploymentResourcePool, which
      * will become the final component of the DeploymentResourcePool's resource
      * name.
+     *
      * The maximum length is 63 characters, and valid characters
      * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
@@ -1075,6 +1075,7 @@ public final class CreateDeploymentResourcePoolRequest
      * Required. The ID to use for the DeploymentResourcePool, which
      * will become the final component of the DeploymentResourcePool's resource
      * name.
+     *
      * The maximum length is 63 characters, and valid characters
      * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
@@ -1097,6 +1098,7 @@ public final class CreateDeploymentResourcePoolRequest
      * Required. The ID to use for the DeploymentResourcePool, which
      * will become the final component of the DeploymentResourcePool's resource
      * name.
+     *
      * The maximum length is 63 characters, and valid characters
      * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>

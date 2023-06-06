@@ -62,6 +62,7 @@ public interface MutateDeployedModelRequestOrBuilder
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -86,6 +87,7 @@ public interface MutateDeployedModelRequestOrBuilder
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -110,6 +112,7 @@ public interface MutateDeployedModelRequestOrBuilder
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]

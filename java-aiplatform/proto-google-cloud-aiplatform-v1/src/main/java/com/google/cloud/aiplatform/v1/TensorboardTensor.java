@@ -47,11 +47,6 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
     return new TensorboardTensor();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.TensorboardDataProto
         .internal_static_google_cloud_aiplatform_v1_TensorboardTensor_descriptor;

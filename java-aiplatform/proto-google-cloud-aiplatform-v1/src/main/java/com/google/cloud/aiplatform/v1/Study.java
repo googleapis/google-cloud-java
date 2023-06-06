@@ -50,11 +50,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     return new Study();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.StudyProto
         .internal_static_google_cloud_aiplatform_v1_Study_descriptor;

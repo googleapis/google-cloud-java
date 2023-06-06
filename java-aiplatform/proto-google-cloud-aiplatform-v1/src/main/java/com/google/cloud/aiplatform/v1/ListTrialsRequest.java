@@ -49,11 +49,6 @@ public final class ListTrialsRequest extends com.google.protobuf.GeneratedMessag
     return new ListTrialsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.VizierServiceProto
         .internal_static_google_cloud_aiplatform_v1_ListTrialsRequest_descriptor;

@@ -61,6 +61,7 @@ public interface ReadTensorboardTimeSeriesDataRequestOrBuilder
    *
    * <pre>
    * The maximum number of TensorboardTimeSeries' data to return.
+   *
    * This value should be a positive integer.
    * This value can be set to -1 to return all data.
    * </pre>

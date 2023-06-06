@@ -48,11 +48,6 @@ public final class DeployedIndexRef extends com.google.protobuf.GeneratedMessage
     return new DeployedIndexRef();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.DeployedIndexRefProto
         .internal_static_google_cloud_aiplatform_v1_DeployedIndexRef_descriptor;

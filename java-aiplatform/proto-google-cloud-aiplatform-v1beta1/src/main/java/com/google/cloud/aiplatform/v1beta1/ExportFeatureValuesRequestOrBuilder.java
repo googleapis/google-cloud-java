@@ -278,5 +278,5 @@ public interface ExportFeatureValuesRequestOrBuilder
   com.google.cloud.aiplatform.v1beta1.DestinationFeatureSettingOrBuilder getSettingsOrBuilder(
       int index);
 
-  public com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.ModeCase getModeCase();
+  com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.ModeCase getModeCase();
 }

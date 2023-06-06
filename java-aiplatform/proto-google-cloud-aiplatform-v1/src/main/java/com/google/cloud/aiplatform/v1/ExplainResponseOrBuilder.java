@@ -29,6 +29,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -43,6 +44,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -57,6 +59,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -71,6 +74,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.
@@ -86,6 +90,7 @@ public interface ExplainResponseOrBuilder
    * <pre>
    * The explanations of the Model's
    * [PredictResponse.predictions][google.cloud.aiplatform.v1.PredictResponse.predictions].
+   *
    * It has the same number of elements as
    * [instances][google.cloud.aiplatform.v1.ExplainRequest.instances] to be
    * explained.

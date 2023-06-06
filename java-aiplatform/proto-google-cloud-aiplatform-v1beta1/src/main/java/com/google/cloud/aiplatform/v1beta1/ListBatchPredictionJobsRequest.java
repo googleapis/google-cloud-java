@@ -51,11 +51,6 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
     return new ListBatchPredictionJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.JobServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ListBatchPredictionJobsRequest_descriptor;
@@ -137,7 +132,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * The standard list filter.
+   *
    * Supported fields:
+   *
    *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
    *   * `model_display_name` supports `=`, `!=` comparisons.
    *   * `state` supports `=`, `!=` comparisons.
@@ -146,7 +143,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    *   * `labels` supports general map functions that is:
    *     `labels.key=value` - key:value equality
    *     `labels.key:* - key existence
+   *
    * Some examples of using the filter are:
+   *
    *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
    *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
    *   * `NOT display_name="my_job"`
@@ -176,7 +175,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * The standard list filter.
+   *
    * Supported fields:
+   *
    *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
    *   * `model_display_name` supports `=`, `!=` comparisons.
    *   * `state` supports `=`, `!=` comparisons.
@@ -185,7 +186,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    *   * `labels` supports general map functions that is:
    *     `labels.key=value` - key:value equality
    *     `labels.key:* - key existence
+   *
    * Some examples of using the filter are:
+   *
    *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
    *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
    *   * `NOT display_name="my_job"`
@@ -916,7 +919,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The standard list filter.
+     *
      * Supported fields:
+     *
      *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
      *   * `model_display_name` supports `=`, `!=` comparisons.
      *   * `state` supports `=`, `!=` comparisons.
@@ -925,7 +930,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *   * `labels` supports general map functions that is:
      *     `labels.key=value` - key:value equality
      *     `labels.key:* - key existence
+     *
      * Some examples of using the filter are:
+     *
      *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
      *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
      *   * `NOT display_name="my_job"`
@@ -954,7 +961,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The standard list filter.
+     *
      * Supported fields:
+     *
      *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
      *   * `model_display_name` supports `=`, `!=` comparisons.
      *   * `state` supports `=`, `!=` comparisons.
@@ -963,7 +972,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *   * `labels` supports general map functions that is:
      *     `labels.key=value` - key:value equality
      *     `labels.key:* - key existence
+     *
      * Some examples of using the filter are:
+     *
      *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
      *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
      *   * `NOT display_name="my_job"`
@@ -992,7 +1003,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The standard list filter.
+     *
      * Supported fields:
+     *
      *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
      *   * `model_display_name` supports `=`, `!=` comparisons.
      *   * `state` supports `=`, `!=` comparisons.
@@ -1001,7 +1014,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *   * `labels` supports general map functions that is:
      *     `labels.key=value` - key:value equality
      *     `labels.key:* - key existence
+     *
      * Some examples of using the filter are:
+     *
      *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
      *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
      *   * `NOT display_name="my_job"`
@@ -1029,7 +1044,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The standard list filter.
+     *
      * Supported fields:
+     *
      *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
      *   * `model_display_name` supports `=`, `!=` comparisons.
      *   * `state` supports `=`, `!=` comparisons.
@@ -1038,7 +1055,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *   * `labels` supports general map functions that is:
      *     `labels.key=value` - key:value equality
      *     `labels.key:* - key existence
+     *
      * Some examples of using the filter are:
+     *
      *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
      *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
      *   * `NOT display_name="my_job"`
@@ -1062,7 +1081,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The standard list filter.
+     *
      * Supported fields:
+     *
      *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
      *   * `model_display_name` supports `=`, `!=` comparisons.
      *   * `state` supports `=`, `!=` comparisons.
@@ -1071,7 +1092,9 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      *   * `labels` supports general map functions that is:
      *     `labels.key=value` - key:value equality
      *     `labels.key:* - key existence
+     *
      * Some examples of using the filter are:
+     *
      *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
      *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
      *   * `NOT display_name="my_job"`

@@ -216,12 +216,15 @@ public interface SearchDataItemsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the DataItem that will be returned.
+   *
    *   * `data_item_id` - for = or !=.
    *   * `labeled` - for = or !=.
    *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
    *     have at least one annotation with annotation_spec_id =
    *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+   *
    * For example:
+   *
    * * `data_item=1`
    * * `has_annotation(5)`
    * </pre>
@@ -236,12 +239,15 @@ public interface SearchDataItemsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the DataItem that will be returned.
+   *
    *   * `data_item_id` - for = or !=.
    *   * `labeled` - for = or !=.
    *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
    *     have at least one annotation with annotation_spec_id =
    *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+   *
    * For example:
+   *
    * * `data_item=1`
    * * `has_annotation(5)`
    * </pre>
@@ -489,5 +495,5 @@ public interface SearchDataItemsRequestOrBuilder
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
-  public com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.OrderCase getOrderCase();
+  com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.OrderCase getOrderCase();
 }

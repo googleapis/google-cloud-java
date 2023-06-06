@@ -46,11 +46,6 @@ public final class AddExecutionEventsResponse extends com.google.protobuf.Genera
     return new AddExecutionEventsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1_AddExecutionEventsResponse_descriptor;

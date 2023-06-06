@@ -48,11 +48,6 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
     return new SampleConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.DataLabelingJobProto
         .internal_static_google_cloud_aiplatform_v1_SampleConfig_descriptor;
@@ -205,6 +200,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int initialBatchSampleSizeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object initialBatchSampleSize_;
 
   public enum InitialBatchSampleSizeCase
@@ -249,6 +246,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int followingBatchSampleSizeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object followingBatchSampleSize_;
 
   public enum FollowingBatchSampleSizeCase

@@ -47,11 +47,6 @@ public final class Neighbor extends com.google.protobuf.GeneratedMessageV3
     return new Neighbor();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1beta1_Neighbor_descriptor;

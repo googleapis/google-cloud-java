@@ -45,11 +45,6 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     return new AutoMlImageClassificationInputs();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLImageClassificationProto

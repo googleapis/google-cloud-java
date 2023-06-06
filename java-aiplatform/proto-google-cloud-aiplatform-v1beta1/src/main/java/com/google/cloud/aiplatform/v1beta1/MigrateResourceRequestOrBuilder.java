@@ -206,5 +206,5 @@ public interface MigrateResourceRequestOrBuilder
           .MigrateDataLabelingDatasetConfigOrBuilder
       getMigrateDataLabelingDatasetConfigOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.RequestCase getRequestCase();
+  com.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.RequestCase getRequestCase();
 }

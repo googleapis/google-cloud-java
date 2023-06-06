@@ -61,6 +61,7 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    *
    * <pre>
    * The standard list filter.
+   *
    *   * `slice.dimension` - for =.
    * </pre>
    *
@@ -74,6 +75,7 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    *
    * <pre>
    * The standard list filter.
+   *
    *   * `slice.dimension` - for =.
    * </pre>
    *

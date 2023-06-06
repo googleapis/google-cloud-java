@@ -50,11 +50,6 @@ public final class ExportFractionSplit extends com.google.protobuf.GeneratedMess
     return new ExportFractionSplit();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.DatasetProto
         .internal_static_google_cloud_aiplatform_v1_ExportFractionSplit_descriptor;

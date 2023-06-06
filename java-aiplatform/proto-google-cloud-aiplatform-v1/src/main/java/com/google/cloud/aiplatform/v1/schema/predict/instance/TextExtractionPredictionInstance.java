@@ -51,11 +51,6 @@ public final class TextExtractionPredictionInstance extends com.google.protobuf.
     return new TextExtractionPredictionInstance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.predict.instance
         .TextExtractionPredictionInstanceProto

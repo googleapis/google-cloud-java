@@ -49,11 +49,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
     return new ListEndpointsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.EndpointServiceProto
         .internal_static_google_cloud_aiplatform_v1_ListEndpointsResponse_descriptor;

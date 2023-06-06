@@ -47,11 +47,6 @@ public final class ExportFeatureValuesOperationMetadata
     return new ExportFeatureValuesOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1_ExportFeatureValuesOperationMetadata_descriptor;

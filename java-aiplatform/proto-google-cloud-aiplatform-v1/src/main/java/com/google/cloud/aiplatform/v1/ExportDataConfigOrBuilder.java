@@ -148,7 +148,7 @@ public interface ExportDataConfigOrBuilder
    */
   com.google.protobuf.ByteString getAnnotationsFilterBytes();
 
-  public com.google.cloud.aiplatform.v1.ExportDataConfig.DestinationCase getDestinationCase();
+  com.google.cloud.aiplatform.v1.ExportDataConfig.DestinationCase getDestinationCase();
 
-  public com.google.cloud.aiplatform.v1.ExportDataConfig.SplitCase getSplitCase();
+  com.google.cloud.aiplatform.v1.ExportDataConfig.SplitCase getSplitCase();
 }

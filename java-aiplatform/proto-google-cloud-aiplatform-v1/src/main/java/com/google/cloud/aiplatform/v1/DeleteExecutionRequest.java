@@ -49,11 +49,6 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     return new DeleteExecutionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1_DeleteExecutionRequest_descriptor;

@@ -81,7 +81,9 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
@@ -104,7 +106,9 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
@@ -127,7 +131,9 @@ public interface UpdateFeaturestoreRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`

@@ -103,6 +103,7 @@ public interface CreateTensorboardRunRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Tensorboard run, which becomes the final
    * component of the Tensorboard run's resource name.
+   *
    * This value should be 1-128 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -118,6 +119,7 @@ public interface CreateTensorboardRunRequestOrBuilder
    * <pre>
    * Required. The ID to use for the Tensorboard run, which becomes the final
    * component of the Tensorboard run's resource name.
+   *
    * This value should be 1-128 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

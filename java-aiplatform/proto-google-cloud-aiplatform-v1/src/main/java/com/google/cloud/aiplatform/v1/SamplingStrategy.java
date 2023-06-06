@@ -46,11 +46,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
     return new SamplingStrategy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelMonitoringProto
         .internal_static_google_cloud_aiplatform_v1_SamplingStrategy_descriptor;
@@ -109,11 +104,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RandomSampleConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

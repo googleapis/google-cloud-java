@@ -53,11 +53,6 @@ public final class VideoActionRecognitionPredictionInstance
     return new VideoActionRecognitionPredictionInstance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.schema.predict.instance
         .VideoActionRecognitionPredictionInstanceProto

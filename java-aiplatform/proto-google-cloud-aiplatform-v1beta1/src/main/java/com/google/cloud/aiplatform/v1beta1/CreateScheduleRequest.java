@@ -48,11 +48,6 @@ public final class CreateScheduleRequest extends com.google.protobuf.GeneratedMe
     return new CreateScheduleRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ScheduleServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CreateScheduleRequest_descriptor;

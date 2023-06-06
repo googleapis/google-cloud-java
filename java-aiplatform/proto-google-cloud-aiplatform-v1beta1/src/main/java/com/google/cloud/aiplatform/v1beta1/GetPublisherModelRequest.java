@@ -50,11 +50,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     return new GetPublisherModelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelGardenServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_GetPublisherModelRequest_descriptor;

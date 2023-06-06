@@ -56,11 +56,6 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     return new FeatureStatsAnomaly();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.FeatureMonitoringStatsProto
         .internal_static_google_cloud_aiplatform_v1_FeatureStatsAnomaly_descriptor;

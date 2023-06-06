@@ -49,11 +49,6 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
     return new ListDeploymentResourcePoolsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DeploymentResourcePoolServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ListDeploymentResourcePoolsRequest_descriptor;
@@ -155,6 +150,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
    * <pre>
    * A page token, received from a previous `ListDeploymentResourcePools` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDeploymentResourcePools` must match the call that provided the page
    * token.
@@ -182,6 +178,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
    * <pre>
    * A page token, received from a previous `ListDeploymentResourcePools` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDeploymentResourcePools` must match the call that provided the page
    * token.
@@ -786,6 +783,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      * <pre>
      * A page token, received from a previous `ListDeploymentResourcePools` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListDeploymentResourcePools` must match the call that provided the page
      * token.
@@ -812,6 +810,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      * <pre>
      * A page token, received from a previous `ListDeploymentResourcePools` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListDeploymentResourcePools` must match the call that provided the page
      * token.
@@ -838,6 +837,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      * <pre>
      * A page token, received from a previous `ListDeploymentResourcePools` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListDeploymentResourcePools` must match the call that provided the page
      * token.
@@ -863,6 +863,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      * <pre>
      * A page token, received from a previous `ListDeploymentResourcePools` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListDeploymentResourcePools` must match the call that provided the page
      * token.
@@ -884,6 +885,7 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      * <pre>
      * A page token, received from a previous `ListDeploymentResourcePools` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListDeploymentResourcePools` must match the call that provided the page
      * token.

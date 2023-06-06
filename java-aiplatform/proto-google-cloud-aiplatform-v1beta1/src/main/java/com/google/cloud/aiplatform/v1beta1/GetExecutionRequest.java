@@ -48,11 +48,6 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
     return new GetExecutionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_GetExecutionRequest_descriptor;

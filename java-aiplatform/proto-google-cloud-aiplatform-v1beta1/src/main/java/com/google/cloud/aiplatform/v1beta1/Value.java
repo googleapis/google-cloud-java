@@ -45,11 +45,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     return new Value();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ValueProto
         .internal_static_google_cloud_aiplatform_v1beta1_Value_descriptor;
@@ -66,6 +61,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase

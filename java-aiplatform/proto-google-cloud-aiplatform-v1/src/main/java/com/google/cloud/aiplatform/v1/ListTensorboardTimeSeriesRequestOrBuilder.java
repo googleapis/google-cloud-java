@@ -104,6 +104,7 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * A page token, received from a previous
    * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
    * must match the call that provided the page token.
@@ -121,6 +122,7 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * A page token, received from a previous
    * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
    * must match the call that provided the page token.

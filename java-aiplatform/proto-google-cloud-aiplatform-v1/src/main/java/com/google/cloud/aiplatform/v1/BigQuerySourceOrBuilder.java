@@ -29,6 +29,7 @@ public interface BigQuerySourceOrBuilder
    * <pre>
    * Required. BigQuery URI to a table, up to 2000 characters long.
    * Accepted forms:
+   *
    * *  BigQuery path. For example: `bq://projectId.bqDatasetId.bqTableId`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface BigQuerySourceOrBuilder
    * <pre>
    * Required. BigQuery URI to a table, up to 2000 characters long.
    * Accepted forms:
+   *
    * *  BigQuery path. For example: `bq://projectId.bqDatasetId.bqTableId`.
    * </pre>
    *

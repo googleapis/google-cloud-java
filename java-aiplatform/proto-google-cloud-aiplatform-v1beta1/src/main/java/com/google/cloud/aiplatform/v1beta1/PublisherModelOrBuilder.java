@@ -209,6 +209,35 @@ public interface PublisherModelOrBuilder
    *
    *
    * <pre>
+   * Optional. Indicates the launch stage of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage launch_stage = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for launchStage.
+   */
+  int getLaunchStageValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the launch stage of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage launch_stage = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The launchStage.
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage getLaunchStage();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Output only. Immutable. Used to indicate this model has a
    * publisher model and provide the template of the publisher model resource
    * name.

@@ -49,11 +49,6 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     return new ExportFeatureValuesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_descriptor;
@@ -182,11 +177,6 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SnapshotExport();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1308,11 +1298,6 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       return new FullExport();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
           .internal_static_google_cloud_aiplatform_v1beta1_ExportFeatureValuesRequest_FullExport_descriptor;
@@ -2304,6 +2289,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
   }
 
   private int modeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object mode_;
 
   public enum ModeCase

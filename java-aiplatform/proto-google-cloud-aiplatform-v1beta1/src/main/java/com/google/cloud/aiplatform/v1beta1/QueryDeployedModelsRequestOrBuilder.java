@@ -72,6 +72,7 @@ public interface QueryDeployedModelsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `QueryDeployedModels` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDeployedModels` must match the call that provided the page
    * token.
@@ -88,6 +89,7 @@ public interface QueryDeployedModelsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `QueryDeployedModels` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDeployedModels` must match the call that provided the page
    * token.

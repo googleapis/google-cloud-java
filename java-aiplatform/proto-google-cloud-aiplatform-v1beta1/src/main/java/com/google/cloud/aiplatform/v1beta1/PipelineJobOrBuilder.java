@@ -377,9 +377,11 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -391,9 +393,11 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -408,9 +412,11 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -422,9 +428,11 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -440,9 +448,11 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -533,6 +543,7 @@ public interface PipelineJobOrBuilder
    * will be used.
    * See
    * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+   *
    * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -551,6 +562,7 @@ public interface PipelineJobOrBuilder
    * will be used.
    * See
    * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+   *
    * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -573,6 +585,7 @@ public interface PipelineJobOrBuilder
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the Google Cloud
    * resources being launched, if applied, such as Vertex AI
@@ -597,6 +610,7 @@ public interface PipelineJobOrBuilder
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the Google Cloud
    * resources being launched, if applied, such as Vertex AI

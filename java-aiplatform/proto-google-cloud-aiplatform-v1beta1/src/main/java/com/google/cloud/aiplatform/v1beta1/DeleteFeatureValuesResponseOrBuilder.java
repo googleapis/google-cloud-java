@@ -108,6 +108,5 @@ public interface DeleteFeatureValuesResponseOrBuilder
   com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.SelectTimeRangeAndFeatureOrBuilder
       getSelectTimeRangeAndFeatureOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.ResponseCase
-      getResponseCase();
+  com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse.ResponseCase getResponseCase();
 }

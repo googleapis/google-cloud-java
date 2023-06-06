@@ -29,6 +29,7 @@ public interface AutoscalingMetricSpecOrBuilder
    * <pre>
    * Required. The resource metric name.
    * Supported metrics:
+   *
    * * For Online Prediction:
    * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
    * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
@@ -45,6 +46,7 @@ public interface AutoscalingMetricSpecOrBuilder
    * <pre>
    * Required. The resource metric name.
    * Supported metrics:
+   *
    * * For Online Prediction:
    * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
    * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`

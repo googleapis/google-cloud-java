@@ -48,11 +48,6 @@ public final class CreateMetadataStoreOperationMetadata
     return new CreateMetadataStoreOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CreateMetadataStoreOperationMetadata_descriptor;

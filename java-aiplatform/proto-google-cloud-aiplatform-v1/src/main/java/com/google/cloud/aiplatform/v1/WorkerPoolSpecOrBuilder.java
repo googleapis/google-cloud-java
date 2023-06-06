@@ -244,5 +244,5 @@ public interface WorkerPoolSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1.DiskSpecOrBuilder getDiskSpecOrBuilder();
 
-  public com.google.cloud.aiplatform.v1.WorkerPoolSpec.TaskCase getTaskCase();
+  com.google.cloud.aiplatform.v1.WorkerPoolSpec.TaskCase getTaskCase();
 }

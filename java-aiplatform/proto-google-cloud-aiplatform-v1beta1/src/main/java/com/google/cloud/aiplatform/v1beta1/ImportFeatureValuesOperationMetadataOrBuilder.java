@@ -166,4 +166,45 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The timestampOutsideRetentionRowsCount.
    */
   long getTimestampOutsideRetentionRowsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of ImportFeatureValues operations running under a single EntityType
+   * that are blocking this operation.
+   * </pre>
+   *
+   * <code>repeated int64 blocking_operation_ids = 8;</code>
+   *
+   * @return A list containing the blockingOperationIds.
+   */
+  java.util.List<java.lang.Long> getBlockingOperationIdsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of ImportFeatureValues operations running under a single EntityType
+   * that are blocking this operation.
+   * </pre>
+   *
+   * <code>repeated int64 blocking_operation_ids = 8;</code>
+   *
+   * @return The count of blockingOperationIds.
+   */
+  int getBlockingOperationIdsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of ImportFeatureValues operations running under a single EntityType
+   * that are blocking this operation.
+   * </pre>
+   *
+   * <code>repeated int64 blocking_operation_ids = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The blockingOperationIds at the given index.
+   */
+  long getBlockingOperationIds(int index);
 }

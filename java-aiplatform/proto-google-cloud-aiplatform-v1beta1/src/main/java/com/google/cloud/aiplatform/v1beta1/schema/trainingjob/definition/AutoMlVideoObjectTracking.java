@@ -47,11 +47,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
     return new AutoMlVideoObjectTracking();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
         .AutoMLVideoObjectTrackingProto

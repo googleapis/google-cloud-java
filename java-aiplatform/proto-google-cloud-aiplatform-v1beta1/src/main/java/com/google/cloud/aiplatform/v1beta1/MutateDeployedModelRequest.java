@@ -48,11 +48,6 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
     return new MutateDeployedModelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.EndpointServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_MutateDeployedModelRequest_descriptor;
@@ -135,6 +130,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -162,6 +158,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -191,6 +188,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -813,6 +811,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -839,6 +838,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -871,6 +871,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -905,6 +906,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -937,6 +939,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -975,6 +978,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -1006,6 +1010,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -1032,6 +1037,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
@@ -1062,6 +1068,7 @@ public final class MutateDeployedModelRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The DeployedModel to be mutated within the Endpoint. Only the
      * following fields can be mutated:
+     *
      * * `min_replica_count` in either
      * [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
      * [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]

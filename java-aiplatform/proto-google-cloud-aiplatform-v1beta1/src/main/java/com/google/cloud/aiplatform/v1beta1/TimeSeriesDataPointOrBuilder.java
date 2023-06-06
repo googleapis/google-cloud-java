@@ -176,5 +176,5 @@ public interface TimeSeriesDataPointOrBuilder
    */
   long getStep();
 
-  public com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint.ValueCase getValueCase();
+  com.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint.ValueCase getValueCase();
 }

@@ -458,6 +458,6 @@ public interface StudySpecOrBuilder
   com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
       getTransferLearningConfigOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.StudySpec.AutomatedStoppingSpecCase
+  com.google.cloud.aiplatform.v1beta1.StudySpec.AutomatedStoppingSpecCase
       getAutomatedStoppingSpecCase();
 }

@@ -103,6 +103,7 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    * Required. The ID to use for the DeploymentResourcePool, which
    * will become the final component of the DeploymentResourcePool's resource
    * name.
+   *
    * The maximum length is 63 characters, and valid characters
    * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * </pre>
@@ -119,6 +120,7 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    * Required. The ID to use for the DeploymentResourcePool, which
    * will become the final component of the DeploymentResourcePool's resource
    * name.
+   *
    * The maximum length is 63 characters, and valid characters
    * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * </pre>

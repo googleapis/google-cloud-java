@@ -310,5 +310,5 @@ public interface ImportDataConfigOrBuilder
    */
   com.google.protobuf.ByteString getImportSchemaUriBytes();
 
-  public com.google.cloud.aiplatform.v1.ImportDataConfig.SourceCase getSourceCase();
+  com.google.cloud.aiplatform.v1.ImportDataConfig.SourceCase getSourceCase();
 }

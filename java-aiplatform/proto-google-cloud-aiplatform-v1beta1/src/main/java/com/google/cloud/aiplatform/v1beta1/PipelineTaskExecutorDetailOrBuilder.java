@@ -109,6 +109,5 @@ public interface PipelineTaskExecutorDetailOrBuilder
   com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.CustomJobDetailOrBuilder
       getCustomJobDetailOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.DetailsCase
-      getDetailsCase();
+  com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail.DetailsCase getDetailsCase();
 }

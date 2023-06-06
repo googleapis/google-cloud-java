@@ -49,11 +49,6 @@ public final class ListSpecialistPoolsResponse extends com.google.protobuf.Gener
     return new ListSpecialistPoolsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.SpecialistPoolServiceProto
         .internal_static_google_cloud_aiplatform_v1_ListSpecialistPoolsResponse_descriptor;

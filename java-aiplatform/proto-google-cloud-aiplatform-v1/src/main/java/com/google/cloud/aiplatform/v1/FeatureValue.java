@@ -45,11 +45,6 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     return new FeatureValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.FeaturestoreOnlineServiceProto
         .internal_static_google_cloud_aiplatform_v1_FeatureValue_descriptor;
@@ -145,11 +140,6 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Metadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -880,6 +870,8 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase

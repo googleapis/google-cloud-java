@@ -51,11 +51,6 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
     return new SearchMigratableResourcesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.MigrationServiceProto
         .internal_static_google_cloud_aiplatform_v1_SearchMigratableResourcesRequest_descriptor;
@@ -211,6 +206,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *
    * <pre>
    * A filter for your search. You can use the following types of filters:
+   *
    * *   Resource type filters. The following strings filter for a specific type
    *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
    *     *   `ml_engine_model_version:*`
@@ -244,6 +240,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *
    * <pre>
    * A filter for your search. You can use the following types of filters:
+   *
    * *   Resource type filters. The following strings filter for a specific type
    *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
    *     *   `ml_engine_model_version:*`
@@ -990,6 +987,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      * <pre>
      * A filter for your search. You can use the following types of filters:
+     *
      * *   Resource type filters. The following strings filter for a specific type
      *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
      *     *   `ml_engine_model_version:*`
@@ -1022,6 +1020,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      * <pre>
      * A filter for your search. You can use the following types of filters:
+     *
      * *   Resource type filters. The following strings filter for a specific type
      *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
      *     *   `ml_engine_model_version:*`
@@ -1054,6 +1053,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      * <pre>
      * A filter for your search. You can use the following types of filters:
+     *
      * *   Resource type filters. The following strings filter for a specific type
      *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
      *     *   `ml_engine_model_version:*`
@@ -1085,6 +1085,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      * <pre>
      * A filter for your search. You can use the following types of filters:
+     *
      * *   Resource type filters. The following strings filter for a specific type
      *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
      *     *   `ml_engine_model_version:*`
@@ -1112,6 +1113,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      * <pre>
      * A filter for your search. You can use the following types of filters:
+     *
      * *   Resource type filters. The following strings filter for a specific type
      *     of [MigratableResource][google.cloud.aiplatform.v1.MigratableResource]:
      *     *   `ml_engine_model_version:*`

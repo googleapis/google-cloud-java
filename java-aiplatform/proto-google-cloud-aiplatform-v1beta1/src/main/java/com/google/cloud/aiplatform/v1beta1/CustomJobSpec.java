@@ -41,7 +41,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     workerPoolSpecs_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     network_ = "";
-    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     tensorboard_ = "";
     experiment_ = "";
     experimentRun_ = "";
@@ -51,11 +51,6 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CustomJobSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -290,9 +285,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * To specify this field, you must have already [configured VPC Network
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   *
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
@@ -325,9 +322,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * To specify this field, you must have already [configured VPC Network
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   *
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
@@ -353,16 +352,19 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList reservedIpRanges_;
+  private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -379,9 +381,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -398,9 +402,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -418,9 +424,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -445,13 +453,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -475,13 +488,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -507,13 +525,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -599,6 +622,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * Optional. Whether you want Vertex AI to enable [interactive shell
    * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * to training containers.
+   *
    * If set to `true`, you can access interactive shells at the URIs given
    * by
    * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -625,6 +649,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Whether you want Vertex AI to enable access to the customized
    * dashboard in training chief container.
+   *
    * If set to `true`, you can access the dashboard at the URIs given
    * by
    * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -1082,8 +1107,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       serviceAccount_ = "";
       network_ = "";
-      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       baseOutputDirectory_ = null;
       if (baseOutputDirectoryBuilder_ != null) {
         baseOutputDirectoryBuilder_.dispose();
@@ -1140,11 +1164,6 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.workerPoolSpecs_ = workerPoolSpecsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.reservedIpRanges_ = reservedIpRanges_;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CustomJobSpec result) {
@@ -1157,6 +1176,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        reservedIpRanges_.makeImmutable();
+        result.reservedIpRanges_ = reservedIpRanges_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.baseOutputDirectory_ =
@@ -1270,7 +1293,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -2178,9 +2201,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2212,9 +2237,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2246,9 +2273,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2279,9 +2308,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2308,9 +2339,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2332,14 +2365,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList reservedIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureReservedIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!reservedIpRanges_.isModifiable()) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2347,9 +2380,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2359,7 +2394,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the reservedIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
-      return reservedIpRanges_.getUnmodifiableView();
+      reservedIpRanges_.makeImmutable();
+      return reservedIpRanges_;
     }
     /**
      *
@@ -2367,9 +2403,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2387,9 +2425,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2408,9 +2448,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2429,9 +2471,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2448,6 +2492,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2457,9 +2502,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2475,6 +2522,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2484,9 +2532,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2499,6 +2549,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureReservedIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2508,9 +2559,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2520,8 +2573,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRanges() {
-      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2531,9 +2585,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2550,6 +2606,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2570,13 +2627,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2599,13 +2661,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2634,13 +2701,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2672,13 +2744,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2707,13 +2784,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2749,13 +2831,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2783,13 +2870,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2813,13 +2905,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2847,13 +2944,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -3017,6 +3119,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether you want Vertex AI to enable [interactive shell
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
+     *
      * If set to `true`, you can access interactive shells at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3041,6 +3144,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether you want Vertex AI to enable [interactive shell
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
+     *
      * If set to `true`, you can access interactive shells at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3069,6 +3173,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether you want Vertex AI to enable [interactive shell
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
+     *
      * If set to `true`, you can access interactive shells at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3096,6 +3201,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Whether you want Vertex AI to enable access to the customized
      * dashboard in training chief container.
+     *
      * If set to `true`, you can access the dashboard at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3119,6 +3225,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Whether you want Vertex AI to enable access to the customized
      * dashboard in training chief container.
+     *
      * If set to `true`, you can access the dashboard at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3146,6 +3253,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Whether you want Vertex AI to enable access to the customized
      * dashboard in training chief container.
+     *
      * If set to `true`, you can access the dashboard at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]

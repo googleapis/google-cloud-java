@@ -45,11 +45,6 @@ public final class IndexStats extends com.google.protobuf.GeneratedMessageV3
     return new IndexStats();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.IndexProto
         .internal_static_google_cloud_aiplatform_v1beta1_IndexStats_descriptor;

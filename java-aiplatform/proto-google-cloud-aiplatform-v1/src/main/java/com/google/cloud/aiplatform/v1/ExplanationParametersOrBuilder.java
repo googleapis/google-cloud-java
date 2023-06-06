@@ -127,6 +127,7 @@ public interface ExplanationParametersOrBuilder
    * attribution to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for
    * more details: https://arxiv.org/abs/1906.02825
+   *
    * XRAI currently performs better on natural images, like a picture of a
    * house or an animal. If the images are taken in artificial environments,
    * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -146,6 +147,7 @@ public interface ExplanationParametersOrBuilder
    * attribution to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for
    * more details: https://arxiv.org/abs/1906.02825
+   *
    * XRAI currently performs better on natural images, like a picture of a
    * house or an animal. If the images are taken in artificial environments,
    * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -165,6 +167,7 @@ public interface ExplanationParametersOrBuilder
    * attribution to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for
    * more details: https://arxiv.org/abs/1906.02825
+   *
    * XRAI currently performs better on natural images, like a picture of a
    * house or an animal. If the images are taken in artificial environments,
    * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -237,10 +240,12 @@ public interface ExplanationParametersOrBuilder
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * contained in output_indices. It must be an ndarray of integers, with the
    * same shape of the output it's explaining.
+   *
    * If not populated, returns attributions for
    * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
    * outputs. If neither top_k nor output_indices is populated, returns the
    * argmax index of the outputs.
+   *
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
    * </pre>
@@ -258,10 +263,12 @@ public interface ExplanationParametersOrBuilder
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * contained in output_indices. It must be an ndarray of integers, with the
    * same shape of the output it's explaining.
+   *
    * If not populated, returns attributions for
    * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
    * outputs. If neither top_k nor output_indices is populated, returns the
    * argmax index of the outputs.
+   *
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
    * </pre>
@@ -279,10 +286,12 @@ public interface ExplanationParametersOrBuilder
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * contained in output_indices. It must be an ndarray of integers, with the
    * same shape of the output it's explaining.
+   *
    * If not populated, returns attributions for
    * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
    * outputs. If neither top_k nor output_indices is populated, returns the
    * argmax index of the outputs.
+   *
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
    * </pre>
@@ -291,5 +300,5 @@ public interface ExplanationParametersOrBuilder
    */
   com.google.protobuf.ListValueOrBuilder getOutputIndicesOrBuilder();
 
-  public com.google.cloud.aiplatform.v1.ExplanationParameters.MethodCase getMethodCase();
+  com.google.cloud.aiplatform.v1.ExplanationParameters.MethodCase getMethodCase();
 }

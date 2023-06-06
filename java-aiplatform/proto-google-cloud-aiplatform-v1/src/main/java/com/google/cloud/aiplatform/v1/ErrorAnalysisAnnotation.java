@@ -48,11 +48,6 @@ public final class ErrorAnalysisAnnotation extends com.google.protobuf.Generated
     return new ErrorAnalysisAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.EvaluatedAnnotationProto
         .internal_static_google_cloud_aiplatform_v1_ErrorAnalysisAnnotation_descriptor;
@@ -322,11 +317,6 @@ public final class ErrorAnalysisAnnotation extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AttributedItem();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

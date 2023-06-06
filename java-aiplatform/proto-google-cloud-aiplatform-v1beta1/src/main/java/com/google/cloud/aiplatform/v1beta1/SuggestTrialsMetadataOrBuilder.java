@@ -64,6 +64,7 @@ public interface SuggestTrialsMetadataOrBuilder
    *
    * <pre>
    * The identifier of the client that is requesting the suggestion.
+   *
    * If multiple SuggestTrialsRequests have the same `client_id`,
    * the service will return the identical suggested Trial if the Trial is
    * pending, and provide a new Trial if the last suggested Trial was completed.
@@ -79,6 +80,7 @@ public interface SuggestTrialsMetadataOrBuilder
    *
    * <pre>
    * The identifier of the client that is requesting the suggestion.
+   *
    * If multiple SuggestTrialsRequests have the same `client_id`,
    * the service will return the identical suggested Trial if the Trial is
    * pending, and provide a new Trial if the last suggested Trial was completed.

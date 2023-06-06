@@ -48,11 +48,6 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
     return new QueryDeployedModelsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DeploymentResourcePoolServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_QueryDeployedModelsRequest_descriptor;
@@ -152,6 +147,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
    * <pre>
    * A page token, received from a previous `QueryDeployedModels` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDeployedModels` must match the call that provided the page
    * token.
@@ -179,6 +175,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
    * <pre>
    * A page token, received from a previous `QueryDeployedModels` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDeployedModels` must match the call that provided the page
    * token.
@@ -772,6 +769,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `QueryDeployedModels` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDeployedModels` must match the call that provided the page
      * token.
@@ -798,6 +796,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `QueryDeployedModels` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDeployedModels` must match the call that provided the page
      * token.
@@ -824,6 +823,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `QueryDeployedModels` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDeployedModels` must match the call that provided the page
      * token.
@@ -849,6 +849,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `QueryDeployedModels` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDeployedModels` must match the call that provided the page
      * token.
@@ -870,6 +871,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `QueryDeployedModels` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryDeployedModels` must match the call that provided the page
      * token.

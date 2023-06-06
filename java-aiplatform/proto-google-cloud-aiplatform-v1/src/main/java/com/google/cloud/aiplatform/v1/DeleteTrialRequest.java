@@ -48,11 +48,6 @@ public final class DeleteTrialRequest extends com.google.protobuf.GeneratedMessa
     return new DeleteTrialRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.VizierServiceProto
         .internal_static_google_cloud_aiplatform_v1_DeleteTrialRequest_descriptor;

@@ -389,9 +389,11 @@ public interface NasJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize NasJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -403,9 +405,11 @@ public interface NasJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize NasJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -420,9 +424,11 @@ public interface NasJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize NasJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -434,9 +440,11 @@ public interface NasJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize NasJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -452,9 +460,11 @@ public interface NasJobOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize NasJobs.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *

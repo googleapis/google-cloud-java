@@ -84,7 +84,9 @@ public interface UpdateFeatureRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -106,7 +108,9 @@ public interface UpdateFeatureRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -128,7 +132,9 @@ public interface UpdateFeatureRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`

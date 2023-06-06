@@ -52,11 +52,6 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     return new SavedQuery();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.SavedQueryProto
         .internal_static_google_cloud_aiplatform_v1_SavedQuery_descriptor;
@@ -383,6 +378,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Problem type of the SavedQuery.
    * Allowed values:
+   *
    * * IMAGE_CLASSIFICATION_SINGLE_LABEL
    * * IMAGE_CLASSIFICATION_MULTI_LABEL
    * * IMAGE_BOUNDING_POLY
@@ -417,6 +413,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Problem type of the SavedQuery.
    * Allowed values:
+   *
    * * IMAGE_CLASSIFICATION_SINGLE_LABEL
    * * IMAGE_CLASSIFICATION_MULTI_LABEL
    * * IMAGE_BOUNDING_POLY
@@ -2027,6 +2024,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2060,6 +2058,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2093,6 +2092,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2125,6 +2125,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY
@@ -2153,6 +2154,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Problem type of the SavedQuery.
      * Allowed values:
+     *
      * * IMAGE_CLASSIFICATION_SINGLE_LABEL
      * * IMAGE_CLASSIFICATION_MULTI_LABEL
      * * IMAGE_BOUNDING_POLY

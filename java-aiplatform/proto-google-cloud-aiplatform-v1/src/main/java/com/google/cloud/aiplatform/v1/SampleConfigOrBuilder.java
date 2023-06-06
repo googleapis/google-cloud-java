@@ -102,9 +102,9 @@ public interface SampleConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.SampleConfig.SampleStrategy getSampleStrategy();
 
-  public com.google.cloud.aiplatform.v1.SampleConfig.InitialBatchSampleSizeCase
+  com.google.cloud.aiplatform.v1.SampleConfig.InitialBatchSampleSizeCase
       getInitialBatchSampleSizeCase();
 
-  public com.google.cloud.aiplatform.v1.SampleConfig.FollowingBatchSampleSizeCase
+  com.google.cloud.aiplatform.v1.SampleConfig.FollowingBatchSampleSizeCase
       getFollowingBatchSampleSizeCase();
 }

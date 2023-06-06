@@ -49,11 +49,6 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
     return new ListDataItemsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ListDataItemsResponse_descriptor;

@@ -45,11 +45,6 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     return new NasJobOutput();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.NasJobProto
         .internal_static_google_cloud_aiplatform_v1beta1_NasJobOutput_descriptor;
@@ -222,11 +217,6 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MultiTrialJobOutput();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1733,6 +1723,8 @@ public final class NasJobOutput extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int outputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object output_;
 
   public enum OutputCase

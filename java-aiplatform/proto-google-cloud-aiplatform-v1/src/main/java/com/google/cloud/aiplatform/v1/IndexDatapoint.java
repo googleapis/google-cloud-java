@@ -49,11 +49,6 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     return new IndexDatapoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.IndexProto
         .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor;
@@ -223,19 +218,14 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
 
     private Restriction() {
       namespace_ = "";
-      allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      denyList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowList_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      denyList_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Restriction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -307,7 +297,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public static final int ALLOW_LIST_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowList_;
+    private com.google.protobuf.LazyStringArrayList allowList_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -370,7 +361,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public static final int DENY_LIST_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList denyList_;
+    private com.google.protobuf.LazyStringArrayList denyList_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -665,10 +657,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         namespace_ = "";
-        allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        denyList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        allowList_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        denyList_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -696,7 +686,6 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction buildPartial() {
         com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction result =
             new com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -704,24 +693,18 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          allowList_ = allowList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.allowList_ = allowList_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          denyList_ = denyList_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.denyList_ = denyList_;
-      }
-
       private void buildPartial0(com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.namespace_ = namespace_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          allowList_.makeImmutable();
+          result.allowList_ = allowList_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          denyList_.makeImmutable();
+          result.denyList_ = denyList_;
         }
       }
 
@@ -781,7 +764,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.allowList_.isEmpty()) {
           if (allowList_.isEmpty()) {
             allowList_ = other.allowList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureAllowListIsMutable();
             allowList_.addAll(other.allowList_);
@@ -791,7 +774,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         if (!other.denyList_.isEmpty()) {
           if (denyList_.isEmpty()) {
             denyList_ = other.denyList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureDenyListIsMutable();
             denyList_.addAll(other.denyList_);
@@ -969,14 +952,14 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList allowList_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowList_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!allowList_.isModifiable()) {
           allowList_ = new com.google.protobuf.LazyStringArrayList(allowList_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -990,7 +973,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the allowList.
        */
       public com.google.protobuf.ProtocolStringList getAllowListList() {
-        return allowList_.getUnmodifiableView();
+        allowList_.makeImmutable();
+        return allowList_;
       }
       /**
        *
@@ -1055,6 +1039,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         ensureAllowListIsMutable();
         allowList_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1076,6 +1061,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         ensureAllowListIsMutable();
         allowList_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1094,6 +1080,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllAllowList(java.lang.Iterable<java.lang.String> values) {
         ensureAllowListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowList_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1109,8 +1096,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAllowList() {
-        allowList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowList_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1133,18 +1121,19 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureAllowListIsMutable();
         allowList_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList denyList_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList denyList_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureDenyListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!denyList_.isModifiable()) {
           denyList_ = new com.google.protobuf.LazyStringArrayList(denyList_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -1158,7 +1147,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the denyList.
        */
       public com.google.protobuf.ProtocolStringList getDenyListList() {
-        return denyList_.getUnmodifiableView();
+        denyList_.makeImmutable();
+        return denyList_;
       }
       /**
        *
@@ -1223,6 +1213,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDenyListIsMutable();
         denyList_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1244,6 +1235,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDenyListIsMutable();
         denyList_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1262,6 +1254,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllDenyList(java.lang.Iterable<java.lang.String> values) {
         ensureDenyListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, denyList_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1277,8 +1270,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDenyList() {
-        denyList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        denyList_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -1301,6 +1295,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDenyListIsMutable();
         denyList_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1436,11 +1431,6 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CrowdingTag();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -135,6 +135,6 @@ public interface MigrateResourceResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigratableResourceOrBuilder getMigratableResourceOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse.MigratedResourceCase
+  com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse.MigratedResourceCase
       getMigratedResourceCase();
 }

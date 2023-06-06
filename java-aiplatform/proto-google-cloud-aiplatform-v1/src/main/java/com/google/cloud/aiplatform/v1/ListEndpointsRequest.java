@@ -51,11 +51,6 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
     return new ListEndpointsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.EndpointServiceProto
         .internal_static_google_cloud_aiplatform_v1_ListEndpointsRequest_descriptor;
@@ -138,6 +133,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. An expression for filtering the results of the request. For field
    * names both snake_case and camelCase are supported.
+   *
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
    *     i.e. the last segment of the Endpoint's [resource
    *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -146,6 +142,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
@@ -174,6 +171,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. An expression for filtering the results of the request. For field
    * names both snake_case and camelCase are supported.
+   *
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
    *     i.e. the last segment of the Endpoint's [resource
    *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -182,6 +180,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *
    * Some examples:
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
@@ -347,6 +346,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *   * `display_name`
    *   * `create_time`
    *   * `update_time`
+   *
    * Example: `display_name, create_time desc`.
    * </pre>
    *
@@ -376,6 +376,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *   * `display_name`
    *   * `create_time`
    *   * `update_time`
+   *
    * Example: `display_name, create_time desc`.
    * </pre>
    *
@@ -992,6 +993,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. An expression for filtering the results of the request. For field
      * names both snake_case and camelCase are supported.
+     *
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
      *     i.e. the last segment of the Endpoint's [resource
      *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -1000,6 +1002,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * `labels.key=value` - key:value equality
      *     * `labels.key:* or labels:key - key existence
      *     * A key including a space must be quoted. `labels."a key"`.
+     *
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
@@ -1027,6 +1030,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. An expression for filtering the results of the request. For field
      * names both snake_case and camelCase are supported.
+     *
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
      *     i.e. the last segment of the Endpoint's [resource
      *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -1035,6 +1039,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * `labels.key=value` - key:value equality
      *     * `labels.key:* or labels:key - key existence
      *     * A key including a space must be quoted. `labels."a key"`.
+     *
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
@@ -1062,6 +1067,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. An expression for filtering the results of the request. For field
      * names both snake_case and camelCase are supported.
+     *
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
      *     i.e. the last segment of the Endpoint's [resource
      *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -1070,6 +1076,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * `labels.key=value` - key:value equality
      *     * `labels.key:* or labels:key - key existence
      *     * A key including a space must be quoted. `labels."a key"`.
+     *
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
@@ -1096,6 +1103,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. An expression for filtering the results of the request. For field
      * names both snake_case and camelCase are supported.
+     *
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
      *     i.e. the last segment of the Endpoint's [resource
      *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -1104,6 +1112,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * `labels.key=value` - key:value equality
      *     * `labels.key:* or labels:key - key existence
      *     * A key including a space must be quoted. `labels."a key"`.
+     *
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
@@ -1126,6 +1135,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. An expression for filtering the results of the request. For field
      * names both snake_case and camelCase are supported.
+     *
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
      *     i.e. the last segment of the Endpoint's [resource
      *     name][google.cloud.aiplatform.v1.Endpoint.name].
@@ -1134,6 +1144,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *     * `labels.key=value` - key:value equality
      *     * `labels.key:* or labels:key - key existence
      *     * A key including a space must be quoted. `labels."a key"`.
+     *
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
@@ -1539,6 +1550,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *   * `display_name`
      *   * `create_time`
      *   * `update_time`
+     *
      * Example: `display_name, create_time desc`.
      * </pre>
      *
@@ -1567,6 +1579,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *   * `display_name`
      *   * `create_time`
      *   * `update_time`
+     *
      * Example: `display_name, create_time desc`.
      * </pre>
      *
@@ -1595,6 +1608,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *   * `display_name`
      *   * `create_time`
      *   * `update_time`
+     *
      * Example: `display_name, create_time desc`.
      * </pre>
      *
@@ -1622,6 +1636,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *   * `display_name`
      *   * `create_time`
      *   * `update_time`
+     *
      * Example: `display_name, create_time desc`.
      * </pre>
      *
@@ -1645,6 +1660,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *   * `display_name`
      *   * `create_time`
      *   * `update_time`
+     *
      * Example: `display_name, create_time desc`.
      * </pre>
      *

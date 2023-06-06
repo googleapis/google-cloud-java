@@ -51,11 +51,6 @@ public final class ReadTensorboardTimeSeriesDataRequest
     return new ReadTensorboardTimeSeriesDataRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.TensorboardServiceProto
         .internal_static_google_cloud_aiplatform_v1_ReadTensorboardTimeSeriesDataRequest_descriptor;
@@ -137,6 +132,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * The maximum number of TensorboardTimeSeries' data to return.
+   *
    * This value should be a positive integer.
    * This value can be set to -1 to return all data.
    * </pre>
@@ -731,6 +727,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of TensorboardTimeSeries' data to return.
+     *
      * This value should be a positive integer.
      * This value can be set to -1 to return all data.
      * </pre>
@@ -748,6 +745,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of TensorboardTimeSeries' data to return.
+     *
      * This value should be a positive integer.
      * This value can be set to -1 to return all data.
      * </pre>
@@ -769,6 +767,7 @@ public final class ReadTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of TensorboardTimeSeries' data to return.
+     *
      * This value should be a positive integer.
      * This value can be set to -1 to return all data.
      * </pre>

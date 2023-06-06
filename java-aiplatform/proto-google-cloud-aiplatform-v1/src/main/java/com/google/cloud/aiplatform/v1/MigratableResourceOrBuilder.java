@@ -278,5 +278,5 @@ public interface MigratableResourceOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
 
-  public com.google.cloud.aiplatform.v1.MigratableResource.ResourceCase getResourceCase();
+  com.google.cloud.aiplatform.v1.MigratableResource.ResourceCase getResourceCase();
 }

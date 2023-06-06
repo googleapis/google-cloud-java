@@ -68,5 +68,5 @@ public interface NasJobOutputOrBuilder
   com.google.cloud.aiplatform.v1beta1.NasJobOutput.MultiTrialJobOutputOrBuilder
       getMultiTrialJobOutputOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.NasJobOutput.OutputCase getOutputCase();
+  com.google.cloud.aiplatform.v1beta1.NasJobOutput.OutputCase getOutputCase();
 }

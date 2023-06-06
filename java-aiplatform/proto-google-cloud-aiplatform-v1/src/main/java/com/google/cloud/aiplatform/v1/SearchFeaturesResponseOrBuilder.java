@@ -28,7 +28,9 @@ public interface SearchFeaturesResponseOrBuilder
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -44,7 +46,9 @@ public interface SearchFeaturesResponseOrBuilder
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -60,7 +64,9 @@ public interface SearchFeaturesResponseOrBuilder
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -76,7 +82,9 @@ public interface SearchFeaturesResponseOrBuilder
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -93,7 +101,9 @@ public interface SearchFeaturesResponseOrBuilder
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`

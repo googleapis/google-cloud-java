@@ -46,11 +46,6 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
     return new UpdateFeatureRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1_UpdateFeatureRequest_descriptor;
@@ -144,7 +139,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -169,7 +166,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -194,7 +193,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `disable_monitoring`
@@ -833,7 +834,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -857,7 +860,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -887,7 +892,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -919,7 +926,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -948,7 +957,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -983,7 +994,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -1012,7 +1025,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -1036,7 +1051,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`
@@ -1064,7 +1081,9 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * user does not provide a mask then only the non-empty fields present in the
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
+     *
      * Updatable fields:
+     *
      *   * `description`
      *   * `labels`
      *   * `disable_monitoring`

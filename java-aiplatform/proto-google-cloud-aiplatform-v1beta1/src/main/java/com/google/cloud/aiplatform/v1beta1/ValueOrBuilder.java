@@ -110,5 +110,5 @@ public interface ValueOrBuilder
    */
   com.google.protobuf.ByteString getStringValueBytes();
 
-  public com.google.cloud.aiplatform.v1beta1.Value.ValueCase getValueCase();
+  com.google.cloud.aiplatform.v1beta1.Value.ValueCase getValueCase();
 }

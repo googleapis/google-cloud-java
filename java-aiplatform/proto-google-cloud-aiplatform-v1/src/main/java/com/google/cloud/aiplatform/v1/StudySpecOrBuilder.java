@@ -359,6 +359,5 @@ public interface StudySpecOrBuilder
    */
   com.google.cloud.aiplatform.v1.StudySpec.MeasurementSelectionType getMeasurementSelectionType();
 
-  public com.google.cloud.aiplatform.v1.StudySpec.AutomatedStoppingSpecCase
-      getAutomatedStoppingSpecCase();
+  com.google.cloud.aiplatform.v1.StudySpec.AutomatedStoppingSpecCase getAutomatedStoppingSpecCase();
 }

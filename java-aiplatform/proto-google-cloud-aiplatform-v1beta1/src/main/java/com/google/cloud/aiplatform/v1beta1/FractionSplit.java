@@ -50,11 +50,6 @@ public final class FractionSplit extends com.google.protobuf.GeneratedMessageV3
     return new FractionSplit();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.TrainingPipelineProto
         .internal_static_google_cloud_aiplatform_v1beta1_FractionSplit_descriptor;

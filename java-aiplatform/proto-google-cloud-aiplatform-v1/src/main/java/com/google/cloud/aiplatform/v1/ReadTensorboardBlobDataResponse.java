@@ -49,11 +49,6 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
     return new ReadTensorboardBlobDataResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.TensorboardServiceProto
         .internal_static_google_cloud_aiplatform_v1_ReadTensorboardBlobDataResponse_descriptor;

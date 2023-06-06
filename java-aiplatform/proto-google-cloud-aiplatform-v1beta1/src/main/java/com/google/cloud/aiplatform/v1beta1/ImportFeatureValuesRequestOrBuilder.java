@@ -184,7 +184,7 @@ public interface ImportFeatureValuesRequestOrBuilder
    *
    * <pre>
    * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named `entity_id`.
+   * extracted from the column named entity_id.
    * </pre>
    *
    * <code>string entity_id_field = 5;</code>
@@ -197,7 +197,7 @@ public interface ImportFeatureValuesRequestOrBuilder
    *
    * <pre>
    * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named `entity_id`.
+   * extracted from the column named entity_id.
    * </pre>
    *
    * <code>string entity_id_field = 5;</code>
@@ -329,8 +329,8 @@ public interface ImportFeatureValuesRequestOrBuilder
    */
   boolean getDisableIngestionAnalysis();
 
-  public com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.SourceCase getSourceCase();
+  com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.SourceCase getSourceCase();
 
-  public com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureTimeSourceCase
+  com.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureTimeSourceCase
       getFeatureTimeSourceCase();
 }

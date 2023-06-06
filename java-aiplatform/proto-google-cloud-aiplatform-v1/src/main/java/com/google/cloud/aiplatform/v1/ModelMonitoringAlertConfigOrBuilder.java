@@ -82,5 +82,5 @@ public interface ModelMonitoringAlertConfigOrBuilder
    */
   boolean getEnableLogging();
 
-  public com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.AlertCase getAlertCase();
+  com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.AlertCase getAlertCase();
 }

@@ -196,9 +196,11 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -210,9 +212,11 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -227,9 +231,11 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -241,9 +247,11 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -259,9 +267,11 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your IndexEndpoints.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -361,11 +371,14 @@ public interface IndexEndpointOrBuilder
    * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
+   *
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
+   *
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -384,11 +397,14 @@ public interface IndexEndpointOrBuilder
    * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
+   *
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
+   *
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -407,6 +423,7 @@ public interface IndexEndpointOrBuilder
    * <pre>
    * Optional. Deprecated: If true, expose the IndexEndpoint via private service
    * connect.
+   *
    * Only one of the fields,
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
@@ -429,6 +446,7 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * Optional. Configuration for private service connect.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
@@ -446,6 +464,7 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * Optional. Configuration for private service connect.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.
@@ -463,6 +482,7 @@ public interface IndexEndpointOrBuilder
    *
    * <pre>
    * Optional. Configuration for private service connect.
+   *
    * [network][google.cloud.aiplatform.v1.IndexEndpoint.network] and
    * [private_service_connect_config][google.cloud.aiplatform.v1.IndexEndpoint.private_service_connect_config]
    * are mutually exclusive.

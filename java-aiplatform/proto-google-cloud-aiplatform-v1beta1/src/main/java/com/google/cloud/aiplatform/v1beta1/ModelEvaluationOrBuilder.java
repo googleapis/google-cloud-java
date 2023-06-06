@@ -184,8 +184,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -199,8 +200,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -214,8 +216,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>
@@ -230,8 +233,9 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
-   * ModelEvaluationSlices. The dimensions can be used as the filter of the
+   * All possible
+   * [dimensions][google.cloud.aiplatform.v1beta1.ModelEvaluationSlice.Slice.dimension]
+   * of ModelEvaluationSlices. The dimensions can be used as the filter of the
    * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
    * request, in the form of `slice.dimension = &lt;dimension&gt;`.
    * </pre>

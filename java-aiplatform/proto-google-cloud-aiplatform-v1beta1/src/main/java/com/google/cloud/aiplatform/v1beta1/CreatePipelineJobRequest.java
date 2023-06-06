@@ -49,11 +49,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
     return new CreatePipelineJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.PipelineServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CreatePipelineJobRequest_descriptor;
@@ -193,6 +188,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    * The ID to use for the PipelineJob, which will become the final component of
    * the PipelineJob name. If not provided, an ID will be automatically
    * generated.
+   *
    * This value should be less than 128 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -220,6 +216,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    * The ID to use for the PipelineJob, which will become the final component of
    * the PipelineJob name. If not provided, an ID will be automatically
    * generated.
+   *
    * This value should be less than 128 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -976,6 +973,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1002,6 +1000,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1028,6 +1027,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1053,6 +1053,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1074,6 +1075,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>

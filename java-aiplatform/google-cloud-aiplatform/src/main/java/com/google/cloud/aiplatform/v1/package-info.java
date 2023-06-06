@@ -233,6 +233,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= ModelGardenServiceClient =======================
+ *
+ * <p>Service Description: The interface of Model Garden Service.
+ *
+ * <p>Sample for ModelGardenServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+ *   PublisherModelName name = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+ *   PublisherModel response = modelGardenServiceClient.getPublisherModel(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= PipelineServiceClient =======================
  *
  * <p>Service Description: A service for creating and managing Vertex AI's pipelines. This includes

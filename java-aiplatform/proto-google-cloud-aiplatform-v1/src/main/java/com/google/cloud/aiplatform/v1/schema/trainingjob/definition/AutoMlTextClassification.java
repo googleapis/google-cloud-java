@@ -46,11 +46,6 @@ public final class AutoMlTextClassification extends com.google.protobuf.Generate
     return new AutoMlTextClassification();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLTextClassificationProto

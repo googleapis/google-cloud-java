@@ -28,6 +28,7 @@ public interface IdMatcherOrBuilder
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -44,6 +45,7 @@ public interface IdMatcherOrBuilder
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -60,6 +62,7 @@ public interface IdMatcherOrBuilder
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with
@@ -77,6 +80,7 @@ public interface IdMatcherOrBuilder
    *
    * <pre>
    * Required. The following are accepted as `ids`:
+   *
    *  * A single-element list containing only `*`, which selects all Features
    *  in the target EntityType, or
    *  * A list containing only Feature IDs, which selects only Features with

@@ -146,5 +146,5 @@ public interface ModelMonitoringAlertConfigOrBuilder
    */
   com.google.protobuf.ByteString getNotificationChannelsBytes(int index);
 
-  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.AlertCase getAlertCase();
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.AlertCase getAlertCase();
 }

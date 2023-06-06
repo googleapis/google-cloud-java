@@ -48,11 +48,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     return new ExportModelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ExportModelRequest_descriptor;
@@ -237,11 +232,6 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OutputConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

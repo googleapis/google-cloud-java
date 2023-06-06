@@ -54,11 +54,6 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     return new Index();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.IndexProto
         .internal_static_google_cloud_aiplatform_v1beta1_Index_descriptor;
@@ -702,9 +697,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -728,9 +725,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -745,9 +744,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -769,9 +770,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -2967,9 +2970,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -2993,9 +2998,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -3010,9 +3017,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -3034,9 +3043,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -3064,9 +3075,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -3090,9 +3103,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -3114,9 +3129,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Indexes.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *

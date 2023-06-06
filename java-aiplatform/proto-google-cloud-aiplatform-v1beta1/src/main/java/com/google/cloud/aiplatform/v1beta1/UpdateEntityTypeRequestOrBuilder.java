@@ -81,7 +81,9 @@ public interface UpdateEntityTypeRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `monitoring_config.snapshot_analysis.disabled`
@@ -110,7 +112,9 @@ public interface UpdateEntityTypeRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `monitoring_config.snapshot_analysis.disabled`
@@ -139,7 +143,9 @@ public interface UpdateEntityTypeRequestOrBuilder
    * user does not provide a mask then only the non-empty fields present in the
    * request will be overwritten. Set the update_mask to `*` to override all
    * fields.
+   *
    * Updatable fields:
+   *
    *   * `description`
    *   * `labels`
    *   * `monitoring_config.snapshot_analysis.disabled`

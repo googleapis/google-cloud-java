@@ -51,11 +51,6 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     return new UploadModelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_UploadModelRequest_descriptor;
@@ -191,6 +186,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The ID to use for the uploaded Model, which will become the final
    * component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -217,6 +213,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The ID to use for the uploaded Model, which will become the final
    * component of the model resource name.
+   *
    * This value may be up to 63 characters, and valid characters are
    * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
    * </pre>
@@ -1039,6 +1036,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1064,6 +1062,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1089,6 +1088,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1113,6 +1113,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>
@@ -1133,6 +1134,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the uploaded Model, which will become the final
      * component of the model resource name.
+     *
      * This value may be up to 63 characters, and valid characters are
      * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
      * </pre>

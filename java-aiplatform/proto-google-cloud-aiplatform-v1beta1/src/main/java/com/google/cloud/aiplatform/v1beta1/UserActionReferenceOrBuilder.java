@@ -142,5 +142,5 @@ public interface UserActionReferenceOrBuilder
    */
   com.google.protobuf.ByteString getMethodBytes();
 
-  public com.google.cloud.aiplatform.v1beta1.UserActionReference.ReferenceCase getReferenceCase();
+  com.google.cloud.aiplatform.v1beta1.UserActionReference.ReferenceCase getReferenceCase();
 }

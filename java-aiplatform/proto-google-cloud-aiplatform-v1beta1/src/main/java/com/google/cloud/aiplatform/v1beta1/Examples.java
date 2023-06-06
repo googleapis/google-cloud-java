@@ -46,11 +46,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     return new Examples();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1beta1_Examples_descriptor;
@@ -162,11 +157,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExampleGcsSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1162,6 +1152,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -1206,6 +1198,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase

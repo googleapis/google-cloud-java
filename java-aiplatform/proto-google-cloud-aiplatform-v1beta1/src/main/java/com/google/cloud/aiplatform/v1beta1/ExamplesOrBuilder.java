@@ -192,7 +192,7 @@ public interface ExamplesOrBuilder
    */
   int getNeighborCount();
 
-  public com.google.cloud.aiplatform.v1beta1.Examples.SourceCase getSourceCase();
+  com.google.cloud.aiplatform.v1beta1.Examples.SourceCase getSourceCase();
 
-  public com.google.cloud.aiplatform.v1beta1.Examples.ConfigCase getConfigCase();
+  com.google.cloud.aiplatform.v1beta1.Examples.ConfigCase getConfigCase();
 }

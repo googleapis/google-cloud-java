@@ -638,8 +638,7 @@ public interface ScheduleOrBuilder
   com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder
       getLastScheduledRunResponseOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.Schedule.TimeSpecificationCase
-      getTimeSpecificationCase();
+  com.google.cloud.aiplatform.v1beta1.Schedule.TimeSpecificationCase getTimeSpecificationCase();
 
-  public com.google.cloud.aiplatform.v1beta1.Schedule.RequestCase getRequestCase();
+  com.google.cloud.aiplatform.v1beta1.Schedule.RequestCase getRequestCase();
 }

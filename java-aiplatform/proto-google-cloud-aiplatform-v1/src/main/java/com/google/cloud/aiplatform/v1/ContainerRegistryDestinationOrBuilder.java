@@ -30,10 +30,13 @@ public interface ContainerRegistryDestinationOrBuilder
    * Required. Container Registry URI of a container image.
    * Only Google Container Registry and Artifact Registry are supported now.
    * Accepted forms:
+   *
    * *  Google Container Registry path. For example:
    *    `gcr.io/projectId/imageName:tag`.
+   *
    * *  Artifact Registry path. For example:
    *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+   *
    * If a tag is not specified, "latest" will be used as the default tag.
    * </pre>
    *
@@ -49,10 +52,13 @@ public interface ContainerRegistryDestinationOrBuilder
    * Required. Container Registry URI of a container image.
    * Only Google Container Registry and Artifact Registry are supported now.
    * Accepted forms:
+   *
    * *  Google Container Registry path. For example:
    *    `gcr.io/projectId/imageName:tag`.
+   *
    * *  Artifact Registry path. For example:
    *    `us-central1-docker.pkg.dev/projectId/repoName/imageName:tag`.
+   *
    * If a tag is not specified, "latest" will be used as the default tag.
    * </pre>
    *

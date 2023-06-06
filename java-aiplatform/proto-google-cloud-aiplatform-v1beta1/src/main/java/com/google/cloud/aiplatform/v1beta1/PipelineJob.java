@@ -52,11 +52,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     return new PipelineJob();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.Pipeline
         .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_descriptor;
@@ -467,11 +462,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       return new RuntimeConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.Pipeline
           .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor;
@@ -556,7 +546,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getArtifactIdBytes();
 
-      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.KindCase
+      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.KindCase
           getKindCase();
     }
     /**
@@ -586,11 +576,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         return new InputArtifact();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1beta1.Pipeline
             .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor;
@@ -608,6 +593,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int kindCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object kind_;
 
       public enum KindCase
@@ -3972,9 +3959,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -3998,9 +3987,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4015,9 +4006,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4039,9 +4032,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize PipelineJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4176,6 +4171,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * will be used.
    * See
    * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+   *
    * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -4205,6 +4201,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * will be used.
    * See
    * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+   *
    * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -4242,6 +4239,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the Google Cloud
    * resources being launched, if applied, such as Vertex AI
@@ -4277,6 +4275,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * Private services access must already be configured for the network.
    * Pipeline job will apply the network configuration to the Google Cloud
    * resources being launched, if applied, such as Vertex AI
@@ -6955,9 +6954,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -6981,9 +6982,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -6998,9 +7001,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7022,9 +7027,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7052,9 +7059,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7078,9 +7087,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7102,9 +7113,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize PipelineJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7511,6 +7524,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * will be used.
      * See
      * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+     *
      * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -7539,6 +7553,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * will be used.
      * See
      * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+     *
      * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -7567,6 +7582,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * will be used.
      * See
      * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+     *
      * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -7594,6 +7610,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * will be used.
      * See
      * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+     *
      * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -7617,6 +7634,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * will be used.
      * See
      * https://cloud.google.com/compute/docs/access/service-accounts#default_service_account
+     *
      * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
      * permission on this service account.
      * </pre>
@@ -7650,6 +7668,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the Google Cloud
      * resources being launched, if applied, such as Vertex AI
@@ -7684,6 +7703,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the Google Cloud
      * resources being launched, if applied, such as Vertex AI
@@ -7718,6 +7738,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the Google Cloud
      * resources being launched, if applied, such as Vertex AI
@@ -7751,6 +7772,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the Google Cloud
      * resources being launched, if applied, such as Vertex AI
@@ -7780,6 +7802,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the Google Cloud
      * resources being launched, if applied, such as Vertex AI

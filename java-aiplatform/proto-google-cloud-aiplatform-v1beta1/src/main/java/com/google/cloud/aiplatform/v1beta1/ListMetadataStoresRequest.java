@@ -49,11 +49,6 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
     return new ListMetadataStoresRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ListMetadataStoresRequest_descriptor;
@@ -159,6 +154,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    * A page token, received from a previous
    * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -187,6 +183,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    * A page token, received from a previous
    * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -795,6 +792,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -822,6 +820,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -849,6 +848,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -875,6 +875,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -897,6 +898,7 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      * A page token, received from a previous
      * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)

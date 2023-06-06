@@ -44,7 +44,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     dataLabelingJob_ = "";
     dataItemFilter_ = "";
     annotationsFilter_ = "";
-    annotationFilters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    annotationFilters_ = com.google.protobuf.LazyStringArrayList.emptyList();
     orderBy_ = "";
     pageToken_ = "";
   }
@@ -53,11 +53,6 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchDataItemsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -164,11 +159,6 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OrderByAnnotation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -984,6 +974,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   }
 
   private int orderCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object order_;
 
   public enum OrderCase
@@ -1356,12 +1348,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * An expression for filtering the DataItem that will be returned.
+   *
    *   * `data_item_id` - for = or !=.
    *   * `labeled` - for = or !=.
    *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
    *     have at least one annotation with annotation_spec_id =
    *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+   *
    * For example:
+   *
    * * `data_item=1`
    * * `has_annotation(5)`
    * </pre>
@@ -1387,12 +1382,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * An expression for filtering the DataItem that will be returned.
+   *
    *   * `data_item_id` - for = or !=.
    *   * `labeled` - for = or !=.
    *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
    *     have at least one annotation with annotation_spec_id =
    *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+   *
    * For example:
+   *
    * * `data_item=1`
    * * `has_annotation(5)`
    * </pre>
@@ -1478,7 +1476,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
   public static final int ANNOTATION_FILTERS_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList annotationFilters_;
+  private com.google.protobuf.LazyStringArrayList annotationFilters_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2113,8 +2112,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       dataLabelingJob_ = "";
       dataItemFilter_ = "";
       annotationsFilter_ = "";
-      annotationFilters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      annotationFilters_ = com.google.protobuf.LazyStringArrayList.emptyList();
       fieldMask_ = null;
       if (fieldMaskBuilder_ != null) {
         fieldMaskBuilder_.dispose();
@@ -2153,22 +2151,12 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest result =
           new com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        annotationFilters_ = annotationFilters_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.annotationFilters_ = annotationFilters_;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest result) {
@@ -2187,6 +2175,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.annotationsFilter_ = annotationsFilter_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        annotationFilters_.makeImmutable();
+        result.annotationFilters_ = annotationFilters_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.fieldMask_ = fieldMaskBuilder_ == null ? fieldMask_ : fieldMaskBuilder_.build();
@@ -2288,7 +2280,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       if (!other.annotationFilters_.isEmpty()) {
         if (annotationFilters_.isEmpty()) {
           annotationFilters_ = other.annotationFilters_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureAnnotationFiltersIsMutable();
           annotationFilters_.addAll(other.annotationFilters_);
@@ -3258,12 +3250,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An expression for filtering the DataItem that will be returned.
+     *
      *   * `data_item_id` - for = or !=.
      *   * `labeled` - for = or !=.
      *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
      *     have at least one annotation with annotation_spec_id =
      *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+     *
      * For example:
+     *
      * * `data_item=1`
      * * `has_annotation(5)`
      * </pre>
@@ -3288,12 +3283,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An expression for filtering the DataItem that will be returned.
+     *
      *   * `data_item_id` - for = or !=.
      *   * `labeled` - for = or !=.
      *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
      *     have at least one annotation with annotation_spec_id =
      *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+     *
      * For example:
+     *
      * * `data_item=1`
      * * `has_annotation(5)`
      * </pre>
@@ -3318,12 +3316,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An expression for filtering the DataItem that will be returned.
+     *
      *   * `data_item_id` - for = or !=.
      *   * `labeled` - for = or !=.
      *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
      *     have at least one annotation with annotation_spec_id =
      *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+     *
      * For example:
+     *
      * * `data_item=1`
      * * `has_annotation(5)`
      * </pre>
@@ -3347,12 +3348,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An expression for filtering the DataItem that will be returned.
+     *
      *   * `data_item_id` - for = or !=.
      *   * `labeled` - for = or !=.
      *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
      *     have at least one annotation with annotation_spec_id =
      *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+     *
      * For example:
+     *
      * * `data_item=1`
      * * `has_annotation(5)`
      * </pre>
@@ -3372,12 +3376,15 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * An expression for filtering the DataItem that will be returned.
+     *
      *   * `data_item_id` - for = or !=.
      *   * `labeled` - for = or !=.
      *   * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that
      *     have at least one annotation with annotation_spec_id =
      *     `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob.
+     *
      * For example:
+     *
      * * `data_item=1`
      * * `has_annotation(5)`
      * </pre>
@@ -3529,14 +3536,14 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList annotationFilters_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList annotationFilters_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAnnotationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!annotationFilters_.isModifiable()) {
         annotationFilters_ = new com.google.protobuf.LazyStringArrayList(annotationFilters_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -3554,7 +3561,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return A list containing the annotationFilters.
      */
     public com.google.protobuf.ProtocolStringList getAnnotationFiltersList() {
-      return annotationFilters_.getUnmodifiableView();
+      annotationFilters_.makeImmutable();
+      return annotationFilters_;
     }
     /**
      *
@@ -3635,6 +3643,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       }
       ensureAnnotationFiltersIsMutable();
       annotationFilters_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3660,6 +3669,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       }
       ensureAnnotationFiltersIsMutable();
       annotationFilters_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3682,6 +3692,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
     public Builder addAllAnnotationFilters(java.lang.Iterable<java.lang.String> values) {
       ensureAnnotationFiltersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationFilters_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3701,8 +3712,9 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAnnotationFilters() {
-      annotationFilters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      annotationFilters_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -3729,6 +3741,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureAnnotationFiltersIsMutable();
       annotationFilters_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

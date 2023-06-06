@@ -48,11 +48,6 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
     return new UserActionReference();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.UserActionReferenceProto
         .internal_static_google_cloud_aiplatform_v1beta1_UserActionReference_descriptor;
@@ -69,6 +64,8 @@ public final class UserActionReference extends com.google.protobuf.GeneratedMess
   }
 
   private int referenceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reference_;
 
   public enum ReferenceCase

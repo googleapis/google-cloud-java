@@ -48,11 +48,6 @@ public final class BatchImportEvaluatedAnnotationsResponse
     return new BatchImportEvaluatedAnnotationsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_BatchImportEvaluatedAnnotationsResponse_descriptor;

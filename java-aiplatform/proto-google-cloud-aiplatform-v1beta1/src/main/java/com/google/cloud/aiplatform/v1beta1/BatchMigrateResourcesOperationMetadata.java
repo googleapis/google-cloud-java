@@ -50,11 +50,6 @@ public final class BatchMigrateResourcesOperationMetadata
     return new BatchMigrateResourcesOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MigrationServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_descriptor;
@@ -223,7 +218,7 @@ public final class BatchMigrateResourcesOperationMetadata
      */
     com.google.cloud.aiplatform.v1beta1.MigrateResourceRequestOrBuilder getRequestOrBuilder();
 
-    public com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult
+    com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata.PartialResult
             .ResultCase
         getResultCase();
   }
@@ -256,11 +251,6 @@ public final class BatchMigrateResourcesOperationMetadata
       return new PartialResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.MigrationServiceProto
           .internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_PartialResult_descriptor;
@@ -279,6 +269,8 @@ public final class BatchMigrateResourcesOperationMetadata
     }
 
     private int resultCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object result_;
 
     public enum ResultCase

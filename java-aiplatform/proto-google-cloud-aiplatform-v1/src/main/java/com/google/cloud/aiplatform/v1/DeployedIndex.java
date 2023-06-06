@@ -41,7 +41,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     index_ = "";
     displayName_ = "";
-    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     deploymentGroup_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeployedIndex();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -362,17 +357,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * Output only. The DeployedIndex may depend on various data on its original
    * Index. Additionally when certain changes to the original Index are being
    * done (e.g. when what the Index contains is being changed) the DeployedIndex
-   * may be asynchronously updated in the background to reflect this changes. If
-   * this timestamp's value is at least the
+   * may be asynchronously updated in the background to reflect these changes.
+   * If this timestamp's value is at least the
    * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
    * original Index, it means that this DeployedIndex and the original Index are
    * in sync. If this timestamp is older, then to see which updates this
-   * DeployedIndex already contains (and which not), one must
-   * [list][Operations.ListOperations] [Operations][Operation]
-   * [working][Operation.name] on the original Index. Only
-   * the successfully completed Operations with
-   * [Operations.metadata.generic_metadata.update_time]
-   * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+   * DeployedIndex already contains (and which it does not), one must
+   * [list][google.longrunning.Operations.ListOperations] the operations that
+   * are running on the original Index. Only the successfully completed
+   * Operations with
+   * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
    * equal or before this sync time are contained in this DeployedIndex.
    * </pre>
    *
@@ -393,17 +387,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * Output only. The DeployedIndex may depend on various data on its original
    * Index. Additionally when certain changes to the original Index are being
    * done (e.g. when what the Index contains is being changed) the DeployedIndex
-   * may be asynchronously updated in the background to reflect this changes. If
-   * this timestamp's value is at least the
+   * may be asynchronously updated in the background to reflect these changes.
+   * If this timestamp's value is at least the
    * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
    * original Index, it means that this DeployedIndex and the original Index are
    * in sync. If this timestamp is older, then to see which updates this
-   * DeployedIndex already contains (and which not), one must
-   * [list][Operations.ListOperations] [Operations][Operation]
-   * [working][Operation.name] on the original Index. Only
-   * the successfully completed Operations with
-   * [Operations.metadata.generic_metadata.update_time]
-   * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+   * DeployedIndex already contains (and which it does not), one must
+   * [list][google.longrunning.Operations.ListOperations] the operations that
+   * are running on the original Index. Only the successfully completed
+   * Operations with
+   * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
    * equal or before this sync time are contained in this DeployedIndex.
    * </pre>
    *
@@ -426,17 +419,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * Output only. The DeployedIndex may depend on various data on its original
    * Index. Additionally when certain changes to the original Index are being
    * done (e.g. when what the Index contains is being changed) the DeployedIndex
-   * may be asynchronously updated in the background to reflect this changes. If
-   * this timestamp's value is at least the
+   * may be asynchronously updated in the background to reflect these changes.
+   * If this timestamp's value is at least the
    * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
    * original Index, it means that this DeployedIndex and the original Index are
    * in sync. If this timestamp is older, then to see which updates this
-   * DeployedIndex already contains (and which not), one must
-   * [list][Operations.ListOperations] [Operations][Operation]
-   * [working][Operation.name] on the original Index. Only
-   * the successfully completed Operations with
-   * [Operations.metadata.generic_metadata.update_time]
-   * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+   * DeployedIndex already contains (and which it does not), one must
+   * [list][google.longrunning.Operations.ListOperations] the operations that
+   * are running on the original Index. Only the successfully completed
+   * Operations with
+   * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
    * equal or before this sync time are contained in this DeployedIndex.
    * </pre>
    *
@@ -537,12 +529,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * min_replica_count is not set, the default value is 2 (we don't provide SLA
    * when min_replica_count=1). If max_replica_count is not set, the default
    * value is min_replica_count. The max allowed replica count is 1000.
+   *
    * Available machine types for SMALL shard:
    * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+   *
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
+   *
    * Available machine types for LARGE shard:
    * e2-highmem-16, n2d-standard-32.
+   *
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
    * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
@@ -566,12 +562,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * min_replica_count is not set, the default value is 2 (we don't provide SLA
    * when min_replica_count=1). If max_replica_count is not set, the default
    * value is min_replica_count. The max allowed replica count is 1000.
+   *
    * Available machine types for SMALL shard:
    * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+   *
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
+   *
    * Available machine types for LARGE shard:
    * e2-highmem-16, n2d-standard-32.
+   *
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
    * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
@@ -597,12 +597,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * min_replica_count is not set, the default value is 2 (we don't provide SLA
    * when min_replica_count=1). If max_replica_count is not set, the default
    * value is min_replica_count. The max allowed replica count is 1000.
+   *
    * Available machine types for SMALL shard:
    * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+   *
    * Available machine types for MEDIUM shard:
    * e2-standard-16 and all machine types available for LARGE shard.
+   *
    * Available machine types for LARGE shard:
    * e2-highmem-16, n2d-standard-32.
+   *
    * n1-standard-16 and n1-standard-32 are still available, but we recommend
    * e2-standard-16 and e2-highmem-16 for cost efficiency.
    * </pre>
@@ -627,8 +631,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. If true, private endpoint's access logs are sent to Cloud
    * Logging.
+   *
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each MatchRequest.
+   *
    * Note that logs may incur a cost, especially if the deployed
    * index receives a high queries per second rate (QPS).
    * Estimate your costs before enabling this option.
@@ -703,16 +709,19 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
   public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList reservedIpRanges_;
+  private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
@@ -731,9 +740,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
@@ -752,9 +763,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
@@ -774,9 +787,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of reserved ip ranges under the VPC network that can be
    * used for this DeployedIndex.
+   *
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
@@ -801,6 +816,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The deployment group can be no longer than 64 characters (eg:
    * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   *
    * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
    * practice when the peered network has multiple peering ranges. This creates
    * your deployments from predictable IP spaces for easier traffic
@@ -808,6 +824,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * used with the same reserved_ip_ranges which means if the deployment_group
    * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
    * [d, e] is disallowed.
+   *
    * Note: we only support up to 5 deployment groups(not including 'default').
    * </pre>
    *
@@ -833,6 +850,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The deployment group can be no longer than 64 characters (eg:
    * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   *
    * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
    * practice when the peered network has multiple peering ranges. This creates
    * your deployments from predictable IP spaces for easier traffic
@@ -840,6 +858,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    * used with the same reserved_ip_ranges which means if the deployment_group
    * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
    * [d, e] is disallowed.
+   *
    * Note: we only support up to 5 deployment groups(not including 'default').
    * </pre>
    *
@@ -1229,8 +1248,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         deployedIndexAuthConfigBuilder_.dispose();
         deployedIndexAuthConfigBuilder_ = null;
       }
-      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       deploymentGroup_ = "";
       return this;
     }
@@ -1259,20 +1277,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.DeployedIndex buildPartial() {
       com.google.cloud.aiplatform.v1.DeployedIndex result =
           new com.google.cloud.aiplatform.v1.DeployedIndex(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.DeployedIndex result) {
-      if (((bitField0_ & 0x00000400) != 0)) {
-        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.reservedIpRanges_ = reservedIpRanges_;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.DeployedIndex result) {
@@ -1317,6 +1326,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
             deployedIndexAuthConfigBuilder_ == null
                 ? deployedIndexAuthConfig_
                 : deployedIndexAuthConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        reservedIpRanges_.makeImmutable();
+        result.reservedIpRanges_ = reservedIpRanges_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.deploymentGroup_ = deploymentGroup_;
@@ -1407,7 +1420,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -2341,17 +2354,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2371,17 +2383,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2407,17 +2418,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2445,17 +2455,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2480,17 +2489,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2521,17 +2529,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2556,17 +2563,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2586,17 +2592,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2620,17 +2625,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * Output only. The DeployedIndex may depend on various data on its original
      * Index. Additionally when certain changes to the original Index are being
      * done (e.g. when what the Index contains is being changed) the DeployedIndex
-     * may be asynchronously updated in the background to reflect this changes. If
-     * this timestamp's value is at least the
+     * may be asynchronously updated in the background to reflect these changes.
+     * If this timestamp's value is at least the
      * [Index.update_time][google.cloud.aiplatform.v1.Index.update_time] of the
      * original Index, it means that this DeployedIndex and the original Index are
      * in sync. If this timestamp is older, then to see which updates this
-     * DeployedIndex already contains (and which not), one must
-     * [list][Operations.ListOperations] [Operations][Operation]
-     * [working][Operation.name] on the original Index. Only
-     * the successfully completed Operations with
-     * [Operations.metadata.generic_metadata.update_time]
-     * [google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
+     * DeployedIndex already contains (and which it does not), one must
+     * [list][google.longrunning.Operations.ListOperations] the operations that
+     * are running on the original Index. Only the successfully completed
+     * Operations with
+     * [update_time][google.cloud.aiplatform.v1.GenericOperationMetadata.update_time]
      * equal or before this sync time are contained in this DeployedIndex.
      * </pre>
      *
@@ -2930,12 +2934,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -2958,12 +2966,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -2992,12 +3004,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3028,12 +3044,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3062,12 +3082,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3103,12 +3127,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3136,12 +3164,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3165,12 +3197,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3198,12 +3234,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * min_replica_count is not set, the default value is 2 (we don't provide SLA
      * when min_replica_count=1). If max_replica_count is not set, the default
      * value is min_replica_count. The max allowed replica count is 1000.
+     *
      * Available machine types for SMALL shard:
      * e2-standard-2 and all machine types available for MEDIUM and LARGE shard.
+     *
      * Available machine types for MEDIUM shard:
      * e2-standard-16 and all machine types available for LARGE shard.
+     *
      * Available machine types for LARGE shard:
      * e2-highmem-16, n2d-standard-32.
+     *
      * n1-standard-16 and n1-standard-32 are still available, but we recommend
      * e2-standard-16 and e2-highmem-16 for cost efficiency.
      * </pre>
@@ -3236,8 +3276,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. If true, private endpoint's access logs are sent to Cloud
      * Logging.
+     *
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each MatchRequest.
+     *
      * Note that logs may incur a cost, especially if the deployed
      * index receives a high queries per second rate (QPS).
      * Estimate your costs before enabling this option.
@@ -3257,8 +3299,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. If true, private endpoint's access logs are sent to Cloud
      * Logging.
+     *
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each MatchRequest.
+     *
      * Note that logs may incur a cost, especially if the deployed
      * index receives a high queries per second rate (QPS).
      * Estimate your costs before enabling this option.
@@ -3282,8 +3326,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. If true, private endpoint's access logs are sent to Cloud
      * Logging.
+     *
      * These logs are like standard server access logs, containing
      * information like timestamp and latency for each MatchRequest.
+     *
      * Note that logs may incur a cost, especially if the deployed
      * index receives a high queries per second rate (QPS).
      * Estimate your costs before enabling this option.
@@ -3507,14 +3553,14 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       return deployedIndexAuthConfigBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList reservedIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureReservedIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!reservedIpRanges_.isModifiable()) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -3522,9 +3568,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3536,7 +3584,8 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the reservedIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
-      return reservedIpRanges_.getUnmodifiableView();
+      reservedIpRanges_.makeImmutable();
+      return reservedIpRanges_;
     }
     /**
      *
@@ -3544,9 +3593,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3566,9 +3617,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3589,9 +3642,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3612,9 +3667,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3633,6 +3690,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3642,9 +3700,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3662,6 +3722,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3671,9 +3732,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3688,6 +3751,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureReservedIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3697,9 +3761,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3711,8 +3777,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRanges() {
-      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -3722,9 +3789,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of reserved ip ranges under the VPC network that can be
      * used for this DeployedIndex.
+     *
      * If set, we will deploy the index within the provided ip ranges. Otherwise,
      * the index might be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
      * Example: 'vertex-ai-ip-range'.
@@ -3743,6 +3812,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3754,6 +3824,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The deployment group can be no longer than 64 characters (eg:
      * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     *
      * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
      * practice when the peered network has multiple peering ranges. This creates
      * your deployments from predictable IP spaces for easier traffic
@@ -3761,6 +3832,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * used with the same reserved_ip_ranges which means if the deployment_group
      * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
      * [d, e] is disallowed.
+     *
      * Note: we only support up to 5 deployment groups(not including 'default').
      * </pre>
      *
@@ -3785,6 +3857,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The deployment group can be no longer than 64 characters (eg:
      * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     *
      * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
      * practice when the peered network has multiple peering ranges. This creates
      * your deployments from predictable IP spaces for easier traffic
@@ -3792,6 +3865,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * used with the same reserved_ip_ranges which means if the deployment_group
      * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
      * [d, e] is disallowed.
+     *
      * Note: we only support up to 5 deployment groups(not including 'default').
      * </pre>
      *
@@ -3816,6 +3890,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The deployment group can be no longer than 64 characters (eg:
      * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     *
      * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
      * practice when the peered network has multiple peering ranges. This creates
      * your deployments from predictable IP spaces for easier traffic
@@ -3823,6 +3898,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * used with the same reserved_ip_ranges which means if the deployment_group
      * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
      * [d, e] is disallowed.
+     *
      * Note: we only support up to 5 deployment groups(not including 'default').
      * </pre>
      *
@@ -3846,6 +3922,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The deployment group can be no longer than 64 characters (eg:
      * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     *
      * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
      * practice when the peered network has multiple peering ranges. This creates
      * your deployments from predictable IP spaces for easier traffic
@@ -3853,6 +3930,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * used with the same reserved_ip_ranges which means if the deployment_group
      * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
      * [d, e] is disallowed.
+     *
      * Note: we only support up to 5 deployment groups(not including 'default').
      * </pre>
      *
@@ -3872,6 +3950,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The deployment group can be no longer than 64 characters (eg:
      * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     *
      * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
      * practice when the peered network has multiple peering ranges. This creates
      * your deployments from predictable IP spaces for easier traffic
@@ -3879,6 +3958,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * used with the same reserved_ip_ranges which means if the deployment_group
      * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
      * [d, e] is disallowed.
+     *
      * Note: we only support up to 5 deployment groups(not including 'default').
      * </pre>
      *

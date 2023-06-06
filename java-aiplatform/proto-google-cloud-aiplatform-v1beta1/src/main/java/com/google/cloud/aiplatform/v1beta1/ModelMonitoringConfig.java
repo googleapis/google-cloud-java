@@ -48,11 +48,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     return new ModelMonitoringConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto
         .internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringConfig_descriptor;
@@ -215,6 +210,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * YAML schema file uri in Cloud Storage describing the format of a single
    * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+   *
    * If there are any data type differences between predict instance and TFDV
    * instance, this field can be used to override the schema.
    * For models trained with Vertex AI, this field must be set as all the
@@ -243,6 +239,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * YAML schema file uri in Cloud Storage describing the format of a single
    * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+   *
    * If there are any data type differences between predict instance and TFDV
    * instance, this field can be used to override the schema.
    * For models trained with Vertex AI, this field must be set as all the
@@ -1428,6 +1425,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * YAML schema file uri in Cloud Storage describing the format of a single
      * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
      * For models trained with Vertex AI, this field must be set as all the
@@ -1455,6 +1453,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * YAML schema file uri in Cloud Storage describing the format of a single
      * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
      * For models trained with Vertex AI, this field must be set as all the
@@ -1482,6 +1481,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * YAML schema file uri in Cloud Storage describing the format of a single
      * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
      * For models trained with Vertex AI, this field must be set as all the
@@ -1508,6 +1508,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * YAML schema file uri in Cloud Storage describing the format of a single
      * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
      * For models trained with Vertex AI, this field must be set as all the
@@ -1530,6 +1531,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * YAML schema file uri in Cloud Storage describing the format of a single
      * instance that you want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
      * For models trained with Vertex AI, this field must be set as all the

@@ -335,5 +335,5 @@ public interface FeatureValueOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeatureValue.MetadataOrBuilder getMetadataOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.FeatureValue.ValueCase getValueCase();
+  com.google.cloud.aiplatform.v1beta1.FeatureValue.ValueCase getValueCase();
 }

@@ -46,11 +46,6 @@ public final class AutoMlTextSentiment extends com.google.protobuf.GeneratedMess
     return new AutoMlTextSentiment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTextSentimentProto
         .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTextSentiment_descriptor;

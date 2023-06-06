@@ -50,11 +50,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     return new Schedule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ScheduleProto
         .internal_static_google_cloud_aiplatform_v1beta1_Schedule_descriptor;
@@ -349,11 +344,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RunResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1208,6 +1198,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int timeSpecificationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object timeSpecification_;
 
   public enum TimeSpecificationCase
@@ -1252,6 +1244,8 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int requestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object request_;
 
   public enum RequestCase

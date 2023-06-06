@@ -78,6 +78,7 @@ public interface ListMetadataSchemasRequestOrBuilder
    * A page token, received from a previous
    * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1.MetadataService.ListMetadataSchemas]
    * call. Provide this to retrieve the next page.
+   *
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -95,6 +96,7 @@ public interface ListMetadataSchemasRequestOrBuilder
    * A page token, received from a previous
    * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1.MetadataService.ListMetadataSchemas]
    * call. Provide this to retrieve the next page.
+   *
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
