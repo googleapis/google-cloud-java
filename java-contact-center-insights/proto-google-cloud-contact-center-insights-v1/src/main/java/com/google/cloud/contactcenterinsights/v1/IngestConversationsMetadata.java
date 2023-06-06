@@ -47,11 +47,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     return new IngestConversationsMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_descriptor;
@@ -153,11 +148,6 @@ public final class IngestConversationsMetadata extends com.google.protobuf.Gener
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IngestConversationsStats();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

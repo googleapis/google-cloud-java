@@ -50,11 +50,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     return new ExportInsightsDataRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_ExportInsightsDataRequest_descriptor;
@@ -356,11 +351,6 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BigQueryDestination();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1408,6 +1398,8 @@ public final class ExportInsightsDataRequest extends com.google.protobuf.Generat
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

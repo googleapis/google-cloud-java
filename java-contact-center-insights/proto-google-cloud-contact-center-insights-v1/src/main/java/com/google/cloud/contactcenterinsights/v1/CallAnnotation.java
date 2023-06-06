@@ -45,11 +45,6 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     return new CallAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ResourcesProto
         .internal_static_google_cloud_contactcenterinsights_v1_CallAnnotation_descriptor;
@@ -66,6 +61,8 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object data_;
 
   public enum DataCase

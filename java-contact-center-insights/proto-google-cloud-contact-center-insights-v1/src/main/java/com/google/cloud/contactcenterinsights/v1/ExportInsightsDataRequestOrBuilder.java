@@ -181,6 +181,6 @@ public interface ExportInsightsDataRequestOrBuilder
   com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition
       getWriteDisposition();
 
-  public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.DestinationCase
+  com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.DestinationCase
       getDestinationCase();
 }

@@ -113,7 +113,7 @@ public interface ConversationParticipantOrBuilder
    *
    * @deprecated
    *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1190
    * @return The dialogflowParticipant.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface ConversationParticipantOrBuilder
    *
    * @deprecated
    *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1186
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1190
    * @return The bytes for dialogflowParticipant.
    */
   @java.lang.Deprecated
@@ -187,6 +187,6 @@ public interface ConversationParticipantOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRole();
 
-  public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.ParticipantCase
+  com.google.cloud.contactcenterinsights.v1.ConversationParticipant.ParticipantCase
       getParticipantCase();
 }

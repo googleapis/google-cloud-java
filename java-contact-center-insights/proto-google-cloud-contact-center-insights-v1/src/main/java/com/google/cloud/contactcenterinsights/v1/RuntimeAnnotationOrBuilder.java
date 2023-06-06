@@ -428,5 +428,5 @@ public interface RuntimeAnnotationOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.AnswerFeedbackOrBuilder getAnswerFeedbackOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.DataCase getDataCase();
+  com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.DataCase getDataCase();
 }

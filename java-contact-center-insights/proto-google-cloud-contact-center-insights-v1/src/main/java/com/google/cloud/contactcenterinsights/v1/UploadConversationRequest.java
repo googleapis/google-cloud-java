@@ -48,11 +48,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     return new UploadConversationRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_UploadConversationRequest_descriptor;
@@ -191,6 +186,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    * Optional. A unique ID for the new conversation. This ID will become the
    * final component of the conversation's resource name. If no ID is specified,
    * a server-generated ID will be used.
+   *
    * This value should be 4-64 characters and must match the regular
    * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * </pre>
@@ -218,6 +214,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    * Optional. A unique ID for the new conversation. This ID will become the
    * final component of the conversation's resource name. If no ID is specified,
    * a server-generated ID will be used.
+   *
    * This value should be 4-64 characters and must match the regular
    * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
    * </pre>
@@ -1066,6 +1063,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      * Optional. A unique ID for the new conversation. This ID will become the
      * final component of the conversation's resource name. If no ID is specified,
      * a server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1092,6 +1090,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      * Optional. A unique ID for the new conversation. This ID will become the
      * final component of the conversation's resource name. If no ID is specified,
      * a server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1118,6 +1117,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      * Optional. A unique ID for the new conversation. This ID will become the
      * final component of the conversation's resource name. If no ID is specified,
      * a server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1143,6 +1143,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      * Optional. A unique ID for the new conversation. This ID will become the
      * final component of the conversation's resource name. If no ID is specified,
      * a server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>
@@ -1164,6 +1165,7 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      * Optional. A unique ID for the new conversation. This ID will become the
      * final component of the conversation's resource name. If no ID is specified,
      * a server-generated ID will be used.
+     *
      * This value should be 4-64 characters and must match the regular
      * expression `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`
      * </pre>

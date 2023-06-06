@@ -33,6 +33,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * The conversation view is not specified.
+   *
    * * Defaults to `FULL` in `GetConversationRequest`.
    * * Defaults to `BASIC` in `ListConversationsRequest`.
    * </pre>
@@ -68,6 +69,7 @@ public enum ConversationView implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * The conversation view is not specified.
+   *
    * * Defaults to `FULL` in `GetConversationRequest`.
    * * Defaults to `BASIC` in `ListConversationsRequest`.
    * </pre>

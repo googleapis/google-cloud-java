@@ -59,5 +59,5 @@ public interface PhraseMatchRuleConfigOrBuilder
   com.google.cloud.contactcenterinsights.v1.ExactMatchConfigOrBuilder
       getExactMatchConfigOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.ConfigCase getConfigCase();
+  com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleConfig.ConfigCase getConfigCase();
 }

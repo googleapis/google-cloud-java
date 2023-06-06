@@ -49,11 +49,6 @@ public final class ListAnalysesRequest extends com.google.protobuf.GeneratedMess
     return new ListAnalysesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_ListAnalysesRequest_descriptor;

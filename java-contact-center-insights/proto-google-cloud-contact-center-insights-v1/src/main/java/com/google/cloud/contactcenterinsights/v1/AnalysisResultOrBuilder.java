@@ -101,5 +101,5 @@ public interface AnalysisResultOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.AnalysisResult.MetadataCase getMetadataCase();
+  com.google.cloud.contactcenterinsights.v1.AnalysisResult.MetadataCase getMetadataCase();
 }

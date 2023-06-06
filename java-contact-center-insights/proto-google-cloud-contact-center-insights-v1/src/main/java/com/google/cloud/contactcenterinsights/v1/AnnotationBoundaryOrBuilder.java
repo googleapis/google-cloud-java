@@ -64,6 +64,6 @@ public interface AnnotationBoundaryOrBuilder
    */
   int getTranscriptIndex();
 
-  public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.DetailedBoundaryCase
+  com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.DetailedBoundaryCase
       getDetailedBoundaryCase();
 }

@@ -181,9 +181,8 @@ public interface IngestConversationsRequestOrBuilder
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfigOrBuilder
       getConversationConfigOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.SourceCase
-      getSourceCase();
+  com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.SourceCase getSourceCase();
 
-  public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ObjectConfigCase
+  com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ObjectConfigCase
       getObjectConfigCase();
 }

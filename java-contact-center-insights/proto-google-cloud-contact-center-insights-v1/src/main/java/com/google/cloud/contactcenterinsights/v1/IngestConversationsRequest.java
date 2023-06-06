@@ -47,11 +47,6 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     return new IngestConversationsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsRequest_descriptor;
@@ -125,11 +120,6 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GcsSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -808,11 +798,6 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TranscriptObjectConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1512,11 +1497,6 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       return new ConversationConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
           .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsRequest_ConversationConfig_descriptor;
@@ -2165,6 +2145,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -2209,6 +2191,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
   }
 
   private int objectConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object objectConfig_;
 
   public enum ObjectConfigCase

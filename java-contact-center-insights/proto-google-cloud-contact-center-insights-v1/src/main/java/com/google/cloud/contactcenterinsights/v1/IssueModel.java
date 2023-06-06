@@ -49,11 +49,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     return new IssueModel();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ResourcesProto
         .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_descriptor;
@@ -315,7 +310,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Deprecated
@@ -334,7 +329,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The medium.
      */
     @java.lang.Deprecated
@@ -411,11 +406,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return new InputDataConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ResourcesProto
           .internal_static_google_cloud_contactcenterinsights_v1_IssueModel_InputDataConfig_descriptor;
@@ -447,7 +437,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Override
@@ -469,7 +459,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
      * @return The medium.
      */
     @java.lang.Override
@@ -974,7 +964,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @return The enum numeric value on the wire for medium.
        */
       @java.lang.Override
@@ -996,7 +986,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @param value The enum numeric value on the wire for medium to set.
        * @return This builder for chaining.
        */
@@ -1021,7 +1011,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @return The medium.
        */
       @java.lang.Override
@@ -1047,7 +1037,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @param value The medium to set.
        * @return This builder for chaining.
        */
@@ -1076,7 +1066,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=623
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

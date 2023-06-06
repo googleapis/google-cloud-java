@@ -49,11 +49,6 @@ public final class EntityMentionData extends com.google.protobuf.GeneratedMessag
     return new EntityMentionData();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ResourcesProto
         .internal_static_google_cloud_contactcenterinsights_v1_EntityMentionData_descriptor;

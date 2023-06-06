@@ -47,11 +47,6 @@ public final class ListIssuesResponse extends com.google.protobuf.GeneratedMessa
     return new ListIssuesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_ListIssuesResponse_descriptor;

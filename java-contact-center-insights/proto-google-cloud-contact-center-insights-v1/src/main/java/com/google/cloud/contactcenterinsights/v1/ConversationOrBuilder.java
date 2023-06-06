@@ -812,7 +812,7 @@ public interface ConversationOrBuilder
    */
   com.google.protobuf.ByteString getObfuscatedUserIdBytes();
 
-  public com.google.cloud.contactcenterinsights.v1.Conversation.MetadataCase getMetadataCase();
+  com.google.cloud.contactcenterinsights.v1.Conversation.MetadataCase getMetadataCase();
 
-  public com.google.cloud.contactcenterinsights.v1.Conversation.ExpirationCase getExpirationCase();
+  com.google.cloud.contactcenterinsights.v1.Conversation.ExpirationCase getExpirationCase();
 }

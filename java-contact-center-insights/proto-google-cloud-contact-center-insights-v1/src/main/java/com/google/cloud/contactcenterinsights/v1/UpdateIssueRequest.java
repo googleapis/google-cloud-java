@@ -45,11 +45,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateIssueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
         .internal_static_google_cloud_contactcenterinsights_v1_UpdateIssueRequest_descriptor;

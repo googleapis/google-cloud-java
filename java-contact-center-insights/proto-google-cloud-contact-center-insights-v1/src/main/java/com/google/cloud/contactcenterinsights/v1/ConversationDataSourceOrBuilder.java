@@ -94,6 +94,5 @@ public interface ConversationDataSourceOrBuilder
   com.google.cloud.contactcenterinsights.v1.DialogflowSourceOrBuilder
       getDialogflowSourceOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.ConversationDataSource.SourceCase
-      getSourceCase();
+  com.google.cloud.contactcenterinsights.v1.ConversationDataSource.SourceCase getSourceCase();
 }

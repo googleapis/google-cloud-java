@@ -397,5 +397,5 @@ public interface CallAnnotationOrBuilder
   com.google.cloud.contactcenterinsights.v1.AnnotationBoundaryOrBuilder
       getAnnotationEndBoundaryOrBuilder();
 
-  public com.google.cloud.contactcenterinsights.v1.CallAnnotation.DataCase getDataCase();
+  com.google.cloud.contactcenterinsights.v1.CallAnnotation.DataCase getDataCase();
 }
