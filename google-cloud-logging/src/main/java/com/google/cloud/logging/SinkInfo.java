@@ -25,7 +25,6 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.jspecify.nullness.Nullable;
 
 /**
  * Cloud Logging sinks can be used to control the export of your logs. Each sink specifies the
@@ -478,7 +477,7 @@ public class SinkInfo implements Serializable {
       return versionPb;
     }
 
-    static @Nullable VersionFormat fromPb(LogSink.VersionFormat versionPb) {
+    static VersionFormat fromPb(LogSink.VersionFormat versionPb) {
       switch (versionPb) {
         case V1:
           return VersionFormat.V1;

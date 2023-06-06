@@ -98,7 +98,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import org.jspecify.nullness.Nullable;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   protected static final String RESOURCE_NAME_FORMAT = "projects/%s/traces/%s";
@@ -791,7 +790,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  private static @Nullable LogName getLogName(
+  private static LogName getLogName(
       String projectId, String logName, LogDestinationName destination) {
     if (logName == null) {
       return null;
@@ -921,7 +920,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
    * @param resource A {@see MonitoredResource} describing environment metadata.
    * @return A formatted trace id string.
    */
-  private @Nullable String getFormattedTrace(String traceId, MonitoredResource resource) {
+  private String getFormattedTrace(String traceId, MonitoredResource resource) {
     if (traceId == null) {
       return null;
     }

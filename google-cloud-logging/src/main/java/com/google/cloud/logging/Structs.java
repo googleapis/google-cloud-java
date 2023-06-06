@@ -32,7 +32,6 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import org.jspecify.nullness.Nullable;
 
 /**
  * This class contains static utility methods that operate on or return protobuf's {@code Struct}
@@ -101,7 +100,7 @@ final class Structs {
     return Struct.newBuilder().putAllFields(valueMap).build();
   }
 
-  private static @Nullable Object valueToObject(Value value) {
+  private static Object valueToObject(Value value) {
     switch (value.getKindCase()) {
       case NULL_VALUE:
         return null;
