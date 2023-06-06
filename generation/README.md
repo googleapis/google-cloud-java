@@ -15,7 +15,7 @@ After running the script locally, you can `cd` into the generated repository and
 
 ```shell
 cd monorepo/google-cloud-java
-mvn test -T C1 -B
+mvn test -T 1C -B
 ```
 
 ### Input
