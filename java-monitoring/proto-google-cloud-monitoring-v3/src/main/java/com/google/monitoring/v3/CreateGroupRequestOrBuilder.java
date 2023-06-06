@@ -29,6 +29,7 @@ public interface CreateGroupRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
    * which to create the group. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateGroupRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
    * which to create the group. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *

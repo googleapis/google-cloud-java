@@ -57,11 +57,6 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     return new ServiceLevelIndicator();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringProto
         .internal_static_google_monitoring_v3_ServiceLevelIndicator_descriptor;
@@ -78,6 +73,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase

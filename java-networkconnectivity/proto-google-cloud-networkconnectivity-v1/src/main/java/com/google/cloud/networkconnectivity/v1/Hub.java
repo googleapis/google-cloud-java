@@ -55,11 +55,6 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     return new Hub();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1_Hub_descriptor;
@@ -503,6 +498,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -518,6 +514,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -534,6 +531,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -549,6 +547,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -564,6 +563,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -2221,6 +2221,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2239,6 +2240,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2257,6 +2259,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2275,6 +2278,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2300,6 +2304,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2322,6 +2327,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2346,6 +2352,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2371,6 +2378,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2393,6 +2401,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2415,6 +2424,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2437,6 +2447,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2458,6 +2469,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2479,6 +2491,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2494,6 +2507,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2513,6 +2527,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2532,6 +2547,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2547,6 +2563,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
@@ -2564,6 +2581,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The VPC networks associated with this hub's spokes.
+     *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>

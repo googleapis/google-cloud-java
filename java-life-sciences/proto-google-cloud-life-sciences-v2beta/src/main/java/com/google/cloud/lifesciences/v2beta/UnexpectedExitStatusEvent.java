@@ -48,11 +48,6 @@ public final class UnexpectedExitStatusEvent extends com.google.protobuf.Generat
     return new UnexpectedExitStatusEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_UnexpectedExitStatusEvent_descriptor;

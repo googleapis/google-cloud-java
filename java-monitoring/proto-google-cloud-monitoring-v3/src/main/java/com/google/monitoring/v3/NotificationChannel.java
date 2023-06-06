@@ -56,11 +56,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     return new NotificationChannel();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationProto
         .internal_static_google_monitoring_v3_NotificationChannel_descriptor;
@@ -330,7 +325,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The full REST resource name for this channel. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+   *
    * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
    * </pre>
    *
@@ -355,7 +352,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The full REST resource name for this channel. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+   *
    * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
    * </pre>
    *
@@ -636,6 +635,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
    * the `labels` field. This field is intended to be used for organizing
    * and identifying the `NotificationChannel` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -665,6 +665,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
    * the `labels` field. This field is intended to be used for organizing
    * and identifying the `NotificationChannel` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -685,6 +686,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
    * the `labels` field. This field is intended to be used for organizing
    * and identifying the `NotificationChannel` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -712,6 +714,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
    * the `labels` field. This field is intended to be used for organizing
    * and identifying the `NotificationChannel` objects.
+   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -743,13 +746,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * or
    * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
    * operation, this field is expected to be populated.
+   *
    * If the value is `UNVERIFIED`, then it indicates that the channel is
    * non-functioning (it both requires verification and lacks verification);
    * otherwise, it is assumed that the channel works.
+   *
    * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
    * the channel is of a type that does not require verification or that
    * this specific channel has been exempted from verification because it was
    * created prior to verification being required for channels of this type.
+   *
    * This field cannot be modified using a standard
    * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
    * operation. To change the value of this field, you must call
@@ -774,13 +780,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * or
    * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
    * operation, this field is expected to be populated.
+   *
    * If the value is `UNVERIFIED`, then it indicates that the channel is
    * non-functioning (it both requires verification and lacks verification);
    * otherwise, it is assumed that the channel works.
+   *
    * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
    * the channel is of a type that does not require verification or that
    * this specific channel has been exempted from verification because it was
    * created prior to verification being required for channels of this type.
+   *
    * This field cannot be modified using a standard
    * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
    * operation. To change the value of this field, you must call
@@ -1776,7 +1785,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The full REST resource name for this channel. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+     *
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1800,7 +1811,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The full REST resource name for this channel. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+     *
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1824,7 +1837,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The full REST resource name for this channel. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+     *
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1847,7 +1862,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The full REST resource name for this channel. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+     *
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -1866,7 +1883,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The full REST resource name for this channel. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+     *
      * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
      * </pre>
      *
@@ -2343,6 +2362,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2372,6 +2392,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2392,6 +2413,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2419,6 +2441,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2452,6 +2475,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2481,6 +2505,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2508,6 +2533,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
      * the `labels` field. This field is intended to be used for organizing
      * and identifying the `NotificationChannel` objects.
+     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -2532,13 +2558,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * or
      * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
      * operation, this field is expected to be populated.
+     *
      * If the value is `UNVERIFIED`, then it indicates that the channel is
      * non-functioning (it both requires verification and lacks verification);
      * otherwise, it is assumed that the channel works.
+     *
      * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
      * the channel is of a type that does not require verification or that
      * this specific channel has been exempted from verification because it was
      * created prior to verification being required for channels of this type.
+     *
      * This field cannot be modified using a standard
      * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
      * operation. To change the value of this field, you must call
@@ -2563,13 +2592,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * or
      * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
      * operation, this field is expected to be populated.
+     *
      * If the value is `UNVERIFIED`, then it indicates that the channel is
      * non-functioning (it both requires verification and lacks verification);
      * otherwise, it is assumed that the channel works.
+     *
      * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
      * the channel is of a type that does not require verification or that
      * this specific channel has been exempted from verification because it was
      * created prior to verification being required for channels of this type.
+     *
      * This field cannot be modified using a standard
      * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
      * operation. To change the value of this field, you must call
@@ -2597,13 +2629,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * or
      * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
      * operation, this field is expected to be populated.
+     *
      * If the value is `UNVERIFIED`, then it indicates that the channel is
      * non-functioning (it both requires verification and lacks verification);
      * otherwise, it is assumed that the channel works.
+     *
      * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
      * the channel is of a type that does not require verification or that
      * this specific channel has been exempted from verification because it was
      * created prior to verification being required for channels of this type.
+     *
      * This field cannot be modified using a standard
      * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
      * operation. To change the value of this field, you must call
@@ -2633,13 +2668,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * or
      * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
      * operation, this field is expected to be populated.
+     *
      * If the value is `UNVERIFIED`, then it indicates that the channel is
      * non-functioning (it both requires verification and lacks verification);
      * otherwise, it is assumed that the channel works.
+     *
      * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
      * the channel is of a type that does not require verification or that
      * this specific channel has been exempted from verification because it was
      * created prior to verification being required for channels of this type.
+     *
      * This field cannot be modified using a standard
      * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
      * operation. To change the value of this field, you must call
@@ -2671,13 +2709,16 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * or
      * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
      * operation, this field is expected to be populated.
+     *
      * If the value is `UNVERIFIED`, then it indicates that the channel is
      * non-functioning (it both requires verification and lacks verification);
      * otherwise, it is assumed that the channel works.
+     *
      * If the channel is neither `VERIFIED` nor `UNVERIFIED`, it implies that
      * the channel is of a type that does not require verification or that
      * this specific channel has been exempted from verification because it was
      * created prior to verification being required for channels of this type.
+     *
      * This field cannot be modified using a standard
      * [`UpdateNotificationChannel`][google.monitoring.v3.NotificationChannelService.UpdateNotificationChannel]
      * operation. To change the value of this field, you must call

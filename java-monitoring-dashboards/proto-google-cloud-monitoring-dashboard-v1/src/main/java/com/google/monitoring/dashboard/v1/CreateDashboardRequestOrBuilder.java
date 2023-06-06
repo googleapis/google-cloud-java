@@ -28,7 +28,9 @@ public interface CreateDashboardRequestOrBuilder
    *
    * <pre>
    * Required. The project on which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface CreateDashboardRequestOrBuilder
    *
    * <pre>
    * Required. The project on which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
    * </pre>
    *

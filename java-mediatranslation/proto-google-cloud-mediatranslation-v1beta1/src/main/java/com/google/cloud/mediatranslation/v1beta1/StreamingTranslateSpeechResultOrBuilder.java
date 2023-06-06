@@ -67,6 +67,6 @@ public interface StreamingTranslateSpeechResultOrBuilder
           .TextTranslationResultOrBuilder
       getTextTranslationResultOrBuilder();
 
-  public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.ResultCase
+  com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.ResultCase
       getResultCase();
 }

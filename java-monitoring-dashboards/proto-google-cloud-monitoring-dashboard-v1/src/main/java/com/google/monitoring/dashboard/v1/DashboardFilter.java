@@ -49,11 +49,6 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     return new DashboardFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardFilterProto
         .internal_static_google_monitoring_dashboard_v1_DashboardFilter_descriptor;
@@ -295,6 +290,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   private int defaultValueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object defaultValue_;
 
   public enum DefaultValueCase

@@ -46,11 +46,6 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     return new FixedOrPercent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.Common
         .internal_static_google_cloud_osconfig_v1alpha_FixedOrPercent_descriptor;
@@ -67,6 +62,8 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int modeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object mode_;
 
   public enum ModeCase

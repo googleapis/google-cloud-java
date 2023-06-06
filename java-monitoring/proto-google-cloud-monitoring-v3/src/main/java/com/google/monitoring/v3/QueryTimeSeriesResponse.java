@@ -49,11 +49,6 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
     return new QueryTimeSeriesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_QueryTimeSeriesResponse_descriptor;

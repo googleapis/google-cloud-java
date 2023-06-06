@@ -222,5 +222,5 @@ public interface WindowsBasedSliOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getWindowPeriodOrBuilder();
 
-  public com.google.monitoring.v3.WindowsBasedSli.WindowCriterionCase getWindowCriterionCase();
+  com.google.monitoring.v3.WindowsBasedSli.WindowCriterionCase getWindowCriterionCase();
 }

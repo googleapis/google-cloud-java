@@ -48,11 +48,6 @@ public final class CreatePolicyRequest extends com.google.protobuf.GeneratedMess
     return new CreatePolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orgpolicy.v2.OrgPolicyProto
         .internal_static_google_cloud_orgpolicy_v2_CreatePolicyRequest_descriptor;

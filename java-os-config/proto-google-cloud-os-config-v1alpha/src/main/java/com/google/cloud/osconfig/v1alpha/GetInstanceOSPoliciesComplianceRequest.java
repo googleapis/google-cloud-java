@@ -51,11 +51,6 @@ public final class GetInstanceOSPoliciesComplianceRequest
     return new GetInstanceOSPoliciesComplianceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesComplianceProto
         .internal_static_google_cloud_osconfig_v1alpha_GetInstanceOSPoliciesComplianceRequest_descriptor;
@@ -80,8 +75,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
    *
    * <pre>
    * Required. API resource name for instance OS policies compliance resource.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -111,8 +108,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
    *
    * <pre>
    * Required. API resource name for instance OS policies compliance resource.
+   *
    * Format:
    * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -500,8 +499,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
      *
      * <pre>
      * Required. API resource name for instance OS policies compliance resource.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -530,8 +531,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
      *
      * <pre>
      * Required. API resource name for instance OS policies compliance resource.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -560,8 +563,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
      *
      * <pre>
      * Required. API resource name for instance OS policies compliance resource.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -589,8 +594,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
      *
      * <pre>
      * Required. API resource name for instance OS policies compliance resource.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -614,8 +621,10 @@ public final class GetInstanceOSPoliciesComplianceRequest
      *
      * <pre>
      * Required. API resource name for instance OS policies compliance resource.
+     *
      * Format:
      * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
+     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * For `{instance}`, either Compute Engine VM instance-id or instance-name can

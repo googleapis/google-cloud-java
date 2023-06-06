@@ -28,6 +28,7 @@ public interface DeleteGroupRequestOrBuilder
    *
    * <pre>
    * Required. The group to delete. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteGroupRequestOrBuilder
    *
    * <pre>
    * Required. The group to delete. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *

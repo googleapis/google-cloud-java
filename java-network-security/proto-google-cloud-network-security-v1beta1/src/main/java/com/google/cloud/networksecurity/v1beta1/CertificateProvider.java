@@ -46,11 +46,6 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
     return new CertificateProvider();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1beta1.TlsProto
         .internal_static_google_cloud_networksecurity_v1beta1_CertificateProvider_descriptor;
@@ -67,6 +62,8 @@ public final class CertificateProvider extends com.google.protobuf.GeneratedMess
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase

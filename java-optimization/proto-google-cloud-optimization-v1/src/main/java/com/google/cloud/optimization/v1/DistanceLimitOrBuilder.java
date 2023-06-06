@@ -57,6 +57,7 @@ public interface DistanceLimitOrBuilder
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
+   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -73,6 +74,7 @@ public interface DistanceLimitOrBuilder
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
+   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>

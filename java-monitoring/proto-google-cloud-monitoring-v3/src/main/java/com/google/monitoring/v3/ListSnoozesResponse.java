@@ -49,11 +49,6 @@ public final class ListSnoozesResponse extends com.google.protobuf.GeneratedMess
     return new ListSnoozesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.SnoozeServiceProto
         .internal_static_google_monitoring_v3_ListSnoozesResponse_descriptor;

@@ -48,11 +48,6 @@ public final class ResetRuntimeRequest extends com.google.protobuf.GeneratedMess
     return new ResetRuntimeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.ManagedNotebooksProto
         .internal_static_google_cloud_notebooks_v1_ResetRuntimeRequest_descriptor;

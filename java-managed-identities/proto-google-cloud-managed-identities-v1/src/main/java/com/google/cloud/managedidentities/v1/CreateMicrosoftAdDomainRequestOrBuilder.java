@@ -60,6 +60,7 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder
    * <pre>
    * Required. The fully qualified domain name.
    * e.g. mydomain.myorganization.com, with the following restrictions:
+   *
    *  * Must contain only lowercase letters, numbers, periods and hyphens.
    *  * Must start with a letter.
    *  * Must contain between 2-64 characters.
@@ -82,6 +83,7 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder
    * <pre>
    * Required. The fully qualified domain name.
    * e.g. mydomain.myorganization.com, with the following restrictions:
+   *
    *  * Must contain only lowercase letters, numbers, periods and hyphens.
    *  * Must start with a letter.
    *  * Must contain between 2-64 characters.

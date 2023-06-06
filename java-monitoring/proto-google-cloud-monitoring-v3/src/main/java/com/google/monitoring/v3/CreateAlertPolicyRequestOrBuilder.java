@@ -29,7 +29,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
    * which to create the alerting policy. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. |name| must be
    * a host project of a Metrics Scope, otherwise INVALID_ARGUMENT error will
@@ -52,7 +54,9 @@ public interface CreateAlertPolicyRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
    * which to create the alerting policy. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. |name| must be
    * a host project of a Metrics Scope, otherwise INVALID_ARGUMENT error will

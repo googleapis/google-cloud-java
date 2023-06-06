@@ -29,7 +29,9 @@ public interface InternalCheckerOrBuilder
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+   *
    * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
    * the Uptime check config associated with the internal checker.
    * </pre>
@@ -44,7 +46,9 @@ public interface InternalCheckerOrBuilder
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
+   *
    * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
    * the Uptime check config associated with the internal checker.
    * </pre>

@@ -45,11 +45,6 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     return new LatencyPercentile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TestOuterClass
         .internal_static_google_cloud_networkmanagement_v1beta1_LatencyPercentile_descriptor;

@@ -49,11 +49,6 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
     return new GeocodingResults();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.GeocodingResultsProto
         .internal_static_google_maps_routing_v2_GeocodingResults_descriptor;

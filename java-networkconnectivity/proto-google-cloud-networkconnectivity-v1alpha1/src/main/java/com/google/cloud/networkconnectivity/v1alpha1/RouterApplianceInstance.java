@@ -50,11 +50,6 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     return new RouterApplianceInstance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1alpha1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1alpha1_RouterApplianceInstance_descriptor;

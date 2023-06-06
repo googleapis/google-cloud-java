@@ -48,11 +48,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     return new RouteModifiers();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RouteModifiersProto
         .internal_static_google_maps_routing_v2_RouteModifiers_descriptor;

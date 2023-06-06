@@ -28,6 +28,7 @@ public interface GetOSPolicyAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of OS policy assignment.
+   *
    * Format:
    * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
    * </pre>
@@ -44,6 +45,7 @@ public interface GetOSPolicyAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of OS policy assignment.
+   *
    * Format:
    * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
    * </pre>

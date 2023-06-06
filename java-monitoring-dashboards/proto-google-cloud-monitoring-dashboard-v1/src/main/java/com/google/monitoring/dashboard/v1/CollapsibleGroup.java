@@ -46,11 +46,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     return new CollapsibleGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.CollapsibleGroupProto
         .internal_static_google_monitoring_dashboard_v1_CollapsibleGroup_descriptor;

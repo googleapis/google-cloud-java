@@ -101,5 +101,5 @@ public interface PolylineOrBuilder
    */
   com.google.protobuf.StructOrBuilder getGeoJsonLinestringOrBuilder();
 
-  public com.google.maps.routing.v2.Polyline.PolylineTypeCase getPolylineTypeCase();
+  com.google.maps.routing.v2.Polyline.PolylineTypeCase getPolylineTypeCase();
 }

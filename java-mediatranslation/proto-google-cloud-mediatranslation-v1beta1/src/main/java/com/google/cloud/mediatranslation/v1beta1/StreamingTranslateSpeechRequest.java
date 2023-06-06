@@ -50,11 +50,6 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
     return new StreamingTranslateSpeechRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.mediatranslation.v1beta1.MediaTranslationProto
         .internal_static_google_cloud_mediatranslation_v1beta1_StreamingTranslateSpeechRequest_descriptor;
@@ -72,6 +67,8 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
   }
 
   private int streamingRequestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object streamingRequest_;
 
   public enum StreamingRequestCase

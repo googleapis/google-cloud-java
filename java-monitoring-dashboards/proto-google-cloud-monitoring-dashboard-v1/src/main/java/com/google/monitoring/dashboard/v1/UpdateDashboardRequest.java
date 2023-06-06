@@ -45,11 +45,6 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     return new UpdateDashboardRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardsServiceProto
         .internal_static_google_monitoring_dashboard_v1_UpdateDashboardRequest_descriptor;

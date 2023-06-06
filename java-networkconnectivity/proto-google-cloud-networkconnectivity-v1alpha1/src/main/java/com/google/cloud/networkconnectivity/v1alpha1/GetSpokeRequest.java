@@ -47,11 +47,6 @@ public final class GetSpokeRequest extends com.google.protobuf.GeneratedMessageV
     return new GetSpokeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1alpha1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1alpha1_GetSpokeRequest_descriptor;

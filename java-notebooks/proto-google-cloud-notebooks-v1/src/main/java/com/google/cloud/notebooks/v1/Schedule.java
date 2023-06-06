@@ -53,11 +53,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     return new Schedule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.ScheduleProto
         .internal_static_google_cloud_notebooks_v1_Schedule_descriptor;
@@ -578,6 +573,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * Timezone on which the cron_schedule.
    * The value of this field must be a time zone name from the tz database.
    * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+   *
    * Note that some time zones include a provision for daylight savings time.
    * The rules for daylight saving time are determined by the chosen tz.
    * For UTC use the string "utc". If a time zone is not specified,
@@ -607,6 +603,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * Timezone on which the cron_schedule.
    * The value of this field must be a time zone name from the tz database.
    * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+   *
    * Note that some time zones include a provision for daylight savings time.
    * The rules for daylight saving time are determined by the chosen tz.
    * For UTC use the string "utc". If a time zone is not specified,
@@ -2013,6 +2010,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * Timezone on which the cron_schedule.
      * The value of this field must be a time zone name from the tz database.
      * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     *
      * Note that some time zones include a provision for daylight savings time.
      * The rules for daylight saving time are determined by the chosen tz.
      * For UTC use the string "utc". If a time zone is not specified,
@@ -2041,6 +2039,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * Timezone on which the cron_schedule.
      * The value of this field must be a time zone name from the tz database.
      * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     *
      * Note that some time zones include a provision for daylight savings time.
      * The rules for daylight saving time are determined by the chosen tz.
      * For UTC use the string "utc". If a time zone is not specified,
@@ -2069,6 +2068,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * Timezone on which the cron_schedule.
      * The value of this field must be a time zone name from the tz database.
      * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     *
      * Note that some time zones include a provision for daylight savings time.
      * The rules for daylight saving time are determined by the chosen tz.
      * For UTC use the string "utc". If a time zone is not specified,
@@ -2096,6 +2096,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * Timezone on which the cron_schedule.
      * The value of this field must be a time zone name from the tz database.
      * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     *
      * Note that some time zones include a provision for daylight savings time.
      * The rules for daylight saving time are determined by the chosen tz.
      * For UTC use the string "utc". If a time zone is not specified,
@@ -2119,6 +2120,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * Timezone on which the cron_schedule.
      * The value of this field must be a time zone name from the tz database.
      * TZ Database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     *
      * Note that some time zones include a provision for daylight savings time.
      * The rules for daylight saving time are determined by the chosen tz.
      * For UTC use the string "utc". If a time zone is not specified,

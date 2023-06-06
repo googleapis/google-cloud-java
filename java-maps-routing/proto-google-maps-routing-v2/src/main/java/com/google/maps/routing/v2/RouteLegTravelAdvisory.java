@@ -48,11 +48,6 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
     return new RouteLegTravelAdvisory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RouteProto
         .internal_static_google_maps_routing_v2_RouteLegTravelAdvisory_descriptor;
@@ -139,7 +134,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * The intervals cover the entire polyline of the RouteLg without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -160,7 +157,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * The intervals cover the entire polyline of the RouteLg without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -181,7 +180,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * The intervals cover the entire polyline of the RouteLg without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -201,7 +202,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * The intervals cover the entire polyline of the RouteLg without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -221,7 +224,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
    * The intervals cover the entire polyline of the RouteLg without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -905,7 +910,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -930,7 +937,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -954,7 +963,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -978,7 +989,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1009,7 +1022,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1037,7 +1052,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1067,7 +1084,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1098,7 +1117,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1126,7 +1147,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1154,7 +1177,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1182,7 +1207,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1209,7 +1236,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1236,7 +1265,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1257,7 +1288,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1282,7 +1315,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1307,7 +1342,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1329,7 +1366,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1351,7 +1390,9 @@ public final class RouteLegTravelAdvisory extends com.google.protobuf.GeneratedM
      * The intervals cover the entire polyline of the RouteLg without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>

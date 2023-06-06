@@ -46,11 +46,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     return new StreamingTranslateSpeechConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.mediatranslation.v1beta1.MediaTranslationProto
         .internal_static_google_cloud_mediatranslation_v1beta1_StreamingTranslateSpeechConfig_descriptor;
@@ -134,6 +129,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
    * the user pauses speaking) until the client closes the input stream (gRPC
    * API) or until the maximum time limit has been reached. May return multiple
    * `StreamingTranslateSpeechResult`s with the `is_final` flag set to `true`.
+   *
    * If `true`, the speech translator will detect a single spoken utterance.
    * When it detects that the user has paused or stopped speaking, it will
    * return an `END_OF_SINGLE_UTTERANCE` event and cease translation.
@@ -756,6 +752,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      * the user pauses speaking) until the client closes the input stream (gRPC
      * API) or until the maximum time limit has been reached. May return multiple
      * `StreamingTranslateSpeechResult`s with the `is_final` flag set to `true`.
+     *
      * If `true`, the speech translator will detect a single spoken utterance.
      * When it detects that the user has paused or stopped speaking, it will
      * return an `END_OF_SINGLE_UTTERANCE` event and cease translation.
@@ -783,6 +780,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      * the user pauses speaking) until the client closes the input stream (gRPC
      * API) or until the maximum time limit has been reached. May return multiple
      * `StreamingTranslateSpeechResult`s with the `is_final` flag set to `true`.
+     *
      * If `true`, the speech translator will detect a single spoken utterance.
      * When it detects that the user has paused or stopped speaking, it will
      * return an `END_OF_SINGLE_UTTERANCE` event and cease translation.
@@ -814,6 +812,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      * the user pauses speaking) until the client closes the input stream (gRPC
      * API) or until the maximum time limit has been reached. May return multiple
      * `StreamingTranslateSpeechResult`s with the `is_final` flag set to `true`.
+     *
      * If `true`, the speech translator will detect a single spoken utterance.
      * When it detects that the user has paused or stopped speaking, it will
      * return an `END_OF_SINGLE_UTTERANCE` event and cease translation.

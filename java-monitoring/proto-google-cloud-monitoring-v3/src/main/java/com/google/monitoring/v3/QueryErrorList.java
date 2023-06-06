@@ -48,11 +48,6 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
     return new QueryErrorList();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_QueryErrorList_descriptor;

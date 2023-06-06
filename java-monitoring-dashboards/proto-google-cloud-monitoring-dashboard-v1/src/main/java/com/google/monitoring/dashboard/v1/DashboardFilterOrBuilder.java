@@ -139,5 +139,5 @@ public interface DashboardFilterOrBuilder
    */
   com.google.monitoring.dashboard.v1.DashboardFilter.FilterType getFilterType();
 
-  public com.google.monitoring.dashboard.v1.DashboardFilter.DefaultValueCase getDefaultValueCase();
+  com.google.monitoring.dashboard.v1.DashboardFilter.DefaultValueCase getDefaultValueCase();
 }

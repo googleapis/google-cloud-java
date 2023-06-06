@@ -29,7 +29,9 @@ public interface ListInstanceOSPoliciesCompliancesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format: `projects/{project}/locations/{location}`
+   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * </pre>
@@ -46,7 +48,9 @@ public interface ListInstanceOSPoliciesCompliancesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format: `projects/{project}/locations/{location}`
+   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * </pre>

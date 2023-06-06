@@ -49,11 +49,6 @@ public final class MonitoredProject extends com.google.protobuf.GeneratedMessage
     return new MonitoredProject();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.metricsscope.v1.MetricsScopeProto
         .internal_static_google_monitoring_metricsscope_v1_MonitoredProject_descriptor;

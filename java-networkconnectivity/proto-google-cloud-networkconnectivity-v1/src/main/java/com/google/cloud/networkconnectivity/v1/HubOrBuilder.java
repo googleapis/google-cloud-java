@@ -284,6 +284,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -296,6 +297,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -308,6 +310,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -320,6 +323,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -333,6 +337,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>

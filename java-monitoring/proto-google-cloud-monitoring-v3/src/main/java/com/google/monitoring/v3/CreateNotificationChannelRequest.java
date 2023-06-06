@@ -48,11 +48,6 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     return new CreateNotificationChannelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationServiceProto
         .internal_static_google_monitoring_v3_CreateNotificationChannelRequest_descriptor;
@@ -78,7 +73,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
    * channel's name will have a normalized version of this field as a prefix,
@@ -109,7 +106,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
    * channel's name will have a normalized version of this field as a prefix,
@@ -576,7 +575,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
      * channel's name will have a normalized version of this field as a prefix,
@@ -606,7 +607,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
      * channel's name will have a normalized version of this field as a prefix,
@@ -636,7 +639,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
      * channel's name will have a normalized version of this field as a prefix,
@@ -665,7 +670,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
      * channel's name will have a normalized version of this field as a prefix,
@@ -690,7 +697,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * This names the container into which the channel will be
      * written, this does not name the newly created channel. The resulting
      * channel's name will have a normalized version of this field as a prefix,

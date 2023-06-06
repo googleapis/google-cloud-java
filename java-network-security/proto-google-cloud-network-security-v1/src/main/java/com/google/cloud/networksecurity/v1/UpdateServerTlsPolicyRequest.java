@@ -45,11 +45,6 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
     return new UpdateServerTlsPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.ServerTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1_UpdateServerTlsPolicyRequest_descriptor;

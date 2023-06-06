@@ -646,5 +646,5 @@ public interface StepOrBuilder
   com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfoOrBuilder
       getCloudSqlInstanceOrBuilder();
 
-  public com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
+  com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

@@ -96,6 +96,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -110,6 +111,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -127,6 +129,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -141,6 +144,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -159,6 +163,7 @@ public interface RunPipelineRequestOrBuilder
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
+   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>

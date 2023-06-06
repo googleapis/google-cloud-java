@@ -48,11 +48,6 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
     return new SpeedReadingInterval();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.SpeedReadingIntervalProto
         .internal_static_google_maps_routing_v2_SpeedReadingInterval_descriptor;
@@ -249,6 +244,8 @@ public final class SpeedReadingInterval extends com.google.protobuf.GeneratedMes
 
   private int bitField0_;
   private int speedTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object speedType_;
 
   public enum SpeedTypeCase

@@ -48,11 +48,6 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     return new AddressComponent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.addressvalidation.v1.AddressProto
         .internal_static_google_maps_addressvalidation_v1_AddressComponent_descriptor;

@@ -48,11 +48,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
     return new CreateConnectivityTestRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceProto
         .internal_static_google_cloud_networkmanagement_v1beta1_CreateConnectivityTestRequest_descriptor;
@@ -131,6 +126,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The logical name of the Connectivity Test in your project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
@@ -160,6 +156,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The logical name of the Connectivity Test in your project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
@@ -769,6 +766,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The logical name of the Connectivity Test in your project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -797,6 +795,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The logical name of the Connectivity Test in your project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -825,6 +824,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The logical name of the Connectivity Test in your project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -852,6 +852,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The logical name of the Connectivity Test in your project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.
@@ -875,6 +876,7 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The logical name of the Connectivity Test in your project
      * with the following restrictions:
+     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-40 characters.

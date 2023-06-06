@@ -74,6 +74,7 @@ public interface StreamingTranslateSpeechConfigOrBuilder
    * the user pauses speaking) until the client closes the input stream (gRPC
    * API) or until the maximum time limit has been reached. May return multiple
    * `StreamingTranslateSpeechResult`s with the `is_final` flag set to `true`.
+   *
    * If `true`, the speech translator will detect a single spoken utterance.
    * When it detects that the user has paused or stopped speaking, it will
    * return an `END_OF_SINGLE_UTTERANCE` event and cease translation.

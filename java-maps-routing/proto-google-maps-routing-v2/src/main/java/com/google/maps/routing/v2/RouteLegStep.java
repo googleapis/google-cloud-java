@@ -47,11 +47,6 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
     return new RouteLegStep();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RouteProto
         .internal_static_google_maps_routing_v2_RouteLegStep_descriptor;

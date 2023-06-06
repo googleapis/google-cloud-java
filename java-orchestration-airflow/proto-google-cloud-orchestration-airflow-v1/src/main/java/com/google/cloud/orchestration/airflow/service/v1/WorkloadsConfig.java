@@ -47,11 +47,6 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     return new WorkloadsConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1_WorkloadsConfig_descriptor;
@@ -152,11 +147,6 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SchedulerResource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1065,11 +1055,6 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       return new WebServerResource();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
           .internal_static_google_cloud_orchestration_airflow_service_v1_WorkloadsConfig_WebServerResource_descriptor;
@@ -1901,11 +1886,6 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WorkerResource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

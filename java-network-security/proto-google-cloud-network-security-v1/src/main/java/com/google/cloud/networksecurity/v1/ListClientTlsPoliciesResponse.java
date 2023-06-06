@@ -48,11 +48,6 @@ public final class ListClientTlsPoliciesResponse extends com.google.protobuf.Gen
     return new ListClientTlsPoliciesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.ClientTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1_ListClientTlsPoliciesResponse_descriptor;

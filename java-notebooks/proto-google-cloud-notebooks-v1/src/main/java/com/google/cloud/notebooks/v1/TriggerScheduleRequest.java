@@ -47,11 +47,6 @@ public final class TriggerScheduleRequest extends com.google.protobuf.GeneratedM
     return new TriggerScheduleRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.NotebooksProto
         .internal_static_google_cloud_notebooks_v1_TriggerScheduleRequest_descriptor;

@@ -49,11 +49,6 @@ public final class ListOSPolicyAssignmentsRequest extends com.google.protobuf.Ge
     return new ListOSPolicyAssignmentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1_ListOSPolicyAssignmentsRequest_descriptor;

@@ -300,5 +300,5 @@ public interface BasicSliOrBuilder
    */
   com.google.monitoring.v3.BasicSli.LatencyCriteriaOrBuilder getLatencyOrBuilder();
 
-  public com.google.monitoring.v3.BasicSli.SliCriteriaCase getSliCriteriaCase();
+  com.google.monitoring.v3.BasicSli.SliCriteriaCase getSliCriteriaCase();
 }

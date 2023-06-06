@@ -28,6 +28,7 @@ public interface DeleteServiceRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the `Service` to delete. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteServiceRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the `Service` to delete. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *

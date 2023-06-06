@@ -28,6 +28,7 @@ public interface GetServiceRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the `Service`. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetServiceRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the `Service`. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *

@@ -50,11 +50,6 @@ public final class ListSpokesRequest extends com.google.protobuf.GeneratedMessag
     return new ListSpokesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1alpha1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1alpha1_ListSpokesRequest_descriptor;

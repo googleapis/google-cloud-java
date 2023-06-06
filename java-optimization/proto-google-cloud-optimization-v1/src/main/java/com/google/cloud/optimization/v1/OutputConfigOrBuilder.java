@@ -83,5 +83,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.optimization.v1.DataFormat getDataFormat();
 
-  public com.google.cloud.optimization.v1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.optimization.v1.OutputConfig.DestinationCase getDestinationCase();
 }

@@ -73,6 +73,7 @@ public interface TraceOrBuilder
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
+   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -87,6 +88,7 @@ public interface TraceOrBuilder
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
+   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -101,6 +103,7 @@ public interface TraceOrBuilder
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
+   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -115,6 +118,7 @@ public interface TraceOrBuilder
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
+   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -130,6 +134,7 @@ public interface TraceOrBuilder
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
+   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.

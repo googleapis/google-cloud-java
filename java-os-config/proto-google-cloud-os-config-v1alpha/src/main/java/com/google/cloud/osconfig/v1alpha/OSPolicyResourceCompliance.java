@@ -50,11 +50,6 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     return new OSPolicyResourceCompliance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.ConfigCommonProto
         .internal_static_google_cloud_osconfig_v1alpha_OSPolicyResourceCompliance_descriptor;
@@ -119,11 +114,6 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExecResourceOutput();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -661,6 +651,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
   }
 
   private int outputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object output_;
 
   public enum OutputCase

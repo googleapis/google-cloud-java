@@ -28,8 +28,10 @@ public interface GetOSPolicyAssignmentReportRequestOrBuilder
    *
    * <pre>
    * Required. API resource name for OS policy assignment report.
+   *
    * Format:
    * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
    * can be provided.
@@ -48,8 +50,10 @@ public interface GetOSPolicyAssignmentReportRequestOrBuilder
    *
    * <pre>
    * Required. API resource name for OS policy assignment report.
+   *
    * Format:
    * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
    * can be provided.

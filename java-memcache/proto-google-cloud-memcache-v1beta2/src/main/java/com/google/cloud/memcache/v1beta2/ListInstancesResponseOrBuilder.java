@@ -29,6 +29,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Memcached instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * </pre>
@@ -42,6 +43,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Memcached instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * </pre>
@@ -55,6 +57,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Memcached instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * </pre>
@@ -68,6 +71,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Memcached instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * </pre>
@@ -82,6 +86,7 @@ public interface ListInstancesResponseOrBuilder
    * <pre>
    * A list of Memcached instances in the project in the specified location,
    * or across all locations.
+   *
    * If the `location_id` in the parent field of the request is "-", all regions
    * available to the project are queried, and the results aggregated.
    * </pre>

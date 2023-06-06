@@ -47,11 +47,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     return new CreateTimeSeriesSummary();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_CreateTimeSeriesSummary_descriptor;
@@ -145,11 +140,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Error();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

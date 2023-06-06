@@ -47,11 +47,6 @@ public final class SetInstanceLabelsRequest extends com.google.protobuf.Generate
     return new SetInstanceLabelsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.NotebooksProto
         .internal_static_google_cloud_notebooks_v1_SetInstanceLabelsRequest_descriptor;

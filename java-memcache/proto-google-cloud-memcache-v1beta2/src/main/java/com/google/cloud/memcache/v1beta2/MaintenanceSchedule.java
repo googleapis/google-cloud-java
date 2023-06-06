@@ -45,11 +45,6 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     return new MaintenanceSchedule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.memcache.v1beta2.CloudMemcacheProto
         .internal_static_google_cloud_memcache_v1beta2_MaintenanceSchedule_descriptor;

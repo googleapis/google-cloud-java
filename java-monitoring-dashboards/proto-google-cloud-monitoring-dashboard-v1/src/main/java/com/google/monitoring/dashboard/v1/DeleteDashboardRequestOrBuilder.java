@@ -28,6 +28,7 @@ public interface DeleteDashboardRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteDashboardRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *

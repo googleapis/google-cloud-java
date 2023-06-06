@@ -49,11 +49,6 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
     return new Runtime();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.RuntimeProto
         .internal_static_google_cloud_notebooks_v1_Runtime_descriptor;
@@ -574,6 +569,8 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int runtimeTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object runtimeType_;
 
   public enum RuntimeTypeCase

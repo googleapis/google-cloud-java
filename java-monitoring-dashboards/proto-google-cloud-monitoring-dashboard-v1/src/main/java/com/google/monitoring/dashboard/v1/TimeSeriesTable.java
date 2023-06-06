@@ -49,11 +49,6 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     return new TimeSeriesTable();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.TableProto
         .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_descriptor;
@@ -436,11 +431,6 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TableDataSet();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2087,11 +2077,6 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ColumnSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

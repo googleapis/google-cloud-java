@@ -100,9 +100,11 @@ public interface ListConnectivityTestsRequestOrBuilder
    * `!=`, `=`, `:` are supported (colon `:` represents a HAS operator which is
    * roughly synonymous with equality). &lt;field&gt; can refer to a proto or JSON
    * field, or a synthetic field. Field names can be camelCase or snake_case.
+   *
    * Examples:
    * - Filter by name:
    *   name = "projects/proj-1/locations/global/connectivityTests/test-1
+   *
    * - Filter by labels:
    *   - Resources that have a key called `foo`
    *     labels.foo:*
@@ -127,9 +129,11 @@ public interface ListConnectivityTestsRequestOrBuilder
    * `!=`, `=`, `:` are supported (colon `:` represents a HAS operator which is
    * roughly synonymous with equality). &lt;field&gt; can refer to a proto or JSON
    * field, or a synthetic field. Field names can be camelCase or snake_case.
+   *
    * Examples:
    * - Filter by name:
    *   name = "projects/proj-1/locations/global/connectivityTests/test-1
+   *
    * - Filter by labels:
    *   - Resources that have a key called `foo`
    *     labels.foo:*

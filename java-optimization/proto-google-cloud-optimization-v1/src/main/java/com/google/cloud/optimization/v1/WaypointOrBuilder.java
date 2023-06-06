@@ -116,5 +116,5 @@ public interface WaypointOrBuilder
    */
   boolean getSideOfRoad();
 
-  public com.google.cloud.optimization.v1.Waypoint.LocationTypeCase getLocationTypeCase();
+  com.google.cloud.optimization.v1.Waypoint.LocationTypeCase getLocationTypeCase();
 }

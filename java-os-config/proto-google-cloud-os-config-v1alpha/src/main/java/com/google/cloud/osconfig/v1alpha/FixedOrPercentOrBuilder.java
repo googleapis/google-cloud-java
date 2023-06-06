@@ -75,5 +75,5 @@ public interface FixedOrPercentOrBuilder
    */
   int getPercent();
 
-  public com.google.cloud.osconfig.v1alpha.FixedOrPercent.ModeCase getModeCase();
+  com.google.cloud.osconfig.v1alpha.FixedOrPercent.ModeCase getModeCase();
 }

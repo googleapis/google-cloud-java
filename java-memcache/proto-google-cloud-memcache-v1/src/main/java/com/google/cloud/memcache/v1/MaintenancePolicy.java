@@ -48,11 +48,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     return new MaintenancePolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.memcache.v1.CloudMemcacheProto
         .internal_static_google_cloud_memcache_v1_MaintenancePolicy_descriptor;

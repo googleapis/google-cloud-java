@@ -48,11 +48,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
     return new ListUptimeCheckIpsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeServiceProto
         .internal_static_google_monitoring_v3_ListUptimeCheckIpsResponse_descriptor;

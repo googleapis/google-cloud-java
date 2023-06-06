@@ -51,11 +51,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     return new EnvironmentConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1_EnvironmentConfig_descriptor;
@@ -373,6 +368,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The number of nodes in the Kubernetes Engine cluster that will be
    * used to run this environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -805,12 +801,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The maintenance window is the period when Cloud Composer
    * components may undergo maintenance. It is defined so that maintenance is
    * not executed during peak hours or critical time periods.
+   *
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
+   *
    * The maintenance window period must encompass at least 12 hours per week.
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
+   *
    * If this value is omitted, the default value for maintenance window will be
    * applied. The default value is Saturday and Sunday 00-06 GMT.
    * </pre>
@@ -832,12 +831,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The maintenance window is the period when Cloud Composer
    * components may undergo maintenance. It is defined so that maintenance is
    * not executed during peak hours or critical time periods.
+   *
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
+   *
    * The maintenance window period must encompass at least 12 hours per week.
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
+   *
    * If this value is omitted, the default value for maintenance window will be
    * applied. The default value is Saturday and Sunday 00-06 GMT.
    * </pre>
@@ -862,12 +864,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The maintenance window is the period when Cloud Composer
    * components may undergo maintenance. It is defined so that maintenance is
    * not executed during peak hours or critical time periods.
+   *
    * The system will not be under maintenance for every occurrence of this
    * window, but when maintenance is planned, it will be scheduled
    * during the window.
+   *
    * The maintenance window period must encompass at least 12 hours per week.
    * This may be split into multiple chunks, each with a size of
    * at least 4 hours.
+   *
    * If this value is omitted, the default value for maintenance window will be
    * applied. The default value is Saturday and Sunday 00-06 GMT.
    * </pre>
@@ -893,6 +898,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The workloads configuration settings for the GKE cluster
    * associated with the Cloud Composer environment. The GKE cluster runs
    * Airflow scheduler, web server and workers workloads.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -914,6 +920,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The workloads configuration settings for the GKE cluster
    * associated with the Cloud Composer environment. The GKE cluster runs
    * Airflow scheduler, web server and workers workloads.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -937,6 +944,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * Optional. The workloads configuration settings for the GKE cluster
    * associated with the Cloud Composer environment. The GKE cluster runs
    * Airflow scheduler, web server and workers workloads.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -960,6 +968,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The size of the Cloud Composer environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -979,6 +988,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The size of the Cloud Composer environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1195,6 +1205,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Recovery settings configuration of an environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1214,6 +1225,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Recovery settings configuration of an environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -1235,6 +1247,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The Recovery settings configuration of an environment.
+   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -2338,6 +2351,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2356,6 +2370,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -2378,6 +2393,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-1.*.*-airflow-*.*.*.
      * </pre>
@@ -3899,12 +3915,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -3925,12 +3944,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -3959,12 +3981,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -3994,12 +4019,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4027,12 +4055,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4067,12 +4098,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4098,12 +4132,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4125,12 +4162,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4157,12 +4197,15 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The maintenance window is the period when Cloud Composer
      * components may undergo maintenance. It is defined so that maintenance is
      * not executed during peak hours or critical time periods.
+     *
      * The system will not be under maintenance for every occurrence of this
      * window, but when maintenance is planned, it will be scheduled
      * during the window.
+     *
      * The maintenance window period must encompass at least 12 hours per week.
      * This may be split into multiple chunks, each with a size of
      * at least 4 hours.
+     *
      * If this value is omitted, the default value for maintenance window will be
      * applied. The default value is Saturday and Sunday 00-06 GMT.
      * </pre>
@@ -4201,6 +4244,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4221,6 +4265,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4247,6 +4292,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4276,6 +4322,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4302,6 +4349,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4336,6 +4384,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4361,6 +4410,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4382,6 +4432,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4407,6 +4458,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * Optional. The workloads configuration settings for the GKE cluster
      * associated with the Cloud Composer environment. The GKE cluster runs
      * Airflow scheduler, web server and workers workloads.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4438,6 +4490,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4457,6 +4510,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4479,6 +4533,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4505,6 +4560,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -4531,6 +4587,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The size of the Cloud Composer environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5056,6 +5113,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5074,6 +5132,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5098,6 +5157,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5125,6 +5185,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5149,6 +5210,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5181,6 +5243,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5204,6 +5267,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5223,6 +5287,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
@@ -5246,6 +5311,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The Recovery settings configuration of an environment.
+     *
      * This field is supported for Cloud Composer environments in versions
      * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>

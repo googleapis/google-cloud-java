@@ -47,11 +47,6 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
     return new LatencyDistribution();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TestOuterClass
         .internal_static_google_cloud_networkmanagement_v1beta1_LatencyDistribution_descriptor;

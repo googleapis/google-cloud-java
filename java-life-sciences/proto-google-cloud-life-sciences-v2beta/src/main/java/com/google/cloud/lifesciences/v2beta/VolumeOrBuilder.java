@@ -159,5 +159,5 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.lifesciences.v2beta.NFSMountOrBuilder getNfsMountOrBuilder();
 
-  public com.google.cloud.lifesciences.v2beta.Volume.StorageCase getStorageCase();
+  com.google.cloud.lifesciences.v2beta.Volume.StorageCase getStorageCase();
 }

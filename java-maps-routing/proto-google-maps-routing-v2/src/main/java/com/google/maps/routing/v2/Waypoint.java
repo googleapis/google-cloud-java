@@ -46,11 +46,6 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     return new Waypoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.WaypointProto
         .internal_static_google_maps_routing_v2_Waypoint_descriptor;
@@ -67,6 +62,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int locationTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object locationType_;
 
   public enum LocationTypeCase

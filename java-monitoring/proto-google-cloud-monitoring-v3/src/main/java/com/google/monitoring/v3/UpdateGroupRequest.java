@@ -45,11 +45,6 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateGroupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.GroupServiceProto
         .internal_static_google_monitoring_v3_UpdateGroupRequest_descriptor;

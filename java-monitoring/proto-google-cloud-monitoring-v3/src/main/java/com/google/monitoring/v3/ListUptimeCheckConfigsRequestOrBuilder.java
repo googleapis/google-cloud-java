@@ -30,6 +30,7 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
    * Uptime check configurations are listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -47,6 +48,7 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
    * Uptime check configurations are listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -64,6 +66,7 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * uptime checks to be included in the response.
+   *
    * For more details, see [Filtering
    * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
    * </pre>
@@ -79,6 +82,7 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * uptime checks to be included in the response.
+   *
    * For more details, see [Filtering
    * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
    * </pre>

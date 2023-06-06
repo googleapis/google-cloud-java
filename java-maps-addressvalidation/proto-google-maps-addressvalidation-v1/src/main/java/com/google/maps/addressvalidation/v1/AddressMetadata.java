@@ -46,11 +46,6 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     return new AddressMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.addressvalidation.v1.MetadataProto
         .internal_static_google_maps_addressvalidation_v1_AddressMetadata_descriptor;

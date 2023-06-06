@@ -48,11 +48,6 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     return new PollAirflowCommandResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_descriptor;
@@ -140,11 +135,6 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Line();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -948,11 +938,6 @@ public final class PollAirflowCommandResponse extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExitInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

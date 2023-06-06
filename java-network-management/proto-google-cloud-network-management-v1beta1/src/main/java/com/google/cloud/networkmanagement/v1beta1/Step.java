@@ -50,11 +50,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return new Step();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TraceProto
         .internal_static_google_cloud_networkmanagement_v1beta1_Step_descriptor;
@@ -737,6 +732,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int stepInfoCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object stepInfo_;
 
   public enum StepInfoCase

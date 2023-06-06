@@ -49,11 +49,6 @@ public final class ListInventoriesResponse extends com.google.protobuf.Generated
     return new ListInventoriesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1.Inventories
         .internal_static_google_cloud_osconfig_v1_ListInventoriesResponse_descriptor;

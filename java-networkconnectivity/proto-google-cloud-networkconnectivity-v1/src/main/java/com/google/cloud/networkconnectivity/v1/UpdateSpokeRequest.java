@@ -49,11 +49,6 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateSpokeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1_UpdateSpokeRequest_descriptor;
@@ -199,11 +194,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
    * retry, this ID lets the server know that it can ignore the request if it
    * has already been completed. The server guarantees that for at least 60
    * minutes after the first request.
+   *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check to see whether the original operation
    * was received. If it was, the server ignores the second request. This
    * behavior prevents clients from mistakenly creating duplicate commitments.
+   *
    * The request ID must be a valid UUID, with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -233,11 +230,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
    * retry, this ID lets the server know that it can ignore the request if it
    * has already been completed. The server guarantees that for at least 60
    * minutes after the first request.
+   *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check to see whether the original operation
    * was received. If it was, the server ignores the second request. This
    * behavior prevents clients from mistakenly creating duplicate commitments.
+   *
    * The request ID must be a valid UUID, with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
@@ -1105,11 +1104,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * retry, this ID lets the server know that it can ignore the request if it
      * has already been completed. The server guarantees that for at least 60
      * minutes after the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
      * was received. If it was, the server ignores the second request. This
      * behavior prevents clients from mistakenly creating duplicate commitments.
+     *
      * The request ID must be a valid UUID, with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1138,11 +1139,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * retry, this ID lets the server know that it can ignore the request if it
      * has already been completed. The server guarantees that for at least 60
      * minutes after the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
      * was received. If it was, the server ignores the second request. This
      * behavior prevents clients from mistakenly creating duplicate commitments.
+     *
      * The request ID must be a valid UUID, with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1171,11 +1174,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * retry, this ID lets the server know that it can ignore the request if it
      * has already been completed. The server guarantees that for at least 60
      * minutes after the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
      * was received. If it was, the server ignores the second request. This
      * behavior prevents clients from mistakenly creating duplicate commitments.
+     *
      * The request ID must be a valid UUID, with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1203,11 +1208,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * retry, this ID lets the server know that it can ignore the request if it
      * has already been completed. The server guarantees that for at least 60
      * minutes after the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
      * was received. If it was, the server ignores the second request. This
      * behavior prevents clients from mistakenly creating duplicate commitments.
+     *
      * The request ID must be a valid UUID, with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
@@ -1231,11 +1238,13 @@ public final class UpdateSpokeRequest extends com.google.protobuf.GeneratedMessa
      * retry, this ID lets the server know that it can ignore the request if it
      * has already been completed. The server guarantees that for at least 60
      * minutes after the first request.
+     *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
      * was received. If it was, the server ignores the second request. This
      * behavior prevents clients from mistakenly creating duplicate commitments.
+     *
      * The request ID must be a valid UUID, with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
      * </pre>

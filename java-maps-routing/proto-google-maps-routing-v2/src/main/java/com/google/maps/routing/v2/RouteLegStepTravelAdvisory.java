@@ -48,11 +48,6 @@ public final class RouteLegStepTravelAdvisory extends com.google.protobuf.Genera
     return new RouteLegStepTravelAdvisory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RouteProto
         .internal_static_google_maps_routing_v2_RouteLegStepTravelAdvisory_descriptor;

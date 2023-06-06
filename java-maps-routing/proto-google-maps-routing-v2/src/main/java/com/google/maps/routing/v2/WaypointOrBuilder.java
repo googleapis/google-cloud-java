@@ -197,5 +197,5 @@ public interface WaypointOrBuilder
    */
   boolean getSideOfRoad();
 
-  public com.google.maps.routing.v2.Waypoint.LocationTypeCase getLocationTypeCase();
+  com.google.maps.routing.v2.Waypoint.LocationTypeCase getLocationTypeCase();
 }

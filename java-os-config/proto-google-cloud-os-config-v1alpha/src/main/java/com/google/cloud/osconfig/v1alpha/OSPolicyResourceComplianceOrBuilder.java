@@ -180,5 +180,5 @@ public interface OSPolicyResourceComplianceOrBuilder
   com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.ExecResourceOutputOrBuilder
       getExecResourceOutputOrBuilder();
 
-  public com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.OutputCase getOutputCase();
+  com.google.cloud.osconfig.v1alpha.OSPolicyResourceCompliance.OutputCase getOutputCase();
 }

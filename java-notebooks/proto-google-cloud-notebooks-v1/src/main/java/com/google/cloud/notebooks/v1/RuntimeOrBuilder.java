@@ -335,5 +335,5 @@ public interface RuntimeOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.cloud.notebooks.v1.Runtime.RuntimeTypeCase getRuntimeTypeCase();
+  com.google.cloud.notebooks.v1.Runtime.RuntimeTypeCase getRuntimeTypeCase();
 }

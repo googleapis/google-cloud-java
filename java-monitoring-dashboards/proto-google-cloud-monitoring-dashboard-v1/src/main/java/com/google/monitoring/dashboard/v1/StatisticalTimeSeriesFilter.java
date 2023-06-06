@@ -49,11 +49,6 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     return new StatisticalTimeSeriesFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.CommonProto
         .internal_static_google_monitoring_dashboard_v1_StatisticalTimeSeriesFilter_descriptor;

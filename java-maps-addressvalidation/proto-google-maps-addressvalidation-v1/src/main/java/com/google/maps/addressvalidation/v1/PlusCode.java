@@ -50,11 +50,6 @@ public final class PlusCode extends com.google.protobuf.GeneratedMessageV3
     return new PlusCode();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.addressvalidation.v1.GeocodeProto
         .internal_static_google_maps_addressvalidation_v1_PlusCode_descriptor;

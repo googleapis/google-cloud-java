@@ -28,6 +28,7 @@ public interface AlertChartOrBuilder
    *
    * <pre>
    * Required. The resource name of the alert policy. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface AlertChartOrBuilder
    *
    * <pre>
    * Required. The resource name of the alert policy. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *

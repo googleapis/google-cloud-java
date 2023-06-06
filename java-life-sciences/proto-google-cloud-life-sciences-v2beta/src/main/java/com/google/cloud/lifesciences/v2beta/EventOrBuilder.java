@@ -473,5 +473,5 @@ public interface EventOrBuilder
    */
   com.google.cloud.lifesciences.v2beta.FailedEventOrBuilder getFailedOrBuilder();
 
-  public com.google.cloud.lifesciences.v2beta.Event.DetailsCase getDetailsCase();
+  com.google.cloud.lifesciences.v2beta.Event.DetailsCase getDetailsCase();
 }

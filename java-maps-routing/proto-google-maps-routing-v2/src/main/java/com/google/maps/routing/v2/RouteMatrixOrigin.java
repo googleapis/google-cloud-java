@@ -45,11 +45,6 @@ public final class RouteMatrixOrigin extends com.google.protobuf.GeneratedMessag
     return new RouteMatrixOrigin();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RoutesServiceProto
         .internal_static_google_maps_routing_v2_RouteMatrixOrigin_descriptor;

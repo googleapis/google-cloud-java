@@ -29,6 +29,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
    * the parent workspace. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
    * the parent workspace. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *

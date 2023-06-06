@@ -52,11 +52,6 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     return new LinkedRouterApplianceInstances();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1_LinkedRouterApplianceInstances_descriptor;

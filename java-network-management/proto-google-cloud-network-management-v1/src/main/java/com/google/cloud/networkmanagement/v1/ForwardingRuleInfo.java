@@ -53,11 +53,6 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     return new ForwardingRuleInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1.TraceProto
         .internal_static_google_cloud_networkmanagement_v1_ForwardingRuleInfo_descriptor;

@@ -28,7 +28,9 @@ public interface ListInventoriesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format: `projects/{project}/locations/{location}/instances/-`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface ListInventoriesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format: `projects/{project}/locations/{location}/instances/-`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *

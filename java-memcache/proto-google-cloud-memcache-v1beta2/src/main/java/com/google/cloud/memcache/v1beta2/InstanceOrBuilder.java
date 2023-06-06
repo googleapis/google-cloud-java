@@ -30,6 +30,7 @@ public interface InstanceOrBuilder
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Memcached instances are managed and addressed at the regional level
    * so `location_id` here refers to a Google Cloud region; however, users may
    * choose which zones Memcached nodes should be provisioned in within an
@@ -48,6 +49,7 @@ public interface InstanceOrBuilder
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Memcached instances are managed and addressed at the regional level
    * so `location_id` here refers to a Google Cloud region; however, users may
    * choose which zones Memcached nodes should be provisioned in within an

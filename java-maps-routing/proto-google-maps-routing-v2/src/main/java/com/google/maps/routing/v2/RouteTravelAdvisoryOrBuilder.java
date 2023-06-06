@@ -79,7 +79,9 @@ public interface RouteTravelAdvisoryOrBuilder
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -96,7 +98,9 @@ public interface RouteTravelAdvisoryOrBuilder
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -113,7 +117,9 @@ public interface RouteTravelAdvisoryOrBuilder
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -130,7 +136,9 @@ public interface RouteTravelAdvisoryOrBuilder
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -148,7 +156,9 @@ public interface RouteTravelAdvisoryOrBuilder
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>

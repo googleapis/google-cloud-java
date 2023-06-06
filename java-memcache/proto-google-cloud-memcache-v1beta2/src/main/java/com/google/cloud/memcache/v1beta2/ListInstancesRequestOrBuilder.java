@@ -61,6 +61,7 @@ public interface ListInstancesRequestOrBuilder
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 1000 will be used by the service.
    * Regardless of the `page_size` value, the response may include a partial
    * list and a caller should only rely on response's

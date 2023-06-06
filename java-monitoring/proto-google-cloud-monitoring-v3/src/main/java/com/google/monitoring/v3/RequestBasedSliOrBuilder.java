@@ -105,5 +105,5 @@ public interface RequestBasedSliOrBuilder
    */
   com.google.monitoring.v3.DistributionCutOrBuilder getDistributionCutOrBuilder();
 
-  public com.google.monitoring.v3.RequestBasedSli.MethodCase getMethodCase();
+  com.google.monitoring.v3.RequestBasedSli.MethodCase getMethodCase();
 }

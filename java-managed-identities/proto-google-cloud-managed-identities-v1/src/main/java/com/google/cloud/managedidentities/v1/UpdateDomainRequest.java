@@ -46,11 +46,6 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
     return new UpdateDomainRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceProto
         .internal_static_google_cloud_managedidentities_v1_UpdateDomainRequest_descriptor;

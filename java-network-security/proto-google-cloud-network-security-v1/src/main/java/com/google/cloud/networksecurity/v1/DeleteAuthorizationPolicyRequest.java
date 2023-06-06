@@ -48,11 +48,6 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
     return new DeleteAuthorizationPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1_DeleteAuthorizationPolicyRequest_descriptor;

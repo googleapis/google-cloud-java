@@ -174,5 +174,5 @@ public interface TypedValueOrBuilder
    */
   com.google.api.DistributionOrBuilder getDistributionValueOrBuilder();
 
-  public com.google.monitoring.v3.TypedValue.ValueCase getValueCase();
+  com.google.monitoring.v3.TypedValue.ValueCase getValueCase();
 }

@@ -47,11 +47,6 @@ public final class DeleteClientTlsPolicyRequest extends com.google.protobuf.Gene
     return new DeleteClientTlsPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.ClientTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1_DeleteClientTlsPolicyRequest_descriptor;

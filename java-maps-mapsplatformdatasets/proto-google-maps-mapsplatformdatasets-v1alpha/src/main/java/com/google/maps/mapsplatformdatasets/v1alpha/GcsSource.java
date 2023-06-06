@@ -48,11 +48,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     return new GcsSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.mapsplatformdatasets.v1alpha.DataSourceProto
         .internal_static_google_maps_mapsplatformdatasets_v1alpha_GcsSource_descriptor;

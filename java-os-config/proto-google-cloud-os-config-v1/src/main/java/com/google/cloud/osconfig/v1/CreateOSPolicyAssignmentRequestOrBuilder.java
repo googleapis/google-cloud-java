@@ -101,6 +101,7 @@ public interface CreateOSPolicyAssignmentRequestOrBuilder
    * <pre>
    * Required. The logical name of the OS policy assignment in the project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-63 characters.
@@ -119,6 +120,7 @@ public interface CreateOSPolicyAssignmentRequestOrBuilder
    * <pre>
    * Required. The logical name of the OS policy assignment in the project
    * with the following restrictions:
+   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-63 characters.

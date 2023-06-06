@@ -47,11 +47,6 @@ public final class GetAuthorizationPolicyRequest extends com.google.protobuf.Gen
     return new GetAuthorizationPolicyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_GetAuthorizationPolicyRequest_descriptor;

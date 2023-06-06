@@ -239,5 +239,5 @@ public interface EnvironmentOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
-  public com.google.cloud.notebooks.v1.Environment.ImageTypeCase getImageTypeCase();
+  com.google.cloud.notebooks.v1.Environment.ImageTypeCase getImageTypeCase();
 }

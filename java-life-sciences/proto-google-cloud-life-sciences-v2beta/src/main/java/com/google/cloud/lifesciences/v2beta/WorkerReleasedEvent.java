@@ -49,11 +49,6 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
     return new WorkerReleasedEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_WorkerReleasedEvent_descriptor;

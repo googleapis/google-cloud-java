@@ -50,11 +50,6 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     return new Threshold();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.MetricsProto
         .internal_static_google_monitoring_dashboard_v1_Threshold_descriptor;

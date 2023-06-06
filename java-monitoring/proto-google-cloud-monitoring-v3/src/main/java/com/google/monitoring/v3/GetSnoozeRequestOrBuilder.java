@@ -28,6 +28,7 @@ public interface GetSnoozeRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the `Snooze` to retrieve. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetSnoozeRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the `Snooze` to retrieve. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
    * </pre>
    *

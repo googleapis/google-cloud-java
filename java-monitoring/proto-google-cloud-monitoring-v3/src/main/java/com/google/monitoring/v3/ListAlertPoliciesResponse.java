@@ -48,11 +48,6 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     return new ListAlertPoliciesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.AlertServiceProto
         .internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;

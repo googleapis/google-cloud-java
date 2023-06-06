@@ -50,11 +50,6 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
     return new ListInstancesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.memcache.v1beta2.CloudMemcacheProto
         .internal_static_google_cloud_memcache_v1beta2_ListInstancesRequest_descriptor;
@@ -136,6 +131,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 1000 will be used by the service.
    * Regardless of the `page_size` value, the response may include a partial
    * list and a caller should only rely on response's
@@ -876,6 +872,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the `page_size` value, the response may include a partial
      * list and a caller should only rely on response's
@@ -896,6 +893,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the `page_size` value, the response may include a partial
      * list and a caller should only rely on response's
@@ -920,6 +918,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The maximum number of items to return.
+     *
      * If not specified, a default value of 1000 will be used by the service.
      * Regardless of the `page_size` value, the response may include a partial
      * list and a caller should only rely on response's

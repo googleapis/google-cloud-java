@@ -49,11 +49,6 @@ public final class ListImageVersionsResponse extends com.google.protobuf.Generat
     return new ListImageVersionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersionsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1beta1_ListImageVersionsResponse_descriptor;

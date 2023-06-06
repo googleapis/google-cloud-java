@@ -48,11 +48,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
     return new GridLayout();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.LayoutsProto
         .internal_static_google_monitoring_dashboard_v1_GridLayout_descriptor;

@@ -110,7 +110,6 @@ public interface StreamingTranslateSpeechRequestOrBuilder
    */
   com.google.protobuf.ByteString getAudioContent();
 
-  public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest
-          .StreamingRequestCase
+  com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest.StreamingRequestCase
       getStreamingRequestCase();
 }

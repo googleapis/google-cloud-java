@@ -216,5 +216,5 @@ public interface TimeSeriesFilterOrBuilder
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder();
 
-  public com.google.monitoring.dashboard.v1.TimeSeriesFilter.OutputFilterCase getOutputFilterCase();
+  com.google.monitoring.dashboard.v1.TimeSeriesFilter.OutputFilterCase getOutputFilterCase();
 }

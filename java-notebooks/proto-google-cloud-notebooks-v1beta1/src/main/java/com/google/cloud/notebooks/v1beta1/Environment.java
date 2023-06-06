@@ -51,11 +51,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     return new Environment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1beta1.EnvironmentProto
         .internal_static_google_cloud_notebooks_v1beta1_Environment_descriptor;
@@ -72,6 +67,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int imageTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object imageType_;
 
   public enum ImageTypeCase

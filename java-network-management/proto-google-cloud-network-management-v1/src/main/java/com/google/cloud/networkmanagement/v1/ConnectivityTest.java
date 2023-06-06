@@ -41,7 +41,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     name_ = "";
     description_ = "";
     protocol_ = "";
-    relatedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    relatedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
     displayName_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConnectivityTest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -195,19 +190,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Source specification of the Connectivity Test.
+   *
    * You can use a combination of source IP address, virtual machine
    * (VM) instance, or Compute Engine network to uniquely identify
    * the source location.
+   *
    * Examples:
    * If the source IP address is an internal IP address within a Google Cloud
    * Virtual Private Cloud (VPC) network, then you must also specify the VPC
    * network. Otherwise, specify the VM instance, which already contains its
    * internal IP address and VPC network information.
+   *
    * If the source of the test is within an on-premises network, then you must
    * provide the destination VPC network.
+   *
    * If the source endpoint is a Compute Engine VM instance with multiple
    * network interfaces, the instance itself is not sufficient to identify the
    * endpoint. So, you must also specify the source IP address or VPC network.
+   *
    * A reachability analysis proceeds even if the source location is
    * ambiguous. However, the test result may include endpoints that you don't
    * intend to test.
@@ -228,19 +228,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Source specification of the Connectivity Test.
+   *
    * You can use a combination of source IP address, virtual machine
    * (VM) instance, or Compute Engine network to uniquely identify
    * the source location.
+   *
    * Examples:
    * If the source IP address is an internal IP address within a Google Cloud
    * Virtual Private Cloud (VPC) network, then you must also specify the VPC
    * network. Otherwise, specify the VM instance, which already contains its
    * internal IP address and VPC network information.
+   *
    * If the source of the test is within an on-premises network, then you must
    * provide the destination VPC network.
+   *
    * If the source endpoint is a Compute Engine VM instance with multiple
    * network interfaces, the instance itself is not sufficient to identify the
    * endpoint. So, you must also specify the source IP address or VPC network.
+   *
    * A reachability analysis proceeds even if the source location is
    * ambiguous. However, the test result may include endpoints that you don't
    * intend to test.
@@ -263,19 +268,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Source specification of the Connectivity Test.
+   *
    * You can use a combination of source IP address, virtual machine
    * (VM) instance, or Compute Engine network to uniquely identify
    * the source location.
+   *
    * Examples:
    * If the source IP address is an internal IP address within a Google Cloud
    * Virtual Private Cloud (VPC) network, then you must also specify the VPC
    * network. Otherwise, specify the VM instance, which already contains its
    * internal IP address and VPC network information.
+   *
    * If the source of the test is within an on-premises network, then you must
    * provide the destination VPC network.
+   *
    * If the source endpoint is a Compute Engine VM instance with multiple
    * network interfaces, the instance itself is not sufficient to identify the
    * endpoint. So, you must also specify the source IP address or VPC network.
+   *
    * A reachability analysis proceeds even if the source location is
    * ambiguous. However, the test result may include endpoints that you don't
    * intend to test.
@@ -299,16 +309,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Destination specification of the Connectivity Test.
+   *
    * You can use a combination of destination IP address, Compute Engine
    * VM instance, or VPC network to uniquely identify the destination
    * location.
+   *
    * Even if the destination IP address is not unique, the source IP
    * location is unique. Usually, the analysis can infer the destination
    * endpoint from route information.
+   *
    * If the destination you specify is a VM instance and the instance has
    * multiple network interfaces, then you must also specify either
    * a destination IP address  or VPC network to identify the destination
    * interface.
+   *
    * A reachability analysis proceeds even if the destination location is
    * ambiguous. However, the result can include endpoints that you don't
    * intend to test.
@@ -329,16 +343,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Destination specification of the Connectivity Test.
+   *
    * You can use a combination of destination IP address, Compute Engine
    * VM instance, or VPC network to uniquely identify the destination
    * location.
+   *
    * Even if the destination IP address is not unique, the source IP
    * location is unique. Usually, the analysis can infer the destination
    * endpoint from route information.
+   *
    * If the destination you specify is a VM instance and the instance has
    * multiple network interfaces, then you must also specify either
    * a destination IP address  or VPC network to identify the destination
    * interface.
+   *
    * A reachability analysis proceeds even if the destination location is
    * ambiguous. However, the result can include endpoints that you don't
    * intend to test.
@@ -361,16 +379,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Destination specification of the Connectivity Test.
+   *
    * You can use a combination of destination IP address, Compute Engine
    * VM instance, or VPC network to uniquely identify the destination
    * location.
+   *
    * Even if the destination IP address is not unique, the source IP
    * location is unique. Usually, the analysis can infer the destination
    * endpoint from route information.
+   *
    * If the destination you specify is a VM instance and the instance has
    * multiple network interfaces, then you must also specify either
    * a destination IP address  or VPC network to identify the destination
    * interface.
+   *
    * A reachability analysis proceeds even if the destination location is
    * ambiguous. However, the result can include endpoints that you don't
    * intend to test.
@@ -441,7 +463,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   public static final int RELATED_PROJECTS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList relatedProjects_;
+  private com.google.protobuf.LazyStringArrayList relatedProjects_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1182,8 +1205,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         destinationBuilder_ = null;
       }
       protocol_ = "";
-      relatedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      relatedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
       displayName_ = "";
       internalGetMutableLabels().clear();
       createTime_ = null;
@@ -1228,21 +1250,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkmanagement.v1.ConnectivityTest buildPartial() {
       com.google.cloud.networkmanagement.v1.ConnectivityTest result =
           new com.google.cloud.networkmanagement.v1.ConnectivityTest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.networkmanagement.v1.ConnectivityTest result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        relatedProjects_ = relatedProjects_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.relatedProjects_ = relatedProjects_;
     }
 
     private void buildPartial0(com.google.cloud.networkmanagement.v1.ConnectivityTest result) {
@@ -1262,6 +1274,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.protocol_ = protocol_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        relatedProjects_.makeImmutable();
+        result.relatedProjects_ = relatedProjects_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.displayName_ = displayName_;
@@ -1354,7 +1370,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (!other.relatedProjects_.isEmpty()) {
         if (relatedProjects_.isEmpty()) {
           relatedProjects_ = other.relatedProjects_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureRelatedProjectsIsMutable();
           relatedProjects_.addAll(other.relatedProjects_);
@@ -1729,19 +1745,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1761,19 +1782,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1799,19 +1825,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1839,19 +1870,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1877,19 +1913,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1920,19 +1961,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1957,19 +2003,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -1989,19 +2040,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -2025,19 +2081,24 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Source specification of the Connectivity Test.
+     *
      * You can use a combination of source IP address, virtual machine
      * (VM) instance, or Compute Engine network to uniquely identify
      * the source location.
+     *
      * Examples:
      * If the source IP address is an internal IP address within a Google Cloud
      * Virtual Private Cloud (VPC) network, then you must also specify the VPC
      * network. Otherwise, specify the VM instance, which already contains its
      * internal IP address and VPC network information.
+     *
      * If the source of the test is within an on-premises network, then you must
      * provide the destination VPC network.
+     *
      * If the source endpoint is a Compute Engine VM instance with multiple
      * network interfaces, the instance itself is not sufficient to identify the
      * endpoint. So, you must also specify the source IP address or VPC network.
+     *
      * A reachability analysis proceeds even if the source location is
      * ambiguous. However, the test result may include endpoints that you don't
      * intend to test.
@@ -2075,16 +2136,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2104,16 +2169,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2139,16 +2208,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2176,16 +2249,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2211,16 +2288,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2252,16 +2333,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2286,16 +2371,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2315,16 +2404,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2348,16 +2441,20 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Destination specification of the Connectivity Test.
+     *
      * You can use a combination of destination IP address, Compute Engine
      * VM instance, or VPC network to uniquely identify the destination
      * location.
+     *
      * Even if the destination IP address is not unique, the source IP
      * location is unique. Usually, the analysis can infer the destination
      * endpoint from route information.
+     *
      * If the destination you specify is a VM instance and the instance has
      * multiple network interfaces, then you must also specify either
      * a destination IP address  or VPC network to identify the destination
      * interface.
+     *
      * A reachability analysis proceeds even if the destination location is
      * ambiguous. However, the result can include endpoints that you don't
      * intend to test.
@@ -2490,14 +2587,14 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList relatedProjects_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList relatedProjects_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRelatedProjectsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!relatedProjects_.isModifiable()) {
         relatedProjects_ = new com.google.protobuf.LazyStringArrayList(relatedProjects_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2512,7 +2609,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return A list containing the relatedProjects.
      */
     public com.google.protobuf.ProtocolStringList getRelatedProjectsList() {
-      return relatedProjects_.getUnmodifiableView();
+      relatedProjects_.makeImmutable();
+      return relatedProjects_;
     }
     /**
      *
@@ -2581,6 +2679,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       ensureRelatedProjectsIsMutable();
       relatedProjects_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2603,6 +2702,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       ensureRelatedProjectsIsMutable();
       relatedProjects_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2622,6 +2722,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public Builder addAllRelatedProjects(java.lang.Iterable<java.lang.String> values) {
       ensureRelatedProjectsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedProjects_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2638,8 +2739,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRelatedProjects() {
-      relatedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      relatedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2663,6 +2765,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureRelatedProjectsIsMutable();
       relatedProjects_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

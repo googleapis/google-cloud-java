@@ -48,11 +48,6 @@ public final class AsyncModelMetadata extends com.google.protobuf.GeneratedMessa
     return new AsyncModelMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.AsyncModelProto
         .internal_static_google_cloud_optimization_v1_AsyncModelMetadata_descriptor;

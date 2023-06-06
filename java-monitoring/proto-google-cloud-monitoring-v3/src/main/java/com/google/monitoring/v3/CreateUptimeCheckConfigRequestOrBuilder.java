@@ -30,6 +30,7 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
    * to create the Uptime check. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -47,6 +48,7 @@ public interface CreateUptimeCheckConfigRequestOrBuilder
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
    * to create the Uptime check. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *

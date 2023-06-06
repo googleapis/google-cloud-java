@@ -30,6 +30,7 @@ public interface GetDatasetRequestOrBuilder
    * Required. Resource name. Can also fetch a specified version
    * projects/{project}/datasets/{dataset_id}
    * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+   *
    * In order to retrieve a previous version of the dataset, also provide
    * the version ID.
    * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8
@@ -49,6 +50,7 @@ public interface GetDatasetRequestOrBuilder
    * Required. Resource name. Can also fetch a specified version
    * projects/{project}/datasets/{dataset_id}
    * projects/{project}/datasets/{dataset_id}&#64;{version-id}
+   *
    * In order to retrieve a previous version of the dataset, also provide
    * the version ID.
    * Example: projects/123/datasets/assisted-driving-preferences&#64;c7cfa2a8

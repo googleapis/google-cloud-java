@@ -52,11 +52,6 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
     return new ListHubsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1_ListHubsRequest_descriptor;
