@@ -47,11 +47,6 @@ public final class CloudWorkspaceSourceContext extends com.google.protobuf.Gener
     return new CloudWorkspaceSourceContext();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.source.v1.SourceContextProto
         .internal_static_google_devtools_source_v1_CloudWorkspaceSourceContext_descriptor;

@@ -176,5 +176,5 @@ public interface CloudRepoSourceContextOrBuilder
    */
   com.google.devtools.source.v1.AliasContextOrBuilder getAliasContextOrBuilder();
 
-  public com.google.devtools.source.v1.CloudRepoSourceContext.RevisionCase getRevisionCase();
+  com.google.devtools.source.v1.CloudRepoSourceContext.RevisionCase getRevisionCase();
 }
