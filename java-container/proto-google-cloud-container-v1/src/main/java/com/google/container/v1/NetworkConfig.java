@@ -50,11 +50,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return new NetworkConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_NetworkConfig_descriptor;
@@ -70,6 +65,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.NetworkConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NETWORK_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -509,6 +505,39 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         : gatewayApiConfig_;
   }
 
+  public static final int ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER = 19;
+  private boolean enableFqdnNetworkPolicy_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return Whether the enableFqdnNetworkPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableFqdnNetworkPolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return The enableFqdnNetworkPolicy.
+   */
+  @java.lang.Override
+  public boolean getEnableFqdnNetworkPolicy() {
+    return enableFqdnNetworkPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -556,6 +585,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (gatewayApiConfig_ != null) {
       output.writeMessage(16, getGatewayApiConfig());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(19, enableFqdnNetworkPolicy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -600,6 +632,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (gatewayApiConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGatewayApiConfig());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableFqdnNetworkPolicy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -636,6 +671,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayApiConfig() != other.hasGatewayApiConfig()) return false;
     if (hasGatewayApiConfig()) {
       if (!getGatewayApiConfig().equals(other.getGatewayApiConfig())) return false;
+    }
+    if (hasEnableFqdnNetworkPolicy() != other.hasEnableFqdnNetworkPolicy()) return false;
+    if (hasEnableFqdnNetworkPolicy()) {
+      if (getEnableFqdnNetworkPolicy() != other.getEnableFqdnNetworkPolicy()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -675,6 +714,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayApiConfig()) {
       hash = (37 * hash) + GATEWAY_API_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGatewayApiConfig().hashCode();
+    }
+    if (hasEnableFqdnNetworkPolicy()) {
+      hash = (37 * hash) + ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableFqdnNetworkPolicy());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -840,6 +883,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         gatewayApiConfigBuilder_.dispose();
         gatewayApiConfigBuilder_ = null;
       }
+      enableFqdnNetworkPolicy_ = false;
       return this;
     }
 
@@ -913,6 +957,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         result.gatewayApiConfig_ =
             gatewayApiConfigBuilder_ == null ? gatewayApiConfig_ : gatewayApiConfigBuilder_.build();
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableFqdnNetworkPolicy_ = enableFqdnNetworkPolicy_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -993,6 +1043,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGatewayApiConfig()) {
         mergeGatewayApiConfig(other.getGatewayApiConfig());
+      }
+      if (other.hasEnableFqdnNetworkPolicy()) {
+        setEnableFqdnNetworkPolicy(other.getEnableFqdnNetworkPolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1083,6 +1136,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 130
+            case 152:
+              {
+                enableFqdnNetworkPolicy_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2433,6 +2492,74 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         gatewayApiConfig_ = null;
       }
       return gatewayApiConfigBuilder_;
+    }
+
+    private boolean enableFqdnNetworkPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @return Whether the enableFqdnNetworkPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableFqdnNetworkPolicy() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @return The enableFqdnNetworkPolicy.
+     */
+    @java.lang.Override
+    public boolean getEnableFqdnNetworkPolicy() {
+      return enableFqdnNetworkPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @param value The enableFqdnNetworkPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableFqdnNetworkPolicy(boolean value) {
+
+      enableFqdnNetworkPolicy_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether FQDN Network Policy is enabled on this cluster.
+     * </pre>
+     *
+     * <code>optional bool enable_fqdn_network_policy = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableFqdnNetworkPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableFqdnNetworkPolicy_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

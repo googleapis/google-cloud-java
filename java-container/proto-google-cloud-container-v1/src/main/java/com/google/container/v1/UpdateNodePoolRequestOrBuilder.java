@@ -35,7 +35,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2426
+   *     google/container/v1/cluster_service.proto;l=2490
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2426
+   *     google/container/v1/cluster_service.proto;l=2490
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2432
+   *     google/container/v1/cluster_service.proto;l=2496
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2432
+   *     google/container/v1/cluster_service.proto;l=2496
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2436
+   *     google/container/v1/cluster_service.proto;l=2500
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2436
+   *     google/container/v1/cluster_service.proto;l=2500
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2440
+   *     google/container/v1/cluster_service.proto;l=2504
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -155,7 +155,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2440
+   *     google/container/v1/cluster_service.proto;l=2504
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -167,8 +167,10 @@ public interface UpdateNodePoolRequestOrBuilder
    * <pre>
    * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -187,8 +189,10 @@ public interface UpdateNodePoolRequestOrBuilder
    * <pre>
    * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version

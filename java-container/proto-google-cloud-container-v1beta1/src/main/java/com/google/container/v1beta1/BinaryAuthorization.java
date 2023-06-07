@@ -47,11 +47,6 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     return new BinaryAuthorization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_BinaryAuthorization_descriptor;
@@ -242,7 +237,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1613
+   *     google/container/v1beta1/cluster_service.proto;l=1659
    * @return The enabled.
    */
   @java.lang.Override
@@ -671,7 +666,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1613
+     *     google/container/v1beta1/cluster_service.proto;l=1659
      * @return The enabled.
      */
     @java.lang.Override
@@ -691,7 +686,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1613
+     *     google/container/v1beta1/cluster_service.proto;l=1659
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -715,7 +710,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1613
+     *     google/container/v1beta1/cluster_service.proto;l=1659
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

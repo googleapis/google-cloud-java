@@ -45,11 +45,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     return new BlueGreenSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_BlueGreenSettings_descriptor;
@@ -157,7 +152,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.DurationOrBuilder getBatchSoakDurationOrBuilder();
 
-    public com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.UpdateBatchSizeCase
+    com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.UpdateBatchSizeCase
         getUpdateBatchSizeCase();
   }
   /**
@@ -187,11 +182,6 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       return new StandardRolloutPolicy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1.ClusterServiceProto
           .internal_static_google_container_v1_BlueGreenSettings_StandardRolloutPolicy_descriptor;
@@ -209,6 +199,8 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
     private int updateBatchSizeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object updateBatchSize_;
 
     public enum UpdateBatchSizeCase
@@ -1240,6 +1232,8 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
   private int bitField0_;
   private int rolloutPolicyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object rolloutPolicy_;
 
   public enum RolloutPolicyCase

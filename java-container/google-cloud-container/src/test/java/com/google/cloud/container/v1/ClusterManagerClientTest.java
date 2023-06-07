@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,12 @@ import com.google.common.collect.Lists;
 import com.google.container.v1.AddonsConfig;
 import com.google.container.v1.AuthenticatorGroupsConfig;
 import com.google.container.v1.Autopilot;
+import com.google.container.v1.AutopilotCompatibilityIssue;
+import com.google.container.v1.BestEffortProvisioning;
 import com.google.container.v1.BinaryAuthorization;
 import com.google.container.v1.CancelOperationRequest;
+import com.google.container.v1.CheckAutopilotCompatibilityRequest;
+import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterAutoscaling;
 import com.google.container.v1.ClusterUpdate;
@@ -55,6 +59,7 @@ import com.google.container.v1.GetServerConfigRequest;
 import com.google.container.v1.IPAllocationPolicy;
 import com.google.container.v1.IdentityServiceConfig;
 import com.google.container.v1.Jwk;
+import com.google.container.v1.K8sBetaAPIConfig;
 import com.google.container.v1.LegacyAbac;
 import com.google.container.v1.LinuxNodeConfig;
 import com.google.container.v1.ListClustersRequest;
@@ -323,6 +328,7 @@ public class ClusterManagerClientTest {
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
+            .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -423,6 +429,7 @@ public class ClusterManagerClientTest {
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
+            .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2068,6 +2075,7 @@ public class ClusterManagerClientTest {
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .setEtag("etag3123477")
+            .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2123,6 +2131,7 @@ public class ClusterManagerClientTest {
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .setEtag("etag3123477")
+            .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -3354,6 +3363,49 @@ public class ClusterManagerClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.listUsableSubnetworks(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkAutopilotCompatibilityTest() throws Exception {
+    CheckAutopilotCompatibilityResponse expectedResponse =
+        CheckAutopilotCompatibilityResponse.newBuilder()
+            .addAllIssues(new ArrayList<AutopilotCompatibilityIssue>())
+            .setSummary("summary-1857640538")
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    CheckAutopilotCompatibilityRequest request =
+        CheckAutopilotCompatibilityRequest.newBuilder().setName("name3373707").build();
+
+    CheckAutopilotCompatibilityResponse actualResponse =
+        client.checkAutopilotCompatibility(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckAutopilotCompatibilityRequest actualRequest =
+        ((CheckAutopilotCompatibilityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkAutopilotCompatibilityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      CheckAutopilotCompatibilityRequest request =
+          CheckAutopilotCompatibilityRequest.newBuilder().setName("name3373707").build();
+      client.checkAutopilotCompatibility(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -39,18 +39,13 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
   }
 
   private AdditionalPodRangesConfig() {
-    podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    podRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AdditionalPodRangesConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
   public static final int POD_RANGE_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList podRangeNames_;
+  private com.google.protobuf.LazyStringArrayList podRangeNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -338,8 +334,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      podRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -367,7 +362,6 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public com.google.container.v1beta1.AdditionalPodRangesConfig buildPartial() {
       com.google.container.v1beta1.AdditionalPodRangesConfig result =
           new com.google.container.v1beta1.AdditionalPodRangesConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -375,17 +369,12 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.container.v1beta1.AdditionalPodRangesConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        podRangeNames_ = podRangeNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.podRangeNames_ = podRangeNames_;
-    }
-
     private void buildPartial0(com.google.container.v1beta1.AdditionalPodRangesConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        podRangeNames_.makeImmutable();
+        result.podRangeNames_ = podRangeNames_;
+      }
     }
 
     @java.lang.Override
@@ -437,7 +426,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       if (!other.podRangeNames_.isEmpty()) {
         if (podRangeNames_.isEmpty()) {
           podRangeNames_ = other.podRangeNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensurePodRangeNamesIsMutable();
           podRangeNames_.addAll(other.podRangeNames_);
@@ -496,14 +485,14 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList podRangeNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList podRangeNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePodRangeNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!podRangeNames_.isModifiable()) {
         podRangeNames_ = new com.google.protobuf.LazyStringArrayList(podRangeNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -517,7 +506,8 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
      * @return A list containing the podRangeNames.
      */
     public com.google.protobuf.ProtocolStringList getPodRangeNamesList() {
-      return podRangeNames_.getUnmodifiableView();
+      podRangeNames_.makeImmutable();
+      return podRangeNames_;
     }
     /**
      *
@@ -582,6 +572,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       }
       ensurePodRangeNamesIsMutable();
       podRangeNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,6 +594,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       }
       ensurePodRangeNamesIsMutable();
       podRangeNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,6 +613,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public Builder addAllPodRangeNames(java.lang.Iterable<java.lang.String> values) {
       ensurePodRangeNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, podRangeNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +629,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPodRangeNames() {
-      podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      podRangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -660,6 +654,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensurePodRangeNamesIsMutable();
       podRangeNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

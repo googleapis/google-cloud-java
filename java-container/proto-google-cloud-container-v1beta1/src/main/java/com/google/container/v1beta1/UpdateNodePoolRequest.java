@@ -44,7 +44,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     nodePoolId_ = "";
     nodeVersion_ = "";
     imageType_ = "";
-    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     etag_ = "";
   }
@@ -53,11 +53,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateNodePoolRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -92,7 +87,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2692
+   *     google/container/v1beta1/cluster_service.proto;l=2756
    * @return The projectId.
    */
   @java.lang.Override
@@ -121,7 +116,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2692
+   *     google/container/v1beta1/cluster_service.proto;l=2756
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -155,7 +150,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2699
+   *     google/container/v1beta1/cluster_service.proto;l=2763
    * @return The zone.
    */
   @java.lang.Override
@@ -184,7 +179,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2699
+   *     google/container/v1beta1/cluster_service.proto;l=2763
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -217,7 +212,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2703
+   *     google/container/v1beta1/cluster_service.proto;l=2767
    * @return The clusterId.
    */
   @java.lang.Override
@@ -245,7 +240,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2703
+   *     google/container/v1beta1/cluster_service.proto;l=2767
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -278,7 +273,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2708
+   *     google/container/v1beta1/cluster_service.proto;l=2772
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -306,7 +301,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2708
+   *     google/container/v1beta1/cluster_service.proto;l=2772
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -333,8 +328,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -364,8 +361,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -448,7 +447,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   public static final int LOCATIONS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList locations_;
+  private com.google.protobuf.LazyStringArrayList locations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1888,8 +1888,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       nodePoolId_ = "";
       nodeVersion_ = "";
       imageType_ = "";
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       workloadMetadataConfig_ = null;
       if (workloadMetadataConfigBuilder_ != null) {
         workloadMetadataConfigBuilder_.dispose();
@@ -1994,21 +1993,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public com.google.container.v1beta1.UpdateNodePoolRequest buildPartial() {
       com.google.container.v1beta1.UpdateNodePoolRequest result =
           new com.google.container.v1beta1.UpdateNodePoolRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.container.v1beta1.UpdateNodePoolRequest result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.locations_ = locations_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.UpdateNodePoolRequest result) {
@@ -2030,6 +2019,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.imageType_ = imageType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        locations_.makeImmutable();
+        result.locations_ = locations_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.workloadMetadataConfig_ =
@@ -2180,7 +2173,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -2450,7 +2443,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2692
+     *     google/container/v1beta1/cluster_service.proto;l=2756
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2478,7 +2471,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2692
+     *     google/container/v1beta1/cluster_service.proto;l=2756
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2506,7 +2499,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2692
+     *     google/container/v1beta1/cluster_service.proto;l=2756
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2533,7 +2526,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2692
+     *     google/container/v1beta1/cluster_service.proto;l=2756
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2556,7 +2549,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2692
+     *     google/container/v1beta1/cluster_service.proto;l=2756
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2586,7 +2579,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2699
+     *     google/container/v1beta1/cluster_service.proto;l=2763
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2614,7 +2607,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2699
+     *     google/container/v1beta1/cluster_service.proto;l=2763
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2642,7 +2635,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2699
+     *     google/container/v1beta1/cluster_service.proto;l=2763
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2669,7 +2662,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2699
+     *     google/container/v1beta1/cluster_service.proto;l=2763
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2692,7 +2685,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2699
+     *     google/container/v1beta1/cluster_service.proto;l=2763
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2721,7 +2714,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2703
+     *     google/container/v1beta1/cluster_service.proto;l=2767
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2748,7 +2741,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2703
+     *     google/container/v1beta1/cluster_service.proto;l=2767
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2775,7 +2768,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2703
+     *     google/container/v1beta1/cluster_service.proto;l=2767
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2801,7 +2794,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2703
+     *     google/container/v1beta1/cluster_service.proto;l=2767
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2823,7 +2816,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2703
+     *     google/container/v1beta1/cluster_service.proto;l=2767
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2852,7 +2845,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2708
+     *     google/container/v1beta1/cluster_service.proto;l=2772
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2879,7 +2872,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2708
+     *     google/container/v1beta1/cluster_service.proto;l=2772
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2906,7 +2899,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2708
+     *     google/container/v1beta1/cluster_service.proto;l=2772
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2932,7 +2925,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2708
+     *     google/container/v1beta1/cluster_service.proto;l=2772
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2954,7 +2947,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2708
+     *     google/container/v1beta1/cluster_service.proto;l=2772
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2977,8 +2970,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -3007,8 +3002,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -3037,8 +3034,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -3066,8 +3065,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -3091,8 +3092,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by Kubernetes Engine or
      * version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -3232,14 +3235,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList locations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -3257,7 +3260,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
-      return locations_.getUnmodifiableView();
+      locations_.makeImmutable();
+      return locations_;
     }
     /**
      *
@@ -3338,6 +3342,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3363,6 +3368,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3385,6 +3391,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3404,8 +3411,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -3432,6 +3440,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

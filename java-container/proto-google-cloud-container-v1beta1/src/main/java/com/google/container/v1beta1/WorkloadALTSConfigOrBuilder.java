@@ -29,6 +29,7 @@ public interface WorkloadALTSConfigOrBuilder
    * <pre>
    * enable_alts controls whether the alts handshaker should be enabled or not
    * for direct-path.
+   *
    * Requires Workload Identity
    * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
    * must be non-empty).
@@ -45,6 +46,7 @@ public interface WorkloadALTSConfigOrBuilder
    * <pre>
    * enable_alts controls whether the alts handshaker should be enabled or not
    * for direct-path.
+   *
    * Requires Workload Identity
    * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
    * must be non-empty).
@@ -61,6 +63,7 @@ public interface WorkloadALTSConfigOrBuilder
    * <pre>
    * enable_alts controls whether the alts handshaker should be enabled or not
    * for direct-path.
+   *
    * Requires Workload Identity
    * ([workload_pool][google.container.v1beta1.WorkloadIdentityConfig.workload_pool]
    * must be non-empty).

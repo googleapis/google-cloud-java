@@ -189,7 +189,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3661
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3741
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -214,7 +214,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3661
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3741
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -226,6 +226,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * Size of the disk attached to each node, specified in GB.
    * The smallest allowed disk size is 10GB.
+   *
    * If unspecified, the default disk size is 100GB.
    * </pre>
    *
@@ -241,6 +242,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -255,6 +257,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *

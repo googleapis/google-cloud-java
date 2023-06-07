@@ -45,11 +45,6 @@ public final class KubernetesDashboard extends com.google.protobuf.GeneratedMess
     return new KubernetesDashboard();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_KubernetesDashboard_descriptor;

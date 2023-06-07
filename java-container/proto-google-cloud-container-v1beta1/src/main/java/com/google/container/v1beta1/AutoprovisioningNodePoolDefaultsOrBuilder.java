@@ -29,14 +29,17 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -52,14 +55,17 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -75,14 +81,17 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -99,14 +108,17 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -237,7 +249,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -262,7 +274,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -274,6 +286,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * Size of the disk attached to each node, specified in GB.
    * The smallest allowed disk size is 10GB.
+   *
    * If unspecified, the default disk size is 100GB.
    * </pre>
    *
@@ -289,6 +302,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -303,6 +317,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -351,6 +366,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -368,6 +384,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].

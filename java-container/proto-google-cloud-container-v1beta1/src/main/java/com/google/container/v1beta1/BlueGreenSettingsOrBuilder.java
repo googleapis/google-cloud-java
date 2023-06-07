@@ -103,5 +103,5 @@ public interface BlueGreenSettingsOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getNodePoolSoakDurationOrBuilder();
 
-  public com.google.container.v1beta1.BlueGreenSettings.RolloutPolicyCase getRolloutPolicyCase();
+  com.google.container.v1beta1.BlueGreenSettings.RolloutPolicyCase getRolloutPolicyCase();
 }

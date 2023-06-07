@@ -45,11 +45,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return new MaintenanceWindow();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_MaintenanceWindow_descriptor;
@@ -77,6 +72,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   }
 
   private int policyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object policy_;
 
   public enum PolicyCase

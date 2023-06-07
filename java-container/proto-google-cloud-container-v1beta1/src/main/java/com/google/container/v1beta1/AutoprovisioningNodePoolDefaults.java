@@ -40,7 +40,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   }
 
   private AutoprovisioningNodePoolDefaults() {
-    oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
     minCpuPlatform_ = "";
     diskType_ = "";
@@ -52,11 +52,6 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AutoprovisioningNodePoolDefaults();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,21 +72,25 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList oauthScopes_;
+  private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -109,14 +108,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -134,14 +136,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -160,14 +165,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -361,7 +369,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
    * @return The minCpuPlatform.
    */
   @java.lang.Override
@@ -397,7 +405,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
@@ -422,6 +430,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <pre>
    * Size of the disk attached to each node, specified in GB.
    * The smallest allowed disk size is 10GB.
+   *
    * If unspecified, the default disk size is 100GB.
    * </pre>
    *
@@ -444,6 +453,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -469,6 +479,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -548,6 +559,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -576,6 +588,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -960,8 +973,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceAccount_ = "";
       upgradeSettings_ = null;
       if (upgradeSettingsBuilder_ != null) {
@@ -1011,7 +1023,6 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public com.google.container.v1beta1.AutoprovisioningNodePoolDefaults buildPartial() {
       com.google.container.v1beta1.AutoprovisioningNodePoolDefaults result =
           new com.google.container.v1beta1.AutoprovisioningNodePoolDefaults(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1019,18 +1030,13 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.container.v1beta1.AutoprovisioningNodePoolDefaults result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.oauthScopes_ = oauthScopes_;
-    }
-
     private void buildPartial0(
         com.google.container.v1beta1.AutoprovisioningNodePoolDefaults result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        oauthScopes_.makeImmutable();
+        result.oauthScopes_ = oauthScopes_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
@@ -1114,7 +1120,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -1265,14 +1271,14 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList oauthScopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!oauthScopes_.isModifiable()) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1280,14 +1286,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1297,7 +1306,8 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return A list containing the oauthScopes.
      */
     public com.google.protobuf.ProtocolStringList getOauthScopesList() {
-      return oauthScopes_.getUnmodifiableView();
+      oauthScopes_.makeImmutable();
+      return oauthScopes_;
     }
     /**
      *
@@ -1305,14 +1315,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1330,14 +1343,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1356,14 +1372,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1382,14 +1401,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1406,6 +1428,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1415,14 +1438,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1438,6 +1464,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1447,14 +1474,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1467,6 +1497,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     public Builder addAllOauthScopes(java.lang.Iterable<java.lang.String> values) {
       ensureOauthScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oauthScopes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1476,14 +1507,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1493,8 +1527,9 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearOauthScopes() {
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1504,14 +1539,17 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -1528,6 +1566,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
       checkByteStringIsUtf8(value);
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2041,7 +2080,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
      * @return The minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2076,7 +2115,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
      * @return The bytes for minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2111,7 +2150,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2145,7 +2184,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2175,7 +2214,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4019
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4099
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2198,6 +2237,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Size of the disk attached to each node, specified in GB.
      * The smallest allowed disk size is 10GB.
+     *
      * If unspecified, the default disk size is 100GB.
      * </pre>
      *
@@ -2215,6 +2255,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Size of the disk attached to each node, specified in GB.
      * The smallest allowed disk size is 10GB.
+     *
      * If unspecified, the default disk size is 100GB.
      * </pre>
      *
@@ -2236,6 +2277,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Size of the disk attached to each node, specified in GB.
      * The smallest allowed disk size is 10GB.
+     *
      * If unspecified, the default disk size is 100GB.
      * </pre>
      *
@@ -2257,6 +2299,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -2281,6 +2324,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -2305,6 +2349,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -2328,6 +2373,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -2347,6 +2393,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -2560,6 +2607,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -2587,6 +2635,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -2614,6 +2663,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -2640,6 +2690,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -2662,6 +2713,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].

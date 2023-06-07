@@ -48,11 +48,6 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     return new Fleet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_Fleet_descriptor;

@@ -46,11 +46,6 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return new AddonsConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_AddonsConfig_descriptor;
@@ -193,7 +188,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1108
+   *     google/container/v1/cluster_service.proto;l=1154
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -216,7 +211,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1108
+   *     google/container/v1/cluster_service.proto;l=1154
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -1717,7 +1712,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1108
+     *     google/container/v1/cluster_service.proto;l=1154
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -1739,7 +1734,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1108
+     *     google/container/v1/cluster_service.proto;l=1154
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated

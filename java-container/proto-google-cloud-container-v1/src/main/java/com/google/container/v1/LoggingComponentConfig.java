@@ -47,11 +47,6 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     return new LoggingComponentConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_LoggingComponentConfig_descriptor;

@@ -60,11 +60,6 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     return new IPAllocationPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_IPAllocationPolicy_descriptor;
@@ -108,6 +103,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Whether a new subnetwork will be created automatically for the cluster.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
    * </pre>
    *
@@ -189,7 +185,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1377
+   *     google/container/v1/cluster_service.proto;l=1423
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -215,7 +211,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1377
+   *     google/container/v1/cluster_service.proto;l=1423
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -246,7 +242,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1380
+   *     google/container/v1/cluster_service.proto;l=1426
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -272,7 +268,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1380
+   *     google/container/v1/cluster_service.proto;l=1426
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -303,7 +299,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1383
+   *     google/container/v1/cluster_service.proto;l=1429
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -329,7 +325,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1383
+   *     google/container/v1/cluster_service.proto;l=1429
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -358,6 +354,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * block.  The secondary range will be used for pod IP
    * addresses. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -386,6 +383,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * block.  The secondary range will be used for pod IP
    * addresses. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -419,6 +417,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * CIDR block.  The secondary range will be used for service
    * ClusterIPs. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -447,6 +446,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * CIDR block.  The secondary range will be used for service
    * ClusterIPs. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -478,10 +478,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -511,10 +515,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -548,10 +556,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
+   *
    * This is applicable only if `create_subnetwork` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -580,10 +592,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
+   *
    * This is applicable only if `create_subnetwork` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -618,10 +634,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -651,10 +671,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -689,10 +713,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
    * range will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * If unspecified, the range will use the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -722,10 +750,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
    * range will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * If unspecified, the range will use the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -849,10 +881,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the cluster.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is doubled and then rounded off to next power of 2 to
    * get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -874,10 +908,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the cluster.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is doubled and then rounded off to next power of 2 to
    * get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -901,10 +937,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the cluster.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is doubled and then rounded off to next power of 2 to
    * get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -1956,6 +1994,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether a new subnetwork will be created automatically for the cluster.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
      * </pre>
      *
@@ -1972,6 +2011,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether a new subnetwork will be created automatically for the cluster.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
      * </pre>
      *
@@ -1992,6 +2032,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether a new subnetwork will be created automatically for the cluster.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
      * </pre>
      *
@@ -2133,7 +2174,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1377
+     *     google/container/v1/cluster_service.proto;l=1423
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2158,7 +2199,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1377
+     *     google/container/v1/cluster_service.proto;l=1423
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2183,7 +2224,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1377
+     *     google/container/v1/cluster_service.proto;l=1423
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2207,7 +2248,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1377
+     *     google/container/v1/cluster_service.proto;l=1423
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2227,7 +2268,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1377
+     *     google/container/v1/cluster_service.proto;l=1423
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2254,7 +2295,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1380
+     *     google/container/v1/cluster_service.proto;l=1426
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2279,7 +2320,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1380
+     *     google/container/v1/cluster_service.proto;l=1426
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2304,7 +2345,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1380
+     *     google/container/v1/cluster_service.proto;l=1426
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2328,7 +2369,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1380
+     *     google/container/v1/cluster_service.proto;l=1426
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2348,7 +2389,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1380
+     *     google/container/v1/cluster_service.proto;l=1426
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2375,7 +2416,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1383
+     *     google/container/v1/cluster_service.proto;l=1429
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2400,7 +2441,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1383
+     *     google/container/v1/cluster_service.proto;l=1429
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2425,7 +2466,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1383
+     *     google/container/v1/cluster_service.proto;l=1429
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2449,7 +2490,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1383
+     *     google/container/v1/cluster_service.proto;l=1429
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2469,7 +2510,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1383
+     *     google/container/v1/cluster_service.proto;l=1429
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2494,6 +2535,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * block.  The secondary range will be used for pod IP
      * addresses. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2521,6 +2563,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * block.  The secondary range will be used for pod IP
      * addresses. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2548,6 +2591,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * block.  The secondary range will be used for pod IP
      * addresses. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2574,6 +2618,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * block.  The secondary range will be used for pod IP
      * addresses. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2596,6 +2641,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * block.  The secondary range will be used for pod IP
      * addresses. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2625,6 +2671,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * CIDR block.  The secondary range will be used for service
      * ClusterIPs. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2652,6 +2699,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * CIDR block.  The secondary range will be used for service
      * ClusterIPs. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2679,6 +2727,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * CIDR block.  The secondary range will be used for service
      * ClusterIPs. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2705,6 +2754,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * CIDR block.  The secondary range will be used for service
      * ClusterIPs. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2727,6 +2777,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * CIDR block.  The secondary range will be used for service
      * ClusterIPs. This must be an existing secondary range associated
      * with the cluster subnetwork.
+     *
      * This field is only applicable with use_ip_aliases is true and
      * create_subnetwork is false.
      * </pre>
@@ -2754,10 +2805,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2786,10 +2841,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2818,10 +2877,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2849,10 +2912,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2876,10 +2943,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2909,10 +2980,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
+     *
      * This is applicable only if `create_subnetwork` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2940,10 +3015,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
+     *
      * This is applicable only if `create_subnetwork` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -2971,10 +3050,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
+     *
      * This is applicable only if `create_subnetwork` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3001,10 +3084,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
+     *
      * This is applicable only if `create_subnetwork` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3027,10 +3114,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
+     *
      * This is applicable only if `create_subnetwork` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3061,10 +3152,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3093,10 +3188,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3125,10 +3224,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3156,10 +3259,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3183,10 +3290,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * Set to blank to have a range chosen with the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3217,10 +3328,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
      * range will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * If unspecified, the range will use the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3249,10 +3364,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
      * range will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * If unspecified, the range will use the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3281,10 +3400,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
      * range will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * If unspecified, the range will use the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3312,10 +3435,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
      * range will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * If unspecified, the range will use the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3339,10 +3466,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
      * range will be automatically chosen with the default size.
+     *
      * This field is only applicable when `use_ip_aliases` is true.
+     *
      * If unspecified, the range will use the default size.
+     *
      * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
      * netmask.
+     *
      * Set to a
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -3620,10 +3751,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3644,10 +3777,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3674,10 +3809,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3707,10 +3844,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3737,10 +3876,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3774,10 +3915,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3803,10 +3946,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3828,10 +3973,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -3857,10 +4004,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <pre>
      * [PRIVATE FIELD]
      * Pod CIDR size overprovisioning config for the cluster.
+     *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is doubled and then rounded off to next power of 2 to
      * get the size of pod CIDR block per node.
      * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     *
      * This config can disable the doubling of IPs (we still round off to next
      * power of 2)
      * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when

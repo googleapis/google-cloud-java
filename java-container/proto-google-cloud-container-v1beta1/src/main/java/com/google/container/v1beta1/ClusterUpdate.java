@@ -44,7 +44,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     desiredMonitoringService_ = "";
     desiredNodePoolId_ = "";
     desiredImageType_ = "";
-    desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    desiredLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     desiredLoggingService_ = "";
     desiredDatapathProvider_ = 0;
     desiredPrivateIpv6GoogleAccess_ = 0;
@@ -57,11 +57,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClusterUpdate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -90,8 +85,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -121,8 +118,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -157,11 +156,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -188,11 +189,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -437,7 +440,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int DESIRED_LOCATIONS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList desiredLocations_;
+  private com.google.protobuf.LazyStringArrayList desiredLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -445,7 +449,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -464,7 +470,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -483,7 +491,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -503,7 +513,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * The desired list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * cluster's nodes should be located.
+   *
    * This list must always include the cluster's primary zone.
+   *
    * Warning: changing cluster locations will update the locations of all node
    * pools and will result in nodes being added and/or removed.
    * </pre>
@@ -745,11 +757,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -776,11 +790,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
+   *
    * * `logging.googleapis.com/kubernetes` - The Cloud Logging
    * service with a Kubernetes-native resource model
    * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
    *   available as of GKE 1.15).
    * * `none` - no logs will be exported from the cluster.
+   *
    * If left as an empty string,`logging.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
    * </pre>
@@ -1420,8 +1436,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Kubernetes version to change the master to. The only valid value is the
    * latest supported version.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -1451,8 +1469,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The Kubernetes version to change the master to. The only valid value is the
    * latest supported version.
+   *
    * Users may specify either explicit versions offered by
    * Kubernetes Engine or version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -2782,6 +2802,139 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : removedAdditionalPodRangesConfig_;
   }
 
+  public static final int ENABLE_K8S_BETA_APIS_FIELD_NUMBER = 122;
+  private com.google.container.v1beta1.K8sBetaAPIConfig enableK8SBetaApis_;
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+   *
+   * @return Whether the enableK8sBetaApis field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableK8SBetaApis() {
+    return enableK8SBetaApis_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+   *
+   * @return The enableK8sBetaApis.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.K8sBetaAPIConfig getEnableK8SBetaApis() {
+    return enableK8SBetaApis_ == null
+        ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+        : enableK8SBetaApis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder() {
+    return enableK8SBetaApis_ == null
+        ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+        : enableK8SBetaApis_;
+  }
+
+  public static final int DESIRED_ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER = 126;
+  private boolean desiredEnableFqdnNetworkPolicy_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable FQDN Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+   *
+   * @return Whether the desiredEnableFqdnNetworkPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEnableFqdnNetworkPolicy() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable FQDN Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+   *
+   * @return The desiredEnableFqdnNetworkPolicy.
+   */
+  @java.lang.Override
+  public boolean getDesiredEnableFqdnNetworkPolicy() {
+    return desiredEnableFqdnNetworkPolicy_;
+  }
+
+  public static final int DESIRED_K8S_BETA_APIS_FIELD_NUMBER = 131;
+  private com.google.container.v1beta1.K8sBetaAPIConfig desiredK8SBetaApis_;
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs enabled for cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+   *
+   * @return Whether the desiredK8sBetaApis field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredK8SBetaApis() {
+    return desiredK8SBetaApis_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs enabled for cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+   *
+   * @return The desiredK8sBetaApis.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.K8sBetaAPIConfig getDesiredK8SBetaApis() {
+    return desiredK8SBetaApis_ == null
+        ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+        : desiredK8SBetaApis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Beta APIs enabled for cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getDesiredK8SBetaApisOrBuilder() {
+    return desiredK8SBetaApis_ == null
+        ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+        : desiredK8SBetaApis_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2951,6 +3104,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (removedAdditionalPodRangesConfig_ != null) {
       output.writeMessage(121, getRemovedAdditionalPodRangesConfig());
+    }
+    if (enableK8SBetaApis_ != null) {
+      output.writeMessage(122, getEnableK8SBetaApis());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(126, desiredEnableFqdnNetworkPolicy_);
+    }
+    if (desiredK8SBetaApis_ != null) {
+      output.writeMessage(131, getDesiredK8SBetaApis());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3186,6 +3348,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               121, getRemovedAdditionalPodRangesConfig());
     }
+    if (enableK8SBetaApis_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(122, getEnableK8SBetaApis());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              126, desiredEnableFqdnNetworkPolicy_);
+    }
+    if (desiredK8SBetaApis_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(131, getDesiredK8SBetaApis());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3403,6 +3577,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getRemovedAdditionalPodRangesConfig()
           .equals(other.getRemovedAdditionalPodRangesConfig())) return false;
     }
+    if (hasEnableK8SBetaApis() != other.hasEnableK8SBetaApis()) return false;
+    if (hasEnableK8SBetaApis()) {
+      if (!getEnableK8SBetaApis().equals(other.getEnableK8SBetaApis())) return false;
+    }
+    if (hasDesiredEnableFqdnNetworkPolicy() != other.hasDesiredEnableFqdnNetworkPolicy())
+      return false;
+    if (hasDesiredEnableFqdnNetworkPolicy()) {
+      if (getDesiredEnableFqdnNetworkPolicy() != other.getDesiredEnableFqdnNetworkPolicy())
+        return false;
+    }
+    if (hasDesiredK8SBetaApis() != other.hasDesiredK8SBetaApis()) return false;
+    if (hasDesiredK8SBetaApis()) {
+      if (!getDesiredK8SBetaApis().equals(other.getDesiredK8SBetaApis())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3595,6 +3783,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + REMOVED_ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRemovedAdditionalPodRangesConfig().hashCode();
     }
+    if (hasEnableK8SBetaApis()) {
+      hash = (37 * hash) + ENABLE_K8S_BETA_APIS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableK8SBetaApis().hashCode();
+    }
+    if (hasDesiredEnableFqdnNetworkPolicy()) {
+      hash = (37 * hash) + DESIRED_ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getDesiredEnableFqdnNetworkPolicy());
+    }
+    if (hasDesiredK8SBetaApis()) {
+      hash = (37 * hash) + DESIRED_K8S_BETA_APIS_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredK8SBetaApis().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3775,6 +3977,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredFleetFieldBuilder();
         getAdditionalPodRangesConfigFieldBuilder();
         getRemovedAdditionalPodRangesConfigFieldBuilder();
+        getEnableK8SBetaApisFieldBuilder();
+        getDesiredK8SBetaApisFieldBuilder();
       }
     }
 
@@ -3797,8 +4001,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoscalingBuilder_.dispose();
         desiredNodePoolAutoscalingBuilder_ = null;
       }
-      desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      desiredLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       desiredMasterAuthorizedNetworksConfig_ = null;
       if (desiredMasterAuthorizedNetworksConfigBuilder_ != null) {
         desiredMasterAuthorizedNetworksConfigBuilder_.dispose();
@@ -3986,6 +4189,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         removedAdditionalPodRangesConfigBuilder_.dispose();
         removedAdditionalPodRangesConfigBuilder_ = null;
       }
+      enableK8SBetaApis_ = null;
+      if (enableK8SBetaApisBuilder_ != null) {
+        enableK8SBetaApisBuilder_.dispose();
+        enableK8SBetaApisBuilder_ = null;
+      }
+      desiredEnableFqdnNetworkPolicy_ = false;
+      desiredK8SBetaApis_ = null;
+      if (desiredK8SBetaApisBuilder_ != null) {
+        desiredK8SBetaApisBuilder_.dispose();
+        desiredK8SBetaApisBuilder_ = null;
+      }
       return this;
     }
 
@@ -4013,7 +4227,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.ClusterUpdate buildPartial() {
       com.google.container.v1beta1.ClusterUpdate result =
           new com.google.container.v1beta1.ClusterUpdate(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -4022,14 +4235,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.container.v1beta1.ClusterUpdate result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        desiredLocations_ = desiredLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.desiredLocations_ = desiredLocations_;
     }
 
     private void buildPartial0(com.google.container.v1beta1.ClusterUpdate result) {
@@ -4057,6 +4262,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             desiredNodePoolAutoscalingBuilder_ == null
                 ? desiredNodePoolAutoscaling_
                 : desiredNodePoolAutoscalingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        desiredLocations_.makeImmutable();
+        result.desiredLocations_ = desiredLocations_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.desiredMasterAuthorizedNetworksConfig_ =
@@ -4294,6 +4503,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 ? removedAdditionalPodRangesConfig_
                 : removedAdditionalPodRangesConfigBuilder_.build();
       }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.enableK8SBetaApis_ =
+            enableK8SBetaApisBuilder_ == null
+                ? enableK8SBetaApis_
+                : enableK8SBetaApisBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.desiredEnableFqdnNetworkPolicy_ = desiredEnableFqdnNetworkPolicy_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField1_ & 0x00100000) != 0)) {
+        result.desiredK8SBetaApis_ =
+            desiredK8SBetaApisBuilder_ == null
+                ? desiredK8SBetaApis_
+                : desiredK8SBetaApisBuilder_.build();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4371,7 +4596,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!other.desiredLocations_.isEmpty()) {
         if (desiredLocations_.isEmpty()) {
           desiredLocations_ = other.desiredLocations_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureDesiredLocationsIsMutable();
           desiredLocations_.addAll(other.desiredLocations_);
@@ -4513,6 +4738,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRemovedAdditionalPodRangesConfig()) {
         mergeRemovedAdditionalPodRangesConfig(other.getRemovedAdditionalPodRangesConfig());
+      }
+      if (other.hasEnableK8SBetaApis()) {
+        mergeEnableK8SBetaApis(other.getEnableK8SBetaApis());
+      }
+      if (other.hasDesiredEnableFqdnNetworkPolicy()) {
+        setDesiredEnableFqdnNetworkPolicy(other.getDesiredEnableFqdnNetworkPolicy());
+      }
+      if (other.hasDesiredK8SBetaApis()) {
+        mergeDesiredK8SBetaApis(other.getDesiredK8SBetaApis());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4885,6 +5119,26 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00020000;
                 break;
               } // case 970
+            case 978:
+              {
+                input.readMessage(
+                    getEnableK8SBetaApisFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00040000;
+                break;
+              } // case 978
+            case 1008:
+              {
+                desiredEnableFqdnNetworkPolicy_ = input.readBool();
+                bitField1_ |= 0x00080000;
+                break;
+              } // case 1008
+            case 1050:
+              {
+                input.readMessage(
+                    getDesiredK8SBetaApisFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00100000;
+                break;
+              } // case 1050
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4912,8 +5166,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -4942,8 +5198,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -4972,8 +5230,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -5001,8 +5261,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -5026,8 +5288,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
      * upgrade).
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -5058,11 +5322,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -5088,11 +5354,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -5118,11 +5386,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -5147,11 +5417,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -5172,11 +5444,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
+     *
      * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
      * service with a Kubernetes-native resource model
      * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
      *   longer available as of GKE 1.15).
      * * `none` - No metrics will be exported from the cluster.
+     *
      * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
      * </pre>
@@ -5830,14 +6104,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredNodePoolAutoscalingBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList desiredLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList desiredLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDesiredLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!desiredLocations_.isModifiable()) {
         desiredLocations_ = new com.google.protobuf.LazyStringArrayList(desiredLocations_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -5846,7 +6120,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5856,7 +6132,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the desiredLocations.
      */
     public com.google.protobuf.ProtocolStringList getDesiredLocationsList() {
-      return desiredLocations_.getUnmodifiableView();
+      desiredLocations_.makeImmutable();
+      return desiredLocations_;
     }
     /**
      *
@@ -5865,7 +6142,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5884,7 +6163,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5904,7 +6185,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5924,7 +6207,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5941,6 +6226,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDesiredLocationsIsMutable();
       desiredLocations_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5951,7 +6237,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5967,6 +6255,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDesiredLocationsIsMutable();
       desiredLocations_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5977,7 +6266,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -5990,6 +6281,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDesiredLocations(java.lang.Iterable<java.lang.String> values) {
       ensureDesiredLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, desiredLocations_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6000,7 +6292,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -6010,8 +6304,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredLocations() {
-      desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      desiredLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -6022,7 +6317,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * The desired list of Google Compute Engine
      * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
      * cluster's nodes should be located.
+     *
      * This list must always include the cluster's primary zone.
+     *
      * Warning: changing cluster locations will update the locations of all node
      * pools and will result in nodes being added and/or removed.
      * </pre>
@@ -6039,6 +6336,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDesiredLocationsIsMutable();
       desiredLocations_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6846,11 +7144,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -6876,11 +7176,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -6906,11 +7208,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -6935,11 +7239,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -6960,11 +7266,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
+     *
      * * `logging.googleapis.com/kubernetes` - The Cloud Logging
      * service with a Kubernetes-native resource model
      * * `logging.googleapis.com` - The legacy Cloud Logging service (no longer
      *   available as of GKE 1.15).
      * * `none` - no logs will be exported from the cluster.
+     *
      * If left as an empty string,`logging.googleapis.com/kubernetes` will be
      * used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
      * </pre>
@@ -9135,8 +9443,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the master to. The only valid value is the
      * latest supported version.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -9165,8 +9475,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the master to. The only valid value is the
      * latest supported version.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -9195,8 +9507,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the master to. The only valid value is the
      * latest supported version.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -9224,8 +9538,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the master to. The only valid value is the
      * latest supported version.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -9249,8 +9565,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The Kubernetes version to change the master to. The only valid value is the
      * latest supported version.
+     *
      * Users may specify either explicit versions offered by
      * Kubernetes Engine or version aliases, which have the following behavior:
+     *
      * - "latest": picks the highest valid Kubernetes version
      * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
      * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -13871,6 +14189,444 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         removedAdditionalPodRangesConfig_ = null;
       }
       return removedAdditionalPodRangesConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.K8sBetaAPIConfig enableK8SBetaApis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.K8sBetaAPIConfig,
+            com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
+            com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>
+        enableK8SBetaApisBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     *
+     * @return Whether the enableK8sBetaApis field is set.
+     */
+    public boolean hasEnableK8SBetaApis() {
+      return ((bitField1_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     *
+     * @return The enableK8sBetaApis.
+     */
+    public com.google.container.v1beta1.K8sBetaAPIConfig getEnableK8SBetaApis() {
+      if (enableK8SBetaApisBuilder_ == null) {
+        return enableK8SBetaApis_ == null
+            ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+            : enableK8SBetaApis_;
+      } else {
+        return enableK8SBetaApisBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    public Builder setEnableK8SBetaApis(com.google.container.v1beta1.K8sBetaAPIConfig value) {
+      if (enableK8SBetaApisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableK8SBetaApis_ = value;
+      } else {
+        enableK8SBetaApisBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    public Builder setEnableK8SBetaApis(
+        com.google.container.v1beta1.K8sBetaAPIConfig.Builder builderForValue) {
+      if (enableK8SBetaApisBuilder_ == null) {
+        enableK8SBetaApis_ = builderForValue.build();
+      } else {
+        enableK8SBetaApisBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    public Builder mergeEnableK8SBetaApis(com.google.container.v1beta1.K8sBetaAPIConfig value) {
+      if (enableK8SBetaApisBuilder_ == null) {
+        if (((bitField1_ & 0x00040000) != 0)
+            && enableK8SBetaApis_ != null
+            && enableK8SBetaApis_
+                != com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()) {
+          getEnableK8SBetaApisBuilder().mergeFrom(value);
+        } else {
+          enableK8SBetaApis_ = value;
+        }
+      } else {
+        enableK8SBetaApisBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    public Builder clearEnableK8SBetaApis() {
+      bitField1_ = (bitField1_ & ~0x00040000);
+      enableK8SBetaApis_ = null;
+      if (enableK8SBetaApisBuilder_ != null) {
+        enableK8SBetaApisBuilder_.dispose();
+        enableK8SBetaApisBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    public com.google.container.v1beta1.K8sBetaAPIConfig.Builder getEnableK8SBetaApisBuilder() {
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return getEnableK8SBetaApisFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    public com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder() {
+      if (enableK8SBetaApisBuilder_ != null) {
+        return enableK8SBetaApisBuilder_.getMessageOrBuilder();
+      } else {
+        return enableK8SBetaApis_ == null
+            ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+            : enableK8SBetaApis_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes open source beta apis enabled on the cluster. Only beta apis
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig enable_k8s_beta_apis = 122;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.K8sBetaAPIConfig,
+            com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
+            com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>
+        getEnableK8SBetaApisFieldBuilder() {
+      if (enableK8SBetaApisBuilder_ == null) {
+        enableK8SBetaApisBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.K8sBetaAPIConfig,
+                com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
+                com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>(
+                getEnableK8SBetaApis(), getParentForChildren(), isClean());
+        enableK8SBetaApis_ = null;
+      }
+      return enableK8SBetaApisBuilder_;
+    }
+
+    private boolean desiredEnableFqdnNetworkPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable FQDN Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+     *
+     * @return Whether the desiredEnableFqdnNetworkPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesiredEnableFqdnNetworkPolicy() {
+      return ((bitField1_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable FQDN Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+     *
+     * @return The desiredEnableFqdnNetworkPolicy.
+     */
+    @java.lang.Override
+    public boolean getDesiredEnableFqdnNetworkPolicy() {
+      return desiredEnableFqdnNetworkPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable FQDN Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+     *
+     * @param value The desiredEnableFqdnNetworkPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEnableFqdnNetworkPolicy(boolean value) {
+
+      desiredEnableFqdnNetworkPolicy_ = value;
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable FQDN Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_fqdn_network_policy = 126;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredEnableFqdnNetworkPolicy() {
+      bitField1_ = (bitField1_ & ~0x00080000);
+      desiredEnableFqdnNetworkPolicy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.K8sBetaAPIConfig desiredK8SBetaApis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.K8sBetaAPIConfig,
+            com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
+            com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>
+        desiredK8SBetaApisBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     *
+     * @return Whether the desiredK8sBetaApis field is set.
+     */
+    public boolean hasDesiredK8SBetaApis() {
+      return ((bitField1_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     *
+     * @return The desiredK8sBetaApis.
+     */
+    public com.google.container.v1beta1.K8sBetaAPIConfig getDesiredK8SBetaApis() {
+      if (desiredK8SBetaApisBuilder_ == null) {
+        return desiredK8SBetaApis_ == null
+            ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+            : desiredK8SBetaApis_;
+      } else {
+        return desiredK8SBetaApisBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    public Builder setDesiredK8SBetaApis(com.google.container.v1beta1.K8sBetaAPIConfig value) {
+      if (desiredK8SBetaApisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredK8SBetaApis_ = value;
+      } else {
+        desiredK8SBetaApisBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    public Builder setDesiredK8SBetaApis(
+        com.google.container.v1beta1.K8sBetaAPIConfig.Builder builderForValue) {
+      if (desiredK8SBetaApisBuilder_ == null) {
+        desiredK8SBetaApis_ = builderForValue.build();
+      } else {
+        desiredK8SBetaApisBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    public Builder mergeDesiredK8SBetaApis(com.google.container.v1beta1.K8sBetaAPIConfig value) {
+      if (desiredK8SBetaApisBuilder_ == null) {
+        if (((bitField1_ & 0x00100000) != 0)
+            && desiredK8SBetaApis_ != null
+            && desiredK8SBetaApis_
+                != com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()) {
+          getDesiredK8SBetaApisBuilder().mergeFrom(value);
+        } else {
+          desiredK8SBetaApis_ = value;
+        }
+      } else {
+        desiredK8SBetaApisBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    public Builder clearDesiredK8SBetaApis() {
+      bitField1_ = (bitField1_ & ~0x00100000);
+      desiredK8SBetaApis_ = null;
+      if (desiredK8SBetaApisBuilder_ != null) {
+        desiredK8SBetaApisBuilder_.dispose();
+        desiredK8SBetaApisBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    public com.google.container.v1beta1.K8sBetaAPIConfig.Builder getDesiredK8SBetaApisBuilder() {
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return getDesiredK8SBetaApisFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    public com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getDesiredK8SBetaApisOrBuilder() {
+      if (desiredK8SBetaApisBuilder_ != null) {
+        return desiredK8SBetaApisBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredK8SBetaApis_ == null
+            ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
+            : desiredK8SBetaApis_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Beta APIs enabled for cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.K8sBetaAPIConfig,
+            com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
+            com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>
+        getDesiredK8SBetaApisFieldBuilder() {
+      if (desiredK8SBetaApisBuilder_ == null) {
+        desiredK8SBetaApisBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.K8sBetaAPIConfig,
+                com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
+                com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>(
+                getDesiredK8SBetaApis(), getParentForChildren(), isClean());
+        desiredK8SBetaApis_ = null;
+      }
+      return desiredK8SBetaApisBuilder_;
     }
 
     @java.lang.Override

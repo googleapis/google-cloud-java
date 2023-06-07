@@ -52,11 +52,6 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     return new UsableSubnetwork();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_UsableSubnetwork_descriptor;

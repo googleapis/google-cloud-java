@@ -51,11 +51,6 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     return new MasterAuthorizedNetworksConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
@@ -154,11 +149,6 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CidrBlock();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

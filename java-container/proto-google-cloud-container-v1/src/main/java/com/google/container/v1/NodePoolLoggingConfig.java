@@ -45,11 +45,6 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
     return new NodePoolLoggingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_NodePoolLoggingConfig_descriptor;

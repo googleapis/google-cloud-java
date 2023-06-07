@@ -138,5 +138,5 @@ public interface TimeWindowOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
-  public com.google.container.v1.TimeWindow.OptionsCase getOptionsCase();
+  com.google.container.v1.TimeWindow.OptionsCase getOptionsCase();
 }

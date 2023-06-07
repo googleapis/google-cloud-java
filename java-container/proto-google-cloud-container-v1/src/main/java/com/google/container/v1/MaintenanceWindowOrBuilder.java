@@ -162,5 +162,5 @@ public interface MaintenanceWindowOrBuilder
    */
   com.google.container.v1.TimeWindow getMaintenanceExclusionsOrThrow(java.lang.String key);
 
-  public com.google.container.v1.MaintenanceWindow.PolicyCase getPolicyCase();
+  com.google.container.v1.MaintenanceWindow.PolicyCase getPolicyCase();
 }

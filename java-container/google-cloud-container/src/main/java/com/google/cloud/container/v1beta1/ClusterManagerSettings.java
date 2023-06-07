@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.container.v1beta1.stub.ClusterManagerStubSettings;
 import com.google.container.v1beta1.CancelOperationRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
@@ -296,6 +298,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).listUsableSubnetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to checkAutopilotCompatibility. */
+  public UnaryCallSettings<CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+      checkAutopilotCompatibilitySettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).checkAutopilotCompatibilitySettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -586,6 +594,13 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings() {
       return getStubSettingsBuilder().listUsableSubnetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkAutopilotCompatibility. */
+    public UnaryCallSettings.Builder<
+            CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+        checkAutopilotCompatibilitySettings() {
+      return getStubSettingsBuilder().checkAutopilotCompatibilitySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

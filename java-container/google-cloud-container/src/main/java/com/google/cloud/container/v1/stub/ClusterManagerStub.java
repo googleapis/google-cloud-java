@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ import static com.google.cloud.container.v1.ClusterManagerClient.ListUsableSubne
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.container.v1.CancelOperationRequest;
+import com.google.container.v1.CheckAutopilotCompatibilityRequest;
+import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
@@ -213,6 +215,12 @@ public abstract class ClusterManagerStub implements BackgroundResource {
   public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
       listUsableSubnetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listUsableSubnetworksCallable()");
+  }
+
+  public UnaryCallable<CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+      checkAutopilotCompatibilityCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: checkAutopilotCompatibilityCallable()");
   }
 
   @Override

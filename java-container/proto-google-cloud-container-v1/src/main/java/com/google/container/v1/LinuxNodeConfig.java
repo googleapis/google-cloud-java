@@ -47,11 +47,6 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     return new LinuxNodeConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_LinuxNodeConfig_descriptor;
@@ -273,7 +268,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -308,7 +305,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -334,7 +333,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -367,7 +368,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -859,7 +862,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog
@@ -894,7 +899,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog
@@ -920,7 +927,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog
@@ -953,7 +962,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog
@@ -992,7 +1003,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog
@@ -1027,7 +1040,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog
@@ -1060,7 +1075,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The Linux kernel parameters to be applied to the nodes and all pods running
      * on the nodes.
+     *
      * The following parameters are supported.
+     *
      * net.core.busy_poll
      * net.core.busy_read
      * net.core.netdev_max_backlog

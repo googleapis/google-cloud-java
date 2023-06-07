@@ -322,4 +322,29 @@ public interface NetworkConfigOrBuilder
    * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
    */
   com.google.container.v1.GatewayAPIConfigOrBuilder getGatewayApiConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return Whether the enableFqdnNetworkPolicy field is set.
+   */
+  boolean hasEnableFqdnNetworkPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return The enableFqdnNetworkPolicy.
+   */
+  boolean getEnableFqdnNetworkPolicy();
 }

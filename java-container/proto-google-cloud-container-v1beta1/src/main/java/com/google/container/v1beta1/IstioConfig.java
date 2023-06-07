@@ -47,11 +47,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     return new IstioConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_IstioConfig_descriptor;
@@ -214,7 +209,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>bool disabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1311
+   *     google/container/v1beta1/cluster_service.proto;l=1357
    * @return The disabled.
    */
   @java.lang.Override
@@ -235,7 +230,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1314
+   *     google/container/v1beta1/cluster_service.proto;l=1360
    * @return The enum numeric value on the wire for auth.
    */
   @java.lang.Override
@@ -253,7 +248,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1314
+   *     google/container/v1beta1/cluster_service.proto;l=1360
    * @return The auth.
    */
   @java.lang.Override
@@ -637,7 +632,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool disabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1311
+     *     google/container/v1beta1/cluster_service.proto;l=1357
      * @return The disabled.
      */
     @java.lang.Override
@@ -655,7 +650,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool disabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1311
+     *     google/container/v1beta1/cluster_service.proto;l=1357
      * @param value The disabled to set.
      * @return This builder for chaining.
      */
@@ -677,7 +672,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool disabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1311
+     *     google/container/v1beta1/cluster_service.proto;l=1357
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -700,7 +695,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1314
+     *     google/container/v1beta1/cluster_service.proto;l=1360
      * @return The enum numeric value on the wire for auth.
      */
     @java.lang.Override
@@ -719,7 +714,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1314
+     *     google/container/v1beta1/cluster_service.proto;l=1360
      * @param value The enum numeric value on the wire for auth to set.
      * @return This builder for chaining.
      */
@@ -741,7 +736,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1314
+     *     google/container/v1beta1/cluster_service.proto;l=1360
      * @return The auth.
      */
     @java.lang.Override
@@ -764,7 +759,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1314
+     *     google/container/v1beta1/cluster_service.proto;l=1360
      * @param value The auth to set.
      * @return This builder for chaining.
      */
@@ -789,7 +784,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1314
+     *     google/container/v1beta1/cluster_service.proto;l=1360
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

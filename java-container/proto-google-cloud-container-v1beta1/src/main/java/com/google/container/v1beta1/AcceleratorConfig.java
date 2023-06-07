@@ -48,11 +48,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     return new AcceleratorConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_AcceleratorConfig_descriptor;
@@ -207,7 +202,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4244
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4324
    * @return The maxTimeSharedClientsPerGpu.
    */
   @java.lang.Override
@@ -1012,7 +1007,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4244
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4324
      * @return The maxTimeSharedClientsPerGpu.
      */
     @java.lang.Override
@@ -1030,7 +1025,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4244
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4324
      * @param value The maxTimeSharedClientsPerGpu to set.
      * @return This builder for chaining.
      */
@@ -1052,7 +1047,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4244
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4324
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

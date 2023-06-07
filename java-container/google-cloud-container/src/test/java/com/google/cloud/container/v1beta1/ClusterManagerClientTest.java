@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,12 @@ import com.google.common.collect.Lists;
 import com.google.container.v1beta1.AddonsConfig;
 import com.google.container.v1beta1.AuthenticatorGroupsConfig;
 import com.google.container.v1beta1.Autopilot;
+import com.google.container.v1beta1.AutopilotCompatibilityIssue;
+import com.google.container.v1beta1.BestEffortProvisioning;
 import com.google.container.v1beta1.BinaryAuthorization;
 import com.google.container.v1beta1.CancelOperationRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterAutoscaling;
 import com.google.container.v1beta1.ClusterTelemetry;
@@ -56,6 +60,7 @@ import com.google.container.v1beta1.GetServerConfigRequest;
 import com.google.container.v1beta1.IPAllocationPolicy;
 import com.google.container.v1beta1.IdentityServiceConfig;
 import com.google.container.v1beta1.Jwk;
+import com.google.container.v1beta1.K8sBetaAPIConfig;
 import com.google.container.v1beta1.LegacyAbac;
 import com.google.container.v1beta1.LinuxNodeConfig;
 import com.google.container.v1beta1.ListClustersRequest;
@@ -247,6 +252,7 @@ public class ClusterManagerClientTest {
             .addAllNodePools(new ArrayList<NodePool>())
             .addAllLocations(new ArrayList<String>())
             .setEnableKubernetesAlpha(true)
+            .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setLabelFingerprint("labelFingerprint379449680")
             .setLegacyAbac(LegacyAbac.newBuilder().build())
@@ -1366,6 +1372,7 @@ public class ClusterManagerClientTest {
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .setEtag("etag3123477")
+            .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2152,6 +2159,49 @@ public class ClusterManagerClientTest {
     try {
       String parent = "parent-995424086";
       client.listUsableSubnetworks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkAutopilotCompatibilityTest() throws Exception {
+    CheckAutopilotCompatibilityResponse expectedResponse =
+        CheckAutopilotCompatibilityResponse.newBuilder()
+            .addAllIssues(new ArrayList<AutopilotCompatibilityIssue>())
+            .setSummary("summary-1857640538")
+            .build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    CheckAutopilotCompatibilityRequest request =
+        CheckAutopilotCompatibilityRequest.newBuilder().setName("name3373707").build();
+
+    CheckAutopilotCompatibilityResponse actualResponse =
+        client.checkAutopilotCompatibility(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckAutopilotCompatibilityRequest actualRequest =
+        ((CheckAutopilotCompatibilityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkAutopilotCompatibilityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      CheckAutopilotCompatibilityRequest request =
+          CheckAutopilotCompatibilityRequest.newBuilder().setName("name3373707").build();
+      client.checkAutopilotCompatibility(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

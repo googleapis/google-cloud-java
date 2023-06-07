@@ -23,6 +23,7 @@ package com.google.container.v1beta1;
  *
  * <pre>
  * Parameters that describe the nodes in a cluster.
+ *
  * GKE Autopilot clusters do not
  * recognize parameters in `NodeConfig`. Use
  * [AutoprovisioningNodePoolDefaults][google.container.v1beta1.AutoprovisioningNodePoolDefaults]
@@ -43,10 +44,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
   private NodeConfig() {
     machineType_ = "";
-    oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
     imageType_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     accelerators_ = java.util.Collections.emptyList();
     nodeGroup_ = "";
     diskType_ = "";
@@ -59,11 +60,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -107,6 +103,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of a Google Compute Engine [machine
    * type](https://cloud.google.com/compute/docs/machine-types).
+   *
    * If unspecified, the default machine type is
    * `e2-medium`.
    * </pre>
@@ -133,6 +130,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of a Google Compute Engine [machine
    * type](https://cloud.google.com/compute/docs/machine-types).
+   *
    * If unspecified, the default machine type is
    * `e2-medium`.
    * </pre>
@@ -162,6 +160,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Size of the disk attached to each node, specified in GB.
    * The smallest allowed disk size is 10GB.
+   *
    * If unspecified, the default disk size is 100GB.
    * </pre>
    *
@@ -177,21 +176,25 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList oauthScopes_;
+  private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -209,14 +212,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -234,14 +240,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -260,14 +269,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The set of Google API scopes to be made available on all of the
    * node VMs under the "default" service account.
+   *
    * The following scopes are recommended, but not required, and by default are
    * not included:
+   *
    * * `https://www.googleapis.com/auth/compute` is required for mounting
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
    * (the [Google Container
    * Registry](https://cloud.google.com/container-registry/)).
+   *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
    * </pre>
@@ -367,10 +379,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -390,9 +404,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -416,10 +432,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -439,9 +457,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -456,10 +476,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -479,9 +501,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -503,10 +527,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The metadata key/value pairs assigned to instances in the cluster.
+   *
    * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
    * metadata keys for the project or be one of the reserved keys:
+   *
    *  - "cluster-location"
    *  - "cluster-name"
    *  - "cluster-uid"
@@ -526,9 +552,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
+   *
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
+   *
    * The total size of all keys and values must be less than 512 KB.
    * </pre>
    *
@@ -740,6 +768,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The number of local SSD disks to be attached to the node.
+   *
    * The limit for this value is dependent upon the maximum number of
    * disks available on a machine per zone. See:
    * https://cloud.google.com/compute/docs/disks/local-ssd
@@ -758,7 +787,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1109,6 +1139,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -1134,6 +1165,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
    * 'pd-balanced')
+   *
    * If unspecified, the default disk type is 'pd-standard'
    * </pre>
    *
@@ -1277,6 +1309,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -1292,6 +1325,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -1308,6 +1342,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -1323,6 +1358,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -1338,6 +1374,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of kubernetes taints to be applied to each node.
+   *
    * For more information, including usage and the valid values, see:
    * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
    * </pre>
@@ -1357,6 +1394,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -1385,6 +1423,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   *
    * The Customer Managed Encryption Key used to encrypt the boot disk attached
    * to each node in the node pool. This should be of the form
    * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -2211,6 +2250,56 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : ephemeralStorageLocalSsdConfig_;
   }
 
+  public static final int SOLE_TENANT_CONFIG_FIELD_NUMBER = 42;
+  private com.google.container.v1beta1.SoleTenantConfig soleTenantConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for node pools to be backed by shared sole tenant node groups.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+   *
+   * @return Whether the soleTenantConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSoleTenantConfig() {
+    return soleTenantConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for node pools to be backed by shared sole tenant node groups.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+   *
+   * @return The soleTenantConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SoleTenantConfig getSoleTenantConfig() {
+    return soleTenantConfig_ == null
+        ? com.google.container.v1beta1.SoleTenantConfig.getDefaultInstance()
+        : soleTenantConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for node pools to be backed by shared sole tenant node groups.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SoleTenantConfigOrBuilder getSoleTenantConfigOrBuilder() {
+    return soleTenantConfig_ == null
+        ? com.google.container.v1beta1.SoleTenantConfig.getDefaultInstance()
+        : soleTenantConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2323,6 +2412,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (ephemeralStorageLocalSsdConfig_ != null) {
       output.writeMessage(41, getEphemeralStorageLocalSsdConfig());
+    }
+    if (soleTenantConfig_ != null) {
+      output.writeMessage(42, getSoleTenantConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2476,6 +2568,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               41, getEphemeralStorageLocalSsdConfig());
     }
+    if (soleTenantConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSoleTenantConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2574,6 +2669,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEphemeralStorageLocalSsdConfig()) {
       if (!getEphemeralStorageLocalSsdConfig().equals(other.getEphemeralStorageLocalSsdConfig()))
         return false;
+    }
+    if (hasSoleTenantConfig() != other.hasSoleTenantConfig()) return false;
+    if (hasSoleTenantConfig()) {
+      if (!getSoleTenantConfig().equals(other.getSoleTenantConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2700,6 +2799,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EPHEMERAL_STORAGE_LOCAL_SSD_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEphemeralStorageLocalSsdConfig().hashCode();
     }
+    if (hasSoleTenantConfig()) {
+      hash = (37 * hash) + SOLE_TENANT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSoleTenantConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2805,6 +2908,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Parameters that describe the nodes in a cluster.
+   *
    * GKE Autopilot clusters do not
    * recognize parameters in `NodeConfig`. Use
    * [AutoprovisioningNodePoolDefaults][google.container.v1beta1.AutoprovisioningNodePoolDefaults]
@@ -2890,6 +2994,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getWindowsNodeConfigFieldBuilder();
         getLocalNvmeSsdBlockConfigFieldBuilder();
         getEphemeralStorageLocalSsdConfigFieldBuilder();
+        getSoleTenantConfigFieldBuilder();
       }
     }
 
@@ -2900,15 +3005,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       bitField1_ = 0;
       machineType_ = "";
       diskSizeGb_ = 0;
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceAccount_ = "";
       internalGetMutableMetadata().clear();
       imageType_ = "";
       internalGetMutableLabels().clear();
       localSsdCount_ = 0;
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       preemptible_ = false;
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
@@ -3010,6 +3113,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         ephemeralStorageLocalSsdConfigBuilder_.dispose();
         ephemeralStorageLocalSsdConfigBuilder_ = null;
       }
+      soleTenantConfig_ = null;
+      if (soleTenantConfigBuilder_ != null) {
+        soleTenantConfigBuilder_.dispose();
+        soleTenantConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -3049,16 +3157,6 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.container.v1beta1.NodeConfig result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.oauthScopes_ = oauthScopes_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.tags_ = tags_;
       if (acceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000400) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
@@ -3087,6 +3185,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.diskSizeGb_ = diskSizeGb_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        oauthScopes_.makeImmutable();
+        result.oauthScopes_ = oauthScopes_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
@@ -3103,6 +3205,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.localSsdCount_ = localSsdCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.preemptible_ = preemptible_;
@@ -3212,6 +3318,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 ? ephemeralStorageLocalSsdConfig_
                 : ephemeralStorageLocalSsdConfigBuilder_.build();
       }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.soleTenantConfig_ =
+            soleTenantConfigBuilder_ == null ? soleTenantConfig_ : soleTenantConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3270,7 +3380,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -3297,7 +3407,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -3433,6 +3543,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEphemeralStorageLocalSsdConfig()) {
         mergeEphemeralStorageLocalSsdConfig(other.getEphemeralStorageLocalSsdConfig());
+      }
+      if (other.hasSoleTenantConfig()) {
+        mergeSoleTenantConfig(other.getSoleTenantConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3708,6 +3821,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000002;
                 break;
               } // case 330
+            case 338:
+              {
+                input.readMessage(
+                    getSoleTenantConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 338
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3735,6 +3855,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of a Google Compute Engine [machine
      * type](https://cloud.google.com/compute/docs/machine-types).
+     *
      * If unspecified, the default machine type is
      * `e2-medium`.
      * </pre>
@@ -3760,6 +3881,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of a Google Compute Engine [machine
      * type](https://cloud.google.com/compute/docs/machine-types).
+     *
      * If unspecified, the default machine type is
      * `e2-medium`.
      * </pre>
@@ -3785,6 +3907,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of a Google Compute Engine [machine
      * type](https://cloud.google.com/compute/docs/machine-types).
+     *
      * If unspecified, the default machine type is
      * `e2-medium`.
      * </pre>
@@ -3809,6 +3932,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of a Google Compute Engine [machine
      * type](https://cloud.google.com/compute/docs/machine-types).
+     *
      * If unspecified, the default machine type is
      * `e2-medium`.
      * </pre>
@@ -3829,6 +3953,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of a Google Compute Engine [machine
      * type](https://cloud.google.com/compute/docs/machine-types).
+     *
      * If unspecified, the default machine type is
      * `e2-medium`.
      * </pre>
@@ -3856,6 +3981,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Size of the disk attached to each node, specified in GB.
      * The smallest allowed disk size is 10GB.
+     *
      * If unspecified, the default disk size is 100GB.
      * </pre>
      *
@@ -3873,6 +3999,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Size of the disk attached to each node, specified in GB.
      * The smallest allowed disk size is 10GB.
+     *
      * If unspecified, the default disk size is 100GB.
      * </pre>
      *
@@ -3894,6 +4021,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Size of the disk attached to each node, specified in GB.
      * The smallest allowed disk size is 10GB.
+     *
      * If unspecified, the default disk size is 100GB.
      * </pre>
      *
@@ -3908,14 +4036,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList oauthScopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList oauthScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!oauthScopes_.isModifiable()) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -3923,14 +4051,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -3940,7 +4071,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the oauthScopes.
      */
     public com.google.protobuf.ProtocolStringList getOauthScopesList() {
-      return oauthScopes_.getUnmodifiableView();
+      oauthScopes_.makeImmutable();
+      return oauthScopes_;
     }
     /**
      *
@@ -3948,14 +4080,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -3973,14 +4108,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -3999,14 +4137,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -4025,14 +4166,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -4049,6 +4193,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4058,14 +4203,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -4081,6 +4229,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4090,14 +4239,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -4110,6 +4262,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllOauthScopes(java.lang.Iterable<java.lang.String> values) {
       ensureOauthScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oauthScopes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4119,14 +4272,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -4136,8 +4292,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOauthScopes() {
-      oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      oauthScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -4147,14 +4304,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The set of Google API scopes to be made available on all of the
      * node VMs under the "default" service account.
+     *
      * The following scopes are recommended, but not required, and by default are
      * not included:
+     *
      * * `https://www.googleapis.com/auth/compute` is required for mounting
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
      * (the [Google Container
      * Registry](https://cloud.google.com/container-registry/)).
+     *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
      * </pre>
@@ -4171,6 +4331,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureOauthScopesIsMutable();
       oauthScopes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4322,10 +4483,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4345,9 +4508,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4371,10 +4536,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4394,9 +4561,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4411,10 +4580,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4434,9 +4605,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4458,10 +4631,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4481,9 +4656,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4511,10 +4688,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4534,9 +4713,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4560,10 +4741,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4583,9 +4766,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4607,10 +4792,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The metadata key/value pairs assigned to instances in the cluster.
+     *
      * Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
      * metadata keys for the project or be one of the reserved keys:
+     *
      *  - "cluster-location"
      *  - "cluster-name"
      *  - "cluster-uid"
@@ -4630,9 +4817,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
+     *
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
+     *
      * The total size of all keys and values must be less than 512 KB.
      * </pre>
      *
@@ -4983,6 +5172,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of local SSD disks to be attached to the node.
+     *
      * The limit for this value is dependent upon the maximum number of
      * disks available on a machine per zone. See:
      * https://cloud.google.com/compute/docs/disks/local-ssd
@@ -5002,6 +5192,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of local SSD disks to be attached to the node.
+     *
      * The limit for this value is dependent upon the maximum number of
      * disks available on a machine per zone. See:
      * https://cloud.google.com/compute/docs/disks/local-ssd
@@ -5025,6 +5216,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The number of local SSD disks to be attached to the node.
+     *
      * The limit for this value is dependent upon the maximum number of
      * disks available on a machine per zone. See:
      * https://cloud.google.com/compute/docs/disks/local-ssd
@@ -5042,14 +5234,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -5066,7 +5258,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -5143,6 +5336,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5167,6 +5361,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5188,6 +5383,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5206,8 +5402,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -5233,6 +5430,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6215,6 +6413,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -6239,6 +6438,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -6263,6 +6463,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -6286,6 +6487,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -6305,6 +6507,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
      * 'pd-balanced')
+     *
      * If unspecified, the default disk type is 'pd-standard'
      * </pre>
      *
@@ -6670,6 +6873,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6688,6 +6892,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6706,6 +6911,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6724,6 +6930,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6748,6 +6955,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6770,6 +6978,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6794,6 +7003,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6818,6 +7028,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6839,6 +7050,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6861,6 +7073,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6883,6 +7096,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6904,6 +7118,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6925,6 +7140,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6939,6 +7155,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6957,6 +7174,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6976,6 +7194,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -6991,6 +7210,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -7006,6 +7226,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of kubernetes taints to be applied to each node.
+     *
      * For more information, including usage and the valid values, see:
      * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
      * </pre>
@@ -7038,6 +7259,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -7065,6 +7287,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -7092,6 +7315,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -7118,6 +7342,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -7140,6 +7365,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     *
      * The Customer Managed Encryption Key used to encrypt the boot disk attached
      * to each node in the node pool. This should be of the form
      * projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
@@ -9885,6 +10111,191 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         ephemeralStorageLocalSsdConfig_ = null;
       }
       return ephemeralStorageLocalSsdConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.SoleTenantConfig soleTenantConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SoleTenantConfig,
+            com.google.container.v1beta1.SoleTenantConfig.Builder,
+            com.google.container.v1beta1.SoleTenantConfigOrBuilder>
+        soleTenantConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     *
+     * @return Whether the soleTenantConfig field is set.
+     */
+    public boolean hasSoleTenantConfig() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     *
+     * @return The soleTenantConfig.
+     */
+    public com.google.container.v1beta1.SoleTenantConfig getSoleTenantConfig() {
+      if (soleTenantConfigBuilder_ == null) {
+        return soleTenantConfig_ == null
+            ? com.google.container.v1beta1.SoleTenantConfig.getDefaultInstance()
+            : soleTenantConfig_;
+      } else {
+        return soleTenantConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    public Builder setSoleTenantConfig(com.google.container.v1beta1.SoleTenantConfig value) {
+      if (soleTenantConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        soleTenantConfig_ = value;
+      } else {
+        soleTenantConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    public Builder setSoleTenantConfig(
+        com.google.container.v1beta1.SoleTenantConfig.Builder builderForValue) {
+      if (soleTenantConfigBuilder_ == null) {
+        soleTenantConfig_ = builderForValue.build();
+      } else {
+        soleTenantConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    public Builder mergeSoleTenantConfig(com.google.container.v1beta1.SoleTenantConfig value) {
+      if (soleTenantConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)
+            && soleTenantConfig_ != null
+            && soleTenantConfig_
+                != com.google.container.v1beta1.SoleTenantConfig.getDefaultInstance()) {
+          getSoleTenantConfigBuilder().mergeFrom(value);
+        } else {
+          soleTenantConfig_ = value;
+        }
+      } else {
+        soleTenantConfigBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    public Builder clearSoleTenantConfig() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      soleTenantConfig_ = null;
+      if (soleTenantConfigBuilder_ != null) {
+        soleTenantConfigBuilder_.dispose();
+        soleTenantConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    public com.google.container.v1beta1.SoleTenantConfig.Builder getSoleTenantConfigBuilder() {
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return getSoleTenantConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    public com.google.container.v1beta1.SoleTenantConfigOrBuilder getSoleTenantConfigOrBuilder() {
+      if (soleTenantConfigBuilder_ != null) {
+        return soleTenantConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return soleTenantConfig_ == null
+            ? com.google.container.v1beta1.SoleTenantConfig.getDefaultInstance()
+            : soleTenantConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for node pools to be backed by shared sole tenant node groups.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SoleTenantConfig,
+            com.google.container.v1beta1.SoleTenantConfig.Builder,
+            com.google.container.v1beta1.SoleTenantConfigOrBuilder>
+        getSoleTenantConfigFieldBuilder() {
+      if (soleTenantConfigBuilder_ == null) {
+        soleTenantConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.SoleTenantConfig,
+                com.google.container.v1beta1.SoleTenantConfig.Builder,
+                com.google.container.v1beta1.SoleTenantConfigOrBuilder>(
+                getSoleTenantConfig(), getParentForChildren(), isClean());
+        soleTenantConfig_ = null;
+      }
+      return soleTenantConfigBuilder_;
     }
 
     @java.lang.Override
