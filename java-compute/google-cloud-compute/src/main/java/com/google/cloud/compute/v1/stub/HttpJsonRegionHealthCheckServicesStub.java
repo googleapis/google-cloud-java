@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthCheckServiceRequest;
@@ -384,6 +385,15 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
         HttpJsonCallSettings.<DeleteRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "health_check_service", String.valueOf(request.getHealthCheckService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRegionHealthCheckServiceRequest, HealthCheckService>
         getTransportSettings =
@@ -391,11 +401,27 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
                 .<GetRegionHealthCheckServiceRequest, HealthCheckService>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "health_check_service", String.valueOf(request.getHealthCheckService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionHealthCheckServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>
         listTransportSettings =
@@ -403,11 +429,27 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
                 .<ListRegionHealthCheckServicesRequest, HealthCheckServicesList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionHealthCheckServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionHealthCheckServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "health_check_service", String.valueOf(request.getHealthCheckService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
 
     this.deleteCallable =

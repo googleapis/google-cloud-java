@@ -38,9 +38,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   }
 
   private FirewallPolicyRuleMatcher() {
-    destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     layer4Configs_ = java.util.Collections.emptyList();
-    srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     srcSecureTags_ = java.util.Collections.emptyList();
   }
 
@@ -48,11 +48,6 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FirewallPolicyRuleMatcher();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,7 +68,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public static final int DEST_IP_RANGES_FIELD_NUMBER = 337357713;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList destIpRanges_;
+  private com.google.protobuf.LazyStringArrayList destIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -222,7 +218,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
   public static final int SRC_IP_RANGES_FIELD_NUMBER = 432128083;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList srcIpRanges_;
+  private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -614,8 +611,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (layer4ConfigsBuilder_ == null) {
         layer4Configs_ = java.util.Collections.emptyList();
       } else {
@@ -623,8 +619,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         layer4ConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (srcSecureTagsBuilder_ == null) {
         srcSecureTags_ = java.util.Collections.emptyList();
       } else {
@@ -669,11 +664,6 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        destIpRanges_ = destIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.destIpRanges_ = destIpRanges_;
       if (layer4ConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           layer4Configs_ = java.util.Collections.unmodifiableList(layer4Configs_);
@@ -683,11 +673,6 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       } else {
         result.layer4Configs_ = layer4ConfigsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        srcIpRanges_ = srcIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.srcIpRanges_ = srcIpRanges_;
       if (srcSecureTagsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           srcSecureTags_ = java.util.Collections.unmodifiableList(srcSecureTags_);
@@ -701,6 +686,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
     private void buildPartial0(com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        destIpRanges_.makeImmutable();
+        result.destIpRanges_ = destIpRanges_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        srcIpRanges_.makeImmutable();
+        result.srcIpRanges_ = srcIpRanges_;
+      }
     }
 
     @java.lang.Override
@@ -752,7 +745,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.destIpRanges_.isEmpty()) {
         if (destIpRanges_.isEmpty()) {
           destIpRanges_ = other.destIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureDestIpRangesIsMutable();
           destIpRanges_.addAll(other.destIpRanges_);
@@ -789,7 +782,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.srcIpRanges_.isEmpty()) {
         if (srcIpRanges_.isEmpty()) {
           srcIpRanges_ = other.srcIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureSrcIpRangesIsMutable();
           srcIpRanges_.addAll(other.srcIpRanges_);
@@ -910,14 +903,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList destIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList destIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDestIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!destIpRanges_.isModifiable()) {
         destIpRanges_ = new com.google.protobuf.LazyStringArrayList(destIpRanges_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -931,7 +924,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return A list containing the destIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getDestIpRangesList() {
-      return destIpRanges_.getUnmodifiableView();
+      destIpRanges_.makeImmutable();
+      return destIpRanges_;
     }
     /**
      *
@@ -996,6 +990,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestIpRangesIsMutable();
       destIpRanges_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1017,6 +1012,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestIpRangesIsMutable();
       destIpRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1035,6 +1031,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllDestIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureDestIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destIpRanges_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1050,8 +1047,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDestIpRanges() {
-      destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1074,6 +1072,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureDestIpRangesIsMutable();
       destIpRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1488,14 +1487,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       return layer4ConfigsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList srcIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSrcIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!srcIpRanges_.isModifiable()) {
         srcIpRanges_ = new com.google.protobuf.LazyStringArrayList(srcIpRanges_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1509,7 +1508,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return A list containing the srcIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getSrcIpRangesList() {
-      return srcIpRanges_.getUnmodifiableView();
+      srcIpRanges_.makeImmutable();
+      return srcIpRanges_;
     }
     /**
      *
@@ -1574,6 +1574,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1595,6 +1596,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1613,6 +1615,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSrcIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcIpRanges_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1628,8 +1631,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearSrcIpRanges() {
-      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1652,6 +1656,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

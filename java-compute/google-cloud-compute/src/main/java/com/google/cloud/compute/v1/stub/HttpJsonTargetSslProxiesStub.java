@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteTargetSslProxyRequest;
 import com.google.cloud.compute.v1.GetTargetSslProxyRequest;
@@ -616,51 +617,112 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
         HttpJsonCallSettings.<DeleteTargetSslProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTargetSslProxyRequest, TargetSslProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetSslProxyRequest, TargetSslProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertTargetSslProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetSslProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTargetSslProxiesRequest, TargetSslProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetSslProxiesRequest, TargetSslProxyList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetBackendServiceTargetSslProxyRequest, Operation>
         setBackendServiceTransportSettings =
             HttpJsonCallSettings.<SetBackendServiceTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setBackendServiceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetCertificateMapTargetSslProxyRequest, Operation>
         setCertificateMapTransportSettings =
             HttpJsonCallSettings.<SetCertificateMapTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setCertificateMapMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetProxyHeaderTargetSslProxyRequest, Operation>
         setProxyHeaderTransportSettings =
             HttpJsonCallSettings.<SetProxyHeaderTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setProxyHeaderMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetSslCertificatesTargetSslProxyRequest, Operation>
         setSslCertificatesTransportSettings =
             HttpJsonCallSettings.<SetSslCertificatesTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslCertificatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetSslPolicyTargetSslProxyRequest, Operation>
         setSslPolicyTransportSettings =
             HttpJsonCallSettings.<SetSslPolicyTargetSslProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_ssl_proxy", String.valueOf(request.getTargetSslProxy()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

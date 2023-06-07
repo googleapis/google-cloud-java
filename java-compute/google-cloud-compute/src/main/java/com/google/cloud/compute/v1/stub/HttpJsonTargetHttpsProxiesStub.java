@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpsProxyRequest;
@@ -747,61 +748,139 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetHttpsProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTargetHttpsProxyRequest, TargetHttpsProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertTargetHttpsProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>
         listTransportSettings =
             HttpJsonCallSettings.<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchTargetHttpsProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation>
         setCertificateMapTransportSettings =
             HttpJsonCallSettings.<SetCertificateMapTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setCertificateMapMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
         setQuicOverrideTransportSettings =
             HttpJsonCallSettings.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setQuicOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetSslCertificatesTargetHttpsProxyRequest, Operation>
         setSslCertificatesTransportSettings =
             HttpJsonCallSettings.<SetSslCertificatesTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslCertificatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetSslPolicyTargetHttpsProxyRequest, Operation>
         setSslPolicyTransportSettings =
             HttpJsonCallSettings.<SetSslPolicyTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetUrlMapTargetHttpsProxyRequest, Operation> setUrlMapTransportSettings =
         HttpJsonCallSettings.<SetUrlMapTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(setUrlMapMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

@@ -50,11 +50,6 @@ public final class NetworkAttachmentList extends com.google.protobuf.GeneratedMe
     return new NetworkAttachmentList();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_NetworkAttachmentList_descriptor;

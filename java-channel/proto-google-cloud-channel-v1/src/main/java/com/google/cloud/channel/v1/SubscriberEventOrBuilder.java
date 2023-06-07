@@ -93,5 +93,5 @@ public interface SubscriberEventOrBuilder
    */
   com.google.cloud.channel.v1.EntitlementEventOrBuilder getEntitlementEventOrBuilder();
 
-  public com.google.cloud.channel.v1.SubscriberEvent.EventCase getEventCase();
+  com.google.cloud.channel.v1.SubscriberEvent.EventCase getEventCase();
 }

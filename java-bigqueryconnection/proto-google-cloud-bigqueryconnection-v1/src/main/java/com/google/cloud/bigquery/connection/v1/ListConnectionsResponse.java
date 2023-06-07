@@ -49,11 +49,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     return new ListConnectionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_ListConnectionsResponse_descriptor;

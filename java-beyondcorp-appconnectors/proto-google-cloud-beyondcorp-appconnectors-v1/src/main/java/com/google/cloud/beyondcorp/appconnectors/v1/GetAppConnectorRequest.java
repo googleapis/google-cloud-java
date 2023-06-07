@@ -47,11 +47,6 @@ public final class GetAppConnectorRequest extends com.google.protobuf.GeneratedM
     return new GetAppConnectorRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorsServiceProto
         .internal_static_google_cloud_beyondcorp_appconnectors_v1_GetAppConnectorRequest_descriptor;

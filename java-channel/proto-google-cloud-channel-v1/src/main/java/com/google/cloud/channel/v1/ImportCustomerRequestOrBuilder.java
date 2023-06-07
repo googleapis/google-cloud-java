@@ -236,6 +236,5 @@ public interface ImportCustomerRequestOrBuilder
    */
   com.google.protobuf.ByteString getCustomerBytes();
 
-  public com.google.cloud.channel.v1.ImportCustomerRequest.CustomerIdentityCase
-      getCustomerIdentityCase();
+  com.google.cloud.channel.v1.ImportCustomerRequest.CustomerIdentityCase getCustomerIdentityCase();
 }

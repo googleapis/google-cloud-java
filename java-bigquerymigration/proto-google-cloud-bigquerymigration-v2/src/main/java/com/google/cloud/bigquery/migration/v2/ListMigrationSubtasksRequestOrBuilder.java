@@ -112,6 +112,7 @@ public interface ListMigrationSubtasksRequestOrBuilder
    * <pre>
    * Optional. A page token, received from previous `ListMigrationSubtasks`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigrationSubtasks`
    * must match the call that provided the page token.
    * </pre>
@@ -127,6 +128,7 @@ public interface ListMigrationSubtasksRequestOrBuilder
    * <pre>
    * Optional. A page token, received from previous `ListMigrationSubtasks`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigrationSubtasks`
    * must match the call that provided the page token.
    * </pre>

@@ -50,11 +50,6 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
     return new PlaceOrderRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.commerce.consumer.procurement.v1alpha1.ProcurementService
         .internal_static_google_cloud_commerce_consumer_procurement_v1alpha1_PlaceOrderRequest_descriptor;
@@ -278,6 +273,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    * Optional. A unique identifier for this request.
    * The server will ignore subsequent requests that provide a duplicate request
    * ID for at least 120 minutes after the first request.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    * </pre>
@@ -305,6 +301,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
    * Optional. A unique identifier for this request.
    * The server will ignore subsequent requests that provide a duplicate request
    * ID for at least 120 minutes after the first request.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    * </pre>
@@ -1456,6 +1453,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1482,6 +1480,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1508,6 +1507,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1533,6 +1533,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>
@@ -1554,6 +1555,7 @@ public final class PlaceOrderRequest extends com.google.protobuf.GeneratedMessag
      * Optional. A unique identifier for this request.
      * The server will ignore subsequent requests that provide a duplicate request
      * ID for at least 120 minutes after the first request.
+     *
      * The request ID must be a valid
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
      * </pre>

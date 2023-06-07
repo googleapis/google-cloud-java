@@ -51,11 +51,6 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     return new ListTransferableOffersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_ListTransferableOffersRequest_descriptor;
@@ -72,6 +67,8 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
   }
 
   private int transferredCustomerIdentityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transferredCustomerIdentity_;
 
   public enum TransferredCustomerIdentityCase

@@ -234,5 +234,5 @@ public interface ReportValueOrBuilder
    */
   com.google.type.DateTimeOrBuilder getDateTimeValueOrBuilder();
 
-  public com.google.cloud.channel.v1.ReportValue.ValueCase getValueCase();
+  com.google.cloud.channel.v1.ReportValue.ValueCase getValueCase();
 }

@@ -47,11 +47,6 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
     return new RouterMd5AuthenticationKey();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_RouterMd5AuthenticationKey_descriptor;

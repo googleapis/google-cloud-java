@@ -48,11 +48,6 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
     return new ListProjectBillingInfoRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.v1.CloudBillingProto
         .internal_static_google_cloud_billing_v1_ListProjectBillingInfoRequest_descriptor;

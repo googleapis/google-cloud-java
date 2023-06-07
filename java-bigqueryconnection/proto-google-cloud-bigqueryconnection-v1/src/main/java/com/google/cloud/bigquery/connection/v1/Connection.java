@@ -50,11 +50,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return new Connection();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_Connection_descriptor;
@@ -71,6 +66,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int propertiesCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object properties_;
 
   public enum PropertiesCase

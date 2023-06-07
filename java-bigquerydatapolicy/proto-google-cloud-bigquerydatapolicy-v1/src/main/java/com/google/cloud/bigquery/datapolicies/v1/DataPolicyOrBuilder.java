@@ -182,8 +182,7 @@ public interface DataPolicyOrBuilder
    */
   com.google.protobuf.ByteString getDataPolicyIdBytes();
 
-  public com.google.cloud.bigquery.datapolicies.v1.DataPolicy.MatchingLabelCase
-      getMatchingLabelCase();
+  com.google.cloud.bigquery.datapolicies.v1.DataPolicy.MatchingLabelCase getMatchingLabelCase();
 
-  public com.google.cloud.bigquery.datapolicies.v1.DataPolicy.PolicyCase getPolicyCase();
+  com.google.cloud.bigquery.datapolicies.v1.DataPolicy.PolicyCase getPolicyCase();
 }

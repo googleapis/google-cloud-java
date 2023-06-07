@@ -188,5 +188,5 @@ public interface LockOrBuilder
    */
   com.google.cloud.bigquery.biglake.v1alpha1.Lock.State getState();
 
-  public com.google.cloud.bigquery.biglake.v1alpha1.Lock.ResourcesCase getResourcesCase();
+  com.google.cloud.bigquery.biglake.v1alpha1.Lock.ResourcesCase getResourcesCase();
 }

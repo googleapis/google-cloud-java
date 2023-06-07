@@ -46,11 +46,6 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
     return new SubscriberEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.SubscriberEventProto
         .internal_static_google_cloud_channel_v1_SubscriberEvent_descriptor;
@@ -67,6 +62,8 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
   }
 
   private int eventCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object event_;
 
   public enum EventCase

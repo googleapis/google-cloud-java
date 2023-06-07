@@ -157,6 +157,5 @@ public interface AttestorOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.cloud.binaryauthorization.v1beta1.Attestor.AttestorTypeCase
-      getAttestorTypeCase();
+  com.google.cloud.binaryauthorization.v1beta1.Attestor.AttestorTypeCase getAttestorTypeCase();
 }

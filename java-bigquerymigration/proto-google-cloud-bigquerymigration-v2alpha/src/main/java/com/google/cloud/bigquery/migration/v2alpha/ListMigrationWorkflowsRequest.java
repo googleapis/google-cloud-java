@@ -48,11 +48,6 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
     return new ListMigrationWorkflowsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.MigrationServiceProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_ListMigrationWorkflowsRequest_descriptor;
@@ -201,6 +196,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
    * <pre>
    * A page token, received from previous `ListMigrationWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigrationWorkflows`
    * must match the call that provided the page token.
    * </pre>
@@ -227,6 +223,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
    * <pre>
    * A page token, received from previous `ListMigrationWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigrationWorkflows`
    * must match the call that provided the page token.
    * </pre>
@@ -1044,6 +1041,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
      * <pre>
      * A page token, received from previous `ListMigrationWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigrationWorkflows`
      * must match the call that provided the page token.
      * </pre>
@@ -1069,6 +1067,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
      * <pre>
      * A page token, received from previous `ListMigrationWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigrationWorkflows`
      * must match the call that provided the page token.
      * </pre>
@@ -1094,6 +1093,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
      * <pre>
      * A page token, received from previous `ListMigrationWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigrationWorkflows`
      * must match the call that provided the page token.
      * </pre>
@@ -1118,6 +1118,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
      * <pre>
      * A page token, received from previous `ListMigrationWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigrationWorkflows`
      * must match the call that provided the page token.
      * </pre>
@@ -1138,6 +1139,7 @@ public final class ListMigrationWorkflowsRequest extends com.google.protobuf.Gen
      * <pre>
      * A page token, received from previous `ListMigrationWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigrationWorkflows`
      * must match the call that provided the page token.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPacketMirroringsRequest;
 import com.google.cloud.compute.v1.DeletePacketMirroringRequest;
@@ -494,31 +495,75 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                 .<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeletePacketMirroringRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePacketMirroringRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("packet_mirroring", String.valueOf(request.getPacketMirroring()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPacketMirroringRequest, PacketMirroring> getTransportSettings =
         HttpJsonCallSettings.<GetPacketMirroringRequest, PacketMirroring>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("packet_mirroring", String.valueOf(request.getPacketMirroring()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertPacketMirroringRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPacketMirroringRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPacketMirroringsRequest, PacketMirroringList> listTransportSettings =
         HttpJsonCallSettings.<ListPacketMirroringsRequest, PacketMirroringList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchPacketMirroringRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchPacketMirroringRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("packet_mirroring", String.valueOf(request.getPacketMirroring()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -526,6 +571,14 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                 .<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.aggregatedListCallable =

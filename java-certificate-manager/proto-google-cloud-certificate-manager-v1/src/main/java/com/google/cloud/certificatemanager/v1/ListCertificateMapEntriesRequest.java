@@ -51,11 +51,6 @@ public final class ListCertificateMapEntriesRequest extends com.google.protobuf.
     return new ListCertificateMapEntriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateManagerProto
         .internal_static_google_cloud_certificatemanager_v1_ListCertificateMapEntriesRequest_descriptor;

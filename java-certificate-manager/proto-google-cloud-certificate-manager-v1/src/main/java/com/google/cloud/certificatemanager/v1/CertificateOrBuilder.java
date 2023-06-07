@@ -439,5 +439,5 @@ public interface CertificateOrBuilder
    */
   com.google.cloud.certificatemanager.v1.Certificate.Scope getScope();
 
-  public com.google.cloud.certificatemanager.v1.Certificate.TypeCase getTypeCase();
+  com.google.cloud.certificatemanager.v1.Certificate.TypeCase getTypeCase();
 }

@@ -174,5 +174,5 @@ public interface TypedValueOrBuilder
    */
   com.google.api.DistributionOrBuilder getDistributionValueOrBuilder();
 
-  public com.google.cloud.bigquery.migration.v2.TypedValue.ValueCase getValueCase();
+  com.google.cloud.bigquery.migration.v2.TypedValue.ValueCase getValueCase();
 }

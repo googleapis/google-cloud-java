@@ -47,11 +47,6 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
     return new DeleteDataExchangeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.dataexchange.v1beta1.DataExchangeProto
         .internal_static_google_cloud_bigquery_dataexchange_v1beta1_DeleteDataExchangeRequest_descriptor;

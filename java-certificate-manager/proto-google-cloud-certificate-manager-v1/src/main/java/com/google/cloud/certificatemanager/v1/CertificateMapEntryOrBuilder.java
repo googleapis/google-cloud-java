@@ -379,5 +379,5 @@ public interface CertificateMapEntryOrBuilder
    */
   com.google.cloud.certificatemanager.v1.ServingState getState();
 
-  public com.google.cloud.certificatemanager.v1.CertificateMapEntry.MatchCase getMatchCase();
+  com.google.cloud.certificatemanager.v1.CertificateMapEntry.MatchCase getMatchCase();
 }

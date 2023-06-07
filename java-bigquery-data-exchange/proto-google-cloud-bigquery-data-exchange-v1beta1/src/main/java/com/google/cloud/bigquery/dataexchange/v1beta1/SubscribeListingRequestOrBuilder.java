@@ -93,6 +93,6 @@ public interface SubscribeListingRequestOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
-  public com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest.DestinationCase
+  com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest.DestinationCase
       getDestinationCase();
 }

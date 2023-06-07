@@ -48,11 +48,6 @@ public final class Escalation extends com.google.protobuf.GeneratedMessageV3
     return new Escalation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.support.v2.EscalationProto
         .internal_static_google_cloud_support_v2_Escalation_descriptor;

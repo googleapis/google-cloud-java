@@ -57,11 +57,6 @@ public final class AppGateway extends com.google.protobuf.GeneratedMessageV3
     return new AppGateway();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appgateways.v1.AppGatewaysServiceProto
         .internal_static_google_cloud_beyondcorp_appgateways_v1_AppGateway_descriptor;
@@ -661,11 +656,6 @@ public final class AppGateway extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AllocatedConnection();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

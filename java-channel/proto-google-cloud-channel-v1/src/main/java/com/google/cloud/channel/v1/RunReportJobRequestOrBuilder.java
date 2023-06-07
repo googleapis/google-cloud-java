@@ -107,8 +107,10 @@ public interface RunReportJobRequestOrBuilder
    * <pre>
    * Optional. A structured string that defines conditions on dimension columns
    * to restrict the report output.
+   *
    * Filters support logical operators (AND, OR, NOT) and conditional operators
    * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+   *
    * For example:
    * `(customer:"accounts/C123abc/customers/S456def" OR
    * customer:"accounts/C123abc/customers/S789ghi") AND
@@ -126,8 +128,10 @@ public interface RunReportJobRequestOrBuilder
    * <pre>
    * Optional. A structured string that defines conditions on dimension columns
    * to restrict the report output.
+   *
    * Filters support logical operators (AND, OR, NOT) and conditional operators
    * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
+   *
    * For example:
    * `(customer:"accounts/C123abc/customers/S456def" OR
    * customer:"accounts/C123abc/customers/S789ghi") AND

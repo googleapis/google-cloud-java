@@ -41,12 +41,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     backends_ = java.util.Collections.emptyList();
     compressionMode_ = "";
     creationTimestamp_ = "";
-    customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
     description_ = "";
     edgeSecurityPolicy_ = "";
     fingerprint_ = "";
-    healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
     loadBalancingScheme_ = "";
     localityLbPolicies_ = java.util.Collections.emptyList();
@@ -58,7 +58,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     region_ = "";
     securityPolicy_ = "";
     selfLink_ = "";
-    serviceBindings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sessionAffinity_ = "";
   }
 
@@ -66,11 +66,6 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BackendService();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1779,7 +1774,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   public static final int CUSTOM_REQUEST_HEADERS_FIELD_NUMBER = 27977992;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList customRequestHeaders_;
+  private com.google.protobuf.LazyStringArrayList customRequestHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1842,7 +1838,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   public static final int CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER = 387539094;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList customResponseHeaders_;
+  private com.google.protobuf.LazyStringArrayList customResponseHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2193,7 +2190,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList healthChecks_;
+  private com.google.protobuf.LazyStringArrayList healthChecks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3325,7 +3323,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
   public static final int SERVICE_BINDINGS_FIELD_NUMBER = 133581016;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceBindings_;
+  private com.google.protobuf.LazyStringArrayList serviceBindings_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4335,10 +4334,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         consistentHashBuilder_ = null;
       }
       creationTimestamp_ = "";
-      customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
-      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
       edgeSecurityPolicy_ = "";
       enableCDN_ = false;
@@ -4348,8 +4345,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         failoverPolicyBuilder_ = null;
       }
       fingerprint_ = "";
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       iap_ = null;
       if (iapBuilder_ != null) {
         iapBuilder_.dispose();
@@ -4394,8 +4390,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         securitySettingsBuilder_ = null;
       }
       selfLink_ = "";
-      serviceBindings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000008);
+      serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sessionAffinity_ = "";
       subsetting_ = null;
       if (subsettingBuilder_ != null) {
@@ -4451,21 +4446,6 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.backends_ = backendsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        customRequestHeaders_ = customRequestHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.customRequestHeaders_ = customRequestHeaders_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.customResponseHeaders_ = customResponseHeaders_;
-      if (((bitField0_ & 0x00010000) != 0)) {
-        healthChecks_ = healthChecks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00010000);
-      }
-      result.healthChecks_ = healthChecks_;
       if (localityLbPoliciesBuilder_ == null) {
         if (((bitField0_ & 0x00200000) != 0)) {
           localityLbPolicies_ = java.util.Collections.unmodifiableList(localityLbPolicies_);
@@ -4475,11 +4455,6 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.localityLbPolicies_ = localityLbPoliciesBuilder_.build();
       }
-      if (((bitField1_ & 0x00000008) != 0)) {
-        serviceBindings_ = serviceBindings_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00000008);
-      }
-      result.serviceBindings_ = serviceBindings_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendService result) {
@@ -4525,6 +4500,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        customRequestHeaders_.makeImmutable();
+        result.customRequestHeaders_ = customRequestHeaders_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        customResponseHeaders_.makeImmutable();
+        result.customResponseHeaders_ = customResponseHeaders_;
+      }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000100;
@@ -4545,6 +4528,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        healthChecks_.makeImmutable();
+        result.healthChecks_ = healthChecks_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.iap_ = iapBuilder_ == null ? iap_ : iapBuilder_.build();
@@ -4624,6 +4611,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00000004) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x20000000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        serviceBindings_.makeImmutable();
+        result.serviceBindings_ = serviceBindings_;
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
         result.sessionAffinity_ = sessionAffinity_;
@@ -4745,7 +4736,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!other.customRequestHeaders_.isEmpty()) {
         if (customRequestHeaders_.isEmpty()) {
           customRequestHeaders_ = other.customRequestHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureCustomRequestHeadersIsMutable();
           customRequestHeaders_.addAll(other.customRequestHeaders_);
@@ -4755,7 +4746,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!other.customResponseHeaders_.isEmpty()) {
         if (customResponseHeaders_.isEmpty()) {
           customResponseHeaders_ = other.customResponseHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureCustomResponseHeadersIsMutable();
           customResponseHeaders_.addAll(other.customResponseHeaders_);
@@ -4786,7 +4777,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!other.healthChecks_.isEmpty()) {
         if (healthChecks_.isEmpty()) {
           healthChecks_ = other.healthChecks_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ |= 0x00010000;
         } else {
           ensureHealthChecksIsMutable();
           healthChecks_.addAll(other.healthChecks_);
@@ -4894,7 +4885,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!other.serviceBindings_.isEmpty()) {
         if (serviceBindings_.isEmpty()) {
           serviceBindings_ = other.serviceBindings_;
-          bitField1_ = (bitField1_ & ~0x00000008);
+          bitField1_ |= 0x00000008;
         } else {
           ensureServiceBindingsIsMutable();
           serviceBindings_.addAll(other.serviceBindings_);
@@ -6766,14 +6757,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList customRequestHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList customRequestHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCustomRequestHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!customRequestHeaders_.isModifiable()) {
         customRequestHeaders_ = new com.google.protobuf.LazyStringArrayList(customRequestHeaders_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -6787,7 +6778,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the customRequestHeaders.
      */
     public com.google.protobuf.ProtocolStringList getCustomRequestHeadersList() {
-      return customRequestHeaders_.getUnmodifiableView();
+      customRequestHeaders_.makeImmutable();
+      return customRequestHeaders_;
     }
     /**
      *
@@ -6852,6 +6844,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomRequestHeadersIsMutable();
       customRequestHeaders_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6873,6 +6866,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomRequestHeadersIsMutable();
       customRequestHeaders_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6891,6 +6885,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomRequestHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureCustomRequestHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customRequestHeaders_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6906,8 +6901,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomRequestHeaders() {
-      customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      customRequestHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -6930,19 +6926,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomRequestHeadersIsMutable();
       customRequestHeaders_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList customResponseHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList customResponseHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCustomResponseHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!customResponseHeaders_.isModifiable()) {
         customResponseHeaders_ =
             new com.google.protobuf.LazyStringArrayList(customResponseHeaders_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -6956,7 +6953,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the customResponseHeaders.
      */
     public com.google.protobuf.ProtocolStringList getCustomResponseHeadersList() {
-      return customResponseHeaders_.getUnmodifiableView();
+      customResponseHeaders_.makeImmutable();
+      return customResponseHeaders_;
     }
     /**
      *
@@ -7021,6 +7019,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomResponseHeadersIsMutable();
       customResponseHeaders_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7042,6 +7041,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomResponseHeadersIsMutable();
       customResponseHeaders_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7060,6 +7060,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomResponseHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureCustomResponseHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customResponseHeaders_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7075,8 +7076,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomResponseHeaders() {
-      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -7099,6 +7101,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomResponseHeadersIsMutable();
       customResponseHeaders_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7738,14 +7741,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList healthChecks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList healthChecks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHealthChecksIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!healthChecks_.isModifiable()) {
         healthChecks_ = new com.google.protobuf.LazyStringArrayList(healthChecks_);
-        bitField0_ |= 0x00010000;
       }
+      bitField0_ |= 0x00010000;
     }
     /**
      *
@@ -7759,7 +7762,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the healthChecks.
      */
     public com.google.protobuf.ProtocolStringList getHealthChecksList() {
-      return healthChecks_.getUnmodifiableView();
+      healthChecks_.makeImmutable();
+      return healthChecks_;
     }
     /**
      *
@@ -7824,6 +7828,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHealthChecksIsMutable();
       healthChecks_.set(index, value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7845,6 +7850,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7863,6 +7869,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllHealthChecks(java.lang.Iterable<java.lang.String> values) {
       ensureHealthChecksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, healthChecks_);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7878,8 +7885,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHealthChecks() {
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00010000);
+      ;
       onChanged();
       return this;
     }
@@ -7902,6 +7910,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -10632,14 +10641,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceBindings_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceBindings_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceBindingsIsMutable() {
-      if (!((bitField1_ & 0x00000008) != 0)) {
+      if (!serviceBindings_.isModifiable()) {
         serviceBindings_ = new com.google.protobuf.LazyStringArrayList(serviceBindings_);
-        bitField1_ |= 0x00000008;
       }
+      bitField1_ |= 0x00000008;
     }
     /**
      *
@@ -10653,7 +10662,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the serviceBindings.
      */
     public com.google.protobuf.ProtocolStringList getServiceBindingsList() {
-      return serviceBindings_.getUnmodifiableView();
+      serviceBindings_.makeImmutable();
+      return serviceBindings_;
     }
     /**
      *
@@ -10718,6 +10728,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceBindingsIsMutable();
       serviceBindings_.set(index, value);
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10739,6 +10750,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceBindingsIsMutable();
       serviceBindings_.add(value);
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10757,6 +10769,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllServiceBindings(java.lang.Iterable<java.lang.String> values) {
       ensureServiceBindingsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceBindings_);
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -10772,8 +10785,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceBindings() {
-      serviceBindings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField1_ = (bitField1_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -10796,6 +10810,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureServiceBindingsIsMutable();
       serviceBindings_.add(value);
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }

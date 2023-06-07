@@ -52,11 +52,6 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
     return new EntitlementChange();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.EntitlementChangesProto
         .internal_static_google_cloud_channel_v1_EntitlementChange_descriptor;
@@ -1096,6 +1091,8 @@ public final class EntitlementChange extends com.google.protobuf.GeneratedMessag
   }
 
   private int changeReasonCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object changeReason_;
 
   public enum ChangeReasonCase

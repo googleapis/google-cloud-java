@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.Case;
 import com.google.cloud.support.v2.CloseCaseRequest;
@@ -421,36 +422,78 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
         HttpJsonCallSettings.<GetCaseRequest, Case>newBuilder()
             .setMethodDescriptor(getCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCasesRequest, ListCasesResponse> listCasesTransportSettings =
         HttpJsonCallSettings.<ListCasesRequest, ListCasesResponse>newBuilder()
             .setMethodDescriptor(listCasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchCasesRequest, SearchCasesResponse> searchCasesTransportSettings =
         HttpJsonCallSettings.<SearchCasesRequest, SearchCasesResponse>newBuilder()
             .setMethodDescriptor(searchCasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateCaseRequest, Case> createCaseTransportSettings =
         HttpJsonCallSettings.<CreateCaseRequest, Case>newBuilder()
             .setMethodDescriptor(createCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCaseRequest, Case> updateCaseTransportSettings =
         HttpJsonCallSettings.<UpdateCaseRequest, Case>newBuilder()
             .setMethodDescriptor(updateCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("case.name", String.valueOf(request.getCase().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<EscalateCaseRequest, Case> escalateCaseTransportSettings =
         HttpJsonCallSettings.<EscalateCaseRequest, Case>newBuilder()
             .setMethodDescriptor(escalateCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CloseCaseRequest, Case> closeCaseTransportSettings =
         HttpJsonCallSettings.<CloseCaseRequest, Case>newBuilder()
             .setMethodDescriptor(closeCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchCaseClassificationsRequest, SearchCaseClassificationsResponse>
         searchCaseClassificationsTransportSettings =

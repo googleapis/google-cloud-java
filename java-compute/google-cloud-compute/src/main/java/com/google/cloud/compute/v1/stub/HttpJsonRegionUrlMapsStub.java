@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionUrlMapRequest;
 import com.google.cloud.compute.v1.GetRegionUrlMapRequest;
@@ -472,37 +473,91 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
         HttpJsonCallSettings.<DeleteRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("url_map", String.valueOf(request.getUrlMap()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRegionUrlMapRequest, UrlMap> getTransportSettings =
         HttpJsonCallSettings.<GetRegionUrlMapRequest, UrlMap>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("url_map", String.valueOf(request.getUrlMap()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertRegionUrlMapRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionUrlMapsRequest, UrlMapList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionUrlMapsRequest, UrlMapList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchRegionUrlMapRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("url_map", String.valueOf(request.getUrlMap()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRegionUrlMapRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("url_map", String.valueOf(request.getUrlMap()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
         validateTransportSettings =
             HttpJsonCallSettings.<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>newBuilder()
                 .setMethodDescriptor(validateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("url_map", String.valueOf(request.getUrlMap()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

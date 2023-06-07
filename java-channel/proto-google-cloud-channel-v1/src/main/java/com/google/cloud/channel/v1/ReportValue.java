@@ -45,11 +45,6 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
     return new ReportValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ReportsServiceProto
         .internal_static_google_cloud_channel_v1_ReportValue_descriptor;
@@ -66,6 +61,8 @@ public final class ReportValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase

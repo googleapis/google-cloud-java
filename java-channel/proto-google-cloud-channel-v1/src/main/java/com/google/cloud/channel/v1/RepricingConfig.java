@@ -48,11 +48,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     return new RepricingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.RepricingProto
         .internal_static_google_cloud_channel_v1_RepricingConfig_descriptor;
@@ -129,11 +124,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EntitlementGranularity();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -777,11 +767,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       return new ChannelPartnerGranularity();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.channel.v1.RepricingProto
           .internal_static_google_cloud_channel_v1_RepricingConfig_ChannelPartnerGranularity_descriptor;
@@ -1191,6 +1176,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int granularityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object granularity_;
 
   public enum GranularityCase

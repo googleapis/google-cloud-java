@@ -41,14 +41,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     connectedEndpoints_ = java.util.Collections.emptyList();
     connectionPreference_ = "";
     consumerAcceptLists_ = java.util.Collections.emptyList();
-    consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
     creationTimestamp_ = "";
     description_ = "";
-    domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    domainNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     fingerprint_ = "";
     kind_ = "";
     name_ = "";
-    natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
     producerForwardingRule_ = "";
     region_ = "";
     selfLink_ = "";
@@ -59,11 +59,6 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServiceAttachment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -460,7 +455,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   public static final int CONSUMER_REJECT_LISTS_FIELD_NUMBER = 204033182;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList consumerRejectLists_;
+  private com.google.protobuf.LazyStringArrayList consumerRejectLists_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -655,7 +651,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   public static final int DOMAIN_NAMES_FIELD_NUMBER = 6450189;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList domainNames_;
+  private com.google.protobuf.LazyStringArrayList domainNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -982,7 +979,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
   public static final int NAT_SUBNETS_FIELD_NUMBER = 374785944;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList natSubnets_;
+  private com.google.protobuf.LazyStringArrayList natSubnets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1837,19 +1835,16 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         consumerAcceptListsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
       creationTimestamp_ = "";
       description_ = "";
-      domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      domainNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enableProxyProtocol_ = false;
       fingerprint_ = "";
       id_ = 0L;
       kind_ = "";
       name_ = "";
-      natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       producerForwardingRule_ = "";
       pscServiceAttachmentId_ = null;
       if (pscServiceAttachmentIdBuilder_ != null) {
@@ -1913,21 +1908,6 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         result.consumerAcceptLists_ = consumerAcceptListsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        consumerRejectLists_ = consumerRejectLists_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.consumerRejectLists_ = consumerRejectLists_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        domainNames_ = domainNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.domainNames_ = domainNames_;
-      if (((bitField0_ & 0x00001000) != 0)) {
-        natSubnets_ = natSubnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.natSubnets_ = natSubnets_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.ServiceAttachment result) {
@@ -1937,6 +1917,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         result.connectionPreference_ = connectionPreference_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        consumerRejectLists_.makeImmutable();
+        result.consumerRejectLists_ = consumerRejectLists_;
+      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000002;
@@ -1944,6 +1928,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        domainNames_.makeImmutable();
+        result.domainNames_ = domainNames_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.enableProxyProtocol_ = enableProxyProtocol_;
@@ -1964,6 +1952,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        natSubnets_.makeImmutable();
+        result.natSubnets_ = natSubnets_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.producerForwardingRule_ = producerForwardingRule_;
@@ -2098,7 +2090,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (!other.consumerRejectLists_.isEmpty()) {
         if (consumerRejectLists_.isEmpty()) {
           consumerRejectLists_ = other.consumerRejectLists_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureConsumerRejectListsIsMutable();
           consumerRejectLists_.addAll(other.consumerRejectLists_);
@@ -2118,7 +2110,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (!other.domainNames_.isEmpty()) {
         if (domainNames_.isEmpty()) {
           domainNames_ = other.domainNames_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureDomainNamesIsMutable();
           domainNames_.addAll(other.domainNames_);
@@ -2149,7 +2141,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (!other.natSubnets_.isEmpty()) {
         if (natSubnets_.isEmpty()) {
           natSubnets_ = other.natSubnets_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ |= 0x00001000;
         } else {
           ensureNatSubnetsIsMutable();
           natSubnets_.addAll(other.natSubnets_);
@@ -3296,14 +3288,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return consumerAcceptListsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList consumerRejectLists_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList consumerRejectLists_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureConsumerRejectListsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!consumerRejectLists_.isModifiable()) {
         consumerRejectLists_ = new com.google.protobuf.LazyStringArrayList(consumerRejectLists_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -3317,7 +3309,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return A list containing the consumerRejectLists.
      */
     public com.google.protobuf.ProtocolStringList getConsumerRejectListsList() {
-      return consumerRejectLists_.getUnmodifiableView();
+      consumerRejectLists_.makeImmutable();
+      return consumerRejectLists_;
     }
     /**
      *
@@ -3382,6 +3375,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureConsumerRejectListsIsMutable();
       consumerRejectLists_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3403,6 +3397,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureConsumerRejectListsIsMutable();
       consumerRejectLists_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3421,6 +3416,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllConsumerRejectLists(java.lang.Iterable<java.lang.String> values) {
       ensureConsumerRejectListsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, consumerRejectLists_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3436,8 +3432,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearConsumerRejectLists() {
-      consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -3460,6 +3457,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureConsumerRejectListsIsMutable();
       consumerRejectLists_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3704,14 +3702,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList domainNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList domainNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDomainNamesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!domainNames_.isModifiable()) {
         domainNames_ = new com.google.protobuf.LazyStringArrayList(domainNames_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -3725,7 +3723,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return A list containing the domainNames.
      */
     public com.google.protobuf.ProtocolStringList getDomainNamesList() {
-      return domainNames_.getUnmodifiableView();
+      domainNames_.makeImmutable();
+      return domainNames_;
     }
     /**
      *
@@ -3790,6 +3789,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureDomainNamesIsMutable();
       domainNames_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3811,6 +3811,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureDomainNamesIsMutable();
       domainNames_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3829,6 +3830,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllDomainNames(java.lang.Iterable<java.lang.String> values) {
       ensureDomainNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, domainNames_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3844,8 +3846,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDomainNames() {
-      domainNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      domainNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -3868,6 +3871,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureDomainNamesIsMutable();
       domainNames_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4368,14 +4372,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList natSubnets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList natSubnets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNatSubnetsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!natSubnets_.isModifiable()) {
         natSubnets_ = new com.google.protobuf.LazyStringArrayList(natSubnets_);
-        bitField0_ |= 0x00001000;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -4389,7 +4393,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return A list containing the natSubnets.
      */
     public com.google.protobuf.ProtocolStringList getNatSubnetsList() {
-      return natSubnets_.getUnmodifiableView();
+      natSubnets_.makeImmutable();
+      return natSubnets_;
     }
     /**
      *
@@ -4454,6 +4459,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureNatSubnetsIsMutable();
       natSubnets_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4475,6 +4481,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureNatSubnetsIsMutable();
       natSubnets_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4493,6 +4500,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllNatSubnets(java.lang.Iterable<java.lang.String> values) {
       ensureNatSubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natSubnets_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4508,8 +4516,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearNatSubnets() {
-      natSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -4532,6 +4541,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureNatSubnetsIsMutable();
       natSubnets_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

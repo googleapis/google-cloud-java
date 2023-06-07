@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
@@ -697,16 +698,37 @@ public class HttpJsonNetworksStub extends NetworksStub {
         HttpJsonCallSettings.<AddPeeringNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(addPeeringMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network", String.valueOf(request.getNetwork()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteNetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network", String.valueOf(request.getNetwork()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetNetworkRequest, Network> getTransportSettings =
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network", String.valueOf(request.getNetwork()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
         getEffectiveFirewallsTransportSettings =
@@ -715,16 +737,35 @@ public class HttpJsonNetworksStub extends NetworksStub {
                     newBuilder()
                 .setMethodDescriptor(getEffectiveFirewallsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("network", String.valueOf(request.getNetwork()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNetworksRequest, NetworkList> listTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, NetworkList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
         listPeeringRoutesTransportSettings =
@@ -732,27 +773,62 @@ public class HttpJsonNetworksStub extends NetworksStub {
                 .<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>newBuilder()
                 .setMethodDescriptor(listPeeringRoutesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("network", String.valueOf(request.getNetwork()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchNetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network", String.valueOf(request.getNetwork()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemovePeeringNetworkRequest, Operation> removePeeringTransportSettings =
         HttpJsonCallSettings.<RemovePeeringNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(removePeeringMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network", String.valueOf(request.getNetwork()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SwitchToCustomModeNetworkRequest, Operation>
         switchToCustomModeTransportSettings =
             HttpJsonCallSettings.<SwitchToCustomModeNetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(switchToCustomModeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("network", String.valueOf(request.getNetwork()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdatePeeringNetworkRequest, Operation> updatePeeringTransportSettings =
         HttpJsonCallSettings.<UpdatePeeringNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(updatePeeringMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network", String.valueOf(request.getNetwork()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
 
     this.addPeeringCallable =

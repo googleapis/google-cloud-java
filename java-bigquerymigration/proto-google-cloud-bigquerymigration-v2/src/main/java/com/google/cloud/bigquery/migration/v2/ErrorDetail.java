@@ -46,11 +46,6 @@ public final class ErrorDetail extends com.google.protobuf.GeneratedMessageV3
     return new ErrorDetail();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.MigrationErrorDetailsProto
         .internal_static_google_cloud_bigquery_migration_v2_ErrorDetail_descriptor;

@@ -50,11 +50,6 @@ public final class ListClientGatewaysRequest extends com.google.protobuf.Generat
     return new ListClientGatewaysRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.clientgateways.v1.ClientGatewaysServiceProto
         .internal_static_google_cloud_beyondcorp_clientgateways_v1_ListClientGatewaysRequest_descriptor;

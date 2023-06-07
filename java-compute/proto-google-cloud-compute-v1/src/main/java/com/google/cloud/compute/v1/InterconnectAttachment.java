@@ -39,8 +39,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   private InterconnectAttachment() {
     bandwidth_ = "";
-    candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    candidateSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
     cloudRouterIpAddress_ = "";
     cloudRouterIpv6Address_ = "";
     cloudRouterIpv6InterfaceId_ = "";
@@ -53,7 +53,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     encryption_ = "";
     googleReferenceId_ = "";
     interconnect_ = "";
-    ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
     name_ = "";
     operationalStatus_ = "";
@@ -70,11 +70,6 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InterconnectAttachment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1627,7 +1622,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   public static final int CANDIDATE_IPV6_SUBNETS_FIELD_NUMBER = 70682522;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList candidateIpv6Subnets_;
+  private com.google.protobuf.LazyStringArrayList candidateIpv6Subnets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1690,7 +1686,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   public static final int CANDIDATE_SUBNETS_FIELD_NUMBER = 237842938;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList candidateSubnets_;
+  private com.google.protobuf.LazyStringArrayList candidateSubnets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2617,7 +2614,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   public static final int IPSEC_INTERNAL_ADDRESSES_FIELD_NUMBER = 407648565;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipsecInternalAddresses_;
+  private com.google.protobuf.LazyStringArrayList ipsecInternalAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4327,10 +4325,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       bitField1_ = 0;
       adminEnabled_ = false;
       bandwidth_ = "";
-      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       cloudRouterIpAddress_ = "";
       cloudRouterIpv6Address_ = "";
       cloudRouterIpv6InterfaceId_ = "";
@@ -4345,8 +4341,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       googleReferenceId_ = "";
       id_ = 0L;
       interconnect_ = "";
-      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00040000);
+      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kind_ = "";
       mtu_ = 0;
       name_ = "";
@@ -4398,7 +4393,6 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.InterconnectAttachment buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachment result =
           new com.google.cloud.compute.v1.InterconnectAttachment(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -4407,25 +4401,6 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.InterconnectAttachment result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        candidateIpv6Subnets_ = candidateIpv6Subnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.candidateIpv6Subnets_ = candidateIpv6Subnets_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        candidateSubnets_ = candidateSubnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.candidateSubnets_ = candidateSubnets_;
-      if (((bitField0_ & 0x00040000) != 0)) {
-        ipsecInternalAddresses_ = ipsecInternalAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00040000);
-      }
-      result.ipsecInternalAddresses_ = ipsecInternalAddresses_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.InterconnectAttachment result) {
@@ -4438,6 +4413,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.bandwidth_ = bandwidth_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        candidateIpv6Subnets_.makeImmutable();
+        result.candidateIpv6Subnets_ = candidateIpv6Subnets_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        candidateSubnets_.makeImmutable();
+        result.candidateSubnets_ = candidateSubnets_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.cloudRouterIpAddress_ = cloudRouterIpAddress_;
@@ -4494,6 +4477,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.interconnect_ = interconnect_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        ipsecInternalAddresses_.makeImmutable();
+        result.ipsecInternalAddresses_ = ipsecInternalAddresses_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.kind_ = kind_;
@@ -4629,7 +4616,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (!other.candidateIpv6Subnets_.isEmpty()) {
         if (candidateIpv6Subnets_.isEmpty()) {
           candidateIpv6Subnets_ = other.candidateIpv6Subnets_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureCandidateIpv6SubnetsIsMutable();
           candidateIpv6Subnets_.addAll(other.candidateIpv6Subnets_);
@@ -4639,7 +4626,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (!other.candidateSubnets_.isEmpty()) {
         if (candidateSubnets_.isEmpty()) {
           candidateSubnets_ = other.candidateSubnets_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureCandidateSubnetsIsMutable();
           candidateSubnets_.addAll(other.candidateSubnets_);
@@ -4715,7 +4702,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (!other.ipsecInternalAddresses_.isEmpty()) {
         if (ipsecInternalAddresses_.isEmpty()) {
           ipsecInternalAddresses_ = other.ipsecInternalAddresses_;
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ |= 0x00040000;
         } else {
           ensureIpsecInternalAddressesIsMutable();
           ipsecInternalAddresses_.addAll(other.ipsecInternalAddresses_);
@@ -5244,14 +5231,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList candidateIpv6Subnets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList candidateIpv6Subnets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCandidateIpv6SubnetsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!candidateIpv6Subnets_.isModifiable()) {
         candidateIpv6Subnets_ = new com.google.protobuf.LazyStringArrayList(candidateIpv6Subnets_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -5265,7 +5252,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return A list containing the candidateIpv6Subnets.
      */
     public com.google.protobuf.ProtocolStringList getCandidateIpv6SubnetsList() {
-      return candidateIpv6Subnets_.getUnmodifiableView();
+      candidateIpv6Subnets_.makeImmutable();
+      return candidateIpv6Subnets_;
     }
     /**
      *
@@ -5330,6 +5318,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateIpv6SubnetsIsMutable();
       candidateIpv6Subnets_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5351,6 +5340,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateIpv6SubnetsIsMutable();
       candidateIpv6Subnets_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5369,6 +5359,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder addAllCandidateIpv6Subnets(java.lang.Iterable<java.lang.String> values) {
       ensureCandidateIpv6SubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, candidateIpv6Subnets_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5384,8 +5375,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCandidateIpv6Subnets() {
-      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -5408,18 +5400,19 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureCandidateIpv6SubnetsIsMutable();
       candidateIpv6Subnets_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList candidateSubnets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList candidateSubnets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCandidateSubnetsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!candidateSubnets_.isModifiable()) {
         candidateSubnets_ = new com.google.protobuf.LazyStringArrayList(candidateSubnets_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -5433,7 +5426,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return A list containing the candidateSubnets.
      */
     public com.google.protobuf.ProtocolStringList getCandidateSubnetsList() {
-      return candidateSubnets_.getUnmodifiableView();
+      candidateSubnets_.makeImmutable();
+      return candidateSubnets_;
     }
     /**
      *
@@ -5498,6 +5492,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateSubnetsIsMutable();
       candidateSubnets_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5519,6 +5514,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateSubnetsIsMutable();
       candidateSubnets_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5537,6 +5533,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder addAllCandidateSubnets(java.lang.Iterable<java.lang.String> values) {
       ensureCandidateSubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, candidateSubnets_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5552,8 +5549,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCandidateSubnets() {
-      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -5576,6 +5574,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureCandidateSubnetsIsMutable();
       candidateSubnets_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7168,15 +7167,15 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ipsecInternalAddresses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipsecInternalAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpsecInternalAddressesIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!ipsecInternalAddresses_.isModifiable()) {
         ipsecInternalAddresses_ =
             new com.google.protobuf.LazyStringArrayList(ipsecInternalAddresses_);
-        bitField0_ |= 0x00040000;
       }
+      bitField0_ |= 0x00040000;
     }
     /**
      *
@@ -7190,7 +7189,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return A list containing the ipsecInternalAddresses.
      */
     public com.google.protobuf.ProtocolStringList getIpsecInternalAddressesList() {
-      return ipsecInternalAddresses_.getUnmodifiableView();
+      ipsecInternalAddresses_.makeImmutable();
+      return ipsecInternalAddresses_;
     }
     /**
      *
@@ -7255,6 +7255,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureIpsecInternalAddressesIsMutable();
       ipsecInternalAddresses_.set(index, value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7276,6 +7277,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureIpsecInternalAddressesIsMutable();
       ipsecInternalAddresses_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7294,6 +7296,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder addAllIpsecInternalAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureIpsecInternalAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipsecInternalAddresses_);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7309,8 +7312,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIpsecInternalAddresses() {
-      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00040000);
+      ;
       onChanged();
       return this;
     }
@@ -7333,6 +7337,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureIpsecInternalAddressesIsMutable();
       ipsecInternalAddresses_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

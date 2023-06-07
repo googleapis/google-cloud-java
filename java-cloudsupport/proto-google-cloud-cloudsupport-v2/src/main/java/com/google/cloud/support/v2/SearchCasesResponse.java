@@ -48,11 +48,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
     return new SearchCasesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.support.v2.CaseServiceProto
         .internal_static_google_cloud_support_v2_SearchCasesResponse_descriptor;

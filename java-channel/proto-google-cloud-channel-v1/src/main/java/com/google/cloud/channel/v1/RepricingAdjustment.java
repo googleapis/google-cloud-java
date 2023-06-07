@@ -45,11 +45,6 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
     return new RepricingAdjustment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.RepricingProto
         .internal_static_google_cloud_channel_v1_RepricingAdjustment_descriptor;
@@ -66,6 +61,8 @@ public final class RepricingAdjustment extends com.google.protobuf.GeneratedMess
   }
 
   private int adjustmentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object adjustment_;
 
   public enum AdjustmentCase

@@ -67,6 +67,6 @@ public interface DataMaskingPolicyOrBuilder
   com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.PredefinedExpression
       getPredefinedExpression();
 
-  public com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.MaskingExpressionCase
+  com.google.cloud.bigquery.datapolicies.v1beta1.DataMaskingPolicy.MaskingExpressionCase
       getMaskingExpressionCase();
 }

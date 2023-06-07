@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest;
 import com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest;
@@ -328,6 +329,16 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
             HttpJsonCallSettings.<DeleteRegionNotificationEndpointRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "notification_endpoint",
+                          String.valueOf(request.getNotificationEndpoint()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRegionNotificationEndpointRequest, NotificationEndpoint>
         getTransportSettings =
@@ -335,12 +346,29 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                 .<GetRegionNotificationEndpointRequest, NotificationEndpoint>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "notification_endpoint",
+                          String.valueOf(request.getNotificationEndpoint()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionNotificationEndpointRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertRegionNotificationEndpointRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
         listTransportSettings =
@@ -348,6 +376,13 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                 .<ListRegionNotificationEndpointsRequest, NotificationEndpointList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

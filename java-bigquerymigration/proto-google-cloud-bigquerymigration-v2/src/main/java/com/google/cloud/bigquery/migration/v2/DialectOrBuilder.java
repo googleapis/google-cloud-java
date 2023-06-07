@@ -514,5 +514,5 @@ public interface DialectOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder getMysqlDialectOrBuilder();
 
-  public com.google.cloud.bigquery.migration.v2.Dialect.DialectValueCase getDialectValueCase();
+  com.google.cloud.bigquery.migration.v2.Dialect.DialectValueCase getDialectValueCase();
 }

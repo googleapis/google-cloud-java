@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetRegionInstanceGroupRequest;
 import com.google.cloud.compute.v1.InstanceGroup;
@@ -338,6 +339,14 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
         HttpJsonCallSettings.<GetRegionInstanceGroupRequest, InstanceGroup>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
         listTransportSettings =
@@ -345,6 +354,13 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                 .<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
@@ -354,12 +370,28 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                     newBuilder()
                 .setMethodDescriptor(listInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation>
         setNamedPortsTransportSettings =
             HttpJsonCallSettings.<SetNamedPortsRegionInstanceGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNamedPortsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getCallable =

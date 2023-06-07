@@ -48,11 +48,6 @@ public final class TranslationFileMapping extends com.google.protobuf.GeneratedM
     return new TranslationFileMapping();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_TranslationFileMapping_descriptor;

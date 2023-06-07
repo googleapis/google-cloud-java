@@ -47,11 +47,6 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
     return new UpdateBillingAccountRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.v1.CloudBillingProto
         .internal_static_google_cloud_billing_v1_UpdateBillingAccountRequest_descriptor;

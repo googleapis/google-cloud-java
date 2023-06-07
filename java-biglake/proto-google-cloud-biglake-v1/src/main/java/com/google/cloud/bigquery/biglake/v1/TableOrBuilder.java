@@ -305,5 +305,5 @@ public interface TableOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloud.bigquery.biglake.v1.Table.OptionsCase getOptionsCase();
+  com.google.cloud.bigquery.biglake.v1.Table.OptionsCase getOptionsCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListReservationsRequest;
 import com.google.cloud.compute.v1.DeleteReservationRequest;
@@ -646,41 +647,101 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                 .<AggregatedListReservationsRequest, ReservationAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteReservationRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("reservation", String.valueOf(request.getReservation()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetReservationRequest, Reservation> getTransportSettings =
         HttpJsonCallSettings.<GetReservationRequest, Reservation>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("reservation", String.valueOf(request.getReservation()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyReservationRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyReservationRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertReservationRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListReservationsRequest, ReservationList> listTransportSettings =
         HttpJsonCallSettings.<ListReservationsRequest, ReservationList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ResizeReservationRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("reservation", String.valueOf(request.getReservation()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyReservationRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyReservationRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsReservationRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -688,11 +749,27 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                 .<TestIamPermissionsReservationRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateReservationRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("reservation", String.valueOf(request.getReservation()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

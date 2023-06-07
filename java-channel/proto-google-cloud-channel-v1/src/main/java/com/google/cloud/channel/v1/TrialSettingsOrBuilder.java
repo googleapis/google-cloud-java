@@ -28,6 +28,7 @@ public interface TrialSettingsOrBuilder
    *
    * <pre>
    * Determines if the entitlement is in a trial or not:
+   *
    * * `true` - The entitlement is in trial.
    * * `false` - The entitlement is not in trial.
    * </pre>

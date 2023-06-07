@@ -382,6 +382,5 @@ public interface MigrationTaskOrBuilder
   com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResultOrBuilder
       getOrchestrationResultOrBuilder();
 
-  public com.google.cloud.bigquery.migration.v2alpha.MigrationTask.TaskDetailsCase
-      getTaskDetailsCase();
+  com.google.cloud.bigquery.migration.v2alpha.MigrationTask.TaskDetailsCase getTaskDetailsCase();
 }

@@ -50,11 +50,6 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     return new MigrationWorkflow();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.MigrationEntitiesProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_MigrationWorkflow_descriptor;
@@ -302,6 +297,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. Immutable. The unique identifier for the migration workflow. The ID is
    * server-generated.
+   *
    * Example: `projects/123/locations/us/workflows/345`
    * </pre>
    *
@@ -329,6 +325,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. Immutable. The unique identifier for the migration workflow. The ID is
    * server-generated.
+   *
    * Example: `projects/123/locations/us/workflows/345`
    * </pre>
    *
@@ -1195,6 +1192,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Immutable. The unique identifier for the migration workflow. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345`
      * </pre>
      *
@@ -1221,6 +1219,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Immutable. The unique identifier for the migration workflow. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345`
      * </pre>
      *
@@ -1247,6 +1246,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Immutable. The unique identifier for the migration workflow. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345`
      * </pre>
      *
@@ -1272,6 +1272,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Immutable. The unique identifier for the migration workflow. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345`
      * </pre>
      *
@@ -1293,6 +1294,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Immutable. The unique identifier for the migration workflow. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345`
      * </pre>
      *

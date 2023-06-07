@@ -292,5 +292,5 @@ public interface RepricingConfigOrBuilder
   com.google.cloud.channel.v1.ConditionalOverrideOrBuilder getConditionalOverridesOrBuilder(
       int index);
 
-  public com.google.cloud.channel.v1.RepricingConfig.GranularityCase getGranularityCase();
+  com.google.cloud.channel.v1.RepricingConfig.GranularityCase getGranularityCase();
 }

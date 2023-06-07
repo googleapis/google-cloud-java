@@ -48,11 +48,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     return new StartManualTransferRunsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
         .internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_descriptor;
@@ -188,11 +183,6 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TimeRange();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1223,6 +1213,8 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
   }
 
   private int timeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object time_;
 
   public enum TimeCase

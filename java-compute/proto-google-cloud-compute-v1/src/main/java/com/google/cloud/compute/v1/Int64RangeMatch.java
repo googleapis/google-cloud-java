@@ -45,11 +45,6 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
     return new Int64RangeMatch();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_Int64RangeMatch_descriptor;

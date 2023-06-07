@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.DeleteVpnTunnelRequest;
@@ -437,31 +438,75 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                 .<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteVpnTunnelRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteVpnTunnelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("vpn_tunnel", String.valueOf(request.getVpnTunnel()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetVpnTunnelRequest, VpnTunnel> getTransportSettings =
         HttpJsonCallSettings.<GetVpnTunnelRequest, VpnTunnel>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("vpn_tunnel", String.valueOf(request.getVpnTunnel()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertVpnTunnelRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertVpnTunnelRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListVpnTunnelsRequest, VpnTunnelList> listTransportSettings =
         HttpJsonCallSettings.<ListVpnTunnelsRequest, VpnTunnelList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsVpnTunnelRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsVpnTunnelRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

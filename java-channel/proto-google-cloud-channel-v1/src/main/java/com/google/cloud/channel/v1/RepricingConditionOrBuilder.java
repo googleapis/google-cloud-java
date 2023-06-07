@@ -58,5 +58,5 @@ public interface RepricingConditionOrBuilder
    */
   com.google.cloud.channel.v1.SkuGroupConditionOrBuilder getSkuGroupConditionOrBuilder();
 
-  public com.google.cloud.channel.v1.RepricingCondition.ConditionCase getConditionCase();
+  com.google.cloud.channel.v1.RepricingCondition.ConditionCase getConditionCase();
 }

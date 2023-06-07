@@ -54,14 +54,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     networkTier_ = "";
     portRange_ = "";
-    ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pscConnectionStatus_ = "";
     region_ = "";
     selfLink_ = "";
     serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
     serviceLabel_ = "";
     serviceName_ = "";
-    sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     subnetwork_ = "";
     target_ = "";
   }
@@ -70,11 +70,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ForwardingRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2318,7 +2313,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   public static final int PORTS_FIELD_NUMBER = 106854418;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ports_;
+  private com.google.protobuf.LazyStringArrayList ports_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2833,7 +2829,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   public static final int SOURCE_IP_RANGES_FIELD_NUMBER = 111563210;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sourceIpRanges_;
+  private com.google.protobuf.LazyStringArrayList sourceIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3738,8 +3735,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       networkTier_ = "";
       noAutomateDnsZone_ = false;
       portRange_ = "";
-      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00400000);
+      ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pscConnectionId_ = 0L;
       pscConnectionStatus_ = "";
       region_ = "";
@@ -3753,8 +3749,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x08000000);
       serviceLabel_ = "";
       serviceName_ = "";
-      sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x40000000);
+      sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       subnetwork_ = "";
       target_ = "";
       return this;
@@ -3805,11 +3800,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
-      if (((bitField0_ & 0x00400000) != 0)) {
-        ports_ = ports_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00400000);
-      }
-      result.ports_ = ports_;
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         if (((bitField0_ & 0x08000000) != 0)) {
           serviceDirectoryRegistrations_ =
@@ -3820,11 +3810,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.serviceDirectoryRegistrations_ = serviceDirectoryRegistrationsBuilder_.build();
       }
-      if (((bitField0_ & 0x40000000) != 0)) {
-        sourceIpRanges_ = sourceIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x40000000);
-      }
-      result.sourceIpRanges_ = sourceIpRanges_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.ForwardingRule result) {
@@ -3914,6 +3899,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         result.portRange_ = portRange_;
         to_bitField0_ |= 0x00080000;
       }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        ports_.makeImmutable();
+        result.ports_ = ports_;
+      }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00100000;
@@ -3937,6 +3926,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.serviceName_ = serviceName_;
         to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        sourceIpRanges_.makeImmutable();
+        result.sourceIpRanges_ = sourceIpRanges_;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
         result.subnetwork_ = subnetwork_;
@@ -4122,7 +4115,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ |= 0x00400000;
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
@@ -4188,7 +4181,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (!other.sourceIpRanges_.isEmpty()) {
         if (sourceIpRanges_.isEmpty()) {
           sourceIpRanges_ = other.sourceIpRanges_;
-          bitField0_ = (bitField0_ & ~0x40000000);
+          bitField0_ |= 0x40000000;
         } else {
           ensureSourceIpRangesIsMutable();
           sourceIpRanges_.addAll(other.sourceIpRanges_);
@@ -7155,14 +7148,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ports_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ports_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePortsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!ports_.isModifiable()) {
         ports_ = new com.google.protobuf.LazyStringArrayList(ports_);
-        bitField0_ |= 0x00400000;
       }
+      bitField0_ |= 0x00400000;
     }
     /**
      *
@@ -7176,7 +7169,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ports.
      */
     public com.google.protobuf.ProtocolStringList getPortsList() {
-      return ports_.getUnmodifiableView();
+      ports_.makeImmutable();
+      return ports_;
     }
     /**
      *
@@ -7241,6 +7235,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePortsIsMutable();
       ports_.set(index, value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7262,6 +7257,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePortsIsMutable();
       ports_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7280,6 +7276,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPorts(java.lang.Iterable<java.lang.String> values) {
       ensurePortsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ports_);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7295,8 +7292,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPorts() {
-      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00400000);
+      ;
       onChanged();
       return this;
     }
@@ -7319,6 +7317,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePortsIsMutable();
       ports_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8414,14 +8413,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList sourceIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sourceIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSourceIpRangesIsMutable() {
-      if (!((bitField0_ & 0x40000000) != 0)) {
+      if (!sourceIpRanges_.isModifiable()) {
         sourceIpRanges_ = new com.google.protobuf.LazyStringArrayList(sourceIpRanges_);
-        bitField0_ |= 0x40000000;
       }
+      bitField0_ |= 0x40000000;
     }
     /**
      *
@@ -8435,7 +8434,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sourceIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getSourceIpRangesList() {
-      return sourceIpRanges_.getUnmodifiableView();
+      sourceIpRanges_.makeImmutable();
+      return sourceIpRanges_;
     }
     /**
      *
@@ -8500,6 +8500,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.set(index, value);
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8521,6 +8522,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.add(value);
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8539,6 +8541,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSourceIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSourceIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceIpRanges_);
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8554,8 +8557,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceIpRanges() {
-      sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x40000000);
+      ;
       onChanged();
       return this;
     }
@@ -8578,6 +8582,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.add(value);
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }

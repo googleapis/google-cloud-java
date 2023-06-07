@@ -48,11 +48,6 @@ public final class ListDataSourcesRequest extends com.google.protobuf.GeneratedM
     return new ListDataSourcesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
         .internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesRequest_descriptor;

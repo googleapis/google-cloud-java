@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNodeTypesRequest;
 import com.google.cloud.compute.v1.GetNodeTypeRequest;
@@ -254,16 +255,37 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                 .<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetNodeTypeRequest, NodeType> getTransportSettings =
         HttpJsonCallSettings.<GetNodeTypeRequest, NodeType>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_type", String.valueOf(request.getNodeType()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNodeTypesRequest, NodeTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeTypesRequest, NodeTypeList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

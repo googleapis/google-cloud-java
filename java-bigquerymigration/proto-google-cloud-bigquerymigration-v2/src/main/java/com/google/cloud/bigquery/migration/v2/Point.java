@@ -45,11 +45,6 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
     return new Point();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.MigrationMetricsProto
         .internal_static_google_cloud_bigquery_migration_v2_Point_descriptor;

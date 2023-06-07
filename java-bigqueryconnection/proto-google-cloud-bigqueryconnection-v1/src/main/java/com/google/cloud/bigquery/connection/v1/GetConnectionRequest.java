@@ -48,11 +48,6 @@ public final class GetConnectionRequest extends com.google.protobuf.GeneratedMes
     return new GetConnectionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_GetConnectionRequest_descriptor;

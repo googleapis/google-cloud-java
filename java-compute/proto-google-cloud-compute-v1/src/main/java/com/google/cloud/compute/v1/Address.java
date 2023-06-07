@@ -53,18 +53,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     selfLink_ = "";
     status_ = "";
     subnetwork_ = "";
-    users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    users_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Address();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2282,7 +2277,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public static final int USERS_FIELD_NUMBER = 111578632;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList users_;
+  private com.google.protobuf.LazyStringArrayList users_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2801,8 +2797,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       selfLink_ = "";
       status_ = "";
       subnetwork_ = "";
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00020000);
+      users_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -2829,20 +2824,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Address buildPartial() {
       com.google.cloud.compute.v1.Address result = new com.google.cloud.compute.v1.Address(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Address result) {
-      if (((bitField0_ & 0x00020000) != 0)) {
-        users_ = users_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00020000);
-      }
-      result.users_ = users_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Address result) {
@@ -2915,6 +2901,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        users_.makeImmutable();
+        result.users_ = users_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3048,7 +3038,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ |= 0x00020000;
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -5181,14 +5171,14 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList users_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList users_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUsersIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!users_.isModifiable()) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
-        bitField0_ |= 0x00020000;
       }
+      bitField0_ |= 0x00020000;
     }
     /**
      *
@@ -5202,7 +5192,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the users.
      */
     public com.google.protobuf.ProtocolStringList getUsersList() {
-      return users_.getUnmodifiableView();
+      users_.makeImmutable();
+      return users_;
     }
     /**
      *
@@ -5267,6 +5258,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.set(index, value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5288,6 +5280,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5306,6 +5299,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUsers(java.lang.Iterable<java.lang.String> values) {
       ensureUsersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, users_);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5321,8 +5315,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsers() {
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      users_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00020000);
+      ;
       onChanged();
       return this;
     }
@@ -5345,6 +5340,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUsersIsMutable();
       users_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

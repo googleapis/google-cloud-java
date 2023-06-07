@@ -49,11 +49,6 @@ public final class GetImageFamilyViewRequest extends com.google.protobuf.Generat
     return new GetImageFamilyViewRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_GetImageFamilyViewRequest_descriptor;

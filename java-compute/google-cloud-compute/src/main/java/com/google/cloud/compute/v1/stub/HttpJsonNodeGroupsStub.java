@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddNodesNodeGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListNodeGroupsRequest;
@@ -873,6 +874,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
         HttpJsonCallSettings.<AddNodesNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(addNodesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>
         aggregatedListTransportSettings =
@@ -880,64 +889,156 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                 .<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNodeGroupRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteNodesNodeGroupRequest, Operation> deleteNodesTransportSettings =
         HttpJsonCallSettings.<DeleteNodesNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteNodesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetNodeGroupRequest, NodeGroup> getTransportSettings =
         HttpJsonCallSettings.<GetNodeGroupRequest, NodeGroup>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyNodeGroupRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyNodeGroupRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertNodeGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNodeGroupsRequest, NodeGroupList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeGroupsRequest, NodeGroupList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListNodesNodeGroupsRequest, NodeGroupsListNodes>
         listNodesTransportSettings =
             HttpJsonCallSettings.<ListNodesNodeGroupsRequest, NodeGroupsListNodes>newBuilder()
                 .setMethodDescriptor(listNodesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchNodeGroupRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNodeGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyNodeGroupRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetNodeTemplateNodeGroupRequest, Operation>
         setNodeTemplateTransportSettings =
             HttpJsonCallSettings.<SetNodeTemplateNodeGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNodeTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation>
         simulateMaintenanceEventTransportSettings =
             HttpJsonCallSettings.<SimulateMaintenanceEventNodeGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(simulateMaintenanceEventMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("node_group", String.valueOf(request.getNodeGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -945,6 +1046,14 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                 .<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
 
     this.addNodesCallable =

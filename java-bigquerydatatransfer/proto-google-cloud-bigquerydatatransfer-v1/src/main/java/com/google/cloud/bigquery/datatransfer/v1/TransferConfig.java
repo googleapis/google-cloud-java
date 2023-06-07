@@ -58,11 +58,6 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     return new TransferConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datatransfer.v1.TransferProto
         .internal_static_google_cloud_bigquery_datatransfer_v1_TransferConfig_descriptor;
@@ -80,6 +75,8 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -434,6 +431,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -469,6 +467,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -804,6 +803,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -830,6 +830,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -2509,6 +2510,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2543,6 +2545,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2577,6 +2580,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2610,6 +2614,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -2639,6 +2644,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * `first sunday of quarter 00:00`.
      * See more explanation about the format here:
      * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+     *
      * NOTE: The minimum interval time between recurring transfers depends on the
      * data source; refer to the documentation for your data source.
      * </pre>
@@ -3642,6 +3648,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3667,6 +3674,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3692,6 +3700,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3716,6 +3725,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>
@@ -3736,6 +3746,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Pub/Sub topic where notifications will be sent after transfer runs
      * associated with this transfer config finish.
+     *
      * The format for specifying a pubsub topic is:
      * `projects/{project}/topics/{topic}`
      * </pre>

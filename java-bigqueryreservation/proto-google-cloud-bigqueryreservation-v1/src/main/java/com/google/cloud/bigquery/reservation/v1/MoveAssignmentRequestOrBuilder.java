@@ -89,6 +89,7 @@ public interface MoveAssignmentRequestOrBuilder
    * <pre>
    * The optional assignment ID. A new assignment name is generated if this
    * field is empty.
+   *
    * This field can contain only lowercase alphanumeric characters or dashes.
    * Max length is 64 characters.
    * </pre>
@@ -104,6 +105,7 @@ public interface MoveAssignmentRequestOrBuilder
    * <pre>
    * The optional assignment ID. A new assignment name is generated if this
    * field is empty.
+   *
    * This field can contain only lowercase alphanumeric characters or dashes.
    * Max length is 64 characters.
    * </pre>

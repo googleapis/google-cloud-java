@@ -45,7 +45,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     expectedOutages_ = java.util.Collections.emptyList();
     googleIpAddress_ = "";
     googleReferenceId_ = "";
-    interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     interconnectType_ = "";
     kind_ = "";
     linkType_ = "";
@@ -62,11 +62,6 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Interconnect();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1301,7 +1296,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
   public static final int INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 425388415;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList interconnectAttachments_;
+  private com.google.protobuf.LazyStringArrayList interconnectAttachments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2669,8 +2665,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       googleIpAddress_ = "";
       googleReferenceId_ = "";
       id_ = 0L;
-      interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       interconnectType_ = "";
       kind_ = "";
       linkType_ = "";
@@ -2738,11 +2733,6 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.expectedOutages_ = expectedOutagesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        interconnectAttachments_ = interconnectAttachments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.interconnectAttachments_ = interconnectAttachments_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Interconnect result) {
@@ -2775,6 +2765,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        interconnectAttachments_.makeImmutable();
+        result.interconnectAttachments_ = interconnectAttachments_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.interconnectType_ = interconnectType_;
@@ -2964,7 +2958,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!other.interconnectAttachments_.isEmpty()) {
         if (interconnectAttachments_.isEmpty()) {
           interconnectAttachments_ = other.interconnectAttachments_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureInterconnectAttachmentsIsMutable();
           interconnectAttachments_.addAll(other.interconnectAttachments_);
@@ -4750,15 +4744,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList interconnectAttachments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList interconnectAttachments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInterconnectAttachmentsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!interconnectAttachments_.isModifiable()) {
         interconnectAttachments_ =
             new com.google.protobuf.LazyStringArrayList(interconnectAttachments_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -4772,7 +4766,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the interconnectAttachments.
      */
     public com.google.protobuf.ProtocolStringList getInterconnectAttachmentsList() {
-      return interconnectAttachments_.getUnmodifiableView();
+      interconnectAttachments_.makeImmutable();
+      return interconnectAttachments_;
     }
     /**
      *
@@ -4837,6 +4832,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInterconnectAttachmentsIsMutable();
       interconnectAttachments_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4858,6 +4854,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInterconnectAttachmentsIsMutable();
       interconnectAttachments_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4876,6 +4873,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInterconnectAttachments(java.lang.Iterable<java.lang.String> values) {
       ensureInterconnectAttachmentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, interconnectAttachments_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4891,8 +4889,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInterconnectAttachments() {
-      interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -4915,6 +4914,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInterconnectAttachmentsIsMutable();
       interconnectAttachments_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

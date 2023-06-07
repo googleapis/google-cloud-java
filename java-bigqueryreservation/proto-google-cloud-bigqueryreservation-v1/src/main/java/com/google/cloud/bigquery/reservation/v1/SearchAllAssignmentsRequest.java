@@ -52,11 +52,6 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
     return new SearchAllAssignmentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsRequest_descriptor;
@@ -140,7 +135,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Please specify resource name as assignee in the query.
+   *
    * Examples:
+   *
    * * `assignee=projects/myproject`
    * * `assignee=folders/123`
    * * `assignee=organizations/456`
@@ -167,7 +164,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Please specify resource name as assignee in the query.
+   *
    * Examples:
+   *
    * * `assignee=projects/myproject`
    * * `assignee=folders/123`
    * * `assignee=organizations/456`
@@ -815,7 +814,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Please specify resource name as assignee in the query.
+     *
      * Examples:
+     *
      * * `assignee=projects/myproject`
      * * `assignee=folders/123`
      * * `assignee=organizations/456`
@@ -841,7 +842,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Please specify resource name as assignee in the query.
+     *
      * Examples:
+     *
      * * `assignee=projects/myproject`
      * * `assignee=folders/123`
      * * `assignee=organizations/456`
@@ -867,7 +870,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Please specify resource name as assignee in the query.
+     *
      * Examples:
+     *
      * * `assignee=projects/myproject`
      * * `assignee=folders/123`
      * * `assignee=organizations/456`
@@ -892,7 +897,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Please specify resource name as assignee in the query.
+     *
      * Examples:
+     *
      * * `assignee=projects/myproject`
      * * `assignee=folders/123`
      * * `assignee=organizations/456`
@@ -913,7 +920,9 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Please specify resource name as assignee in the query.
+     *
      * Examples:
+     *
      * * `assignee=projects/myproject`
      * * `assignee=folders/123`
      * * `assignee=organizations/456`

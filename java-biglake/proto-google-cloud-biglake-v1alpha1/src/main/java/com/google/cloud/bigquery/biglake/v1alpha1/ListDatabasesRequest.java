@@ -48,11 +48,6 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
     return new ListDatabasesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.biglake.v1alpha1.MetastoreProto
         .internal_static_google_cloud_bigquery_biglake_v1alpha1_ListDatabasesRequest_descriptor;
@@ -158,6 +153,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListDatabases` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDatabases` must
    * match the call that provided the page token.
    * </pre>
@@ -184,6 +180,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListDatabases` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDatabases` must
    * match the call that provided the page token.
    * </pre>
@@ -793,6 +790,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListDatabases` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDatabases` must
      * match the call that provided the page token.
      * </pre>
@@ -818,6 +816,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListDatabases` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDatabases` must
      * match the call that provided the page token.
      * </pre>
@@ -843,6 +842,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListDatabases` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDatabases` must
      * match the call that provided the page token.
      * </pre>
@@ -867,6 +867,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListDatabases` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDatabases` must
      * match the call that provided the page token.
      * </pre>
@@ -887,6 +888,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListDatabases` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDatabases` must
      * match the call that provided the page token.
      * </pre>

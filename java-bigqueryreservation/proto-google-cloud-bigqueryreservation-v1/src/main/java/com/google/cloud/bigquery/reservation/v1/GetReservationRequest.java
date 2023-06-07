@@ -48,11 +48,6 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
     return new GetReservationRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_GetReservationRequest_descriptor;

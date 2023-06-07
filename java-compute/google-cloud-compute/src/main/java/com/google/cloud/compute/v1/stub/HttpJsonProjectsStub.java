@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DisableXpnHostProjectRequest;
 import com.google.cloud.compute.v1.DisableXpnResourceProjectRequest;
@@ -806,33 +807,69 @@ public class HttpJsonProjectsStub extends ProjectsStub {
         HttpJsonCallSettings.<DisableXpnHostProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(disableXpnHostMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DisableXpnResourceProjectRequest, Operation>
         disableXpnResourceTransportSettings =
             HttpJsonCallSettings.<DisableXpnResourceProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(disableXpnResourceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<EnableXpnHostProjectRequest, Operation> enableXpnHostTransportSettings =
         HttpJsonCallSettings.<EnableXpnHostProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(enableXpnHostMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<EnableXpnResourceProjectRequest, Operation>
         enableXpnResourceTransportSettings =
             HttpJsonCallSettings.<EnableXpnResourceProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(enableXpnResourceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetProjectRequest, Project> getTransportSettings =
         HttpJsonCallSettings.<GetProjectRequest, Project>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetXpnHostProjectRequest, Project> getXpnHostTransportSettings =
         HttpJsonCallSettings.<GetXpnHostProjectRequest, Project>newBuilder()
             .setMethodDescriptor(getXpnHostMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>
         getXpnResourcesTransportSettings =
@@ -840,39 +877,81 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                 .<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>newBuilder()
                 .setMethodDescriptor(getXpnResourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListXpnHostsProjectsRequest, XpnHostList> listXpnHostsTransportSettings =
         HttpJsonCallSettings.<ListXpnHostsProjectsRequest, XpnHostList>newBuilder()
             .setMethodDescriptor(listXpnHostsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<MoveDiskProjectRequest, Operation> moveDiskTransportSettings =
         HttpJsonCallSettings.<MoveDiskProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(moveDiskMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceTransportSettings =
         HttpJsonCallSettings.<MoveInstanceProjectRequest, Operation>newBuilder()
             .setMethodDescriptor(moveInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
         setCommonInstanceMetadataTransportSettings =
             HttpJsonCallSettings.<SetCommonInstanceMetadataProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(setCommonInstanceMetadataMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetDefaultNetworkTierProjectRequest, Operation>
         setDefaultNetworkTierTransportSettings =
             HttpJsonCallSettings.<SetDefaultNetworkTierProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(setDefaultNetworkTierMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetUsageExportBucketProjectRequest, Operation>
         setUsageExportBucketTransportSettings =
             HttpJsonCallSettings.<SetUsageExportBucketProjectRequest, Operation>newBuilder()
                 .setMethodDescriptor(setUsageExportBucketMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
 
     this.disableXpnHostCallable =

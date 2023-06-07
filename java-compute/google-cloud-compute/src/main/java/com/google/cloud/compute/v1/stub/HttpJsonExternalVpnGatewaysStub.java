@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.ExternalVpnGateway;
@@ -414,16 +415,38 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
         HttpJsonCallSettings.<DeleteExternalVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "external_vpn_gateway", String.valueOf(request.getExternalVpnGateway()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetExternalVpnGatewayRequest, ExternalVpnGateway> getTransportSettings =
         HttpJsonCallSettings.<GetExternalVpnGatewayRequest, ExternalVpnGateway>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "external_vpn_gateway", String.valueOf(request.getExternalVpnGateway()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertExternalVpnGatewayRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertExternalVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
         listTransportSettings =
@@ -431,11 +454,24 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                 .<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsExternalVpnGatewayRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -443,6 +479,13 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                 .<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

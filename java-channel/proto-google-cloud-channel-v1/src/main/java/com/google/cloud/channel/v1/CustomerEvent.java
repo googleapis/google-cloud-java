@@ -48,11 +48,6 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
     return new CustomerEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.SubscriberEventProto
         .internal_static_google_cloud_channel_v1_CustomerEvent_descriptor;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.billing.budgets.v1beta1.Budget;
 import com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest;
@@ -32,7 +33,6 @@ import com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest;
 import com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest;
 import com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse;
 import com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -147,9 +147,9 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
             .setMethodDescriptor(createBudgetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateBudgetRequest, Budget> updateBudgetTransportSettings =
@@ -157,9 +157,9 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
             .setMethodDescriptor(updateBudgetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("budget.name", String.valueOf(request.getBudget().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("budget.name", String.valueOf(request.getBudget().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBudgetRequest, Budget> getBudgetTransportSettings =
@@ -167,9 +167,9 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
             .setMethodDescriptor(getBudgetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBudgetsRequest, ListBudgetsResponse> listBudgetsTransportSettings =
@@ -177,9 +177,9 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
             .setMethodDescriptor(listBudgetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteBudgetRequest, Empty> deleteBudgetTransportSettings =
@@ -187,9 +187,9 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
             .setMethodDescriptor(deleteBudgetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

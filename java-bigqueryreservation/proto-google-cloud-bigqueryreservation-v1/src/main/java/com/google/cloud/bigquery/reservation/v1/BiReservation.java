@@ -48,11 +48,6 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     return new BiReservation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_BiReservation_descriptor;

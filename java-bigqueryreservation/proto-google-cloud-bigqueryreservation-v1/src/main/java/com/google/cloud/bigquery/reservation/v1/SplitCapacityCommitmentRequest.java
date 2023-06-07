@@ -49,11 +49,6 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
     return new SplitCapacityCommitmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentRequest_descriptor;

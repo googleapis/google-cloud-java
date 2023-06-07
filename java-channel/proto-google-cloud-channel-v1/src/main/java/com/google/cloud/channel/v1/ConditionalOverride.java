@@ -47,11 +47,6 @@ public final class ConditionalOverride extends com.google.protobuf.GeneratedMess
     return new ConditionalOverride();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.RepricingProto
         .internal_static_google_cloud_channel_v1_ConditionalOverride_descriptor;

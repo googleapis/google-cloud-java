@@ -273,5 +273,5 @@ public interface MigrationTaskOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
 
-  public com.google.cloud.bigquery.migration.v2.MigrationTask.TaskDetailsCase getTaskDetailsCase();
+  com.google.cloud.bigquery.migration.v2.MigrationTask.TaskDetailsCase getTaskDetailsCase();
 }

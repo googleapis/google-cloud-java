@@ -229,6 +229,6 @@ public interface ListTransferableOffersRequestOrBuilder
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
-  public com.google.cloud.channel.v1.ListTransferableOffersRequest.TransferredCustomerIdentityCase
+  com.google.cloud.channel.v1.ListTransferableOffersRequest.TransferredCustomerIdentityCase
       getTransferredCustomerIdentityCase();
 }

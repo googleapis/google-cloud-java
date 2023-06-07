@@ -43,7 +43,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     description_ = "";
     type_ = 0;
     validationRegex_ = "";
-    allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
     fields_ = java.util.Collections.emptyList();
     validationDescription_ = "";
     validationHelpUrl_ = "";
@@ -53,11 +53,6 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataSourceParameter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -604,7 +599,8 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
   public static final int ALLOWED_VALUES_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedValues_;
+  private com.google.protobuf.LazyStringArrayList allowedValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1353,8 +1349,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       required_ = false;
       repeated_ = false;
       validationRegex_ = "";
-      allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       minValue_ = null;
       if (minValueBuilder_ != null) {
         minValueBuilder_.dispose();
@@ -1415,11 +1410,6 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
 
     private void buildPartialRepeatedFields(
         com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        allowedValues_ = allowedValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.allowedValues_ = allowedValues_;
       if (fieldsBuilder_ == null) {
         if (((bitField0_ & 0x00000400) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -1454,6 +1444,10 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.validationRegex_ = validationRegex_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        allowedValues_.makeImmutable();
+        result.allowedValues_ = allowedValues_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.minValue_ = minValueBuilder_ == null ? minValue_ : minValueBuilder_.build();
@@ -1557,7 +1551,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       if (!other.allowedValues_.isEmpty()) {
         if (allowedValues_.isEmpty()) {
           allowedValues_ = other.allowedValues_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureAllowedValuesIsMutable();
           allowedValues_.addAll(other.allowedValues_);
@@ -2389,14 +2383,14 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowedValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedValuesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!allowedValues_.isModifiable()) {
         allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2410,7 +2404,8 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * @return A list containing the allowedValues.
      */
     public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
-      return allowedValues_.getUnmodifiableView();
+      allowedValues_.makeImmutable();
+      return allowedValues_;
     }
     /**
      *
@@ -2475,6 +2470,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       ensureAllowedValuesIsMutable();
       allowedValues_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2496,6 +2492,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       }
       ensureAllowedValuesIsMutable();
       allowedValues_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2514,6 +2511,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
     public Builder addAllAllowedValues(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedValues_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2529,8 +2527,9 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowedValues() {
-      allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2553,6 +2552,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureAllowedValuesIsMutable();
       allowedValues_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

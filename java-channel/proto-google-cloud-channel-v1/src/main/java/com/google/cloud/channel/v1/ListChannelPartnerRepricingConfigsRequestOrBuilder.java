@@ -121,6 +121,7 @@ public interface ListChannelPartnerRepricingConfigsRequestOrBuilder
    * (channel_partner_link only). You can use this filter when you support a
    * BatchGet-like query. To use the filter, you must set
    * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+   *
    * Example: `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c2`.
@@ -140,6 +141,7 @@ public interface ListChannelPartnerRepricingConfigsRequestOrBuilder
    * (channel_partner_link only). You can use this filter when you support a
    * BatchGet-like query. To use the filter, you must set
    * `parent=accounts/{account_id}/channelPartnerLinks/-`.
+   *
    * Example: `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c2`.

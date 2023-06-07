@@ -48,11 +48,6 @@ public final class ListDataPoliciesResponse extends com.google.protobuf.Generate
     return new ListDataPoliciesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicyProto
         .internal_static_google_cloud_bigquery_datapolicies_v1beta1_ListDataPoliciesResponse_descriptor;

@@ -351,5 +351,5 @@ public interface ConnectionOrBuilder
    */
   boolean getHasCredential();
 
-  public com.google.cloud.bigquery.connection.v1.Connection.PropertiesCase getPropertiesCase();
+  com.google.cloud.bigquery.connection.v1.Connection.PropertiesCase getPropertiesCase();
 }

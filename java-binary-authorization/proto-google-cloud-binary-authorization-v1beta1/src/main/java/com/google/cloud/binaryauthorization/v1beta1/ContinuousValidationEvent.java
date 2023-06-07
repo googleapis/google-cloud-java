@@ -45,11 +45,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     return new ContinuousValidationEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_descriptor;
@@ -328,11 +323,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       return new ContinuousValidationPodEvent();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
           .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_descriptor;
@@ -608,11 +598,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ImageDetails();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3995,11 +3980,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       return new UnsupportedPolicyEvent();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
           .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor;
@@ -4650,6 +4630,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
   }
 
   private int eventTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object eventType_;
 
   public enum EventTypeCase

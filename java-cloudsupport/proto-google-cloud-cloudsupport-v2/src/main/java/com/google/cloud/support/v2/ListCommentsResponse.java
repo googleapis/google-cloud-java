@@ -48,11 +48,6 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
     return new ListCommentsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.support.v2.CommentServiceProto
         .internal_static_google_cloud_support_v2_ListCommentsResponse_descriptor;

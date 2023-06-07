@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSslCertificatesRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateRequest;
@@ -378,26 +379,58 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                 .<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSslCertificateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSslCertificateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("ssl_certificate", String.valueOf(request.getSslCertificate()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSslCertificateRequest, SslCertificate> getTransportSettings =
         HttpJsonCallSettings.<GetSslCertificateRequest, SslCertificate>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("ssl_certificate", String.valueOf(request.getSslCertificate()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertSslCertificateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSslCertificateRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSslCertificatesRequest, SslCertificateList> listTransportSettings =
         HttpJsonCallSettings.<ListSslCertificatesRequest, SslCertificateList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

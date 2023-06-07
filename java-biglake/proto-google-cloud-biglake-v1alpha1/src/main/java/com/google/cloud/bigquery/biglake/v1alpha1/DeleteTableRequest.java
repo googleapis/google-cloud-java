@@ -47,11 +47,6 @@ public final class DeleteTableRequest extends com.google.protobuf.GeneratedMessa
     return new DeleteTableRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.biglake.v1alpha1.MetastoreProto
         .internal_static_google_cloud_bigquery_biglake_v1alpha1_DeleteTableRequest_descriptor;

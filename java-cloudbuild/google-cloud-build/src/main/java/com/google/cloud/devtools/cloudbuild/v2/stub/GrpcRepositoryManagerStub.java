@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloudbuild.v2.BatchCreateRepositoriesRequest;
 import com.google.cloudbuild.v2.BatchCreateRepositoriesResponse;
@@ -49,7 +50,6 @@ import com.google.cloudbuild.v2.ListRepositoriesResponse;
 import com.google.cloudbuild.v2.OperationMetadata;
 import com.google.cloudbuild.v2.Repository;
 import com.google.cloudbuild.v2.UpdateConnectionRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -331,9 +331,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(createConnectionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
@@ -341,9 +341,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(getConnectionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListConnectionsRequest, ListConnectionsResponse>
@@ -352,9 +352,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(listConnectionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateConnectionRequest, Operation> updateConnectionTransportSettings =
@@ -362,9 +362,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(updateConnectionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("connection.name", String.valueOf(request.getConnection().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("connection.name", String.valueOf(request.getConnection().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteConnectionRequest, Operation> deleteConnectionTransportSettings =
@@ -372,9 +372,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(deleteConnectionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
@@ -382,9 +382,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(createRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateRepositoriesRequest, Operation>
@@ -393,9 +393,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(batchCreateRepositoriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
@@ -403,9 +403,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(getRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRepositoriesRequest, ListRepositoriesResponse>
@@ -414,9 +414,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(listRepositoriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteRepositoryRequest, Operation> deleteRepositoryTransportSettings =
@@ -424,9 +424,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(deleteRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
@@ -435,9 +435,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(fetchReadWriteTokenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("repository", String.valueOf(request.getRepository()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("repository", String.valueOf(request.getRepository()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<FetchReadTokenRequest, FetchReadTokenResponse>
@@ -446,9 +446,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(fetchReadTokenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("repository", String.valueOf(request.getRepository()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("repository", String.valueOf(request.getRepository()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<FetchLinkableRepositoriesRequest, FetchLinkableRepositoriesResponse>
@@ -458,9 +458,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(fetchLinkableRepositoriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("connection", String.valueOf(request.getConnection()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("connection", String.valueOf(request.getConnection()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -468,9 +468,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -478,9 +478,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -489,9 +489,9 @@ public class GrpcRepositoryManagerStub extends RepositoryManagerStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

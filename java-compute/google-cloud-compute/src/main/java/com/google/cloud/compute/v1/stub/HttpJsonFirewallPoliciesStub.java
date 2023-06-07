@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleFirewallPolicyRequest;
@@ -1032,26 +1033,56 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
             HttpJsonCallSettings.<AddAssociationFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(addAssociationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddRuleFirewallPolicyRequest, Operation> addRuleTransportSettings =
         HttpJsonCallSettings.<AddRuleFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(addRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CloneRulesFirewallPolicyRequest, Operation> cloneRulesTransportSettings =
         HttpJsonCallSettings.<CloneRulesFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(cloneRulesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteFirewallPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetFirewallPolicyRequest, FirewallPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetFirewallPolicyRequest, FirewallPolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>
         getAssociationTransportSettings =
@@ -1059,17 +1090,35 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                 .<GetAssociationFirewallPolicyRequest, FirewallPolicyAssociation>newBuilder()
                 .setMethodDescriptor(getAssociationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyFirewallPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRuleFirewallPolicyRequest, FirewallPolicyRule>
         getRuleTransportSettings =
             HttpJsonCallSettings.<GetRuleFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
                 .setMethodDescriptor(getRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertFirewallPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertFirewallPolicyRequest, Operation>newBuilder()
@@ -1094,32 +1143,68 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
         HttpJsonCallSettings.<MoveFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(moveMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchFirewallPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchRuleFirewallPolicyRequest, Operation> patchRuleTransportSettings =
         HttpJsonCallSettings.<PatchRuleFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemoveAssociationFirewallPolicyRequest, Operation>
         removeAssociationTransportSettings =
             HttpJsonCallSettings.<RemoveAssociationFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeAssociationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveRuleFirewallPolicyRequest, Operation> removeRuleTransportSettings =
         HttpJsonCallSettings.<RemoveRuleFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(removeRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyFirewallPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyFirewallPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1127,6 +1212,12 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                 .<TestIamPermissionsFirewallPolicyRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.addAssociationCallable =

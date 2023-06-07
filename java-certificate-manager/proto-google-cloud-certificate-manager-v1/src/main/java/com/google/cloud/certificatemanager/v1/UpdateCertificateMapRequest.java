@@ -45,11 +45,6 @@ public final class UpdateCertificateMapRequest extends com.google.protobuf.Gener
     return new UpdateCertificateMapRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateManagerProto
         .internal_static_google_cloud_certificatemanager_v1_UpdateCertificateMapRequest_descriptor;

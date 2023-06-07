@@ -47,11 +47,6 @@ public final class HiveDatabaseOptions extends com.google.protobuf.GeneratedMess
     return new HiveDatabaseOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.biglake.v1.MetastoreProto
         .internal_static_google_cloud_bigquery_biglake_v1_HiveDatabaseOptions_descriptor;

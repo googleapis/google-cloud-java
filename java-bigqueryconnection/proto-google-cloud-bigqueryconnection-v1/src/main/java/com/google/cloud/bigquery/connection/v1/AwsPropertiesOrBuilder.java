@@ -116,6 +116,6 @@ public interface AwsPropertiesOrBuilder
    */
   com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder getAccessRoleOrBuilder();
 
-  public com.google.cloud.bigquery.connection.v1.AwsProperties.AuthenticationMethodCase
+  com.google.cloud.bigquery.connection.v1.AwsProperties.AuthenticationMethodCase
       getAuthenticationMethodCase();
 }

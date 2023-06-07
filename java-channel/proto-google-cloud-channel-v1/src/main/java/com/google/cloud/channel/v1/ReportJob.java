@@ -49,11 +49,6 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
     return new ReportJob();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ReportsServiceProto
         .internal_static_google_cloud_channel_v1_ReportJob_descriptor;

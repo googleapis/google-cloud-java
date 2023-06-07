@@ -56,7 +56,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     networkInterfaces_ = java.util.Collections.emptyList();
     privateIpv6GoogleAccess_ = "";
-    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
     serviceAccounts_ = java.util.Collections.emptyList();
     sourceMachineImage_ = "";
@@ -69,11 +69,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2560,7 +2555,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourcePolicies_;
+  private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4333,8 +4329,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         reservationAffinityBuilder_.dispose();
         reservationAffinityBuilder_ = null;
       }
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x20000000);
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
         resourceStatusBuilder_.dispose();
@@ -4444,11 +4439,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
-      if (((bitField0_ & 0x20000000) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x20000000);
-      }
-      result.resourcePolicies_ = resourcePolicies_;
       if (serviceAccountsBuilder_ == null) {
         if (((bitField1_ & 0x00000004) != 0)) {
           serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
@@ -4579,6 +4569,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 ? reservationAffinity_
                 : reservationAffinityBuilder_.build();
         to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        resourcePolicies_.makeImmutable();
+        result.resourcePolicies_ = resourcePolicies_;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
         result.resourceStatus_ =
@@ -4889,7 +4883,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ |= 0x20000000;
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -9868,14 +9862,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return reservationAffinityBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList resourcePolicies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x20000000) != 0)) {
+      if (!resourcePolicies_.isModifiable()) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x20000000;
       }
+      bitField0_ |= 0x20000000;
     }
     /**
      *
@@ -9889,7 +9883,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the resourcePolicies.
      */
     public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
-      return resourcePolicies_.getUnmodifiableView();
+      resourcePolicies_.makeImmutable();
+      return resourcePolicies_;
     }
     /**
      *
@@ -9954,6 +9949,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.set(index, value);
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9975,6 +9971,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9993,6 +9990,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllResourcePolicies(java.lang.Iterable<java.lang.String> values) {
       ensureResourcePoliciesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourcePolicies_);
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10008,8 +10006,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourcePolicies() {
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x20000000);
+      ;
       onChanged();
       return this;
     }
@@ -10032,6 +10031,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

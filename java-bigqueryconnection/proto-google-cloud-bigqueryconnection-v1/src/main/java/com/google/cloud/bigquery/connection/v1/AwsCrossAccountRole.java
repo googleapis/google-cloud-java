@@ -50,11 +50,6 @@ public final class AwsCrossAccountRole extends com.google.protobuf.GeneratedMess
     return new AwsCrossAccountRole();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_AwsCrossAccountRole_descriptor;

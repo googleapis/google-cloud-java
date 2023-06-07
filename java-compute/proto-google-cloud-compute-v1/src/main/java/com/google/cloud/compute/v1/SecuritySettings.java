@@ -39,18 +39,13 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
   private SecuritySettings() {
     clientTlsPolicy_ = "";
-    subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subjectAltNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecuritySettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,7 +133,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   public static final int SUBJECT_ALT_NAMES_FIELD_NUMBER = 330029535;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subjectAltNames_;
+  private com.google.protobuf.LazyStringArrayList subjectAltNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -419,8 +415,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       clientTlsPolicy_ = "";
-      subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      subjectAltNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -448,20 +443,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.SecuritySettings buildPartial() {
       com.google.cloud.compute.v1.SecuritySettings result =
           new com.google.cloud.compute.v1.SecuritySettings(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SecuritySettings result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        subjectAltNames_ = subjectAltNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.subjectAltNames_ = subjectAltNames_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.SecuritySettings result) {
@@ -470,6 +456,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.clientTlsPolicy_ = clientTlsPolicy_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        subjectAltNames_.makeImmutable();
+        result.subjectAltNames_ = subjectAltNames_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -527,7 +517,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (!other.subjectAltNames_.isEmpty()) {
         if (subjectAltNames_.isEmpty()) {
           subjectAltNames_ = other.subjectAltNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureSubjectAltNamesIsMutable();
           subjectAltNames_.addAll(other.subjectAltNames_);
@@ -712,14 +702,14 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subjectAltNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subjectAltNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubjectAltNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!subjectAltNames_.isModifiable()) {
         subjectAltNames_ = new com.google.protobuf.LazyStringArrayList(subjectAltNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -733,7 +723,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return A list containing the subjectAltNames.
      */
     public com.google.protobuf.ProtocolStringList getSubjectAltNamesList() {
-      return subjectAltNames_.getUnmodifiableView();
+      subjectAltNames_.makeImmutable();
+      return subjectAltNames_;
     }
     /**
      *
@@ -798,6 +789,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       ensureSubjectAltNamesIsMutable();
       subjectAltNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -819,6 +811,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       ensureSubjectAltNamesIsMutable();
       subjectAltNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -837,6 +830,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public Builder addAllSubjectAltNames(java.lang.Iterable<java.lang.String> values) {
       ensureSubjectAltNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subjectAltNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -852,8 +846,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubjectAltNames() {
-      subjectAltNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subjectAltNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -876,6 +871,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSubjectAltNamesIsMutable();
       subjectAltNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -48,11 +48,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     return new CloudSpannerProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_CloudSpannerProperties_descriptor;
@@ -172,7 +167,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
    * execute their Cloud Spanner query. The role is passthrough here. If the
    * user is not authorized to use the specified role, they get an error. This
    * validation happens on Cloud Spanner.
+   *
    * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+   *
    * REQUIRES: database role name must start with uppercase/lowercase letter
    * and only contain uppercase/lowercase letters, numbers, and underscores.
    * </pre>
@@ -204,7 +201,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
    * execute their Cloud Spanner query. The role is passthrough here. If the
    * user is not authorized to use the specified role, they get an error. This
    * validation happens on Cloud Spanner.
+   *
    * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+   *
    * REQUIRES: database role name must start with uppercase/lowercase letter
    * and only contain uppercase/lowercase letters, numbers, and underscores.
    * </pre>
@@ -870,7 +869,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * execute their Cloud Spanner query. The role is passthrough here. If the
      * user is not authorized to use the specified role, they get an error. This
      * validation happens on Cloud Spanner.
+     *
      * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     *
      * REQUIRES: database role name must start with uppercase/lowercase letter
      * and only contain uppercase/lowercase letters, numbers, and underscores.
      * </pre>
@@ -901,7 +902,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * execute their Cloud Spanner query. The role is passthrough here. If the
      * user is not authorized to use the specified role, they get an error. This
      * validation happens on Cloud Spanner.
+     *
      * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     *
      * REQUIRES: database role name must start with uppercase/lowercase letter
      * and only contain uppercase/lowercase letters, numbers, and underscores.
      * </pre>
@@ -932,7 +935,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * execute their Cloud Spanner query. The role is passthrough here. If the
      * user is not authorized to use the specified role, they get an error. This
      * validation happens on Cloud Spanner.
+     *
      * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     *
      * REQUIRES: database role name must start with uppercase/lowercase letter
      * and only contain uppercase/lowercase letters, numbers, and underscores.
      * </pre>
@@ -962,7 +967,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * execute their Cloud Spanner query. The role is passthrough here. If the
      * user is not authorized to use the specified role, they get an error. This
      * validation happens on Cloud Spanner.
+     *
      * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     *
      * REQUIRES: database role name must start with uppercase/lowercase letter
      * and only contain uppercase/lowercase letters, numbers, and underscores.
      * </pre>
@@ -988,7 +995,9 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
      * execute their Cloud Spanner query. The role is passthrough here. If the
      * user is not authorized to use the specified role, they get an error. This
      * validation happens on Cloud Spanner.
+     *
      * See https://cloud.google.com/spanner/docs/fgac-about for more details.
+     *
      * REQUIRES: database role name must start with uppercase/lowercase letter
      * and only contain uppercase/lowercase letters, numbers, and underscores.
      * </pre>

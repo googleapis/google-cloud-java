@@ -47,11 +47,6 @@ public final class StartMigrationWorkflowRequest extends com.google.protobuf.Gen
     return new StartMigrationWorkflowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.MigrationServiceProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_StartMigrationWorkflowRequest_descriptor;

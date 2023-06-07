@@ -109,6 +109,7 @@ public interface ListMigrationWorkflowsRequestOrBuilder
    * <pre>
    * A page token, received from previous `ListMigrationWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigrationWorkflows`
    * must match the call that provided the page token.
    * </pre>
@@ -124,6 +125,7 @@ public interface ListMigrationWorkflowsRequestOrBuilder
    * <pre>
    * A page token, received from previous `ListMigrationWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigrationWorkflows`
    * must match the call that provided the page token.
    * </pre>

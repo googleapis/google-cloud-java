@@ -54,11 +54,6 @@ public final class AppConnector extends com.google.protobuf.GeneratedMessageV3
     return new AppConnector();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorsServiceProto
         .internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnector_descriptor;
@@ -360,8 +355,7 @@ public final class AppConnector extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.PrincipalInfo.ServiceAccountOrBuilder
         getServiceAccountOrBuilder();
 
-    public com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.PrincipalInfo.TypeCase
-        getTypeCase();
+    com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.PrincipalInfo.TypeCase getTypeCase();
   }
   /**
    *
@@ -388,11 +382,6 @@ public final class AppConnector extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PrincipalInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -469,11 +458,6 @@ public final class AppConnector extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ServiceAccount();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1122,6 +1106,8 @@ public final class AppConnector extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
 
     public enum TypeCase

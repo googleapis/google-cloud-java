@@ -42,13 +42,13 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     detailedStatus_ = "";
     kind_ = "";
-    localTrafficSelector_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    localTrafficSelector_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     peerExternalGateway_ = "";
     peerGcpGateway_ = "";
     peerIp_ = "";
     region_ = "";
-    remoteTrafficSelector_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    remoteTrafficSelector_ = com.google.protobuf.LazyStringArrayList.emptyList();
     router_ = "";
     selfLink_ = "";
     sharedSecret_ = "";
@@ -62,11 +62,6 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VpnTunnel();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -817,7 +812,8 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
   public static final int LOCAL_TRAFFIC_SELECTOR_FIELD_NUMBER = 317314613;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList localTrafficSelector_;
+  private com.google.protobuf.LazyStringArrayList localTrafficSelector_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1243,7 +1239,8 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
   public static final int REMOTE_TRAFFIC_SELECTOR_FIELD_NUMBER = 358887098;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList remoteTrafficSelector_;
+  private com.google.protobuf.LazyStringArrayList remoteTrafficSelector_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2316,16 +2313,14 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       id_ = 0L;
       ikeVersion_ = 0;
       kind_ = "";
-      localTrafficSelector_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      localTrafficSelector_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
       peerExternalGateway_ = "";
       peerExternalGatewayInterface_ = 0;
       peerGcpGateway_ = "";
       peerIp_ = "";
       region_ = "";
-      remoteTrafficSelector_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      remoteTrafficSelector_ = com.google.protobuf.LazyStringArrayList.emptyList();
       router_ = "";
       selfLink_ = "";
       sharedSecret_ = "";
@@ -2361,25 +2356,11 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.VpnTunnel buildPartial() {
       com.google.cloud.compute.v1.VpnTunnel result =
           new com.google.cloud.compute.v1.VpnTunnel(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.VpnTunnel result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        localTrafficSelector_ = localTrafficSelector_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.localTrafficSelector_ = localTrafficSelector_;
-      if (((bitField0_ & 0x00002000) != 0)) {
-        remoteTrafficSelector_ = remoteTrafficSelector_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00002000);
-      }
-      result.remoteTrafficSelector_ = remoteTrafficSelector_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.VpnTunnel result) {
@@ -2409,6 +2390,10 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        localTrafficSelector_.makeImmutable();
+        result.localTrafficSelector_ = localTrafficSelector_;
+      }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000040;
@@ -2432,6 +2417,10 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        remoteTrafficSelector_.makeImmutable();
+        result.remoteTrafficSelector_ = remoteTrafficSelector_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.router_ = router_;
@@ -2542,7 +2531,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       if (!other.localTrafficSelector_.isEmpty()) {
         if (localTrafficSelector_.isEmpty()) {
           localTrafficSelector_ = other.localTrafficSelector_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureLocalTrafficSelectorIsMutable();
           localTrafficSelector_.addAll(other.localTrafficSelector_);
@@ -2580,7 +2569,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       if (!other.remoteTrafficSelector_.isEmpty()) {
         if (remoteTrafficSelector_.isEmpty()) {
           remoteTrafficSelector_ = other.remoteTrafficSelector_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ |= 0x00002000;
         } else {
           ensureRemoteTrafficSelectorIsMutable();
           remoteTrafficSelector_.addAll(other.remoteTrafficSelector_);
@@ -3420,14 +3409,14 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList localTrafficSelector_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList localTrafficSelector_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocalTrafficSelectorIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!localTrafficSelector_.isModifiable()) {
         localTrafficSelector_ = new com.google.protobuf.LazyStringArrayList(localTrafficSelector_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -3441,7 +3430,8 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the localTrafficSelector.
      */
     public com.google.protobuf.ProtocolStringList getLocalTrafficSelectorList() {
-      return localTrafficSelector_.getUnmodifiableView();
+      localTrafficSelector_.makeImmutable();
+      return localTrafficSelector_;
     }
     /**
      *
@@ -3506,6 +3496,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocalTrafficSelectorIsMutable();
       localTrafficSelector_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3527,6 +3518,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocalTrafficSelectorIsMutable();
       localTrafficSelector_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3545,6 +3537,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLocalTrafficSelector(java.lang.Iterable<java.lang.String> values) {
       ensureLocalTrafficSelectorIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, localTrafficSelector_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3560,8 +3553,9 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalTrafficSelector() {
-      localTrafficSelector_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      localTrafficSelector_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -3584,6 +3578,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLocalTrafficSelectorIsMutable();
       localTrafficSelector_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4256,15 +4251,15 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList remoteTrafficSelector_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList remoteTrafficSelector_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRemoteTrafficSelectorIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!remoteTrafficSelector_.isModifiable()) {
         remoteTrafficSelector_ =
             new com.google.protobuf.LazyStringArrayList(remoteTrafficSelector_);
-        bitField0_ |= 0x00002000;
       }
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -4278,7 +4273,8 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the remoteTrafficSelector.
      */
     public com.google.protobuf.ProtocolStringList getRemoteTrafficSelectorList() {
-      return remoteTrafficSelector_.getUnmodifiableView();
+      remoteTrafficSelector_.makeImmutable();
+      return remoteTrafficSelector_;
     }
     /**
      *
@@ -4343,6 +4339,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRemoteTrafficSelectorIsMutable();
       remoteTrafficSelector_.set(index, value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4364,6 +4361,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRemoteTrafficSelectorIsMutable();
       remoteTrafficSelector_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4382,6 +4380,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRemoteTrafficSelector(java.lang.Iterable<java.lang.String> values) {
       ensureRemoteTrafficSelectorIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, remoteTrafficSelector_);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4397,8 +4396,9 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemoteTrafficSelector() {
-      remoteTrafficSelector_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      remoteTrafficSelector_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00002000);
+      ;
       onChanged();
       return this;
     }
@@ -4421,6 +4421,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRemoteTrafficSelectorIsMutable();
       remoteTrafficSelector_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

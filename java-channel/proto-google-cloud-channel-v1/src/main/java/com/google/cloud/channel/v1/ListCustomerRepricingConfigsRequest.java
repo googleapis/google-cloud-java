@@ -52,11 +52,6 @@ public final class ListCustomerRepricingConfigsRequest
     return new ListCustomerRepricingConfigsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_ListCustomerRepricingConfigsRequest_descriptor;
@@ -226,6 +221,7 @@ public final class ListCustomerRepricingConfigsRequest
    * results (customer only). You can use this filter when you support
    * a BatchGet-like query.
    * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+   *
    * Example: customer = accounts/account_id/customers/c1 OR
    * customer = accounts/account_id/customers/c2.
    * </pre>
@@ -254,6 +250,7 @@ public final class ListCustomerRepricingConfigsRequest
    * results (customer only). You can use this filter when you support
    * a BatchGet-like query.
    * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+   *
    * Example: customer = accounts/account_id/customers/c1 OR
    * customer = accounts/account_id/customers/c2.
    * </pre>
@@ -1023,6 +1020,7 @@ public final class ListCustomerRepricingConfigsRequest
      * results (customer only). You can use this filter when you support
      * a BatchGet-like query.
      * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+     *
      * Example: customer = accounts/account_id/customers/c1 OR
      * customer = accounts/account_id/customers/c2.
      * </pre>
@@ -1050,6 +1048,7 @@ public final class ListCustomerRepricingConfigsRequest
      * results (customer only). You can use this filter when you support
      * a BatchGet-like query.
      * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+     *
      * Example: customer = accounts/account_id/customers/c1 OR
      * customer = accounts/account_id/customers/c2.
      * </pre>
@@ -1077,6 +1076,7 @@ public final class ListCustomerRepricingConfigsRequest
      * results (customer only). You can use this filter when you support
      * a BatchGet-like query.
      * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+     *
      * Example: customer = accounts/account_id/customers/c1 OR
      * customer = accounts/account_id/customers/c2.
      * </pre>
@@ -1103,6 +1103,7 @@ public final class ListCustomerRepricingConfigsRequest
      * results (customer only). You can use this filter when you support
      * a BatchGet-like query.
      * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+     *
      * Example: customer = accounts/account_id/customers/c1 OR
      * customer = accounts/account_id/customers/c2.
      * </pre>
@@ -1125,6 +1126,7 @@ public final class ListCustomerRepricingConfigsRequest
      * results (customer only). You can use this filter when you support
      * a BatchGet-like query.
      * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+     *
      * Example: customer = accounts/account_id/customers/c1 OR
      * customer = accounts/account_id/customers/c2.
      * </pre>

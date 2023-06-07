@@ -29,6 +29,7 @@ public interface MigrationWorkflowOrBuilder
    * <pre>
    * Output only. Immutable. The unique identifier for the migration workflow. The ID is
    * server-generated.
+   *
    * Example: `projects/123/locations/us/workflows/345`
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface MigrationWorkflowOrBuilder
    * <pre>
    * Output only. Immutable. The unique identifier for the migration workflow. The ID is
    * server-generated.
+   *
    * Example: `projects/123/locations/us/workflows/345`
    * </pre>
    *

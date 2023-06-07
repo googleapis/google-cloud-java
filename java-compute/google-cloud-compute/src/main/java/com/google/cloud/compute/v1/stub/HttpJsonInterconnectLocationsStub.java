@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetInterconnectLocationRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
@@ -196,6 +197,15 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
             HttpJsonCallSettings.<GetInterconnectLocationRequest, InterconnectLocation>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "interconnect_location",
+                          String.valueOf(request.getInterconnectLocation()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListInterconnectLocationsRequest, InterconnectLocationList>
         listTransportSettings =
@@ -203,6 +213,12 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
                 .<ListInterconnectLocationsRequest, InterconnectLocationList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getCallable =

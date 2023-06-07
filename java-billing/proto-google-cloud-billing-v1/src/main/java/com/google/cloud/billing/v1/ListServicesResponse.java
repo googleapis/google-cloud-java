@@ -48,11 +48,6 @@ public final class ListServicesResponse extends com.google.protobuf.GeneratedMes
     return new ListServicesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.v1.CloudCatalogProto
         .internal_static_google_cloud_billing_v1_ListServicesResponse_descriptor;

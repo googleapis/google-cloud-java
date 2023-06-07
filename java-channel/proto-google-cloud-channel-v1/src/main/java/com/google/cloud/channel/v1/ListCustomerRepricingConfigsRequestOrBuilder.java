@@ -116,6 +116,7 @@ public interface ListCustomerRepricingConfigsRequestOrBuilder
    * results (customer only). You can use this filter when you support
    * a BatchGet-like query.
    * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+   *
    * Example: customer = accounts/account_id/customers/c1 OR
    * customer = accounts/account_id/customers/c2.
    * </pre>
@@ -133,6 +134,7 @@ public interface ListCustomerRepricingConfigsRequestOrBuilder
    * results (customer only). You can use this filter when you support
    * a BatchGet-like query.
    * To use the filter, you must set `parent=accounts/{account_id}/customers/-`.
+   *
    * Example: customer = accounts/account_id/customers/c1 OR
    * customer = accounts/account_id/customers/c2.
    * </pre>

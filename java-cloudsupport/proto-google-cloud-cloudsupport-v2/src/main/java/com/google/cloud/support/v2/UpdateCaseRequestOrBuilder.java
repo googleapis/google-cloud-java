@@ -66,6 +66,7 @@ public interface UpdateCaseRequestOrBuilder
    * as part of this request. Supported values are `priority`, `display_name`,
    * and `subscriber_email_addresses`. If no fields are specified, all supported
    * fields are updated.
+   *
    * WARNING: If you do not provide a field mask, then you might accidentally
    * clear some fields. For example, if you leave the field mask empty and do
    * not provide a value for `subscriber_email_addresses`, then
@@ -85,6 +86,7 @@ public interface UpdateCaseRequestOrBuilder
    * as part of this request. Supported values are `priority`, `display_name`,
    * and `subscriber_email_addresses`. If no fields are specified, all supported
    * fields are updated.
+   *
    * WARNING: If you do not provide a field mask, then you might accidentally
    * clear some fields. For example, if you leave the field mask empty and do
    * not provide a value for `subscriber_email_addresses`, then
@@ -104,6 +106,7 @@ public interface UpdateCaseRequestOrBuilder
    * as part of this request. Supported values are `priority`, `display_name`,
    * and `subscriber_email_addresses`. If no fields are specified, all supported
    * fields are updated.
+   *
    * WARNING: If you do not provide a field mask, then you might accidentally
    * clear some fields. For example, if you leave the field mask empty and do
    * not provide a value for `subscriber_email_addresses`, then

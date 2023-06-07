@@ -48,11 +48,6 @@ public final class LineItem extends com.google.protobuf.GeneratedMessageV3
     return new LineItem();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.commerce.consumer.procurement.v1alpha1.OrderOuterClass
         .internal_static_google_cloud_commerce_consumer_procurement_v1alpha1_LineItem_descriptor;

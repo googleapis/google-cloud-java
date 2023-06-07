@@ -54,11 +54,6 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
     return new MigrationSubtask();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.MigrationEntitiesProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_MigrationSubtask_descriptor;
@@ -311,6 +306,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Immutable. The resource name for the migration subtask. The ID is
    * server-generated.
+   *
    * Example: `projects/123/locations/us/workflows/345/subtasks/678`
    * </pre>
    *
@@ -338,6 +334,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. Immutable. The resource name for the migration subtask. The ID is
    * server-generated.
+   *
    * Example: `projects/123/locations/us/workflows/345/subtasks/678`
    * </pre>
    *
@@ -1531,6 +1528,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Immutable. The resource name for the migration subtask. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345/subtasks/678`
      * </pre>
      *
@@ -1557,6 +1555,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Immutable. The resource name for the migration subtask. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345/subtasks/678`
      * </pre>
      *
@@ -1583,6 +1582,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Immutable. The resource name for the migration subtask. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345/subtasks/678`
      * </pre>
      *
@@ -1608,6 +1608,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Immutable. The resource name for the migration subtask. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345/subtasks/678`
      * </pre>
      *
@@ -1629,6 +1630,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. Immutable. The resource name for the migration subtask. The ID is
      * server-generated.
+     *
      * Example: `projects/123/locations/us/workflows/345/subtasks/678`
      * </pre>
      *

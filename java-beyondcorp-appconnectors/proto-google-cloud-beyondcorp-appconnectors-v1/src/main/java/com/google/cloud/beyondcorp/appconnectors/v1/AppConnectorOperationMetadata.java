@@ -50,11 +50,6 @@ public final class AppConnectorOperationMetadata extends com.google.protobuf.Gen
     return new AppConnectorOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorsServiceProto
         .internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnectorOperationMetadata_descriptor;

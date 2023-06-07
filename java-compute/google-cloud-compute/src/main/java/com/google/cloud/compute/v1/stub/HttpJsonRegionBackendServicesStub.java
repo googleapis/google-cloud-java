@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
@@ -577,11 +578,27 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
         HttpJsonCallSettings.<DeleteRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRegionBackendServiceRequest, BackendService> getTransportSettings =
         HttpJsonCallSettings.<GetRegionBackendServiceRequest, BackendService>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
         getHealthTransportSettings =
@@ -589,39 +606,93 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                 .<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
                 .setMethodDescriptor(getHealthMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backend_service", String.valueOf(request.getBackendService()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyRegionBackendServiceRequest, Policy>
         getIamPolicyTransportSettings =
             HttpJsonCallSettings.<GetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
                 .setMethodDescriptor(getIamPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionBackendServicesRequest, BackendServiceList>
         listTransportSettings =
             HttpJsonCallSettings.<ListRegionBackendServicesRequest, BackendServiceList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionBackendServiceRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy>
         setIamPolicyTransportSettings =
             HttpJsonCallSettings.<SetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
                 .setMethodDescriptor(setIamPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateRegionBackendServiceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backend_service", String.valueOf(request.getBackendService()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
 
     this.deleteCallable =

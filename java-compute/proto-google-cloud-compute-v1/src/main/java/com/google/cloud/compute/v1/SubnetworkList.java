@@ -51,11 +51,6 @@ public final class SubnetworkList extends com.google.protobuf.GeneratedMessageV3
     return new SubnetworkList();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_SubnetworkList_descriptor;

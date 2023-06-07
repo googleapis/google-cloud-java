@@ -45,11 +45,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     return new Dialect();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.TranslationConfigProto
         .internal_static_google_cloud_bigquery_migration_v2_Dialect_descriptor;
@@ -66,6 +61,8 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dialectValueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object dialectValue_;
 
   public enum DialectValueCase

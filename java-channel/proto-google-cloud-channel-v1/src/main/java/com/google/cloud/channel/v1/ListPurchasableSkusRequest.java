@@ -49,11 +49,6 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     return new ListPurchasableSkusRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_ListPurchasableSkusRequest_descriptor;
@@ -132,11 +127,6 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreateEntitlementPurchase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -864,11 +854,6 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ChangeOfferPurchase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1835,6 +1820,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
   }
 
   private int purchaseOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object purchaseOption_;
 
   public enum PurchaseOptionCase

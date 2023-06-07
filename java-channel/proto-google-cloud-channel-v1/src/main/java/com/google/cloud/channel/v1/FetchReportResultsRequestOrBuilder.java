@@ -65,6 +65,7 @@ public interface FetchReportResultsRequestOrBuilder
    * Optional. Requested page size of the report. The server may return fewer
    * results than requested. If you don't specify a page size, the server uses a
    * sensible default (may change over time).
+   *
    * The maximum value is 30,000; the server will change larger values to
    * 30,000.
    * </pre>

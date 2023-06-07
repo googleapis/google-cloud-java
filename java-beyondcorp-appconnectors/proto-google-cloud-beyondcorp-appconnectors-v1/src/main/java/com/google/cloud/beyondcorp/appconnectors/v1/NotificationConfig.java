@@ -45,11 +45,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     return new NotificationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorInstanceConfigProto
         .internal_static_google_cloud_beyondcorp_appconnectors_v1_NotificationConfig_descriptor;
@@ -125,11 +120,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CloudPubSubNotificationConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -782,6 +772,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase

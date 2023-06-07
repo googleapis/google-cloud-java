@@ -45,11 +45,6 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     return new AwsProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_AwsProperties_descriptor;
@@ -66,6 +61,8 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int authenticationMethodCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object authenticationMethod_;
 
   public enum AuthenticationMethodCase

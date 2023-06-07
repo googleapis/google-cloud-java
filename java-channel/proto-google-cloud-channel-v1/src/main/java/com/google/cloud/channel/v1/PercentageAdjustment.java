@@ -45,11 +45,6 @@ public final class PercentageAdjustment extends com.google.protobuf.GeneratedMes
     return new PercentageAdjustment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.RepricingProto
         .internal_static_google_cloud_channel_v1_PercentageAdjustment_descriptor;

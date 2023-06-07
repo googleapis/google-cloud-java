@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.channel.v1.ActivateEntitlementRequest;
 import com.google.cloud.channel.v1.CancelEntitlementRequest;
@@ -2169,11 +2170,23 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
             HttpJsonCallSettings.<ListCustomersRequest, ListCustomersResponse>newBuilder()
                 .setMethodDescriptor(listCustomersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCustomerRequest, Customer> getCustomerTransportSettings =
         HttpJsonCallSettings.<GetCustomerRequest, Customer>newBuilder()
             .setMethodDescriptor(getCustomerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<
             CheckCloudIdentityAccountsExistRequest, CheckCloudIdentityAccountsExistResponse>
@@ -2183,38 +2196,80 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     newBuilder()
                 .setMethodDescriptor(checkCloudIdentityAccountsExistMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCustomerRequest, Customer> createCustomerTransportSettings =
         HttpJsonCallSettings.<CreateCustomerRequest, Customer>newBuilder()
             .setMethodDescriptor(createCustomerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateCustomerRequest, Customer> updateCustomerTransportSettings =
         HttpJsonCallSettings.<UpdateCustomerRequest, Customer>newBuilder()
             .setMethodDescriptor(updateCustomerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("customer.name", String.valueOf(request.getCustomer().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteCustomerRequest, Empty> deleteCustomerTransportSettings =
         HttpJsonCallSettings.<DeleteCustomerRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteCustomerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportCustomerRequest, Customer> importCustomerTransportSettings =
         HttpJsonCallSettings.<ImportCustomerRequest, Customer>newBuilder()
             .setMethodDescriptor(importCustomerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ProvisionCloudIdentityRequest, Operation>
         provisionCloudIdentityTransportSettings =
             HttpJsonCallSettings.<ProvisionCloudIdentityRequest, Operation>newBuilder()
                 .setMethodDescriptor(provisionCloudIdentityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
             HttpJsonCallSettings.<ListEntitlementsRequest, ListEntitlementsResponse>newBuilder()
                 .setMethodDescriptor(listEntitlementsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListTransferableSkusRequest, ListTransferableSkusResponse>
         listTransferableSkusTransportSettings =
@@ -2222,6 +2277,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<ListTransferableSkusRequest, ListTransferableSkusResponse>newBuilder()
                 .setMethodDescriptor(listTransferableSkusMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListTransferableOffersRequest, ListTransferableOffersResponse>
         listTransferableOffersTransportSettings =
@@ -2229,65 +2290,137 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<ListTransferableOffersRequest, ListTransferableOffersResponse>newBuilder()
                 .setMethodDescriptor(listTransferableOffersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEntitlementRequest, Entitlement> getEntitlementTransportSettings =
         HttpJsonCallSettings.<GetEntitlementRequest, Entitlement>newBuilder()
             .setMethodDescriptor(getEntitlementMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateEntitlementRequest, Operation> createEntitlementTransportSettings =
         HttpJsonCallSettings.<CreateEntitlementRequest, Operation>newBuilder()
             .setMethodDescriptor(createEntitlementMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ChangeParametersRequest, Operation> changeParametersTransportSettings =
         HttpJsonCallSettings.<ChangeParametersRequest, Operation>newBuilder()
             .setMethodDescriptor(changeParametersMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ChangeRenewalSettingsRequest, Operation>
         changeRenewalSettingsTransportSettings =
             HttpJsonCallSettings.<ChangeRenewalSettingsRequest, Operation>newBuilder()
                 .setMethodDescriptor(changeRenewalSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ChangeOfferRequest, Operation> changeOfferTransportSettings =
         HttpJsonCallSettings.<ChangeOfferRequest, Operation>newBuilder()
             .setMethodDescriptor(changeOfferMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartPaidServiceRequest, Operation> startPaidServiceTransportSettings =
         HttpJsonCallSettings.<StartPaidServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(startPaidServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SuspendEntitlementRequest, Operation> suspendEntitlementTransportSettings =
         HttpJsonCallSettings.<SuspendEntitlementRequest, Operation>newBuilder()
             .setMethodDescriptor(suspendEntitlementMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CancelEntitlementRequest, Operation> cancelEntitlementTransportSettings =
         HttpJsonCallSettings.<CancelEntitlementRequest, Operation>newBuilder()
             .setMethodDescriptor(cancelEntitlementMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ActivateEntitlementRequest, Operation>
         activateEntitlementTransportSettings =
             HttpJsonCallSettings.<ActivateEntitlementRequest, Operation>newBuilder()
                 .setMethodDescriptor(activateEntitlementMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferEntitlementsRequest, Operation>
         transferEntitlementsTransportSettings =
             HttpJsonCallSettings.<TransferEntitlementsRequest, Operation>newBuilder()
                 .setMethodDescriptor(transferEntitlementsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TransferEntitlementsToGoogleRequest, Operation>
         transferEntitlementsToGoogleTransportSettings =
             HttpJsonCallSettings.<TransferEntitlementsToGoogleRequest, Operation>newBuilder()
                 .setMethodDescriptor(transferEntitlementsToGoogleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse>
         listChannelPartnerLinksTransportSettings =
@@ -2295,24 +2428,48 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse>newBuilder()
                 .setMethodDescriptor(listChannelPartnerLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetChannelPartnerLinkRequest, ChannelPartnerLink>
         getChannelPartnerLinkTransportSettings =
             HttpJsonCallSettings.<GetChannelPartnerLinkRequest, ChannelPartnerLink>newBuilder()
                 .setMethodDescriptor(getChannelPartnerLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateChannelPartnerLinkRequest, ChannelPartnerLink>
         createChannelPartnerLinkTransportSettings =
             HttpJsonCallSettings.<CreateChannelPartnerLinkRequest, ChannelPartnerLink>newBuilder()
                 .setMethodDescriptor(createChannelPartnerLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkTransportSettings =
             HttpJsonCallSettings.<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>newBuilder()
                 .setMethodDescriptor(updateChannelPartnerLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
         getCustomerRepricingConfigTransportSettings =
@@ -2320,6 +2477,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
                 .setMethodDescriptor(getCustomerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
         listCustomerRepricingConfigsTransportSettings =
@@ -2328,6 +2491,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listCustomerRepricingConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
         createCustomerRepricingConfigTransportSettings =
@@ -2335,6 +2504,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
                 .setMethodDescriptor(createCustomerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
         updateCustomerRepricingConfigTransportSettings =
@@ -2342,12 +2517,26 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
                 .setMethodDescriptor(updateCustomerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "customer_repricing_config.name",
+                          String.valueOf(request.getCustomerRepricingConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteCustomerRepricingConfigRequest, Empty>
         deleteCustomerRepricingConfigTransportSettings =
             HttpJsonCallSettings.<DeleteCustomerRepricingConfigRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteCustomerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         getChannelPartnerRepricingConfigTransportSettings =
@@ -2356,6 +2545,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     newBuilder()
                 .setMethodDescriptor(getChannelPartnerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
@@ -2366,6 +2561,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listChannelPartnerRepricingConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         createChannelPartnerRepricingConfigTransportSettings =
@@ -2374,6 +2575,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     newBuilder()
                 .setMethodDescriptor(createChannelPartnerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
         updateChannelPartnerRepricingConfigTransportSettings =
@@ -2382,17 +2589,37 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     newBuilder()
                 .setMethodDescriptor(updateChannelPartnerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "channel_partner_repricing_config.name",
+                          String.valueOf(request.getChannelPartnerRepricingConfig().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
         deleteChannelPartnerRepricingConfigTransportSettings =
             HttpJsonCallSettings.<DeleteChannelPartnerRepricingConfigRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteChannelPartnerRepricingConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
         HttpJsonCallSettings.<LookupOfferRequest, Offer>newBuilder()
             .setMethodDescriptor(lookupOfferMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entitlement", String.valueOf(request.getEntitlement()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -2403,11 +2630,23 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
         HttpJsonCallSettings.<ListSkusRequest, ListSkusResponse>newBuilder()
             .setMethodDescriptor(listSkusMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListOffersRequest, ListOffersResponse> listOffersTransportSettings =
         HttpJsonCallSettings.<ListOffersRequest, ListOffersResponse>newBuilder()
             .setMethodDescriptor(listOffersMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPurchasableSkusRequest, ListPurchasableSkusResponse>
         listPurchasableSkusTransportSettings =
@@ -2415,6 +2654,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<ListPurchasableSkusRequest, ListPurchasableSkusResponse>newBuilder()
                 .setMethodDescriptor(listPurchasableSkusMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
         listPurchasableOffersTransportSettings =
@@ -2422,12 +2667,24 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<ListPurchasableOffersRequest, ListPurchasableOffersResponse>newBuilder()
                 .setMethodDescriptor(listPurchasableOffersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
         registerSubscriberTransportSettings =
             HttpJsonCallSettings.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
                 .setMethodDescriptor(registerSubscriberMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
         unregisterSubscriberTransportSettings =
@@ -2435,12 +2692,24 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<UnregisterSubscriberRequest, UnregisterSubscriberResponse>newBuilder()
                 .setMethodDescriptor(unregisterSubscriberMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListSubscribersRequest, ListSubscribersResponse>
         listSubscribersTransportSettings =
             HttpJsonCallSettings.<ListSubscribersRequest, ListSubscribersResponse>newBuilder()
                 .setMethodDescriptor(listSubscribersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListEntitlementChangesRequest, ListEntitlementChangesResponse>
         listEntitlementChangesTransportSettings =
@@ -2448,6 +2717,12 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                 .<ListEntitlementChangesRequest, ListEntitlementChangesResponse>newBuilder()
                 .setMethodDescriptor(listEntitlementChangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listCustomersCallable =

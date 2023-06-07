@@ -51,11 +51,6 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
     return new ImportCustomerRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_ImportCustomerRequest_descriptor;
@@ -72,6 +67,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
   }
 
   private int customerIdentityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object customerIdentity_;
 
   public enum CustomerIdentityCase

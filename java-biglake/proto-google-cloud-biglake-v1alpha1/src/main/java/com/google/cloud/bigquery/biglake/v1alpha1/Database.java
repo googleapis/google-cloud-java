@@ -48,11 +48,6 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     return new Database();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.biglake.v1alpha1.MetastoreProto
         .internal_static_google_cloud_bigquery_biglake_v1alpha1_Database_descriptor;
@@ -208,6 +203,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int optionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object options_;
 
   public enum OptionsCase

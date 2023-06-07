@@ -47,11 +47,6 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
     return new GetAttestorRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationServiceProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_GetAttestorRequest_descriptor;

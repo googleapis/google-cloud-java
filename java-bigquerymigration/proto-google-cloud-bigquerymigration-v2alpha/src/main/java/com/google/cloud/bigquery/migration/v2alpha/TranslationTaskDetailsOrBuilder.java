@@ -521,6 +521,6 @@ public interface TranslationTaskDetailsOrBuilder
    */
   com.google.protobuf.ByteString getTranslationExceptionTableBytes();
 
-  public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.LanguageOptionsCase
+  com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.LanguageOptionsCase
       getLanguageOptionsCase();
 }

@@ -50,11 +50,6 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
     return new MigrationTask();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.MigrationEntitiesProto
         .internal_static_google_cloud_bigquery_migration_v2_MigrationTask_descriptor;
@@ -320,6 +315,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int taskDetailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object taskDetails_;
 
   public enum TaskDetailsCase

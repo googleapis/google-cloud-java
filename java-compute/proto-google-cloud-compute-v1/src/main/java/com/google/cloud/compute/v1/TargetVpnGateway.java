@@ -40,25 +40,20 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
   private TargetVpnGateway() {
     creationTimestamp_ = "";
     description_ = "";
-    forwardingRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    forwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
     name_ = "";
     network_ = "";
     region_ = "";
     selfLink_ = "";
     status_ = "";
-    tunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TargetVpnGateway();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -349,7 +344,8 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
   public static final int FORWARDING_RULES_FIELD_NUMBER = 315821365;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList forwardingRules_;
+  private com.google.protobuf.LazyStringArrayList forwardingRules_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -844,7 +840,8 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
   public static final int TUNNELS_FIELD_NUMBER = 104561931;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tunnels_;
+  private com.google.protobuf.LazyStringArrayList tunnels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1255,8 +1252,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       creationTimestamp_ = "";
       description_ = "";
-      forwardingRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      forwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       id_ = 0L;
       kind_ = "";
       name_ = "";
@@ -1264,8 +1260,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       region_ = "";
       selfLink_ = "";
       status_ = "";
-      tunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      tunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1293,25 +1288,11 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.TargetVpnGateway buildPartial() {
       com.google.cloud.compute.v1.TargetVpnGateway result =
           new com.google.cloud.compute.v1.TargetVpnGateway(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.TargetVpnGateway result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        forwardingRules_ = forwardingRules_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.forwardingRules_ = forwardingRules_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        tunnels_ = tunnels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.tunnels_ = tunnels_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.TargetVpnGateway result) {
@@ -1324,6 +1305,10 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        forwardingRules_.makeImmutable();
+        result.forwardingRules_ = forwardingRules_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.id_ = id_;
@@ -1352,6 +1337,10 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.status_ = status_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        tunnels_.makeImmutable();
+        result.tunnels_ = tunnels_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1414,7 +1403,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (!other.forwardingRules_.isEmpty()) {
         if (forwardingRules_.isEmpty()) {
           forwardingRules_ = other.forwardingRules_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureForwardingRulesIsMutable();
           forwardingRules_.addAll(other.forwardingRules_);
@@ -1457,7 +1446,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       if (!other.tunnels_.isEmpty()) {
         if (tunnels_.isEmpty()) {
           tunnels_ = other.tunnels_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureTunnelsIsMutable();
           tunnels_.addAll(other.tunnels_);
@@ -1817,14 +1806,14 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList forwardingRules_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList forwardingRules_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureForwardingRulesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!forwardingRules_.isModifiable()) {
         forwardingRules_ = new com.google.protobuf.LazyStringArrayList(forwardingRules_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1838,7 +1827,8 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return A list containing the forwardingRules.
      */
     public com.google.protobuf.ProtocolStringList getForwardingRulesList() {
-      return forwardingRules_.getUnmodifiableView();
+      forwardingRules_.makeImmutable();
+      return forwardingRules_;
     }
     /**
      *
@@ -1903,6 +1893,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       ensureForwardingRulesIsMutable();
       forwardingRules_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1924,6 +1915,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       ensureForwardingRulesIsMutable();
       forwardingRules_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1942,6 +1934,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     public Builder addAllForwardingRules(java.lang.Iterable<java.lang.String> values) {
       ensureForwardingRulesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, forwardingRules_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1957,8 +1950,9 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearForwardingRules() {
-      forwardingRules_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      forwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1981,6 +1975,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureForwardingRulesIsMutable();
       forwardingRules_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2779,14 +2774,14 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tunnels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tunnels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTunnelsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!tunnels_.isModifiable()) {
         tunnels_ = new com.google.protobuf.LazyStringArrayList(tunnels_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -2800,7 +2795,8 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return A list containing the tunnels.
      */
     public com.google.protobuf.ProtocolStringList getTunnelsList() {
-      return tunnels_.getUnmodifiableView();
+      tunnels_.makeImmutable();
+      return tunnels_;
     }
     /**
      *
@@ -2865,6 +2861,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       ensureTunnelsIsMutable();
       tunnels_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2886,6 +2883,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       }
       ensureTunnelsIsMutable();
       tunnels_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2904,6 +2902,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     public Builder addAllTunnels(java.lang.Iterable<java.lang.String> values) {
       ensureTunnelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tunnels_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2919,8 +2918,9 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTunnels() {
-      tunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -2943,6 +2943,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTunnelsIsMutable();
       tunnels_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

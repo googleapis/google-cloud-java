@@ -46,11 +46,6 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
     return new AutoscalingPolicyScaleInControl();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_AutoscalingPolicyScaleInControl_descriptor;

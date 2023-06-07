@@ -52,11 +52,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     return new UrlMapTest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_UrlMapTest_descriptor;

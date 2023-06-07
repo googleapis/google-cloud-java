@@ -209,6 +209,5 @@ public interface ListPurchasableSkusRequestOrBuilder
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
-  public com.google.cloud.channel.v1.ListPurchasableSkusRequest.PurchaseOptionCase
-      getPurchaseOptionCase();
+  com.google.cloud.channel.v1.ListPurchasableSkusRequest.PurchaseOptionCase getPurchaseOptionCase();
 }

@@ -67,5 +67,5 @@ public interface NotificationConfigOrBuilder
           .CloudPubSubNotificationConfigOrBuilder
       getPubsubNotificationOrBuilder();
 
-  public com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig.ConfigCase getConfigCase();
+  com.google.cloud.beyondcorp.appconnectors.v1.NotificationConfig.ConfigCase getConfigCase();
 }

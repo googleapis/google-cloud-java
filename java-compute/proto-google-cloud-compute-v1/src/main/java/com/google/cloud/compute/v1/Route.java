@@ -55,7 +55,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     routeStatus_ = "";
     routeType_ = "";
     selfLink_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     warnings_ = java.util.Collections.emptyList();
   }
 
@@ -63,11 +63,6 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Route();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1626,7 +1621,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 3552281;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2261,8 +2257,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       routeStatus_ = "";
       routeType_ = "";
       selfLink_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00080000);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
       } else {
@@ -2314,11 +2309,6 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.asPaths_ = asPathsBuilder_.build();
       }
-      if (((bitField0_ & 0x00080000) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00080000);
-      }
-      result.tags_ = tags_;
       if (warningsBuilder_ == null) {
         if (((bitField0_ & 0x00100000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
@@ -2404,6 +2394,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2569,7 +2563,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ |= 0x00080000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -5205,14 +5199,14 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00080000;
       }
+      bitField0_ |= 0x00080000;
     }
     /**
      *
@@ -5226,7 +5220,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -5291,6 +5286,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5312,6 +5308,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5330,6 +5327,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5345,8 +5343,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00080000);
+      ;
       onChanged();
       return this;
     }
@@ -5369,6 +5368,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }

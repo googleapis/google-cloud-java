@@ -22,7 +22,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
+ *
  * Messages
+ *
  * A request message for InstanceGroupManagers.AbandonInstances. See the method description for details.
  * </pre>
  *
@@ -51,11 +53,6 @@ public final class AbandonInstancesInstanceGroupManagerRequest
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AbandonInstancesInstanceGroupManagerRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -582,7 +579,9 @@ public final class AbandonInstancesInstanceGroupManagerRequest
    *
    *
    * <pre>
+   *
    * Messages
+   *
    * A request message for InstanceGroupManagers.AbandonInstances. See the method description for details.
    * </pre>
    *

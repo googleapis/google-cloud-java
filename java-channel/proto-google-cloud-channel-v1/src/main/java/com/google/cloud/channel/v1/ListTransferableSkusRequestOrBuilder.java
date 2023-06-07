@@ -246,6 +246,6 @@ public interface ListTransferableSkusRequestOrBuilder
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
-  public com.google.cloud.channel.v1.ListTransferableSkusRequest.TransferredCustomerIdentityCase
+  com.google.cloud.channel.v1.ListTransferableSkusRequest.TransferredCustomerIdentityCase
       getTransferredCustomerIdentityCase();
 }

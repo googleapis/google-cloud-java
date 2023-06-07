@@ -133,6 +133,5 @@ public interface StartManualTransferRunsRequestOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getRequestedRunTimeOrBuilder();
 
-  public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeCase
-      getTimeCase();
+  com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeCase getTimeCase();
 }

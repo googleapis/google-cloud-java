@@ -41,18 +41,13 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   private FetchReportResultsRequest() {
     reportJob_ = "";
     pageToken_ = "";
-    partitionKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    partitionKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FetchReportResultsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,6 +135,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
    * Optional. Requested page size of the report. The server may return fewer
    * results than requested. If you don't specify a page size, the server uses a
    * sensible default (may change over time).
+   *
    * The maximum value is 30,000; the server will change larger values to
    * 30,000.
    * </pre>
@@ -217,7 +213,8 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
   public static final int PARTITION_KEYS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList partitionKeys_;
+  private com.google.protobuf.LazyStringArrayList partitionKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -518,8 +515,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       reportJob_ = "";
       pageSize_ = 0;
       pageToken_ = "";
-      partitionKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      partitionKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -547,21 +543,11 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public com.google.cloud.channel.v1.FetchReportResultsRequest buildPartial() {
       com.google.cloud.channel.v1.FetchReportResultsRequest result =
           new com.google.cloud.channel.v1.FetchReportResultsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.channel.v1.FetchReportResultsRequest result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        partitionKeys_ = partitionKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.partitionKeys_ = partitionKeys_;
     }
 
     private void buildPartial0(com.google.cloud.channel.v1.FetchReportResultsRequest result) {
@@ -574,6 +560,10 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        partitionKeys_.makeImmutable();
+        result.partitionKeys_ = partitionKeys_;
       }
     }
 
@@ -639,7 +629,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       if (!other.partitionKeys_.isEmpty()) {
         if (partitionKeys_.isEmpty()) {
           partitionKeys_ = other.partitionKeys_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensurePartitionKeysIsMutable();
           partitionKeys_.addAll(other.partitionKeys_);
@@ -855,6 +845,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
      * Optional. Requested page size of the report. The server may return fewer
      * results than requested. If you don't specify a page size, the server uses a
      * sensible default (may change over time).
+     *
      * The maximum value is 30,000; the server will change larger values to
      * 30,000.
      * </pre>
@@ -874,6 +865,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
      * Optional. Requested page size of the report. The server may return fewer
      * results than requested. If you don't specify a page size, the server uses a
      * sensible default (may change over time).
+     *
      * The maximum value is 30,000; the server will change larger values to
      * 30,000.
      * </pre>
@@ -897,6 +889,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
      * Optional. Requested page size of the report. The server may return fewer
      * results than requested. If you don't specify a page size, the server uses a
      * sensible default (may change over time).
+     *
      * The maximum value is 30,000; the server will change larger values to
      * 30,000.
      * </pre>
@@ -1043,14 +1036,14 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.protobuf.LazyStringList partitionKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList partitionKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePartitionKeysIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!partitionKeys_.isModifiable()) {
         partitionKeys_ = new com.google.protobuf.LazyStringArrayList(partitionKeys_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1065,7 +1058,8 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
      * @return A list containing the partitionKeys.
      */
     public com.google.protobuf.ProtocolStringList getPartitionKeysList() {
-      return partitionKeys_.getUnmodifiableView();
+      partitionKeys_.makeImmutable();
+      return partitionKeys_;
     }
     /**
      *
@@ -1134,6 +1128,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       }
       ensurePartitionKeysIsMutable();
       partitionKeys_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1156,6 +1151,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       }
       ensurePartitionKeysIsMutable();
       partitionKeys_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1175,6 +1171,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
     public Builder addAllPartitionKeys(java.lang.Iterable<java.lang.String> values) {
       ensurePartitionKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partitionKeys_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1191,8 +1188,9 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPartitionKeys() {
-      partitionKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      partitionKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1216,6 +1214,7 @@ public final class FetchReportResultsRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensurePartitionKeysIsMutable();
       partitionKeys_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

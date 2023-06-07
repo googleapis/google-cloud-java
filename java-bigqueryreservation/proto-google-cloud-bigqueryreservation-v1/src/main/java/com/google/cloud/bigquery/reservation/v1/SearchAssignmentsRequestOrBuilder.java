@@ -61,7 +61,9 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    * <pre>
    * Please specify resource name as assignee in the query.
+   *
    * Examples:
+   *
    * * `assignee=projects/myproject`
    * * `assignee=folders/123`
    * * `assignee=organizations/456`
@@ -77,7 +79,9 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    * <pre>
    * Please specify resource name as assignee in the query.
+   *
    * Examples:
+   *
    * * `assignee=projects/myproject`
    * * `assignee=folders/123`
    * * `assignee=organizations/456`

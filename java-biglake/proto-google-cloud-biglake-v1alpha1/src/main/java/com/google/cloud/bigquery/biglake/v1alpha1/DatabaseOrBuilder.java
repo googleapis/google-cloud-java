@@ -274,5 +274,5 @@ public interface DatabaseOrBuilder
    */
   com.google.cloud.bigquery.biglake.v1alpha1.Database.Type getType();
 
-  public com.google.cloud.bigquery.biglake.v1alpha1.Database.OptionsCase getOptionsCase();
+  com.google.cloud.bigquery.biglake.v1alpha1.Database.OptionsCase getOptionsCase();
 }

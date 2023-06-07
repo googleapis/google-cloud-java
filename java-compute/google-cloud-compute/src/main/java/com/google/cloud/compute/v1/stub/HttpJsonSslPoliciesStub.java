@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
@@ -488,26 +489,58 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                 .<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSslPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetSslPolicyRequest, SslPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetSslPolicyRequest, SslPolicy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertSslPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSslPoliciesRequest, SslPoliciesList> listTransportSettings =
         HttpJsonCallSettings.<ListSslPoliciesRequest, SslPoliciesList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<
             ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
@@ -517,11 +550,24 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                     newBuilder()
                 .setMethodDescriptor(listAvailableFeaturesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchSslPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

@@ -49,11 +49,6 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     return new DataPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.datapolicies.v1.DataPolicyProto
         .internal_static_google_cloud_bigquery_datapolicies_v1_DataPolicy_descriptor;
@@ -231,6 +226,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int matchingLabelCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object matchingLabel_;
 
   public enum MatchingLabelCase
@@ -275,6 +272,8 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int policyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object policy_;
 
   public enum PolicyCase

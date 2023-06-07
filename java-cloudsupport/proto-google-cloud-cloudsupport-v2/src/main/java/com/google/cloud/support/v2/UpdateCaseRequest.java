@@ -45,11 +45,6 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
     return new UpdateCaseRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.support.v2.CaseServiceProto
         .internal_static_google_cloud_support_v2_UpdateCaseRequest_descriptor;
@@ -121,6 +116,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
    * as part of this request. Supported values are `priority`, `display_name`,
    * and `subscriber_email_addresses`. If no fields are specified, all supported
    * fields are updated.
+   *
    * WARNING: If you do not provide a field mask, then you might accidentally
    * clear some fields. For example, if you leave the field mask empty and do
    * not provide a value for `subscriber_email_addresses`, then
@@ -143,6 +139,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
    * as part of this request. Supported values are `priority`, `display_name`,
    * and `subscriber_email_addresses`. If no fields are specified, all supported
    * fields are updated.
+   *
    * WARNING: If you do not provide a field mask, then you might accidentally
    * clear some fields. For example, if you leave the field mask empty and do
    * not provide a value for `subscriber_email_addresses`, then
@@ -165,6 +162,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
    * as part of this request. Supported values are `priority`, `display_name`,
    * and `subscriber_email_addresses`. If no fields are specified, all supported
    * fields are updated.
+   *
    * WARNING: If you do not provide a field mask, then you might accidentally
    * clear some fields. For example, if you leave the field mask empty and do
    * not provide a value for `subscriber_email_addresses`, then
@@ -759,6 +757,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -780,6 +779,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -807,6 +807,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -836,6 +837,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -862,6 +864,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -894,6 +897,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -920,6 +924,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -941,6 +946,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then
@@ -966,6 +972,7 @@ public final class UpdateCaseRequest extends com.google.protobuf.GeneratedMessag
      * as part of this request. Supported values are `priority`, `display_name`,
      * and `subscriber_email_addresses`. If no fields are specified, all supported
      * fields are updated.
+     *
      * WARNING: If you do not provide a field mask, then you might accidentally
      * clear some fields. For example, if you leave the field mask empty and do
      * not provide a value for `subscriber_email_addresses`, then

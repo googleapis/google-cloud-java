@@ -170,5 +170,5 @@ public interface ValueOrBuilder
    */
   boolean getBoolValue();
 
-  public com.google.cloud.channel.v1.Value.KindCase getKindCase();
+  com.google.cloud.channel.v1.Value.KindCase getKindCase();
 }

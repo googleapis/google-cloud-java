@@ -53,11 +53,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     return new TranslationTaskDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_TranslationTaskDetails_descriptor;
@@ -602,6 +597,8 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   }
 
   private int languageOptionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object languageOptions_;
 
   public enum LanguageOptionsCase

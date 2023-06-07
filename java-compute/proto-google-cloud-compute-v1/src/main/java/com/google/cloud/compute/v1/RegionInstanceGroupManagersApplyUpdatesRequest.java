@@ -40,7 +40,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   }
 
   private RegionInstanceGroupManagersApplyUpdatesRequest() {
-    instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
     minimalAction_ = "";
     mostDisruptiveAllowedAction_ = "";
   }
@@ -49,11 +49,6 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RegionInstanceGroupManagersApplyUpdatesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -356,7 +351,8 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instances_;
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -816,8 +812,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       super.clear();
       bitField0_ = 0;
       allInstances_ = false;
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       minimalAction_ = "";
       mostDisruptiveAllowedAction_ = "";
       return this;
@@ -851,21 +846,11 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
         buildPartial() {
       com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest result =
           new com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.instances_ = instances_;
     }
 
     private void buildPartial0(
@@ -875,6 +860,10 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allInstances_ = allInstances_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.minimalAction_ = minimalAction_;
@@ -943,7 +932,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
@@ -1098,14 +1087,14 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instances_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!instances_.isModifiable()) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1119,7 +1108,8 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
      * @return A list containing the instances.
      */
     public com.google.protobuf.ProtocolStringList getInstancesList() {
-      return instances_.getUnmodifiableView();
+      instances_.makeImmutable();
+      return instances_;
     }
     /**
      *
@@ -1184,6 +1174,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       }
       ensureInstancesIsMutable();
       instances_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1205,6 +1196,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       }
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1223,6 +1215,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
     public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
       ensureInstancesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1238,8 +1231,9 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
      * @return This builder for chaining.
      */
     public Builder clearInstances() {
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1262,6 +1256,7 @@ public final class RegionInstanceGroupManagersApplyUpdatesRequest
       checkByteStringIsUtf8(value);
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

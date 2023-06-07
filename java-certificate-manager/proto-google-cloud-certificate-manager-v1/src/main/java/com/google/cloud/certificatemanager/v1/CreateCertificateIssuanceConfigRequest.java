@@ -50,11 +50,6 @@ public final class CreateCertificateIssuanceConfigRequest
     return new CreateCertificateIssuanceConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateIssuanceConfigProto
         .internal_static_google_cloud_certificatemanager_v1_CreateCertificateIssuanceConfigRequest_descriptor;

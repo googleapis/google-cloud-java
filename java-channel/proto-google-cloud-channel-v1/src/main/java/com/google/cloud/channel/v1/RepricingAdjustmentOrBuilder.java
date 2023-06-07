@@ -58,5 +58,5 @@ public interface RepricingAdjustmentOrBuilder
    */
   com.google.cloud.channel.v1.PercentageAdjustmentOrBuilder getPercentageAdjustmentOrBuilder();
 
-  public com.google.cloud.channel.v1.RepricingAdjustment.AdjustmentCase getAdjustmentCase();
+  com.google.cloud.channel.v1.RepricingAdjustment.AdjustmentCase getAdjustmentCase();
 }

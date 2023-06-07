@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest;
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest;
@@ -32,7 +33,6 @@ import com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRespons
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.Order;
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderMetadata;
 import com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -137,9 +137,9 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
             .setMethodDescriptor(placeOrderMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetOrderRequest, Order> getOrderTransportSettings =
@@ -147,9 +147,9 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
             .setMethodDescriptor(getOrderMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListOrdersRequest, ListOrdersResponse> listOrdersTransportSettings =
@@ -157,9 +157,9 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
             .setMethodDescriptor(listOrdersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

@@ -49,11 +49,6 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     return new CertificateIssuanceConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateIssuanceConfigProto
         .internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_descriptor;
@@ -289,8 +284,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
             .CertificateAuthorityServiceConfigOrBuilder
         getCertificateAuthorityServiceConfigOrBuilder();
 
-    public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
-            .CertificateAuthorityConfig.KindCase
+    com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.CertificateAuthorityConfig
+            .KindCase
         getKindCase();
   }
   /**
@@ -321,11 +316,6 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CertificateAuthorityConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -413,11 +403,6 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CertificateAuthorityServiceConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1102,6 +1087,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase

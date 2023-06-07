@@ -49,11 +49,6 @@ public final class GetCustomerRepricingConfigRequest extends com.google.protobuf
     return new GetCustomerRepricingConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_GetCustomerRepricingConfigRequest_descriptor;

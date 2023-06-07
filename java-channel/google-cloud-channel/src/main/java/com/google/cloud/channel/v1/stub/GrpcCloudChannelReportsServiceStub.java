@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.channel.v1.FetchReportResultsRequest;
 import com.google.cloud.channel.v1.FetchReportResultsResponse;
@@ -33,7 +34,6 @@ import com.google.cloud.channel.v1.ListReportsResponse;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.RunReportJobRequest;
 import com.google.cloud.channel.v1.RunReportJobResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -144,9 +144,9 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
             .setMethodDescriptor(runReportJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchReportResultsRequest, FetchReportResultsResponse>
@@ -155,9 +155,9 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
                 .setMethodDescriptor(fetchReportResultsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("report_job", String.valueOf(request.getReportJob()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("report_job", String.valueOf(request.getReportJob()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListReportsRequest, ListReportsResponse> listReportsTransportSettings =
@@ -165,9 +165,9 @@ public class GrpcCloudChannelReportsServiceStub extends CloudChannelReportsServi
             .setMethodDescriptor(listReportsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

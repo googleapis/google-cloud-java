@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
@@ -866,63 +867,155 @@ public class HttpJsonDisksStub extends DisksStub {
             HttpJsonCallSettings.<AddResourcePoliciesDiskRequest, Operation>newBuilder()
                 .setMethodDescriptor(addResourcePoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AggregatedListDisksRequest, DiskAggregatedList>
         aggregatedListTransportSettings =
             HttpJsonCallSettings.<AggregatedListDisksRequest, DiskAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateSnapshotDiskRequest, Operation> createSnapshotTransportSettings =
         HttpJsonCallSettings.<CreateSnapshotDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(createSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDiskRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDiskRequest, Disk> getTransportSettings =
         HttpJsonCallSettings.<GetDiskRequest, Disk>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyDiskRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyDiskRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertDiskRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDisksRequest, DiskList> listTransportSettings =
         HttpJsonCallSettings.<ListDisksRequest, DiskList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RemoveResourcePoliciesDiskRequest, Operation>
         removeResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<RemoveResourcePoliciesDiskRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeResourcePoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("disk", String.valueOf(request.getDisk()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResizeDiskRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyDiskRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyDiskRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsDiskRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsDiskRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -930,11 +1023,27 @@ public class HttpJsonDisksStub extends DisksStub {
                 .<TestIamPermissionsDiskRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDiskRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateDiskRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
 
     this.addResourcePoliciesCallable =

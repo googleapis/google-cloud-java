@@ -66,6 +66,6 @@ public interface MigrationTaskOrchestrationResultOrBuilder
   com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetailsOrBuilder
       getAssessmentDetailsOrBuilder();
 
-  public com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.DetailsCase
+  com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.DetailsCase
       getDetailsCase();
 }

@@ -50,11 +50,6 @@ public final class ListCertificateMapsRequest extends com.google.protobuf.Genera
     return new ListCertificateMapsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateManagerProto
         .internal_static_google_cloud_certificatemanager_v1_ListCertificateMapsRequest_descriptor;

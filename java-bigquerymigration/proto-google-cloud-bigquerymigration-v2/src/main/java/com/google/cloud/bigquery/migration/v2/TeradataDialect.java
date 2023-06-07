@@ -47,11 +47,6 @@ public final class TeradataDialect extends com.google.protobuf.GeneratedMessageV
     return new TeradataDialect();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.TranslationConfigProto
         .internal_static_google_cloud_bigquery_migration_v2_TeradataDialect_descriptor;

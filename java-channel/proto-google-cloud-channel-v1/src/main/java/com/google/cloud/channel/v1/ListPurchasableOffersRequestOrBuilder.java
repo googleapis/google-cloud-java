@@ -209,6 +209,6 @@ public interface ListPurchasableOffersRequestOrBuilder
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
-  public com.google.cloud.channel.v1.ListPurchasableOffersRequest.PurchaseOptionCase
+  com.google.cloud.channel.v1.ListPurchasableOffersRequest.PurchaseOptionCase
       getPurchaseOptionCase();
 }

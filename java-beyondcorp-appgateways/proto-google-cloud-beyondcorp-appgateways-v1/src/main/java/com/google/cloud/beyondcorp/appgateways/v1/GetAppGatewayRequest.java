@@ -47,11 +47,6 @@ public final class GetAppGatewayRequest extends com.google.protobuf.GeneratedMes
     return new GetAppGatewayRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appgateways.v1.AppGatewaysServiceProto
         .internal_static_google_cloud_beyondcorp_appgateways_v1_GetAppGatewayRequest_descriptor;

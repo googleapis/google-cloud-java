@@ -50,11 +50,6 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
     return new Attestor();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationResourcesProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_Attestor_descriptor;
@@ -71,6 +66,8 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int attestorTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object attestorType_;
 
   public enum AttestorTypeCase

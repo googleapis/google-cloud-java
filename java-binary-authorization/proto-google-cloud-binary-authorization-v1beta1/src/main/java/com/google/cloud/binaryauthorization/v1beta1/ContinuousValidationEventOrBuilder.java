@@ -112,6 +112,6 @@ public interface ContinuousValidationEventOrBuilder
           .UnsupportedPolicyEventOrBuilder
       getUnsupportedPolicyEventOrBuilder();
 
-  public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.EventTypeCase
+  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.EventTypeCase
       getEventTypeCase();
 }

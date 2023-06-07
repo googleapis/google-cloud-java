@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
@@ -948,64 +949,156 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
         HttpJsonCallSettings.<CreateBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(createBuildMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetBuildRequest, Build> getBuildTransportSettings =
         HttpJsonCallSettings.<GetBuildRequest, Build>newBuilder()
             .setMethodDescriptor(getBuildMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("id", String.valueOf(request.getId()));
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
         HttpJsonCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
             .setMethodDescriptor(listBuildsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CancelBuildRequest, Build> cancelBuildTransportSettings =
         HttpJsonCallSettings.<CancelBuildRequest, Build>newBuilder()
             .setMethodDescriptor(cancelBuildMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("id", String.valueOf(request.getId()));
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RetryBuildRequest, Operation> retryBuildTransportSettings =
         HttpJsonCallSettings.<RetryBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(retryBuildMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("id", String.valueOf(request.getId()));
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ApproveBuildRequest, Operation> approveBuildTransportSettings =
         HttpJsonCallSettings.<ApproveBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(approveBuildMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateBuildTriggerRequest, BuildTrigger>
         createBuildTriggerTransportSettings =
             HttpJsonCallSettings.<CreateBuildTriggerRequest, BuildTrigger>newBuilder()
                 .setMethodDescriptor(createBuildTriggerMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
         HttpJsonCallSettings.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
             .setMethodDescriptor(getBuildTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
         listBuildTriggersTransportSettings =
             HttpJsonCallSettings.<ListBuildTriggersRequest, ListBuildTriggersResponse>newBuilder()
                 .setMethodDescriptor(listBuildTriggersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
         HttpJsonCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBuildTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateBuildTriggerRequest, BuildTrigger>
         updateBuildTriggerTransportSettings =
             HttpJsonCallSettings.<UpdateBuildTriggerRequest, BuildTrigger>newBuilder()
                 .setMethodDescriptor(updateBuildTriggerMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      builder.add(
+                          "trigger.resource_name",
+                          String.valueOf(request.getTrigger().getResourceName()));
+                      builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RunBuildTriggerRequest, Operation> runBuildTriggerTransportSettings =
         HttpJsonCallSettings.<RunBuildTriggerRequest, Operation>newBuilder()
             .setMethodDescriptor(runBuildTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("trigger_id", String.valueOf(request.getTriggerId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
         receiveTriggerWebhookTransportSettings =
@@ -1013,32 +1106,71 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                 .<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>newBuilder()
                 .setMethodDescriptor(receiveTriggerWebhookMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      builder.add("trigger", String.valueOf(request.getTrigger()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateWorkerPoolRequest, Operation> createWorkerPoolTransportSettings =
         HttpJsonCallSettings.<CreateWorkerPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(createWorkerPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
         HttpJsonCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
             .setMethodDescriptor(getWorkerPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteWorkerPoolRequest, Operation> deleteWorkerPoolTransportSettings =
         HttpJsonCallSettings.<DeleteWorkerPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteWorkerPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateWorkerPoolRequest, Operation> updateWorkerPoolTransportSettings =
         HttpJsonCallSettings.<UpdateWorkerPoolRequest, Operation>newBuilder()
             .setMethodDescriptor(updateWorkerPoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "worker_pool.name", String.valueOf(request.getWorkerPool().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
         listWorkerPoolsTransportSettings =
             HttpJsonCallSettings.<ListWorkerPoolsRequest, ListWorkerPoolsResponse>newBuilder()
                 .setMethodDescriptor(listWorkerPoolsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createBuildCallable =

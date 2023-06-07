@@ -28,8 +28,11 @@ public interface ListAssignmentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name e.g.:
+   *
    * `projects/myproject/locations/US/reservations/team1-prod`
+   *
    * Or:
+   *
    * `projects/myproject/locations/US/reservations/-`
    * </pre>
    *
@@ -45,8 +48,11 @@ public interface ListAssignmentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name e.g.:
+   *
    * `projects/myproject/locations/US/reservations/team1-prod`
+   *
    * Or:
+   *
    * `projects/myproject/locations/US/reservations/-`
    * </pre>
    *

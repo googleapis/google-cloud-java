@@ -323,6 +323,7 @@ public interface CaseOrBuilder
    *
    * <pre>
    * The user who created the case.
+   *
    * Note: The name and email will be obfuscated if the case was created by
    * Google Support.
    * </pre>
@@ -337,6 +338,7 @@ public interface CaseOrBuilder
    *
    * <pre>
    * The user who created the case.
+   *
    * Note: The name and email will be obfuscated if the case was created by
    * Google Support.
    * </pre>
@@ -351,6 +353,7 @@ public interface CaseOrBuilder
    *
    * <pre>
    * The user who created the case.
+   *
    * Note: The name and email will be obfuscated if the case was created by
    * Google Support.
    * </pre>
@@ -423,6 +426,7 @@ public interface CaseOrBuilder
    * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
    * If no language or an unsupported language is specified, this field defaults
    * to English (en).
+   *
    * Language selection during case creation may affect your available support
    * options. For a list of supported languages and their support working hours,
    * see: https://cloud.google.com/support/docs/language-working-hours
@@ -441,6 +445,7 @@ public interface CaseOrBuilder
    * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
    * If no language or an unsupported language is specified, this field defaults
    * to English (en).
+   *
    * Language selection during case creation may affect your available support
    * options. For a list of supported languages and their support working hours,
    * see: https://cloud.google.com/support/docs/language-working-hours

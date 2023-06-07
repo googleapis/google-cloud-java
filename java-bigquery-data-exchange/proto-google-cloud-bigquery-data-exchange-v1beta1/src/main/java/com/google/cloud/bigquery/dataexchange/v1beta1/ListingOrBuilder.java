@@ -444,5 +444,5 @@ public interface ListingOrBuilder
    */
   com.google.protobuf.ByteString getRequestAccessBytes();
 
-  public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.SourceCase getSourceCase();
+  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.SourceCase getSourceCase();
 }

@@ -48,11 +48,6 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessageV3
     return new ImageConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorInstanceConfigProto
         .internal_static_google_cloud_beyondcorp_appconnectors_v1_ImageConfig_descriptor;

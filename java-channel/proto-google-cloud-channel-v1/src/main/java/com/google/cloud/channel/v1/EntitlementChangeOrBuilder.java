@@ -455,5 +455,5 @@ public interface EntitlementChangeOrBuilder
    */
   com.google.protobuf.ByteString getOperatorBytes();
 
-  public com.google.cloud.channel.v1.EntitlementChange.ChangeReasonCase getChangeReasonCase();
+  com.google.cloud.channel.v1.EntitlementChange.ChangeReasonCase getChangeReasonCase();
 }

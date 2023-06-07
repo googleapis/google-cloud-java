@@ -47,13 +47,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     lastAttachTimestamp_ = "";
     lastDetachTimestamp_ = "";
     licenseCodes_ = emptyLongList();
-    licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     locationHint_ = "";
     name_ = "";
     options_ = "";
     region_ = "";
-    replicaZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
     sourceDisk_ = "";
     sourceDiskId_ = "";
@@ -64,7 +64,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     sourceStorageObject_ = "";
     status_ = "";
     type_ = "";
-    users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    users_ = com.google.protobuf.LazyStringArrayList.emptyList();
     zone_ = "";
   }
 
@@ -72,11 +72,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Disk();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1287,7 +1282,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   public static final int LICENSES_FIELD_NUMBER = 337642578;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList licenses_;
+  private com.google.protobuf.LazyStringArrayList licenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1726,7 +1722,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   public static final int REPLICA_ZONES_FIELD_NUMBER = 48438272;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList replicaZones_;
+  private com.google.protobuf.LazyStringArrayList replicaZones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1789,7 +1786,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourcePolicies_;
+  private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2695,7 +2693,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   public static final int USERS_FIELD_NUMBER = 111578632;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList users_;
+  private com.google.protobuf.LazyStringArrayList users_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3633,8 +3632,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       lastAttachTimestamp_ = "";
       lastDetachTimestamp_ = "";
       licenseCodes_ = emptyLongList();
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       locationHint_ = "";
       name_ = "";
       options_ = "";
@@ -3646,10 +3644,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       physicalBlockSizeBytes_ = 0L;
       provisionedIops_ = 0L;
       region_ = "";
-      replicaZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00100000);
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00200000);
+      replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       satisfiesPzs_ = false;
       selfLink_ = "";
       sizeGb_ = 0L;
@@ -3672,8 +3668,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       sourceStorageObject_ = "";
       status_ = "";
       type_ = "";
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000010);
+      users_ = com.google.protobuf.LazyStringArrayList.emptyList();
       zone_ = "";
       return this;
     }
@@ -3727,26 +3722,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.licenseCodes_ = licenseCodes_;
-      if (((bitField0_ & 0x00001000) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.licenses_ = licenses_;
-      if (((bitField0_ & 0x00100000) != 0)) {
-        replicaZones_ = replicaZones_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00100000);
-      }
-      result.replicaZones_ = replicaZones_;
-      if (((bitField0_ & 0x00200000) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00200000);
-      }
-      result.resourcePolicies_ = resourcePolicies_;
-      if (((bitField1_ & 0x00000010) != 0)) {
-        users_ = users_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00000010);
-      }
-      result.users_ = users_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Disk result) {
@@ -3795,6 +3770,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         result.lastDetachTimestamp_ = lastDetachTimestamp_;
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        licenses_.makeImmutable();
+        result.licenses_ = licenses_;
+      }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.locationHint_ = locationHint_;
         to_bitField0_ |= 0x00000200;
@@ -3822,6 +3801,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        replicaZones_.makeImmutable();
+        result.replicaZones_ = replicaZones_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        resourcePolicies_.makeImmutable();
+        result.resourcePolicies_ = resourcePolicies_;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
@@ -3890,6 +3877,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00000008) != 0)) {
         result.type_ = type_;
         to_bitField0_ |= 0x20000000;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        users_.makeImmutable();
+        result.users_ = users_;
       }
       if (((from_bitField1_ & 0x00000020) != 0)) {
         result.zone_ = zone_;
@@ -4026,7 +4017,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ |= 0x00001000;
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -4065,7 +4056,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!other.replicaZones_.isEmpty()) {
         if (replicaZones_.isEmpty()) {
           replicaZones_ = other.replicaZones_;
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ |= 0x00100000;
         } else {
           ensureReplicaZonesIsMutable();
           replicaZones_.addAll(other.replicaZones_);
@@ -4075,7 +4066,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ |= 0x00200000;
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -4147,7 +4138,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField1_ = (bitField1_ & ~0x00000010);
+          bitField1_ |= 0x00000010;
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -6229,14 +6220,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList licenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLicensesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!licenses_.isModifiable()) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
-        bitField0_ |= 0x00001000;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -6250,7 +6241,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the licenses.
      */
     public com.google.protobuf.ProtocolStringList getLicensesList() {
-      return licenses_.getUnmodifiableView();
+      licenses_.makeImmutable();
+      return licenses_;
     }
     /**
      *
@@ -6315,6 +6307,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6336,6 +6329,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6354,6 +6348,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6369,8 +6364,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLicenses() {
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -6393,6 +6389,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7196,14 +7193,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList replicaZones_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList replicaZones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureReplicaZonesIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!replicaZones_.isModifiable()) {
         replicaZones_ = new com.google.protobuf.LazyStringArrayList(replicaZones_);
-        bitField0_ |= 0x00100000;
       }
+      bitField0_ |= 0x00100000;
     }
     /**
      *
@@ -7217,7 +7214,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the replicaZones.
      */
     public com.google.protobuf.ProtocolStringList getReplicaZonesList() {
-      return replicaZones_.getUnmodifiableView();
+      replicaZones_.makeImmutable();
+      return replicaZones_;
     }
     /**
      *
@@ -7282,6 +7280,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReplicaZonesIsMutable();
       replicaZones_.set(index, value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7303,6 +7302,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReplicaZonesIsMutable();
       replicaZones_.add(value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7321,6 +7321,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReplicaZones(java.lang.Iterable<java.lang.String> values) {
       ensureReplicaZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicaZones_);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7336,8 +7337,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReplicaZones() {
-      replicaZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00100000);
+      ;
       onChanged();
       return this;
     }
@@ -7360,18 +7362,19 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReplicaZonesIsMutable();
       replicaZones_.add(value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resourcePolicies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!resourcePolicies_.isModifiable()) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00200000;
       }
+      bitField0_ |= 0x00200000;
     }
     /**
      *
@@ -7385,7 +7388,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the resourcePolicies.
      */
     public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
-      return resourcePolicies_.getUnmodifiableView();
+      resourcePolicies_.makeImmutable();
+      return resourcePolicies_;
     }
     /**
      *
@@ -7450,6 +7454,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.set(index, value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7471,6 +7476,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7489,6 +7495,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllResourcePolicies(java.lang.Iterable<java.lang.String> values) {
       ensureResourcePoliciesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourcePolicies_);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7504,8 +7511,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourcePolicies() {
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00200000);
+      ;
       onChanged();
       return this;
     }
@@ -7528,6 +7536,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9288,14 +9297,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList users_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList users_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUsersIsMutable() {
-      if (!((bitField1_ & 0x00000010) != 0)) {
+      if (!users_.isModifiable()) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
-        bitField1_ |= 0x00000010;
       }
+      bitField1_ |= 0x00000010;
     }
     /**
      *
@@ -9309,7 +9318,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the users.
      */
     public com.google.protobuf.ProtocolStringList getUsersList() {
-      return users_.getUnmodifiableView();
+      users_.makeImmutable();
+      return users_;
     }
     /**
      *
@@ -9374,6 +9384,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.set(index, value);
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9395,6 +9406,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.add(value);
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9413,6 +9425,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUsers(java.lang.Iterable<java.lang.String> values) {
       ensureUsersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, users_);
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9428,8 +9441,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsers() {
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      users_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField1_ = (bitField1_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -9452,6 +9466,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUsersIsMutable();
       users_.add(value);
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }

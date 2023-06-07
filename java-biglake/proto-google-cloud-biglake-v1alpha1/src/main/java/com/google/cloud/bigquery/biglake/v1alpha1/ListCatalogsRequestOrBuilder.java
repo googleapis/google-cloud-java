@@ -76,6 +76,7 @@ public interface ListCatalogsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListCatalogs` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListCatalogs` must match
    * the call that provided the page token.
    * </pre>
@@ -91,6 +92,7 @@ public interface ListCatalogsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListCatalogs` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListCatalogs` must match
    * the call that provided the page token.
    * </pre>

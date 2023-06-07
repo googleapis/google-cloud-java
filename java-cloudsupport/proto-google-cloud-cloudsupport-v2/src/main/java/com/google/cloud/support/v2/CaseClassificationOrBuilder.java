@@ -28,6 +28,7 @@ public interface CaseClassificationOrBuilder
    *
    * <pre>
    * The unique ID for a classification. Must be specified for case creation.
+   *
    * To retrieve valid classification IDs for case creation, use
    * `caseClassifications.search`.
    * </pre>
@@ -42,6 +43,7 @@ public interface CaseClassificationOrBuilder
    *
    * <pre>
    * The unique ID for a classification. Must be specified for case creation.
+   *
    * To retrieve valid classification IDs for case creation, use
    * `caseClassifications.search`.
    * </pre>

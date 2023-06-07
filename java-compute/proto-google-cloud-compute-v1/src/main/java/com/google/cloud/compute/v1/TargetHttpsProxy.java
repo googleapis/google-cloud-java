@@ -49,7 +49,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     region_ = "";
     selfLink_ = "";
     serverTlsPolicy_ = "";
-    sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sslPolicy_ = "";
     urlMap_ = "";
   }
@@ -58,11 +58,6 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TargetHttpsProxy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1058,7 +1053,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
   public static final int SSL_CERTIFICATES_FIELD_NUMBER = 366006543;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sslCertificates_;
+  private com.google.protobuf.LazyStringArrayList sslCertificates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1681,8 +1677,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       region_ = "";
       selfLink_ = "";
       serverTlsPolicy_ = "";
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00002000);
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sslPolicy_ = "";
       urlMap_ = "";
       return this;
@@ -1712,20 +1707,11 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.compute.v1.TargetHttpsProxy buildPartial() {
       com.google.cloud.compute.v1.TargetHttpsProxy result =
           new com.google.cloud.compute.v1.TargetHttpsProxy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.TargetHttpsProxy result) {
-      if (((bitField0_ & 0x00002000) != 0)) {
-        sslCertificates_ = sslCertificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00002000);
-      }
-      result.sslCertificates_ = sslCertificates_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.TargetHttpsProxy result) {
@@ -1782,6 +1768,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.serverTlsPolicy_ = serverTlsPolicy_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        sslCertificates_.makeImmutable();
+        result.sslCertificates_ = sslCertificates_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.sslPolicy_ = sslPolicy_;
@@ -1903,7 +1893,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (!other.sslCertificates_.isEmpty()) {
         if (sslCertificates_.isEmpty()) {
           sslCertificates_ = other.sslCertificates_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ |= 0x00002000;
         } else {
           ensureSslCertificatesIsMutable();
           sslCertificates_.addAll(other.sslCertificates_);
@@ -3524,14 +3514,14 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList sslCertificates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sslCertificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSslCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!sslCertificates_.isModifiable()) {
         sslCertificates_ = new com.google.protobuf.LazyStringArrayList(sslCertificates_);
-        bitField0_ |= 0x00002000;
       }
+      bitField0_ |= 0x00002000;
     }
     /**
      *
@@ -3545,7 +3535,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return A list containing the sslCertificates.
      */
     public com.google.protobuf.ProtocolStringList getSslCertificatesList() {
-      return sslCertificates_.getUnmodifiableView();
+      sslCertificates_.makeImmutable();
+      return sslCertificates_;
     }
     /**
      *
@@ -3610,6 +3601,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       }
       ensureSslCertificatesIsMutable();
       sslCertificates_.set(index, value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3631,6 +3623,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       }
       ensureSslCertificatesIsMutable();
       sslCertificates_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3649,6 +3642,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     public Builder addAllSslCertificates(java.lang.Iterable<java.lang.String> values) {
       ensureSslCertificatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sslCertificates_);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3664,8 +3658,9 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSslCertificates() {
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00002000);
+      ;
       onChanged();
       return this;
     }
@@ -3688,6 +3683,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSslCertificatesIsMutable();
       sslCertificates_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

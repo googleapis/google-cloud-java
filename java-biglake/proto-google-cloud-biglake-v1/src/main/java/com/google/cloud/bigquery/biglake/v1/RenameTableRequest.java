@@ -48,11 +48,6 @@ public final class RenameTableRequest extends com.google.protobuf.GeneratedMessa
     return new RenameTableRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.biglake.v1.MetastoreProto
         .internal_static_google_cloud_bigquery_biglake_v1_RenameTableRequest_descriptor;

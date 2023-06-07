@@ -263,12 +263,12 @@ public interface TranslationConfigDetailsOrBuilder
    */
   com.google.protobuf.ByteString getRequestSourceBytes();
 
-  public com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.SourceLocationCase
+  com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.SourceLocationCase
       getSourceLocationCase();
 
-  public com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.TargetLocationCase
+  com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.TargetLocationCase
       getTargetLocationCase();
 
-  public com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.OutputNameMappingCase
+  com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.OutputNameMappingCase
       getOutputNameMappingCase();
 }

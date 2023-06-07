@@ -208,6 +208,7 @@ public interface TransferConfigOrBuilder
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -232,6 +233,7 @@ public interface TransferConfigOrBuilder
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -461,6 +463,7 @@ public interface TransferConfigOrBuilder
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -476,6 +479,7 @@ public interface TransferConfigOrBuilder
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -572,6 +576,5 @@ public interface TransferConfigOrBuilder
    */
   com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder();
 
-  public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase
-      getDestinationCase();
+  com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase getDestinationCase();
 }

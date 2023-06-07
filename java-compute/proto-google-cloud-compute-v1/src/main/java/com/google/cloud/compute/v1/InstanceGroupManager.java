@@ -51,7 +51,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     namedPorts_ = java.util.Collections.emptyList();
     region_ = "";
     selfLink_ = "";
-    targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
     versions_ = java.util.Collections.emptyList();
     zone_ = "";
   }
@@ -60,11 +60,6 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InstanceGroupManager();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1375,7 +1370,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
   public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList targetPools_;
+  private com.google.protobuf.LazyStringArrayList targetPools_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2249,8 +2245,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
         statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-      targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00040000);
+      targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetSize_ = 0;
       updatePolicy_ = null;
       if (updatePolicyBuilder_ != null) {
@@ -2320,11 +2315,6 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       } else {
         result.namedPorts_ = namedPortsBuilder_.build();
       }
-      if (((bitField0_ & 0x00040000) != 0)) {
-        targetPools_ = targetPools_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00040000);
-      }
-      result.targetPools_ = targetPools_;
       if (versionsBuilder_ == null) {
         if (((bitField0_ & 0x00200000) != 0)) {
           versions_ = java.util.Collections.unmodifiableList(versions_);
@@ -2407,6 +2397,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        targetPools_.makeImmutable();
+        result.targetPools_ = targetPools_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.targetSize_ = targetSize_;
@@ -2597,7 +2591,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       if (!other.targetPools_.isEmpty()) {
         if (targetPools_.isEmpty()) {
           targetPools_ = other.targetPools_;
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ |= 0x00040000;
         } else {
           ensureTargetPoolsIsMutable();
           targetPools_.addAll(other.targetPools_);
@@ -5776,14 +5770,14 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       return statusBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList targetPools_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList targetPools_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTargetPoolsIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!targetPools_.isModifiable()) {
         targetPools_ = new com.google.protobuf.LazyStringArrayList(targetPools_);
-        bitField0_ |= 0x00040000;
       }
+      bitField0_ |= 0x00040000;
     }
     /**
      *
@@ -5797,7 +5791,8 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return A list containing the targetPools.
      */
     public com.google.protobuf.ProtocolStringList getTargetPoolsList() {
-      return targetPools_.getUnmodifiableView();
+      targetPools_.makeImmutable();
+      return targetPools_;
     }
     /**
      *
@@ -5862,6 +5857,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       ensureTargetPoolsIsMutable();
       targetPools_.set(index, value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5883,6 +5879,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       }
       ensureTargetPoolsIsMutable();
       targetPools_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5901,6 +5898,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     public Builder addAllTargetPools(java.lang.Iterable<java.lang.String> values) {
       ensureTargetPoolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetPools_);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5916,8 +5914,9 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTargetPools() {
-      targetPools_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetPools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00040000);
+      ;
       onChanged();
       return this;
     }
@@ -5940,6 +5939,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTargetPoolsIsMutable();
       targetPools_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
