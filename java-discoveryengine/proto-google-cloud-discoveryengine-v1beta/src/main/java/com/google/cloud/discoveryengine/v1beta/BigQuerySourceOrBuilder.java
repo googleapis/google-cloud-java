@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,10 +175,14 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for user event imports:
+   *
    * * `user_event` (default): One
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+   *
    * Supported values for document imports:
+   *
    * * `document` (default): One
    * [Document][google.cloud.discoveryengine.v1beta.Document] format per
    *   row. Each document must have a valid
@@ -201,10 +205,14 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for user event imports:
+   *
    * * `user_event` (default): One
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+   *
    * Supported values for document imports:
+   *
    * * `document` (default): One
    * [Document][google.cloud.discoveryengine.v1beta.Document] format per
    *   row. Each document must have a valid
@@ -223,5 +231,5 @@ public interface BigQuerySourceOrBuilder
    */
   com.google.protobuf.ByteString getDataSchemaBytes();
 
-  public com.google.cloud.discoveryengine.v1beta.BigQuerySource.PartitionCase getPartitionCase();
+  com.google.cloud.discoveryengine.v1beta.BigQuerySource.PartitionCase getPartitionCase();
 }

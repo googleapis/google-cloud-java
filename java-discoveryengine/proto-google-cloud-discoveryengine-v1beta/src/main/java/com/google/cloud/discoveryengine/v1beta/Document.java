@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return new Document();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.DocumentProto
         .internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor;
@@ -82,6 +77,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The content represented as a stream of bytes. The maximum length is
      * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     *
      * Note: As with all `bytes` fields, this field is represented as pure
      * binary in Protocol Buffers and base64-encoded string in JSON. For
      * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -100,6 +96,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The content represented as a stream of bytes. The maximum length is
      * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     *
      * Note: As with all `bytes` fields, this field is represented as pure
      * binary in Protocol Buffers and base64-encoded string in JSON. For
      * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -161,8 +158,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the content. Supported types:
+     *
      * * `application/pdf` (PDF)
      * * `text/html` (HTML)
+     *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
      *
@@ -176,8 +175,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the content. Supported types:
+     *
      * * `application/pdf` (PDF)
      * * `text/html` (HTML)
+     *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
      *
@@ -187,7 +188,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getMimeTypeBytes();
 
-    public com.google.cloud.discoveryengine.v1beta.Document.Content.ContentCase getContentCase();
+    com.google.cloud.discoveryengine.v1beta.Document.Content.ContentCase getContentCase();
   }
   /**
    *
@@ -218,11 +219,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Content();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.DocumentProto
           .internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor;
@@ -239,6 +235,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int contentCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object content_;
 
     public enum ContentCase
@@ -292,6 +290,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The content represented as a stream of bytes. The maximum length is
      * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     *
      * Note: As with all `bytes` fields, this field is represented as pure
      * binary in Protocol Buffers and base64-encoded string in JSON. For
      * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -313,6 +312,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The content represented as a stream of bytes. The maximum length is
      * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     *
      * Note: As with all `bytes` fields, this field is represented as pure
      * binary in Protocol Buffers and base64-encoded string in JSON. For
      * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -417,8 +417,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the content. Supported types:
+     *
      * * `application/pdf` (PDF)
      * * `text/html` (HTML)
+     *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
      *
@@ -443,8 +445,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the content. Supported types:
+     *
      * * `application/pdf` (PDF)
      * * `text/html` (HTML)
+     *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
      *
@@ -909,6 +913,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The content represented as a stream of bytes. The maximum length is
        * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       *
        * Note: As with all `bytes` fields, this field is represented as pure
        * binary in Protocol Buffers and base64-encoded string in JSON. For
        * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -929,6 +934,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The content represented as a stream of bytes. The maximum length is
        * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       *
        * Note: As with all `bytes` fields, this field is represented as pure
        * binary in Protocol Buffers and base64-encoded string in JSON. For
        * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -952,6 +958,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The content represented as a stream of bytes. The maximum length is
        * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       *
        * Note: As with all `bytes` fields, this field is represented as pure
        * binary in Protocol Buffers and base64-encoded string in JSON. For
        * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -979,6 +986,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The content represented as a stream of bytes. The maximum length is
        * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       *
        * Note: As with all `bytes` fields, this field is represented as pure
        * binary in Protocol Buffers and base64-encoded string in JSON. For
        * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
@@ -1151,8 +1159,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The MIME type of the content. Supported types:
+       *
        * * `application/pdf` (PDF)
        * * `text/html` (HTML)
+       *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
        *
@@ -1176,8 +1186,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The MIME type of the content. Supported types:
+       *
        * * `application/pdf` (PDF)
        * * `text/html` (HTML)
+       *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
        *
@@ -1201,8 +1213,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The MIME type of the content. Supported types:
+       *
        * * `application/pdf` (PDF)
        * * `text/html` (HTML)
+       *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
        *
@@ -1225,8 +1239,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The MIME type of the content. Supported types:
+       *
        * * `application/pdf` (PDF)
        * * `text/html` (HTML)
+       *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
        *
@@ -1245,8 +1261,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The MIME type of the content. Supported types:
+       *
        * * `application/pdf` (PDF)
        * * `text/html` (HTML)
+       *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
        *
@@ -1331,6 +1349,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object data_;
 
   public enum DataCase
@@ -1527,6 +1547,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Immutable. The full resource name of the document.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -1554,6 +1575,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Immutable. The full resource name of the document.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -1584,6 +1606,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The identifier of the document.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -1609,6 +1632,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The identifier of the document.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -1747,6 +1771,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The identifier of the parent document. Currently supports at most two level
    * document hierarchy.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -1773,6 +1798,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The identifier of the parent document. Currently supports at most two level
    * document hierarchy.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -2821,6 +2847,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The full resource name of the document.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -2847,6 +2874,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The full resource name of the document.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -2873,6 +2901,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The full resource name of the document.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -2898,6 +2927,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The full resource name of the document.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -2919,6 +2949,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The full resource name of the document.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -2945,6 +2976,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The identifier of the document.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -2969,6 +3001,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The identifier of the document.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -2993,6 +3026,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The identifier of the document.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3016,6 +3050,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The identifier of the document.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3035,6 +3070,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The identifier of the document.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3371,6 +3407,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the parent document. Currently supports at most two level
      * document hierarchy.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3396,6 +3433,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the parent document. Currently supports at most two level
      * document hierarchy.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3421,6 +3459,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the parent document. Currently supports at most two level
      * document hierarchy.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3445,6 +3484,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the parent document. Currently supports at most two level
      * document hierarchy.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>
@@ -3465,6 +3505,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The identifier of the parent document. Currently supports at most two level
      * document hierarchy.
+     *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
      * standard with a length limit of 63 characters.
      * </pre>

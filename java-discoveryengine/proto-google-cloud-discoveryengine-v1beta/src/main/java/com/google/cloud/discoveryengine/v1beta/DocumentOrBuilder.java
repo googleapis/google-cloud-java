@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,7 @@ public interface DocumentOrBuilder
    * Immutable. The full resource name of the document.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -136,6 +137,7 @@ public interface DocumentOrBuilder
    * Immutable. The full resource name of the document.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -151,6 +153,7 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Immutable. The identifier of the document.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -165,6 +168,7 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Immutable. The identifier of the document.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -247,6 +251,7 @@ public interface DocumentOrBuilder
    * <pre>
    * The identifier of the parent document. Currently supports at most two level
    * document hierarchy.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -262,6 +267,7 @@ public interface DocumentOrBuilder
    * <pre>
    * The identifier of the parent document. Currently supports at most two level
    * document hierarchy.
+   *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
    * standard with a length limit of 63 characters.
    * </pre>
@@ -316,5 +322,5 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder();
 
-  public com.google.cloud.discoveryengine.v1beta.Document.DataCase getDataCase();
+  com.google.cloud.discoveryengine.v1beta.Document.DataCase getDataCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,9 +111,12 @@ public interface DocumentInfoOrBuilder
    *
    * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
+   *
    * For example, this field will be 2 if two quantities of the same Document
    * are involved in a `add-to-cart` event.
+   *
    * Required for events of the following event types:
+   *
    * * `add-to-cart`
    * * `purchase`
    * </pre>
@@ -128,9 +131,12 @@ public interface DocumentInfoOrBuilder
    *
    * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
+   *
    * For example, this field will be 2 if two quantities of the same Document
    * are involved in a `add-to-cart` event.
+   *
    * Required for events of the following event types:
+   *
    * * `add-to-cart`
    * * `purchase`
    * </pre>
@@ -196,6 +202,6 @@ public interface DocumentInfoOrBuilder
    */
   com.google.protobuf.ByteString getPromotionIdsBytes(int index);
 
-  public com.google.cloud.discoveryengine.v1beta.DocumentInfo.DocumentDescriptorCase
+  com.google.cloud.discoveryengine.v1beta.DocumentInfo.DocumentDescriptorCase
       getDocumentDescriptorCase();
 }

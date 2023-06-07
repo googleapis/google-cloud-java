@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The branch resource name, such as
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+   *
    * Use `default_branch` as the branch ID or leave this field empty, to search
    * documents under the default branch.
    * </pre>
@@ -79,6 +80,7 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The branch resource name, such as
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+   *
    * Use `default_branch` as the branch ID or leave this field empty, to search
    * documents under the default branch.
    * </pre>
@@ -121,6 +123,7 @@ public interface SearchRequestOrBuilder
    * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
    * to return. If unspecified, defaults to a reasonable value. The maximum
    * allowed value is 100. Values above 100 will be coerced to 100.
+   *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -137,6 +140,7 @@ public interface SearchRequestOrBuilder
    * A page token received from a previous
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * must match the call that provided the page token. Otherwise, an
@@ -155,6 +159,7 @@ public interface SearchRequestOrBuilder
    * A page token received from a previous
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * must match the call that provided the page token. Otherwise, an
@@ -177,6 +182,7 @@ public interface SearchRequestOrBuilder
    * as relevant) in search results. This field is only considered if
    * [page_token][google.cloud.discoveryengine.v1beta.SearchRequest.page_token]
    * is unset.
+   *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -193,6 +199,7 @@ public interface SearchRequestOrBuilder
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered. Filter
    * expression is case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -208,6 +215,7 @@ public interface SearchRequestOrBuilder
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered. Filter
    * expression is case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -225,6 +233,7 @@ public interface SearchRequestOrBuilder
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
    * object. Leave it unset if ordered by relevance. OrderBy expression is
    * case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -241,6 +250,7 @@ public interface SearchRequestOrBuilder
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
    * object. Leave it unset if ordered by relevance. OrderBy expression is
    * case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -296,6 +306,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -310,6 +321,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -323,6 +335,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -336,6 +349,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -350,6 +364,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -400,9 +415,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -418,9 +433,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -439,9 +454,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -457,9 +472,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -479,9 +494,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -592,11 +607,14 @@ public interface SearchRequestOrBuilder
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
    * </pre>
@@ -614,11 +632,14 @@ public interface SearchRequestOrBuilder
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
    * </pre>
@@ -693,6 +714,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -704,6 +726,7 @@ public interface SearchRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -717,6 +740,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -728,6 +752,7 @@ public interface SearchRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -744,6 +769,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -755,6 +781,7 @@ public interface SearchRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -768,6 +795,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -779,6 +807,7 @@ public interface SearchRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -796,6 +825,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -807,6 +837,7 @@ public interface SearchRequestOrBuilder
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
