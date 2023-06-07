@@ -28,6 +28,7 @@ public interface ListCompaniesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -44,6 +45,7 @@ public interface ListCompaniesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -100,7 +102,9 @@ public interface ListCompaniesRequestOrBuilder
    *
    * <pre>
    * Set to true if the companies requested must have open jobs.
+   *
    * Defaults to false.
+   *
    * If true, at most
    * [page_size][google.cloud.talent.v4.ListCompaniesRequest.page_size] of
    * companies are fetched, among which only those with open jobs are returned.

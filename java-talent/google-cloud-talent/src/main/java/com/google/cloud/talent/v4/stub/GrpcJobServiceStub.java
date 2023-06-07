@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4.BatchCreateJobsRequest;
 import com.google.cloud.talent.v4.BatchCreateJobsResponse;
@@ -41,7 +42,6 @@ import com.google.cloud.talent.v4.ListJobsResponse;
 import com.google.cloud.talent.v4.SearchJobsRequest;
 import com.google.cloud.talent.v4.SearchJobsResponse;
 import com.google.cloud.talent.v4.UpdateJobRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -216,9 +216,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(createJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsTransportSettings =
@@ -226,9 +226,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(batchCreateJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
@@ -236,9 +236,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(getJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
@@ -246,9 +246,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(updateJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job.name", String.valueOf(request.getJob().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job.name", String.valueOf(request.getJob().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchUpdateJobsRequest, Operation> batchUpdateJobsTransportSettings =
@@ -256,9 +256,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(batchUpdateJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
@@ -266,9 +266,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(deleteJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchDeleteJobsRequest, Operation> batchDeleteJobsTransportSettings =
@@ -276,9 +276,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(batchDeleteJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
@@ -286,9 +286,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SearchJobsRequest, SearchJobsResponse> searchJobsTransportSettings =
@@ -296,9 +296,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(searchJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertTransportSettings =
@@ -306,9 +306,9 @@ public class GrpcJobServiceStub extends JobServiceStub {
             .setMethodDescriptor(searchJobsForAlertMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

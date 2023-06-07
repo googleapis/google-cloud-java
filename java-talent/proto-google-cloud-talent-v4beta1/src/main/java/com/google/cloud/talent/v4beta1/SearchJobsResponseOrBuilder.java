@@ -255,6 +255,7 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * An estimation of the number of jobs that match the specified query.
+   *
    * This number isn't guaranteed to be accurate. For accurate results,
    * see
    * [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].

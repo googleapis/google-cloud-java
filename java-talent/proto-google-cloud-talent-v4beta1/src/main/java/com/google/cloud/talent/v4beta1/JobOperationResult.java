@@ -53,11 +53,6 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     return new JobOperationResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.JobServiceProto
         .internal_static_google_cloud_talent_v4beta1_JobOperationResult_descriptor;
@@ -200,11 +195,6 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new JobResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

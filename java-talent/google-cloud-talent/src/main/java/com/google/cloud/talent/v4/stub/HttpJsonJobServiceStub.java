@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4.BatchCreateJobsRequest;
 import com.google.cloud.talent.v4.BatchCreateJobsResponse;
@@ -524,52 +525,112 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
         HttpJsonCallSettings.<CreateJobRequest, Job>newBuilder()
             .setMethodDescriptor(createJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchCreateJobsRequest, Operation> batchCreateJobsTransportSettings =
         HttpJsonCallSettings.<BatchCreateJobsRequest, Operation>newBuilder()
             .setMethodDescriptor(batchCreateJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
             .setMethodDescriptor(getJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
             .setMethodDescriptor(updateJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job.name", String.valueOf(request.getJob().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchUpdateJobsRequest, Operation> batchUpdateJobsTransportSettings =
         HttpJsonCallSettings.<BatchUpdateJobsRequest, Operation>newBuilder()
             .setMethodDescriptor(batchUpdateJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         HttpJsonCallSettings.<DeleteJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchDeleteJobsRequest, Operation> batchDeleteJobsTransportSettings =
         HttpJsonCallSettings.<BatchDeleteJobsRequest, Operation>newBuilder()
             .setMethodDescriptor(batchDeleteJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchJobsRequest, SearchJobsResponse> searchJobsTransportSettings =
         HttpJsonCallSettings.<SearchJobsRequest, SearchJobsResponse>newBuilder()
             .setMethodDescriptor(searchJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchJobsRequest, SearchJobsResponse>
         searchJobsForAlertTransportSettings =
             HttpJsonCallSettings.<SearchJobsRequest, SearchJobsResponse>newBuilder()
                 .setMethodDescriptor(searchJobsForAlertMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createJobCallable =

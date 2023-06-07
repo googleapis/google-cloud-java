@@ -49,11 +49,6 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     return new HistogramQueryResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.HistogramProto
         .internal_static_google_cloud_talent_v4beta1_HistogramQueryResult_descriptor;
@@ -163,7 +158,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -192,7 +189,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -212,7 +211,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -236,7 +237,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * A map from the values of the facet associated with distinct values to the
    * number of matching entries with corresponding value.
+   *
    * The key format is:
+   *
    * * (for string histogram) string values stored in the field.
    * * (for named numeric bucket) name specified in `bucket()` function, like
    *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -796,7 +799,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -825,7 +830,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -845,7 +852,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -869,7 +878,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -902,7 +913,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -931,7 +944,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.
@@ -956,7 +971,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * A map from the values of the facet associated with distinct values to the
      * number of matching entries with corresponding value.
+     *
      * The key format is:
+     *
      * * (for string histogram) string values stored in the field.
      * * (for named numeric bucket) name specified in `bucket()` function, like
      *   for `bucket(0, MAX, "non-negative")`, the key will be `non-negative`.

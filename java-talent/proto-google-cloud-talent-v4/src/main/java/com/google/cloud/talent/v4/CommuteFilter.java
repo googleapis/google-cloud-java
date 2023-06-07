@@ -47,11 +47,6 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     return new CommuteFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.FiltersProto
         .internal_static_google_cloud_talent_v4_CommuteFilter_descriptor;
@@ -225,6 +220,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int trafficOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object trafficOption_;
 
   public enum TrafficOptionCase
@@ -506,6 +503,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The departure time used to calculate traffic impact, represented as
    * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   *
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -523,6 +521,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The departure time used to calculate traffic impact, represented as
    * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   *
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -543,6 +542,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The departure time used to calculate traffic impact, represented as
    * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   *
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -1777,6 +1777,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1794,6 +1795,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1821,6 +1823,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1845,6 +1848,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1866,6 +1870,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1899,6 +1904,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1926,6 +1932,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1940,6 +1947,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *
@@ -1962,6 +1970,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The departure time used to calculate traffic impact, represented as
      * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+     *
      * Currently traffic model is restricted to hour level resolution.
      * </pre>
      *

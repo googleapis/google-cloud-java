@@ -45,11 +45,6 @@ public final class JobResult extends com.google.protobuf.GeneratedMessageV3
     return new JobResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.JobServiceProto
         .internal_static_google_cloud_talent_v4_JobResult_descriptor;

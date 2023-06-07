@@ -238,6 +238,7 @@ public interface SearchJobsResponseOrBuilder
    *
    * <pre>
    * Number of jobs that match the specified query.
+   *
    * Note: This size is precise only if the total is less than 100,000.
    * </pre>
    *

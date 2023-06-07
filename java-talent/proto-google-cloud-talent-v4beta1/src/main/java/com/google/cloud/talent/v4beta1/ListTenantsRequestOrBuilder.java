@@ -28,6 +28,7 @@ public interface ListTenantsRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the project under which the tenant is created.
+   *
    * The format is "projects/{project_id}", for example,
    * "projects/foo".
    * </pre>
@@ -44,6 +45,7 @@ public interface ListTenantsRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the project under which the tenant is created.
+   *
    * The format is "projects/{project_id}", for example,
    * "projects/foo".
    * </pre>

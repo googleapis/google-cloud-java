@@ -48,11 +48,6 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
     return new ListTenantsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.TenantServiceProto
         .internal_static_google_cloud_talent_v4beta1_ListTenantsResponse_descriptor;

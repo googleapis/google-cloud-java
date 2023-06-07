@@ -48,11 +48,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     return new ListCompaniesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.CompanyServiceProto
         .internal_static_google_cloud_talent_v4beta1_ListCompaniesResponse_descriptor;

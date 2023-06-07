@@ -48,11 +48,6 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     return new SpellingCorrection();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.CommonProto
         .internal_static_google_cloud_talent_v4beta1_SpellingCorrection_descriptor;
@@ -147,6 +142,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Corrected output with html tags to highlight the corrected words.
    * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+   *
    * For example, the user input query is "software enginear", where the second
    * word, "enginear," is incorrect. It should be "engineer". When spelling
    * correction is enabled, this value is
@@ -175,6 +171,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Corrected output with html tags to highlight the corrected words.
    * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+   *
    * For example, the user input query is "software enginear", where the second
    * word, "enginear," is incorrect. It should be "engineer". When spelling
    * correction is enabled, this value is
@@ -752,6 +749,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -779,6 +777,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -806,6 +805,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -832,6 +832,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is
@@ -854,6 +855,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Corrected output with html tags to highlight the corrected words.
      * Corrected words are called out with the "&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;" html tags.
+     *
      * For example, the user input query is "software enginear", where the second
      * word, "enginear," is incorrect. It should be "engineer". When spelling
      * correction is enabled, this value is

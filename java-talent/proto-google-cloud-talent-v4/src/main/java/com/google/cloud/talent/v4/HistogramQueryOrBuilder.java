@@ -29,6 +29,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching jobs for
    * searches.
+   *
    * See
    * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
    * for details about syntax.
@@ -45,6 +46,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching jobs for
    * searches.
+   *
    * See
    * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
    * for details about syntax.

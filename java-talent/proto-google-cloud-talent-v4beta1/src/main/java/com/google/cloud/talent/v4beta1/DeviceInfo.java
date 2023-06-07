@@ -50,11 +50,6 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     return new DeviceInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.CommonProto
         .internal_static_google_cloud_talent_v4beta1_DeviceInfo_descriptor;

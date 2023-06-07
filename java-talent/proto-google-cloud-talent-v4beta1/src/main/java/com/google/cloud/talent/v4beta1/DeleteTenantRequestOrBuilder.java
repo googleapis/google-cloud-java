@@ -28,6 +28,7 @@ public interface DeleteTenantRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant to be deleted.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -44,6 +45,7 @@ public interface DeleteTenantRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant to be deleted.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>

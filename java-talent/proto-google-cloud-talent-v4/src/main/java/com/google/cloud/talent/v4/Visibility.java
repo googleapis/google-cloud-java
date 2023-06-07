@@ -23,6 +23,7 @@ package com.google.cloud.talent.v4;
  *
  * <pre>
  * Deprecated. All resources are only visible to the owner.
+ *
  * An enum that represents who has view access to the resource.
  * </pre>
  *

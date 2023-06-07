@@ -50,11 +50,6 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
     return new BatchOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.CommonProto
         .internal_static_google_cloud_talent_v4beta1_BatchOperationMetadata_descriptor;

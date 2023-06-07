@@ -194,6 +194,7 @@ public interface CommuteFilterOrBuilder
    * <pre>
    * The departure time used to calculate traffic impact, represented as
    * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   *
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -208,6 +209,7 @@ public interface CommuteFilterOrBuilder
    * <pre>
    * The departure time used to calculate traffic impact, represented as
    * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   *
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -222,6 +224,7 @@ public interface CommuteFilterOrBuilder
    * <pre>
    * The departure time used to calculate traffic impact, represented as
    * [google.type.TimeOfDay][google.type.TimeOfDay] in local time zone.
+   *
    * Currently traffic model is restricted to hour level resolution.
    * </pre>
    *
@@ -229,5 +232,5 @@ public interface CommuteFilterOrBuilder
    */
   com.google.type.TimeOfDayOrBuilder getDepartureTimeOrBuilder();
 
-  public com.google.cloud.talent.v4beta1.CommuteFilter.TrafficOptionCase getTrafficOptionCase();
+  com.google.cloud.talent.v4beta1.CommuteFilter.TrafficOptionCase getTrafficOptionCase();
 }

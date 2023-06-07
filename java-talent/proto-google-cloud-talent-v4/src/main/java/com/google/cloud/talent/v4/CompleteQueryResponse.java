@@ -47,11 +47,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     return new CompleteQueryResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.CompletionServiceProto
         .internal_static_google_cloud_talent_v4_CompleteQueryResponse_descriptor;
@@ -178,11 +173,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CompletionResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

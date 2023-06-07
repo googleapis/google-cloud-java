@@ -28,6 +28,7 @@ public interface CreateCompanyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
@@ -44,6 +45,7 @@ public interface CreateCompanyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenants/bar".
    * </pre>
