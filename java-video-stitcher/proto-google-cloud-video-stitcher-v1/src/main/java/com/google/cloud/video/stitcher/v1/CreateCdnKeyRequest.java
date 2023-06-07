@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
     return new CreateCdnKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.VideoStitcherServiceProto
         .internal_static_google_cloud_video_stitcher_v1_CreateCdnKeyRequest_descriptor;
@@ -76,8 +71,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The project in which the CDN key should be created, in the form of
-   * `projects/{project_number}/locations/{location}`.
+   * Required. The project in which the CDN key should be created, in the form
+   * of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -102,8 +97,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The project in which the CDN key should be created, in the form of
-   * `projects/{project_number}/locations/{location}`.
+   * Required. The project in which the CDN key should be created, in the form
+   * of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -189,8 +184,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The ID to use for the CDN key, which will become the final component of
-   * the CDN key's resource name.
+   * Required. The ID to use for the CDN key, which will become the final
+   * component of the CDN key's resource name.
+   *
    * This value should conform to RFC-1034, which restricts to
    * lower-case letters, numbers, and hyphen, with the first character a
    * letter, the last a letter or a number, and a 63 character maximum.
@@ -216,8 +212,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The ID to use for the CDN key, which will become the final component of
-   * the CDN key's resource name.
+   * Required. The ID to use for the CDN key, which will become the final
+   * component of the CDN key's resource name.
+   *
    * This value should conform to RFC-1034, which restricts to
    * lower-case letters, numbers, and hyphen, with the first character a
    * letter, the last a letter or a number, and a 63 character maximum.
@@ -643,8 +640,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project in which the CDN key should be created, in the form of
-     * `projects/{project_number}/locations/{location}`.
+     * Required. The project in which the CDN key should be created, in the form
+     * of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -668,8 +665,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project in which the CDN key should be created, in the form of
-     * `projects/{project_number}/locations/{location}`.
+     * Required. The project in which the CDN key should be created, in the form
+     * of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -693,8 +690,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project in which the CDN key should be created, in the form of
-     * `projects/{project_number}/locations/{location}`.
+     * Required. The project in which the CDN key should be created, in the form
+     * of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -717,8 +714,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project in which the CDN key should be created, in the form of
-     * `projects/{project_number}/locations/{location}`.
+     * Required. The project in which the CDN key should be created, in the form
+     * of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -737,8 +734,8 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The project in which the CDN key should be created, in the form of
-     * `projects/{project_number}/locations/{location}`.
+     * Required. The project in which the CDN key should be created, in the form
+     * of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -965,8 +962,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The ID to use for the CDN key, which will become the final component of
-     * the CDN key's resource name.
+     * Required. The ID to use for the CDN key, which will become the final
+     * component of the CDN key's resource name.
+     *
      * This value should conform to RFC-1034, which restricts to
      * lower-case letters, numbers, and hyphen, with the first character a
      * letter, the last a letter or a number, and a 63 character maximum.
@@ -991,8 +989,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The ID to use for the CDN key, which will become the final component of
-     * the CDN key's resource name.
+     * Required. The ID to use for the CDN key, which will become the final
+     * component of the CDN key's resource name.
+     *
      * This value should conform to RFC-1034, which restricts to
      * lower-case letters, numbers, and hyphen, with the first character a
      * letter, the last a letter or a number, and a 63 character maximum.
@@ -1017,8 +1016,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The ID to use for the CDN key, which will become the final component of
-     * the CDN key's resource name.
+     * Required. The ID to use for the CDN key, which will become the final
+     * component of the CDN key's resource name.
+     *
      * This value should conform to RFC-1034, which restricts to
      * lower-case letters, numbers, and hyphen, with the first character a
      * letter, the last a letter or a number, and a 63 character maximum.
@@ -1042,8 +1042,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The ID to use for the CDN key, which will become the final component of
-     * the CDN key's resource name.
+     * Required. The ID to use for the CDN key, which will become the final
+     * component of the CDN key's resource name.
+     *
      * This value should conform to RFC-1034, which restricts to
      * lower-case letters, numbers, and hyphen, with the first character a
      * letter, the last a letter or a number, and a 63 character maximum.
@@ -1063,8 +1064,9 @@ public final class CreateCdnKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The ID to use for the CDN key, which will become the final component of
-     * the CDN key's resource name.
+     * Required. The ID to use for the CDN key, which will become the final
+     * component of the CDN key's resource name.
+     *
      * This value should conform to RFC-1034, which restricts to
      * lower-case letters, numbers, and hyphen, with the first character a
      * letter, the last a letter or a number, and a 63 character maximum.

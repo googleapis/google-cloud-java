@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface CreateLiveSessionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the live session should be created,
-   * in the form of `projects/{project_number}/locations/{location}`.
+   * Required. The project and location in which the live session should be
+   * created, in the form of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateLiveSessionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the live session should be created,
-   * in the form of `projects/{project_number}/locations/{location}`.
+   * Required. The project and location in which the live session should be
+   * created, in the form of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,17 @@
 
 package com.google.cloud.video.stitcher.v1.stub.samples;
 
-// [START videostitcher_v1_generated_VideoStitcherServiceStubSettings_CreateCdnKey_sync]
+// [START videostitcher_v1_generated_VideoStitcherServiceStubSettings_GetCdnKey_sync]
 import com.google.cloud.video.stitcher.v1.stub.VideoStitcherServiceStubSettings;
 import java.time.Duration;
 
-public class SyncCreateCdnKey {
+public class SyncGetCdnKey {
 
   public static void main(String[] args) throws Exception {
-    syncCreateCdnKey();
+    syncGetCdnKey();
   }
 
-  public static void syncCreateCdnKey() throws Exception {
+  public static void syncGetCdnKey() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -35,10 +35,10 @@ public class SyncCreateCdnKey {
     VideoStitcherServiceStubSettings.Builder videoStitcherServiceSettingsBuilder =
         VideoStitcherServiceStubSettings.newBuilder();
     videoStitcherServiceSettingsBuilder
-        .createCdnKeySettings()
+        .getCdnKeySettings()
         .setRetrySettings(
             videoStitcherServiceSettingsBuilder
-                .createCdnKeySettings()
+                .getCdnKeySettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
@@ -47,4 +47,4 @@ public class SyncCreateCdnKey {
         videoStitcherServiceSettingsBuilder.build();
   }
 }
-// [END videostitcher_v1_generated_VideoStitcherServiceStubSettings_CreateCdnKey_sync]
+// [END videostitcher_v1_generated_VideoStitcherServiceStubSettings_GetCdnKey_sync]

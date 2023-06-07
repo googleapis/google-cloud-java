@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
     return new CreateVodSessionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.VideoStitcherServiceProto
         .internal_static_google_cloud_video_stitcher_v1_CreateVodSessionRequest_descriptor;
@@ -75,8 +70,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The project and location in which the VOD session should be created, in the
-   * form of `projects/{project_number}/locations/{location}`.
+   * Required. The project and location in which the VOD session should be
+   * created, in the form of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -101,8 +96,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The project and location in which the VOD session should be created, in the
-   * form of `projects/{project_number}/locations/{location}`.
+   * Required. The project and location in which the VOD session should be
+   * created, in the form of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -559,8 +554,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project and location in which the VOD session should be created, in the
-     * form of `projects/{project_number}/locations/{location}`.
+     * Required. The project and location in which the VOD session should be
+     * created, in the form of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -584,8 +579,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project and location in which the VOD session should be created, in the
-     * form of `projects/{project_number}/locations/{location}`.
+     * Required. The project and location in which the VOD session should be
+     * created, in the form of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -609,8 +604,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project and location in which the VOD session should be created, in the
-     * form of `projects/{project_number}/locations/{location}`.
+     * Required. The project and location in which the VOD session should be
+     * created, in the form of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -633,8 +628,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project and location in which the VOD session should be created, in the
-     * form of `projects/{project_number}/locations/{location}`.
+     * Required. The project and location in which the VOD session should be
+     * created, in the form of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -653,8 +648,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The project and location in which the VOD session should be created, in the
-     * form of `projects/{project_number}/locations/{location}`.
+     * Required. The project and location in which the VOD session should be
+     * created, in the form of `projects/{project_number}/locations/{location}`.
      * </pre>
      *
      * <code>

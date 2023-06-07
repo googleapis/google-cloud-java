@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface ListVodStitchDetailsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The VOD session where the stitch details belong to, in the form of
-   * `projects/{project}/locations/{location}/vodSessions/{id}`.
+   * Required. The VOD session where the stitch details belong to, in the form
+   * of `projects/{project}/locations/{location}/vodSessions/{id}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListVodStitchDetailsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The VOD session where the stitch details belong to, in the form of
-   * `projects/{project}/locations/{location}/vodSessions/{id}`.
+   * Required. The VOD session where the stitch details belong to, in the form
+   * of `projects/{project}/locations/{location}/vodSessions/{id}`.
    * </pre>
    *
    * <code>
