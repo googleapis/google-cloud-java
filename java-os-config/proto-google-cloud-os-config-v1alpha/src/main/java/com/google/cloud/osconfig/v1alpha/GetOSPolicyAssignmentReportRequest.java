@@ -48,6 +48,11 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
     return new GetOSPolicyAssignmentReportRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReportsProto
         .internal_static_google_cloud_osconfig_v1alpha_GetOSPolicyAssignmentReportRequest_descriptor;
@@ -72,10 +77,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
    *
    * <pre>
    * Required. API resource name for OS policy assignment report.
-   *
    * Format:
    * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
    * can be provided.
@@ -105,10 +108,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
    *
    * <pre>
    * Required. API resource name for OS policy assignment report.
-   *
    * Format:
    * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
    * can be provided.
@@ -491,10 +492,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
      *
      * <pre>
      * Required. API resource name for OS policy assignment report.
-     *
      * Format:
      * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
      * can be provided.
@@ -523,10 +522,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
      *
      * <pre>
      * Required. API resource name for OS policy assignment report.
-     *
      * Format:
      * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
      * can be provided.
@@ -555,10 +552,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
      *
      * <pre>
      * Required. API resource name for OS policy assignment report.
-     *
      * Format:
      * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
      * can be provided.
@@ -586,10 +581,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
      *
      * <pre>
      * Required. API resource name for OS policy assignment report.
-     *
      * Format:
      * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
      * can be provided.
@@ -613,10 +606,8 @@ public final class GetOSPolicyAssignmentReportRequest extends com.google.protobu
      *
      * <pre>
      * Required. API resource name for OS policy assignment report.
-     *
      * Format:
      * `/projects/{project}/locations/{location}/instances/{instance}/osPolicyAssignments/{assignment}/report`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * For `{instance_id}`, either Compute Engine `instance-id` or `instance-name`
      * can be provided.

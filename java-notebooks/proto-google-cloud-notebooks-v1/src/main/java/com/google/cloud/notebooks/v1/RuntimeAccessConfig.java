@@ -49,6 +49,11 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
     return new RuntimeAccessConfig();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.RuntimeProto
         .internal_static_google_cloud_notebooks_v1_RuntimeAccessConfig_descriptor;

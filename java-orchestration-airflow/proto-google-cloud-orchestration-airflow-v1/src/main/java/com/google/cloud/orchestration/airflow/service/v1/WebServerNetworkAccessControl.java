@@ -47,6 +47,11 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
     return new WebServerNetworkAccessControl();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1_WebServerNetworkAccessControl_descriptor;
@@ -76,7 +81,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      * rule applies to.
      * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
      *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-     *
      * IP range prefixes should be properly truncated. For example,
      * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
      * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -95,7 +99,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      * rule applies to.
      * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
      *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-     *
      * IP range prefixes should be properly truncated. For example,
      * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
      * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -165,6 +168,11 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
       return new AllowedIpRange();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
           .internal_static_google_cloud_orchestration_airflow_service_v1_WebServerNetworkAccessControl_AllowedIpRange_descriptor;
@@ -194,7 +202,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      * rule applies to.
      * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
      *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-     *
      * IP range prefixes should be properly truncated. For example,
      * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
      * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -224,7 +231,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
      * rule applies to.
      * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
      *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-     *
      * IP range prefixes should be properly truncated. For example,
      * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
      * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -736,7 +742,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * rule applies to.
        * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
        *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-       *
        * IP range prefixes should be properly truncated. For example,
        * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
        * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -765,7 +770,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * rule applies to.
        * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
        *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-       *
        * IP range prefixes should be properly truncated. For example,
        * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
        * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -794,7 +798,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * rule applies to.
        * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
        *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-       *
        * IP range prefixes should be properly truncated. For example,
        * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
        * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -822,7 +825,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * rule applies to.
        * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
        *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-       *
        * IP range prefixes should be properly truncated. For example,
        * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
        * `2001:db8::1/32` should be truncated to `2001:db8::/32`.
@@ -846,7 +848,6 @@ public final class WebServerNetworkAccessControl extends com.google.protobuf.Gen
        * rule applies to.
        * Examples: `192.168.1.1` or `192.168.0.0/16` or `2001:db8::/32`
        *           or `2001:0db8:0000:0042:0000:8a2e:0370:7334`.
-       *
        * IP range prefixes should be properly truncated. For example,
        * `1.2.3.4/24` should be truncated to `1.2.3.0/24`. Similarly, for IPv6,
        * `2001:db8::1/32` should be truncated to `2001:db8::/32`.

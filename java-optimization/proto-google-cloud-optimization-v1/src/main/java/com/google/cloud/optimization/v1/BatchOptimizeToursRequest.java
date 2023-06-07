@@ -52,6 +52,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     return new BatchOptimizeToursRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.FleetRoutingProto
         .internal_static_google_cloud_optimization_v1_BatchOptimizeToursRequest_descriptor;
@@ -228,6 +233,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AsyncModelConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1556,9 +1566,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Target project and location to make a call.
-   *
    * Format: `projects/{project-id}/locations/{location-id}`.
-   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -1583,9 +1591,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Target project and location to make a call.
-   *
    * Format: `projects/{project-id}/locations/{location-id}`.
-   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -2126,9 +2132,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2152,9 +2156,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2178,9 +2180,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2203,9 +2203,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2224,9 +2222,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *

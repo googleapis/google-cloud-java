@@ -47,6 +47,11 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
     return new GetOSPolicyAssignmentRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1_GetOSPolicyAssignmentRequest_descriptor;
@@ -71,7 +76,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The resource name of OS policy assignment.
-   *
    * Format:
    * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
    * </pre>
@@ -99,7 +103,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The resource name of OS policy assignment.
-   *
    * Format:
    * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
    * </pre>
@@ -472,7 +475,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The resource name of OS policy assignment.
-     *
      * Format:
      * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
      * </pre>
@@ -499,7 +501,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The resource name of OS policy assignment.
-     *
      * Format:
      * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
      * </pre>
@@ -526,7 +527,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The resource name of OS policy assignment.
-     *
      * Format:
      * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
      * </pre>
@@ -552,7 +552,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The resource name of OS policy assignment.
-     *
      * Format:
      * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
      * </pre>
@@ -574,7 +573,6 @@ public final class GetOSPolicyAssignmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The resource name of OS policy assignment.
-     *
      * Format:
      * `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}&#64;{revisionId}`
      * </pre>

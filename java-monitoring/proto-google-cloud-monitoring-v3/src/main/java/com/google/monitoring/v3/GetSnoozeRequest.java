@@ -48,6 +48,11 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
     return new GetSnoozeRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.SnoozeServiceProto
         .internal_static_google_monitoring_v3_GetSnoozeRequest_descriptor;
@@ -72,7 +77,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The ID of the `Snooze` to retrieve. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
    * </pre>
    *
@@ -99,7 +103,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The ID of the `Snooze` to retrieve. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
    * </pre>
    *
@@ -470,7 +473,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The ID of the `Snooze` to retrieve. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
      * </pre>
      *
@@ -496,7 +498,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The ID of the `Snooze` to retrieve. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
      * </pre>
      *
@@ -522,7 +523,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The ID of the `Snooze` to retrieve. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
      * </pre>
      *
@@ -547,7 +547,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The ID of the `Snooze` to retrieve. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
      * </pre>
      *
@@ -568,7 +567,6 @@ public final class GetSnoozeRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The ID of the `Snooze` to retrieve. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
      * </pre>
      *

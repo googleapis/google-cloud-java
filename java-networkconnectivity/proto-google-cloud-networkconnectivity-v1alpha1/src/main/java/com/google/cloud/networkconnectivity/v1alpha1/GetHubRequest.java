@@ -47,6 +47,11 @@ public final class GetHubRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetHubRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkconnectivity.v1alpha1.HubProto
         .internal_static_google_cloud_networkconnectivity_v1alpha1_GetHubRequest_descriptor;

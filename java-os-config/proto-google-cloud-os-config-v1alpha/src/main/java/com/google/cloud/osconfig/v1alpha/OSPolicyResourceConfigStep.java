@@ -51,6 +51,11 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
     return new OSPolicyResourceConfigStep();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.ConfigCommonProto
         .internal_static_google_cloud_osconfig_v1alpha_OSPolicyResourceConfigStep_descriptor;
@@ -123,7 +128,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <pre>
      * Re-check desired state status for a resource after enforcement of all
      * resources in the current configuration run.
-     *
      * This step is used to determine the final desired state status for the
      * resource. It accounts for any resources that might have drifted from
      * their desired state due to side effects from configuring other resources
@@ -182,7 +186,6 @@ public final class OSPolicyResourceConfigStep extends com.google.protobuf.Genera
      * <pre>
      * Re-check desired state status for a resource after enforcement of all
      * resources in the current configuration run.
-     *
      * This step is used to determine the final desired state status for the
      * resource. It accounts for any resources that might have drifted from
      * their desired state due to side effects from configuring other resources

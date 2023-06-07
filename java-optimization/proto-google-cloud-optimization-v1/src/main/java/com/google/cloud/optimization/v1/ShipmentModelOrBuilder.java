@@ -168,10 +168,8 @@ public interface ShipmentModelOrBuilder
    * <pre>
    * Global start and end time of the model: no times outside of this range
    * can be considered valid.
-   *
    * The model's time span must be less than a year, i.e. the `global_end_time`
    * and the `global_start_time` must be within 31536000 seconds of each other.
-   *
    * When using `cost_per_*hour` fields, you might want to set this window to a
    * smaller interval to increase performance (eg. if you model a single day,
    * you should set the global time limits to that day).
@@ -190,10 +188,8 @@ public interface ShipmentModelOrBuilder
    * <pre>
    * Global start and end time of the model: no times outside of this range
    * can be considered valid.
-   *
    * The model's time span must be less than a year, i.e. the `global_end_time`
    * and the `global_start_time` must be within 31536000 seconds of each other.
-   *
    * When using `cost_per_*hour` fields, you might want to set this window to a
    * smaller interval to increase performance (eg. if you model a single day,
    * you should set the global time limits to that day).
@@ -212,10 +208,8 @@ public interface ShipmentModelOrBuilder
    * <pre>
    * Global start and end time of the model: no times outside of this range
    * can be considered valid.
-   *
    * The model's time span must be less than a year, i.e. the `global_end_time`
    * and the `global_start_time` must be within 31536000 seconds of each other.
-   *
    * When using `cost_per_*hour` fields, you might want to set this window to a
    * smaller interval to increase performance (eg. if you model a single day,
    * you should set the global time limits to that day).
@@ -293,13 +287,10 @@ public interface ShipmentModelOrBuilder
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
-   *
    * Usage examples:
-   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -320,8 +311,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -330,7 +319,6 @@ public interface ShipmentModelOrBuilder
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -392,13 +380,10 @@ public interface ShipmentModelOrBuilder
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
-   *
    * Usage examples:
-   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -419,8 +404,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -429,7 +412,6 @@ public interface ShipmentModelOrBuilder
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -491,13 +473,10 @@ public interface ShipmentModelOrBuilder
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
-   *
    * Usage examples:
-   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -518,8 +497,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -528,7 +505,6 @@ public interface ShipmentModelOrBuilder
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -589,13 +565,10 @@ public interface ShipmentModelOrBuilder
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
-   *
    * Usage examples:
-   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -616,8 +589,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -626,7 +597,6 @@ public interface ShipmentModelOrBuilder
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -689,13 +659,10 @@ public interface ShipmentModelOrBuilder
    * `use_geodesic_distances` cannot be true and neither
    * `duration_distance_matrix_src_tags` nor `duration_distance_matrix_dst_tags`
    * can be empty.
-   *
    * Usage examples:
-   *
    * * There are two locations: locA and locB.
    * * 1 vehicle starting its route at locA and ending it at locA.
    * * 1 pickup visit request at locB.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA"  end_tags: "locA" }
@@ -716,8 +683,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -726,7 +691,6 @@ public interface ShipmentModelOrBuilder
    * * 1 vehicle starting its route at locB and ending it at locB, using
    *   matrix "fast".
    * * 1 pickup visit request at locC.
-   *
    * ```
    * model {
    *   vehicles { start_tags: "locA" end_tags: "locB" start_tags: "fast" }
@@ -787,7 +751,6 @@ public interface ShipmentModelOrBuilder
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -811,7 +774,6 @@ public interface ShipmentModelOrBuilder
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -835,7 +797,6 @@ public interface ShipmentModelOrBuilder
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -860,7 +821,6 @@ public interface ShipmentModelOrBuilder
    * `duration_distance_matrices(i).rows(j)` defines durations and distances
    * from visits with tag `duration_distance_matrix_src_tags(j)` to other visits
    * in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -888,7 +848,6 @@ public interface ShipmentModelOrBuilder
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -914,7 +873,6 @@ public interface ShipmentModelOrBuilder
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -940,7 +898,6 @@ public interface ShipmentModelOrBuilder
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].
@@ -967,7 +924,6 @@ public interface ShipmentModelOrBuilder
    * (resp. the distance) of the travel from visits with tag
    * `duration_distance_matrix_src_tags(j)` to visits with tag
    * `duration_distance_matrix_dst_tags(k)` in matrix i.
-   *
    * Tags correspond to
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags].

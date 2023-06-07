@@ -29,9 +29,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
-   *
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
    * channel's name will have a normalized version of this field as a prefix,
@@ -51,9 +49,7 @@ public interface CreateNotificationChannelRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
-   *
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
    * channel's name will have a normalized version of this field as a prefix,

@@ -47,6 +47,11 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     return new Accelerator();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_Accelerator_descriptor;
@@ -71,7 +76,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The accelerator type string (for example, "nvidia-tesla-k80").
-   *
    * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
    * attached, the required runtime libraries will be made available to all
    * containers under `/usr/local/nvidia`. The driver version to install must
@@ -101,7 +105,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The accelerator type string (for example, "nvidia-tesla-k80").
-   *
    * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
    * attached, the required runtime libraries will be made available to all
    * containers under `/usr/local/nvidia`. The driver version to install must
@@ -515,7 +518,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The accelerator type string (for example, "nvidia-tesla-k80").
-     *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
      * containers under `/usr/local/nvidia`. The driver version to install must
@@ -544,7 +546,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The accelerator type string (for example, "nvidia-tesla-k80").
-     *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
      * containers under `/usr/local/nvidia`. The driver version to install must
@@ -573,7 +574,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The accelerator type string (for example, "nvidia-tesla-k80").
-     *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
      * containers under `/usr/local/nvidia`. The driver version to install must
@@ -601,7 +601,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The accelerator type string (for example, "nvidia-tesla-k80").
-     *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
      * containers under `/usr/local/nvidia`. The driver version to install must
@@ -625,7 +624,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The accelerator type string (for example, "nvidia-tesla-k80").
-     *
      * Only NVIDIA GPU accelerators are currently supported. If an NVIDIA GPU is
      * attached, the required runtime libraries will be made available to all
      * containers under `/usr/local/nvidia`. The driver version to install must

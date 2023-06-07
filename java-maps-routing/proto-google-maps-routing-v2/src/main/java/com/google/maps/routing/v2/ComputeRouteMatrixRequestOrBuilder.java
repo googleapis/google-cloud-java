@@ -30,7 +30,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Required. Array of origins, which determines the rows of the response
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
-   *
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
    * * The number of elements (origins × destinations) must be no greater than
@@ -51,7 +50,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Required. Array of origins, which determines the rows of the response
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
-   *
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
    * * The number of elements (origins × destinations) must be no greater than
@@ -72,7 +70,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Required. Array of origins, which determines the rows of the response
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
-   *
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
    * * The number of elements (origins × destinations) must be no greater than
@@ -93,7 +90,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Required. Array of origins, which determines the rows of the response
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
-   *
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
    * * The number of elements (origins × destinations) must be no greater than
@@ -115,7 +111,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * Required. Array of origins, which determines the rows of the response
    * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
-   *
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
    * * The number of elements (origins × destinations) must be no greater than

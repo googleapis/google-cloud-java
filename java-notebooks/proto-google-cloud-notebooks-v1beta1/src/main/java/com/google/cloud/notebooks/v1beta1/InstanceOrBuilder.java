@@ -179,7 +179,6 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -195,7 +194,6 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -211,7 +209,6 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -228,7 +225,6 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -249,7 +245,6 @@ public interface InstanceOrBuilder
    * Cloud services.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
-   *
    * If not specified, the [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
@@ -268,7 +263,6 @@ public interface InstanceOrBuilder
    * Cloud services.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
-   *
    * If not specified, the [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
@@ -568,7 +562,6 @@ public interface InstanceOrBuilder
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   *
    * Learn more about [using your own encryption
    * keys](https://cloud.google.com/kms/docs/quickstart).
    * </pre>
@@ -586,7 +579,6 @@ public interface InstanceOrBuilder
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   *
    * Learn more about [using your own encryption
    * keys](https://cloud.google.com/kms/docs/quickstart).
    * </pre>
@@ -973,5 +965,5 @@ public interface InstanceOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  com.google.cloud.notebooks.v1beta1.Instance.EnvironmentCase getEnvironmentCase();
+  public com.google.cloud.notebooks.v1beta1.Instance.EnvironmentCase getEnvironmentCase();
 }

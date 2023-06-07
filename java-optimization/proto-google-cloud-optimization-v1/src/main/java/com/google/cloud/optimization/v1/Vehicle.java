@@ -41,8 +41,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   private Vehicle() {
     travelMode_ = 0;
-    startTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    endTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    startTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    endTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     startTimeWindows_ = java.util.Collections.emptyList();
     endTimeWindows_ = java.util.Collections.emptyList();
     unloadingPolicy_ = 0;
@@ -57,6 +57,11 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Vehicle();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -92,7 +97,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Travel modes which can be used by vehicles.
-   *
    * These should be a subset of the Google Maps Platform Routes Preferred API
    * travel modes, see:
    * https://developers.google.com/maps/documentation/routes_preferred/reference/rest/Shared.Types/RouteTravelMode.
@@ -232,7 +236,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Policy on how a vehicle can be unloaded. Applies only to shipments having
    * both a pickup and a delivery.
-   *
    * Other shipments are free to occur anywhere on the route independent of
    * `unloading_policy`.
    * </pre>
@@ -559,6 +562,11 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return new LoadLimit();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.optimization.v1.FleetRoutingProto
           .internal_static_google_cloud_optimization_v1_Vehicle_LoadLimit_descriptor;
@@ -656,6 +664,11 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Interval();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2699,7 +2712,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost. This cost adds up to other costs defined in
      * the model, with the same unit.
-     *
      * If defined, `soft_max_duration` must be nonnegative. If max_duration is
      * also defined, `soft_max_duration` must be less than max_duration.
      * </pre>
@@ -2716,7 +2728,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost. This cost adds up to other costs defined in
      * the model, with the same unit.
-     *
      * If defined, `soft_max_duration` must be nonnegative. If max_duration is
      * also defined, `soft_max_duration` must be less than max_duration.
      * </pre>
@@ -2733,7 +2744,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost. This cost adds up to other costs defined in
      * the model, with the same unit.
-     *
      * If defined, `soft_max_duration` must be nonnegative. If max_duration is
      * also defined, `soft_max_duration` must be less than max_duration.
      * </pre>
@@ -2786,12 +2796,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
-     *
      * If defined, `quadratic_soft_max_duration` must be nonnegative. If
      * `max_duration` is also defined, `quadratic_soft_max_duration` must be
      * less than `max_duration`, and the difference must be no larger than one
      * day:
-     *
      *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -2807,12 +2815,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
-     *
      * If defined, `quadratic_soft_max_duration` must be nonnegative. If
      * `max_duration` is also defined, `quadratic_soft_max_duration` must be
      * less than `max_duration`, and the difference must be no larger than one
      * day:
-     *
      *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -2828,12 +2834,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
-     *
      * If defined, `quadratic_soft_max_duration` must be nonnegative. If
      * `max_duration` is also defined, `quadratic_soft_max_duration` must be
      * less than `max_duration`, and the difference must be no larger than one
      * day:
-     *
      *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -2847,15 +2851,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per square hour incurred if the
      * `quadratic_soft_max_duration` threshold is violated.
-     *
      * The additional cost is 0 if the duration is under the threshold,
      * otherwise the cost depends on the duration as follows:
-     *
      * ```
      *   cost_per_square_hour_after_quadratic_soft_max *
      *   (duration - quadratic_soft_max_duration)^2
      * ```
-     *
      * The cost must be nonnegative.
      * </pre>
      *
@@ -2870,15 +2871,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per square hour incurred if the
      * `quadratic_soft_max_duration` threshold is violated.
-     *
      * The additional cost is 0 if the duration is under the threshold,
      * otherwise the cost depends on the duration as follows:
-     *
      * ```
      *   cost_per_square_hour_after_quadratic_soft_max *
      *   (duration - quadratic_soft_max_duration)^2
      * ```
-     *
      * The cost must be nonnegative.
      * </pre>
      *
@@ -2894,7 +2892,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A limit defining a maximum duration of the route of a vehicle. It can be
    * either hard or soft.
-   *
    * When a soft limit field is defined, both the soft max threshold and its
    * associated cost must be defined together.
    * </pre>
@@ -2917,6 +2914,11 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DurationLimit();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2994,7 +2996,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost. This cost adds up to other costs defined in
      * the model, with the same unit.
-     *
      * If defined, `soft_max_duration` must be nonnegative. If max_duration is
      * also defined, `soft_max_duration` must be less than max_duration.
      * </pre>
@@ -3014,7 +3015,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost. This cost adds up to other costs defined in
      * the model, with the same unit.
-     *
      * If defined, `soft_max_duration` must be nonnegative. If max_duration is
      * also defined, `soft_max_duration` must be less than max_duration.
      * </pre>
@@ -3036,7 +3036,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost. This cost adds up to other costs defined in
      * the model, with the same unit.
-     *
      * If defined, `soft_max_duration` must be nonnegative. If max_duration is
      * also defined, `soft_max_duration` must be less than max_duration.
      * </pre>
@@ -3104,12 +3103,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
-     *
      * If defined, `quadratic_soft_max_duration` must be nonnegative. If
      * `max_duration` is also defined, `quadratic_soft_max_duration` must be
      * less than `max_duration`, and the difference must be no larger than one
      * day:
-     *
      *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -3128,12 +3125,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
-     *
      * If defined, `quadratic_soft_max_duration` must be nonnegative. If
      * `max_duration` is also defined, `quadratic_soft_max_duration` must be
      * less than `max_duration`, and the difference must be no larger than one
      * day:
-     *
      *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -3154,12 +3149,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum duration limit, but when violated
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
-     *
      * If defined, `quadratic_soft_max_duration` must be nonnegative. If
      * `max_duration` is also defined, `quadratic_soft_max_duration` must be
      * less than `max_duration`, and the difference must be no larger than one
      * day:
-     *
      *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -3180,15 +3173,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per square hour incurred if the
      * `quadratic_soft_max_duration` threshold is violated.
-     *
      * The additional cost is 0 if the duration is under the threshold,
      * otherwise the cost depends on the duration as follows:
-     *
      * ```
      *   cost_per_square_hour_after_quadratic_soft_max *
      *   (duration - quadratic_soft_max_duration)^2
      * ```
-     *
      * The cost must be nonnegative.
      * </pre>
      *
@@ -3206,15 +3196,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per square hour incurred if the
      * `quadratic_soft_max_duration` threshold is violated.
-     *
      * The additional cost is 0 if the duration is under the threshold,
      * otherwise the cost depends on the duration as follows:
-     *
      * ```
      *   cost_per_square_hour_after_quadratic_soft_max *
      *   (duration - quadratic_soft_max_duration)^2
      * ```
-     *
      * The cost must be nonnegative.
      * </pre>
      *
@@ -3471,7 +3458,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A limit defining a maximum duration of the route of a vehicle. It can be
      * either hard or soft.
-     *
      * When a soft limit field is defined, both the soft max threshold and its
      * associated cost must be defined together.
      * </pre>
@@ -3925,7 +3911,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -3944,7 +3929,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -3969,7 +3953,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -3996,7 +3979,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -4020,7 +4002,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -4050,7 +4031,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -4074,7 +4054,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -4093,7 +4072,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -4116,7 +4094,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost. This cost adds up to other costs defined in
        * the model, with the same unit.
-       *
        * If defined, `soft_max_duration` must be nonnegative. If max_duration is
        * also defined, `soft_max_duration` must be less than max_duration.
        * </pre>
@@ -4245,12 +4222,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4268,12 +4243,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4297,12 +4270,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4328,12 +4299,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4357,12 +4326,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4391,12 +4358,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4419,12 +4384,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4442,12 +4405,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4469,12 +4430,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * A soft limit not enforcing a maximum duration limit, but when violated
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
-       *
        * If defined, `quadratic_soft_max_duration` must be nonnegative. If
        * `max_duration` is also defined, `quadratic_soft_max_duration` must be
        * less than `max_duration`, and the difference must be no larger than one
        * day:
-       *
        *    `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -4504,15 +4463,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Cost per square hour incurred if the
        * `quadratic_soft_max_duration` threshold is violated.
-       *
        * The additional cost is 0 if the duration is under the threshold,
        * otherwise the cost depends on the duration as follows:
-       *
        * ```
        *   cost_per_square_hour_after_quadratic_soft_max *
        *   (duration - quadratic_soft_max_duration)^2
        * ```
-       *
        * The cost must be nonnegative.
        * </pre>
        *
@@ -4530,15 +4486,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Cost per square hour incurred if the
        * `quadratic_soft_max_duration` threshold is violated.
-       *
        * The additional cost is 0 if the duration is under the threshold,
        * otherwise the cost depends on the duration as follows:
-       *
        * ```
        *   cost_per_square_hour_after_quadratic_soft_max *
        *   (duration - quadratic_soft_max_duration)^2
        * ```
-       *
        * The cost must be nonnegative.
        * </pre>
        *
@@ -4556,15 +4509,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Cost per square hour incurred if the
        * `quadratic_soft_max_duration` threshold is violated.
-       *
        * The additional cost is 0 if the duration is under the threshold,
        * otherwise the cost depends on the duration as follows:
-       *
        * ```
        *   cost_per_square_hour_after_quadratic_soft_max *
        *   (duration - quadratic_soft_max_duration)^2
        * ```
-       *
        * The cost must be nonnegative.
        * </pre>
        *
@@ -4586,15 +4536,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Cost per square hour incurred if the
        * `quadratic_soft_max_duration` threshold is violated.
-       *
        * The additional cost is 0 if the duration is under the threshold,
        * otherwise the cost depends on the duration as follows:
-       *
        * ```
        *   cost_per_square_hour_after_quadratic_soft_max *
        *   (duration - quadratic_soft_max_duration)^2
        * ```
-       *
        * The cost must be nonnegative.
        * </pre>
        *
@@ -4956,14 +4903,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public static final int START_TAGS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList startTags_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList startTags_;
   /**
    *
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -4979,7 +4924,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -4995,7 +4939,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -5012,7 +4955,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies tags attached to the start of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -5028,14 +4970,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public static final int END_TAGS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList endTags_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList endTags_;
   /**
    *
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -5051,7 +4991,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -5067,7 +5006,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -5084,7 +5022,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies tags attached to the end of the vehicle's route.
-   *
    * Empty or duplicate strings are not allowed.
    * </pre>
    *
@@ -5110,11 +5047,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5134,11 +5069,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5159,11 +5092,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5183,11 +5114,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5207,11 +5136,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5237,11 +5164,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5261,11 +5186,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5286,11 +5209,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5310,11 +5231,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5334,11 +5253,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
    * fields). If unspecified, there is no limitation besides those global time
    * limits.
-   *
    * Time windows belonging to the same repeated field must be disjoint, i.e. no
    * time window can overlap with or be adjacent to another, and they must be in
    * chronological order.
-   *
    * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
    * there is a single time window.
    * </pre>
@@ -5364,11 +5281,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
    * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
    * is standard, and this multiple is considered 1.0.
-   *
    * WARNING: Travel times will be rounded to the nearest second after this
    * multiple is applied but before performing any numerical operations, thus,
    * a small multiple may result in a loss of precision.
-   *
    * See also `extra_visit_duration_for_visit_type` below.
    * </pre>
    *
@@ -5391,11 +5306,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
    * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
    * is standard, and this multiple is considered 1.0.
-   *
    * WARNING: Travel times will be rounded to the nearest second after this
    * multiple is applied but before performing any numerical operations, thus,
    * a small multiple may result in a loss of precision.
-   *
    * See also `extra_visit_duration_for_visit_type` below.
    * </pre>
    *
@@ -5592,7 +5505,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Vehicle costs: all costs add up and must be in the same unit as
    * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
-   *
    * Cost per hour of the vehicle route. This cost is applied to the total time
    * taken by the route, and includes travel time, waiting time, and visit time.
    * Using `cost_per_hour` instead of just `cost_per_traveled_hour` may result
@@ -5678,11 +5590,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * This field only applies to vehicles when their route does not serve any
    * shipments. It indicates if the vehicle should be considered as used or not
    * in this case.
-   *
    * If true, the vehicle goes from its start to its end location even if it
    * doesn't serve any shipments, and time and distance costs resulting from its
    * start --&gt; end travel are taken into account.
-   *
    * Otherwise, it doesn't travel from its start to its end location, and no
    * `break_rule` or delay (from `TransitionAttributes`) are scheduled for this
    * vehicle. In this case, the vehicle's `ShipmentRoute` doesn't contain any
@@ -5909,7 +5819,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
-   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -5941,7 +5850,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
-   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -5964,7 +5872,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
-   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -5994,7 +5901,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * to be taken at visits with the specified `visit_types`. This extra visit
    * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
    * `visit_types`) cannot be empty strings.
-   *
    * If a visit request has multiple types, a duration will be added for each
    * type in the map.
    * </pre>
@@ -6132,11 +6038,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If true, `used_if_route_is_empty` must be false, and this vehicle will
    * remain unused.
-   *
    * If a shipment is performed by an ignored vehicle in
    * `injected_first_solution_routes`, it is skipped in the first solution but
    * is free to be performed in the response.
-   *
    * If a shipment is performed by an ignored vehicle in
    * `injected_solution_constraint` and any related pickup/delivery is
    * constrained to remain on the vehicle (i.e., not relaxed to level
@@ -6166,7 +6070,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * Indices in the `break_rule` field in the source
    * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
    * correspond to break rules enforced on the vehicle.
-   *
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
@@ -6189,7 +6092,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * Indices in the `break_rule` field in the source
    * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
    * correspond to break rules enforced on the vehicle.
-   *
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
@@ -6211,7 +6113,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * Indices in the `break_rule` field in the source
    * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
    * correspond to break rules enforced on the vehicle.
-   *
    * As of 2018/03, at most one rule index per vehicle can be specified.
    * </pre>
    *
@@ -7157,8 +7058,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         endWaypointBuilder_.dispose();
         endWaypointBuilder_ = null;
       }
-      startTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      endTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      startTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      endTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (startTimeWindowsBuilder_ == null) {
         startTimeWindows_ = java.util.Collections.emptyList();
       } else {
@@ -7262,6 +7165,16 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.optimization.v1.Vehicle result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        startTags_ = startTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.startTags_ = startTags_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        endTags_ = endTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.endTags_ = endTags_;
       if (startTimeWindowsBuilder_ == null) {
         if (((bitField0_ & 0x00000080) != 0)) {
           startTimeWindows_ = java.util.Collections.unmodifiableList(startTimeWindows_);
@@ -7334,14 +7247,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.endWaypoint_ =
             endWaypointBuilder_ == null ? endWaypoint_ : endWaypointBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        startTags_.makeImmutable();
-        result.startTags_ = startTags_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        endTags_.makeImmutable();
-        result.endTags_ = endTags_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000200) != 0)) {
@@ -7467,7 +7372,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (!other.startTags_.isEmpty()) {
         if (startTags_.isEmpty()) {
           startTags_ = other.startTags_;
-          bitField0_ |= 0x00000020;
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureStartTagsIsMutable();
           startTags_.addAll(other.startTags_);
@@ -7477,7 +7382,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (!other.endTags_.isEmpty()) {
         if (endTags_.isEmpty()) {
           endTags_ = other.endTags_;
-          bitField0_ |= 0x00000040;
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureEndTagsIsMutable();
           endTags_.addAll(other.endTags_);
@@ -8924,21 +8829,20 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return endWaypointBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList startTags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList startTags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureStartTagsIsMutable() {
-      if (!startTags_.isModifiable()) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         startTags_ = new com.google.protobuf.LazyStringArrayList(startTags_);
+        bitField0_ |= 0x00000020;
       }
-      bitField0_ |= 0x00000020;
     }
     /**
      *
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -8947,15 +8851,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the startTags.
      */
     public com.google.protobuf.ProtocolStringList getStartTagsList() {
-      startTags_.makeImmutable();
-      return startTags_;
+      return startTags_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -8971,7 +8873,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -8988,7 +8889,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9005,7 +8905,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9021,7 +8920,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStartTagsIsMutable();
       startTags_.set(index, value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9030,7 +8928,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9045,7 +8942,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStartTagsIsMutable();
       startTags_.add(value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9054,7 +8950,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9066,7 +8961,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStartTags(java.lang.Iterable<java.lang.String> values) {
       ensureStartTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, startTags_);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9075,7 +8969,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9084,9 +8977,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartTags() {
-      startTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      startTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
-      ;
       onChanged();
       return this;
     }
@@ -9095,7 +8987,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the start of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9111,26 +9002,24 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStartTagsIsMutable();
       startTags_.add(value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList endTags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList endTags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEndTagsIsMutable() {
-      if (!endTags_.isModifiable()) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         endTags_ = new com.google.protobuf.LazyStringArrayList(endTags_);
+        bitField0_ |= 0x00000040;
       }
-      bitField0_ |= 0x00000040;
     }
     /**
      *
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9139,15 +9028,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the endTags.
      */
     public com.google.protobuf.ProtocolStringList getEndTagsList() {
-      endTags_.makeImmutable();
-      return endTags_;
+      return endTags_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9163,7 +9050,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9180,7 +9066,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9197,7 +9082,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9213,7 +9097,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEndTagsIsMutable();
       endTags_.set(index, value);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9222,7 +9105,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9237,7 +9119,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEndTagsIsMutable();
       endTags_.add(value);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9246,7 +9127,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9258,7 +9138,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEndTags(java.lang.Iterable<java.lang.String> values) {
       ensureEndTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, endTags_);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9267,7 +9146,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9276,9 +9154,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndTags() {
-      endTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      endTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
-      ;
       onChanged();
       return this;
     }
@@ -9287,7 +9164,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies tags attached to the end of the vehicle's route.
-     *
      * Empty or duplicate strings are not allowed.
      * </pre>
      *
@@ -9303,7 +9179,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEndTagsIsMutable();
       endTags_.add(value);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9334,11 +9209,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9361,11 +9234,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9388,11 +9259,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9415,11 +9284,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9449,11 +9316,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9480,11 +9345,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9513,11 +9376,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9547,11 +9408,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9578,11 +9437,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9609,11 +9466,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9640,11 +9495,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9670,11 +9523,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9700,11 +9551,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9724,11 +9573,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9752,11 +9599,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9780,11 +9625,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9804,11 +9647,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9829,11 +9670,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9891,11 +9730,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9918,11 +9755,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9945,11 +9780,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -9972,11 +9805,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10005,11 +9836,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10036,11 +9865,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10069,11 +9896,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10102,11 +9927,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10133,11 +9956,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10164,11 +9985,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10195,11 +10014,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10225,11 +10042,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10255,11 +10070,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10278,11 +10091,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10306,11 +10117,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10334,11 +10143,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10358,11 +10165,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10382,11 +10187,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * [ShipmentModel.global_*][google.cloud.optimization.v1.ShipmentModel.global_start_time]
      * fields). If unspecified, there is no limitation besides those global time
      * limits.
-     *
      * Time windows belonging to the same repeated field must be disjoint, i.e. no
      * time window can overlap with or be adjacent to another, and they must be in
      * chronological order.
-     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only be set if
      * there is a single time window.
      * </pre>
@@ -10430,11 +10233,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
      * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
      * is standard, and this multiple is considered 1.0.
-     *
      * WARNING: Travel times will be rounded to the nearest second after this
      * multiple is applied but before performing any numerical operations, thus,
      * a small multiple may result in a loss of precision.
-     *
      * See also `extra_visit_duration_for_visit_type` below.
      * </pre>
      *
@@ -10457,11 +10258,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
      * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
      * is standard, and this multiple is considered 1.0.
-     *
      * WARNING: Travel times will be rounded to the nearest second after this
      * multiple is applied but before performing any numerical operations, thus,
      * a small multiple may result in a loss of precision.
-     *
      * See also `extra_visit_duration_for_visit_type` below.
      * </pre>
      *
@@ -10484,11 +10283,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
      * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
      * is standard, and this multiple is considered 1.0.
-     *
      * WARNING: Travel times will be rounded to the nearest second after this
      * multiple is applied but before performing any numerical operations, thus,
      * a small multiple may result in a loss of precision.
-     *
      * See also `extra_visit_duration_for_visit_type` below.
      * </pre>
      *
@@ -10515,11 +10312,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * It does affect cost if `cost_per_hour` or `cost_per_traveled_hour` are
      * specified. This must be in the range [0.001, 1000.0]. If unset, the vehicle
      * is standard, and this multiple is considered 1.0.
-     *
      * WARNING: Travel times will be rounded to the nearest second after this
      * multiple is applied but before performing any numerical operations, thus,
      * a small multiple may result in a loss of precision.
-     *
      * See also `extra_visit_duration_for_visit_type` below.
      * </pre>
      *
@@ -10855,7 +10650,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Vehicle costs: all costs add up and must be in the same unit as
      * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
-     *
      * Cost per hour of the vehicle route. This cost is applied to the total time
      * taken by the route, and includes travel time, waiting time, and visit time.
      * Using `cost_per_hour` instead of just `cost_per_traveled_hour` may result
@@ -10876,7 +10670,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Vehicle costs: all costs add up and must be in the same unit as
      * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
-     *
      * Cost per hour of the vehicle route. This cost is applied to the total time
      * taken by the route, and includes travel time, waiting time, and visit time.
      * Using `cost_per_hour` instead of just `cost_per_traveled_hour` may result
@@ -10901,7 +10694,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Vehicle costs: all costs add up and must be in the same unit as
      * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
-     *
      * Cost per hour of the vehicle route. This cost is applied to the total time
      * taken by the route, and includes travel time, waiting time, and visit time.
      * Using `cost_per_hour` instead of just `cost_per_traveled_hour` may result
@@ -11107,11 +10899,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * This field only applies to vehicles when their route does not serve any
      * shipments. It indicates if the vehicle should be considered as used or not
      * in this case.
-     *
      * If true, the vehicle goes from its start to its end location even if it
      * doesn't serve any shipments, and time and distance costs resulting from its
      * start --&gt; end travel are taken into account.
-     *
      * Otherwise, it doesn't travel from its start to its end location, and no
      * `break_rule` or delay (from `TransitionAttributes`) are scheduled for this
      * vehicle. In this case, the vehicle's `ShipmentRoute` doesn't contain any
@@ -11133,11 +10923,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * This field only applies to vehicles when their route does not serve any
      * shipments. It indicates if the vehicle should be considered as used or not
      * in this case.
-     *
      * If true, the vehicle goes from its start to its end location even if it
      * doesn't serve any shipments, and time and distance costs resulting from its
      * start --&gt; end travel are taken into account.
-     *
      * Otherwise, it doesn't travel from its start to its end location, and no
      * `break_rule` or delay (from `TransitionAttributes`) are scheduled for this
      * vehicle. In this case, the vehicle's `ShipmentRoute` doesn't contain any
@@ -11163,11 +10951,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * This field only applies to vehicles when their route does not serve any
      * shipments. It indicates if the vehicle should be considered as used or not
      * in this case.
-     *
      * If true, the vehicle goes from its start to its end location even if it
      * doesn't serve any shipments, and time and distance costs resulting from its
      * start --&gt; end travel are taken into account.
-     *
      * Otherwise, it doesn't travel from its start to its end location, and no
      * `break_rule` or delay (from `TransitionAttributes`) are scheduled for this
      * vehicle. In this case, the vehicle's `ShipmentRoute` doesn't contain any
@@ -11843,7 +11629,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -11875,7 +11660,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -11898,7 +11682,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -11928,7 +11711,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -11965,7 +11747,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -11997,7 +11778,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -12027,7 +11807,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * to be taken at visits with the specified `visit_types`. This extra visit
      * duration adds cost if `cost_per_hour` is specified. Keys (i.e.
      * `visit_types`) cannot be empty strings.
-     *
      * If a visit request has multiple types, a duration will be added for each
      * type in the map.
      * </pre>
@@ -12358,11 +12137,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, `used_if_route_is_empty` must be false, and this vehicle will
      * remain unused.
-     *
      * If a shipment is performed by an ignored vehicle in
      * `injected_first_solution_routes`, it is skipped in the first solution but
      * is free to be performed in the response.
-     *
      * If a shipment is performed by an ignored vehicle in
      * `injected_solution_constraint` and any related pickup/delivery is
      * constrained to remain on the vehicle (i.e., not relaxed to level
@@ -12385,11 +12162,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, `used_if_route_is_empty` must be false, and this vehicle will
      * remain unused.
-     *
      * If a shipment is performed by an ignored vehicle in
      * `injected_first_solution_routes`, it is skipped in the first solution but
      * is free to be performed in the response.
-     *
      * If a shipment is performed by an ignored vehicle in
      * `injected_solution_constraint` and any related pickup/delivery is
      * constrained to remain on the vehicle (i.e., not relaxed to level
@@ -12416,11 +12191,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, `used_if_route_is_empty` must be false, and this vehicle will
      * remain unused.
-     *
      * If a shipment is performed by an ignored vehicle in
      * `injected_first_solution_routes`, it is skipped in the first solution but
      * is free to be performed in the response.
-     *
      * If a shipment is performed by an ignored vehicle in
      * `injected_solution_constraint` and any related pickup/delivery is
      * constrained to remain on the vehicle (i.e., not relaxed to level
@@ -12456,7 +12229,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *
@@ -12480,7 +12252,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *
@@ -12502,7 +12273,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *
@@ -12525,7 +12295,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *
@@ -12553,7 +12322,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *
@@ -12580,7 +12348,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *
@@ -12606,7 +12373,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * Indices in the `break_rule` field in the source
      * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel]. They
      * correspond to break rules enforced on the vehicle.
-     *
      * As of 2018/03, at most one rule index per vehicle can be specified.
      * </pre>
      *

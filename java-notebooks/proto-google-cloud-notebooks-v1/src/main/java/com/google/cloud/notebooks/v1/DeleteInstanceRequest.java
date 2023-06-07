@@ -47,6 +47,11 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     return new DeleteInstanceRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.NotebooksProto
         .internal_static_google_cloud_notebooks_v1_DeleteInstanceRequest_descriptor;

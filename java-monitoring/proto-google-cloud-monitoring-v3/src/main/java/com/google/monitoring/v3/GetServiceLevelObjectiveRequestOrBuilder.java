@@ -28,7 +28,6 @@ public interface GetServiceLevelObjectiveRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
@@ -44,7 +43,6 @@ public interface GetServiceLevelObjectiveRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *

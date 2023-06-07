@@ -46,6 +46,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
     return new UpdateNotificationChannelRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationServiceProto
         .internal_static_google_monitoring_v3_UpdateNotificationChannelRequest_descriptor;

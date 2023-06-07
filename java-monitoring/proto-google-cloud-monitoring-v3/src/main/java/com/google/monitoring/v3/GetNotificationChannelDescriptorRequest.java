@@ -49,6 +49,11 @@ public final class GetNotificationChannelDescriptorRequest
     return new GetNotificationChannelDescriptorRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationServiceProto
         .internal_static_google_monitoring_v3_GetNotificationChannelDescriptorRequest_descriptor;
@@ -73,7 +78,6 @@ public final class GetNotificationChannelDescriptorRequest
    *
    * <pre>
    * Required. The channel type for which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
    * </pre>
    *
@@ -100,7 +104,6 @@ public final class GetNotificationChannelDescriptorRequest
    *
    * <pre>
    * Required. The channel type for which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
    * </pre>
    *
@@ -476,7 +479,6 @@ public final class GetNotificationChannelDescriptorRequest
      *
      * <pre>
      * Required. The channel type for which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
      * </pre>
      *
@@ -502,7 +504,6 @@ public final class GetNotificationChannelDescriptorRequest
      *
      * <pre>
      * Required. The channel type for which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
      * </pre>
      *
@@ -528,7 +529,6 @@ public final class GetNotificationChannelDescriptorRequest
      *
      * <pre>
      * Required. The channel type for which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
      * </pre>
      *
@@ -553,7 +553,6 @@ public final class GetNotificationChannelDescriptorRequest
      *
      * <pre>
      * Required. The channel type for which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
      * </pre>
      *
@@ -574,7 +573,6 @@ public final class GetNotificationChannelDescriptorRequest
      *
      * <pre>
      * Required. The channel type for which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
      * </pre>
      *

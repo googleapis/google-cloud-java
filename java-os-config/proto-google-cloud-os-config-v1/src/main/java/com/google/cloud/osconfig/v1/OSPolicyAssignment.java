@@ -25,12 +25,10 @@ package com.google.cloud.osconfig.v1;
  * OS policy assignment is an API resource that is used to
  * apply a set of OS policies to a dynamically targeted group of Compute Engine
  * VM instances.
- *
  * An OS policy is used to define the desired state configuration for a
  * Compute Engine VM instance through a set of configuration resources that
  * provide capabilities such as installing or removing software packages, or
  * executing a script.
- *
  * For more information, see [OS policy and OS policy
  * assignment](https://cloud.google.com/compute/docs/os-configuration-management/working-with-os-policies).
  * </pre>
@@ -61,6 +59,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OSPolicyAssignment();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -385,6 +388,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LabelSet();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1175,7 +1183,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1190,7 +1197,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1204,7 +1210,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1218,7 +1223,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1233,7 +1237,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1249,7 +1252,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1264,7 +1266,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1278,7 +1279,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1292,7 +1292,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1307,7 +1306,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -1323,7 +1321,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -1339,7 +1336,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -1355,7 +1351,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -1370,7 +1365,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -1388,7 +1382,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -1405,7 +1398,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Filters to select target VMs for an assignment.
-   *
    * If more than one filter criteria is specified below, a VM will be selected
    * if and only if it satisfies all of them.
    * </pre>
@@ -1432,6 +1424,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InstanceFilter();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1484,11 +1481,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The OS version
-       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
-       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -1502,11 +1497,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The OS version
-       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
-       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -1544,6 +1537,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Inventory();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1622,11 +1620,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The OS version
-       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
-       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -1651,11 +1647,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The OS version
-       *
        * Prefix matches are supported if asterisk(*) is provided as the
        * last character. For example, to match all versions with a major
        * version of `7`, specify the following value for this field `7.*`
-       *
        * An empty string matches all OS versions.
        * </pre>
        *
@@ -2179,11 +2173,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * The OS version
-         *
          * Prefix matches are supported if asterisk(*) is provided as the
          * last character. For example, to match all versions with a major
          * version of `7`, specify the following value for this field `7.*`
-         *
          * An empty string matches all OS versions.
          * </pre>
          *
@@ -2207,11 +2199,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * The OS version
-         *
          * Prefix matches are supported if asterisk(*) is provided as the
          * last character. For example, to match all versions with a major
          * version of `7`, specify the following value for this field `7.*`
-         *
          * An empty string matches all OS versions.
          * </pre>
          *
@@ -2235,11 +2225,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * The OS version
-         *
          * Prefix matches are supported if asterisk(*) is provided as the
          * last character. For example, to match all versions with a major
          * version of `7`, specify the following value for this field `7.*`
-         *
          * An empty string matches all OS versions.
          * </pre>
          *
@@ -2262,11 +2250,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * The OS version
-         *
          * Prefix matches are supported if asterisk(*) is provided as the
          * last character. For example, to match all versions with a major
          * version of `7`, specify the following value for this field `7.*`
-         *
          * An empty string matches all OS versions.
          * </pre>
          *
@@ -2285,11 +2271,9 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
          *
          * <pre>
          * The OS version
-         *
          * Prefix matches are supported if asterisk(*) is provided as the
          * last character. For example, to match all versions with a major
          * version of `7`, specify the following value for this field `7.*`
-         *
          * An empty string matches all OS versions.
          * </pre>
          *
@@ -2406,7 +2390,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2424,7 +2407,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2443,7 +2425,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2460,7 +2441,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2477,7 +2457,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM inclusion.
-     *
      * If the list has more than one `LabelSet`, the VM is included if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2501,7 +2480,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2519,7 +2497,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2538,7 +2515,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2555,7 +2531,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2572,7 +2547,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of label sets used for VM exclusion.
-     *
      * If the list has more than one label set, the VM is excluded if any
      * of the label sets are applicable for the VM.
      * </pre>
@@ -2596,7 +2570,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -2615,7 +2588,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -2636,7 +2608,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -2654,7 +2625,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -2673,7 +2643,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of inventories to select VMs.
-     *
      * A VM is selected if its inventory data matches at least one of the
      * following inventories.
      * </pre>
@@ -2889,7 +2858,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Filters to select target VMs for an assignment.
-     *
      * If more than one filter criteria is specified below, a VM will be selected
      * if and only if it satisfies all of them.
      * </pre>
@@ -3331,7 +3299,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3352,7 +3319,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3372,7 +3338,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3393,7 +3358,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3420,7 +3384,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3445,7 +3408,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3472,7 +3434,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3499,7 +3460,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3523,7 +3483,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3548,7 +3507,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3573,7 +3531,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3596,7 +3553,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3619,7 +3575,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3636,7 +3591,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3657,7 +3611,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3679,7 +3632,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3698,7 +3650,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3718,7 +3669,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM inclusion.
-       *
        * If the list has more than one `LabelSet`, the VM is included if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3774,7 +3724,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3795,7 +3744,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3815,7 +3763,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3836,7 +3783,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3863,7 +3809,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3888,7 +3833,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3915,7 +3859,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3942,7 +3885,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3966,7 +3908,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -3991,7 +3932,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4016,7 +3956,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4039,7 +3978,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4062,7 +4000,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4079,7 +4016,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4100,7 +4036,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4122,7 +4057,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4141,7 +4075,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4161,7 +4094,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of label sets used for VM exclusion.
-       *
        * If the list has more than one label set, the VM is excluded if any
        * of the label sets are applicable for the VM.
        * </pre>
@@ -4219,7 +4151,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4242,7 +4173,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4263,7 +4193,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4285,7 +4214,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4314,7 +4242,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4341,7 +4268,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4369,7 +4295,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4398,7 +4323,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4424,7 +4348,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4451,7 +4374,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4479,7 +4401,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4503,7 +4424,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4527,7 +4447,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4545,7 +4464,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4567,7 +4485,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4591,7 +4508,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4612,7 +4528,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4634,7 +4549,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * List of inventories to select VMs.
-       *
        * A VM is selected if its inventory data matches at least one of the
        * following inventories.
        * </pre>
@@ -4865,6 +4779,11 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Rollout();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5927,10 +5846,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-   *
    * This field is ignored when you create an OS policy assignment.
    * </pre>
    *
@@ -5955,10 +5872,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-   *
    * This field is ignored when you create an OS policy assignment.
    * </pre>
    *
@@ -6460,7 +6375,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. Indicates that this revision has been successfully rolled out
    * in this zone and new VMs will be assigned OS policies from this revision.
-   *
    * For a given OS policy assignment, there is only one revision with a value
    * of `true` for this field.
    * </pre>
@@ -6861,12 +6775,10 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
    * OS policy assignment is an API resource that is used to
    * apply a set of OS policies to a dynamically targeted group of Compute Engine
    * VM instances.
-   *
    * An OS policy is used to define the desired state configuration for a
    * Compute Engine VM instance through a set of configuration resources that
    * provide capabilities such as installing or removing software packages, or
    * executing a script.
-   *
    * For more information, see [OS policy and OS policy
    * assignment](https://cloud.google.com/compute/docs/os-configuration-management/working-with-os-policies).
    * </pre>
@@ -7282,10 +7194,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-     *
      * This field is ignored when you create an OS policy assignment.
      * </pre>
      *
@@ -7309,10 +7219,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-     *
      * This field is ignored when you create an OS policy assignment.
      * </pre>
      *
@@ -7336,10 +7244,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-     *
      * This field is ignored when you create an OS policy assignment.
      * </pre>
      *
@@ -7362,10 +7268,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-     *
      * This field is ignored when you create an OS policy assignment.
      * </pre>
      *
@@ -7384,10 +7288,8 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-     *
      * This field is ignored when you create an OS policy assignment.
      * </pre>
      *
@@ -8915,7 +8817,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Indicates that this revision has been successfully rolled out
      * in this zone and new VMs will be assigned OS policies from this revision.
-     *
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      * </pre>
@@ -8934,7 +8835,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Indicates that this revision has been successfully rolled out
      * in this zone and new VMs will be assigned OS policies from this revision.
-     *
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      * </pre>
@@ -8957,7 +8857,6 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Indicates that this revision has been successfully rolled out
      * in this zone and new VMs will be assigned OS policies from this revision.
-     *
      * For a given OS policy assignment, there is only one revision with a value
      * of `true` for this field.
      * </pre>

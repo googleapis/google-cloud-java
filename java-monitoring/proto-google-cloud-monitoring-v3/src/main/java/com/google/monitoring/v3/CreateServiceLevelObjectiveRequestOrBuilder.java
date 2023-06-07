@@ -28,7 +28,6 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the parent `Service`. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -44,7 +43,6 @@ public interface CreateServiceLevelObjectiveRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the parent `Service`. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *

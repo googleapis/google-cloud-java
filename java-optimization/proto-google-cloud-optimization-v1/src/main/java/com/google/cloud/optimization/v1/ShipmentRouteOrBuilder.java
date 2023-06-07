@@ -260,12 +260,10 @@ public interface ShipmentRouteOrBuilder
    * insufficient time to complete traffic-adjusted travel, delays, and breaks
    * between visits, before the first visit, or after the last visit, while
    * still satisfying the visit and vehicle time windows. For example,
-   *
    * ```
    *   start_time(previous_visit) + duration(previous_visit) +
    *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)
    * ```
-   *
    * Arrival at next_visit will likely happen later than its current
    * time window due the increased estimate of travel time
    * `travel_duration(previous_visit, next_visit)` due to traffic. Also, a break
@@ -729,10 +727,8 @@ public interface ShipmentRouteOrBuilder
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
    * level.
-   *
    * This field is the extra detour time due to the shipments visited on the
    * route.
-   *
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -753,10 +749,8 @@ public interface ShipmentRouteOrBuilder
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
    * level.
-   *
    * This field is the extra detour time due to the shipments visited on the
    * route.
-   *
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -777,10 +771,8 @@ public interface ShipmentRouteOrBuilder
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
    * level.
-   *
    * This field is the extra detour time due to the shipments visited on the
    * route.
-   *
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>

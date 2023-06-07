@@ -128,5 +128,5 @@ public interface ServiceLevelIndicatorOrBuilder
    */
   com.google.monitoring.v3.WindowsBasedSliOrBuilder getWindowsBasedOrBuilder();
 
-  com.google.monitoring.v3.ServiceLevelIndicator.TypeCase getTypeCase();
+  public com.google.monitoring.v3.ServiceLevelIndicator.TypeCase getTypeCase();
 }

@@ -331,5 +331,5 @@ public interface WidgetOrBuilder
    */
   com.google.monitoring.dashboard.v1.LogsPanelOrBuilder getLogsPanelOrBuilder();
 
-  com.google.monitoring.dashboard.v1.Widget.ContentCase getContentCase();
+  public com.google.monitoring.dashboard.v1.Widget.ContentCase getContentCase();
 }

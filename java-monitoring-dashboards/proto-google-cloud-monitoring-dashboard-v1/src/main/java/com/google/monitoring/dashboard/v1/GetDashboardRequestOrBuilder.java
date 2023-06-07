@@ -28,7 +28,6 @@ public interface GetDashboardRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is one of:
-   *
    *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
    *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
    *       (for custom dashboards).
@@ -46,7 +45,6 @@ public interface GetDashboardRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is one of:
-   *
    *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
    *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
    *       (for custom dashboards).

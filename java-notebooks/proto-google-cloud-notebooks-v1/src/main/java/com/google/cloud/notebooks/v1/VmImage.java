@@ -48,6 +48,11 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
     return new VmImage();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.EnvironmentProto
         .internal_static_google_cloud_notebooks_v1_VmImage_descriptor;
@@ -64,8 +69,6 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int imageCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object image_;
 
   public enum ImageCase

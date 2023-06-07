@@ -50,6 +50,11 @@ public final class ListNotificationChannelDescriptorsRequest
     return new ListNotificationChannelDescriptorsRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationServiceProto
         .internal_static_google_monitoring_v3_ListNotificationChannelDescriptorsRequest_descriptor;
@@ -75,9 +80,7 @@ public final class ListNotificationChannelDescriptorsRequest
    * <pre>
    * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
-   *
    * Note that this
    * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
    * container in which to look for the descriptors; to retrieve a single
@@ -110,9 +113,7 @@ public final class ListNotificationChannelDescriptorsRequest
    * <pre>
    * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
-   *
    * Note that this
    * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
    * container in which to look for the descriptors; to retrieve a single
@@ -619,9 +620,7 @@ public final class ListNotificationChannelDescriptorsRequest
      * <pre>
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * Note that this
      * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
      * container in which to look for the descriptors; to retrieve a single
@@ -653,9 +652,7 @@ public final class ListNotificationChannelDescriptorsRequest
      * <pre>
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * Note that this
      * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
      * container in which to look for the descriptors; to retrieve a single
@@ -687,9 +684,7 @@ public final class ListNotificationChannelDescriptorsRequest
      * <pre>
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * Note that this
      * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
      * container in which to look for the descriptors; to retrieve a single
@@ -720,9 +715,7 @@ public final class ListNotificationChannelDescriptorsRequest
      * <pre>
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * Note that this
      * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
      * container in which to look for the descriptors; to retrieve a single
@@ -749,9 +742,7 @@ public final class ListNotificationChannelDescriptorsRequest
      * <pre>
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * Note that this
      * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
      * container in which to look for the descriptors; to retrieve a single

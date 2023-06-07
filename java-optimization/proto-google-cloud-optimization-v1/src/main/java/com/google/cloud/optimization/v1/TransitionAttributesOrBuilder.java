@@ -28,7 +28,6 @@ public interface TransitionAttributesOrBuilder
    *
    * <pre>
    * Tags defining the set of (src-&gt;dst) transitions these attributes apply to.
-   *
    * A source visit or vehicle start matches iff its
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags]
@@ -46,7 +45,6 @@ public interface TransitionAttributesOrBuilder
    *
    * <pre>
    * Tags defining the set of (src-&gt;dst) transitions these attributes apply to.
-   *
    * A source visit or vehicle start matches iff its
    * [VisitRequest.tags][google.cloud.optimization.v1.Shipment.VisitRequest.tags]
    * or [Vehicle.start_tags][google.cloud.optimization.v1.Vehicle.start_tags]
@@ -184,7 +182,6 @@ public interface TransitionAttributesOrBuilder
    * <pre>
    * Specifies a limit on the distance traveled while performing this
    * transition.
-   *
    * As of 2021/06, only soft limits are supported.
    * </pre>
    *
@@ -199,7 +196,6 @@ public interface TransitionAttributesOrBuilder
    * <pre>
    * Specifies a limit on the distance traveled while performing this
    * transition.
-   *
    * As of 2021/06, only soft limits are supported.
    * </pre>
    *
@@ -214,7 +210,6 @@ public interface TransitionAttributesOrBuilder
    * <pre>
    * Specifies a limit on the distance traveled while performing this
    * transition.
-   *
    * As of 2021/06, only soft limits are supported.
    * </pre>
    *
@@ -227,7 +222,6 @@ public interface TransitionAttributesOrBuilder
    *
    * <pre>
    * Specifies a delay incurred when performing this transition.
-   *
    * This delay always occurs *after* finishing the source visit and *before*
    * starting the destination visit.
    * </pre>
@@ -242,7 +236,6 @@ public interface TransitionAttributesOrBuilder
    *
    * <pre>
    * Specifies a delay incurred when performing this transition.
-   *
    * This delay always occurs *after* finishing the source visit and *before*
    * starting the destination visit.
    * </pre>
@@ -257,7 +250,6 @@ public interface TransitionAttributesOrBuilder
    *
    * <pre>
    * Specifies a delay incurred when performing this transition.
-   *
    * This delay always occurs *after* finishing the source visit and *before*
    * starting the destination visit.
    * </pre>

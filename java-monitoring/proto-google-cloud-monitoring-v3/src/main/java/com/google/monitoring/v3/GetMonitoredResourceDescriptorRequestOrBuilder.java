@@ -28,9 +28,7 @@ public interface GetMonitoredResourceDescriptorRequestOrBuilder
    *
    * <pre>
    * Required. The monitored resource descriptor to get.  The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-   *
    * The `[RESOURCE_TYPE]` is a predefined type, such as
    * `cloudsql_database`.
    * </pre>
@@ -47,9 +45,7 @@ public interface GetMonitoredResourceDescriptorRequestOrBuilder
    *
    * <pre>
    * Required. The monitored resource descriptor to get.  The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-   *
    * The `[RESOURCE_TYPE]` is a predefined type, such as
    * `cloudsql_database`.
    * </pre>

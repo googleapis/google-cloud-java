@@ -42,15 +42,20 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   private Address() {
     formattedAddress_ = "";
     addressComponents_ = java.util.Collections.emptyList();
-    missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Address();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -182,7 +187,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -203,7 +207,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -224,7 +227,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -244,7 +246,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -264,7 +265,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -282,8 +282,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public static final int MISSING_COMPONENT_TYPES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList missingComponentTypes_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList missingComponentTypes_;
   /**
    *
    *
@@ -370,8 +369,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public static final int UNCONFIRMED_COMPONENT_TYPES_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList unconfirmedComponentTypes_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList unconfirmedComponentTypes_;
   /**
    *
    *
@@ -474,8 +472,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   public static final int UNRESOLVED_TOKENS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList unresolvedTokens_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList unresolvedTokens_;
   /**
    *
    *
@@ -841,9 +838,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         addressComponentsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -889,6 +889,21 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.addressComponents_ = addressComponentsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        missingComponentTypes_ = missingComponentTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.missingComponentTypes_ = missingComponentTypes_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        unconfirmedComponentTypes_ = unconfirmedComponentTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.unconfirmedComponentTypes_ = unconfirmedComponentTypes_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        unresolvedTokens_ = unresolvedTokens_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.unresolvedTokens_ = unresolvedTokens_;
     }
 
     private void buildPartial0(com.google.maps.addressvalidation.v1.Address result) {
@@ -899,18 +914,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.postalAddress_ =
             postalAddressBuilder_ == null ? postalAddress_ : postalAddressBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        missingComponentTypes_.makeImmutable();
-        result.missingComponentTypes_ = missingComponentTypes_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        unconfirmedComponentTypes_.makeImmutable();
-        result.unconfirmedComponentTypes_ = unconfirmedComponentTypes_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        unresolvedTokens_.makeImmutable();
-        result.unresolvedTokens_ = unresolvedTokens_;
       }
     }
 
@@ -997,7 +1000,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.missingComponentTypes_.isEmpty()) {
         if (missingComponentTypes_.isEmpty()) {
           missingComponentTypes_ = other.missingComponentTypes_;
-          bitField0_ |= 0x00000008;
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureMissingComponentTypesIsMutable();
           missingComponentTypes_.addAll(other.missingComponentTypes_);
@@ -1007,7 +1010,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.unconfirmedComponentTypes_.isEmpty()) {
         if (unconfirmedComponentTypes_.isEmpty()) {
           unconfirmedComponentTypes_ = other.unconfirmedComponentTypes_;
-          bitField0_ |= 0x00000010;
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureUnconfirmedComponentTypesIsMutable();
           unconfirmedComponentTypes_.addAll(other.unconfirmedComponentTypes_);
@@ -1017,7 +1020,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.unresolvedTokens_.isEmpty()) {
         if (unresolvedTokens_.isEmpty()) {
           unresolvedTokens_ = other.unresolvedTokens_;
-          bitField0_ |= 0x00000020;
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureUnresolvedTokensIsMutable();
           unresolvedTokens_.addAll(other.unresolvedTokens_);
@@ -1435,7 +1438,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1459,7 +1461,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1482,7 +1483,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1505,7 +1505,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1535,7 +1534,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1562,7 +1560,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1592,7 +1589,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1622,7 +1618,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1649,7 +1644,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1676,7 +1670,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1704,7 +1697,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1730,7 +1722,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1756,7 +1747,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1776,7 +1766,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1800,7 +1789,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1824,7 +1812,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1845,7 +1832,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1867,7 +1853,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Unordered list. The individual address components of the formatted and
      * corrected address, along with validation information. This provides
      * information on the validation status of the individual components.
-     *
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1901,15 +1886,15 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return addressComponentsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList missingComponentTypes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList missingComponentTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMissingComponentTypesIsMutable() {
-      if (!missingComponentTypes_.isModifiable()) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         missingComponentTypes_ =
             new com.google.protobuf.LazyStringArrayList(missingComponentTypes_);
+        bitField0_ |= 0x00000008;
       }
-      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1929,8 +1914,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the missingComponentTypes.
      */
     public com.google.protobuf.ProtocolStringList getMissingComponentTypesList() {
-      missingComponentTypes_.makeImmutable();
-      return missingComponentTypes_;
+      return missingComponentTypes_.getUnmodifiableView();
     }
     /**
      *
@@ -2019,7 +2003,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMissingComponentTypesIsMutable();
       missingComponentTypes_.set(index, value);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2047,7 +2030,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMissingComponentTypesIsMutable();
       missingComponentTypes_.add(value);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2072,7 +2054,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMissingComponentTypes(java.lang.Iterable<java.lang.String> values) {
       ensureMissingComponentTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, missingComponentTypes_);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2094,9 +2075,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMissingComponentTypes() {
-      missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      ;
       onChanged();
       return this;
     }
@@ -2125,20 +2105,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMissingComponentTypesIsMutable();
       missingComponentTypes_.add(value);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList unconfirmedComponentTypes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList unconfirmedComponentTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnconfirmedComponentTypesIsMutable() {
-      if (!unconfirmedComponentTypes_.isModifiable()) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         unconfirmedComponentTypes_ =
             new com.google.protobuf.LazyStringArrayList(unconfirmedComponentTypes_);
+        bitField0_ |= 0x00000010;
       }
-      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2162,8 +2141,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the unconfirmedComponentTypes.
      */
     public com.google.protobuf.ProtocolStringList getUnconfirmedComponentTypesList() {
-      unconfirmedComponentTypes_.makeImmutable();
-      return unconfirmedComponentTypes_;
+      return unconfirmedComponentTypes_.getUnmodifiableView();
     }
     /**
      *
@@ -2268,7 +2246,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUnconfirmedComponentTypesIsMutable();
       unconfirmedComponentTypes_.set(index, value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2300,7 +2277,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUnconfirmedComponentTypesIsMutable();
       unconfirmedComponentTypes_.add(value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2329,7 +2305,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUnconfirmedComponentTypes(java.lang.Iterable<java.lang.String> values) {
       ensureUnconfirmedComponentTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unconfirmedComponentTypes_);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2355,9 +2330,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnconfirmedComponentTypes() {
-      unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
-      ;
       onChanged();
       return this;
     }
@@ -2390,19 +2364,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUnconfirmedComponentTypesIsMutable();
       unconfirmedComponentTypes_.add(value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList unresolvedTokens_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList unresolvedTokens_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnresolvedTokensIsMutable() {
-      if (!unresolvedTokens_.isModifiable()) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         unresolvedTokens_ = new com.google.protobuf.LazyStringArrayList(unresolvedTokens_);
+        bitField0_ |= 0x00000020;
       }
-      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2420,8 +2393,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the unresolvedTokens.
      */
     public com.google.protobuf.ProtocolStringList getUnresolvedTokensList() {
-      unresolvedTokens_.makeImmutable();
-      return unresolvedTokens_;
+      return unresolvedTokens_.getUnmodifiableView();
     }
     /**
      *
@@ -2502,7 +2474,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUnresolvedTokensIsMutable();
       unresolvedTokens_.set(index, value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2528,7 +2499,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUnresolvedTokensIsMutable();
       unresolvedTokens_.add(value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2551,7 +2521,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUnresolvedTokens(java.lang.Iterable<java.lang.String> values) {
       ensureUnresolvedTokensIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unresolvedTokens_);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2571,9 +2540,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnresolvedTokens() {
-      unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
-      ;
       onChanged();
       return this;
     }
@@ -2600,7 +2568,6 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUnresolvedTokensIsMutable();
       unresolvedTokens_.add(value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -28,7 +28,6 @@ public interface ListDashboardsRequestOrBuilder
    *
    * <pre>
    * Required. The scope of the dashboards to list. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -44,7 +43,6 @@ public interface ListDashboardsRequestOrBuilder
    *
    * <pre>
    * Required. The scope of the dashboards to list. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *

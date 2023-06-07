@@ -40,7 +40,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   private Action() {
     containerName_ = "";
     imageUri_ = "";
-    commands_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     entrypoint_ = "";
     pidNamespace_ = "";
     mounts_ = java.util.Collections.emptyList();
@@ -50,6 +50,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Action();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -151,12 +156,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * referenced by actions in the pipeline are pulled before the first action
    * runs. If multiple actions reference the same image, it is only pulled once,
    * ensuring that the same image is used for all actions in a single pipeline.
-   *
    * The image URI can be either a complete host and image specification (e.g.,
    * quay.io/biocontainers/samtools), a library and image name (e.g.,
    * google/cloud-sdk) or a bare image name ('bash') to pull from the default
    * library.  No schema is required in any of these cases.
-   *
    * If the specified image is not public, the service account specified for
    * the Virtual Machine must have access to pull the images from GCR, or
    * appropriate credentials must be specified in the
@@ -188,12 +191,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * referenced by actions in the pipeline are pulled before the first action
    * runs. If multiple actions reference the same image, it is only pulled once,
    * ensuring that the same image is used for all actions in a single pipeline.
-   *
    * The image URI can be either a complete host and image specification (e.g.,
    * quay.io/biocontainers/samtools), a library and image name (e.g.,
    * google/cloud-sdk) or a bare image name ('bash') to pull from the default
    * library.  No schema is required in any of these cases.
-   *
    * If the specified image is not public, the service account specified for
    * the Virtual Machine must have access to pull the images from GCR, or
    * appropriate credentials must be specified in the
@@ -221,8 +222,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public static final int COMMANDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList commands_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList commands_;
   /**
    *
    *
@@ -380,16 +380,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
    * overwritten.
-   *
    * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
    * because an action has exited with a non-zero status (and did not have the
    * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
    * debug or logging actions should execute.
-   *
    * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
    * non-background action that executed. This can be used by workflow engine
    * authors to determine whether an individual action has succeeded or failed.
@@ -418,16 +415,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
    * overwritten.
-   *
    * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
    * because an action has exited with a non-zero status (and did not have the
    * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
    * debug or logging actions should execute.
-   *
    * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
    * non-background action that executed. This can be used by workflow engine
    * authors to determine whether an individual action has succeeded or failed.
@@ -447,16 +441,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
    * overwritten.
-   *
    * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
    * because an action has exited with a non-zero status (and did not have the
    * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
    * debug or logging actions should execute.
-   *
    * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
    * non-background action that executed. This can be used by workflow engine
    * authors to determine whether an individual action has succeeded or failed.
@@ -483,16 +474,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * In addition to the values passed here, a few other values are
    * automatically injected into the environment. These cannot be hidden or
    * overwritten.
-   *
    * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
    * because an action has exited with a non-zero status (and did not have the
    * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
    * debug or logging actions should execute.
-   *
    * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
    * non-background action that executed. This can be used by workflow engine
    * authors to determine whether an individual action has succeeded or failed.
@@ -522,7 +510,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * merged with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
    * serve as environment variable names and their values. The decoded
    * environment variables can overwrite the values specified by the
@@ -545,7 +532,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * merged with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
    * serve as environment variable names and their values. The decoded
    * environment variables can overwrite the values specified by the
@@ -570,7 +556,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * merged with values specified in the
    * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
    * message, overwriting any duplicate values.
-   *
    * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
    * serve as environment variable names and their values. The decoded
    * environment variables can overwrite the values specified by the
@@ -676,7 +661,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * A map of containers to host port mappings for this container. If the
    * container already specifies exposed ports, use the
    * `PUBLISH_EXPOSED_PORTS` flag instead.
-   *
    * The host port number must be less than 65536. If it is zero, an unused
    * random port is assigned. To determine the resulting port number, consult
    * the `ContainerStartedEvent` in the operation metadata.
@@ -702,7 +686,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * A map of containers to host port mappings for this container. If the
    * container already specifies exposed ports, use the
    * `PUBLISH_EXPOSED_PORTS` flag instead.
-   *
    * The host port number must be less than 65536. If it is zero, an unused
    * random port is assigned. To determine the resulting port number, consult
    * the `ContainerStartedEvent` in the operation metadata.
@@ -721,7 +704,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * A map of containers to host port mappings for this container. If the
    * container already specifies exposed ports, use the
    * `PUBLISH_EXPOSED_PORTS` flag instead.
-   *
    * The host port number must be less than 65536. If it is zero, an unused
    * random port is assigned. To determine the resulting port number, consult
    * the `ContainerStartedEvent` in the operation metadata.
@@ -742,7 +724,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * A map of containers to host port mappings for this container. If the
    * container already specifies exposed ports, use the
    * `PUBLISH_EXPOSED_PORTS` flag instead.
-   *
    * The host port number must be less than 65536. If it is zero, an unused
    * random port is assigned. To determine the resulting port number, consult
    * the `ContainerStartedEvent` in the operation metadata.
@@ -769,11 +750,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of mounts to make available to the action.
-   *
    * In addition to the values specified here, every action has a special
    * virtual disk mounted under `/google` that contains log files and other
    * operational components.
-   *
    * &lt;ul&gt;
    *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
    *   execution.&lt;/li&gt;
@@ -798,11 +777,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of mounts to make available to the action.
-   *
    * In addition to the values specified here, every action has a special
    * virtual disk mounted under `/google` that contains log files and other
    * operational components.
-   *
    * &lt;ul&gt;
    *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
    *   execution.&lt;/li&gt;
@@ -828,11 +805,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of mounts to make available to the action.
-   *
    * In addition to the values specified here, every action has a special
    * virtual disk mounted under `/google` that contains log files and other
    * operational components.
-   *
    * &lt;ul&gt;
    *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
    *   execution.&lt;/li&gt;
@@ -857,11 +832,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of mounts to make available to the action.
-   *
    * In addition to the values specified here, every action has a special
    * virtual disk mounted under `/google` that contains log files and other
    * operational components.
-   *
    * &lt;ul&gt;
    *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
    *   execution.&lt;/li&gt;
@@ -886,11 +859,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A list of mounts to make available to the action.
-   *
    * In addition to the values specified here, every action has a special
    * virtual disk mounted under `/google` that contains log files and other
    * operational components.
-   *
    * &lt;ul&gt;
    *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
    *   execution.&lt;/li&gt;
@@ -1034,7 +1005,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * If the specified image is hosted on a private registry other than Google
    * Container Registry, the credentials required to pull the image must be
    * specified here as an encrypted secret.
-   *
    * The secret must decrypt to a JSON-encoded dictionary containing both
    * `username` and `password` keys.
    * </pre>
@@ -1054,7 +1024,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * If the specified image is hosted on a private registry other than Google
    * Container Registry, the credentials required to pull the image must be
    * specified here as an encrypted secret.
-   *
    * The secret must decrypt to a JSON-encoded dictionary containing both
    * `username` and `password` keys.
    * </pre>
@@ -1076,7 +1045,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * If the specified image is hosted on a private registry other than Google
    * Container Registry, the credentials required to pull the image must be
    * specified here as an encrypted secret.
-   *
    * The secret must decrypt to a JSON-encoded dictionary containing both
    * `username` and `password` keys.
    * </pre>
@@ -1215,7 +1183,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * Enable access to the FUSE device for this action. Filesystems can then
    * be mounted into disks shared with other actions. The other actions do
    * not need the `enable_fuse` flag to access the mounted filesystem.
-   *
    * This has the effect of causing the container to be executed with
    * `CAP_SYS_ADMIN` and exposes `/dev/fuse` to the container, so use it only
    * for containers you trust.
@@ -1259,7 +1226,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * All container images are typically downloaded before any actions are
    * executed. This helps prevent typos in URIs or issues like lack of disk
    * space from wasting large amounts of compute resources.
-   *
    * If set, this flag prevents the worker from downloading the image until
    * just before the action is executed.
    * </pre>
@@ -1760,7 +1726,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       containerName_ = "";
       imageUri_ = "";
-      commands_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       entrypoint_ = "";
       internalGetMutableEnvironment().clear();
       encryptedEnvironment_ = null;
@@ -1832,6 +1799,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.lifesciences.v2beta.Action result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        commands_ = commands_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.commands_ = commands_;
       if (mountsBuilder_ == null) {
         if (((bitField0_ & 0x00000100) != 0)) {
           mounts_ = java.util.Collections.unmodifiableList(mounts_);
@@ -1850,10 +1822,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.imageUri_ = imageUri_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        commands_.makeImmutable();
-        result.commands_ = commands_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.entrypoint_ = entrypoint_;
@@ -1970,7 +1938,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (!other.commands_.isEmpty()) {
         if (commands_.isEmpty()) {
           commands_ = other.commands_;
-          bitField0_ |= 0x00000004;
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureCommandsIsMutable();
           commands_.addAll(other.commands_);
@@ -2375,12 +2343,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * referenced by actions in the pipeline are pulled before the first action
      * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
-     *
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
      * google/cloud-sdk) or a bare image name ('bash') to pull from the default
      * library.  No schema is required in any of these cases.
-     *
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
@@ -2411,12 +2377,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * referenced by actions in the pipeline are pulled before the first action
      * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
-     *
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
      * google/cloud-sdk) or a bare image name ('bash') to pull from the default
      * library.  No schema is required in any of these cases.
-     *
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
@@ -2447,12 +2411,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * referenced by actions in the pipeline are pulled before the first action
      * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
-     *
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
      * google/cloud-sdk) or a bare image name ('bash') to pull from the default
      * library.  No schema is required in any of these cases.
-     *
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
@@ -2482,12 +2444,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * referenced by actions in the pipeline are pulled before the first action
      * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
-     *
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
      * google/cloud-sdk) or a bare image name ('bash') to pull from the default
      * library.  No schema is required in any of these cases.
-     *
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
@@ -2513,12 +2473,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * referenced by actions in the pipeline are pulled before the first action
      * runs. If multiple actions reference the same image, it is only pulled once,
      * ensuring that the same image is used for all actions in a single pipeline.
-     *
      * The image URI can be either a complete host and image specification (e.g.,
      * quay.io/biocontainers/samtools), a library and image name (e.g.,
      * google/cloud-sdk) or a bare image name ('bash') to pull from the default
      * library.  No schema is required in any of these cases.
-     *
      * If the specified image is not public, the service account specified for
      * the Virtual Machine must have access to pull the images from GCR, or
      * appropriate credentials must be specified in the
@@ -2542,14 +2500,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList commands_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList commands_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCommandsIsMutable() {
-      if (!commands_.isModifiable()) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         commands_ = new com.google.protobuf.LazyStringArrayList(commands_);
+        bitField0_ |= 0x00000004;
       }
-      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2566,8 +2524,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the commands.
      */
     public com.google.protobuf.ProtocolStringList getCommandsList() {
-      commands_.makeImmutable();
-      return commands_;
+      return commands_.getUnmodifiableView();
     }
     /**
      *
@@ -2644,7 +2601,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCommandsIsMutable();
       commands_.set(index, value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2669,7 +2625,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCommandsIsMutable();
       commands_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2691,7 +2646,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCommands(java.lang.Iterable<java.lang.String> values) {
       ensureCommandsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, commands_);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2710,9 +2664,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCommands() {
-      commands_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      ;
       onChanged();
       return this;
     }
@@ -2738,7 +2691,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCommandsIsMutable();
       commands_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2885,16 +2837,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -2923,16 +2872,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -2952,16 +2898,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -2988,16 +2931,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -3030,16 +2970,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -3068,16 +3005,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -3104,16 +3038,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * In addition to the values passed here, a few other values are
      * automatically injected into the environment. These cannot be hidden or
      * overwritten.
-     *
      * `GOOGLE_PIPELINE_FAILED` will be set to "1" if the pipeline failed
      * because an action has exited with a non-zero status (and did not have the
      * `IGNORE_EXIT_STATUS` flag set). This can be used to determine if additional
      * debug or logging actions should execute.
-     *
      * `GOOGLE_LAST_EXIT_STATUS` will be set to the exit status of the last
      * non-background action that executed. This can be used by workflow engine
      * authors to determine whether an individual action has succeeded or failed.
@@ -3141,7 +3072,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3163,7 +3093,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3191,7 +3120,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3221,7 +3149,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3249,7 +3176,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3283,7 +3209,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3310,7 +3235,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3332,7 +3256,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3358,7 +3281,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * merged with values specified in the
      * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline]
      * message, overwriting any duplicate values.
-     *
      * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
      * serve as environment variable names and their values. The decoded
      * environment variables can overwrite the values specified by the
@@ -3535,7 +3457,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3561,7 +3482,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3580,7 +3500,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3601,7 +3520,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3631,7 +3549,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3657,7 +3574,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3678,7 +3594,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * A map of containers to host port mappings for this container. If the
      * container already specifies exposed ports, use the
      * `PUBLISH_EXPOSED_PORTS` flag instead.
-     *
      * The host port number must be less than 65536. If it is zero, an unused
      * random port is assigned. To determine the resulting port number, consult
      * the `ContainerStartedEvent` in the operation metadata.
@@ -3713,11 +3628,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3745,11 +3658,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3777,11 +3688,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3809,11 +3718,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3847,11 +3754,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3883,11 +3788,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3921,11 +3824,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3959,11 +3860,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -3994,11 +3893,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4030,11 +3927,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4066,11 +3961,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4101,11 +3994,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4136,11 +4027,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4164,11 +4053,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4196,11 +4083,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4229,11 +4114,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4258,11 +4141,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4287,11 +4168,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A list of mounts to make available to the action.
-     *
      * In addition to the values specified here, every action has a special
      * virtual disk mounted under `/google` that contains log files and other
      * operational components.
-     *
      * &lt;ul&gt;
      *   &lt;li&gt;&lt;code&gt;/google/logs&lt;/code&gt; All logs written during the pipeline
      *   execution.&lt;/li&gt;
@@ -4526,7 +4405,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4545,7 +4423,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4570,7 +4447,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4597,7 +4473,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4622,7 +4497,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4652,7 +4526,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4676,7 +4549,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4695,7 +4567,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -4718,7 +4589,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * If the specified image is hosted on a private registry other than Google
      * Container Registry, the credentials required to pull the image must be
      * specified here as an encrypted secret.
-     *
      * The secret must decrypt to a JSON-encoded dictionary containing both
      * `username` and `password` keys.
      * </pre>
@@ -5136,7 +5006,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * Enable access to the FUSE device for this action. Filesystems can then
      * be mounted into disks shared with other actions. The other actions do
      * not need the `enable_fuse` flag to access the mounted filesystem.
-     *
      * This has the effect of causing the container to be executed with
      * `CAP_SYS_ADMIN` and exposes `/dev/fuse` to the container, so use it only
      * for containers you trust.
@@ -5157,7 +5026,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * Enable access to the FUSE device for this action. Filesystems can then
      * be mounted into disks shared with other actions. The other actions do
      * not need the `enable_fuse` flag to access the mounted filesystem.
-     *
      * This has the effect of causing the container to be executed with
      * `CAP_SYS_ADMIN` and exposes `/dev/fuse` to the container, so use it only
      * for containers you trust.
@@ -5182,7 +5050,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * Enable access to the FUSE device for this action. Filesystems can then
      * be mounted into disks shared with other actions. The other actions do
      * not need the `enable_fuse` flag to access the mounted filesystem.
-     *
      * This has the effect of causing the container to be executed with
      * `CAP_SYS_ADMIN` and exposes `/dev/fuse` to the container, so use it only
      * for containers you trust.
@@ -5266,7 +5133,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * All container images are typically downloaded before any actions are
      * executed. This helps prevent typos in URIs or issues like lack of disk
      * space from wasting large amounts of compute resources.
-     *
      * If set, this flag prevents the worker from downloading the image until
      * just before the action is executed.
      * </pre>
@@ -5286,7 +5152,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * All container images are typically downloaded before any actions are
      * executed. This helps prevent typos in URIs or issues like lack of disk
      * space from wasting large amounts of compute resources.
-     *
      * If set, this flag prevents the worker from downloading the image until
      * just before the action is executed.
      * </pre>
@@ -5310,7 +5175,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * All container images are typically downloaded before any actions are
      * executed. This helps prevent typos in URIs or issues like lack of disk
      * space from wasting large amounts of compute resources.
-     *
      * If set, this flag prevents the worker from downloading the image until
      * just before the action is executed.
      * </pre>

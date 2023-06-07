@@ -85,7 +85,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -102,7 +101,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -119,7 +117,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -137,7 +134,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>

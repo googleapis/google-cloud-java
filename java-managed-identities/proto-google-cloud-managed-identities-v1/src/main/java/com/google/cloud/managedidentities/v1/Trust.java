@@ -42,7 +42,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     targetDomainName_ = "";
     trustType_ = 0;
     trustDirection_ = 0;
-    targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     trustHandshakeSecret_ = "";
     state_ = 0;
     stateDescription_ = "";
@@ -52,6 +52,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Trust();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -791,8 +796,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
   public static final int TARGET_DNS_IP_ADDRESSES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList targetDnsIpAddresses_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList targetDnsIpAddresses_;
   /**
    *
    *
@@ -1482,7 +1486,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       trustType_ = 0;
       trustDirection_ = 0;
       selectiveAuthentication_ = false;
-      targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       trustHandshakeSecret_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1528,11 +1533,20 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.managedidentities.v1.Trust buildPartial() {
       com.google.cloud.managedidentities.v1.Trust result =
           new com.google.cloud.managedidentities.v1.Trust(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.managedidentities.v1.Trust result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        targetDnsIpAddresses_ = targetDnsIpAddresses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.targetDnsIpAddresses_ = targetDnsIpAddresses_;
     }
 
     private void buildPartial0(com.google.cloud.managedidentities.v1.Trust result) {
@@ -1548,10 +1562,6 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.selectiveAuthentication_ = selectiveAuthentication_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        targetDnsIpAddresses_.makeImmutable();
-        result.targetDnsIpAddresses_ = targetDnsIpAddresses_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.trustHandshakeSecret_ = trustHandshakeSecret_;
@@ -1638,7 +1648,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetDnsIpAddresses_.isEmpty()) {
         if (targetDnsIpAddresses_.isEmpty()) {
           targetDnsIpAddresses_ = other.targetDnsIpAddresses_;
-          bitField0_ |= 0x00000010;
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureTargetDnsIpAddressesIsMutable();
           targetDnsIpAddresses_.addAll(other.targetDnsIpAddresses_);
@@ -2160,14 +2170,14 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList targetDnsIpAddresses_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList targetDnsIpAddresses_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetDnsIpAddressesIsMutable() {
-      if (!targetDnsIpAddresses_.isModifiable()) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         targetDnsIpAddresses_ = new com.google.protobuf.LazyStringArrayList(targetDnsIpAddresses_);
+        bitField0_ |= 0x00000010;
       }
-      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2183,8 +2193,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the targetDnsIpAddresses.
      */
     public com.google.protobuf.ProtocolStringList getTargetDnsIpAddressesList() {
-      targetDnsIpAddresses_.makeImmutable();
-      return targetDnsIpAddresses_;
+      return targetDnsIpAddresses_.getUnmodifiableView();
     }
     /**
      *
@@ -2257,7 +2266,6 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetDnsIpAddressesIsMutable();
       targetDnsIpAddresses_.set(index, value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2281,7 +2289,6 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetDnsIpAddressesIsMutable();
       targetDnsIpAddresses_.add(value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2302,7 +2309,6 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTargetDnsIpAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureTargetDnsIpAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetDnsIpAddresses_);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2320,9 +2326,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetDnsIpAddresses() {
-      targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
-      ;
       onChanged();
       return this;
     }
@@ -2347,7 +2352,6 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTargetDnsIpAddressesIsMutable();
       targetDnsIpAddresses_.add(value);
-      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

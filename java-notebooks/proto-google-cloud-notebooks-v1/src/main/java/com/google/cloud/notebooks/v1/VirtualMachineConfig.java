@@ -43,7 +43,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     containerImages_ = java.util.Collections.emptyList();
     network_ = "";
     subnet_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     nicType_ = 0;
     reservedIpRange_ = "";
   }
@@ -52,6 +52,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VirtualMachineConfig();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -274,6 +279,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BootImage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1110,15 +1120,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * communications. Cannot be specified with subnetwork. If neither
    * `network` nor `subnet` is specified, the "default" network of
    * the project is used, if it exists.
-   *
    * A full URL or partial URI. Examples:
-   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
-   *
    * Runtimes are managed resources inside Google Infrastructure.
    * Runtimes support the following network configurations:
-   *
    * * Google Managed Network (Network &amp; subnet are empty)
    * * Consumer Project VPC (network &amp; subnet are required). Requires
    * configuring Private Service Access.
@@ -1150,15 +1156,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * communications. Cannot be specified with subnetwork. If neither
    * `network` nor `subnet` is specified, the "default" network of
    * the project is used, if it exists.
-   *
    * A full URL or partial URI. Examples:
-   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
-   *
    * Runtimes are managed resources inside Google Infrastructure.
    * Runtimes support the following network configurations:
-   *
    * * Google Managed Network (Network &amp; subnet are empty)
    * * Consumer Project VPC (network &amp; subnet are required). Requires
    * configuring Private Service Access.
@@ -1193,9 +1195,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network.
-   *
    * A full URL or partial URI are valid. Examples:
-   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * </pre>
@@ -1222,9 +1222,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network.
-   *
    * A full URL or partial URI are valid. Examples:
-   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
    * </pre>
@@ -1272,8 +1270,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
   public static final int TAGS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList tags_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList tags_;
   /**
    *
    *
@@ -1750,9 +1747,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Reserved IP Range name is used for VPC Peering.
    * The subnetwork allocation will use the range *name* if it's assigned.
-   *
    * Example: managed-notebooks-range-c
-   *
    *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
    *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
    *       --global &#92;
@@ -1761,7 +1756,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *       --network=$NETWORK &#92;
    *       --addresses=192.168.0.0 &#92;
    *       --purpose=VPC_PEERING
-   *
    * Field value will be: `managed-notebooks-range-c`
    * </pre>
    *
@@ -1787,9 +1781,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. Reserved IP Range name is used for VPC Peering.
    * The subnetwork allocation will use the range *name* if it's assigned.
-   *
    * Example: managed-notebooks-range-c
-   *
    *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
    *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
    *       --global &#92;
@@ -1798,7 +1790,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *       --network=$NETWORK &#92;
    *       --addresses=192.168.0.0 &#92;
    *       --purpose=VPC_PEERING
-   *
    * Field value will be: `managed-notebooks-range-c`
    * </pre>
    *
@@ -2341,7 +2332,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       network_ = "";
       subnet_ = "";
       internalIpOnly_ = false;
-      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableGuestAttributes().clear();
       internalGetMutableMetadata().clear();
       internalGetMutableLabels().clear();
@@ -2398,6 +2390,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       } else {
         result.containerImages_ = containerImagesBuilder_.build();
       }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        tags_ = tags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.tags_ = tags_;
     }
 
     private void buildPartial0(com.google.cloud.notebooks.v1.VirtualMachineConfig result) {
@@ -2435,10 +2432,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.internalIpOnly_ = internalIpOnly_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        tags_.makeImmutable();
-        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.guestAttributes_ = internalGetGuestAttributes();
@@ -2574,7 +2567,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x00000400;
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -4244,15 +4237,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * communications. Cannot be specified with subnetwork. If neither
      * `network` nor `subnet` is specified, the "default" network of
      * the project is used, if it exists.
-     *
      * A full URL or partial URI. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
-     *
      * Runtimes are managed resources inside Google Infrastructure.
      * Runtimes support the following network configurations:
-     *
      * * Google Managed Network (Network &amp; subnet are empty)
      * * Consumer Project VPC (network &amp; subnet are required). Requires
      * configuring Private Service Access.
@@ -4283,15 +4272,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * communications. Cannot be specified with subnetwork. If neither
      * `network` nor `subnet` is specified, the "default" network of
      * the project is used, if it exists.
-     *
      * A full URL or partial URI. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
-     *
      * Runtimes are managed resources inside Google Infrastructure.
      * Runtimes support the following network configurations:
-     *
      * * Google Managed Network (Network &amp; subnet are empty)
      * * Consumer Project VPC (network &amp; subnet are required). Requires
      * configuring Private Service Access.
@@ -4322,15 +4307,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * communications. Cannot be specified with subnetwork. If neither
      * `network` nor `subnet` is specified, the "default" network of
      * the project is used, if it exists.
-     *
      * A full URL or partial URI. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
-     *
      * Runtimes are managed resources inside Google Infrastructure.
      * Runtimes support the following network configurations:
-     *
      * * Google Managed Network (Network &amp; subnet are empty)
      * * Consumer Project VPC (network &amp; subnet are required). Requires
      * configuring Private Service Access.
@@ -4360,15 +4341,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * communications. Cannot be specified with subnetwork. If neither
      * `network` nor `subnet` is specified, the "default" network of
      * the project is used, if it exists.
-     *
      * A full URL or partial URI. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
-     *
      * Runtimes are managed resources inside Google Infrastructure.
      * Runtimes support the following network configurations:
-     *
      * * Google Managed Network (Network &amp; subnet are empty)
      * * Consumer Project VPC (network &amp; subnet are required). Requires
      * configuring Private Service Access.
@@ -4394,15 +4371,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * communications. Cannot be specified with subnetwork. If neither
      * `network` nor `subnet` is specified, the "default" network of
      * the project is used, if it exists.
-     *
      * A full URL or partial URI. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
-     *
      * Runtimes are managed resources inside Google Infrastructure.
      * Runtimes support the following network configurations:
-     *
      * * Google Managed Network (Network &amp; subnet are empty)
      * * Consumer Project VPC (network &amp; subnet are required). Requires
      * configuring Private Service Access.
@@ -4433,9 +4406,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network.
-     *
      * A full URL or partial URI are valid. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * </pre>
@@ -4461,9 +4432,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network.
-     *
      * A full URL or partial URI are valid. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * </pre>
@@ -4489,9 +4458,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network.
-     *
      * A full URL or partial URI are valid. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * </pre>
@@ -4516,9 +4483,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network.
-     *
      * A full URL or partial URI are valid. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * </pre>
@@ -4539,9 +4504,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network.
-     *
      * A full URL or partial URI are valid. Examples:
-     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
      * </pre>
@@ -4630,14 +4593,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList tags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList tags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!tags_.isModifiable()) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        bitField0_ |= 0x00000400;
       }
-      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -4652,8 +4615,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      tags_.makeImmutable();
-      return tags_;
+      return tags_.getUnmodifiableView();
     }
     /**
      *
@@ -4722,7 +4684,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4745,7 +4706,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4765,7 +4725,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
-      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4782,9 +4741,8 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
-      ;
       onChanged();
       return this;
     }
@@ -4808,7 +4766,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5519,9 +5476,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
-     *
      * Example: managed-notebooks-range-c
-     *
      *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
      *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
      *       --global &#92;
@@ -5530,7 +5485,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *       --network=$NETWORK &#92;
      *       --addresses=192.168.0.0 &#92;
      *       --purpose=VPC_PEERING
-     *
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5555,9 +5509,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
-     *
      * Example: managed-notebooks-range-c
-     *
      *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
      *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
      *       --global &#92;
@@ -5566,7 +5518,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *       --network=$NETWORK &#92;
      *       --addresses=192.168.0.0 &#92;
      *       --purpose=VPC_PEERING
-     *
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5591,9 +5542,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
-     *
      * Example: managed-notebooks-range-c
-     *
      *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
      *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
      *       --global &#92;
@@ -5602,7 +5551,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *       --network=$NETWORK &#92;
      *       --addresses=192.168.0.0 &#92;
      *       --purpose=VPC_PEERING
-     *
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5626,9 +5574,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
-     *
      * Example: managed-notebooks-range-c
-     *
      *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
      *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
      *       --global &#92;
@@ -5637,7 +5583,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *       --network=$NETWORK &#92;
      *       --addresses=192.168.0.0 &#92;
      *       --purpose=VPC_PEERING
-     *
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5657,9 +5602,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
-     *
      * Example: managed-notebooks-range-c
-     *
      *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
      *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
      *       --global &#92;
@@ -5668,7 +5611,6 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *       --network=$NETWORK &#92;
      *       --addresses=192.168.0.0 &#92;
      *       --purpose=VPC_PEERING
-     *
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *

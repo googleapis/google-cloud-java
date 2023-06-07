@@ -47,6 +47,11 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
     return new DeleteServiceRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringServiceProto
         .internal_static_google_monitoring_v3_DeleteServiceRequest_descriptor;
@@ -71,7 +76,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the `Service` to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -98,7 +102,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the `Service` to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -468,7 +471,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the `Service` to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -494,7 +496,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the `Service` to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -520,7 +521,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the `Service` to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -545,7 +545,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the `Service` to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -566,7 +565,6 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the `Service` to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *

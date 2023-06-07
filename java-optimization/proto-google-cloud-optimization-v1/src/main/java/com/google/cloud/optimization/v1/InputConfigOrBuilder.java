@@ -86,5 +86,5 @@ public interface InputConfigOrBuilder
    */
   com.google.cloud.optimization.v1.DataFormat getDataFormat();
 
-  com.google.cloud.optimization.v1.InputConfig.SourceCase getSourceCase();
+  public com.google.cloud.optimization.v1.InputConfig.SourceCase getSourceCase();
 }

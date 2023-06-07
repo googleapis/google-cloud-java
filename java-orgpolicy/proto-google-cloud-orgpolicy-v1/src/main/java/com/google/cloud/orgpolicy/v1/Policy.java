@@ -49,6 +49,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return new Policy();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orgpolicy.v1.OrgPolicyProto
         .internal_static_google_cloud_orgpolicy_v1_Policy_descriptor;
@@ -240,20 +245,17 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines the inheritance behavior for this `Policy`.
-     *
      * By default, a `ListPolicy` set at a resource supercedes any `Policy` set
      * anywhere up the resource hierarchy. However, if `inherit_from_parent` is
      * set to `true`, then the values from the effective `Policy` of the parent
      * resource are inherited, meaning the values set in this `Policy` are
      * added to the values inherited up the hierarchy.
-     *
      * Setting `Policy` hierarchies that inherit both allowed values and denied
      * values isn't recommended in most circumstances to keep the configuration
      * simple and understandable. However, it is possible to set a `Policy` with
      * `allowed_values` set that inherits a `Policy` with `denied_values` set.
      * In this case, the values that are allowed must be in `allowed_values` and
      * not present in `denied_values`.
-     *
      * For example, suppose you have a `Constraint`
      * `constraints/serviceuser.services`, which has a `constraint_type` of
      * `list_constraint`, and with `constraint_default` set to `ALLOW`.
@@ -262,10 +264,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * `Policy` is applied to a project below the Organization that has
      * `inherit_from_parent` set to `false` and field all_values set to DENY,
      * then an attempt to activate any API will be denied.
-     *
      * The following examples demonstrate different possible layerings for
      * `projects/bar` parented by `organizations/foo`:
-     *
      * Example 1 (no inherited values):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values:"E2"}
@@ -273,7 +273,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {allowed_values: "E3" allowed_values: "E4"}
      * The accepted values at `organizations/foo` are `E1`, `E2`.
      * The accepted values at `projects/bar` are `E3`, and `E4`.
-     *
      * Example 2 (inherited values):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values:"E2"}
@@ -281,7 +280,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {value: "E3" value: "E4" inherit_from_parent: true}
      * The accepted values at `organizations/foo` are `E1`, `E2`.
      * The accepted values at `projects/bar` are `E1`, `E2`, `E3`, and `E4`.
-     *
      * Example 3 (inheriting both allowed and denied values):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values: "E2"}
@@ -289,7 +287,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {denied_values: "E1"}
      * The accepted values at `organizations/foo` are `E1`, `E2`.
      * The value accepted at `projects/bar` is `E2`.
-     *
      * Example 4 (RestoreDefault):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values:"E2"}
@@ -299,14 +296,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * The accepted values at `projects/bar` are either all or none depending on
      * the value of `constraint_default` (if `ALLOW`, all; if
      * `DENY`, none).
-     *
      * Example 5 (no policy inherits parent policy):
      *   `organizations/foo` has no `Policy` set.
      *   `projects/bar` has no `Policy` set.
      * The accepted values at both levels are either all or none depending on
      * the value of `constraint_default` (if `ALLOW`, all; if
      * `DENY`, none).
-     *
      * Example 6 (ListConstraint allowing all):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values: "E2"}
@@ -314,7 +309,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {all: ALLOW}
      * The accepted values at `organizations/foo` are `E1`, E2`.
      * Any value is accepted at `projects/bar`.
-     *
      * Example 7 (ListConstraint allowing none):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values: "E2"}
@@ -322,7 +316,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {all: DENY}
      * The accepted values at `organizations/foo` are `E1`, E2`.
      * No value is accepted at `projects/bar`.
-     *
      * Example 10 (allowed and denied subtrees of Resource Manager hierarchy):
      * Given the following resource hierarchy
      *   O1-&gt;{F1, F2}; F1-&gt;{P1}; F2-&gt;{P2, P3},
@@ -350,7 +343,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Used in `policy_type` to specify how `list_policy` behaves at this
    * resource.
-   *
    * `ListPolicy` can define specific values and subtrees of Cloud Resource
    * Manager resource hierarchy (`Organizations`, `Folders`, `Projects`) that
    * are allowed or denied by setting the `allowed_values` and `denied_values`
@@ -384,8 +376,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private ListPolicy() {
-      allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       allValues_ = 0;
       suggestedValue_ = "";
     }
@@ -394,6 +386,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListPolicy();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -418,7 +415,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * This enum can be used to set `Policies` that apply to all possible
      * configuration values rather than specific values in `allowed_values` or
      * `denied_values`.
-     *
      * Settting this to `ALLOW` will mean this `Policy` allows all values.
      * Similarly, setting it to `DENY` will mean no values are allowed. If
      * set to either `ALLOW` or `DENY,  `allowed_values` and `denied_values`
@@ -581,8 +577,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public static final int ALLOWED_VALUES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList allowedValues_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList allowedValues_;
     /**
      *
      *
@@ -649,8 +644,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public static final int DENIED_VALUES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList deniedValues_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList deniedValues_;
     /**
      *
      *
@@ -815,20 +809,17 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Determines the inheritance behavior for this `Policy`.
-     *
      * By default, a `ListPolicy` set at a resource supercedes any `Policy` set
      * anywhere up the resource hierarchy. However, if `inherit_from_parent` is
      * set to `true`, then the values from the effective `Policy` of the parent
      * resource are inherited, meaning the values set in this `Policy` are
      * added to the values inherited up the hierarchy.
-     *
      * Setting `Policy` hierarchies that inherit both allowed values and denied
      * values isn't recommended in most circumstances to keep the configuration
      * simple and understandable. However, it is possible to set a `Policy` with
      * `allowed_values` set that inherits a `Policy` with `denied_values` set.
      * In this case, the values that are allowed must be in `allowed_values` and
      * not present in `denied_values`.
-     *
      * For example, suppose you have a `Constraint`
      * `constraints/serviceuser.services`, which has a `constraint_type` of
      * `list_constraint`, and with `constraint_default` set to `ALLOW`.
@@ -837,10 +828,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * `Policy` is applied to a project below the Organization that has
      * `inherit_from_parent` set to `false` and field all_values set to DENY,
      * then an attempt to activate any API will be denied.
-     *
      * The following examples demonstrate different possible layerings for
      * `projects/bar` parented by `organizations/foo`:
-     *
      * Example 1 (no inherited values):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values:"E2"}
@@ -848,7 +837,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {allowed_values: "E3" allowed_values: "E4"}
      * The accepted values at `organizations/foo` are `E1`, `E2`.
      * The accepted values at `projects/bar` are `E3`, and `E4`.
-     *
      * Example 2 (inherited values):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values:"E2"}
@@ -856,7 +844,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {value: "E3" value: "E4" inherit_from_parent: true}
      * The accepted values at `organizations/foo` are `E1`, `E2`.
      * The accepted values at `projects/bar` are `E1`, `E2`, `E3`, and `E4`.
-     *
      * Example 3 (inheriting both allowed and denied values):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values: "E2"}
@@ -864,7 +851,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {denied_values: "E1"}
      * The accepted values at `organizations/foo` are `E1`, `E2`.
      * The value accepted at `projects/bar` is `E2`.
-     *
      * Example 4 (RestoreDefault):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values:"E2"}
@@ -874,14 +860,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * The accepted values at `projects/bar` are either all or none depending on
      * the value of `constraint_default` (if `ALLOW`, all; if
      * `DENY`, none).
-     *
      * Example 5 (no policy inherits parent policy):
      *   `organizations/foo` has no `Policy` set.
      *   `projects/bar` has no `Policy` set.
      * The accepted values at both levels are either all or none depending on
      * the value of `constraint_default` (if `ALLOW`, all; if
      * `DENY`, none).
-     *
      * Example 6 (ListConstraint allowing all):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values: "E2"}
@@ -889,7 +873,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {all: ALLOW}
      * The accepted values at `organizations/foo` are `E1`, E2`.
      * Any value is accepted at `projects/bar`.
-     *
      * Example 7 (ListConstraint allowing none):
      *   `organizations/foo` has a `Policy` with values:
      *     {allowed_values: "E1" allowed_values: "E2"}
@@ -897,7 +880,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {all: DENY}
      * The accepted values at `organizations/foo` are `E1`, E2`.
      * No value is accepted at `projects/bar`.
-     *
      * Example 10 (allowed and denied subtrees of Resource Manager hierarchy):
      * Given the following resource hierarchy
      *   O1-&gt;{F1, F2}; F1-&gt;{P1}; F2-&gt;{P2, P3},
@@ -1142,7 +1124,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Used in `policy_type` to specify how `list_policy` behaves at this
      * resource.
-     *
      * `ListPolicy` can define specific values and subtrees of Cloud Resource
      * Manager resource hierarchy (`Organizations`, `Folders`, `Projects`) that
      * are allowed or denied by setting the `allowed_values` and `denied_values`
@@ -1196,8 +1177,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         allValues_ = 0;
         suggestedValue_ = "";
         inheritFromParent_ = false;
@@ -1228,6 +1211,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.orgpolicy.v1.Policy.ListPolicy buildPartial() {
         com.google.cloud.orgpolicy.v1.Policy.ListPolicy result =
             new com.google.cloud.orgpolicy.v1.Policy.ListPolicy(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1235,16 +1219,22 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
+      private void buildPartialRepeatedFields(
+          com.google.cloud.orgpolicy.v1.Policy.ListPolicy result) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          allowedValues_ = allowedValues_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.allowedValues_ = allowedValues_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          deniedValues_ = deniedValues_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.deniedValues_ = deniedValues_;
+      }
+
       private void buildPartial0(com.google.cloud.orgpolicy.v1.Policy.ListPolicy result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          allowedValues_.makeImmutable();
-          result.allowedValues_ = allowedValues_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          deniedValues_.makeImmutable();
-          result.deniedValues_ = deniedValues_;
-        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.allValues_ = allValues_;
         }
@@ -1307,7 +1297,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         if (!other.allowedValues_.isEmpty()) {
           if (allowedValues_.isEmpty()) {
             allowedValues_ = other.allowedValues_;
-            bitField0_ |= 0x00000001;
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAllowedValuesIsMutable();
             allowedValues_.addAll(other.allowedValues_);
@@ -1317,7 +1307,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         if (!other.deniedValues_.isEmpty()) {
           if (deniedValues_.isEmpty()) {
             deniedValues_ = other.deniedValues_;
-            bitField0_ |= 0x00000002;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDeniedValuesIsMutable();
             deniedValues_.addAll(other.deniedValues_);
@@ -1412,14 +1402,14 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringArrayList allowedValues_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList allowedValues_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAllowedValuesIsMutable() {
-        if (!allowedValues_.isModifiable()) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           allowedValues_ = new com.google.protobuf.LazyStringArrayList(allowedValues_);
+          bitField0_ |= 0x00000001;
         }
-        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1434,8 +1424,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the allowedValues.
        */
       public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
-        allowedValues_.makeImmutable();
-        return allowedValues_;
+        return allowedValues_.getUnmodifiableView();
       }
       /**
        *
@@ -1504,7 +1493,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
         ensureAllowedValuesIsMutable();
         allowedValues_.set(index, value);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1527,7 +1515,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
         ensureAllowedValuesIsMutable();
         allowedValues_.add(value);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1547,7 +1534,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllAllowedValues(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedValuesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedValues_);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1564,9 +1550,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAllowedValues() {
-        allowedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        ;
         onChanged();
         return this;
       }
@@ -1590,19 +1575,18 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureAllowedValuesIsMutable();
         allowedValues_.add(value);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList deniedValues_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList deniedValues_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureDeniedValuesIsMutable() {
-        if (!deniedValues_.isModifiable()) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           deniedValues_ = new com.google.protobuf.LazyStringArrayList(deniedValues_);
+          bitField0_ |= 0x00000002;
         }
-        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1617,8 +1601,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the deniedValues.
        */
       public com.google.protobuf.ProtocolStringList getDeniedValuesList() {
-        deniedValues_.makeImmutable();
-        return deniedValues_;
+        return deniedValues_.getUnmodifiableView();
       }
       /**
        *
@@ -1687,7 +1670,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDeniedValuesIsMutable();
         deniedValues_.set(index, value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1710,7 +1692,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
         ensureDeniedValuesIsMutable();
         deniedValues_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1730,7 +1711,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllDeniedValues(java.lang.Iterable<java.lang.String> values) {
         ensureDeniedValuesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deniedValues_);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1747,9 +1727,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDeniedValues() {
-        deniedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        deniedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        ;
         onChanged();
         return this;
       }
@@ -1773,7 +1752,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDeniedValuesIsMutable();
         deniedValues_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1997,20 +1975,17 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Determines the inheritance behavior for this `Policy`.
-       *
        * By default, a `ListPolicy` set at a resource supercedes any `Policy` set
        * anywhere up the resource hierarchy. However, if `inherit_from_parent` is
        * set to `true`, then the values from the effective `Policy` of the parent
        * resource are inherited, meaning the values set in this `Policy` are
        * added to the values inherited up the hierarchy.
-       *
        * Setting `Policy` hierarchies that inherit both allowed values and denied
        * values isn't recommended in most circumstances to keep the configuration
        * simple and understandable. However, it is possible to set a `Policy` with
        * `allowed_values` set that inherits a `Policy` with `denied_values` set.
        * In this case, the values that are allowed must be in `allowed_values` and
        * not present in `denied_values`.
-       *
        * For example, suppose you have a `Constraint`
        * `constraints/serviceuser.services`, which has a `constraint_type` of
        * `list_constraint`, and with `constraint_default` set to `ALLOW`.
@@ -2019,10 +1994,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * `Policy` is applied to a project below the Organization that has
        * `inherit_from_parent` set to `false` and field all_values set to DENY,
        * then an attempt to activate any API will be denied.
-       *
        * The following examples demonstrate different possible layerings for
        * `projects/bar` parented by `organizations/foo`:
-       *
        * Example 1 (no inherited values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2030,7 +2003,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {allowed_values: "E3" allowed_values: "E4"}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The accepted values at `projects/bar` are `E3`, and `E4`.
-       *
        * Example 2 (inherited values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2038,7 +2010,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {value: "E3" value: "E4" inherit_from_parent: true}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The accepted values at `projects/bar` are `E1`, `E2`, `E3`, and `E4`.
-       *
        * Example 3 (inheriting both allowed and denied values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2046,7 +2017,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {denied_values: "E1"}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The value accepted at `projects/bar` is `E2`.
-       *
        * Example 4 (RestoreDefault):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2056,14 +2026,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * The accepted values at `projects/bar` are either all or none depending on
        * the value of `constraint_default` (if `ALLOW`, all; if
        * `DENY`, none).
-       *
        * Example 5 (no policy inherits parent policy):
        *   `organizations/foo` has no `Policy` set.
        *   `projects/bar` has no `Policy` set.
        * The accepted values at both levels are either all or none depending on
        * the value of `constraint_default` (if `ALLOW`, all; if
        * `DENY`, none).
-       *
        * Example 6 (ListConstraint allowing all):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2071,7 +2039,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {all: ALLOW}
        * The accepted values at `organizations/foo` are `E1`, E2`.
        * Any value is accepted at `projects/bar`.
-       *
        * Example 7 (ListConstraint allowing none):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2079,7 +2046,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {all: DENY}
        * The accepted values at `organizations/foo` are `E1`, E2`.
        * No value is accepted at `projects/bar`.
-       *
        * Example 10 (allowed and denied subtrees of Resource Manager hierarchy):
        * Given the following resource hierarchy
        *   O1-&gt;{F1, F2}; F1-&gt;{P1}; F2-&gt;{P2, P3},
@@ -2108,20 +2074,17 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Determines the inheritance behavior for this `Policy`.
-       *
        * By default, a `ListPolicy` set at a resource supercedes any `Policy` set
        * anywhere up the resource hierarchy. However, if `inherit_from_parent` is
        * set to `true`, then the values from the effective `Policy` of the parent
        * resource are inherited, meaning the values set in this `Policy` are
        * added to the values inherited up the hierarchy.
-       *
        * Setting `Policy` hierarchies that inherit both allowed values and denied
        * values isn't recommended in most circumstances to keep the configuration
        * simple and understandable. However, it is possible to set a `Policy` with
        * `allowed_values` set that inherits a `Policy` with `denied_values` set.
        * In this case, the values that are allowed must be in `allowed_values` and
        * not present in `denied_values`.
-       *
        * For example, suppose you have a `Constraint`
        * `constraints/serviceuser.services`, which has a `constraint_type` of
        * `list_constraint`, and with `constraint_default` set to `ALLOW`.
@@ -2130,10 +2093,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * `Policy` is applied to a project below the Organization that has
        * `inherit_from_parent` set to `false` and field all_values set to DENY,
        * then an attempt to activate any API will be denied.
-       *
        * The following examples demonstrate different possible layerings for
        * `projects/bar` parented by `organizations/foo`:
-       *
        * Example 1 (no inherited values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2141,7 +2102,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {allowed_values: "E3" allowed_values: "E4"}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The accepted values at `projects/bar` are `E3`, and `E4`.
-       *
        * Example 2 (inherited values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2149,7 +2109,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {value: "E3" value: "E4" inherit_from_parent: true}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The accepted values at `projects/bar` are `E1`, `E2`, `E3`, and `E4`.
-       *
        * Example 3 (inheriting both allowed and denied values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2157,7 +2116,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {denied_values: "E1"}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The value accepted at `projects/bar` is `E2`.
-       *
        * Example 4 (RestoreDefault):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2167,14 +2125,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * The accepted values at `projects/bar` are either all or none depending on
        * the value of `constraint_default` (if `ALLOW`, all; if
        * `DENY`, none).
-       *
        * Example 5 (no policy inherits parent policy):
        *   `organizations/foo` has no `Policy` set.
        *   `projects/bar` has no `Policy` set.
        * The accepted values at both levels are either all or none depending on
        * the value of `constraint_default` (if `ALLOW`, all; if
        * `DENY`, none).
-       *
        * Example 6 (ListConstraint allowing all):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2182,7 +2138,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {all: ALLOW}
        * The accepted values at `organizations/foo` are `E1`, E2`.
        * Any value is accepted at `projects/bar`.
-       *
        * Example 7 (ListConstraint allowing none):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2190,7 +2145,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {all: DENY}
        * The accepted values at `organizations/foo` are `E1`, E2`.
        * No value is accepted at `projects/bar`.
-       *
        * Example 10 (allowed and denied subtrees of Resource Manager hierarchy):
        * Given the following resource hierarchy
        *   O1-&gt;{F1, F2}; F1-&gt;{P1}; F2-&gt;{P2, P3},
@@ -2223,20 +2177,17 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Determines the inheritance behavior for this `Policy`.
-       *
        * By default, a `ListPolicy` set at a resource supercedes any `Policy` set
        * anywhere up the resource hierarchy. However, if `inherit_from_parent` is
        * set to `true`, then the values from the effective `Policy` of the parent
        * resource are inherited, meaning the values set in this `Policy` are
        * added to the values inherited up the hierarchy.
-       *
        * Setting `Policy` hierarchies that inherit both allowed values and denied
        * values isn't recommended in most circumstances to keep the configuration
        * simple and understandable. However, it is possible to set a `Policy` with
        * `allowed_values` set that inherits a `Policy` with `denied_values` set.
        * In this case, the values that are allowed must be in `allowed_values` and
        * not present in `denied_values`.
-       *
        * For example, suppose you have a `Constraint`
        * `constraints/serviceuser.services`, which has a `constraint_type` of
        * `list_constraint`, and with `constraint_default` set to `ALLOW`.
@@ -2245,10 +2196,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * `Policy` is applied to a project below the Organization that has
        * `inherit_from_parent` set to `false` and field all_values set to DENY,
        * then an attempt to activate any API will be denied.
-       *
        * The following examples demonstrate different possible layerings for
        * `projects/bar` parented by `organizations/foo`:
-       *
        * Example 1 (no inherited values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2256,7 +2205,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {allowed_values: "E3" allowed_values: "E4"}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The accepted values at `projects/bar` are `E3`, and `E4`.
-       *
        * Example 2 (inherited values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2264,7 +2212,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {value: "E3" value: "E4" inherit_from_parent: true}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The accepted values at `projects/bar` are `E1`, `E2`, `E3`, and `E4`.
-       *
        * Example 3 (inheriting both allowed and denied values):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2272,7 +2219,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {denied_values: "E1"}
        * The accepted values at `organizations/foo` are `E1`, `E2`.
        * The value accepted at `projects/bar` is `E2`.
-       *
        * Example 4 (RestoreDefault):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values:"E2"}
@@ -2282,14 +2228,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * The accepted values at `projects/bar` are either all or none depending on
        * the value of `constraint_default` (if `ALLOW`, all; if
        * `DENY`, none).
-       *
        * Example 5 (no policy inherits parent policy):
        *   `organizations/foo` has no `Policy` set.
        *   `projects/bar` has no `Policy` set.
        * The accepted values at both levels are either all or none depending on
        * the value of `constraint_default` (if `ALLOW`, all; if
        * `DENY`, none).
-       *
        * Example 6 (ListConstraint allowing all):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2297,7 +2241,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {all: ALLOW}
        * The accepted values at `organizations/foo` are `E1`, E2`.
        * Any value is accepted at `projects/bar`.
-       *
        * Example 7 (ListConstraint allowing none):
        *   `organizations/foo` has a `Policy` with values:
        *     {allowed_values: "E1" allowed_values: "E2"}
@@ -2305,7 +2248,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {all: DENY}
        * The accepted values at `organizations/foo` are `E1`, E2`.
        * No value is accepted at `projects/bar`.
-       *
        * Example 10 (allowed and denied subtrees of Resource Manager hierarchy):
        * Given the following resource hierarchy
        *   O1-&gt;{F1, F2}; F1-&gt;{P1}; F2-&gt;{P2, P3},
@@ -2407,7 +2349,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If `true`, then the `Policy` is enforced. If `false`, then any
      * configuration is acceptable.
-     *
      * Suppose you have a `Constraint`
      * `constraints/compute.disableSerialPortAccess` with `constraint_default`
      * set to `ALLOW`. A `Policy` for that `Constraint` exhibits the following
@@ -2423,16 +2364,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *   - If no `Policy` is set at this resource, but one exists higher in the
      *     resource hierarchy, the behavior is as if the`Policy` were set at
      *     this resource.
-     *
      * The following examples demonstrate the different possible layerings:
-     *
      * Example 1 (nearest `Constraint` wins):
      *   `organizations/foo` has a `Policy` with:
      *     {enforced: false}
      *   `projects/bar` has no `Policy` set.
      * The constraint at `projects/bar` and `organizations/foo` will not be
      * enforced.
-     *
      * Example 2 (enforcement gets replaced):
      *   `organizations/foo` has a `Policy` with:
      *     {enforced: false}
@@ -2440,7 +2378,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {enforced: true}
      * The constraint at `organizations/foo` is not enforced.
      * The constraint at `projects/bar` is enforced.
-     *
      * Example 3 (RestoreDefault):
      *   `organizations/foo` has a `Policy` with:
      *     {enforced: true}
@@ -2485,6 +2422,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return new BooleanPolicy();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.orgpolicy.v1.OrgPolicyProto
           .internal_static_google_cloud_orgpolicy_v1_Policy_BooleanPolicy_descriptor;
@@ -2508,7 +2450,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If `true`, then the `Policy` is enforced. If `false`, then any
      * configuration is acceptable.
-     *
      * Suppose you have a `Constraint`
      * `constraints/compute.disableSerialPortAccess` with `constraint_default`
      * set to `ALLOW`. A `Policy` for that `Constraint` exhibits the following
@@ -2524,16 +2465,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *   - If no `Policy` is set at this resource, but one exists higher in the
      *     resource hierarchy, the behavior is as if the`Policy` were set at
      *     this resource.
-     *
      * The following examples demonstrate the different possible layerings:
-     *
      * Example 1 (nearest `Constraint` wins):
      *   `organizations/foo` has a `Policy` with:
      *     {enforced: false}
      *   `projects/bar` has no `Policy` set.
      * The constraint at `projects/bar` and `organizations/foo` will not be
      * enforced.
-     *
      * Example 2 (enforcement gets replaced):
      *   `organizations/foo` has a `Policy` with:
      *     {enforced: false}
@@ -2541,7 +2479,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *     {enforced: true}
      * The constraint at `organizations/foo` is not enforced.
      * The constraint at `projects/bar` is enforced.
-     *
      * Example 3 (RestoreDefault):
      *   `organizations/foo` has a `Policy` with:
      *     {enforced: true}
@@ -2913,7 +2850,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If `true`, then the `Policy` is enforced. If `false`, then any
        * configuration is acceptable.
-       *
        * Suppose you have a `Constraint`
        * `constraints/compute.disableSerialPortAccess` with `constraint_default`
        * set to `ALLOW`. A `Policy` for that `Constraint` exhibits the following
@@ -2929,16 +2865,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *   - If no `Policy` is set at this resource, but one exists higher in the
        *     resource hierarchy, the behavior is as if the`Policy` were set at
        *     this resource.
-       *
        * The following examples demonstrate the different possible layerings:
-       *
        * Example 1 (nearest `Constraint` wins):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: false}
        *   `projects/bar` has no `Policy` set.
        * The constraint at `projects/bar` and `organizations/foo` will not be
        * enforced.
-       *
        * Example 2 (enforcement gets replaced):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: false}
@@ -2946,7 +2879,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {enforced: true}
        * The constraint at `organizations/foo` is not enforced.
        * The constraint at `projects/bar` is enforced.
-       *
        * Example 3 (RestoreDefault):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: true}
@@ -2971,7 +2903,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If `true`, then the `Policy` is enforced. If `false`, then any
        * configuration is acceptable.
-       *
        * Suppose you have a `Constraint`
        * `constraints/compute.disableSerialPortAccess` with `constraint_default`
        * set to `ALLOW`. A `Policy` for that `Constraint` exhibits the following
@@ -2987,16 +2918,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *   - If no `Policy` is set at this resource, but one exists higher in the
        *     resource hierarchy, the behavior is as if the`Policy` were set at
        *     this resource.
-       *
        * The following examples demonstrate the different possible layerings:
-       *
        * Example 1 (nearest `Constraint` wins):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: false}
        *   `projects/bar` has no `Policy` set.
        * The constraint at `projects/bar` and `organizations/foo` will not be
        * enforced.
-       *
        * Example 2 (enforcement gets replaced):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: false}
@@ -3004,7 +2932,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {enforced: true}
        * The constraint at `organizations/foo` is not enforced.
        * The constraint at `projects/bar` is enforced.
-       *
        * Example 3 (RestoreDefault):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: true}
@@ -3033,7 +2960,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If `true`, then the `Policy` is enforced. If `false`, then any
        * configuration is acceptable.
-       *
        * Suppose you have a `Constraint`
        * `constraints/compute.disableSerialPortAccess` with `constraint_default`
        * set to `ALLOW`. A `Policy` for that `Constraint` exhibits the following
@@ -3049,16 +2975,13 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *   - If no `Policy` is set at this resource, but one exists higher in the
        *     resource hierarchy, the behavior is as if the`Policy` were set at
        *     this resource.
-       *
        * The following examples demonstrate the different possible layerings:
-       *
        * Example 1 (nearest `Constraint` wins):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: false}
        *   `projects/bar` has no `Policy` set.
        * The constraint at `projects/bar` and `organizations/foo` will not be
        * enforced.
-       *
        * Example 2 (enforcement gets replaced):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: false}
@@ -3066,7 +2989,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *     {enforced: true}
        * The constraint at `organizations/foo` is not enforced.
        * The constraint at `projects/bar` is enforced.
-       *
        * Example 3 (RestoreDefault):
        *   `organizations/foo` has a `Policy` with:
        *     {enforced: true}
@@ -3163,7 +3085,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * Ignores policies set above this resource and restores the
    * `constraint_default` enforcement behavior of the specific `Constraint` at
    * this resource.
-   *
    * Suppose that `constraint_default` is set to `ALLOW` for the
    * `Constraint` `constraints/serviceuser.services`. Suppose that organization
    * foo.com sets a `Policy` at their Organization resource node that restricts
@@ -3192,6 +3113,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RestoreDefault();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3368,7 +3294,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * Ignores policies set above this resource and restores the
      * `constraint_default` enforcement behavior of the specific `Constraint` at
      * this resource.
-     *
      * Suppose that `constraint_default` is set to `ALLOW` for the
      * `Constraint` `constraints/serviceuser.services`. Suppose that organization
      * foo.com sets a `Policy` at their Organization resource node that restricts
@@ -3598,8 +3523,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int policyTypeCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object policyType_;
 
   public enum PolicyTypeCase
@@ -3677,7 +3600,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the `Constraint` the `Policy` is configuring, for example,
    * `constraints/serviceuser.services`.
-   *
    * Immutable after creation.
    * </pre>
    *
@@ -3703,7 +3625,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the `Constraint` the `Policy` is configuring, for example,
    * `constraints/serviceuser.services`.
-   *
    * Immutable after creation.
    * </pre>
    *
@@ -3732,14 +3653,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An opaque tag indicating the current version of the `Policy`, used for
    * concurrency control.
-   *
    * When the `Policy` is returned from either a `GetPolicy` or a
    * `ListOrgPolicy` request, this `etag` indicates the version of the current
    * `Policy` to use when executing a read-modify-write loop.
-   *
    * When the `Policy` is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
-   *
    * When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value
    * that was returned from a `GetOrgPolicy` request as part of a
    * read-modify-write loop for concurrency control. Not setting the `etag`in a
@@ -4574,7 +4492,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the `Constraint` the `Policy` is configuring, for example,
      * `constraints/serviceuser.services`.
-     *
      * Immutable after creation.
      * </pre>
      *
@@ -4599,7 +4516,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the `Constraint` the `Policy` is configuring, for example,
      * `constraints/serviceuser.services`.
-     *
      * Immutable after creation.
      * </pre>
      *
@@ -4624,7 +4540,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the `Constraint` the `Policy` is configuring, for example,
      * `constraints/serviceuser.services`.
-     *
      * Immutable after creation.
      * </pre>
      *
@@ -4648,7 +4563,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the `Constraint` the `Policy` is configuring, for example,
      * `constraints/serviceuser.services`.
-     *
      * Immutable after creation.
      * </pre>
      *
@@ -4668,7 +4582,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the `Constraint` the `Policy` is configuring, for example,
      * `constraints/serviceuser.services`.
-     *
      * Immutable after creation.
      * </pre>
      *
@@ -4695,14 +4608,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
-     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListOrgPolicy` request, this `etag` indicates the version of the current
      * `Policy` to use when executing a read-modify-write loop.
-     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
-     *
      * When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value
      * that was returned from a `GetOrgPolicy` request as part of a
      * read-modify-write loop for concurrency control. Not setting the `etag`in a
@@ -4724,14 +4634,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
-     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListOrgPolicy` request, this `etag` indicates the version of the current
      * `Policy` to use when executing a read-modify-write loop.
-     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
-     *
      * When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value
      * that was returned from a `GetOrgPolicy` request as part of a
      * read-modify-write loop for concurrency control. Not setting the `etag`in a
@@ -4759,14 +4666,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An opaque tag indicating the current version of the `Policy`, used for
      * concurrency control.
-     *
      * When the `Policy` is returned from either a `GetPolicy` or a
      * `ListOrgPolicy` request, this `etag` indicates the version of the current
      * `Policy` to use when executing a read-modify-write loop.
-     *
      * When the `Policy` is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
-     *
      * When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value
      * that was returned from a `GetOrgPolicy` request as part of a
      * read-modify-write loop for concurrency control. Not setting the `etag`in a

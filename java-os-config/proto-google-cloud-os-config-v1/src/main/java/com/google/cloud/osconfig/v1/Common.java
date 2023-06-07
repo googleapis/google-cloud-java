@@ -84,7 +84,7 @@ public final class Common {
      */
     int getPercent();
 
-    com.google.cloud.osconfig.v1.Common.FixedOrPercent.ModeCase getModeCase();
+    public com.google.cloud.osconfig.v1.Common.FixedOrPercent.ModeCase getModeCase();
   }
   /**
    *
@@ -114,6 +114,11 @@ public final class Common {
       return new FixedOrPercent();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1.Common
           .internal_static_google_cloud_osconfig_v1_FixedOrPercent_descriptor;
@@ -130,8 +135,6 @@ public final class Common {
     }
 
     private int modeCase_ = 0;
-
-    @SuppressWarnings("serial")
     private java.lang.Object mode_;
 
     public enum ModeCase

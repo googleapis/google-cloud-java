@@ -53,6 +53,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     return new UptimeCheckConfig();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeProto
         .internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
@@ -334,6 +339,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResourceGroup();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1128,6 +1138,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PingConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1975,7 +1990,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * provide a `Content-Length` header via the `headers` field or the API will
      * do so. If the `request_method` is `GET` and `body` is not empty, the API
      * will return an error. The maximum byte size is 1 megabyte.
-     *
      * Note: If client libraries aren't used (which performs the conversion
      * automatically) base64 encode your `body` data since the field is of
      * `bytes` type.
@@ -2131,6 +2145,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new HttpCheck();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2571,6 +2590,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new BasicAuthentication();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3439,7 +3463,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusClass
           getStatusClass();
 
-      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusCodeCase
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ResponseStatusCode.StatusCodeCase
           getStatusCodeCase();
     }
     /**
@@ -3468,6 +3492,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ResponseStatusCode();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3739,8 +3768,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private int statusCodeCase_ = 0;
-
-      @SuppressWarnings("serial")
       private java.lang.Object statusCode_;
 
       public enum StatusCodeCase
@@ -5089,7 +5116,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * provide a `Content-Length` header via the `headers` field or the API will
      * do so. If the `request_method` is `GET` and `body` is not empty, the API
      * will return an error. The maximum byte size is 1 megabyte.
-     *
      * Note: If client libraries aren't used (which performs the conversion
      * automatically) base64 encode your `body` data since the field is of
      * `bytes` type.
@@ -7159,7 +7185,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * provide a `Content-Length` header via the `headers` field or the API will
        * do so. If the `request_method` is `GET` and `body` is not empty, the API
        * will return an error. The maximum byte size is 1 megabyte.
-       *
        * Note: If client libraries aren't used (which performs the conversion
        * automatically) base64 encode your `body` data since the field is of
        * `bytes` type.
@@ -7182,7 +7207,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * provide a `Content-Length` header via the `headers` field or the API will
        * do so. If the `request_method` is `GET` and `body` is not empty, the API
        * will return an error. The maximum byte size is 1 megabyte.
-       *
        * Note: If client libraries aren't used (which performs the conversion
        * automatically) base64 encode your `body` data since the field is of
        * `bytes` type.
@@ -7211,7 +7235,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * provide a `Content-Length` header via the `headers` field or the API will
        * do so. If the `request_method` is `GET` and `body` is not empty, the API
        * will return an error. The maximum byte size is 1 megabyte.
-       *
        * Note: If client libraries aren't used (which performs the conversion
        * automatically) base64 encode your `body` data since the field is of
        * `bytes` type.
@@ -8014,6 +8037,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TcpCheck();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8892,7 +8920,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.JsonPathMatcherOrBuilder
         getJsonPathMatcherOrBuilder();
 
-    com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.AdditionalMatcherInfoCase
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.AdditionalMatcherInfoCase
         getAdditionalMatcherInfoCase();
   }
   /**
@@ -8927,6 +8955,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ContentMatcher();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9320,6 +9353,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new JsonPathMatcher();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10307,8 +10345,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int additionalMatcherInfoCase_ = 0;
-
-    @SuppressWarnings("serial")
     private java.lang.Object additionalMatcherInfo_;
 
     public enum AdditionalMatcherInfoCase
@@ -11503,8 +11539,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   private int resourceCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object resource_;
 
   public enum ResourceCase
@@ -11552,8 +11586,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   private int checkRequestTypeCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object checkRequestType_;
 
   public enum CheckRequestTypeCase
@@ -11609,12 +11641,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
-   *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-   *
    * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
    * Uptime check.
-   *
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -11641,12 +11670,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A unique resource name for this Uptime check configuration. The format is:
-   *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-   *
    * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
    * Uptime check.
-   *
    * This field should be omitted when creating the Uptime check configuration;
    * on create, the resource name is assigned by the server and included in the
    * response.
@@ -12480,7 +12506,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -12508,7 +12533,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -12527,7 +12551,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -12553,7 +12576,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `UptimeCheckConfig` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -13515,12 +13537,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
      * Uptime check.
-     *
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -13546,12 +13565,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
      * Uptime check.
-     *
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -13577,12 +13593,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
      * Uptime check.
-     *
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -13607,12 +13620,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
      * Uptime check.
-     *
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -13633,12 +13643,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A unique resource name for this Uptime check configuration. The format is:
-     *
      *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Workspace host project associated with the
      * Uptime check.
-     *
      * This field should be omitted when creating the Uptime check configuration;
      * on create, the resource name is assigned by the server and included in the
      * response.
@@ -16500,7 +16507,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -16528,7 +16534,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -16547,7 +16552,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -16573,7 +16577,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -16605,7 +16608,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -16633,7 +16635,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -16659,7 +16660,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `UptimeCheckConfig` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and

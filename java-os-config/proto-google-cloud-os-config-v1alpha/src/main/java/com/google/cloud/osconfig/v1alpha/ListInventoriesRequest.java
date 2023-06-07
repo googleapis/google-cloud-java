@@ -51,6 +51,11 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
     return new ListInventoriesRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.Inventories
         .internal_static_google_cloud_osconfig_v1alpha_ListInventoriesRequest_descriptor;
@@ -75,9 +80,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name.
-   *
    * Format: `projects/{project}/locations/{location}/instances/-`
-   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *
@@ -104,9 +107,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name.
-   *
    * Format: `projects/{project}/locations/{location}/instances/-`
-   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *
@@ -736,9 +737,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}/instances/-`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
@@ -764,9 +763,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}/instances/-`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
@@ -792,9 +789,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}/instances/-`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
@@ -819,9 +814,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}/instances/-`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *
@@ -842,9 +835,7 @@ public final class ListInventoriesRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}/instances/-`
-     *
      * For `{project}`, either `project-number` or `project-id` can be provided.
      * </pre>
      *

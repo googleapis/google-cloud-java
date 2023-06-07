@@ -48,6 +48,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     return new ProbingDetails();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TestOuterClass
         .internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_descriptor;
@@ -496,6 +501,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EdgeLocation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -110,5 +110,5 @@ public interface LabelValueOrBuilder
    */
   com.google.protobuf.ByteString getStringValueBytes();
 
-  com.google.monitoring.v3.LabelValue.ValueCase getValueCase();
+  public com.google.monitoring.v3.LabelValue.ValueCase getValueCase();
 }

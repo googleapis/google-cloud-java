@@ -28,7 +28,6 @@ public interface InventoryOrBuilder
    *
    * <pre>
    * Output only. The `Inventory` API resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
    * </pre>
@@ -43,7 +42,6 @@ public interface InventoryOrBuilder
    *
    * <pre>
    * Output only. The `Inventory` API resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
    * </pre>

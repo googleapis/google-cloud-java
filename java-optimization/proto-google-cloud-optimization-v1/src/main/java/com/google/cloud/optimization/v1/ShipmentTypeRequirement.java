@@ -39,8 +39,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   }
 
   private ShipmentTypeRequirement() {
-    requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     requirementMode_ = 0;
   }
 
@@ -48,6 +48,11 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ShipmentTypeRequirement();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -103,9 +108,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * With the `IN_SAME_VEHICLE_AT_PICKUP_TIME` mode, all "dependent"
      * shipments need to have at least one "required" shipment on their vehicle
      * at the time of their pickup.
-     *
      * A "dependent" shipment pickup must therefore have either:
-     *
      * * A delivery-only "required" shipment delivered on the route after, or
      * * A "required" shipment picked up on the route before it, and if the
      *   "required" shipment has a delivery, this delivery must be performed
@@ -157,9 +160,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * With the `IN_SAME_VEHICLE_AT_PICKUP_TIME` mode, all "dependent"
      * shipments need to have at least one "required" shipment on their vehicle
      * at the time of their pickup.
-     *
      * A "dependent" shipment pickup must therefore have either:
-     *
      * * A delivery-only "required" shipment delivered on the route after, or
      * * A "required" shipment picked up on the route before it, and if the
      *   "required" shipment has a delivery, this delivery must be performed
@@ -273,8 +274,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public static final int REQUIRED_SHIPMENT_TYPE_ALTERNATIVES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList requiredShipmentTypeAlternatives_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList requiredShipmentTypeAlternatives_;
   /**
    *
    *
@@ -341,8 +341,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public static final int DEPENDENT_SHIPMENT_TYPES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList dependentShipmentTypes_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList dependentShipmentTypes_;
   /**
    *
    *
@@ -350,7 +349,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -369,7 +367,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -388,7 +385,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -408,7 +404,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
    * All shipments with a type in the `dependent_shipment_types` field require
    * at least one shipment of type `required_shipment_type_alternatives` to be
    * visited on the same route.
-   *
    * NOTE: Chains of requirements such that a `shipment_type` depends on itself
    * are not allowed.
    * </pre>
@@ -707,8 +702,10 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       requirementMode_ = 0;
       return this;
     }
@@ -737,6 +734,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public com.google.cloud.optimization.v1.ShipmentTypeRequirement buildPartial() {
       com.google.cloud.optimization.v1.ShipmentTypeRequirement result =
           new com.google.cloud.optimization.v1.ShipmentTypeRequirement(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -744,16 +742,22 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.ShipmentTypeRequirement result) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        requiredShipmentTypeAlternatives_ = requiredShipmentTypeAlternatives_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.requiredShipmentTypeAlternatives_ = requiredShipmentTypeAlternatives_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        dependentShipmentTypes_ = dependentShipmentTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.dependentShipmentTypes_ = dependentShipmentTypes_;
+    }
+
     private void buildPartial0(com.google.cloud.optimization.v1.ShipmentTypeRequirement result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        requiredShipmentTypeAlternatives_.makeImmutable();
-        result.requiredShipmentTypeAlternatives_ = requiredShipmentTypeAlternatives_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        dependentShipmentTypes_.makeImmutable();
-        result.dependentShipmentTypes_ = dependentShipmentTypes_;
-      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.requirementMode_ = requirementMode_;
       }
@@ -808,7 +812,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       if (!other.requiredShipmentTypeAlternatives_.isEmpty()) {
         if (requiredShipmentTypeAlternatives_.isEmpty()) {
           requiredShipmentTypeAlternatives_ = other.requiredShipmentTypeAlternatives_;
-          bitField0_ |= 0x00000001;
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureRequiredShipmentTypeAlternativesIsMutable();
           requiredShipmentTypeAlternatives_.addAll(other.requiredShipmentTypeAlternatives_);
@@ -818,7 +822,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       if (!other.dependentShipmentTypes_.isEmpty()) {
         if (dependentShipmentTypes_.isEmpty()) {
           dependentShipmentTypes_ = other.dependentShipmentTypes_;
-          bitField0_ |= 0x00000002;
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDependentShipmentTypesIsMutable();
           dependentShipmentTypes_.addAll(other.dependentShipmentTypes_);
@@ -893,15 +897,15 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList requiredShipmentTypeAlternatives_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList requiredShipmentTypeAlternatives_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRequiredShipmentTypeAlternativesIsMutable() {
-      if (!requiredShipmentTypeAlternatives_.isModifiable()) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         requiredShipmentTypeAlternatives_ =
             new com.google.protobuf.LazyStringArrayList(requiredShipmentTypeAlternatives_);
+        bitField0_ |= 0x00000001;
       }
-      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -916,8 +920,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * @return A list containing the requiredShipmentTypeAlternatives.
      */
     public com.google.protobuf.ProtocolStringList getRequiredShipmentTypeAlternativesList() {
-      requiredShipmentTypeAlternatives_.makeImmutable();
-      return requiredShipmentTypeAlternatives_;
+      return requiredShipmentTypeAlternatives_.getUnmodifiableView();
     }
     /**
      *
@@ -986,7 +989,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       }
       ensureRequiredShipmentTypeAlternativesIsMutable();
       requiredShipmentTypeAlternatives_.set(index, value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,7 +1011,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       }
       ensureRequiredShipmentTypeAlternativesIsMutable();
       requiredShipmentTypeAlternatives_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1031,7 +1032,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       ensureRequiredShipmentTypeAlternativesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, requiredShipmentTypeAlternatives_);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1048,9 +1048,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequiredShipmentTypeAlternatives() {
-      requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      requiredShipmentTypeAlternatives_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ;
       onChanged();
       return this;
     }
@@ -1074,20 +1073,19 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureRequiredShipmentTypeAlternativesIsMutable();
       requiredShipmentTypeAlternatives_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList dependentShipmentTypes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList dependentShipmentTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDependentShipmentTypesIsMutable() {
-      if (!dependentShipmentTypes_.isModifiable()) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         dependentShipmentTypes_ =
             new com.google.protobuf.LazyStringArrayList(dependentShipmentTypes_);
+        bitField0_ |= 0x00000002;
       }
-      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1096,7 +1094,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1106,8 +1103,7 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * @return A list containing the dependentShipmentTypes.
      */
     public com.google.protobuf.ProtocolStringList getDependentShipmentTypesList() {
-      dependentShipmentTypes_.makeImmutable();
-      return dependentShipmentTypes_;
+      return dependentShipmentTypes_.getUnmodifiableView();
     }
     /**
      *
@@ -1116,7 +1112,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1135,7 +1130,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1155,7 +1149,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1175,7 +1168,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1192,7 +1184,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       }
       ensureDependentShipmentTypesIsMutable();
       dependentShipmentTypes_.set(index, value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1203,7 +1194,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1219,7 +1209,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       }
       ensureDependentShipmentTypesIsMutable();
       dependentShipmentTypes_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1230,7 +1219,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1243,7 +1231,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public Builder addAllDependentShipmentTypes(java.lang.Iterable<java.lang.String> values) {
       ensureDependentShipmentTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependentShipmentTypes_);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1254,7 +1241,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1264,9 +1250,8 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDependentShipmentTypes() {
-      dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      dependentShipmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      ;
       onChanged();
       return this;
     }
@@ -1277,7 +1262,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * All shipments with a type in the `dependent_shipment_types` field require
      * at least one shipment of type `required_shipment_type_alternatives` to be
      * visited on the same route.
-     *
      * NOTE: Chains of requirements such that a `shipment_type` depends on itself
      * are not allowed.
      * </pre>
@@ -1294,7 +1278,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureDependentShipmentTypesIsMutable();
       dependentShipmentTypes_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

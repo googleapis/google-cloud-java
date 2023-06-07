@@ -48,6 +48,11 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     return new Scorecard();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.ScorecardProto
         .internal_static_google_monitoring_dashboard_v1_Scorecard_descriptor;
@@ -123,6 +128,11 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GaugeView();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -842,6 +852,11 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SparkChartView();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1740,8 +1755,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataViewCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object dataView_;
 
   public enum DataViewCase
@@ -1965,9 +1978,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    * Similarly, if x is above/below a warning threshold that triggers
    * above/below, then the scorecard is in a warning state - unless x also puts
    * it in a danger state. (Danger trumps warning.)
-   *
    * As an example, consider a scorecard with the following four thresholds:
-   *
    * ```
    * {
    *   value: 90,
@@ -1990,7 +2001,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *   trigger: 'BELOW',
    * }
    * ```
-   *
    * Then: values less than or equal to 10 would put the scorecard in a DANGER
    * state, values greater than 10 but less than or equal to 20 a WARNING state,
    * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -2015,9 +2025,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    * Similarly, if x is above/below a warning threshold that triggers
    * above/below, then the scorecard is in a warning state - unless x also puts
    * it in a danger state. (Danger trumps warning.)
-   *
    * As an example, consider a scorecard with the following four thresholds:
-   *
    * ```
    * {
    *   value: 90,
@@ -2040,7 +2048,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *   trigger: 'BELOW',
    * }
    * ```
-   *
    * Then: values less than or equal to 10 would put the scorecard in a DANGER
    * state, values greater than 10 but less than or equal to 20 a WARNING state,
    * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -2066,9 +2073,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    * Similarly, if x is above/below a warning threshold that triggers
    * above/below, then the scorecard is in a warning state - unless x also puts
    * it in a danger state. (Danger trumps warning.)
-   *
    * As an example, consider a scorecard with the following four thresholds:
-   *
    * ```
    * {
    *   value: 90,
@@ -2091,7 +2096,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *   trigger: 'BELOW',
    * }
    * ```
-   *
    * Then: values less than or equal to 10 would put the scorecard in a DANGER
    * state, values greater than 10 but less than or equal to 20 a WARNING state,
    * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -2116,9 +2120,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    * Similarly, if x is above/below a warning threshold that triggers
    * above/below, then the scorecard is in a warning state - unless x also puts
    * it in a danger state. (Danger trumps warning.)
-   *
    * As an example, consider a scorecard with the following four thresholds:
-   *
    * ```
    * {
    *   value: 90,
@@ -2141,7 +2143,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *   trigger: 'BELOW',
    * }
    * ```
-   *
    * Then: values less than or equal to 10 would put the scorecard in a DANGER
    * state, values greater than 10 but less than or equal to 20 a WARNING state,
    * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -2166,9 +2167,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    * Similarly, if x is above/below a warning threshold that triggers
    * above/below, then the scorecard is in a warning state - unless x also puts
    * it in a danger state. (Danger trumps warning.)
-   *
    * As an example, consider a scorecard with the following four thresholds:
-   *
    * ```
    * {
    *   value: 90,
@@ -2191,7 +2190,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *   trigger: 'BELOW',
    * }
    * ```
-   *
    * Then: values less than or equal to 10 would put the scorecard in a DANGER
    * state, values greater than 10 but less than or equal to 20 a WARNING state,
    * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3396,9 +3394,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3421,7 +3417,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3449,9 +3444,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3474,7 +3467,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3502,9 +3494,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3527,7 +3517,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3555,9 +3544,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3580,7 +3567,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3614,9 +3600,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3639,7 +3623,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3671,9 +3654,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3696,7 +3677,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3730,9 +3710,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3755,7 +3733,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3789,9 +3766,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3814,7 +3789,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3846,9 +3820,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3871,7 +3843,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3903,9 +3874,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3928,7 +3897,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -3960,9 +3928,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -3985,7 +3951,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4016,9 +3981,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4041,7 +4004,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4072,9 +4034,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4097,7 +4057,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4121,9 +4080,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4146,7 +4103,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4174,9 +4130,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4199,7 +4153,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4228,9 +4181,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4253,7 +4204,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4278,9 +4228,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4303,7 +4251,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal
@@ -4328,9 +4275,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      * Similarly, if x is above/below a warning threshold that triggers
      * above/below, then the scorecard is in a warning state - unless x also puts
      * it in a danger state. (Danger trumps warning.)
-     *
      * As an example, consider a scorecard with the following four thresholds:
-     *
      * ```
      * {
      *   value: 90,
@@ -4353,7 +4298,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *   trigger: 'BELOW',
      * }
      * ```
-     *
      * Then: values less than or equal to 10 would put the scorecard in a DANGER
      * state, values greater than 10 but less than or equal to 20 a WARNING state,
      * values strictly between 20 and 70 an OK state, values greater than or equal

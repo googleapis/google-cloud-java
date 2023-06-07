@@ -48,6 +48,11 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     return new TimeSeriesQuery();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.MetricsProto
         .internal_static_google_monitoring_dashboard_v1_TimeSeriesQuery_descriptor;
@@ -64,8 +69,6 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   private int sourceCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

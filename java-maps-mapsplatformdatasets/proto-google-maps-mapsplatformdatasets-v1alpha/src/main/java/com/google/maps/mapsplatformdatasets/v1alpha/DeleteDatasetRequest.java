@@ -23,7 +23,6 @@ package com.google.maps.mapsplatformdatasets.v1alpha;
  *
  * <pre>
  * Request to delete a dataset.
- *
  * The dataset to be deleted.
  * </pre>
  *
@@ -47,6 +46,11 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeleteDatasetRequest();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -313,7 +317,6 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Request to delete a dataset.
-   *
    * The dataset to be deleted.
    * </pre>
    *

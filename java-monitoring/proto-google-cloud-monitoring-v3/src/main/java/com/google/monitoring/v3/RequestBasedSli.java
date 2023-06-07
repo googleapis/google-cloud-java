@@ -46,6 +46,11 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     return new RequestBasedSli();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringProto
         .internal_static_google_monitoring_v3_RequestBasedSli_descriptor;
@@ -62,8 +67,6 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
   }
 
   private int methodCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object method_;
 
   public enum MethodCase

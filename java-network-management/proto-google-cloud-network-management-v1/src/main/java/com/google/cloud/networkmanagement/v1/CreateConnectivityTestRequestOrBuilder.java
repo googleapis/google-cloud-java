@@ -56,7 +56,6 @@ public interface CreateConnectivityTestRequestOrBuilder
    * <pre>
    * Required. The logical name of the Connectivity Test in your project
    * with the following restrictions:
-   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
@@ -75,7 +74,6 @@ public interface CreateConnectivityTestRequestOrBuilder
    * <pre>
    * Required. The logical name of the Connectivity Test in your project
    * with the following restrictions:
-   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.

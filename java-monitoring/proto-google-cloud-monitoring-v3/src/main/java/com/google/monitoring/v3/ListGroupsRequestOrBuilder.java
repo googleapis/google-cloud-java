@@ -29,7 +29,6 @@ public interface ListGroupsRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
    * whose groups are to be listed. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -46,7 +45,6 @@ public interface ListGroupsRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
    * whose groups are to be listed. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -63,9 +61,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
@@ -80,9 +76,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
@@ -97,9 +91,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
@@ -115,9 +107,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -134,9 +124,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -153,9 +141,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -173,9 +159,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns the descendants of the specified group.  This is a superset of
    * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
@@ -191,9 +175,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns the descendants of the specified group.  This is a superset of
    * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
@@ -209,9 +191,7 @@ public interface ListGroupsRequestOrBuilder
    *
    * <pre>
    * A group name. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   *
    * Returns the descendants of the specified group.  This is a superset of
    * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
@@ -265,5 +245,5 @@ public interface ListGroupsRequestOrBuilder
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
-  com.google.monitoring.v3.ListGroupsRequest.FilterCase getFilterCase();
+  public com.google.monitoring.v3.ListGroupsRequest.FilterCase getFilterCase();
 }

@@ -53,6 +53,11 @@ public final class ListInstanceOSPoliciesCompliancesRequest
     return new ListInstanceOSPoliciesCompliancesRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesComplianceProto
         .internal_static_google_cloud_osconfig_v1alpha_ListInstanceOSPoliciesCompliancesRequest_descriptor;
@@ -78,9 +83,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
    *
    * <pre>
    * Required. The parent resource name.
-   *
    * Format: `projects/{project}/locations/{location}`
-   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * </pre>
@@ -108,9 +111,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
    *
    * <pre>
    * Required. The parent resource name.
-   *
    * Format: `projects/{project}/locations/{location}`
-   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * </pre>
@@ -698,9 +699,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}`
-     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * </pre>
@@ -727,9 +726,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}`
-     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * </pre>
@@ -756,9 +753,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}`
-     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * </pre>
@@ -784,9 +779,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}`
-     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * </pre>
@@ -808,9 +801,7 @@ public final class ListInstanceOSPoliciesCompliancesRequest
      *
      * <pre>
      * Required. The parent resource name.
-     *
      * Format: `projects/{project}/locations/{location}`
-     *
      * For `{project}`, either Compute Engine project-number or project-id can be
      * provided.
      * </pre>

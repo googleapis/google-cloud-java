@@ -28,7 +28,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    *
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -43,7 +42,6 @@ public interface OSPolicyAssignmentOperationMetadataOrBuilder
    *
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>

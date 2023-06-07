@@ -110,5 +110,5 @@ public interface SpeedReadingIntervalOrBuilder
    */
   com.google.maps.routing.v2.SpeedReadingInterval.Speed getSpeed();
 
-  com.google.maps.routing.v2.SpeedReadingInterval.SpeedTypeCase getSpeedTypeCase();
+  public com.google.maps.routing.v2.SpeedReadingInterval.SpeedTypeCase getSpeedTypeCase();
 }

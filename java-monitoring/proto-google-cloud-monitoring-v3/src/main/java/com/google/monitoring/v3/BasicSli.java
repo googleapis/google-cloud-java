@@ -43,15 +43,20 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   private BasicSli() {
-    method_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    location_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    version_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    method_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    location_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    version_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BasicSli();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -98,6 +103,11 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AvailabilityCriteria();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -560,6 +570,11 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LatencyCriteria();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1236,8 +1251,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sliCriteriaCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object sliCriteria_;
 
   public enum SliCriteriaCase
@@ -1287,8 +1300,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public static final int METHOD_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList method_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList method_;
   /**
    *
    *
@@ -1367,8 +1379,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public static final int LOCATION_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList location_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList location_;
   /**
    *
    *
@@ -1447,8 +1458,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   public static final int VERSION_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList version_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList version_;
   /**
    *
    *
@@ -1912,9 +1922,12 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      method_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      location_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      version_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      method_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      version_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (availabilityBuilder_ != null) {
         availabilityBuilder_.clear();
       }
@@ -1949,6 +1962,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.BasicSli buildPartial() {
       com.google.monitoring.v3.BasicSli result = new com.google.monitoring.v3.BasicSli(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1957,20 +1971,26 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.BasicSli result) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        method_ = method_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.method_ = method_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        location_ = location_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.location_ = location_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        version_ = version_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.version_ = version_;
+    }
+
     private void buildPartial0(com.google.monitoring.v3.BasicSli result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        method_.makeImmutable();
-        result.method_ = method_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        location_.makeImmutable();
-        result.location_ = location_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        version_.makeImmutable();
-        result.version_ = version_;
-      }
     }
 
     private void buildPartialOneofs(com.google.monitoring.v3.BasicSli result) {
@@ -2032,7 +2052,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       if (!other.method_.isEmpty()) {
         if (method_.isEmpty()) {
           method_ = other.method_;
-          bitField0_ |= 0x00000001;
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureMethodIsMutable();
           method_.addAll(other.method_);
@@ -2042,7 +2062,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       if (!other.location_.isEmpty()) {
         if (location_.isEmpty()) {
           location_ = other.location_;
-          bitField0_ |= 0x00000002;
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureLocationIsMutable();
           location_.addAll(other.location_);
@@ -2052,7 +2072,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       if (!other.version_.isEmpty()) {
         if (version_.isEmpty()) {
           version_ = other.version_;
-          bitField0_ |= 0x00000004;
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureVersionIsMutable();
           version_.addAll(other.version_);
@@ -2167,14 +2187,14 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList method_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList method_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMethodIsMutable() {
-      if (!method_.isModifiable()) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         method_ = new com.google.protobuf.LazyStringArrayList(method_);
+        bitField0_ |= 0x00000001;
       }
-      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -2192,8 +2212,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the method.
      */
     public com.google.protobuf.ProtocolStringList getMethodList() {
-      method_.makeImmutable();
-      return method_;
+      return method_.getUnmodifiableView();
     }
     /**
      *
@@ -2274,7 +2293,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMethodIsMutable();
       method_.set(index, value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2300,7 +2318,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMethodIsMutable();
       method_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2323,7 +2340,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMethod(java.lang.Iterable<java.lang.String> values) {
       ensureMethodIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, method_);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2343,9 +2359,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMethod() {
-      method_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      method_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ;
       onChanged();
       return this;
     }
@@ -2372,19 +2387,18 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMethodIsMutable();
       method_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList location_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList location_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationIsMutable() {
-      if (!location_.isModifiable()) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         location_ = new com.google.protobuf.LazyStringArrayList(location_);
+        bitField0_ |= 0x00000002;
       }
-      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2402,8 +2416,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the location.
      */
     public com.google.protobuf.ProtocolStringList getLocationList() {
-      location_.makeImmutable();
-      return location_;
+      return location_.getUnmodifiableView();
     }
     /**
      *
@@ -2484,7 +2497,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationIsMutable();
       location_.set(index, value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2510,7 +2522,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationIsMutable();
       location_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2533,7 +2544,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLocation(java.lang.Iterable<java.lang.String> values) {
       ensureLocationIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, location_);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2553,9 +2563,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-      location_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      location_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      ;
       onChanged();
       return this;
     }
@@ -2582,19 +2591,18 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLocationIsMutable();
       location_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList version_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList version_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureVersionIsMutable() {
-      if (!version_.isModifiable()) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         version_ = new com.google.protobuf.LazyStringArrayList(version_);
+        bitField0_ |= 0x00000004;
       }
-      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2612,8 +2620,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the version.
      */
     public com.google.protobuf.ProtocolStringList getVersionList() {
-      version_.makeImmutable();
-      return version_;
+      return version_.getUnmodifiableView();
     }
     /**
      *
@@ -2694,7 +2701,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       ensureVersionIsMutable();
       version_.set(index, value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2720,7 +2726,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       ensureVersionIsMutable();
       version_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2743,7 +2748,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllVersion(java.lang.Iterable<java.lang.String> values) {
       ensureVersionIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, version_);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2763,9 +2767,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      version_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      version_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      ;
       onChanged();
       return this;
     }
@@ -2792,7 +2795,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureVersionIsMutable();
       version_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

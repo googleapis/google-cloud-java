@@ -48,6 +48,11 @@ public final class RouteMatrixElement extends com.google.protobuf.GeneratedMessa
     return new RouteMatrixElement();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RoutesServiceProto
         .internal_static_google_maps_routing_v2_RouteMatrixElement_descriptor;

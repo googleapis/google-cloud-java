@@ -47,6 +47,11 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     return new ValidateAddressRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.addressvalidation.v1.AddressValidationServiceProto
         .internal_static_google_maps_addressvalidation_v1_ValidateAddressRequest_descriptor;
@@ -70,18 +75,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The address being validated. Unformatted addresses should be
    * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-   *
    * The total length of the fields in this input must not exceed 280
    * characters.
-   *
    * Supported regions can be found in the
    * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-   *
    * The [language_code][google.type.PostalAddress.language_code] value in the
    * input address is reserved for future uses and is ignored today. The
    * validated address result will be populated based on the preferred language
    * for the given address, as identified by the system.
-   *
    * The Address Validation API ignores the values in
    * [recipients][google.type.PostalAddress.recipients] and
    * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -102,18 +103,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The address being validated. Unformatted addresses should be
    * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-   *
    * The total length of the fields in this input must not exceed 280
    * characters.
-   *
    * Supported regions can be found in the
    * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-   *
    * The [language_code][google.type.PostalAddress.language_code] value in the
    * input address is reserved for future uses and is ignored today. The
    * validated address result will be populated based on the preferred language
    * for the given address, as identified by the system.
-   *
    * The Address Validation API ignores the values in
    * [recipients][google.type.PostalAddress.recipients] and
    * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -134,18 +131,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The address being validated. Unformatted addresses should be
    * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-   *
    * The total length of the fields in this input must not exceed 280
    * characters.
-   *
    * Supported regions can be found in the
    * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-   *
    * The [language_code][google.type.PostalAddress.language_code] value in the
    * input address is reserved for future uses and is ignored today. The
    * validated address result will be populated based on the preferred language
    * for the given address, as identified by the system.
-   *
    * The Address Validation API ignores the values in
    * [recipients][google.type.PostalAddress.recipients] and
    * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -235,7 +228,6 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
    * [google.type.PostalAddress.region_code] of the `address` must be provided
    * as "PR", or an [google.type.PostalAddress.administrative_area] of the
    * `address` must be provided as "Puerto Rico" (case-insensitive) or "PR".
-   *
    * It's recommended to use a componentized `address`, or alternatively specify
    * at least two [google.type.PostalAddress.address_lines] where the first line
    * contains the street number and name and the second line contains the city,
@@ -659,18 +651,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -691,18 +679,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -727,18 +711,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -767,18 +747,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -804,18 +780,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -847,18 +819,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -884,18 +852,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -916,18 +880,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -950,18 +910,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The address being validated. Unformatted addresses should be
      * submitted via [`address_lines`][google.type.PostalAddress.address_lines].
-     *
      * The total length of the fields in this input must not exceed 280
      * characters.
-     *
      * Supported regions can be found in the
      * [FAQ](https://developers.google.com/maps/documentation/address-validation/faq#which_regions_are_currently_supported).
-     *
      * The [language_code][google.type.PostalAddress.language_code] value in the
      * input address is reserved for future uses and is ignored today. The
      * validated address result will be populated based on the preferred language
      * for the given address, as identified by the system.
-     *
      * The Address Validation API ignores the values in
      * [recipients][google.type.PostalAddress.recipients] and
      * [organization][google.type.PostalAddress.organization]. Any values in those
@@ -1136,7 +1092,6 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * [google.type.PostalAddress.region_code] of the `address` must be provided
      * as "PR", or an [google.type.PostalAddress.administrative_area] of the
      * `address` must be provided as "Puerto Rico" (case-insensitive) or "PR".
-     *
      * It's recommended to use a componentized `address`, or alternatively specify
      * at least two [google.type.PostalAddress.address_lines] where the first line
      * contains the street number and name and the second line contains the city,
@@ -1162,7 +1117,6 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * [google.type.PostalAddress.region_code] of the `address` must be provided
      * as "PR", or an [google.type.PostalAddress.administrative_area] of the
      * `address` must be provided as "Puerto Rico" (case-insensitive) or "PR".
-     *
      * It's recommended to use a componentized `address`, or alternatively specify
      * at least two [google.type.PostalAddress.address_lines] where the first line
      * contains the street number and name and the second line contains the city,
@@ -1192,7 +1146,6 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * [google.type.PostalAddress.region_code] of the `address` must be provided
      * as "PR", or an [google.type.PostalAddress.administrative_area] of the
      * `address` must be provided as "Puerto Rico" (case-insensitive) or "PR".
-     *
      * It's recommended to use a componentized `address`, or alternatively specify
      * at least two [google.type.PostalAddress.address_lines] where the first line
      * contains the street number and name and the second line contains the city,

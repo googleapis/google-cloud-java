@@ -47,6 +47,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     return new TimeSeriesFilterRatio();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.MetricsProto
         .internal_static_google_monitoring_dashboard_v1_TimeSeriesFilterRatio_descriptor;
@@ -165,6 +170,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RatioPart();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1068,8 +1078,6 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
   }
 
   private int outputFilterCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object outputFilter_;
 
   public enum OutputFilterCase

@@ -127,5 +127,5 @@ public interface VmImageOrBuilder
    */
   com.google.protobuf.ByteString getImageFamilyBytes();
 
-  com.google.cloud.notebooks.v1beta1.VmImage.ImageCase getImageCase();
+  public com.google.cloud.notebooks.v1beta1.VmImage.ImageCase getImageCase();
 }

@@ -45,13 +45,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     conditions_ = java.util.Collections.emptyList();
     combiner_ = 0;
-    notificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AlertPolicy();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -370,6 +375,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Documentation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1189,25 +1199,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     *
      * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
-     *
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
      * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
-     *
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
      * method to update a policy, including a condition `name` causes the
      * existing condition to be updated. Conditions without names are added to
      * the updated policy. Existing conditions are deleted if they are not
      * updated.
-     *
      * Best practice is to preserve `[CONDITION_ID]` if you make only small
      * changes, such as those to condition thresholds, durations, or trigger
      * values.  Otherwise, treat the change as a new condition and let the
@@ -1225,25 +1230,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     *
      * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
-     *
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
      * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
-     *
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
      * method to update a policy, including a condition `name` causes the
      * existing condition to be updated. Conditions without names are added to
      * the updated policy. Existing conditions are deleted if they are not
      * updated.
-     *
      * Best practice is to preserve `[CONDITION_ID]` if you make only small
      * changes, such as those to condition thresholds, durations, or trigger
      * values.  Otherwise, treat the change as a new condition and let the
@@ -1448,7 +1448,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageConditionOrBuilder
         getConditionMonitoringQueryLanguageOrBuilder();
 
-    com.google.monitoring.v3.AlertPolicy.Condition.ConditionCase getConditionCase();
+    public com.google.monitoring.v3.AlertPolicy.Condition.ConditionCase getConditionCase();
   }
   /**
    *
@@ -1480,6 +1480,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Condition();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1746,7 +1751,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       double getPercent();
 
-      com.google.monitoring.v3.AlertPolicy.Condition.Trigger.TypeCase getTypeCase();
+      public com.google.monitoring.v3.AlertPolicy.Condition.Trigger.TypeCase getTypeCase();
     }
     /**
      *
@@ -1776,6 +1781,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return new Trigger();
       }
 
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.monitoring.v3.AlertProto
             .internal_static_google_monitoring_v3_AlertPolicy_Condition_Trigger_descriptor;
@@ -1792,8 +1802,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int typeCase_ = 0;
-
-      @SuppressWarnings("serial")
       private java.lang.Object type_;
 
       public enum TypeCase
@@ -2555,7 +2563,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -2576,7 +2583,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -2602,7 +2608,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -2622,7 +2627,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -2642,7 +2646,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -2662,7 +2665,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -2683,7 +2685,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -2703,7 +2704,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * ratio that will be compared with the threshold. If a
        * `denominator_filter` is specified, the time series specified by the
        * `filter` field will be used as the numerator.
-       *
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -2723,7 +2723,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * ratio that will be compared with the threshold. If a
        * `denominator_filter` is specified, the time series specified by the
        * `filter` field will be used as the numerator.
-       *
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -2745,7 +2744,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -2764,7 +2762,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -2783,7 +2780,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -2802,7 +2798,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -2822,7 +2817,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -2840,7 +2834,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * and `aggregation`) and the threshold (indicated by `threshold_value`).
        * The comparison is applied on each time series, with the time series
        * on the left-hand side and the threshold on the right-hand side.
-       *
        * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
        * </pre>
        *
@@ -2857,7 +2850,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * and `aggregation`) and the threshold (indicated by `threshold_value`).
        * The comparison is applied on each time series, with the time series
        * on the left-hand side and the threshold on the right-hand side.
-       *
        * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
        * </pre>
        *
@@ -3059,6 +3051,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return new MetricThreshold();
       }
 
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.monitoring.v3.AlertProto
             .internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricThreshold_descriptor;
@@ -3084,7 +3081,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -3116,7 +3112,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -3157,7 +3152,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -3180,7 +3174,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -3204,7 +3197,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -3227,7 +3219,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -3250,7 +3241,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -3277,7 +3267,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * ratio that will be compared with the threshold. If a
        * `denominator_filter` is specified, the time series specified by the
        * `filter` field will be used as the numerator.
-       *
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -3308,7 +3297,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * ratio that will be compared with the threshold. If a
        * `denominator_filter` is specified, the time series specified by the
        * `filter` field will be used as the numerator.
-       *
        * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
@@ -3345,7 +3333,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -3367,7 +3354,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -3390,7 +3376,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -3412,7 +3397,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -3434,7 +3418,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * when aggregating multiple streams on each resource to a single
        * stream for each resource or when aggregating streams across all
        * members of a group of resources).
-       *
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
@@ -3458,7 +3441,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * and `aggregation`) and the threshold (indicated by `threshold_value`).
        * The comparison is applied on each time series, with the time series
        * on the left-hand side and the threshold on the right-hand side.
-       *
        * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
        * </pre>
        *
@@ -3478,7 +3460,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * and `aggregation`) and the threshold (indicated by `threshold_value`).
        * The comparison is applied on each time series, with the time series
        * on the left-hand side and the threshold on the right-hand side.
-       *
        * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
        * </pre>
        *
@@ -4365,7 +4346,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -4396,7 +4376,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -4427,7 +4406,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -4457,7 +4435,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -4483,7 +4460,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -4536,7 +4512,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4562,7 +4537,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4588,7 +4562,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4614,7 +4587,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4646,7 +4618,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4676,7 +4647,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4708,7 +4678,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4740,7 +4709,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4770,7 +4738,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4800,7 +4767,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4830,7 +4796,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4859,7 +4824,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4888,7 +4852,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4910,7 +4873,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4936,7 +4898,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4963,7 +4924,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -4986,7 +4946,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -5009,7 +4968,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -5053,7 +5011,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * ratio that will be compared with the threshold. If a
          * `denominator_filter` is specified, the time series specified by the
          * `filter` field will be used as the numerator.
-         *
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -5083,7 +5040,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * ratio that will be compared with the threshold. If a
          * `denominator_filter` is specified, the time series specified by the
          * `filter` field will be used as the numerator.
-         *
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -5113,7 +5069,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * ratio that will be compared with the threshold. If a
          * `denominator_filter` is specified, the time series specified by the
          * `filter` field will be used as the numerator.
-         *
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -5142,7 +5097,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * ratio that will be compared with the threshold. If a
          * `denominator_filter` is specified, the time series specified by the
          * `filter` field will be used as the numerator.
-         *
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -5167,7 +5121,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * ratio that will be compared with the threshold. If a
          * `denominator_filter` is specified, the time series specified by the
          * `filter` field will be used as the numerator.
-         *
          * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
@@ -5217,7 +5170,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5243,7 +5195,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5268,7 +5219,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5293,7 +5243,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5325,7 +5274,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5354,7 +5302,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5385,7 +5332,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5417,7 +5363,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5446,7 +5391,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5475,7 +5419,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5505,7 +5448,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5533,7 +5475,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5561,7 +5502,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5583,7 +5523,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5609,7 +5548,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5635,7 +5573,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5657,7 +5594,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5680,7 +5616,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * when aggregating multiple streams on each resource to a single
          * stream for each resource or when aggregating streams across all
          * members of a group of resources).
-         *
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
@@ -5722,7 +5657,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * and `aggregation`) and the threshold (indicated by `threshold_value`).
          * The comparison is applied on each time series, with the time series
          * on the left-hand side and the threshold on the right-hand side.
-         *
          * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
          * </pre>
          *
@@ -5742,7 +5676,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * and `aggregation`) and the threshold (indicated by `threshold_value`).
          * The comparison is applied on each time series, with the time series
          * on the left-hand side and the threshold on the right-hand side.
-         *
          * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
          * </pre>
          *
@@ -5765,7 +5698,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * and `aggregation`) and the threshold (indicated by `threshold_value`).
          * The comparison is applied on each time series, with the time series
          * on the left-hand side and the threshold on the right-hand side.
-         *
          * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
          * </pre>
          *
@@ -5787,7 +5719,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * and `aggregation`) and the threshold (indicated by `threshold_value`).
          * The comparison is applied on each time series, with the time series
          * on the left-hand side and the threshold on the right-hand side.
-         *
          * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
          * </pre>
          *
@@ -5813,7 +5744,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * and `aggregation`) and the threshold (indicated by `threshold_value`).
          * The comparison is applied on each time series, with the time series
          * on the left-hand side and the threshold on the right-hand side.
-         *
          * Only `COMPARISON_LT` and `COMPARISON_GT` are supported currently.
          * </pre>
          *
@@ -6565,7 +6495,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -6586,7 +6515,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -6612,7 +6540,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6632,7 +6559,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6652,7 +6578,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6672,7 +6597,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6693,7 +6617,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6835,6 +6758,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return new MetricAbsence();
       }
 
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.monitoring.v3.AlertProto
             .internal_static_google_monitoring_v3_AlertPolicy_Condition_MetricAbsence_descriptor;
@@ -6860,7 +6788,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -6892,7 +6819,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
-       *
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -6933,7 +6859,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6956,7 +6881,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -6980,7 +6904,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7003,7 +6926,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7026,7 +6948,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * stream for each resource or when aggregating streams across all
        * members of a group of resources). Multiple aggregations
        * are applied in the order specified.
-       *
        * This field is similar to the one in the [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
        * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7659,7 +7580,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -7690,7 +7610,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -7721,7 +7640,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -7751,7 +7669,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -7777,7 +7694,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
-         *
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
@@ -7830,7 +7746,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7856,7 +7771,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7882,7 +7796,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7908,7 +7821,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7940,7 +7852,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -7970,7 +7881,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8002,7 +7912,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8034,7 +7943,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8064,7 +7972,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8094,7 +8001,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8124,7 +8030,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8153,7 +8058,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8182,7 +8086,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8204,7 +8107,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8230,7 +8132,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8257,7 +8158,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8280,7 +8180,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8303,7 +8202,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * stream for each resource or when aggregating streams across all
          * members of a group of resources). Multiple aggregations
          * are applied in the order specified.
-         *
          * This field is similar to the one in the [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
          * It is advisable to use the `ListTimeSeries` method when debugging this
@@ -8900,7 +8798,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -8920,7 +8817,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -8943,7 +8839,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -8963,7 +8858,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -8987,7 +8881,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -9027,6 +8920,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new LogMatch();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9149,7 +9047,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -9181,7 +9078,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -9204,7 +9100,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -9235,7 +9130,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * separate rule for the purposes of triggering notifications. Label keys
        * and corresponding values can be used in notifications generated by this
        * condition.
-       *
        * Please see [the documentation on logs-based metric
        * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
        * for syntax and examples.
@@ -9822,7 +9716,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -9854,7 +9747,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -9877,7 +9769,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -9908,7 +9799,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -9945,7 +9835,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -9977,7 +9866,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -10007,7 +9895,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * separate rule for the purposes of triggering notifications. Label keys
          * and corresponding values can be used in notifications generated by this
          * condition.
-         *
          * Please see [the documentation on logs-based metric
          * `valueExtractor`s](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics#LogMetric.FIELDS.value_extractor)
          * for syntax and examples.
@@ -10294,6 +10181,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new MonitoringQueryLanguageCondition();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11803,8 +11695,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int conditionCase_ = 0;
-
-    @SuppressWarnings("serial")
     private java.lang.Object condition_;
 
     public enum ConditionCase
@@ -11867,25 +11757,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     *
      * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
-     *
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
      * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
-     *
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
      * method to update a policy, including a condition `name` causes the
      * existing condition to be updated. Conditions without names are added to
      * the updated policy. Existing conditions are deleted if they are not
      * updated.
-     *
      * Best practice is to preserve `[CONDITION_ID]` if you make only small
      * changes, such as those to condition thresholds, durations, or trigger
      * values.  Otherwise, treat the change as a new condition and let the
@@ -11914,25 +11799,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     *
      * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
-     *
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
      * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
-     *
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
      * method to update a policy, including a condition `name` causes the
      * existing condition to be updated. Conditions without names are added to
      * the updated policy. Existing conditions are deleted if they are not
      * updated.
-     *
      * Best practice is to preserve `[CONDITION_ID]` if you make only small
      * changes, such as those to condition thresholds, durations, or trigger
      * values.  Otherwise, treat the change as a new condition and let the
@@ -12800,25 +12680,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       *
        * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
-       *
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
        * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
-       *
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
        * method to update a policy, including a condition `name` causes the
        * existing condition to be updated. Conditions without names are added to
        * the updated policy. Existing conditions are deleted if they are not
        * updated.
-       *
        * Best practice is to preserve `[CONDITION_ID]` if you make only small
        * changes, such as those to condition thresholds, durations, or trigger
        * values.  Otherwise, treat the change as a new condition and let the
@@ -12846,25 +12721,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       *
        * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
-       *
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
        * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
-       *
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
        * method to update a policy, including a condition `name` causes the
        * existing condition to be updated. Conditions without names are added to
        * the updated policy. Existing conditions are deleted if they are not
        * updated.
-       *
        * Best practice is to preserve `[CONDITION_ID]` if you make only small
        * changes, such as those to condition thresholds, durations, or trigger
        * values.  Otherwise, treat the change as a new condition and let the
@@ -12892,25 +12762,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       *
        * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
-       *
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
        * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
-       *
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
        * method to update a policy, including a condition `name` causes the
        * existing condition to be updated. Conditions without names are added to
        * the updated policy. Existing conditions are deleted if they are not
        * updated.
-       *
        * Best practice is to preserve `[CONDITION_ID]` if you make only small
        * changes, such as those to condition thresholds, durations, or trigger
        * values.  Otherwise, treat the change as a new condition and let the
@@ -12937,25 +12802,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       *
        * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
-       *
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
        * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
-       *
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
        * method to update a policy, including a condition `name` causes the
        * existing condition to be updated. Conditions without names are added to
        * the updated policy. Existing conditions are deleted if they are not
        * updated.
-       *
        * Best practice is to preserve `[CONDITION_ID]` if you make only small
        * changes, such as those to condition thresholds, durations, or trigger
        * values.  Otherwise, treat the change as a new condition and let the
@@ -12978,25 +12838,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       *
        * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
-       *
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
        * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
-       *
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
        * method to update a policy, including a condition `name` causes the
        * existing condition to be updated. Conditions without names are added to
        * the updated policy. Existing conditions are deleted if they are not
        * updated.
-       *
        * Best practice is to preserve `[CONDITION_ID]` if you make only small
        * changes, such as those to condition thresholds, durations, or trigger
        * values.  Otherwise, treat the change as a new condition and let the
@@ -14167,7 +14022,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required for alert policies with a `LogMatch` condition.
-     *
      * This limit is not implemented for alert policies that are not log-based.
      * </pre>
      *
@@ -14183,7 +14037,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required for alert policies with a `LogMatch` condition.
-     *
      * This limit is not implemented for alert policies that are not log-based.
      * </pre>
      *
@@ -14200,7 +14053,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required for alert policies with a `LogMatch` condition.
-     *
      * This limit is not implemented for alert policies that are not log-based.
      * </pre>
      *
@@ -14275,6 +14127,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AlertStrategy();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14358,6 +14215,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new NotificationRateLimit();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15052,7 +14914,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required for alert policies with a `LogMatch` condition.
-     *
      * This limit is not implemented for alert policies that are not log-based.
      * </pre>
      *
@@ -15071,7 +14932,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required for alert policies with a `LogMatch` condition.
-     *
      * This limit is not implemented for alert policies that are not log-based.
      * </pre>
      *
@@ -15094,7 +14954,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required for alert policies with a `LogMatch` condition.
-     *
      * This limit is not implemented for alert policies that are not log-based.
      * </pre>
      *
@@ -15562,7 +15421,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15580,7 +15438,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15606,7 +15463,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15633,7 +15489,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15658,7 +15513,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15690,7 +15544,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15713,7 +15566,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15732,7 +15584,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -15756,7 +15607,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required for alert policies with a `LogMatch` condition.
-       *
        * This limit is not implemented for alert policies that are not log-based.
        * </pre>
        *
@@ -16048,9 +15898,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
    * format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -16080,9 +15928,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
    * format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -16258,7 +16104,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -16286,7 +16131,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -16305,7 +16149,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -16331,7 +16174,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -16601,8 +16443,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int NOTIFICATION_CHANNELS_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList notificationChannels_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList notificationChannels_;
   /**
    *
    *
@@ -16615,7 +16456,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -16638,7 +16478,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -16661,7 +16500,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -16685,7 +16523,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -17250,7 +17087,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         validityBuilder_.dispose();
         validityBuilder_ = null;
       }
-      notificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
       creationRecord_ = null;
       if (creationRecordBuilder_ != null) {
         creationRecordBuilder_.dispose();
@@ -17310,6 +17148,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        notificationChannels_ = notificationChannels_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.notificationChannels_ = notificationChannels_;
     }
 
     private void buildPartial0(com.google.monitoring.v3.AlertPolicy result) {
@@ -17336,10 +17179,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.validity_ = validityBuilder_ == null ? validity_ : validityBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        notificationChannels_.makeImmutable();
-        result.notificationChannels_ = notificationChannels_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.creationRecord_ =
@@ -17454,7 +17293,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.notificationChannels_.isEmpty()) {
         if (notificationChannels_.isEmpty()) {
           notificationChannels_ = other.notificationChannels_;
-          bitField0_ |= 0x00000100;
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureNotificationChannelsIsMutable();
           notificationChannels_.addAll(other.notificationChannels_);
@@ -17608,9 +17447,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
      * format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -17639,9 +17476,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
      * format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -17670,9 +17505,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
      * format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -17700,9 +17533,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
      * format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -17726,9 +17557,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required if the policy exists. The resource name for this policy. The
      * format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -18128,7 +17957,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -18156,7 +17984,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -18175,7 +18002,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -18201,7 +18027,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -18233,7 +18058,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -18261,7 +18085,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -18287,7 +18110,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-supplied key/value data to be used for organizing and
      * identifying the `AlertPolicy` objects.
-     *
      * The field can contain up to 64 entries. Each key and value is limited to
      * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
      * values can contain only lowercase letters, numerals, underscores, and
@@ -19249,14 +19071,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return validityBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList notificationChannels_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList notificationChannels_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotificationChannelsIsMutable() {
-      if (!notificationChannels_.isModifiable()) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         notificationChannels_ = new com.google.protobuf.LazyStringArrayList(notificationChannels_);
+        bitField0_ |= 0x00000100;
       }
-      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -19270,7 +19092,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19279,8 +19100,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the notificationChannels.
      */
     public com.google.protobuf.ProtocolStringList getNotificationChannelsList() {
-      notificationChannels_.makeImmutable();
-      return notificationChannels_;
+      return notificationChannels_.getUnmodifiableView();
     }
     /**
      *
@@ -19294,7 +19114,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19317,7 +19136,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19341,7 +19159,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19365,7 +19182,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19381,7 +19197,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNotificationChannelsIsMutable();
       notificationChannels_.set(index, value);
-      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -19397,7 +19212,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19412,7 +19226,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNotificationChannelsIsMutable();
       notificationChannels_.add(value);
-      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -19428,7 +19241,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19440,7 +19252,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllNotificationChannels(java.lang.Iterable<java.lang.String> values) {
       ensureNotificationChannelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, notificationChannels_);
-      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -19456,7 +19267,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19465,9 +19275,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNotificationChannels() {
-      notificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000100);
-      ;
       onChanged();
       return this;
     }
@@ -19483,7 +19292,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * objects that are returned from the [`ListNotificationChannels`]
      * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
      * method. The format of the entries in this field is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
      * </pre>
      *
@@ -19499,7 +19307,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureNotificationChannelsIsMutable();
       notificationChannels_.add(value);
-      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

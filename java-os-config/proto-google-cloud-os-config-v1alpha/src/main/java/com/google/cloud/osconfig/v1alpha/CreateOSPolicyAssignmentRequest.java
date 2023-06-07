@@ -49,6 +49,11 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
     return new CreateOSPolicyAssignmentRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1alpha.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1alpha_CreateOSPolicyAssignmentRequest_descriptor;
@@ -188,7 +193,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
    * <pre>
    * Required. The logical name of the OS policy assignment in the project
    * with the following restrictions:
-   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-63 characters.
@@ -218,7 +222,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
    * <pre>
    * Required. The logical name of the OS policy assignment in the project
    * with the following restrictions:
-   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-63 characters.
@@ -986,7 +989,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * <pre>
      * Required. The logical name of the OS policy assignment in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -1015,7 +1017,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * <pre>
      * Required. The logical name of the OS policy assignment in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -1044,7 +1045,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * <pre>
      * Required. The logical name of the OS policy assignment in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -1072,7 +1072,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * <pre>
      * Required. The logical name of the OS policy assignment in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -1096,7 +1095,6 @@ public final class CreateOSPolicyAssignmentRequest extends com.google.protobuf.G
      * <pre>
      * Required. The logical name of the OS policy assignment in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.

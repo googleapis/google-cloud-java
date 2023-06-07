@@ -28,7 +28,6 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Resource name for this Service. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -42,7 +41,6 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Resource name for this Service. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -412,5 +410,5 @@ public interface ServiceOrBuilder
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
 
-  com.google.monitoring.v3.Service.IdentifierCase getIdentifierCase();
+  public com.google.monitoring.v3.Service.IdentifierCase getIdentifierCase();
 }

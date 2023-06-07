@@ -47,6 +47,11 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
     return new AlertChart();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.AlertChartProto
         .internal_static_google_monitoring_dashboard_v1_AlertChart_descriptor;
@@ -71,7 +76,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the alert policy. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
@@ -96,7 +100,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the alert policy. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * </pre>
    *
@@ -464,7 +467,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the alert policy. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * </pre>
      *
@@ -488,7 +490,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the alert policy. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * </pre>
      *
@@ -512,7 +513,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the alert policy. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * </pre>
      *
@@ -535,7 +535,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the alert policy. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * </pre>
      *
@@ -554,7 +553,6 @@ public final class AlertChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the alert policy. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      * </pre>
      *

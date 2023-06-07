@@ -28,7 +28,6 @@ public interface ProvideValidationFeedbackRequestOrBuilder
    *
    * <pre>
    * Required. The outcome of the sequence of validation attempts.
-   *
    * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
    * `INVALID_ARGUMENT` error will be returned.
    * </pre>
@@ -45,7 +44,6 @@ public interface ProvideValidationFeedbackRequestOrBuilder
    *
    * <pre>
    * Required. The outcome of the sequence of validation attempts.
-   *
    * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
    * `INVALID_ARGUMENT` error will be returned.
    * </pre>

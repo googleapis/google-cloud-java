@@ -52,6 +52,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return new Service();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringProto
         .internal_static_google_monitoring_v3_Service_descriptor;
@@ -107,6 +112,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Custom();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -560,6 +570,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AppEngine();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1218,6 +1233,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CloudEndpoints();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1965,6 +1985,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ClusterIstio();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3254,6 +3279,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return new MeshIstio();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.monitoring.v3.ServiceMonitoringProto
           .internal_static_google_monitoring_v3_Service_MeshIstio_descriptor;
@@ -4347,6 +4377,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return new IstioCanonicalService();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.monitoring.v3.ServiceMonitoringProto
           .internal_static_google_monitoring_v3_Service_IstioCanonicalService_descriptor;
@@ -5412,6 +5447,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return new Telemetry();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.monitoring.v3.ServiceMonitoringProto
           .internal_static_google_monitoring_v3_Service_Telemetry_descriptor;
@@ -6001,8 +6041,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int identifierCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object identifier_;
 
   public enum IdentifierCase
@@ -6070,7 +6108,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name for this Service. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -6095,7 +6132,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name for this Service. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * </pre>
    *
@@ -7341,7 +7377,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name for this Service. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -7365,7 +7400,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name for this Service. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -7389,7 +7423,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name for this Service. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -7412,7 +7445,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name for this Service. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *
@@ -7431,7 +7463,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name for this Service. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
      * </pre>
      *

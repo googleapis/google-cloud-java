@@ -175,13 +175,11 @@ public interface TimeWindowOrBuilder
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs
    * before soft_start_time, computed as:
-   *
    * ```
    *    max(0, soft_start_time - t.seconds)
    *                           * cost_per_hour_before_soft_start_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * soft_start_time has been set.
    * </pre>
@@ -197,13 +195,11 @@ public interface TimeWindowOrBuilder
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs
    * before soft_start_time, computed as:
-   *
    * ```
    *    max(0, soft_start_time - t.seconds)
    *                           * cost_per_hour_before_soft_start_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * soft_start_time has been set.
    * </pre>
@@ -220,13 +216,11 @@ public interface TimeWindowOrBuilder
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs after
    * `soft_end_time`, computed as:
-   *
    * ```
    *    max(0, t.seconds - soft_end_time.seconds)
    *                     * cost_per_hour_after_soft_end_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * `soft_end_time` has been set.
    * </pre>
@@ -242,13 +236,11 @@ public interface TimeWindowOrBuilder
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs after
    * `soft_end_time`, computed as:
-   *
    * ```
    *    max(0, t.seconds - soft_end_time.seconds)
    *                     * cost_per_hour_after_soft_end_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * `soft_end_time` has been set.
    * </pre>

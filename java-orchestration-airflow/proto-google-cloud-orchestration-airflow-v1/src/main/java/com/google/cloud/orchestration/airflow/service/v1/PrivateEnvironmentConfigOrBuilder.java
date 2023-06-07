@@ -92,7 +92,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * reserved. Needs to be disjoint from
    * `private_cluster_config.master_ipv4_cidr_block` and
    * `cloud_sql_ipv4_cidr_block`.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -110,7 +109,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * reserved. Needs to be disjoint from
    * `private_cluster_config.master_ipv4_cidr_block` and
    * `cloud_sql_ipv4_cidr_block`.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -155,7 +153,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    * <pre>
    * Output only. The IP range reserved for the tenant project's App Engine VMs.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -171,7 +168,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    *
    * <pre>
    * Output only. The IP range reserved for the tenant project's App Engine VMs.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-1.*.*-airflow-*.*.*.
    * </pre>
@@ -191,7 +187,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * tenant project will be reserved. Needs to be disjoint from
    * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -211,7 +206,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * tenant project will be reserved. Needs to be disjoint from
    * private_cluster_config.master_ipv4_cidr_block and
    * cloud_sql_ipv4_cidr_block.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -230,7 +224,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * <pre>
    * Output only. The IP range reserved for the tenant project's Cloud Composer
    * network.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>
@@ -248,7 +241,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * <pre>
    * Output only. The IP range reserved for the tenant project's Cloud Composer
    * network.
-   *
    * This field is supported for Cloud Composer environments in versions
    * composer-2.*.*-airflow-*.*.* and newer.
    * </pre>

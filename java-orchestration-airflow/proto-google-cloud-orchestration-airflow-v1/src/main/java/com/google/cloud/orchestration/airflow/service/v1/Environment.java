@@ -49,6 +49,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     return new Environment();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1_Environment_descriptor;
@@ -312,7 +317,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-   *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -339,7 +343,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-   *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -627,7 +630,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
-   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -656,7 +658,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
-   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -676,7 +677,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
-   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -703,7 +703,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
-   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -1276,7 +1275,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-     *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -1302,7 +1300,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-     *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -1328,7 +1325,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-     *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -1353,7 +1349,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-     *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -1374,7 +1369,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
-     *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -2190,7 +2184,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2219,7 +2212,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2239,7 +2231,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2266,7 +2257,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2299,7 +2289,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2328,7 +2317,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -2355,7 +2343,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * Optional. User-defined labels for this environment.
      * The labels map can contain no more than 64 entries. Entries of the labels
      * map are UTF8 strings that comply with the following restrictions:
-     *
      * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
      * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
      * * Both keys and values are additionally constrained to be &lt;= 128 bytes in

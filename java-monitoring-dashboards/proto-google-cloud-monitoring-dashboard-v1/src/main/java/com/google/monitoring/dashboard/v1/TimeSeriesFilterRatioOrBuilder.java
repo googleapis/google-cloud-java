@@ -218,5 +218,6 @@ public interface TimeSeriesFilterRatioOrBuilder
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder();
 
-  com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.OutputFilterCase getOutputFilterCase();
+  public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.OutputFilterCase
+      getOutputFilterCase();
 }

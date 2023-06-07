@@ -48,6 +48,11 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
     return new ColumnLayout();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.LayoutsProto
         .internal_static_google_monitoring_dashboard_v1_ColumnLayout_descriptor;
@@ -163,6 +168,11 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Column();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -62,13 +62,11 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The logical name of the Memcached instance in the user
    * project with the following restrictions:
-   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
    * * Must end with a number or a letter.
    * * Must be unique within the user project / location.
-   *
    * If any of the above are not met, the API raises an invalid argument error.
    * </pre>
    *
@@ -83,13 +81,11 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The logical name of the Memcached instance in the user
    * project with the following restrictions:
-   *
    * * Must contain only lowercase letters, numbers, and hyphens.
    * * Must start with a letter.
    * * Must be between 1-40 characters.
    * * Must end with a number or a letter.
    * * Must be unique within the user project / location.
-   *
    * If any of the above are not met, the API raises an invalid argument error.
    * </pre>
    *

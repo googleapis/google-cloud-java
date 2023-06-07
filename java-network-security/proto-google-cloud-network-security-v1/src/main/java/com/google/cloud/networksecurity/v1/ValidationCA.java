@@ -46,6 +46,11 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
     return new ValidationCA();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.TlsProto
         .internal_static_google_cloud_networksecurity_v1_ValidationCA_descriptor;
@@ -62,8 +67,6 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase

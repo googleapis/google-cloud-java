@@ -48,6 +48,11 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     return new CreateSnoozeRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.SnoozeServiceProto
         .internal_static_google_monitoring_v3_CreateSnoozeRequest_descriptor;
@@ -74,7 +79,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
    * a `Snooze` should be created. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -103,7 +107,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
    * Required. The
    * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
    * a `Snooze` should be created. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -556,7 +559,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
      * a `Snooze` should be created. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -584,7 +586,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
      * a `Snooze` should be created. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -612,7 +613,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
      * a `Snooze` should be created. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -639,7 +639,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
      * a `Snooze` should be created. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -662,7 +661,6 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * Required. The
      * [project](https://cloud.google.com/monitoring/api/v3#project_name) in which
      * a `Snooze` should be created. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *

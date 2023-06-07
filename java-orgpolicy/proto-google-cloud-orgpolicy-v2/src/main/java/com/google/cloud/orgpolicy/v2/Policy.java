@@ -48,6 +48,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return new Policy();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orgpolicy.v2.OrgPolicyProto
         .internal_static_google_cloud_orgpolicy_v2_Policy_descriptor;
@@ -77,9 +82,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * * `projects/{project_number}/policies/{constraint_name}`
    * * `folders/{folder_id}/policies/{constraint_name}`
    * * `organizations/{organization_id}/policies/{constraint_name}`
-   *
    * For example, "projects/123/policies/compute.disableSerialPortAccess".
-   *
    * Note: `projects/{project_id}/policies/{constraint_name}` is also an
    * acceptable name for API requests, but responses will return the name using
    * the equivalent project number.
@@ -111,9 +114,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * * `projects/{project_number}/policies/{constraint_name}`
    * * `folders/{folder_id}/policies/{constraint_name}`
    * * `organizations/{organization_id}/policies/{constraint_name}`
-   *
    * For example, "projects/123/policies/compute.disableSerialPortAccess".
-   *
    * Note: `projects/{project_id}/policies/{constraint_name}` is also an
    * acceptable name for API requests, but responses will return the name using
    * the equivalent project number.
@@ -738,9 +739,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
-     *
      * For example, "projects/123/policies/compute.disableSerialPortAccess".
-     *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
      * the equivalent project number.
@@ -771,9 +770,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
-     *
      * For example, "projects/123/policies/compute.disableSerialPortAccess".
-     *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
      * the equivalent project number.
@@ -804,9 +801,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
-     *
      * For example, "projects/123/policies/compute.disableSerialPortAccess".
-     *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
      * the equivalent project number.
@@ -836,9 +831,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
-     *
      * For example, "projects/123/policies/compute.disableSerialPortAccess".
-     *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
      * the equivalent project number.
@@ -864,9 +857,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
-     *
      * For example, "projects/123/policies/compute.disableSerialPortAccess".
-     *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
      * the equivalent project number.

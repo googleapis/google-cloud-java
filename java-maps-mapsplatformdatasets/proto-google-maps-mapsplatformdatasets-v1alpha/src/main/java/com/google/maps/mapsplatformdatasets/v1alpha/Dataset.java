@@ -53,6 +53,11 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return new Dataset();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.mapsplatformdatasets.v1alpha.DatasetProto
         .internal_static_google_maps_mapsplatformdatasets_v1alpha_Dataset_descriptor;
@@ -69,8 +74,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataSourceCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object dataSource_;
 
   public enum DataSourceCase

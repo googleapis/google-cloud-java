@@ -51,6 +51,11 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
     return new ListNotificationChannelsRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.NotificationServiceProto
         .internal_static_google_monitoring_v3_ListNotificationChannelsRequest_descriptor;
@@ -76,9 +81,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
-   *
    * This names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
@@ -111,9 +114,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
-   *
    * This names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
@@ -151,7 +152,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * notification channels to be included in the response.
-   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -178,7 +178,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * notification channels to be included in the response.
-   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -211,7 +210,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of fields as in `filter`. Entries can be prefixed with
    * a minus sign to sort in descending rather than ascending order.
-   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -239,7 +237,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of fields as in `filter`. Entries can be prefixed with
    * a minus sign to sort in descending rather than ascending order.
-   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -780,9 +777,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * This names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -814,9 +809,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * This names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -848,9 +841,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * This names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -881,9 +872,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * This names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -910,9 +899,7 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]
-     *
      * This names the container
      * in which to look for the notification channels; it does not name a
      * specific channel. To query a specific channel by REST resource name, use
@@ -946,7 +933,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * notification channels to be included in the response.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -972,7 +958,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * notification channels to be included in the response.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -998,7 +983,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * notification channels to be included in the response.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1023,7 +1007,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * notification channels to be included in the response.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1044,7 +1027,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * notification channels to be included in the response.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1073,7 +1055,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of fields as in `filter`. Entries can be prefixed with
      * a minus sign to sort in descending rather than ascending order.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1100,7 +1081,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of fields as in `filter`. Entries can be prefixed with
      * a minus sign to sort in descending rather than ascending order.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1127,7 +1107,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of fields as in `filter`. Entries can be prefixed with
      * a minus sign to sort in descending rather than ascending order.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1153,7 +1132,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of fields as in `filter`. Entries can be prefixed with
      * a minus sign to sort in descending rather than ascending order.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1175,7 +1153,6 @@ public final class ListNotificationChannelsRequest extends com.google.protobuf.G
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of fields as in `filter`. Entries can be prefixed with
      * a minus sign to sort in descending rather than ascending order.
-     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>

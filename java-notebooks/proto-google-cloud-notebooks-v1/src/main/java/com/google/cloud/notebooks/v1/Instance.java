@@ -41,9 +41,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     postStartupScript_ = "";
     proxyUri_ = "";
-    instanceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    instanceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     serviceAccount_ = "";
-    serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     machineType_ = "";
     state_ = 0;
     customGpuDriverPath_ = "";
@@ -54,7 +54,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     disks_ = java.util.Collections.emptyList();
     network_ = "";
     subnet_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     upgradeHistory_ = java.util.Collections.emptyList();
     nicType_ = 0;
     creator_ = "";
@@ -64,6 +64,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Instance();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1400,6 +1405,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new AcceleratorConfig();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1.InstanceProto
           .internal_static_google_cloud_notebooks_v1_Instance_AcceleratorConfig_descriptor;
@@ -2094,7 +2104,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running
      * within the instance. This name can be used to reference the device for
      * mounting, resizing, and so on, from within the instance.
-     *
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -2113,7 +2122,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running
      * within the instance. This name can be used to reference the device for
      * mounting, resizing, and so on, from within the instance.
-     *
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -2233,7 +2241,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -2254,7 +2261,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -2358,7 +2364,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or
      * `READ_ONLY`. If not specified, the default is to attach the disk in
      * `READ_WRITE` mode. Valid values:
-     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -2375,7 +2380,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or
      * `READ_ONLY`. If not specified, the default is to attach the disk in
      * `READ_WRITE` mode. Valid values:
-     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -2419,7 +2423,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -2435,7 +2438,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -2470,7 +2472,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       guestOsFeatures_ = java.util.Collections.emptyList();
       interface_ = "";
       kind_ = "";
-      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       mode_ = "";
       source_ = "";
       type_ = "";
@@ -2480,6 +2482,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Disk();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2509,7 +2516,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -2530,7 +2536,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -2574,6 +2579,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return new GuestOsFeature();
       }
 
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.notebooks.v1.InstanceProto
             .internal_static_google_cloud_notebooks_v1_Instance_Disk_GuestOsFeature_descriptor;
@@ -2600,7 +2610,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -2632,7 +2641,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -3016,7 +3024,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         *
          * * `FEATURE_TYPE_UNSPECIFIED`
          * * `MULTI_IP_SUBNET`
          * * `SECURE_BOOT`
@@ -3047,7 +3054,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         *
          * * `FEATURE_TYPE_UNSPECIFIED`
          * * `MULTI_IP_SUBNET`
          * * `SECURE_BOOT`
@@ -3078,7 +3084,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         *
          * * `FEATURE_TYPE_UNSPECIFIED`
          * * `MULTI_IP_SUBNET`
          * * `SECURE_BOOT`
@@ -3108,7 +3113,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         *
          * * `FEATURE_TYPE_UNSPECIFIED`
          * * `MULTI_IP_SUBNET`
          * * `SECURE_BOOT`
@@ -3134,7 +3138,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         *
          * * `FEATURE_TYPE_UNSPECIFIED`
          * * `MULTI_IP_SUBNET`
          * * `SECURE_BOOT`
@@ -3276,7 +3279,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running
      * within the instance. This name can be used to reference the device for
      * mounting, resizing, and so on, from within the instance.
-     *
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -3306,7 +3308,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running
      * within the instance. This name can be used to reference the device for
      * mounting, resizing, and so on, from within the instance.
-     *
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -3473,7 +3474,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3505,7 +3505,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3583,8 +3582,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public static final int LICENSES_FIELD_NUMBER = 9;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList licenses_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList licenses_;
     /**
      *
      *
@@ -3663,7 +3661,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or
      * `READ_ONLY`. If not specified, the default is to attach the disk in
      * `READ_WRITE` mode. Valid values:
-     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3691,7 +3688,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or
      * `READ_ONLY`. If not specified, the default is to attach the disk in
      * `READ_WRITE` mode. Valid values:
-     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3776,7 +3772,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -3803,7 +3798,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -4148,7 +4142,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         index_ = 0L;
         interface_ = "";
         kind_ = "";
-        licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000100);
         mode_ = "";
         source_ = "";
         type_ = "";
@@ -4197,6 +4192,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
         }
+        if (((bitField0_ & 0x00000100) != 0)) {
+          licenses_ = licenses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.licenses_ = licenses_;
       }
 
       private void buildPartial0(com.google.cloud.notebooks.v1.Instance.Disk result) {
@@ -4221,10 +4221,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.kind_ = kind_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          licenses_.makeImmutable();
-          result.licenses_ = licenses_;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
           result.mode_ = mode_;
@@ -4341,7 +4337,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (!other.licenses_.isEmpty()) {
           if (licenses_.isEmpty()) {
             licenses_ = other.licenses_;
-            bitField0_ |= 0x00000100;
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureLicensesIsMutable();
             licenses_.addAll(other.licenses_);
@@ -4610,7 +4606,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `/dev/disk/by-id/google-*` tree of a Linux operating system running
        * within the instance. This name can be used to reference the device for
        * mounting, resizing, and so on, from within the instance.
-       *
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4639,7 +4634,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `/dev/disk/by-id/google-*` tree of a Linux operating system running
        * within the instance. This name can be used to reference the device for
        * mounting, resizing, and so on, from within the instance.
-       *
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4668,7 +4662,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `/dev/disk/by-id/google-*` tree of a Linux operating system running
        * within the instance. This name can be used to reference the device for
        * mounting, resizing, and so on, from within the instance.
-       *
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4696,7 +4689,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `/dev/disk/by-id/google-*` tree of a Linux operating system running
        * within the instance. This name can be used to reference the device for
        * mounting, resizing, and so on, from within the instance.
-       *
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4720,7 +4712,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `/dev/disk/by-id/google-*` tree of a Linux operating system running
        * within the instance. This name can be used to reference the device for
        * mounting, resizing, and so on, from within the instance.
-       *
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -5309,7 +5300,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       *
        * * `NVME`
        * * `SCSI`
        * </pre>
@@ -5340,7 +5330,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       *
        * * `NVME`
        * * `SCSI`
        * </pre>
@@ -5371,7 +5360,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       *
        * * `NVME`
        * * `SCSI`
        * </pre>
@@ -5401,7 +5389,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       *
        * * `NVME`
        * * `SCSI`
        * </pre>
@@ -5427,7 +5414,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       *
        * * `NVME`
        * * `SCSI`
        * </pre>
@@ -5559,14 +5545,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList licenses_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList licenses_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureLicensesIsMutable() {
-        if (!licenses_.isModifiable()) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
+          bitField0_ |= 0x00000100;
         }
-        bitField0_ |= 0x00000100;
       }
       /**
        *
@@ -5582,8 +5568,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the licenses.
        */
       public com.google.protobuf.ProtocolStringList getLicensesList() {
-        licenses_.makeImmutable();
-        return licenses_;
+        return licenses_.getUnmodifiableView();
       }
       /**
        *
@@ -5656,7 +5641,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         ensureLicensesIsMutable();
         licenses_.set(index, value);
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -5680,7 +5664,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         ensureLicensesIsMutable();
         licenses_.add(value);
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -5701,7 +5684,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
         ensureLicensesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -5719,9 +5701,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLicenses() {
-        licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000100);
-        ;
         onChanged();
         return this;
       }
@@ -5746,7 +5727,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureLicensesIsMutable();
         licenses_.add(value);
-        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -5759,7 +5739,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The mode in which to attach this disk, either `READ_WRITE` or
        * `READ_ONLY`. If not specified, the default is to attach the disk in
        * `READ_WRITE` mode. Valid values:
-       *
        * * `READ_ONLY`
        * * `READ_WRITE`
        * </pre>
@@ -5786,7 +5765,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The mode in which to attach this disk, either `READ_WRITE` or
        * `READ_ONLY`. If not specified, the default is to attach the disk in
        * `READ_WRITE` mode. Valid values:
-       *
        * * `READ_ONLY`
        * * `READ_WRITE`
        * </pre>
@@ -5813,7 +5791,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The mode in which to attach this disk, either `READ_WRITE` or
        * `READ_ONLY`. If not specified, the default is to attach the disk in
        * `READ_WRITE` mode. Valid values:
-       *
        * * `READ_ONLY`
        * * `READ_WRITE`
        * </pre>
@@ -5839,7 +5816,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The mode in which to attach this disk, either `READ_WRITE` or
        * `READ_ONLY`. If not specified, the default is to attach the disk in
        * `READ_WRITE` mode. Valid values:
-       *
        * * `READ_ONLY`
        * * `READ_WRITE`
        * </pre>
@@ -5861,7 +5837,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The mode in which to attach this disk, either `READ_WRITE` or
        * `READ_ONLY`. If not specified, the default is to attach the disk in
        * `READ_WRITE` mode. Valid values:
-       *
        * * `READ_ONLY`
        * * `READ_WRITE`
        * </pre>
@@ -6000,7 +5975,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       *
        * * `PERSISTENT`
        * * `SCRATCH`
        * </pre>
@@ -6026,7 +6000,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       *
        * * `PERSISTENT`
        * * `SCRATCH`
        * </pre>
@@ -6052,7 +6025,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       *
        * * `PERSISTENT`
        * * `SCRATCH`
        * </pre>
@@ -6077,7 +6049,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       *
        * * `PERSISTENT`
        * * `SCRATCH`
        * </pre>
@@ -6098,7 +6069,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       *
        * * `PERSISTENT`
        * * `SCRATCH`
        * </pre>
@@ -6193,7 +6163,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails. Disabled by default.
@@ -6223,7 +6192,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
-     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when
@@ -6266,6 +6234,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new ShieldedInstanceConfig();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1.InstanceProto
           .internal_static_google_cloud_notebooks_v1_Instance_ShieldedInstanceConfig_descriptor;
@@ -6288,7 +6261,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails. Disabled by default.
@@ -6328,7 +6300,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
-     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when
@@ -6747,7 +6718,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Defines whether the instance has Secure Boot enabled.
-       *
        * Secure Boot helps ensure that the system only runs authentic software by
        * verifying the digital signature of all boot components, and halting the
        * boot process if signature verification fails. Disabled by default.
@@ -6766,7 +6736,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Defines whether the instance has Secure Boot enabled.
-       *
        * Secure Boot helps ensure that the system only runs authentic software by
        * verifying the digital signature of all boot components, and halting the
        * boot process if signature verification fails. Disabled by default.
@@ -6789,7 +6758,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Defines whether the instance has Secure Boot enabled.
-       *
        * Secure Boot helps ensure that the system only runs authentic software by
        * verifying the digital signature of all boot components, and halting the
        * boot process if signature verification fails. Disabled by default.
@@ -6865,7 +6833,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Defines whether the instance has integrity monitoring enabled.
-       *
        * Enables monitoring and attestation of the boot integrity of the instance.
        * The attestation is performed against the integrity policy baseline. This
        * baseline is initially derived from the implicitly trusted boot image when
@@ -6885,7 +6852,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Defines whether the instance has integrity monitoring enabled.
-       *
        * Enables monitoring and attestation of the boot integrity of the instance.
        * The attestation is performed against the integrity policy baseline. This
        * baseline is initially derived from the implicitly trusted boot image when
@@ -6909,7 +6875,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Defines whether the instance has integrity monitoring enabled.
-       *
        * Enables monitoring and attestation of the boot integrity of the instance.
        * The attestation is performed against the integrity policy baseline. This
        * baseline is initially derived from the implicitly trusted boot image when
@@ -7300,6 +7265,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UpgradeHistoryEntry();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9910,8 +9880,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int environmentCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object environment_;
 
   public enum EnvironmentCase
@@ -10222,14 +10190,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCE_OWNERS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList instanceOwners_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList instanceOwners_;
   /**
    *
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -10247,7 +10213,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -10265,7 +10230,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -10284,7 +10248,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-   *
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -10311,7 +10274,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Cloud services.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
-   *
    * If not specified, the [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
@@ -10341,7 +10303,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Cloud services.
    * You can use any service account within the same project, but you
    * must have the service account user permission to use the instance.
-   *
    * If not specified, the [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
    * is used.
@@ -10367,15 +10328,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int SERVICE_ACCOUNT_SCOPES_FIELD_NUMBER = 31;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList serviceAccountScopes_;
   /**
    *
    *
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances.
-   *
    * If not specified, the following
    * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
    * are defined:
@@ -10399,7 +10358,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances.
-   *
    * If not specified, the following
    * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
    * are defined:
@@ -10423,7 +10381,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances.
-   *
    * If not specified, the following
    * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
    * are defined:
@@ -10448,7 +10405,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances.
-   *
    * If not specified, the following
    * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
    * are defined:
@@ -10889,7 +10845,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   *
    * Learn more about [using your own encryption keys](/kms/docs/quickstart).
    * </pre>
    *
@@ -10917,7 +10872,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   *
    * Learn more about [using your own encryption keys](/kms/docs/quickstart).
    * </pre>
    *
@@ -11439,8 +11393,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 32;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList tags_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList tags_;
   /**
    *
    *
@@ -12505,9 +12458,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       postStartupScript_ = "";
       proxyUri_ = "";
-      instanceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      instanceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       serviceAccount_ = "";
-      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
       machineType_ = "";
       acceleratorConfig_ = null;
       if (acceleratorConfigBuilder_ != null) {
@@ -12542,7 +12497,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       subnet_ = "";
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
-      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x10000000);
       if (upgradeHistoryBuilder_ == null) {
         upgradeHistory_ = java.util.Collections.emptyList();
       } else {
@@ -12610,6 +12566,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.notebooks.v1.Instance result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        instanceOwners_ = instanceOwners_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.instanceOwners_ = instanceOwners_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.serviceAccountScopes_ = serviceAccountScopes_;
       if (disksBuilder_ == null) {
         if (((bitField0_ & 0x00100000) != 0)) {
           disks_ = java.util.Collections.unmodifiableList(disks_);
@@ -12619,6 +12585,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.disks_ = disksBuilder_.build();
       }
+      if (((bitField0_ & 0x10000000) != 0)) {
+        tags_ = tags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x10000000);
+      }
+      result.tags_ = tags_;
       if (upgradeHistoryBuilder_ == null) {
         if (((bitField0_ & 0x20000000) != 0)) {
           upgradeHistory_ = java.util.Collections.unmodifiableList(upgradeHistory_);
@@ -12641,16 +12612,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.proxyUri_ = proxyUri_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        instanceOwners_.makeImmutable();
-        result.instanceOwners_ = instanceOwners_;
-      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.serviceAccount_ = serviceAccount_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        serviceAccountScopes_.makeImmutable();
-        result.serviceAccountScopes_ = serviceAccountScopes_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.machineType_ = machineType_;
@@ -12716,10 +12679,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x08000000) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        tags_.makeImmutable();
-        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
         result.nicType_ = nicType_;
@@ -12822,7 +12781,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceOwners_.isEmpty()) {
         if (instanceOwners_.isEmpty()) {
           instanceOwners_ = other.instanceOwners_;
-          bitField0_ |= 0x00000020;
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureInstanceOwnersIsMutable();
           instanceOwners_.addAll(other.instanceOwners_);
@@ -12837,7 +12796,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.serviceAccountScopes_.isEmpty()) {
         if (serviceAccountScopes_.isEmpty()) {
           serviceAccountScopes_ = other.serviceAccountScopes_;
-          bitField0_ |= 0x00000080;
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureServiceAccountScopesIsMutable();
           serviceAccountScopes_.addAll(other.serviceAccountScopes_);
@@ -12939,7 +12898,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x10000000;
+          bitField0_ = (bitField0_ & ~0x10000000);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -14068,21 +14027,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList instanceOwners_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList instanceOwners_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceOwnersIsMutable() {
-      if (!instanceOwners_.isModifiable()) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         instanceOwners_ = new com.google.protobuf.LazyStringArrayList(instanceOwners_);
+        bitField0_ |= 0x00000020;
       }
-      bitField0_ |= 0x00000020;
     }
     /**
      *
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14093,15 +14051,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the instanceOwners.
      */
     public com.google.protobuf.ProtocolStringList getInstanceOwnersList() {
-      instanceOwners_.makeImmutable();
-      return instanceOwners_;
+      return instanceOwners_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14119,7 +14075,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14138,7 +14093,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14157,7 +14111,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14175,7 +14128,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceOwnersIsMutable();
       instanceOwners_.set(index, value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -14184,7 +14136,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14201,7 +14152,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceOwnersIsMutable();
       instanceOwners_.add(value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -14210,7 +14160,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14224,7 +14173,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstanceOwners(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceOwnersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceOwners_);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -14233,7 +14181,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14244,9 +14191,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceOwners() {
-      instanceOwners_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      instanceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
-      ;
       onChanged();
       return this;
     }
@@ -14255,7 +14201,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
-     *
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -14273,7 +14218,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstanceOwnersIsMutable();
       instanceOwners_.add(value);
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -14287,7 +14231,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
-     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -14316,7 +14259,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
-     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -14345,7 +14287,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
-     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -14373,7 +14314,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
-     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -14397,7 +14337,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Cloud services.
      * You can use any service account within the same project, but you
      * must have the service account user permission to use the instance.
-     *
      * If not specified, the [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
      * is used.
@@ -14419,14 +14358,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList serviceAccountScopes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceAccountScopesIsMutable() {
-      if (!serviceAccountScopes_.isModifiable()) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
+        bitField0_ |= 0x00000080;
       }
-      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -14434,7 +14373,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14450,8 +14388,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the serviceAccountScopes.
      */
     public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
-      serviceAccountScopes_.makeImmutable();
-      return serviceAccountScopes_;
+      return serviceAccountScopes_.getUnmodifiableView();
     }
     /**
      *
@@ -14459,7 +14396,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14483,7 +14419,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14508,7 +14443,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14533,7 +14467,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14556,7 +14489,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.set(index, value);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14566,7 +14498,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14588,7 +14519,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.add(value);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14598,7 +14528,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14617,7 +14546,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllServiceAccountScopes(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAccountScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAccountScopes_);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -14627,7 +14555,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14643,9 +14570,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountScopes() {
-      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
-      ;
       onChanged();
       return this;
     }
@@ -14655,7 +14581,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances.
-     *
      * If not specified, the following
      * [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam)
      * are defined:
@@ -14678,7 +14603,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.add(value);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -15780,7 +15704,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     *
      * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
@@ -15807,7 +15730,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     *
      * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
@@ -15834,7 +15756,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     *
      * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
@@ -15860,7 +15781,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     *
      * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
@@ -15882,7 +15802,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     *
      * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
@@ -17186,14 +17105,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList tags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList tags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!tags_.isModifiable()) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        bitField0_ |= 0x10000000;
       }
-      bitField0_ |= 0x10000000;
     }
     /**
      *
@@ -17208,8 +17127,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      tags_.makeImmutable();
-      return tags_;
+      return tags_.getUnmodifiableView();
     }
     /**
      *
@@ -17278,7 +17196,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -17301,7 +17218,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -17321,7 +17237,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
-      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -17338,9 +17253,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x10000000);
-      ;
       onChanged();
       return this;
     }
@@ -17364,7 +17278,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }

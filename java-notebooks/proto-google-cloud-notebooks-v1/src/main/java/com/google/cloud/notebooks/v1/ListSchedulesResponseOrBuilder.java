@@ -107,7 +107,6 @@ public interface ListSchedulesResponseOrBuilder
    *
    * <pre>
    * Schedules that could not be reached. For example:
-   *
    *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
    *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
@@ -122,7 +121,6 @@ public interface ListSchedulesResponseOrBuilder
    *
    * <pre>
    * Schedules that could not be reached. For example:
-   *
    *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
    *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
@@ -137,7 +135,6 @@ public interface ListSchedulesResponseOrBuilder
    *
    * <pre>
    * Schedules that could not be reached. For example:
-   *
    *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
    *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
@@ -153,7 +150,6 @@ public interface ListSchedulesResponseOrBuilder
    *
    * <pre>
    * Schedules that could not be reached. For example:
-   *
    *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
    *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>

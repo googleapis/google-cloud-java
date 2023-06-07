@@ -47,6 +47,11 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
     return new GetDashboardRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardsServiceProto
         .internal_static_google_monitoring_dashboard_v1_GetDashboardRequest_descriptor;
@@ -71,7 +76,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is one of:
-   *
    *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
    *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
    *       (for custom dashboards).
@@ -100,7 +104,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is one of:
-   *
    *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
    *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
    *       (for custom dashboards).
@@ -474,7 +477,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is one of:
-     *
      *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
      *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
      *       (for custom dashboards).
@@ -502,7 +504,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is one of:
-     *
      *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
      *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
      *       (for custom dashboards).
@@ -530,7 +531,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is one of:
-     *
      *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
      *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
      *       (for custom dashboards).
@@ -557,7 +557,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is one of:
-     *
      *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
      *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
      *       (for custom dashboards).
@@ -580,7 +579,6 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is one of:
-     *
      *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
      *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
      *       (for custom dashboards).

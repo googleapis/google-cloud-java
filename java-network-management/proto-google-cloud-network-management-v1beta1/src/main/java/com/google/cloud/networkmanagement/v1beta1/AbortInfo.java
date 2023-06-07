@@ -40,13 +40,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   private AbortInfo() {
     cause_ = 0;
     resourceUri_ = "";
-    projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AbortInfo();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -630,8 +635,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int PROJECTS_MISSING_PERMISSION_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList projectsMissingPermission_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList projectsMissingPermission_;
   /**
    *
    *
@@ -930,7 +934,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       cause_ = 0;
       resourceUri_ = "";
-      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -958,11 +963,21 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.AbortInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.AbortInfo result =
           new com.google.cloud.networkmanagement.v1beta1.AbortInfo(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1beta1.AbortInfo result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        projectsMissingPermission_ = projectsMissingPermission_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.projectsMissingPermission_ = projectsMissingPermission_;
     }
 
     private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.AbortInfo result) {
@@ -972,10 +987,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceUri_ = resourceUri_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        projectsMissingPermission_.makeImmutable();
-        result.projectsMissingPermission_ = projectsMissingPermission_;
       }
     }
 
@@ -1036,7 +1047,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.projectsMissingPermission_.isEmpty()) {
         if (projectsMissingPermission_.isEmpty()) {
           projectsMissingPermission_ = other.projectsMissingPermission_;
-          bitField0_ |= 0x00000004;
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureProjectsMissingPermissionIsMutable();
           projectsMissingPermission_.addAll(other.projectsMissingPermission_);
@@ -1305,15 +1316,15 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList projectsMissingPermission_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList projectsMissingPermission_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureProjectsMissingPermissionIsMutable() {
-      if (!projectsMissingPermission_.isModifiable()) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         projectsMissingPermission_ =
             new com.google.protobuf.LazyStringArrayList(projectsMissingPermission_);
+        bitField0_ |= 0x00000004;
       }
-      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1329,8 +1340,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the projectsMissingPermission.
      */
     public com.google.protobuf.ProtocolStringList getProjectsMissingPermissionList() {
-      projectsMissingPermission_.makeImmutable();
-      return projectsMissingPermission_;
+      return projectsMissingPermission_.getUnmodifiableView();
     }
     /**
      *
@@ -1403,7 +1413,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.set(index, value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1427,7 +1436,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1448,7 +1456,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllProjectsMissingPermission(java.lang.Iterable<java.lang.String> values) {
       ensureProjectsMissingPermissionIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectsMissingPermission_);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1466,9 +1473,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectsMissingPermission() {
-      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      ;
       onChanged();
       return this;
     }
@@ -1493,7 +1499,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

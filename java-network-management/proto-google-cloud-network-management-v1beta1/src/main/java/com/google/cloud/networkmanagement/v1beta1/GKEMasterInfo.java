@@ -51,6 +51,11 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     return new GKEMasterInfo();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.TraceProto
         .internal_static_google_cloud_networkmanagement_v1beta1_GKEMasterInfo_descriptor;

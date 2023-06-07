@@ -28,10 +28,8 @@ public interface OSPolicyAssignmentOrBuilder
    *
    * <pre>
    * Resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-   *
    * This field is ignored when you create an OS policy assignment.
    * </pre>
    *
@@ -45,10 +43,8 @@ public interface OSPolicyAssignmentOrBuilder
    *
    * <pre>
    * Resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id}`
-   *
    * This field is ignored when you create an OS policy assignment.
    * </pre>
    *
@@ -383,7 +379,6 @@ public interface OSPolicyAssignmentOrBuilder
    * <pre>
    * Output only. Indicates that this revision has been successfully rolled out
    * in this zone and new VMs will be assigned OS policies from this revision.
-   *
    * For a given OS policy assignment, there is only one revision with a value
    * of `true` for this field.
    * </pre>

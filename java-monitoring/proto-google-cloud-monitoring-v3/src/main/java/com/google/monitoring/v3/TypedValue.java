@@ -45,6 +45,11 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
     return new TypedValue();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.CommonProto
         .internal_static_google_monitoring_v3_TypedValue_descriptor;
@@ -61,8 +66,6 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase

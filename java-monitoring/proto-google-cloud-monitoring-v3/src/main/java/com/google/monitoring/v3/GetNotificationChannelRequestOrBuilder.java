@@ -28,7 +28,6 @@ public interface GetNotificationChannelRequestOrBuilder
    *
    * <pre>
    * Required. The channel for which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -44,7 +43,6 @@ public interface GetNotificationChannelRequestOrBuilder
    *
    * <pre>
    * Required. The channel for which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *

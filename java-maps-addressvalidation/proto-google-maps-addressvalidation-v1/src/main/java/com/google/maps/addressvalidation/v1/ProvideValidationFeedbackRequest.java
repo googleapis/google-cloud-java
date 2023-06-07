@@ -49,6 +49,11 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     return new ProvideValidationFeedbackRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.addressvalidation.v1.AddressValidationServiceProto
         .internal_static_google_maps_addressvalidation_v1_ProvideValidationFeedbackRequest_descriptor;
@@ -291,7 +296,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
    *
    * <pre>
    * Required. The outcome of the sequence of validation attempts.
-   *
    * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
    * `INVALID_ARGUMENT` error will be returned.
    * </pre>
@@ -311,7 +315,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
    *
    * <pre>
    * Required. The outcome of the sequence of validation attempts.
-   *
    * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
    * `INVALID_ARGUMENT` error will be returned.
    * </pre>
@@ -777,7 +780,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The outcome of the sequence of validation attempts.
-     *
      * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
      * `INVALID_ARGUMENT` error will be returned.
      * </pre>
@@ -797,7 +799,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The outcome of the sequence of validation attempts.
-     *
      * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
      * `INVALID_ARGUMENT` error will be returned.
      * </pre>
@@ -820,7 +821,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The outcome of the sequence of validation attempts.
-     *
      * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
      * `INVALID_ARGUMENT` error will be returned.
      * </pre>
@@ -849,7 +849,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The outcome of the sequence of validation attempts.
-     *
      * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
      * `INVALID_ARGUMENT` error will be returned.
      * </pre>
@@ -877,7 +876,6 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The outcome of the sequence of validation attempts.
-     *
      * If this field is set to `VALIDATION_CONCLUSION_UNSPECIFIED`, an
      * `INVALID_ARGUMENT` error will be returned.
      * </pre>

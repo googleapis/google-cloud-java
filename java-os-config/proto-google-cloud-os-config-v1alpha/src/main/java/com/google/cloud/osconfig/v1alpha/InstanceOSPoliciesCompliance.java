@@ -24,14 +24,11 @@ package com.google.cloud.osconfig.v1alpha;
  * <pre>
  * This API resource represents the OS policies compliance data for a Compute
  * Engine virtual machine (VM) instance at a given point in time.
- *
  * A Compute Engine VM can have multiple OS policy assignments, and each
  * assignment can have multiple OS policies. As a result, multiple OS policies
  * could be applied to a single VM.
- *
  * You can use this API resource to determine both the compliance state of your
  * VM as well as the compliance state of an individual OS policy.
- *
  * For more information, see [View
  * compliance](https://cloud.google.com/compute/docs/os-configuration-management/view-compliance).
  * </pre>
@@ -63,6 +60,11 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InstanceOSPoliciesCompliance();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -117,7 +119,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -133,7 +134,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -273,6 +273,11 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
       return new OSPolicyCompliance();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesComplianceProto
           .internal_static_google_cloud_osconfig_v1alpha_InstanceOSPoliciesCompliance_OSPolicyCompliance_descriptor;
@@ -351,7 +356,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -378,7 +382,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
      * belongs to.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -1146,7 +1149,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
        * <pre>
        * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
        * belongs to.
-       *
        * Format:
        * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
        * </pre>
@@ -1172,7 +1174,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
        * <pre>
        * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
        * belongs to.
-       *
        * Format:
        * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
        * </pre>
@@ -1198,7 +1199,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
        * <pre>
        * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
        * belongs to.
-       *
        * Format:
        * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
        * </pre>
@@ -1223,7 +1223,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
        * <pre>
        * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
        * belongs to.
-       *
        * Format:
        * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
        * </pre>
@@ -1244,7 +1243,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
        * <pre>
        * Reference to the `OSPolicyAssignment` API resource that the `OSPolicy`
        * belongs to.
-       *
        * Format:
        * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
        * </pre>
@@ -1861,7 +1859,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
    * </pre>
@@ -1887,7 +1884,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
    * </pre>
@@ -2011,9 +2007,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
    * <pre>
    * Output only. Detailed compliance state of the VM.
    * This field is populated only when compliance state is `UNKNOWN`.
-   *
    * It may contain one of the following values:
-   *
    * * `no-compliance-data`: Compliance data is not available for this VM.
    * * `no-agent-detected`: OS Config agent is not detected for this VM.
    * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -2047,9 +2041,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
    * <pre>
    * Output only. Detailed compliance state of the VM.
    * This field is populated only when compliance state is `UNKNOWN`.
-   *
    * It may contain one of the following values:
-   *
    * * `no-compliance-data`: Compliance data is not available for this VM.
    * * `no-agent-detected`: OS Config agent is not detected for this VM.
    * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -2574,14 +2566,11 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
    * <pre>
    * This API resource represents the OS policies compliance data for a Compute
    * Engine virtual machine (VM) instance at a given point in time.
-   *
    * A Compute Engine VM can have multiple OS policy assignments, and each
    * assignment can have multiple OS policies. As a result, multiple OS policies
    * could be applied to a single VM.
-   *
    * You can use this API resource to determine both the compliance state of your
    * VM as well as the compliance state of an individual OS policy.
-   *
    * For more information, see [View
    * compliance](https://cloud.google.com/compute/docs/os-configuration-management/view-compliance).
    * </pre>
@@ -2929,7 +2918,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
      * </pre>
@@ -2954,7 +2942,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
      * </pre>
@@ -2979,7 +2966,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
      * </pre>
@@ -3003,7 +2989,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
      * </pre>
@@ -3023,7 +3008,6 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
      * </pre>
@@ -3259,9 +3243,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Output only. Detailed compliance state of the VM.
      * This field is populated only when compliance state is `UNKNOWN`.
-     *
      * It may contain one of the following values:
-     *
      * * `no-compliance-data`: Compliance data is not available for this VM.
      * * `no-agent-detected`: OS Config agent is not detected for this VM.
      * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -3294,9 +3276,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Output only. Detailed compliance state of the VM.
      * This field is populated only when compliance state is `UNKNOWN`.
-     *
      * It may contain one of the following values:
-     *
      * * `no-compliance-data`: Compliance data is not available for this VM.
      * * `no-agent-detected`: OS Config agent is not detected for this VM.
      * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -3329,9 +3309,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Output only. Detailed compliance state of the VM.
      * This field is populated only when compliance state is `UNKNOWN`.
-     *
      * It may contain one of the following values:
-     *
      * * `no-compliance-data`: Compliance data is not available for this VM.
      * * `no-agent-detected`: OS Config agent is not detected for this VM.
      * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -3363,9 +3341,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Output only. Detailed compliance state of the VM.
      * This field is populated only when compliance state is `UNKNOWN`.
-     *
      * It may contain one of the following values:
-     *
      * * `no-compliance-data`: Compliance data is not available for this VM.
      * * `no-agent-detected`: OS Config agent is not detected for this VM.
      * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -3393,9 +3369,7 @@ public final class InstanceOSPoliciesCompliance extends com.google.protobuf.Gene
      * <pre>
      * Output only. Detailed compliance state of the VM.
      * This field is populated only when compliance state is `UNKNOWN`.
-     *
      * It may contain one of the following values:
-     *
      * * `no-compliance-data`: Compliance data is not available for this VM.
      * * `no-agent-detected`: OS Config agent is not detected for this VM.
      * * `config-not-supported-by-agent`: The version of the OS Config agent

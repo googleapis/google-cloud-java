@@ -51,6 +51,11 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     return new Snooze();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.SnoozeProto
         .internal_static_google_monitoring_v3_Snooze_descriptor;
@@ -76,9 +81,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -94,9 +97,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -112,9 +113,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -131,9 +130,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -167,13 +164,18 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Criteria() {
-      policies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      policies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Criteria();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -194,17 +196,14 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
     public static final int POLICIES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList policies_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList policies_;
     /**
      *
      *
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -222,9 +221,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -242,9 +239,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -263,9 +258,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The specific `AlertPolicy` names for the alert that should be snoozed.
      * The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-     *
      * There is a limit of 10 policies per snooze. This limit is checked during
      * snooze creation.
      * </pre>
@@ -488,7 +481,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        policies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        policies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -516,6 +510,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.v3.Snooze.Criteria buildPartial() {
         com.google.monitoring.v3.Snooze.Criteria result =
             new com.google.monitoring.v3.Snooze.Criteria(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -523,12 +518,16 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
+      private void buildPartialRepeatedFields(com.google.monitoring.v3.Snooze.Criteria result) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          policies_ = policies_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.policies_ = policies_;
+      }
+
       private void buildPartial0(com.google.monitoring.v3.Snooze.Criteria result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          policies_.makeImmutable();
-          result.policies_ = policies_;
-        }
       }
 
       @java.lang.Override
@@ -581,7 +580,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         if (!other.policies_.isEmpty()) {
           if (policies_.isEmpty()) {
             policies_ = other.policies_;
-            bitField0_ |= 0x00000001;
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePoliciesIsMutable();
             policies_.addAll(other.policies_);
@@ -640,14 +639,14 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringArrayList policies_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList policies_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePoliciesIsMutable() {
-        if (!policies_.isModifiable()) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           policies_ = new com.google.protobuf.LazyStringArrayList(policies_);
+          bitField0_ |= 0x00000001;
         }
-        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -655,9 +654,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -667,8 +664,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the policies.
        */
       public com.google.protobuf.ProtocolStringList getPoliciesList() {
-        policies_.makeImmutable();
-        return policies_;
+        return policies_.getUnmodifiableView();
       }
       /**
        *
@@ -676,9 +672,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -696,9 +690,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -717,9 +709,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -738,9 +728,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -757,7 +745,6 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePoliciesIsMutable();
         policies_.set(index, value);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -767,9 +754,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -785,7 +770,6 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         }
         ensurePoliciesIsMutable();
         policies_.add(value);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -795,9 +779,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -810,7 +792,6 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllPolicies(java.lang.Iterable<java.lang.String> values) {
         ensurePoliciesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, policies_);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -820,9 +801,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -832,9 +811,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPolicies() {
-        policies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        policies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        ;
         onChanged();
         return this;
       }
@@ -844,9 +822,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The specific `AlertPolicy` names for the alert that should be snoozed.
        * The format is:
-       *
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]
-       *
        * There is a limit of 10 policies per snooze. This limit is checked during
        * snooze creation.
        * </pre>
@@ -863,7 +839,6 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensurePoliciesIsMutable();
         policies_.add(value);
-        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -941,9 +916,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the `Snooze`. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-   *
    * The ID of the `Snooze` will be generated by the system.
    * </pre>
    *
@@ -968,9 +941,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the `Snooze`. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-   *
    * The ID of the `Snooze` will be generated by the system.
    * </pre>
    *
@@ -1603,9 +1574,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the `Snooze`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-     *
      * The ID of the `Snooze` will be generated by the system.
      * </pre>
      *
@@ -1629,9 +1598,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the `Snooze`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-     *
      * The ID of the `Snooze` will be generated by the system.
      * </pre>
      *
@@ -1655,9 +1622,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the `Snooze`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-     *
      * The ID of the `Snooze` will be generated by the system.
      * </pre>
      *
@@ -1680,9 +1645,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the `Snooze`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-     *
      * The ID of the `Snooze` will be generated by the system.
      * </pre>
      *
@@ -1701,9 +1664,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the `Snooze`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID]
-     *
      * The ID of the `Snooze` will be generated by the system.
      * </pre>
      *

@@ -47,6 +47,11 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     return new ValidateAddressResponse();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.addressvalidation.v1.AddressValidationServiceProto
         .internal_static_google_maps_addressvalidation_v1_ValidateAddressResponse_descriptor;

@@ -49,6 +49,11 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
     return new GetServiceLevelObjectiveRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringServiceProto
         .internal_static_google_monitoring_v3_GetServiceLevelObjectiveRequest_descriptor;
@@ -73,7 +78,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
@@ -100,7 +104,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
@@ -537,7 +540,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -563,7 +565,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -589,7 +590,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -614,7 +614,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -635,7 +634,6 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the `ServiceLevelObjective` to get. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *

@@ -40,13 +40,18 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
 
   private DelayedEvent() {
     cause_ = "";
-    metrics_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    metrics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DelayedEvent();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -122,8 +127,7 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
   public static final int METRICS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList metrics_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList metrics_;
   /**
    *
    *
@@ -411,7 +415,8 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       cause_ = "";
-      metrics_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      metrics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -439,6 +444,7 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.DelayedEvent buildPartial() {
       com.google.cloud.lifesciences.v2beta.DelayedEvent result =
           new com.google.cloud.lifesciences.v2beta.DelayedEvent(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -446,14 +452,19 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.lifesciences.v2beta.DelayedEvent result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        metrics_ = metrics_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.metrics_ = metrics_;
+    }
+
     private void buildPartial0(com.google.cloud.lifesciences.v2beta.DelayedEvent result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.cause_ = cause_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        metrics_.makeImmutable();
-        result.metrics_ = metrics_;
       }
     }
 
@@ -511,7 +522,7 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       if (!other.metrics_.isEmpty()) {
         if (metrics_.isEmpty()) {
           metrics_ = other.metrics_;
-          bitField0_ |= 0x00000002;
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureMetricsIsMutable();
           metrics_.addAll(other.metrics_);
@@ -692,14 +703,14 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList metrics_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList metrics_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMetricsIsMutable() {
-      if (!metrics_.isModifiable()) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         metrics_ = new com.google.protobuf.LazyStringArrayList(metrics_);
+        bitField0_ |= 0x00000002;
       }
-      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -716,8 +727,7 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the metrics.
      */
     public com.google.protobuf.ProtocolStringList getMetricsList() {
-      metrics_.makeImmutable();
-      return metrics_;
+      return metrics_.getUnmodifiableView();
     }
     /**
      *
@@ -794,7 +804,6 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMetricsIsMutable();
       metrics_.set(index, value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -819,7 +828,6 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMetricsIsMutable();
       metrics_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -841,7 +849,6 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMetrics(java.lang.Iterable<java.lang.String> values) {
       ensureMetricsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metrics_);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,9 +867,8 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMetrics() {
-      metrics_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      metrics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      ;
       onChanged();
       return this;
     }
@@ -888,7 +894,6 @@ public final class DelayedEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMetricsIsMutable();
       metrics_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

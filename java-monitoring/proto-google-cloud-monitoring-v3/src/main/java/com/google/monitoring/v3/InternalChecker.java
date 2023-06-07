@@ -54,6 +54,11 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     return new InternalChecker();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeProto
         .internal_static_google_monitoring_v3_InternalChecker_descriptor;
@@ -255,9 +260,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-   *
    * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
    * the Uptime check config associated with the internal checker.
    * </pre>
@@ -283,9 +286,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-   *
    * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
    * the Uptime check config associated with the internal checker.
    * </pre>
@@ -1021,9 +1022,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
      * the Uptime check config associated with the internal checker.
      * </pre>
@@ -1048,9 +1047,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
      * the Uptime check config associated with the internal checker.
      * </pre>
@@ -1075,9 +1072,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
      * the Uptime check config associated with the internal checker.
      * </pre>
@@ -1101,9 +1096,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
      * the Uptime check config associated with the internal checker.
      * </pre>
@@ -1123,9 +1116,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     *
      * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
      * the Uptime check config associated with the internal checker.
      * </pre>

@@ -41,7 +41,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   }
 
   private LinkedVpnTunnels() {
-    uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     vpcNetwork_ = "";
   }
 
@@ -49,6 +49,11 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LinkedVpnTunnels();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,8 +74,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   public static final int URIS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList uris_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList uris_;
   /**
    *
    *
@@ -432,7 +436,8 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       siteToSiteDataTransfer_ = false;
       vpcNetwork_ = "";
       return this;
@@ -462,6 +467,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels buildPartial() {
       com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels result =
           new com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -469,12 +475,17 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels result) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        uris_ = uris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.uris_ = uris_;
+    }
+
     private void buildPartial0(com.google.cloud.networkconnectivity.v1.LinkedVpnTunnels result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        uris_.makeImmutable();
-        result.uris_ = uris_;
-      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
       }
@@ -532,7 +543,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       if (!other.uris_.isEmpty()) {
         if (uris_.isEmpty()) {
           uris_ = other.uris_;
-          bitField0_ |= 0x00000001;
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureUrisIsMutable();
           uris_.addAll(other.uris_);
@@ -611,14 +622,14 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList uris_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList uris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUrisIsMutable() {
-      if (!uris_.isModifiable()) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
+        bitField0_ |= 0x00000001;
       }
-      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -632,8 +643,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
      * @return A list containing the uris.
      */
     public com.google.protobuf.ProtocolStringList getUrisList() {
-      uris_.makeImmutable();
-      return uris_;
+      return uris_.getUnmodifiableView();
     }
     /**
      *
@@ -698,7 +708,6 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       }
       ensureUrisIsMutable();
       uris_.set(index, value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,7 +729,6 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       }
       ensureUrisIsMutable();
       uris_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,7 +747,6 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     public Builder addAllUris(java.lang.Iterable<java.lang.String> values) {
       ensureUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uris_);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -755,9 +762,8 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUris() {
-      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ;
       onChanged();
       return this;
     }
@@ -780,7 +786,6 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureUrisIsMutable();
       uris_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

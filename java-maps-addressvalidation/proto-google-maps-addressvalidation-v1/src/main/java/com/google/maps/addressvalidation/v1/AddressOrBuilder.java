@@ -92,7 +92,6 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -109,7 +108,6 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -126,7 +124,6 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -143,7 +140,6 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -161,7 +157,6 @@ public interface AddressOrBuilder
    * Unordered list. The individual address components of the formatted and
    * corrected address, along with validation information. This provides
    * information on the validation status of the individual components.
-   *
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>

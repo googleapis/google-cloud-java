@@ -47,6 +47,11 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
     return new DeleteDashboardRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardsServiceProto
         .internal_static_google_monitoring_dashboard_v1_DeleteDashboardRequest_descriptor;
@@ -71,7 +76,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
@@ -98,7 +102,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the Dashboard. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
@@ -470,7 +473,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
@@ -496,7 +498,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
@@ -522,7 +523,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
@@ -547,7 +547,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
@@ -568,7 +567,6 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Dashboard. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *

@@ -24,10 +24,8 @@ package com.google.cloud.networkconnectivity.v1;
  * <pre>
  * A Network Connectivity Center spoke represents a connection between your
  * Google Cloud network resources and a non-Google-Cloud network.
- *
  * When you create a spoke, you associate it with a hub. You must also identify
  * a value for exactly one of the following fields:
- *
  * * linked_vpn_tunnels
  * * linked_interconnect_attachments
  * * linked_router_appliance_instances
@@ -57,6 +55,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Spoke();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1015,10 +1018,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A Network Connectivity Center spoke represents a connection between your
    * Google Cloud network resources and a non-Google-Cloud network.
-   *
    * When you create a spoke, you associate it with a hub. You must also identify
    * a value for exactly one of the following fields:
-   *
    * * linked_vpn_tunnels
    * * linked_interconnect_attachments
    * * linked_router_appliance_instances

@@ -25,7 +25,6 @@ package com.google.cloud.notebooks.v1;
  * Specifies the selection and configuration of software inside the runtime.
  * The properties to set on runtime.
  * Properties keys are specified in `key:value` format, for example:
- *
  * * `idle_shutdown: true`
  * * `idle_shutdown_timeout: 180`
  * * `enable_health_monitoring: true`
@@ -56,6 +55,11 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RuntimeSoftwareConfig();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1060,7 +1064,6 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
    * Specifies the selection and configuration of software inside the runtime.
    * The properties to set on runtime.
    * Properties keys are specified in `key:value` format, for example:
-   *
    * * `idle_shutdown: true`
    * * `idle_shutdown_timeout: 180`
    * * `enable_health_monitoring: true`

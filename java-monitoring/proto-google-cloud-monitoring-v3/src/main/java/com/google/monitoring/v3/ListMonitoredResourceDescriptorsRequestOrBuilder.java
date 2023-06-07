@@ -29,7 +29,6 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -46,7 +45,6 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -66,7 +64,6 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * describing the descriptors to be returned.  The filter can reference the
    * descriptor's type and labels. For example, the following filter returns
    * only Google Compute Engine descriptors that have an `id` label:
-   *
    *     resource.type = starts_with("gce_") AND resource.label:id
    * </pre>
    *
@@ -83,7 +80,6 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder
    * describing the descriptors to be returned.  The filter can reference the
    * descriptor's type and labels. For example, the following filter returns
    * only Google Compute Engine descriptors that have an `id` label:
-   *
    *     resource.type = starts_with("gce_") AND resource.label:id
    * </pre>
    *

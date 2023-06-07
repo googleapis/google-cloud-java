@@ -359,9 +359,7 @@ public final class GuestPolicies {
      * Required. Specifies the VM instances that are assigned to this policy. This allows
      * you to target sets or groups of VM instances by different parameters such
      * as labels, names, OS, or zones.
-     *
      * If left empty, all VM instances underneath this policy are targeted.
-     *
      * At the same level in the resource hierarchy (that is within a project), the
      * service prevents the creation of multiple policies that conflict with
      * each other. For more information, see how the service [handles assignment
@@ -382,9 +380,7 @@ public final class GuestPolicies {
      * Required. Specifies the VM instances that are assigned to this policy. This allows
      * you to target sets or groups of VM instances by different parameters such
      * as labels, names, OS, or zones.
-     *
      * If left empty, all VM instances underneath this policy are targeted.
-     *
      * At the same level in the resource hierarchy (that is within a project), the
      * service prevents the creation of multiple policies that conflict with
      * each other. For more information, see how the service [handles assignment
@@ -405,9 +401,7 @@ public final class GuestPolicies {
      * Required. Specifies the VM instances that are assigned to this policy. This allows
      * you to target sets or groups of VM instances by different parameters such
      * as labels, names, OS, or zones.
-     *
      * If left empty, all VM instances underneath this policy are targeted.
-     *
      * At the same level in the resource hierarchy (that is within a project), the
      * service prevents the creation of multiple policies that conflict with
      * each other. For more information, see how the service [handles assignment
@@ -665,6 +659,11 @@ public final class GuestPolicies {
       return new GuestPolicy();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.GuestPolicies
           .internal_static_google_cloud_osconfig_v1beta_GuestPolicy_descriptor;
@@ -901,9 +900,7 @@ public final class GuestPolicies {
      * Required. Specifies the VM instances that are assigned to this policy. This allows
      * you to target sets or groups of VM instances by different parameters such
      * as labels, names, OS, or zones.
-     *
      * If left empty, all VM instances underneath this policy are targeted.
-     *
      * At the same level in the resource hierarchy (that is within a project), the
      * service prevents the creation of multiple policies that conflict with
      * each other. For more information, see how the service [handles assignment
@@ -927,9 +924,7 @@ public final class GuestPolicies {
      * Required. Specifies the VM instances that are assigned to this policy. This allows
      * you to target sets or groups of VM instances by different parameters such
      * as labels, names, OS, or zones.
-     *
      * If left empty, all VM instances underneath this policy are targeted.
-     *
      * At the same level in the resource hierarchy (that is within a project), the
      * service prevents the creation of multiple policies that conflict with
      * each other. For more information, see how the service [handles assignment
@@ -955,9 +950,7 @@ public final class GuestPolicies {
      * Required. Specifies the VM instances that are assigned to this policy. This allows
      * you to target sets or groups of VM instances by different parameters such
      * as labels, names, OS, or zones.
-     *
      * If left empty, all VM instances underneath this policy are targeted.
-     *
      * At the same level in the resource hierarchy (that is within a project), the
      * service prevents the creation of multiple policies that conflict with
      * each other. For more information, see how the service [handles assignment
@@ -2622,9 +2615,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2647,9 +2638,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2678,9 +2667,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2712,9 +2699,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2743,9 +2728,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2782,9 +2765,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2812,9 +2793,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2838,9 +2817,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -2868,9 +2845,7 @@ public final class GuestPolicies {
        * Required. Specifies the VM instances that are assigned to this policy. This allows
        * you to target sets or groups of VM instances by different parameters such
        * as labels, names, OS, or zones.
-       *
        * If left empty, all VM instances underneath this policy are targeted.
-       *
        * At the same level in the resource hierarchy (that is within a project), the
        * service prevents the creation of multiple policies that conflict with
        * each other. For more information, see how the service [handles assignment
@@ -4333,7 +4308,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -4349,7 +4323,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -4365,7 +4338,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -4382,7 +4354,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -4400,11 +4371,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -4420,11 +4389,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -4440,11 +4407,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -4461,11 +4426,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -4482,10 +4445,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -4499,10 +4460,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -4516,10 +4475,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -4534,10 +4491,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -4553,7 +4508,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -4567,7 +4521,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -4580,7 +4533,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -4593,7 +4545,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -4608,7 +4559,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -4624,7 +4574,6 @@ public final class GuestPolicies {
    * <pre>
    * An assignment represents the group or groups of VM instances that the policy
    * applies to.
-   *
    * If an assignment is empty, it applies to all VM instances. Otherwise, the
    * targeted VM instances must meet all the criteria specified. So if both
    * labels and zones are specified, the policy applies to VM instances with those
@@ -4645,9 +4594,9 @@ public final class GuestPolicies {
 
     private Assignment() {
       groupLabels_ = java.util.Collections.emptyList();
-      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       osTypes_ = java.util.Collections.emptyList();
     }
 
@@ -4655,6 +4604,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Assignment();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4766,6 +4720,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new GroupLabel();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5649,6 +5608,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new OsType();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6718,15 +6682,13 @@ public final class GuestPolicies {
     public static final int ZONES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList zones_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList zones_;
     /**
      *
      *
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -6744,7 +6706,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -6762,7 +6723,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -6781,7 +6741,6 @@ public final class GuestPolicies {
      * <pre>
      * Targets instances in any of these zones. Leave empty to target instances
      * in any zone.
-     *
      * Zonal targeting is uncommon and is supported to facilitate the management
      * of changes by zone.
      * </pre>
@@ -6798,19 +6757,16 @@ public final class GuestPolicies {
     public static final int INSTANCES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList instances_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList instances_;
     /**
      *
      *
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -6828,11 +6784,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -6850,11 +6804,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -6873,11 +6825,9 @@ public final class GuestPolicies {
      * <pre>
      * Targets any of the instances specified. Instances are specified by their
      * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-     *
      * Instance targeting is uncommon and is supported to facilitate the
      * management of changes by the instance or to target specific VM instances
      * for development and testing.
-     *
      * Only supported for project-level policies and must reference instances
      * within this project.
      * </pre>
@@ -6894,17 +6844,14 @@ public final class GuestPolicies {
     public static final int INSTANCE_NAME_PREFIXES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList instanceNamePrefixes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList instanceNamePrefixes_;
     /**
      *
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -6920,10 +6867,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -6939,10 +6884,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -6959,10 +6902,8 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances whose name starts with one of these prefixes.
-     *
      * Like labels, this is another way to group VM instances when targeting
      * configs, for example prefix="prod-".
-     *
      * Only supported for project-level policies.
      * </pre>
      *
@@ -6985,7 +6926,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -7002,7 +6942,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -7020,7 +6959,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -7036,7 +6974,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -7052,7 +6989,6 @@ public final class GuestPolicies {
      *
      * <pre>
      * Targets VM instances matching at least one of the following OS types.
-     *
      * VM instances must match all supplied criteria for a given OsType to be
      * included.
      * </pre>
@@ -7294,7 +7230,6 @@ public final class GuestPolicies {
      * <pre>
      * An assignment represents the group or groups of VM instances that the policy
      * applies to.
-     *
      * If an assignment is empty, it applies to all VM instances. Otherwise, the
      * targeted VM instances must meet all the criteria specified. So if both
      * labels and zones are specified, the policy applies to VM instances with those
@@ -7341,9 +7276,12 @@ public final class GuestPolicies {
           groupLabelsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (osTypesBuilder_ == null) {
           osTypes_ = java.util.Collections.emptyList();
         } else {
@@ -7397,6 +7335,21 @@ public final class GuestPolicies {
         } else {
           result.groupLabels_ = groupLabelsBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          zones_ = zones_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.zones_ = zones_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          instances_ = instances_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.instances_ = instances_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          instanceNamePrefixes_ = instanceNamePrefixes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.instanceNamePrefixes_ = instanceNamePrefixes_;
         if (osTypesBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0)) {
             osTypes_ = java.util.Collections.unmodifiableList(osTypes_);
@@ -7410,18 +7363,6 @@ public final class GuestPolicies {
 
       private void buildPartial0(com.google.cloud.osconfig.v1beta.GuestPolicies.Assignment result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          zones_.makeImmutable();
-          result.zones_ = zones_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          instances_.makeImmutable();
-          result.instances_ = instances_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          instanceNamePrefixes_.makeImmutable();
-          result.instanceNamePrefixes_ = instanceNamePrefixes_;
-        }
       }
 
       @java.lang.Override
@@ -7502,7 +7443,7 @@ public final class GuestPolicies {
         if (!other.zones_.isEmpty()) {
           if (zones_.isEmpty()) {
             zones_ = other.zones_;
-            bitField0_ |= 0x00000002;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureZonesIsMutable();
             zones_.addAll(other.zones_);
@@ -7512,7 +7453,7 @@ public final class GuestPolicies {
         if (!other.instances_.isEmpty()) {
           if (instances_.isEmpty()) {
             instances_ = other.instances_;
-            bitField0_ |= 0x00000004;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureInstancesIsMutable();
             instances_.addAll(other.instances_);
@@ -7522,7 +7463,7 @@ public final class GuestPolicies {
         if (!other.instanceNamePrefixes_.isEmpty()) {
           if (instanceNamePrefixes_.isEmpty()) {
             instanceNamePrefixes_ = other.instanceNamePrefixes_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureInstanceNamePrefixesIsMutable();
             instanceNamePrefixes_.addAll(other.instanceNamePrefixes_);
@@ -8067,14 +8008,14 @@ public final class GuestPolicies {
         return groupLabelsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringArrayList zones_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList zones_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureZonesIsMutable() {
-        if (!zones_.isModifiable()) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
+          bitField0_ |= 0x00000002;
         }
-        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -8082,7 +8023,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8092,8 +8032,7 @@ public final class GuestPolicies {
        * @return A list containing the zones.
        */
       public com.google.protobuf.ProtocolStringList getZonesList() {
-        zones_.makeImmutable();
-        return zones_;
+        return zones_.getUnmodifiableView();
       }
       /**
        *
@@ -8101,7 +8040,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8119,7 +8057,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8138,7 +8075,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8157,7 +8093,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8174,7 +8109,6 @@ public final class GuestPolicies {
         }
         ensureZonesIsMutable();
         zones_.set(index, value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8184,7 +8118,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8200,7 +8133,6 @@ public final class GuestPolicies {
         }
         ensureZonesIsMutable();
         zones_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8210,7 +8142,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8223,7 +8154,6 @@ public final class GuestPolicies {
       public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
         ensureZonesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8233,7 +8163,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8243,9 +8172,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearZones() {
-        zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        ;
         onChanged();
         return this;
       }
@@ -8255,7 +8183,6 @@ public final class GuestPolicies {
        * <pre>
        * Targets instances in any of these zones. Leave empty to target instances
        * in any zone.
-       *
        * Zonal targeting is uncommon and is supported to facilitate the management
        * of changes by zone.
        * </pre>
@@ -8272,19 +8199,18 @@ public final class GuestPolicies {
         checkByteStringIsUtf8(value);
         ensureZonesIsMutable();
         zones_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList instances_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList instances_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureInstancesIsMutable() {
-        if (!instances_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
+          bitField0_ |= 0x00000004;
         }
-        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -8292,11 +8218,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8306,8 +8230,7 @@ public final class GuestPolicies {
        * @return A list containing the instances.
        */
       public com.google.protobuf.ProtocolStringList getInstancesList() {
-        instances_.makeImmutable();
-        return instances_;
+        return instances_.getUnmodifiableView();
       }
       /**
        *
@@ -8315,11 +8238,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8337,11 +8258,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8360,11 +8279,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8383,11 +8300,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8404,7 +8319,6 @@ public final class GuestPolicies {
         }
         ensureInstancesIsMutable();
         instances_.set(index, value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8414,11 +8328,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8434,7 +8346,6 @@ public final class GuestPolicies {
         }
         ensureInstancesIsMutable();
         instances_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8444,11 +8355,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8461,7 +8370,6 @@ public final class GuestPolicies {
       public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
         ensureInstancesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8471,11 +8379,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8485,9 +8391,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearInstances() {
-        instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        ;
         onChanged();
         return this;
       }
@@ -8497,11 +8402,9 @@ public final class GuestPolicies {
        * <pre>
        * Targets any of the instances specified. Instances are specified by their
        * URI in the form `zones/[ZONE]/instances/[INSTANCE_NAME]`.
-       *
        * Instance targeting is uncommon and is supported to facilitate the
        * management of changes by the instance or to target specific VM instances
        * for development and testing.
-       *
        * Only supported for project-level policies and must reference instances
        * within this project.
        * </pre>
@@ -8518,30 +8421,27 @@ public final class GuestPolicies {
         checkByteStringIsUtf8(value);
         ensureInstancesIsMutable();
         instances_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList instanceNamePrefixes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList instanceNamePrefixes_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureInstanceNamePrefixesIsMutable() {
-        if (!instanceNamePrefixes_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           instanceNamePrefixes_ =
               new com.google.protobuf.LazyStringArrayList(instanceNamePrefixes_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8550,18 +8450,15 @@ public final class GuestPolicies {
        * @return A list containing the instanceNamePrefixes.
        */
       public com.google.protobuf.ProtocolStringList getInstanceNamePrefixesList() {
-        instanceNamePrefixes_.makeImmutable();
-        return instanceNamePrefixes_;
+        return instanceNamePrefixes_.getUnmodifiableView();
       }
       /**
        *
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8577,10 +8474,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8597,10 +8492,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8617,10 +8510,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8636,7 +8527,6 @@ public final class GuestPolicies {
         }
         ensureInstanceNamePrefixesIsMutable();
         instanceNamePrefixes_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8645,10 +8535,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8663,7 +8551,6 @@ public final class GuestPolicies {
         }
         ensureInstanceNamePrefixesIsMutable();
         instanceNamePrefixes_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8672,10 +8559,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8687,7 +8572,6 @@ public final class GuestPolicies {
       public Builder addAllInstanceNamePrefixes(java.lang.Iterable<java.lang.String> values) {
         ensureInstanceNamePrefixesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceNamePrefixes_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8696,10 +8580,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8708,9 +8590,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearInstanceNamePrefixes() {
-        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -8719,10 +8600,8 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances whose name starts with one of these prefixes.
-       *
        * Like labels, this is another way to group VM instances when targeting
        * configs, for example prefix="prod-".
-       *
        * Only supported for project-level policies.
        * </pre>
        *
@@ -8738,7 +8617,6 @@ public final class GuestPolicies {
         checkByteStringIsUtf8(value);
         ensureInstanceNamePrefixesIsMutable();
         instanceNamePrefixes_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8766,7 +8644,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8786,7 +8663,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8805,7 +8681,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8825,7 +8700,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8851,7 +8725,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8876,7 +8749,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8902,7 +8774,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8928,7 +8799,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8952,7 +8822,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -8977,7 +8846,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9002,7 +8870,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9024,7 +8891,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9046,7 +8912,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9062,7 +8927,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9082,7 +8946,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9103,7 +8966,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9122,7 +8984,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9142,7 +9003,6 @@ public final class GuestPolicies {
        *
        * <pre>
        * Targets VM instances matching at least one of the following OS types.
-       *
        * VM instances must match all supplied criteria for a given OsType to be
        * included.
        * </pre>
@@ -9308,7 +9168,6 @@ public final class GuestPolicies {
      * the agent attempts to install and remove this package using the default
      * package manager. This is useful when creating a policy that applies to
      * different types of systems.
-     *
      * The default behavior is ANY.
      * </pre>
      *
@@ -9328,7 +9187,6 @@ public final class GuestPolicies {
      * the agent attempts to install and remove this package using the default
      * package manager. This is useful when creating a policy that applies to
      * different types of systems.
-     *
      * The default behavior is ANY.
      * </pre>
      *
@@ -9345,23 +9203,17 @@ public final class GuestPolicies {
    * Package is a reference to the software package to be installed or removed.
    * The agent on the VM instance uses the system package manager to apply the
    * config.
-   *
-   *
    * These are the commands that the agent uses to install or remove
    * packages.
-   *
    * Apt
    * install: `apt-get update &amp;&amp; apt-get -y install package1 package2 package3`
    * remove: `apt-get -y remove package1 package2 package3`
-   *
    * Yum
    * install: `yum -y install package1 package2 package3`
    * remove: `yum -y remove package1 package2 package3`
-   *
    * Zypper
    * install: `zypper install package1 package2 package3`
    * remove: `zypper rm package1 package2`
-   *
    * Googet
    * install: `googet -noconfirm install package1 package2 package3`
    * remove: `googet -noconfirm remove package1 package2 package3`
@@ -9389,6 +9241,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Package();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9738,7 +9595,6 @@ public final class GuestPolicies {
      * the agent attempts to install and remove this package using the default
      * package manager. This is useful when creating a policy that applies to
      * different types of systems.
-     *
      * The default behavior is ANY.
      * </pre>
      *
@@ -9761,7 +9617,6 @@ public final class GuestPolicies {
      * the agent attempts to install and remove this package using the default
      * package manager. This is useful when creating a policy that applies to
      * different types of systems.
-     *
      * The default behavior is ANY.
      * </pre>
      *
@@ -9972,23 +9827,17 @@ public final class GuestPolicies {
      * Package is a reference to the software package to be installed or removed.
      * The agent on the VM instance uses the system package manager to apply the
      * config.
-     *
-     *
      * These are the commands that the agent uses to install or remove
      * packages.
-     *
      * Apt
      * install: `apt-get update &amp;&amp; apt-get -y install package1 package2 package3`
      * remove: `apt-get -y remove package1 package2 package3`
-     *
      * Yum
      * install: `yum -y install package1 package2 package3`
      * remove: `yum -y remove package1 package2 package3`
-     *
      * Zypper
      * install: `zypper install package1 package2 package3`
      * remove: `zypper rm package1 package2`
-     *
      * Googet
      * install: `googet -noconfirm install package1 package2 package3`
      * remove: `googet -noconfirm remove package1 package2 package3`
@@ -10425,7 +10274,6 @@ public final class GuestPolicies {
        * the agent attempts to install and remove this package using the default
        * package manager. This is useful when creating a policy that applies to
        * different types of systems.
-       *
        * The default behavior is ANY.
        * </pre>
        *
@@ -10448,7 +10296,6 @@ public final class GuestPolicies {
        * the agent attempts to install and remove this package using the default
        * package manager. This is useful when creating a policy that applies to
        * different types of systems.
-       *
        * The default behavior is ANY.
        * </pre>
        *
@@ -10474,7 +10321,6 @@ public final class GuestPolicies {
        * the agent attempts to install and remove this package using the default
        * package manager. This is useful when creating a policy that applies to
        * different types of systems.
-       *
        * The default behavior is ANY.
        * </pre>
        *
@@ -10501,7 +10347,6 @@ public final class GuestPolicies {
        * the agent attempts to install and remove this package using the default
        * package manager. This is useful when creating a policy that applies to
        * different types of systems.
-       *
        * The default behavior is ANY.
        * </pre>
        *
@@ -10531,7 +10376,6 @@ public final class GuestPolicies {
        * the agent attempts to install and remove this package using the default
        * package manager. This is useful when creating a policy that applies to
        * different types of systems.
-       *
        * The default behavior is ANY.
        * </pre>
        *
@@ -10795,7 +10639,7 @@ public final class GuestPolicies {
       archiveType_ = 0;
       uri_ = "";
       distribution_ = "";
-      components_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       gpgKey_ = "";
     }
 
@@ -10803,6 +10647,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AptRepository();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11123,8 +10972,7 @@ public final class GuestPolicies {
     public static final int COMPONENTS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList components_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList components_;
     /**
      *
      *
@@ -11494,7 +11342,8 @@ public final class GuestPolicies {
         archiveType_ = 0;
         uri_ = "";
         distribution_ = "";
-        components_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         gpgKey_ = "";
         return this;
       }
@@ -11524,11 +11373,21 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.AptRepository result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          components_ = components_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.components_ = components_;
       }
 
       private void buildPartial0(
@@ -11542,10 +11401,6 @@ public final class GuestPolicies {
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.distribution_ = distribution_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          components_.makeImmutable();
-          result.components_ = components_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.gpgKey_ = gpgKey_;
@@ -11617,7 +11472,7 @@ public final class GuestPolicies {
         if (!other.components_.isEmpty()) {
           if (components_.isEmpty()) {
             components_ = other.components_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureComponentsIsMutable();
             components_.addAll(other.components_);
@@ -12012,14 +11867,14 @@ public final class GuestPolicies {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList components_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList components_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureComponentsIsMutable() {
-        if (!components_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           components_ = new com.google.protobuf.LazyStringArrayList(components_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -12033,8 +11888,7 @@ public final class GuestPolicies {
        * @return A list containing the components.
        */
       public com.google.protobuf.ProtocolStringList getComponentsList() {
-        components_.makeImmutable();
-        return components_;
+        return components_.getUnmodifiableView();
       }
       /**
        *
@@ -12099,7 +11953,6 @@ public final class GuestPolicies {
         }
         ensureComponentsIsMutable();
         components_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12121,7 +11974,6 @@ public final class GuestPolicies {
         }
         ensureComponentsIsMutable();
         components_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12140,7 +11992,6 @@ public final class GuestPolicies {
       public Builder addAllComponents(java.lang.Iterable<java.lang.String> values) {
         ensureComponentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, components_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12156,9 +12007,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearComponents() {
-        components_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        components_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -12181,7 +12031,6 @@ public final class GuestPolicies {
         checkByteStringIsUtf8(value);
         ensureComponentsIsMutable();
         components_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12530,13 +12379,18 @@ public final class GuestPolicies {
       id_ = "";
       displayName_ = "";
       baseUrl_ = "";
-      gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new YumRepository();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12716,8 +12570,7 @@ public final class GuestPolicies {
     public static final int GPG_KEYS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList gpgKeys_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList gpgKeys_;
     /**
      *
      *
@@ -13016,7 +12869,8 @@ public final class GuestPolicies {
         id_ = "";
         displayName_ = "";
         baseUrl_ = "";
-        gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -13045,11 +12899,21 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.YumRepository result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          gpgKeys_ = gpgKeys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.gpgKeys_ = gpgKeys_;
       }
 
       private void buildPartial0(
@@ -13063,10 +12927,6 @@ public final class GuestPolicies {
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.baseUrl_ = baseUrl_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          gpgKeys_.makeImmutable();
-          result.gpgKeys_ = gpgKeys_;
         }
       }
 
@@ -13137,7 +12997,7 @@ public final class GuestPolicies {
         if (!other.gpgKeys_.isEmpty()) {
           if (gpgKeys_.isEmpty()) {
             gpgKeys_ = other.gpgKeys_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureGpgKeysIsMutable();
             gpgKeys_.addAll(other.gpgKeys_);
@@ -13547,14 +13407,14 @@ public final class GuestPolicies {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList gpgKeys_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList gpgKeys_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureGpgKeysIsMutable() {
-        if (!gpgKeys_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -13568,8 +13428,7 @@ public final class GuestPolicies {
        * @return A list containing the gpgKeys.
        */
       public com.google.protobuf.ProtocolStringList getGpgKeysList() {
-        gpgKeys_.makeImmutable();
-        return gpgKeys_;
+        return gpgKeys_.getUnmodifiableView();
       }
       /**
        *
@@ -13634,7 +13493,6 @@ public final class GuestPolicies {
         }
         ensureGpgKeysIsMutable();
         gpgKeys_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -13656,7 +13514,6 @@ public final class GuestPolicies {
         }
         ensureGpgKeysIsMutable();
         gpgKeys_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -13675,7 +13532,6 @@ public final class GuestPolicies {
       public Builder addAllGpgKeys(java.lang.Iterable<java.lang.String> values) {
         ensureGpgKeysIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gpgKeys_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -13691,9 +13547,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearGpgKeys() {
-        gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -13716,7 +13571,6 @@ public final class GuestPolicies {
         checkByteStringIsUtf8(value);
         ensureGpgKeysIsMutable();
         gpgKeys_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -13949,13 +13803,18 @@ public final class GuestPolicies {
       id_ = "";
       displayName_ = "";
       baseUrl_ = "";
-      gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ZypperRepository();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14135,8 +13994,7 @@ public final class GuestPolicies {
     public static final int GPG_KEYS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList gpgKeys_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList gpgKeys_;
     /**
      *
      *
@@ -14437,7 +14295,8 @@ public final class GuestPolicies {
         id_ = "";
         displayName_ = "";
         baseUrl_ = "";
-        gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -14466,11 +14325,21 @@ public final class GuestPolicies {
       public com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository buildPartial() {
         com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository result =
             new com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.GuestPolicies.ZypperRepository result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          gpgKeys_ = gpgKeys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.gpgKeys_ = gpgKeys_;
       }
 
       private void buildPartial0(
@@ -14484,10 +14353,6 @@ public final class GuestPolicies {
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.baseUrl_ = baseUrl_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          gpgKeys_.makeImmutable();
-          result.gpgKeys_ = gpgKeys_;
         }
       }
 
@@ -14559,7 +14424,7 @@ public final class GuestPolicies {
         if (!other.gpgKeys_.isEmpty()) {
           if (gpgKeys_.isEmpty()) {
             gpgKeys_ = other.gpgKeys_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureGpgKeysIsMutable();
             gpgKeys_.addAll(other.gpgKeys_);
@@ -14969,14 +14834,14 @@ public final class GuestPolicies {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList gpgKeys_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList gpgKeys_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureGpgKeysIsMutable() {
-        if (!gpgKeys_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           gpgKeys_ = new com.google.protobuf.LazyStringArrayList(gpgKeys_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -14990,8 +14855,7 @@ public final class GuestPolicies {
        * @return A list containing the gpgKeys.
        */
       public com.google.protobuf.ProtocolStringList getGpgKeysList() {
-        gpgKeys_.makeImmutable();
-        return gpgKeys_;
+        return gpgKeys_.getUnmodifiableView();
       }
       /**
        *
@@ -15056,7 +14920,6 @@ public final class GuestPolicies {
         }
         ensureGpgKeysIsMutable();
         gpgKeys_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -15078,7 +14941,6 @@ public final class GuestPolicies {
         }
         ensureGpgKeysIsMutable();
         gpgKeys_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -15097,7 +14959,6 @@ public final class GuestPolicies {
       public Builder addAllGpgKeys(java.lang.Iterable<java.lang.String> values) {
         ensureGpgKeysIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gpgKeys_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -15113,9 +14974,8 @@ public final class GuestPolicies {
        * @return This builder for chaining.
        */
       public Builder clearGpgKeys() {
-        gpgKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        gpgKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -15138,7 +14998,6 @@ public final class GuestPolicies {
         checkByteStringIsUtf8(value);
         ensureGpgKeysIsMutable();
         gpgKeys_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -15294,6 +15153,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GooRepository();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16212,7 +16076,7 @@ public final class GuestPolicies {
      */
     com.google.cloud.osconfig.v1beta.GuestPolicies.GooRepositoryOrBuilder getGooOrBuilder();
 
-    com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository.RepositoryCase
+    public com.google.cloud.osconfig.v1beta.GuestPolicies.PackageRepository.RepositoryCase
         getRepositoryCase();
   }
   /**
@@ -16242,6 +16106,11 @@ public final class GuestPolicies {
       return new PackageRepository();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.GuestPolicies
           .internal_static_google_cloud_osconfig_v1beta_PackageRepository_descriptor;
@@ -16258,8 +16127,6 @@ public final class GuestPolicies {
     }
 
     private int repositoryCase_ = 0;
-
-    @SuppressWarnings("serial")
     private java.lang.Object repository_;
 
     public enum RepositoryCase
@@ -17956,7 +17823,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. Unique identifier for the recipe. Only one recipe with a given name is
      * installed on an instance.
-     *
      * Names are also used to identify resources which helps to determine whether
      * guest policies have conflicts. This means that requests to create multiple
      * recipes with the same name and version are rejected since they
@@ -17974,7 +17840,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. Unique identifier for the recipe. Only one recipe with a given name is
      * installed on an instance.
-     *
      * Names are also used to identify resources which helps to determine whether
      * guest policies have conflicts. This means that requests to create multiple
      * recipes with the same name and version are rejected since they
@@ -18206,7 +18071,6 @@ public final class GuestPolicies {
      * <pre>
      * Default is INSTALLED. The desired state the agent should maintain for this
      * recipe.
-     *
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
      * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -18227,7 +18091,6 @@ public final class GuestPolicies {
      * <pre>
      * Default is INSTALLED. The desired state the agent should maintain for this
      * recipe.
-     *
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
      * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -18251,23 +18114,17 @@ public final class GuestPolicies {
    * piece of software. It consists of a set of artifacts that are
    * downloaded, and a set of steps that install, configure, and/or update the
    * software.
-   *
    * Recipes support installing and updating software from artifacts in the
    * following formats:
    * Zip archive, Tar archive, Windows MSI, Debian package, and RPM package.
-   *
    * Additionally, recipes support executing a script (either defined in a file or
    * directly in this api) in bash, sh, cmd, and powershell.
-   *
    * Updating a software recipe
-   *
    * If a recipe is assigned to an instance and there is a recipe with the same
    * name but a lower version already installed and the assigned state
    * of the recipe is `UPDATED`, then the recipe is updated to
    * the new version.
-   *
    * Script Working Directories
-   *
    * Each script or execution step is run in its own temporary directory which
    * is deleted after completing the step.
    * </pre>
@@ -18297,6 +18154,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SoftwareRecipe();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18424,7 +18286,6 @@ public final class GuestPolicies {
        * <pre>
        * Defaults to false. When false, recipes are subject to validations
        * based on the artifact type:
-       *
        * Remote: A checksum must be specified, and only protocols with
        * transport-layer security are permitted.
        * GCS:    An object generation number must be specified.
@@ -18436,7 +18297,7 @@ public final class GuestPolicies {
        */
       boolean getAllowInsecure();
 
-      com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.ArtifactCase
+      public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Artifact.ArtifactCase
           getArtifactCase();
     }
     /**
@@ -18466,6 +18327,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Artifact();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18577,6 +18443,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Remote();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -19531,6 +19402,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Gcs();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -20494,8 +20370,6 @@ public final class GuestPolicies {
       }
 
       private int artifactCase_ = 0;
-
-      @SuppressWarnings("serial")
       private java.lang.Object artifact_;
 
       public enum ArtifactCase
@@ -20716,7 +20590,6 @@ public final class GuestPolicies {
        * <pre>
        * Defaults to false. When false, recipes are subject to validations
        * based on the artifact type:
-       *
        * Remote: A checksum must be specified, and only protocols with
        * transport-layer security are permitted.
        * GCS:    An object generation number must be specified.
@@ -21814,7 +21687,6 @@ public final class GuestPolicies {
          * <pre>
          * Defaults to false. When false, recipes are subject to validations
          * based on the artifact type:
-         *
          * Remote: A checksum must be specified, and only protocols with
          * transport-layer security are permitted.
          * GCS:    An object generation number must be specified.
@@ -21834,7 +21706,6 @@ public final class GuestPolicies {
          * <pre>
          * Defaults to false. When false, recipes are subject to validations
          * based on the artifact type:
-         *
          * Remote: A checksum must be specified, and only protocols with
          * transport-layer security are permitted.
          * GCS:    An object generation number must be specified.
@@ -21858,7 +21729,6 @@ public final class GuestPolicies {
          * <pre>
          * Defaults to false. When false, recipes are subject to validations
          * based on the artifact type:
-         *
          * Remote: A checksum must be specified, and only protocols with
          * transport-layer security are permitted.
          * GCS:    An object generation number must be specified.
@@ -22219,7 +22089,8 @@ public final class GuestPolicies {
       com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.RunScriptOrBuilder
           getScriptRunOrBuilder();
 
-      com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.StepCase getStepCase();
+      public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.StepCase
+          getStepCase();
     }
     /**
      *
@@ -22246,6 +22117,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Step();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22344,7 +22220,6 @@ public final class GuestPolicies {
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
-         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -22368,7 +22243,6 @@ public final class GuestPolicies {
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
-         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -22411,6 +22285,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new CopyFile();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22566,7 +22445,6 @@ public final class GuestPolicies {
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
-         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -22601,7 +22479,6 @@ public final class GuestPolicies {
          * corresponding to the read permissions, the 2 bit corresponds to the
          * write bit, and the one bit corresponds to the execute permission.
          * Default behavior is 755.
-         *
          * Below are some examples of permissions and their associated values:
          * read, write, and execute: 7
          * read and execute: 5
@@ -23355,7 +23232,6 @@ public final class GuestPolicies {
            * corresponding to the read permissions, the 2 bit corresponds to the
            * write bit, and the one bit corresponds to the execute permission.
            * Default behavior is 755.
-           *
            * Below are some examples of permissions and their associated values:
            * read, write, and execute: 7
            * read and execute: 5
@@ -23389,7 +23265,6 @@ public final class GuestPolicies {
            * corresponding to the read permissions, the 2 bit corresponds to the
            * write bit, and the one bit corresponds to the execute permission.
            * Default behavior is 755.
-           *
            * Below are some examples of permissions and their associated values:
            * read, write, and execute: 7
            * read and execute: 5
@@ -23423,7 +23298,6 @@ public final class GuestPolicies {
            * corresponding to the read permissions, the 2 bit corresponds to the
            * write bit, and the one bit corresponds to the execute permission.
            * Default behavior is 755.
-           *
            * Below are some examples of permissions and their associated values:
            * read, write, and execute: 7
            * read and execute: 5
@@ -23456,7 +23330,6 @@ public final class GuestPolicies {
            * corresponding to the read permissions, the 2 bit corresponds to the
            * write bit, and the one bit corresponds to the execute permission.
            * Default behavior is 755.
-           *
            * Below are some examples of permissions and their associated values:
            * read, write, and execute: 7
            * read and execute: 5
@@ -23485,7 +23358,6 @@ public final class GuestPolicies {
            * corresponding to the read permissions, the 2 bit corresponds to the
            * write bit, and the one bit corresponds to the execute permission.
            * Default behavior is 755.
-           *
            * Below are some examples of permissions and their associated values:
            * read, write, and execute: 7
            * read and execute: 5
@@ -23695,6 +23567,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new ExtractArchive();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -25111,7 +24988,7 @@ public final class GuestPolicies {
 
         private InstallMsi() {
           artifactId_ = "";
-          flags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          flags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           allowedExitCodes_ = emptyIntList();
         }
 
@@ -25119,6 +24996,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new InstallMsi();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -25192,8 +25074,7 @@ public final class GuestPolicies {
         public static final int FLAGS_FIELD_NUMBER = 2;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringArrayList flags_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        private com.google.protobuf.LazyStringList flags_;
         /**
          *
          *
@@ -25573,7 +25454,8 @@ public final class GuestPolicies {
             super.clear();
             bitField0_ = 0;
             artifactId_ = "";
-            flags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            flags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000002);
             allowedExitCodes_ = emptyIntList();
             return this;
           }
@@ -25619,6 +25501,11 @@ public final class GuestPolicies {
           private void buildPartialRepeatedFields(
               com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.InstallMsi
                   result) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              flags_ = flags_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.flags_ = flags_;
             if (((bitField0_ & 0x00000004) != 0)) {
               allowedExitCodes_.makeImmutable();
               bitField0_ = (bitField0_ & ~0x00000004);
@@ -25632,10 +25519,6 @@ public final class GuestPolicies {
             int from_bitField0_ = bitField0_;
             if (((from_bitField0_ & 0x00000001) != 0)) {
               result.artifactId_ = artifactId_;
-            }
-            if (((from_bitField0_ & 0x00000002) != 0)) {
-              flags_.makeImmutable();
-              result.flags_ = flags_;
             }
           }
 
@@ -25701,7 +25584,7 @@ public final class GuestPolicies {
             if (!other.flags_.isEmpty()) {
               if (flags_.isEmpty()) {
                 flags_ = other.flags_;
-                bitField0_ |= 0x00000002;
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureFlagsIsMutable();
                 flags_.addAll(other.flags_);
@@ -25900,14 +25783,14 @@ public final class GuestPolicies {
             return this;
           }
 
-          private com.google.protobuf.LazyStringArrayList flags_ =
-              com.google.protobuf.LazyStringArrayList.emptyList();
+          private com.google.protobuf.LazyStringList flags_ =
+              com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureFlagsIsMutable() {
-            if (!flags_.isModifiable()) {
+            if (!((bitField0_ & 0x00000002) != 0)) {
               flags_ = new com.google.protobuf.LazyStringArrayList(flags_);
+              bitField0_ |= 0x00000002;
             }
-            bitField0_ |= 0x00000002;
           }
           /**
            *
@@ -25922,8 +25805,7 @@ public final class GuestPolicies {
            * @return A list containing the flags.
            */
           public com.google.protobuf.ProtocolStringList getFlagsList() {
-            flags_.makeImmutable();
-            return flags_;
+            return flags_.getUnmodifiableView();
           }
           /**
            *
@@ -25992,7 +25874,6 @@ public final class GuestPolicies {
             }
             ensureFlagsIsMutable();
             flags_.set(index, value);
-            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -26015,7 +25896,6 @@ public final class GuestPolicies {
             }
             ensureFlagsIsMutable();
             flags_.add(value);
-            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -26035,7 +25915,6 @@ public final class GuestPolicies {
           public Builder addAllFlags(java.lang.Iterable<java.lang.String> values) {
             ensureFlagsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, flags_);
-            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -26052,9 +25931,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearFlags() {
-            flags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            flags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000002);
-            ;
             onChanged();
             return this;
           }
@@ -26078,7 +25956,6 @@ public final class GuestPolicies {
             checkByteStringIsUtf8(value);
             ensureFlagsIsMutable();
             flags_.add(value);
-            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -26345,6 +26222,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new InstallDpkg();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -27027,6 +26909,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new InstallRpm();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -27821,7 +27708,8 @@ public final class GuestPolicies {
          */
         int getAllowedExitCodes(int index);
 
-        com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile.LocationTypeCase
+        public com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile
+                .LocationTypeCase
             getLocationTypeCase();
       }
       /**
@@ -27844,7 +27732,7 @@ public final class GuestPolicies {
         }
 
         private ExecFile() {
-          args_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           allowedExitCodes_ = emptyIntList();
         }
 
@@ -27852,6 +27740,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new ExecFile();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -27871,8 +27764,6 @@ public final class GuestPolicies {
         }
 
         private int locationTypeCase_ = 0;
-
-        @SuppressWarnings("serial")
         private java.lang.Object locationType_;
 
         public enum LocationTypeCase
@@ -28062,8 +27953,7 @@ public final class GuestPolicies {
         public static final int ARGS_FIELD_NUMBER = 3;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringArrayList args_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        private com.google.protobuf.LazyStringList args_;
         /**
          *
          *
@@ -28463,7 +28353,8 @@ public final class GuestPolicies {
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            args_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000004);
             allowedExitCodes_ = emptyIntList();
             locationTypeCase_ = 0;
             locationType_ = null;
@@ -28511,6 +28402,11 @@ public final class GuestPolicies {
 
           private void buildPartialRepeatedFields(
               com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile result) {
+            if (((bitField0_ & 0x00000004) != 0)) {
+              args_ = args_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000004);
+            }
+            result.args_ = args_;
             if (((bitField0_ & 0x00000008) != 0)) {
               allowedExitCodes_.makeImmutable();
               bitField0_ = (bitField0_ & ~0x00000008);
@@ -28521,10 +28417,6 @@ public final class GuestPolicies {
           private void buildPartial0(
               com.google.cloud.osconfig.v1beta.GuestPolicies.SoftwareRecipe.Step.ExecFile result) {
             int from_bitField0_ = bitField0_;
-            if (((from_bitField0_ & 0x00000004) != 0)) {
-              args_.makeImmutable();
-              result.args_ = args_;
-            }
           }
 
           private void buildPartialOneofs(
@@ -28590,7 +28482,7 @@ public final class GuestPolicies {
             if (!other.args_.isEmpty()) {
               if (args_.isEmpty()) {
                 args_ = other.args_;
-                bitField0_ |= 0x00000004;
+                bitField0_ = (bitField0_ & ~0x00000004);
               } else {
                 ensureArgsIsMutable();
                 args_.addAll(other.args_);
@@ -28993,14 +28885,14 @@ public final class GuestPolicies {
             return this;
           }
 
-          private com.google.protobuf.LazyStringArrayList args_ =
-              com.google.protobuf.LazyStringArrayList.emptyList();
+          private com.google.protobuf.LazyStringList args_ =
+              com.google.protobuf.LazyStringArrayList.EMPTY;
 
           private void ensureArgsIsMutable() {
-            if (!args_.isModifiable()) {
+            if (!((bitField0_ & 0x00000004) != 0)) {
               args_ = new com.google.protobuf.LazyStringArrayList(args_);
+              bitField0_ |= 0x00000004;
             }
-            bitField0_ |= 0x00000004;
           }
           /**
            *
@@ -29014,8 +28906,7 @@ public final class GuestPolicies {
            * @return A list containing the args.
            */
           public com.google.protobuf.ProtocolStringList getArgsList() {
-            args_.makeImmutable();
-            return args_;
+            return args_.getUnmodifiableView();
           }
           /**
            *
@@ -29080,7 +28971,6 @@ public final class GuestPolicies {
             }
             ensureArgsIsMutable();
             args_.set(index, value);
-            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -29102,7 +28992,6 @@ public final class GuestPolicies {
             }
             ensureArgsIsMutable();
             args_.add(value);
-            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -29121,7 +29010,6 @@ public final class GuestPolicies {
           public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
             ensureArgsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
-            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -29137,9 +29025,8 @@ public final class GuestPolicies {
            * @return This builder for chaining.
            */
           public Builder clearArgs() {
-            args_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000004);
-            ;
             onChanged();
             return this;
           }
@@ -29162,7 +29049,6 @@ public final class GuestPolicies {
             checkByteStringIsUtf8(value);
             ensureArgsIsMutable();
             args_.add(value);
-            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -29508,6 +29394,11 @@ public final class GuestPolicies {
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new RunScript();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -30759,8 +30650,6 @@ public final class GuestPolicies {
       }
 
       private int stepCase_ = 0;
-
-      @SuppressWarnings("serial")
       private java.lang.Object step_;
 
       public enum StepCase
@@ -33649,7 +33538,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. Unique identifier for the recipe. Only one recipe with a given name is
      * installed on an instance.
-     *
      * Names are also used to identify resources which helps to determine whether
      * guest policies have conflicts. This means that requests to create multiple
      * recipes with the same name and version are rejected since they
@@ -33678,7 +33566,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. Unique identifier for the recipe. Only one recipe with a given name is
      * installed on an instance.
-     *
      * Names are also used to identify resources which helps to determine whether
      * guest policies have conflicts. This means that requests to create multiple
      * recipes with the same name and version are rejected since they
@@ -34012,7 +33899,6 @@ public final class GuestPolicies {
      * <pre>
      * Default is INSTALLED. The desired state the agent should maintain for this
      * recipe.
-     *
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
      * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -34036,7 +33922,6 @@ public final class GuestPolicies {
      * <pre>
      * Default is INSTALLED. The desired state the agent should maintain for this
      * recipe.
-     *
      * INSTALLED: The software recipe is installed on the instance but
      *            won't be updated to new versions.
      * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -34283,23 +34168,17 @@ public final class GuestPolicies {
      * piece of software. It consists of a set of artifacts that are
      * downloaded, and a set of steps that install, configure, and/or update the
      * software.
-     *
      * Recipes support installing and updating software from artifacts in the
      * following formats:
      * Zip archive, Tar archive, Windows MSI, Debian package, and RPM package.
-     *
      * Additionally, recipes support executing a script (either defined in a file or
      * directly in this api) in bash, sh, cmd, and powershell.
-     *
      * Updating a software recipe
-     *
      * If a recipe is assigned to an instance and there is a recipe with the same
      * name but a lower version already installed and the assigned state
      * of the recipe is `UPDATED`, then the recipe is updated to
      * the new version.
-     *
      * Script Working Directories
-     *
      * Each script or execution step is run in its own temporary directory which
      * is deleted after completing the step.
      * </pre>
@@ -34701,7 +34580,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. Unique identifier for the recipe. Only one recipe with a given name is
        * installed on an instance.
-       *
        * Names are also used to identify resources which helps to determine whether
        * guest policies have conflicts. This means that requests to create multiple
        * recipes with the same name and version are rejected since they
@@ -34729,7 +34607,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. Unique identifier for the recipe. Only one recipe with a given name is
        * installed on an instance.
-       *
        * Names are also used to identify resources which helps to determine whether
        * guest policies have conflicts. This means that requests to create multiple
        * recipes with the same name and version are rejected since they
@@ -34757,7 +34634,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. Unique identifier for the recipe. Only one recipe with a given name is
        * installed on an instance.
-       *
        * Names are also used to identify resources which helps to determine whether
        * guest policies have conflicts. This means that requests to create multiple
        * recipes with the same name and version are rejected since they
@@ -34784,7 +34660,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. Unique identifier for the recipe. Only one recipe with a given name is
        * installed on an instance.
-       *
        * Names are also used to identify resources which helps to determine whether
        * guest policies have conflicts. This means that requests to create multiple
        * recipes with the same name and version are rejected since they
@@ -34807,7 +34682,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. Unique identifier for the recipe. Only one recipe with a given name is
        * installed on an instance.
-       *
        * Names are also used to identify resources which helps to determine whether
        * guest policies have conflicts. This means that requests to create multiple
        * recipes with the same name and version are rejected since they
@@ -36154,7 +36028,6 @@ public final class GuestPolicies {
        * <pre>
        * Default is INSTALLED. The desired state the agent should maintain for this
        * recipe.
-       *
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
        * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -36178,7 +36051,6 @@ public final class GuestPolicies {
        * <pre>
        * Default is INSTALLED. The desired state the agent should maintain for this
        * recipe.
-       *
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
        * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -36205,7 +36077,6 @@ public final class GuestPolicies {
        * <pre>
        * Default is INSTALLED. The desired state the agent should maintain for this
        * recipe.
-       *
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
        * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -36233,7 +36104,6 @@ public final class GuestPolicies {
        * <pre>
        * Default is INSTALLED. The desired state the agent should maintain for this
        * recipe.
-       *
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
        * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -36264,7 +36134,6 @@ public final class GuestPolicies {
        * <pre>
        * Default is INSTALLED. The desired state the agent should maintain for this
        * recipe.
-       *
        * INSTALLED: The software recipe is installed on the instance but
        *            won't be updated to new versions.
        * UPDATED: The software recipe is installed on the instance. The recipe is
@@ -36394,7 +36263,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. The logical name of the guest policy in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -36413,7 +36281,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. The logical name of the guest policy in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -36496,6 +36363,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreateGuestPolicyRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -36581,7 +36453,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. The logical name of the guest policy in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -36611,7 +36482,6 @@ public final class GuestPolicies {
      * <pre>
      * Required. The logical name of the guest policy in the project
      * with the following restrictions:
-     *
      * * Must contain only lowercase letters, numbers, and hyphens.
      * * Must start with a letter.
      * * Must be between 1-63 characters.
@@ -37237,7 +37107,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. The logical name of the guest policy in the project
        * with the following restrictions:
-       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -37266,7 +37135,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. The logical name of the guest policy in the project
        * with the following restrictions:
-       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -37295,7 +37163,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. The logical name of the guest policy in the project
        * with the following restrictions:
-       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -37323,7 +37190,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. The logical name of the guest policy in the project
        * with the following restrictions:
-       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -37347,7 +37213,6 @@ public final class GuestPolicies {
        * <pre>
        * Required. The logical name of the guest policy in the project
        * with the following restrictions:
-       *
        * * Must contain only lowercase letters, numbers, and hyphens.
        * * Must start with a letter.
        * * Must be between 1-63 characters.
@@ -37710,6 +37575,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GetGuestPolicyRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -38432,6 +38302,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListGuestPoliciesRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -39451,6 +39326,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListGuestPoliciesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -40696,6 +40576,11 @@ public final class GuestPolicies {
       return new UpdateGuestPolicyRequest();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.GuestPolicies
           .internal_static_google_cloud_osconfig_v1beta_UpdateGuestPolicyRequest_descriptor;
@@ -41751,6 +41636,11 @@ public final class GuestPolicies {
       return new DeleteGuestPolicyRequest();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.GuestPolicies
           .internal_static_google_cloud_osconfig_v1beta_DeleteGuestPolicyRequest_descriptor;
@@ -42523,6 +42413,11 @@ public final class GuestPolicies {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LookupEffectiveGuestPolicyRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -43973,6 +43868,11 @@ public final class GuestPolicies {
       return new EffectiveGuestPolicy();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.GuestPolicies
           .internal_static_google_cloud_osconfig_v1beta_EffectiveGuestPolicy_descriptor;
@@ -44080,6 +43980,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SourcedPackage();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -45081,6 +44986,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SourcedPackageRepository();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -46109,6 +46019,11 @@ public final class GuestPolicies {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SourcedSoftwareRecipe();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -49409,156 +49324,155 @@ public final class GuestPolicies {
           + "a\032\037google/api/field_behavior.proto\032\031goog"
           + "le/api/resource.proto\032 google/protobuf/f"
           + "ield_mask.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\230\004\n\013GuestPolicy\022\022\n\004name\030\001 \001(\tB\004"
-          + "\342A\001\002\022\023\n\013description\030\002 \001(\t\0225\n\013create_time"
-          + "\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003"
-          + "\0225\n\013update_time\030\004 \001(\0132\032.google.protobuf."
-          + "TimestampB\004\342A\001\003\022B\n\nassignment\030\006 \001(\0132(.go"
-          + "ogle.cloud.osconfig.v1beta.AssignmentB\004\342"
-          + "A\001\002\0227\n\010packages\030\007 \003(\0132%.google.cloud.osc"
-          + "onfig.v1beta.Package\022M\n\024package_reposito"
-          + "ries\030\010 \003(\0132/.google.cloud.osconfig.v1bet"
-          + "a.PackageRepository\022=\n\007recipes\030\t \003(\0132,.g"
-          + "oogle.cloud.osconfig.v1beta.SoftwareReci"
-          + "pe\022\014\n\004etag\030\n \001(\t:Y\352AV\n#osconfig.googleap"
-          + "is.com/GuestPolicy\022/projects/{project}/g"
-          + "uestPolicies/{guest_policy}\"\271\003\n\nAssignme"
-          + "nt\022I\n\014group_labels\030\001 \003(\01323.google.cloud."
-          + "osconfig.v1beta.Assignment.GroupLabel\022\r\n"
-          + "\005zones\030\002 \003(\t\022\021\n\tinstances\030\003 \003(\t\022\036\n\026insta"
-          + "nce_name_prefixes\030\004 \003(\t\022A\n\010os_types\030\005 \003("
-          + "\0132/.google.cloud.osconfig.v1beta.Assignm"
-          + "ent.OsType\032\214\001\n\nGroupLabel\022O\n\006labels\030\001 \003("
-          + "\0132?.google.cloud.osconfig.v1beta.Assignm"
-          + "ent.GroupLabel.LabelsEntry\032-\n\013LabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032L\n\006OsT"
-          + "ype\022\025\n\ros_short_name\030\001 \001(\t\022\022\n\nos_version"
-          + "\030\002 \001(\t\022\027\n\017os_architecture\030\003 \001(\t\"\364\001\n\007Pack"
-          + "age\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022A\n\rdesired_state"
-          + "\030\002 \001(\0162*.google.cloud.osconfig.v1beta.De"
-          + "siredState\022>\n\007manager\030\003 \001(\0162-.google.clo"
-          + "ud.osconfig.v1beta.Package.Manager\"R\n\007Ma"
-          + "nager\022\027\n\023MANAGER_UNSPECIFIED\020\000\022\007\n\003ANY\020\001\022"
-          + "\007\n\003APT\020\002\022\007\n\003YUM\020\003\022\n\n\006ZYPPER\020\004\022\007\n\003GOO\020\005\"\373"
-          + "\001\n\rAptRepository\022M\n\014archive_type\030\001 \001(\01627"
-          + ".google.cloud.osconfig.v1beta.AptReposit"
-          + "ory.ArchiveType\022\021\n\003uri\030\002 \001(\tB\004\342A\001\002\022\032\n\014di"
-          + "stribution\030\003 \001(\tB\004\342A\001\002\022\030\n\ncomponents\030\004 \003"
-          + "(\tB\004\342A\001\002\022\017\n\007gpg_key\030\005 \001(\t\"A\n\013ArchiveType"
-          + "\022\034\n\030ARCHIVE_TYPE_UNSPECIFIED\020\000\022\007\n\003DEB\020\001\022"
-          + "\013\n\007DEB_SRC\020\002\"a\n\rYumRepository\022\020\n\002id\030\001 \001("
-          + "\tB\004\342A\001\002\022\024\n\014display_name\030\002 \001(\t\022\026\n\010base_ur"
-          + "l\030\003 \001(\tB\004\342A\001\002\022\020\n\010gpg_keys\030\004 \003(\t\"d\n\020Zyppe"
-          + "rRepository\022\020\n\002id\030\001 \001(\tB\004\342A\001\002\022\024\n\014display"
-          + "_name\030\002 \001(\t\022\026\n\010base_url\030\003 \001(\tB\004\342A\001\002\022\020\n\010g"
-          + "pg_keys\030\004 \003(\t\"6\n\rGooRepository\022\022\n\004name\030\001"
-          + " \001(\tB\004\342A\001\002\022\021\n\003url\030\002 \001(\tB\004\342A\001\002\"\227\002\n\021Packag"
-          + "eRepository\022:\n\003apt\030\001 \001(\0132+.google.cloud."
-          + "osconfig.v1beta.AptRepositoryH\000\022:\n\003yum\030\002"
-          + " \001(\0132+.google.cloud.osconfig.v1beta.YumR"
-          + "epositoryH\000\022@\n\006zypper\030\003 \001(\0132..google.clo"
-          + "ud.osconfig.v1beta.ZypperRepositoryH\000\022:\n"
-          + "\003goo\030\004 \001(\0132+.google.cloud.osconfig.v1bet"
-          + "a.GooRepositoryH\000B\014\n\nrepository\"\220\021\n\016Soft"
-          + "wareRecipe\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\017\n\007versio"
-          + "n\030\002 \001(\t\022H\n\tartifacts\030\003 \003(\01325.google.clou"
-          + "d.osconfig.v1beta.SoftwareRecipe.Artifac"
-          + "t\022H\n\rinstall_steps\030\004 \003(\01321.google.cloud."
-          + "osconfig.v1beta.SoftwareRecipe.Step\022G\n\014u"
-          + "pdate_steps\030\005 \003(\01321.google.cloud.osconfi"
-          + "g.v1beta.SoftwareRecipe.Step\022A\n\rdesired_"
-          + "state\030\006 \001(\0162*.google.cloud.osconfig.v1be"
-          + "ta.DesiredState\032\276\002\n\010Artifact\022\020\n\002id\030\001 \001(\t"
-          + "B\004\342A\001\002\022N\n\006remote\030\002 \001(\0132<.google.cloud.os"
-          + "config.v1beta.SoftwareRecipe.Artifact.Re"
-          + "moteH\000\022H\n\003gcs\030\003 \001(\01329.google.cloud.oscon"
-          + "fig.v1beta.SoftwareRecipe.Artifact.GcsH\000"
-          + "\022\026\n\016allow_insecure\030\004 \001(\010\032\'\n\006Remote\022\013\n\003ur"
-          + "i\030\001 \001(\t\022\020\n\010checksum\030\002 \001(\t\0329\n\003Gcs\022\016\n\006buck"
-          + "et\030\001 \001(\t\022\016\n\006object\030\002 \001(\t\022\022\n\ngeneration\030\003"
-          + " \001(\003B\n\n\010artifact\032\367\013\n\004Step\022O\n\tfile_copy\030\001"
-          + " \001(\0132:.google.cloud.osconfig.v1beta.Soft"
-          + "wareRecipe.Step.CopyFileH\000\022^\n\022archive_ex"
-          + "traction\030\002 \001(\0132@.google.cloud.osconfig.v"
-          + "1beta.SoftwareRecipe.Step.ExtractArchive"
-          + "H\000\022X\n\020msi_installation\030\003 \001(\0132<.google.cl"
+          + "mp.proto\"\224\004\n\013GuestPolicy\022\021\n\004name\030\001 \001(\tB\003"
+          + "\340A\002\022\023\n\013description\030\002 \001(\t\0224\n\013create_time\030"
+          + "\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224"
+          + "\n\013update_time\030\004 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\022A\n\nassignment\030\006 \001(\0132(.googl"
+          + "e.cloud.osconfig.v1beta.AssignmentB\003\340A\002\022"
+          + "7\n\010packages\030\007 \003(\0132%.google.cloud.osconfi"
+          + "g.v1beta.Package\022M\n\024package_repositories"
+          + "\030\010 \003(\0132/.google.cloud.osconfig.v1beta.Pa"
+          + "ckageRepository\022=\n\007recipes\030\t \003(\0132,.googl"
+          + "e.cloud.osconfig.v1beta.SoftwareRecipe\022\014"
+          + "\n\004etag\030\n \001(\t:Y\352AV\n#osconfig.googleapis.c"
+          + "om/GuestPolicy\022/projects/{project}/guest"
+          + "Policies/{guest_policy}\"\271\003\n\nAssignment\022I"
+          + "\n\014group_labels\030\001 \003(\01323.google.cloud.osco"
+          + "nfig.v1beta.Assignment.GroupLabel\022\r\n\005zon"
+          + "es\030\002 \003(\t\022\021\n\tinstances\030\003 \003(\t\022\036\n\026instance_"
+          + "name_prefixes\030\004 \003(\t\022A\n\010os_types\030\005 \003(\0132/."
+          + "google.cloud.osconfig.v1beta.Assignment."
+          + "OsType\032\214\001\n\nGroupLabel\022O\n\006labels\030\001 \003(\0132?."
+          + "google.cloud.osconfig.v1beta.Assignment."
+          + "GroupLabel.LabelsEntry\032-\n\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032L\n\006OsType\022"
+          + "\025\n\ros_short_name\030\001 \001(\t\022\022\n\nos_version\030\002 \001"
+          + "(\t\022\027\n\017os_architecture\030\003 \001(\t\"\363\001\n\007Package\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\002\022A\n\rdesired_state\030\002 \001("
+          + "\0162*.google.cloud.osconfig.v1beta.Desired"
+          + "State\022>\n\007manager\030\003 \001(\0162-.google.cloud.os"
+          + "config.v1beta.Package.Manager\"R\n\007Manager"
+          + "\022\027\n\023MANAGER_UNSPECIFIED\020\000\022\007\n\003ANY\020\001\022\007\n\003AP"
+          + "T\020\002\022\007\n\003YUM\020\003\022\n\n\006ZYPPER\020\004\022\007\n\003GOO\020\005\"\370\001\n\rAp"
+          + "tRepository\022M\n\014archive_type\030\001 \001(\01627.goog"
+          + "le.cloud.osconfig.v1beta.AptRepository.A"
+          + "rchiveType\022\020\n\003uri\030\002 \001(\tB\003\340A\002\022\031\n\014distribu"
+          + "tion\030\003 \001(\tB\003\340A\002\022\027\n\ncomponents\030\004 \003(\tB\003\340A\002"
+          + "\022\017\n\007gpg_key\030\005 \001(\t\"A\n\013ArchiveType\022\034\n\030ARCH"
+          + "IVE_TYPE_UNSPECIFIED\020\000\022\007\n\003DEB\020\001\022\013\n\007DEB_S"
+          + "RC\020\002\"_\n\rYumRepository\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024"
+          + "\n\014display_name\030\002 \001(\t\022\025\n\010base_url\030\003 \001(\tB\003"
+          + "\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\"b\n\020ZypperRepositor"
+          + "y\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t"
+          + "\022\025\n\010base_url\030\003 \001(\tB\003\340A\002\022\020\n\010gpg_keys\030\004 \003("
+          + "\t\"4\n\rGooRepository\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n"
+          + "\003url\030\002 \001(\tB\003\340A\002\"\227\002\n\021PackageRepository\022:\n"
+          + "\003apt\030\001 \001(\0132+.google.cloud.osconfig.v1bet"
+          + "a.AptRepositoryH\000\022:\n\003yum\030\002 \001(\0132+.google."
+          + "cloud.osconfig.v1beta.YumRepositoryH\000\022@\n"
+          + "\006zypper\030\003 \001(\0132..google.cloud.osconfig.v1"
+          + "beta.ZypperRepositoryH\000\022:\n\003goo\030\004 \001(\0132+.g"
+          + "oogle.cloud.osconfig.v1beta.GooRepositor"
+          + "yH\000B\014\n\nrepository\"\206\021\n\016SoftwareRecipe\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\002\022\017\n\007version\030\002 \001(\t\022H\n\tarti"
+          + "facts\030\003 \003(\01325.google.cloud.osconfig.v1be"
+          + "ta.SoftwareRecipe.Artifact\022H\n\rinstall_st"
+          + "eps\030\004 \003(\01321.google.cloud.osconfig.v1beta"
+          + ".SoftwareRecipe.Step\022G\n\014update_steps\030\005 \003"
+          + "(\01321.google.cloud.osconfig.v1beta.Softwa"
+          + "reRecipe.Step\022A\n\rdesired_state\030\006 \001(\0162*.g"
+          + "oogle.cloud.osconfig.v1beta.DesiredState"
+          + "\032\275\002\n\010Artifact\022\017\n\002id\030\001 \001(\tB\003\340A\002\022N\n\006remote"
+          + "\030\002 \001(\0132<.google.cloud.osconfig.v1beta.So"
+          + "ftwareRecipe.Artifact.RemoteH\000\022H\n\003gcs\030\003 "
+          + "\001(\01329.google.cloud.osconfig.v1beta.Softw"
+          + "areRecipe.Artifact.GcsH\000\022\026\n\016allow_insecu"
+          + "re\030\004 \001(\010\032\'\n\006Remote\022\013\n\003uri\030\001 \001(\t\022\020\n\010check"
+          + "sum\030\002 \001(\t\0329\n\003Gcs\022\016\n\006bucket\030\001 \001(\t\022\016\n\006obje"
+          + "ct\030\002 \001(\t\022\022\n\ngeneration\030\003 \001(\003B\n\n\010artifact"
+          + "\032\357\013\n\004Step\022O\n\tfile_copy\030\001 \001(\0132:.google.cl"
           + "oud.osconfig.v1beta.SoftwareRecipe.Step."
-          + "InstallMsiH\000\022Z\n\021dpkg_installation\030\004 \001(\0132"
-          + "=.google.cloud.osconfig.v1beta.SoftwareR"
-          + "ecipe.Step.InstallDpkgH\000\022X\n\020rpm_installa"
-          + "tion\030\005 \001(\0132<.google.cloud.osconfig.v1bet"
-          + "a.SoftwareRecipe.Step.InstallRpmH\000\022O\n\tfi"
-          + "le_exec\030\006 \001(\0132:.google.cloud.osconfig.v1"
-          + "beta.SoftwareRecipe.Step.ExecFileH\000\022Q\n\ns"
-          + "cript_run\030\007 \001(\0132;.google.cloud.osconfig."
-          + "v1beta.SoftwareRecipe.Step.RunScriptH\000\032h"
-          + "\n\010CopyFile\022\031\n\013artifact_id\030\001 \001(\tB\004\342A\001\002\022\031\n"
-          + "\013destination\030\002 \001(\tB\004\342A\001\002\022\021\n\toverwrite\030\003 "
-          + "\001(\010\022\023\n\013permissions\030\004 \001(\t\032\227\002\n\016ExtractArch"
-          + "ive\022\031\n\013artifact_id\030\001 \001(\tB\004\342A\001\002\022\023\n\013destin"
-          + "ation\030\002 \001(\t\022`\n\004type\030\003 \001(\0162L.google.cloud"
-          + ".osconfig.v1beta.SoftwareRecipe.Step.Ext"
-          + "ractArchive.ArchiveTypeB\004\342A\001\002\"s\n\013Archive"
-          + "Type\022\034\n\030ARCHIVE_TYPE_UNSPECIFIED\020\000\022\007\n\003TA"
-          + "R\020\001\022\014\n\010TAR_GZIP\020\002\022\014\n\010TAR_BZIP\020\003\022\014\n\010TAR_L"
-          + "ZMA\020\004\022\n\n\006TAR_XZ\020\005\022\007\n\003ZIP\020\013\032R\n\nInstallMsi"
-          + "\022\031\n\013artifact_id\030\001 \001(\tB\004\342A\001\002\022\r\n\005flags\030\002 \003"
-          + "(\t\022\032\n\022allowed_exit_codes\030\003 \003(\005\032(\n\013Instal"
-          + "lDpkg\022\031\n\013artifact_id\030\001 \001(\tB\004\342A\001\002\032\'\n\nInst"
-          + "allRpm\022\031\n\013artifact_id\030\001 \001(\tB\004\342A\001\002\032r\n\010Exe"
-          + "cFile\022\025\n\013artifact_id\030\001 \001(\tH\000\022\024\n\nlocal_pa"
-          + "th\030\002 \001(\tH\000\022\014\n\004args\030\003 \003(\t\022\032\n\022allowed_exit"
-          + "_codes\030\004 \003(\005B\017\n\rlocation_type\032\342\001\n\tRunScr"
-          + "ipt\022\024\n\006script\030\001 \001(\tB\004\342A\001\002\022\032\n\022allowed_exi"
-          + "t_codes\030\002 \003(\005\022\\\n\013interpreter\030\003 \001(\0162G.goo"
+          + "CopyFileH\000\022^\n\022archive_extraction\030\002 \001(\0132@"
+          + ".google.cloud.osconfig.v1beta.SoftwareRe"
+          + "cipe.Step.ExtractArchiveH\000\022X\n\020msi_instal"
+          + "lation\030\003 \001(\0132<.google.cloud.osconfig.v1b"
+          + "eta.SoftwareRecipe.Step.InstallMsiH\000\022Z\n\021"
+          + "dpkg_installation\030\004 \001(\0132=.google.cloud.o"
+          + "sconfig.v1beta.SoftwareRecipe.Step.Insta"
+          + "llDpkgH\000\022X\n\020rpm_installation\030\005 \001(\0132<.goo"
           + "gle.cloud.osconfig.v1beta.SoftwareRecipe"
-          + ".Step.RunScript.Interpreter\"E\n\013Interpret"
-          + "er\022\033\n\027INTERPRETER_UNSPECIFIED\020\000\022\t\n\005SHELL"
-          + "\020\001\022\016\n\nPOWERSHELL\020\003B\006\n\004step\"\276\001\n\030CreateGue"
-          + "stPolicyRequest\022<\n\006parent\030\001 \001(\tB,\342A\001\002\372A%"
-          + "\022#osconfig.googleapis.com/GuestPolicy\022\035\n"
-          + "\017guest_policy_id\030\002 \001(\tB\004\342A\001\002\022E\n\014guest_po"
-          + "licy\030\003 \001(\0132).google.cloud.osconfig.v1bet"
-          + "a.GuestPolicyB\004\342A\001\002\"S\n\025GetGuestPolicyReq"
-          + "uest\022:\n\004name\030\001 \001(\tB,\342A\001\002\372A%\n#osconfig.go"
-          + "ogleapis.com/GuestPolicy\"\177\n\030ListGuestPol"
-          + "iciesRequest\022<\n\006parent\030\001 \001(\tB,\342A\001\002\372A%\022#o"
-          + "sconfig.googleapis.com/GuestPolicy\022\021\n\tpa"
-          + "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"w\n\031Lis"
-          + "tGuestPoliciesResponse\022A\n\016guest_policies"
-          + "\030\001 \003(\0132).google.cloud.osconfig.v1beta.Gu"
-          + "estPolicy\022\027\n\017next_page_token\030\002 \001(\t\"\222\001\n\030U"
-          + "pdateGuestPolicyRequest\022E\n\014guest_policy\030"
-          + "\001 \001(\0132).google.cloud.osconfig.v1beta.Gue"
-          + "stPolicyB\004\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.FieldMask\"V\n\030DeleteGuestPo"
-          + "licyRequest\022:\n\004name\030\001 \001(\tB,\342A\001\002\372A%\n#osco"
-          + "nfig.googleapis.com/GuestPolicy\"\177\n!Looku"
-          + "pEffectiveGuestPolicyRequest\022\026\n\010instance"
-          + "\030\001 \001(\tB\004\342A\001\002\022\025\n\ros_short_name\030\002 \001(\t\022\022\n\no"
-          + "s_version\030\003 \001(\t\022\027\n\017os_architecture\030\004 \001(\t"
-          + "\"\375\004\n\024EffectiveGuestPolicy\022S\n\010packages\030\001 "
-          + "\003(\0132A.google.cloud.osconfig.v1beta.Effec"
-          + "tiveGuestPolicy.SourcedPackage\022i\n\024packag"
-          + "e_repositories\030\002 \003(\0132K.google.cloud.osco"
-          + "nfig.v1beta.EffectiveGuestPolicy.Sourced"
-          + "PackageRepository\022b\n\020software_recipes\030\003 "
-          + "\003(\0132H.google.cloud.osconfig.v1beta.Effec"
-          + "tiveGuestPolicy.SourcedSoftwareRecipe\032X\n"
-          + "\016SourcedPackage\022\016\n\006source\030\001 \001(\t\0226\n\007packa"
-          + "ge\030\002 \001(\0132%.google.cloud.osconfig.v1beta."
-          + "Package\032w\n\030SourcedPackageRepository\022\016\n\006s"
-          + "ource\030\001 \001(\t\022K\n\022package_repository\030\002 \001(\0132"
-          + "/.google.cloud.osconfig.v1beta.PackageRe"
-          + "pository\032n\n\025SourcedSoftwareRecipe\022\016\n\006sou"
-          + "rce\030\001 \001(\t\022E\n\017software_recipe\030\002 \001(\0132,.goo"
-          + "gle.cloud.osconfig.v1beta.SoftwareRecipe"
-          + "*V\n\014DesiredState\022\035\n\031DESIRED_STATE_UNSPEC"
-          + "IFIED\020\000\022\r\n\tINSTALLED\020\001\022\013\n\007UPDATED\020\002\022\013\n\007R"
-          + "EMOVED\020\003Bo\n com.google.cloud.osconfig.v1"
-          + "betaB\rGuestPoliciesZ<cloud.google.com/go"
-          + "/osconfig/apiv1beta/osconfigpb;osconfigp"
-          + "bb\006proto3"
+          + ".Step.InstallRpmH\000\022O\n\tfile_exec\030\006 \001(\0132:."
+          + "google.cloud.osconfig.v1beta.SoftwareRec"
+          + "ipe.Step.ExecFileH\000\022Q\n\nscript_run\030\007 \001(\0132"
+          + ";.google.cloud.osconfig.v1beta.SoftwareR"
+          + "ecipe.Step.RunScriptH\000\032f\n\010CopyFile\022\030\n\013ar"
+          + "tifact_id\030\001 \001(\tB\003\340A\002\022\030\n\013destination\030\002 \001("
+          + "\tB\003\340A\002\022\021\n\toverwrite\030\003 \001(\010\022\023\n\013permissions"
+          + "\030\004 \001(\t\032\225\002\n\016ExtractArchive\022\030\n\013artifact_id"
+          + "\030\001 \001(\tB\003\340A\002\022\023\n\013destination\030\002 \001(\t\022_\n\004type"
+          + "\030\003 \001(\0162L.google.cloud.osconfig.v1beta.So"
+          + "ftwareRecipe.Step.ExtractArchive.Archive"
+          + "TypeB\003\340A\002\"s\n\013ArchiveType\022\034\n\030ARCHIVE_TYPE"
+          + "_UNSPECIFIED\020\000\022\007\n\003TAR\020\001\022\014\n\010TAR_GZIP\020\002\022\014\n"
+          + "\010TAR_BZIP\020\003\022\014\n\010TAR_LZMA\020\004\022\n\n\006TAR_XZ\020\005\022\007\n"
+          + "\003ZIP\020\013\032Q\n\nInstallMsi\022\030\n\013artifact_id\030\001 \001("
+          + "\tB\003\340A\002\022\r\n\005flags\030\002 \003(\t\022\032\n\022allowed_exit_co"
+          + "des\030\003 \003(\005\032\'\n\013InstallDpkg\022\030\n\013artifact_id\030"
+          + "\001 \001(\tB\003\340A\002\032&\n\nInstallRpm\022\030\n\013artifact_id\030"
+          + "\001 \001(\tB\003\340A\002\032r\n\010ExecFile\022\025\n\013artifact_id\030\001 "
+          + "\001(\tH\000\022\024\n\nlocal_path\030\002 \001(\tH\000\022\014\n\004args\030\003 \003("
+          + "\t\022\032\n\022allowed_exit_codes\030\004 \003(\005B\017\n\rlocatio"
+          + "n_type\032\341\001\n\tRunScript\022\023\n\006script\030\001 \001(\tB\003\340A"
+          + "\002\022\032\n\022allowed_exit_codes\030\002 \003(\005\022\\\n\013interpr"
+          + "eter\030\003 \001(\0162G.google.cloud.osconfig.v1bet"
+          + "a.SoftwareRecipe.Step.RunScript.Interpre"
+          + "ter\"E\n\013Interpreter\022\033\n\027INTERPRETER_UNSPEC"
+          + "IFIED\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSHELL\020\003B\006\n\004st"
+          + "ep\"\273\001\n\030CreateGuestPolicyRequest\022;\n\006paren"
+          + "t\030\001 \001(\tB+\340A\002\372A%\022#osconfig.googleapis.com"
+          + "/GuestPolicy\022\034\n\017guest_policy_id\030\002 \001(\tB\003\340"
+          + "A\002\022D\n\014guest_policy\030\003 \001(\0132).google.cloud."
+          + "osconfig.v1beta.GuestPolicyB\003\340A\002\"R\n\025GetG"
+          + "uestPolicyRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#osconfig.googleapis.com/GuestPolicy\"~\n\030"
+          + "ListGuestPoliciesRequest\022;\n\006parent\030\001 \001(\t"
+          + "B+\340A\002\372A%\022#osconfig.googleapis.com/GuestP"
+          + "olicy\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
+          + " \001(\t\"w\n\031ListGuestPoliciesResponse\022A\n\016gue"
+          + "st_policies\030\001 \003(\0132).google.cloud.osconfi"
+          + "g.v1beta.GuestPolicy\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\"\221\001\n\030UpdateGuestPolicyRequest\022D\n\014gu"
+          + "est_policy\030\001 \001(\0132).google.cloud.osconfig"
+          + ".v1beta.GuestPolicyB\003\340A\002\022/\n\013update_mask\030"
+          + "\002 \001(\0132\032.google.protobuf.FieldMask\"U\n\030Del"
+          + "eteGuestPolicyRequest\0229\n\004name\030\001 \001(\tB+\340A\002"
+          + "\372A%\n#osconfig.googleapis.com/GuestPolicy"
+          + "\"~\n!LookupEffectiveGuestPolicyRequest\022\025\n"
+          + "\010instance\030\001 \001(\tB\003\340A\002\022\025\n\ros_short_name\030\002 "
+          + "\001(\t\022\022\n\nos_version\030\003 \001(\t\022\027\n\017os_architectu"
+          + "re\030\004 \001(\t\"\375\004\n\024EffectiveGuestPolicy\022S\n\010pac"
+          + "kages\030\001 \003(\0132A.google.cloud.osconfig.v1be"
+          + "ta.EffectiveGuestPolicy.SourcedPackage\022i"
+          + "\n\024package_repositories\030\002 \003(\0132K.google.cl"
+          + "oud.osconfig.v1beta.EffectiveGuestPolicy"
+          + ".SourcedPackageRepository\022b\n\020software_re"
+          + "cipes\030\003 \003(\0132H.google.cloud.osconfig.v1be"
+          + "ta.EffectiveGuestPolicy.SourcedSoftwareR"
+          + "ecipe\032X\n\016SourcedPackage\022\016\n\006source\030\001 \001(\t\022"
+          + "6\n\007package\030\002 \001(\0132%.google.cloud.osconfig"
+          + ".v1beta.Package\032w\n\030SourcedPackageReposit"
+          + "ory\022\016\n\006source\030\001 \001(\t\022K\n\022package_repositor"
+          + "y\030\002 \001(\0132/.google.cloud.osconfig.v1beta.P"
+          + "ackageRepository\032n\n\025SourcedSoftwareRecip"
+          + "e\022\016\n\006source\030\001 \001(\t\022E\n\017software_recipe\030\002 \001"
+          + "(\0132,.google.cloud.osconfig.v1beta.Softwa"
+          + "reRecipe*V\n\014DesiredState\022\035\n\031DESIRED_STAT"
+          + "E_UNSPECIFIED\020\000\022\r\n\tINSTALLED\020\001\022\013\n\007UPDATE"
+          + "D\020\002\022\013\n\007REMOVED\020\003Bo\n com.google.cloud.osc"
+          + "onfig.v1betaB\rGuestPoliciesZ<cloud.googl"
+          + "e.com/go/osconfig/apiv1beta/osconfigpb;o"
+          + "sconfigpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

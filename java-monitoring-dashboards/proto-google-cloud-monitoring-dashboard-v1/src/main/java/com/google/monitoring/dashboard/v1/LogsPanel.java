@@ -39,13 +39,18 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
 
   private LogsPanel() {
     filter_ = "";
-    resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LogsPanel();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,8 +128,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList resourceNames_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList resourceNames_;
   /**
    *
    *
@@ -403,7 +407,8 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       filter_ = "";
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -431,6 +436,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.LogsPanel buildPartial() {
       com.google.monitoring.dashboard.v1.LogsPanel result =
           new com.google.monitoring.dashboard.v1.LogsPanel(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -438,14 +444,18 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
+    private void buildPartialRepeatedFields(com.google.monitoring.dashboard.v1.LogsPanel result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        resourceNames_ = resourceNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.resourceNames_ = resourceNames_;
+    }
+
     private void buildPartial0(com.google.monitoring.dashboard.v1.LogsPanel result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.filter_ = filter_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        resourceNames_.makeImmutable();
-        result.resourceNames_ = resourceNames_;
       }
     }
 
@@ -502,7 +512,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       if (!other.resourceNames_.isEmpty()) {
         if (resourceNames_.isEmpty()) {
           resourceNames_ = other.resourceNames_;
-          bitField0_ |= 0x00000002;
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureResourceNamesIsMutable();
           resourceNames_.addAll(other.resourceNames_);
@@ -688,14 +698,14 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList resourceNames_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList resourceNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourceNamesIsMutable() {
-      if (!resourceNames_.isModifiable()) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
+        bitField0_ |= 0x00000002;
       }
-      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -710,8 +720,7 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the resourceNames.
      */
     public com.google.protobuf.ProtocolStringList getResourceNamesList() {
-      resourceNames_.makeImmutable();
-      return resourceNames_;
+      return resourceNames_.getUnmodifiableView();
     }
     /**
      *
@@ -780,7 +789,6 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourceNamesIsMutable();
       resourceNames_.set(index, value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -803,7 +811,6 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,7 +830,6 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
       ensureResourceNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -840,9 +846,8 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceNames() {
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      ;
       onChanged();
       return this;
     }
@@ -866,7 +871,6 @@ public final class LogsPanel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -28,7 +28,6 @@ public interface ListGroupMembersRequestOrBuilder
    *
    * <pre>
    * Required. The group whose members are listed. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
@@ -44,7 +43,6 @@ public interface ListGroupMembersRequestOrBuilder
    *
    * <pre>
    * Required. The group whose members are listed. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * </pre>
    *
@@ -108,7 +106,6 @@ public interface ListGroupMembersRequestOrBuilder
    * labels, and metadata of monitored resources that comprise the group. For
    * example, to return only resources representing Compute Engine VM instances,
    * use this filter:
-   *
    *     `resource.type = "gce_instance"`
    * </pre>
    *
@@ -127,7 +124,6 @@ public interface ListGroupMembersRequestOrBuilder
    * labels, and metadata of monitored resources that comprise the group. For
    * example, to return only resources representing Compute Engine VM instances,
    * use this filter:
-   *
    *     `resource.type = "gce_instance"`
    * </pre>
    *

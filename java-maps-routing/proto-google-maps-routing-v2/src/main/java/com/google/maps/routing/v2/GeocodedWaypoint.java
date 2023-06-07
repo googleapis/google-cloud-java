@@ -40,7 +40,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   }
 
   private GeocodedWaypoint() {
-    type_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    type_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     placeId_ = "";
   }
 
@@ -48,6 +48,11 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GeocodedWaypoint();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -152,8 +157,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
   public static final int TYPE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList type_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList type_;
   /**
    *
    *
@@ -556,7 +560,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
         geocoderStatusBuilder_ = null;
       }
       intermediateWaypointRequestIndex_ = 0;
-      type_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      type_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       partialMatch_ = false;
       placeId_ = "";
       return this;
@@ -586,11 +591,20 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public com.google.maps.routing.v2.GeocodedWaypoint buildPartial() {
       com.google.maps.routing.v2.GeocodedWaypoint result =
           new com.google.maps.routing.v2.GeocodedWaypoint(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.routing.v2.GeocodedWaypoint result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        type_ = type_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.type_ = type_;
     }
 
     private void buildPartial0(com.google.maps.routing.v2.GeocodedWaypoint result) {
@@ -603,10 +617,6 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.intermediateWaypointRequestIndex_ = intermediateWaypointRequestIndex_;
         to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        type_.makeImmutable();
-        result.type_ = type_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.partialMatch_ = partialMatch_;
@@ -671,7 +681,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       if (!other.type_.isEmpty()) {
         if (type_.isEmpty()) {
           type_ = other.type_;
-          bitField0_ |= 0x00000004;
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTypeIsMutable();
           type_.addAll(other.type_);
@@ -1017,14 +1027,14 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList type_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList type_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTypeIsMutable() {
-      if (!type_.isModifiable()) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         type_ = new com.google.protobuf.LazyStringArrayList(type_);
+        bitField0_ |= 0x00000004;
       }
-      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1040,8 +1050,7 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      * @return A list containing the type.
      */
     public com.google.protobuf.ProtocolStringList getTypeList() {
-      type_.makeImmutable();
-      return type_;
+      return type_.getUnmodifiableView();
     }
     /**
      *
@@ -1114,7 +1123,6 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       }
       ensureTypeIsMutable();
       type_.set(index, value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1138,7 +1146,6 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       }
       ensureTypeIsMutable();
       type_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1159,7 +1166,6 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
     public Builder addAllType(java.lang.Iterable<java.lang.String> values) {
       ensureTypeIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, type_);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1177,9 +1183,8 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      type_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      type_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      ;
       onChanged();
       return this;
     }
@@ -1204,7 +1209,6 @@ public final class GeocodedWaypoint extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTypeIsMutable();
       type_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

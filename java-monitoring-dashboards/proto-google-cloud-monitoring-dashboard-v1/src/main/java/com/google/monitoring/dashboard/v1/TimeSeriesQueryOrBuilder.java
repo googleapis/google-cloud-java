@@ -204,5 +204,5 @@ public interface TimeSeriesQueryOrBuilder
    */
   com.google.protobuf.ByteString getUnitOverrideBytes();
 
-  com.google.monitoring.dashboard.v1.TimeSeriesQuery.SourceCase getSourceCase();
+  public com.google.monitoring.dashboard.v1.TimeSeriesQuery.SourceCase getSourceCase();
 }

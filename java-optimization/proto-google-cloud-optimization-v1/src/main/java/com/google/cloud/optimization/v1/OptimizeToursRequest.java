@@ -53,6 +53,11 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
     return new OptimizeToursRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.FleetRoutingProto
         .internal_static_google_cloud_optimization_v1_OptimizeToursRequest_descriptor;
@@ -112,7 +117,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * [OptimizeToursResponse.skipped_shipments][google.cloud.optimization.v1.OptimizeToursResponse.skipped_shipments],
      * and doesn't actually solve the rest of the request (`status` and `routes`
      * are unset in the response).
-     *
      * *IMPORTANT*: not all infeasible shipments are returned here, but only the
      * ones that are detected as infeasible as a preprocessing.
      * </pre>
@@ -153,7 +157,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * [OptimizeToursResponse.skipped_shipments][google.cloud.optimization.v1.OptimizeToursResponse.skipped_shipments],
      * and doesn't actually solve the rest of the request (`status` and `routes`
      * are unset in the response).
-     *
      * *IMPORTANT*: not all infeasible shipments are returned here, but only the
      * ones that are detected as infeasible as a preprocessing.
      * </pre>
@@ -417,9 +420,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Target project and location to make a call.
-   *
    * Format: `projects/{project-id}/locations/{location-id}`.
-   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -444,9 +445,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Target project and location to make a call.
-   *
    * Format: `projects/{project-id}/locations/{location-id}`.
-   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -476,7 +475,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If this timeout is set, the server returns a response before the timeout
    * period has elapsed or the server deadline for synchronous requests is
    * reached, whichever is sooner.
-   *
    * For asynchronous requests, the server will generate a solution (if
    * possible) before the timeout has elapsed.
    * </pre>
@@ -496,7 +494,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If this timeout is set, the server returns a response before the timeout
    * period has elapsed or the server deadline for synchronous requests is
    * reached, whichever is sooner.
-   *
    * For asynchronous requests, the server will generate a solution (if
    * possible) before the timeout has elapsed.
    * </pre>
@@ -516,7 +513,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If this timeout is set, the server returns a response before the timeout
    * period has elapsed or the server deadline for synchronous requests is
    * reached, whichever is sooner.
-   *
    * For asynchronous requests, the server will generate a solution (if
    * possible) before the timeout has elapsed.
    * </pre>
@@ -708,13 +704,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Guide the optimization algorithm in finding a first solution that is
    * similar to a previous solution.
-   *
    * The model is constrained when the first solution is built.
    * Any shipments not performed on a route are implicitly skipped in the first
    * solution, but they may be performed in successive solutions.
-   *
    * The solution must satisfy some basic validity assumptions:
-   *
    *   * for all routes, `vehicle_index` must be in range and not be duplicated.
    *   * for all visits, `shipment_index` and `visit_request_index` must be
    *     in range.
@@ -731,7 +724,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
    *     is empty or its `vehicle_index` is included in
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -751,13 +743,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Guide the optimization algorithm in finding a first solution that is
    * similar to a previous solution.
-   *
    * The model is constrained when the first solution is built.
    * Any shipments not performed on a route are implicitly skipped in the first
    * solution, but they may be performed in successive solutions.
-   *
    * The solution must satisfy some basic validity assumptions:
-   *
    *   * for all routes, `vehicle_index` must be in range and not be duplicated.
    *   * for all visits, `shipment_index` and `visit_request_index` must be
    *     in range.
@@ -774,7 +763,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
    *     is empty or its `vehicle_index` is included in
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -794,13 +782,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Guide the optimization algorithm in finding a first solution that is
    * similar to a previous solution.
-   *
    * The model is constrained when the first solution is built.
    * Any shipments not performed on a route are implicitly skipped in the first
    * solution, but they may be performed in successive solutions.
-   *
    * The solution must satisfy some basic validity assumptions:
-   *
    *   * for all routes, `vehicle_index` must be in range and not be duplicated.
    *   * for all visits, `shipment_index` and `visit_request_index` must be
    *     in range.
@@ -817,7 +802,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
    *     is empty or its `vehicle_index` is included in
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -836,13 +820,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Guide the optimization algorithm in finding a first solution that is
    * similar to a previous solution.
-   *
    * The model is constrained when the first solution is built.
    * Any shipments not performed on a route are implicitly skipped in the first
    * solution, but they may be performed in successive solutions.
-   *
    * The solution must satisfy some basic validity assumptions:
-   *
    *   * for all routes, `vehicle_index` must be in range and not be duplicated.
    *   * for all visits, `shipment_index` and `visit_request_index` must be
    *     in range.
@@ -859,7 +840,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
    *     is empty or its `vehicle_index` is included in
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -878,13 +858,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Guide the optimization algorithm in finding a first solution that is
    * similar to a previous solution.
-   *
    * The model is constrained when the first solution is built.
    * Any shipments not performed on a route are implicitly skipped in the first
    * solution, but they may be performed in successive solutions.
-   *
    * The solution must satisfy some basic validity assumptions:
-   *
    *   * for all routes, `vehicle_index` must be in range and not be duplicated.
    *   * for all visits, `shipment_index` and `visit_request_index` must be
    *     in range.
@@ -901,7 +878,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
    *     is empty or its `vehicle_index` is included in
    *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -926,7 +902,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * similar to a previous solution. For example, this may be used to freeze
    * portions of routes which have already been completed or which are to be
    * completed but must not be modified.
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -950,7 +925,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * similar to a previous solution. For example, this may be used to freeze
    * portions of routes which have already been completed or which are to be
    * completed but must not be modified.
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -977,7 +951,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * similar to a previous solution. For example, this may be used to freeze
    * portions of routes which have already been completed or which are to be
    * completed but must not be modified.
-   *
    * If the injected solution is not feasible, a validation error is not
    * necessarily returned and an error indicating infeasibility may be returned
    * instead.
@@ -1006,16 +979,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If non-empty, the given routes will be refreshed, without modifying their
    * underlying sequence of visits or travel times: only other details will be
    * updated. This does not solve the model.
-   *
    * As of 2020/11, this only populates the polylines of non-empty routes and
    * requires that `populate_polylines` is true.
-   *
    * The `route_polyline` fields of the passed-in routes may be inconsistent
    * with route `transitions`.
-   *
    * This field must not be used together with `injected_first_solution_routes`
    * or `injected_solution_constraint`.
-   *
    * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
    * Polylines are still populated between all visits in all non-empty routes
    * regardless of whether the related shipments or vehicles are ignored.
@@ -1035,16 +1004,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If non-empty, the given routes will be refreshed, without modifying their
    * underlying sequence of visits or travel times: only other details will be
    * updated. This does not solve the model.
-   *
    * As of 2020/11, this only populates the polylines of non-empty routes and
    * requires that `populate_polylines` is true.
-   *
    * The `route_polyline` fields of the passed-in routes may be inconsistent
    * with route `transitions`.
-   *
    * This field must not be used together with `injected_first_solution_routes`
    * or `injected_solution_constraint`.
-   *
    * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
    * Polylines are still populated between all visits in all non-empty routes
    * regardless of whether the related shipments or vehicles are ignored.
@@ -1064,16 +1029,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If non-empty, the given routes will be refreshed, without modifying their
    * underlying sequence of visits or travel times: only other details will be
    * updated. This does not solve the model.
-   *
    * As of 2020/11, this only populates the polylines of non-empty routes and
    * requires that `populate_polylines` is true.
-   *
    * The `route_polyline` fields of the passed-in routes may be inconsistent
    * with route `transitions`.
-   *
    * This field must not be used together with `injected_first_solution_routes`
    * or `injected_solution_constraint`.
-   *
    * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
    * Polylines are still populated between all visits in all non-empty routes
    * regardless of whether the related shipments or vehicles are ignored.
@@ -1092,16 +1053,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If non-empty, the given routes will be refreshed, without modifying their
    * underlying sequence of visits or travel times: only other details will be
    * updated. This does not solve the model.
-   *
    * As of 2020/11, this only populates the polylines of non-empty routes and
    * requires that `populate_polylines` is true.
-   *
    * The `route_polyline` fields of the passed-in routes may be inconsistent
    * with route `transitions`.
-   *
    * This field must not be used together with `injected_first_solution_routes`
    * or `injected_solution_constraint`.
-   *
    * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
    * Polylines are still populated between all visits in all non-empty routes
    * regardless of whether the related shipments or vehicles are ignored.
@@ -1120,16 +1077,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * If non-empty, the given routes will be refreshed, without modifying their
    * underlying sequence of visits or travel times: only other details will be
    * updated. This does not solve the model.
-   *
    * As of 2020/11, this only populates the polylines of non-empty routes and
    * requires that `populate_polylines` is true.
-   *
    * The `route_polyline` fields of the passed-in routes may be inconsistent
    * with route `transitions`.
-   *
    * This field must not be used together with `injected_first_solution_routes`
    * or `injected_solution_constraint`.
-   *
    * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
    * Polylines are still populated between all visits in all non-empty routes
    * regardless of whether the related shipments or vehicles are ignored.
@@ -1150,7 +1103,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If true:
-   *
    *   * uses
    *   [ShipmentRoute.vehicle_label][google.cloud.optimization.v1.ShipmentRoute.vehicle_label]
    *   instead of `vehicle_index` to
@@ -1174,16 +1126,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *   to
    *     match skipped shipments in the injected solution with request
    *     shipments.
-   *
    * This interpretation applies to the `injected_first_solution_routes`,
    * `injected_solution_constraint`, and `refresh_details_routes` fields.
    * It can be used when shipment or vehicle indices in the request have
    * changed since the solution was created, perhaps because shipments or
    * vehicles have been removed from or added to the request.
-   *
    * If true, labels in the following categories must appear at most once in
    * their category:
-   *
    *   * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] in the
    *   request;
    *   * [Shipment.label][google.cloud.optimization.v1.Shipment.label] in the
@@ -1192,7 +1141,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *   * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label] and [ShipmentRoute.Visit.shipment_label][google.cloud.optimization.v1.ShipmentRoute.Visit.shipment_label] in
    *     the injected solution (except pickup/delivery visit pairs, whose
    *     `shipment_label` must appear twice).
-   *
    * If a `vehicle_label` in the injected solution does not correspond to a
    * request vehicle, the corresponding route is removed from the solution
    * along with its visits. If a `shipment_label` in the injected solution does
@@ -1201,11 +1149,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label]
    * in the injected solution does not correspond to a request shipment, the
    * `SkippedShipment` is removed from the solution.
-   *
    * Removing route visits or entire routes from an injected solution may
    * have an effect on the implied constraints, which may lead to change in
    * solution, validation errors, or infeasibility.
-   *
    * NOTE: The caller must ensure that each
    * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] (resp.
    * [Shipment.label][google.cloud.optimization.v1.Shipment.label]) uniquely
@@ -2348,9 +2294,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2374,9 +2318,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2400,9 +2342,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2425,9 +2365,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2446,9 +2384,7 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Target project and location to make a call.
-     *
      * Format: `projects/{project-id}/locations/{location-id}`.
-     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -2481,7 +2417,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2500,7 +2435,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2523,7 +2457,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2550,7 +2483,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2574,7 +2506,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2604,7 +2535,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2628,7 +2558,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2647,7 +2576,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -2668,7 +2596,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If this timeout is set, the server returns a response before the timeout
      * period has elapsed or the server deadline for synchronous requests is
      * reached, whichever is sooner.
-     *
      * For asynchronous requests, the server will generate a solution (if
      * possible) before the timeout has elapsed.
      * </pre>
@@ -3178,13 +3105,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3201,7 +3125,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3225,13 +3148,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3248,7 +3168,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3271,13 +3190,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3294,7 +3210,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3318,13 +3233,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3341,7 +3253,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3371,13 +3282,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3394,7 +3302,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3421,13 +3328,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3444,7 +3348,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3474,13 +3377,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3497,7 +3397,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3527,13 +3426,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3550,7 +3446,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3577,13 +3472,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3600,7 +3492,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3627,13 +3518,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3650,7 +3538,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3678,13 +3565,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3701,7 +3585,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3727,13 +3610,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3750,7 +3630,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3776,13 +3655,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3799,7 +3675,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3819,13 +3694,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3842,7 +3714,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3866,13 +3737,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3889,7 +3757,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3913,13 +3780,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3936,7 +3800,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -3957,13 +3820,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -3980,7 +3840,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4001,13 +3860,10 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Guide the optimization algorithm in finding a first solution that is
      * similar to a previous solution.
-     *
      * The model is constrained when the first solution is built.
      * Any shipments not performed on a route are implicitly skipped in the first
      * solution, but they may be performed in successive solutions.
-     *
      * The solution must satisfy some basic validity assumptions:
-     *
      *   * for all routes, `vehicle_index` must be in range and not be duplicated.
      *   * for all visits, `shipment_index` and `visit_request_index` must be
      *     in range.
@@ -4024,7 +3880,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices]
      *     is empty or its `vehicle_index` is included in
      *     [Shipment.allowed_vehicle_indices][google.cloud.optimization.v1.Shipment.allowed_vehicle_indices].
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4073,7 +3928,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4096,7 +3950,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4126,7 +3979,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4158,7 +4010,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4187,7 +4038,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4224,7 +4074,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4252,7 +4101,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4276,7 +4124,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4304,7 +4151,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * similar to a previous solution. For example, this may be used to freeze
      * portions of routes which have already been completed or which are to be
      * completed but must not be modified.
-     *
      * If the injected solution is not feasible, a validation error is not
      * necessarily returned and an error indicating infeasibility may be returned
      * instead.
@@ -4356,16 +4202,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4388,16 +4230,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4419,16 +4257,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4450,16 +4284,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4488,16 +4318,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4523,16 +4349,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4560,16 +4382,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4598,16 +4416,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4633,16 +4447,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4668,16 +4478,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4703,16 +4509,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4737,16 +4539,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4771,16 +4569,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4799,16 +4593,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4831,16 +4621,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4863,16 +4649,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4891,16 +4673,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4920,16 +4698,12 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * If non-empty, the given routes will be refreshed, without modifying their
      * underlying sequence of visits or travel times: only other details will be
      * updated. This does not solve the model.
-     *
      * As of 2020/11, this only populates the polylines of non-empty routes and
      * requires that `populate_polylines` is true.
-     *
      * The `route_polyline` fields of the passed-in routes may be inconsistent
      * with route `transitions`.
-     *
      * This field must not be used together with `injected_first_solution_routes`
      * or `injected_solution_constraint`.
-     *
      * `Shipment.ignore` and `Vehicle.ignore` have no effect on the behavior.
      * Polylines are still populated between all visits in all non-empty routes
      * regardless of whether the related shipments or vehicles are ignored.
@@ -4968,7 +4742,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If true:
-     *
      *   * uses
      *   [ShipmentRoute.vehicle_label][google.cloud.optimization.v1.ShipmentRoute.vehicle_label]
      *   instead of `vehicle_index` to
@@ -4992,16 +4765,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *   to
      *     match skipped shipments in the injected solution with request
      *     shipments.
-     *
      * This interpretation applies to the `injected_first_solution_routes`,
      * `injected_solution_constraint`, and `refresh_details_routes` fields.
      * It can be used when shipment or vehicle indices in the request have
      * changed since the solution was created, perhaps because shipments or
      * vehicles have been removed from or added to the request.
-     *
      * If true, labels in the following categories must appear at most once in
      * their category:
-     *
      *   * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] in the
      *   request;
      *   * [Shipment.label][google.cloud.optimization.v1.Shipment.label] in the
@@ -5010,7 +4780,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *   * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label] and [ShipmentRoute.Visit.shipment_label][google.cloud.optimization.v1.ShipmentRoute.Visit.shipment_label] in
      *     the injected solution (except pickup/delivery visit pairs, whose
      *     `shipment_label` must appear twice).
-     *
      * If a `vehicle_label` in the injected solution does not correspond to a
      * request vehicle, the corresponding route is removed from the solution
      * along with its visits. If a `shipment_label` in the injected solution does
@@ -5019,11 +4788,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label]
      * in the injected solution does not correspond to a request shipment, the
      * `SkippedShipment` is removed from the solution.
-     *
      * Removing route visits or entire routes from an injected solution may
      * have an effect on the implied constraints, which may lead to change in
      * solution, validation errors, or infeasibility.
-     *
      * NOTE: The caller must ensure that each
      * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] (resp.
      * [Shipment.label][google.cloud.optimization.v1.Shipment.label]) uniquely
@@ -5047,7 +4814,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If true:
-     *
      *   * uses
      *   [ShipmentRoute.vehicle_label][google.cloud.optimization.v1.ShipmentRoute.vehicle_label]
      *   instead of `vehicle_index` to
@@ -5071,16 +4837,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *   to
      *     match skipped shipments in the injected solution with request
      *     shipments.
-     *
      * This interpretation applies to the `injected_first_solution_routes`,
      * `injected_solution_constraint`, and `refresh_details_routes` fields.
      * It can be used when shipment or vehicle indices in the request have
      * changed since the solution was created, perhaps because shipments or
      * vehicles have been removed from or added to the request.
-     *
      * If true, labels in the following categories must appear at most once in
      * their category:
-     *
      *   * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] in the
      *   request;
      *   * [Shipment.label][google.cloud.optimization.v1.Shipment.label] in the
@@ -5089,7 +4852,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *   * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label] and [ShipmentRoute.Visit.shipment_label][google.cloud.optimization.v1.ShipmentRoute.Visit.shipment_label] in
      *     the injected solution (except pickup/delivery visit pairs, whose
      *     `shipment_label` must appear twice).
-     *
      * If a `vehicle_label` in the injected solution does not correspond to a
      * request vehicle, the corresponding route is removed from the solution
      * along with its visits. If a `shipment_label` in the injected solution does
@@ -5098,11 +4860,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label]
      * in the injected solution does not correspond to a request shipment, the
      * `SkippedShipment` is removed from the solution.
-     *
      * Removing route visits or entire routes from an injected solution may
      * have an effect on the implied constraints, which may lead to change in
      * solution, validation errors, or infeasibility.
-     *
      * NOTE: The caller must ensure that each
      * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] (resp.
      * [Shipment.label][google.cloud.optimization.v1.Shipment.label]) uniquely
@@ -5130,7 +4890,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If true:
-     *
      *   * uses
      *   [ShipmentRoute.vehicle_label][google.cloud.optimization.v1.ShipmentRoute.vehicle_label]
      *   instead of `vehicle_index` to
@@ -5154,16 +4913,13 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *   to
      *     match skipped shipments in the injected solution with request
      *     shipments.
-     *
      * This interpretation applies to the `injected_first_solution_routes`,
      * `injected_solution_constraint`, and `refresh_details_routes` fields.
      * It can be used when shipment or vehicle indices in the request have
      * changed since the solution was created, perhaps because shipments or
      * vehicles have been removed from or added to the request.
-     *
      * If true, labels in the following categories must appear at most once in
      * their category:
-     *
      *   * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] in the
      *   request;
      *   * [Shipment.label][google.cloud.optimization.v1.Shipment.label] in the
@@ -5172,7 +4928,6 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *   * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label] and [ShipmentRoute.Visit.shipment_label][google.cloud.optimization.v1.ShipmentRoute.Visit.shipment_label] in
      *     the injected solution (except pickup/delivery visit pairs, whose
      *     `shipment_label` must appear twice).
-     *
      * If a `vehicle_label` in the injected solution does not correspond to a
      * request vehicle, the corresponding route is removed from the solution
      * along with its visits. If a `shipment_label` in the injected solution does
@@ -5181,11 +4936,9 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * [SkippedShipment.label][google.cloud.optimization.v1.SkippedShipment.label]
      * in the injected solution does not correspond to a request shipment, the
      * `SkippedShipment` is removed from the solution.
-     *
      * Removing route visits or entire routes from an injected solution may
      * have an effect on the implied constraints, which may lead to change in
      * solution, validation errors, or infeasibility.
-     *
      * NOTE: The caller must ensure that each
      * [Vehicle.label][google.cloud.optimization.v1.Vehicle.label] (resp.
      * [Shipment.label][google.cloud.optimization.v1.Shipment.label]) uniquely

@@ -29,9 +29,7 @@ public interface OptimizeToursValidationErrorOrBuilder
    * <pre>
    * A validation error is defined by the pair (`code`, `display_name`) which
    * are always present.
-   *
    * Other fields (below) provide more context about the error.
-   *
    * *MULTIPLE ERRORS*:
    * When there are multiple errors, the validation process tries to output
    * several of them. Much like a compiler, this is an imperfect process. Some
@@ -39,19 +37,15 @@ public interface OptimizeToursValidationErrorOrBuilder
    * validation process. This is the case for `display_name="UNSPECIFIED"`
    * errors, among others. Some may cause the validation process to skip other
    * errors.
-   *
    * *STABILITY*:
    * `code` and `display_name` should be very stable. But new codes and
    * display names may appear over time, which may cause a given (invalid)
    * request to yield a different (`code`, `display_name`) pair because the new
    * error hid the old one (see "MULTIPLE ERRORS").
-   *
    * *REFERENCE*: A list of all (code, name) pairs:
-   *
    * * UNSPECIFIED = 0;
    * * VALIDATION_TIMEOUT_ERROR = 10; Validation couldn't be completed within
    * the deadline.
-   *
    * * REQUEST_OPTIONS_ERROR = 12;
    *     * REQUEST_OPTIONS_INVALID_SOLVING_MODE = 1201;
    *     * REQUEST_OPTIONS_INVALID_MAX_VALIDATION_ERRORS = 1203;
@@ -408,7 +402,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    * <pre>
    * Human-readable string describing the error. There is a 1:1 mapping
    * between `code` and `error_message` (when code != "UNSPECIFIED").
-   *
    * *STABILITY*: Not stable: the error message associated to a given `code` may
    * change (hopefully to clarify it) over time. Please rely on the
    * `display_name` and `code` instead.
@@ -425,7 +418,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    * <pre>
    * Human-readable string describing the error. There is a 1:1 mapping
    * between `code` and `error_message` (when code != "UNSPECIFIED").
-   *
    * *STABILITY*: Not stable: the error message associated to a given `code` may
    * change (hopefully to clarify it) over time. Please rely on the
    * `display_name` and `code` instead.

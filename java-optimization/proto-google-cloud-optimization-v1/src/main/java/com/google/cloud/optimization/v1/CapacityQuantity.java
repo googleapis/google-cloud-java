@@ -50,6 +50,11 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
     return new CapacityQuantity();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.FleetRoutingProto
         .internal_static_google_cloud_optimization_v1_CapacityQuantity_descriptor;

@@ -42,7 +42,6 @@ public interface PolicyOrBuilder
    * <pre>
    * The name of the `Constraint` the `Policy` is configuring, for example,
    * `constraints/serviceuser.services`.
-   *
    * Immutable after creation.
    * </pre>
    *
@@ -57,7 +56,6 @@ public interface PolicyOrBuilder
    * <pre>
    * The name of the `Constraint` the `Policy` is configuring, for example,
    * `constraints/serviceuser.services`.
-   *
    * Immutable after creation.
    * </pre>
    *
@@ -73,14 +71,11 @@ public interface PolicyOrBuilder
    * <pre>
    * An opaque tag indicating the current version of the `Policy`, used for
    * concurrency control.
-   *
    * When the `Policy` is returned from either a `GetPolicy` or a
    * `ListOrgPolicy` request, this `etag` indicates the version of the current
    * `Policy` to use when executing a read-modify-write loop.
-   *
    * When the `Policy` is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
-   *
    * When the `Policy` is used in a `SetOrgPolicy` method, use the `etag` value
    * that was returned from a `GetOrgPolicy` request as part of a
    * read-modify-write loop for concurrency control. Not setting the `etag`in a
@@ -246,5 +241,5 @@ public interface PolicyOrBuilder
    */
   com.google.cloud.orgpolicy.v1.Policy.RestoreDefaultOrBuilder getRestoreDefaultOrBuilder();
 
-  com.google.cloud.orgpolicy.v1.Policy.PolicyTypeCase getPolicyTypeCase();
+  public com.google.cloud.orgpolicy.v1.Policy.PolicyTypeCase getPolicyTypeCase();
 }

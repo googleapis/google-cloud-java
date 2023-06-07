@@ -38,13 +38,18 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   }
 
   private TableDisplayOptions() {
-    shownColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    shownColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TableDisplayOptions();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -65,8 +70,7 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   public static final int SHOWN_COLUMNS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList shownColumns_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList shownColumns_;
   /**
    *
    *
@@ -356,7 +360,8 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      shownColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      shownColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -384,6 +389,7 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public com.google.monitoring.dashboard.v1.TableDisplayOptions buildPartial() {
       com.google.monitoring.dashboard.v1.TableDisplayOptions result =
           new com.google.monitoring.dashboard.v1.TableDisplayOptions(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -391,12 +397,17 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.dashboard.v1.TableDisplayOptions result) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        shownColumns_ = shownColumns_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.shownColumns_ = shownColumns_;
+    }
+
     private void buildPartial0(com.google.monitoring.dashboard.v1.TableDisplayOptions result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        shownColumns_.makeImmutable();
-        result.shownColumns_ = shownColumns_;
-      }
     }
 
     @java.lang.Override
@@ -448,7 +459,7 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       if (!other.shownColumns_.isEmpty()) {
         if (shownColumns_.isEmpty()) {
           shownColumns_ = other.shownColumns_;
-          bitField0_ |= 0x00000001;
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureShownColumnsIsMutable();
           shownColumns_.addAll(other.shownColumns_);
@@ -507,14 +518,14 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList shownColumns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList shownColumns_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureShownColumnsIsMutable() {
-      if (!shownColumns_.isModifiable()) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         shownColumns_ = new com.google.protobuf.LazyStringArrayList(shownColumns_);
+        bitField0_ |= 0x00000001;
       }
-      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -534,8 +545,7 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getShownColumnsList() {
-      shownColumns_.makeImmutable();
-      return shownColumns_;
+      return shownColumns_.getUnmodifiableView();
     }
     /**
      *
@@ -624,7 +634,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       }
       ensureShownColumnsIsMutable();
       shownColumns_.set(index, value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -652,7 +661,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       }
       ensureShownColumnsIsMutable();
       shownColumns_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +685,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public Builder addAllShownColumns(java.lang.Iterable<java.lang.String> values) {
       ensureShownColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, shownColumns_);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -699,9 +706,8 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public Builder clearShownColumns() {
-      shownColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      shownColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ;
       onChanged();
       return this;
     }
@@ -730,7 +736,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureShownColumnsIsMutable();
       shownColumns_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

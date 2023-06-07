@@ -24,7 +24,6 @@ package com.google.cloud.optimization.v1;
  * <pre>
  * Time windows constrain the time of an event, such as the arrival time at a
  * visit, or the start and end time of a vehicle.
- *
  * Hard time window bounds, `start_time` and `end_time`, enforce the earliest
  * and latest time of the event, such that `start_time &lt;= event_time &lt;=
  * end_time`. The soft time window lower bound, `soft_start_time`, expresses a
@@ -63,6 +62,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TimeWindow();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -283,13 +287,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs
    * before soft_start_time, computed as:
-   *
    * ```
    *    max(0, soft_start_time - t.seconds)
    *                           * cost_per_hour_before_soft_start_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * soft_start_time has been set.
    * </pre>
@@ -308,13 +310,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs
    * before soft_start_time, computed as:
-   *
    * ```
    *    max(0, soft_start_time - t.seconds)
    *                           * cost_per_hour_before_soft_start_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * soft_start_time has been set.
    * </pre>
@@ -336,13 +336,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs after
    * `soft_end_time`, computed as:
-   *
    * ```
    *    max(0, t.seconds - soft_end_time.seconds)
    *                     * cost_per_hour_after_soft_end_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * `soft_end_time` has been set.
    * </pre>
@@ -361,13 +359,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A cost per hour added to other costs in the model if the event occurs after
    * `soft_end_time`, computed as:
-   *
    * ```
    *    max(0, t.seconds - soft_end_time.seconds)
    *                     * cost_per_hour_after_soft_end_time / 3600,
    * t being the time of the event.
    * ```
-   *
    * This cost must be positive, and the field can only be set if
    * `soft_end_time` has been set.
    * </pre>
@@ -635,7 +631,6 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Time windows constrain the time of an event, such as the arrival time at a
    * visit, or the start and end time of a vehicle.
-   *
    * Hard time window bounds, `start_time` and `end_time`, enforce the earliest
    * and latest time of the event, such that `start_time &lt;= event_time &lt;=
    * end_time`. The soft time window lower bound, `soft_start_time`, expresses a
@@ -1665,13 +1660,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs
      * before soft_start_time, computed as:
-     *
      * ```
      *    max(0, soft_start_time - t.seconds)
      *                           * cost_per_hour_before_soft_start_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * soft_start_time has been set.
      * </pre>
@@ -1690,13 +1683,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs
      * before soft_start_time, computed as:
-     *
      * ```
      *    max(0, soft_start_time - t.seconds)
      *                           * cost_per_hour_before_soft_start_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * soft_start_time has been set.
      * </pre>
@@ -1715,13 +1706,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs
      * before soft_start_time, computed as:
-     *
      * ```
      *    max(0, soft_start_time - t.seconds)
      *                           * cost_per_hour_before_soft_start_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * soft_start_time has been set.
      * </pre>
@@ -1744,13 +1733,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs
      * before soft_start_time, computed as:
-     *
      * ```
      *    max(0, soft_start_time - t.seconds)
      *                           * cost_per_hour_before_soft_start_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * soft_start_time has been set.
      * </pre>
@@ -1773,13 +1760,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs after
      * `soft_end_time`, computed as:
-     *
      * ```
      *    max(0, t.seconds - soft_end_time.seconds)
      *                     * cost_per_hour_after_soft_end_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * `soft_end_time` has been set.
      * </pre>
@@ -1798,13 +1783,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs after
      * `soft_end_time`, computed as:
-     *
      * ```
      *    max(0, t.seconds - soft_end_time.seconds)
      *                     * cost_per_hour_after_soft_end_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * `soft_end_time` has been set.
      * </pre>
@@ -1823,13 +1806,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs after
      * `soft_end_time`, computed as:
-     *
      * ```
      *    max(0, t.seconds - soft_end_time.seconds)
      *                     * cost_per_hour_after_soft_end_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * `soft_end_time` has been set.
      * </pre>
@@ -1852,13 +1833,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A cost per hour added to other costs in the model if the event occurs after
      * `soft_end_time`, computed as:
-     *
      * ```
      *    max(0, t.seconds - soft_end_time.seconds)
      *                     * cost_per_hour_after_soft_end_time / 3600,
      * t being the time of the event.
      * ```
-     *
      * This cost must be positive, and the field can only be set if
      * `soft_end_time` has been set.
      * </pre>

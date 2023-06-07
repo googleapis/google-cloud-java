@@ -53,6 +53,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     return new AuthorizationPolicy();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_descriptor;
@@ -446,6 +451,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       return new Rule();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_descriptor;
@@ -624,14 +634,19 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       private Source() {
-        principals_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        ipBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        principals_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        ipBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Source();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -653,8 +668,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public static final int PRINCIPALS_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringArrayList principals_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList principals_;
       /**
        *
        *
@@ -737,8 +751,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public static final int IP_BLOCKS_FIELD_NUMBER = 2;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringArrayList ipBlocks_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList ipBlocks_;
       /**
        *
        *
@@ -1049,8 +1062,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          principals_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          ipBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          principals_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ipBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -1082,6 +1097,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             buildPartial() {
           com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source result =
               new com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source(this);
+          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -1089,17 +1105,23 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return result;
         }
 
+        private void buildPartialRepeatedFields(
+            com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source result) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            principals_ = principals_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.principals_ = principals_;
+          if (((bitField0_ & 0x00000002) != 0)) {
+            ipBlocks_ = ipBlocks_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.ipBlocks_ = ipBlocks_;
+        }
+
         private void buildPartial0(
             com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Source result) {
           int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            principals_.makeImmutable();
-            result.principals_ = principals_;
-          }
-          if (((from_bitField0_ & 0x00000002) != 0)) {
-            ipBlocks_.makeImmutable();
-            result.ipBlocks_ = ipBlocks_;
-          }
         }
 
         @java.lang.Override
@@ -1157,7 +1179,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (!other.principals_.isEmpty()) {
             if (principals_.isEmpty()) {
               principals_ = other.principals_;
-              bitField0_ |= 0x00000001;
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensurePrincipalsIsMutable();
               principals_.addAll(other.principals_);
@@ -1167,7 +1189,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (!other.ipBlocks_.isEmpty()) {
             if (ipBlocks_.isEmpty()) {
               ipBlocks_ = other.ipBlocks_;
-              bitField0_ |= 0x00000002;
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureIpBlocksIsMutable();
               ipBlocks_.addAll(other.ipBlocks_);
@@ -1233,14 +1255,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringArrayList principals_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        private com.google.protobuf.LazyStringList principals_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensurePrincipalsIsMutable() {
-          if (!principals_.isModifiable()) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             principals_ = new com.google.protobuf.LazyStringArrayList(principals_);
+            bitField0_ |= 0x00000001;
           }
-          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -1259,8 +1281,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return A list containing the principals.
          */
         public com.google.protobuf.ProtocolStringList getPrincipalsList() {
-          principals_.makeImmutable();
-          return principals_;
+          return principals_.getUnmodifiableView();
         }
         /**
          *
@@ -1345,7 +1366,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensurePrincipalsIsMutable();
           principals_.set(index, value);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1372,7 +1392,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensurePrincipalsIsMutable();
           principals_.add(value);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1396,7 +1415,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public Builder addAllPrincipals(java.lang.Iterable<java.lang.String> values) {
           ensurePrincipalsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, principals_);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1417,9 +1435,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearPrincipals() {
-          principals_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          principals_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
-          ;
           onChanged();
           return this;
         }
@@ -1447,19 +1464,18 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           checkByteStringIsUtf8(value);
           ensurePrincipalsIsMutable();
           principals_.add(value);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringArrayList ipBlocks_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        private com.google.protobuf.LazyStringList ipBlocks_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureIpBlocksIsMutable() {
-          if (!ipBlocks_.isModifiable()) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             ipBlocks_ = new com.google.protobuf.LazyStringArrayList(ipBlocks_);
+            bitField0_ |= 0x00000002;
           }
-          bitField0_ |= 0x00000002;
         }
         /**
          *
@@ -1477,8 +1493,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return A list containing the ipBlocks.
          */
         public com.google.protobuf.ProtocolStringList getIpBlocksList() {
-          ipBlocks_.makeImmutable();
-          return ipBlocks_;
+          return ipBlocks_.getUnmodifiableView();
         }
         /**
          *
@@ -1559,7 +1574,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensureIpBlocksIsMutable();
           ipBlocks_.set(index, value);
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1585,7 +1599,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensureIpBlocksIsMutable();
           ipBlocks_.add(value);
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1608,7 +1621,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public Builder addAllIpBlocks(java.lang.Iterable<java.lang.String> values) {
           ensureIpBlocksIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipBlocks_);
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1628,9 +1640,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearIpBlocks() {
-          ipBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          ipBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000002);
-          ;
           onChanged();
           return this;
         }
@@ -1657,7 +1668,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           checkByteStringIsUtf8(value);
           ensureIpBlocksIsMutable();
           ipBlocks_.add(value);
-          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -1971,15 +1981,20 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       private Destination() {
-        hosts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         ports_ = emptyIntList();
-        methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Destination();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2089,7 +2104,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          */
         com.google.protobuf.ByteString getHeaderNameBytes();
 
-        com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination
+        public com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination
                 .HttpHeaderMatch.TypeCase
             getTypeCase();
       }
@@ -2123,6 +2138,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return new HttpHeaderMatch();
         }
 
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyProto
               .internal_static_google_cloud_networksecurity_v1beta1_AuthorizationPolicy_Rule_Destination_HttpHeaderMatch_descriptor;
@@ -2141,8 +2161,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
 
         private int typeCase_ = 0;
-
-        @SuppressWarnings("serial")
         private java.lang.Object type_;
 
         public enum TypeCase
@@ -3173,8 +3191,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public static final int HOSTS_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringArrayList hosts_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList hosts_;
       /**
        *
        *
@@ -3303,8 +3320,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public static final int METHODS_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringArrayList methods_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList methods_;
       /**
        *
        *
@@ -3722,9 +3738,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          hosts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
           ports_ = emptyIntList();
-          methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000004);
           httpHeaderMatch_ = null;
           if (httpHeaderMatchBuilder_ != null) {
             httpHeaderMatchBuilder_.dispose();
@@ -3773,24 +3791,26 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         private void buildPartialRepeatedFields(
             com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination result) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            hosts_ = hosts_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.hosts_ = hosts_;
           if (((bitField0_ & 0x00000002) != 0)) {
             ports_.makeImmutable();
             bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.ports_ = ports_;
+          if (((bitField0_ & 0x00000004) != 0)) {
+            methods_ = methods_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.methods_ = methods_;
         }
 
         private void buildPartial0(
             com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy.Rule.Destination result) {
           int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            hosts_.makeImmutable();
-            result.hosts_ = hosts_;
-          }
-          if (((from_bitField0_ & 0x00000004) != 0)) {
-            methods_.makeImmutable();
-            result.methods_ = methods_;
-          }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.httpHeaderMatch_ =
                 httpHeaderMatchBuilder_ == null
@@ -3856,7 +3876,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (!other.hosts_.isEmpty()) {
             if (hosts_.isEmpty()) {
               hosts_ = other.hosts_;
-              bitField0_ |= 0x00000001;
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureHostsIsMutable();
               hosts_.addAll(other.hosts_);
@@ -3876,7 +3896,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (!other.methods_.isEmpty()) {
             if (methods_.isEmpty()) {
               methods_ = other.methods_;
-              bitField0_ |= 0x00000004;
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureMethodsIsMutable();
               methods_.addAll(other.methods_);
@@ -3970,14 +3990,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringArrayList hosts_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        private com.google.protobuf.LazyStringList hosts_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureHostsIsMutable() {
-          if (!hosts_.isModifiable()) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             hosts_ = new com.google.protobuf.LazyStringArrayList(hosts_);
+            bitField0_ |= 0x00000001;
           }
-          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -3994,8 +4014,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return A list containing the hosts.
          */
         public com.google.protobuf.ProtocolStringList getHostsList() {
-          hosts_.makeImmutable();
-          return hosts_;
+          return hosts_.getUnmodifiableView();
         }
         /**
          *
@@ -4072,7 +4091,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensureHostsIsMutable();
           hosts_.set(index, value);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4097,7 +4115,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensureHostsIsMutable();
           hosts_.add(value);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4119,7 +4136,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public Builder addAllHosts(java.lang.Iterable<java.lang.String> values) {
           ensureHostsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, hosts_);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4138,9 +4154,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearHosts() {
-          hosts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          hosts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
-          ;
           onChanged();
           return this;
         }
@@ -4166,7 +4181,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           checkByteStringIsUtf8(value);
           ensureHostsIsMutable();
           hosts_.add(value);
-          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -4306,14 +4320,14 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return this;
         }
 
-        private com.google.protobuf.LazyStringArrayList methods_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        private com.google.protobuf.LazyStringList methods_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureMethodsIsMutable() {
-          if (!methods_.isModifiable()) {
+          if (!((bitField0_ & 0x00000004) != 0)) {
             methods_ = new com.google.protobuf.LazyStringArrayList(methods_);
+            bitField0_ |= 0x00000004;
           }
-          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -4328,8 +4342,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return A list containing the methods.
          */
         public com.google.protobuf.ProtocolStringList getMethodsList() {
-          methods_.makeImmutable();
-          return methods_;
+          return methods_.getUnmodifiableView();
         }
         /**
          *
@@ -4398,7 +4411,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensureMethodsIsMutable();
           methods_.set(index, value);
-          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4421,7 +4433,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           ensureMethodsIsMutable();
           methods_.add(value);
-          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4441,7 +4452,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public Builder addAllMethods(java.lang.Iterable<java.lang.String> values) {
           ensureMethodsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, methods_);
-          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4458,9 +4468,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return This builder for chaining.
          */
         public Builder clearMethods() {
-          methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000004);
-          ;
           onChanged();
           return this;
         }
@@ -4484,7 +4493,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           checkByteStringIsUtf8(value);
           ensureMethodsIsMutable();
           methods_.add(value);
-          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }

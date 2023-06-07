@@ -47,6 +47,11 @@ public final class UpdateSshPublicKeyRequest extends com.google.protobuf.Generat
     return new UpdateSshPublicKeyRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.oslogin.v1.OsLoginProto
         .internal_static_google_cloud_oslogin_v1_UpdateSshPublicKeyRequest_descriptor;

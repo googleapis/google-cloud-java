@@ -52,6 +52,11 @@ public final class OSPolicyAssignmentOperationMetadata
     return new OSPolicyAssignmentOperationMetadata();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1.OsPolicyAssignmentsProto
         .internal_static_google_cloud_osconfig_v1_OSPolicyAssignmentOperationMetadata_descriptor;
@@ -460,7 +465,6 @@ public final class OSPolicyAssignmentOperationMetadata
    *
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -486,7 +490,6 @@ public final class OSPolicyAssignmentOperationMetadata
    *
    * <pre>
    * Reference to the `OSPolicyAssignment` API resource.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
    * </pre>
@@ -1169,7 +1172,6 @@ public final class OSPolicyAssignmentOperationMetadata
      *
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -1194,7 +1196,6 @@ public final class OSPolicyAssignmentOperationMetadata
      *
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -1219,7 +1220,6 @@ public final class OSPolicyAssignmentOperationMetadata
      *
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -1243,7 +1243,6 @@ public final class OSPolicyAssignmentOperationMetadata
      *
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>
@@ -1263,7 +1262,6 @@ public final class OSPolicyAssignmentOperationMetadata
      *
      * <pre>
      * Reference to the `OSPolicyAssignment` API resource.
-     *
      * Format:
      * `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id&#64;revision_id}`
      * </pre>

@@ -28,7 +28,6 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. Mask of fields to update.
-   *
    *  *   `displayName`
    * </pre>
    *
@@ -43,7 +42,6 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. Mask of fields to update.
-   *
    *  *   `displayName`
    * </pre>
    *
@@ -58,7 +56,6 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. Mask of fields to update.
-   *
    *  *   `displayName`
    * </pre>
    *

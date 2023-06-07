@@ -23,10 +23,8 @@ package com.google.cloud.lifesciences.v2beta;
  *
  * <pre>
  * Carries information about a disk that can be attached to a VM.
- *
  * See https://cloud.google.com/compute/docs/disks/performance for more
  * information about disk type, size, and performance considerations.
- *
  * Specify either [`Volume`][google.cloud.lifesciences.v2beta.Volume] or
  * [`Disk`][google.cloud.lifesciences.v2beta.Disk], but not both.
  * </pre>
@@ -53,6 +51,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Disk();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,7 +136,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The size, in GB, of the disk to attach. If the size is not
    * specified, a default is chosen to ensure reasonable I/O performance.
-   *
    * If the disk type is specified as `local-ssd`, multiple local drives are
    * automatically combined to provide the requested size. Note, however, that
    * each physical SSD is 375GB in size, and no more than 8 drives can be
@@ -442,10 +444,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Carries information about a disk that can be attached to a VM.
-   *
    * See https://cloud.google.com/compute/docs/disks/performance for more
    * information about disk type, size, and performance considerations.
-   *
    * Specify either [`Volume`][google.cloud.lifesciences.v2beta.Volume] or
    * [`Disk`][google.cloud.lifesciences.v2beta.Disk], but not both.
    * </pre>
@@ -791,7 +791,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The size, in GB, of the disk to attach. If the size is not
      * specified, a default is chosen to ensure reasonable I/O performance.
-     *
      * If the disk type is specified as `local-ssd`, multiple local drives are
      * automatically combined to provide the requested size. Note, however, that
      * each physical SSD is 375GB in size, and no more than 8 drives can be
@@ -812,7 +811,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The size, in GB, of the disk to attach. If the size is not
      * specified, a default is chosen to ensure reasonable I/O performance.
-     *
      * If the disk type is specified as `local-ssd`, multiple local drives are
      * automatically combined to provide the requested size. Note, however, that
      * each physical SSD is 375GB in size, and no more than 8 drives can be
@@ -837,7 +835,6 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The size, in GB, of the disk to attach. If the size is not
      * specified, a default is chosen to ensure reasonable I/O performance.
-     *
      * If the disk type is specified as `local-ssd`, multiple local drives are
      * automatically combined to provide the requested size. Note, however, that
      * each physical SSD is 375GB in size, and no more than 8 drives can be

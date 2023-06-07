@@ -48,6 +48,11 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
     return new ListDatasetsResponse();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.mapsplatformdatasets.v1alpha.MapsPlatformDatasetsProto
         .internal_static_google_maps_mapsplatformdatasets_v1alpha_ListDatasetsResponse_descriptor;

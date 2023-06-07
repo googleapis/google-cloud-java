@@ -310,6 +310,11 @@ public final class PatchJobs {
       return new ExecutePatchJobRequest();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_ExecutePatchJobRequest_descriptor;
@@ -2557,6 +2562,11 @@ public final class PatchJobs {
       return new GetPatchJobRequest();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_GetPatchJobRequest_descriptor;
@@ -3277,6 +3287,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListPatchJobInstanceDetailsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4491,6 +4506,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListPatchJobInstanceDetailsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5840,6 +5860,11 @@ public final class PatchJobs {
       return new PatchJobInstanceDetails();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_PatchJobInstanceDetails_descriptor;
@@ -7185,6 +7210,11 @@ public final class PatchJobs {
       return new ListPatchJobsRequest();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_ListPatchJobsRequest_descriptor;
@@ -8363,6 +8393,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListPatchJobsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9916,10 +9951,8 @@ public final class PatchJobs {
    * <pre>
    * A high level representation of a patch job that is either in progress
    * or has completed.
-   *
    * Instance details are not included in the job. To paginate through instance
    * details, use `ListPatchJobInstanceDetails`.
-   *
    * For more information about patch jobs, see
    * [Creating patch
    * jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
@@ -9950,6 +9983,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PatchJob();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10467,6 +10505,11 @@ public final class PatchJobs {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new InstanceDetailsSummary();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13359,10 +13402,8 @@ public final class PatchJobs {
      * <pre>
      * A high level representation of a patch job that is either in progress
      * or has completed.
-     *
      * Instance details are not included in the job. To paginate through instance
      * details, use `ListPatchJobInstanceDetails`.
-     *
      * For more information about patch jobs, see
      * [Creating patch
      * jobs](https://cloud.google.com/compute/docs/os-patch-management/create-patch-job).
@@ -16251,6 +16292,11 @@ public final class PatchJobs {
       return new PatchConfig();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_PatchConfig_descriptor;
@@ -19047,6 +19093,11 @@ public final class PatchJobs {
       return new Instance();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_Instance_descriptor;
@@ -19947,6 +19998,11 @@ public final class PatchJobs {
       return new CancelPatchJobRequest();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_CancelPatchJobRequest_descriptor;
@@ -20709,14 +20765,19 @@ public final class PatchJobs {
 
     private AptSettings() {
       type_ = 0;
-      excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      exclusivePackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exclusivePackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AptSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -20935,8 +20996,7 @@ public final class PatchJobs {
     public static final int EXCLUDES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList excludes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList excludes_;
     /**
      *
      *
@@ -20999,8 +21059,7 @@ public final class PatchJobs {
     public static final int EXCLUSIVE_PACKAGES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList exclusivePackages_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList exclusivePackages_;
     /**
      *
      *
@@ -21311,8 +21370,10 @@ public final class PatchJobs {
         super.clear();
         bitField0_ = 0;
         type_ = 0;
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -21340,6 +21401,7 @@ public final class PatchJobs {
       public com.google.cloud.osconfig.v1beta.PatchJobs.AptSettings buildPartial() {
         com.google.cloud.osconfig.v1beta.PatchJobs.AptSettings result =
             new com.google.cloud.osconfig.v1beta.PatchJobs.AptSettings(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -21347,18 +21409,24 @@ public final class PatchJobs {
         return result;
       }
 
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.PatchJobs.AptSettings result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          excludes_ = excludes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.excludes_ = excludes_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          exclusivePackages_ = exclusivePackages_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.exclusivePackages_ = exclusivePackages_;
+      }
+
       private void buildPartial0(com.google.cloud.osconfig.v1beta.PatchJobs.AptSettings result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.type_ = type_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          excludes_.makeImmutable();
-          result.excludes_ = excludes_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          exclusivePackages_.makeImmutable();
-          result.exclusivePackages_ = exclusivePackages_;
         }
       }
 
@@ -21416,7 +21484,7 @@ public final class PatchJobs {
         if (!other.excludes_.isEmpty()) {
           if (excludes_.isEmpty()) {
             excludes_ = other.excludes_;
-            bitField0_ |= 0x00000002;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureExcludesIsMutable();
             excludes_.addAll(other.excludes_);
@@ -21426,7 +21494,7 @@ public final class PatchJobs {
         if (!other.exclusivePackages_.isEmpty()) {
           if (exclusivePackages_.isEmpty()) {
             exclusivePackages_ = other.exclusivePackages_;
-            bitField0_ |= 0x00000004;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureExclusivePackagesIsMutable();
             exclusivePackages_.addAll(other.exclusivePackages_);
@@ -21595,14 +21663,14 @@ public final class PatchJobs {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList excludes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList excludes_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExcludesIsMutable() {
-        if (!excludes_.isModifiable()) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           excludes_ = new com.google.protobuf.LazyStringArrayList(excludes_);
+          bitField0_ |= 0x00000002;
         }
-        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -21616,8 +21684,7 @@ public final class PatchJobs {
        * @return A list containing the excludes.
        */
       public com.google.protobuf.ProtocolStringList getExcludesList() {
-        excludes_.makeImmutable();
-        return excludes_;
+        return excludes_.getUnmodifiableView();
       }
       /**
        *
@@ -21682,7 +21749,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.set(index, value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -21704,7 +21770,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -21723,7 +21788,6 @@ public final class PatchJobs {
       public Builder addAllExcludes(java.lang.Iterable<java.lang.String> values) {
         ensureExcludesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludes_);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -21739,9 +21803,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExcludes() {
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        ;
         onChanged();
         return this;
       }
@@ -21764,19 +21827,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList exclusivePackages_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList exclusivePackages_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExclusivePackagesIsMutable() {
-        if (!exclusivePackages_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           exclusivePackages_ = new com.google.protobuf.LazyStringArrayList(exclusivePackages_);
+          bitField0_ |= 0x00000004;
         }
-        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -21793,8 +21855,7 @@ public final class PatchJobs {
        * @return A list containing the exclusivePackages.
        */
       public com.google.protobuf.ProtocolStringList getExclusivePackagesList() {
-        exclusivePackages_.makeImmutable();
-        return exclusivePackages_;
+        return exclusivePackages_.getUnmodifiableView();
       }
       /**
        *
@@ -21871,7 +21932,6 @@ public final class PatchJobs {
         }
         ensureExclusivePackagesIsMutable();
         exclusivePackages_.set(index, value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -21896,7 +21956,6 @@ public final class PatchJobs {
         }
         ensureExclusivePackagesIsMutable();
         exclusivePackages_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -21918,7 +21977,6 @@ public final class PatchJobs {
       public Builder addAllExclusivePackages(java.lang.Iterable<java.lang.String> values) {
         ensureExclusivePackagesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exclusivePackages_);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -21937,9 +21995,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExclusivePackages() {
-        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        ;
         onChanged();
         return this;
       }
@@ -21965,7 +22022,6 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExclusivePackagesIsMutable();
         exclusivePackages_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -22190,7 +22246,6 @@ public final class PatchJobs {
    * <pre>
    * Yum patching is performed by executing `yum update`. Additional options
    * can be set to control how this is executed.
-   *
    * Note that not all settings are supported on all platforms.
    * </pre>
    *
@@ -22207,14 +22262,19 @@ public final class PatchJobs {
     }
 
     private YumSettings() {
-      excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      exclusivePackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exclusivePackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new YumSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22272,8 +22332,7 @@ public final class PatchJobs {
     public static final int EXCLUDES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList excludes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList excludes_;
     /**
      *
      *
@@ -22340,8 +22399,7 @@ public final class PatchJobs {
     public static final int EXCLUSIVE_PACKAGES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList exclusivePackages_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList exclusivePackages_;
     /**
      *
      *
@@ -22621,7 +22679,6 @@ public final class PatchJobs {
      * <pre>
      * Yum patching is performed by executing `yum update`. Additional options
      * can be set to control how this is executed.
-     *
      * Note that not all settings are supported on all platforms.
      * </pre>
      *
@@ -22660,8 +22717,10 @@ public final class PatchJobs {
         bitField0_ = 0;
         security_ = false;
         minimal_ = false;
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -22689,11 +22748,26 @@ public final class PatchJobs {
       public com.google.cloud.osconfig.v1beta.PatchJobs.YumSettings buildPartial() {
         com.google.cloud.osconfig.v1beta.PatchJobs.YumSettings result =
             new com.google.cloud.osconfig.v1beta.PatchJobs.YumSettings(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.PatchJobs.YumSettings result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          excludes_ = excludes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.excludes_ = excludes_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          exclusivePackages_ = exclusivePackages_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.exclusivePackages_ = exclusivePackages_;
       }
 
       private void buildPartial0(com.google.cloud.osconfig.v1beta.PatchJobs.YumSettings result) {
@@ -22703,14 +22777,6 @@ public final class PatchJobs {
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.minimal_ = minimal_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          excludes_.makeImmutable();
-          result.excludes_ = excludes_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          exclusivePackages_.makeImmutable();
-          result.exclusivePackages_ = exclusivePackages_;
         }
       }
 
@@ -22771,7 +22837,7 @@ public final class PatchJobs {
         if (!other.excludes_.isEmpty()) {
           if (excludes_.isEmpty()) {
             excludes_ = other.excludes_;
-            bitField0_ |= 0x00000004;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureExcludesIsMutable();
             excludes_.addAll(other.excludes_);
@@ -22781,7 +22847,7 @@ public final class PatchJobs {
         if (!other.exclusivePackages_.isEmpty()) {
           if (exclusivePackages_.isEmpty()) {
             exclusivePackages_ = other.exclusivePackages_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureExclusivePackagesIsMutable();
             exclusivePackages_.addAll(other.exclusivePackages_);
@@ -22968,14 +23034,14 @@ public final class PatchJobs {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList excludes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList excludes_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExcludesIsMutable() {
-        if (!excludes_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           excludes_ = new com.google.protobuf.LazyStringArrayList(excludes_);
+          bitField0_ |= 0x00000004;
         }
-        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -22990,8 +23056,7 @@ public final class PatchJobs {
        * @return A list containing the excludes.
        */
       public com.google.protobuf.ProtocolStringList getExcludesList() {
-        excludes_.makeImmutable();
-        return excludes_;
+        return excludes_.getUnmodifiableView();
       }
       /**
        *
@@ -23060,7 +23125,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.set(index, value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23083,7 +23147,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23103,7 +23166,6 @@ public final class PatchJobs {
       public Builder addAllExcludes(java.lang.Iterable<java.lang.String> values) {
         ensureExcludesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludes_);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23120,9 +23182,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExcludes() {
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        ;
         onChanged();
         return this;
       }
@@ -23146,19 +23207,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList exclusivePackages_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList exclusivePackages_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExclusivePackagesIsMutable() {
-        if (!exclusivePackages_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           exclusivePackages_ = new com.google.protobuf.LazyStringArrayList(exclusivePackages_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -23175,8 +23235,7 @@ public final class PatchJobs {
        * @return A list containing the exclusivePackages.
        */
       public com.google.protobuf.ProtocolStringList getExclusivePackagesList() {
-        exclusivePackages_.makeImmutable();
-        return exclusivePackages_;
+        return exclusivePackages_.getUnmodifiableView();
       }
       /**
        *
@@ -23253,7 +23312,6 @@ public final class PatchJobs {
         }
         ensureExclusivePackagesIsMutable();
         exclusivePackages_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -23278,7 +23336,6 @@ public final class PatchJobs {
         }
         ensureExclusivePackagesIsMutable();
         exclusivePackages_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -23300,7 +23357,6 @@ public final class PatchJobs {
       public Builder addAllExclusivePackages(java.lang.Iterable<java.lang.String> values) {
         ensureExclusivePackagesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exclusivePackages_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -23319,9 +23375,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExclusivePackages() {
-        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        exclusivePackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -23347,7 +23402,6 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExclusivePackagesIsMutable();
         exclusivePackages_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -23445,6 +23499,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GooSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -24111,16 +24170,21 @@ public final class PatchJobs {
     }
 
     private ZypperSettings() {
-      categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      severities_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      exclusivePatches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      severities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exclusivePatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ZypperSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -24177,8 +24241,7 @@ public final class PatchJobs {
     public static final int CATEGORIES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList categories_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList categories_;
     /**
      *
      *
@@ -24245,8 +24308,7 @@ public final class PatchJobs {
     public static final int SEVERITIES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList severities_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList severities_;
     /**
      *
      *
@@ -24313,8 +24375,7 @@ public final class PatchJobs {
     public static final int EXCLUDES_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList excludes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList excludes_;
     /**
      *
      *
@@ -24377,8 +24438,7 @@ public final class PatchJobs {
     public static final int EXCLUSIVE_PATCHES_FIELD_NUMBER = 6;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList exclusivePatches_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList exclusivePatches_;
     /**
      *
      *
@@ -24723,10 +24783,14 @@ public final class PatchJobs {
         bitField0_ = 0;
         withOptional_ = false;
         withUpdate_ = false;
-        categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        severities_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        severities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -24754,11 +24818,36 @@ public final class PatchJobs {
       public com.google.cloud.osconfig.v1beta.PatchJobs.ZypperSettings buildPartial() {
         com.google.cloud.osconfig.v1beta.PatchJobs.ZypperSettings result =
             new com.google.cloud.osconfig.v1beta.PatchJobs.ZypperSettings(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.osconfig.v1beta.PatchJobs.ZypperSettings result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          categories_ = categories_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.categories_ = categories_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          severities_ = severities_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.severities_ = severities_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          excludes_ = excludes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.excludes_ = excludes_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          exclusivePatches_ = exclusivePatches_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.exclusivePatches_ = exclusivePatches_;
       }
 
       private void buildPartial0(com.google.cloud.osconfig.v1beta.PatchJobs.ZypperSettings result) {
@@ -24768,22 +24857,6 @@ public final class PatchJobs {
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.withUpdate_ = withUpdate_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          categories_.makeImmutable();
-          result.categories_ = categories_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          severities_.makeImmutable();
-          result.severities_ = severities_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          excludes_.makeImmutable();
-          result.excludes_ = excludes_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          exclusivePatches_.makeImmutable();
-          result.exclusivePatches_ = exclusivePatches_;
         }
       }
 
@@ -24844,7 +24917,7 @@ public final class PatchJobs {
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ |= 0x00000004;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -24854,7 +24927,7 @@ public final class PatchJobs {
         if (!other.severities_.isEmpty()) {
           if (severities_.isEmpty()) {
             severities_ = other.severities_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSeveritiesIsMutable();
             severities_.addAll(other.severities_);
@@ -24864,7 +24937,7 @@ public final class PatchJobs {
         if (!other.excludes_.isEmpty()) {
           if (excludes_.isEmpty()) {
             excludes_ = other.excludes_;
-            bitField0_ |= 0x00000010;
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureExcludesIsMutable();
             excludes_.addAll(other.excludes_);
@@ -24874,7 +24947,7 @@ public final class PatchJobs {
         if (!other.exclusivePatches_.isEmpty()) {
           if (exclusivePatches_.isEmpty()) {
             exclusivePatches_ = other.exclusivePatches_;
-            bitField0_ |= 0x00000020;
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureExclusivePatchesIsMutable();
             exclusivePatches_.addAll(other.exclusivePatches_);
@@ -25072,14 +25145,14 @@ public final class PatchJobs {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList categories_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList categories_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureCategoriesIsMutable() {
-        if (!categories_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           categories_ = new com.google.protobuf.LazyStringArrayList(categories_);
+          bitField0_ |= 0x00000004;
         }
-        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -25094,8 +25167,7 @@ public final class PatchJobs {
        * @return A list containing the categories.
        */
       public com.google.protobuf.ProtocolStringList getCategoriesList() {
-        categories_.makeImmutable();
-        return categories_;
+        return categories_.getUnmodifiableView();
       }
       /**
        *
@@ -25164,7 +25236,6 @@ public final class PatchJobs {
         }
         ensureCategoriesIsMutable();
         categories_.set(index, value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -25187,7 +25258,6 @@ public final class PatchJobs {
         }
         ensureCategoriesIsMutable();
         categories_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -25207,7 +25277,6 @@ public final class PatchJobs {
       public Builder addAllCategories(java.lang.Iterable<java.lang.String> values) {
         ensureCategoriesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categories_);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -25224,9 +25293,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearCategories() {
-        categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        ;
         onChanged();
         return this;
       }
@@ -25250,19 +25318,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureCategoriesIsMutable();
         categories_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList severities_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList severities_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureSeveritiesIsMutable() {
-        if (!severities_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           severities_ = new com.google.protobuf.LazyStringArrayList(severities_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -25277,8 +25344,7 @@ public final class PatchJobs {
        * @return A list containing the severities.
        */
       public com.google.protobuf.ProtocolStringList getSeveritiesList() {
-        severities_.makeImmutable();
-        return severities_;
+        return severities_.getUnmodifiableView();
       }
       /**
        *
@@ -25347,7 +25413,6 @@ public final class PatchJobs {
         }
         ensureSeveritiesIsMutable();
         severities_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -25370,7 +25435,6 @@ public final class PatchJobs {
         }
         ensureSeveritiesIsMutable();
         severities_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -25390,7 +25454,6 @@ public final class PatchJobs {
       public Builder addAllSeverities(java.lang.Iterable<java.lang.String> values) {
         ensureSeveritiesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, severities_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -25407,9 +25470,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearSeverities() {
-        severities_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        severities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -25433,19 +25495,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureSeveritiesIsMutable();
         severities_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList excludes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList excludes_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExcludesIsMutable() {
-        if (!excludes_.isModifiable()) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           excludes_ = new com.google.protobuf.LazyStringArrayList(excludes_);
+          bitField0_ |= 0x00000010;
         }
-        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -25459,8 +25520,7 @@ public final class PatchJobs {
        * @return A list containing the excludes.
        */
       public com.google.protobuf.ProtocolStringList getExcludesList() {
-        excludes_.makeImmutable();
-        return excludes_;
+        return excludes_.getUnmodifiableView();
       }
       /**
        *
@@ -25525,7 +25585,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.set(index, value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -25547,7 +25606,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -25566,7 +25624,6 @@ public final class PatchJobs {
       public Builder addAllExcludes(java.lang.Iterable<java.lang.String> values) {
         ensureExcludesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludes_);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -25582,9 +25639,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExcludes() {
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
-        ;
         onChanged();
         return this;
       }
@@ -25607,19 +25663,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList exclusivePatches_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList exclusivePatches_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExclusivePatchesIsMutable() {
-        if (!exclusivePatches_.isModifiable()) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           exclusivePatches_ = new com.google.protobuf.LazyStringArrayList(exclusivePatches_);
+          bitField0_ |= 0x00000020;
         }
-        bitField0_ |= 0x00000020;
       }
       /**
        *
@@ -25635,8 +25690,7 @@ public final class PatchJobs {
        * @return A list containing the exclusivePatches.
        */
       public com.google.protobuf.ProtocolStringList getExclusivePatchesList() {
-        exclusivePatches_.makeImmutable();
-        return exclusivePatches_;
+        return exclusivePatches_.getUnmodifiableView();
       }
       /**
        *
@@ -25709,7 +25763,6 @@ public final class PatchJobs {
         }
         ensureExclusivePatchesIsMutable();
         exclusivePatches_.set(index, value);
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -25733,7 +25786,6 @@ public final class PatchJobs {
         }
         ensureExclusivePatchesIsMutable();
         exclusivePatches_.add(value);
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -25754,7 +25806,6 @@ public final class PatchJobs {
       public Builder addAllExclusivePatches(java.lang.Iterable<java.lang.String> values) {
         ensureExclusivePatchesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exclusivePatches_);
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -25772,9 +25823,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExclusivePatches() {
-        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000020);
-        ;
         onChanged();
         return this;
       }
@@ -25799,7 +25849,6 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExclusivePatchesIsMutable();
         exclusivePatches_.add(value);
-        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -26084,14 +26133,19 @@ public final class PatchJobs {
 
     private WindowsUpdateSettings() {
       classifications_ = java.util.Collections.emptyList();
-      excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      exclusivePatches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exclusivePatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WindowsUpdateSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -26588,8 +26642,7 @@ public final class PatchJobs {
     public static final int EXCLUDES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList excludes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList excludes_;
     /**
      *
      *
@@ -26652,8 +26705,7 @@ public final class PatchJobs {
     public static final int EXCLUSIVE_PATCHES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList exclusivePatches_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList exclusivePatches_;
     /**
      *
      *
@@ -26975,8 +27027,10 @@ public final class PatchJobs {
         bitField0_ = 0;
         classifications_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -27021,19 +27075,21 @@ public final class PatchJobs {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.classifications_ = classifications_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          excludes_ = excludes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.excludes_ = excludes_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          exclusivePatches_ = exclusivePatches_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.exclusivePatches_ = exclusivePatches_;
       }
 
       private void buildPartial0(
           com.google.cloud.osconfig.v1beta.PatchJobs.WindowsUpdateSettings result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          excludes_.makeImmutable();
-          result.excludes_ = excludes_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          exclusivePatches_.makeImmutable();
-          result.exclusivePatches_ = exclusivePatches_;
-        }
       }
 
       @java.lang.Override
@@ -27100,7 +27156,7 @@ public final class PatchJobs {
         if (!other.excludes_.isEmpty()) {
           if (excludes_.isEmpty()) {
             excludes_ = other.excludes_;
-            bitField0_ |= 0x00000002;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureExcludesIsMutable();
             excludes_.addAll(other.excludes_);
@@ -27110,7 +27166,7 @@ public final class PatchJobs {
         if (!other.exclusivePatches_.isEmpty()) {
           if (exclusivePatches_.isEmpty()) {
             exclusivePatches_ = other.exclusivePatches_;
-            bitField0_ |= 0x00000004;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureExclusivePatchesIsMutable();
             exclusivePatches_.addAll(other.exclusivePatches_);
@@ -27465,14 +27521,14 @@ public final class PatchJobs {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList excludes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList excludes_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExcludesIsMutable() {
-        if (!excludes_.isModifiable()) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           excludes_ = new com.google.protobuf.LazyStringArrayList(excludes_);
+          bitField0_ |= 0x00000002;
         }
-        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -27486,8 +27542,7 @@ public final class PatchJobs {
        * @return A list containing the excludes.
        */
       public com.google.protobuf.ProtocolStringList getExcludesList() {
-        excludes_.makeImmutable();
-        return excludes_;
+        return excludes_.getUnmodifiableView();
       }
       /**
        *
@@ -27552,7 +27607,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.set(index, value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -27574,7 +27628,6 @@ public final class PatchJobs {
         }
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -27593,7 +27646,6 @@ public final class PatchJobs {
       public Builder addAllExcludes(java.lang.Iterable<java.lang.String> values) {
         ensureExcludesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludes_);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -27609,9 +27661,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExcludes() {
-        excludes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        ;
         onChanged();
         return this;
       }
@@ -27634,19 +27685,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExcludesIsMutable();
         excludes_.add(value);
-        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList exclusivePatches_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList exclusivePatches_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExclusivePatchesIsMutable() {
-        if (!exclusivePatches_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           exclusivePatches_ = new com.google.protobuf.LazyStringArrayList(exclusivePatches_);
+          bitField0_ |= 0x00000004;
         }
-        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -27662,8 +27712,7 @@ public final class PatchJobs {
        * @return A list containing the exclusivePatches.
        */
       public com.google.protobuf.ProtocolStringList getExclusivePatchesList() {
-        exclusivePatches_.makeImmutable();
-        return exclusivePatches_;
+        return exclusivePatches_.getUnmodifiableView();
       }
       /**
        *
@@ -27736,7 +27785,6 @@ public final class PatchJobs {
         }
         ensureExclusivePatchesIsMutable();
         exclusivePatches_.set(index, value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -27760,7 +27808,6 @@ public final class PatchJobs {
         }
         ensureExclusivePatchesIsMutable();
         exclusivePatches_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -27781,7 +27828,6 @@ public final class PatchJobs {
       public Builder addAllExclusivePatches(java.lang.Iterable<java.lang.String> values) {
         ensureExclusivePatchesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exclusivePatches_);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -27799,9 +27845,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearExclusivePatches() {
-        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        exclusivePatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        ;
         onChanged();
         return this;
       }
@@ -27826,7 +27871,6 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureExclusivePatchesIsMutable();
         exclusivePatches_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -28000,6 +28044,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExecStep();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -29107,7 +29156,8 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1beta.PatchJobs.ExecStepConfig.Interpreter getInterpreter();
 
-    com.google.cloud.osconfig.v1beta.PatchJobs.ExecStepConfig.ExecutableCase getExecutableCase();
+    public com.google.cloud.osconfig.v1beta.PatchJobs.ExecStepConfig.ExecutableCase
+        getExecutableCase();
   }
   /**
    *
@@ -29137,6 +29187,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExecStepConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -29322,8 +29377,6 @@ public final class PatchJobs {
     }
 
     private int executableCase_ = 0;
-
-    @SuppressWarnings("serial")
     private java.lang.Object executable_;
 
     public enum ExecutableCase
@@ -30856,6 +30909,11 @@ public final class PatchJobs {
       return new GcsObject();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.osconfig.v1beta.PatchJobs
           .internal_static_google_cloud_osconfig_v1beta_GcsObject_descriptor;
@@ -32004,15 +32062,20 @@ public final class PatchJobs {
 
     private PatchInstanceFilter() {
       groupLabels_ = java.util.Collections.emptyList();
-      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PatchInstanceFilter();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -32124,6 +32187,11 @@ public final class PatchJobs {
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new GroupLabel();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -33011,8 +33079,7 @@ public final class PatchJobs {
     public static final int ZONES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList zones_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList zones_;
     /**
      *
      *
@@ -33079,8 +33146,7 @@ public final class PatchJobs {
     public static final int INSTANCES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList instances_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList instances_;
     /**
      *
      *
@@ -33155,8 +33221,7 @@ public final class PatchJobs {
     public static final int INSTANCE_NAME_PREFIXES_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList instanceNamePrefixes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList instanceNamePrefixes_;
     /**
      *
      *
@@ -33496,9 +33561,12 @@ public final class PatchJobs {
           groupLabelsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -33546,6 +33614,21 @@ public final class PatchJobs {
         } else {
           result.groupLabels_ = groupLabelsBuilder_.build();
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          zones_ = zones_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.zones_ = zones_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          instances_ = instances_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.instances_ = instances_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          instanceNamePrefixes_ = instanceNamePrefixes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.instanceNamePrefixes_ = instanceNamePrefixes_;
       }
 
       private void buildPartial0(
@@ -33553,18 +33636,6 @@ public final class PatchJobs {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.all_ = all_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          zones_.makeImmutable();
-          result.zones_ = zones_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          instances_.makeImmutable();
-          result.instances_ = instances_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          instanceNamePrefixes_.makeImmutable();
-          result.instanceNamePrefixes_ = instanceNamePrefixes_;
         }
       }
 
@@ -33651,7 +33722,7 @@ public final class PatchJobs {
         if (!other.zones_.isEmpty()) {
           if (zones_.isEmpty()) {
             zones_ = other.zones_;
-            bitField0_ |= 0x00000004;
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureZonesIsMutable();
             zones_.addAll(other.zones_);
@@ -33661,7 +33732,7 @@ public final class PatchJobs {
         if (!other.instances_.isEmpty()) {
           if (instances_.isEmpty()) {
             instances_ = other.instances_;
-            bitField0_ |= 0x00000008;
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureInstancesIsMutable();
             instances_.addAll(other.instances_);
@@ -33671,7 +33742,7 @@ public final class PatchJobs {
         if (!other.instanceNamePrefixes_.isEmpty()) {
           if (instanceNamePrefixes_.isEmpty()) {
             instanceNamePrefixes_ = other.instanceNamePrefixes_;
-            bitField0_ |= 0x00000010;
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureInstanceNamePrefixesIsMutable();
             instanceNamePrefixes_.addAll(other.instanceNamePrefixes_);
@@ -34262,14 +34333,14 @@ public final class PatchJobs {
         return groupLabelsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringArrayList zones_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList zones_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureZonesIsMutable() {
-        if (!zones_.isModifiable()) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
+          bitField0_ |= 0x00000004;
         }
-        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -34284,8 +34355,7 @@ public final class PatchJobs {
        * @return A list containing the zones.
        */
       public com.google.protobuf.ProtocolStringList getZonesList() {
-        zones_.makeImmutable();
-        return zones_;
+        return zones_.getUnmodifiableView();
       }
       /**
        *
@@ -34354,7 +34424,6 @@ public final class PatchJobs {
         }
         ensureZonesIsMutable();
         zones_.set(index, value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -34377,7 +34446,6 @@ public final class PatchJobs {
         }
         ensureZonesIsMutable();
         zones_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -34397,7 +34465,6 @@ public final class PatchJobs {
       public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
         ensureZonesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -34414,9 +34481,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearZones() {
-        zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
-        ;
         onChanged();
         return this;
       }
@@ -34440,19 +34506,18 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureZonesIsMutable();
         zones_.add(value);
-        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList instances_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList instances_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureInstancesIsMutable() {
-        if (!instances_.isModifiable()) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
+          bitField0_ |= 0x00000008;
         }
-        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -34469,8 +34534,7 @@ public final class PatchJobs {
        * @return A list containing the instances.
        */
       public com.google.protobuf.ProtocolStringList getInstancesList() {
-        instances_.makeImmutable();
-        return instances_;
+        return instances_.getUnmodifiableView();
       }
       /**
        *
@@ -34547,7 +34611,6 @@ public final class PatchJobs {
         }
         ensureInstancesIsMutable();
         instances_.set(index, value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -34572,7 +34635,6 @@ public final class PatchJobs {
         }
         ensureInstancesIsMutable();
         instances_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -34594,7 +34656,6 @@ public final class PatchJobs {
       public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
         ensureInstancesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -34613,9 +34674,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearInstances() {
-        instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
-        ;
         onChanged();
         return this;
       }
@@ -34641,20 +34701,19 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureInstancesIsMutable();
         instances_.add(value);
-        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList instanceNamePrefixes_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      private com.google.protobuf.LazyStringList instanceNamePrefixes_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureInstanceNamePrefixesIsMutable() {
-        if (!instanceNamePrefixes_.isModifiable()) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           instanceNamePrefixes_ =
               new com.google.protobuf.LazyStringArrayList(instanceNamePrefixes_);
+          bitField0_ |= 0x00000010;
         }
-        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -34670,8 +34729,7 @@ public final class PatchJobs {
        * @return A list containing the instanceNamePrefixes.
        */
       public com.google.protobuf.ProtocolStringList getInstanceNamePrefixesList() {
-        instanceNamePrefixes_.makeImmutable();
-        return instanceNamePrefixes_;
+        return instanceNamePrefixes_.getUnmodifiableView();
       }
       /**
        *
@@ -34744,7 +34802,6 @@ public final class PatchJobs {
         }
         ensureInstanceNamePrefixesIsMutable();
         instanceNamePrefixes_.set(index, value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -34768,7 +34825,6 @@ public final class PatchJobs {
         }
         ensureInstanceNamePrefixesIsMutable();
         instanceNamePrefixes_.add(value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -34789,7 +34845,6 @@ public final class PatchJobs {
       public Builder addAllInstanceNamePrefixes(java.lang.Iterable<java.lang.String> values) {
         ensureInstanceNamePrefixesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceNamePrefixes_);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -34807,9 +34862,8 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder clearInstanceNamePrefixes() {
-        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        instanceNamePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
-        ;
         onChanged();
         return this;
       }
@@ -34834,7 +34888,6 @@ public final class PatchJobs {
         checkByteStringIsUtf8(value);
         ensureInstanceNamePrefixesIsMutable();
         instanceNamePrefixes_.add(value);
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -34943,21 +34996,17 @@ public final class PatchJobs {
      * The maximum number (or percentage) of VMs per zone to disrupt at any given
      * moment. The number of VMs calculated from multiplying the percentage by the
      * total number of VMs in a zone is rounded up.
-     *
      * During patching, a VM is considered disrupted from the time the agent is
      * notified to begin until patching has completed. This disruption time
      * includes the time to complete reboot and any post-patch steps.
-     *
      * A VM contributes to the disruption budget if its patching operation fails
      * either when applying the patches, running pre or post patch steps, or if it
      * fails to respond with a success notification before timing out. VMs that
      * are not running or do not have an active agent do not count toward this
      * disruption budget.
-     *
      * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
      * the patch job stops, because continuing to the next zone requires
      * completion of the patch process in the previous zone.
-     *
      * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
      * fail to patch in the current zone, the patch job continues to patch 2 VMs
      * at a time until the zone is completed. When that zone is completed
@@ -34977,21 +35026,17 @@ public final class PatchJobs {
      * The maximum number (or percentage) of VMs per zone to disrupt at any given
      * moment. The number of VMs calculated from multiplying the percentage by the
      * total number of VMs in a zone is rounded up.
-     *
      * During patching, a VM is considered disrupted from the time the agent is
      * notified to begin until patching has completed. This disruption time
      * includes the time to complete reboot and any post-patch steps.
-     *
      * A VM contributes to the disruption budget if its patching operation fails
      * either when applying the patches, running pre or post patch steps, or if it
      * fails to respond with a success notification before timing out. VMs that
      * are not running or do not have an active agent do not count toward this
      * disruption budget.
-     *
      * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
      * the patch job stops, because continuing to the next zone requires
      * completion of the patch process in the previous zone.
-     *
      * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
      * fail to patch in the current zone, the patch job continues to patch 2 VMs
      * at a time until the zone is completed. When that zone is completed
@@ -35011,21 +35056,17 @@ public final class PatchJobs {
      * The maximum number (or percentage) of VMs per zone to disrupt at any given
      * moment. The number of VMs calculated from multiplying the percentage by the
      * total number of VMs in a zone is rounded up.
-     *
      * During patching, a VM is considered disrupted from the time the agent is
      * notified to begin until patching has completed. This disruption time
      * includes the time to complete reboot and any post-patch steps.
-     *
      * A VM contributes to the disruption budget if its patching operation fails
      * either when applying the patches, running pre or post patch steps, or if it
      * fails to respond with a success notification before timing out. VMs that
      * are not running or do not have an active agent do not count toward this
      * disruption budget.
-     *
      * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
      * the patch job stops, because continuing to the next zone requires
      * completion of the patch process in the previous zone.
-     *
      * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
      * fail to patch in the current zone, the patch job continues to patch 2 VMs
      * at a time until the zone is completed. When that zone is completed
@@ -35065,6 +35106,11 @@ public final class PatchJobs {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PatchRollout();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -35297,21 +35343,17 @@ public final class PatchJobs {
      * The maximum number (or percentage) of VMs per zone to disrupt at any given
      * moment. The number of VMs calculated from multiplying the percentage by the
      * total number of VMs in a zone is rounded up.
-     *
      * During patching, a VM is considered disrupted from the time the agent is
      * notified to begin until patching has completed. This disruption time
      * includes the time to complete reboot and any post-patch steps.
-     *
      * A VM contributes to the disruption budget if its patching operation fails
      * either when applying the patches, running pre or post patch steps, or if it
      * fails to respond with a success notification before timing out. VMs that
      * are not running or do not have an active agent do not count toward this
      * disruption budget.
-     *
      * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
      * the patch job stops, because continuing to the next zone requires
      * completion of the patch process in the previous zone.
-     *
      * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
      * fail to patch in the current zone, the patch job continues to patch 2 VMs
      * at a time until the zone is completed. When that zone is completed
@@ -35334,21 +35376,17 @@ public final class PatchJobs {
      * The maximum number (or percentage) of VMs per zone to disrupt at any given
      * moment. The number of VMs calculated from multiplying the percentage by the
      * total number of VMs in a zone is rounded up.
-     *
      * During patching, a VM is considered disrupted from the time the agent is
      * notified to begin until patching has completed. This disruption time
      * includes the time to complete reboot and any post-patch steps.
-     *
      * A VM contributes to the disruption budget if its patching operation fails
      * either when applying the patches, running pre or post patch steps, or if it
      * fails to respond with a success notification before timing out. VMs that
      * are not running or do not have an active agent do not count toward this
      * disruption budget.
-     *
      * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
      * the patch job stops, because continuing to the next zone requires
      * completion of the patch process in the previous zone.
-     *
      * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
      * fail to patch in the current zone, the patch job continues to patch 2 VMs
      * at a time until the zone is completed. When that zone is completed
@@ -35373,21 +35411,17 @@ public final class PatchJobs {
      * The maximum number (or percentage) of VMs per zone to disrupt at any given
      * moment. The number of VMs calculated from multiplying the percentage by the
      * total number of VMs in a zone is rounded up.
-     *
      * During patching, a VM is considered disrupted from the time the agent is
      * notified to begin until patching has completed. This disruption time
      * includes the time to complete reboot and any post-patch steps.
-     *
      * A VM contributes to the disruption budget if its patching operation fails
      * either when applying the patches, running pre or post patch steps, or if it
      * fails to respond with a success notification before timing out. VMs that
      * are not running or do not have an active agent do not count toward this
      * disruption budget.
-     *
      * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
      * the patch job stops, because continuing to the next zone requires
      * completion of the patch process in the previous zone.
-     *
      * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
      * fail to patch in the current zone, the patch job continues to patch 2 VMs
      * at a time until the zone is completed. When that zone is completed
@@ -35895,21 +35929,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -35931,21 +35961,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -35973,21 +35999,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36018,21 +36040,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36060,21 +36078,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36109,21 +36123,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36150,21 +36160,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36187,21 +36193,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36228,21 +36230,17 @@ public final class PatchJobs {
        * The maximum number (or percentage) of VMs per zone to disrupt at any given
        * moment. The number of VMs calculated from multiplying the percentage by the
        * total number of VMs in a zone is rounded up.
-       *
        * During patching, a VM is considered disrupted from the time the agent is
        * notified to begin until patching has completed. This disruption time
        * includes the time to complete reboot and any post-patch steps.
-       *
        * A VM contributes to the disruption budget if its patching operation fails
        * either when applying the patches, running pre or post patch steps, or if it
        * fails to respond with a success notification before timing out. VMs that
        * are not running or do not have an active agent do not count toward this
        * disruption budget.
-       *
        * For zone-by-zone rollouts, if the disruption budget in a zone is exceeded,
        * the patch job stops, because continuing to the next zone requires
        * completion of the patch process in the previous zone.
-       *
        * For example, if the disruption budget has a fixed value of `10`, and 8 VMs
        * fail to patch in the current zone, the patch job continues to patch 2 VMs
        * at a time until the zone is completed. When that zone is completed
@@ -36444,147 +36442,146 @@ public final class PatchJobs {
           + "pi/resource.proto\0322google/cloud/osconfig"
           + "/v1beta/osconfig_common.proto\032\036google/pr"
           + "otobuf/duration.proto\032\037google/protobuf/t"
-          + "imestamp.proto\"\347\002\n\026ExecutePatchJobReques"
-          + "t\022\024\n\006parent\030\001 \001(\tB\004\342A\001\002\022\023\n\013description\030\002"
-          + " \001(\t\022P\n\017instance_filter\030\007 \001(\01321.google.c"
-          + "loud.osconfig.v1beta.PatchInstanceFilter"
-          + "B\004\342A\001\002\022?\n\014patch_config\030\004 \001(\0132).google.cl"
-          + "oud.osconfig.v1beta.PatchConfig\022+\n\010durat"
-          + "ion\030\005 \001(\0132\031.google.protobuf.Duration\022\017\n\007"
-          + "dry_run\030\006 \001(\010\022\024\n\014display_name\030\010 \001(\t\022;\n\007r"
-          + "ollout\030\t \001(\0132*.google.cloud.osconfig.v1b"
-          + "eta.PatchRollout\"(\n\022GetPatchJobRequest\022\022"
-          + "\n\004name\030\001 \001(\tB\004\342A\001\002\"q\n\"ListPatchJobInstan"
-          + "ceDetailsRequest\022\024\n\006parent\030\001 \001(\tB\004\342A\001\002\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n"
-          + "\006filter\030\004 \001(\t\"\231\001\n#ListPatchJobInstanceDe"
-          + "tailsResponse\022Y\n\032patch_job_instance_deta"
-          + "ils\030\001 \003(\01325.google.cloud.osconfig.v1beta"
-          + ".PatchJobInstanceDetails\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\"\264\001\n\027PatchJobInstanceDetails\022\014\n"
-          + "\004name\030\001 \001(\t\022\032\n\022instance_system_id\030\002 \001(\t\022"
-          + "@\n\005state\030\003 \001(\01621.google.cloud.osconfig.v"
-          + "1beta.Instance.PatchState\022\026\n\016failure_rea"
-          + "son\030\004 \001(\t\022\025\n\rattempt_count\030\005 \001(\003\"c\n\024List"
-          + "PatchJobsRequest\022\024\n\006parent\030\001 \001(\tB\004\342A\001\002\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n"
-          + "\006filter\030\004 \001(\t\"l\n\025ListPatchJobsResponse\022:"
-          + "\n\npatch_jobs\030\001 \003(\0132&.google.cloud.osconf"
-          + "ig.v1beta.PatchJob\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\"\305\013\n\010PatchJob\022\014\n\004name\030\001 \001(\t\022\024\n\014displa"
-          + "y_name\030\016 \001(\t\022\023\n\013description\030\002 \001(\t\022/\n\013cre"
-          + "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta"
-          + "mp\022/\n\013update_time\030\004 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022;\n\005state\030\005 \001(\0162,.google.clou"
-          + "d.osconfig.v1beta.PatchJob.State\022J\n\017inst"
-          + "ance_filter\030\r \001(\01321.google.cloud.osconfi"
-          + "g.v1beta.PatchInstanceFilter\022?\n\014patch_co"
-          + "nfig\030\007 \001(\0132).google.cloud.osconfig.v1bet"
-          + "a.PatchConfig\022+\n\010duration\030\010 \001(\0132\031.google"
-          + ".protobuf.Duration\022_\n\030instance_details_s"
-          + "ummary\030\t \001(\0132=.google.cloud.osconfig.v1b"
-          + "eta.PatchJob.InstanceDetailsSummary\022\017\n\007d"
-          + "ry_run\030\n \001(\010\022\025\n\rerror_message\030\013 \001(\t\022\030\n\020p"
-          + "ercent_complete\030\014 \001(\001\022\036\n\020patch_deploymen"
-          + "t\030\017 \001(\tB\004\342A\001\003\022;\n\007rollout\030\020 \001(\0132*.google."
-          + "cloud.osconfig.v1beta.PatchRollout\032\275\004\n\026I"
-          + "nstanceDetailsSummary\022\036\n\026pending_instanc"
-          + "e_count\030\001 \001(\003\022\037\n\027inactive_instance_count"
-          + "\030\002 \001(\003\022\037\n\027notified_instance_count\030\003 \001(\003\022"
-          + "\036\n\026started_instance_count\030\004 \001(\003\022*\n\"downl"
-          + "oading_patches_instance_count\030\005 \001(\003\022\'\n\037a"
-          + "pplying_patches_instance_count\030\006 \001(\003\022 \n\030"
-          + "rebooting_instance_count\030\007 \001(\003\022 \n\030succee"
-          + "ded_instance_count\030\010 \001(\003\0220\n(succeeded_re"
-          + "boot_required_instance_count\030\t \001(\003\022\035\n\025fa"
-          + "iled_instance_count\030\n \001(\003\022\034\n\024acked_insta"
-          + "nce_count\030\013 \001(\003\022 \n\030timed_out_instance_co"
-          + "unt\030\014 \001(\003\022%\n\035pre_patch_step_instance_cou"
-          + "nt\030\r \001(\003\022&\n\036post_patch_step_instance_cou"
-          + "nt\030\016 \001(\003\022(\n no_agent_detected_instance_c"
-          + "ount\030\017 \001(\003\"\225\001\n\005State\022\025\n\021STATE_UNSPECIFIE"
-          + "D\020\000\022\013\n\007STARTED\020\001\022\023\n\017INSTANCE_LOOKUP\020\002\022\014\n"
-          + "\010PATCHING\020\003\022\r\n\tSUCCEEDED\020\004\022\031\n\025COMPLETED_"
-          + "WITH_ERRORS\020\005\022\014\n\010CANCELED\020\006\022\r\n\tTIMED_OUT"
-          + "\020\007:O\352AL\n osconfig.googleapis.com/PatchJo"
-          + "b\022(projects/{project}/patchJobs/{patch_j"
-          + "ob}\"\366\004\n\013PatchConfig\022M\n\rreboot_config\030\001 \001"
-          + "(\01626.google.cloud.osconfig.v1beta.PatchC"
-          + "onfig.RebootConfig\0226\n\003apt\030\003 \001(\0132).google"
-          + ".cloud.osconfig.v1beta.AptSettings\0226\n\003yu"
-          + "m\030\004 \001(\0132).google.cloud.osconfig.v1beta.Y"
-          + "umSettings\0226\n\003goo\030\005 \001(\0132).google.cloud.o"
-          + "sconfig.v1beta.GooSettings\022<\n\006zypper\030\006 \001"
-          + "(\0132,.google.cloud.osconfig.v1beta.Zypper"
-          + "Settings\022K\n\016windows_update\030\007 \001(\01323.googl"
-          + "e.cloud.osconfig.v1beta.WindowsUpdateSet"
-          + "tings\0228\n\010pre_step\030\010 \001(\0132&.google.cloud.o"
-          + "sconfig.v1beta.ExecStep\0229\n\tpost_step\030\t \001"
-          + "(\0132&.google.cloud.osconfig.v1beta.ExecSt"
-          + "ep\022\035\n\025mig_instances_allowed\030\n \001(\010\"Q\n\014Reb"
-          + "ootConfig\022\035\n\031REBOOT_CONFIG_UNSPECIFIED\020\000"
-          + "\022\013\n\007DEFAULT\020\001\022\n\n\006ALWAYS\020\002\022\t\n\005NEVER\020\003\"\316\002\n"
-          + "\010Instance\"\301\002\n\nPatchState\022\033\n\027PATCH_STATE_"
-          + "UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010INACTIVE\020\002"
-          + "\022\014\n\010NOTIFIED\020\003\022\013\n\007STARTED\020\004\022\027\n\023DOWNLOADI"
-          + "NG_PATCHES\020\005\022\024\n\020APPLYING_PATCHES\020\006\022\r\n\tRE"
-          + "BOOTING\020\007\022\r\n\tSUCCEEDED\020\010\022\035\n\031SUCCEEDED_RE"
-          + "BOOT_REQUIRED\020\t\022\n\n\006FAILED\020\n\022\t\n\005ACKED\020\013\022\r"
-          + "\n\tTIMED_OUT\020\014\022\032\n\026RUNNING_PRE_PATCH_STEP\020"
-          + "\r\022\033\n\027RUNNING_POST_PATCH_STEP\020\016\022\025\n\021NO_AGE"
-          + "NT_DETECTED\020\017\"+\n\025CancelPatchJobRequest\022\022"
-          + "\n\004name\030\001 \001(\tB\004\342A\001\002\"\256\001\n\013AptSettings\022<\n\004ty"
-          + "pe\030\001 \001(\0162..google.cloud.osconfig.v1beta."
-          + "AptSettings.Type\022\020\n\010excludes\030\002 \003(\t\022\032\n\022ex"
-          + "clusive_packages\030\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_U"
-          + "NSPECIFIED\020\000\022\010\n\004DIST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013Y"
-          + "umSettings\022\020\n\010security\030\001 \001(\010\022\017\n\007minimal\030"
-          + "\002 \001(\010\022\020\n\010excludes\030\003 \003(\t\022\032\n\022exclusive_pac"
-          + "kages\030\004 \003(\t\"\r\n\013GooSettings\"\221\001\n\016ZypperSet"
-          + "tings\022\025\n\rwith_optional\030\001 \001(\010\022\023\n\013with_upd"
-          + "ate\030\002 \001(\010\022\022\n\ncategories\030\003 \003(\t\022\022\n\nseverit"
-          + "ies\030\004 \003(\t\022\020\n\010excludes\030\005 \003(\t\022\031\n\021exclusive"
-          + "_patches\030\006 \003(\t\"\331\002\n\025WindowsUpdateSettings"
-          + "\022[\n\017classifications\030\001 \003(\0162B.google.cloud"
-          + ".osconfig.v1beta.WindowsUpdateSettings.C"
-          + "lassification\022\020\n\010excludes\030\002 \003(\t\022\031\n\021exclu"
-          + "sive_patches\030\003 \003(\t\"\265\001\n\016Classification\022\036\n"
-          + "\032CLASSIFICATION_UNSPECIFIED\020\000\022\014\n\010CRITICA"
-          + "L\020\001\022\014\n\010SECURITY\020\002\022\016\n\nDEFINITION\020\003\022\n\n\006DRI"
-          + "VER\020\004\022\020\n\014FEATURE_PACK\020\005\022\020\n\014SERVICE_PACK\020"
-          + "\006\022\010\n\004TOOL\020\007\022\021\n\rUPDATE_ROLLUP\020\010\022\n\n\006UPDATE"
-          + "\020\t\"\250\001\n\010ExecStep\022L\n\026linux_exec_step_confi"
-          + "g\030\001 \001(\0132,.google.cloud.osconfig.v1beta.E"
-          + "xecStepConfig\022N\n\030windows_exec_step_confi"
-          + "g\030\002 \001(\0132,.google.cloud.osconfig.v1beta.E"
-          + "xecStepConfig\"\250\002\n\016ExecStepConfig\022\024\n\nloca"
-          + "l_path\030\001 \001(\tH\000\022=\n\ngcs_object\030\002 \001(\0132\'.goo"
-          + "gle.cloud.osconfig.v1beta.GcsObjectH\000\022\035\n"
-          + "\025allowed_success_codes\030\003 \003(\005\022M\n\013interpre"
-          + "ter\030\004 \001(\01628.google.cloud.osconfig.v1beta"
-          + ".ExecStepConfig.Interpreter\"E\n\013Interpret"
-          + "er\022\033\n\027INTERPRETER_UNSPECIFIED\020\000\022\t\n\005SHELL"
-          + "\020\001\022\016\n\nPOWERSHELL\020\002B\014\n\nexecutable\"X\n\tGcsO"
-          + "bject\022\024\n\006bucket\030\001 \001(\tB\004\342A\001\002\022\024\n\006object\030\002 "
-          + "\001(\tB\004\342A\001\002\022\037\n\021generation_number\030\003 \001(\003B\004\342A"
-          + "\001\002\"\320\002\n\023PatchInstanceFilter\022\013\n\003all\030\001 \001(\010\022"
-          + "R\n\014group_labels\030\002 \003(\0132<.google.cloud.osc"
-          + "onfig.v1beta.PatchInstanceFilter.GroupLa"
-          + "bel\022\r\n\005zones\030\003 \003(\t\022\021\n\tinstances\030\004 \003(\t\022\036\n"
-          + "\026instance_name_prefixes\030\005 \003(\t\032\225\001\n\nGroupL"
-          + "abel\022X\n\006labels\030\001 \003(\0132H.google.cloud.osco"
-          + "nfig.v1beta.PatchInstanceFilter.GroupLab"
-          + "el.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\334\001\n\014PatchRollout\022="
-          + "\n\004mode\030\001 \001(\0162/.google.cloud.osconfig.v1b"
-          + "eta.PatchRollout.Mode\022G\n\021disruption_budg"
-          + "et\030\002 \001(\0132,.google.cloud.osconfig.v1beta."
-          + "FixedOrPercent\"D\n\004Mode\022\024\n\020MODE_UNSPECIFI"
-          + "ED\020\000\022\020\n\014ZONE_BY_ZONE\020\001\022\024\n\020CONCURRENT_ZON"
-          + "ES\020\002Bk\n com.google.cloud.osconfig.v1beta"
-          + "B\tPatchJobsZ<cloud.google.com/go/osconfi"
-          + "g/apiv1beta/osconfigpb;osconfigpbb\006proto"
-          + "3"
+          + "imestamp.proto\"\345\002\n\026ExecutePatchJobReques"
+          + "t\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 "
+          + "\001(\t\022O\n\017instance_filter\030\007 \001(\01321.google.cl"
+          + "oud.osconfig.v1beta.PatchInstanceFilterB"
+          + "\003\340A\002\022?\n\014patch_config\030\004 \001(\0132).google.clou"
+          + "d.osconfig.v1beta.PatchConfig\022+\n\010duratio"
+          + "n\030\005 \001(\0132\031.google.protobuf.Duration\022\017\n\007dr"
+          + "y_run\030\006 \001(\010\022\024\n\014display_name\030\010 \001(\t\022;\n\007rol"
+          + "lout\030\t \001(\0132*.google.cloud.osconfig.v1bet"
+          + "a.PatchRollout\"\'\n\022GetPatchJobRequest\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\002\"p\n\"ListPatchJobInstanceD"
+          + "etailsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpa"
+          + "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006fil"
+          + "ter\030\004 \001(\t\"\231\001\n#ListPatchJobInstanceDetail"
+          + "sResponse\022Y\n\032patch_job_instance_details\030"
+          + "\001 \003(\01325.google.cloud.osconfig.v1beta.Pat"
+          + "chJobInstanceDetails\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\"\264\001\n\027PatchJobInstanceDetails\022\014\n\004nam"
+          + "e\030\001 \001(\t\022\032\n\022instance_system_id\030\002 \001(\t\022@\n\005s"
+          + "tate\030\003 \001(\01621.google.cloud.osconfig.v1bet"
+          + "a.Instance.PatchState\022\026\n\016failure_reason\030"
+          + "\004 \001(\t\022\025\n\rattempt_count\030\005 \001(\003\"b\n\024ListPatc"
+          + "hJobsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpag"
+          + "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filt"
+          + "er\030\004 \001(\t\"l\n\025ListPatchJobsResponse\022:\n\npat"
+          + "ch_jobs\030\001 \003(\0132&.google.cloud.osconfig.v1"
+          + "beta.PatchJob\022\027\n\017next_page_token\030\002 \001(\t\"\304"
+          + "\013\n\010PatchJob\022\014\n\004name\030\001 \001(\t\022\024\n\014display_nam"
+          + "e\030\016 \001(\t\022\023\n\013description\030\002 \001(\t\022/\n\013create_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.Timestamp\022/\n"
+          + "\013update_time\030\004 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022;\n\005state\030\005 \001(\0162,.google.cloud.osc"
+          + "onfig.v1beta.PatchJob.State\022J\n\017instance_"
+          + "filter\030\r \001(\01321.google.cloud.osconfig.v1b"
+          + "eta.PatchInstanceFilter\022?\n\014patch_config\030"
+          + "\007 \001(\0132).google.cloud.osconfig.v1beta.Pat"
+          + "chConfig\022+\n\010duration\030\010 \001(\0132\031.google.prot"
+          + "obuf.Duration\022_\n\030instance_details_summar"
+          + "y\030\t \001(\0132=.google.cloud.osconfig.v1beta.P"
+          + "atchJob.InstanceDetailsSummary\022\017\n\007dry_ru"
+          + "n\030\n \001(\010\022\025\n\rerror_message\030\013 \001(\t\022\030\n\020percen"
+          + "t_complete\030\014 \001(\001\022\035\n\020patch_deployment\030\017 \001"
+          + "(\tB\003\340A\003\022;\n\007rollout\030\020 \001(\0132*.google.cloud."
+          + "osconfig.v1beta.PatchRollout\032\275\004\n\026Instanc"
+          + "eDetailsSummary\022\036\n\026pending_instance_coun"
+          + "t\030\001 \001(\003\022\037\n\027inactive_instance_count\030\002 \001(\003"
+          + "\022\037\n\027notified_instance_count\030\003 \001(\003\022\036\n\026sta"
+          + "rted_instance_count\030\004 \001(\003\022*\n\"downloading"
+          + "_patches_instance_count\030\005 \001(\003\022\'\n\037applyin"
+          + "g_patches_instance_count\030\006 \001(\003\022 \n\030reboot"
+          + "ing_instance_count\030\007 \001(\003\022 \n\030succeeded_in"
+          + "stance_count\030\010 \001(\003\0220\n(succeeded_reboot_r"
+          + "equired_instance_count\030\t \001(\003\022\035\n\025failed_i"
+          + "nstance_count\030\n \001(\003\022\034\n\024acked_instance_co"
+          + "unt\030\013 \001(\003\022 \n\030timed_out_instance_count\030\014 "
+          + "\001(\003\022%\n\035pre_patch_step_instance_count\030\r \001"
+          + "(\003\022&\n\036post_patch_step_instance_count\030\016 \001"
+          + "(\003\022(\n no_agent_detected_instance_count\030\017"
+          + " \001(\003\"\225\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007STARTED\020\001\022\023\n\017INSTANCE_LOOKUP\020\002\022\014\n\010PATCH"
+          + "ING\020\003\022\r\n\tSUCCEEDED\020\004\022\031\n\025COMPLETED_WITH_E"
+          + "RRORS\020\005\022\014\n\010CANCELED\020\006\022\r\n\tTIMED_OUT\020\007:O\352A"
+          + "L\n osconfig.googleapis.com/PatchJob\022(pro"
+          + "jects/{project}/patchJobs/{patch_job}\"\366\004"
+          + "\n\013PatchConfig\022M\n\rreboot_config\030\001 \001(\01626.g"
+          + "oogle.cloud.osconfig.v1beta.PatchConfig."
+          + "RebootConfig\0226\n\003apt\030\003 \001(\0132).google.cloud"
+          + ".osconfig.v1beta.AptSettings\0226\n\003yum\030\004 \001("
+          + "\0132).google.cloud.osconfig.v1beta.YumSett"
+          + "ings\0226\n\003goo\030\005 \001(\0132).google.cloud.osconfi"
+          + "g.v1beta.GooSettings\022<\n\006zypper\030\006 \001(\0132,.g"
+          + "oogle.cloud.osconfig.v1beta.ZypperSettin"
+          + "gs\022K\n\016windows_update\030\007 \001(\01323.google.clou"
+          + "d.osconfig.v1beta.WindowsUpdateSettings\022"
+          + "8\n\010pre_step\030\010 \001(\0132&.google.cloud.osconfi"
+          + "g.v1beta.ExecStep\0229\n\tpost_step\030\t \001(\0132&.g"
+          + "oogle.cloud.osconfig.v1beta.ExecStep\022\035\n\025"
+          + "mig_instances_allowed\030\n \001(\010\"Q\n\014RebootCon"
+          + "fig\022\035\n\031REBOOT_CONFIG_UNSPECIFIED\020\000\022\013\n\007DE"
+          + "FAULT\020\001\022\n\n\006ALWAYS\020\002\022\t\n\005NEVER\020\003\"\316\002\n\010Insta"
+          + "nce\"\301\002\n\nPatchState\022\033\n\027PATCH_STATE_UNSPEC"
+          + "IFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010INACTIVE\020\002\022\014\n\010NO"
+          + "TIFIED\020\003\022\013\n\007STARTED\020\004\022\027\n\023DOWNLOADING_PAT"
+          + "CHES\020\005\022\024\n\020APPLYING_PATCHES\020\006\022\r\n\tREBOOTIN"
+          + "G\020\007\022\r\n\tSUCCEEDED\020\010\022\035\n\031SUCCEEDED_REBOOT_R"
+          + "EQUIRED\020\t\022\n\n\006FAILED\020\n\022\t\n\005ACKED\020\013\022\r\n\tTIME"
+          + "D_OUT\020\014\022\032\n\026RUNNING_PRE_PATCH_STEP\020\r\022\033\n\027R"
+          + "UNNING_POST_PATCH_STEP\020\016\022\025\n\021NO_AGENT_DET"
+          + "ECTED\020\017\"*\n\025CancelPatchJobRequest\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\002\"\256\001\n\013AptSettings\022<\n\004type\030\001 \001("
+          + "\0162..google.cloud.osconfig.v1beta.AptSett"
+          + "ings.Type\022\020\n\010excludes\030\002 \003(\t\022\032\n\022exclusive"
+          + "_packages\030\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_UNSPECIF"
+          + "IED\020\000\022\010\n\004DIST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013YumSetti"
+          + "ngs\022\020\n\010security\030\001 \001(\010\022\017\n\007minimal\030\002 \001(\010\022\020"
+          + "\n\010excludes\030\003 \003(\t\022\032\n\022exclusive_packages\030\004"
+          + " \003(\t\"\r\n\013GooSettings\"\221\001\n\016ZypperSettings\022\025"
+          + "\n\rwith_optional\030\001 \001(\010\022\023\n\013with_update\030\002 \001"
+          + "(\010\022\022\n\ncategories\030\003 \003(\t\022\022\n\nseverities\030\004 \003"
+          + "(\t\022\020\n\010excludes\030\005 \003(\t\022\031\n\021exclusive_patche"
+          + "s\030\006 \003(\t\"\331\002\n\025WindowsUpdateSettings\022[\n\017cla"
+          + "ssifications\030\001 \003(\0162B.google.cloud.osconf"
+          + "ig.v1beta.WindowsUpdateSettings.Classifi"
+          + "cation\022\020\n\010excludes\030\002 \003(\t\022\031\n\021exclusive_pa"
+          + "tches\030\003 \003(\t\"\265\001\n\016Classification\022\036\n\032CLASSI"
+          + "FICATION_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\014\n\010"
+          + "SECURITY\020\002\022\016\n\nDEFINITION\020\003\022\n\n\006DRIVER\020\004\022\020"
+          + "\n\014FEATURE_PACK\020\005\022\020\n\014SERVICE_PACK\020\006\022\010\n\004TO"
+          + "OL\020\007\022\021\n\rUPDATE_ROLLUP\020\010\022\n\n\006UPDATE\020\t\"\250\001\n\010"
+          + "ExecStep\022L\n\026linux_exec_step_config\030\001 \001(\013"
+          + "2,.google.cloud.osconfig.v1beta.ExecStep"
+          + "Config\022N\n\030windows_exec_step_config\030\002 \001(\013"
+          + "2,.google.cloud.osconfig.v1beta.ExecStep"
+          + "Config\"\250\002\n\016ExecStepConfig\022\024\n\nlocal_path\030"
+          + "\001 \001(\tH\000\022=\n\ngcs_object\030\002 \001(\0132\'.google.clo"
+          + "ud.osconfig.v1beta.GcsObjectH\000\022\035\n\025allowe"
+          + "d_success_codes\030\003 \003(\005\022M\n\013interpreter\030\004 \001"
+          + "(\01628.google.cloud.osconfig.v1beta.ExecSt"
+          + "epConfig.Interpreter\"E\n\013Interpreter\022\033\n\027I"
+          + "NTERPRETER_UNSPECIFIED\020\000\022\t\n\005SHELL\020\001\022\016\n\nP"
+          + "OWERSHELL\020\002B\014\n\nexecutable\"U\n\tGcsObject\022\023"
+          + "\n\006bucket\030\001 \001(\tB\003\340A\002\022\023\n\006object\030\002 \001(\tB\003\340A\002"
+          + "\022\036\n\021generation_number\030\003 \001(\003B\003\340A\002\"\320\002\n\023Pat"
+          + "chInstanceFilter\022\013\n\003all\030\001 \001(\010\022R\n\014group_l"
+          + "abels\030\002 \003(\0132<.google.cloud.osconfig.v1be"
+          + "ta.PatchInstanceFilter.GroupLabel\022\r\n\005zon"
+          + "es\030\003 \003(\t\022\021\n\tinstances\030\004 \003(\t\022\036\n\026instance_"
+          + "name_prefixes\030\005 \003(\t\032\225\001\n\nGroupLabel\022X\n\006la"
+          + "bels\030\001 \003(\0132H.google.cloud.osconfig.v1bet"
+          + "a.PatchInstanceFilter.GroupLabel.LabelsE"
+          + "ntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001\"\334\001\n\014PatchRollout\022=\n\004mode\030\001 \001"
+          + "(\0162/.google.cloud.osconfig.v1beta.PatchR"
+          + "ollout.Mode\022G\n\021disruption_budget\030\002 \001(\0132,"
+          + ".google.cloud.osconfig.v1beta.FixedOrPer"
+          + "cent\"D\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n\014ZO"
+          + "NE_BY_ZONE\020\001\022\024\n\020CONCURRENT_ZONES\020\002Bk\n co"
+          + "m.google.cloud.osconfig.v1betaB\tPatchJob"
+          + "sZ<cloud.google.com/go/osconfig/apiv1bet"
+          + "a/osconfigpb;osconfigpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

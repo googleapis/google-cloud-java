@@ -53,6 +53,11 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     return new ServiceLevelObjective();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringProto
         .internal_static_google_monitoring_v3_ServiceLevelObjective_descriptor;
@@ -249,8 +254,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   }
 
   private int periodCase_ = 0;
-
-  @SuppressWarnings("serial")
   private java.lang.Object period_;
 
   public enum PeriodCase
@@ -306,7 +309,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Resource name for this `ServiceLevelObjective`. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
@@ -331,7 +333,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Resource name for this `ServiceLevelObjective`. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * </pre>
    *
@@ -1301,7 +1302,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource name for this `ServiceLevelObjective`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -1325,7 +1325,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource name for this `ServiceLevelObjective`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -1349,7 +1348,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource name for this `ServiceLevelObjective`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -1372,7 +1370,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource name for this `ServiceLevelObjective`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *
@@ -1391,7 +1388,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource name for this `ServiceLevelObjective`. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
      * </pre>
      *

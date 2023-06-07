@@ -47,6 +47,11 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     return new ContainerStoppedEvent();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_ContainerStoppedEvent_descriptor;
@@ -110,7 +115,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
    * If the content emits large amounts of debugging noise or contains
    * sensitive information, you can prevent the content from being printed by
    * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-   *
    * Note that only a small amount of the end of the stream is captured here.
    * The entire stream is stored in the `/google/logs` directory mounted into
    * each action, and can be copied off the machine as described elsewhere.
@@ -140,7 +144,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
    * If the content emits large amounts of debugging noise or contains
    * sensitive information, you can prevent the content from being printed by
    * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-   *
    * Note that only a small amount of the end of the stream is captured here.
    * The entire stream is stored in the `/google/logs` directory mounted into
    * each action, and can be copied off the machine as described elsewhere.
@@ -665,7 +668,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * If the content emits large amounts of debugging noise or contains
      * sensitive information, you can prevent the content from being printed by
      * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-     *
      * Note that only a small amount of the end of the stream is captured here.
      * The entire stream is stored in the `/google/logs` directory mounted into
      * each action, and can be copied off the machine as described elsewhere.
@@ -694,7 +696,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * If the content emits large amounts of debugging noise or contains
      * sensitive information, you can prevent the content from being printed by
      * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-     *
      * Note that only a small amount of the end of the stream is captured here.
      * The entire stream is stored in the `/google/logs` directory mounted into
      * each action, and can be copied off the machine as described elsewhere.
@@ -723,7 +724,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * If the content emits large amounts of debugging noise or contains
      * sensitive information, you can prevent the content from being printed by
      * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-     *
      * Note that only a small amount of the end of the stream is captured here.
      * The entire stream is stored in the `/google/logs` directory mounted into
      * each action, and can be copied off the machine as described elsewhere.
@@ -751,7 +751,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * If the content emits large amounts of debugging noise or contains
      * sensitive information, you can prevent the content from being printed by
      * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-     *
      * Note that only a small amount of the end of the stream is captured here.
      * The entire stream is stored in the `/google/logs` directory mounted into
      * each action, and can be copied off the machine as described elsewhere.
@@ -775,7 +774,6 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * If the content emits large amounts of debugging noise or contains
      * sensitive information, you can prevent the content from being printed by
      * setting the `DISABLE_STANDARD_ERROR_CAPTURE` flag.
-     *
      * Note that only a small amount of the end of the stream is captured here.
      * The entire stream is stored in the `/google/logs` directory mounted into
      * each action, and can be copied off the machine as described elsewhere.

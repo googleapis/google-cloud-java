@@ -50,6 +50,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     return new ServerTlsPolicy();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.ServerTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_descriptor;
@@ -85,7 +90,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -97,7 +101,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -109,7 +112,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -121,7 +123,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -134,7 +135,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -173,6 +173,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return new MTLSPolicy();
     }
 
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.networksecurity.v1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_MTLSPolicy_descriptor;
@@ -196,7 +201,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -212,7 +216,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -228,7 +231,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -243,7 +245,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -258,7 +259,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines the mechanism to obtain the Certificate Authority certificate to
      * validate the client certificate.
      * </pre>
@@ -694,7 +694,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -714,7 +713,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -733,7 +731,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -752,7 +749,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -778,7 +774,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -801,7 +796,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -826,7 +820,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -852,7 +845,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -875,7 +867,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -898,7 +889,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -921,7 +911,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -943,7 +932,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -965,7 +953,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -981,7 +968,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -1001,7 +987,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -1021,7 +1006,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -1038,7 +1022,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -1056,7 +1039,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       *
        * Defines the mechanism to obtain the Certificate Authority certificate to
        * validate the client certificate.
        * </pre>
@@ -1466,14 +1448,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Determines if server allows plaintext connections. If set to true, server
    * allows plain text connections. By default, it is set to false. This setting
    * is not exclusive of other encryption modes. For example, if `allow_open`
    * and `mtls_policy` are set, server allows both plain text and mTLS
    * connections. See documentation of other encryption modes to confirm
    * compatibility.
-   *
    * Consider using it if you wish to upgrade in place your deployment to TLS
    * while having mixed TLS and non-TLS traffic reaching port :80.
    * </pre>
@@ -1493,7 +1473,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
@@ -1511,7 +1490,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
@@ -1531,7 +1509,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Defines a mechanism to provision server identity (public and private keys).
    * Cannot be combined with `allow_open` as a permissive mode that allows both
    * plain text and TLS is not supported.
@@ -1553,7 +1530,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
@@ -1573,7 +1549,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
@@ -1595,7 +1570,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   *
    * Defines a mechanism to provision peer validation certificates for peer to
    * peer authentication (Mutual TLS - mTLS). If not specified, client
    * certificate will not be requested. The connection is treated as TLS and not
@@ -2974,14 +2948,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
      * is not exclusive of other encryption modes. For example, if `allow_open`
      * and `mtls_policy` are set, server allows both plain text and mTLS
      * connections. See documentation of other encryption modes to confirm
      * compatibility.
-     *
      * Consider using it if you wish to upgrade in place your deployment to TLS
      * while having mixed TLS and non-TLS traffic reaching port :80.
      * </pre>
@@ -2998,14 +2970,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
      * is not exclusive of other encryption modes. For example, if `allow_open`
      * and `mtls_policy` are set, server allows both plain text and mTLS
      * connections. See documentation of other encryption modes to confirm
      * compatibility.
-     *
      * Consider using it if you wish to upgrade in place your deployment to TLS
      * while having mixed TLS and non-TLS traffic reaching port :80.
      * </pre>
@@ -3026,14 +2996,12 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Determines if server allows plaintext connections. If set to true, server
      * allows plain text connections. By default, it is set to false. This setting
      * is not exclusive of other encryption modes. For example, if `allow_open`
      * and `mtls_policy` are set, server allows both plain text and mTLS
      * connections. See documentation of other encryption modes to confirm
      * compatibility.
-     *
      * Consider using it if you wish to upgrade in place your deployment to TLS
      * while having mixed TLS and non-TLS traffic reaching port :80.
      * </pre>
@@ -3059,7 +3027,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3076,7 +3043,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3099,7 +3065,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3125,7 +3090,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3148,7 +3112,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3178,7 +3141,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3200,7 +3162,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3218,7 +3179,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3240,7 +3200,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision server identity (public and private keys).
      * Cannot be combined with `allow_open` as a permissive mode that allows both
      * plain text and TLS is not supported.
@@ -3275,7 +3234,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3294,7 +3252,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3319,7 +3276,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3347,7 +3303,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3372,7 +3327,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3405,7 +3359,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3429,7 +3382,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3449,7 +3401,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not
@@ -3473,7 +3424,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     *
      * Defines a mechanism to provision peer validation certificates for peer to
      * peer authentication (Mutual TLS - mTLS). If not specified, client
      * certificate will not be requested. The connection is treated as TLS and not

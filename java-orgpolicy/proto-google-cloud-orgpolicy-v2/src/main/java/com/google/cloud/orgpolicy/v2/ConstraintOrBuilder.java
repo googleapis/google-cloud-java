@@ -32,7 +32,6 @@ public interface ConstraintOrBuilder
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
-   *
    * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
    * </pre>
    *
@@ -50,7 +49,6 @@ public interface ConstraintOrBuilder
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
-   *
    * For example, "/projects/123/constraints/compute.disableSerialPortAccess".
    * </pre>
    *
@@ -65,7 +63,6 @@ public interface ConstraintOrBuilder
    *
    * <pre>
    * The human readable name.
-   *
    * Mutable.
    * </pre>
    *
@@ -79,7 +76,6 @@ public interface ConstraintOrBuilder
    *
    * <pre>
    * The human readable name.
-   *
    * Mutable.
    * </pre>
    *
@@ -95,7 +91,6 @@ public interface ConstraintOrBuilder
    * <pre>
    * Detailed description of what this `Constraint` controls as well as how and
    * where it is enforced.
-   *
    * Mutable.
    * </pre>
    *
@@ -110,7 +105,6 @@ public interface ConstraintOrBuilder
    * <pre>
    * Detailed description of what this `Constraint` controls as well as how and
    * where it is enforced.
-   *
    * Mutable.
    * </pre>
    *
@@ -216,5 +210,5 @@ public interface ConstraintOrBuilder
   com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraintOrBuilder
       getBooleanConstraintOrBuilder();
 
-  com.google.cloud.orgpolicy.v2.Constraint.ConstraintTypeCase getConstraintTypeCase();
+  public com.google.cloud.orgpolicy.v2.Constraint.ConstraintTypeCase getConstraintTypeCase();
 }

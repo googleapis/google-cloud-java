@@ -40,7 +40,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   }
 
   private ShipmentTypeIncompatibility() {
-    types_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     incompatibilityMode_ = 0;
   }
 
@@ -48,6 +48,11 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ShipmentTypeIncompatibility();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -104,7 +109,6 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * <pre>
      * For two shipments with incompatible types with the
      * `NOT_IN_SAME_VEHICLE_SIMULTANEOUSLY` incompatibility mode:
-     *
      * * If both are pickups only (no deliveries) or deliveries only (no
      *   pickups), they cannot share the same vehicle at all.
      * * If one of the shipments has a delivery and the other a pickup, the two
@@ -145,7 +149,6 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * <pre>
      * For two shipments with incompatible types with the
      * `NOT_IN_SAME_VEHICLE_SIMULTANEOUSLY` incompatibility mode:
-     *
      * * If both are pickups only (no deliveries) or deliveries only (no
      *   pickups), they cannot share the same vehicle at all.
      * * If one of the shipments has a delivery and the other a pickup, the two
@@ -248,8 +251,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   public static final int TYPES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList types_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList types_;
   /**
    *
    *
@@ -580,7 +582,8 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      types_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       incompatibilityMode_ = 0;
       return this;
     }
@@ -610,6 +613,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public com.google.cloud.optimization.v1.ShipmentTypeIncompatibility buildPartial() {
       com.google.cloud.optimization.v1.ShipmentTypeIncompatibility result =
           new com.google.cloud.optimization.v1.ShipmentTypeIncompatibility(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -617,13 +621,18 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.optimization.v1.ShipmentTypeIncompatibility result) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        types_ = types_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.types_ = types_;
+    }
+
     private void buildPartial0(
         com.google.cloud.optimization.v1.ShipmentTypeIncompatibility result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        types_.makeImmutable();
-        result.types_ = types_;
-      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.incompatibilityMode_ = incompatibilityMode_;
       }
@@ -679,7 +688,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       if (!other.types_.isEmpty()) {
         if (types_.isEmpty()) {
           types_ = other.types_;
-          bitField0_ |= 0x00000001;
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureTypesIsMutable();
           types_.addAll(other.types_);
@@ -747,14 +756,14 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList types_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList types_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTypesIsMutable() {
-      if (!types_.isModifiable()) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         types_ = new com.google.protobuf.LazyStringArrayList(types_);
+        bitField0_ |= 0x00000001;
       }
-      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -769,8 +778,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * @return A list containing the types.
      */
     public com.google.protobuf.ProtocolStringList getTypesList() {
-      types_.makeImmutable();
-      return types_;
+      return types_.getUnmodifiableView();
     }
     /**
      *
@@ -839,7 +847,6 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       }
       ensureTypesIsMutable();
       types_.set(index, value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,7 +869,6 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       }
       ensureTypesIsMutable();
       types_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -882,7 +888,6 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public Builder addAllTypes(java.lang.Iterable<java.lang.String> values) {
       ensureTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, types_);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,9 +904,8 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearTypes() {
-      types_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      types_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ;
       onChanged();
       return this;
     }
@@ -925,7 +929,6 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureTypesIsMutable();
       types_.add(value);
-      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

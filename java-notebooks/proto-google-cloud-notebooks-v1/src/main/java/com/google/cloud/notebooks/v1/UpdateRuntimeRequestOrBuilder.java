@@ -70,7 +70,6 @@ public interface UpdateRuntimeRequestOrBuilder
    * kernels, the `update_mask` parameter would be
    * specified as `software_config.kernels`,
    * and the `PATCH` request body would specify the new value, as follows:
-   *
    *     {
    *       "software_config":{
    *         "kernels": [{
@@ -79,8 +78,6 @@ public interface UpdateRuntimeRequestOrBuilder
    *            'latest' }],
    *         }
    *     }
-   *
-   *
    * Currently, only the following fields can be updated:
    * - `software_config.kernels`
    * - `software_config.post_startup_script`
@@ -105,7 +102,6 @@ public interface UpdateRuntimeRequestOrBuilder
    * kernels, the `update_mask` parameter would be
    * specified as `software_config.kernels`,
    * and the `PATCH` request body would specify the new value, as follows:
-   *
    *     {
    *       "software_config":{
    *         "kernels": [{
@@ -114,8 +110,6 @@ public interface UpdateRuntimeRequestOrBuilder
    *            'latest' }],
    *         }
    *     }
-   *
-   *
    * Currently, only the following fields can be updated:
    * - `software_config.kernels`
    * - `software_config.post_startup_script`
@@ -140,7 +134,6 @@ public interface UpdateRuntimeRequestOrBuilder
    * kernels, the `update_mask` parameter would be
    * specified as `software_config.kernels`,
    * and the `PATCH` request body would specify the new value, as follows:
-   *
    *     {
    *       "software_config":{
    *         "kernels": [{
@@ -149,8 +142,6 @@ public interface UpdateRuntimeRequestOrBuilder
    *            'latest' }],
    *         }
    *     }
-   *
-   *
    * Currently, only the following fields can be updated:
    * - `software_config.kernels`
    * - `software_config.post_startup_script`

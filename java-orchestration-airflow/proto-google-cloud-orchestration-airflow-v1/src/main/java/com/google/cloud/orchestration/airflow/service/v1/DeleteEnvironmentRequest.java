@@ -47,6 +47,11 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
     return new DeleteEnvironmentRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1_DeleteEnvironmentRequest_descriptor;

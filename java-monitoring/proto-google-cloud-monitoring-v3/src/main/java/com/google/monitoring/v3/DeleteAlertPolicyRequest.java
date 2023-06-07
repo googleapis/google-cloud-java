@@ -47,6 +47,11 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
     return new DeleteAlertPolicyRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.AlertServiceProto
         .internal_static_google_monitoring_v3_DeleteAlertPolicyRequest_descriptor;
@@ -71,9 +76,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The alerting policy to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *
@@ -100,9 +103,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The alerting policy to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *
@@ -473,9 +474,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The alerting policy to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
@@ -501,9 +500,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The alerting policy to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
@@ -529,9 +526,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The alerting policy to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
@@ -556,9 +551,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The alerting policy to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *
@@ -579,9 +572,7 @@ public final class DeleteAlertPolicyRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The alerting policy to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     *
      * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
      * </pre>
      *

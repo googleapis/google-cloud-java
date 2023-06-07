@@ -50,6 +50,11 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
     return new RunPipelineRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_RunPipelineRequest_descriptor;
@@ -216,7 +221,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
-   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -243,7 +247,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
-   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -261,7 +264,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
-   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -286,7 +288,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
    * User-defined labels to associate with the returned operation. These
    * labels are not propagated to any Google Cloud Platform resources used by
    * the operation, and can be modified at any time.
-   *
    * To associate labels with resources created while executing the operation,
    * see the appropriate resource message (for example, `VirtualMachine`).
    * </pre>
@@ -1158,7 +1159,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>
@@ -1185,7 +1185,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>
@@ -1203,7 +1202,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>
@@ -1228,7 +1226,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>
@@ -1259,7 +1256,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>
@@ -1286,7 +1282,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>
@@ -1311,7 +1306,6 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * User-defined labels to associate with the returned operation. These
      * labels are not propagated to any Google Cloud Platform resources used by
      * the operation, and can be modified at any time.
-     *
      * To associate labels with resources created while executing the operation,
      * see the appropriate resource message (for example, `VirtualMachine`).
      * </pre>

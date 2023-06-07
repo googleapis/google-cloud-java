@@ -47,6 +47,11 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
     return new CreateMonitoredProjectRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.metricsscope.v1.MetricsScopesProto
         .internal_static_google_monitoring_metricsscope_v1_CreateMonitoredProjectRequest_descriptor;

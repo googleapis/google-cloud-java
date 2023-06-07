@@ -23,7 +23,6 @@ package com.google.cloud.networkmanagement.v1beta1;
  *
  * <pre>
  * Trace represents one simulated packet forwarding path.
- *
  *   * Each trace contains multiple ordered steps.
  *   * Each step is in a particular state with associated configuration.
  *   * State is categorized as final or non-final states.
@@ -55,6 +54,11 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Trace();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,7 +146,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
-   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -160,7 +163,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
-   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -179,7 +181,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
-   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -197,7 +198,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
-   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -215,7 +215,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A trace of a test contains multiple steps from the initial state to the
    * final state (delivered, dropped, forwarded, or aborted).
-   *
    * The steps are ordered by the processing sequence within the simulated
    * network state machine. It is critical to preserve the order of the steps
    * and avoid reordering or sorting them.
@@ -408,7 +407,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Trace represents one simulated packet forwarding path.
-   *
    *   * Each trace contains multiple ordered steps.
    *   * Each step is in a particular state with associated configuration.
    *   * State is categorized as final or non-final states.
@@ -898,7 +896,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -919,7 +916,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -940,7 +936,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -961,7 +956,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -988,7 +982,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1013,7 +1006,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1040,7 +1032,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1067,7 +1058,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1092,7 +1082,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1117,7 +1106,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1142,7 +1130,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1166,7 +1153,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1190,7 +1176,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1207,7 +1192,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1228,7 +1212,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1250,7 +1233,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1268,7 +1250,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.
@@ -1286,7 +1267,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A trace of a test contains multiple steps from the initial state to the
      * final state (delivered, dropped, forwarded, or aborted).
-     *
      * The steps are ordered by the processing sequence within the simulated
      * network state machine. It is critical to preserve the order of the steps
      * and avoid reordering or sorting them.

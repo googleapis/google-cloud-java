@@ -28,9 +28,7 @@ public interface DeleteAlertPolicyRequestOrBuilder
    *
    * <pre>
    * Required. The alerting policy to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *
@@ -46,9 +44,7 @@ public interface DeleteAlertPolicyRequestOrBuilder
    *
    * <pre>
    * Required. The alerting policy to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * </pre>
    *

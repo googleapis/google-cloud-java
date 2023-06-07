@@ -29,9 +29,7 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
    * format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -50,9 +48,7 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
    * format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *
    * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
@@ -150,7 +146,6 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -166,7 +161,6 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -185,7 +179,6 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -201,7 +194,6 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -221,7 +213,6 @@ public interface AlertPolicyOrBuilder
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
-   *
    * The field can contain up to 64 entries. Each key and value is limited to
    * 63 Unicode characters or 128 bytes, whichever is smaller. Labels and
    * values can contain only lowercase letters, numerals, underscores, and
@@ -437,7 +428,6 @@ public interface AlertPolicyOrBuilder
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -458,7 +448,6 @@ public interface AlertPolicyOrBuilder
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -479,7 +468,6 @@ public interface AlertPolicyOrBuilder
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *
@@ -501,7 +489,6 @@ public interface AlertPolicyOrBuilder
    * objects that are returned from the [`ListNotificationChannels`]
    * [google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
    * method. The format of the entries in this field is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    * </pre>
    *

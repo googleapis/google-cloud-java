@@ -48,6 +48,11 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     return new TimeSeriesDescriptor();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricProto
         .internal_static_google_monitoring_v3_TimeSeriesDescriptor_descriptor;
@@ -204,6 +209,11 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ValueDescriptor();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

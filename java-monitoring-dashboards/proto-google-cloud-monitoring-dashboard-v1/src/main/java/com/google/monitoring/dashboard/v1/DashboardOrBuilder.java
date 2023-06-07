@@ -373,5 +373,5 @@ public interface DashboardOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
-  com.google.monitoring.dashboard.v1.Dashboard.LayoutCase getLayoutCase();
+  public com.google.monitoring.dashboard.v1.Dashboard.LayoutCase getLayoutCase();
 }

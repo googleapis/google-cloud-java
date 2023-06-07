@@ -25,7 +25,6 @@ package com.google.cloud.optimization.v1;
  * Rules to generate time breaks for a vehicle (e.g. lunch breaks). A break
  * is a contiguous period of time during which the vehicle remains idle at its
  * current position and cannot perform any visit. A break may occur:
- *
  * * during the travel between two visits (which includes the time right
  *   before or right after a visit, but not in the middle of a visit), in
  *   which case it extends the corresponding transit time between the visits,
@@ -55,6 +54,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BreakRule();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -226,6 +230,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BreakRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1605,11 +1614,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
    *    max_inter_break_duration { seconds: 39600 }  # 11 hours (12 - 1 = 11).
    * }
    * ```
-   *
    * The timing and duration of the breaks in the solution will respect all
    * such constraints, in addition to the time windows and minimum durations
    * already specified in the `BreakRequest`.
-   *
    * A `FrequencyConstraint` may in practice apply to non-consecutive breaks.
    * For example, the following schedule honors the "1h every 12h" example:
    * ```
@@ -1646,6 +1653,11 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FrequencyConstraint();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1981,11 +1993,9 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *    max_inter_break_duration { seconds: 39600 }  # 11 hours (12 - 1 = 11).
      * }
      * ```
-     *
      * The timing and duration of the breaks in the solution will respect all
      * such constraints, in addition to the time windows and minimum durations
      * already specified in the `BreakRequest`.
-     *
      * A `FrequencyConstraint` may in practice apply to non-consecutive breaks.
      * For example, the following schedule honors the "1h every 12h" example:
      * ```
@@ -3055,7 +3065,6 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
    * Rules to generate time breaks for a vehicle (e.g. lunch breaks). A break
    * is a contiguous period of time during which the vehicle remains idle at its
    * current position and cannot perform any visit. A break may occur:
-   *
    * * during the travel between two visits (which includes the time right
    *   before or right after a visit, but not in the middle of a visit), in
    *   which case it extends the corresponding transit time between the visits,

@@ -29,7 +29,6 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    *
    * <pre>
    * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
    * </pre>
@@ -44,7 +43,6 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    *
    * <pre>
    * Output only. The `InstanceOSPoliciesCompliance` API resource name.
-   *
    * Format:
    * `projects/{project_number}/locations/{location}/instanceOSPoliciesCompliances/{instance_id}`
    * </pre>
@@ -115,9 +113,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * <pre>
    * Output only. Detailed compliance state of the VM.
    * This field is populated only when compliance state is `UNKNOWN`.
-   *
    * It may contain one of the following values:
-   *
    * * `no-compliance-data`: Compliance data is not available for this VM.
    * * `no-agent-detected`: OS Config agent is not detected for this VM.
    * * `config-not-supported-by-agent`: The version of the OS Config agent
@@ -140,9 +136,7 @@ public interface InstanceOSPoliciesComplianceOrBuilder
    * <pre>
    * Output only. Detailed compliance state of the VM.
    * This field is populated only when compliance state is `UNKNOWN`.
-   *
    * It may contain one of the following values:
-   *
    * * `no-compliance-data`: Compliance data is not available for this VM.
    * * `no-agent-detected`: OS Config agent is not detected for this VM.
    * * `config-not-supported-by-agent`: The version of the OS Config agent

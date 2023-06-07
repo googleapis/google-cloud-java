@@ -47,6 +47,11 @@ public final class RerunConnectivityTestRequest extends com.google.protobuf.Gene
     return new RerunConnectivityTestRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceProto
         .internal_static_google_cloud_networkmanagement_v1beta1_RerunConnectivityTestRequest_descriptor;

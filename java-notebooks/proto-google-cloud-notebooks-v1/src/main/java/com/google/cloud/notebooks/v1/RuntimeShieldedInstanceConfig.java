@@ -48,6 +48,11 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
     return new RuntimeShieldedInstanceConfig();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.RuntimeProto
         .internal_static_google_cloud_notebooks_v1_RuntimeShieldedInstanceConfig_descriptor;
@@ -70,7 +75,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
    *
    * <pre>
    * Defines whether the instance has Secure Boot enabled.
-   *
    * Secure Boot helps ensure that the system only runs authentic software by
    * verifying the digital signature of all boot components, and halting the
    * boot process if signature verification fails. Disabled by default.
@@ -110,7 +114,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
    *
    * <pre>
    * Defines whether the instance has integrity monitoring enabled.
-   *
    * Enables monitoring and attestation of the boot integrity of the instance.
    * The attestation is performed against the integrity policy baseline. This
    * baseline is initially derived from the implicitly trusted boot image when
@@ -520,7 +523,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails. Disabled by default.
@@ -539,7 +541,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails. Disabled by default.
@@ -562,7 +563,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails. Disabled by default.
@@ -638,7 +638,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
-     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when
@@ -658,7 +657,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
-     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when
@@ -682,7 +680,6 @@ public final class RuntimeShieldedInstanceConfig extends com.google.protobuf.Gen
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
-     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when

@@ -48,6 +48,11 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
     return new DeleteUptimeCheckConfigRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeServiceProto
         .internal_static_google_monitoring_v3_DeleteUptimeCheckConfigRequest_descriptor;
@@ -72,7 +77,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The Uptime check configuration to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * </pre>
    *
@@ -99,7 +103,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The Uptime check configuration to delete. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * </pre>
    *
@@ -471,7 +474,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The Uptime check configuration to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -497,7 +499,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The Uptime check configuration to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -523,7 +524,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The Uptime check configuration to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -548,7 +548,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The Uptime check configuration to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -569,7 +568,6 @@ public final class DeleteUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The Uptime check configuration to delete. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *

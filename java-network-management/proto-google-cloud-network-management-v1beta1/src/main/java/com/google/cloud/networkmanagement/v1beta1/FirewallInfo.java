@@ -44,8 +44,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     direction_ = "";
     action_ = "";
     networkUri_ = "";
-    targetTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    targetTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     policy_ = "";
     firewallRuleType_ = 0;
   }
@@ -54,6 +54,11 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FirewallInfo();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -576,8 +581,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int TARGET_TAGS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList targetTags_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList targetTags_;
   /**
    *
    *
@@ -644,8 +648,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList targetServiceAccounts_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList targetServiceAccounts_;
   /**
    *
    *
@@ -1109,8 +1112,10 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       action_ = "";
       priority_ = 0;
       networkUri_ = "";
-      targetTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
       policy_ = "";
       firewallRuleType_ = 0;
       return this;
@@ -1140,11 +1145,26 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.FirewallInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.FirewallInfo result =
           new com.google.cloud.networkmanagement.v1beta1.FirewallInfo(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1beta1.FirewallInfo result) {
+      if (((bitField0_ & 0x00000040) != 0)) {
+        targetTags_ = targetTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.targetTags_ = targetTags_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        targetServiceAccounts_ = targetServiceAccounts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.targetServiceAccounts_ = targetServiceAccounts_;
     }
 
     private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.FirewallInfo result) {
@@ -1166,14 +1186,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.networkUri_ = networkUri_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        targetTags_.makeImmutable();
-        result.targetTags_ = targetTags_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        targetServiceAccounts_.makeImmutable();
-        result.targetServiceAccounts_ = targetServiceAccounts_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.policy_ = policy_;
@@ -1260,7 +1272,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetTags_.isEmpty()) {
         if (targetTags_.isEmpty()) {
           targetTags_ = other.targetTags_;
-          bitField0_ |= 0x00000040;
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureTargetTagsIsMutable();
           targetTags_.addAll(other.targetTags_);
@@ -1270,7 +1282,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetServiceAccounts_.isEmpty()) {
         if (targetServiceAccounts_.isEmpty()) {
           targetServiceAccounts_ = other.targetServiceAccounts_;
-          bitField0_ |= 0x00000080;
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureTargetServiceAccountsIsMutable();
           targetServiceAccounts_.addAll(other.targetServiceAccounts_);
@@ -1990,14 +2002,14 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList targetTags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList targetTags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetTagsIsMutable() {
-      if (!targetTags_.isModifiable()) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         targetTags_ = new com.google.protobuf.LazyStringArrayList(targetTags_);
+        bitField0_ |= 0x00000040;
       }
-      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2012,8 +2024,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the targetTags.
      */
     public com.google.protobuf.ProtocolStringList getTargetTagsList() {
-      targetTags_.makeImmutable();
-      return targetTags_;
+      return targetTags_.getUnmodifiableView();
     }
     /**
      *
@@ -2082,7 +2093,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetTagsIsMutable();
       targetTags_.set(index, value);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2105,7 +2115,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetTagsIsMutable();
       targetTags_.add(value);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2125,7 +2134,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTargetTags(java.lang.Iterable<java.lang.String> values) {
       ensureTargetTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetTags_);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2142,9 +2150,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetTags() {
-      targetTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
-      ;
       onChanged();
       return this;
     }
@@ -2168,20 +2175,19 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTargetTagsIsMutable();
       targetTags_.add(value);
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList targetServiceAccounts_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList targetServiceAccounts_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetServiceAccountsIsMutable() {
-      if (!targetServiceAccounts_.isModifiable()) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         targetServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(targetServiceAccounts_);
+        bitField0_ |= 0x00000080;
       }
-      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2195,8 +2201,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the targetServiceAccounts.
      */
     public com.google.protobuf.ProtocolStringList getTargetServiceAccountsList() {
-      targetServiceAccounts_.makeImmutable();
-      return targetServiceAccounts_;
+      return targetServiceAccounts_.getUnmodifiableView();
     }
     /**
      *
@@ -2261,7 +2266,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.set(index, value);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2283,7 +2287,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.add(value);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2302,7 +2305,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTargetServiceAccounts(java.lang.Iterable<java.lang.String> values) {
       ensureTargetServiceAccountsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetServiceAccounts_);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2318,9 +2320,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetServiceAccounts() {
-      targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
-      ;
       onChanged();
       return this;
     }
@@ -2343,7 +2344,6 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.add(value);
-      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

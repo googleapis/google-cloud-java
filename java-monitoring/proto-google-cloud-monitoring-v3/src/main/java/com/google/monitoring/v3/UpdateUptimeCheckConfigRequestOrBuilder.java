@@ -78,7 +78,6 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * the corresponding field is omitted in this partial Uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
-   *
    * The following fields can be updated: `display_name`,
    * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
    * `selected_regions`.
@@ -102,7 +101,6 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * the corresponding field is omitted in this partial Uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
-   *
    * The following fields can be updated: `display_name`,
    * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
    * `selected_regions`.
@@ -126,7 +124,6 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder
    * the corresponding field is omitted in this partial Uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
-   *
    * The following fields can be updated: `display_name`,
    * `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
    * `selected_regions`.

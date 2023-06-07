@@ -24,7 +24,6 @@ package com.google.cloud.optimization.v1;
  * <pre>
  * A limit defining a maximum distance which can be traveled. It can be either
  * hard or soft.
- *
  * If a soft limit is defined, both `soft_max_meters` and
  * `cost_per_kilometer_above_soft_max` must be defined and be nonnegative.
  * </pre>
@@ -47,6 +46,11 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DistanceLimit();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -109,7 +113,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
-   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -129,7 +132,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
-   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -394,7 +396,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A limit defining a maximum distance which can be traveled. It can be either
    * hard or soft.
-   *
    * If a soft limit is defined, both `soft_max_meters` and
    * `cost_per_kilometer_above_soft_max` must be defined and be nonnegative.
    * </pre>
@@ -683,7 +684,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
-     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -703,7 +703,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
-     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -723,7 +722,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
-     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>
@@ -747,7 +745,6 @@ public final class DistanceLimit extends com.google.protobuf.GeneratedMessageV3
      * A soft limit not enforcing a maximum distance limit, but when violated
      * results in a cost which adds up to other costs defined in the model,
      * with the same unit.
-     *
      * If defined soft_max_meters must be less than max_meters and must be
      * nonnegative.
      * </pre>

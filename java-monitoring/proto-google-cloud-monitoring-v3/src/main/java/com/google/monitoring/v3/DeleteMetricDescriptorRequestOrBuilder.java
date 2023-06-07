@@ -28,9 +28,7 @@ public interface DeleteMetricDescriptorRequestOrBuilder
    *
    * <pre>
    * Required. The metric descriptor on which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-   *
    * An example of `[METRIC_ID]` is:
    * `"custom.googleapis.com/my_test_metric"`.
    * </pre>
@@ -47,9 +45,7 @@ public interface DeleteMetricDescriptorRequestOrBuilder
    *
    * <pre>
    * Required. The metric descriptor on which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-   *
    * An example of `[METRIC_ID]` is:
    * `"custom.googleapis.com/my_test_metric"`.
    * </pre>

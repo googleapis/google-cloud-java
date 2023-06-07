@@ -47,6 +47,11 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
     return new GetMetricDescriptorRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_GetMetricDescriptorRequest_descriptor;
@@ -71,9 +76,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The metric descriptor on which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-   *
    * An example value of `[METRIC_ID]` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
@@ -101,9 +104,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The metric descriptor on which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-   *
    * An example value of `[METRIC_ID]` is
    * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * </pre>
@@ -475,9 +476,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example value of `[METRIC_ID]` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
@@ -504,9 +503,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example value of `[METRIC_ID]` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
@@ -533,9 +530,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example value of `[METRIC_ID]` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
@@ -561,9 +556,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example value of `[METRIC_ID]` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>
@@ -585,9 +578,7 @@ public final class GetMetricDescriptorRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example value of `[METRIC_ID]` is
      * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
      * </pre>

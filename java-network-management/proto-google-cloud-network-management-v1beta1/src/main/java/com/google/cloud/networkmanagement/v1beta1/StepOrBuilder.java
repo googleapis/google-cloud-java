@@ -720,5 +720,5 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder getCloudFunctionOrBuilder();
 
-  com.google.cloud.networkmanagement.v1beta1.Step.StepInfoCase getStepInfoCase();
+  public com.google.cloud.networkmanagement.v1beta1.Step.StepInfoCase getStepInfoCase();
 }

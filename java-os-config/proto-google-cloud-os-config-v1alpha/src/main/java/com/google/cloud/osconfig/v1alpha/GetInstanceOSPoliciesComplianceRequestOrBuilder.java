@@ -29,10 +29,8 @@ public interface GetInstanceOSPoliciesComplianceRequestOrBuilder
    *
    * <pre>
    * Required. API resource name for instance OS policies compliance resource.
-   *
    * Format:
    * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
-   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * For `{instance}`, either Compute Engine VM instance-id or instance-name can
@@ -51,10 +49,8 @@ public interface GetInstanceOSPoliciesComplianceRequestOrBuilder
    *
    * <pre>
    * Required. API resource name for instance OS policies compliance resource.
-   *
    * Format:
    * `projects/{project}/locations/{location}/instanceOSPoliciesCompliances/{instance}`
-   *
    * For `{project}`, either Compute Engine project-number or project-id can be
    * provided.
    * For `{instance}`, either Compute Engine VM instance-id or instance-name can

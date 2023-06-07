@@ -47,6 +47,11 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
     return new DeleteMetricDescriptorRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_DeleteMetricDescriptorRequest_descriptor;
@@ -71,9 +76,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The metric descriptor on which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-   *
    * An example of `[METRIC_ID]` is:
    * `"custom.googleapis.com/my_test_metric"`.
    * </pre>
@@ -101,9 +104,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The metric descriptor on which to execute the request. The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-   *
    * An example of `[METRIC_ID]` is:
    * `"custom.googleapis.com/my_test_metric"`.
    * </pre>
@@ -476,9 +477,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example of `[METRIC_ID]` is:
      * `"custom.googleapis.com/my_test_metric"`.
      * </pre>
@@ -505,9 +504,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example of `[METRIC_ID]` is:
      * `"custom.googleapis.com/my_test_metric"`.
      * </pre>
@@ -534,9 +531,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example of `[METRIC_ID]` is:
      * `"custom.googleapis.com/my_test_metric"`.
      * </pre>
@@ -562,9 +557,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example of `[METRIC_ID]` is:
      * `"custom.googleapis.com/my_test_metric"`.
      * </pre>
@@ -586,9 +579,7 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The metric descriptor on which to execute the request. The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
-     *
      * An example of `[METRIC_ID]` is:
      * `"custom.googleapis.com/my_test_metric"`.
      * </pre>

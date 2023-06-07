@@ -110,5 +110,5 @@ public interface ValidationCAOrBuilder
   com.google.cloud.networksecurity.v1beta1.CertificateProviderInstanceOrBuilder
       getCertificateProviderInstanceOrBuilder();
 
-  com.google.cloud.networksecurity.v1beta1.ValidationCA.TypeCase getTypeCase();
+  public com.google.cloud.networksecurity.v1beta1.ValidationCA.TypeCase getTypeCase();
 }

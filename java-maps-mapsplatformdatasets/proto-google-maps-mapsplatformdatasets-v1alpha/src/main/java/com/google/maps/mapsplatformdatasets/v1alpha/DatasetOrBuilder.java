@@ -431,5 +431,5 @@ public interface DatasetOrBuilder
    */
   com.google.protobuf.ByteString getVersionDescriptionBytes();
 
-  com.google.maps.mapsplatformdatasets.v1alpha.Dataset.DataSourceCase getDataSourceCase();
+  public com.google.maps.mapsplatformdatasets.v1alpha.Dataset.DataSourceCase getDataSourceCase();
 }

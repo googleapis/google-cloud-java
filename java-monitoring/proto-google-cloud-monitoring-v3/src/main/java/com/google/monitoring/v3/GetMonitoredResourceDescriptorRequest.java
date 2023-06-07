@@ -49,6 +49,11 @@ public final class GetMonitoredResourceDescriptorRequest
     return new GetMonitoredResourceDescriptorRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_GetMonitoredResourceDescriptorRequest_descriptor;
@@ -73,9 +78,7 @@ public final class GetMonitoredResourceDescriptorRequest
    *
    * <pre>
    * Required. The monitored resource descriptor to get.  The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-   *
    * The `[RESOURCE_TYPE]` is a predefined type, such as
    * `cloudsql_database`.
    * </pre>
@@ -103,9 +106,7 @@ public final class GetMonitoredResourceDescriptorRequest
    *
    * <pre>
    * Required. The monitored resource descriptor to get.  The format is:
-   *
    *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-   *
    * The `[RESOURCE_TYPE]` is a predefined type, such as
    * `cloudsql_database`.
    * </pre>
@@ -481,9 +482,7 @@ public final class GetMonitoredResourceDescriptorRequest
      *
      * <pre>
      * Required. The monitored resource descriptor to get.  The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-     *
      * The `[RESOURCE_TYPE]` is a predefined type, such as
      * `cloudsql_database`.
      * </pre>
@@ -510,9 +509,7 @@ public final class GetMonitoredResourceDescriptorRequest
      *
      * <pre>
      * Required. The monitored resource descriptor to get.  The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-     *
      * The `[RESOURCE_TYPE]` is a predefined type, such as
      * `cloudsql_database`.
      * </pre>
@@ -539,9 +536,7 @@ public final class GetMonitoredResourceDescriptorRequest
      *
      * <pre>
      * Required. The monitored resource descriptor to get.  The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-     *
      * The `[RESOURCE_TYPE]` is a predefined type, such as
      * `cloudsql_database`.
      * </pre>
@@ -567,9 +562,7 @@ public final class GetMonitoredResourceDescriptorRequest
      *
      * <pre>
      * Required. The monitored resource descriptor to get.  The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-     *
      * The `[RESOURCE_TYPE]` is a predefined type, such as
      * `cloudsql_database`.
      * </pre>
@@ -591,9 +584,7 @@ public final class GetMonitoredResourceDescriptorRequest
      *
      * <pre>
      * Required. The monitored resource descriptor to get.  The format is:
-     *
      *     projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
-     *
      * The `[RESOURCE_TYPE]` is a predefined type, such as
      * `cloudsql_database`.
      * </pre>

@@ -26,20 +26,17 @@ package com.google.monitoring.v3;
  * the data.  Aggregation of time series is done in two steps. First, each time
  * series in the set is _aligned_ to the same time interval boundaries, then the
  * set of time series is optionally _reduced_ in number.
- *
  * Alignment consists of applying the `per_series_aligner` operation
  * to each time series after its data has been divided into regular
  * `alignment_period` time intervals. This process takes _all_ of the data
  * points in an alignment period, applies a mathematical transformation such as
  * averaging, minimum, maximum, delta, etc., and converts them into a single
  * data point per period.
- *
  * Reduction is when the aligned and transformed time series can optionally be
  * combined, reducing the number of time series through similar mathematical
  * transformations. Reduction involves applying a `cross_series_reducer` to
  * all the time series, optionally sorting the time series into subsets with
  * `group_by_fields`, and applying the reducer to each subset.
- *
  * The raw time series data can contain a huge amount of information from
  * multiple sources. Alignment and reduction transforms this mass of data into
  * a more manageable and representative collection of data, for example "the
@@ -65,13 +62,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   private Aggregation() {
     perSeriesAligner_ = 0;
     crossSeriesReducer_ = 0;
-    groupByFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Aggregation();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -100,7 +102,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * a single value: the result of applying the operation to the data values.
    * An aligned time series has a single data value at the end of each
    * `alignment_period`.
-   *
    * An alignment operation can change the data type of the values, too. For
    * example, if you apply a counting operation to boolean values, the data
    * `value_type` in the original time series is `BOOLEAN`, but the `value_type`
@@ -129,7 +130,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * Align and convert to
      * [DELTA][google.api.MetricDescriptor.MetricKind.DELTA].
      * The output is `delta = y1 - y0`.
-     *
      * This alignment is valid for
      * [CUMULATIVE][google.api.MetricDescriptor.MetricKind.CUMULATIVE] and
      * `DELTA` metrics. If the selected alignment period results in periods
@@ -149,13 +149,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `rate = (y1 - y0)/(t1 - t0)`, or "delta over time".
      * Think of this aligner as providing the slope of the line that passes
      * through the value at the start and at the end of the `alignment_period`.
-     *
      * This aligner is valid for `CUMULATIVE`
      * and `DELTA` metrics with numeric values. If the selected alignment
      * period results in periods with no data, then the aligned value for
      * such a period is created by interpolation. The output is a `GAUGE`
      * metric with `value_type` `DOUBLE`.
-     *
      * If, by "rate", you mean "percentage change", see the
      * `ALIGN_PERCENT_CHANGE` aligner instead.
      * </pre>
@@ -371,10 +369,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `GAUGE` and `DELTA` metrics with numeric values. This alignment returns
      * `((current - previous)/previous) * 100`, where the value of `previous` is
      * determined based on the `alignment_period`.
-     *
      * If the values of `current` and `previous` are both 0, then the returned
      * value is 0. If only `previous` is 0, the returned value is infinity.
-     *
      * A 10-minute moving mean is computed at each point of the alignment period
      * prior to the above calculation to smooth the metric and prevent false
      * positives from very short-lived spikes. The moving mean is only
@@ -410,7 +406,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * Align and convert to
      * [DELTA][google.api.MetricDescriptor.MetricKind.DELTA].
      * The output is `delta = y1 - y0`.
-     *
      * This alignment is valid for
      * [CUMULATIVE][google.api.MetricDescriptor.MetricKind.CUMULATIVE] and
      * `DELTA` metrics. If the selected alignment period results in periods
@@ -430,13 +425,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `rate = (y1 - y0)/(t1 - t0)`, or "delta over time".
      * Think of this aligner as providing the slope of the line that passes
      * through the value at the start and at the end of the `alignment_period`.
-     *
      * This aligner is valid for `CUMULATIVE`
      * and `DELTA` metrics with numeric values. If the selected alignment
      * period results in periods with no data, then the aligned value for
      * such a period is created by interpolation. The output is a `GAUGE`
      * metric with `value_type` `DOUBLE`.
-     *
      * If, by "rate", you mean "percentage change", see the
      * `ALIGN_PERCENT_CHANGE` aligner instead.
      * </pre>
@@ -652,10 +645,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `GAUGE` and `DELTA` metrics with numeric values. This alignment returns
      * `((current - previous)/previous) * 100`, where the value of `previous` is
      * determined based on the `alignment_period`.
-     *
      * If the values of `current` and `previous` are both 0, then the returned
      * value is 0. If only `previous` is 0, the returned value is infinity.
-     *
      * A 10-minute moving mean is computed at each point of the alignment period
      * prior to the above calculation to smooth the metric and prevent false
      * positives from very short-lived spikes. The moving mean is only
@@ -1292,12 +1283,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
    * time. This will be done before the per-series aligner can be applied to
    * the data.
-   *
    * The value must be at least 60 seconds. If a per-series
    * aligner other than `ALIGN_NONE` is specified, this field is required or an
    * error is returned. If no per-series aligner is specified, or the aligner
    * `ALIGN_NONE` is specified, then this field is ignored.
-   *
    * The maximum value of the `alignment_period` is 104 weeks (2 years) for
    * charts, and 90,000 seconds (25 hours) for alerting policies.
    * </pre>
@@ -1319,12 +1308,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
    * time. This will be done before the per-series aligner can be applied to
    * the data.
-   *
    * The value must be at least 60 seconds. If a per-series
    * aligner other than `ALIGN_NONE` is specified, this field is required or an
    * error is returned. If no per-series aligner is specified, or the aligner
    * `ALIGN_NONE` is specified, then this field is ignored.
-   *
    * The maximum value of the `alignment_period` is 104 weeks (2 years) for
    * charts, and 90,000 seconds (25 hours) for alerting policies.
    * </pre>
@@ -1348,12 +1335,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
    * time. This will be done before the per-series aligner can be applied to
    * the data.
-   *
    * The value must be at least 60 seconds. If a per-series
    * aligner other than `ALIGN_NONE` is specified, this field is required or an
    * error is returned. If no per-series aligner is specified, or the aligner
    * `ALIGN_NONE` is specified, then this field is ignored.
-   *
    * The maximum value of the `alignment_period` is 104 weeks (2 years) for
    * charts, and 90,000 seconds (25 hours) for alerting policies.
    * </pre>
@@ -1378,12 +1363,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * alignments cause all the data points in an `alignment_period` to be
    * mathematically grouped together, resulting in a single data point for
    * each `alignment_period` with end timestamp at the end of the period.
-   *
    * Not all alignment operations may be applied to all time series. The valid
    * choices depend on the `metric_kind` and `value_type` of the original time
    * series. Alignment can change the `metric_kind` or the `value_type` of
    * the time series.
-   *
    * Time series data must be aligned in order to perform cross-time
    * series reduction. If `cross_series_reducer` is specified, then
    * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -1408,12 +1391,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * alignments cause all the data points in an `alignment_period` to be
    * mathematically grouped together, resulting in a single data point for
    * each `alignment_period` with end timestamp at the end of the period.
-   *
    * Not all alignment operations may be applied to all time series. The valid
    * choices depend on the `metric_kind` and `value_type` of the original time
    * series. Alignment can change the `metric_kind` or the `value_type` of
    * the time series.
-   *
    * Time series data must be aligned in order to perform cross-time
    * series reduction. If `cross_series_reducer` is specified, then
    * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -1441,12 +1422,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * The reduction operation to be used to combine time series into a single
    * time series, where the value of each data point in the resulting series is
    * a function of all the already aligned values in the input time series.
-   *
    * Not all reducer operations can be applied to all time series. The valid
    * choices depend on the `metric_kind` and the `value_type` of the original
    * time series. Reduction can yield a time series with a different
    * `metric_kind` or `value_type` than the input time series.
-   *
    * Time series data must first be aligned (see `per_series_aligner`) in order
    * to perform cross-time series reduction. If `cross_series_reducer` is
    * specified, then `per_series_aligner` must be specified, and must not be
@@ -1469,12 +1448,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * The reduction operation to be used to combine time series into a single
    * time series, where the value of each data point in the resulting series is
    * a function of all the already aligned values in the input time series.
-   *
    * Not all reducer operations can be applied to all time series. The valid
    * choices depend on the `metric_kind` and the `value_type` of the original
    * time series. Reduction can yield a time series with a different
    * `metric_kind` or `value_type` than the input time series.
-   *
    * Time series data must first be aligned (see `per_series_aligner`) in order
    * to perform cross-time series reduction. If `cross_series_reducer` is
    * specified, then `per_series_aligner` must be specified, and must not be
@@ -1496,8 +1473,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public static final int GROUP_BY_FIELDS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList groupByFields_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList groupByFields_;
   /**
    *
    *
@@ -1815,20 +1791,17 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * the data.  Aggregation of time series is done in two steps. First, each time
    * series in the set is _aligned_ to the same time interval boundaries, then the
    * set of time series is optionally _reduced_ in number.
-   *
    * Alignment consists of applying the `per_series_aligner` operation
    * to each time series after its data has been divided into regular
    * `alignment_period` time intervals. This process takes _all_ of the data
    * points in an alignment period, applies a mathematical transformation such as
    * averaging, minimum, maximum, delta, etc., and converts them into a single
    * data point per period.
-   *
    * Reduction is when the aligned and transformed time series can optionally be
    * combined, reducing the number of time series through similar mathematical
    * transformations. Reduction involves applying a `cross_series_reducer` to
    * all the time series, optionally sorting the time series into subsets with
    * `group_by_fields`, and applying the reducer to each subset.
-   *
    * The raw time series data can contain a huge amount of information from
    * multiple sources. Alignment and reduction transforms this mass of data into
    * a more manageable and representative collection of data, for example "the
@@ -1878,7 +1851,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       perSeriesAligner_ = 0;
       crossSeriesReducer_ = 0;
-      groupByFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -1905,11 +1879,20 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.Aggregation buildPartial() {
       com.google.monitoring.v3.Aggregation result = new com.google.monitoring.v3.Aggregation(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.Aggregation result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        groupByFields_ = groupByFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.groupByFields_ = groupByFields_;
     }
 
     private void buildPartial0(com.google.monitoring.v3.Aggregation result) {
@@ -1923,10 +1906,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.crossSeriesReducer_ = crossSeriesReducer_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        groupByFields_.makeImmutable();
-        result.groupByFields_ = groupByFields_;
       }
     }
 
@@ -1987,7 +1966,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       if (!other.groupByFields_.isEmpty()) {
         if (groupByFields_.isEmpty()) {
           groupByFields_ = other.groupByFields_;
-          bitField0_ |= 0x00000008;
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureGroupByFieldsIsMutable();
           groupByFields_.addAll(other.groupByFields_);
@@ -2079,12 +2058,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2105,12 +2082,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2137,12 +2112,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2171,12 +2144,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2202,12 +2173,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2239,12 +2208,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2270,12 +2237,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2296,12 +2261,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2326,12 +2289,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * [time series][google.monitoring.v3.TimeSeries] into consistent blocks of
      * time. This will be done before the per-series aligner can be applied to
      * the data.
-     *
      * The value must be at least 60 seconds. If a per-series
      * aligner other than `ALIGN_NONE` is specified, this field is required or an
      * error is returned. If no per-series aligner is specified, or the aligner
      * `ALIGN_NONE` is specified, then this field is ignored.
-     *
      * The maximum value of the `alignment_period` is 104 weeks (2 years) for
      * charts, and 90,000 seconds (25 hours) for alerting policies.
      * </pre>
@@ -2365,12 +2326,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * alignments cause all the data points in an `alignment_period` to be
      * mathematically grouped together, resulting in a single data point for
      * each `alignment_period` with end timestamp at the end of the period.
-     *
      * Not all alignment operations may be applied to all time series. The valid
      * choices depend on the `metric_kind` and `value_type` of the original time
      * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
-     *
      * Time series data must be aligned in order to perform cross-time
      * series reduction. If `cross_series_reducer` is specified, then
      * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -2395,12 +2354,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * alignments cause all the data points in an `alignment_period` to be
      * mathematically grouped together, resulting in a single data point for
      * each `alignment_period` with end timestamp at the end of the period.
-     *
      * Not all alignment operations may be applied to all time series. The valid
      * choices depend on the `metric_kind` and `value_type` of the original time
      * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
-     *
      * Time series data must be aligned in order to perform cross-time
      * series reduction. If `cross_series_reducer` is specified, then
      * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -2428,12 +2385,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * alignments cause all the data points in an `alignment_period` to be
      * mathematically grouped together, resulting in a single data point for
      * each `alignment_period` with end timestamp at the end of the period.
-     *
      * Not all alignment operations may be applied to all time series. The valid
      * choices depend on the `metric_kind` and `value_type` of the original time
      * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
-     *
      * Time series data must be aligned in order to perform cross-time
      * series reduction. If `cross_series_reducer` is specified, then
      * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -2460,12 +2415,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * alignments cause all the data points in an `alignment_period` to be
      * mathematically grouped together, resulting in a single data point for
      * each `alignment_period` with end timestamp at the end of the period.
-     *
      * Not all alignment operations may be applied to all time series. The valid
      * choices depend on the `metric_kind` and `value_type` of the original time
      * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
-     *
      * Time series data must be aligned in order to perform cross-time
      * series reduction. If `cross_series_reducer` is specified, then
      * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -2496,12 +2449,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * alignments cause all the data points in an `alignment_period` to be
      * mathematically grouped together, resulting in a single data point for
      * each `alignment_period` with end timestamp at the end of the period.
-     *
      * Not all alignment operations may be applied to all time series. The valid
      * choices depend on the `metric_kind` and `value_type` of the original time
      * series. Alignment can change the `metric_kind` or the `value_type` of
      * the time series.
-     *
      * Time series data must be aligned in order to perform cross-time
      * series reduction. If `cross_series_reducer` is specified, then
      * `per_series_aligner` must be specified and not equal to `ALIGN_NONE`
@@ -2528,12 +2479,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * The reduction operation to be used to combine time series into a single
      * time series, where the value of each data point in the resulting series is
      * a function of all the already aligned values in the input time series.
-     *
      * Not all reducer operations can be applied to all time series. The valid
      * choices depend on the `metric_kind` and the `value_type` of the original
      * time series. Reduction can yield a time series with a different
      * `metric_kind` or `value_type` than the input time series.
-     *
      * Time series data must first be aligned (see `per_series_aligner`) in order
      * to perform cross-time series reduction. If `cross_series_reducer` is
      * specified, then `per_series_aligner` must be specified, and must not be
@@ -2556,12 +2505,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * The reduction operation to be used to combine time series into a single
      * time series, where the value of each data point in the resulting series is
      * a function of all the already aligned values in the input time series.
-     *
      * Not all reducer operations can be applied to all time series. The valid
      * choices depend on the `metric_kind` and the `value_type` of the original
      * time series. Reduction can yield a time series with a different
      * `metric_kind` or `value_type` than the input time series.
-     *
      * Time series data must first be aligned (see `per_series_aligner`) in order
      * to perform cross-time series reduction. If `cross_series_reducer` is
      * specified, then `per_series_aligner` must be specified, and must not be
@@ -2587,12 +2534,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * The reduction operation to be used to combine time series into a single
      * time series, where the value of each data point in the resulting series is
      * a function of all the already aligned values in the input time series.
-     *
      * Not all reducer operations can be applied to all time series. The valid
      * choices depend on the `metric_kind` and the `value_type` of the original
      * time series. Reduction can yield a time series with a different
      * `metric_kind` or `value_type` than the input time series.
-     *
      * Time series data must first be aligned (see `per_series_aligner`) in order
      * to perform cross-time series reduction. If `cross_series_reducer` is
      * specified, then `per_series_aligner` must be specified, and must not be
@@ -2617,12 +2562,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * The reduction operation to be used to combine time series into a single
      * time series, where the value of each data point in the resulting series is
      * a function of all the already aligned values in the input time series.
-     *
      * Not all reducer operations can be applied to all time series. The valid
      * choices depend on the `metric_kind` and the `value_type` of the original
      * time series. Reduction can yield a time series with a different
      * `metric_kind` or `value_type` than the input time series.
-     *
      * Time series data must first be aligned (see `per_series_aligner`) in order
      * to perform cross-time series reduction. If `cross_series_reducer` is
      * specified, then `per_series_aligner` must be specified, and must not be
@@ -2651,12 +2594,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * The reduction operation to be used to combine time series into a single
      * time series, where the value of each data point in the resulting series is
      * a function of all the already aligned values in the input time series.
-     *
      * Not all reducer operations can be applied to all time series. The valid
      * choices depend on the `metric_kind` and the `value_type` of the original
      * time series. Reduction can yield a time series with a different
      * `metric_kind` or `value_type` than the input time series.
-     *
      * Time series data must first be aligned (see `per_series_aligner`) in order
      * to perform cross-time series reduction. If `cross_series_reducer` is
      * specified, then `per_series_aligner` must be specified, and must not be
@@ -2675,14 +2616,14 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList groupByFields_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList groupByFields_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupByFieldsIsMutable() {
-      if (!groupByFields_.isModifiable()) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         groupByFields_ = new com.google.protobuf.LazyStringArrayList(groupByFields_);
+        bitField0_ |= 0x00000008;
       }
-      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2709,8 +2650,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the groupByFields.
      */
     public com.google.protobuf.ProtocolStringList getGroupByFieldsList() {
-      groupByFields_.makeImmutable();
-      return groupByFields_;
+      return groupByFields_.getUnmodifiableView();
     }
     /**
      *
@@ -2827,7 +2767,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGroupByFieldsIsMutable();
       groupByFields_.set(index, value);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2862,7 +2801,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGroupByFieldsIsMutable();
       groupByFields_.add(value);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2894,7 +2832,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllGroupByFields(java.lang.Iterable<java.lang.String> values) {
       ensureGroupByFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groupByFields_);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2923,9 +2860,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGroupByFields() {
-      groupByFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      ;
       onChanged();
       return this;
     }
@@ -2961,7 +2897,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureGroupByFieldsIsMutable();
       groupByFields_.add(value);
-      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

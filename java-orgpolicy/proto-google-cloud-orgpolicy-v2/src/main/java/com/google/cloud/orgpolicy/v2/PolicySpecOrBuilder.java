@@ -29,13 +29,10 @@ public interface PolicySpecOrBuilder
    * <pre>
    * An opaque tag indicating the current version of the `Policy`, used for
    * concurrency control.
-   *
    * This field is ignored if used in a `CreatePolicy` request.
-   *
    * When the `Policy` is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
    * current `Policy` to use when executing a read-modify-write loop.
-   *
    * When the `Policy` is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
@@ -51,13 +48,10 @@ public interface PolicySpecOrBuilder
    * <pre>
    * An opaque tag indicating the current version of the `Policy`, used for
    * concurrency control.
-   *
    * This field is ignored if used in a `CreatePolicy` request.
-   *
    * When the `Policy` is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
    * current `Policy` to use when executing a read-modify-write loop.
-   *
    * When the `Policy` is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
@@ -117,7 +111,6 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
-   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -134,7 +127,6 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
-   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -151,7 +143,6 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
-   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -168,7 +159,6 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
-   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -186,7 +176,6 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Up to 10 PolicyRules are allowed.
-   *
    * In Policies for boolean constraints, the following requirements apply:
    *   - There must be one and only one PolicyRule where condition is unset.
    *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
@@ -204,7 +193,6 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Determines the inheritance behavior for this `Policy`.
-   *
    * If `inherit_from_parent` is true, PolicyRules set higher up in the
    * hierarchy (up to the closest root) are inherited and present in the
    * effective policy. If it is false, then no rules are inherited, and this

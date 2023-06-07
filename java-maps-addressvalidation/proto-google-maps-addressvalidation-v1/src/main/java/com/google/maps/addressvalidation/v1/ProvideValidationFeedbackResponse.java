@@ -23,7 +23,6 @@ package com.google.maps.addressvalidation.v1;
  *
  * <pre>
  * The response for validation feedback.
- *
  * The response is empty if the feedback is sent successfully.
  * </pre>
  *
@@ -46,6 +45,11 @@ public final class ProvideValidationFeedbackResponse extends com.google.protobuf
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProvideValidationFeedbackResponse();
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -220,7 +224,6 @@ public final class ProvideValidationFeedbackResponse extends com.google.protobuf
    *
    * <pre>
    * The response for validation feedback.
-   *
    * The response is empty if the feedback is sent successfully.
    * </pre>
    *
