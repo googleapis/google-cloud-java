@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.maps.api.grpc</groupId>
+        <artifactId>proto-google-maps-mapsplatformdatasets-v1</artifactId>
+        <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-mapsplatformdatasets-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.maps.api.grpc</groupId>
+        <artifactId>grpc-google-maps-mapsplatformdatasets-v1</artifactId>
+        <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-mapsplatformdatasets-v1alpha</artifactId>
         <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1alpha:current} -->
       </dependency>
@@ -47,7 +57,9 @@
   <modules>
     <module>google-maps-mapsplatformdatasets</module>
     <module>grpc-google-maps-mapsplatformdatasets-v1alpha</module>
+    <module>grpc-google-maps-mapsplatformdatasets-v1</module>
     <module>proto-google-maps-mapsplatformdatasets-v1alpha</module>
+    <module>proto-google-maps-mapsplatformdatasets-v1</module>
     <module>google-maps-mapsplatformdatasets-bom</module>
   </modules>
 
