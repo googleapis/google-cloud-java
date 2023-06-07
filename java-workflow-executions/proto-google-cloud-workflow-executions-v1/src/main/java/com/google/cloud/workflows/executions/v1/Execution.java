@@ -53,11 +53,6 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     return new Execution();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workflows.executions.v1.ExecutionsProto
         .internal_static_google_cloud_workflows_executions_v1_Execution_descriptor;
@@ -566,11 +561,6 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       return new StackTraceElement();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.workflows.executions.v1.ExecutionsProto
           .internal_static_google_cloud_workflows_executions_v1_Execution_StackTraceElement_descriptor;
@@ -659,11 +649,6 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Position();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2553,11 +2538,6 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
       return new StackTrace();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.workflows.executions.v1.ExecutionsProto
           .internal_static_google_cloud_workflows_executions_v1_Execution_StackTrace_descriptor;
@@ -3657,11 +3637,6 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Error();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4905,6 +4880,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input parameters of the execution represented as a JSON string.
    * The size limit is 32KB.
+   *
    * *Note*: If you are using the REST API directly to run your workflow, you
    * must escape any JSON string value of `argument`. Example:
    * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
@@ -4932,6 +4908,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input parameters of the execution represented as a JSON string.
    * The size limit is 32KB.
+   *
    * *Note*: If you are using the REST API directly to run your workflow, you
    * must escape any JSON string value of `argument`. Example:
    * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
@@ -6318,6 +6295,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     *
      * *Note*: If you are using the REST API directly to run your workflow, you
      * must escape any JSON string value of `argument`. Example:
      * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
@@ -6344,6 +6322,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     *
      * *Note*: If you are using the REST API directly to run your workflow, you
      * must escape any JSON string value of `argument`. Example:
      * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
@@ -6370,6 +6349,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     *
      * *Note*: If you are using the REST API directly to run your workflow, you
      * must escape any JSON string value of `argument`. Example:
      * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
@@ -6395,6 +6375,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     *
      * *Note*: If you are using the REST API directly to run your workflow, you
      * must escape any JSON string value of `argument`. Example:
      * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`
@@ -6416,6 +6397,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input parameters of the execution represented as a JSON string.
      * The size limit is 32KB.
+     *
      * *Note*: If you are using the REST API directly to run your workflow, you
      * must escape any JSON string value of `argument`. Example:
      * `'{"argument":"{&#92;"firstName&#92;":&#92;"FIRST&#92;",&#92;"lastName&#92;":&#92;"LAST&#92;"}"}'`

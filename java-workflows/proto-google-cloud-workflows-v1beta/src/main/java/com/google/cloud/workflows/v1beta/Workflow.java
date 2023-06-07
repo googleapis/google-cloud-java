@@ -51,11 +51,6 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     return new Workflow();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workflows.v1beta.WorkflowsProto
         .internal_static_google_cloud_workflows_v1beta_Workflow_descriptor;
@@ -219,6 +214,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCodeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceCode_;
 
   public enum SourceCodeCase
@@ -759,9 +756,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * This service account represents the identity of the workflow and determines
    * what permissions the workflow has.
    * Format: projects/{project}/serviceAccounts/{account}
+   *
    * Using `-` as a wildcard for the `{project}` will infer the project from
    * the account. The `{account}` value can be the `email` address or the
    * `unique_id` of the service account.
+   *
    * If not provided, workflow will use the project's default service account.
    * Modifying this field for an existing workflow results in a new workflow
    * revision.
@@ -791,9 +790,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * This service account represents the identity of the workflow and determines
    * what permissions the workflow has.
    * Format: projects/{project}/serviceAccounts/{account}
+   *
    * Using `-` as a wildcard for the `{project}` will infer the project from
    * the account. The `{account}` value can be the `email` address or the
    * `unique_id` of the service account.
+   *
    * If not provided, workflow will use the project's default service account.
    * Modifying this field for an existing workflow results in a new workflow
    * revision.
@@ -2815,9 +2816,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account}
+     *
      * Using `-` as a wildcard for the `{project}` will infer the project from
      * the account. The `{account}` value can be the `email` address or the
      * `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2846,9 +2849,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account}
+     *
      * Using `-` as a wildcard for the `{project}` will infer the project from
      * the account. The `{account}` value can be the `email` address or the
      * `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2877,9 +2882,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account}
+     *
      * Using `-` as a wildcard for the `{project}` will infer the project from
      * the account. The `{account}` value can be the `email` address or the
      * `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2907,9 +2914,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account}
+     *
      * Using `-` as a wildcard for the `{project}` will infer the project from
      * the account. The `{account}` value can be the `email` address or the
      * `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.
@@ -2933,9 +2942,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
      * Format: projects/{project}/serviceAccounts/{account}
+     *
      * Using `-` as a wildcard for the `{project}` will infer the project from
      * the account. The `{account}` value can be the `email` address or the
      * `unique_id` of the service account.
+     *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
      * revision.

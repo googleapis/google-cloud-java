@@ -46,11 +46,6 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
     return new UpdateWorkstationConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workstations.v1beta.WorkstationsProto
         .internal_static_google_cloud_workstations_v1beta_UpdateWorkstationConfigRequest_descriptor;

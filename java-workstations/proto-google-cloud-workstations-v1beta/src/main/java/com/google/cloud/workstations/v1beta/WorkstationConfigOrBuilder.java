@@ -605,17 +605,21 @@ public interface WorkstationConfigOrBuilder
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
    * Otherwise, data on the persistent disk will be lost.
+   *
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   *
    * Immutable after the workstation configuration is created.
    * </pre>
    *
@@ -632,17 +636,21 @@ public interface WorkstationConfigOrBuilder
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
    * Otherwise, data on the persistent disk will be lost.
+   *
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   *
    * Immutable after the workstation configuration is created.
    * </pre>
    *
@@ -659,17 +667,21 @@ public interface WorkstationConfigOrBuilder
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
    * Otherwise, data on the persistent disk will be lost.
+   *
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   *
    * Immutable after the workstation configuration is created.
    * </pre>
    *

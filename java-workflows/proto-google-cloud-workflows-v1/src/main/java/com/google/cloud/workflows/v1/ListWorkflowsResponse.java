@@ -42,18 +42,13 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
   private ListWorkflowsResponse() {
     workflows_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
-    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListWorkflowsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -198,7 +193,8 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
   public static final int UNREACHABLE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachable_;
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -493,8 +489,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -541,17 +536,16 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.workflows_ = workflowsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unreachable_ = unreachable_;
     }
 
     private void buildPartial0(com.google.cloud.workflows.v1.ListWorkflowsResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
     }
 
@@ -636,7 +630,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -1174,14 +1168,14 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unreachable_.isModifiable()) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1195,7 +1189,8 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
-      return unreachable_.getUnmodifiableView();
+      unreachable_.makeImmutable();
+      return unreachable_;
     }
     /**
      *
@@ -1260,6 +1255,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       }
       ensureUnreachableIsMutable();
       unreachable_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1281,6 +1277,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       }
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1299,6 +1296,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1314,8 +1312,9 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1338,6 +1337,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

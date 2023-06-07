@@ -55,11 +55,6 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     return new WorkstationCluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workstations.v1beta.WorkstationsProto
         .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_descriptor;
@@ -253,18 +248,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     private PrivateClusterConfig() {
       clusterHostname_ = "";
       serviceAttachmentUri_ = "";
-      allowedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PrivateClusterConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -422,7 +412,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     public static final int ALLOWED_PROJECTS_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowedProjects_;
+    private com.google.protobuf.LazyStringArrayList allowedProjects_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -739,8 +730,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         enablePrivateEndpoint_ = false;
         clusterHostname_ = "";
         serviceAttachmentUri_ = "";
-        allowedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        allowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -772,21 +762,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
           buildPartial() {
         com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig result =
             new com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig result) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          allowedProjects_ = allowedProjects_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.allowedProjects_ = allowedProjects_;
       }
 
       private void buildPartial0(
@@ -800,6 +780,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.serviceAttachmentUri_ = serviceAttachmentUri_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          allowedProjects_.makeImmutable();
+          result.allowedProjects_ = allowedProjects_;
         }
       }
 
@@ -872,7 +856,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         if (!other.allowedProjects_.isEmpty()) {
           if (allowedProjects_.isEmpty()) {
             allowedProjects_ = other.allowedProjects_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureAllowedProjectsIsMutable();
             allowedProjects_.addAll(other.allowedProjects_);
@@ -1259,14 +1243,14 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.protobuf.LazyStringList allowedProjects_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowedProjects_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowedProjectsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!allowedProjects_.isModifiable()) {
           allowedProjects_ = new com.google.protobuf.LazyStringArrayList(allowedProjects_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -1282,7 +1266,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * @return A list containing the allowedProjects.
        */
       public com.google.protobuf.ProtocolStringList getAllowedProjectsList() {
-        return allowedProjects_.getUnmodifiableView();
+        allowedProjects_.makeImmutable();
+        return allowedProjects_;
       }
       /**
        *
@@ -1355,6 +1340,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         }
         ensureAllowedProjectsIsMutable();
         allowedProjects_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1378,6 +1364,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         }
         ensureAllowedProjectsIsMutable();
         allowedProjects_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1398,6 +1385,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       public Builder addAllAllowedProjects(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedProjectsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedProjects_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1415,8 +1403,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearAllowedProjects() {
-        allowedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -1441,6 +1430,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         ensureAllowedProjectsIsMutable();
         allowedProjects_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

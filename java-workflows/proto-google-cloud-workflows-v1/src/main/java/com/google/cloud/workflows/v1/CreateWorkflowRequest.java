@@ -50,11 +50,6 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
     return new CreateWorkflowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workflows.v1.WorkflowsProto
         .internal_static_google_cloud_workflows_v1_CreateWorkflowRequest_descriptor;
@@ -193,6 +188,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ID of the workflow to be created. It has to fulfill the
    * following requirements:
+   *
    * * Must contain only letters, numbers, underscores and hyphens.
    * * Must start with a letter.
    * * Must be between 1-64 characters.
@@ -222,6 +218,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ID of the workflow to be created. It has to fulfill the
    * following requirements:
+   *
    * * Must contain only letters, numbers, underscores and hyphens.
    * * Must start with a letter.
    * * Must be between 1-64 characters.
@@ -974,6 +971,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID of the workflow to be created. It has to fulfill the
      * following requirements:
+     *
      * * Must contain only letters, numbers, underscores and hyphens.
      * * Must start with a letter.
      * * Must be between 1-64 characters.
@@ -1002,6 +1000,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID of the workflow to be created. It has to fulfill the
      * following requirements:
+     *
      * * Must contain only letters, numbers, underscores and hyphens.
      * * Must start with a letter.
      * * Must be between 1-64 characters.
@@ -1030,6 +1029,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID of the workflow to be created. It has to fulfill the
      * following requirements:
+     *
      * * Must contain only letters, numbers, underscores and hyphens.
      * * Must start with a letter.
      * * Must be between 1-64 characters.
@@ -1057,6 +1057,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID of the workflow to be created. It has to fulfill the
      * following requirements:
+     *
      * * Must contain only letters, numbers, underscores and hyphens.
      * * Must start with a letter.
      * * Must be between 1-64 characters.
@@ -1080,6 +1081,7 @@ public final class CreateWorkflowRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID of the workflow to be created. It has to fulfill the
      * following requirements:
+     *
      * * Must contain only letters, numbers, underscores and hyphens.
      * * Must start with a letter.
      * * Must be between 1-64 characters.

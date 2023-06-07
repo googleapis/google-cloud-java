@@ -76,6 +76,7 @@ public interface ListWorkflowsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflows` must
    * match the call that provided the page token.
    * </pre>
@@ -91,6 +92,7 @@ public interface ListWorkflowsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflows` must
    * match the call that provided the page token.
    * </pre>

@@ -54,11 +54,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     return new WorkstationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workstations.v1.WorkstationsProto
         .internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor;
@@ -131,7 +126,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstanceOrBuilder
         getGceInstanceOrBuilder();
 
-    public com.google.cloud.workstations.v1.WorkstationConfig.Host.ConfigCase getConfigCase();
+    com.google.cloud.workstations.v1.WorkstationConfig.Host.ConfigCase getConfigCase();
   }
   /**
    *
@@ -158,11 +153,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Host();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -475,18 +465,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private GceInstance() {
         machineType_ = "";
         serviceAccount_ = "";
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new GceInstance();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -576,11 +561,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new GceShieldedInstanceConfig();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1388,11 +1368,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return new GceConfidentialInstanceConfig();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.workstations.v1.WorkstationsProto
               .internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_GceConfidentialInstanceConfig_descriptor;
@@ -2077,7 +2052,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public static final int TAGS_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList tags_;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -2674,8 +2650,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           bitField0_ = 0;
           machineType_ = "";
           serviceAccount_ = "";
-          tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
           poolSize_ = 0;
           pooledInstances_ = 0;
           disablePublicIpAddresses_ = false;
@@ -2721,21 +2696,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance buildPartial() {
           com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance result =
               new com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
           onBuilt();
           return result;
-        }
-
-        private void buildPartialRepeatedFields(
-            com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance result) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            tags_ = tags_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.tags_ = tags_;
         }
 
         private void buildPartial0(
@@ -2746,6 +2711,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.serviceAccount_ = serviceAccount_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            tags_.makeImmutable();
+            result.tags_ = tags_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.poolSize_ = poolSize_;
@@ -2841,7 +2810,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           if (!other.tags_.isEmpty()) {
             if (tags_.isEmpty()) {
               tags_ = other.tags_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensureTagsIsMutable();
               tags_.addAll(other.tags_);
@@ -3210,14 +3179,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return this;
         }
 
-        private com.google.protobuf.LazyStringList tags_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList tags_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureTagsIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!tags_.isModifiable()) {
             tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -3232,7 +3201,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return A list containing the tags.
          */
         public com.google.protobuf.ProtocolStringList getTagsList() {
-          return tags_.getUnmodifiableView();
+          tags_.makeImmutable();
+          return tags_;
         }
         /**
          *
@@ -3301,6 +3271,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           ensureTagsIsMutable();
           tags_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3323,6 +3294,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           ensureTagsIsMutable();
           tags_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3342,6 +3314,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
           ensureTagsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3358,8 +3331,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearTags() {
-          tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -3383,6 +3357,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           checkByteStringIsUtf8(value);
           ensureTagsIsMutable();
           tags_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4186,6 +4161,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int configCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object config_;
 
     public enum ConfigCase
@@ -5049,7 +5026,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getMountPathBytes();
 
-    public com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.DirectoryTypeCase
+    com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.DirectoryTypeCase
         getDirectoryTypeCase();
   }
   /**
@@ -5079,11 +5056,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PersistentDirectory();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5267,11 +5239,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new GceRegionalPersistentDisk();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6769,6 +6736,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int directoryTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object directoryType_;
 
     public enum DirectoryTypeCase
@@ -8057,8 +8026,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     private Container() {
       image_ = "";
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       workingDir_ = "";
     }
 
@@ -8066,11 +8035,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Container();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8155,7 +8119,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public static final int COMMAND_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList command_;
+    private com.google.protobuf.LazyStringArrayList command_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -8218,7 +8183,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public static final int ARGS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList args_;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -8738,10 +8704,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         super.clear();
         bitField0_ = 0;
         image_ = "";
-        command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        args_ = com.google.protobuf.LazyStringArrayList.emptyList();
         internalGetMutableEnv().clear();
         workingDir_ = "";
         runAsUser_ = 0;
@@ -8773,7 +8737,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public com.google.cloud.workstations.v1.WorkstationConfig.Container buildPartial() {
         com.google.cloud.workstations.v1.WorkstationConfig.Container result =
             new com.google.cloud.workstations.v1.WorkstationConfig.Container(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -8781,25 +8744,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.workstations.v1.WorkstationConfig.Container result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          command_ = command_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.command_ = command_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          args_ = args_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.args_ = args_;
-      }
-
       private void buildPartial0(
           com.google.cloud.workstations.v1.WorkstationConfig.Container result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.image_ = image_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          command_.makeImmutable();
+          result.command_ = command_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          args_.makeImmutable();
+          result.args_ = args_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.env_ = internalGetEnv();
@@ -8870,7 +8827,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         if (!other.command_.isEmpty()) {
           if (command_.isEmpty()) {
             command_ = other.command_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureCommandIsMutable();
             command_.addAll(other.command_);
@@ -8880,7 +8837,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         if (!other.args_.isEmpty()) {
           if (args_.isEmpty()) {
             args_ = other.args_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureArgsIsMutable();
             args_.addAll(other.args_);
@@ -9094,14 +9051,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return this;
       }
 
-      private com.google.protobuf.LazyStringList command_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList command_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCommandIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!command_.isModifiable()) {
           command_ = new com.google.protobuf.LazyStringArrayList(command_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -9115,7 +9072,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return A list containing the command.
        */
       public com.google.protobuf.ProtocolStringList getCommandList() {
-        return command_.getUnmodifiableView();
+        command_.makeImmutable();
+        return command_;
       }
       /**
        *
@@ -9180,6 +9138,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         ensureCommandIsMutable();
         command_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9201,6 +9160,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         ensureCommandIsMutable();
         command_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9219,6 +9179,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public Builder addAllCommand(java.lang.Iterable<java.lang.String> values) {
         ensureCommandIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, command_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -9234,8 +9195,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearCommand() {
-        command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        command_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -9258,18 +9220,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         checkByteStringIsUtf8(value);
         ensureCommandIsMutable();
         command_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList args_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList args_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureArgsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!args_.isModifiable()) {
           args_ = new com.google.protobuf.LazyStringArrayList(args_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -9283,7 +9246,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return A list containing the args.
        */
       public com.google.protobuf.ProtocolStringList getArgsList() {
-        return args_.getUnmodifiableView();
+        args_.makeImmutable();
+        return args_;
       }
       /**
        *
@@ -9348,6 +9312,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         ensureArgsIsMutable();
         args_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9369,6 +9334,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         ensureArgsIsMutable();
         args_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9387,6 +9353,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
         ensureArgsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9402,8 +9369,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearArgs() {
-        args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        args_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -9426,6 +9394,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         checkByteStringIsUtf8(value);
         ensureArgsIsMutable();
         args_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9917,11 +9886,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CustomerEncryptionKey();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11651,17 +11615,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
    * Otherwise, data on the persistent disk will be lost.
+   *
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   *
    * Immutable after the workstation configuration is created.
    * </pre>
    *
@@ -11681,17 +11649,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
    * Otherwise, data on the persistent disk will be lost.
+   *
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   *
    * Immutable after the workstation configuration is created.
    * </pre>
    *
@@ -11715,17 +11687,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
+   *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
    * this field is not set, the disks are encrypted using a generated
    * key. Customer-managed encryption keys do not protect disk metadata.
+   *
    * If the customer-managed encryption key is rotated, when the workstation
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
    * Otherwise, data on the persistent disk will be lost.
+   *
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   *
    * Immutable after the workstation configuration is created.
    * </pre>
    *
@@ -15433,17 +15409,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15462,17 +15442,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15499,17 +15483,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15537,17 +15525,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15573,17 +15565,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15616,17 +15612,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15650,17 +15650,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15680,17 +15684,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *
@@ -15715,17 +15723,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
      * customer-managed encryption key.
+     *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
      * this field is not set, the disks are encrypted using a generated
      * key. Customer-managed encryption keys do not protect disk metadata.
+     *
      * If the customer-managed encryption key is rotated, when the workstation
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
      * Otherwise, data on the persistent disk will be lost.
+     *
      * If the encryption key is revoked, the workstation session will
      * automatically be stopped within 7 hours.
+     *
      * Immutable after the workstation configuration is created.
      * </pre>
      *

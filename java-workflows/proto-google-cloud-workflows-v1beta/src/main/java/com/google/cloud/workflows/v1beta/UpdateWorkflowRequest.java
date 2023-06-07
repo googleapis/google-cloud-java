@@ -47,11 +47,6 @@ public final class UpdateWorkflowRequest extends com.google.protobuf.GeneratedMe
     return new UpdateWorkflowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workflows.v1beta.WorkflowsProto
         .internal_static_google_cloud_workflows_v1beta_UpdateWorkflowRequest_descriptor;

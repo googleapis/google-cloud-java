@@ -47,11 +47,6 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     return new GenerateAccessTokenRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workstations.v1beta.WorkstationsProto
         .internal_static_google_cloud_workstations_v1beta_GenerateAccessTokenRequest_descriptor;
@@ -68,6 +63,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   private int expirationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object expiration_;
 
   public enum ExpirationCase

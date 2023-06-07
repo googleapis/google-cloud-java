@@ -101,6 +101,7 @@ public interface CreateWorkflowRequestOrBuilder
    * <pre>
    * Required. The ID of the workflow to be created. It has to fulfill the
    * following requirements:
+   *
    * * Must contain only letters, numbers, underscores and hyphens.
    * * Must start with a letter.
    * * Must be between 1-64 characters.
@@ -119,6 +120,7 @@ public interface CreateWorkflowRequestOrBuilder
    * <pre>
    * Required. The ID of the workflow to be created. It has to fulfill the
    * following requirements:
+   *
    * * Must contain only letters, numbers, underscores and hyphens.
    * * Must start with a letter.
    * * Must be between 1-64 characters.

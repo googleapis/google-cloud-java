@@ -139,6 +139,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
 
-  public com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest.ExpirationCase
+  com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest.ExpirationCase
       getExpirationCase();
 }

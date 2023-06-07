@@ -50,11 +50,6 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
     return new GetExecutionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workflows.executions.v1beta.ExecutionsProto
         .internal_static_google_cloud_workflows_executions_v1beta_GetExecutionRequest_descriptor;
