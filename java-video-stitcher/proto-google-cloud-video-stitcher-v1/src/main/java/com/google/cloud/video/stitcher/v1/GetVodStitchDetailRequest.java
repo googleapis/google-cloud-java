@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
     return new GetVodStitchDetailRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.VideoStitcherServiceProto
         .internal_static_google_cloud_video_stitcher_v1_GetVodStitchDetailRequest_descriptor;
@@ -75,7 +70,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The name of the stitch detail in the specified VOD session, in the form of
+   * Required. The name of the stitch detail in the specified VOD session, in
+   * the form of
    * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
    * </pre>
    *
@@ -101,7 +97,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The name of the stitch detail in the specified VOD session, in the form of
+   * Required. The name of the stitch detail in the specified VOD session, in
+   * the form of
    * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
    * </pre>
    *
@@ -475,7 +472,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the stitch detail in the specified VOD session, in the form of
+     * Required. The name of the stitch detail in the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
      * </pre>
      *
@@ -500,7 +498,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the stitch detail in the specified VOD session, in the form of
+     * Required. The name of the stitch detail in the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
      * </pre>
      *
@@ -525,7 +524,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the stitch detail in the specified VOD session, in the form of
+     * Required. The name of the stitch detail in the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
      * </pre>
      *
@@ -549,7 +549,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the stitch detail in the specified VOD session, in the form of
+     * Required. The name of the stitch detail in the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
      * </pre>
      *
@@ -569,7 +570,8 @@ public final class GetVodStitchDetailRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the stitch detail in the specified VOD session, in the form of
+     * Required. The name of the stitch detail in the specified VOD session, in
+     * the form of
      * `projects/{project}/locations/{location}/vodSessions/{vod_session_id}/vodStitchDetails/{id}`.
      * </pre>
      *

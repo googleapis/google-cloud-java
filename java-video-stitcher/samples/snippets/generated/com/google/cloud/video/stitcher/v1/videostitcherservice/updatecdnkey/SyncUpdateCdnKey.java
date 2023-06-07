@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public class SyncUpdateCdnKey {
               .setCdnKey(CdnKey.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
-      CdnKey response = videoStitcherServiceClient.updateCdnKey(request);
+      CdnKey response = videoStitcherServiceClient.updateCdnKeyAsync(request).get();
     }
   }
 }

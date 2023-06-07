@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface CreateCdnKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project in which the CDN key should be created, in the form of
-   * `projects/{project_number}/locations/{location}`.
+   * Required. The project in which the CDN key should be created, in the form
+   * of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateCdnKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project in which the CDN key should be created, in the form of
-   * `projects/{project_number}/locations/{location}`.
+   * Required. The project in which the CDN key should be created, in the form
+   * of `projects/{project_number}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -99,8 +99,9 @@ public interface CreateCdnKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the CDN key, which will become the final component of
-   * the CDN key's resource name.
+   * Required. The ID to use for the CDN key, which will become the final
+   * component of the CDN key's resource name.
+   *
    * This value should conform to RFC-1034, which restricts to
    * lower-case letters, numbers, and hyphen, with the first character a
    * letter, the last a letter or a number, and a 63 character maximum.
@@ -115,8 +116,9 @@ public interface CreateCdnKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the CDN key, which will become the final component of
-   * the CDN key's resource name.
+   * Required. The ID to use for the CDN key, which will become the final
+   * component of the CDN key's resource name.
+   *
    * This value should conform to RFC-1034, which restricts to
    * lower-case letters, numbers, and hyphen, with the first character a
    * letter, the last a letter or a number, and a 63 character maximum.

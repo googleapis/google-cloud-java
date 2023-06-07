@@ -648,3 +648,5 @@ proto-google-cloud-rapidmigrationassessment-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-rapidmigrationassessment-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-maps-mapsplatformdatasets-v1:0.7.0:0.8.0-SNAPSHOT
 grpc-google-maps-mapsplatformdatasets-v1:0.7.0:0.8.0-SNAPSHOT
+proto-google-cloud-discoveryengine-v1:0.14.0:0.15.0-SNAPSHOT
+grpc-google-cloud-discoveryengine-v1:0.14.0:0.15.0-SNAPSHOT

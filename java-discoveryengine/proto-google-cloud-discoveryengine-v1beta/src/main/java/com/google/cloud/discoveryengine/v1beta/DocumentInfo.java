@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   private DocumentInfo() {
-    promotionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DocumentInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +64,8 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   private int documentDescriptorCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object documentDescriptor_;
 
   public enum DocumentDescriptorCase
@@ -271,9 +268,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
+   *
    * For example, this field will be 2 if two quantities of the same Document
    * are involved in a `add-to-cart` event.
+   *
    * Required for events of the following event types:
+   *
    * * `add-to-cart`
    * * `purchase`
    * </pre>
@@ -291,9 +291,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
+   *
    * For example, this field will be 2 if two quantities of the same Document
    * are involved in a `add-to-cart` event.
+   *
    * Required for events of the following event types:
+   *
    * * `add-to-cart`
    * * `purchase`
    * </pre>
@@ -310,7 +313,8 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int PROMOTION_IDS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList promotionIds_;
+  private com.google.protobuf.LazyStringArrayList promotionIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -629,8 +633,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       quantity_ = 0;
-      promotionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       documentDescriptorCase_ = 0;
       documentDescriptor_ = null;
       return this;
@@ -660,7 +663,6 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1beta.DocumentInfo buildPartial() {
       com.google.cloud.discoveryengine.v1beta.DocumentInfo result =
           new com.google.cloud.discoveryengine.v1beta.DocumentInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -669,21 +671,16 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.discoveryengine.v1beta.DocumentInfo result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        promotionIds_ = promotionIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.promotionIds_ = promotionIds_;
-    }
-
     private void buildPartial0(com.google.cloud.discoveryengine.v1beta.DocumentInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.quantity_ = quantity_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        promotionIds_.makeImmutable();
+        result.promotionIds_ = promotionIds_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -745,7 +742,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -1150,9 +1147,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
+     *
      * For example, this field will be 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
+     *
      * Required for events of the following event types:
+     *
      * * `add-to-cart`
      * * `purchase`
      * </pre>
@@ -1170,9 +1170,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
+     *
      * For example, this field will be 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
+     *
      * Required for events of the following event types:
+     *
      * * `add-to-cart`
      * * `purchase`
      * </pre>
@@ -1190,9 +1193,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
+     *
      * For example, this field will be 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
+     *
      * Required for events of the following event types:
+     *
      * * `add-to-cart`
      * * `purchase`
      * </pre>
@@ -1214,9 +1220,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the Document associated with the user event. Defaults to 1.
+     *
      * For example, this field will be 2 if two quantities of the same Document
      * are involved in a `add-to-cart` event.
+     *
      * Required for events of the following event types:
+     *
      * * `add-to-cart`
      * * `purchase`
      * </pre>
@@ -1232,14 +1241,14 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList promotionIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList promotionIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePromotionIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!promotionIds_.isModifiable()) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1254,7 +1263,8 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the promotionIds.
      */
     public com.google.protobuf.ProtocolStringList getPromotionIdsList() {
-      return promotionIds_.getUnmodifiableView();
+      promotionIds_.makeImmutable();
+      return promotionIds_;
     }
     /**
      *
@@ -1323,6 +1333,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1345,6 +1356,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1364,6 +1376,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPromotionIds(java.lang.Iterable<java.lang.String> values) {
       ensurePromotionIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotionIds_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1380,8 +1393,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPromotionIds() {
-      promotionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1405,6 +1419,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

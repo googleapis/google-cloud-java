@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
     return new PageInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.UserEventProto
         .internal_static_google_cloud_discoveryengine_v1beta_PageInfo_descriptor;
@@ -79,11 +74,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A unique ID of a web page view.
+   *
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
    * events as the user is browsing the page. The `pageViewId` property should
    * be kept the same for all these events so that they can be grouped together
    * properly.
+   *
    * When using the client side event reporting with JavaScript pixel and Google
    * Tag Manager, this value is filled in automatically.
    * </pre>
@@ -109,11 +106,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A unique ID of a web page view.
+   *
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
    * events as the user is browsing the page. The `pageViewId` property should
    * be kept the same for all these events so that they can be grouped together
    * properly.
+   *
    * When using the client side event reporting with JavaScript pixel and Google
    * Tag Manager, this value is filled in automatically.
    * </pre>
@@ -144,12 +143,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The most specific category associated with a category page.
+   *
    * To represent full path of category, use '&gt;' sign to separate different
    * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
+   *
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+   *
    * Required for `view-category-page` events. Other event types should not set
    * this field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -175,12 +177,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The most specific category associated with a category page.
+   *
    * To represent full path of category, use '&gt;' sign to separate different
    * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
+   *
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+   *
    * Required for `view-category-page` events. Other event types should not set
    * this field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -211,6 +216,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Complete URL (window.location.href) of the user's current page.
+   *
    * When using the client side event reporting with JavaScript pixel and Google
    * Tag Manager, this value is filled in automatically. Maximum length 5,000
    * characters.
@@ -237,6 +243,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Complete URL (window.location.href) of the user's current page.
+   *
    * When using the client side event reporting with JavaScript pixel and Google
    * Tag Manager, this value is filled in automatically. Maximum length 5,000
    * characters.
@@ -268,6 +275,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The referrer URL of the current page.
+   *
    * When using the client side event reporting with JavaScript pixel and Google
    * Tag Manager, this value is filled in automatically. However, some browser
    * privacy restrictions may cause this field to be empty.
@@ -294,6 +302,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The referrer URL of the current page.
+   *
    * When using the client side event reporting with JavaScript pixel and Google
    * Tag Manager, this value is filled in automatically. However, some browser
    * privacy restrictions may cause this field to be empty.
@@ -736,11 +745,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A unique ID of a web page view.
+     *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically.
      * </pre>
@@ -765,11 +776,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A unique ID of a web page view.
+     *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically.
      * </pre>
@@ -794,11 +807,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A unique ID of a web page view.
+     *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically.
      * </pre>
@@ -822,11 +837,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A unique ID of a web page view.
+     *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically.
      * </pre>
@@ -846,11 +863,13 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A unique ID of a web page view.
+     *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
      * events as the user is browsing the page. The `pageViewId` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically.
      * </pre>
@@ -877,12 +896,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The most specific category associated with a category page.
+     *
      * To represent full path of category, use '&gt;' sign to separate different
      * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
+     *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     *
      * Required for `view-category-page` events. Other event types should not set
      * this field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -907,12 +929,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The most specific category associated with a category page.
+     *
      * To represent full path of category, use '&gt;' sign to separate different
      * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
+     *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     *
      * Required for `view-category-page` events. Other event types should not set
      * this field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -937,12 +962,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The most specific category associated with a category page.
+     *
      * To represent full path of category, use '&gt;' sign to separate different
      * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
+     *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     *
      * Required for `view-category-page` events. Other event types should not set
      * this field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -966,12 +994,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The most specific category associated with a category page.
+     *
      * To represent full path of category, use '&gt;' sign to separate different
      * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
+     *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     *
      * Required for `view-category-page` events. Other event types should not set
      * this field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -991,12 +1022,15 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The most specific category associated with a category page.
+     *
      * To represent full path of category, use '&gt;' sign to separate different
      * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
+     *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
      * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     *
      * Required for `view-category-page` events. Other event types should not set
      * this field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1023,6 +1057,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Complete URL (window.location.href) of the user's current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. Maximum length 5,000
      * characters.
@@ -1048,6 +1083,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Complete URL (window.location.href) of the user's current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. Maximum length 5,000
      * characters.
@@ -1073,6 +1109,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Complete URL (window.location.href) of the user's current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. Maximum length 5,000
      * characters.
@@ -1097,6 +1134,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Complete URL (window.location.href) of the user's current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. Maximum length 5,000
      * characters.
@@ -1117,6 +1155,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Complete URL (window.location.href) of the user's current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. Maximum length 5,000
      * characters.
@@ -1144,6 +1183,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The referrer URL of the current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. However, some browser
      * privacy restrictions may cause this field to be empty.
@@ -1169,6 +1209,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The referrer URL of the current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. However, some browser
      * privacy restrictions may cause this field to be empty.
@@ -1194,6 +1235,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The referrer URL of the current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. However, some browser
      * privacy restrictions may cause this field to be empty.
@@ -1218,6 +1260,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The referrer URL of the current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. However, some browser
      * privacy restrictions may cause this field to be empty.
@@ -1238,6 +1281,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The referrer URL of the current page.
+     *
      * When using the client side event reporting with JavaScript pixel and Google
      * Tag Manager, this value is filled in automatically. However, some browser
      * privacy restrictions may cause this field to be empty.

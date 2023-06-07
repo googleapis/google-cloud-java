@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,18 +45,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     attributionToken_ = "";
     nextPageToken_ = "";
     correctedQuery_ = "";
-    appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -171,11 +166,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SearchResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1198,11 +1188,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return new Facet();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Facet_descriptor;
@@ -1314,7 +1299,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       long getCount();
 
-      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.FacetValueCase
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.FacetValueCase
           getFacetValueCase();
     }
     /**
@@ -1344,11 +1329,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return new FacetValue();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
             .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Facet_FacetValue_descriptor;
@@ -1366,6 +1346,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int facetValueCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object facetValue_;
 
       public enum FacetValueCase
@@ -3858,11 +3840,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return new GuidedSearchResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_GuidedSearchResult_descriptor;
@@ -3963,11 +3940,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new RefinementAttribute();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5893,11 +5865,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return new Summary();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_descriptor;
@@ -6958,7 +6925,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
   public static final int APPLIED_CONTROLS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList appliedControls_;
+  private com.google.protobuf.LazyStringArrayList appliedControls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -7340,8 +7308,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         summaryBuilder_.dispose();
         summaryBuilder_ = null;
       }
-      appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -7397,11 +7364,6 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.facets_ = facetsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        appliedControls_ = appliedControls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.appliedControls_ = appliedControls_;
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1beta.SearchResponse result) {
@@ -7426,6 +7388,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.summary_ = summaryBuilder_ == null ? summary_ : summaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        appliedControls_.makeImmutable();
+        result.appliedControls_ = appliedControls_;
       }
     }
 
@@ -7556,7 +7522,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!other.appliedControls_.isEmpty()) {
         if (appliedControls_.isEmpty()) {
           appliedControls_ = other.appliedControls_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureAppliedControlsIsMutable();
           appliedControls_.addAll(other.appliedControls_);
@@ -9295,14 +9261,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return summaryBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList appliedControls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList appliedControls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAppliedControlsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!appliedControls_.isModifiable()) {
         appliedControls_ = new com.google.protobuf.LazyStringArrayList(appliedControls_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -9316,7 +9282,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the appliedControls.
      */
     public com.google.protobuf.ProtocolStringList getAppliedControlsList() {
-      return appliedControls_.getUnmodifiableView();
+      appliedControls_.makeImmutable();
+      return appliedControls_;
     }
     /**
      *
@@ -9381,6 +9348,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAppliedControlsIsMutable();
       appliedControls_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9402,6 +9370,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAppliedControlsIsMutable();
       appliedControls_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9420,6 +9389,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAppliedControls(java.lang.Iterable<java.lang.String> values) {
       ensureAppliedControlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedControls_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9435,8 +9405,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAppliedControls() {
-      appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -9459,6 +9430,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAppliedControlsIsMutable();
       appliedControls_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

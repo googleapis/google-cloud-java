@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -143,6 +138,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum of facet values that should be returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 will be coerced to 300.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -157,12 +153,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -171,11 +171,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -190,12 +192,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -204,11 +210,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -223,12 +231,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -237,11 +249,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -257,12 +271,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -271,11 +289,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -297,15 +317,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * facets is enabled. If set to false, the position of this facet in the
      * response will be the same as in the request, and it will be ranked before
      * the facets with dynamic position enable and all dynamic facets.
+     *
      * For example, you may always want to have rating facet returned in
      * the response, but it's not necessarily to always display the rating facet
      * at the top. In that case, you can set enable_dynamic_position to true so
      * that the position of rating facet in response will be determined
      * automatically.
+     *
      * Another example, assuming you have the following facets in the request:
+     *
      * * "rating", enable_dynamic_position = true
+     *
      * * "price", enable_dynamic_position = false
+     *
      * * "brands", enable_dynamic_position = false
+     *
      * And also you have a dynamic facets enable, which will generate a facet
      * 'gender'. Then the final order of the facets in the response can be
      * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
@@ -341,18 +367,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private FacetSpec() {
-      excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FacetSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -690,14 +711,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The order in which documents are returned.
+       *
        * Allowed values are:
+       *
        * * "count desc", which means order by
        * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
        * descending.
+       *
        * * "value desc", which means order by
        * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
+       *
        * If not set, textual values are sorted in [natural
        * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
        * intervals are sorted in the order given by
@@ -714,14 +739,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The order in which documents are returned.
+       *
        * Allowed values are:
+       *
        * * "count desc", which means order by
        * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
        * descending.
+       *
        * * "value desc", which means order by
        * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
+       *
        * If not set, textual values are sorted in [natural
        * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
        * intervals are sorted in the order given by
@@ -756,9 +785,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private FacetKey() {
         key_ = "";
         intervals_ = java.util.Collections.emptyList();
-        restrictedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        contains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        restrictedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        prefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        contains_ = com.google.protobuf.LazyStringArrayList.emptyList();
         orderBy_ = "";
       }
 
@@ -766,11 +795,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FacetKey();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -929,7 +953,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public static final int RESTRICTED_VALUES_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList restrictedValues_;
+      private com.google.protobuf.LazyStringArrayList restrictedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1012,7 +1037,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public static final int PREFIXES_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList prefixes_;
+      private com.google.protobuf.LazyStringArrayList prefixes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1091,7 +1117,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public static final int CONTAINS_FIELD_NUMBER = 5;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList contains_;
+      private com.google.protobuf.LazyStringArrayList contains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1195,14 +1222,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The order in which documents are returned.
+       *
        * Allowed values are:
+       *
        * * "count desc", which means order by
        * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
        * descending.
+       *
        * * "value desc", which means order by
        * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
+       *
        * If not set, textual values are sorted in [natural
        * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
        * intervals are sorted in the order given by
@@ -1230,14 +1261,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The order in which documents are returned.
+       *
        * Allowed values are:
+       *
        * * "count desc", which means order by
        * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
        * descending.
+       *
        * * "value desc", which means order by
        * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
+       *
        * If not set, textual values are sorted in [natural
        * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
        * intervals are sorted in the order given by
@@ -1559,12 +1594,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             intervalsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000002);
-          restrictedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000008);
-          contains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          restrictedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          prefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          contains_ = com.google.protobuf.LazyStringArrayList.emptyList();
           caseInsensitive_ = false;
           orderBy_ = "";
           return this;
@@ -1617,21 +1649,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.intervals_ = intervalsBuilder_.build();
           }
-          if (((bitField0_ & 0x00000004) != 0)) {
-            restrictedValues_ = restrictedValues_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.restrictedValues_ = restrictedValues_;
-          if (((bitField0_ & 0x00000008) != 0)) {
-            prefixes_ = prefixes_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.prefixes_ = prefixes_;
-          if (((bitField0_ & 0x00000010) != 0)) {
-            contains_ = contains_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.contains_ = contains_;
         }
 
         private void buildPartial0(
@@ -1639,6 +1656,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.key_ = key_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            restrictedValues_.makeImmutable();
+            result.restrictedValues_ = restrictedValues_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            prefixes_.makeImmutable();
+            result.prefixes_ = prefixes_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            contains_.makeImmutable();
+            result.contains_ = contains_;
           }
           if (((from_bitField0_ & 0x00000020) != 0)) {
             result.caseInsensitive_ = caseInsensitive_;
@@ -1735,7 +1764,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (!other.restrictedValues_.isEmpty()) {
             if (restrictedValues_.isEmpty()) {
               restrictedValues_ = other.restrictedValues_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensureRestrictedValuesIsMutable();
               restrictedValues_.addAll(other.restrictedValues_);
@@ -1745,7 +1774,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (!other.prefixes_.isEmpty()) {
             if (prefixes_.isEmpty()) {
               prefixes_ = other.prefixes_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ |= 0x00000008;
             } else {
               ensurePrefixesIsMutable();
               prefixes_.addAll(other.prefixes_);
@@ -1755,7 +1784,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (!other.contains_.isEmpty()) {
             if (contains_.isEmpty()) {
               contains_ = other.contains_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ |= 0x00000010;
             } else {
               ensureContainsIsMutable();
               contains_.addAll(other.contains_);
@@ -2381,14 +2410,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return intervalsBuilder_;
         }
 
-        private com.google.protobuf.LazyStringList restrictedValues_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList restrictedValues_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureRestrictedValuesIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!restrictedValues_.isModifiable()) {
             restrictedValues_ = new com.google.protobuf.LazyStringArrayList(restrictedValues_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -2407,7 +2436,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the restrictedValues.
          */
         public com.google.protobuf.ProtocolStringList getRestrictedValuesList() {
-          return restrictedValues_.getUnmodifiableView();
+          restrictedValues_.makeImmutable();
+          return restrictedValues_;
         }
         /**
          *
@@ -2492,6 +2522,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           ensureRestrictedValuesIsMutable();
           restrictedValues_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2518,6 +2549,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           ensureRestrictedValuesIsMutable();
           restrictedValues_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2541,6 +2573,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllRestrictedValues(java.lang.Iterable<java.lang.String> values) {
           ensureRestrictedValuesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restrictedValues_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2561,8 +2594,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearRestrictedValues() {
-          restrictedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          restrictedValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -2590,18 +2624,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureRestrictedValuesIsMutable();
           restrictedValues_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList prefixes_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList prefixes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensurePrefixesIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!prefixes_.isModifiable()) {
             prefixes_ = new com.google.protobuf.LazyStringArrayList(prefixes_);
-            bitField0_ |= 0x00000008;
           }
+          bitField0_ |= 0x00000008;
         }
         /**
          *
@@ -2619,7 +2654,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the prefixes.
          */
         public com.google.protobuf.ProtocolStringList getPrefixesList() {
-          return prefixes_.getUnmodifiableView();
+          prefixes_.makeImmutable();
+          return prefixes_;
         }
         /**
          *
@@ -2700,6 +2736,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           ensurePrefixesIsMutable();
           prefixes_.set(index, value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2725,6 +2762,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           ensurePrefixesIsMutable();
           prefixes_.add(value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2747,6 +2785,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllPrefixes(java.lang.Iterable<java.lang.String> values) {
           ensurePrefixesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, prefixes_);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2766,8 +2805,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearPrefixes() {
-          prefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          prefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000008);
+          ;
           onChanged();
           return this;
         }
@@ -2794,18 +2834,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensurePrefixesIsMutable();
           prefixes_.add(value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList contains_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList contains_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureContainsIsMutable() {
-          if (!((bitField0_ & 0x00000010) != 0)) {
+          if (!contains_.isModifiable()) {
             contains_ = new com.google.protobuf.LazyStringArrayList(contains_);
-            bitField0_ |= 0x00000010;
           }
+          bitField0_ |= 0x00000010;
         }
         /**
          *
@@ -2823,7 +2864,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the contains.
          */
         public com.google.protobuf.ProtocolStringList getContainsList() {
-          return contains_.getUnmodifiableView();
+          contains_.makeImmutable();
+          return contains_;
         }
         /**
          *
@@ -2904,6 +2946,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           ensureContainsIsMutable();
           contains_.set(index, value);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2929,6 +2972,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           ensureContainsIsMutable();
           contains_.add(value);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2951,6 +2995,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllContains(java.lang.Iterable<java.lang.String> values) {
           ensureContainsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contains_);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2970,8 +3015,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearContains() {
-          contains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          contains_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
+          ;
           onChanged();
           return this;
         }
@@ -2998,6 +3044,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureContainsIsMutable();
           contains_.add(value);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3064,14 +3111,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The order in which documents are returned.
+         *
          * Allowed values are:
+         *
          * * "count desc", which means order by
          * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
          * descending.
+         *
          * * "value desc", which means order by
          * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
+         *
          * If not set, textual values are sorted in [natural
          * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
          * intervals are sorted in the order given by
@@ -3098,14 +3149,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The order in which documents are returned.
+         *
          * Allowed values are:
+         *
          * * "count desc", which means order by
          * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
          * descending.
+         *
          * * "value desc", which means order by
          * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
+         *
          * If not set, textual values are sorted in [natural
          * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
          * intervals are sorted in the order given by
@@ -3132,14 +3187,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The order in which documents are returned.
+         *
          * Allowed values are:
+         *
          * * "count desc", which means order by
          * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
          * descending.
+         *
          * * "value desc", which means order by
          * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
+         *
          * If not set, textual values are sorted in [natural
          * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
          * intervals are sorted in the order given by
@@ -3165,14 +3224,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The order in which documents are returned.
+         *
          * Allowed values are:
+         *
          * * "count desc", which means order by
          * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
          * descending.
+         *
          * * "value desc", which means order by
          * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
+         *
          * If not set, textual values are sorted in [natural
          * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
          * intervals are sorted in the order given by
@@ -3194,14 +3257,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The order in which documents are returned.
+         *
          * Allowed values are:
+         *
          * * "count desc", which means order by
          * [SearchResponse.Facet.values.count][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.count]
          * descending.
+         *
          * * "value desc", which means order by
          * [SearchResponse.Facet.values.value][google.cloud.discoveryengine.v1beta.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
+         *
          * If not set, textual values are sorted in [natural
          * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
          * intervals are sorted in the order given by
@@ -3360,6 +3427,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum of facet values that should be returned for this facet. If
      * unspecified, defaults to 20. The maximum allowed value is 300. Values
      * above 300 will be coerced to 300.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -3375,18 +3443,23 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public static final int EXCLUDED_FILTER_KEYS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList excludedFilterKeys_;
+    private com.google.protobuf.LazyStringArrayList excludedFilterKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -3395,11 +3468,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -3416,12 +3491,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -3430,11 +3509,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -3451,12 +3532,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -3465,11 +3550,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -3487,12 +3574,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of keys to exclude when faceting.
+     *
+     *
      * By default,
      * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
+     *
      * Listing a facet key in this field allows its values to appear as facet
      * results, even when they are filtered out of search results. Using this
      * field does not affect what search results are returned.
+     *
      * For example, suppose there are 100 documents with the color facet "Red"
      * and 200 documents with the color facet "Blue". A query containing the
      * filter "color:ANY("Red")" and having "color" as
@@ -3501,11 +3592,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * also return "Red" with count 100 as the only color facet. Although there
      * are also blue documents available, "Blue" would not be shown as an
      * available facet value.
+     *
      * If "color" is listed in "excludedFilterKeys", then the query returns the
      * facet values "Red" with count 100 and "Blue" with count 200, because the
      * "color" key is now excluded from the filter. Because this field doesn't
      * affect search results, the search results are still correctly filtered to
      * return only "Red" documents.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -3531,15 +3624,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * facets is enabled. If set to false, the position of this facet in the
      * response will be the same as in the request, and it will be ranked before
      * the facets with dynamic position enable and all dynamic facets.
+     *
      * For example, you may always want to have rating facet returned in
      * the response, but it's not necessarily to always display the rating facet
      * at the top. In that case, you can set enable_dynamic_position to true so
      * that the position of rating facet in response will be determined
      * automatically.
+     *
      * Another example, assuming you have the following facets in the request:
+     *
      * * "rating", enable_dynamic_position = true
+     *
      * * "price", enable_dynamic_position = false
+     *
      * * "brands", enable_dynamic_position = false
+     *
      * And also you have a dynamic facets enable, which will generate a facet
      * 'gender'. Then the final order of the facets in the response can be
      * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
@@ -3807,8 +3906,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           facetKeyBuilder_ = null;
         }
         limit_ = 0;
-        excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
         enableDynamicPosition_ = false;
         return this;
       }
@@ -3838,21 +3936,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec buildPartial() {
         com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec result =
             new com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec result) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          excludedFilterKeys_ = excludedFilterKeys_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.excludedFilterKeys_ = excludedFilterKeys_;
       }
 
       private void buildPartial0(
@@ -3863,6 +3951,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.limit_ = limit_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          excludedFilterKeys_.makeImmutable();
+          result.excludedFilterKeys_ = excludedFilterKeys_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.enableDynamicPosition_ = enableDynamicPosition_;
@@ -3928,7 +4020,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.excludedFilterKeys_.isEmpty()) {
           if (excludedFilterKeys_.isEmpty()) {
             excludedFilterKeys_ = other.excludedFilterKeys_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureExcludedFilterKeysIsMutable();
             excludedFilterKeys_.addAll(other.excludedFilterKeys_);
@@ -4228,6 +4320,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum of facet values that should be returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 will be coerced to 300.
+       *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
        *
@@ -4246,6 +4339,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum of facet values that should be returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 will be coerced to 300.
+       *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
        *
@@ -4268,6 +4362,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Maximum of facet values that should be returned for this facet. If
        * unspecified, defaults to 20. The maximum allowed value is 300. Values
        * above 300 will be coerced to 300.
+       *
        * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
        * </pre>
        *
@@ -4282,26 +4377,30 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList excludedFilterKeys_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList excludedFilterKeys_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureExcludedFilterKeysIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!excludedFilterKeys_.isModifiable()) {
           excludedFilterKeys_ = new com.google.protobuf.LazyStringArrayList(excludedFilterKeys_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4310,11 +4409,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4324,19 +4425,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the excludedFilterKeys.
        */
       public com.google.protobuf.ProtocolStringList getExcludedFilterKeysList() {
-        return excludedFilterKeys_.getUnmodifiableView();
+        excludedFilterKeys_.makeImmutable();
+        return excludedFilterKeys_;
       }
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4345,11 +4451,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4366,12 +4474,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4380,11 +4492,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4402,12 +4516,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4416,11 +4534,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4438,12 +4558,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4452,11 +4576,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4473,6 +4599,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedFilterKeysIsMutable();
         excludedFilterKeys_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4481,12 +4608,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4495,11 +4626,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4515,6 +4648,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         ensureExcludedFilterKeysIsMutable();
         excludedFilterKeys_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4523,12 +4657,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4537,11 +4675,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4554,6 +4694,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllExcludedFilterKeys(java.lang.Iterable<java.lang.String> values) {
         ensureExcludedFilterKeysIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedFilterKeys_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4562,12 +4703,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4576,11 +4721,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4590,8 +4737,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearExcludedFilterKeys() {
-        excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        excludedFilterKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -4600,12 +4748,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of keys to exclude when faceting.
+       *
+       *
        * By default,
        * [FacetKey.key][google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
+       *
        * Listing a facet key in this field allows its values to appear as facet
        * results, even when they are filtered out of search results. Using this
        * field does not affect what search results are returned.
+       *
        * For example, suppose there are 100 documents with the color facet "Red"
        * and 200 documents with the color facet "Blue". A query containing the
        * filter "color:ANY("Red")" and having "color" as
@@ -4614,11 +4766,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * also return "Red" with count 100 as the only color facet. Although there
        * are also blue documents available, "Blue" would not be shown as an
        * available facet value.
+       *
        * If "color" is listed in "excludedFilterKeys", then the query returns the
        * facet values "Red" with count 100 and "Blue" with count 200, because the
        * "color" key is now excluded from the filter. Because this field doesn't
        * affect search results, the search results are still correctly filtered to
        * return only "Red" documents.
+       *
        * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
        * error is returned.
        * </pre>
@@ -4635,6 +4789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureExcludedFilterKeysIsMutable();
         excludedFilterKeys_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -4650,15 +4805,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * facets is enabled. If set to false, the position of this facet in the
        * response will be the same as in the request, and it will be ranked before
        * the facets with dynamic position enable and all dynamic facets.
+       *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
        * that the position of rating facet in response will be determined
        * automatically.
+       *
        * Another example, assuming you have the following facets in the request:
+       *
        * * "rating", enable_dynamic_position = true
+       *
        * * "price", enable_dynamic_position = false
+       *
        * * "brands", enable_dynamic_position = false
+       *
        * And also you have a dynamic facets enable, which will generate a facet
        * 'gender'. Then the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
@@ -4686,15 +4847,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * facets is enabled. If set to false, the position of this facet in the
        * response will be the same as in the request, and it will be ranked before
        * the facets with dynamic position enable and all dynamic facets.
+       *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
        * that the position of rating facet in response will be determined
        * automatically.
+       *
        * Another example, assuming you have the following facets in the request:
+       *
        * * "rating", enable_dynamic_position = true
+       *
        * * "price", enable_dynamic_position = false
+       *
        * * "brands", enable_dynamic_position = false
+       *
        * And also you have a dynamic facets enable, which will generate a facet
        * 'gender'. Then the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
@@ -4726,15 +4893,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * facets is enabled. If set to false, the position of this facet in the
        * response will be the same as in the request, and it will be ranked before
        * the facets with dynamic position enable and all dynamic facets.
+       *
        * For example, you may always want to have rating facet returned in
        * the response, but it's not necessarily to always display the rating facet
        * at the top. In that case, you can set enable_dynamic_position to true so
        * that the position of rating facet in response will be determined
        * automatically.
+       *
        * Another example, assuming you have the following facets in the request:
+       *
        * * "rating", enable_dynamic_position = true
+       *
        * * "price", enable_dynamic_position = false
+       *
        * * "brands", enable_dynamic_position = false
+       *
        * And also you have a dynamic facets enable, which will generate a facet
        * 'gender'. Then the final order of the facets in the response can be
        * ("price", "brands", "rating", "gender") or ("price", "brands", "gender",
@@ -4940,11 +5113,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return new BoostSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_BoostSpec_descriptor;
@@ -4973,7 +5141,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
        * for detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost documents with document ID "doc_1" or "doc_2", and
        * color
        *   "Red" or "Blue":
@@ -4993,7 +5163,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
        * for detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost documents with document ID "doc_1" or "doc_2", and
        * color
        *   "Red" or "Blue":
@@ -5012,16 +5184,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Strength of the condition boost, which should be in [-1, 1]. Negative
        * boost means demotion. Default is 0.0.
+       *
        * Setting to 1.0 gives the document a big promotion. However, it does not
        * necessarily mean that the boosted document will be the top result at
        * all times, nor that other documents will be excluded. Results could
        * still be shown even when none of them matches the condition. And
        * results that are significantly more relevant to the search query can
        * still trump your heavily favored but irrelevant documents.
+       *
        * Setting to -1.0 gives the document a big demotion. However, results
        * that are deeply relevant might still be shown. The document will have
        * an upstream battle to get a fairly high ranking, but it is not blocked
        * out completely.
+       *
        * Setting to 0.0 means no boost applied. The boosting condition is
        * ignored.
        * </pre>
@@ -5062,11 +5237,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return new ConditionBoostSpec();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
             .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_BoostSpec_ConditionBoostSpec_descriptor;
@@ -5096,7 +5266,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
        * for detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost documents with document ID "doc_1" or "doc_2", and
        * color
        *   "Red" or "Blue":
@@ -5127,7 +5299,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * supported fields are the same as a filter expression. See
        * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
        * for detail syntax and limitations.
+       *
        * Examples:
+       *
        * * To boost documents with document ID "doc_1" or "doc_2", and
        * color
        *   "Red" or "Blue":
@@ -5159,16 +5333,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Strength of the condition boost, which should be in [-1, 1]. Negative
        * boost means demotion. Default is 0.0.
+       *
        * Setting to 1.0 gives the document a big promotion. However, it does not
        * necessarily mean that the boosted document will be the top result at
        * all times, nor that other documents will be excluded. Results could
        * still be shown even when none of them matches the condition. And
        * results that are significantly more relevant to the search query can
        * still trump your heavily favored but irrelevant documents.
+       *
        * Setting to -1.0 gives the document a big demotion. However, results
        * that are deeply relevant might still be shown. The document will have
        * an upstream battle to get a fairly high ranking, but it is not blocked
        * out completely.
+       *
        * Setting to 0.0 means no boost applied. The boosting condition is
        * ignored.
        * </pre>
@@ -5606,7 +5783,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * supported fields are the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
          * for detail syntax and limitations.
+         *
          * Examples:
+         *
          * * To boost documents with document ID "doc_1" or "doc_2", and
          * color
          *   "Red" or "Blue":
@@ -5636,7 +5815,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * supported fields are the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
          * for detail syntax and limitations.
+         *
          * Examples:
+         *
          * * To boost documents with document ID "doc_1" or "doc_2", and
          * color
          *   "Red" or "Blue":
@@ -5666,7 +5847,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * supported fields are the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
          * for detail syntax and limitations.
+         *
          * Examples:
+         *
          * * To boost documents with document ID "doc_1" or "doc_2", and
          * color
          *   "Red" or "Blue":
@@ -5695,7 +5878,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * supported fields are the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
          * for detail syntax and limitations.
+         *
          * Examples:
+         *
          * * To boost documents with document ID "doc_1" or "doc_2", and
          * color
          *   "Red" or "Blue":
@@ -5720,7 +5905,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * supported fields are the same as a filter expression. See
          * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
          * for detail syntax and limitations.
+         *
          * Examples:
+         *
          * * To boost documents with document ID "doc_1" or "doc_2", and
          * color
          *   "Red" or "Blue":
@@ -5750,16 +5937,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Strength of the condition boost, which should be in [-1, 1]. Negative
          * boost means demotion. Default is 0.0.
+         *
          * Setting to 1.0 gives the document a big promotion. However, it does not
          * necessarily mean that the boosted document will be the top result at
          * all times, nor that other documents will be excluded. Results could
          * still be shown even when none of them matches the condition. And
          * results that are significantly more relevant to the search query can
          * still trump your heavily favored but irrelevant documents.
+         *
          * Setting to -1.0 gives the document a big demotion. However, results
          * that are deeply relevant might still be shown. The document will have
          * an upstream battle to get a fairly high ranking, but it is not blocked
          * out completely.
+         *
          * Setting to 0.0 means no boost applied. The boosting condition is
          * ignored.
          * </pre>
@@ -5778,16 +5968,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Strength of the condition boost, which should be in [-1, 1]. Negative
          * boost means demotion. Default is 0.0.
+         *
          * Setting to 1.0 gives the document a big promotion. However, it does not
          * necessarily mean that the boosted document will be the top result at
          * all times, nor that other documents will be excluded. Results could
          * still be shown even when none of them matches the condition. And
          * results that are significantly more relevant to the search query can
          * still trump your heavily favored but irrelevant documents.
+         *
          * Setting to -1.0 gives the document a big demotion. However, results
          * that are deeply relevant might still be shown. The document will have
          * an upstream battle to get a fairly high ranking, but it is not blocked
          * out completely.
+         *
          * Setting to 0.0 means no boost applied. The boosting condition is
          * ignored.
          * </pre>
@@ -5810,16 +6003,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Strength of the condition boost, which should be in [-1, 1]. Negative
          * boost means demotion. Default is 0.0.
+         *
          * Setting to 1.0 gives the document a big promotion. However, it does not
          * necessarily mean that the boosted document will be the top result at
          * all times, nor that other documents will be excluded. Results could
          * still be shown even when none of them matches the condition. And
          * results that are significantly more relevant to the search query can
          * still trump your heavily favored but irrelevant documents.
+         *
          * Setting to -1.0 gives the document a big demotion. However, results
          * that are deeply relevant might still be shown. The document will have
          * an upstream battle to get a fairly high ranking, but it is not blocked
          * out completely.
+         *
          * Setting to 0.0 means no boost applied. The boosting condition is
          * ignored.
          * </pre>
@@ -7044,11 +7240,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return new QueryExpansionSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_QueryExpansionSpec_descriptor;
@@ -7893,11 +8084,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SpellCorrectionSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8808,11 +8994,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return new ContentSearchSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_descriptor;
@@ -8841,6 +9022,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Max number of snippets returned in each search result.
        * If the matching snippets is less than the max_snippet_count, return all
        * of the snippets; otherwise, return the max_snippet_count.
+       *
        * At most 5 snippets will be returned for each SearchResult.
        * </pre>
        *
@@ -8891,11 +9073,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return new SnippetSpec();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
             .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SnippetSpec_descriptor;
@@ -8922,6 +9099,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Max number of snippets returned in each search result.
        * If the matching snippets is less than the max_snippet_count, return all
        * of the snippets; otherwise, return the max_snippet_count.
+       *
        * At most 5 snippets will be returned for each SearchResult.
        * </pre>
        *
@@ -9373,6 +9551,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Max number of snippets returned in each search result.
          * If the matching snippets is less than the max_snippet_count, return all
          * of the snippets; otherwise, return the max_snippet_count.
+         *
          * At most 5 snippets will be returned for each SearchResult.
          * </pre>
          *
@@ -9391,6 +9570,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Max number of snippets returned in each search result.
          * If the matching snippets is less than the max_snippet_count, return all
          * of the snippets; otherwise, return the max_snippet_count.
+         *
          * At most 5 snippets will be returned for each SearchResult.
          * </pre>
          *
@@ -9413,6 +9593,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Max number of snippets returned in each search result.
          * If the matching snippets is less than the max_snippet_count, return all
          * of the snippets; otherwise, return the max_snippet_count.
+         *
          * At most 5 snippets will be returned for each SearchResult.
          * </pre>
          *
@@ -9564,6 +9745,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * If the number of returned results is less than summary_result_count,
        * then the summary would be derived from all the results; otherwise, the
        * summary would be derived from the top results.
+       *
        * At most 5 results can be used for generating summary.
        * </pre>
        *
@@ -9601,11 +9783,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return new SummarySpec();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
             .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_descriptor;
@@ -9633,6 +9810,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * If the number of returned results is less than summary_result_count,
        * then the summary would be derived from all the results; otherwise, the
        * summary would be derived from the top results.
+       *
        * At most 5 results can be used for generating summary.
        * </pre>
        *
@@ -10045,6 +10223,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * If the number of returned results is less than summary_result_count,
          * then the summary would be derived from all the results; otherwise, the
          * summary would be derived from the top results.
+         *
          * At most 5 results can be used for generating summary.
          * </pre>
          *
@@ -10064,6 +10243,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * If the number of returned results is less than summary_result_count,
          * then the summary would be derived from all the results; otherwise, the
          * summary would be derived from the top results.
+         *
          * At most 5 results can be used for generating summary.
          * </pre>
          *
@@ -10087,6 +10267,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * If the number of returned results is less than summary_result_count,
          * then the summary would be derived from all the results; otherwise, the
          * summary would be derived from the top results.
+         *
          * At most 5 results can be used for generating summary.
          * </pre>
          *
@@ -11308,6 +11489,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The branch resource name, such as
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+   *
    * Use `default_branch` as the branch ID or leave this field empty, to search
    * documents under the default branch.
    * </pre>
@@ -11334,6 +11516,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The branch resource name, such as
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+   *
    * Use `default_branch` as the branch ID or leave this field empty, to search
    * documents under the default branch.
    * </pre>
@@ -11415,6 +11598,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
    * to return. If unspecified, defaults to a reasonable value. The maximum
    * allowed value is 100. Values above 100 will be coerced to 100.
+   *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -11438,6 +11622,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * A page token received from a previous
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * must match the call that provided the page token. Otherwise, an
@@ -11467,6 +11652,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * A page token received from a previous
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * must match the call that provided the page token. Otherwise, an
@@ -11502,6 +11688,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * as relevant) in search results. This field is only considered if
    * [page_token][google.cloud.discoveryengine.v1beta.SearchRequest.page_token]
    * is unset.
+   *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -11525,6 +11712,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered. Filter
    * expression is case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -11551,6 +11739,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered. Filter
    * expression is case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -11583,6 +11772,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
    * object. Leave it unset if ordered by relevance. OrderBy expression is
    * case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -11610,6 +11800,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
    * object. Leave it unset if ordered by relevance. OrderBy expression is
    * case-sensitive.
+   *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
    *
@@ -11696,6 +11887,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -11713,6 +11905,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -11731,6 +11924,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -11747,6 +11941,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -11763,6 +11958,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
+   *
    * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
    * error is returned.
    * </pre>
@@ -11861,9 +12057,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -11891,9 +12087,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -11912,9 +12108,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -11940,9 +12136,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Additional search parameters.
-   * For
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * vertical, supported values are:
+   *
+   * For public website search only, supported values are:
+   *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
    * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -12104,11 +12300,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
    * </pre>
@@ -12137,11 +12336,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
    * </pre>
@@ -12277,6 +12479,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -12288,6 +12491,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -12313,6 +12517,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -12324,6 +12529,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -12340,6 +12546,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -12351,6 +12558,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -12374,6 +12582,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The user labels applied to a resource must meet the following requirements:
+   *
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -12385,6 +12594,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * The key portion of a label must be unique. However, you can use the same
    *   key with multiple resources.
    * * Keys must start with a lowercase letter or international character.
+   *
    * See [Google Cloud
    * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
    * for more details.
@@ -13434,6 +13644,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The branch resource name, such as
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+     *
      * Use `default_branch` as the branch ID or leave this field empty, to search
      * documents under the default branch.
      * </pre>
@@ -13459,6 +13670,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The branch resource name, such as
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+     *
      * Use `default_branch` as the branch ID or leave this field empty, to search
      * documents under the default branch.
      * </pre>
@@ -13484,6 +13696,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The branch resource name, such as
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+     *
      * Use `default_branch` as the branch ID or leave this field empty, to search
      * documents under the default branch.
      * </pre>
@@ -13508,6 +13721,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The branch resource name, such as
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+     *
      * Use `default_branch` as the branch ID or leave this field empty, to search
      * documents under the default branch.
      * </pre>
@@ -13528,6 +13742,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The branch resource name, such as
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/branches/0`.
+     *
      * Use `default_branch` as the branch ID or leave this field empty, to search
      * documents under the default branch.
      * </pre>
@@ -13662,6 +13877,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to a reasonable value. The maximum
      * allowed value is 100. Values above 100 will be coerced to 100.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13680,6 +13896,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to a reasonable value. The maximum
      * allowed value is 100. Values above 100 will be coerced to 100.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13702,6 +13919,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
      * to return. If unspecified, defaults to a reasonable value. The maximum
      * allowed value is 100. Values above 100 will be coerced to 100.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13724,6 +13942,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * A page token received from a previous
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * must match the call that provided the page token. Otherwise, an
@@ -13752,6 +13971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * A page token received from a previous
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * must match the call that provided the page token. Otherwise, an
@@ -13780,6 +14000,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * A page token received from a previous
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * must match the call that provided the page token. Otherwise, an
@@ -13807,6 +14028,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * A page token received from a previous
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * must match the call that provided the page token. Otherwise, an
@@ -13830,6 +14052,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * A page token received from a previous
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * must match the call that provided the page token. Otherwise, an
@@ -13863,6 +14086,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * as relevant) in search results. This field is only considered if
      * [page_token][google.cloud.discoveryengine.v1beta.SearchRequest.page_token]
      * is unset.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13884,6 +14108,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * as relevant) in search results. This field is only considered if
      * [page_token][google.cloud.discoveryengine.v1beta.SearchRequest.page_token]
      * is unset.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13909,6 +14134,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * as relevant) in search results. This field is only considered if
      * [page_token][google.cloud.discoveryengine.v1beta.SearchRequest.page_token]
      * is unset.
+     *
      * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13931,6 +14157,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered. Filter
      * expression is case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13956,6 +14183,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered. Filter
      * expression is case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -13981,6 +14209,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered. Filter
      * expression is case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14005,6 +14234,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered. Filter
      * expression is case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14025,6 +14255,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered. Filter
      * expression is case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14053,6 +14284,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
      * object. Leave it unset if ordered by relevance. OrderBy expression is
      * case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14079,6 +14311,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
      * object. Leave it unset if ordered by relevance. OrderBy expression is
      * case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14105,6 +14338,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
      * object. Leave it unset if ordered by relevance. OrderBy expression is
      * case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14130,6 +14364,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
      * object. Leave it unset if ordered by relevance. OrderBy expression is
      * case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14151,6 +14386,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
      * object. Leave it unset if ordered by relevance. OrderBy expression is
      * case-sensitive.
+     *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
      * </pre>
      *
@@ -14395,6 +14631,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14415,6 +14652,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14434,6 +14672,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14454,6 +14693,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14480,6 +14720,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14504,6 +14745,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14530,6 +14772,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14556,6 +14799,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14579,6 +14823,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14603,6 +14848,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14628,6 +14874,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14650,6 +14897,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14672,6 +14920,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14688,6 +14937,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14708,6 +14958,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14729,6 +14980,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14747,6 +14999,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -14766,6 +15019,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
+     *
      * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
      * error is returned.
      * </pre>
@@ -15016,9 +15270,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15046,9 +15300,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15067,9 +15321,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15095,9 +15349,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15129,9 +15383,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15159,9 +15413,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15187,9 +15441,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Additional search parameters.
-     * For
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * vertical, supported values are:
+     *
+     * For public website search only, supported values are:
+     *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
      * * `search_type`: double. Default empty. Enables non-webpage searching
@@ -15658,11 +15912,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
      * </pre>
@@ -15690,11 +15947,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
      * </pre>
@@ -15722,11 +15982,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
      * </pre>
@@ -15753,11 +16016,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
      * </pre>
@@ -15780,11 +16046,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [CompleteQueryRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.CompleteQueryRequest.user_pseudo_id]
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an  `INVALID_ARGUMENT`  error is returned.
      * </pre>
@@ -16116,6 +16385,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16127,6 +16397,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.
@@ -16152,6 +16423,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16163,6 +16435,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.
@@ -16179,6 +16452,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16190,6 +16464,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.
@@ -16213,6 +16488,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16224,6 +16500,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.
@@ -16253,6 +16530,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16264,6 +16542,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.
@@ -16289,6 +16568,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16300,6 +16580,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.
@@ -16323,6 +16604,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The user labels applied to a resource must meet the following requirements:
+     *
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
@@ -16334,6 +16616,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * The key portion of a label must be unique. However, you can use the same
      *   key with multiple resources.
      * * Keys must start with a lowercase letter or international character.
+     *
      * See [Google Cloud
      * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
      * for more details.

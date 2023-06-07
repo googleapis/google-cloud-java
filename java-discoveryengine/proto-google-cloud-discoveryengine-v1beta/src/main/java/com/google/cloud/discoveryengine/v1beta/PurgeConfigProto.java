@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,25 +52,25 @@ public final class PurgeConfigProto {
           + "rge_config.proto\022#google.cloud.discovery"
           + "engine.v1beta\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"z\n\025PurgeDocum"
-          + "entsRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%dis"
-          + "coveryengine.googleapis.com/Branch\022\023\n\006fi"
-          + "lter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"q\n\026PurgeD"
-          + "ocumentsResponse\022\023\n\013purge_count\030\001 \001(\003\022B\n"
-          + "\014purge_sample\030\002 \003(\tB,\372A)\n\'discoveryengin"
-          + "e.googleapis.com/Document\"\250\001\n\026PurgeDocum"
-          + "entsMetadata\022/\n\013create_time\030\001 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\022/\n\013update_time\030\002 \001"
-          + "(\0132\032.google.protobuf.Timestamp\022\025\n\rsucces"
-          + "s_count\030\003 \001(\003\022\025\n\rfailure_count\030\004 \001(\003B\227\002\n"
-          + "\'com.google.cloud.discoveryengine.v1beta"
-          + "B\020PurgeConfigProtoP\001ZQcloud.google.com/g"
-          + "o/discoveryengine/apiv1beta/discoveryeng"
-          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
-          + "E\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312"
-          + "\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&"
-          + "Google::Cloud::DiscoveryEngine::V1betab\006"
-          + "proto3"
+          + "e/protobuf/timestamp.proto\"|\n\025PurgeDocum"
+          + "entsRequest\022>\n\006parent\030\001 \001(\tB.\342A\001\002\372A\'\n%di"
+          + "scoveryengine.googleapis.com/Branch\022\024\n\006f"
+          + "ilter\030\002 \001(\tB\004\342A\001\002\022\r\n\005force\030\003 \001(\010\"q\n\026Purg"
+          + "eDocumentsResponse\022\023\n\013purge_count\030\001 \001(\003\022"
+          + "B\n\014purge_sample\030\002 \003(\tB,\372A)\n\'discoveryeng"
+          + "ine.googleapis.com/Document\"\250\001\n\026PurgeDoc"
+          + "umentsMetadata\022/\n\013create_time\030\001 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022/\n\013update_time\030\002"
+          + " \001(\0132\032.google.protobuf.Timestamp\022\025\n\rsucc"
+          + "ess_count\030\003 \001(\003\022\025\n\rfailure_count\030\004 \001(\003B\227"
+          + "\002\n\'com.google.cloud.discoveryengine.v1be"
+          + "taB\020PurgeConfigProtoP\001ZQcloud.google.com"
+          + "/go/discoveryengine/apiv1beta/discoverye"
+          + "nginepb;discoveryenginepb\242\002\017DISCOVERYENG"
+          + "INE\252\002#Google.Cloud.DiscoveryEngine.V1Bet"
+          + "a\312\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352"
+          + "\002&Google::Cloud::DiscoveryEngine::V1beta"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

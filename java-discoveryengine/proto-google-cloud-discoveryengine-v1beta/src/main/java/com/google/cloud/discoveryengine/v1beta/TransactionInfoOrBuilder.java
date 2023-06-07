@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,6 +134,7 @@ public interface TransactionInfoOrBuilder
    * All the costs associated with the products. These can be manufacturing
    * costs, shipping expenses not borne by the end user, or any other costs,
    * such that:
+   *
    * * Profit =
    * [value][google.cloud.discoveryengine.v1beta.TransactionInfo.value] -
    * [tax][google.cloud.discoveryengine.v1beta.TransactionInfo.tax] -
@@ -152,6 +153,7 @@ public interface TransactionInfoOrBuilder
    * All the costs associated with the products. These can be manufacturing
    * costs, shipping expenses not borne by the end user, or any other costs,
    * such that:
+   *
    * * Profit =
    * [value][google.cloud.discoveryengine.v1beta.TransactionInfo.value] -
    * [tax][google.cloud.discoveryengine.v1beta.TransactionInfo.tax] -
@@ -171,17 +173,20 @@ public interface TransactionInfoOrBuilder
    * The total discount(s) value applied to this transaction.
    * This figure should be excluded from
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]
+   *
    * For example, if a user paid
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]
    * amount, then nominal (pre-discount) value of the transaction is the sum of
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]
    * and
    * [TransactionInfo.discount_value][google.cloud.discoveryengine.v1beta.TransactionInfo.discount_value]
+   *
    * This means that profit is calculated the same way, regardless of the
    * discount value, and that
    * [TransactionInfo.discount_value][google.cloud.discoveryengine.v1beta.TransactionInfo.discount_value]
    * can be larger than
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]:
+   *
    * * Profit =
    * [value][google.cloud.discoveryengine.v1beta.TransactionInfo.value] -
    * [tax][google.cloud.discoveryengine.v1beta.TransactionInfo.tax] -
@@ -200,17 +205,20 @@ public interface TransactionInfoOrBuilder
    * The total discount(s) value applied to this transaction.
    * This figure should be excluded from
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]
+   *
    * For example, if a user paid
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]
    * amount, then nominal (pre-discount) value of the transaction is the sum of
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]
    * and
    * [TransactionInfo.discount_value][google.cloud.discoveryengine.v1beta.TransactionInfo.discount_value]
+   *
    * This means that profit is calculated the same way, regardless of the
    * discount value, and that
    * [TransactionInfo.discount_value][google.cloud.discoveryengine.v1beta.TransactionInfo.discount_value]
    * can be larger than
    * [TransactionInfo.value][google.cloud.discoveryengine.v1beta.TransactionInfo.value]:
+   *
    * * Profit =
    * [value][google.cloud.discoveryengine.v1beta.TransactionInfo.value] -
    * [tax][google.cloud.discoveryengine.v1beta.TransactionInfo.tax] -

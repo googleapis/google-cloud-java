@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     return new CdnKey();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.CdnKeysProto
         .internal_static_google_cloud_video_stitcher_v1_CdnKey_descriptor;
@@ -71,6 +66,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int cdnKeyConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object cdnKeyConfig_;
 
   public enum CdnKeyConfigCase

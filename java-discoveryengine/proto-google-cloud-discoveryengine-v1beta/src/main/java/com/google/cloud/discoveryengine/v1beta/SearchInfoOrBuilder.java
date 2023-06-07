@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,14 @@ public interface SearchInfoOrBuilder
    *
    * <pre>
    * The user's search query.
+   *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
    * for definition.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
    * or
@@ -51,11 +54,14 @@ public interface SearchInfoOrBuilder
    *
    * <pre>
    * The user's search query.
+   *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1beta.SearchRequest.query]
    * for definition.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
    * or
@@ -75,11 +81,14 @@ public interface SearchInfoOrBuilder
    *
    * <pre>
    * The order in which products are returned, if applicable.
+   *
    * See
    * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
    * for definition and syntax.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
    * this field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -94,11 +103,14 @@ public interface SearchInfoOrBuilder
    *
    * <pre>
    * The order in which products are returned, if applicable.
+   *
    * See
    * [SearchRequest.order_by][google.cloud.discoveryengine.v1beta.SearchRequest.order_by]
    * for definition and syntax.
+   *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
    * this field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -115,10 +127,13 @@ public interface SearchInfoOrBuilder
    * <pre>
    * An integer that specifies the current offset for pagination (the 0-indexed
    * starting location, amongst the products deemed by the API as relevant).
+   *
    * See
    * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
    * for definition.
+   *
    * If this field is negative, an INVALID_ARGUMENT is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
    * this field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -134,10 +149,13 @@ public interface SearchInfoOrBuilder
    * <pre>
    * An integer that specifies the current offset for pagination (the 0-indexed
    * starting location, amongst the products deemed by the API as relevant).
+   *
    * See
    * [SearchRequest.offset][google.cloud.discoveryengine.v1beta.SearchRequest.offset]
    * for definition.
+   *
    * If this field is negative, an INVALID_ARGUMENT is returned.
+   *
    * This can only be set for `search` events. Other event types should not set
    * this field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>

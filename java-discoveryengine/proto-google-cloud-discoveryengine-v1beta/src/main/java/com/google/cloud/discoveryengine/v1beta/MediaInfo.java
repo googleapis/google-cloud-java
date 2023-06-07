@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MediaInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,7 +128,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Media progress should be computed using only the media_progress_duration
    * relative to the media total length.
+   *
    * This value must be between `[0, 1.0]` inclusive.
+   *
    * If this is not a playback or the progress cannot be computed (e.g. ongoing
    * livestream), this field should be unset.
    * </pre>
@@ -152,7 +149,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Media progress should be computed using only the media_progress_duration
    * relative to the media total length.
+   *
    * This value must be between `[0, 1.0]` inclusive.
+   *
    * If this is not a playback or the progress cannot be computed (e.g. ongoing
    * livestream), this field should be unset.
    * </pre>
@@ -768,7 +767,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Media progress should be computed using only the media_progress_duration
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>
@@ -787,7 +788,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Media progress should be computed using only the media_progress_duration
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>
@@ -806,7 +809,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Media progress should be computed using only the media_progress_duration
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>
@@ -829,7 +834,9 @@ public final class MediaInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Media progress should be computed using only the media_progress_duration
      * relative to the media total length.
+     *
      * This value must be between `[0, 1.0]` inclusive.
+     *
      * If this is not a playback or the progress cannot be computed (e.g. ongoing
      * livestream), this field should be unset.
      * </pre>

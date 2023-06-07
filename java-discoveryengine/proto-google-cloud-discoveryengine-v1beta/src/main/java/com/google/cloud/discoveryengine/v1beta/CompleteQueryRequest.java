@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CompleteQueryRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -194,13 +189,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Selects data model of query suggestions for serving. Currently supported
    * values:
+   *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * API calls. Do not use it when there is no traffic for Search API.
    * * `user-event` - Using suggestions generated from user-imported search
    * events.
+   *
    * Default values:
+   *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
    * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -229,13 +227,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Selects data model of query suggestions for serving. Currently supported
    * values:
+   *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
    * API calls. Do not use it when there is no traffic for Search API.
    * * `user-event` - Using suggestions generated from user-imported search
    * events.
+   *
    * Default values:
+   *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
    * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -271,11 +272,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
@@ -304,11 +308,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * implemented with an HTTP cookie, which should be able to uniquely identify
    * a visitor on a single device. This unique identifier should not change if
    * the visitor logs in or out of the website.
+   *
    * This field should NOT have a fixed value such as `unknown_visitor`.
+   *
    * This should be the same identifier as
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
    * and
    * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
@@ -994,13 +1001,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Selects data model of query suggestions for serving. Currently supported
      * values:
+     *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * API calls. Do not use it when there is no traffic for Search API.
      * * `user-event` - Using suggestions generated from user-imported search
      * events.
+     *
      * Default values:
+     *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
      * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -1028,13 +1038,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Selects data model of query suggestions for serving. Currently supported
      * values:
+     *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * API calls. Do not use it when there is no traffic for Search API.
      * * `user-event` - Using suggestions generated from user-imported search
      * events.
+     *
      * Default values:
+     *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
      * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -1062,13 +1075,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Selects data model of query suggestions for serving. Currently supported
      * values:
+     *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * API calls. Do not use it when there is no traffic for Search API.
      * * `user-event` - Using suggestions generated from user-imported search
      * events.
+     *
      * Default values:
+     *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
      * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -1095,13 +1111,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Selects data model of query suggestions for serving. Currently supported
      * values:
+     *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * API calls. Do not use it when there is no traffic for Search API.
      * * `user-event` - Using suggestions generated from user-imported search
      * events.
+     *
      * Default values:
+     *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
      * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -1124,13 +1143,16 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Selects data model of query suggestions for serving. Currently supported
      * values:
+     *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
      * API calls. Do not use it when there is no traffic for Search API.
      * * `user-event` - Using suggestions generated from user-imported search
      * events.
+     *
      * Default values:
+     *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
      * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
@@ -1162,11 +1184,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
@@ -1194,11 +1219,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
@@ -1226,11 +1254,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
@@ -1257,11 +1288,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
@@ -1284,11 +1318,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * implemented with an HTTP cookie, which should be able to uniquely identify
      * a visitor on a single device. This unique identifier should not change if
      * the visitor logs in or out of the website.
+     *
      * This field should NOT have a fixed value such as `unknown_visitor`.
+     *
      * This should be the same identifier as
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
      * and
      * [SearchRequest.user_pseudo_id][google.cloud.discoveryengine.v1beta.SearchRequest.user_pseudo_id].
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>

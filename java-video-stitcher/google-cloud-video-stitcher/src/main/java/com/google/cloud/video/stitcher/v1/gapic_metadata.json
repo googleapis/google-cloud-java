@@ -11,28 +11,37 @@
           "libraryClient": "VideoStitcherServiceClient",
           "rpcs": {
             "CreateCdnKey": {
-              "methods": ["createCdnKey", "createCdnKey", "createCdnKey", "createCdnKeyCallable"]
+              "methods": ["createCdnKeyAsync", "createCdnKeyAsync", "createCdnKeyAsync", "createCdnKeyOperationCallable", "createCdnKeyCallable"]
+            },
+            "CreateLiveConfig": {
+              "methods": ["createLiveConfigAsync", "createLiveConfigAsync", "createLiveConfigAsync", "createLiveConfigOperationCallable", "createLiveConfigCallable"]
             },
             "CreateLiveSession": {
               "methods": ["createLiveSession", "createLiveSession", "createLiveSession", "createLiveSessionCallable"]
             },
             "CreateSlate": {
-              "methods": ["createSlate", "createSlate", "createSlate", "createSlateCallable"]
+              "methods": ["createSlateAsync", "createSlateAsync", "createSlateAsync", "createSlateOperationCallable", "createSlateCallable"]
             },
             "CreateVodSession": {
               "methods": ["createVodSession", "createVodSession", "createVodSession", "createVodSessionCallable"]
             },
             "DeleteCdnKey": {
-              "methods": ["deleteCdnKey", "deleteCdnKey", "deleteCdnKey", "deleteCdnKeyCallable"]
+              "methods": ["deleteCdnKeyAsync", "deleteCdnKeyAsync", "deleteCdnKeyAsync", "deleteCdnKeyOperationCallable", "deleteCdnKeyCallable"]
+            },
+            "DeleteLiveConfig": {
+              "methods": ["deleteLiveConfigAsync", "deleteLiveConfigAsync", "deleteLiveConfigAsync", "deleteLiveConfigOperationCallable", "deleteLiveConfigCallable"]
             },
             "DeleteSlate": {
-              "methods": ["deleteSlate", "deleteSlate", "deleteSlate", "deleteSlateCallable"]
+              "methods": ["deleteSlateAsync", "deleteSlateAsync", "deleteSlateAsync", "deleteSlateOperationCallable", "deleteSlateCallable"]
             },
             "GetCdnKey": {
               "methods": ["getCdnKey", "getCdnKey", "getCdnKey", "getCdnKeyCallable"]
             },
             "GetLiveAdTagDetail": {
               "methods": ["getLiveAdTagDetail", "getLiveAdTagDetail", "getLiveAdTagDetail", "getLiveAdTagDetailCallable"]
+            },
+            "GetLiveConfig": {
+              "methods": ["getLiveConfig", "getLiveConfig", "getLiveConfig", "getLiveConfigCallable"]
             },
             "GetLiveSession": {
               "methods": ["getLiveSession", "getLiveSession", "getLiveSession", "getLiveSessionCallable"]
@@ -55,6 +64,9 @@
             "ListLiveAdTagDetails": {
               "methods": ["listLiveAdTagDetails", "listLiveAdTagDetails", "listLiveAdTagDetails", "listLiveAdTagDetailsPagedCallable", "listLiveAdTagDetailsCallable"]
             },
+            "ListLiveConfigs": {
+              "methods": ["listLiveConfigs", "listLiveConfigs", "listLiveConfigs", "listLiveConfigsPagedCallable", "listLiveConfigsCallable"]
+            },
             "ListSlates": {
               "methods": ["listSlates", "listSlates", "listSlates", "listSlatesPagedCallable", "listSlatesCallable"]
             },
@@ -65,10 +77,10 @@
               "methods": ["listVodStitchDetails", "listVodStitchDetails", "listVodStitchDetails", "listVodStitchDetailsPagedCallable", "listVodStitchDetailsCallable"]
             },
             "UpdateCdnKey": {
-              "methods": ["updateCdnKey", "updateCdnKey", "updateCdnKeyCallable"]
+              "methods": ["updateCdnKeyAsync", "updateCdnKeyAsync", "updateCdnKeyOperationCallable", "updateCdnKeyCallable"]
             },
             "UpdateSlate": {
-              "methods": ["updateSlate", "updateSlate", "updateSlateCallable"]
+              "methods": ["updateSlateAsync", "updateSlateAsync", "updateSlateOperationCallable", "updateSlateCallable"]
             }
           }
         }

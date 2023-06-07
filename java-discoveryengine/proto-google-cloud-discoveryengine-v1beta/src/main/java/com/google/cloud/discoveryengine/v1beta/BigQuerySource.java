@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     return new BigQuerySource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.ImportConfigProto
         .internal_static_google_cloud_discoveryengine_v1beta_BigQuerySource_descriptor;
@@ -72,6 +67,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int partitionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object partition_;
 
   public enum PartitionCase
@@ -391,10 +388,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for user event imports:
+   *
    * * `user_event` (default): One
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+   *
    * Supported values for document imports:
+   *
    * * `document` (default): One
    * [Document][google.cloud.discoveryengine.v1beta.Document] format per
    *   row. Each document must have a valid
@@ -428,10 +429,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for user event imports:
+   *
    * * `user_event` (default): One
    * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+   *
    * Supported values for document imports:
+   *
    * * `document` (default): One
    * [Document][google.cloud.discoveryengine.v1beta.Document] format per
    *   row. Each document must have a valid
@@ -1627,10 +1632,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for user event imports:
+     *
      * * `user_event` (default): One
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+     *
      * Supported values for document imports:
+     *
      * * `document` (default): One
      * [Document][google.cloud.discoveryengine.v1beta.Document] format per
      *   row. Each document must have a valid
@@ -1663,10 +1672,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for user event imports:
+     *
      * * `user_event` (default): One
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+     *
      * Supported values for document imports:
+     *
      * * `document` (default): One
      * [Document][google.cloud.discoveryengine.v1beta.Document] format per
      *   row. Each document must have a valid
@@ -1699,10 +1712,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for user event imports:
+     *
      * * `user_event` (default): One
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+     *
      * Supported values for document imports:
+     *
      * * `document` (default): One
      * [Document][google.cloud.discoveryengine.v1beta.Document] format per
      *   row. Each document must have a valid
@@ -1734,10 +1751,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for user event imports:
+     *
      * * `user_event` (default): One
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+     *
      * Supported values for document imports:
+     *
      * * `document` (default): One
      * [Document][google.cloud.discoveryengine.v1beta.Document] format per
      *   row. Each document must have a valid
@@ -1765,10 +1786,14 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for user event imports:
+     *
      * * `user_event` (default): One
      * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per row.
+     *
      * Supported values for document imports:
+     *
      * * `document` (default): One
      * [Document][google.cloud.discoveryengine.v1beta.Document] format per
      *   row. Each document must have a valid

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.video.stitcher.v1;
 
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListCdnKeysPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveAdTagDetailsPagedResponse;
+import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListLiveConfigsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListSlatesPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodAdTagDetailsPagedResponse;
 import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.ListVodStitchDetailsPagedResponse;
@@ -30,10 +31,12 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.video.stitcher.v1.stub.VideoStitcherServiceStubSettings;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -54,7 +57,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createCdnKey to 30 seconds:
+ * <p>For example, to set the total timeout of getCdnKey to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -65,10 +68,10 @@ import javax.annotation.Generated;
  * VideoStitcherServiceSettings.Builder videoStitcherServiceSettingsBuilder =
  *     VideoStitcherServiceSettings.newBuilder();
  * videoStitcherServiceSettingsBuilder
- *     .createCdnKeySettings()
+ *     .getCdnKeySettings()
  *     .setRetrySettings(
  *         videoStitcherServiceSettingsBuilder
- *             .createCdnKeySettings()
+ *             .getCdnKeySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -81,8 +84,14 @@ import javax.annotation.Generated;
 public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherServiceSettings> {
 
   /** Returns the object with the settings used for calls to createCdnKey. */
-  public UnaryCallSettings<CreateCdnKeyRequest, CdnKey> createCdnKeySettings() {
+  public UnaryCallSettings<CreateCdnKeyRequest, Operation> createCdnKeySettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).createCdnKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCdnKey. */
+  public OperationCallSettings<CreateCdnKeyRequest, CdnKey, OperationMetadata>
+      createCdnKeyOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).createCdnKeyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listCdnKeys. */
@@ -97,13 +106,25 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
   }
 
   /** Returns the object with the settings used for calls to deleteCdnKey. */
-  public UnaryCallSettings<DeleteCdnKeyRequest, Empty> deleteCdnKeySettings() {
+  public UnaryCallSettings<DeleteCdnKeyRequest, Operation> deleteCdnKeySettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).deleteCdnKeySettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteCdnKey. */
+  public OperationCallSettings<DeleteCdnKeyRequest, Empty, OperationMetadata>
+      deleteCdnKeyOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).deleteCdnKeyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateCdnKey. */
-  public UnaryCallSettings<UpdateCdnKeyRequest, CdnKey> updateCdnKeySettings() {
+  public UnaryCallSettings<UpdateCdnKeyRequest, Operation> updateCdnKeySettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).updateCdnKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCdnKey. */
+  public OperationCallSettings<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
+      updateCdnKeyOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).updateCdnKeyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createVodSession. */
@@ -159,8 +180,14 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
   }
 
   /** Returns the object with the settings used for calls to createSlate. */
-  public UnaryCallSettings<CreateSlateRequest, Slate> createSlateSettings() {
+  public UnaryCallSettings<CreateSlateRequest, Operation> createSlateSettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).createSlateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSlate. */
+  public OperationCallSettings<CreateSlateRequest, Slate, OperationMetadata>
+      createSlateOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).createSlateOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listSlates. */
@@ -175,13 +202,25 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
   }
 
   /** Returns the object with the settings used for calls to updateSlate. */
-  public UnaryCallSettings<UpdateSlateRequest, Slate> updateSlateSettings() {
+  public UnaryCallSettings<UpdateSlateRequest, Operation> updateSlateSettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).updateSlateSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateSlate. */
+  public OperationCallSettings<UpdateSlateRequest, Slate, OperationMetadata>
+      updateSlateOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).updateSlateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSlate. */
-  public UnaryCallSettings<DeleteSlateRequest, Empty> deleteSlateSettings() {
+  public UnaryCallSettings<DeleteSlateRequest, Operation> deleteSlateSettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).deleteSlateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSlate. */
+  public OperationCallSettings<DeleteSlateRequest, Empty, OperationMetadata>
+      deleteSlateOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).deleteSlateOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createLiveSession. */
@@ -192,6 +231,42 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
   /** Returns the object with the settings used for calls to getLiveSession. */
   public UnaryCallSettings<GetLiveSessionRequest, LiveSession> getLiveSessionSettings() {
     return ((VideoStitcherServiceStubSettings) getStubSettings()).getLiveSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLiveConfig. */
+  public UnaryCallSettings<CreateLiveConfigRequest, Operation> createLiveConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).createLiveConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLiveConfig. */
+  public OperationCallSettings<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
+      createLiveConfigOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings())
+        .createLiveConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLiveConfigs. */
+  public PagedCallSettings<
+          ListLiveConfigsRequest, ListLiveConfigsResponse, ListLiveConfigsPagedResponse>
+      listLiveConfigsSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).listLiveConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLiveConfig. */
+  public UnaryCallSettings<GetLiveConfigRequest, LiveConfig> getLiveConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).getLiveConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLiveConfig. */
+  public UnaryCallSettings<DeleteLiveConfigRequest, Operation> deleteLiveConfigSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings()).deleteLiveConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLiveConfig. */
+  public OperationCallSettings<DeleteLiveConfigRequest, Empty, OperationMetadata>
+      deleteLiveConfigOperationSettings() {
+    return ((VideoStitcherServiceStubSettings) getStubSettings())
+        .deleteLiveConfigOperationSettings();
   }
 
   public static final VideoStitcherServiceSettings create(VideoStitcherServiceStubSettings stub)
@@ -293,8 +368,14 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
     }
 
     /** Returns the builder for the settings used for calls to createCdnKey. */
-    public UnaryCallSettings.Builder<CreateCdnKeyRequest, CdnKey> createCdnKeySettings() {
+    public UnaryCallSettings.Builder<CreateCdnKeyRequest, Operation> createCdnKeySettings() {
       return getStubSettingsBuilder().createCdnKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCdnKey. */
+    public OperationCallSettings.Builder<CreateCdnKeyRequest, CdnKey, OperationMetadata>
+        createCdnKeyOperationSettings() {
+      return getStubSettingsBuilder().createCdnKeyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listCdnKeys. */
@@ -310,13 +391,25 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
     }
 
     /** Returns the builder for the settings used for calls to deleteCdnKey. */
-    public UnaryCallSettings.Builder<DeleteCdnKeyRequest, Empty> deleteCdnKeySettings() {
+    public UnaryCallSettings.Builder<DeleteCdnKeyRequest, Operation> deleteCdnKeySettings() {
       return getStubSettingsBuilder().deleteCdnKeySettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteCdnKey. */
+    public OperationCallSettings.Builder<DeleteCdnKeyRequest, Empty, OperationMetadata>
+        deleteCdnKeyOperationSettings() {
+      return getStubSettingsBuilder().deleteCdnKeyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateCdnKey. */
-    public UnaryCallSettings.Builder<UpdateCdnKeyRequest, CdnKey> updateCdnKeySettings() {
+    public UnaryCallSettings.Builder<UpdateCdnKeyRequest, Operation> updateCdnKeySettings() {
       return getStubSettingsBuilder().updateCdnKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCdnKey. */
+    public OperationCallSettings.Builder<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
+        updateCdnKeyOperationSettings() {
+      return getStubSettingsBuilder().updateCdnKeyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createVodSession. */
@@ -376,8 +469,14 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
     }
 
     /** Returns the builder for the settings used for calls to createSlate. */
-    public UnaryCallSettings.Builder<CreateSlateRequest, Slate> createSlateSettings() {
+    public UnaryCallSettings.Builder<CreateSlateRequest, Operation> createSlateSettings() {
       return getStubSettingsBuilder().createSlateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSlate. */
+    public OperationCallSettings.Builder<CreateSlateRequest, Slate, OperationMetadata>
+        createSlateOperationSettings() {
+      return getStubSettingsBuilder().createSlateOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSlates. */
@@ -392,13 +491,25 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
     }
 
     /** Returns the builder for the settings used for calls to updateSlate. */
-    public UnaryCallSettings.Builder<UpdateSlateRequest, Slate> updateSlateSettings() {
+    public UnaryCallSettings.Builder<UpdateSlateRequest, Operation> updateSlateSettings() {
       return getStubSettingsBuilder().updateSlateSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateSlate. */
+    public OperationCallSettings.Builder<UpdateSlateRequest, Slate, OperationMetadata>
+        updateSlateOperationSettings() {
+      return getStubSettingsBuilder().updateSlateOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteSlate. */
-    public UnaryCallSettings.Builder<DeleteSlateRequest, Empty> deleteSlateSettings() {
+    public UnaryCallSettings.Builder<DeleteSlateRequest, Operation> deleteSlateSettings() {
       return getStubSettingsBuilder().deleteSlateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSlate. */
+    public OperationCallSettings.Builder<DeleteSlateRequest, Empty, OperationMetadata>
+        deleteSlateOperationSettings() {
+      return getStubSettingsBuilder().deleteSlateOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createLiveSession. */
@@ -410,6 +521,42 @@ public class VideoStitcherServiceSettings extends ClientSettings<VideoStitcherSe
     /** Returns the builder for the settings used for calls to getLiveSession. */
     public UnaryCallSettings.Builder<GetLiveSessionRequest, LiveSession> getLiveSessionSettings() {
       return getStubSettingsBuilder().getLiveSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLiveConfig. */
+    public UnaryCallSettings.Builder<CreateLiveConfigRequest, Operation>
+        createLiveConfigSettings() {
+      return getStubSettingsBuilder().createLiveConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLiveConfig. */
+    public OperationCallSettings.Builder<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
+        createLiveConfigOperationSettings() {
+      return getStubSettingsBuilder().createLiveConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLiveConfigs. */
+    public PagedCallSettings.Builder<
+            ListLiveConfigsRequest, ListLiveConfigsResponse, ListLiveConfigsPagedResponse>
+        listLiveConfigsSettings() {
+      return getStubSettingsBuilder().listLiveConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLiveConfig. */
+    public UnaryCallSettings.Builder<GetLiveConfigRequest, LiveConfig> getLiveConfigSettings() {
+      return getStubSettingsBuilder().getLiveConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLiveConfig. */
+    public UnaryCallSettings.Builder<DeleteLiveConfigRequest, Operation>
+        deleteLiveConfigSettings() {
+      return getStubSettingsBuilder().deleteLiveConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLiveConfig. */
+    public OperationCallSettings.Builder<DeleteLiveConfigRequest, Empty, OperationMetadata>
+        deleteLiveConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteLiveConfigOperationSettings();
     }
 
     @Override

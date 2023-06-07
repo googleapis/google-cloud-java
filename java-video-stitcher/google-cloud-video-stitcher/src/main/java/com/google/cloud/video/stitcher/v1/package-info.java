@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,10 +36,8 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (VideoStitcherServiceClient videoStitcherServiceClient =
  *     VideoStitcherServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   CdnKey cdnKey = CdnKey.newBuilder().build();
- *   String cdnKeyId = "cdnKeyId-1777782867";
- *   CdnKey response = videoStitcherServiceClient.createCdnKey(parent, cdnKey, cdnKeyId);
+ *   CdnKeyName name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]");
+ *   CdnKey response = videoStitcherServiceClient.getCdnKey(name);
  * }
  * }</pre>
  */

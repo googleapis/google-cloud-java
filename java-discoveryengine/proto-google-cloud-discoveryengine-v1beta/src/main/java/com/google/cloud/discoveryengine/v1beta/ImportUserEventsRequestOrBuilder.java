@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,5 +216,5 @@ public interface ImportUserEventsRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.ImportErrorConfigOrBuilder getErrorConfigOrBuilder();
 
-  public com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.SourceCase getSourceCase();
+  com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest.SourceCase getSourceCase();
 }

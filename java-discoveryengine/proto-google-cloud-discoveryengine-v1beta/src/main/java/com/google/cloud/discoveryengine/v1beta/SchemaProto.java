@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,23 +44,23 @@ public final class SchemaProto {
           + "hema.proto\022#google.cloud.discoveryengine"
           + ".v1beta\032\037google/api/field_behavior.proto"
           + "\032\031google/api/resource.proto\032\034google/prot"
-          + "obuf/struct.proto\"\331\002\n\006Schema\0220\n\rstruct_s"
+          + "obuf/struct.proto\"\332\002\n\006Schema\0220\n\rstruct_s"
           + "chema\030\002 \001(\0132\027.google.protobuf.StructH\000\022\025"
-          + "\n\013json_schema\030\003 \001(\tH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005"
-          + ":\350\001\352A\344\001\n%discoveryengine.googleapis.com/"
-          + "Schema\022Pprojects/{project}/locations/{lo"
-          + "cation}/dataStores/{data_store}/schemas/"
-          + "{schema}\022iprojects/{project}/locations/{"
-          + "location}/collections/{collection}/dataS"
-          + "tores/{data_store}/schemas/{schema}B\010\n\006s"
-          + "chemaB\222\002\n\'com.google.cloud.discoveryengi"
-          + "ne.v1betaB\013SchemaProtoP\001ZQcloud.google.c"
-          + "om/go/discoveryengine/apiv1beta/discover"
-          + "yenginepb;discoveryenginepb\242\002\017DISCOVERYE"
-          + "NGINE\252\002#Google.Cloud.DiscoveryEngine.V1B"
-          + "eta\312\002#Google\\Cloud\\DiscoveryEngine\\V1bet"
-          + "a\352\002&Google::Cloud::DiscoveryEngine::V1be"
-          + "tab\006proto3"
+          + "\n\013json_schema\030\003 \001(\tH\000\022\022\n\004name\030\001 \001(\tB\004\342A\001"
+          + "\005:\350\001\352A\344\001\n%discoveryengine.googleapis.com"
+          + "/Schema\022Pprojects/{project}/locations/{l"
+          + "ocation}/dataStores/{data_store}/schemas"
+          + "/{schema}\022iprojects/{project}/locations/"
+          + "{location}/collections/{collection}/data"
+          + "Stores/{data_store}/schemas/{schema}B\010\n\006"
+          + "schemaB\222\002\n\'com.google.cloud.discoveryeng"
+          + "ine.v1betaB\013SchemaProtoP\001ZQcloud.google."
+          + "com/go/discoveryengine/apiv1beta/discove"
+          + "ryenginepb;discoveryenginepb\242\002\017DISCOVERY"
+          + "ENGINE\252\002#Google.Cloud.DiscoveryEngine.V1"
+          + "Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1be"
+          + "ta\352\002&Google::Cloud::DiscoveryEngine::V1b"
+          + "etab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

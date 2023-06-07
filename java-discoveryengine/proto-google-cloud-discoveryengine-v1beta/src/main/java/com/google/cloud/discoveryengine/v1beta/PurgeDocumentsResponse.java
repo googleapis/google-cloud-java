@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
   }
 
   private PurgeDocumentsResponse() {
-    purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    purgeSample_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PurgeDocumentsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -91,7 +86,8 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
   public static final int PURGE_SAMPLE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList purgeSample_;
+  private com.google.protobuf.LazyStringArrayList purgeSample_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -378,8 +374,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       purgeCount_ = 0L;
-      purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      purgeSample_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -408,7 +403,6 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse buildPartial() {
       com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse result =
           new com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -416,20 +410,15 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        purgeSample_ = purgeSample_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.purgeSample_ = purgeSample_;
-    }
-
     private void buildPartial0(
         com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.purgeCount_ = purgeCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        purgeSample_.makeImmutable();
+        result.purgeSample_ = purgeSample_;
       }
     }
 
@@ -486,7 +475,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       if (!other.purgeSample_.isEmpty()) {
         if (purgeSample_.isEmpty()) {
           purgeSample_ = other.purgeSample_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePurgeSampleIsMutable();
           purgeSample_.addAll(other.purgeSample_);
@@ -604,14 +593,14 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList purgeSample_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList purgeSample_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePurgeSampleIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!purgeSample_.isModifiable()) {
         purgeSample_ = new com.google.protobuf.LazyStringArrayList(purgeSample_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -627,7 +616,8 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
      * @return A list containing the purgeSample.
      */
     public com.google.protobuf.ProtocolStringList getPurgeSampleList() {
-      return purgeSample_.getUnmodifiableView();
+      purgeSample_.makeImmutable();
+      return purgeSample_;
     }
     /**
      *
@@ -700,6 +690,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       }
       ensurePurgeSampleIsMutable();
       purgeSample_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -723,6 +714,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       }
       ensurePurgeSampleIsMutable();
       purgeSample_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -743,6 +735,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
     public Builder addAllPurgeSample(java.lang.Iterable<java.lang.String> values) {
       ensurePurgeSampleIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, purgeSample_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -760,8 +753,9 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPurgeSample() {
-      purgeSample_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      purgeSample_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -786,6 +780,7 @@ public final class PurgeDocumentsResponse extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensurePurgeSampleIsMutable();
       purgeSample_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

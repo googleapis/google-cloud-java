@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.video.stitcher.v1.CdnKeyName;
 import com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
-import com.google.protobuf.Empty;
+import com.google.longrunning.Operation;
 
 public class AsyncDeleteCdnKey {
 
@@ -41,7 +41,7 @@ public class AsyncDeleteCdnKey {
           DeleteCdnKeyRequest.newBuilder()
               .setName(CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString())
               .build();
-      ApiFuture<Empty> future =
+      ApiFuture<Operation> future =
           videoStitcherServiceClient.deleteCdnKeyCallable().futureCall(request);
       // Do something.
       future.get();
