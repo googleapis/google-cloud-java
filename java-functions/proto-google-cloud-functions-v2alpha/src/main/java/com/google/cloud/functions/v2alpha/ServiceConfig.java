@@ -41,6 +41,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
   private ServiceConfig() {
     service_ = "";
     availableMemory_ = "";
+    availableCpu_ = "";
     vpcConnector_ = "";
     vpcConnectorEgressSettings_ = 0;
     ingressSettings_ = 0;
@@ -49,6 +50,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     secretEnvironmentVariables_ = java.util.Collections.emptyList();
     secretVolumes_ = java.util.Collections.emptyList();
     revision_ = "";
+    securityLevel_ = 0;
   }
 
   @java.lang.Override
@@ -433,6 +435,176 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.functions.v2alpha.ServiceConfig.IngressSettings)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Available security level settings.
+   *
+   * This enforces security protocol on function URL.
+   *
+   * Security level is only configurable for 1st Gen functions, If unspecified,
+   * SECURE_OPTIONAL will be used. 2nd Gen functions are SECURE_ALWAYS ONLY.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel}
+   */
+  public enum SecurityLevel implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>SECURITY_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    SECURITY_LEVEL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Requests for a URL that match this handler that do not use HTTPS are
+     * automatically redirected to the HTTPS URL with the same path. Query
+     * parameters are reserved for the redirect.
+     * </pre>
+     *
+     * <code>SECURE_ALWAYS = 1;</code>
+     */
+    SECURE_ALWAYS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Both HTTP and HTTPS requests with URLs that match the handler succeed
+     * without redirects. The application can examine the request to determine
+     * which protocol was used and respond accordingly.
+     * </pre>
+     *
+     * <code>SECURE_OPTIONAL = 2;</code>
+     */
+    SECURE_OPTIONAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>SECURITY_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int SECURITY_LEVEL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Requests for a URL that match this handler that do not use HTTPS are
+     * automatically redirected to the HTTPS URL with the same path. Query
+     * parameters are reserved for the redirect.
+     * </pre>
+     *
+     * <code>SECURE_ALWAYS = 1;</code>
+     */
+    public static final int SECURE_ALWAYS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Both HTTP and HTTPS requests with URLs that match the handler succeed
+     * without redirects. The application can examine the request to determine
+     * which protocol was used and respond accordingly.
+     * </pre>
+     *
+     * <code>SECURE_OPTIONAL = 2;</code>
+     */
+    public static final int SECURE_OPTIONAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SecurityLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SecurityLevel forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SECURITY_LEVEL_UNSPECIFIED;
+        case 1:
+          return SECURE_ALWAYS;
+        case 2:
+          return SECURE_OPTIONAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SecurityLevel> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SecurityLevel> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SecurityLevel>() {
+          public SecurityLevel findValueByNumber(int number) {
+            return SecurityLevel.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.functions.v2alpha.ServiceConfig.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final SecurityLevel[] VALUES = values();
+
+    public static SecurityLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SecurityLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel)
+  }
+
   public static final int SERVICE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -567,6 +739,65 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       availableMemory_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVAILABLE_CPU_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object availableCpu_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] The number of CPUs used in a single container instance.
+   * Default value is calculated from available memory.
+   * Supports the same values as Cloud Run, see
+   * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+   * Example: "1" indicates 1 vCPU
+   * </pre>
+   *
+   * <code>string available_cpu = 22;</code>
+   *
+   * @return The availableCpu.
+   */
+  @java.lang.Override
+  public java.lang.String getAvailableCpu() {
+    java.lang.Object ref = availableCpu_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      availableCpu_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] The number of CPUs used in a single container instance.
+   * Default value is calculated from available memory.
+   * Supports the same values as Cloud Run, see
+   * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+   * Example: "1" indicates 1 vCPU
+   * </pre>
+   *
+   * <code>string available_cpu = 22;</code>
+   *
+   * @return The bytes for availableCpu.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAvailableCpuBytes() {
+    java.lang.Object ref = availableCpu_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      availableCpu_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1202,6 +1433,68 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER = 20;
+  private int maxInstanceRequestConcurrency_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Sets the maximum number of concurrent requests that each instance
+   * can receive. Defaults to 1.
+   * </pre>
+   *
+   * <code>int32 max_instance_request_concurrency = 20;</code>
+   *
+   * @return The maxInstanceRequestConcurrency.
+   */
+  @java.lang.Override
+  public int getMaxInstanceRequestConcurrency() {
+    return maxInstanceRequestConcurrency_;
+  }
+
+  public static final int SECURITY_LEVEL_FIELD_NUMBER = 21;
+  private int securityLevel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Security level configure whether the function only accepts https.
+   * This configuration is only applicable to 1st Gen functions with Http
+   * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+   * functions are https ONLY.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+   *
+   * @return The enum numeric value on the wire for securityLevel.
+   */
+  @java.lang.Override
+  public int getSecurityLevelValue() {
+    return securityLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Security level configure whether the function only accepts https.
+   * This configuration is only applicable to 1st Gen functions with Http
+   * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+   * functions are https ONLY.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+   *
+   * @return The securityLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel getSecurityLevel() {
+    com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel result =
+        com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel.forNumber(securityLevel_);
+    return result == null
+        ? com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1268,6 +1561,17 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < secretVolumes_.size(); i++) {
       output.writeMessage(19, secretVolumes_.get(i));
+    }
+    if (maxInstanceRequestConcurrency_ != 0) {
+      output.writeInt32(20, maxInstanceRequestConcurrency_);
+    }
+    if (securityLevel_
+        != com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel.SECURITY_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(21, securityLevel_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(availableCpu_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, availableCpu_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1339,6 +1643,19 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < secretVolumes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, secretVolumes_.get(i));
     }
+    if (maxInstanceRequestConcurrency_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              20, maxInstanceRequestConcurrency_);
+    }
+    if (securityLevel_
+        != com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel.SECURITY_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, securityLevel_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(availableCpu_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, availableCpu_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1358,6 +1675,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getService().equals(other.getService())) return false;
     if (getTimeoutSeconds() != other.getTimeoutSeconds()) return false;
     if (!getAvailableMemory().equals(other.getAvailableMemory())) return false;
+    if (!getAvailableCpu().equals(other.getAvailableCpu())) return false;
     if (!internalGetEnvironmentVariables().equals(other.internalGetEnvironmentVariables()))
       return false;
     if (getMaxInstanceCount() != other.getMaxInstanceCount()) return false;
@@ -1372,6 +1690,9 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (!getSecretVolumesList().equals(other.getSecretVolumesList())) return false;
     if (!getRevision().equals(other.getRevision())) return false;
+    if (getMaxInstanceRequestConcurrency() != other.getMaxInstanceRequestConcurrency())
+      return false;
+    if (securityLevel_ != other.securityLevel_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1389,6 +1710,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTimeoutSeconds();
     hash = (37 * hash) + AVAILABLE_MEMORY_FIELD_NUMBER;
     hash = (53 * hash) + getAvailableMemory().hashCode();
+    hash = (37 * hash) + AVAILABLE_CPU_FIELD_NUMBER;
+    hash = (53 * hash) + getAvailableCpu().hashCode();
     if (!internalGetEnvironmentVariables().getMap().isEmpty()) {
       hash = (37 * hash) + ENVIRONMENT_VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEnvironmentVariables().hashCode();
@@ -1419,6 +1742,10 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + REVISION_FIELD_NUMBER;
     hash = (53 * hash) + getRevision().hashCode();
+    hash = (37 * hash) + MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxInstanceRequestConcurrency();
+    hash = (37 * hash) + SECURITY_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + securityLevel_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1582,6 +1909,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       service_ = "";
       timeoutSeconds_ = 0;
       availableMemory_ = "";
+      availableCpu_ = "";
       internalGetMutableEnvironmentVariables().clear();
       maxInstanceCount_ = 0;
       minInstanceCount_ = 0;
@@ -1597,15 +1925,17 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         secretEnvironmentVariables_ = null;
         secretEnvironmentVariablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (secretVolumesBuilder_ == null) {
         secretVolumes_ = java.util.Collections.emptyList();
       } else {
         secretVolumes_ = null;
         secretVolumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       revision_ = "";
+      maxInstanceRequestConcurrency_ = 0;
+      securityLevel_ = 0;
       return this;
     }
 
@@ -1644,19 +1974,19 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.functions.v2alpha.ServiceConfig result) {
       if (secretEnvironmentVariablesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           secretEnvironmentVariables_ =
               java.util.Collections.unmodifiableList(secretEnvironmentVariables_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.secretEnvironmentVariables_ = secretEnvironmentVariables_;
       } else {
         result.secretEnvironmentVariables_ = secretEnvironmentVariablesBuilder_.build();
       }
       if (secretVolumesBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           secretVolumes_ = java.util.Collections.unmodifiableList(secretVolumes_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.secretVolumes_ = secretVolumes_;
       } else {
@@ -1676,36 +2006,78 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         result.availableMemory_ = availableMemory_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.availableCpu_ = availableCpu_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.environmentVariables_ = internalGetEnvironmentVariables();
         result.environmentVariables_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxInstanceCount_ = maxInstanceCount_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.minInstanceCount_ = minInstanceCount_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.vpcConnector_ = vpcConnector_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.vpcConnectorEgressSettings_ = vpcConnectorEgressSettings_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ingressSettings_ = ingressSettings_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.uri_ = uri_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.serviceAccountEmail_ = serviceAccountEmail_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.allTrafficOnLatestRevision_ = allTrafficOnLatestRevision_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.revision_ = revision_;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.securityLevel_ = securityLevel_;
+      }
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.setField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1734,8 +2106,13 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getAvailableCpu().isEmpty()) {
+        availableCpu_ = other.availableCpu_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       internalGetMutableEnvironmentVariables().mergeFrom(other.internalGetEnvironmentVariables());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       if (other.getMaxInstanceCount() != 0) {
         setMaxInstanceCount(other.getMaxInstanceCount());
       }
@@ -1744,7 +2121,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVpcConnector().isEmpty()) {
         vpcConnector_ = other.vpcConnector_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.vpcConnectorEgressSettings_ != 0) {
@@ -1755,12 +2132,12 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.getAllTrafficOnLatestRevision() != false) {
@@ -1770,7 +2147,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.secretEnvironmentVariables_.isEmpty()) {
           if (secretEnvironmentVariables_.isEmpty()) {
             secretEnvironmentVariables_ = other.secretEnvironmentVariables_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureSecretEnvironmentVariablesIsMutable();
             secretEnvironmentVariables_.addAll(other.secretEnvironmentVariables_);
@@ -1783,7 +2160,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             secretEnvironmentVariablesBuilder_.dispose();
             secretEnvironmentVariablesBuilder_ = null;
             secretEnvironmentVariables_ = other.secretEnvironmentVariables_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             secretEnvironmentVariablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecretEnvironmentVariablesFieldBuilder()
@@ -1797,7 +2174,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.secretVolumes_.isEmpty()) {
           if (secretVolumes_.isEmpty()) {
             secretVolumes_ = other.secretVolumes_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureSecretVolumesIsMutable();
             secretVolumes_.addAll(other.secretVolumes_);
@@ -1810,7 +2187,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             secretVolumesBuilder_.dispose();
             secretVolumesBuilder_ = null;
             secretVolumes_ = other.secretVolumes_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             secretVolumesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecretVolumesFieldBuilder()
@@ -1822,8 +2199,14 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRevision().isEmpty()) {
         revision_ = other.revision_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
+      }
+      if (other.getMaxInstanceRequestConcurrency() != 0) {
+        setMaxInstanceRequestConcurrency(other.getMaxInstanceRequestConcurrency());
+      }
+      if (other.securityLevel_ != 0) {
+        setSecurityLevelValue(other.getSecurityLevelValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1873,49 +2256,49 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvironmentVariables()
                     .getMutableMap()
                     .put(environmentVariables__.getKey(), environmentVariables__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 maxInstanceCount_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 vpcConnector_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 56:
               {
                 vpcConnectorEgressSettings_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 64:
               {
                 ingressSettings_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 64
             case 74:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 96:
               {
                 minInstanceCount_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 96
             case 106:
@@ -1927,7 +2310,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             case 128:
               {
                 allTrafficOnLatestRevision_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 128
             case 138:
@@ -1947,7 +2330,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 revision_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
             case 154:
@@ -1964,6 +2347,24 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 154
+            case 160:
+              {
+                maxInstanceRequestConcurrency_ = input.readInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 160
+            case 168:
+              {
+                securityLevel_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 168
+            case 178:
+              {
+                availableCpu_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2299,6 +2700,132 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object availableCpu_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] The number of CPUs used in a single container instance.
+     * Default value is calculated from available memory.
+     * Supports the same values as Cloud Run, see
+     * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+     * Example: "1" indicates 1 vCPU
+     * </pre>
+     *
+     * <code>string available_cpu = 22;</code>
+     *
+     * @return The availableCpu.
+     */
+    public java.lang.String getAvailableCpu() {
+      java.lang.Object ref = availableCpu_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        availableCpu_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] The number of CPUs used in a single container instance.
+     * Default value is calculated from available memory.
+     * Supports the same values as Cloud Run, see
+     * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+     * Example: "1" indicates 1 vCPU
+     * </pre>
+     *
+     * <code>string available_cpu = 22;</code>
+     *
+     * @return The bytes for availableCpu.
+     */
+    public com.google.protobuf.ByteString getAvailableCpuBytes() {
+      java.lang.Object ref = availableCpu_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        availableCpu_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] The number of CPUs used in a single container instance.
+     * Default value is calculated from available memory.
+     * Supports the same values as Cloud Run, see
+     * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+     * Example: "1" indicates 1 vCPU
+     * </pre>
+     *
+     * <code>string available_cpu = 22;</code>
+     *
+     * @param value The availableCpu to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableCpu(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      availableCpu_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] The number of CPUs used in a single container instance.
+     * Default value is calculated from available memory.
+     * Supports the same values as Cloud Run, see
+     * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+     * Example: "1" indicates 1 vCPU
+     * </pre>
+     *
+     * <code>string available_cpu = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailableCpu() {
+      availableCpu_ = getDefaultInstance().getAvailableCpu();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] The number of CPUs used in a single container instance.
+     * Default value is calculated from available memory.
+     * Supports the same values as Cloud Run, see
+     * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+     * Example: "1" indicates 1 vCPU
+     * </pre>
+     *
+     * <code>string available_cpu = 22;</code>
+     *
+     * @param value The bytes for availableCpu to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableCpuBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      availableCpu_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> environmentVariables_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -2320,7 +2847,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (!environmentVariables_.isMutable()) {
         environmentVariables_ = environmentVariables_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return environmentVariables_;
     }
@@ -2407,7 +2934,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnvironmentVariables() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableEnvironmentVariables().getMutableMap().clear();
       return this;
     }
@@ -2430,7 +2957,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironmentVariables() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return internalGetMutableEnvironmentVariables().getMutableMap();
     }
     /**
@@ -2450,7 +2977,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableEnvironmentVariables().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2465,7 +2992,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllEnvironmentVariables(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironmentVariables().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2522,7 +3049,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxInstanceCount(int value) {
 
       maxInstanceCount_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2549,7 +3076,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxInstanceCount() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxInstanceCount_ = 0;
       onChanged();
       return this;
@@ -2602,7 +3129,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinInstanceCount(int value) {
 
       minInstanceCount_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2626,7 +3153,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinInstanceCount() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       minInstanceCount_ = 0;
       onChanged();
       return this;
@@ -2697,7 +3224,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       vpcConnector_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2715,7 +3242,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearVpcConnector() {
       vpcConnector_ = getDefaultInstance().getVpcConnector();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2738,7 +3265,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       vpcConnector_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2779,7 +3306,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setVpcConnectorEgressSettingsValue(int value) {
       vpcConnectorEgressSettings_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2827,7 +3354,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       vpcConnectorEgressSettings_ = value.getNumber();
       onChanged();
       return this;
@@ -2847,7 +3374,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVpcConnectorEgressSettings() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       vpcConnectorEgressSettings_ = 0;
       onChanged();
       return this;
@@ -2887,7 +3414,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setIngressSettingsValue(int value) {
       ingressSettings_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2932,7 +3459,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       ingressSettings_ = value.getNumber();
       onChanged();
       return this;
@@ -2951,7 +3478,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIngressSettings() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ingressSettings_ = 0;
       onChanged();
       return this;
@@ -3019,7 +3546,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uri_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3036,7 +3563,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUri() {
       uri_ = getDefaultInstance().getUri();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3058,7 +3585,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uri_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3128,7 +3655,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3146,7 +3673,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccountEmail() {
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3169,7 +3696,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccountEmail_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3213,7 +3740,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllTrafficOnLatestRevision(boolean value) {
 
       allTrafficOnLatestRevision_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3233,7 +3760,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllTrafficOnLatestRevision() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       allTrafficOnLatestRevision_ = false;
       onChanged();
       return this;
@@ -3243,11 +3770,11 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         secretEnvironmentVariables_ = java.util.Collections.emptyList();
 
     private void ensureSecretEnvironmentVariablesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         secretEnvironmentVariables_ =
             new java.util.ArrayList<com.google.cloud.functions.v2alpha.SecretEnvVar>(
                 secretEnvironmentVariables_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -3490,7 +4017,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecretEnvironmentVariables() {
       if (secretEnvironmentVariablesBuilder_ == null) {
         secretEnvironmentVariables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         secretEnvironmentVariablesBuilder_.clear();
@@ -3631,7 +4158,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2alpha.SecretEnvVar.Builder,
                 com.google.cloud.functions.v2alpha.SecretEnvVarOrBuilder>(
                 secretEnvironmentVariables_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         secretEnvironmentVariables_ = null;
@@ -3643,11 +4170,11 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSecretVolumesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         secretVolumes_ =
             new java.util.ArrayList<com.google.cloud.functions.v2alpha.SecretVolume>(
                 secretVolumes_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -3865,7 +4392,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecretVolumes() {
       if (secretVolumesBuilder_ == null) {
         secretVolumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         secretVolumesBuilder_.clear();
@@ -3991,7 +4518,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.functions.v2alpha.SecretVolume.Builder,
                 com.google.cloud.functions.v2alpha.SecretVolumeOrBuilder>(
                 secretVolumes_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         secretVolumes_ = null;
@@ -4061,7 +4588,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       revision_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4078,7 +4605,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRevision() {
       revision_ = getDefaultInstance().getRevision();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4100,7 +4627,171 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       revision_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private int maxInstanceRequestConcurrency_;
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * can receive. Defaults to 1.
+     * </pre>
+     *
+     * <code>int32 max_instance_request_concurrency = 20;</code>
+     *
+     * @return The maxInstanceRequestConcurrency.
+     */
+    @java.lang.Override
+    public int getMaxInstanceRequestConcurrency() {
+      return maxInstanceRequestConcurrency_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * can receive. Defaults to 1.
+     * </pre>
+     *
+     * <code>int32 max_instance_request_concurrency = 20;</code>
+     *
+     * @param value The maxInstanceRequestConcurrency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInstanceRequestConcurrency(int value) {
+
+      maxInstanceRequestConcurrency_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Preview] Sets the maximum number of concurrent requests that each instance
+     * can receive. Defaults to 1.
+     * </pre>
+     *
+     * <code>int32 max_instance_request_concurrency = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInstanceRequestConcurrency() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      maxInstanceRequestConcurrency_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int securityLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Security level configure whether the function only accepts https.
+     * This configuration is only applicable to 1st Gen functions with Http
+     * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+     * functions are https ONLY.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+     *
+     * @return The enum numeric value on the wire for securityLevel.
+     */
+    @java.lang.Override
+    public int getSecurityLevelValue() {
+      return securityLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Security level configure whether the function only accepts https.
+     * This configuration is only applicable to 1st Gen functions with Http
+     * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+     * functions are https ONLY.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+     *
+     * @param value The enum numeric value on the wire for securityLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityLevelValue(int value) {
+      securityLevel_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Security level configure whether the function only accepts https.
+     * This configuration is only applicable to 1st Gen functions with Http
+     * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+     * functions are https ONLY.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+     *
+     * @return The securityLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel getSecurityLevel() {
+      com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel result =
+          com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel.forNumber(securityLevel_);
+      return result == null
+          ? com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Security level configure whether the function only accepts https.
+     * This configuration is only applicable to 1st Gen functions with Http
+     * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+     * functions are https ONLY.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+     *
+     * @param value The securityLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityLevel(
+        com.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      securityLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Security level configure whether the function only accepts https.
+     * This configuration is only applicable to 1st Gen functions with Http
+     * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+     * functions are https ONLY.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v2alpha.ServiceConfig.SecurityLevel security_level = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecurityLevel() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      securityLevel_ = 0;
       onChanged();
       return this;
     }

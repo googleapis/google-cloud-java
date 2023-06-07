@@ -27,8 +27,8 @@ public interface EventTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Eventarc trigger. The format of this field is
-   * `projects/{project}/locations/{region}/triggers/{trigger}`.
+   * Output only. The resource name of the Eventarc trigger. The format of this
+   * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface EventTriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Eventarc trigger. The format of this field is
-   * `projects/{project}/locations/{region}/triggers/{trigger}`.
+   * Output only. The resource name of the Eventarc trigger. The format of this
+   * field is `projects/{project}/locations/{region}/triggers/{trigger}`.
    * </pre>
    *
    * <code>
@@ -211,8 +211,8 @@ public interface EventTriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. The email of the trigger's service account. The service account must have
-   * permission to invoke Cloud Run services, the permission is
+   * Optional. The email of the trigger's service account. The service account
+   * must have permission to invoke Cloud Run services, the permission is
    * `run.routes.invoke`.
    * If empty, defaults to the Compute Engine default service account:
    * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -227,8 +227,8 @@ public interface EventTriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. The email of the trigger's service account. The service account must have
-   * permission to invoke Cloud Run services, the permission is
+   * Optional. The email of the trigger's service account. The service account
+   * must have permission to invoke Cloud Run services, the permission is
    * `run.routes.invoke`.
    * If empty, defaults to the Compute Engine default service account:
    * `{project_number}-compute&#64;developer.gserviceaccount.com`.
@@ -244,7 +244,8 @@ public interface EventTriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+   * them).
    * </pre>
    *
    * <code>
@@ -258,7 +259,8 @@ public interface EventTriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+   * Optional. If unset, then defaults to ignoring failures (i.e. not retrying
+   * them).
    * </pre>
    *
    * <code>

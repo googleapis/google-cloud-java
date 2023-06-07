@@ -319,8 +319,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Identifies whether the user has requested cancellation
    * of the operation. Operations that have successfully been cancelled
-   * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
-   * corresponding to `Code.CANCELLED`.
+   * have [Operation.error][] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+   * `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool cancel_requested = 6;</code>
@@ -893,6 +894,39 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         result.requestResource_ =
             requestResourceBuilder_ == null ? requestResource_ : requestResourceBuilder_.build();
       }
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.setField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1760,8 +1794,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
-     * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
-     * corresponding to `Code.CANCELLED`.
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
@@ -1778,8 +1813,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
-     * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
-     * corresponding to `Code.CANCELLED`.
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>
@@ -1800,8 +1836,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
-     * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
-     * corresponding to `Code.CANCELLED`.
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool cancel_requested = 6;</code>

@@ -73,12 +73,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The project and location from which the function should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`
-   * If you want to list functions in all locations, use "-" in place of a
-   * location. When listing functions in all locations, if one or more
-   * location(s) are unreachable, the response will contain functions from all
-   * reachable locations along with the names of any unreachable locations.
+   * Required. The project and location from which the function should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+   * list functions in all locations, use "-" in place of a location. When
+   * listing functions in all locations, if one or more location(s) are
+   * unreachable, the response will contain functions from all reachable
+   * locations along with the names of any unreachable locations.
    * </pre>
    *
    * <code>
@@ -103,12 +103,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The project and location from which the function should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`
-   * If you want to list functions in all locations, use "-" in place of a
-   * location. When listing functions in all locations, if one or more
-   * location(s) are unreachable, the response will contain functions from all
-   * reachable locations along with the names of any unreachable locations.
+   * Required. The project and location from which the function should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+   * list functions in all locations, use "-" in place of a location. When
+   * listing functions in all locations, if one or more location(s) are
+   * unreachable, the response will contain functions from all reachable
+   * locations along with the names of any unreachable locations.
    * </pre>
    *
    * <code>
@@ -136,7 +136,10 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Maximum number of functions to return per call.
+   * Maximum number of functions to return per call. The largest allowed
+   * page_size is 1,000, if the page_size is omitted or specified as greater
+   * than 1,000 then it will be replaced as 1,000. The size of the list
+   * response can be less than specified when used with filters.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -607,6 +610,39 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.setField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.functions.v2alpha.ListFunctionsRequest) {
         return mergeFrom((com.google.cloud.functions.v2alpha.ListFunctionsRequest) other);
@@ -722,12 +758,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location from which the function should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
-     * If you want to list functions in all locations, use "-" in place of a
-     * location. When listing functions in all locations, if one or more
-     * location(s) are unreachable, the response will contain functions from all
-     * reachable locations along with the names of any unreachable locations.
+     * Required. The project and location from which the function should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+     * list functions in all locations, use "-" in place of a location. When
+     * listing functions in all locations, if one or more location(s) are
+     * unreachable, the response will contain functions from all reachable
+     * locations along with the names of any unreachable locations.
      * </pre>
      *
      * <code>
@@ -751,12 +787,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location from which the function should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
-     * If you want to list functions in all locations, use "-" in place of a
-     * location. When listing functions in all locations, if one or more
-     * location(s) are unreachable, the response will contain functions from all
-     * reachable locations along with the names of any unreachable locations.
+     * Required. The project and location from which the function should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+     * list functions in all locations, use "-" in place of a location. When
+     * listing functions in all locations, if one or more location(s) are
+     * unreachable, the response will contain functions from all reachable
+     * locations along with the names of any unreachable locations.
      * </pre>
      *
      * <code>
@@ -780,12 +816,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location from which the function should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
-     * If you want to list functions in all locations, use "-" in place of a
-     * location. When listing functions in all locations, if one or more
-     * location(s) are unreachable, the response will contain functions from all
-     * reachable locations along with the names of any unreachable locations.
+     * Required. The project and location from which the function should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+     * list functions in all locations, use "-" in place of a location. When
+     * listing functions in all locations, if one or more location(s) are
+     * unreachable, the response will contain functions from all reachable
+     * locations along with the names of any unreachable locations.
      * </pre>
      *
      * <code>
@@ -808,12 +844,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location from which the function should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
-     * If you want to list functions in all locations, use "-" in place of a
-     * location. When listing functions in all locations, if one or more
-     * location(s) are unreachable, the response will contain functions from all
-     * reachable locations along with the names of any unreachable locations.
+     * Required. The project and location from which the function should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+     * list functions in all locations, use "-" in place of a location. When
+     * listing functions in all locations, if one or more location(s) are
+     * unreachable, the response will contain functions from all reachable
+     * locations along with the names of any unreachable locations.
      * </pre>
      *
      * <code>
@@ -832,12 +868,12 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The project and location from which the function should be listed,
-     * specified in the format `projects/&#42;&#47;locations/&#42;`
-     * If you want to list functions in all locations, use "-" in place of a
-     * location. When listing functions in all locations, if one or more
-     * location(s) are unreachable, the response will contain functions from all
-     * reachable locations along with the names of any unreachable locations.
+     * Required. The project and location from which the function should be
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;` If you want to
+     * list functions in all locations, use "-" in place of a location. When
+     * listing functions in all locations, if one or more location(s) are
+     * unreachable, the response will contain functions from all reachable
+     * locations along with the names of any unreachable locations.
      * </pre>
      *
      * <code>
@@ -863,7 +899,10 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maximum number of functions to return per call.
+     * Maximum number of functions to return per call. The largest allowed
+     * page_size is 1,000, if the page_size is omitted or specified as greater
+     * than 1,000 then it will be replaced as 1,000. The size of the list
+     * response can be less than specified when used with filters.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -878,7 +917,10 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maximum number of functions to return per call.
+     * Maximum number of functions to return per call. The largest allowed
+     * page_size is 1,000, if the page_size is omitted or specified as greater
+     * than 1,000 then it will be replaced as 1,000. The size of the list
+     * response can be less than specified when used with filters.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -897,7 +939,10 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maximum number of functions to return per call.
+     * Maximum number of functions to return per call. The largest allowed
+     * page_size is 1,000, if the page_size is omitted or specified as greater
+     * than 1,000 then it will be replaced as 1,000. The size of the list
+     * response can be less than specified when used with filters.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
