@@ -74,6 +74,7 @@ public interface ListTargetProjectsRequestOrBuilder
    * <pre>
    * Required. A page token, received from a previous `ListTargets` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTargets` must
    * match the call that provided the page token.
    * </pre>
@@ -89,6 +90,7 @@ public interface ListTargetProjectsRequestOrBuilder
    * <pre>
    * Required. A page token, received from a previous `ListTargets` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTargets` must
    * match the call that provided the page token.
    * </pre>

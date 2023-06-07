@@ -45,11 +45,6 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
     return new Module();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudtrace.v2.TraceProto
         .internal_static_google_devtools_cloudtrace_v2_Module_descriptor;

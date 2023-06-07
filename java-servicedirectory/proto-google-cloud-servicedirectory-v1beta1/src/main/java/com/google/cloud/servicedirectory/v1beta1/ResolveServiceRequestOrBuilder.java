@@ -72,15 +72,19 @@ public interface ResolveServiceRequestOrBuilder
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for
    *     map field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns endpoints that have a annotation with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -97,6 +101,7 @@ public interface ResolveServiceRequestOrBuilder
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoint, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -111,15 +116,19 @@ public interface ResolveServiceRequestOrBuilder
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for
    *     map field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns endpoints that have a annotation with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -136,6 +145,7 @@ public interface ResolveServiceRequestOrBuilder
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoint, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

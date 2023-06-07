@@ -28,6 +28,7 @@ public interface CreateProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The project in which the ProductSet should be created.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface CreateProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The project in which the ProductSet should be created.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *

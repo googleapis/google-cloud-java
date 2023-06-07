@@ -48,11 +48,6 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
     return new LogoRecognitionAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p3beta1_LogoRecognitionAnnotation_descriptor;

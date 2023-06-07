@@ -29,6 +29,7 @@ public interface StreamingRecognizeRequestOrBuilder
    * <pre>
    * Required. Streaming recognition should start with an initial request having
    * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+   *
    * The initial request with configuration can be omitted if the Recognizer
    * being used has a
    * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -47,6 +48,7 @@ public interface StreamingRecognizeRequestOrBuilder
    * <pre>
    * Required. Streaming recognition should start with an initial request having
    * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+   *
    * The initial request with configuration can be omitted if the Recognizer
    * being used has a
    * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -128,6 +130,6 @@ public interface StreamingRecognizeRequestOrBuilder
    */
   com.google.protobuf.ByteString getAudio();
 
-  public com.google.cloud.speech.v2.StreamingRecognizeRequest.StreamingRequestCase
+  com.google.cloud.speech.v2.StreamingRecognizeRequest.StreamingRequestCase
       getStreamingRequestCase();
 }

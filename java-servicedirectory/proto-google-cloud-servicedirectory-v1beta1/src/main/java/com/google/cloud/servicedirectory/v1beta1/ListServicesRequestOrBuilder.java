@@ -99,14 +99,18 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Optional. The filter to list results by.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name` or `metadata.&lt;key&gt;` for map field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns services that have a metadata with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns services that have key/value
@@ -121,6 +125,7 @@ public interface ListServicesRequestOrBuilder
    * *   `doesnotexist.foo=bar` returns an empty list. Note that service
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any services, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -135,14 +140,18 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Optional. The filter to list results by.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name` or `metadata.&lt;key&gt;` for map field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns services that have a metadata with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns services that have key/value
@@ -157,6 +166,7 @@ public interface ListServicesRequestOrBuilder
    * *   `doesnotexist.foo=bar` returns an empty list. Note that service
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any services, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -172,10 +182,13 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Optional. The order to list results by.
+   *
    * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   *
    * *   `&lt;field&gt;` allows value: `name`
    * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
    *     left blank, `asc` is used
+   *
    * Note that an empty `order_by` string results in default order, which is
    * order by `name` in ascending order.
    * </pre>
@@ -190,10 +203,13 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Optional. The order to list results by.
+   *
    * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   *
    * *   `&lt;field&gt;` allows value: `name`
    * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
    *     left blank, `asc` is used
+   *
    * Note that an empty `order_by` string results in default order, which is
    * order by `name` in ascending order.
    * </pre>

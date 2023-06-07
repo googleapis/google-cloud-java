@@ -367,6 +367,5 @@ public interface AwsSourceDetailsOrBuilder
    */
   com.google.protobuf.ByteString getPublicIpBytes();
 
-  public com.google.cloud.vmmigration.v1.AwsSourceDetails.CredentialsTypeCase
-      getCredentialsTypeCase();
+  com.google.cloud.vmmigration.v1.AwsSourceDetails.CredentialsTypeCase getCredentialsTypeCase();
 }

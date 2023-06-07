@@ -49,11 +49,6 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
     return new AsyncBatchAnnotateImagesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_AsyncBatchAnnotateImagesRequest_descriptor;
@@ -215,12 +210,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    * <pre>
    * Optional. Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no parent is specified, a region will be chosen automatically.
+   *
    * Supported location-ids:
    *     `us`: USA country only,
    *     `asia`: East asia areas, like Japan, Taiwan,
    *     `eu`: The European Union.
+   *
    * Example: `projects/project-A/locations/eu`.
    * </pre>
    *
@@ -245,12 +244,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    * <pre>
    * Optional. Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no parent is specified, a region will be chosen automatically.
+   *
    * Supported location-ids:
    *     `us`: USA country only,
    *     `asia`: East asia areas, like Japan, Taiwan,
    *     `eu`: The European Union.
+   *
    * Example: `projects/project-A/locations/eu`.
    * </pre>
    *
@@ -1315,12 +1318,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1344,12 +1351,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1373,12 +1384,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1401,12 +1416,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *
@@ -1425,12 +1444,16 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      * <pre>
      * Optional. Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no parent is specified, a region will be chosen automatically.
+     *
      * Supported location-ids:
      *     `us`: USA country only,
      *     `asia`: East asia areas, like Japan, Taiwan,
      *     `eu`: The European Union.
+     *
      * Example: `projects/project-A/locations/eu`.
      * </pre>
      *

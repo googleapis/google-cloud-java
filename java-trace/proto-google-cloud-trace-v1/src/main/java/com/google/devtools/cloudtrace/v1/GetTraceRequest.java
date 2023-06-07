@@ -48,11 +48,6 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
     return new GetTraceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudtrace.v1.TraceProto
         .internal_static_google_devtools_cloudtrace_v1_GetTraceRequest_descriptor;

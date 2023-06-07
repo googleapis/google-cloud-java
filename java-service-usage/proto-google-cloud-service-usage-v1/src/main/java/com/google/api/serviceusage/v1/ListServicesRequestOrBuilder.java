@@ -28,6 +28,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Parent to search for services on.
+   *
    * An example name would be:
    * `projects/123` where `123` is the project number.
    * </pre>
@@ -42,6 +43,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Parent to search for services on.
+   *
    * An example name would be:
    * `projects/123` where `123` is the project number.
    * </pre>

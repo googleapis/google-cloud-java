@@ -30,6 +30,7 @@ public interface TextDetectionConfigOrBuilder
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface TextDetectionConfigOrBuilder
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -60,6 +62,7 @@ public interface TextDetectionConfigOrBuilder
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -76,6 +79,7 @@ public interface TextDetectionConfigOrBuilder
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *

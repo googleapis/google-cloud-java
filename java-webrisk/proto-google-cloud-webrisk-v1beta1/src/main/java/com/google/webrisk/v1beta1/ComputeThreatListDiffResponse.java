@@ -40,11 +40,6 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     return new ComputeThreatListDiffResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1beta1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1beta1_ComputeThreatListDiffResponse_descriptor;
@@ -269,11 +264,6 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Checksum();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

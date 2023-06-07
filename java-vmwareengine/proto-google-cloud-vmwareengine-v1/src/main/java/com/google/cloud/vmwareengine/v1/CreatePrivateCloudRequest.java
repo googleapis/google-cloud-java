@@ -50,11 +50,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     return new CreatePrivateCloudRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineProto
         .internal_static_google_cloud_vmwareengine_v1_CreatePrivateCloudRequest_descriptor;
@@ -145,6 +140,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    * This identifier must be unique among each `PrivateCloud` within the parent
    * and becomes the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -177,6 +173,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    * This identifier must be unique among each `PrivateCloud` within the parent
    * and becomes the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -921,6 +918,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * This identifier must be unique among each `PrivateCloud` within the parent
      * and becomes the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -952,6 +950,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * This identifier must be unique among each `PrivateCloud` within the parent
      * and becomes the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -983,6 +982,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * This identifier must be unique among each `PrivateCloud` within the parent
      * and becomes the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1013,6 +1013,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * This identifier must be unique among each `PrivateCloud` within the parent
      * and becomes the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1039,6 +1040,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * This identifier must be unique among each `PrivateCloud` within the parent
      * and becomes the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character

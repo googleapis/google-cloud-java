@@ -50,11 +50,6 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
     return new ListEndpointsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.servicedirectory.v1beta1.RegistrationServiceProto
         .internal_static_google_cloud_servicedirectory_v1beta1_ListEndpointsRequest_descriptor;
@@ -207,15 +202,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The filter to list results by.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
    *     field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns endpoints that have a metadata with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -232,6 +231,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoints, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -257,15 +257,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The filter to list results by.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
    *     field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns endpoints that have a metadata with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -282,6 +286,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoints, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -312,10 +317,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The order to list results by.
+   *
    * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   *
    * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
    * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
    *     left blank, `asc` is used
+   *
    * Note that an empty `order_by` string results in default order, which is
    * order by `name` in ascending order.
    * </pre>
@@ -341,10 +349,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The order to list results by.
+   *
    * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+   *
    * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
    * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
    *     left blank, `asc` is used
+   *
    * Note that an empty `order_by` string results in default order, which is
    * order by `name` in ascending order.
    * </pre>
@@ -1097,15 +1108,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list results by.
+     *
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     *
      * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
      *     field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
      * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+     *
      * Examples of valid filters:
+     *
      * *   `metadata.owner` returns endpoints that have a metadata with the key
      *     `owner`, this is the same as `metadata:owner`
      * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -1122,6 +1137,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1146,15 +1162,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list results by.
+     *
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     *
      * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
      *     field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
      * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+     *
      * Examples of valid filters:
+     *
      * *   `metadata.owner` returns endpoints that have a metadata with the key
      *     `owner`, this is the same as `metadata:owner`
      * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -1171,6 +1191,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1195,15 +1216,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list results by.
+     *
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     *
      * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
      *     field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
      * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+     *
      * Examples of valid filters:
+     *
      * *   `metadata.owner` returns endpoints that have a metadata with the key
      *     `owner`, this is the same as `metadata:owner`
      * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -1220,6 +1245,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1243,15 +1269,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list results by.
+     *
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     *
      * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
      *     field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
      * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+     *
      * Examples of valid filters:
+     *
      * *   `metadata.owner` returns endpoints that have a metadata with the key
      *     `owner`, this is the same as `metadata:owner`
      * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -1268,6 +1298,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1287,15 +1318,19 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list results by.
+     *
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+     *
      * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
      *     field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
      * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+     *
      * Examples of valid filters:
+     *
      * *   `metadata.owner` returns endpoints that have a metadata with the key
      *     `owner`, this is the same as `metadata:owner`
      * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -1312,6 +1347,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1338,10 +1374,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The order to list results by.
+     *
      * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     *
      * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
      * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
      *     left blank, `asc` is used
+     *
      * Note that an empty `order_by` string results in default order, which is
      * order by `name` in ascending order.
      * </pre>
@@ -1366,10 +1405,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The order to list results by.
+     *
      * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     *
      * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
      * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
      *     left blank, `asc` is used
+     *
      * Note that an empty `order_by` string results in default order, which is
      * order by `name` in ascending order.
      * </pre>
@@ -1394,10 +1436,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The order to list results by.
+     *
      * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     *
      * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
      * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
      *     left blank, `asc` is used
+     *
      * Note that an empty `order_by` string results in default order, which is
      * order by `name` in ascending order.
      * </pre>
@@ -1421,10 +1466,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The order to list results by.
+     *
      * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     *
      * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
      * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
      *     left blank, `asc` is used
+     *
      * Note that an empty `order_by` string results in default order, which is
      * order by `name` in ascending order.
      * </pre>
@@ -1444,10 +1492,13 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The order to list results by.
+     *
      * General `order_by` string syntax: `&lt;field&gt; (&lt;asc|desc&gt;) (,)`
+     *
      * *   `&lt;field&gt;` allows values: `name`, `address`, `port`
      * *   `&lt;asc|desc&gt;` ascending or descending order by `&lt;field&gt;`. If this is
      *     left blank, `asc` is used
+     *
      * Note that an empty `order_by` string results in default order, which is
      * order by `name` in ascending order.
      * </pre>

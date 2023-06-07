@@ -84,6 +84,7 @@ public interface CreateRecognizerRequestOrBuilder
    * <pre>
    * The ID to use for the Recognizer, which will become the final component of
    * the Recognizer's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -99,6 +100,7 @@ public interface CreateRecognizerRequestOrBuilder
    * <pre>
    * The ID to use for the Recognizer, which will become the final component of
    * the Recognizer's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

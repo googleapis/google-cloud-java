@@ -28,7 +28,9 @@ public interface DisableServiceRequestOrBuilder
    *
    * <pre>
    * Name of the consumer and service to disable the service on.
+   *
    * The enable and disable methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com`
    * where `123` is the project number (not project ID).
@@ -44,7 +46,9 @@ public interface DisableServiceRequestOrBuilder
    *
    * <pre>
    * Name of the consumer and service to disable the service on.
+   *
    * The enable and disable methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com`
    * where `123` is the project number (not project ID).

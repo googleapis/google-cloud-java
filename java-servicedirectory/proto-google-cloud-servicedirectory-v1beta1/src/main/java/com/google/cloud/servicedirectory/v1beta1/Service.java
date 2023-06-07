@@ -51,11 +51,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return new Service();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.servicedirectory.v1beta1.ServiceProto
         .internal_static_google_cloud_servicedirectory_v1beta1_Service_descriptor;
@@ -167,7 +162,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -183,6 +180,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -209,7 +207,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -225,6 +225,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -242,7 +243,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -258,6 +261,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -282,7 +286,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -298,6 +304,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -1192,7 +1199,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1208,6 +1217,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
@@ -1235,7 +1245,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1251,6 +1263,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
@@ -1269,7 +1282,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1285,6 +1300,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
@@ -1310,7 +1326,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1326,6 +1344,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
@@ -1357,7 +1376,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1373,6 +1394,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
@@ -1400,7 +1422,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1416,6 +1440,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
@@ -1441,7 +1466,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Metadata for the service. This data can be consumed by service
      * clients.
+     *
      * Restrictions:
+     *
      * *   The entire metadata dictionary may contain up to 2000 characters,
      *     spread accoss all key-value pairs. Metadata that goes beyond this
      *     limit are rejected
@@ -1457,6 +1484,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *     for system metadata managed by Service Directory. If the user tries
      *     to write to these keyspaces, those entries are silently ignored by
      *     the system
+     *
      * Note: This field is equivalent to the `annotations` field in the v1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.

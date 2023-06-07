@@ -47,11 +47,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
     return new SupportedLanguages();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_SupportedLanguages_descriptor;

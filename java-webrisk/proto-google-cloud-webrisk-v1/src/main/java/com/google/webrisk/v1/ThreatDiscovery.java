@@ -39,18 +39,13 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
 
   private ThreatDiscovery() {
     platform_ = 0;
-    regionCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ThreatDiscovery();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -307,7 +302,8 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
   public static final int REGION_CODES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList regionCodes_;
+  private com.google.protobuf.LazyStringArrayList regionCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -586,8 +582,7 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       platform_ = 0;
-      regionCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -615,7 +610,6 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
     public com.google.webrisk.v1.ThreatDiscovery buildPartial() {
       com.google.webrisk.v1.ThreatDiscovery result =
           new com.google.webrisk.v1.ThreatDiscovery(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -623,18 +617,14 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.webrisk.v1.ThreatDiscovery result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        regionCodes_ = regionCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.regionCodes_ = regionCodes_;
-    }
-
     private void buildPartial0(com.google.webrisk.v1.ThreatDiscovery result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.platform_ = platform_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        regionCodes_.makeImmutable();
+        result.regionCodes_ = regionCodes_;
       }
     }
 
@@ -689,7 +679,7 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       if (!other.regionCodes_.isEmpty()) {
         if (regionCodes_.isEmpty()) {
           regionCodes_ = other.regionCodes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureRegionCodesIsMutable();
           regionCodes_.addAll(other.regionCodes_);
@@ -844,14 +834,14 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList regionCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList regionCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRegionCodesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!regionCodes_.isModifiable()) {
         regionCodes_ = new com.google.protobuf.LazyStringArrayList(regionCodes_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -866,7 +856,8 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the regionCodes.
      */
     public com.google.protobuf.ProtocolStringList getRegionCodesList() {
-      return regionCodes_.getUnmodifiableView();
+      regionCodes_.makeImmutable();
+      return regionCodes_;
     }
     /**
      *
@@ -935,6 +926,7 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       }
       ensureRegionCodesIsMutable();
       regionCodes_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -957,6 +949,7 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       }
       ensureRegionCodesIsMutable();
       regionCodes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -976,6 +969,7 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
     public Builder addAllRegionCodes(java.lang.Iterable<java.lang.String> values) {
       ensureRegionCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regionCodes_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,8 +986,9 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRegionCodes() {
-      regionCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1017,6 +1012,7 @@ public final class ThreatDiscovery extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureRegionCodesIsMutable();
       regionCodes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

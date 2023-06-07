@@ -28,6 +28,7 @@ public interface UpdateCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The CustomClass to update.
+   *
    * The CustomClass's `name` field is used to identify the CustomClass to
    * update. Format:
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
@@ -45,6 +46,7 @@ public interface UpdateCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The CustomClass to update.
+   *
    * The CustomClass's `name` field is used to identify the CustomClass to
    * update. Format:
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`.
@@ -62,6 +64,7 @@ public interface UpdateCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The CustomClass to update.
+   *
    * The CustomClass's `name` field is used to identify the CustomClass to
    * update. Format:
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`.

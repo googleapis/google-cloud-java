@@ -57,11 +57,6 @@ public final class HcxActivationKey extends com.google.protobuf.GeneratedMessage
     return new HcxActivationKey();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
         .internal_static_google_cloud_vmwareengine_v1_HcxActivationKey_descriptor;

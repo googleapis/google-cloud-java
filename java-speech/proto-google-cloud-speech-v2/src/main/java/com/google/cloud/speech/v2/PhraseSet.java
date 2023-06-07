@@ -56,11 +56,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     return new PhraseSet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_PhraseSet_descriptor;
@@ -307,6 +302,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    * for specific words and phrases, for example, if specific commands are
    * typically spoken by the user. This can also be used to add additional words
    * to the vocabulary of the recognizer.
+   *
    * List items can also include CustomClass references containing groups of
    * words that represent common concepts that occur in natural language.
    * </pre>
@@ -331,11 +327,6 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Phrase();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -610,6 +601,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * for specific words and phrases, for example, if specific commands are
      * typically spoken by the user. This can also be used to add additional words
      * to the vocabulary of the recognizer.
+     *
      * List items can also include CustomClass references containing groups of
      * words that represent common concepts that occur in natural language.
      * </pre>

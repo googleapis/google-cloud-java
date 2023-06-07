@@ -49,11 +49,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     return new ScanRunWarningTrace();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTraceProto
         .internal_static_google_cloud_websecurityscanner_v1beta_ScanRunWarningTrace_descriptor;

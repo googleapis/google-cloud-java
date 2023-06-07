@@ -61,5 +61,5 @@ public interface ImportProductSetsInputConfigOrBuilder
    */
   com.google.cloud.vision.v1.ImportProductSetsGcsSourceOrBuilder getGcsSourceOrBuilder();
 
-  public com.google.cloud.vision.v1.ImportProductSetsInputConfig.SourceCase getSourceCase();
+  com.google.cloud.vision.v1.ImportProductSetsInputConfig.SourceCase getSourceCase();
 }

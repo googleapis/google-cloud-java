@@ -94,6 +94,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Include services consumed by the specified consumer.
+   *
    * The Google Service Management implementation accepts the following
    * forms:
    * - project:&lt;project_id&gt;
@@ -112,6 +113,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Include services consumed by the specified consumer.
+   *
    * The Google Service Management implementation accepts the following
    * forms:
    * - project:&lt;project_id&gt;

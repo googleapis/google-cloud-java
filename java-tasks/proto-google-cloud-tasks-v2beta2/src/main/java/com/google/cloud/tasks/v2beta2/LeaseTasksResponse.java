@@ -48,11 +48,6 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
     return new LeaseTasksResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta2.CloudTasksProto
         .internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;

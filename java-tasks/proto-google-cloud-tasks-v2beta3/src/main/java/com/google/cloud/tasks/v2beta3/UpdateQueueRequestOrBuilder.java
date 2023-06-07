@@ -28,7 +28,9 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
@@ -45,7 +47,9 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
@@ -62,7 +66,9 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
@@ -78,6 +84,7 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -91,6 +98,7 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -104,6 +112,7 @@ public interface UpdateQueueRequestOrBuilder
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *

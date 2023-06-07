@@ -124,6 +124,7 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -138,6 +139,7 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -152,6 +154,7 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -482,5 +485,5 @@ public interface JobOrBuilder
    */
   com.google.cloud.video.transcoder.v1.Job.ProcessingMode getMode();
 
-  public com.google.cloud.video.transcoder.v1.Job.JobConfigCase getJobConfigCase();
+  com.google.cloud.video.transcoder.v1.Job.JobConfigCase getJobConfigCase();
 }

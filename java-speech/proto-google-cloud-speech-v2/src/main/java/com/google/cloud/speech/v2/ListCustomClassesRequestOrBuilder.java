@@ -77,6 +77,7 @@ public interface ListCustomClassesRequestOrBuilder
    * A page token, received from a previous
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
    * match the call that provided the page token.
@@ -94,6 +95,7 @@ public interface ListCustomClassesRequestOrBuilder
    * A page token, received from a previous
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
    * match the call that provided the page token.

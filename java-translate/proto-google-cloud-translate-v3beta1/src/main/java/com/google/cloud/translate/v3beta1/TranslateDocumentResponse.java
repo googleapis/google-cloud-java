@@ -47,11 +47,6 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
     return new TranslateDocumentResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3beta1.TranslationServiceProto
         .internal_static_google_cloud_translation_v3beta1_TranslateDocumentResponse_descriptor;
@@ -188,6 +183,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
    * <pre>
    * Only present when 'model' is present in the request.
    * 'model' is normalized to have a project number.
+   *
    * For example:
    * If the 'model' field in TranslateDocumentRequest is:
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -217,6 +213,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
    * <pre>
    * Only present when 'model' is present in the request.
    * 'model' is normalized to have a project number.
+   *
    * For example:
    * If the 'model' field in TranslateDocumentRequest is:
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -1164,6 +1161,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
      * <pre>
      * Only present when 'model' is present in the request.
      * 'model' is normalized to have a project number.
+     *
      * For example:
      * If the 'model' field in TranslateDocumentRequest is:
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -1192,6 +1190,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
      * <pre>
      * Only present when 'model' is present in the request.
      * 'model' is normalized to have a project number.
+     *
      * For example:
      * If the 'model' field in TranslateDocumentRequest is:
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -1220,6 +1219,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
      * <pre>
      * Only present when 'model' is present in the request.
      * 'model' is normalized to have a project number.
+     *
      * For example:
      * If the 'model' field in TranslateDocumentRequest is:
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -1247,6 +1247,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
      * <pre>
      * Only present when 'model' is present in the request.
      * 'model' is normalized to have a project number.
+     *
      * For example:
      * If the 'model' field in TranslateDocumentRequest is:
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -1270,6 +1271,7 @@ public final class TranslateDocumentResponse extends com.google.protobuf.Generat
      * <pre>
      * Only present when 'model' is present in the request.
      * 'model' is normalized to have a project number.
+     *
      * For example:
      * If the 'model' field in TranslateDocumentRequest is:
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then

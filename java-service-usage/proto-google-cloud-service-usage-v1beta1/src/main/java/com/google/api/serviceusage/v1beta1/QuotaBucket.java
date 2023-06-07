@@ -45,11 +45,6 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     return new QuotaBucket();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_QuotaBucket_descriptor;
@@ -295,10 +290,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -324,10 +322,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -344,10 +345,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -371,10 +375,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -1612,10 +1619,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1641,10 +1651,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1661,10 +1674,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1688,10 +1704,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1721,10 +1740,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1750,10 +1772,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1777,10 +1802,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.

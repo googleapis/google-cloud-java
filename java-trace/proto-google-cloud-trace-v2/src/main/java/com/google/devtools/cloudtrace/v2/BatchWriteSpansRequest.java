@@ -48,11 +48,6 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
     return new BatchWriteSpansRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudtrace.v2.TracingProto
         .internal_static_google_devtools_cloudtrace_v2_BatchWriteSpansRequest_descriptor;

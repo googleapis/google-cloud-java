@@ -358,7 +358,7 @@ public interface ReportConfigOrBuilder
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
-  public com.google.cloud.storageinsights.v1.ReportConfig.ReportFormatCase getReportFormatCase();
+  com.google.cloud.storageinsights.v1.ReportConfig.ReportFormatCase getReportFormatCase();
 
-  public com.google.cloud.storageinsights.v1.ReportConfig.ReportKindCase getReportKindCase();
+  com.google.cloud.storageinsights.v1.ReportConfig.ReportKindCase getReportKindCase();
 }

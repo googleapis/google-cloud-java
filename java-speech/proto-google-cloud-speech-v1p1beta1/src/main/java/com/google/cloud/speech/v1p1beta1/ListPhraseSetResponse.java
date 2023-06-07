@@ -48,11 +48,6 @@ public final class ListPhraseSetResponse extends com.google.protobuf.GeneratedMe
     return new ListPhraseSetResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechAdaptationProto
         .internal_static_google_cloud_speech_v1p1beta1_ListPhraseSetResponse_descriptor;

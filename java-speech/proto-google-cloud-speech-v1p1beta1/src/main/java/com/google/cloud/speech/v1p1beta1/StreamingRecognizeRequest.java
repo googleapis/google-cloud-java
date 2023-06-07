@@ -49,11 +49,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     return new StreamingRecognizeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto
         .internal_static_google_cloud_speech_v1p1beta1_StreamingRecognizeRequest_descriptor;
@@ -70,6 +65,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   }
 
   private int streamingRequestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object streamingRequest_;
 
   public enum StreamingRequestCase

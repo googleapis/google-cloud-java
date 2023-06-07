@@ -202,5 +202,5 @@ public interface CycleStepOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
-  public com.google.cloud.vmmigration.v1.CycleStep.StepCase getStepCase();
+  com.google.cloud.vmmigration.v1.CycleStep.StepCase getStepCase();
 }

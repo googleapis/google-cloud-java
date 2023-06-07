@@ -49,11 +49,6 @@ public final class ListConsumerQuotaMetricsResponse extends com.google.protobuf.
     return new ListConsumerQuotaMetricsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1beta1_ListConsumerQuotaMetricsResponse_descriptor;

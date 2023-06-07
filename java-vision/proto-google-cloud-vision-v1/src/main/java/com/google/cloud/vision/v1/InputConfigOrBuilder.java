@@ -65,6 +65,7 @@ public interface InputConfigOrBuilder
    * File content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * Currently, this field only works for BatchAnnotateFiles requests. It does
    * not work for AsyncBatchAnnotateFiles requests.
    * </pre>

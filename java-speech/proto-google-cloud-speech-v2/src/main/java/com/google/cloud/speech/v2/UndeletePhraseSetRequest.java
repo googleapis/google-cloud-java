@@ -50,11 +50,6 @@ public final class UndeletePhraseSetRequest extends com.google.protobuf.Generate
     return new UndeletePhraseSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_UndeletePhraseSetRequest_descriptor;

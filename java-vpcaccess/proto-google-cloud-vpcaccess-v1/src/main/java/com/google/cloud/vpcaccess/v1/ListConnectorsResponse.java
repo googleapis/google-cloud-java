@@ -48,11 +48,6 @@ public final class ListConnectorsResponse extends com.google.protobuf.GeneratedM
     return new ListConnectorsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vpcaccess.v1.VpcAccessProto
         .internal_static_google_cloud_vpcaccess_v1_ListConnectorsResponse_descriptor;

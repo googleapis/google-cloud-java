@@ -527,5 +527,5 @@ public interface EventOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
-  public com.google.cloud.video.livestream.v1.Event.TaskCase getTaskCase();
+  com.google.cloud.video.livestream.v1.Event.TaskCase getTaskCase();
 }

@@ -54,11 +54,6 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     return new VmwareEngineNetwork();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
         .internal_static_google_cloud_vmwareengine_v1_VmwareEngineNetwork_descriptor;
@@ -516,11 +511,6 @@ public final class VmwareEngineNetwork extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new VpcNetwork();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

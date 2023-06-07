@@ -388,6 +388,6 @@ public interface StreamingVideoConfigOrBuilder
   com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfigOrBuilder
       getStorageConfigOrBuilder();
 
-  public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig.StreamingConfigCase
+  com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig.StreamingConfigCase
       getStreamingConfigCase();
 }

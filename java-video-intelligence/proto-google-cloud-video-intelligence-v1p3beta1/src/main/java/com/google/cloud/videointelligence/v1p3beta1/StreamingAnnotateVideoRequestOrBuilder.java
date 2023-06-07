@@ -102,7 +102,6 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    */
   com.google.protobuf.ByteString getInputContent();
 
-  public com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest
-          .StreamingRequestCase
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest.StreamingRequestCase
       getStreamingRequestCase();
 }

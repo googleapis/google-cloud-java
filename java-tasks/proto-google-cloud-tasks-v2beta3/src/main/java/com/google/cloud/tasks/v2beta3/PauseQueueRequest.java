@@ -47,11 +47,6 @@ public final class PauseQueueRequest extends com.google.protobuf.GeneratedMessag
     return new PauseQueueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta3.CloudTasksProto
         .internal_static_google_cloud_tasks_v2beta3_PauseQueueRequest_descriptor;

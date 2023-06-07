@@ -47,11 +47,6 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
     return new CropHintsAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p3beta1_CropHintsAnnotation_descriptor;

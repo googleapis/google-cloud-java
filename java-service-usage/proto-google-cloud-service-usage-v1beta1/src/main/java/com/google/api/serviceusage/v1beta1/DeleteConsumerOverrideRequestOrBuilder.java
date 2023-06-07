@@ -28,6 +28,7 @@ public interface DeleteConsumerOverrideRequestOrBuilder
    *
    * <pre>
    * The resource name of the override to delete.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/consumerOverrides/4a3f2c1d`
    * </pre>
@@ -42,6 +43,7 @@ public interface DeleteConsumerOverrideRequestOrBuilder
    *
    * <pre>
    * The resource name of the override to delete.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/consumerOverrides/4a3f2c1d`
    * </pre>

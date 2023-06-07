@@ -54,11 +54,6 @@ public final class ScanRunLog extends com.google.protobuf.GeneratedMessageV3
     return new ScanRunLog();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.ScanRunLogProto
         .internal_static_google_cloud_websecurityscanner_v1_ScanRunLog_descriptor;

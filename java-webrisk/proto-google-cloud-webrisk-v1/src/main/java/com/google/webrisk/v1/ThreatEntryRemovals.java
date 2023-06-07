@@ -45,11 +45,6 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
     return new ThreatEntryRemovals();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1_ThreatEntryRemovals_descriptor;

@@ -47,11 +47,6 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     return new ExplicitContentFrame();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p2beta1_ExplicitContentFrame_descriptor;

@@ -54,11 +54,6 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     return new RecognitionMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto
         .internal_static_google_cloud_speech_v1p1beta1_RecognitionMetadata_descriptor;

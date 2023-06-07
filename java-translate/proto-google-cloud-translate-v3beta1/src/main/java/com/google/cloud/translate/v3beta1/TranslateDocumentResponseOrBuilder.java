@@ -109,6 +109,7 @@ public interface TranslateDocumentResponseOrBuilder
    * <pre>
    * Only present when 'model' is present in the request.
    * 'model' is normalized to have a project number.
+   *
    * For example:
    * If the 'model' field in TranslateDocumentRequest is:
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -127,6 +128,7 @@ public interface TranslateDocumentResponseOrBuilder
    * <pre>
    * Only present when 'model' is present in the request.
    * 'model' is normalized to have a project number.
+   *
    * For example:
    * If the 'model' field in TranslateDocumentRequest is:
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then

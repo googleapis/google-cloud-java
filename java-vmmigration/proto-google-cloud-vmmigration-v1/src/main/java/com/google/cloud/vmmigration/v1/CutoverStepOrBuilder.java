@@ -273,5 +273,5 @@ public interface CutoverStepOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
-  public com.google.cloud.vmmigration.v1.CutoverStep.StepCase getStepCase();
+  com.google.cloud.vmmigration.v1.CutoverStep.StepCase getStepCase();
 }

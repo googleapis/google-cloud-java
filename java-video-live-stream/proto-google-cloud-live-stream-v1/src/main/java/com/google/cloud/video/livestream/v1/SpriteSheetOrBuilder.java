@@ -28,7 +28,9 @@ public interface SpriteSheetOrBuilder
    *
    * <pre>
    * Format type. The default is `jpeg`.
+   *
    * Supported formats:
+   *
    * - `jpeg`
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface SpriteSheetOrBuilder
    *
    * <pre>
    * Format type. The default is `jpeg`.
+   *
    * Supported formats:
+   *
    * - `jpeg`
    * </pre>
    *

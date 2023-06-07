@@ -28,8 +28,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -47,8 +50,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * The `global` location is not supported for batch translation.
+   *
    * Only AutoML Translation models or glossaries within the same region (have
    * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
    * error is returned.
@@ -282,11 +288,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -301,11 +312,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -323,11 +339,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -342,11 +363,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -365,11 +391,16 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. The models to use for translation. Map's key is target language
    * code. Map's value is the model name. Value can be a built-in general model,
    * or an AutoML Translation model.
+   *
    * The value format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -456,9 +487,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -475,9 +508,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -497,9 +532,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -516,9 +553,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>
@@ -539,9 +578,11 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * Optional. File format conversion map to be applied to all input files.
    * Map's key is the original mime_type. Map's value is the target mime_type of
    * translated documents.
+   *
    * Supported file format conversion includes:
    * - `application/pdf` to
    *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   *
    * If nothing specified, output files will be in the same format as the
    * original file.
    * </pre>

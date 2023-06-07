@@ -28,6 +28,7 @@ public interface UpdateRecognizerRequestOrBuilder
    *
    * <pre>
    * Required. The Recognizer to update.
+   *
    * The Recognizer's `name` field is used to identify the Recognizer to update.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateRecognizerRequestOrBuilder
    *
    * <pre>
    * Required. The Recognizer to update.
+   *
    * The Recognizer's `name` field is used to identify the Recognizer to update.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateRecognizerRequestOrBuilder
    *
    * <pre>
    * Required. The Recognizer to update.
+   *
    * The Recognizer's `name` field is used to identify the Recognizer to update.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>

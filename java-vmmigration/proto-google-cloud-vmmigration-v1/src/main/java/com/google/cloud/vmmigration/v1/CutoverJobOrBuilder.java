@@ -376,5 +376,5 @@ public interface CutoverJobOrBuilder
    */
   com.google.cloud.vmmigration.v1.CutoverStepOrBuilder getStepsOrBuilder(int index);
 
-  public com.google.cloud.vmmigration.v1.CutoverJob.TargetVmDetailsCase getTargetVmDetailsCase();
+  com.google.cloud.vmmigration.v1.CutoverJob.TargetVmDetailsCase getTargetVmDetailsCase();
 }

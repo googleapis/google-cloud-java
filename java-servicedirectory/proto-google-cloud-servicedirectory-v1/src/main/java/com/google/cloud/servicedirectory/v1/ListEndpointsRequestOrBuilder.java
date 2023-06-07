@@ -99,6 +99,7 @@ public interface ListEndpointsRequestOrBuilder
    *
    * <pre>
    * Optional. The filter to list result by.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -106,6 +107,7 @@ public interface ListEndpointsRequestOrBuilder
    * is roughly the same as "=".
    * &lt;value&gt; must be the same data type as field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the key "owner"
    *   this is the same as "metadata:owner".
@@ -133,6 +135,7 @@ public interface ListEndpointsRequestOrBuilder
    *
    * <pre>
    * Optional. The filter to list result by.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -140,6 +143,7 @@ public interface ListEndpointsRequestOrBuilder
    * is roughly the same as "=".
    * &lt;value&gt; must be the same data type as field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the key "owner"
    *   this is the same as "metadata:owner".

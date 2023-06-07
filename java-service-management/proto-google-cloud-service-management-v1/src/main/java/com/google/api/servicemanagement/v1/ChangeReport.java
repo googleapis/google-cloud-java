@@ -23,6 +23,7 @@ package com.google.api.servicemanagement.v1;
  *
  * <pre>
  * Change report associated with a particular service configuration.
+ *
  * It contains a list of ConfigChanges based on the comparison between
  * two service configurations.
  * </pre>
@@ -47,11 +48,6 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ChangeReport();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -326,6 +322,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Change report associated with a particular service configuration.
+   *
    * It contains a list of ConfigChanges based on the comparison between
    * two service configurations.
    * </pre>

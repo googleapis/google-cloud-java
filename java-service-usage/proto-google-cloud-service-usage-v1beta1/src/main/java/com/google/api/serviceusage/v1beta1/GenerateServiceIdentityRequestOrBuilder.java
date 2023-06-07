@@ -28,7 +28,9 @@ public interface GenerateServiceIdentityRequestOrBuilder
    *
    * <pre>
    * Name of the consumer and service to generate an identity for.
+   *
    * The `GenerateServiceIdentity` methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/example.googleapis.com` where `123` is the
    * project number.
@@ -44,7 +46,9 @@ public interface GenerateServiceIdentityRequestOrBuilder
    *
    * <pre>
    * Name of the consumer and service to generate an identity for.
+   *
    * The `GenerateServiceIdentity` methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/example.googleapis.com` where `123` is the
    * project number.

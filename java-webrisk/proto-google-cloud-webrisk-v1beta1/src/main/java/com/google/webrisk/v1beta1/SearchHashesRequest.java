@@ -48,11 +48,6 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
     return new SearchHashesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1beta1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1beta1_SearchHashesRequest_descriptor;

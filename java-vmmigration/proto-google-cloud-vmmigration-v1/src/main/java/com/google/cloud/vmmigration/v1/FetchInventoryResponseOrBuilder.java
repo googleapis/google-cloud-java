@@ -134,5 +134,5 @@ public interface FetchInventoryResponseOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.cloud.vmmigration.v1.FetchInventoryResponse.SourceVmsCase getSourceVmsCase();
+  com.google.cloud.vmmigration.v1.FetchInventoryResponse.SourceVmsCase getSourceVmsCase();
 }

@@ -108,5 +108,5 @@ public interface RecognitionOutputConfigOrBuilder
    */
   com.google.cloud.speech.v2.InlineOutputConfigOrBuilder getInlineResponseConfigOrBuilder();
 
-  public com.google.cloud.speech.v2.RecognitionOutputConfig.OutputCase getOutputCase();
+  com.google.cloud.speech.v2.RecognitionOutputConfig.OutputCase getOutputCase();
 }

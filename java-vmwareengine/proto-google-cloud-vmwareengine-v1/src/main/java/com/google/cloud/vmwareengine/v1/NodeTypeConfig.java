@@ -45,11 +45,6 @@ public final class NodeTypeConfig extends com.google.protobuf.GeneratedMessageV3
     return new NodeTypeConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
         .internal_static_google_cloud_vmwareengine_v1_NodeTypeConfig_descriptor;

@@ -108,5 +108,5 @@ public interface AttributeValueOrBuilder
    */
   boolean getBoolValue();
 
-  public com.google.devtools.cloudtrace.v2.AttributeValue.ValueCase getValueCase();
+  com.google.devtools.cloudtrace.v2.AttributeValue.ValueCase getValueCase();
 }

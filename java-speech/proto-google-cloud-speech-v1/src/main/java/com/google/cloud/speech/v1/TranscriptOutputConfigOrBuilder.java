@@ -66,5 +66,5 @@ public interface TranscriptOutputConfigOrBuilder
    */
   com.google.protobuf.ByteString getGcsUriBytes();
 
-  public com.google.cloud.speech.v1.TranscriptOutputConfig.OutputTypeCase getOutputTypeCase();
+  com.google.cloud.speech.v1.TranscriptOutputConfig.OutputTypeCase getOutputTypeCase();
 }

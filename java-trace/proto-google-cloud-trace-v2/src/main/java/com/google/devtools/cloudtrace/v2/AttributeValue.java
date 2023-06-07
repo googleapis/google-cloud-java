@@ -45,11 +45,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     return new AttributeValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudtrace.v2.TraceProto
         .internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
@@ -66,6 +61,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object value_;
 
   public enum ValueCase

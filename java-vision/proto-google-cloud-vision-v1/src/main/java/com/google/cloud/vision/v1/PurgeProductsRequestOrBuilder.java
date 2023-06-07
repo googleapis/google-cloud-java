@@ -90,6 +90,7 @@ public interface PurgeProductsRequestOrBuilder
    *
    * <pre>
    * Required. The project and location in which the Products should be deleted.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
@@ -105,6 +106,7 @@ public interface PurgeProductsRequestOrBuilder
    *
    * <pre>
    * Required. The project and location in which the Products should be deleted.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
@@ -130,5 +132,5 @@ public interface PurgeProductsRequestOrBuilder
    */
   boolean getForce();
 
-  public com.google.cloud.vision.v1.PurgeProductsRequest.TargetCase getTargetCase();
+  com.google.cloud.vision.v1.PurgeProductsRequest.TargetCase getTargetCase();
 }

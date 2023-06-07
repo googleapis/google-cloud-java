@@ -28,6 +28,7 @@ public interface ListProductsInProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The ProductSet resource for which to retrieve Products.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -44,6 +45,7 @@ public interface ListProductsInProductSetRequestOrBuilder
    *
    * <pre>
    * Required. The ProductSet resource for which to retrieve Products.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>

@@ -108,6 +108,7 @@ public interface RecognizerOrBuilder
    * <pre>
    * Required. Which model to use for recognition requests. Select the model
    * best suited to your domain to get best results.
+   *
    * Guidance for choosing which model to use can be found in the [Transcription
    * Models
    * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
@@ -127,6 +128,7 @@ public interface RecognizerOrBuilder
    * <pre>
    * Required. Which model to use for recognition requests. Select the model
    * best suited to your domain to get best results.
+   *
    * Guidance for choosing which model to use can be found in the [Transcription
    * Models
    * Documentation](https://cloud.google.com/speech-to-text/v2/docs/transcription-model)
@@ -147,8 +149,10 @@ public interface RecognizerOrBuilder
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   *
    * Supported languages for each model are listed in the [Table of Supported
    * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -168,8 +172,10 @@ public interface RecognizerOrBuilder
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   *
    * Supported languages for each model are listed in the [Table of Supported
    * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -189,8 +195,10 @@ public interface RecognizerOrBuilder
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   *
    * Supported languages for each model are listed in the [Table of Supported
    * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -211,8 +219,10 @@ public interface RecognizerOrBuilder
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   *
    * Supported languages for each model are listed in the [Table of Supported
    * Models](https://cloud.google.com/speech-to-text/v2/docs/speech-to-text-supported-languages).
+   *
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.

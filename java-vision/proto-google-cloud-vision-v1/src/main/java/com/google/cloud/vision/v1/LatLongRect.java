@@ -45,11 +45,6 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
     return new LatLongRect();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_LatLongRect_descriptor;

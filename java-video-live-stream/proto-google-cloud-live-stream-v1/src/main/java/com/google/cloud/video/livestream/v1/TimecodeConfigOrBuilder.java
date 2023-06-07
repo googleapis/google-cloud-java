@@ -122,5 +122,5 @@ public interface TimecodeConfigOrBuilder
    */
   com.google.type.TimeZoneOrBuilder getTimeZoneOrBuilder();
 
-  public com.google.cloud.video.livestream.v1.TimecodeConfig.TimeOffsetCase getTimeOffsetCase();
+  com.google.cloud.video.livestream.v1.TimecodeConfig.TimeOffsetCase getTimeOffsetCase();
 }

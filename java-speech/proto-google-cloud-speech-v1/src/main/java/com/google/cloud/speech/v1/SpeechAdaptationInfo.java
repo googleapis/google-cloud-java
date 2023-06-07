@@ -47,11 +47,6 @@ public final class SpeechAdaptationInfo extends com.google.protobuf.GeneratedMes
     return new SpeechAdaptationInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechProto
         .internal_static_google_cloud_speech_v1_SpeechAdaptationInfo_descriptor;

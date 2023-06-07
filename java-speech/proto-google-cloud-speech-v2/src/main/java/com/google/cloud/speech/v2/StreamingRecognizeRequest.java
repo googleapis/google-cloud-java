@@ -61,11 +61,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     return new StreamingRecognizeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_StreamingRecognizeRequest_descriptor;
@@ -82,6 +77,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   }
 
   private int streamingRequestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object streamingRequest_;
 
   public enum StreamingRequestCase
@@ -138,6 +135,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. Streaming recognition should start with an initial request having
    * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+   *
    * The initial request with configuration can be omitted if the Recognizer
    * being used has a
    * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -167,6 +165,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. Streaming recognition should start with an initial request having
    * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+   *
    * The initial request with configuration can be omitted if the Recognizer
    * being used has a
    * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -745,6 +744,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. Streaming recognition should start with an initial request having
      * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+     *
      * The initial request with configuration can be omitted if the Recognizer
      * being used has a
      * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -773,6 +773,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. Streaming recognition should start with an initial request having
      * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+     *
      * The initial request with configuration can be omitted if the Recognizer
      * being used has a
      * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -801,6 +802,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. Streaming recognition should start with an initial request having
      * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+     *
      * The initial request with configuration can be omitted if the Recognizer
      * being used has a
      * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -828,6 +830,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. Streaming recognition should start with an initial request having
      * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+     *
      * The initial request with configuration can be omitted if the Recognizer
      * being used has a
      * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].
@@ -851,6 +854,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. Streaming recognition should start with an initial request having
      * a `recognizer`. Subsequent requests carry the audio data to be recognized.
+     *
      * The initial request with configuration can be omitted if the Recognizer
      * being used has a
      * [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config].

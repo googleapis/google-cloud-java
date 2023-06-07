@@ -50,11 +50,6 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     return new ListGroupsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
         .internal_static_google_cloud_vmmigration_v1_ListGroupsRequest_descriptor;
@@ -156,6 +151,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. A page token, received from a previous `ListGroups` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListGroups` must
    * match the call that provided the page token.
    * </pre>
@@ -182,6 +178,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. A page token, received from a previous `ListGroups` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListGroups` must
    * match the call that provided the page token.
    * </pre>
@@ -926,6 +923,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. A page token, received from a previous `ListGroups` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGroups` must
      * match the call that provided the page token.
      * </pre>
@@ -951,6 +949,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. A page token, received from a previous `ListGroups` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGroups` must
      * match the call that provided the page token.
      * </pre>
@@ -976,6 +975,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. A page token, received from a previous `ListGroups` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGroups` must
      * match the call that provided the page token.
      * </pre>
@@ -1000,6 +1000,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. A page token, received from a previous `ListGroups` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGroups` must
      * match the call that provided the page token.
      * </pre>
@@ -1020,6 +1021,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. A page token, received from a previous `ListGroups` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGroups` must
      * match the call that provided the page token.
      * </pre>

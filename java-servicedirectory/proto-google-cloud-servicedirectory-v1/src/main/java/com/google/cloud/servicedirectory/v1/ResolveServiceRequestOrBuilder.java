@@ -72,6 +72,7 @@ public interface ResolveServiceRequestOrBuilder
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -79,6 +80,7 @@ public interface ResolveServiceRequestOrBuilder
    * roughly the same as "=".
    * &lt;value&gt; must be the same data type as the field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the
    *   key "owner", this is the same as "metadata:owner"
@@ -99,6 +101,7 @@ public interface ResolveServiceRequestOrBuilder
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -106,6 +109,7 @@ public interface ResolveServiceRequestOrBuilder
    * roughly the same as "=".
    * &lt;value&gt; must be the same data type as the field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the
    *   key "owner", this is the same as "metadata:owner"

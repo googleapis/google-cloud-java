@@ -33,6 +33,7 @@ public interface SegmentSettingsOrBuilder
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -52,6 +53,7 @@ public interface SegmentSettingsOrBuilder
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -71,6 +73,7 @@ public interface SegmentSettingsOrBuilder
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>

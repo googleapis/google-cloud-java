@@ -251,5 +251,5 @@ public interface GlossaryOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
-  public com.google.cloud.translate.v3beta1.Glossary.LanguagesCase getLanguagesCase();
+  com.google.cloud.translate.v3beta1.Glossary.LanguagesCase getLanguagesCase();
 }

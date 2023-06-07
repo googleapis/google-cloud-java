@@ -47,11 +47,6 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
     return new DetectLanguageResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_DetectLanguageResponse_descriptor;

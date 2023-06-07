@@ -28,6 +28,7 @@ public interface ListReferenceImagesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the product containing the reference images.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
@@ -44,6 +45,7 @@ public interface ListReferenceImagesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the product containing the reference images.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
@@ -75,6 +77,7 @@ public interface ListReferenceImagesRequestOrBuilder
    * <pre>
    * A token identifying a page of results to be returned. This is the value
    * of `nextPageToken` returned in a previous reference image list request.
+   *
    * Defaults to the first page if not specified.
    * </pre>
    *
@@ -89,6 +92,7 @@ public interface ListReferenceImagesRequestOrBuilder
    * <pre>
    * A token identifying a page of results to be returned. This is the value
    * of `nextPageToken` returned in a previous reference image list request.
+   *
    * Defaults to the first page if not specified.
    * </pre>
    *

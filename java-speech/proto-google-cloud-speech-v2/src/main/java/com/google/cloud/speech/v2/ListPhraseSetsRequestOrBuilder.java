@@ -76,6 +76,7 @@ public interface ListPhraseSetsRequestOrBuilder
    * A page token, received from a previous
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] must match
    * the call that provided the page token.
@@ -93,6 +94,7 @@ public interface ListPhraseSetsRequestOrBuilder
    * A page token, received from a previous
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListPhraseSets][google.cloud.speech.v2.Speech.ListPhraseSets] must match
    * the call that provided the page token.

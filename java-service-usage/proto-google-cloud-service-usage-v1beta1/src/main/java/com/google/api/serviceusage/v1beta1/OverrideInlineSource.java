@@ -47,11 +47,6 @@ public final class OverrideInlineSource extends com.google.protobuf.GeneratedMes
     return new OverrideInlineSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_OverrideInlineSource_descriptor;

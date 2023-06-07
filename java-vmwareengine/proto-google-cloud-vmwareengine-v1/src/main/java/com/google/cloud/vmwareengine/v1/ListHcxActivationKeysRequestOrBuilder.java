@@ -84,6 +84,7 @@ public interface ListHcxActivationKeysRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListHcxActivationKeys` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListHcxActivationKeys` must match the call that provided the page
    * token.
@@ -100,6 +101,7 @@ public interface ListHcxActivationKeysRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListHcxActivationKeys` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListHcxActivationKeys` must match the call that provided the page
    * token.

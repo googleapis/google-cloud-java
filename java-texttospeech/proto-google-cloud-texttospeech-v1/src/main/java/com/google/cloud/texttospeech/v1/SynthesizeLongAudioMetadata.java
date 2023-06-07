@@ -45,11 +45,6 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
     return new SynthesizeLongAudioMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.texttospeech.v1.TextToSpeechLongAudioSynthesisProto
         .internal_static_google_cloud_texttospeech_v1_SynthesizeLongAudioMetadata_descriptor;

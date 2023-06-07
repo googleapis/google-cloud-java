@@ -47,11 +47,6 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
     return new NormalizedVertex();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.GeometryProto
         .internal_static_google_cloud_vision_v1_NormalizedVertex_descriptor;

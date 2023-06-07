@@ -47,11 +47,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     return new GcsSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3beta1.TranslationServiceProto
         .internal_static_google_cloud_translation_v3beta1_GcsSource_descriptor;

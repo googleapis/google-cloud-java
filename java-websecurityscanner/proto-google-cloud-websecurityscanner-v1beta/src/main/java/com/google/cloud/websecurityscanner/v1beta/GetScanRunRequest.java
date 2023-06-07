@@ -47,11 +47,6 @@ public final class GetScanRunRequest extends com.google.protobuf.GeneratedMessag
     return new GetScanRunRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerProto
         .internal_static_google_cloud_websecurityscanner_v1beta_GetScanRunRequest_descriptor;

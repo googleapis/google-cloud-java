@@ -55,11 +55,6 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return new MigratingVm();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
         .internal_static_google_cloud_vmmigration_v1_MigratingVm_descriptor;
@@ -454,6 +449,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int targetVmDefaultsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object targetVmDefaults_;
 
   public enum TargetVmDefaultsCase
@@ -498,6 +495,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceVmDetailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceVmDetails_;
 
   public enum SourceVmDetailsCase

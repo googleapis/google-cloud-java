@@ -50,11 +50,6 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     return new BatchEnableServicesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1_BatchEnableServicesResponse_descriptor;
@@ -153,11 +148,6 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EnableFailure();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

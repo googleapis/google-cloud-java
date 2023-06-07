@@ -51,11 +51,6 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     return new ListMigratingVmsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
         .internal_static_google_cloud_vmmigration_v1_ListMigratingVmsRequest_descriptor;
@@ -157,6 +152,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. A page token, received from a previous `ListMigratingVms` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigratingVms`
    * must match the call that provided the page token.
    * </pre>
@@ -183,6 +179,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. A page token, received from a previous `ListMigratingVms` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListMigratingVms`
    * must match the call that provided the page token.
    * </pre>
@@ -993,6 +990,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. A page token, received from a previous `ListMigratingVms` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigratingVms`
      * must match the call that provided the page token.
      * </pre>
@@ -1018,6 +1016,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. A page token, received from a previous `ListMigratingVms` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigratingVms`
      * must match the call that provided the page token.
      * </pre>
@@ -1043,6 +1042,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. A page token, received from a previous `ListMigratingVms` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigratingVms`
      * must match the call that provided the page token.
      * </pre>
@@ -1067,6 +1067,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. A page token, received from a previous `ListMigratingVms` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigratingVms`
      * must match the call that provided the page token.
      * </pre>
@@ -1087,6 +1088,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. A page token, received from a previous `ListMigratingVms` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListMigratingVms`
      * must match the call that provided the page token.
      * </pre>

@@ -45,11 +45,6 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     return new StreamingRecognitionConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_StreamingRecognitionConfig_descriptor;

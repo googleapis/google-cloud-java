@@ -57,11 +57,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     return new NetworkPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
         .internal_static_google_cloud_vmwareengine_v1_NetworkPolicy_descriptor;
@@ -157,11 +152,6 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NetworkService();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

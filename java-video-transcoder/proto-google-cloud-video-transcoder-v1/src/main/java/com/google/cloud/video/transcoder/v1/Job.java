@@ -51,11 +51,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return new Job();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_Job_descriptor;
@@ -451,6 +446,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobConfig_;
 
   public enum JobConfigCase
@@ -677,6 +674,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -693,6 +691,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -722,6 +721,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `template_id` to use for populating `Job.config`.
    * The default is `preset/web-hd`, which is the only supported preset.
+   *
    * User defined JobTemplate: `{job_template_id}`
    * </pre>
    *
@@ -2311,6 +2311,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2328,6 +2329,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2358,6 +2360,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2388,6 +2391,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2411,6 +2415,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *
@@ -2432,6 +2437,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `template_id` to use for populating `Job.config`.
      * The default is `preset/web-hd`, which is the only supported preset.
+     *
      * User defined JobTemplate: `{job_template_id}`
      * </pre>
      *

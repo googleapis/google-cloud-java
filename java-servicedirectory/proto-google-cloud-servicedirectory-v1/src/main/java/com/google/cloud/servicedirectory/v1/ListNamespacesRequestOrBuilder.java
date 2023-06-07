@@ -99,6 +99,7 @@ public interface ListNamespacesRequestOrBuilder
    *
    * <pre>
    * Optional. The filter to list result by.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
@@ -106,6 +107,7 @@ public interface ListNamespacesRequestOrBuilder
    * is roughly the same as "=".
    * &lt;value&gt; must be the same data type as field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "labels.owner" returns Namespaces that have a label with the key "owner"
    *   this is the same as "labels:owner".
@@ -131,6 +133,7 @@ public interface ListNamespacesRequestOrBuilder
    *
    * <pre>
    * Optional. The filter to list result by.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name", or "labels.&lt;key&gt;" for map field.
@@ -138,6 +141,7 @@ public interface ListNamespacesRequestOrBuilder
    * is roughly the same as "=".
    * &lt;value&gt; must be the same data type as field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "labels.owner" returns Namespaces that have a label with the key "owner"
    *   this is the same as "labels:owner".
@@ -164,6 +168,7 @@ public interface ListNamespacesRequestOrBuilder
    *
    * <pre>
    * Optional. The order to list result by.
+   *
    * General order by string syntax:
    * &lt;field&gt; (&lt;asc|desc&gt;) (,)
    * &lt;field&gt; allows values {"name"}
@@ -183,6 +188,7 @@ public interface ListNamespacesRequestOrBuilder
    *
    * <pre>
    * Optional. The order to list result by.
+   *
    * General order by string syntax:
    * &lt;field&gt; (&lt;asc|desc&gt;) (,)
    * &lt;field&gt; allows values {"name"}

@@ -29,6 +29,7 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * <pre>
    * The resource name of the parent quota limit, returned by a
    * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
    * </pre>
@@ -44,6 +45,7 @@ public interface CreateConsumerOverrideRequestOrBuilder
    * <pre>
    * The resource name of the parent quota limit, returned by a
    * ListConsumerQuotaMetrics or GetConsumerQuotaMetric call.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
    * </pre>

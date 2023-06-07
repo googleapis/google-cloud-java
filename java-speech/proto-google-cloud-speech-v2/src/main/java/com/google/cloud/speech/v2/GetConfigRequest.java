@@ -48,11 +48,6 @@ public final class GetConfigRequest extends com.google.protobuf.GeneratedMessage
     return new GetConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_GetConfigRequest_descriptor;

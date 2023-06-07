@@ -272,5 +272,5 @@ public interface GlossaryOrBuilder
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
-  public com.google.cloud.translate.v3.Glossary.LanguagesCase getLanguagesCase();
+  com.google.cloud.translate.v3.Glossary.LanguagesCase getLanguagesCase();
 }

@@ -48,11 +48,6 @@ public final class AddPublicKeyResponse extends com.google.protobuf.GeneratedMes
     return new AddPublicKeyResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.shell.v1.CloudShellProto
         .internal_static_google_cloud_shell_v1_AddPublicKeyResponse_descriptor;

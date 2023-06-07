@@ -48,11 +48,6 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
     return new GenerateServiceIdentityRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1beta1_GenerateServiceIdentityRequest_descriptor;
@@ -77,7 +72,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Name of the consumer and service to generate an identity for.
+   *
    * The `GenerateServiceIdentity` methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/example.googleapis.com` where `123` is the
    * project number.
@@ -104,7 +101,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Name of the consumer and service to generate an identity for.
+   *
    * The `GenerateServiceIdentity` methods currently only support projects.
+   *
    * An example name would be:
    * `projects/123/services/example.googleapis.com` where `123` is the
    * project number.
@@ -484,7 +483,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
+     *
      * The `GenerateServiceIdentity` methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/example.googleapis.com` where `123` is the
      * project number.
@@ -510,7 +511,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
+     *
      * The `GenerateServiceIdentity` methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/example.googleapis.com` where `123` is the
      * project number.
@@ -536,7 +539,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
+     *
      * The `GenerateServiceIdentity` methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/example.googleapis.com` where `123` is the
      * project number.
@@ -561,7 +566,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
+     *
      * The `GenerateServiceIdentity` methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/example.googleapis.com` where `123` is the
      * project number.
@@ -582,7 +589,9 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Name of the consumer and service to generate an identity for.
+     *
      * The `GenerateServiceIdentity` methods currently only support projects.
+     *
      * An example name would be:
      * `projects/123/services/example.googleapis.com` where `123` is the
      * project number.

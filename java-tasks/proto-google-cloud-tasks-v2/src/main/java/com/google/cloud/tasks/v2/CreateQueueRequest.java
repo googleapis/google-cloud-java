@@ -47,11 +47,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     return new CreateQueueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2.CloudTasksProto
         .internal_static_google_cloud_tasks_v2_CreateQueueRequest_descriptor;
@@ -77,6 +72,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+   *
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -106,6 +102,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+   *
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -137,6 +134,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create.
+   *
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
@@ -153,6 +151,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create.
+   *
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
@@ -169,6 +168,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create.
+   *
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
@@ -558,6 +558,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -586,6 +587,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -614,6 +616,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -641,6 +644,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -664,6 +668,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The location name in which the queue will be created.
      * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+     *
      * The list of allowed locations can be obtained by calling Cloud
      * Tasks' implementation of
      * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -698,6 +703,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -714,6 +720,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -734,6 +741,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -758,6 +766,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -779,6 +788,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -806,6 +816,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -827,6 +838,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -843,6 +855,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *
@@ -861,6 +874,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create.
+     *
      * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
      * </pre>
      *

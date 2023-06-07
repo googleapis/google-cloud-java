@@ -28,6 +28,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    *
    * <pre>
    * Parent of the quotas resource.
+   *
    * Some example names would be:
    * `projects/123/services/serviceconsumermanagement.googleapis.com`
    * `folders/345/services/serviceconsumermanagement.googleapis.com`
@@ -44,6 +45,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    *
    * <pre>
    * Parent of the quotas resource.
+   *
    * Some example names would be:
    * `projects/123/services/serviceconsumermanagement.googleapis.com`
    * `folders/345/services/serviceconsumermanagement.googleapis.com`

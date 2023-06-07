@@ -47,11 +47,6 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
     return new ListVoicesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.texttospeech.v1.TextToSpeechProto
         .internal_static_google_cloud_texttospeech_v1_ListVoicesResponse_descriptor;

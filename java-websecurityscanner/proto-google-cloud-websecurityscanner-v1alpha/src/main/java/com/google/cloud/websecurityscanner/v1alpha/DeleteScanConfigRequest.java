@@ -47,11 +47,6 @@ public final class DeleteScanConfigRequest extends com.google.protobuf.Generated
     return new DeleteScanConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
         .internal_static_google_cloud_websecurityscanner_v1alpha_DeleteScanConfigRequest_descriptor;

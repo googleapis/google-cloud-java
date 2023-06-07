@@ -84,6 +84,7 @@ public interface ListSubnetsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListSubnetsRequest` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListSubnetsRequest` must match the call that provided the page token.
    * </pre>
@@ -99,6 +100,7 @@ public interface ListSubnetsRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListSubnetsRequest` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListSubnetsRequest` must match the call that provided the page token.
    * </pre>

@@ -103,6 +103,6 @@ public interface StreamingRecognizeRequestOrBuilder
    */
   com.google.protobuf.ByteString getAudioContent();
 
-  public com.google.cloud.speech.v1.StreamingRecognizeRequest.StreamingRequestCase
+  com.google.cloud.speech.v1.StreamingRecognizeRequest.StreamingRequestCase
       getStreamingRequestCase();
 }

@@ -47,11 +47,6 @@ public final class GetConnectorRequest extends com.google.protobuf.GeneratedMess
     return new GetConnectorRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vpcaccess.v1.VpcAccessProto
         .internal_static_google_cloud_vpcaccess_v1_GetConnectorRequest_descriptor;

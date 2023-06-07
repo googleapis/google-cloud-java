@@ -28,7 +28,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * The codec for this text stream. The default is `webvtt`.
+   *
    * Supported text codecs:
+   *
    * - `srt`
    * - `ttml`
    * - `cea608`
@@ -46,7 +48,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * The codec for this text stream. The default is `webvtt`.
+   *
    * Supported text codecs:
+   *
    * - `srt`
    * - `ttml`
    * - `cea608`

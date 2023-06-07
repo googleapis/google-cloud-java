@@ -57,6 +57,7 @@ public interface GetServiceConfigRequestOrBuilder
    *
    * <pre>
    * Required. The id of the service configuration resource.
+   *
    * This field must be specified for the server to return all fields, including
    * `SourceInfo`.
    * </pre>
@@ -71,6 +72,7 @@ public interface GetServiceConfigRequestOrBuilder
    *
    * <pre>
    * Required. The id of the service configuration resource.
+   *
    * This field must be specified for the server to return all fields, including
    * `SourceInfo`.
    * </pre>

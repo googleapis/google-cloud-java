@@ -50,11 +50,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     return new TranscriptNormalization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechResourceProto
         .internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor;
@@ -166,11 +161,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Entry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

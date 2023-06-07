@@ -49,11 +49,6 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     return new SynthesizeLongAudioRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.texttospeech.v1beta1.TextToSpeechLongAudioSynthesisProto
         .internal_static_google_cloud_texttospeech_v1beta1_SynthesizeLongAudioRequest_descriptor;

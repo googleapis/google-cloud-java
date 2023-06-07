@@ -47,11 +47,6 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
     return new TimecodeConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.OutputsProto
         .internal_static_google_cloud_video_livestream_v1_TimecodeConfig_descriptor;
@@ -227,6 +222,8 @@ public final class TimecodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int timeOffsetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object timeOffset_;
 
   public enum TimeOffsetCase

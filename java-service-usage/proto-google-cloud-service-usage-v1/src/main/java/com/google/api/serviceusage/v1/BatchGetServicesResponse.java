@@ -47,11 +47,6 @@ public final class BatchGetServicesResponse extends com.google.protobuf.Generate
     return new BatchGetServicesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1_BatchGetServicesResponse_descriptor;

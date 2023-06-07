@@ -769,7 +769,7 @@ public interface OperationMetadataOrBuilder
    */
   com.google.cloud.speech.v2.BatchRecognizeMetadataOrBuilder getBatchRecognizeMetadataOrBuilder();
 
-  public com.google.cloud.speech.v2.OperationMetadata.RequestCase getRequestCase();
+  com.google.cloud.speech.v2.OperationMetadata.RequestCase getRequestCase();
 
-  public com.google.cloud.speech.v2.OperationMetadata.MetadataCase getMetadataCase();
+  com.google.cloud.speech.v2.OperationMetadata.MetadataCase getMetadataCase();
 }

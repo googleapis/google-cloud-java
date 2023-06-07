@@ -28,7 +28,9 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
@@ -43,7 +45,9 @@ public interface TranslateTextGlossaryConfigOrBuilder
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>

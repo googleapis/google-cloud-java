@@ -47,11 +47,6 @@ public final class GetFindingRequest extends com.google.protobuf.GeneratedMessag
     return new GetFindingRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.WebSecurityScannerProto
         .internal_static_google_cloud_websecurityscanner_v1_GetFindingRequest_descriptor;

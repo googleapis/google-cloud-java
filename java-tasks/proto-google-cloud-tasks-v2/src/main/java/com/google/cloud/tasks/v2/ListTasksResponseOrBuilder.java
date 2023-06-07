@@ -79,9 +79,11 @@ public interface ListTasksResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
+   *
    * To return the next page of results, call
    * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
    * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+   *
    * If the next_page_token is empty, there are no more results.
    * </pre>
    *
@@ -95,9 +97,11 @@ public interface ListTasksResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
+   *
    * To return the next page of results, call
    * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] with this value as the
    * [page_token][google.cloud.tasks.v2.ListTasksRequest.page_token].
+   *
    * If the next_page_token is empty, there are no more results.
    * </pre>
    *

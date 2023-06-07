@@ -153,6 +153,6 @@ public interface ElementaryStreamOrBuilder
    */
   com.google.cloud.video.transcoder.v1.TextStreamOrBuilder getTextStreamOrBuilder();
 
-  public com.google.cloud.video.transcoder.v1.ElementaryStream.ElementaryStreamCase
+  com.google.cloud.video.transcoder.v1.ElementaryStream.ElementaryStreamCase
       getElementaryStreamCase();
 }

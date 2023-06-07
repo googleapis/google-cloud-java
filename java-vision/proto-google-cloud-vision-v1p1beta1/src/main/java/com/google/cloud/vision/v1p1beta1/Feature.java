@@ -51,11 +51,6 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     return new Feature();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p1beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p1beta1_Feature_descriptor;

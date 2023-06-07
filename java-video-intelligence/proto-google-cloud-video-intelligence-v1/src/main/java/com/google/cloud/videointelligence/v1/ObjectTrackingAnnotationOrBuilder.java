@@ -236,6 +236,5 @@ public interface ObjectTrackingAnnotationOrBuilder
    */
   com.google.protobuf.ByteString getVersionBytes();
 
-  public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.TrackInfoCase
-      getTrackInfoCase();
+  com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.TrackInfoCase getTrackInfoCase();
 }

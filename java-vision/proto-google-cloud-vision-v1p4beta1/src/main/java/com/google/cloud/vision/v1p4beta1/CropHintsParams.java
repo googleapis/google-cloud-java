@@ -47,11 +47,6 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
     return new CropHintsParams();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p4beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p4beta1_CropHintsParams_descriptor;

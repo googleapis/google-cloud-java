@@ -50,11 +50,6 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     return new ConsumerQuotaLimit();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_ConsumerQuotaLimit_descriptor;
@@ -79,8 +74,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -106,8 +103,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -138,6 +137,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The name of the parent metric of this limit.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -163,6 +163,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The name of the parent metric of this limit.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -193,6 +194,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The limit unit.
+   *
    * An example unit would be
    * `1/{project}/{region}`
    * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -220,6 +222,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The limit unit.
+   *
    * An example unit would be
    * `1/{project}/{region}`
    * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -875,8 +878,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The resource name of the quota limit.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -901,8 +906,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The resource name of the quota limit.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -927,8 +934,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The resource name of the quota limit.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -952,8 +961,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The resource name of the quota limit.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -973,8 +984,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The resource name of the quota limit.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -1001,6 +1014,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the parent metric of this limit.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1025,6 +1039,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the parent metric of this limit.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1049,6 +1064,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the parent metric of this limit.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1072,6 +1088,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the parent metric of this limit.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1091,6 +1108,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The name of the parent metric of this limit.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1117,6 +1135,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The limit unit.
+     *
      * An example unit would be
      * `1/{project}/{region}`
      * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -1143,6 +1162,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The limit unit.
+     *
      * An example unit would be
      * `1/{project}/{region}`
      * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -1169,6 +1189,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The limit unit.
+     *
      * An example unit would be
      * `1/{project}/{region}`
      * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -1194,6 +1215,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The limit unit.
+     *
      * An example unit would be
      * `1/{project}/{region}`
      * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -1215,6 +1237,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The limit unit.
+     *
      * An example unit would be
      * `1/{project}/{region}`
      * Note that `{project}` and `{region}` are not placeholders in this example;

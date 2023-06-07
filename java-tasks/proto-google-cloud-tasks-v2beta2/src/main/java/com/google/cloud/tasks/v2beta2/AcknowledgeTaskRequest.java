@@ -48,11 +48,6 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
     return new AcknowledgeTaskRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta2.CloudTasksProto
         .internal_static_google_cloud_tasks_v2beta2_AcknowledgeTaskRequest_descriptor;

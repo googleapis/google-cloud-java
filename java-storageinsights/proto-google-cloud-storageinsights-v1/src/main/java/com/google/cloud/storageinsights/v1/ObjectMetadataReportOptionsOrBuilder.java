@@ -151,8 +151,8 @@ public interface ObjectMetadataReportOptionsOrBuilder
   com.google.cloud.storageinsights.v1.CloudStorageDestinationOptionsOrBuilder
       getStorageDestinationOptionsOrBuilder();
 
-  public com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.FilterCase getFilterCase();
+  com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.FilterCase getFilterCase();
 
-  public com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.DestinationOptionsCase
+  com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions.DestinationOptionsCase
       getDestinationOptionsCase();
 }

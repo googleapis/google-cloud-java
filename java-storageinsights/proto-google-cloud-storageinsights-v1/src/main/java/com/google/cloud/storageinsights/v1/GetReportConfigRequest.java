@@ -47,11 +47,6 @@ public final class GetReportConfigRequest extends com.google.protobuf.GeneratedM
     return new GetReportConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.storageinsights.v1.V1Proto
         .internal_static_google_cloud_storageinsights_v1_GetReportConfigRequest_descriptor;

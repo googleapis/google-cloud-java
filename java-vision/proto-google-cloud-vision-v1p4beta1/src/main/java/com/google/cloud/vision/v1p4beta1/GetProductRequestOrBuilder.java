@@ -28,6 +28,7 @@ public interface GetProductRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the Product to get.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>
@@ -44,6 +45,7 @@ public interface GetProductRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the Product to get.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * </pre>

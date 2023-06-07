@@ -76,6 +76,7 @@ public interface ListRecognizersRequestOrBuilder
    * A page token, received from a previous
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
    * the call that provided the page token.
@@ -93,6 +94,7 @@ public interface ListRecognizersRequestOrBuilder
    * A page token, received from a previous
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
    * the call that provided the page token.

@@ -28,6 +28,7 @@ public interface ImportProductSetsRequestOrBuilder
    *
    * <pre>
    * Required. The project in which the ProductSets should be imported.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ImportProductSetsRequestOrBuilder
    *
    * <pre>
    * Required. The project in which the ProductSets should be imported.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *

@@ -46,11 +46,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     return new RecognitionConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_RecognitionConfig_descriptor;
@@ -67,6 +62,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   }
 
   private int decodingConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object decodingConfig_;
 
   public enum DecodingConfigCase

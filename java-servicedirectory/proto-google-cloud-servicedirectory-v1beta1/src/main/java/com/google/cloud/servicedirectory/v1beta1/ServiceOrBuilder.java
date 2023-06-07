@@ -56,7 +56,9 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -72,6 +74,7 @@ public interface ServiceOrBuilder
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -86,7 +89,9 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -102,6 +107,7 @@ public interface ServiceOrBuilder
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -119,7 +125,9 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -135,6 +143,7 @@ public interface ServiceOrBuilder
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -149,7 +158,9 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -165,6 +176,7 @@ public interface ServiceOrBuilder
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
@@ -183,7 +195,9 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Metadata for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
+   *
    * *   The entire metadata dictionary may contain up to 2000 characters,
    *     spread accoss all key-value pairs. Metadata that goes beyond this
    *     limit are rejected
@@ -199,6 +213,7 @@ public interface ServiceOrBuilder
    *     for system metadata managed by Service Directory. If the user tries
    *     to write to these keyspaces, those entries are silently ignored by
    *     the system
+   *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.

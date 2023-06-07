@@ -266,5 +266,5 @@ public interface RecognizeRequestOrBuilder
    */
   com.google.protobuf.ByteString getUriBytes();
 
-  public com.google.cloud.speech.v2.RecognizeRequest.AudioSourceCase getAudioSourceCase();
+  com.google.cloud.speech.v2.RecognizeRequest.AudioSourceCase getAudioSourceCase();
 }

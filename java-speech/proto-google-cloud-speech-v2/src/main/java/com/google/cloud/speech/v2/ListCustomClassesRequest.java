@@ -49,11 +49,6 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
     return new ListCustomClassesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_ListCustomClassesRequest_descriptor;
@@ -158,6 +153,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    * A page token, received from a previous
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
    * match the call that provided the page token.
@@ -186,6 +182,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    * A page token, received from a previous
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
    * match the call that provided the page token.
@@ -828,6 +825,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -855,6 +853,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -882,6 +881,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -908,6 +908,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.
@@ -930,6 +931,7 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * A page token, received from a previous
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListCustomClasses][google.cloud.speech.v2.Speech.ListCustomClasses] must
      * match the call that provided the page token.

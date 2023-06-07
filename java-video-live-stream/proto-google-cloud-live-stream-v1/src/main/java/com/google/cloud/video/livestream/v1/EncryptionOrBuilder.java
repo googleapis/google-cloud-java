@@ -238,7 +238,7 @@ public interface EncryptionOrBuilder
   com.google.cloud.video.livestream.v1.Encryption.MpegCommonEncryptionOrBuilder
       getMpegCencOrBuilder();
 
-  public com.google.cloud.video.livestream.v1.Encryption.SecretSourceCase getSecretSourceCase();
+  com.google.cloud.video.livestream.v1.Encryption.SecretSourceCase getSecretSourceCase();
 
-  public com.google.cloud.video.livestream.v1.Encryption.EncryptionModeCase getEncryptionModeCase();
+  com.google.cloud.video.livestream.v1.Encryption.EncryptionModeCase getEncryptionModeCase();
 }

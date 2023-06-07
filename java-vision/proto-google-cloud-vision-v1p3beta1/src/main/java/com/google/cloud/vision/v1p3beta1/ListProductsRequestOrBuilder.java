@@ -28,6 +28,7 @@ public interface ListProductsRequestOrBuilder
    *
    * <pre>
    * Required. The project OR ProductSet from which Products should be listed.
+   *
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>
@@ -44,6 +45,7 @@ public interface ListProductsRequestOrBuilder
    *
    * <pre>
    * Required. The project OR ProductSet from which Products should be listed.
+   *
    * Format:
    * `projects/PROJECT_ID/locations/LOC_ID`
    * </pre>

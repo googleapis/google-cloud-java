@@ -50,11 +50,6 @@ public final class ListJobTemplatesRequest extends com.google.protobuf.Generated
     return new ListJobTemplatesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ServicesProto
         .internal_static_google_cloud_video_transcoder_v1_ListJobTemplatesRequest_descriptor;

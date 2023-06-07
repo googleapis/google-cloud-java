@@ -28,6 +28,7 @@ public interface UpdatePhraseSetRequestOrBuilder
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdatePhraseSetRequestOrBuilder
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdatePhraseSetRequestOrBuilder
    *
    * <pre>
    * Required. The PhraseSet to update.
+   *
    * The PhraseSet's `name` field is used to identify the PhraseSet to update.
    * Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * </pre>

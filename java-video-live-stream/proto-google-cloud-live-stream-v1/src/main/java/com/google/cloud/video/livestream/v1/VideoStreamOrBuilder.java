@@ -58,5 +58,5 @@ public interface VideoStreamOrBuilder
    */
   com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettingsOrBuilder getH264OrBuilder();
 
-  public com.google.cloud.video.livestream.v1.VideoStream.CodecSettingsCase getCodecSettingsCase();
+  com.google.cloud.video.livestream.v1.VideoStream.CodecSettingsCase getCodecSettingsCase();
 }

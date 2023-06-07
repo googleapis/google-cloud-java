@@ -49,11 +49,6 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
     return new ListServiceRolloutsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicemanagement.v1.ServiceManagerProto
         .internal_static_google_api_servicemanagement_v1_ListServiceRolloutsRequest_descriptor;

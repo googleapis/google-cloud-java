@@ -45,11 +45,6 @@ public final class TranscriptOutputConfig extends com.google.protobuf.GeneratedM
     return new TranscriptOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto
         .internal_static_google_cloud_speech_v1p1beta1_TranscriptOutputConfig_descriptor;
@@ -66,6 +61,8 @@ public final class TranscriptOutputConfig extends com.google.protobuf.GeneratedM
   }
 
   private int outputTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object outputType_;
 
   public enum OutputTypeCase

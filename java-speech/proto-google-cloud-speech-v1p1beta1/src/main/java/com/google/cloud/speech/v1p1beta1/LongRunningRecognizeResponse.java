@@ -51,11 +51,6 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     return new LongRunningRecognizeResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto
         .internal_static_google_cloud_speech_v1p1beta1_LongRunningRecognizeResponse_descriptor;

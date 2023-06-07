@@ -47,11 +47,6 @@ public final class ListFindingTypeStatsRequest extends com.google.protobuf.Gener
     return new ListFindingTypeStatsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.WebSecurityScannerProto
         .internal_static_google_cloud_websecurityscanner_v1_ListFindingTypeStatsRequest_descriptor;

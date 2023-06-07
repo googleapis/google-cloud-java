@@ -74,6 +74,7 @@ public interface ListDatacenterConnectorsRequestOrBuilder
    * <pre>
    * Required. A page token, received from a previous `ListDatacenterConnectors`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDatacenterConnectors` must match the call that provided the page
    * token.
@@ -90,6 +91,7 @@ public interface ListDatacenterConnectorsRequestOrBuilder
    * <pre>
    * Required. A page token, received from a previous `ListDatacenterConnectors`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDatacenterConnectors` must match the call that provided the page
    * token.

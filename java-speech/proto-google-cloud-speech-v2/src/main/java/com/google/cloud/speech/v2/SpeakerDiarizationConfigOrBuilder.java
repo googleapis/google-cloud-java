@@ -30,6 +30,7 @@ public interface SpeakerDiarizationConfigOrBuilder
    * Required. Minimum number of speakers in the conversation. This range gives
    * you more flexibility by allowing the system to automatically determine the
    * correct number of speakers.
+   *
    * To fix the number of speakers detected in the audio, set
    * `min_speaker_count` = `max_speaker_count`.
    * </pre>

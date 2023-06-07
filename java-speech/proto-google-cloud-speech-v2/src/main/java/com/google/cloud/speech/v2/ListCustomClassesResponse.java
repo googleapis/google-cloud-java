@@ -49,11 +49,6 @@ public final class ListCustomClassesResponse extends com.google.protobuf.Generat
     return new ListCustomClassesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_ListCustomClassesResponse_descriptor;

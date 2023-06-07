@@ -187,5 +187,5 @@ public interface BatchRecognizeFileMetadataOrBuilder
    */
   com.google.protobuf.FieldMaskOrBuilder getConfigMaskOrBuilder();
 
-  public com.google.cloud.speech.v2.BatchRecognizeFileMetadata.AudioSourceCase getAudioSourceCase();
+  com.google.cloud.speech.v2.BatchRecognizeFileMetadata.AudioSourceCase getAudioSourceCase();
 }

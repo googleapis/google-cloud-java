@@ -51,11 +51,6 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     return new EntityAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_EntityAnnotation_descriptor;

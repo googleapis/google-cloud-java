@@ -49,11 +49,6 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     return new ThreatInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1_ThreatInfo_descriptor;
@@ -318,7 +313,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.webrisk.v1.ThreatInfo.Confidence.ConfidenceLevel getLevel();
 
-    public com.google.webrisk.v1.ThreatInfo.Confidence.ValueCase getValueCase();
+    com.google.webrisk.v1.ThreatInfo.Confidence.ValueCase getValueCase();
   }
   /**
    *
@@ -345,11 +340,6 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Confidence();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -550,6 +540,8 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int valueCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object value_;
 
     public enum ValueCase
@@ -1511,18 +1503,13 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
 
     private ThreatJustification() {
       labels_ = java.util.Collections.emptyList();
-      comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      comments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ThreatJustification();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1846,7 +1833,8 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMENTS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList comments_;
+    private com.google.protobuf.LazyStringArrayList comments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2141,8 +2129,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         labels_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        comments_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2185,15 +2172,14 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.labels_ = labels_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          comments_ = comments_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.comments_ = comments_;
       }
 
       private void buildPartial0(com.google.webrisk.v1.ThreatInfo.ThreatJustification result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          comments_.makeImmutable();
+          result.comments_ = comments_;
+        }
       }
 
       @java.lang.Override
@@ -2257,7 +2243,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         if (!other.comments_.isEmpty()) {
           if (comments_.isEmpty()) {
             comments_ = other.comments_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureCommentsIsMutable();
             comments_.addAll(other.comments_);
@@ -2589,14 +2575,14 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList comments_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList comments_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCommentsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!comments_.isModifiable()) {
           comments_ = new com.google.protobuf.LazyStringArrayList(comments_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -2610,7 +2596,8 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the comments.
        */
       public com.google.protobuf.ProtocolStringList getCommentsList() {
-        return comments_.getUnmodifiableView();
+        comments_.makeImmutable();
+        return comments_;
       }
       /**
        *
@@ -2675,6 +2662,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCommentsIsMutable();
         comments_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2696,6 +2684,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCommentsIsMutable();
         comments_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2714,6 +2703,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllComments(java.lang.Iterable<java.lang.String> values) {
         ensureCommentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, comments_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2729,8 +2719,9 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearComments() {
-        comments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        comments_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -2753,6 +2744,7 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureCommentsIsMutable();
         comments_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

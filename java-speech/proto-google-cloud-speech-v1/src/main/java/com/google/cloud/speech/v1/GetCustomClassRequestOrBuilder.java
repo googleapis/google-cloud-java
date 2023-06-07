@@ -28,6 +28,7 @@ public interface GetCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The name of the custom class to retrieve. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The name of the custom class to retrieve. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *

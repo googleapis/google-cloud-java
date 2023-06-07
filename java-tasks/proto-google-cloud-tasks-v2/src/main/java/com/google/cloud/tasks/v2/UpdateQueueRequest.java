@@ -45,11 +45,6 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateQueueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2.CloudTasksProto
         .internal_static_google_cloud_tasks_v2_UpdateQueueRequest_descriptor;
@@ -72,7 +67,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -91,7 +88,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -110,7 +109,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The queue to create or update.
+   *
    * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -130,6 +131,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -146,6 +148,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -162,6 +165,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
+   *
    * If empty, then all fields will be updated.
    * </pre>
    *
@@ -562,7 +566,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -581,7 +587,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -604,7 +612,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -631,7 +641,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -655,7 +667,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -685,7 +699,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -709,7 +725,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -728,7 +746,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -749,7 +769,9 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The queue to create or update.
+     *
      * The queue's [name][google.cloud.tasks.v2.Queue.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2.Queue.name] cannot be changed.
@@ -786,6 +808,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -801,6 +824,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -822,6 +846,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -845,6 +870,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -865,6 +891,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -891,6 +918,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -911,6 +939,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -926,6 +955,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *
@@ -945,6 +975,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A mask used to specify which fields of the queue are being updated.
+     *
      * If empty, then all fields will be updated.
      * </pre>
      *

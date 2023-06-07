@@ -28,6 +28,7 @@ public interface GetReferenceImageRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the ReferenceImage to get.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * </pre>
@@ -44,6 +45,7 @@ public interface GetReferenceImageRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the ReferenceImage to get.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * </pre>

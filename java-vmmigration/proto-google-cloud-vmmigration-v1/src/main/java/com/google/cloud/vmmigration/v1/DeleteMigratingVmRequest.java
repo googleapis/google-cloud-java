@@ -47,11 +47,6 @@ public final class DeleteMigratingVmRequest extends com.google.protobuf.Generate
     return new DeleteMigratingVmRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
         .internal_static_google_cloud_vmmigration_v1_DeleteMigratingVmRequest_descriptor;

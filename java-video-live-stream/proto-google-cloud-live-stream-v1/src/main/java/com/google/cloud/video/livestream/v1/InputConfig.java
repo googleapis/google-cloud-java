@@ -47,11 +47,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return new InputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.ResourcesProto
         .internal_static_google_cloud_video_livestream_v1_InputConfig_descriptor;

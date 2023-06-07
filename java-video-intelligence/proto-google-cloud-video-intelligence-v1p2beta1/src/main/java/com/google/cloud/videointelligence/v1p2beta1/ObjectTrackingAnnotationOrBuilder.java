@@ -198,6 +198,6 @@ public interface ObjectTrackingAnnotationOrBuilder
   com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrameOrBuilder getFramesOrBuilder(
       int index);
 
-  public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingAnnotation.TrackInfoCase
+  com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingAnnotation.TrackInfoCase
       getTrackInfoCase();
 }

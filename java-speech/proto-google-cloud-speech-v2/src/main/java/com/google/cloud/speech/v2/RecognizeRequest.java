@@ -51,11 +51,6 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     return new RecognizeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_RecognizeRequest_descriptor;
@@ -72,6 +67,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
   }
 
   private int audioSourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object audioSource_;
 
   public enum AudioSourceCase

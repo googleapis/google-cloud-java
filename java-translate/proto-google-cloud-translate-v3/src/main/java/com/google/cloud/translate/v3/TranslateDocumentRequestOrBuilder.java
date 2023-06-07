@@ -28,11 +28,15 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Non-global location is required for requests using AutoML models or custom
    * glossaries.
+   *
    * Models and glossaries must be within the same region (have the same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -47,11 +51,15 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Required. Location to make a regional call.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Non-global location is required for requests using AutoML models or custom
    * glossaries.
+   *
    * Models and glossaries must be within the same region (have the same
    * location-id), otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -223,11 +231,16 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
+   *
    * The format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If not provided, the default Google model (NMT) will be used for
    * translation.
    * </pre>
@@ -242,11 +255,16 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The `model` type requested for this translation.
+   *
    * The format depends on model type:
+   *
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
+   *
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *
+   *
    * If not provided, the default Google model (NMT) will be used for
    * translation.
    * </pre>
@@ -309,10 +327,12 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -325,10 +345,12 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -344,10 +366,12 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -360,10 +384,12 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -380,10 +406,12 @@ public interface TranslateDocumentRequestOrBuilder
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters (Unicode
    * codepoints), can only contain lowercase letters, numeric characters,
    * underscores and dashes. International characters are allowed. Label values
    * are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>

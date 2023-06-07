@@ -772,7 +772,7 @@ public interface MigratingVmOrBuilder
    */
   com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getRecentCutoverJobsOrBuilder(int index);
 
-  public com.google.cloud.vmmigration.v1.MigratingVm.TargetVmDefaultsCase getTargetVmDefaultsCase();
+  com.google.cloud.vmmigration.v1.MigratingVm.TargetVmDefaultsCase getTargetVmDefaultsCase();
 
-  public com.google.cloud.vmmigration.v1.MigratingVm.SourceVmDetailsCase getSourceVmDetailsCase();
+  com.google.cloud.vmmigration.v1.MigratingVm.SourceVmDetailsCase getSourceVmDetailsCase();
 }

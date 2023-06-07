@@ -68,6 +68,7 @@ public interface CreateClusterRequestOrBuilder
    * This identifier must be unique among clusters within the parent and becomes
    * the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -89,6 +90,7 @@ public interface CreateClusterRequestOrBuilder
    * This identifier must be unique among clusters within the parent and becomes
    * the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character

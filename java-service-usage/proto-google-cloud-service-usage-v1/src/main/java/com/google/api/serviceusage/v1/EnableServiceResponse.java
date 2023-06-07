@@ -47,11 +47,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
     return new EnableServiceResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1_EnableServiceResponse_descriptor;

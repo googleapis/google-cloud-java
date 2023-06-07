@@ -91,6 +91,7 @@ public interface DocumentInputConfigOrBuilder
    *
    * <pre>
    * Specifies the input document's mime_type.
+   *
    * If not specified it will be determined using the file extension for
    * gcs_source provided files. For a file provided through bytes content the
    * mime_type must be provided.
@@ -111,6 +112,7 @@ public interface DocumentInputConfigOrBuilder
    *
    * <pre>
    * Specifies the input document's mime_type.
+   *
    * If not specified it will be determined using the file extension for
    * gcs_source provided files. For a file provided through bytes content the
    * mime_type must be provided.
@@ -127,5 +129,5 @@ public interface DocumentInputConfigOrBuilder
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
-  public com.google.cloud.translate.v3beta1.DocumentInputConfig.SourceCase getSourceCase();
+  com.google.cloud.translate.v3beta1.DocumentInputConfig.SourceCase getSourceCase();
 }

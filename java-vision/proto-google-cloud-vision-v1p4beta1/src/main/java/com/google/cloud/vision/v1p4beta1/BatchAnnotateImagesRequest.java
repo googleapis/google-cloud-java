@@ -47,11 +47,6 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
     return new BatchAnnotateImagesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p4beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p4beta1_BatchAnnotateImagesRequest_descriptor;

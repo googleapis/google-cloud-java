@@ -29,6 +29,7 @@ public interface CreateQueueRequestOrBuilder
    * <pre>
    * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+   *
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -47,6 +48,7 @@ public interface CreateQueueRequestOrBuilder
    * <pre>
    * Required. The location name in which the queue will be created.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
+   *
    * The list of allowed locations can be obtained by calling Cloud
    * Tasks' implementation of
    * [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -65,6 +67,7 @@ public interface CreateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create.
+   *
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
@@ -78,6 +81,7 @@ public interface CreateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create.
+   *
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *
@@ -91,6 +95,7 @@ public interface CreateQueueRequestOrBuilder
    *
    * <pre>
    * Required. The queue to create.
+   *
    * [Queue's name][google.cloud.tasks.v2.Queue.name] cannot be the same as an existing queue.
    * </pre>
    *

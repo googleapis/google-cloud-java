@@ -45,11 +45,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     return new OutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_OutputConfig_descriptor;
@@ -124,10 +119,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * The max number of response protos to put into each output JSON file on
    * Google Cloud Storage.
    * The valid range is [1, 100]. If not specified, the default value is 20.
+   *
    * For example, for one pdf file with 100 pages, 100 response protos will
    * be generated. If `batch_size` = 20, then 5 json files each
    * containing 20 response protos will be written under the prefix
    * `gcs_destination`.`uri`.
+   *
    * Currently, batch_size only applies to GcsDestination, with potential future
    * support for other output configurations.
    * </pre>
@@ -703,10 +700,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The max number of response protos to put into each output JSON file on
      * Google Cloud Storage.
      * The valid range is [1, 100]. If not specified, the default value is 20.
+     *
      * For example, for one pdf file with 100 pages, 100 response protos will
      * be generated. If `batch_size` = 20, then 5 json files each
      * containing 20 response protos will be written under the prefix
      * `gcs_destination`.`uri`.
+     *
      * Currently, batch_size only applies to GcsDestination, with potential future
      * support for other output configurations.
      * </pre>
@@ -726,10 +725,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The max number of response protos to put into each output JSON file on
      * Google Cloud Storage.
      * The valid range is [1, 100]. If not specified, the default value is 20.
+     *
      * For example, for one pdf file with 100 pages, 100 response protos will
      * be generated. If `batch_size` = 20, then 5 json files each
      * containing 20 response protos will be written under the prefix
      * `gcs_destination`.`uri`.
+     *
      * Currently, batch_size only applies to GcsDestination, with potential future
      * support for other output configurations.
      * </pre>
@@ -753,10 +754,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * The max number of response protos to put into each output JSON file on
      * Google Cloud Storage.
      * The valid range is [1, 100]. If not specified, the default value is 20.
+     *
      * For example, for one pdf file with 100 pages, 100 response protos will
      * be generated. If `batch_size` = 20, then 5 json files each
      * containing 20 response protos will be written under the prefix
      * `gcs_destination`.`uri`.
+     *
      * Currently, batch_size only applies to GcsDestination, with potential future
      * support for other output configurations.
      * </pre>

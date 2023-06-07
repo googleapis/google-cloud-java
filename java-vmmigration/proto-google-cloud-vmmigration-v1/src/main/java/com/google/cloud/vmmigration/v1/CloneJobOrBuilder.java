@@ -336,5 +336,5 @@ public interface CloneJobOrBuilder
    */
   com.google.cloud.vmmigration.v1.CloneStepOrBuilder getStepsOrBuilder(int index);
 
-  public com.google.cloud.vmmigration.v1.CloneJob.TargetVmDetailsCase getTargetVmDetailsCase();
+  com.google.cloud.vmmigration.v1.CloneJob.TargetVmDetailsCase getTargetVmDetailsCase();
 }

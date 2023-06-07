@@ -28,6 +28,7 @@ public interface UpdateAdminOverrideRequestOrBuilder
    *
    * <pre>
    * The resource name of the override to update.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/adminOverrides/4a3f2c1d`
    * </pre>
@@ -42,6 +43,7 @@ public interface UpdateAdminOverrideRequestOrBuilder
    *
    * <pre>
    * The resource name of the override to update.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/adminOverrides/4a3f2c1d`
    * </pre>

@@ -128,5 +128,5 @@ public interface VideoStreamOrBuilder
    */
   com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettingsOrBuilder getVp9OrBuilder();
 
-  public com.google.cloud.video.transcoder.v1.VideoStream.CodecSettingsCase getCodecSettingsCase();
+  com.google.cloud.video.transcoder.v1.VideoStream.CodecSettingsCase getCodecSettingsCase();
 }

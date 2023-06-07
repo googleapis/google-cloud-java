@@ -48,11 +48,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return new InputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_InputConfig_descriptor;
@@ -127,6 +122,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * File content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * Currently, this field only works for BatchAnnotateFiles requests. It does
    * not work for AsyncBatchAnnotateFiles requests.
    * </pre>
@@ -777,6 +773,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * File content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateFiles requests. It does
      * not work for AsyncBatchAnnotateFiles requests.
      * </pre>
@@ -796,6 +793,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * File content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateFiles requests. It does
      * not work for AsyncBatchAnnotateFiles requests.
      * </pre>
@@ -821,6 +819,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * File content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateFiles requests. It does
      * not work for AsyncBatchAnnotateFiles requests.
      * </pre>

@@ -48,11 +48,6 @@ public final class GetVmwareEngineNetworkRequest extends com.google.protobuf.Gen
     return new GetVmwareEngineNetworkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineProto
         .internal_static_google_cloud_vmwareengine_v1_GetVmwareEngineNetworkRequest_descriptor;

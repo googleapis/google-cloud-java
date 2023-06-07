@@ -28,7 +28,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * Required. The codec for this text stream.
+   *
    * Supported text codecs:
+   *
    * - `cea608`
    * - `cea708`
    * </pre>
@@ -43,7 +45,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * Required. The codec for this text stream.
+   *
    * Supported text codecs:
+   *
    * - `cea608`
    * - `cea708`
    * </pre>

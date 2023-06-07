@@ -51,11 +51,6 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
     return new ListEndpointsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.servicedirectory.v1.RegistrationServiceProto
         .internal_static_google_cloud_servicedirectory_v1_ListEndpointsRequest_descriptor;
@@ -208,6 +203,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The filter to list result by.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -215,6 +211,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * is roughly the same as "=".
    * &lt;value&gt; must be the same data type as field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the key "owner"
    *   this is the same as "metadata:owner".
@@ -253,6 +250,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The filter to list result by.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -260,6 +258,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * is roughly the same as "=".
    * &lt;value&gt; must be the same data type as field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the key "owner"
    *   this is the same as "metadata:owner".
@@ -1074,6 +1073,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list result by.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -1081,6 +1081,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * is roughly the same as "=".
      * &lt;value&gt; must be the same data type as field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the key "owner"
      *   this is the same as "metadata:owner".
@@ -1118,6 +1119,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list result by.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -1125,6 +1127,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * is roughly the same as "=".
      * &lt;value&gt; must be the same data type as field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the key "owner"
      *   this is the same as "metadata:owner".
@@ -1162,6 +1165,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list result by.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -1169,6 +1173,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * is roughly the same as "=".
      * &lt;value&gt; must be the same data type as field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the key "owner"
      *   this is the same as "metadata:owner".
@@ -1205,6 +1210,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list result by.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -1212,6 +1218,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * is roughly the same as "=".
      * &lt;value&gt; must be the same data type as field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the key "owner"
      *   this is the same as "metadata:owner".
@@ -1244,6 +1251,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The filter to list result by.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name", "address", "port" or "metadata.&lt;key&gt;" for map field.
@@ -1251,6 +1259,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * is roughly the same as "=".
      * &lt;value&gt; must be the same data type as field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the key "owner"
      *   this is the same as "metadata:owner".

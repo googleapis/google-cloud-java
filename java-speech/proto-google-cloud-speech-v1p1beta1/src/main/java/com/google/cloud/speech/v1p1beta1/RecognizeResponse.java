@@ -49,11 +49,6 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     return new RecognizeResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto
         .internal_static_google_cloud_speech_v1p1beta1_RecognizeResponse_descriptor;

@@ -287,6 +287,7 @@ public interface PrivateCloudOrBuilder
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -305,6 +306,7 @@ public interface PrivateCloudOrBuilder
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -323,6 +325,7 @@ public interface PrivateCloudOrBuilder
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>

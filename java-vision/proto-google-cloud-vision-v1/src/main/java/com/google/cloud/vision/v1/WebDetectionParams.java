@@ -45,11 +45,6 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
     return new WebDetectionParams();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_WebDetectionParams_descriptor;

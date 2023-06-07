@@ -50,11 +50,6 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
     return new PrivateCloud();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
         .internal_static_google_cloud_vmwareengine_v1_PrivateCloud_descriptor;
@@ -330,6 +325,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -349,6 +345,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -467,11 +464,6 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
       return new ManagementCluster();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.vmwareengine.v1.VmwareengineResourcesProto
           .internal_static_google_cloud_vmwareengine_v1_PrivateCloud_ManagementCluster_descriptor;
@@ -508,6 +500,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -538,6 +531,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The user-provided identifier of the new `Cluster`.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1112,6 +1106,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1141,6 +1136,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1170,6 +1166,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1198,6 +1195,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1222,6 +1220,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The user-provided identifier of the new `Cluster`.
        * The identifier must meet the following requirements:
+       *
        * * Only contains 1-63 alphanumeric characters and hyphens
        * * Begins with an alphabetical character
        * * Ends with a non-hyphen character
@@ -1877,6 +1876,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -1898,6 +1898,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -1921,6 +1922,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
    * Required. Input only. The management cluster for this private cloud.
    * This field is required during creation of the private cloud to provide
    * details for the default cluster.
+   *
    * The following fields can't be changed after private cloud creation:
    * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
    * </pre>
@@ -4143,6 +4145,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4163,6 +4166,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4189,6 +4193,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4218,6 +4223,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4244,6 +4250,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4278,6 +4285,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4303,6 +4311,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4324,6 +4333,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>
@@ -4349,6 +4359,7 @@ public final class PrivateCloud extends com.google.protobuf.GeneratedMessageV3
      * Required. Input only. The management cluster for this private cloud.
      * This field is required during creation of the private cloud to provide
      * details for the default cluster.
+     *
      * The following fields can't be changed after private cloud creation:
      * `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
      * </pre>

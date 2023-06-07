@@ -47,11 +47,6 @@ public final class GetNamespaceRequest extends com.google.protobuf.GeneratedMess
     return new GetNamespaceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.servicedirectory.v1beta1.RegistrationServiceProto
         .internal_static_google_cloud_servicedirectory_v1beta1_GetNamespaceRequest_descriptor;

@@ -28,6 +28,7 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * The DNS address at which this service is available.
+   *
    * An example DNS address would be:
    * `calendar.googleapis.com`.
    * </pre>
@@ -42,6 +43,7 @@ public interface ServiceConfigOrBuilder
    *
    * <pre>
    * The DNS address at which this service is available.
+   *
    * An example DNS address would be:
    * `calendar.googleapis.com`.
    * </pre>

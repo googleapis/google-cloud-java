@@ -49,11 +49,6 @@ public final class ConfigSource extends com.google.protobuf.GeneratedMessageV3
     return new ConfigSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicemanagement.v1.ResourcesProto
         .internal_static_google_api_servicemanagement_v1_ConfigSource_descriptor;

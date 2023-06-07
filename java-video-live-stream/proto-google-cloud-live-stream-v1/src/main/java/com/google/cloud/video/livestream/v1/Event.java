@@ -49,11 +49,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return new Event();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.ResourcesProto
         .internal_static_google_cloud_video_livestream_v1_Event_descriptor;
@@ -386,11 +381,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InputSwitchTask();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1059,11 +1049,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AdBreakTask();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1756,11 +1741,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return new ReturnToProgramTask();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.livestream.v1.ResourcesProto
           .internal_static_google_cloud_video_livestream_v1_Event_ReturnToProgramTask_descriptor;
@@ -2228,11 +2208,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MuteTask();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2937,11 +2912,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return new UnmuteTask();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.livestream.v1.ResourcesProto
           .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor;
@@ -3336,6 +3306,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int taskCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object task_;
 
   public enum TaskCase

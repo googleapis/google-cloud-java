@@ -48,11 +48,6 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     return new TranslateTextGlossaryConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_TranslateTextGlossaryConfig_descriptor;
@@ -77,7 +72,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
@@ -103,7 +100,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The `glossary` to be applied for this translation.
+   *
    * The format depends on the glossary:
+   *
    * - User-provided custom glossary:
    *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
@@ -516,7 +515,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -541,7 +542,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -566,7 +569,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -590,7 +595,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
@@ -610,7 +617,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The `glossary` to be applied for this translation.
+     *
      * The format depends on the glossary:
+     *
      * - User-provided custom glossary:
      *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>

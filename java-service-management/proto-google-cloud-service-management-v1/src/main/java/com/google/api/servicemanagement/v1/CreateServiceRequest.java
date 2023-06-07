@@ -45,11 +45,6 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
     return new CreateServiceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicemanagement.v1.ServiceManagerProto
         .internal_static_google_api_servicemanagement_v1_CreateServiceRequest_descriptor;

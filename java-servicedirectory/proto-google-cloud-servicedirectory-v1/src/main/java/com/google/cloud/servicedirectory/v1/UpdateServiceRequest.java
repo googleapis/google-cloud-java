@@ -46,11 +46,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     return new UpdateServiceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.servicedirectory.v1.RegistrationServiceProto
         .internal_static_google_cloud_servicedirectory_v1_UpdateServiceRequest_descriptor;

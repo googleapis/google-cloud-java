@@ -50,11 +50,6 @@ public final class CloudStorageDestinationOptions extends com.google.protobuf.Ge
     return new CloudStorageDestinationOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.storageinsights.v1.V1Proto
         .internal_static_google_cloud_storageinsights_v1_CloudStorageDestinationOptions_descriptor;

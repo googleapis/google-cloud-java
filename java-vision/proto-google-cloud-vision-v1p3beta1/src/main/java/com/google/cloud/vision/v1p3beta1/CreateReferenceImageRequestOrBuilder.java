@@ -28,6 +28,7 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the product in which to create the reference image.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>
@@ -44,6 +45,7 @@ public interface CreateReferenceImageRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the product in which to create the reference image.
+   *
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
    * </pre>

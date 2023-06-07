@@ -28,6 +28,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer and service.
+   *
    * A valid name would be:
    * - projects/123/services/serviceusage.googleapis.com
    * </pre>
@@ -42,6 +43,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer and service.
+   *
    * A valid name would be:
    * - projects/123/services/serviceusage.googleapis.com
    * </pre>
@@ -57,6 +59,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * A valid name would be:
    * - projects/123
    * </pre>
@@ -71,6 +74,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * A valid name would be:
    * - projects/123
    * </pre>

@@ -51,11 +51,6 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
     return new ListClustersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineProto
         .internal_static_google_cloud_vmwareengine_v1_ListClustersRequest_descriptor;
@@ -165,6 +160,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous `ListClusters` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListClusters`
    * must match the call that provided the page token.
    * </pre>
@@ -191,6 +187,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous `ListClusters` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListClusters`
    * must match the call that provided the page token.
    * </pre>
@@ -220,12 +217,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "example-cluster")
    * (nodeCount = "3")
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you can
    * include `AND` and `OR` expressions explicitly. For example:
    * ```
@@ -255,12 +254,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "example-cluster")
    * (nodeCount = "3")
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you can
    * include `AND` and `OR` expressions explicitly. For example:
    * ```
@@ -986,6 +987,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListClusters` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListClusters`
      * must match the call that provided the page token.
      * </pre>
@@ -1011,6 +1013,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListClusters` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListClusters`
      * must match the call that provided the page token.
      * </pre>
@@ -1036,6 +1039,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListClusters` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListClusters`
      * must match the call that provided the page token.
      * </pre>
@@ -1060,6 +1064,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListClusters` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListClusters`
      * must match the call that provided the page token.
      * </pre>
@@ -1080,6 +1085,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListClusters` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListClusters`
      * must match the call that provided the page token.
      * </pre>
@@ -1105,12 +1111,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "example-cluster")
      * (nodeCount = "3")
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you can
      * include `AND` and `OR` expressions explicitly. For example:
      * ```
@@ -1139,12 +1147,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "example-cluster")
      * (nodeCount = "3")
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you can
      * include `AND` and `OR` expressions explicitly. For example:
      * ```
@@ -1173,12 +1183,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "example-cluster")
      * (nodeCount = "3")
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you can
      * include `AND` and `OR` expressions explicitly. For example:
      * ```
@@ -1206,12 +1218,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "example-cluster")
      * (nodeCount = "3")
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you can
      * include `AND` and `OR` expressions explicitly. For example:
      * ```
@@ -1235,12 +1249,14 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "example-cluster")
      * (nodeCount = "3")
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you can
      * include `AND` and `OR` expressions explicitly. For example:
      * ```

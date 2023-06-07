@@ -45,11 +45,6 @@ public final class PullTarget extends com.google.protobuf.GeneratedMessageV3
     return new PullTarget();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta2.TargetProto
         .internal_static_google_cloud_tasks_v2beta2_PullTarget_descriptor;

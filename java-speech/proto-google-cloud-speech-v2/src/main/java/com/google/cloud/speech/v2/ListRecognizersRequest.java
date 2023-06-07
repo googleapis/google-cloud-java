@@ -49,11 +49,6 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
     return new ListRecognizersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_ListRecognizersRequest_descriptor;
@@ -157,6 +152,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
    * A page token, received from a previous
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
    * the call that provided the page token.
@@ -185,6 +181,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
    * A page token, received from a previous
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
    * the call that provided the page token.
@@ -824,6 +821,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
      * the call that provided the page token.
@@ -851,6 +849,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
      * the call that provided the page token.
@@ -878,6 +877,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
      * the call that provided the page token.
@@ -904,6 +904,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
      * the call that provided the page token.
@@ -926,6 +927,7 @@ public final class ListRecognizersRequest extends com.google.protobuf.GeneratedM
      * A page token, received from a previous
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [ListRecognizers][google.cloud.speech.v2.Speech.ListRecognizers] must match
      * the call that provided the page token.

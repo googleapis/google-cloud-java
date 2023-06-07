@@ -50,11 +50,6 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
     return new ResolveServiceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.servicedirectory.v1.LookupServiceProto
         .internal_static_google_cloud_servicedirectory_v1_ResolveServiceRequest_descriptor;
@@ -154,6 +149,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -161,6 +157,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    * roughly the same as "=".
    * &lt;value&gt; must be the same data type as the field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the
    *   key "owner", this is the same as "metadata:owner"
@@ -192,6 +189,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General filter string syntax:
    * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
    * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -199,6 +197,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    * roughly the same as "=".
    * &lt;value&gt; must be the same data type as the field.
    * &lt;logical connector&gt; can be "AND, OR, NOT".
+   *
    * Examples of valid filters:
    * * "metadata.owner" returns Endpoints that have a label with the
    *   key "owner", this is the same as "metadata:owner"
@@ -798,6 +797,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The filter applied to the endpoints of the resolved service.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -805,6 +805,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * roughly the same as "=".
      * &lt;value&gt; must be the same data type as the field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the
      *   key "owner", this is the same as "metadata:owner"
@@ -835,6 +836,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The filter applied to the endpoints of the resolved service.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -842,6 +844,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * roughly the same as "=".
      * &lt;value&gt; must be the same data type as the field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the
      *   key "owner", this is the same as "metadata:owner"
@@ -872,6 +875,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The filter applied to the endpoints of the resolved service.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -879,6 +883,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * roughly the same as "=".
      * &lt;value&gt; must be the same data type as the field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the
      *   key "owner", this is the same as "metadata:owner"
@@ -908,6 +913,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The filter applied to the endpoints of the resolved service.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -915,6 +921,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * roughly the same as "=".
      * &lt;value&gt; must be the same data type as the field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the
      *   key "owner", this is the same as "metadata:owner"
@@ -940,6 +947,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The filter applied to the endpoints of the resolved service.
+     *
      * General filter string syntax:
      * &lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)
      * &lt;field&gt; can be "name" or "metadata.&lt;key&gt;" for map field.
@@ -947,6 +955,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      * roughly the same as "=".
      * &lt;value&gt; must be the same data type as the field.
      * &lt;logical connector&gt; can be "AND, OR, NOT".
+     *
      * Examples of valid filters:
      * * "metadata.owner" returns Endpoints that have a label with the
      *   key "owner", this is the same as "metadata:owner"

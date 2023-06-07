@@ -28,8 +28,10 @@ public interface ConsumerQuotaLimitOrBuilder
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -44,8 +46,10 @@ public interface ConsumerQuotaLimitOrBuilder
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -61,6 +65,7 @@ public interface ConsumerQuotaLimitOrBuilder
    *
    * <pre>
    * The name of the parent metric of this limit.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -75,6 +80,7 @@ public interface ConsumerQuotaLimitOrBuilder
    *
    * <pre>
    * The name of the parent metric of this limit.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -90,6 +96,7 @@ public interface ConsumerQuotaLimitOrBuilder
    *
    * <pre>
    * The limit unit.
+   *
    * An example unit would be
    * `1/{project}/{region}`
    * Note that `{project}` and `{region}` are not placeholders in this example;
@@ -106,6 +113,7 @@ public interface ConsumerQuotaLimitOrBuilder
    *
    * <pre>
    * The limit unit.
+   *
    * An example unit would be
    * `1/{project}/{region}`
    * Note that `{project}` and `{region}` are not placeholders in this example;

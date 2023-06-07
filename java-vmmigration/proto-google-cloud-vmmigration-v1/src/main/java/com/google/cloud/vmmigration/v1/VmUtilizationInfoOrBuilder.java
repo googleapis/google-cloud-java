@@ -118,5 +118,5 @@ public interface VmUtilizationInfoOrBuilder
    */
   com.google.cloud.vmmigration.v1.VmUtilizationMetricsOrBuilder getUtilizationOrBuilder();
 
-  public com.google.cloud.vmmigration.v1.VmUtilizationInfo.VmDetailsCase getVmDetailsCase();
+  com.google.cloud.vmmigration.v1.VmUtilizationInfo.VmDetailsCase getVmDetailsCase();
 }

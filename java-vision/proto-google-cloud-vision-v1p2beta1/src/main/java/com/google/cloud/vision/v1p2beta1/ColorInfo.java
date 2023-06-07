@@ -46,11 +46,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     return new ColorInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p2beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p2beta1_ColorInfo_descriptor;

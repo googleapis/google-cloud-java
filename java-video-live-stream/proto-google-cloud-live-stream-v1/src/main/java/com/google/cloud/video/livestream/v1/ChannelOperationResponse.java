@@ -45,11 +45,6 @@ public final class ChannelOperationResponse extends com.google.protobuf.Generate
     return new ChannelOperationResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.ServiceProto
         .internal_static_google_cloud_video_livestream_v1_ChannelOperationResponse_descriptor;

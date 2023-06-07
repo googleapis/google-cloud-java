@@ -54,11 +54,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     return new FaceAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p3beta1_FaceAnnotation_descriptor;
@@ -166,11 +161,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Landmark();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

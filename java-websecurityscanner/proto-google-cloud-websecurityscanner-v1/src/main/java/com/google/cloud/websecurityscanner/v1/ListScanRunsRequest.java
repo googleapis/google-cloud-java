@@ -48,11 +48,6 @@ public final class ListScanRunsRequest extends com.google.protobuf.GeneratedMess
     return new ListScanRunsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.WebSecurityScannerProto
         .internal_static_google_cloud_websecurityscanner_v1_ListScanRunsRequest_descriptor;

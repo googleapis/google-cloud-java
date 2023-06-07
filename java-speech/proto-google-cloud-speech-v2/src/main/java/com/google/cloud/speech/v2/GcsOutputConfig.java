@@ -47,11 +47,6 @@ public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV
     return new GcsOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor;

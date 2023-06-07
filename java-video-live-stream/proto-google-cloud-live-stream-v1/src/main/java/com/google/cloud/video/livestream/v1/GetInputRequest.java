@@ -47,11 +47,6 @@ public final class GetInputRequest extends com.google.protobuf.GeneratedMessageV
     return new GetInputRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.ServiceProto
         .internal_static_google_cloud_video_livestream_v1_GetInputRequest_descriptor;

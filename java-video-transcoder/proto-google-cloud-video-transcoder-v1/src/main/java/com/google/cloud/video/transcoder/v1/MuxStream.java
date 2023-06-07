@@ -41,18 +41,13 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     key_ = "";
     fileName_ = "";
     container_ = "";
-    elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MuxStream();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +128,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
+   *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
@@ -159,6 +155,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
+   *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
@@ -189,11 +186,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The container format. The default is `mp4`
+   *
    * Supported container formats:
+   *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   *
    * See also:
    * [Supported input and output
    * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -220,11 +220,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The container format. The default is `mp4`
+   *
    * Supported container formats:
+   *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   *
    * See also:
    * [Supported input and output
    * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -250,7 +253,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   public static final int ELEMENTARY_STREAMS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList elementaryStreams_;
+  private com.google.protobuf.LazyStringArrayList elementaryStreams_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -610,8 +614,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       key_ = "";
       fileName_ = "";
       container_ = "";
-      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       segmentSettings_ = null;
       if (segmentSettingsBuilder_ != null) {
         segmentSettingsBuilder_.dispose();
@@ -644,20 +647,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.MuxStream buildPartial() {
       com.google.cloud.video.transcoder.v1.MuxStream result =
           new com.google.cloud.video.transcoder.v1.MuxStream(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.video.transcoder.v1.MuxStream result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        elementaryStreams_ = elementaryStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.elementaryStreams_ = elementaryStreams_;
     }
 
     private void buildPartial0(com.google.cloud.video.transcoder.v1.MuxStream result) {
@@ -670,6 +664,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.container_ = container_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        elementaryStreams_.makeImmutable();
+        result.elementaryStreams_ = elementaryStreams_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.segmentSettings_ =
@@ -740,7 +738,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (!other.elementaryStreams_.isEmpty()) {
         if (elementaryStreams_.isEmpty()) {
           elementaryStreams_ = other.elementaryStreams_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureElementaryStreamsIsMutable();
           elementaryStreams_.addAll(other.elementaryStreams_);
@@ -944,6 +942,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -969,6 +968,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -994,6 +994,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -1018,6 +1019,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -1038,6 +1040,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
+     *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
@@ -1064,11 +1067,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1094,11 +1100,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1124,11 +1133,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1153,11 +1165,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1178,11 +1193,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The container format. The default is `mp4`
+     *
      * Supported container formats:
+     *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
      * - `mp4`
      * - `vtt`
+     *
      * See also:
      * [Supported input and output
      * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
@@ -1204,14 +1222,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList elementaryStreams_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList elementaryStreams_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureElementaryStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!elementaryStreams_.isModifiable()) {
         elementaryStreams_ = new com.google.protobuf.LazyStringArrayList(elementaryStreams_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1225,7 +1243,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the elementaryStreams.
      */
     public com.google.protobuf.ProtocolStringList getElementaryStreamsList() {
-      return elementaryStreams_.getUnmodifiableView();
+      elementaryStreams_.makeImmutable();
+      return elementaryStreams_;
     }
     /**
      *
@@ -1290,6 +1309,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       ensureElementaryStreamsIsMutable();
       elementaryStreams_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1311,6 +1331,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       }
       ensureElementaryStreamsIsMutable();
       elementaryStreams_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1329,6 +1350,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllElementaryStreams(java.lang.Iterable<java.lang.String> values) {
       ensureElementaryStreamsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, elementaryStreams_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1344,8 +1366,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearElementaryStreams() {
-      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      elementaryStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1368,6 +1391,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureElementaryStreamsIsMutable();
       elementaryStreams_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -172,5 +172,5 @@ public interface RecognitionConfigOrBuilder
    */
   com.google.cloud.speech.v2.SpeechAdaptationOrBuilder getAdaptationOrBuilder();
 
-  public com.google.cloud.speech.v2.RecognitionConfig.DecodingConfigCase getDecodingConfigCase();
+  com.google.cloud.speech.v2.RecognitionConfig.DecodingConfigCase getDecodingConfigCase();
 }

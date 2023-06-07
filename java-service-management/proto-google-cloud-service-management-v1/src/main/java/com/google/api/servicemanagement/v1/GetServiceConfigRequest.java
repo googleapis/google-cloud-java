@@ -49,11 +49,6 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     return new GetServiceConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicemanagement.v1.ServiceManagerProto
         .internal_static_google_api_servicemanagement_v1_GetServiceConfigRequest_descriptor;
@@ -268,6 +263,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The id of the service configuration resource.
+   *
    * This field must be specified for the server to return all fields, including
    * `SourceInfo`.
    * </pre>
@@ -293,6 +289,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The id of the service configuration resource.
+   *
    * This field must be specified for the server to return all fields, including
    * `SourceInfo`.
    * </pre>
@@ -868,6 +865,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The id of the service configuration resource.
+     *
      * This field must be specified for the server to return all fields, including
      * `SourceInfo`.
      * </pre>
@@ -892,6 +890,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The id of the service configuration resource.
+     *
      * This field must be specified for the server to return all fields, including
      * `SourceInfo`.
      * </pre>
@@ -916,6 +915,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The id of the service configuration resource.
+     *
      * This field must be specified for the server to return all fields, including
      * `SourceInfo`.
      * </pre>
@@ -939,6 +939,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The id of the service configuration resource.
+     *
      * This field must be specified for the server to return all fields, including
      * `SourceInfo`.
      * </pre>
@@ -958,6 +959,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The id of the service configuration resource.
+     *
      * This field must be specified for the server to return all fields, including
      * `SourceInfo`.
      * </pre>

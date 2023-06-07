@@ -61,6 +61,7 @@ public interface BatchGetServicesRequestOrBuilder
    *
    * <pre>
    * Names of the services to retrieve.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -77,6 +78,7 @@ public interface BatchGetServicesRequestOrBuilder
    *
    * <pre>
    * Names of the services to retrieve.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -93,6 +95,7 @@ public interface BatchGetServicesRequestOrBuilder
    *
    * <pre>
    * Names of the services to retrieve.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -110,6 +113,7 @@ public interface BatchGetServicesRequestOrBuilder
    *
    * <pre>
    * Names of the services to retrieve.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.

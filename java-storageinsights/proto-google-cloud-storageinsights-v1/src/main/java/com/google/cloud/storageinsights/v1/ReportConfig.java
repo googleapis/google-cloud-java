@@ -50,11 +50,6 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
     return new ReportConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.storageinsights.v1.V1Proto
         .internal_static_google_cloud_storageinsights_v1_ReportConfig_descriptor;
@@ -82,6 +77,8 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int reportFormatCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reportFormat_;
 
   public enum ReportFormatCase
@@ -129,6 +126,8 @@ public final class ReportConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int reportKindCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object reportKind_;
 
   public enum ReportKindCase

@@ -24,14 +24,23 @@ package com.google.cloud.speech.v2;
  * <pre>
  * Automatically detected decoding parameters.
  * Supported for the following encodings:
+ *
  * * WAV_LINEAR16: 16-bit signed little-endian PCM samples in a WAV container.
+ *
  * * WAV_MULAW: 8-bit companded mulaw samples in a WAV container.
+ *
  * * WAV_ALAW: 8-bit companded alaw samples in a WAV container.
+ *
  * * RFC4867_5_AMR: AMR frames with an rfc4867.5 header.
+ *
  * * RFC4867_5_AMRWB: AMR-WB frames with an rfc4867.5 header.
+ *
  * * FLAC: FLAC frames in the "native FLAC" container format.
+ *
  * * MP3: MPEG audio frames with optional (ignored) ID3 metadata.
+ *
  * * OGG_OPUS: Opus audio frames in an Ogg container.
+ *
  * * WEBM_OPUS: Opus audio frames in a WebM container.
  * </pre>
  *
@@ -53,11 +62,6 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AutoDetectDecodingConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -231,14 +235,23 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
    * <pre>
    * Automatically detected decoding parameters.
    * Supported for the following encodings:
+   *
    * * WAV_LINEAR16: 16-bit signed little-endian PCM samples in a WAV container.
+   *
    * * WAV_MULAW: 8-bit companded mulaw samples in a WAV container.
+   *
    * * WAV_ALAW: 8-bit companded alaw samples in a WAV container.
+   *
    * * RFC4867_5_AMR: AMR frames with an rfc4867.5 header.
+   *
    * * RFC4867_5_AMRWB: AMR-WB frames with an rfc4867.5 header.
+   *
    * * FLAC: FLAC frames in the "native FLAC" container format.
+   *
    * * MP3: MPEG audio frames with optional (ignored) ID3 metadata.
+   *
    * * OGG_OPUS: Opus audio frames in an Ogg container.
+   *
    * * WEBM_OPUS: Opus audio frames in a WebM container.
    * </pre>
    *

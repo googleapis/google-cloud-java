@@ -110,5 +110,5 @@ public interface RecognitionAudioOrBuilder
    */
   com.google.protobuf.ByteString getUriBytes();
 
-  public com.google.cloud.speech.v1.RecognitionAudio.AudioSourceCase getAudioSourceCase();
+  com.google.cloud.speech.v1.RecognitionAudio.AudioSourceCase getAudioSourceCase();
 }

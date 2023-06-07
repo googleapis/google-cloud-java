@@ -29,6 +29,7 @@ public interface CreateTaskRequestOrBuilder
    * <pre>
    * Required. The queue name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   *
    * The queue must already exist.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateTaskRequestOrBuilder
    * <pre>
    * Required. The queue name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   *
    * The queue must already exist.
    * </pre>
    *
@@ -61,15 +63,19 @@ public interface CreateTaskRequestOrBuilder
    *
    * <pre>
    * Required. The task to add.
+   *
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task
    * [name][google.cloud.tasks.v2beta2.Task.name]. If a name is not specified
    * then the system will generate a random unique task id, which will be set in
    * the task returned in the [response][google.cloud.tasks.v2beta2.Task.name].
+   *
    * If [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] is not
    * set or is in the past then Cloud Tasks will set it to the current time.
+   *
    * Task De-duplication:
+   *
    * Explicitly specifying a task ID enables task de-duplication.  If
    * a task's ID is identical to that of an existing task or a task
    * that was deleted or completed recently then the call will fail
@@ -79,6 +85,7 @@ public interface CreateTaskRequestOrBuilder
    * deleted or completed. If the task's queue was created using queue.yaml or
    * queue.xml, then another task with the same name can't be created
    * for ~9days after the original task was deleted or completed.
+   *
    * Because there is an extra lookup cost to identify duplicate task
    * names, these [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
    * calls have significantly increased latency. Using hashed strings for the
@@ -101,15 +108,19 @@ public interface CreateTaskRequestOrBuilder
    *
    * <pre>
    * Required. The task to add.
+   *
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task
    * [name][google.cloud.tasks.v2beta2.Task.name]. If a name is not specified
    * then the system will generate a random unique task id, which will be set in
    * the task returned in the [response][google.cloud.tasks.v2beta2.Task.name].
+   *
    * If [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] is not
    * set or is in the past then Cloud Tasks will set it to the current time.
+   *
    * Task De-duplication:
+   *
    * Explicitly specifying a task ID enables task de-duplication.  If
    * a task's ID is identical to that of an existing task or a task
    * that was deleted or completed recently then the call will fail
@@ -119,6 +130,7 @@ public interface CreateTaskRequestOrBuilder
    * deleted or completed. If the task's queue was created using queue.yaml or
    * queue.xml, then another task with the same name can't be created
    * for ~9days after the original task was deleted or completed.
+   *
    * Because there is an extra lookup cost to identify duplicate task
    * names, these [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
    * calls have significantly increased latency. Using hashed strings for the
@@ -141,15 +153,19 @@ public interface CreateTaskRequestOrBuilder
    *
    * <pre>
    * Required. The task to add.
+   *
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task
    * [name][google.cloud.tasks.v2beta2.Task.name]. If a name is not specified
    * then the system will generate a random unique task id, which will be set in
    * the task returned in the [response][google.cloud.tasks.v2beta2.Task.name].
+   *
    * If [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] is not
    * set or is in the past then Cloud Tasks will set it to the current time.
+   *
    * Task De-duplication:
+   *
    * Explicitly specifying a task ID enables task de-duplication.  If
    * a task's ID is identical to that of an existing task or a task
    * that was deleted or completed recently then the call will fail
@@ -159,6 +175,7 @@ public interface CreateTaskRequestOrBuilder
    * deleted or completed. If the task's queue was created using queue.yaml or
    * queue.xml, then another task with the same name can't be created
    * for ~9days after the original task was deleted or completed.
+   *
    * Because there is an extra lookup cost to identify duplicate task
    * names, these [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
    * calls have significantly increased latency. Using hashed strings for the
@@ -181,11 +198,13 @@ public interface CreateTaskRequestOrBuilder
    * <pre>
    * The response_view specifies which subset of the
    * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   *
    * By default response_view is
    * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
    * retrieved by default because some data, such as payloads, might be
    * desirable to return only when needed because of its large size or because
    * of the sensitivity of data that it contains.
+   *
    * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
    * requires `cloudtasks.tasks.fullView` [Google
    * IAM](https://cloud.google.com/iam/) permission on the
@@ -203,11 +222,13 @@ public interface CreateTaskRequestOrBuilder
    * <pre>
    * The response_view specifies which subset of the
    * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   *
    * By default response_view is
    * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
    * retrieved by default because some data, such as payloads, might be
    * desirable to return only when needed because of its large size or because
    * of the sensitivity of data that it contains.
+   *
    * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
    * requires `cloudtasks.tasks.fullView` [Google
    * IAM](https://cloud.google.com/iam/) permission on the

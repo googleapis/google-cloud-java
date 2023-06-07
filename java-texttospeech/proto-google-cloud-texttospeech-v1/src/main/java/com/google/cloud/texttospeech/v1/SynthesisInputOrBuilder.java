@@ -109,5 +109,5 @@ public interface SynthesisInputOrBuilder
    */
   com.google.protobuf.ByteString getSsmlBytes();
 
-  public com.google.cloud.texttospeech.v1.SynthesisInput.InputSourceCase getInputSourceCase();
+  com.google.cloud.texttospeech.v1.SynthesisInput.InputSourceCase getInputSourceCase();
 }

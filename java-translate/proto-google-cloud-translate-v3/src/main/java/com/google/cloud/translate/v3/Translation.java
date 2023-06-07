@@ -49,11 +49,6 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
     return new Translation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_Translation_descriptor;
@@ -134,6 +129,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Only present when `model` is present in the request.
    * `model` here is normalized to have project number.
+   *
    * For example:
    * If the `model` requested in TranslationTextRequest is
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -163,6 +159,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Only present when `model` is present in the request.
    * `model` here is normalized to have project number.
+   *
    * For example:
    * If the `model` requested in TranslationTextRequest is
    * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -839,6 +836,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only present when `model` is present in the request.
      * `model` here is normalized to have project number.
+     *
      * For example:
      * If the `model` requested in TranslationTextRequest is
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -867,6 +865,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only present when `model` is present in the request.
      * `model` here is normalized to have project number.
+     *
      * For example:
      * If the `model` requested in TranslationTextRequest is
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -895,6 +894,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only present when `model` is present in the request.
      * `model` here is normalized to have project number.
+     *
      * For example:
      * If the `model` requested in TranslationTextRequest is
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -922,6 +922,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only present when `model` is present in the request.
      * `model` here is normalized to have project number.
+     *
      * For example:
      * If the `model` requested in TranslationTextRequest is
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
@@ -945,6 +946,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only present when `model` is present in the request.
      * `model` here is normalized to have project number.
+     *
      * For example:
      * If the `model` requested in TranslationTextRequest is
      * `projects/{project-id}/locations/{location-id}/models/general/nmt` then

@@ -51,11 +51,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
     return new ScanConfigError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.ScanConfigErrorProto
         .internal_static_google_cloud_websecurityscanner_v1_ScanConfigError_descriptor;

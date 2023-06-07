@@ -51,11 +51,6 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
     return new ServiceConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_ServiceConfig_descriptor;
@@ -80,6 +75,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The DNS address at which this service is available.
+   *
    * An example DNS address would be:
    * `calendar.googleapis.com`.
    * </pre>
@@ -105,6 +101,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The DNS address at which this service is available.
+   *
    * An example DNS address would be:
    * `calendar.googleapis.com`.
    * </pre>
@@ -1382,6 +1379,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The DNS address at which this service is available.
+     *
      * An example DNS address would be:
      * `calendar.googleapis.com`.
      * </pre>
@@ -1406,6 +1404,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The DNS address at which this service is available.
+     *
      * An example DNS address would be:
      * `calendar.googleapis.com`.
      * </pre>
@@ -1430,6 +1429,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The DNS address at which this service is available.
+     *
      * An example DNS address would be:
      * `calendar.googleapis.com`.
      * </pre>
@@ -1453,6 +1453,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The DNS address at which this service is available.
+     *
      * An example DNS address would be:
      * `calendar.googleapis.com`.
      * </pre>
@@ -1472,6 +1473,7 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The DNS address at which this service is available.
+     *
      * An example DNS address would be:
      * `calendar.googleapis.com`.
      * </pre>

@@ -28,6 +28,7 @@ public interface ImportAdminOverridesRequestOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com`
    * </pre>
@@ -42,6 +43,7 @@ public interface ImportAdminOverridesRequestOrBuilder
    *
    * <pre>
    * The resource name of the consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com`
    * </pre>
@@ -180,5 +182,5 @@ public interface ImportAdminOverridesRequestOrBuilder
    */
   int getForceOnlyValue(int index);
 
-  public com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest.SourceCase getSourceCase();
+  com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest.SourceCase getSourceCase();
 }

@@ -49,11 +49,6 @@ public final class ListSubnetsResponse extends com.google.protobuf.GeneratedMess
     return new ListSubnetsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineProto
         .internal_static_google_cloud_vmwareengine_v1_ListSubnetsResponse_descriptor;

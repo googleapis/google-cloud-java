@@ -90,11 +90,6 @@ public final class TransferProto {
       return new GetGoogleServiceAccountRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_GetGoogleServiceAccountRequest_descriptor;
@@ -789,11 +784,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreateTransferJobRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1734,11 +1724,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new UpdateTransferJobRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3408,11 +3393,6 @@ public final class TransferProto {
       return new GetTransferJobRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_GetTransferJobRequest_descriptor;
@@ -4289,11 +4269,6 @@ public final class TransferProto {
       return new DeleteTransferJobRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor;
@@ -5101,6 +5076,7 @@ public final class TransferProto {
      * `{"projectId":"my_project_id",
      *  "jobNames":["jobid1","jobid2",...],
      *  "jobStatuses":["status1","status2",...]}`
+     *
      * Since `jobNames` and `jobStatuses` support multiple values, their values
      * must be specified with array notation. `projectId` is required.
      * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5123,6 +5099,7 @@ public final class TransferProto {
      * `{"projectId":"my_project_id",
      *  "jobNames":["jobid1","jobid2",...],
      *  "jobStatuses":["status1","status2",...]}`
+     *
      * Since `jobNames` and `jobStatuses` support multiple values, their values
      * must be specified with array notation. `projectId` is required.
      * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5207,11 +5184,6 @@ public final class TransferProto {
       return new ListTransferJobsRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_ListTransferJobsRequest_descriptor;
@@ -5240,6 +5212,7 @@ public final class TransferProto {
      * `{"projectId":"my_project_id",
      *  "jobNames":["jobid1","jobid2",...],
      *  "jobStatuses":["status1","status2",...]}`
+     *
      * Since `jobNames` and `jobStatuses` support multiple values, their values
      * must be specified with array notation. `projectId` is required.
      * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5273,6 +5246,7 @@ public final class TransferProto {
      * `{"projectId":"my_project_id",
      *  "jobNames":["jobid1","jobid2",...],
      *  "jobStatuses":["status1","status2",...]}`
+     *
      * Since `jobNames` and `jobStatuses` support multiple values, their values
      * must be specified with array notation. `projectId` is required.
      * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5789,6 +5763,7 @@ public final class TransferProto {
        * `{"projectId":"my_project_id",
        *  "jobNames":["jobid1","jobid2",...],
        *  "jobStatuses":["status1","status2",...]}`
+       *
        * Since `jobNames` and `jobStatuses` support multiple values, their values
        * must be specified with array notation. `projectId` is required.
        * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5821,6 +5796,7 @@ public final class TransferProto {
        * `{"projectId":"my_project_id",
        *  "jobNames":["jobid1","jobid2",...],
        *  "jobStatuses":["status1","status2",...]}`
+       *
        * Since `jobNames` and `jobStatuses` support multiple values, their values
        * must be specified with array notation. `projectId` is required.
        * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5853,6 +5829,7 @@ public final class TransferProto {
        * `{"projectId":"my_project_id",
        *  "jobNames":["jobid1","jobid2",...],
        *  "jobStatuses":["status1","status2",...]}`
+       *
        * Since `jobNames` and `jobStatuses` support multiple values, their values
        * must be specified with array notation. `projectId` is required.
        * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5884,6 +5861,7 @@ public final class TransferProto {
        * `{"projectId":"my_project_id",
        *  "jobNames":["jobid1","jobid2",...],
        *  "jobStatuses":["status1","status2",...]}`
+       *
        * Since `jobNames` and `jobStatuses` support multiple values, their values
        * must be specified with array notation. `projectId` is required.
        * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -5911,6 +5889,7 @@ public final class TransferProto {
        * `{"projectId":"my_project_id",
        *  "jobNames":["jobid1","jobid2",...],
        *  "jobStatuses":["status1","status2",...]}`
+       *
        * Since `jobNames` and `jobStatuses` support multiple values, their values
        * must be specified with array notation. `projectId` is required.
        * `jobNames` and `jobStatuses` are optional.  The valid values for
@@ -6275,11 +6254,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListTransferJobsResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7470,11 +7444,6 @@ public final class TransferProto {
       return new PauseTransferOperationRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_PauseTransferOperationRequest_descriptor;
@@ -8147,11 +8116,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResumeTransferOperationRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8854,11 +8818,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RunTransferJobRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9728,13 +9687,16 @@ public final class TransferProto {
      *
      * <pre>
      * Required. The ID of the agent pool to create.
+     *
      * The `agent_pool_id` must meet the following requirements:
+     *
      * *   Length of 128 characters or less.
      * *   Not start with the string `goog`.
      * *   Start with a lowercase ASCII character, followed by:
      *     *   Zero or more: lowercase Latin alphabet characters, numerals,
      *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
      *     *   One or more numerals or lowercase ASCII characters.
+     *
      * As expressed by the regular expression:
      * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
      * </pre>
@@ -9749,13 +9711,16 @@ public final class TransferProto {
      *
      * <pre>
      * Required. The ID of the agent pool to create.
+     *
      * The `agent_pool_id` must meet the following requirements:
+     *
      * *   Length of 128 characters or less.
      * *   Not start with the string `goog`.
      * *   Start with a lowercase ASCII character, followed by:
      *     *   Zero or more: lowercase Latin alphabet characters, numerals,
      *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
      *     *   One or more numerals or lowercase ASCII characters.
+     *
      * As expressed by the regular expression:
      * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
      * </pre>
@@ -9794,11 +9759,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreateAgentPoolRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9936,13 +9896,16 @@ public final class TransferProto {
      *
      * <pre>
      * Required. The ID of the agent pool to create.
+     *
      * The `agent_pool_id` must meet the following requirements:
+     *
      * *   Length of 128 characters or less.
      * *   Not start with the string `goog`.
      * *   Start with a lowercase ASCII character, followed by:
      *     *   Zero or more: lowercase Latin alphabet characters, numerals,
      *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
      *     *   One or more numerals or lowercase ASCII characters.
+     *
      * As expressed by the regular expression:
      * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
      * </pre>
@@ -9968,13 +9931,16 @@ public final class TransferProto {
      *
      * <pre>
      * Required. The ID of the agent pool to create.
+     *
      * The `agent_pool_id` must meet the following requirements:
+     *
      * *   Length of 128 characters or less.
      * *   Not start with the string `goog`.
      * *   Start with a lowercase ASCII character, followed by:
      *     *   Zero or more: lowercase Latin alphabet characters, numerals,
      *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
      *     *   One or more numerals or lowercase ASCII characters.
+     *
      * As expressed by the regular expression:
      * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
      * </pre>
@@ -10741,13 +10707,16 @@ public final class TransferProto {
        *
        * <pre>
        * Required. The ID of the agent pool to create.
+       *
        * The `agent_pool_id` must meet the following requirements:
+       *
        * *   Length of 128 characters or less.
        * *   Not start with the string `goog`.
        * *   Start with a lowercase ASCII character, followed by:
        *     *   Zero or more: lowercase Latin alphabet characters, numerals,
        *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
        *     *   One or more numerals or lowercase ASCII characters.
+       *
        * As expressed by the regular expression:
        * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
        * </pre>
@@ -10772,13 +10741,16 @@ public final class TransferProto {
        *
        * <pre>
        * Required. The ID of the agent pool to create.
+       *
        * The `agent_pool_id` must meet the following requirements:
+       *
        * *   Length of 128 characters or less.
        * *   Not start with the string `goog`.
        * *   Start with a lowercase ASCII character, followed by:
        *     *   Zero or more: lowercase Latin alphabet characters, numerals,
        *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
        *     *   One or more numerals or lowercase ASCII characters.
+       *
        * As expressed by the regular expression:
        * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
        * </pre>
@@ -10803,13 +10775,16 @@ public final class TransferProto {
        *
        * <pre>
        * Required. The ID of the agent pool to create.
+       *
        * The `agent_pool_id` must meet the following requirements:
+       *
        * *   Length of 128 characters or less.
        * *   Not start with the string `goog`.
        * *   Start with a lowercase ASCII character, followed by:
        *     *   Zero or more: lowercase Latin alphabet characters, numerals,
        *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
        *     *   One or more numerals or lowercase ASCII characters.
+       *
        * As expressed by the regular expression:
        * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
        * </pre>
@@ -10833,13 +10808,16 @@ public final class TransferProto {
        *
        * <pre>
        * Required. The ID of the agent pool to create.
+       *
        * The `agent_pool_id` must meet the following requirements:
+       *
        * *   Length of 128 characters or less.
        * *   Not start with the string `goog`.
        * *   Start with a lowercase ASCII character, followed by:
        *     *   Zero or more: lowercase Latin alphabet characters, numerals,
        *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
        *     *   One or more numerals or lowercase ASCII characters.
+       *
        * As expressed by the regular expression:
        * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
        * </pre>
@@ -10859,13 +10837,16 @@ public final class TransferProto {
        *
        * <pre>
        * Required. The ID of the agent pool to create.
+       *
        * The `agent_pool_id` must meet the following requirements:
+       *
        * *   Length of 128 characters or less.
        * *   Not start with the string `goog`.
        * *   Start with a lowercase ASCII character, followed by:
        *     *   Zero or more: lowercase Latin alphabet characters, numerals,
        *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
        *     *   One or more numerals or lowercase ASCII characters.
+       *
        * As expressed by the regular expression:
        * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
        * </pre>
@@ -10965,8 +10946,11 @@ public final class TransferProto {
      * <pre>
      * Required. The agent pool to update. `agent_pool` is expected to specify following
      * fields:
+     *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * An `UpdateAgentPoolRequest` with any other fields is rejected
      * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -10985,8 +10969,11 @@ public final class TransferProto {
      * <pre>
      * Required. The agent pool to update. `agent_pool` is expected to specify following
      * fields:
+     *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * An `UpdateAgentPoolRequest` with any other fields is rejected
      * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11005,8 +10992,11 @@ public final class TransferProto {
      * <pre>
      * Required. The agent pool to update. `agent_pool` is expected to specify following
      * fields:
+     *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * An `UpdateAgentPoolRequest` with any other fields is rejected
      * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11026,7 +11016,9 @@ public final class TransferProto {
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
      * of the fields in `agentPool` to update in this request.
      * The following `agentPool` fields can be updated:
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * </pre>
      *
@@ -11043,7 +11035,9 @@ public final class TransferProto {
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
      * of the fields in `agentPool` to update in this request.
      * The following `agentPool` fields can be updated:
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * </pre>
      *
@@ -11060,7 +11054,9 @@ public final class TransferProto {
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
      * of the fields in `agentPool` to update in this request.
      * The following `agentPool` fields can be updated:
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * </pre>
      *
@@ -11095,11 +11091,6 @@ public final class TransferProto {
       return new UpdateAgentPoolRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor;
@@ -11124,8 +11115,11 @@ public final class TransferProto {
      * <pre>
      * Required. The agent pool to update. `agent_pool` is expected to specify following
      * fields:
+     *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * An `UpdateAgentPoolRequest` with any other fields is rejected
      * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11147,8 +11141,11 @@ public final class TransferProto {
      * <pre>
      * Required. The agent pool to update. `agent_pool` is expected to specify following
      * fields:
+     *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * An `UpdateAgentPoolRequest` with any other fields is rejected
      * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11172,8 +11169,11 @@ public final class TransferProto {
      * <pre>
      * Required. The agent pool to update. `agent_pool` is expected to specify following
      * fields:
+     *
      * *  [name][google.storagetransfer.v1.AgentPool.name]
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * An `UpdateAgentPoolRequest` with any other fields is rejected
      * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11201,7 +11201,9 @@ public final class TransferProto {
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
      * of the fields in `agentPool` to update in this request.
      * The following `agentPool` fields can be updated:
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * </pre>
      *
@@ -11221,7 +11223,9 @@ public final class TransferProto {
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
      * of the fields in `agentPool` to update in this request.
      * The following `agentPool` fields can be updated:
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * </pre>
      *
@@ -11241,7 +11245,9 @@ public final class TransferProto {
      * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
      * of the fields in `agentPool` to update in this request.
      * The following `agentPool` fields can be updated:
+     *
      * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     *
      * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
      * </pre>
      *
@@ -11668,8 +11674,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11690,8 +11699,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11718,8 +11730,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11749,8 +11764,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11777,8 +11795,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11813,8 +11834,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11840,8 +11864,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11863,8 +11890,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11890,8 +11920,11 @@ public final class TransferProto {
        * <pre>
        * Required. The agent pool to update. `agent_pool` is expected to specify following
        * fields:
+       *
        * *  [name][google.storagetransfer.v1.AgentPool.name]
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * An `UpdateAgentPoolRequest` with any other fields is rejected
        * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
@@ -11932,7 +11965,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -11951,7 +11986,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -11976,7 +12013,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12003,7 +12042,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12027,7 +12068,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12057,7 +12100,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12081,7 +12126,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12100,7 +12147,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12123,7 +12172,9 @@ public final class TransferProto {
        * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
        * of the fields in `agentPool` to update in this request.
        * The following `agentPool` fields can be updated:
+       *
        * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       *
        * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
        * </pre>
        *
@@ -12271,11 +12322,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GetAgentPoolRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12935,11 +12981,6 @@ public final class TransferProto {
       return new DeleteAgentPoolRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor;
@@ -13582,7 +13623,9 @@ public final class TransferProto {
      * <pre>
      * An optional list of query parameters specified as JSON text in the
      * form of:
+     *
      * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     *
      * Since `agentPoolNames` support multiple values, its values must be
      * specified with array notation. When the filter is either empty or not
      * provided, the list returns all agent pools for the project.
@@ -13599,7 +13642,9 @@ public final class TransferProto {
      * <pre>
      * An optional list of query parameters specified as JSON text in the
      * form of:
+     *
      * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     *
      * Since `agentPoolNames` support multiple values, its values must be
      * specified with array notation. When the filter is either empty or not
      * provided, the list returns all agent pools for the project.
@@ -13680,11 +13725,6 @@ public final class TransferProto {
       return new ListAgentPoolsRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.storagetransfer.v1.proto.TransferProto
           .internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor;
@@ -13762,7 +13802,9 @@ public final class TransferProto {
      * <pre>
      * An optional list of query parameters specified as JSON text in the
      * form of:
+     *
      * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     *
      * Since `agentPoolNames` support multiple values, its values must be
      * specified with array notation. When the filter is either empty or not
      * provided, the list returns all agent pools for the project.
@@ -13790,7 +13832,9 @@ public final class TransferProto {
      * <pre>
      * An optional list of query parameters specified as JSON text in the
      * form of:
+     *
      * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     *
      * Since `agentPoolNames` support multiple values, its values must be
      * specified with array notation. When the filter is either empty or not
      * provided, the list returns all agent pools for the project.
@@ -14425,7 +14469,9 @@ public final class TransferProto {
        * <pre>
        * An optional list of query parameters specified as JSON text in the
        * form of:
+       *
        * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       *
        * Since `agentPoolNames` support multiple values, its values must be
        * specified with array notation. When the filter is either empty or not
        * provided, the list returns all agent pools for the project.
@@ -14452,7 +14498,9 @@ public final class TransferProto {
        * <pre>
        * An optional list of query parameters specified as JSON text in the
        * form of:
+       *
        * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       *
        * Since `agentPoolNames` support multiple values, its values must be
        * specified with array notation. When the filter is either empty or not
        * provided, the list returns all agent pools for the project.
@@ -14479,7 +14527,9 @@ public final class TransferProto {
        * <pre>
        * An optional list of query parameters specified as JSON text in the
        * form of:
+       *
        * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       *
        * Since `agentPoolNames` support multiple values, its values must be
        * specified with array notation. When the filter is either empty or not
        * provided, the list returns all agent pools for the project.
@@ -14505,7 +14555,9 @@ public final class TransferProto {
        * <pre>
        * An optional list of query parameters specified as JSON text in the
        * form of:
+       *
        * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       *
        * Since `agentPoolNames` support multiple values, its values must be
        * specified with array notation. When the filter is either empty or not
        * provided, the list returns all agent pools for the project.
@@ -14527,7 +14579,9 @@ public final class TransferProto {
        * <pre>
        * An optional list of query parameters specified as JSON text in the
        * form of:
+       *
        * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       *
        * Since `agentPoolNames` support multiple values, its values must be
        * specified with array notation. When the filter is either empty or not
        * provided, the list returns all agent pools for the project.
@@ -14887,11 +14941,6 @@ public final class TransferProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ListAgentPoolsResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16094,112 +16143,112 @@ public final class TransferProto {
           + "oogle/longrunning/operations.proto\032\033goog"
           + "le/protobuf/empty.proto\032 google/protobuf"
           + "/field_mask.proto\032.google/storagetransfe"
-          + "r/v1/transfer_types.proto\"9\n\036GetGoogleSe"
-          + "rviceAccountRequest\022\027\n\nproject_id\030\001 \001(\tB"
-          + "\003\340A\002\"]\n\030CreateTransferJobRequest\022A\n\014tran"
-          + "sfer_job\030\001 \001(\0132&.google.storagetransfer."
-          + "v1.TransferJobB\003\340A\002\"\321\001\n\030UpdateTransferJo"
-          + "bRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\nproje"
-          + "ct_id\030\002 \001(\tB\003\340A\002\022A\n\014transfer_job\030\003 \001(\0132&"
-          + ".google.storagetransfer.v1.TransferJobB\003"
-          + "\340A\002\022B\n\036update_transfer_job_field_mask\030\004 "
-          + "\001(\0132\032.google.protobuf.FieldMask\"G\n\025GetTr"
-          + "ansferJobRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022"
-          + "\027\n\nproject_id\030\002 \001(\tB\003\340A\002\"J\n\030DeleteTransf"
-          + "erJobRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\np"
-          + "roject_id\030\002 \001(\tB\003\340A\002\"U\n\027ListTransferJobs"
-          + "Request\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022\021\n\tpage_siz"
-          + "e\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"r\n\030ListTrans"
-          + "ferJobsResponse\022=\n\rtransfer_jobs\030\001 \003(\0132&"
-          + ".google.storagetransfer.v1.TransferJob\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"2\n\035PauseTransfer"
-          + "OperationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"3\n\036R"
-          + "esumeTransferOperationRequest\022\021\n\004name\030\001 "
-          + "\001(\tB\003\340A\002\"G\n\025RunTransferJobRequest\022\025\n\010job"
-          + "_name\030\001 \001(\tB\003\340A\002\022\027\n\nproject_id\030\002 \001(\tB\003\340A"
-          + "\002\"\214\001\n\026CreateAgentPoolRequest\022\027\n\nproject_"
-          + "id\030\001 \001(\tB\003\340A\002\022=\n\nagent_pool\030\002 \001(\0132$.goog"
-          + "le.storagetransfer.v1.AgentPoolB\003\340A\002\022\032\n\r"
-          + "agent_pool_id\030\003 \001(\tB\003\340A\002\"\210\001\n\026UpdateAgent"
-          + "PoolRequest\022=\n\nagent_pool\030\001 \001(\0132$.google"
-          + ".storagetransfer.v1.AgentPoolB\003\340A\002\022/\n\013up"
-          + "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
-          + "ask\"(\n\023GetAgentPoolRequest\022\021\n\004name\030\001 \001(\t"
-          + "B\003\340A\002\"+\n\026DeleteAgentPoolRequest\022\021\n\004name\030"
-          + "\001 \001(\tB\003\340A\002\"g\n\025ListAgentPoolsRequest\022\027\n\np"
-          + "roject_id\030\001 \001(\tB\003\340A\002\022\016\n\006filter\030\002 \001(\t\022\021\n\t"
-          + "page_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"l\n\026L"
-          + "istAgentPoolsResponse\0229\n\013agent_pools\030\001 \003"
-          + "(\0132$.google.storagetransfer.v1.AgentPool"
-          + "\022\027\n\017next_page_token\030\002 \001(\t2\221\023\n\026StorageTra"
-          + "nsferService\022\265\001\n\027GetGoogleServiceAccount"
-          + "\0229.google.storagetransfer.v1.GetGoogleSe"
-          + "rviceAccountRequest\032/.google.storagetran"
-          + "sfer.v1.GoogleServiceAccount\".\202\323\344\223\002(\022&/v"
-          + "1/googleServiceAccounts/{project_id}\022\230\001\n"
-          + "\021CreateTransferJob\0223.google.storagetrans"
-          + "fer.v1.CreateTransferJobRequest\032&.google"
-          + ".storagetransfer.v1.TransferJob\"&\202\323\344\223\002 \""
-          + "\020/v1/transferJobs:\014transfer_job\022\233\001\n\021Upda"
-          + "teTransferJob\0223.google.storagetransfer.v"
-          + "1.UpdateTransferJobRequest\032&.google.stor"
-          + "agetransfer.v1.TransferJob\")\202\323\344\223\002#2\036/v1/"
-          + "{job_name=transferJobs/**}:\001*\022\222\001\n\016GetTra"
-          + "nsferJob\0220.google.storagetransfer.v1.Get"
-          + "TransferJobRequest\032&.google.storagetrans"
-          + "fer.v1.TransferJob\"&\202\323\344\223\002 \022\036/v1/{job_nam"
-          + "e=transferJobs/**}\022\225\001\n\020ListTransferJobs\022"
-          + "2.google.storagetransfer.v1.ListTransfer"
-          + "JobsRequest\0323.google.storagetransfer.v1."
-          + "ListTransferJobsResponse\"\030\202\323\344\223\002\022\022\020/v1/tr"
-          + "ansferJobs\022\235\001\n\026PauseTransferOperation\0228."
-          + "google.storagetransfer.v1.PauseTransferO"
-          + "perationRequest\032\026.google.protobuf.Empty\""
-          + "1\202\323\344\223\002+\"&/v1/{name=transferOperations/**"
-          + "}:pause:\001*\022\240\001\n\027ResumeTransferOperation\0229"
-          + ".google.storagetransfer.v1.ResumeTransfe"
-          + "rOperationRequest\032\026.google.protobuf.Empt"
-          + "y\"2\202\323\344\223\002,\"\'/v1/{name=transferOperations/"
-          + "**}:resume:\001*\022\275\001\n\016RunTransferJob\0220.googl"
-          + "e.storagetransfer.v1.RunTransferJobReque"
-          + "st\032\035.google.longrunning.Operation\"Z\202\323\344\223\002"
-          + "\'\"\"/v1/{job_name=transferJobs/**}:run:\001*"
-          + "\312A*\n\025google.protobuf.Empty\022\021TransferOper"
-          + "ation\022\210\001\n\021DeleteTransferJob\0223.google.sto"
-          + "ragetransfer.v1.DeleteTransferJobRequest"
-          + "\032\026.google.protobuf.Empty\"&\202\323\344\223\002 *\036/v1/{j"
-          + "ob_name=transferJobs/**}\022\314\001\n\017CreateAgent"
-          + "Pool\0221.google.storagetransfer.v1.CreateA"
-          + "gentPoolRequest\032$.google.storagetransfer"
-          + ".v1.AgentPool\"`\202\323\344\223\0024\"&/v1/projects/{pro"
-          + "ject_id=*}/agentPools:\nagent_pool\332A#proj"
-          + "ect_id,agent_pool,agent_pool_id\022\306\001\n\017Upda"
-          + "teAgentPool\0221.google.storagetransfer.v1."
-          + "UpdateAgentPoolRequest\032$.google.storaget"
-          + "ransfer.v1.AgentPool\"Z\202\323\344\223\002;2-/v1/{agent"
-          + "_pool.name=projects/*/agentPools/*}:\nage"
-          + "nt_pool\332A\026agent_pool,update_mask\022\227\001\n\014Get"
-          + "AgentPool\022..google.storagetransfer.v1.Ge"
-          + "tAgentPoolRequest\032$.google.storagetransf"
-          + "er.v1.AgentPool\"1\202\323\344\223\002$\022\"/v1/{name=proje"
-          + "cts/*/agentPools/*}\332A\004name\022\262\001\n\016ListAgent"
-          + "Pools\0220.google.storagetransfer.v1.ListAg"
-          + "entPoolsRequest\0321.google.storagetransfer"
-          + ".v1.ListAgentPoolsResponse\";\202\323\344\223\002(\022&/v1/"
-          + "projects/{project_id=*}/agentPools\332A\npro"
-          + "ject_id\022\217\001\n\017DeleteAgentPool\0221.google.sto"
-          + "ragetransfer.v1.DeleteAgentPoolRequest\032\026"
-          + ".google.protobuf.Empty\"1\202\323\344\223\002$*\"/v1/{nam"
-          + "e=projects/*/agentPools/*}\332A\004name\032R\312A\036st"
-          + "oragetransfer.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\357\001"
-          + "\n#com.google.storagetransfer.v1.protoB\rT"
-          + "ransferProtoZMcloud.google.com/go/storag"
-          + "etransfer/apiv1/storagetransferpb;storag"
-          + "etransferpb\370\001\001\252\002\037Google.Cloud.StorageTra"
-          + "nsfer.V1\312\002\037Google\\Cloud\\StorageTransfer\\"
-          + "V1\352\002\"Google::Cloud::StorageTransfer::V1b"
-          + "\006proto3"
+          + "r/v1/transfer_types.proto\":\n\036GetGoogleSe"
+          + "rviceAccountRequest\022\030\n\nproject_id\030\001 \001(\tB"
+          + "\004\342A\001\002\"^\n\030CreateTransferJobRequest\022B\n\014tra"
+          + "nsfer_job\030\001 \001(\0132&.google.storagetransfer"
+          + ".v1.TransferJobB\004\342A\001\002\"\324\001\n\030UpdateTransfer"
+          + "JobRequest\022\026\n\010job_name\030\001 \001(\tB\004\342A\001\002\022\030\n\npr"
+          + "oject_id\030\002 \001(\tB\004\342A\001\002\022B\n\014transfer_job\030\003 \001"
+          + "(\0132&.google.storagetransfer.v1.TransferJ"
+          + "obB\004\342A\001\002\022B\n\036update_transfer_job_field_ma"
+          + "sk\030\004 \001(\0132\032.google.protobuf.FieldMask\"I\n\025"
+          + "GetTransferJobRequest\022\026\n\010job_name\030\001 \001(\tB"
+          + "\004\342A\001\002\022\030\n\nproject_id\030\002 \001(\tB\004\342A\001\002\"L\n\030Delet"
+          + "eTransferJobRequest\022\026\n\010job_name\030\001 \001(\tB\004\342"
+          + "A\001\002\022\030\n\nproject_id\030\002 \001(\tB\004\342A\001\002\"V\n\027ListTra"
+          + "nsferJobsRequest\022\024\n\006filter\030\001 \001(\tB\004\342A\001\002\022\021"
+          + "\n\tpage_size\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"r\n"
+          + "\030ListTransferJobsResponse\022=\n\rtransfer_jo"
+          + "bs\030\001 \003(\0132&.google.storagetransfer.v1.Tra"
+          + "nsferJob\022\027\n\017next_page_token\030\002 \001(\t\"3\n\035Pau"
+          + "seTransferOperationRequest\022\022\n\004name\030\001 \001(\t"
+          + "B\004\342A\001\002\"4\n\036ResumeTransferOperationRequest"
+          + "\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\"I\n\025RunTransferJobRe"
+          + "quest\022\026\n\010job_name\030\001 \001(\tB\004\342A\001\002\022\030\n\nproject"
+          + "_id\030\002 \001(\tB\004\342A\001\002\"\217\001\n\026CreateAgentPoolReque"
+          + "st\022\030\n\nproject_id\030\001 \001(\tB\004\342A\001\002\022>\n\nagent_po"
+          + "ol\030\002 \001(\0132$.google.storagetransfer.v1.Age"
+          + "ntPoolB\004\342A\001\002\022\033\n\ragent_pool_id\030\003 \001(\tB\004\342A\001"
+          + "\002\"\211\001\n\026UpdateAgentPoolRequest\022>\n\nagent_po"
+          + "ol\030\001 \001(\0132$.google.storagetransfer.v1.Age"
+          + "ntPoolB\004\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.goog"
+          + "le.protobuf.FieldMask\")\n\023GetAgentPoolReq"
+          + "uest\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\",\n\026DeleteAgentP"
+          + "oolRequest\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\"h\n\025ListAg"
+          + "entPoolsRequest\022\030\n\nproject_id\030\001 \001(\tB\004\342A\001"
+          + "\002\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\n"
+          + "page_token\030\004 \001(\t\"l\n\026ListAgentPoolsRespon"
+          + "se\0229\n\013agent_pools\030\001 \003(\0132$.google.storage"
+          + "transfer.v1.AgentPool\022\027\n\017next_page_token"
+          + "\030\002 \001(\t2\221\023\n\026StorageTransferService\022\265\001\n\027Ge"
+          + "tGoogleServiceAccount\0229.google.storagetr"
+          + "ansfer.v1.GetGoogleServiceAccountRequest"
+          + "\032/.google.storagetransfer.v1.GoogleServi"
+          + "ceAccount\".\202\323\344\223\002(\022&/v1/googleServiceAcco"
+          + "unts/{project_id}\022\230\001\n\021CreateTransferJob\022"
+          + "3.google.storagetransfer.v1.CreateTransf"
+          + "erJobRequest\032&.google.storagetransfer.v1"
+          + ".TransferJob\"&\202\323\344\223\002 \"\020/v1/transferJobs:\014"
+          + "transfer_job\022\233\001\n\021UpdateTransferJob\0223.goo"
+          + "gle.storagetransfer.v1.UpdateTransferJob"
+          + "Request\032&.google.storagetransfer.v1.Tran"
+          + "sferJob\")\202\323\344\223\002#2\036/v1/{job_name=transferJ"
+          + "obs/**}:\001*\022\222\001\n\016GetTransferJob\0220.google.s"
+          + "toragetransfer.v1.GetTransferJobRequest\032"
+          + "&.google.storagetransfer.v1.TransferJob\""
+          + "&\202\323\344\223\002 \022\036/v1/{job_name=transferJobs/**}\022"
+          + "\225\001\n\020ListTransferJobs\0222.google.storagetra"
+          + "nsfer.v1.ListTransferJobsRequest\0323.googl"
+          + "e.storagetransfer.v1.ListTransferJobsRes"
+          + "ponse\"\030\202\323\344\223\002\022\022\020/v1/transferJobs\022\235\001\n\026Paus"
+          + "eTransferOperation\0228.google.storagetrans"
+          + "fer.v1.PauseTransferOperationRequest\032\026.g"
+          + "oogle.protobuf.Empty\"1\202\323\344\223\002+\"&/v1/{name="
+          + "transferOperations/**}:pause:\001*\022\240\001\n\027Resu"
+          + "meTransferOperation\0229.google.storagetran"
+          + "sfer.v1.ResumeTransferOperationRequest\032\026"
+          + ".google.protobuf.Empty\"2\202\323\344\223\002,\"\'/v1/{nam"
+          + "e=transferOperations/**}:resume:\001*\022\275\001\n\016R"
+          + "unTransferJob\0220.google.storagetransfer.v"
+          + "1.RunTransferJobRequest\032\035.google.longrun"
+          + "ning.Operation\"Z\312A*\n\025google.protobuf.Emp"
+          + "ty\022\021TransferOperation\202\323\344\223\002\'\"\"/v1/{job_na"
+          + "me=transferJobs/**}:run:\001*\022\210\001\n\021DeleteTra"
+          + "nsferJob\0223.google.storagetransfer.v1.Del"
+          + "eteTransferJobRequest\032\026.google.protobuf."
+          + "Empty\"&\202\323\344\223\002 *\036/v1/{job_name=transferJob"
+          + "s/**}\022\314\001\n\017CreateAgentPool\0221.google.stora"
+          + "getransfer.v1.CreateAgentPoolRequest\032$.g"
+          + "oogle.storagetransfer.v1.AgentPool\"`\332A#p"
+          + "roject_id,agent_pool,agent_pool_id\202\323\344\223\0024"
+          + "\"&/v1/projects/{project_id=*}/agentPools"
+          + ":\nagent_pool\022\306\001\n\017UpdateAgentPool\0221.googl"
+          + "e.storagetransfer.v1.UpdateAgentPoolRequ"
+          + "est\032$.google.storagetransfer.v1.AgentPoo"
+          + "l\"Z\332A\026agent_pool,update_mask\202\323\344\223\002;2-/v1/"
+          + "{agent_pool.name=projects/*/agentPools/*"
+          + "}:\nagent_pool\022\227\001\n\014GetAgentPool\022..google."
+          + "storagetransfer.v1.GetAgentPoolRequest\032$"
+          + ".google.storagetransfer.v1.AgentPool\"1\332A"
+          + "\004name\202\323\344\223\002$\022\"/v1/{name=projects/*/agentP"
+          + "ools/*}\022\262\001\n\016ListAgentPools\0220.google.stor"
+          + "agetransfer.v1.ListAgentPoolsRequest\0321.g"
+          + "oogle.storagetransfer.v1.ListAgentPoolsR"
+          + "esponse\";\332A\nproject_id\202\323\344\223\002(\022&/v1/projec"
+          + "ts/{project_id=*}/agentPools\022\217\001\n\017DeleteA"
+          + "gentPool\0221.google.storagetransfer.v1.Del"
+          + "eteAgentPoolRequest\032\026.google.protobuf.Em"
+          + "pty\"1\332A\004name\202\323\344\223\002$*\"/v1/{name=projects/*"
+          + "/agentPools/*}\032R\312A\036storagetransfer.googl"
+          + "eapis.com\322A.https://www.googleapis.com/a"
+          + "uth/cloud-platformB\357\001\n#com.google.storag"
+          + "etransfer.v1.protoB\rTransferProtoZMcloud"
+          + ".google.com/go/storagetransfer/apiv1/sto"
+          + "ragetransferpb;storagetransferpb\370\001\001\252\002\037Go"
+          + "ogle.Cloud.StorageTransfer.V1\312\002\037Google\\C"
+          + "loud\\StorageTransfer\\V1\352\002\"Google::Cloud:"
+          + ":StorageTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

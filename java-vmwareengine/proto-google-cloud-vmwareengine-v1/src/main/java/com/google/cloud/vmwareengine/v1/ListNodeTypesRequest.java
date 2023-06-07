@@ -50,11 +50,6 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
     return new ListNodeTypesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmwareengine.v1.VmwareengineProto
         .internal_static_google_cloud_vmwareengine_v1_ListNodeTypesRequest_descriptor;
@@ -164,6 +159,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListNodeTypes` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListNodeTypes` must match the call that provided the page token.
    * </pre>
@@ -190,6 +186,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListNodeTypes` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListNodeTypes` must match the call that provided the page token.
    * </pre>
@@ -224,15 +221,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    * operator, and the value that you want to use for filtering. The value
    * must be a string, a number, or a boolean. The comparison operator
    * must be `=`, `!=`, `&gt;`, or `&lt;`.
+   *
    * For example, if you are filtering a list of node types, you can
    * exclude the ones named `standard-72` by specifying
    * `name != "standard-72"`.
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "standard-72")
    * (virtual_cpu_count &gt; 2)
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you
    * can include `AND` and `OR` expressions explicitly.
    * For example:
@@ -268,15 +268,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    * operator, and the value that you want to use for filtering. The value
    * must be a string, a number, or a boolean. The comparison operator
    * must be `=`, `!=`, `&gt;`, or `&lt;`.
+   *
    * For example, if you are filtering a list of node types, you can
    * exclude the ones named `standard-72` by specifying
    * `name != "standard-72"`.
+   *
    * To filter on multiple expressions, provide each separate expression within
    * parentheses. For example:
    * ```
    * (name = "standard-72")
    * (virtual_cpu_count &gt; 2)
    * ```
+   *
    * By default, each expression is an `AND` expression. However, you
    * can include `AND` and `OR` expressions explicitly.
    * For example:
@@ -923,6 +926,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListNodeTypes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListNodeTypes` must match the call that provided the page token.
      * </pre>
@@ -948,6 +952,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListNodeTypes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListNodeTypes` must match the call that provided the page token.
      * </pre>
@@ -973,6 +978,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListNodeTypes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListNodeTypes` must match the call that provided the page token.
      * </pre>
@@ -997,6 +1003,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListNodeTypes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListNodeTypes` must match the call that provided the page token.
      * </pre>
@@ -1017,6 +1024,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListNodeTypes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListNodeTypes` must match the call that provided the page token.
      * </pre>
@@ -1047,15 +1055,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * operator, and the value that you want to use for filtering. The value
      * must be a string, a number, or a boolean. The comparison operator
      * must be `=`, `!=`, `&gt;`, or `&lt;`.
+     *
      * For example, if you are filtering a list of node types, you can
      * exclude the ones named `standard-72` by specifying
      * `name != "standard-72"`.
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "standard-72")
      * (virtual_cpu_count &gt; 2)
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you
      * can include `AND` and `OR` expressions explicitly.
      * For example:
@@ -1090,15 +1101,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * operator, and the value that you want to use for filtering. The value
      * must be a string, a number, or a boolean. The comparison operator
      * must be `=`, `!=`, `&gt;`, or `&lt;`.
+     *
      * For example, if you are filtering a list of node types, you can
      * exclude the ones named `standard-72` by specifying
      * `name != "standard-72"`.
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "standard-72")
      * (virtual_cpu_count &gt; 2)
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you
      * can include `AND` and `OR` expressions explicitly.
      * For example:
@@ -1133,15 +1147,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * operator, and the value that you want to use for filtering. The value
      * must be a string, a number, or a boolean. The comparison operator
      * must be `=`, `!=`, `&gt;`, or `&lt;`.
+     *
      * For example, if you are filtering a list of node types, you can
      * exclude the ones named `standard-72` by specifying
      * `name != "standard-72"`.
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "standard-72")
      * (virtual_cpu_count &gt; 2)
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you
      * can include `AND` and `OR` expressions explicitly.
      * For example:
@@ -1175,15 +1192,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * operator, and the value that you want to use for filtering. The value
      * must be a string, a number, or a boolean. The comparison operator
      * must be `=`, `!=`, `&gt;`, or `&lt;`.
+     *
      * For example, if you are filtering a list of node types, you can
      * exclude the ones named `standard-72` by specifying
      * `name != "standard-72"`.
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "standard-72")
      * (virtual_cpu_count &gt; 2)
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you
      * can include `AND` and `OR` expressions explicitly.
      * For example:
@@ -1213,15 +1233,18 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * operator, and the value that you want to use for filtering. The value
      * must be a string, a number, or a boolean. The comparison operator
      * must be `=`, `!=`, `&gt;`, or `&lt;`.
+     *
      * For example, if you are filtering a list of node types, you can
      * exclude the ones named `standard-72` by specifying
      * `name != "standard-72"`.
+     *
      * To filter on multiple expressions, provide each separate expression within
      * parentheses. For example:
      * ```
      * (name = "standard-72")
      * (virtual_cpu_count &gt; 2)
      * ```
+     *
      * By default, each expression is an `AND` expression. However, you
      * can include `AND` and `OR` expressions explicitly.
      * For example:

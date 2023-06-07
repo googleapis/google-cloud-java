@@ -49,11 +49,6 @@ public final class ServiceIdentity extends com.google.protobuf.GeneratedMessageV
     return new ServiceIdentity();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_ServiceIdentity_descriptor;

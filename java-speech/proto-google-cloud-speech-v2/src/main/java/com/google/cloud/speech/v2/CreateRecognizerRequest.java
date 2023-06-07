@@ -49,11 +49,6 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
     return new CreateRecognizerRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_CreateRecognizerRequest_descriptor;
@@ -154,6 +149,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
    * <pre>
    * The ID to use for the Recognizer, which will become the final component of
    * the Recognizer's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -180,6 +176,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
    * <pre>
    * The ID to use for the Recognizer, which will become the final component of
    * the Recognizer's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -942,6 +939,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * <pre>
      * The ID to use for the Recognizer, which will become the final component of
      * the Recognizer's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -967,6 +965,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * <pre>
      * The ID to use for the Recognizer, which will become the final component of
      * the Recognizer's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -992,6 +991,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * <pre>
      * The ID to use for the Recognizer, which will become the final component of
      * the Recognizer's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1016,6 +1016,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * <pre>
      * The ID to use for the Recognizer, which will become the final component of
      * the Recognizer's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
@@ -1036,6 +1037,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * <pre>
      * The ID to use for the Recognizer, which will become the final component of
      * the Recognizer's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>

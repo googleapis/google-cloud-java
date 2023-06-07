@@ -277,5 +277,5 @@ public interface SourceOrBuilder
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
-  public com.google.cloud.vmmigration.v1.Source.SourceDetailsCase getSourceDetailsCase();
+  com.google.cloud.vmmigration.v1.Source.SourceDetailsCase getSourceDetailsCase();
 }

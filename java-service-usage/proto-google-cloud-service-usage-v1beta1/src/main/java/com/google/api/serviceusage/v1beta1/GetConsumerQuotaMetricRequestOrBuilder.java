@@ -28,6 +28,7 @@ public interface GetConsumerQuotaMetricRequestOrBuilder
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com/quotas/metrics/serviceusage.googleapis.com%2Fmutate_requests`
    * </pre>
@@ -42,6 +43,7 @@ public interface GetConsumerQuotaMetricRequestOrBuilder
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com/quotas/metrics/serviceusage.googleapis.com%2Fmutate_requests`
    * </pre>

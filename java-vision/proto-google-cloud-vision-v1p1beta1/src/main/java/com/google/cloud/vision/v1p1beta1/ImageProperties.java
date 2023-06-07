@@ -45,11 +45,6 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
     return new ImageProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p1beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p1beta1_ImageProperties_descriptor;
