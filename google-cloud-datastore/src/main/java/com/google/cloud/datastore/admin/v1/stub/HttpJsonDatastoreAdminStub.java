@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.admin.v1.CreateIndexRequest;
@@ -392,31 +393,69 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
         HttpJsonCallSettings.<ExportEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(exportEntitiesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportEntitiesRequest, Operation> importEntitiesTransportSettings =
         HttpJsonCallSettings.<ImportEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(importEntitiesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         HttpJsonCallSettings.<CreateIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(createIndexMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         HttpJsonCallSettings.<DeleteIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteIndexMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index_id", String.valueOf(request.getIndexId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         HttpJsonCallSettings.<GetIndexRequest, Index>newBuilder()
             .setMethodDescriptor(getIndexMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index_id", String.valueOf(request.getIndexId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         HttpJsonCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
             .setMethodDescriptor(listIndexesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
 
     this.exportEntitiesCallable =

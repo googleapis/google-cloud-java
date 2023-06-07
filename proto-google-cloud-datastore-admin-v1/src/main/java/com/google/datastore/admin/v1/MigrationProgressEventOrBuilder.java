@@ -28,6 +28,7 @@ public interface MigrationProgressEventOrBuilder
    *
    * <pre>
    * The step that is starting.
+   *
    * An event with step set to `START` indicates that the migration
    * has been reverted back to the initial pre-migration state.
    * </pre>
@@ -42,6 +43,7 @@ public interface MigrationProgressEventOrBuilder
    *
    * <pre>
    * The step that is starting.
+   *
    * An event with step set to `START` indicates that the migration
    * has been reverted back to the initial pre-migration state.
    * </pre>
@@ -137,5 +139,5 @@ public interface MigrationProgressEventOrBuilder
   com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetailsOrBuilder
       getRedirectWritesStepDetailsOrBuilder();
 
-  public com.google.datastore.admin.v1.MigrationProgressEvent.StepDetailsCase getStepDetailsCase();
+  com.google.datastore.admin.v1.MigrationProgressEvent.StepDetailsCase getStepDetailsCase();
 }

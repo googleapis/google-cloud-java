@@ -173,6 +173,7 @@ public interface QueryResultBatchOrBuilder
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater snapshot version number. Each batch's snapshot version
    * is valid for all preceding batches.
@@ -193,6 +194,7 @@ public interface QueryResultBatchOrBuilder
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -213,6 +215,7 @@ public interface QueryResultBatchOrBuilder
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -233,6 +236,7 @@ public interface QueryResultBatchOrBuilder
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.

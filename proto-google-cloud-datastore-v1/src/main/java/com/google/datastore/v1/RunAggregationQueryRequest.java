@@ -49,11 +49,6 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     return new RunAggregationQueryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_RunAggregationQueryRequest_descriptor;
@@ -70,6 +65,8 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   }
 
   private int queryTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object queryType_;
 
   public enum QueryTypeCase
@@ -176,6 +173,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -201,6 +199,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -1078,6 +1077,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1102,6 +1102,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1126,6 +1127,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1149,6 +1151,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1168,6 +1171,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>

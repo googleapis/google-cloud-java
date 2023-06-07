@@ -64,7 +64,9 @@ public interface AggregationQueryOrBuilder
    * <pre>
    * Optional. Series of aggregations to apply over the results of the
    * `nested_query`.
+   *
    * Requires:
+   *
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
    *
@@ -79,7 +81,9 @@ public interface AggregationQueryOrBuilder
    * <pre>
    * Optional. Series of aggregations to apply over the results of the
    * `nested_query`.
+   *
    * Requires:
+   *
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
    *
@@ -94,7 +98,9 @@ public interface AggregationQueryOrBuilder
    * <pre>
    * Optional. Series of aggregations to apply over the results of the
    * `nested_query`.
+   *
    * Requires:
+   *
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
    *
@@ -109,7 +115,9 @@ public interface AggregationQueryOrBuilder
    * <pre>
    * Optional. Series of aggregations to apply over the results of the
    * `nested_query`.
+   *
    * Requires:
+   *
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
    *
@@ -125,7 +133,9 @@ public interface AggregationQueryOrBuilder
    * <pre>
    * Optional. Series of aggregations to apply over the results of the
    * `nested_query`.
+   *
    * Requires:
+   *
    * * A minimum of one and maximum of five aggregations per query.
    * </pre>
    *
@@ -135,5 +145,5 @@ public interface AggregationQueryOrBuilder
    */
   com.google.datastore.v1.AggregationQuery.AggregationOrBuilder getAggregationsOrBuilder(int index);
 
-  public com.google.datastore.v1.AggregationQuery.QueryTypeCase getQueryTypeCase();
+  com.google.datastore.v1.AggregationQuery.QueryTypeCase getQueryTypeCase();
 }

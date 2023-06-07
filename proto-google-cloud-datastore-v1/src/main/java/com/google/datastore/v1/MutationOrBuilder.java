@@ -245,8 +245,7 @@ public interface MutationOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.datastore.v1.Mutation.OperationCase getOperationCase();
+  com.google.datastore.v1.Mutation.OperationCase getOperationCase();
 
-  public com.google.datastore.v1.Mutation.ConflictDetectionStrategyCase
-      getConflictDetectionStrategyCase();
+  com.google.datastore.v1.Mutation.ConflictDetectionStrategyCase getConflictDetectionStrategyCase();
 }

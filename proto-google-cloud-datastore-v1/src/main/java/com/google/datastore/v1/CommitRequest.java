@@ -50,11 +50,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     return new CommitRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_CommitRequest_descriptor;
@@ -232,6 +227,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int transactionSelectorCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transactionSelector_;
 
   public enum TransactionSelectorCase
@@ -338,6 +335,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -363,6 +361,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -527,13 +526,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The mutations to perform.
+   *
    * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
    * applied in order. The following sequences of mutations affecting a single
    * entity are not permitted in a single `Commit` request:
+   *
    * - `insert` followed by `insert`
    * - `update` followed by `insert`
    * - `upsert` followed by `insert`
    * - `delete` followed by `update`
+   *
    * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
    * entity.
    * </pre>
@@ -549,13 +551,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The mutations to perform.
+   *
    * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
    * applied in order. The following sequences of mutations affecting a single
    * entity are not permitted in a single `Commit` request:
+   *
    * - `insert` followed by `insert`
    * - `update` followed by `insert`
    * - `upsert` followed by `insert`
    * - `delete` followed by `update`
+   *
    * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
    * entity.
    * </pre>
@@ -572,13 +577,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The mutations to perform.
+   *
    * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
    * applied in order. The following sequences of mutations affecting a single
    * entity are not permitted in a single `Commit` request:
+   *
    * - `insert` followed by `insert`
    * - `update` followed by `insert`
    * - `upsert` followed by `insert`
    * - `delete` followed by `update`
+   *
    * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
    * entity.
    * </pre>
@@ -594,13 +602,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The mutations to perform.
+   *
    * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
    * applied in order. The following sequences of mutations affecting a single
    * entity are not permitted in a single `Commit` request:
+   *
    * - `insert` followed by `insert`
    * - `update` followed by `insert`
    * - `upsert` followed by `insert`
    * - `delete` followed by `update`
+   *
    * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
    * entity.
    * </pre>
@@ -616,13 +627,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The mutations to perform.
+   *
    * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
    * applied in order. The following sequences of mutations affecting a single
    * entity are not permitted in a single `Commit` request:
+   *
    * - `insert` followed by `insert`
    * - `update` followed by `insert`
    * - `upsert` followed by `insert`
    * - `delete` followed by `update`
+   *
    * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
    * entity.
    * </pre>
@@ -1297,6 +1311,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1321,6 +1336,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1345,6 +1361,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1368,6 +1385,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1387,6 +1405,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1835,13 +1854,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -1860,13 +1882,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -1885,13 +1910,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -1910,13 +1938,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -1941,13 +1972,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -1970,13 +2004,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2001,13 +2038,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2032,13 +2072,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2060,13 +2103,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2089,13 +2135,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2118,13 +2167,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2146,13 +2198,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2174,13 +2229,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2195,13 +2253,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2220,13 +2281,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2246,13 +2310,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2268,13 +2335,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>
@@ -2290,13 +2360,16 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The mutations to perform.
+     *
      * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
      * applied in order. The following sequences of mutations affecting a single
      * entity are not permitted in a single `Commit` request:
+     *
      * - `insert` followed by `insert`
      * - `update` followed by `insert`
      * - `upsert` followed by `insert`
      * - `delete` followed by `update`
+     *
      * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
      * entity.
      * </pre>

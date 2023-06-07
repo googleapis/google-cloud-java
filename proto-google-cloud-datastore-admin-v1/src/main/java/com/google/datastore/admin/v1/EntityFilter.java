@@ -26,14 +26,19 @@ package com.google.datastore.admin.v1;
  * combinations of kinds and namespaces (either or both of which may be all, as
  * described in the following examples).
  * Example usage:
+ *
  * Entire project:
  *   kinds=[], namespace_ids=[]
+ *
  * Kinds Foo and Bar in all namespaces:
  *   kinds=['Foo', 'Bar'], namespace_ids=[]
+ *
  * Kinds Foo and Bar only in the default namespace:
  *   kinds=['Foo', 'Bar'], namespace_ids=['']
+ *
  * Kinds Foo and Bar in both the default and Baz namespaces:
  *   kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz']
+ *
  * The entire Baz namespace:
  *   kinds=[], namespace_ids=['Baz']
  * </pre>
@@ -51,19 +56,14 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private EntityFilter() {
-    kinds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    namespaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    kinds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    namespaceIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EntityFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,7 +84,8 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public static final int KINDS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList kinds_;
+  private com.google.protobuf.LazyStringArrayList kinds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -147,13 +148,15 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public static final int NAMESPACE_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList namespaceIds_;
+  private com.google.protobuf.LazyStringArrayList namespaceIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * An empty list represents all namespaces. This is the preferred
    * usage for projects that don't use namespaces.
+   *
    * An empty string element represents the default namespace. This should be
    * used if the project has data in non-default namespaces, but doesn't want to
    * include them.
@@ -173,6 +176,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An empty list represents all namespaces. This is the preferred
    * usage for projects that don't use namespaces.
+   *
    * An empty string element represents the default namespace. This should be
    * used if the project has data in non-default namespaces, but doesn't want to
    * include them.
@@ -192,6 +196,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An empty list represents all namespaces. This is the preferred
    * usage for projects that don't use namespaces.
+   *
    * An empty string element represents the default namespace. This should be
    * used if the project has data in non-default namespaces, but doesn't want to
    * include them.
@@ -212,6 +217,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An empty list represents all namespaces. This is the preferred
    * usage for projects that don't use namespaces.
+   *
    * An empty string element represents the default namespace. This should be
    * used if the project has data in non-default namespaces, but doesn't want to
    * include them.
@@ -417,14 +423,19 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
    * combinations of kinds and namespaces (either or both of which may be all, as
    * described in the following examples).
    * Example usage:
+   *
    * Entire project:
    *   kinds=[], namespace_ids=[]
+   *
    * Kinds Foo and Bar in all namespaces:
    *   kinds=['Foo', 'Bar'], namespace_ids=[]
+   *
    * Kinds Foo and Bar only in the default namespace:
    *   kinds=['Foo', 'Bar'], namespace_ids=['']
+   *
    * Kinds Foo and Bar in both the default and Baz namespaces:
    *   kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz']
+   *
    * The entire Baz namespace:
    *   kinds=[], namespace_ids=['Baz']
    * </pre>
@@ -461,10 +472,8 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      kinds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      namespaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      kinds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      namespaceIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -492,7 +501,6 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.admin.v1.EntityFilter buildPartial() {
       com.google.datastore.admin.v1.EntityFilter result =
           new com.google.datastore.admin.v1.EntityFilter(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -500,21 +508,16 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.datastore.admin.v1.EntityFilter result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        kinds_ = kinds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.kinds_ = kinds_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        namespaceIds_ = namespaceIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.namespaceIds_ = namespaceIds_;
-    }
-
     private void buildPartial0(com.google.datastore.admin.v1.EntityFilter result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        kinds_.makeImmutable();
+        result.kinds_ = kinds_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        namespaceIds_.makeImmutable();
+        result.namespaceIds_ = namespaceIds_;
+      }
     }
 
     @java.lang.Override
@@ -565,7 +568,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       if (!other.kinds_.isEmpty()) {
         if (kinds_.isEmpty()) {
           kinds_ = other.kinds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureKindsIsMutable();
           kinds_.addAll(other.kinds_);
@@ -575,7 +578,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       if (!other.namespaceIds_.isEmpty()) {
         if (namespaceIds_.isEmpty()) {
           namespaceIds_ = other.namespaceIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureNamespaceIdsIsMutable();
           namespaceIds_.addAll(other.namespaceIds_);
@@ -641,14 +644,14 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList kinds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList kinds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureKindsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!kinds_.isModifiable()) {
         kinds_ = new com.google.protobuf.LazyStringArrayList(kinds_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -662,7 +665,8 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the kinds.
      */
     public com.google.protobuf.ProtocolStringList getKindsList() {
-      return kinds_.getUnmodifiableView();
+      kinds_.makeImmutable();
+      return kinds_;
     }
     /**
      *
@@ -727,6 +731,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureKindsIsMutable();
       kinds_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -748,6 +753,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureKindsIsMutable();
       kinds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,6 +772,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllKinds(java.lang.Iterable<java.lang.String> values) {
       ensureKindsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kinds_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +788,9 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKinds() {
-      kinds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kinds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -805,18 +813,19 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureKindsIsMutable();
       kinds_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList namespaceIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList namespaceIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNamespaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!namespaceIds_.isModifiable()) {
         namespaceIds_ = new com.google.protobuf.LazyStringArrayList(namespaceIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -824,6 +833,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -835,7 +845,8 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the namespaceIds.
      */
     public com.google.protobuf.ProtocolStringList getNamespaceIdsList() {
-      return namespaceIds_.getUnmodifiableView();
+      namespaceIds_.makeImmutable();
+      return namespaceIds_;
     }
     /**
      *
@@ -843,6 +854,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -862,6 +874,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -882,6 +895,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -902,6 +916,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -920,6 +935,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNamespaceIdsIsMutable();
       namespaceIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -929,6 +945,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -946,6 +963,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNamespaceIdsIsMutable();
       namespaceIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -955,6 +973,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -969,6 +988,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllNamespaceIds(java.lang.Iterable<java.lang.String> values) {
       ensureNamespaceIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, namespaceIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -978,6 +998,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -989,8 +1010,9 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNamespaceIds() {
-      namespaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      namespaceIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1000,6 +1022,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An empty list represents all namespaces. This is the preferred
      * usage for projects that don't use namespaces.
+     *
      * An empty string element represents the default namespace. This should be
      * used if the project has data in non-default namespaces, but doesn't want to
      * include them.
@@ -1018,6 +1041,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureNamespaceIdsIsMutable();
       namespaceIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

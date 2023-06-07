@@ -52,11 +52,6 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
     return new Query();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_Query_descriptor;
   }
@@ -345,7 +340,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   *
    * Requires:
+   *
    * * If `order` is specified, the set of distinct on properties must appear
    * before the non-distinct on properties in `order`.
    * </pre>
@@ -363,7 +360,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   *
    * Requires:
+   *
    * * If `order` is specified, the set of distinct on properties must appear
    * before the non-distinct on properties in `order`.
    * </pre>
@@ -382,7 +381,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   *
    * Requires:
+   *
    * * If `order` is specified, the set of distinct on properties must appear
    * before the non-distinct on properties in `order`.
    * </pre>
@@ -400,7 +401,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   *
    * Requires:
+   *
    * * If `order` is specified, the set of distinct on properties must appear
    * before the non-distinct on properties in `order`.
    * </pre>
@@ -418,7 +421,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   *
    * Requires:
+   *
    * * If `order` is specified, the set of distinct on properties must appear
    * before the non-distinct on properties in `order`.
    * </pre>
@@ -2524,7 +2529,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2545,7 +2552,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2566,7 +2575,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2587,7 +2598,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2614,7 +2627,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2639,7 +2654,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2666,7 +2683,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2693,7 +2712,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2718,7 +2739,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2743,7 +2766,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2768,7 +2793,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2792,7 +2819,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2816,7 +2845,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2833,7 +2864,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2854,7 +2887,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2876,7 +2911,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2894,7 +2931,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>
@@ -2912,7 +2951,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     *
      * Requires:
+     *
      * * If `order` is specified, the set of distinct on properties must appear
      * before the non-distinct on properties in `order`.
      * </pre>

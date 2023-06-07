@@ -53,6 +53,7 @@ public interface RunAggregationQueryRequestOrBuilder
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -67,6 +68,7 @@ public interface RunAggregationQueryRequestOrBuilder
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -226,5 +228,5 @@ public interface RunAggregationQueryRequestOrBuilder
    */
   com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder();
 
-  public com.google.datastore.v1.RunAggregationQueryRequest.QueryTypeCase getQueryTypeCase();
+  com.google.datastore.v1.RunAggregationQueryRequest.QueryTypeCase getQueryTypeCase();
 }

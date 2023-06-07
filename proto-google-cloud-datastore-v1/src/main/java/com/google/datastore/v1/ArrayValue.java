@@ -47,11 +47,6 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     return new ArrayValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.EntityProto
         .internal_static_google_datastore_v1_ArrayValue_descriptor;

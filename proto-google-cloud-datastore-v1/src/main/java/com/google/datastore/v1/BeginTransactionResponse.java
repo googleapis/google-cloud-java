@@ -48,11 +48,6 @@ public final class BeginTransactionResponse extends com.google.protobuf.Generate
     return new BeginTransactionResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_BeginTransactionResponse_descriptor;

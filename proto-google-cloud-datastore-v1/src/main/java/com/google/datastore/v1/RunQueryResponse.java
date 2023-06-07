@@ -48,11 +48,6 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     return new RunQueryResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_RunQueryResponse_descriptor;
@@ -168,6 +163,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The identifier of the transaction that was started as part of this
    * RunQuery request.
+   *
    * Set only when
    * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
    * was set in
@@ -953,6 +949,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The identifier of the transaction that was started as part of this
      * RunQuery request.
+     *
      * Set only when
      * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
      * was set in
@@ -973,6 +970,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The identifier of the transaction that was started as part of this
      * RunQuery request.
+     *
      * Set only when
      * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
      * was set in
@@ -999,6 +997,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The identifier of the transaction that was started as part of this
      * RunQuery request.
+     *
      * Set only when
      * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
      * was set in

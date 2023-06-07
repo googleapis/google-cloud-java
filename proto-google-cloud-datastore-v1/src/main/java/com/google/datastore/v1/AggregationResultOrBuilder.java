@@ -28,6 +28,7 @@ public interface AggregationResultOrBuilder
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -42,6 +43,7 @@ public interface AggregationResultOrBuilder
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -59,6 +61,7 @@ public interface AggregationResultOrBuilder
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -73,6 +76,7 @@ public interface AggregationResultOrBuilder
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -91,6 +95,7 @@ public interface AggregationResultOrBuilder
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the

@@ -49,11 +49,6 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     return new ImportEntitiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.DatastoreAdminProto
         .internal_static_google_datastore_admin_v1_ImportEntitiesRequest_descriptor;
@@ -251,6 +246,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
    * namespace paths, see
    * [Object name
    * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+   *
    * For more information, see
    * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
    * </pre>
@@ -285,6 +281,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
    * namespace paths, see
    * [Object name
    * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+   *
    * For more information, see
    * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
    * </pre>
@@ -1104,6 +1101,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * For more information, see
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
      * </pre>
@@ -1137,6 +1135,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * For more information, see
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
      * </pre>
@@ -1170,6 +1169,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * For more information, see
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
      * </pre>
@@ -1202,6 +1202,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * For more information, see
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
      * </pre>
@@ -1230,6 +1231,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * For more information, see
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.datastore.admin.v1.CreateIndexRequest;
 import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesMetadata;
@@ -176,9 +176,9 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             .setMethodDescriptor(exportEntitiesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportEntitiesRequest, Operation> importEntitiesTransportSettings =
@@ -186,9 +186,9 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             .setMethodDescriptor(importEntitiesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
@@ -196,9 +196,9 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             .setMethodDescriptor(createIndexMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
@@ -206,10 +206,10 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             .setMethodDescriptor(deleteIndexMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("index_id", String.valueOf(request.getIndexId()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index_id", String.valueOf(request.getIndexId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
@@ -217,10 +217,10 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             .setMethodDescriptor(getIndexMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("index_id", String.valueOf(request.getIndexId()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index_id", String.valueOf(request.getIndexId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
@@ -228,9 +228,9 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
             .setMethodDescriptor(listIndexesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
 

@@ -48,11 +48,6 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
     return new AggregationResultBatch();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.AggregationResultProto
         .internal_static_google_datastore_v1_AggregationResultBatch_descriptor;
@@ -188,6 +183,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Read timestamp this batch was returned from.
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -206,6 +202,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Read timestamp this batch was returned from.
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -224,6 +221,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Read timestamp this batch was returned from.
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -1154,6 +1152,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1171,6 +1170,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1192,6 +1192,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1217,6 +1218,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1239,6 +1241,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1267,6 +1270,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1289,6 +1293,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1306,6 +1311,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1325,6 +1331,7 @@ public final class AggregationResultBatch extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Read timestamp this batch was returned from.
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.

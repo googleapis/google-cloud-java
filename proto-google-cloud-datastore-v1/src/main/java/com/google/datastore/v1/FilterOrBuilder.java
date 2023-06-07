@@ -93,5 +93,5 @@ public interface FilterOrBuilder
    */
   com.google.datastore.v1.PropertyFilterOrBuilder getPropertyFilterOrBuilder();
 
-  public com.google.datastore.v1.Filter.FilterTypeCase getFilterTypeCase();
+  com.google.datastore.v1.Filter.FilterTypeCase getFilterTypeCase();
 }

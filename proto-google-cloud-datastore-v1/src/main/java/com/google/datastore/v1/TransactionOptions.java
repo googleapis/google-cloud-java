@@ -23,6 +23,7 @@ package com.google.datastore.v1;
  *
  * <pre>
  * Options for beginning a new transaction.
+ *
  * Transactions can be created explicitly with calls to
  * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction]
  * or implicitly by setting
@@ -48,11 +49,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TransactionOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -115,11 +111,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReadWrite();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -689,11 +680,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReadOnly();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1367,6 +1353,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
   }
 
   private int modeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object mode_;
 
   public enum ModeCase
@@ -1709,6 +1697,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Options for beginning a new transaction.
+   *
    * Transactions can be created explicitly with calls to
    * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction]
    * or implicitly by setting

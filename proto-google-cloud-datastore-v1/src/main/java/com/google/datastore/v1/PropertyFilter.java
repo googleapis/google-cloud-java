@@ -47,11 +47,6 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     return new PropertyFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto
         .internal_static_google_datastore_v1_PropertyFilter_descriptor;
@@ -92,7 +87,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is less than the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -104,7 +101,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is less than or equal to the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -116,7 +115,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is greater than the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -128,7 +129,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is greater than or equal to the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -150,7 +153,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is equal to at least one value in the given array.
+     *
      * Requires:
+     *
      * * That `value` is a non-empty `ArrayValue` with at most 10 values.
      * * No other `IN` or `NOT_IN` is in the same query.
      * </pre>
@@ -163,7 +168,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is not equal to the given `value`.
+     *
      * Requires:
+     *
      * * No other `NOT_EQUAL` or `NOT_IN` is in the same query.
      * * That `property` comes first in the `order_by`.
      * </pre>
@@ -176,7 +183,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Limit the result set to the given entity and its descendants.
+     *
      * Requires:
+     *
      * * That `value` is an entity key.
      * * No other `HAS_ANCESTOR` is in the same query.
      * </pre>
@@ -189,7 +198,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The value of the `property` is not in the given array.
+     *
      * Requires:
+     *
      * * That `value` is a non-empty `ArrayValue` with at most 10 values.
      * * No other `IN`, `NOT_IN`, `NOT_EQUAL` is in the same query.
      * * That `field` comes first in the `order_by`.
@@ -216,7 +227,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is less than the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -228,7 +241,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is less than or equal to the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -240,7 +255,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is greater than the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -252,7 +269,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is greater than or equal to the given `value`.
+     *
      * Requires:
+     *
      * * That `property` comes first in `order_by`.
      * </pre>
      *
@@ -274,7 +293,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is equal to at least one value in the given array.
+     *
      * Requires:
+     *
      * * That `value` is a non-empty `ArrayValue` with at most 10 values.
      * * No other `IN` or `NOT_IN` is in the same query.
      * </pre>
@@ -287,7 +308,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The given `property` is not equal to the given `value`.
+     *
      * Requires:
+     *
      * * No other `NOT_EQUAL` or `NOT_IN` is in the same query.
      * * That `property` comes first in the `order_by`.
      * </pre>
@@ -300,7 +323,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Limit the result set to the given entity and its descendants.
+     *
      * Requires:
+     *
      * * That `value` is an entity key.
      * * No other `HAS_ANCESTOR` is in the same query.
      * </pre>
@@ -313,7 +338,9 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The value of the `property` is not in the given array.
+     *
      * Requires:
+     *
      * * That `value` is a non-empty `ArrayValue` with at most 10 values.
      * * No other `IN`, `NOT_IN`, `NOT_EQUAL` is in the same query.
      * * That `field` comes first in the `order_by`.

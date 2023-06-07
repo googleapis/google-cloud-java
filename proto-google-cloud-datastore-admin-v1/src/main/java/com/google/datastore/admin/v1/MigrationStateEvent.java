@@ -49,11 +49,6 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
     return new MigrationStateEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.MigrationProto
         .internal_static_google_datastore_admin_v1_MigrationStateEvent_descriptor;

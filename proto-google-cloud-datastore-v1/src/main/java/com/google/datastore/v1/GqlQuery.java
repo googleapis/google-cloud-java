@@ -49,11 +49,6 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
     return new GqlQuery();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto
         .internal_static_google_datastore_v1_GqlQuery_descriptor;
@@ -191,6 +186,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
+   *
    * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
    * `__.*__`, and must not be `""`.
    * </pre>
@@ -217,6 +213,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
+   *
    * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
    * `__.*__`, and must not be `""`.
    * </pre>
@@ -234,6 +231,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
+   *
    * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
    * `__.*__`, and must not be `""`.
    * </pre>
@@ -258,6 +256,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
+   *
    * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
    * `__.*__`, and must not be `""`.
    * </pre>
@@ -287,6 +286,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
+   *
    * For each binding site numbered i in `query_string`, there must be an i-th
    * numbered parameter. The inverse must also be true.
    * </pre>
@@ -303,6 +303,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
+   *
    * For each binding site numbered i in `query_string`, there must be an i-th
    * numbered parameter. The inverse must also be true.
    * </pre>
@@ -320,6 +321,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
+   *
    * For each binding site numbered i in `query_string`, there must be an i-th
    * numbered parameter. The inverse must also be true.
    * </pre>
@@ -336,6 +338,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
+   *
    * For each binding site numbered i in `query_string`, there must be an i-th
    * numbered parameter. The inverse must also be true.
    * </pre>
@@ -352,6 +355,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
+   *
    * For each binding site numbered i in `query_string`, there must be an i-th
    * numbered parameter. The inverse must also be true.
    * </pre>
@@ -1067,6 +1071,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1093,6 +1098,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1110,6 +1116,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1134,6 +1141,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1164,6 +1172,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1190,6 +1199,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1214,6 +1224,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
+     *
      * Key must match regex `[A-Za-z_$][A-Za-z_$0-9]*`, must not match regex
      * `__.*__`, and must not be `""`.
      * </pre>
@@ -1250,6 +1261,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1269,6 +1281,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1288,6 +1301,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1307,6 +1321,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1333,6 +1348,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1356,6 +1372,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1381,6 +1398,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1407,6 +1425,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1430,6 +1449,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1453,6 +1473,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1476,6 +1497,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1498,6 +1520,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1520,6 +1543,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1536,6 +1560,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1556,6 +1581,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1576,6 +1602,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1592,6 +1619,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>
@@ -1609,6 +1637,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
+     *
      * For each binding site numbered i in `query_string`, there must be an i-th
      * numbered parameter. The inverse must also be true.
      * </pre>

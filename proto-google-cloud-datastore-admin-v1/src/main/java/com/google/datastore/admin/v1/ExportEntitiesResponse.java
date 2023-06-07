@@ -48,11 +48,6 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
     return new ExportEntitiesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.DatastoreAdminProto
         .internal_static_google_datastore_admin_v1_ExportEntitiesResponse_descriptor;

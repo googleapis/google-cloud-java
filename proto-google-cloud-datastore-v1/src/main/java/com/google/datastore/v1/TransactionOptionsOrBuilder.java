@@ -93,5 +93,5 @@ public interface TransactionOptionsOrBuilder
    */
   com.google.datastore.v1.TransactionOptions.ReadOnlyOrBuilder getReadOnlyOrBuilder();
 
-  public com.google.datastore.v1.TransactionOptions.ModeCase getModeCase();
+  com.google.datastore.v1.TransactionOptions.ModeCase getModeCase();
 }

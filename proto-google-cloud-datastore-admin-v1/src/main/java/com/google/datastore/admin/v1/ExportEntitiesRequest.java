@@ -49,11 +49,6 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
     return new ExportEntitiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.DatastoreAdminProto
         .internal_static_google_datastore_admin_v1_ExportEntitiesRequest_descriptor;
@@ -292,6 +287,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Location for the export metadata and data files.
+   *
    * The full resource URL of the external storage location. Currently, only
    * Google Cloud Storage is supported. So output_url_prefix should be of the
    * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -300,10 +296,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
    * information about Cloud Storage namespace paths, see
    * [Object name
    * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+   *
    * The resulting files will be nested deeper than the specified URL prefix.
    * The final output URL will be provided in the
    * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
    * value should be used for subsequent ImportEntities operations.
+   *
    * By nesting the data files deeper, the same Cloud Storage bucket can be used
    * in multiple ExportEntities operations without conflict.
    * </pre>
@@ -329,6 +327,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Location for the export metadata and data files.
+   *
    * The full resource URL of the external storage location. Currently, only
    * Google Cloud Storage is supported. So output_url_prefix should be of the
    * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -337,10 +336,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
    * information about Cloud Storage namespace paths, see
    * [Object name
    * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+   *
    * The resulting files will be nested deeper than the specified URL prefix.
    * The final output URL will be provided in the
    * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
    * value should be used for subsequent ImportEntities operations.
+   *
    * By nesting the data files deeper, the same Cloud Storage bucket can be used
    * in multiple ExportEntities operations without conflict.
    * </pre>
@@ -1276,6 +1277,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Location for the export metadata and data files.
+     *
      * The full resource URL of the external storage location. Currently, only
      * Google Cloud Storage is supported. So output_url_prefix should be of the
      * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -1284,10 +1286,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * information about Cloud Storage namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * The resulting files will be nested deeper than the specified URL prefix.
      * The final output URL will be provided in the
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
      * value should be used for subsequent ImportEntities operations.
+     *
      * By nesting the data files deeper, the same Cloud Storage bucket can be used
      * in multiple ExportEntities operations without conflict.
      * </pre>
@@ -1312,6 +1316,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Location for the export metadata and data files.
+     *
      * The full resource URL of the external storage location. Currently, only
      * Google Cloud Storage is supported. So output_url_prefix should be of the
      * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -1320,10 +1325,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * information about Cloud Storage namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * The resulting files will be nested deeper than the specified URL prefix.
      * The final output URL will be provided in the
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
      * value should be used for subsequent ImportEntities operations.
+     *
      * By nesting the data files deeper, the same Cloud Storage bucket can be used
      * in multiple ExportEntities operations without conflict.
      * </pre>
@@ -1348,6 +1355,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Location for the export metadata and data files.
+     *
      * The full resource URL of the external storage location. Currently, only
      * Google Cloud Storage is supported. So output_url_prefix should be of the
      * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -1356,10 +1364,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * information about Cloud Storage namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * The resulting files will be nested deeper than the specified URL prefix.
      * The final output URL will be provided in the
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
      * value should be used for subsequent ImportEntities operations.
+     *
      * By nesting the data files deeper, the same Cloud Storage bucket can be used
      * in multiple ExportEntities operations without conflict.
      * </pre>
@@ -1383,6 +1393,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Location for the export metadata and data files.
+     *
      * The full resource URL of the external storage location. Currently, only
      * Google Cloud Storage is supported. So output_url_prefix should be of the
      * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -1391,10 +1402,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * information about Cloud Storage namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * The resulting files will be nested deeper than the specified URL prefix.
      * The final output URL will be provided in the
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
      * value should be used for subsequent ImportEntities operations.
+     *
      * By nesting the data files deeper, the same Cloud Storage bucket can be used
      * in multiple ExportEntities operations without conflict.
      * </pre>
@@ -1414,6 +1427,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Location for the export metadata and data files.
+     *
      * The full resource URL of the external storage location. Currently, only
      * Google Cloud Storage is supported. So output_url_prefix should be of the
      * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
@@ -1422,10 +1436,12 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * information about Cloud Storage namespace paths, see
      * [Object name
      * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+     *
      * The resulting files will be nested deeper than the specified URL prefix.
      * The final output URL will be provided in the
      * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url] field. That
      * value should be used for subsequent ImportEntities operations.
+     *
      * By nesting the data files deeper, the same Cloud Storage bucket can be used
      * in multiple ExportEntities operations without conflict.
      * </pre>

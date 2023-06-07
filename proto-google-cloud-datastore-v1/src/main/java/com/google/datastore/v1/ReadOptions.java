@@ -45,11 +45,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     return new ReadOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_ReadOptions_descriptor;
@@ -225,6 +220,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int consistencyTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object consistencyType_;
 
   public enum ConsistencyTypeCase
@@ -377,6 +374,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Options for beginning a new transaction for this request.
+   *
    * The new transaction identifier will be returned in the corresponding
    * response as either
    * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -397,6 +395,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Options for beginning a new transaction for this request.
+   *
    * The new transaction identifier will be returned in the corresponding
    * response as either
    * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -420,6 +419,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Options for beginning a new transaction for this request.
+   *
    * The new transaction identifier will be returned in the corresponding
    * response as either
    * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1167,6 +1167,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1187,6 +1188,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1217,6 +1219,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1244,6 +1247,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1269,6 +1273,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1307,6 +1312,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1337,6 +1343,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1354,6 +1361,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -1379,6 +1387,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Options for beginning a new transaction for this request.
+     *
      * The new transaction identifier will be returned in the corresponding
      * response as either
      * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]

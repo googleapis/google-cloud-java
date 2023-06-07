@@ -50,11 +50,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     return new Key();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_descriptor;
   }
@@ -78,9 +73,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The kind of the entity.
+     *
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -96,9 +93,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The kind of the entity.
+     *
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -115,6 +114,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The auto-allocated ID of the entity.
+     *
      * Never equal to zero. Values less than zero are discouraged and may not
      * be supported in the future.
      * </pre>
@@ -129,6 +129,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The auto-allocated ID of the entity.
+     *
      * Never equal to zero. Values less than zero are discouraged and may not
      * be supported in the future.
      * </pre>
@@ -144,9 +145,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the entity.
+     *
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -162,9 +165,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the entity.
+     *
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -180,9 +185,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the entity.
+     *
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -194,13 +201,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
 
-    public com.google.datastore.v1.Key.PathElement.IdTypeCase getIdTypeCase();
+    com.google.datastore.v1.Key.PathElement.IdTypeCase getIdTypeCase();
   }
   /**
    *
    *
    * <pre>
    * A (kind, ID/name) pair used to construct a key path.
+   *
    * If either name or ID is set, the element is complete.
    * If neither is set, the element is incomplete.
    * </pre>
@@ -227,11 +235,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       return new PathElement();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.datastore.v1.EntityProto
           .internal_static_google_datastore_v1_Key_PathElement_descriptor;
@@ -248,6 +251,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int idTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object idType_;
 
     public enum IdTypeCase
@@ -303,9 +308,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The kind of the entity.
+     *
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -332,9 +339,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The kind of the entity.
+     *
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -363,6 +372,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The auto-allocated ID of the entity.
+     *
      * Never equal to zero. Values less than zero are discouraged and may not
      * be supported in the future.
      * </pre>
@@ -380,6 +390,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The auto-allocated ID of the entity.
+     *
      * Never equal to zero. Values less than zero are discouraged and may not
      * be supported in the future.
      * </pre>
@@ -402,9 +413,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the entity.
+     *
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -422,9 +435,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the entity.
+     *
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -455,9 +470,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the entity.
+     *
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     *
      * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
      * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
      * bytes.
@@ -685,6 +702,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A (kind, ID/name) pair used to construct a key path.
+     *
      * If either name or ID is set, the element is complete.
      * If neither is set, the element is incomplete.
      * </pre>
@@ -926,9 +944,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The kind of the entity.
+       *
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -954,9 +974,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The kind of the entity.
+       *
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -982,9 +1004,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The kind of the entity.
+       *
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1009,9 +1033,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The kind of the entity.
+       *
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1032,9 +1058,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The kind of the entity.
+       *
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1061,6 +1089,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The auto-allocated ID of the entity.
+       *
        * Never equal to zero. Values less than zero are discouraged and may not
        * be supported in the future.
        * </pre>
@@ -1077,6 +1106,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The auto-allocated ID of the entity.
+       *
        * Never equal to zero. Values less than zero are discouraged and may not
        * be supported in the future.
        * </pre>
@@ -1096,6 +1126,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The auto-allocated ID of the entity.
+       *
        * Never equal to zero. Values less than zero are discouraged and may not
        * be supported in the future.
        * </pre>
@@ -1117,6 +1148,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The auto-allocated ID of the entity.
+       *
        * Never equal to zero. Values less than zero are discouraged and may not
        * be supported in the future.
        * </pre>
@@ -1139,9 +1171,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the entity.
+       *
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1160,9 +1194,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the entity.
+       *
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1194,9 +1230,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the entity.
+       *
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1228,9 +1266,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the entity.
+       *
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1255,9 +1295,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the entity.
+       *
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1280,9 +1322,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the entity.
+       *
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       *
        * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
        * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
        * bytes.
@@ -1439,12 +1483,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1465,12 +1511,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1492,12 +1540,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1518,12 +1568,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -1544,12 +1596,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -2205,12 +2259,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2234,12 +2290,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2263,12 +2321,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2292,12 +2352,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2327,12 +2389,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2360,12 +2424,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2395,12 +2461,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2430,12 +2498,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2462,12 +2532,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2495,12 +2567,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2528,12 +2602,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2560,12 +2636,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2592,12 +2670,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2617,12 +2697,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2646,12 +2728,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2676,12 +2760,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2702,12 +2788,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *
@@ -2728,12 +2816,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * a _child_ of the root entity, the third element identifies a child of the
      * second entity, and so forth. The entities identified by all prefixes of
      * the path are called the element's _ancestors_.
+     *
      * An entity path is always fully complete: *all* of the entity's ancestors
      * are required to be in the path along with the entity identifier itself.
      * The only exception is that in some documented cases, the identifier in the
      * last path element (for the entity) itself may be omitted. For example,
      * the last path element of the key of `Mutation.insert` may have no
      * identifier.
+     *
      * A path can never be empty, and a path can have at most 100 elements.
      * </pre>
      *

@@ -99,6 +99,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * <pre>
    * The identifier of the transaction that was started as part of this
    * RunAggregationQuery request.
+   *
    * Set only when
    * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
    * was set in

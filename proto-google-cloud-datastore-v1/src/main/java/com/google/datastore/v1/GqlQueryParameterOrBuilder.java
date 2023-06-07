@@ -85,5 +85,5 @@ public interface GqlQueryParameterOrBuilder
    */
   com.google.protobuf.ByteString getCursor();
 
-  public com.google.datastore.v1.GqlQueryParameter.ParameterTypeCase getParameterTypeCase();
+  com.google.datastore.v1.GqlQueryParameter.ParameterTypeCase getParameterTypeCase();
 }

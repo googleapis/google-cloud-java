@@ -51,11 +51,6 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     return new QueryResultBatch();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto
         .internal_static_google_datastore_v1_QueryResultBatch_descriptor;
@@ -484,6 +479,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater snapshot version number. Each batch's snapshot version
    * is valid for all preceding batches.
@@ -509,6 +505,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -532,6 +529,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -555,6 +553,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    * This applies to the range of results from the query's `start_cursor` (or
    * the beginning of the query if no cursor was given) to this batch's
    * `end_cursor` (not the query's `end_cursor`).
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -1835,6 +1834,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater snapshot version number. Each batch's snapshot version
      * is valid for all preceding batches.
@@ -1857,6 +1857,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater snapshot version number. Each batch's snapshot version
      * is valid for all preceding batches.
@@ -1883,6 +1884,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater snapshot version number. Each batch's snapshot version
      * is valid for all preceding batches.
@@ -1914,6 +1916,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1936,6 +1939,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1962,6 +1966,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -1992,6 +1997,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -2019,6 +2025,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -2052,6 +2059,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -2079,6 +2087,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -2101,6 +2110,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.
@@ -2125,6 +2135,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * This applies to the range of results from the query's `start_cursor` (or
      * the beginning of the query if no cursor was given) to this batch's
      * `end_cursor` (not the query's `end_cursor`).
+     *
      * In a single transaction, subsequent query result batches for the same query
      * can have a greater timestamp. Each batch's read timestamp
      * is valid for all preceding batches.

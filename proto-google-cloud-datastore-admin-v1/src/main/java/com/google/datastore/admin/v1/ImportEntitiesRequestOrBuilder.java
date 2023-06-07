@@ -120,6 +120,7 @@ public interface ImportEntitiesRequestOrBuilder
    * namespace paths, see
    * [Object name
    * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+   *
    * For more information, see
    * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
    * </pre>
@@ -143,6 +144,7 @@ public interface ImportEntitiesRequestOrBuilder
    * namespace paths, see
    * [Object name
    * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+   *
    * For more information, see
    * [google.datastore.admin.v1.ExportEntitiesResponse.output_url][google.datastore.admin.v1.ExportEntitiesResponse.output_url].
    * </pre>

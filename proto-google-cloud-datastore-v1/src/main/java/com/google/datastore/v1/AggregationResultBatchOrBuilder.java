@@ -109,6 +109,7 @@ public interface AggregationResultBatchOrBuilder
    *
    * <pre>
    * Read timestamp this batch was returned from.
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -124,6 +125,7 @@ public interface AggregationResultBatchOrBuilder
    *
    * <pre>
    * Read timestamp this batch was returned from.
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.
@@ -139,6 +141,7 @@ public interface AggregationResultBatchOrBuilder
    *
    * <pre>
    * Read timestamp this batch was returned from.
+   *
    * In a single transaction, subsequent query result batches for the same query
    * can have a greater timestamp. Each batch's read timestamp
    * is valid for all preceding batches.

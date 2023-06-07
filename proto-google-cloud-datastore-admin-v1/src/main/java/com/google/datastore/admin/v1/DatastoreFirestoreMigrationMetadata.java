@@ -23,9 +23,11 @@ package com.google.datastore.admin.v1;
  *
  * <pre>
  * Metadata for Datastore to Firestore migration operations.
+ *
  * The DatastoreFirestoreMigration operation is not started by the end-user via
  * an explicit "creation" method. This is an intentional deviation from the LRO
  * design pattern.
+ *
  * This singleton resource can be accessed at:
  * "projects/{project_id}/operations/datastore-firestore-migration"
  * </pre>
@@ -53,11 +55,6 @@ public final class DatastoreFirestoreMigrationMetadata
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DatastoreFirestoreMigrationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -328,9 +325,11 @@ public final class DatastoreFirestoreMigrationMetadata
    *
    * <pre>
    * Metadata for Datastore to Firestore migration operations.
+   *
    * The DatastoreFirestoreMigration operation is not started by the end-user via
    * an explicit "creation" method. This is an intentional deviation from the LRO
    * design pattern.
+   *
    * This singleton resource can be accessed at:
    * "projects/{project_id}/operations/datastore-firestore-migration"
    * </pre>

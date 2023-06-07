@@ -49,11 +49,6 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     return new LookupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_LookupRequest_descriptor;
@@ -129,6 +124,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -154,6 +150,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -877,6 +874,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -901,6 +899,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -925,6 +924,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -948,6 +948,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -967,6 +968,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>

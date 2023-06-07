@@ -28,6 +28,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * The entity's key.
+   *
    * An entity must have a key, unless otherwise documented (for example,
    * an entity in `Value.entity_value` may have no key).
    * An entity's kind is its key path's last element's kind,
@@ -44,6 +45,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * The entity's key.
+   *
    * An entity must have a key, unless otherwise documented (for example,
    * an entity in `Value.entity_value` may have no key).
    * An entity's kind is its key path's last element's kind,
@@ -60,6 +62,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * The entity's key.
+   *
    * An entity must have a key, unless otherwise documented (for example,
    * an entity in `Value.entity_value` may have no key).
    * An entity's kind is its key path's last element's kind,

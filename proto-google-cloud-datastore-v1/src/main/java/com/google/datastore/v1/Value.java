@@ -46,11 +46,6 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     return new Value();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Value_descriptor;
   }
@@ -65,6 +60,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valueTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object valueType_;
 
   public enum ValueTypeCase
@@ -577,6 +574,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An entity value.
+   *
    * - May have no key.
    * - May have a key with an incomplete key path.
    * - May have a reserved/read-only key.
@@ -595,6 +593,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An entity value.
+   *
    * - May have no key.
    * - May have a key with an incomplete key path.
    * - May have a reserved/read-only key.
@@ -616,6 +615,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An entity value.
+   *
    * - May have no key.
    * - May have a key with an incomplete key path.
    * - May have a reserved/read-only key.
@@ -2634,6 +2634,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2652,6 +2653,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2680,6 +2682,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2705,6 +2708,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2727,6 +2731,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2761,6 +2766,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2789,6 +2795,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2804,6 +2811,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.
@@ -2827,6 +2835,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An entity value.
+     *
      * - May have no key.
      * - May have a key with an incomplete key path.
      * - May have a reserved/read-only key.

@@ -48,11 +48,6 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     return new CompositeFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto
         .internal_static_google_datastore_v1_CompositeFilter_descriptor;
@@ -269,7 +264,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -284,7 +281,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -300,7 +299,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -315,7 +316,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -330,7 +333,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -862,7 +867,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -880,7 +887,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -898,7 +907,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -916,7 +927,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -940,7 +953,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -961,7 +976,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -985,7 +1002,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1009,7 +1028,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1030,7 +1051,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1051,7 +1074,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1073,7 +1098,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1094,7 +1121,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1115,7 +1144,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1129,7 +1160,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1147,7 +1180,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1166,7 +1201,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1181,7 +1218,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *
@@ -1196,7 +1235,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
+     *
      * Requires:
+     *
      * * At least one filter is present.
      * </pre>
      *

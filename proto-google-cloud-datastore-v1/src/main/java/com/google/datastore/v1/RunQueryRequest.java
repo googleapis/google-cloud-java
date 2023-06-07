@@ -48,11 +48,6 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     return new RunQueryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_RunQueryRequest_descriptor;
@@ -69,6 +64,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   private int queryTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object queryType_;
 
   public enum QueryTypeCase
@@ -175,6 +172,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -200,6 +198,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -1073,6 +1072,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1097,6 +1097,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1121,6 +1122,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1144,6 +1146,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -1163,6 +1166,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>

@@ -53,6 +53,7 @@ public interface AllocateIdsRequestOrBuilder
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -67,6 +68,7 @@ public interface AllocateIdsRequestOrBuilder
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>

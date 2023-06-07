@@ -94,6 +94,7 @@ public interface ReadOptionsOrBuilder
    *
    * <pre>
    * Options for beginning a new transaction for this request.
+   *
    * The new transaction identifier will be returned in the corresponding
    * response as either
    * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -111,6 +112,7 @@ public interface ReadOptionsOrBuilder
    *
    * <pre>
    * Options for beginning a new transaction for this request.
+   *
    * The new transaction identifier will be returned in the corresponding
    * response as either
    * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -128,6 +130,7 @@ public interface ReadOptionsOrBuilder
    *
    * <pre>
    * Options for beginning a new transaction for this request.
+   *
    * The new transaction identifier will be returned in the corresponding
    * response as either
    * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
@@ -180,5 +183,5 @@ public interface ReadOptionsOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
-  public com.google.datastore.v1.ReadOptions.ConsistencyTypeCase getConsistencyTypeCase();
+  com.google.datastore.v1.ReadOptions.ConsistencyTypeCase getConsistencyTypeCase();
 }

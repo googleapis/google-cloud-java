@@ -49,11 +49,6 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     return new BeginTransactionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_BeginTransactionRequest_descriptor;
@@ -129,6 +124,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -154,6 +150,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The ID of the database against which to make the request.
+   *
    * '(default)' is not allowed; please use empty string '' to refer the default
    * database.
    * </pre>
@@ -739,6 +736,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -763,6 +761,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -787,6 +786,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -810,6 +810,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>
@@ -829,6 +830,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The ID of the database against which to make the request.
+     *
      * '(default)' is not allowed; please use empty string '' to refer the default
      * database.
      * </pre>

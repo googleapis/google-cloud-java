@@ -45,11 +45,6 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
     return new GqlQueryParameter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto
         .internal_static_google_datastore_v1_GqlQueryParameter_descriptor;
@@ -66,6 +61,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
   }
 
   private int parameterTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object parameterType_;
 
   public enum ParameterTypeCase

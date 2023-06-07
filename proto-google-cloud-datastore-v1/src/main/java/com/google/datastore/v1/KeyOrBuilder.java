@@ -75,12 +75,14 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -98,12 +100,14 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -121,12 +125,14 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -144,12 +150,14 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *
@@ -167,12 +175,14 @@ public interface KeyOrBuilder
    * a _child_ of the root entity, the third element identifies a child of the
    * second entity, and so forth. The entities identified by all prefixes of
    * the path are called the element's _ancestors_.
+   *
    * An entity path is always fully complete: *all* of the entity's ancestors
    * are required to be in the path along with the entity identifier itself.
    * The only exception is that in some documented cases, the identifier in the
    * last path element (for the entity) itself may be omitted. For example,
    * the last path element of the key of `Mutation.insert` may have no
    * identifier.
+   *
    * A path can never be empty, and a path can have at most 100 elements.
    * </pre>
    *

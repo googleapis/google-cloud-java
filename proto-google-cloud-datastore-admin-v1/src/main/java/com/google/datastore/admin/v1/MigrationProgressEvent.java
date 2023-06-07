@@ -49,11 +49,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     return new MigrationProgressEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.MigrationProto
         .internal_static_google_datastore_admin_v1_MigrationProgressEvent_descriptor;
@@ -313,11 +308,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PrepareStepDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -983,11 +973,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       return new RedirectWritesStepDetails();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.datastore.admin.v1.MigrationProto
           .internal_static_google_datastore_admin_v1_MigrationProgressEvent_RedirectWritesStepDetails_descriptor;
@@ -1596,6 +1581,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
   }
 
   private int stepDetailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object stepDetails_;
 
   public enum StepDetailsCase
@@ -1649,6 +1636,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The step that is starting.
+   *
    * An event with step set to `START` indicates that the migration
    * has been reverted back to the initial pre-migration state.
    * </pre>
@@ -1666,6 +1654,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The step that is starting.
+   *
    * An event with step set to `START` indicates that the migration
    * has been reverted back to the initial pre-migration state.
    * </pre>
@@ -2268,6 +2257,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The step that is starting.
+     *
      * An event with step set to `START` indicates that the migration
      * has been reverted back to the initial pre-migration state.
      * </pre>
@@ -2285,6 +2275,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The step that is starting.
+     *
      * An event with step set to `START` indicates that the migration
      * has been reverted back to the initial pre-migration state.
      * </pre>
@@ -2305,6 +2296,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The step that is starting.
+     *
      * An event with step set to `START` indicates that the migration
      * has been reverted back to the initial pre-migration state.
      * </pre>
@@ -2324,6 +2316,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The step that is starting.
+     *
      * An event with step set to `START` indicates that the migration
      * has been reverted back to the initial pre-migration state.
      * </pre>
@@ -2347,6 +2340,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The step that is starting.
+     *
      * An event with step set to `START` indicates that the migration
      * has been reverted back to the initial pre-migration state.
      * </pre>

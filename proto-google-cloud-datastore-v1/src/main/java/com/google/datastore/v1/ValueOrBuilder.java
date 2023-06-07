@@ -325,6 +325,7 @@ public interface ValueOrBuilder
    *
    * <pre>
    * An entity value.
+   *
    * - May have no key.
    * - May have a key with an incomplete key path.
    * - May have a reserved/read-only key.
@@ -340,6 +341,7 @@ public interface ValueOrBuilder
    *
    * <pre>
    * An entity value.
+   *
    * - May have no key.
    * - May have a key with an incomplete key path.
    * - May have a reserved/read-only key.
@@ -355,6 +357,7 @@ public interface ValueOrBuilder
    *
    * <pre>
    * An entity value.
+   *
    * - May have no key.
    * - May have a key with an incomplete key path.
    * - May have a reserved/read-only key.
@@ -435,5 +438,5 @@ public interface ValueOrBuilder
    */
   boolean getExcludeFromIndexes();
 
-  public com.google.datastore.v1.Value.ValueTypeCase getValueTypeCase();
+  com.google.datastore.v1.Value.ValueTypeCase getValueTypeCase();
 }

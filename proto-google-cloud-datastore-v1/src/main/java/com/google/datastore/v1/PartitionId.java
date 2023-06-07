@@ -24,9 +24,12 @@ package com.google.datastore.v1;
  * <pre>
  * A partition ID identifies a grouping of entities. The grouping is always
  * by project and namespace, however the namespace ID may be empty.
+ *
  * A partition ID contains several dimensions:
  * project ID and namespace ID.
+ *
  * Partition dimensions:
+ *
  * - May be `""`.
  * - Must be valid UTF-8 bytes.
  * - Must have values that match regex `[A-Za-z&#92;d&#92;.&#92;-_]{1,100}`
@@ -34,6 +37,7 @@ package com.google.datastore.v1;
  * reserved/read-only.
  * A reserved/read-only partition ID is forbidden in certain documented
  * contexts.
+ *
  * Foreign partition IDs (in which the project ID does
  * not match the context project ID ) are discouraged.
  * Reads and writes of foreign partition IDs may fail if the project is not in
@@ -62,11 +66,6 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PartitionId();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -420,9 +419,12 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A partition ID identifies a grouping of entities. The grouping is always
    * by project and namespace, however the namespace ID may be empty.
+   *
    * A partition ID contains several dimensions:
    * project ID and namespace ID.
+   *
    * Partition dimensions:
+   *
    * - May be `""`.
    * - Must be valid UTF-8 bytes.
    * - Must have values that match regex `[A-Za-z&#92;d&#92;.&#92;-_]{1,100}`
@@ -430,6 +432,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    * reserved/read-only.
    * A reserved/read-only partition ID is forbidden in certain documented
    * contexts.
+   *
    * Foreign partition IDs (in which the project ID does
    * not match the context project ID ) are discouraged.
    * Reads and writes of foreign partition IDs may fail if the project is not in

@@ -53,7 +53,9 @@ public interface CompositeFilterOrBuilder
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -65,7 +67,9 @@ public interface CompositeFilterOrBuilder
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -77,7 +81,9 @@ public interface CompositeFilterOrBuilder
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -89,7 +95,9 @@ public interface CompositeFilterOrBuilder
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *
@@ -101,7 +109,9 @@ public interface CompositeFilterOrBuilder
    *
    * <pre>
    * The list of filters to combine.
+   *
    * Requires:
+   *
    * * At least one filter is present.
    * </pre>
    *

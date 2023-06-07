@@ -23,6 +23,7 @@ package com.google.datastore.v1;
  *
  * <pre>
  * The result of a single bucket from a Datastore aggregation query.
+ *
  * The keys of `aggregate_properties` are the same for all results in an
  * aggregation query, unlike entity queries which can have different fields
  * present for each result.
@@ -46,11 +47,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AggregationResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -115,6 +111,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -141,6 +138,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -159,6 +157,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -184,6 +183,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+   *
    * The key is the
    * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
    * the aggregation function on input and the size of this map equals the
@@ -382,6 +382,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The result of a single bucket from a Datastore aggregation query.
+   *
    * The keys of `aggregate_properties` are the same for all results in an
    * aggregation query, unlike entity queries which can have different fields
    * present for each result.
@@ -622,6 +623,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
@@ -648,6 +650,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
@@ -666,6 +669,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
@@ -691,6 +695,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
@@ -722,6 +727,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
@@ -749,6 +755,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
@@ -774,6 +781,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The result of the aggregation functions, ex: `COUNT(*) AS total_entities`.
+     *
      * The key is the
      * [alias][google.datastore.v1.AggregationQuery.Aggregation.alias] assigned to
      * the aggregation function on input and the size of this map equals the
