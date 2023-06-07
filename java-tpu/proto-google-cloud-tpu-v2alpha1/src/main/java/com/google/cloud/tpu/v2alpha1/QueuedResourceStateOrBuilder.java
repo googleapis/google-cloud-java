@@ -337,5 +337,5 @@ public interface QueuedResourceStateOrBuilder
   com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedDataOrBuilder
       getSuspendedDataOrBuilder();
 
-  public com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateDataCase getStateDataCase();
+  com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateDataCase getStateDataCase();
 }

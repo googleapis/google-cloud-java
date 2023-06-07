@@ -47,11 +47,6 @@ public final class StartNodeRequest extends com.google.protobuf.GeneratedMessage
     return new StartNodeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v1.CloudTpuProto
         .internal_static_google_cloud_tpu_v1_StartNodeRequest_descriptor;

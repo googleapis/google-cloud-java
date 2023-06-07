@@ -49,11 +49,6 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     return new QueuedResource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v2alpha1.CloudTpuProto
         .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_descriptor;
@@ -154,11 +149,6 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Tpu();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -309,11 +299,6 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new NodeSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2319,11 +2304,6 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       return new BestEffort();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2alpha1.CloudTpuProto
           .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_BestEffort_descriptor;
@@ -2803,11 +2783,6 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Guaranteed();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3798,7 +3773,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.type.IntervalOrBuilder getValidIntervalOrBuilder();
 
-    public com.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy.StartTimingConstraintsCase
+    com.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy.StartTimingConstraintsCase
         getStartTimingConstraintsCase();
   }
   /**
@@ -3828,11 +3803,6 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       return new QueueingPolicy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2alpha1.CloudTpuProto
           .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_QueueingPolicy_descriptor;
@@ -3849,6 +3819,8 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int startTimingConstraintsCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object startTimingConstraints_;
 
     public enum StartTimingConstraintsCase
@@ -5842,6 +5814,8 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int resourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object resource_;
 
   public enum ResourceCase
@@ -5886,6 +5860,8 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int tierCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object tier_;
 
   public enum TierCase

@@ -50,11 +50,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return new OperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v2alpha1.CloudTpuProto
         .internal_static_google_cloud_tpu_v2alpha1_OperationMetadata_descriptor;

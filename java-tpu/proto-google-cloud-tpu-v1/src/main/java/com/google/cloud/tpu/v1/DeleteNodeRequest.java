@@ -47,11 +47,6 @@ public final class DeleteNodeRequest extends com.google.protobuf.GeneratedMessag
     return new DeleteNodeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v1.CloudTpuProto
         .internal_static_google_cloud_tpu_v1_DeleteNodeRequest_descriptor;

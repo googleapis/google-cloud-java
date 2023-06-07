@@ -47,11 +47,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     return new QueuedResourceState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v2alpha1.CloudTpuProto
         .internal_static_google_cloud_tpu_v2alpha1_QueuedResourceState_descriptor;
@@ -409,11 +404,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CreatingData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -845,11 +835,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       return new AcceptedData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2alpha1.CloudTpuProto
           .internal_static_google_cloud_tpu_v2alpha1_QueuedResourceState_AcceptedData_descriptor;
@@ -1277,11 +1262,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ProvisioningData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1751,11 +1731,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FailedData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2448,11 +2423,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       return new DeletingData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2alpha1.CloudTpuProto
           .internal_static_google_cloud_tpu_v2alpha1_QueuedResourceState_DeletingData_descriptor;
@@ -2882,11 +2852,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       return new ActiveData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2alpha1.CloudTpuProto
           .internal_static_google_cloud_tpu_v2alpha1_QueuedResourceState_ActiveData_descriptor;
@@ -3313,11 +3278,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SuspendingData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3753,11 +3713,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       return new SuspendedData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.tpu.v2alpha1.CloudTpuProto
           .internal_static_google_cloud_tpu_v2alpha1_QueuedResourceState_SuspendedData_descriptor;
@@ -4159,6 +4114,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   private int stateDataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object stateData_;
 
   public enum StateDataCase

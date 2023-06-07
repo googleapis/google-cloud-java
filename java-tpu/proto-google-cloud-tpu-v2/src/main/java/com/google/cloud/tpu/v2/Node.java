@@ -47,7 +47,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     cidrBlock_ = "";
     networkEndpoints_ = java.util.Collections.emptyList();
     health_ = 0;
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataDisks_ = java.util.Collections.emptyList();
     apiVersion_ = 0;
     symptoms_ = java.util.Collections.emptyList();
@@ -57,11 +57,6 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Node();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1823,7 +1818,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 40;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2705,8 +2701,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       health_ = 0;
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00008000);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       id_ = 0L;
       if (dataDisksBuilder_ == null) {
         dataDisks_ = java.util.Collections.emptyList();
@@ -2777,11 +2772,6 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networkEndpoints_ = networkEndpointsBuilder_.build();
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00008000);
-      }
-      result.tags_ = tags_;
       if (dataDisksBuilder_ == null) {
         if (((bitField0_ & 0x00020000) != 0)) {
           dataDisks_ = java.util.Collections.unmodifiableList(dataDisks_);
@@ -2850,6 +2840,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.id_ = id_;
@@ -2998,7 +2992,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ |= 0x00008000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -5677,14 +5671,14 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00008000;
       }
+      bitField0_ |= 0x00008000;
     }
     /**
      *
@@ -5699,7 +5693,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -5768,6 +5763,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5790,6 +5786,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5809,6 +5806,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5825,8 +5823,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00008000);
+      ;
       onChanged();
       return this;
     }
@@ -5850,6 +5849,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

@@ -49,11 +49,6 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     return new Symptom();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tpu.v2.CloudTpuProto
         .internal_static_google_cloud_tpu_v2_Symptom_descriptor;

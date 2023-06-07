@@ -260,7 +260,7 @@ public interface QueuedResourceOrBuilder
    */
   com.google.protobuf.ByteString getReservationNameBytes();
 
-  public com.google.cloud.tpu.v2alpha1.QueuedResource.ResourceCase getResourceCase();
+  com.google.cloud.tpu.v2alpha1.QueuedResource.ResourceCase getResourceCase();
 
-  public com.google.cloud.tpu.v2alpha1.QueuedResource.TierCase getTierCase();
+  com.google.cloud.tpu.v2alpha1.QueuedResource.TierCase getTierCase();
 }

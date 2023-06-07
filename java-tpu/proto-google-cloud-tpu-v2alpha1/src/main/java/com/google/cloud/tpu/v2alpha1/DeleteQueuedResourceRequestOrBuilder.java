@@ -76,4 +76,21 @@ public interface DeleteQueuedResourceRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, all running nodes belonging to this queued resource will
+   * be deleted first and then the queued resource will be deleted.
+   * Otherwise (i.e. force=false), the queued resource will only be deleted if
+   * its nodes have already been deleted or the queued resource is in the
+   * ACCEPTED, FAILED, or SUSPENDED state.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

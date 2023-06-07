@@ -894,4 +894,17 @@ public interface NodeOrBuilder
    */
   com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the Node belongs to a Multislice group.
+   * </pre>
+   *
+   * <code>bool multislice_node = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The multisliceNode.
+   */
+  boolean getMultisliceNode();
 }
