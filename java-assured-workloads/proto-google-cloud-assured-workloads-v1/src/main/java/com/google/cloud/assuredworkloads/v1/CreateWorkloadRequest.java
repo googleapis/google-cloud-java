@@ -48,11 +48,6 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
     return new CreateWorkloadRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
         .internal_static_google_cloud_assuredworkloads_v1_CreateWorkloadRequest_descriptor;

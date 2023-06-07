@@ -53,11 +53,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
     return new CheckCompatibilityRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_CheckCompatibilityRequest_descriptor;
@@ -85,7 +80,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
    * learn more, see [where to find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * `property` should be the same value as in your `runReport` request.
+   *
    * Example: properties/1234
+   *
    * Set the Property ID to 0 for compatibility checking on dimensions and
    * metrics common to all properties. In this special mode, this method will
    * not return custom dimensions and metrics.
@@ -115,7 +112,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
    * learn more, see [where to find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * `property` should be the same value as in your `runReport` request.
+   *
    * Example: properties/1234
+   *
    * Set the Property ID to 0 for compatibility checking on dimensions and
    * metrics common to all properties. In this special mode, this method will
    * not return custom dimensions and metrics.
@@ -1017,7 +1016,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
+     *
      * Example: properties/1234
+     *
      * Set the Property ID to 0 for compatibility checking on dimensions and
      * metrics common to all properties. In this special mode, this method will
      * not return custom dimensions and metrics.
@@ -1046,7 +1047,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
+     *
      * Example: properties/1234
+     *
      * Set the Property ID to 0 for compatibility checking on dimensions and
      * metrics common to all properties. In this special mode, this method will
      * not return custom dimensions and metrics.
@@ -1075,7 +1078,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
+     *
      * Example: properties/1234
+     *
      * Set the Property ID to 0 for compatibility checking on dimensions and
      * metrics common to all properties. In this special mode, this method will
      * not return custom dimensions and metrics.
@@ -1103,7 +1108,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
+     *
      * Example: properties/1234
+     *
      * Set the Property ID to 0 for compatibility checking on dimensions and
      * metrics common to all properties. In this special mode, this method will
      * not return custom dimensions and metrics.
@@ -1127,7 +1134,9 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * learn more, see [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * `property` should be the same value as in your `runReport` request.
+     *
      * Example: properties/1234
+     *
      * Set the Property ID to 0 for compatibility checking on dimensions and
      * metrics common to all properties. In this special mode, this method will
      * not return custom dimensions and metrics.

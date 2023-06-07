@@ -48,11 +48,6 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
     return new CreateApiRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_CreateApiRequest_descriptor;
@@ -184,8 +179,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The ID to use for the API, which will become the final component of
    * the API's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -211,8 +208,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The ID to use for the API, which will become the final component of
    * the API's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -946,8 +945,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The ID to use for the API, which will become the final component of
      * the API's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -972,8 +973,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The ID to use for the API, which will become the final component of
      * the API's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -998,8 +1001,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The ID to use for the API, which will become the final component of
      * the API's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1023,8 +1028,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The ID to use for the API, which will become the final component of
      * the API's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1044,8 +1051,10 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The ID to use for the API, which will become the final component of
      * the API's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *

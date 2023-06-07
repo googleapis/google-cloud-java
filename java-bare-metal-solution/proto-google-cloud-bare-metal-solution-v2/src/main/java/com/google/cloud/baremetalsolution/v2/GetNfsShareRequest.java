@@ -47,11 +47,6 @@ public final class GetNfsShareRequest extends com.google.protobuf.GeneratedMessa
     return new GetNfsShareRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NfsShareProto
         .internal_static_google_cloud_baremetalsolution_v2_GetNfsShareRequest_descriptor;

@@ -45,11 +45,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     return new ExportModelOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Operations
         .internal_static_google_cloud_automl_v1beta1_ExportModelOperationMetadata_descriptor;
@@ -103,6 +98,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    * <pre>
    * Further describes the output of model export.
    * Supplements
+   *
    * [ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
    * </pre>
    *
@@ -127,11 +123,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExportModelOutputInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -380,6 +371,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * <pre>
      * Further describes the output of model export.
      * Supplements
+     *
      * [ModelExportOutputConfig][google.cloud.automl.v1beta1.ModelExportOutputConfig].
      * </pre>
      *

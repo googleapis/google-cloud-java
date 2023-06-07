@@ -58,5 +58,5 @@ public interface FeedOutputConfigOrBuilder
    */
   com.google.cloud.asset.v1.PubsubDestinationOrBuilder getPubsubDestinationOrBuilder();
 
-  public com.google.cloud.asset.v1.FeedOutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.asset.v1.FeedOutputConfig.DestinationCase getDestinationCase();
 }

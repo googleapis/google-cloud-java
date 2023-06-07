@@ -49,11 +49,6 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     return new ResponseMetaData();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_ResponseMetaData_descriptor;
@@ -190,11 +185,6 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SchemaRestrictionResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -358,11 +348,6 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ActiveMetricRestriction();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2695,6 +2680,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -2718,6 +2704,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -2749,6 +2736,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -3766,6 +3754,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * was specified in the request, this response parameter will echo the request
      * parameter; otherwise, this response parameter is the property's current
      * currency_code.
+     *
      * Currency codes are string encodings of currency types from the ISO 4217
      * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
      * "EUR", "JPY". To learn more, see
@@ -3788,6 +3777,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * was specified in the request, this response parameter will echo the request
      * parameter; otherwise, this response parameter is the property's current
      * currency_code.
+     *
      * Currency codes are string encodings of currency types from the ISO 4217
      * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
      * "EUR", "JPY". To learn more, see
@@ -3818,6 +3808,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * was specified in the request, this response parameter will echo the request
      * parameter; otherwise, this response parameter is the property's current
      * currency_code.
+     *
      * Currency codes are string encodings of currency types from the ISO 4217
      * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
      * "EUR", "JPY". To learn more, see
@@ -3848,6 +3839,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * was specified in the request, this response parameter will echo the request
      * parameter; otherwise, this response parameter is the property's current
      * currency_code.
+     *
      * Currency codes are string encodings of currency types from the ISO 4217
      * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
      * "EUR", "JPY". To learn more, see
@@ -3877,6 +3869,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * was specified in the request, this response parameter will echo the request
      * parameter; otherwise, this response parameter is the property's current
      * currency_code.
+     *
      * Currency codes are string encodings of currency types from the ISO 4217
      * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
      * "EUR", "JPY". To learn more, see
@@ -3902,6 +3895,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * was specified in the request, this response parameter will echo the request
      * parameter; otherwise, this response parameter is the property's current
      * currency_code.
+     *
      * Currency codes are string encodings of currency types from the ISO 4217
      * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
      * "EUR", "JPY". To learn more, see

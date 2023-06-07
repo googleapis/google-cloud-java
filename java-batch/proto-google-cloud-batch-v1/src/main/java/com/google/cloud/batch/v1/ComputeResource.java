@@ -45,11 +45,6 @@ public final class ComputeResource extends com.google.protobuf.GeneratedMessageV
     return new ComputeResource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1.TaskProto
         .internal_static_google_cloud_batch_v1_ComputeResource_descriptor;

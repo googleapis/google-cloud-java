@@ -50,11 +50,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     return new AudienceFilterClause();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AudienceProto
         .internal_static_google_analytics_admin_v1alpha_AudienceFilterClause_descriptor;
@@ -233,6 +228,8 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   }
 
   private int filterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object filter_;
 
   public enum FilterCase

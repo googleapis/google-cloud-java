@@ -324,6 +324,5 @@ public interface RepositoryOrBuilder
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
 
-  public com.google.devtools.artifactregistry.v1beta2.Repository.FormatConfigCase
-      getFormatConfigCase();
+  com.google.devtools.artifactregistry.v1beta2.Repository.FormatConfigCase getFormatConfigCase();
 }

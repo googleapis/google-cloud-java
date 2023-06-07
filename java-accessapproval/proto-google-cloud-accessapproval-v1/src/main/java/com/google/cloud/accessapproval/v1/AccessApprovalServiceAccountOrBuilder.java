@@ -28,6 +28,7 @@ public interface AccessApprovalServiceAccountOrBuilder
    *
    * <pre>
    * The resource name of the Access Approval service account. Format is one of:
+   *
    *   * "projects/{project}/serviceAccount"
    *   * "folders/{folder}/serviceAccount"
    *   * "organizations/{organization}/serviceAccount"
@@ -43,6 +44,7 @@ public interface AccessApprovalServiceAccountOrBuilder
    *
    * <pre>
    * The resource name of the Access Approval service account. Format is one of:
+   *
    *   * "projects/{project}/serviceAccount"
    *   * "folders/{folder}/serviceAccount"
    *   * "organizations/{organization}/serviceAccount"

@@ -60,5 +60,5 @@ public interface MetricValueOrBuilder
    */
   com.google.protobuf.ByteString getValueBytes();
 
-  public com.google.analytics.data.v1beta.MetricValue.OneValueCase getOneValueCase();
+  com.google.analytics.data.v1beta.MetricValue.OneValueCase getOneValueCase();
 }

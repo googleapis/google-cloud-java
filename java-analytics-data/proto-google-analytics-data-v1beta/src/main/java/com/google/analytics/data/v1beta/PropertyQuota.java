@@ -47,11 +47,6 @@ public final class PropertyQuota extends com.google.protobuf.GeneratedMessageV3
     return new PropertyQuota();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_PropertyQuota_descriptor;

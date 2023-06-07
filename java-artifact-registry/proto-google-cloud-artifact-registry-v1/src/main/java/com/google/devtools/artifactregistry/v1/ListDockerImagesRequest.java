@@ -49,11 +49,6 @@ public final class ListDockerImagesRequest extends com.google.protobuf.Generated
     return new ListDockerImagesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.ArtifactProto
         .internal_static_google_devtools_artifactregistry_v1_ListDockerImagesRequest_descriptor;

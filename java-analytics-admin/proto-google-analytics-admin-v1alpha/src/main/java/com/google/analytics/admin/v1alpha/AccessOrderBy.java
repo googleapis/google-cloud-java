@@ -47,11 +47,6 @@ public final class AccessOrderBy extends com.google.protobuf.GeneratedMessageV3
     return new AccessOrderBy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AccessReportProto
         .internal_static_google_analytics_admin_v1alpha_AccessOrderBy_descriptor;
@@ -124,11 +119,6 @@ public final class AccessOrderBy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MetricOrderBy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -808,11 +798,6 @@ public final class AccessOrderBy extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DimensionOrderBy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1778,6 +1763,8 @@ public final class AccessOrderBy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneOrderByCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneOrderBy_;
 
   public enum OneOrderByCase

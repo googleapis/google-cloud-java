@@ -133,5 +133,5 @@ public interface GcsDestinationOrBuilder
    */
   com.google.protobuf.ByteString getUriPrefixBytes();
 
-  public com.google.cloud.asset.v1p7beta1.GcsDestination.ObjectUriCase getObjectUriCase();
+  com.google.cloud.asset.v1p7beta1.GcsDestination.ObjectUriCase getObjectUriCase();
 }

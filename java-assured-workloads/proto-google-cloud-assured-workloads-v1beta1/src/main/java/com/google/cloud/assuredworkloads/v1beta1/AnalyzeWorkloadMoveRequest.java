@@ -48,11 +48,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     return new AnalyzeWorkloadMoveRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
         .internal_static_google_cloud_assuredworkloads_v1beta1_AnalyzeWorkloadMoveRequest_descriptor;
@@ -69,6 +64,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
   }
 
   private int projectOrWorkloadResourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object projectOrWorkloadResource_;
 
   public enum ProjectOrWorkloadResourceCase

@@ -58,6 +58,6 @@ public interface ExportEvaluatedExamplesOutputConfigOrBuilder
    */
   com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder getBigqueryDestinationOrBuilder();
 
-  public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig.DestinationCase
+  com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig.DestinationCase
       getDestinationCase();
 }

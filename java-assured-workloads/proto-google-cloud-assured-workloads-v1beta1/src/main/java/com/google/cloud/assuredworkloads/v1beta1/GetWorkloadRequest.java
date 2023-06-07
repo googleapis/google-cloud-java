@@ -47,11 +47,6 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
     return new GetWorkloadRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
         .internal_static_google_cloud_assuredworkloads_v1beta1_GetWorkloadRequest_descriptor;

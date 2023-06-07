@@ -28,6 +28,7 @@ public interface UpdateVolumeRequestOrBuilder
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateVolumeRequestOrBuilder
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateVolumeRequestOrBuilder
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>

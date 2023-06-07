@@ -50,11 +50,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     return new TaskGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.JobProto
         .internal_static_google_cloud_batch_v1alpha_TaskGroup_descriptor;
@@ -106,6 +101,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Run Tasks as soon as resources are available.
+     *
      * Tasks might be executed in parallel depending on parallelism and
      * task_count values.
      * </pre>
@@ -118,6 +114,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Run Tasks sequentially with increased task index.
+     *
      * Not yet implemented.
      * </pre>
      *
@@ -142,6 +139,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Run Tasks as soon as resources are available.
+     *
      * Tasks might be executed in parallel depending on parallelism and
      * task_count values.
      * </pre>
@@ -154,6 +152,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Run Tasks sequentially with increased task index.
+     *
      * Not yet implemented.
      * </pre>
      *
@@ -624,10 +623,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * matching indices. If task_environments is used then task_count should
    * not be specified in the request (and will be ignored). Task count will be
    * the length of task_environments.
+   *
    * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+   *
    * task_environments supports up to 200 entries.
    * </pre>
    *
@@ -645,10 +646,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * matching indices. If task_environments is used then task_count should
    * not be specified in the request (and will be ignored). Task count will be
    * the length of task_environments.
+   *
    * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+   *
    * task_environments supports up to 200 entries.
    * </pre>
    *
@@ -667,10 +670,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * matching indices. If task_environments is used then task_count should
    * not be specified in the request (and will be ignored). Task count will be
    * the length of task_environments.
+   *
    * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+   *
    * task_environments supports up to 200 entries.
    * </pre>
    *
@@ -688,10 +693,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * matching indices. If task_environments is used then task_count should
    * not be specified in the request (and will be ignored). Task count will be
    * the length of task_environments.
+   *
    * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+   *
    * task_environments supports up to 200 entries.
    * </pre>
    *
@@ -709,10 +716,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
    * matching indices. If task_environments is used then task_count should
    * not be specified in the request (and will be ignored). Task count will be
    * the length of task_environments.
+   *
    * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
    * addition to any environment variables set in task_environments, specifying
    * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
    * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+   *
    * task_environments supports up to 200 entries.
    * </pre>
    *
@@ -2403,10 +2412,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2427,10 +2438,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2451,10 +2464,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2475,10 +2490,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2506,10 +2523,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2534,10 +2553,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2564,10 +2585,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2595,10 +2618,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2623,10 +2648,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2651,10 +2678,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2679,10 +2708,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2706,10 +2737,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2733,10 +2766,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2754,10 +2789,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2779,10 +2816,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2804,10 +2843,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2825,10 +2866,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *
@@ -2847,10 +2890,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * matching indices. If task_environments is used then task_count should
      * not be specified in the request (and will be ignored). Task count will be
      * the length of task_environments.
+     *
      * Tasks get a BATCH_TASK_INDEX and BATCH_TASK_COUNT environment variable, in
      * addition to any environment variables set in task_environments, specifying
      * the number of Tasks in the Task's parent TaskGroup, and the specific Task's
      * index in the TaskGroup (0 through BATCH_TASK_COUNT - 1).
+     *
      * task_environments supports up to 200 entries.
      * </pre>
      *

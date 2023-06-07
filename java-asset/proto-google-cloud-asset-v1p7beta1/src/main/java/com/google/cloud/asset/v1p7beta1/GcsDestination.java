@@ -45,11 +45,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     return new GcsDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p7beta1.AssetServiceProto
         .internal_static_google_cloud_asset_v1p7beta1_GcsDestination_descriptor;
@@ -66,6 +61,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int objectUriCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object objectUri_;
 
   public enum ObjectUriCase

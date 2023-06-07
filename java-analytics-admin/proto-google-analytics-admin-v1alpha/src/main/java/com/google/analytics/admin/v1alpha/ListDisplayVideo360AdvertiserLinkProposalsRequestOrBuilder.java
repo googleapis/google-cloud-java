@@ -74,6 +74,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsRequestOrBuilder
    * A page token, received from a previous
    * `ListDisplayVideo360AdvertiserLinkProposals` call. Provide this to retrieve
    * the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDisplayVideo360AdvertiserLinkProposals` must match the call that
    * provided the page token.
@@ -91,6 +92,7 @@ public interface ListDisplayVideo360AdvertiserLinkProposalsRequestOrBuilder
    * A page token, received from a previous
    * `ListDisplayVideo360AdvertiserLinkProposals` call. Provide this to retrieve
    * the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListDisplayVideo360AdvertiserLinkProposals` must match the call that
    * provided the page token.

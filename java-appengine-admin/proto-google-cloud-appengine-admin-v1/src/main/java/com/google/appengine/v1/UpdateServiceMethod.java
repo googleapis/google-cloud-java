@@ -45,11 +45,6 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
     return new UpdateServiceMethod();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AuditDataProto
         .internal_static_google_appengine_v1_UpdateServiceMethod_descriptor;

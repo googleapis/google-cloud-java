@@ -28,6 +28,7 @@ public interface DeleteAccessPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name for the access policy to delete.
+   *
    * Format `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteAccessPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name for the access policy to delete.
+   *
    * Format `accessPolicies/{policy_id}`
    * </pre>
    *

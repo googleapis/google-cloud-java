@@ -129,5 +129,5 @@ public interface ExpandedDataSetFilterOrBuilder
    */
   com.google.protobuf.ByteString getFieldNameBytes();
 
-  public com.google.analytics.admin.v1alpha.ExpandedDataSetFilter.OneFilterCase getOneFilterCase();
+  com.google.analytics.admin.v1alpha.ExpandedDataSetFilter.OneFilterCase getOneFilterCase();
 }

@@ -50,11 +50,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return new Model();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.ModelOuterClass
         .internal_static_google_cloud_automl_v1beta1_Model_descriptor;
@@ -230,6 +225,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int modelMetadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object modelMetadata_;
 
   public enum ModelMetadataCase

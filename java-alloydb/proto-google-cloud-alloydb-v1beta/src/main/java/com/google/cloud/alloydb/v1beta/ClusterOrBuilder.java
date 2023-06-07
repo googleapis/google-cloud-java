@@ -657,6 +657,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -674,6 +675,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -691,6 +693,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -991,5 +994,5 @@ public interface ClusterOrBuilder
    */
   com.google.cloud.alloydb.v1beta.Cluster.PrimaryConfigOrBuilder getPrimaryConfigOrBuilder();
 
-  public com.google.cloud.alloydb.v1beta.Cluster.SourceCase getSourceCase();
+  com.google.cloud.alloydb.v1beta.Cluster.SourceCase getSourceCase();
 }

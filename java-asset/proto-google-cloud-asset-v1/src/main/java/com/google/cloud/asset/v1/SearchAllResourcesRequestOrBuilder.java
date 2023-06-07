@@ -32,7 +32,9 @@ public interface SearchAllResourcesRequestOrBuilder
    * granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -53,7 +55,9 @@ public interface SearchAllResourcesRequestOrBuilder
    * granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -74,7 +78,9 @@ public interface SearchAllResourcesRequestOrBuilder
    * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    * for more information. If not specified or empty, it will search all the
    * resources within the specified `scope`.
+   *
    * Examples:
+   *
    * * `name:Important` to find Google Cloud resources whose name contains
    *   "Important" as a word.
    * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -135,7 +141,9 @@ public interface SearchAllResourcesRequestOrBuilder
    * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    * for more information. If not specified or empty, it will search all the
    * resources within the specified `scope`.
+   *
    * Examples:
+   *
    * * `name:Important` to find Google Cloud resources whose name contains
    *   "Important" as a word.
    * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -196,11 +204,14 @@ public interface SearchAllResourcesRequestOrBuilder
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -218,11 +229,14 @@ public interface SearchAllResourcesRequestOrBuilder
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -240,11 +254,14 @@ public interface SearchAllResourcesRequestOrBuilder
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -263,11 +280,14 @@ public interface SearchAllResourcesRequestOrBuilder
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -337,6 +357,7 @@ public interface SearchAllResourcesRequestOrBuilder
    * name to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
+   *
    *   * name
    *   * assetType
    *   * project
@@ -348,6 +369,7 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * state
    *   * parentFullResourceName
    *   * parentAssetType
+   *
    * All the other fields such as repeated fields (e.g., `networkTags`,
    * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
    * `additionalAttributes`) are not supported.
@@ -367,6 +389,7 @@ public interface SearchAllResourcesRequestOrBuilder
    * name to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
+   *
    *   * name
    *   * assetType
    *   * project
@@ -378,6 +401,7 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * state
    *   * parentFullResourceName
    *   * parentAssetType
+   *
    * All the other fields such as repeated fields (e.g., `networkTags`,
    * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
    * `additionalAttributes`) are not supported.
@@ -397,8 +421,10 @@ public interface SearchAllResourcesRequestOrBuilder
    * returned in ResourceSearchResult. Only '*' or combination of top level
    * fields can be specified. Field names of both snake_case and camelCase are
    * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   *
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
+   *
    *   * name
    *   * assetType
    *   * project
@@ -418,6 +444,7 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * state
    *   * additionalAttributes
    *   * versionedResources
+   *
    * If read_mask is not specified, all fields except versionedResources will
    * be returned.
    * If only '*' is specified, all fields including versionedResources will be
@@ -439,8 +466,10 @@ public interface SearchAllResourcesRequestOrBuilder
    * returned in ResourceSearchResult. Only '*' or combination of top level
    * fields can be specified. Field names of both snake_case and camelCase are
    * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   *
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
+   *
    *   * name
    *   * assetType
    *   * project
@@ -460,6 +489,7 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * state
    *   * additionalAttributes
    *   * versionedResources
+   *
    * If read_mask is not specified, all fields except versionedResources will
    * be returned.
    * If only '*' is specified, all fields including versionedResources will be
@@ -481,8 +511,10 @@ public interface SearchAllResourcesRequestOrBuilder
    * returned in ResourceSearchResult. Only '*' or combination of top level
    * fields can be specified. Field names of both snake_case and camelCase are
    * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   *
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
+   *
    *   * name
    *   * assetType
    *   * project
@@ -502,6 +534,7 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * state
    *   * additionalAttributes
    *   * versionedResources
+   *
    * If read_mask is not specified, all fields except versionedResources will
    * be returned.
    * If only '*' is specified, all fields including versionedResources will be

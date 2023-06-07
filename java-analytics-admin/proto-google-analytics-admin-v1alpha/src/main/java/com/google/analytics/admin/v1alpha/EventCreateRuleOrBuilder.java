@@ -57,6 +57,7 @@ public interface EventCreateRuleOrBuilder
    *
    * <pre>
    * Required. The name of the new event to be created.
+   *
    * This value must:
    * * be less than 40 characters
    * * consist only of letters, digits or _ (underscores)
@@ -73,6 +74,7 @@ public interface EventCreateRuleOrBuilder
    *
    * <pre>
    * Required. The name of the new event to be created.
+   *
    * This value must:
    * * be less than 40 characters
    * * consist only of letters, digits or _ (underscores)

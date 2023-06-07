@@ -107,5 +107,5 @@ public interface AccessOrderByOrBuilder
    */
   boolean getDesc();
 
-  public com.google.analytics.admin.v1beta.AccessOrderBy.OneOrderByCase getOneOrderByCase();
+  com.google.analytics.admin.v1beta.AccessOrderBy.OneOrderByCase getOneOrderByCase();
 }

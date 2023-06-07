@@ -40,7 +40,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
   private SearchAllResourcesRequest() {
     scope_ = "";
     query_ = "";
-    assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pageToken_ = "";
     orderBy_ = "";
   }
@@ -49,11 +49,6 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchAllResourcesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,7 +79,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -116,7 +113,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
+   *
    * The allowed values are:
+   *
    * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
    * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
    * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -152,7 +151,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    * for more information. If not specified or empty, it will search all the
    * resources within the specified `scope`.
+   *
    * Examples:
+   *
    * * `name:Important` to find Google Cloud resources whose name contains
    *   "Important" as a word.
    * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -224,7 +225,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
    * for more information. If not specified or empty, it will search all the
    * resources within the specified `scope`.
+   *
    * Examples:
+   *
    * * `name:Important` to find Google Cloud resources whose name contains
    *   "Important" as a word.
    * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -292,7 +295,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetTypes_;
+  private com.google.protobuf.LazyStringArrayList assetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -300,11 +304,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -324,11 +331,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -348,11 +358,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -373,11 +386,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * Optional. A list of asset types that this request searches for. If empty,
    * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *
    * Regular expressions are also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -484,6 +500,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * name to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
+   *
    *   * name
    *   * assetType
    *   * project
@@ -495,6 +512,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * state
    *   * parentFullResourceName
    *   * parentAssetType
+   *
    * All the other fields such as repeated fields (e.g., `networkTags`,
    * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
    * `additionalAttributes`) are not supported.
@@ -525,6 +543,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * name to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
+   *
    *   * name
    *   * assetType
    *   * project
@@ -536,6 +555,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * state
    *   * parentFullResourceName
    *   * parentAssetType
+   *
    * All the other fields such as repeated fields (e.g., `networkTags`,
    * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
    * `additionalAttributes`) are not supported.
@@ -568,8 +588,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * returned in ResourceSearchResult. Only '*' or combination of top level
    * fields can be specified. Field names of both snake_case and camelCase are
    * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   *
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
+   *
    *   * name
    *   * assetType
    *   * project
@@ -589,6 +611,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * state
    *   * additionalAttributes
    *   * versionedResources
+   *
    * If read_mask is not specified, all fields except versionedResources will
    * be returned.
    * If only '*' is specified, all fields including versionedResources will be
@@ -613,8 +636,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * returned in ResourceSearchResult. Only '*' or combination of top level
    * fields can be specified. Field names of both snake_case and camelCase are
    * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   *
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
+   *
    *   * name
    *   * assetType
    *   * project
@@ -634,6 +659,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * state
    *   * additionalAttributes
    *   * versionedResources
+   *
    * If read_mask is not specified, all fields except versionedResources will
    * be returned.
    * If only '*' is specified, all fields including versionedResources will be
@@ -658,8 +684,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    * returned in ResourceSearchResult. Only '*' or combination of top level
    * fields can be specified. Field names of both snake_case and camelCase are
    * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   *
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
+   *
    *   * name
    *   * assetType
    *   * project
@@ -679,6 +707,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * state
    *   * additionalAttributes
    *   * versionedResources
+   *
    * If read_mask is not specified, all fields except versionedResources will
    * be returned.
    * If only '*' is specified, all fields including versionedResources will be
@@ -960,8 +989,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       bitField0_ = 0;
       scope_ = "";
       query_ = "";
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pageSize_ = 0;
       pageToken_ = "";
       orderBy_ = "";
@@ -997,21 +1025,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     public com.google.cloud.asset.v1.SearchAllResourcesRequest buildPartial() {
       com.google.cloud.asset.v1.SearchAllResourcesRequest result =
           new com.google.cloud.asset.v1.SearchAllResourcesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1.SearchAllResourcesRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.assetTypes_ = assetTypes_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1.SearchAllResourcesRequest result) {
@@ -1021,6 +1039,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        assetTypes_.makeImmutable();
+        result.assetTypes_ = assetTypes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageSize_ = pageSize_;
@@ -1095,7 +1117,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -1216,7 +1238,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1247,7 +1271,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1278,7 +1304,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1308,7 +1336,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1334,7 +1364,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
+     *
      * The allowed values are:
+     *
      * * projects/{PROJECT_ID} (e.g., "projects/foo-bar")
      * * projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
      * * folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
@@ -1366,7 +1398,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
      * resources within the specified `scope`.
+     *
      * Examples:
+     *
      * * `name:Important` to find Google Cloud resources whose name contains
      *   "Important" as a word.
      * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -1437,7 +1471,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
      * resources within the specified `scope`.
+     *
      * Examples:
+     *
      * * `name:Important` to find Google Cloud resources whose name contains
      *   "Important" as a word.
      * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -1508,7 +1544,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
      * resources within the specified `scope`.
+     *
      * Examples:
+     *
      * * `name:Important` to find Google Cloud resources whose name contains
      *   "Important" as a word.
      * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -1578,7 +1616,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
      * resources within the specified `scope`.
+     *
      * Examples:
+     *
      * * `name:Important` to find Google Cloud resources whose name contains
      *   "Important" as a word.
      * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -1644,7 +1684,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
      * for more information. If not specified or empty, it will search all the
      * resources within the specified `scope`.
+     *
      * Examples:
+     *
      * * `name:Important` to find Google Cloud resources whose name contains
      *   "Important" as a word.
      * * `name=Important` to find the Google Cloud resource whose name is exactly
@@ -1708,14 +1750,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!assetTypes_.isModifiable()) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1724,11 +1766,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1739,7 +1784,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
-      return assetTypes_.getUnmodifiableView();
+      assetTypes_.makeImmutable();
+      return assetTypes_;
     }
     /**
      *
@@ -1748,11 +1794,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1772,11 +1821,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1797,11 +1849,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1822,11 +1877,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1844,6 +1902,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       }
       ensureAssetTypesIsMutable();
       assetTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1854,11 +1913,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1875,6 +1937,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       }
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1885,11 +1948,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1903,6 +1969,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetTypes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1913,11 +1980,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1928,8 +1998,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1940,11 +2011,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * Optional. A list of asset types that this request searches for. If empty,
      * it will search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+     *
      * Regular expressions are also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
@@ -1962,6 +2036,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2162,6 +2237,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * name to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2173,6 +2249,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
+     *
      * All the other fields such as repeated fields (e.g., `networkTags`,
      * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
      * `additionalAttributes`) are not supported.
@@ -2202,6 +2279,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * name to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2213,6 +2291,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
+     *
      * All the other fields such as repeated fields (e.g., `networkTags`,
      * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
      * `additionalAttributes`) are not supported.
@@ -2242,6 +2321,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * name to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2253,6 +2333,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
+     *
      * All the other fields such as repeated fields (e.g., `networkTags`,
      * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
      * `additionalAttributes`) are not supported.
@@ -2281,6 +2362,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * name to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2292,6 +2374,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
+     *
      * All the other fields such as repeated fields (e.g., `networkTags`,
      * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
      * `additionalAttributes`) are not supported.
@@ -2316,6 +2399,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * name to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2327,6 +2411,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
+     *
      * All the other fields such as repeated fields (e.g., `networkTags`,
      * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
      * `additionalAttributes`) are not supported.
@@ -2362,8 +2447,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2383,6 +2470,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2406,8 +2494,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2427,6 +2517,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2454,8 +2545,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2475,6 +2568,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2506,8 +2600,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2527,6 +2623,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2555,8 +2652,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2576,6 +2675,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2610,8 +2710,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2631,6 +2733,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2659,8 +2762,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2680,6 +2785,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2703,8 +2809,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2724,6 +2832,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be
@@ -2749,8 +2858,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      * returned in ResourceSearchResult. Only '*' or combination of top level
      * fields can be specified. Field names of both snake_case and camelCase are
      * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
+     *
      *   * name
      *   * assetType
      *   * project
@@ -2770,6 +2881,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * state
      *   * additionalAttributes
      *   * versionedResources
+     *
      * If read_mask is not specified, all fields except versionedResources will
      * be returned.
      * If only '*' is specified, all fields including versionedResources will be

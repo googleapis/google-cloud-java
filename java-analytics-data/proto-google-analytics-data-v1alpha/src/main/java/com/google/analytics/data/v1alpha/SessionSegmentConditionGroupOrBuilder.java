@@ -37,6 +37,7 @@ public interface SessionSegmentConditionGroupOrBuilder
    * SESSION_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a
    * single event, and then, the condition group is determined to be matched or
    * not for this session.
+   *
    * Optional. If unspecified, a `conditionScoping` of `WITHIN_SAME_SESSION`
    * is used.
    * </pre>
@@ -60,6 +61,7 @@ public interface SessionSegmentConditionGroupOrBuilder
    * SESSION_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a
    * single event, and then, the condition group is determined to be matched or
    * not for this session.
+   *
    * Optional. If unspecified, a `conditionScoping` of `WITHIN_SAME_SESSION`
    * is used.
    * </pre>

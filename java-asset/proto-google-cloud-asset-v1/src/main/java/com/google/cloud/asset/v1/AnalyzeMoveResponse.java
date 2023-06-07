@@ -47,11 +47,6 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
     return new AnalyzeMoveResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_AnalyzeMoveResponse_descriptor;

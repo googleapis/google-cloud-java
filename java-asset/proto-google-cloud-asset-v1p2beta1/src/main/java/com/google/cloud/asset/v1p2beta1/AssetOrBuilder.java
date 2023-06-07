@@ -162,6 +162,7 @@ public interface AssetOrBuilder
    * represented as a list of relative resource names. Ancestry path starts with
    * the closest CRM ancestor and ends at root. If the asset is a CRM
    * project/folder/organization, this starts from the asset itself.
+   *
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -178,6 +179,7 @@ public interface AssetOrBuilder
    * represented as a list of relative resource names. Ancestry path starts with
    * the closest CRM ancestor and ends at root. If the asset is a CRM
    * project/folder/organization, this starts from the asset itself.
+   *
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -194,6 +196,7 @@ public interface AssetOrBuilder
    * represented as a list of relative resource names. Ancestry path starts with
    * the closest CRM ancestor and ends at root. If the asset is a CRM
    * project/folder/organization, this starts from the asset itself.
+   *
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *
@@ -211,6 +214,7 @@ public interface AssetOrBuilder
    * represented as a list of relative resource names. Ancestry path starts with
    * the closest CRM ancestor and ends at root. If the asset is a CRM
    * project/folder/organization, this starts from the asset itself.
+   *
    * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
    * </pre>
    *

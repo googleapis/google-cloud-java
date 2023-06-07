@@ -112,5 +112,5 @@ public interface ImageOrBuilder
    */
   com.google.protobuf.ByteString getThumbnailUriBytes();
 
-  public com.google.cloud.automl.v1beta1.Image.DataCase getDataCase();
+  com.google.cloud.automl.v1beta1.Image.DataCase getDataCase();
 }

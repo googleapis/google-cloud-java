@@ -48,11 +48,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     return new IamPolicySearchResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p1beta1.AssetProto
         .internal_static_google_cloud_asset_v1p1beta1_IamPolicySearchResult_descriptor;
@@ -183,11 +178,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Explanation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

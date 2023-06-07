@@ -48,11 +48,6 @@ public final class ConnectedSiteTag extends com.google.protobuf.GeneratedMessage
     return new ConnectedSiteTag();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_ConnectedSiteTag_descriptor;

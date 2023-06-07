@@ -47,11 +47,6 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     return new PartitionSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p7beta1.AssetServiceProto
         .internal_static_google_cloud_asset_v1p7beta1_PartitionSpec_descriptor;

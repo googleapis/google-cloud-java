@@ -86,6 +86,7 @@ public interface TablesModelColumnInfoOrBuilder
    * depend on values in this column. A value between 0 and 1, higher means
    * higher influence. These values are normalized - for all input feature
    * columns of a given model they add to 1.
+   *
    * When given back by Predict (populated iff
    * [feature_importance
    * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch

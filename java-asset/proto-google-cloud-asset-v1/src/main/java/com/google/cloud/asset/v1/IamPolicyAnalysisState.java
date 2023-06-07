@@ -49,11 +49,6 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     return new IamPolicyAnalysisState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetProto
         .internal_static_google_cloud_asset_v1_IamPolicyAnalysisState_descriptor;

@@ -33,6 +33,7 @@ public interface RunPivotReportRequestOrBuilder
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -51,6 +52,7 @@ public interface RunPivotReportRequestOrBuilder
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *

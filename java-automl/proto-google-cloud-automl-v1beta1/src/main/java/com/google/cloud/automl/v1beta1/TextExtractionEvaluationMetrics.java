@@ -48,11 +48,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     return new TextExtractionEvaluationMetrics();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.TextExtraction
         .internal_static_google_cloud_automl_v1beta1_TextExtractionEvaluationMetrics_descriptor;
@@ -153,11 +148,6 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConfidenceMetricsEntry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

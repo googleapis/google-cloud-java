@@ -48,11 +48,6 @@ public final class ListApiSpecRevisionsResponse extends com.google.protobuf.Gene
     return new ListApiSpecRevisionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_ListApiSpecRevisionsResponse_descriptor;

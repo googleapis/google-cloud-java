@@ -47,11 +47,6 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
     return new DeleteVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AppengineProto
         .internal_static_google_appengine_v1_DeleteVersionRequest_descriptor;

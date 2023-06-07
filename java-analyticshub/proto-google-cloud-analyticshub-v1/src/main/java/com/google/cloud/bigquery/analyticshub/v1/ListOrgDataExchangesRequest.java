@@ -49,11 +49,6 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
     return new ListOrgDataExchangesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
         .internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesRequest_descriptor;

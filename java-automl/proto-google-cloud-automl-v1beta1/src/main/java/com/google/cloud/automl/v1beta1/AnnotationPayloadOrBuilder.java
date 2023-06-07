@@ -385,5 +385,5 @@ public interface AnnotationPayloadOrBuilder
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
-  public com.google.cloud.automl.v1beta1.AnnotationPayload.DetailCase getDetailCase();
+  com.google.cloud.automl.v1beta1.AnnotationPayload.DetailCase getDetailCase();
 }

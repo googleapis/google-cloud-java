@@ -32,6 +32,7 @@ public interface GcsDestinationOrBuilder
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   *
    * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
@@ -51,6 +52,7 @@ public interface GcsDestinationOrBuilder
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   *
    * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
@@ -70,6 +72,7 @@ public interface GcsDestinationOrBuilder
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   *
    * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
@@ -142,5 +145,5 @@ public interface GcsDestinationOrBuilder
    */
   com.google.protobuf.ByteString getUriPrefixBytes();
 
-  public com.google.cloud.asset.v1.GcsDestination.ObjectUriCase getObjectUriCase();
+  com.google.cloud.asset.v1.GcsDestination.ObjectUriCase getObjectUriCase();
 }

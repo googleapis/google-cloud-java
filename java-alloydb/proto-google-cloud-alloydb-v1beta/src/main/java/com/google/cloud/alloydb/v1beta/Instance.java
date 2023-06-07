@@ -57,11 +57,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return new Instance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1beta.ResourcesProto
         .internal_static_google_cloud_alloydb_v1beta_Instance_descriptor;
@@ -790,11 +785,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new MachineConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1beta.ResourcesProto
           .internal_static_google_cloud_alloydb_v1beta_Instance_MachineConfig_descriptor;
@@ -1433,11 +1423,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Node();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2718,11 +2703,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return new QueryInsightsInstanceConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1beta.ResourcesProto
           .internal_static_google_cloud_alloydb_v1beta_Instance_QueryInsightsInstanceConfig_descriptor;
@@ -3691,11 +3671,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ReadPoolConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4886,6 +4861,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4919,6 +4896,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4943,6 +4922,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -4974,6 +4955,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *  * Read instances can set new or override existing flags that are relevant
    *    for reads, e.g. for enabling columnar cache on a read instance. Flags
    *    set on read instance may or may not be present on primary.
+   *
+   *
    * This is a list of "key": "value" pairs.
    * "key": The name of the flag. These flags are passed at instance setup time,
    * so include both server options and system variables for Postgres. Flags are
@@ -8276,6 +8259,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8309,6 +8294,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8333,6 +8320,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8364,6 +8353,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8401,6 +8392,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8434,6 +8427,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are
@@ -8465,6 +8460,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *  * Read instances can set new or override existing flags that are relevant
      *    for reads, e.g. for enabling columnar cache on a read instance. Flags
      *    set on read instance may or may not be present on primary.
+     *
+     *
      * This is a list of "key": "value" pairs.
      * "key": The name of the flag. These flags are passed at instance setup time,
      * so include both server options and system variables for Postgres. Flags are

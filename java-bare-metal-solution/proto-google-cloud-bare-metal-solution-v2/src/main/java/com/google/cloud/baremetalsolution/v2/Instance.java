@@ -56,11 +56,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return new Instance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.InstanceProto
         .internal_static_google_cloud_baremetalsolution_v2_Instance_descriptor;

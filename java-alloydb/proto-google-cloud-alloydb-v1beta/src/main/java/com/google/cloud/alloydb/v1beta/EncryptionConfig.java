@@ -48,11 +48,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     return new EncryptionConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1beta.ResourcesProto
         .internal_static_google_cloud_alloydb_v1beta_EncryptionConfig_descriptor;

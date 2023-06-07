@@ -40,18 +40,13 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
 
   private GenerateClientCertificateResponse() {
     pemCertificate_ = "";
-    pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GenerateClientCertificateResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,7 +118,8 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
   public static final int PEM_CERTIFICATE_CHAIN_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList pemCertificateChain_;
+  private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -409,8 +405,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       super.clear();
       bitField0_ = 0;
       pemCertificate_ = "";
-      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -439,7 +434,6 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     public com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse buildPartial() {
       com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse result =
           new com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -447,20 +441,15 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        pemCertificateChain_ = pemCertificateChain_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.pemCertificateChain_ = pemCertificateChain_;
-    }
-
     private void buildPartial0(
         com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.pemCertificate_ = pemCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        pemCertificateChain_.makeImmutable();
+        result.pemCertificateChain_ = pemCertificateChain_;
       }
     }
 
@@ -520,7 +509,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       if (!other.pemCertificateChain_.isEmpty()) {
         if (pemCertificateChain_.isEmpty()) {
           pemCertificateChain_ = other.pemCertificateChain_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePemCertificateChainIsMutable();
           pemCertificateChain_.addAll(other.pemCertificateChain_);
@@ -691,14 +680,14 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       return this;
     }
 
-    private com.google.protobuf.LazyStringList pemCertificateChain_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePemCertificateChainIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!pemCertificateChain_.isModifiable()) {
         pemCertificateChain_ = new com.google.protobuf.LazyStringArrayList(pemCertificateChain_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -714,7 +703,8 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * @return A list containing the pemCertificateChain.
      */
     public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
-      return pemCertificateChain_.getUnmodifiableView();
+      pemCertificateChain_.makeImmutable();
+      return pemCertificateChain_;
     }
     /**
      *
@@ -787,6 +777,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -810,6 +801,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -830,6 +822,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
     public Builder addAllPemCertificateChain(java.lang.Iterable<java.lang.String> values) {
       ensurePemCertificateChainIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCertificateChain_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -847,8 +840,9 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearPemCertificateChain() {
-      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -873,6 +867,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
       checkByteStringIsUtf8(value);
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

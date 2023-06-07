@@ -48,11 +48,6 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
     return new ListDataStreamsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_ListDataStreamsRequest_descriptor;
@@ -153,6 +148,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListDataStreams` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDataStreams` must
    * match the call that provided the page token.
    * </pre>
@@ -179,6 +175,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListDataStreams` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDataStreams` must
    * match the call that provided the page token.
    * </pre>
@@ -771,6 +768,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListDataStreams` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDataStreams` must
      * match the call that provided the page token.
      * </pre>
@@ -796,6 +794,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListDataStreams` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDataStreams` must
      * match the call that provided the page token.
      * </pre>
@@ -821,6 +820,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListDataStreams` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDataStreams` must
      * match the call that provided the page token.
      * </pre>
@@ -845,6 +845,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListDataStreams` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDataStreams` must
      * match the call that provided the page token.
      * </pre>
@@ -865,6 +866,7 @@ public final class ListDataStreamsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListDataStreams` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDataStreams` must
      * match the call that provided the page token.
      * </pre>

@@ -48,11 +48,6 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
     return new AccessApprovalServiceAccount();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_AccessApprovalServiceAccount_descriptor;
@@ -77,6 +72,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
    *
    * <pre>
    * The resource name of the Access Approval service account. Format is one of:
+   *
    *   * "projects/{project}/serviceAccount"
    *   * "folders/{folder}/serviceAccount"
    *   * "organizations/{organization}/serviceAccount"
@@ -103,6 +99,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
    *
    * <pre>
    * The resource name of the Access Approval service account. Format is one of:
+   *
    *   * "projects/{project}/serviceAccount"
    *   * "folders/{folder}/serviceAccount"
    *   * "organizations/{organization}/serviceAccount"
@@ -553,6 +550,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * The resource name of the Access Approval service account. Format is one of:
+     *
      *   * "projects/{project}/serviceAccount"
      *   * "folders/{folder}/serviceAccount"
      *   * "organizations/{organization}/serviceAccount"
@@ -578,6 +576,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * The resource name of the Access Approval service account. Format is one of:
+     *
      *   * "projects/{project}/serviceAccount"
      *   * "folders/{folder}/serviceAccount"
      *   * "organizations/{organization}/serviceAccount"
@@ -603,6 +602,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * The resource name of the Access Approval service account. Format is one of:
+     *
      *   * "projects/{project}/serviceAccount"
      *   * "folders/{folder}/serviceAccount"
      *   * "organizations/{organization}/serviceAccount"
@@ -627,6 +627,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * The resource name of the Access Approval service account. Format is one of:
+     *
      *   * "projects/{project}/serviceAccount"
      *   * "folders/{folder}/serviceAccount"
      *   * "organizations/{organization}/serviceAccount"
@@ -647,6 +648,7 @@ public final class AccessApprovalServiceAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * The resource name of the Access Approval service account. Format is one of:
+     *
      *   * "projects/{project}/serviceAccount"
      *   * "folders/{folder}/serviceAccount"
      *   * "organizations/{organization}/serviceAccount"

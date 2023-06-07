@@ -32,6 +32,7 @@ public interface CommitServicePerimetersRequestOrBuilder
    * [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] in scope for
    * the commit operation.
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -51,6 +52,7 @@ public interface CommitServicePerimetersRequestOrBuilder
    * [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] in scope for
    * the commit operation.
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *

@@ -247,6 +247,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * evaluation). If unset or set to false, user evaluation for an Audience is
    * dynamic; users are added to an Audience when they meet the conditions and
    * then removed when they no longer meet them.
+   *
    * This can only be set when Audience scope is ACROSS_ALL_SESSIONS.
    * </pre>
    *
@@ -263,9 +264,11 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * Optional. If set, specifies the time window for which to evaluate data in
    * number of days. If not set, then audience data is evaluated against
    * lifetime data (For example, infinite time window).
+   *
    * For example, if set to 1 day, only the current day's data is evaluated. The
    * reference point is the current day when at_any_point_in_time is unset or
    * false.
+   *
    * It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be
    * greater than 60 days.
    * </pre>
@@ -276,6 +279,6 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    */
   int getInAnyNDayPeriod();
 
-  public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.OneFilterCase
+  com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.OneFilterCase
       getOneFilterCase();
 }

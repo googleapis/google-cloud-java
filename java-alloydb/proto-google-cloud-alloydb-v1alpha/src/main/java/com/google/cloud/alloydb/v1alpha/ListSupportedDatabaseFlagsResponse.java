@@ -49,11 +49,6 @@ public final class ListSupportedDatabaseFlagsResponse extends com.google.protobu
     return new ListSupportedDatabaseFlagsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1alpha.ServiceProto
         .internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsResponse_descriptor;

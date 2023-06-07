@@ -47,11 +47,6 @@ public final class GetSearchAds360LinkRequest extends com.google.protobuf.Genera
     return new GetSearchAds360LinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_GetSearchAds360LinkRequest_descriptor;

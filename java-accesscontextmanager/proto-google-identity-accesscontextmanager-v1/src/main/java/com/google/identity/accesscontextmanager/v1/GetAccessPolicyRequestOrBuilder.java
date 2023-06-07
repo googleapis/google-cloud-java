@@ -28,6 +28,7 @@ public interface GetAccessPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name for the access policy to get.
+   *
    * Format `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetAccessPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name for the access policy to get.
+   *
    * Format `accessPolicies/{policy_id}`
    * </pre>
    *

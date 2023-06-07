@@ -51,11 +51,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return new OperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigateway.v1.Apigateway
         .internal_static_google_cloud_apigateway_v1_OperationMetadata_descriptor;
@@ -154,11 +149,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Diagnostic();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -48,11 +48,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     return new AnnotationPayload();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
         .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
@@ -69,6 +64,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   private int detailCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object detail_;
 
   public enum DetailCase

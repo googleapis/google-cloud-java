@@ -45,11 +45,6 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
     return new NumericValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AccessReportProto
         .internal_static_google_analytics_admin_v1beta_NumericValue_descriptor;
@@ -66,6 +61,8 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneValueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneValue_;
 
   public enum OneValueCase

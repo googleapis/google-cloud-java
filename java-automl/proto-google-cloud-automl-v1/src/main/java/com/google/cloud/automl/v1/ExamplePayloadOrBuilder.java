@@ -128,5 +128,5 @@ public interface ExamplePayloadOrBuilder
    */
   com.google.cloud.automl.v1.DocumentOrBuilder getDocumentOrBuilder();
 
-  public com.google.cloud.automl.v1.ExamplePayload.PayloadCase getPayloadCase();
+  com.google.cloud.automl.v1.ExamplePayload.PayloadCase getPayloadCase();
 }

@@ -47,11 +47,6 @@ public final class JobDependency extends com.google.protobuf.GeneratedMessageV3
     return new JobDependency();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.JobProto
         .internal_static_google_cloud_batch_v1alpha_JobDependency_descriptor;

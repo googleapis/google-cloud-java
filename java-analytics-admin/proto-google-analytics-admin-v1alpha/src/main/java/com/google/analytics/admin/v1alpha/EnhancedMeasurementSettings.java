@@ -50,11 +50,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     return new EnhancedMeasurementSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_EnhancedMeasurementSettings_descriptor;
@@ -135,6 +130,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    * <pre>
    * Indicates whether Enhanced Measurement Settings will be used to
    * automatically measure interactions and content on this web stream.
+   *
    * Changing this value does not affect the settings themselves, but determines
    * whether they are respected.
    * </pre>
@@ -1087,6 +1083,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * <pre>
      * Indicates whether Enhanced Measurement Settings will be used to
      * automatically measure interactions and content on this web stream.
+     *
      * Changing this value does not affect the settings themselves, but determines
      * whether they are respected.
      * </pre>
@@ -1105,6 +1102,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * <pre>
      * Indicates whether Enhanced Measurement Settings will be used to
      * automatically measure interactions and content on this web stream.
+     *
      * Changing this value does not affect the settings themselves, but determines
      * whether they are respected.
      * </pre>
@@ -1127,6 +1125,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * <pre>
      * Indicates whether Enhanced Measurement Settings will be used to
      * automatically measure interactions and content on this web stream.
+     *
      * Changing this value does not affect the settings themselves, but determines
      * whether they are respected.
      * </pre>

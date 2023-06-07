@@ -47,11 +47,6 @@ public final class ListNetworkUsageResponse extends com.google.protobuf.Generate
     return new ListNetworkUsageResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NetworkProto
         .internal_static_google_cloud_baremetalsolution_v2_ListNetworkUsageResponse_descriptor;

@@ -62,11 +62,6 @@ public final class BatchCreateInstanceStatus extends com.google.protobuf.Generat
     return new BatchCreateInstanceStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1alpha.ServiceProto
         .internal_static_google_cloud_alloydb_v1alpha_BatchCreateInstanceStatus_descriptor;

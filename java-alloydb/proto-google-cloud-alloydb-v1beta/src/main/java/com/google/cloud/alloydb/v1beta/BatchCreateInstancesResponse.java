@@ -47,11 +47,6 @@ public final class BatchCreateInstancesResponse extends com.google.protobuf.Gene
     return new BatchCreateInstancesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1beta.ServiceProto
         .internal_static_google_cloud_alloydb_v1beta_BatchCreateInstancesResponse_descriptor;

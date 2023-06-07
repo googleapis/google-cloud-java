@@ -93,5 +93,5 @@ public interface BatchPredictInputConfigOrBuilder
    */
   com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder();
 
-  public com.google.cloud.automl.v1beta1.BatchPredictInputConfig.SourceCase getSourceCase();
+  com.google.cloud.automl.v1beta1.BatchPredictInputConfig.SourceCase getSourceCase();
 }

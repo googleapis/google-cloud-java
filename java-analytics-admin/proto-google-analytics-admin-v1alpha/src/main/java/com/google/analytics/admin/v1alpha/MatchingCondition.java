@@ -50,11 +50,6 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
     return new MatchingCondition();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.EventCreateAndEdit
         .internal_static_google_analytics_admin_v1alpha_MatchingCondition_descriptor;
@@ -505,6 +500,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
    * If 'event_name' is specified this condition will apply to the name of the
    * event.  Otherwise the condition will apply to a parameter with the
    * specified name.
+   *
    * This value cannot contain spaces.
    * </pre>
    *
@@ -532,6 +528,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
    * If 'event_name' is specified this condition will apply to the name of the
    * event.  Otherwise the condition will apply to a parameter with the
    * specified name.
+   *
    * This value cannot contain spaces.
    * </pre>
    *
@@ -1095,6 +1092,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
      * If 'event_name' is specified this condition will apply to the name of the
      * event.  Otherwise the condition will apply to a parameter with the
      * specified name.
+     *
      * This value cannot contain spaces.
      * </pre>
      *
@@ -1121,6 +1119,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
      * If 'event_name' is specified this condition will apply to the name of the
      * event.  Otherwise the condition will apply to a parameter with the
      * specified name.
+     *
      * This value cannot contain spaces.
      * </pre>
      *
@@ -1147,6 +1146,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
      * If 'event_name' is specified this condition will apply to the name of the
      * event.  Otherwise the condition will apply to a parameter with the
      * specified name.
+     *
      * This value cannot contain spaces.
      * </pre>
      *
@@ -1172,6 +1172,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
      * If 'event_name' is specified this condition will apply to the name of the
      * event.  Otherwise the condition will apply to a parameter with the
      * specified name.
+     *
      * This value cannot contain spaces.
      * </pre>
      *
@@ -1193,6 +1194,7 @@ public final class MatchingCondition extends com.google.protobuf.GeneratedMessag
      * If 'event_name' is specified this condition will apply to the name of the
      * event.  Otherwise the condition will apply to a parameter with the
      * specified name.
+     *
      * This value cannot contain spaces.
      * </pre>
      *

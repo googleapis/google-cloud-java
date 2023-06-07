@@ -47,11 +47,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     return new TextSegment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.TextSegmentProto
         .internal_static_google_cloud_automl_v1_TextSegment_descriptor;

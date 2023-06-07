@@ -226,5 +226,5 @@ public interface AudienceFilterExpressionOrBuilder
    */
   com.google.analytics.admin.v1alpha.AudienceEventFilterOrBuilder getEventFilterOrBuilder();
 
-  public com.google.analytics.admin.v1alpha.AudienceFilterExpression.ExprCase getExprCase();
+  com.google.analytics.admin.v1alpha.AudienceFilterExpression.ExprCase getExprCase();
 }

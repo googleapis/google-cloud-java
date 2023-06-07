@@ -49,11 +49,6 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
     return new ListApiVersionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_ListApiVersionsRequest_descriptor;
@@ -157,6 +152,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListApiVersions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListApiVersions` must
    * match the call that provided the page token.
    * </pre>
@@ -183,6 +179,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListApiVersions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListApiVersions` must
    * match the call that provided the page token.
    * </pre>
@@ -860,6 +857,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListApiVersions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiVersions` must
      * match the call that provided the page token.
      * </pre>
@@ -885,6 +883,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListApiVersions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiVersions` must
      * match the call that provided the page token.
      * </pre>
@@ -910,6 +909,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListApiVersions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiVersions` must
      * match the call that provided the page token.
      * </pre>
@@ -934,6 +934,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListApiVersions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiVersions` must
      * match the call that provided the page token.
      * </pre>
@@ -954,6 +955,7 @@ public final class ListApiVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListApiVersions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiVersions` must
      * match the call that provided the page token.
      * </pre>

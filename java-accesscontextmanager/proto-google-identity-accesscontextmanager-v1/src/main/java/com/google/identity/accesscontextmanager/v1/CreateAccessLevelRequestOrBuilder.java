@@ -29,6 +29,7 @@ public interface CreateAccessLevelRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy which owns this [Access
    * Level] [google.identity.accesscontextmanager.v1.AccessLevel].
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateAccessLevelRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy which owns this [Access
    * Level] [google.identity.accesscontextmanager.v1.AccessLevel].
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *

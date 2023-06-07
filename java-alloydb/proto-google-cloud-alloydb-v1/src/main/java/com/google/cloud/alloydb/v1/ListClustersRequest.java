@@ -50,11 +50,6 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
     return new ListClustersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1.ServiceProto
         .internal_static_google_cloud_alloydb_v1_ListClustersRequest_descriptor;

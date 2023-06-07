@@ -31,6 +31,7 @@ public interface MatchingConditionOrBuilder
    * If 'event_name' is specified this condition will apply to the name of the
    * event.  Otherwise the condition will apply to a parameter with the
    * specified name.
+   *
    * This value cannot contain spaces.
    * </pre>
    *
@@ -47,6 +48,7 @@ public interface MatchingConditionOrBuilder
    * If 'event_name' is specified this condition will apply to the name of the
    * event.  Otherwise the condition will apply to a parameter with the
    * specified name.
+   *
    * This value cannot contain spaces.
    * </pre>
    *

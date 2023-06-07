@@ -45,11 +45,6 @@ public final class TextSentimentModelMetadata extends com.google.protobuf.Genera
     return new TextSentimentModelMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.TextProto
         .internal_static_google_cloud_automl_v1_TextSentimentModelMetadata_descriptor;

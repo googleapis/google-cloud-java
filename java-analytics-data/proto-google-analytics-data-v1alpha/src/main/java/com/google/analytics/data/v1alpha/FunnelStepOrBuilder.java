@@ -80,6 +80,7 @@ public interface FunnelStepOrBuilder
    * of the endpoint at the microsecond granularity. For example a duration of
    * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
    * microsecond.
+   *
    * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
    * be separated by any time duration.
    * </pre>
@@ -98,6 +99,7 @@ public interface FunnelStepOrBuilder
    * of the endpoint at the microsecond granularity. For example a duration of
    * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
    * microsecond.
+   *
    * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
    * be separated by any time duration.
    * </pre>
@@ -116,6 +118,7 @@ public interface FunnelStepOrBuilder
    * of the endpoint at the microsecond granularity. For example a duration of
    * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
    * microsecond.
+   *
    * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
    * be separated by any time duration.
    * </pre>

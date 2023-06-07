@@ -82,6 +82,7 @@ public interface FileInfoOrBuilder
    *
    * <pre>
    * The MIME type of the file.
+   *
    * Defaults to the value from Google Cloud Storage.
    * </pre>
    *
@@ -95,6 +96,7 @@ public interface FileInfoOrBuilder
    *
    * <pre>
    * The MIME type of the file.
+   *
    * Defaults to the value from Google Cloud Storage.
    * </pre>
    *

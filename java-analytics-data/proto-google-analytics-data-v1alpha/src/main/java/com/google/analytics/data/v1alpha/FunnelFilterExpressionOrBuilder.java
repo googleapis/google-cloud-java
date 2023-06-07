@@ -207,5 +207,5 @@ public interface FunnelFilterExpressionOrBuilder
    */
   com.google.analytics.data.v1alpha.FunnelEventFilterOrBuilder getFunnelEventFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.FunnelFilterExpression.ExprCase getExprCase();
+  com.google.analytics.data.v1alpha.FunnelFilterExpression.ExprCase getExprCase();
 }

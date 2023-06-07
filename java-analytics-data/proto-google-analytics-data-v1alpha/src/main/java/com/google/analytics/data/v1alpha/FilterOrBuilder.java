@@ -190,5 +190,5 @@ public interface FilterOrBuilder
    */
   com.google.analytics.data.v1alpha.BetweenFilterOrBuilder getBetweenFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.Filter.OneFilterCase getOneFilterCase();
+  com.google.analytics.data.v1alpha.Filter.OneFilterCase getOneFilterCase();
 }

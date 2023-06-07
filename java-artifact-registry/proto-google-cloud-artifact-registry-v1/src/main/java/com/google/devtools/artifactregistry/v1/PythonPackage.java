@@ -50,11 +50,6 @@ public final class PythonPackage extends com.google.protobuf.GeneratedMessageV3
     return new PythonPackage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.ArtifactProto
         .internal_static_google_devtools_artifactregistry_v1_PythonPackage_descriptor;

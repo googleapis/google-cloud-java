@@ -49,11 +49,6 @@ public final class ContainerInfo extends com.google.protobuf.GeneratedMessageV3
     return new ContainerInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DeployProto
         .internal_static_google_appengine_v1_ContainerInfo_descriptor;

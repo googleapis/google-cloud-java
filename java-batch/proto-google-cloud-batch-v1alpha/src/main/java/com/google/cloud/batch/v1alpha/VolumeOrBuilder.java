@@ -295,5 +295,5 @@ public interface VolumeOrBuilder
    */
   com.google.protobuf.ByteString getMountOptionsBytes(int index);
 
-  public com.google.cloud.batch.v1alpha.Volume.SourceCase getSourceCase();
+  com.google.cloud.batch.v1alpha.Volume.SourceCase getSourceCase();
 }

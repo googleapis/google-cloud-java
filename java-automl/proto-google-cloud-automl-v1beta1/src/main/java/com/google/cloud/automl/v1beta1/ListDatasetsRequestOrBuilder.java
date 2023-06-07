@@ -57,9 +57,11 @@ public interface ListDatasetsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `dataset_metadata` - for existence of the case (e.g.
    *             `image_classification_dataset_metadata:*`). Some examples of
    *             using the filter are:
+   *
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          `translation_dataset_metadata`.
    * </pre>
@@ -74,9 +76,11 @@ public interface ListDatasetsRequestOrBuilder
    *
    * <pre>
    * An expression for filtering the results of the request.
+   *
    *   * `dataset_metadata` - for existence of the case (e.g.
    *             `image_classification_dataset_metadata:*`). Some examples of
    *             using the filter are:
+   *
    *   * `translation_dataset_metadata:*` --&gt; The dataset has
    *                                          `translation_dataset_metadata`.
    * </pre>

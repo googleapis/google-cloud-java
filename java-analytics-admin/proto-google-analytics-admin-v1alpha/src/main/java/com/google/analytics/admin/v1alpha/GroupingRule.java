@@ -47,11 +47,6 @@ public final class GroupingRule extends com.google.protobuf.GeneratedMessageV3
     return new GroupingRule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ChannelGroupProto
         .internal_static_google_analytics_admin_v1alpha_GroupingRule_descriptor;

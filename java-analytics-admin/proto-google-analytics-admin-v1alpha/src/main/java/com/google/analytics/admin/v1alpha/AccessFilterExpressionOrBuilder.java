@@ -166,6 +166,6 @@ public interface AccessFilterExpressionOrBuilder
    */
   com.google.analytics.admin.v1alpha.AccessFilterOrBuilder getAccessFilterOrBuilder();
 
-  public com.google.analytics.admin.v1alpha.AccessFilterExpression.OneExpressionCase
+  com.google.analytics.admin.v1alpha.AccessFilterExpression.OneExpressionCase
       getOneExpressionCase();
 }

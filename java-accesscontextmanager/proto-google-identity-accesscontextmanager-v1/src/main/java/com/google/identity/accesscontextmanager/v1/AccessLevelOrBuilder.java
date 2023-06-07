@@ -244,5 +244,5 @@ public interface AccessLevelOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.identity.accesscontextmanager.v1.AccessLevel.LevelCase getLevelCase();
+  com.google.identity.accesscontextmanager.v1.AccessLevel.LevelCase getLevelCase();
 }

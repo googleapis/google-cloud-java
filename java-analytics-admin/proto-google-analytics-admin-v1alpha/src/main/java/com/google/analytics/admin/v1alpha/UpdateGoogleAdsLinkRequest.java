@@ -45,11 +45,6 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
     return new UpdateGoogleAdsLinkRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_UpdateGoogleAdsLinkRequest_descriptor;

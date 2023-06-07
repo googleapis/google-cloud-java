@@ -49,11 +49,6 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     return new TablesModelColumnInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Tables
         .internal_static_google_cloud_automl_v1beta1_TablesModelColumnInfo_descriptor;
@@ -186,6 +181,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * depend on values in this column. A value between 0 and 1, higher means
    * higher influence. These values are normalized - for all input feature
    * columns of a given model they add to 1.
+   *
    * When given back by Predict (populated iff
    * [feature_importance
    * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
@@ -831,6 +827,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * depend on values in this column. A value between 0 and 1, higher means
      * higher influence. These values are normalized - for all input feature
      * columns of a given model they add to 1.
+     *
      * When given back by Predict (populated iff
      * [feature_importance
      * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
@@ -861,6 +858,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * depend on values in this column. A value between 0 and 1, higher means
      * higher influence. These values are normalized - for all input feature
      * columns of a given model they add to 1.
+     *
      * When given back by Predict (populated iff
      * [feature_importance
      * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch
@@ -895,6 +893,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * depend on values in this column. A value between 0 and 1, higher means
      * higher influence. These values are normalized - for all input feature
      * columns of a given model they add to 1.
+     *
      * When given back by Predict (populated iff
      * [feature_importance
      * param][google.cloud.automl.v1beta1.PredictRequest.params] is set) or Batch

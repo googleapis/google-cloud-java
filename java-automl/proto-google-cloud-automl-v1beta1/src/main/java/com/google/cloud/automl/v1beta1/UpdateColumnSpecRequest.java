@@ -45,11 +45,6 @@ public final class UpdateColumnSpecRequest extends com.google.protobuf.Generated
     return new UpdateColumnSpecRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.AutoMlProto
         .internal_static_google_cloud_automl_v1beta1_UpdateColumnSpecRequest_descriptor;

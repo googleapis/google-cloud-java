@@ -96,5 +96,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.asset.v1p7beta1.BigQueryDestinationOrBuilder getBigqueryDestinationOrBuilder();
 
-  public com.google.cloud.asset.v1p7beta1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.asset.v1p7beta1.OutputConfig.DestinationCase getDestinationCase();
 }

@@ -49,11 +49,6 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
     return new NetworkAddressReservation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NetworkProto
         .internal_static_google_cloud_baremetalsolution_v2_NetworkAddressReservation_descriptor;

@@ -166,5 +166,5 @@ public interface FilterExpressionOrBuilder
    */
   com.google.analytics.data.v1alpha.FilterOrBuilder getFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.FilterExpression.ExprCase getExprCase();
+  com.google.analytics.data.v1alpha.FilterExpression.ExprCase getExprCase();
 }

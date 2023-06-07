@@ -47,11 +47,6 @@ public final class GetLunRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetLunRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.LunProto
         .internal_static_google_cloud_baremetalsolution_v2_GetLunRequest_descriptor;

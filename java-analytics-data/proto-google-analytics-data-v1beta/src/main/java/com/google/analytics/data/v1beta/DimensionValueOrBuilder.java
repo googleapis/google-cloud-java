@@ -60,5 +60,5 @@ public interface DimensionValueOrBuilder
    */
   com.google.protobuf.ByteString getValueBytes();
 
-  public com.google.analytics.data.v1beta.DimensionValue.OneValueCase getOneValueCase();
+  com.google.analytics.data.v1beta.DimensionValue.OneValueCase getOneValueCase();
 }

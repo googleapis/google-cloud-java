@@ -47,11 +47,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     return new VideoObjectTrackingAnnotation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Detection
         .internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingAnnotation_descriptor;

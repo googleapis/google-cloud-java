@@ -87,6 +87,5 @@ public interface ImportAptArtifactsRequestOrBuilder
    */
   com.google.protobuf.ByteString getParentBytes();
 
-  public com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest.SourceCase
-      getSourceCase();
+  com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest.SourceCase getSourceCase();
 }

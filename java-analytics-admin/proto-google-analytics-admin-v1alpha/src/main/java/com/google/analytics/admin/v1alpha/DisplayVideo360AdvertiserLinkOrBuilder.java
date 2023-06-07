@@ -30,6 +30,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * Output only. The resource name for this DisplayVideo360AdvertiserLink
    * resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
+   *
    * Note: linkId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    * Output only. The resource name for this DisplayVideo360AdvertiserLink
    * resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
+   *
    * Note: linkId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *

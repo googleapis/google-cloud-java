@@ -84,6 +84,5 @@ public interface ImportYumArtifactsRequestOrBuilder
    */
   com.google.protobuf.ByteString getParentBytes();
 
-  public com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest.SourceCase
-      getSourceCase();
+  com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest.SourceCase getSourceCase();
 }

@@ -48,11 +48,6 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     return new CreateSavedQueryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_CreateSavedQueryRequest_descriptor;
@@ -201,8 +196,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    * Required. The ID to use for the saved query, which must be unique in the
    * specified parent. It will become the final component of the saved query's
    * resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are `[a-z][0-9]-`.
+   *
    * Notice that this field is required in the saved query creation, and the
    * `name` field of the `saved_query` will be ignored.
    * </pre>
@@ -230,8 +227,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    * Required. The ID to use for the saved query, which must be unique in the
    * specified parent. It will become the final component of the saved query's
    * resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are `[a-z][0-9]-`.
+   *
    * Notice that this field is required in the saved query creation, and the
    * `name` field of the `saved_query` will be ignored.
    * </pre>
@@ -1004,8 +1003,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * Required. The ID to use for the saved query, which must be unique in the
      * specified parent. It will become the final component of the saved query's
      * resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are `[a-z][0-9]-`.
+     *
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1032,8 +1033,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * Required. The ID to use for the saved query, which must be unique in the
      * specified parent. It will become the final component of the saved query's
      * resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are `[a-z][0-9]-`.
+     *
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1060,8 +1063,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * Required. The ID to use for the saved query, which must be unique in the
      * specified parent. It will become the final component of the saved query's
      * resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are `[a-z][0-9]-`.
+     *
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1087,8 +1092,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * Required. The ID to use for the saved query, which must be unique in the
      * specified parent. It will become the final component of the saved query's
      * resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are `[a-z][0-9]-`.
+     *
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1110,8 +1117,10 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * Required. The ID to use for the saved query, which must be unique in the
      * specified parent. It will become the final component of the saved query's
      * resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are `[a-z][0-9]-`.
+     *
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>

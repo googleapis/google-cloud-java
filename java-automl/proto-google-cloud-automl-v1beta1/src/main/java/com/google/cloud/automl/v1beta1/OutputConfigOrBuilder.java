@@ -108,5 +108,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder getBigqueryDestinationOrBuilder();
 
-  public com.google.cloud.automl.v1beta1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.automl.v1beta1.OutputConfig.DestinationCase getDestinationCase();
 }

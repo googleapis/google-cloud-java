@@ -60,6 +60,7 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * <pre>
    * Indicates whether Enhanced Measurement Settings will be used to
    * automatically measure interactions and content on this web stream.
+   *
    * Changing this value does not affect the settings themselves, but determines
    * whether they are respected.
    * </pre>

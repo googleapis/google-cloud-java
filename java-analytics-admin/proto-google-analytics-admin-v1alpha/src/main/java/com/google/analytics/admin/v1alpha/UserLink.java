@@ -41,18 +41,13 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
   private UserLink() {
     name_ = "";
     emailAddress_ = "";
-    directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    directRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UserLink();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,12 +170,14 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
   public static final int DIRECT_ROLES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList directRoles_;
+  private com.google.protobuf.LazyStringArrayList directRoles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Roles directly assigned to this user for this account or property.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -188,8 +185,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * Excludes roles that are inherited from a higher-level entity, group,
    * or organization admin role.
+   *
    * A UserLink that is updated to have an empty list of direct_roles will be
    * deleted.
    * </pre>
@@ -206,6 +205,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Roles directly assigned to this user for this account or property.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -213,8 +213,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * Excludes roles that are inherited from a higher-level entity, group,
    * or organization admin role.
+   *
    * A UserLink that is updated to have an empty list of direct_roles will be
    * deleted.
    * </pre>
@@ -231,6 +233,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Roles directly assigned to this user for this account or property.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -238,8 +241,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * Excludes roles that are inherited from a higher-level entity, group,
    * or organization admin role.
+   *
    * A UserLink that is updated to have an empty list of direct_roles will be
    * deleted.
    * </pre>
@@ -257,6 +262,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Roles directly assigned to this user for this account or property.
+   *
    * Valid values:
    * predefinedRoles/viewer
    * predefinedRoles/analyst
@@ -264,8 +270,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
    * predefinedRoles/admin
    * predefinedRoles/no-cost-data
    * predefinedRoles/no-revenue-data
+   *
    * Excludes roles that are inherited from a higher-level entity, group,
    * or organization admin role.
+   *
    * A UserLink that is updated to have an empty list of direct_roles will be
    * deleted.
    * </pre>
@@ -505,8 +513,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       emailAddress_ = "";
-      directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      directRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -534,20 +541,11 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.UserLink buildPartial() {
       com.google.analytics.admin.v1alpha.UserLink result =
           new com.google.analytics.admin.v1alpha.UserLink(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.analytics.admin.v1alpha.UserLink result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        directRoles_ = directRoles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.directRoles_ = directRoles_;
     }
 
     private void buildPartial0(com.google.analytics.admin.v1alpha.UserLink result) {
@@ -557,6 +555,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.emailAddress_ = emailAddress_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        directRoles_.makeImmutable();
+        result.directRoles_ = directRoles_;
       }
     }
 
@@ -618,7 +620,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       if (!other.directRoles_.isEmpty()) {
         if (directRoles_.isEmpty()) {
           directRoles_ = other.directRoles_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureDirectRolesIsMutable();
           directRoles_.addAll(other.directRoles_);
@@ -901,20 +903,21 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList directRoles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList directRoles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDirectRolesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!directRoles_.isModifiable()) {
         directRoles_ = new com.google.protobuf.LazyStringArrayList(directRoles_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -922,8 +925,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -933,13 +938,15 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the directRoles.
      */
     public com.google.protobuf.ProtocolStringList getDirectRolesList() {
-      return directRoles_.getUnmodifiableView();
+      directRoles_.makeImmutable();
+      return directRoles_;
     }
     /**
      *
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -947,8 +954,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -965,6 +974,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -972,8 +982,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -991,6 +1003,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -998,8 +1011,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -1017,6 +1032,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1024,8 +1040,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -1042,6 +1060,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDirectRolesIsMutable();
       directRoles_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1050,6 +1069,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1057,8 +1077,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -1074,6 +1096,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDirectRolesIsMutable();
       directRoles_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1082,6 +1105,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1089,8 +1113,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -1103,6 +1129,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDirectRoles(java.lang.Iterable<java.lang.String> values) {
       ensureDirectRolesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, directRoles_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1111,6 +1138,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1118,8 +1146,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -1129,8 +1159,9 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirectRoles() {
-      directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      directRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1139,6 +1170,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this account or property.
+     *
      * Valid values:
      * predefinedRoles/viewer
      * predefinedRoles/analyst
@@ -1146,8 +1178,10 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * predefinedRoles/admin
      * predefinedRoles/no-cost-data
      * predefinedRoles/no-revenue-data
+     *
      * Excludes roles that are inherited from a higher-level entity, group,
      * or organization admin role.
+     *
      * A UserLink that is updated to have an empty list of direct_roles will be
      * deleted.
      * </pre>
@@ -1164,6 +1198,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDirectRolesIsMutable();
       directRoles_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

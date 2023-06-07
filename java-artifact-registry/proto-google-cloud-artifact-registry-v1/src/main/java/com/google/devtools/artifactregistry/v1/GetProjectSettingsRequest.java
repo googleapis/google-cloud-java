@@ -47,11 +47,6 @@ public final class GetProjectSettingsRequest extends com.google.protobuf.Generat
     return new GetProjectSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.SettingsProto
         .internal_static_google_devtools_artifactregistry_v1_GetProjectSettingsRequest_descriptor;

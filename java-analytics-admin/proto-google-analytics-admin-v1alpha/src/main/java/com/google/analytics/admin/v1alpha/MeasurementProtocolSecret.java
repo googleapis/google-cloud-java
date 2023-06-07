@@ -49,11 +49,6 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
     return new MeasurementProtocolSecret();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_MeasurementProtocolSecret_descriptor;

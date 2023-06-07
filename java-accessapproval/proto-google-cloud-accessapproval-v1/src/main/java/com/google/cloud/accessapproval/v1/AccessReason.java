@@ -40,11 +40,6 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
     return new AccessReason();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_AccessReason_descriptor;
@@ -86,6 +81,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Customer made a request or raised an issue that required the principal to
      * access customer data. `detail` is of the form ("#####" is the issue ID):
+     *
      *   * "Feedback Report: #####"
      *   * "Case Number: #####"
      *   * "Case ID: #####"
@@ -163,6 +159,7 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Customer made a request or raised an issue that required the principal to
      * access customer data. `detail` is of the form ("#####" is the issue ID):
+     *
      *   * "Feedback Report: #####"
      *   * "Case Number: #####"
      *   * "Case ID: #####"

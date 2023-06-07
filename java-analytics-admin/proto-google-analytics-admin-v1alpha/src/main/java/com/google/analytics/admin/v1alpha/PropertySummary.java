@@ -50,11 +50,6 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     return new PropertySummary();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_PropertySummary_descriptor;
@@ -220,6 +215,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Resource name of this property's logical parent.
+   *
    * Note: The Property-Moving UI can be used to change the parent.
    * Format: accounts/{account}, properties/{property}
    * Example: "accounts/100", "properties/200"
@@ -246,6 +242,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Resource name of this property's logical parent.
+   *
    * Note: The Property-Moving UI can be used to change the parent.
    * Format: accounts/{account}, properties/{property}
    * Example: "accounts/100", "properties/200"
@@ -1000,6 +997,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/200"
@@ -1025,6 +1023,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/200"
@@ -1050,6 +1049,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/200"
@@ -1074,6 +1074,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/200"
@@ -1094,6 +1095,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/200"

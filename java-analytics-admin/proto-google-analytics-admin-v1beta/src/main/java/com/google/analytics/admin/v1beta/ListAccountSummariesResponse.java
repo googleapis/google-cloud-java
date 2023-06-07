@@ -48,11 +48,6 @@ public final class ListAccountSummariesResponse extends com.google.protobuf.Gene
     return new ListAccountSummariesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1beta_ListAccountSummariesResponse_descriptor;

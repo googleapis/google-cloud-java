@@ -48,11 +48,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     return new ChangeHistoryChange();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_ChangeHistoryChange_descriptor;
@@ -888,7 +883,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder getEventCreateRuleOrBuilder();
 
-    public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
+    com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
   /**
@@ -919,11 +914,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return new ChangeHistoryResource();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1alpha.ResourcesProto
           .internal_static_google_analytics_admin_v1alpha_ChangeHistoryChange_ChangeHistoryResource_descriptor;
@@ -941,6 +931,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     private int resourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object resource_;
 
     public enum ResourceCase

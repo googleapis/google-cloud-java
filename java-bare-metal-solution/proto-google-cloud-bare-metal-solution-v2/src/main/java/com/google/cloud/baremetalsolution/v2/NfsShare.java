@@ -51,11 +51,6 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     return new NfsShare();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NfsShareProto
         .internal_static_google_cloud_baremetalsolution_v2_NfsShare_descriptor;
@@ -554,11 +549,6 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AllowedClient();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

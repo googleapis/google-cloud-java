@@ -497,5 +497,5 @@ public interface OperationMetadataOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.cloud.automl.v1.OperationMetadata.DetailsCase getDetailsCase();
+  com.google.cloud.automl.v1.OperationMetadata.DetailsCase getDetailsCase();
 }

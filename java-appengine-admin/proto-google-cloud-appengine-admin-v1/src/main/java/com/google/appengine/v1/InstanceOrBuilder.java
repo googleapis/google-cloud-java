@@ -217,6 +217,7 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. Time that this instance was started.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -231,6 +232,7 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. Time that this instance was started.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -245,6 +247,7 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. Time that this instance was started.
+   *
    * &#64;OutputOnly
    * </pre>
    *

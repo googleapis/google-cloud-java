@@ -47,11 +47,6 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     return new MoveAnalysis();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_MoveAnalysis_descriptor;
@@ -68,6 +63,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int resultCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object result_;
 
   public enum ResultCase

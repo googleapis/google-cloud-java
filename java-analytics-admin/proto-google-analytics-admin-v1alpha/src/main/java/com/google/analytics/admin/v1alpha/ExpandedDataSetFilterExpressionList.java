@@ -49,11 +49,6 @@ public final class ExpandedDataSetFilterExpressionList
     return new ExpandedDataSetFilterExpressionList();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ExpandedDataSetProto
         .internal_static_google_analytics_admin_v1alpha_ExpandedDataSetFilterExpressionList_descriptor;

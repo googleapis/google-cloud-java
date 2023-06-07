@@ -58,6 +58,7 @@ public interface RollbackApiSpecRequestOrBuilder
    * <pre>
    * Required. The revision ID to roll back to.
    * It must be a revision of the same spec.
+   *
    *   Example: `c7cfa2a8`
    * </pre>
    *
@@ -72,6 +73,7 @@ public interface RollbackApiSpecRequestOrBuilder
    * <pre>
    * Required. The revision ID to roll back to.
    * It must be a revision of the same spec.
+   *
    *   Example: `c7cfa2a8`
    * </pre>
    *

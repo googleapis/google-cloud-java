@@ -34,6 +34,7 @@ public interface BatchRunReportsRequestOrBuilder
    * This property must be specified for the batch. The property within
    * RunReportRequest may either be unspecified or consistent with this
    * property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -53,6 +54,7 @@ public interface BatchRunReportsRequestOrBuilder
    * This property must be specified for the batch. The property within
    * RunReportRequest may either be unspecified or consistent with this
    * property.
+   *
    * Example: properties/1234
    * </pre>
    *

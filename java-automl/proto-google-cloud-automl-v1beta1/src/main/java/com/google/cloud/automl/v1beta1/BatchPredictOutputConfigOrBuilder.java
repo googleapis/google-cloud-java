@@ -96,6 +96,5 @@ public interface BatchPredictOutputConfigOrBuilder
    */
   com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder getBigqueryDestinationOrBuilder();
 
-  public com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.DestinationCase
-      getDestinationCase();
+  com.google.cloud.automl.v1beta1.BatchPredictOutputConfig.DestinationCase getDestinationCase();
 }

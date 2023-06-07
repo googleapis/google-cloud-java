@@ -46,11 +46,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     return new Runnable();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1.TaskProto
         .internal_static_google_cloud_batch_v1_Runnable_descriptor;
@@ -372,9 +367,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     private Container() {
       imageUri_ = "";
-      commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      commands_ = com.google.protobuf.LazyStringArrayList.emptyList();
       entrypoint_ = "";
-      volumes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      volumes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       options_ = "";
       username_ = "";
       password_ = "";
@@ -384,11 +379,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Container();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -460,7 +450,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMANDS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList commands_;
+    private com.google.protobuf.LazyStringArrayList commands_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -582,7 +573,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public static final int VOLUMES_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList volumes_;
+    private com.google.protobuf.LazyStringArrayList volumes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1112,11 +1104,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         imageUri_ = "";
-        commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        commands_ = com.google.protobuf.LazyStringArrayList.emptyList();
         entrypoint_ = "";
-        volumes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        volumes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         options_ = "";
         blockExternalNetwork_ = false;
         username_ = "";
@@ -1148,7 +1138,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.batch.v1.Runnable.Container buildPartial() {
         com.google.cloud.batch.v1.Runnable.Container result =
             new com.google.cloud.batch.v1.Runnable.Container(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1156,26 +1145,21 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(com.google.cloud.batch.v1.Runnable.Container result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          commands_ = commands_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.commands_ = commands_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          volumes_ = volumes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.volumes_ = volumes_;
-      }
-
       private void buildPartial0(com.google.cloud.batch.v1.Runnable.Container result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.imageUri_ = imageUri_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          commands_.makeImmutable();
+          result.commands_ = commands_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.entrypoint_ = entrypoint_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          volumes_.makeImmutable();
+          result.volumes_ = volumes_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.options_ = options_;
@@ -1246,7 +1230,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (!other.commands_.isEmpty()) {
           if (commands_.isEmpty()) {
             commands_ = other.commands_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureCommandsIsMutable();
             commands_.addAll(other.commands_);
@@ -1261,7 +1245,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1487,14 +1471,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList commands_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList commands_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCommandsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!commands_.isModifiable()) {
           commands_ = new com.google.protobuf.LazyStringArrayList(commands_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1510,7 +1494,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the commands.
        */
       public com.google.protobuf.ProtocolStringList getCommandsList() {
-        return commands_.getUnmodifiableView();
+        commands_.makeImmutable();
+        return commands_;
       }
       /**
        *
@@ -1583,6 +1568,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCommandsIsMutable();
         commands_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1606,6 +1592,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCommandsIsMutable();
         commands_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1626,6 +1613,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllCommands(java.lang.Iterable<java.lang.String> values) {
         ensureCommandsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, commands_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1643,8 +1631,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCommands() {
-        commands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        commands_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1669,6 +1658,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureCommandsIsMutable();
         commands_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1779,14 +1769,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList volumes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList volumes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureVolumesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!volumes_.isModifiable()) {
           volumes_ = new com.google.protobuf.LazyStringArrayList(volumes_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -1802,7 +1792,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the volumes.
        */
       public com.google.protobuf.ProtocolStringList getVolumesList() {
-        return volumes_.getUnmodifiableView();
+        volumes_.makeImmutable();
+        return volumes_;
       }
       /**
        *
@@ -1875,6 +1866,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         ensureVolumesIsMutable();
         volumes_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1898,6 +1890,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         ensureVolumesIsMutable();
         volumes_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1918,6 +1911,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllVolumes(java.lang.Iterable<java.lang.String> values) {
         ensureVolumesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, volumes_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1935,8 +1929,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVolumes() {
-        volumes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        volumes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -1961,6 +1956,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureVolumesIsMutable();
         volumes_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2444,6 +2440,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
      * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
      * first line of the file.(For example, to execute the script using bash,
@@ -2463,6 +2460,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
      * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
      * first line of the file.(For example, to execute the script using bash,
@@ -2482,6 +2480,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
      * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
      * first line of the file.(For example, to execute the script using bash,
@@ -2502,6 +2501,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
      * beginning of the text.(For example, to execute the script using bash,
      * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -2519,6 +2519,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
      * beginning of the text.(For example, to execute the script using bash,
      * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -2536,6 +2537,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
      * beginning of the text.(For example, to execute the script using bash,
      * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -2549,7 +2551,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
 
-    public com.google.cloud.batch.v1.Runnable.Script.CommandCase getCommandCase();
+    com.google.cloud.batch.v1.Runnable.Script.CommandCase getCommandCase();
   }
   /**
    *
@@ -2578,11 +2580,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       return new Script();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.TaskProto
           .internal_static_google_cloud_batch_v1_Runnable_Script_descriptor;
@@ -2599,6 +2596,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int commandCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object command_;
 
     public enum CommandCase
@@ -2651,6 +2650,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
      * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
      * first line of the file.(For example, to execute the script using bash,
@@ -2672,6 +2672,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
      * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
      * first line of the file.(For example, to execute the script using bash,
@@ -2706,6 +2707,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Script file path on the host VM.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
      * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
      * first line of the file.(For example, to execute the script using bash,
@@ -2742,6 +2744,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
      * beginning of the text.(For example, to execute the script using bash,
      * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -2761,6 +2764,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
      * beginning of the text.(For example, to execute the script using bash,
      * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -2793,6 +2797,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Shell script text.
+     *
      * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
      * beginning of the text.(For example, to execute the script using bash,
      * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3238,6 +3243,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
        * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
        * first line of the file.(For example, to execute the script using bash,
@@ -3260,6 +3266,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
        * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
        * first line of the file.(For example, to execute the script using bash,
@@ -3295,6 +3302,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
        * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
        * first line of the file.(For example, to execute the script using bash,
@@ -3330,6 +3338,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
        * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
        * first line of the file.(For example, to execute the script using bash,
@@ -3358,6 +3367,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
        * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
        * first line of the file.(For example, to execute the script using bash,
@@ -3384,6 +3394,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Script file path on the host VM.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;`(also known as
        * [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the
        * first line of the file.(For example, to execute the script using bash,
@@ -3414,6 +3425,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
        * beginning of the text.(For example, to execute the script using bash,
        * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3434,6 +3446,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
        * beginning of the text.(For example, to execute the script using bash,
        * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3467,6 +3480,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
        * beginning of the text.(For example, to execute the script using bash,
        * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3500,6 +3514,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
        * beginning of the text.(For example, to execute the script using bash,
        * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3526,6 +3541,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
        * beginning of the text.(For example, to execute the script using bash,
        * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3550,6 +3566,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Shell script text.
+       *
        * To specify an interpreter, please add a `#!&lt;interpreter&gt;&#92;n` at the
        * beginning of the text.(For example, to execute the script using bash,
        * `#!/bin/bash&#92;n` should be added. To execute the script using`Python3`,
@@ -3696,11 +3713,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Barrier();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4292,6 +4304,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int executableCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object executable_;
 
   public enum ExecutableCase
@@ -4543,6 +4557,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
    * flag indicates that this Runnable must be run even if the Task has already
    * failed. This is useful for Runnables that copy output files off of the VM
    * or for debugging.
+   *
    * The always_run flag does not override the Task's overall max_run_duration.
    * If the max_run_duration has expired then no further Runnables will execute,
    * not even always_run Runnables.
@@ -6140,6 +6155,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * flag indicates that this Runnable must be run even if the Task has already
      * failed. This is useful for Runnables that copy output files off of the VM
      * or for debugging.
+     *
      * The always_run flag does not override the Task's overall max_run_duration.
      * If the max_run_duration has expired then no further Runnables will execute,
      * not even always_run Runnables.
@@ -6161,6 +6177,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * flag indicates that this Runnable must be run even if the Task has already
      * failed. This is useful for Runnables that copy output files off of the VM
      * or for debugging.
+     *
      * The always_run flag does not override the Task's overall max_run_duration.
      * If the max_run_duration has expired then no further Runnables will execute,
      * not even always_run Runnables.
@@ -6186,6 +6203,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * flag indicates that this Runnable must be run even if the Task has already
      * failed. This is useful for Runnables that copy output files off of the VM
      * or for debugging.
+     *
      * The always_run flag does not override the Task's overall max_run_duration.
      * If the max_run_duration has expired then no further Runnables will execute,
      * not even always_run Runnables.

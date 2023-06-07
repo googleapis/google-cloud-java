@@ -45,11 +45,6 @@ public final class ChannelGroupFilterExpression extends com.google.protobuf.Gene
     return new ChannelGroupFilterExpression();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ChannelGroupProto
         .internal_static_google_analytics_admin_v1alpha_ChannelGroupFilterExpression_descriptor;
@@ -66,6 +61,8 @@ public final class ChannelGroupFilterExpression extends com.google.protobuf.Gene
   }
 
   private int exprCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object expr_;
 
   public enum ExprCase

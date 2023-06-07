@@ -47,11 +47,6 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
     return new PubsubDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p2beta1.AssetServiceProto
         .internal_static_google_cloud_asset_v1p2beta1_PubsubDestination_descriptor;

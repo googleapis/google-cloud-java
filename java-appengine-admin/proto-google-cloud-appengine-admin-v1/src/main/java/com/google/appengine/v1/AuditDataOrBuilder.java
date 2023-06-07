@@ -93,5 +93,5 @@ public interface AuditDataOrBuilder
    */
   com.google.appengine.v1.CreateVersionMethodOrBuilder getCreateVersionOrBuilder();
 
-  public com.google.appengine.v1.AuditData.MethodCase getMethodCase();
+  com.google.appengine.v1.AuditData.MethodCase getMethodCase();
 }

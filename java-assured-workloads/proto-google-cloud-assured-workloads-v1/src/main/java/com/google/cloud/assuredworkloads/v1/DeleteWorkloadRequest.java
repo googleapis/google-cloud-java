@@ -48,11 +48,6 @@ public final class DeleteWorkloadRequest extends com.google.protobuf.GeneratedMe
     return new DeleteWorkloadRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
         .internal_static_google_cloud_assuredworkloads_v1_DeleteWorkloadRequest_descriptor;

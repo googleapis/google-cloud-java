@@ -258,6 +258,5 @@ public interface OperationMetadataOrBuilder
    */
   com.google.protobuf.ByteString getApiVersionBytes();
 
-  public com.google.cloud.alloydb.v1beta.OperationMetadata.RequestSpecificCase
-      getRequestSpecificCase();
+  com.google.cloud.alloydb.v1beta.OperationMetadata.RequestSpecificCase getRequestSpecificCase();
 }

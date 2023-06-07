@@ -23,6 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  * <pre>
  * Request message for CreateUserLink RPC.
+ *
  * Users can have multiple email addresses associated with their Google
  * account, and one of these email addresses is the "primary" email address.
  * Any of the email addresses associated with a Google account may be used
@@ -51,11 +52,6 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateUserLinkRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -391,6 +387,7 @@ public final class CreateUserLinkRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Request message for CreateUserLink RPC.
+   *
    * Users can have multiple email addresses associated with their Google
    * account, and one of these email addresses is the "primary" email address.
    * Any of the email addresses associated with a Google account may be used

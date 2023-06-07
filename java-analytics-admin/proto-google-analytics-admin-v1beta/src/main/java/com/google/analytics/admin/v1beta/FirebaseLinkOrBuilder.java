@@ -56,6 +56,7 @@ public interface FirebaseLinkOrBuilder
    * you may provide this resource name using either a project number or project
    * ID. Once this resource has been created, returned FirebaseLinks will always
    * have a project_name that contains a project number.
+   *
    * Format: 'projects/{project number}'
    * Example: 'projects/1234'
    * </pre>
@@ -73,6 +74,7 @@ public interface FirebaseLinkOrBuilder
    * you may provide this resource name using either a project number or project
    * ID. Once this resource has been created, returned FirebaseLinks will always
    * have a project_name that contains a project number.
+   *
    * Format: 'projects/{project number}'
    * Example: 'projects/1234'
    * </pre>

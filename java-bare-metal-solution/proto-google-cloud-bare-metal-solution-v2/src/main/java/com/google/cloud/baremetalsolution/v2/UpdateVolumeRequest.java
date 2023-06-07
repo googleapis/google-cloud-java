@@ -45,11 +45,6 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
     return new UpdateVolumeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.VolumeProto
         .internal_static_google_cloud_baremetalsolution_v2_UpdateVolumeRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -583,6 +581,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -601,6 +600,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -625,6 +625,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -651,6 +652,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -674,6 +676,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -703,6 +706,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -726,6 +730,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -744,6 +749,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>
@@ -766,6 +772,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The volume to update.
+     *
      * The `name` field is used to identify the volume to update.
      * Format: projects/{project}/locations/{location}/volumes/{volume}
      * </pre>

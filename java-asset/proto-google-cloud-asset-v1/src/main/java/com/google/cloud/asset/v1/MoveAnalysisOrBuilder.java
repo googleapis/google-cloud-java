@@ -120,5 +120,5 @@ public interface MoveAnalysisOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
-  public com.google.cloud.asset.v1.MoveAnalysis.ResultCase getResultCase();
+  com.google.cloud.asset.v1.MoveAnalysis.ResultCase getResultCase();
 }

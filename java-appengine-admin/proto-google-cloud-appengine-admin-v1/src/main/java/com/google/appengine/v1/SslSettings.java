@@ -49,11 +49,6 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
     return new SslSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DomainMappingProto
         .internal_static_google_appengine_v1_SslSettings_descriptor;
@@ -245,6 +240,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ID of the `AuthorizedCertificate` resource configuring SSL for the
    * application. Clearing this field will remove SSL support.
+   *
    * By default, a managed certificate is automatically created for every
    * domain mapping. To omit SSL support or to configure SSL manually, specify
    * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -275,6 +271,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ID of the `AuthorizedCertificate` resource configuring SSL for the
    * application. Clearing this field will remove SSL support.
+   *
    * By default, a managed certificate is automatically created for every
    * domain mapping. To omit SSL support or to configure SSL manually, specify
    * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -356,6 +353,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
    * the new managed certificate and this field will be left empty. To remove
    * SSL support while there is still a pending managed certificate, clear the
    * `certificate_id` field with an `UpdateDomainMappingRequest`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -386,6 +384,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
    * the new managed certificate and this field will be left empty. To remove
    * SSL support while there is still a pending managed certificate, clear the
    * `certificate_id` field with an `UpdateDomainMappingRequest`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -803,6 +802,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ID of the `AuthorizedCertificate` resource configuring SSL for the
      * application. Clearing this field will remove SSL support.
+     *
      * By default, a managed certificate is automatically created for every
      * domain mapping. To omit SSL support or to configure SSL manually, specify
      * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -832,6 +832,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ID of the `AuthorizedCertificate` resource configuring SSL for the
      * application. Clearing this field will remove SSL support.
+     *
      * By default, a managed certificate is automatically created for every
      * domain mapping. To omit SSL support or to configure SSL manually, specify
      * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -861,6 +862,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ID of the `AuthorizedCertificate` resource configuring SSL for the
      * application. Clearing this field will remove SSL support.
+     *
      * By default, a managed certificate is automatically created for every
      * domain mapping. To omit SSL support or to configure SSL manually, specify
      * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -889,6 +891,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ID of the `AuthorizedCertificate` resource configuring SSL for the
      * application. Clearing this field will remove SSL support.
+     *
      * By default, a managed certificate is automatically created for every
      * domain mapping. To omit SSL support or to configure SSL manually, specify
      * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -913,6 +916,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * ID of the `AuthorizedCertificate` resource configuring SSL for the
      * application. Clearing this field will remove SSL support.
+     *
      * By default, a managed certificate is automatically created for every
      * domain mapping. To omit SSL support or to configure SSL manually, specify
      * `SslManagementType.MANUAL` on a `CREATE` or `UPDATE` request. You must
@@ -1052,6 +1056,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * the new managed certificate and this field will be left empty. To remove
      * SSL support while there is still a pending managed certificate, clear the
      * `certificate_id` field with an `UpdateDomainMappingRequest`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1081,6 +1086,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * the new managed certificate and this field will be left empty. To remove
      * SSL support while there is still a pending managed certificate, clear the
      * `certificate_id` field with an `UpdateDomainMappingRequest`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1110,6 +1116,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * the new managed certificate and this field will be left empty. To remove
      * SSL support while there is still a pending managed certificate, clear the
      * `certificate_id` field with an `UpdateDomainMappingRequest`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1138,6 +1145,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * the new managed certificate and this field will be left empty. To remove
      * SSL support while there is still a pending managed certificate, clear the
      * `certificate_id` field with an `UpdateDomainMappingRequest`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -1162,6 +1170,7 @@ public final class SslSettings extends com.google.protobuf.GeneratedMessageV3
      * the new managed certificate and this field will be left empty. To remove
      * SSL support while there is still a pending managed certificate, clear the
      * `certificate_id` field with an `UpdateDomainMappingRequest`.
+     *
      * &#64;OutputOnly
      * </pre>
      *

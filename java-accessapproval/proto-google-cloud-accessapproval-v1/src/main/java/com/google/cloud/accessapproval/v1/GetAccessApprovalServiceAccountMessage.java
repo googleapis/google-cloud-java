@@ -49,11 +49,6 @@ public final class GetAccessApprovalServiceAccountMessage
     return new GetAccessApprovalServiceAccountMessage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_GetAccessApprovalServiceAccountMessage_descriptor;

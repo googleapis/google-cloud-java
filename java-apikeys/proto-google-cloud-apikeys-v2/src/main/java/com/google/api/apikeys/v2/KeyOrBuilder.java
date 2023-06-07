@@ -32,6 +32,7 @@ public interface KeyOrBuilder
    * `projects/&lt;PROJECT_NUMBER&gt;/locations/global/keys/&lt;KEY_ID&gt;`.
    * For example:
    * `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2`
+   *
    * NOTE: Key is a global resource; hence the only supported value for
    * location is `global`.
    * </pre>
@@ -50,6 +51,7 @@ public interface KeyOrBuilder
    * `projects/&lt;PROJECT_NUMBER&gt;/locations/global/keys/&lt;KEY_ID&gt;`.
    * For example:
    * `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2`
+   *
    * NOTE: Key is a global resource; hence the only supported value for
    * location is `global`.
    * </pre>

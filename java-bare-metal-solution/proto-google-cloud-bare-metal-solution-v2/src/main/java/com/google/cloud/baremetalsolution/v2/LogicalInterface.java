@@ -51,11 +51,6 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     return new LogicalInterface();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NetworkProto
         .internal_static_google_cloud_baremetalsolution_v2_LogicalInterface_descriptor;
@@ -221,11 +216,6 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LogicalNetworkInterface();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

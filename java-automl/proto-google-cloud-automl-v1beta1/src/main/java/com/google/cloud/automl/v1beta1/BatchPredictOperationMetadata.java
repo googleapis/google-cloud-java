@@ -45,11 +45,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     return new BatchPredictOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Operations
         .internal_static_google_cloud_automl_v1beta1_BatchPredictOperationMetadata_descriptor;
@@ -150,7 +145,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getBigqueryOutputDatasetBytes();
 
-    public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.BatchPredictOutputInfo
+    com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.BatchPredictOutputInfo
             .OutputLocationCase
         getOutputLocationCase();
   }
@@ -160,6 +155,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * <pre>
    * Further describes this batch predict's output.
    * Supplements
+   *
    * [BatchPredictOutputConfig][google.cloud.automl.v1beta1.BatchPredictOutputConfig].
    * </pre>
    *
@@ -184,11 +180,6 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       return new BatchPredictOutputInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.automl.v1beta1.Operations
           .internal_static_google_cloud_automl_v1beta1_BatchPredictOperationMetadata_BatchPredictOutputInfo_descriptor;
@@ -207,6 +198,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     }
 
     private int outputLocationCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object outputLocation_;
 
     public enum OutputLocationCase
@@ -614,6 +607,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * <pre>
      * Further describes this batch predict's output.
      * Supplements
+     *
      * [BatchPredictOutputConfig][google.cloud.automl.v1beta1.BatchPredictOutputConfig].
      * </pre>
      *

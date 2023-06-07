@@ -50,11 +50,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     return new Repository();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.RepositoryProto
         .internal_static_google_devtools_artifactregistry_v1_Repository_descriptor;
@@ -406,11 +401,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MavenRepositoryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1286,6 +1276,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int formatConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object formatConfig_;
 
   public enum FormatConfigCase

@@ -47,11 +47,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     return new ExportEvaluatedExamplesOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Operations
         .internal_static_google_cloud_automl_v1beta1_ExportEvaluatedExamplesOperationMetadata_descriptor;
@@ -105,6 +100,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
    * <pre>
    * Further describes the output of the evaluated examples export.
    * Supplements
+   *
    * [ExportEvaluatedExamplesOutputConfig][google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig].
    * </pre>
    *
@@ -131,11 +127,6 @@ public final class ExportEvaluatedExamplesOperationMetadata
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExportEvaluatedExamplesOutputInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -402,6 +393,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * <pre>
      * Further describes the output of the evaluated examples export.
      * Supplements
+     *
      * [ExportEvaluatedExamplesOutputConfig][google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig].
      * </pre>
      *

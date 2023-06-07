@@ -28,6 +28,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The deployment to update.
+   *
    * The `name` field is used to identify the deployment to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The deployment to update.
+   *
    * The `name` field is used to identify the deployment to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateApiDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The deployment to update.
+   *
    * The `name` field is used to identify the deployment to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>

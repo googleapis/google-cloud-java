@@ -141,5 +141,5 @@ public interface OrderByOrBuilder
    */
   boolean getDesc();
 
-  public com.google.analytics.data.v1beta.OrderBy.OneOrderByCase getOneOrderByCase();
+  com.google.analytics.data.v1beta.OrderBy.OneOrderByCase getOneOrderByCase();
 }

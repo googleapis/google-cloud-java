@@ -48,11 +48,6 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
     return new CreateApiSpecRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_CreateApiSpecRequest_descriptor;
@@ -191,8 +186,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The ID to use for the spec, which will become the final component of
    * the spec's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -218,8 +215,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The ID to use for the spec, which will become the final component of
    * the spec's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -967,8 +966,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the spec, which will become the final component of
      * the spec's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -993,8 +994,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the spec, which will become the final component of
      * the spec's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1019,8 +1022,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the spec, which will become the final component of
      * the spec's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1044,8 +1049,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the spec, which will become the final component of
      * the spec's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *
@@ -1065,8 +1072,10 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the spec, which will become the final component of
      * the spec's resource name.
+     *
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
+     *
      * Following AIP-162, IDs must not have the form of a UUID.
      * </pre>
      *

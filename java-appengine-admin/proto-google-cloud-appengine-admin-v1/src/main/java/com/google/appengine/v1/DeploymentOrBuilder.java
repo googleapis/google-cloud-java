@@ -170,6 +170,7 @@ public interface DeploymentOrBuilder
    * <pre>
    * Options for any Google Cloud Build builds created as a part of this
    * deployment.
+   *
    * These options will only be used if a new build is created, such as when
    * deploying to the App Engine flexible environment using files or zip.
    * </pre>
@@ -185,6 +186,7 @@ public interface DeploymentOrBuilder
    * <pre>
    * Options for any Google Cloud Build builds created as a part of this
    * deployment.
+   *
    * These options will only be used if a new build is created, such as when
    * deploying to the App Engine flexible environment using files or zip.
    * </pre>
@@ -200,6 +202,7 @@ public interface DeploymentOrBuilder
    * <pre>
    * Options for any Google Cloud Build builds created as a part of this
    * deployment.
+   *
    * These options will only be used if a new build is created, such as when
    * deploying to the App Engine flexible environment using files or zip.
    * </pre>

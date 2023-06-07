@@ -73,6 +73,7 @@ public interface ListAudiencesRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListAudiences` call. Provide this
    * to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListAudiences` must
    * match the call that provided the page token.
    * </pre>
@@ -88,6 +89,7 @@ public interface ListAudiencesRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListAudiences` call. Provide this
    * to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListAudiences` must
    * match the call that provided the page token.
    * </pre>

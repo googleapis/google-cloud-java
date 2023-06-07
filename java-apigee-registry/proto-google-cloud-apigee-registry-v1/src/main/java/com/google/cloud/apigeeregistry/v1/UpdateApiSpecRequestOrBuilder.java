@@ -28,6 +28,7 @@ public interface UpdateApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The spec to update.
+   *
    * The `name` field is used to identify the spec to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The spec to update.
+   *
    * The `name` field is used to identify the spec to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The spec to update.
+   *
    * The `name` field is used to identify the spec to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>

@@ -46,11 +46,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     return new AutomaticScaling();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.VersionProto
         .internal_static_google_appengine_v1_AutomaticScaling_descriptor;
@@ -189,6 +184,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Number of concurrent requests an automatic scaling instance can accept
    * before the scheduler spawns a new instance.
+   *
    * Defaults to a runtime-specific value.
    * </pre>
    *
@@ -1704,6 +1700,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Number of concurrent requests an automatic scaling instance can accept
      * before the scheduler spawns a new instance.
+     *
      * Defaults to a runtime-specific value.
      * </pre>
      *
@@ -1721,6 +1718,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Number of concurrent requests an automatic scaling instance can accept
      * before the scheduler spawns a new instance.
+     *
      * Defaults to a runtime-specific value.
      * </pre>
      *
@@ -1742,6 +1740,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Number of concurrent requests an automatic scaling instance can accept
      * before the scheduler spawns a new instance.
+     *
      * Defaults to a runtime-specific value.
      * </pre>
      *

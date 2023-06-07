@@ -52,11 +52,6 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
     return new StaticFilesHandler();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AppYamlProto
         .internal_static_google_appengine_v1_StaticFilesHandler_descriptor;
@@ -303,6 +298,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * MIME type used to serve all files served by this handler.
+   *
    * Defaults to file-specific MIME types, which are derived from each file's
    * filename extension.
    * </pre>
@@ -328,6 +324,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * MIME type used to serve all files served by this handler.
+   *
    * Defaults to file-specific MIME types, which are derived from each file's
    * filename extension.
    * </pre>
@@ -1361,6 +1358,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1385,6 +1383,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1409,6 +1408,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1432,6 +1432,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>
@@ -1451,6 +1452,7 @@ public final class StaticFilesHandler extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * MIME type used to serve all files served by this handler.
+     *
      * Defaults to file-specific MIME types, which are derived from each file's
      * filename extension.
      * </pre>

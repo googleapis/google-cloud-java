@@ -48,11 +48,6 @@ public final class ListAccountsResponse extends com.google.protobuf.GeneratedMes
     return new ListAccountsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1beta_ListAccountsResponse_descriptor;

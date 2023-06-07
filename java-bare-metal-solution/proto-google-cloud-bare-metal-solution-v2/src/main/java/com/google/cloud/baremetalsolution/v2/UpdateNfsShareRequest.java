@@ -45,11 +45,6 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
     return new UpdateNfsShareRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NfsShareProto
         .internal_static_google_cloud_baremetalsolution_v2_UpdateNfsShareRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -571,6 +569,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -589,6 +588,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -613,6 +613,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -639,6 +640,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -663,6 +665,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -692,6 +695,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -715,6 +719,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -733,6 +738,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>
@@ -755,6 +761,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The NFS share to update.
+     *
      * The `name` field is used to identify the NFS share to update.
      * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
      * </pre>

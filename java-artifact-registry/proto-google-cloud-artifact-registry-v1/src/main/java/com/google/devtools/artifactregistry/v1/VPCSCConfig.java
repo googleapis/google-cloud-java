@@ -48,11 +48,6 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
     return new VPCSCConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.VPCSCConfigProto
         .internal_static_google_devtools_artifactregistry_v1_VPCSCConfig_descriptor;
@@ -244,8 +239,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the project's VPC SC Config.
+   *
    * Always of the form:
    * projects/{projectID}/locations/{location}/vpcscConfig
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -271,8 +268,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the project's VPC SC Config.
+   *
    * Always of the form:
    * projects/{projectID}/locations/{location}/vpcscConfig
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -707,8 +706,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the project's VPC SC Config.
+     *
      * Always of the form:
      * projects/{projectID}/locations/{location}/vpcscConfig
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -733,8 +734,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the project's VPC SC Config.
+     *
      * Always of the form:
      * projects/{projectID}/locations/{location}/vpcscConfig
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -759,8 +762,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the project's VPC SC Config.
+     *
      * Always of the form:
      * projects/{projectID}/locations/{location}/vpcscConfig
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -784,8 +789,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the project's VPC SC Config.
+     *
      * Always of the form:
      * projects/{projectID}/locations/{location}/vpcscConfig
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -805,8 +812,10 @@ public final class VPCSCConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the project's VPC SC Config.
+     *
      * Always of the form:
      * projects/{projectID}/locations/{location}/vpcscConfig
+     *
      * In update request: never set
      * In response: always set
      * </pre>

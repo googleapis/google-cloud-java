@@ -53,11 +53,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     return new ColumnSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.ColumnSpecOuterClass
         .internal_static_google_cloud_automl_v1beta1_ColumnSpec_descriptor;
@@ -168,11 +163,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CorrelatedColumn();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1052,6 +1042,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the column specs.
    * Form:
+   *
    * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
    * </pre>
    *
@@ -1077,6 +1068,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the column specs.
    * Form:
+   *
    * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
    * </pre>
    *
@@ -1936,6 +1928,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the column specs.
      * Form:
+     *
      * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
      * </pre>
      *
@@ -1960,6 +1953,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the column specs.
      * Form:
+     *
      * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
      * </pre>
      *
@@ -1984,6 +1978,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the column specs.
      * Form:
+     *
      * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
      * </pre>
      *
@@ -2007,6 +2002,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the column specs.
      * Form:
+     *
      * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
      * </pre>
      *
@@ -2026,6 +2022,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the column specs.
      * Form:
+     *
      * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/tableSpecs/{table_spec_id}/columnSpecs/{column_spec_id}`
      * </pre>
      *

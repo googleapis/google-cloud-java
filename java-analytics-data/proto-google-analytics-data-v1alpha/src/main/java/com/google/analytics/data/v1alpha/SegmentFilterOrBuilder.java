@@ -223,5 +223,5 @@ public interface SegmentFilterOrBuilder
    */
   com.google.analytics.data.v1alpha.SegmentFilterScopingOrBuilder getFilterScopingOrBuilder();
 
-  public com.google.analytics.data.v1alpha.SegmentFilter.OneFilterCase getOneFilterCase();
+  com.google.analytics.data.v1alpha.SegmentFilter.OneFilterCase getOneFilterCase();
 }

@@ -48,11 +48,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
     return new SessionSegmentCriteria();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_SessionSegmentCriteria_descriptor;

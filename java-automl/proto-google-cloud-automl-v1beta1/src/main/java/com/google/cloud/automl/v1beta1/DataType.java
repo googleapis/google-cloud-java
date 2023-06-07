@@ -48,11 +48,6 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     return new DataType();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.DataTypes
         .internal_static_google_cloud_automl_v1beta1_DataType_descriptor;
@@ -69,6 +64,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object details_;
 
   public enum DetailsCase

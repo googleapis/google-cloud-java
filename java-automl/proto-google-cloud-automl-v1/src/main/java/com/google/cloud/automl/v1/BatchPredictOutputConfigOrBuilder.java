@@ -67,5 +67,5 @@ public interface BatchPredictOutputConfigOrBuilder
    */
   com.google.cloud.automl.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
-  public com.google.cloud.automl.v1.BatchPredictOutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.automl.v1.BatchPredictOutputConfig.DestinationCase getDestinationCase();
 }

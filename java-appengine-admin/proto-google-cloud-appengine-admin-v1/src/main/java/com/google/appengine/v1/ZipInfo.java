@@ -47,11 +47,6 @@ public final class ZipInfo extends com.google.protobuf.GeneratedMessageV3
     return new ZipInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DeployProto
         .internal_static_google_appengine_v1_ZipInfo_descriptor;

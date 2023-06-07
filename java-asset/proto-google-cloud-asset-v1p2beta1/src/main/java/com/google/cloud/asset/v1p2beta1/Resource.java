@@ -51,11 +51,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     return new Resource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p2beta1.AssetProto
         .internal_static_google_cloud_asset_v1p2beta1_Resource_descriptor;
@@ -307,10 +302,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
+   *
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * For example:
    * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   *
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -338,10 +335,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
+   *
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * For example:
    * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   *
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -1362,10 +1361,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * For example:
      * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     *
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1392,10 +1393,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * For example:
      * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     *
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1422,10 +1425,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * For example:
      * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     *
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1451,10 +1456,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * For example:
      * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     *
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1476,10 +1483,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
+     *
      * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * For example:
      * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+     *
      * For third-party assets, it is up to the users to define.
      * </pre>
      *

@@ -50,11 +50,6 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     return new TableFieldSchema();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_TableFieldSchema_descriptor;

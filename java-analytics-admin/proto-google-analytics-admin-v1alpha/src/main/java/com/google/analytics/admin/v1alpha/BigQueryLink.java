@@ -40,19 +40,14 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   private BigQueryLink() {
     name_ = "";
     project_ = "";
-    exportStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    excludedEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    exportStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    excludedEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BigQueryLink();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -311,7 +306,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public static final int EXPORT_STREAMS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList exportStreams_;
+  private com.google.protobuf.LazyStringArrayList exportStreams_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -386,7 +382,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
   public static final int EXCLUDED_EVENTS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList excludedEvents_;
+  private com.google.protobuf.LazyStringArrayList excludedEvents_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -746,10 +743,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       streamingExportEnabled_ = false;
       intradayExportEnabled_ = false;
       includeAdvertisingId_ = false;
-      exportStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      excludedEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      exportStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludedEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -777,26 +772,11 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.BigQueryLink buildPartial() {
       com.google.analytics.admin.v1alpha.BigQueryLink result =
           new com.google.analytics.admin.v1alpha.BigQueryLink(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.analytics.admin.v1alpha.BigQueryLink result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        exportStreams_ = exportStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.exportStreams_ = exportStreams_;
-      if (((bitField0_ & 0x00000100) != 0)) {
-        excludedEvents_ = excludedEvents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.excludedEvents_ = excludedEvents_;
     }
 
     private void buildPartial0(com.google.analytics.admin.v1alpha.BigQueryLink result) {
@@ -821,6 +801,14 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.includeAdvertisingId_ = includeAdvertisingId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        exportStreams_.makeImmutable();
+        result.exportStreams_ = exportStreams_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        excludedEvents_.makeImmutable();
+        result.excludedEvents_ = excludedEvents_;
       }
     }
 
@@ -898,7 +886,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       if (!other.exportStreams_.isEmpty()) {
         if (exportStreams_.isEmpty()) {
           exportStreams_ = other.exportStreams_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureExportStreamsIsMutable();
           exportStreams_.addAll(other.exportStreams_);
@@ -908,7 +896,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       if (!other.excludedEvents_.isEmpty()) {
         if (excludedEvents_.isEmpty()) {
           excludedEvents_ = other.excludedEvents_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureExcludedEventsIsMutable();
           excludedEvents_.addAll(other.excludedEvents_);
@@ -1679,14 +1667,14 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList exportStreams_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList exportStreams_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExportStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!exportStreams_.isModifiable()) {
         exportStreams_ = new com.google.protobuf.LazyStringArrayList(exportStreams_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -1703,7 +1691,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the exportStreams.
      */
     public com.google.protobuf.ProtocolStringList getExportStreamsList() {
-      return exportStreams_.getUnmodifiableView();
+      exportStreams_.makeImmutable();
+      return exportStreams_;
     }
     /**
      *
@@ -1780,6 +1769,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExportStreamsIsMutable();
       exportStreams_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1804,6 +1794,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExportStreamsIsMutable();
       exportStreams_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1825,6 +1816,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExportStreams(java.lang.Iterable<java.lang.String> values) {
       ensureExportStreamsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exportStreams_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1843,8 +1835,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExportStreams() {
-      exportStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exportStreams_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -1870,18 +1863,19 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExportStreamsIsMutable();
       exportStreams_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList excludedEvents_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList excludedEvents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExcludedEventsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!excludedEvents_.isModifiable()) {
         excludedEvents_ = new com.google.protobuf.LazyStringArrayList(excludedEvents_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -1895,7 +1889,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the excludedEvents.
      */
     public com.google.protobuf.ProtocolStringList getExcludedEventsList() {
-      return excludedEvents_.getUnmodifiableView();
+      excludedEvents_.makeImmutable();
+      return excludedEvents_;
     }
     /**
      *
@@ -1960,6 +1955,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExcludedEventsIsMutable();
       excludedEvents_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1981,6 +1977,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureExcludedEventsIsMutable();
       excludedEvents_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1999,6 +1996,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllExcludedEvents(java.lang.Iterable<java.lang.String> values) {
       ensureExcludedEventsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedEvents_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2014,8 +2012,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExcludedEvents() {
-      excludedEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2038,6 +2037,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureExcludedEventsIsMutable();
       excludedEvents_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

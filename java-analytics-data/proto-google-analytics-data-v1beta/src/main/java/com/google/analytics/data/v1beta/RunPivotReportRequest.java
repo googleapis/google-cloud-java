@@ -52,11 +52,6 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     return new RunPivotReportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_RunPivotReportRequest_descriptor;
@@ -86,6 +81,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -115,6 +111,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -1513,6 +1510,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1541,6 +1539,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1569,6 +1568,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1596,6 +1596,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1619,6 +1620,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *

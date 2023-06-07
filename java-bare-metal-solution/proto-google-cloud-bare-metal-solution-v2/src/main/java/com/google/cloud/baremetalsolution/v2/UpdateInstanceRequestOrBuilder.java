@@ -28,6 +28,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The server to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The server to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The server to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/instances/{instance}
    * </pre>

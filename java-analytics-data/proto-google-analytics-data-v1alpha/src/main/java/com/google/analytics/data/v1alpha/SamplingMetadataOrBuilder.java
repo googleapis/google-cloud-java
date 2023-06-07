@@ -46,6 +46,7 @@ public interface SamplingMetadataOrBuilder
    * have been analyzed in this funnel report for a date range. Sampling
    * uncovers the meaningful information about the larger data set, and this
    * is the size of the larger data set.
+   *
    * To calculate the percentage of available data that was used in this
    * funnel report, compute `samplesReadCount/samplingSpaceSize`.
    * </pre>

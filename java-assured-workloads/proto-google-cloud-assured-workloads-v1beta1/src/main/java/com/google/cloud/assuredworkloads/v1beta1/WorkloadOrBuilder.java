@@ -30,6 +30,7 @@ public interface WorkloadOrBuilder
    * Optional. The resource name of the workload.
    * Format:
    * organizations/{organization}/locations/{location}/workloads/{workload}
+   *
    * Read-only.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface WorkloadOrBuilder
    * Optional. The resource name of the workload.
    * Format:
    * organizations/{organization}/locations/{location}/workloads/{workload}
+   *
    * Read-only.
    * </pre>
    *
@@ -62,6 +64,7 @@ public interface WorkloadOrBuilder
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
    * hyphen, and spaces.
+   *
    * Example: My Workload
    * </pre>
    *
@@ -78,6 +81,7 @@ public interface WorkloadOrBuilder
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
    * hyphen, and spaces.
+   *
    * Example: My Workload
    * </pre>
    *
@@ -892,6 +896,6 @@ public interface WorkloadOrBuilder
    */
   com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index);
 
-  public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegimeSettingsCase
+  com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegimeSettingsCase
       getComplianceRegimeSettingsCase();
 }

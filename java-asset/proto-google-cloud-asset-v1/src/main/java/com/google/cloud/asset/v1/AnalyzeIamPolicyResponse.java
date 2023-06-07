@@ -48,11 +48,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     return new AnalyzeIamPolicyResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_AnalyzeIamPolicyResponse_descriptor;
@@ -267,11 +262,6 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IamPolicyAnalysis();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

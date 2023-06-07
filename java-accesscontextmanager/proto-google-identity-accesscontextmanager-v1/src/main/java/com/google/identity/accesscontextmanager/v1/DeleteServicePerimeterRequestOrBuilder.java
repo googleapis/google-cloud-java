@@ -29,6 +29,7 @@ public interface DeleteServicePerimeterRequestOrBuilder
    * <pre>
    * Required. Resource name for the [Service Perimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format:
    * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
    * </pre>
@@ -46,6 +47,7 @@ public interface DeleteServicePerimeterRequestOrBuilder
    * <pre>
    * Required. Resource name for the [Service Perimeter]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format:
    * `accessPolicies/{policy_id}/servicePerimeters/{service_perimeter_id}`
    * </pre>

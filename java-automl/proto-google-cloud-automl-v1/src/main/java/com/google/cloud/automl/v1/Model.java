@@ -51,11 +51,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return new Model();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.ModelOuterClass
         .internal_static_google_cloud_automl_v1_Model_descriptor;
@@ -241,6 +236,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int modelMetadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object modelMetadata_;
 
   public enum ModelMetadataCase
@@ -1014,10 +1011,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your model.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -1041,10 +1040,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your model.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -1059,10 +1060,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your model.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -1084,10 +1087,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels with user-defined metadata to organize your model.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * </pre>
    *
@@ -4240,10 +4245,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *
@@ -4267,10 +4274,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *
@@ -4285,10 +4294,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *
@@ -4310,10 +4321,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *
@@ -4341,10 +4354,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *
@@ -4368,10 +4383,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *
@@ -4393,10 +4410,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels with user-defined metadata to organize your model.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://goo.gl/xmQnxf for more information on and examples of labels.
      * </pre>
      *

@@ -47,11 +47,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
     return new RelatedResources();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetProto
         .internal_static_google_cloud_asset_v1_RelatedResources_descriptor;

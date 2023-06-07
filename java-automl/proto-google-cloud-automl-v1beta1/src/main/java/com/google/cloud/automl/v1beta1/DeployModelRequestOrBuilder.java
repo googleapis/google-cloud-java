@@ -138,6 +138,6 @@ public interface DeployModelRequestOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
-  public com.google.cloud.automl.v1beta1.DeployModelRequest.ModelDeploymentMetadataCase
+  com.google.cloud.automl.v1beta1.DeployModelRequest.ModelDeploymentMetadataCase
       getModelDeploymentMetadataCase();
 }

@@ -130,5 +130,5 @@ public interface ChannelGroupFilterOrBuilder
    */
   com.google.protobuf.ByteString getFieldNameBytes();
 
-  public com.google.analytics.admin.v1alpha.ChannelGroupFilter.ValueFilterCase getValueFilterCase();
+  com.google.analytics.admin.v1alpha.ChannelGroupFilter.ValueFilterCase getValueFilterCase();
 }

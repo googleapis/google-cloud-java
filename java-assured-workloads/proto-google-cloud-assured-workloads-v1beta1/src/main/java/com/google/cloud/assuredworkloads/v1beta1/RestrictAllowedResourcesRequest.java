@@ -49,11 +49,6 @@ public final class RestrictAllowedResourcesRequest extends com.google.protobuf.G
     return new RestrictAllowedResourcesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
         .internal_static_google_cloud_assuredworkloads_v1beta1_RestrictAllowedResourcesRequest_descriptor;

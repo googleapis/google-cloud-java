@@ -48,11 +48,6 @@ public final class ListKeysRequest extends com.google.protobuf.GeneratedMessageV
     return new ListKeysRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.apikeys.v2.ApiKeysProto
         .internal_static_google_api_apikeys_v2_ListKeysRequest_descriptor;

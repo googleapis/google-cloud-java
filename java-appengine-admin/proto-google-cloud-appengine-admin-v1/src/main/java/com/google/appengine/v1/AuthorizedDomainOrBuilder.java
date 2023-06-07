@@ -29,6 +29,7 @@ public interface AuthorizedDomainOrBuilder
    * <pre>
    * Full path to the `AuthorizedDomain` resource in the API. Example:
    * `apps/myapp/authorizedDomains/example.com`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface AuthorizedDomainOrBuilder
    * <pre>
    * Full path to the `AuthorizedDomain` resource in the API. Example:
    * `apps/myapp/authorizedDomains/example.com`.
+   *
    * &#64;OutputOnly
    * </pre>
    *

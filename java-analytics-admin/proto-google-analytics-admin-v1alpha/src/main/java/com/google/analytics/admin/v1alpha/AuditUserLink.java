@@ -40,19 +40,14 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
   private AuditUserLink() {
     name_ = "";
     emailAddress_ = "";
-    directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    effectiveRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    directRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    effectiveRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AuditUserLink();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,13 +170,16 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
   public static final int DIRECT_ROLES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList directRoles_;
+  private com.google.protobuf.LazyStringArrayList directRoles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Roles directly assigned to this user for this entity.
+   *
    * Format: predefinedRoles/viewer
+   *
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -198,7 +196,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Roles directly assigned to this user for this entity.
+   *
    * Format: predefinedRoles/viewer
+   *
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -215,7 +215,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Roles directly assigned to this user for this entity.
+   *
    * Format: predefinedRoles/viewer
+   *
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -233,7 +235,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Roles directly assigned to this user for this entity.
+   *
    * Format: predefinedRoles/viewer
+   *
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -250,13 +254,15 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
   public static final int EFFECTIVE_ROLES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList effectiveRoles_;
+  private com.google.protobuf.LazyStringArrayList effectiveRoles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
+   *
    * Format: predefinedRoles/viewer
    * </pre>
    *
@@ -273,6 +279,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
+   *
    * Format: predefinedRoles/viewer
    * </pre>
    *
@@ -289,6 +296,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
+   *
    * Format: predefinedRoles/viewer
    * </pre>
    *
@@ -306,6 +314,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
+   *
    * Format: predefinedRoles/viewer
    * </pre>
    *
@@ -559,10 +568,8 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       emailAddress_ = "";
-      directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      effectiveRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      directRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      effectiveRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -590,26 +597,11 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.AuditUserLink buildPartial() {
       com.google.analytics.admin.v1alpha.AuditUserLink result =
           new com.google.analytics.admin.v1alpha.AuditUserLink(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.analytics.admin.v1alpha.AuditUserLink result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        directRoles_ = directRoles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.directRoles_ = directRoles_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        effectiveRoles_ = effectiveRoles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.effectiveRoles_ = effectiveRoles_;
     }
 
     private void buildPartial0(com.google.analytics.admin.v1alpha.AuditUserLink result) {
@@ -619,6 +611,14 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.emailAddress_ = emailAddress_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        directRoles_.makeImmutable();
+        result.directRoles_ = directRoles_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        effectiveRoles_.makeImmutable();
+        result.effectiveRoles_ = effectiveRoles_;
       }
     }
 
@@ -681,7 +681,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       if (!other.directRoles_.isEmpty()) {
         if (directRoles_.isEmpty()) {
           directRoles_ = other.directRoles_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureDirectRolesIsMutable();
           directRoles_.addAll(other.directRoles_);
@@ -691,7 +691,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       if (!other.effectiveRoles_.isEmpty()) {
         if (effectiveRoles_.isEmpty()) {
           effectiveRoles_ = other.effectiveRoles_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureEffectiveRolesIsMutable();
           effectiveRoles_.addAll(other.effectiveRoles_);
@@ -981,21 +981,23 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList directRoles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList directRoles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDirectRolesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!directRoles_.isModifiable()) {
         directRoles_ = new com.google.protobuf.LazyStringArrayList(directRoles_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1005,14 +1007,17 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the directRoles.
      */
     public com.google.protobuf.ProtocolStringList getDirectRolesList() {
-      return directRoles_.getUnmodifiableView();
+      directRoles_.makeImmutable();
+      return directRoles_;
     }
     /**
      *
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1029,7 +1034,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1047,7 +1054,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1065,7 +1074,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1082,6 +1093,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDirectRolesIsMutable();
       directRoles_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1090,7 +1102,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1106,6 +1120,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDirectRolesIsMutable();
       directRoles_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1114,7 +1129,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1127,6 +1144,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDirectRoles(java.lang.Iterable<java.lang.String> values) {
       ensureDirectRolesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, directRoles_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1135,7 +1153,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1145,8 +1165,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirectRoles() {
-      directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      directRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1155,7 +1176,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Roles directly assigned to this user for this entity.
+     *
      * Format: predefinedRoles/viewer
+     *
      * Excludes roles that are inherited from an account (if this is for a
      * property), group, or organization admin role.
      * </pre>
@@ -1172,18 +1195,19 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDirectRolesIsMutable();
       directRoles_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList effectiveRoles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList effectiveRoles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEffectiveRolesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!effectiveRoles_.isModifiable()) {
         effectiveRoles_ = new com.google.protobuf.LazyStringArrayList(effectiveRoles_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1191,6 +1215,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1199,7 +1224,8 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the effectiveRoles.
      */
     public com.google.protobuf.ProtocolStringList getEffectiveRolesList() {
-      return effectiveRoles_.getUnmodifiableView();
+      effectiveRoles_.makeImmutable();
+      return effectiveRoles_;
     }
     /**
      *
@@ -1207,6 +1233,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1223,6 +1250,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1240,6 +1268,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1257,6 +1286,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1272,6 +1302,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEffectiveRolesIsMutable();
       effectiveRoles_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1281,6 +1312,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1295,6 +1327,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEffectiveRolesIsMutable();
       effectiveRoles_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1304,6 +1337,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1315,6 +1349,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEffectiveRoles(java.lang.Iterable<java.lang.String> values) {
       ensureEffectiveRolesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectiveRoles_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1324,6 +1359,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1332,8 +1368,9 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEffectiveRoles() {
-      effectiveRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      effectiveRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1343,6 +1380,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Union of all permissions a user has at this account or property (includes
      * direct permissions, group-inherited permissions, etc.).
+     *
      * Format: predefinedRoles/viewer
      * </pre>
      *
@@ -1358,6 +1396,7 @@ public final class AuditUserLink extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEffectiveRolesIsMutable();
       effectiveRoles_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

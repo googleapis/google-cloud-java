@@ -45,11 +45,6 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     return new ResourceProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_ResourceProperties_descriptor;

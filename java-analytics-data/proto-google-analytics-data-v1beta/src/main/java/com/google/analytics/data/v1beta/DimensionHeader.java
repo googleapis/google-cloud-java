@@ -50,11 +50,6 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
     return new DimensionHeader();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_DimensionHeader_descriptor;

@@ -184,5 +184,5 @@ public interface ChannelGroupFilterExpressionOrBuilder
    */
   com.google.analytics.admin.v1alpha.ChannelGroupFilterOrBuilder getFilterOrBuilder();
 
-  public com.google.analytics.admin.v1alpha.ChannelGroupFilterExpression.ExprCase getExprCase();
+  com.google.analytics.admin.v1alpha.ChannelGroupFilterExpression.ExprCase getExprCase();
 }

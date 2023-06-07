@@ -28,8 +28,10 @@ public interface VPCSCConfigOrBuilder
    *
    * <pre>
    * The name of the project's VPC SC Config.
+   *
    * Always of the form:
    * projects/{projectID}/locations/{location}/vpcscConfig
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -44,8 +46,10 @@ public interface VPCSCConfigOrBuilder
    *
    * <pre>
    * The name of the project's VPC SC Config.
+   *
    * Always of the form:
    * projects/{projectID}/locations/{location}/vpcscConfig
+   *
    * In update request: never set
    * In response: always set
    * </pre>

@@ -34,6 +34,7 @@ public interface BatchRunPivotReportsRequestOrBuilder
    * This property must be specified for the batch. The property within
    * RunPivotReportRequest may either be unspecified or consistent with this
    * property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -53,6 +54,7 @@ public interface BatchRunPivotReportsRequestOrBuilder
    * This property must be specified for the batch. The property within
    * RunPivotReportRequest may either be unspecified or consistent with this
    * property.
+   *
    * Example: properties/1234
    * </pre>
    *

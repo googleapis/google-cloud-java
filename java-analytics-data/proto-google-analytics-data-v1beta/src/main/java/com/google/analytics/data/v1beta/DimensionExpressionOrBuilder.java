@@ -137,6 +137,5 @@ public interface DimensionExpressionOrBuilder
   com.google.analytics.data.v1beta.DimensionExpression.ConcatenateExpressionOrBuilder
       getConcatenateOrBuilder();
 
-  public com.google.analytics.data.v1beta.DimensionExpression.OneExpressionCase
-      getOneExpressionCase();
+  com.google.analytics.data.v1beta.DimensionExpression.OneExpressionCase getOneExpressionCase();
 }

@@ -48,11 +48,6 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
     return new FirebaseLink();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.ResourcesProto
         .internal_static_google_analytics_admin_v1beta_FirebaseLink_descriptor;
@@ -131,6 +126,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
    * you may provide this resource name using either a project number or project
    * ID. Once this resource has been created, returned FirebaseLinks will always
    * have a project_name that contains a project number.
+   *
    * Format: 'projects/{project number}'
    * Example: 'projects/1234'
    * </pre>
@@ -159,6 +155,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
    * you may provide this resource name using either a project number or project
    * ID. Once this resource has been created, returned FirebaseLinks will always
    * have a project_name that contains a project number.
+   *
    * Format: 'projects/{project number}'
    * Example: 'projects/1234'
    * </pre>
@@ -740,6 +737,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      * you may provide this resource name using either a project number or project
      * ID. Once this resource has been created, returned FirebaseLinks will always
      * have a project_name that contains a project number.
+     *
      * Format: 'projects/{project number}'
      * Example: 'projects/1234'
      * </pre>
@@ -767,6 +765,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      * you may provide this resource name using either a project number or project
      * ID. Once this resource has been created, returned FirebaseLinks will always
      * have a project_name that contains a project number.
+     *
      * Format: 'projects/{project number}'
      * Example: 'projects/1234'
      * </pre>
@@ -794,6 +793,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      * you may provide this resource name using either a project number or project
      * ID. Once this resource has been created, returned FirebaseLinks will always
      * have a project_name that contains a project number.
+     *
      * Format: 'projects/{project number}'
      * Example: 'projects/1234'
      * </pre>
@@ -820,6 +820,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      * you may provide this resource name using either a project number or project
      * ID. Once this resource has been created, returned FirebaseLinks will always
      * have a project_name that contains a project number.
+     *
      * Format: 'projects/{project number}'
      * Example: 'projects/1234'
      * </pre>
@@ -842,6 +843,7 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessageV3
      * you may provide this resource name using either a project number or project
      * ID. Once this resource has been created, returned FirebaseLinks will always
      * have a project_name that contains a project number.
+     *
      * Format: 'projects/{project number}'
      * Example: 'projects/1234'
      * </pre>

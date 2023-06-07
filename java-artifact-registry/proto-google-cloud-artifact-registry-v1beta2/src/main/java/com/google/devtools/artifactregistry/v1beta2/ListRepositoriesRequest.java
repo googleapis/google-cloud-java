@@ -48,11 +48,6 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
     return new ListRepositoriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.RepositoryProto
         .internal_static_google_devtools_artifactregistry_v1beta2_ListRepositoriesRequest_descriptor;

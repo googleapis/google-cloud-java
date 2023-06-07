@@ -151,5 +151,5 @@ public interface ExpandedDataSetFilterExpressionOrBuilder
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilterOrBuilder getFilterOrBuilder();
 
-  public com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpression.ExprCase getExprCase();
+  com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpression.ExprCase getExprCase();
 }

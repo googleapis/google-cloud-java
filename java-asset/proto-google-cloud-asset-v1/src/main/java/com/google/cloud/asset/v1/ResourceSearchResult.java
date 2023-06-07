@@ -42,21 +42,21 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     name_ = "";
     assetType_ = "";
     project_ = "";
-    folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
     organization_ = "";
     displayName_ = "";
     description_ = "";
     location_ = "";
-    networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kmsKey_ = "";
-    kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    kmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = "";
     parentFullResourceName_ = "";
     versionedResources_ = java.util.Collections.emptyList();
     attachedResources_ = java.util.Collections.emptyList();
-    tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tagKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tagValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     parentAssetType_ = "";
   }
 
@@ -64,11 +64,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResourceSearchResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -112,7 +107,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `name`:
+   *
    * * Use a field query. Example: `name:instance1`
    * * Use a free text query. Example: `instance1`
    * </pre>
@@ -142,7 +139,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `name`:
+   *
    * * Use a field query. Example: `name:instance1`
    * * Use a free text query. Example: `instance1`
    * </pre>
@@ -173,7 +172,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource. Example: `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * Specify the `asset_type` field in your search request.
    * </pre>
    *
@@ -198,7 +199,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource. Example: `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * Specify the `asset_type` field in your search request.
    * </pre>
    *
@@ -230,7 +233,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The project that this resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. This field is available when the resource
    * belongs to a project.
+   *
    * To search against `project`:
+   *
    * * Use a field query. Example: `project:12345`
    * * Use a free text query. Example: `12345`
    * * Specify the `scope` field as this project in your search request.
@@ -259,7 +264,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The project that this resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. This field is available when the resource
    * belongs to a project.
+   *
    * To search against `project`:
+   *
    * * Use a field query. Example: `project:12345`
    * * Use a free text query. Example: `12345`
    * * Specify the `scope` field as this project in your search request.
@@ -285,7 +292,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int FOLDERS_FIELD_NUMBER = 17;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList folders_;
+  private com.google.protobuf.LazyStringArrayList folders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -293,7 +301,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -313,7 +323,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -333,7 +345,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -354,7 +368,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -380,7 +396,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The organization that this resource belongs to, in the form of
    * organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * resource belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * Use a field query. Example: `organization:123`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this organization in your search request.
@@ -409,7 +427,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The organization that this resource belongs to, in the form of
    * organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * resource belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * Use a field query. Example: `organization:123`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this organization in your search request.
@@ -442,7 +462,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The display name of this resource. This field is available only when the
    * resource's Protobuf contains it.
+   *
    * To search against the `display_name`:
+   *
    * * Use a field query. Example: `displayName:"My Instance"`
    * * Use a free text query. Example: `"My Instance"`
    * </pre>
@@ -469,7 +491,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The display name of this resource. This field is available only when the
    * resource's Protobuf contains it.
+   *
    * To search against the `display_name`:
+   *
    * * Use a field query. Example: `displayName:"My Instance"`
    * * Use a free text query. Example: `"My Instance"`
    * </pre>
@@ -502,7 +526,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `description`:
+   *
    * * Use a field query. Example: `description:"important instance"`
    * * Use a free text query. Example: `"important instance"`
    * </pre>
@@ -530,7 +556,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `description`:
+   *
    * * Use a field query. Example: `description:"important instance"`
    * * Use a free text query. Example: `"important instance"`
    * </pre>
@@ -563,7 +591,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against the `location`:
+   *
    * * Use a field query. Example: `location:us-west*`
    * * Use a free text query. Example: `us-west*`
    * </pre>
@@ -591,7 +621,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against the `location`:
+   *
    * * Use a field query. Example: `location:us-west*`
    * * Use a free text query. Example: `us-west*`
    * </pre>
@@ -648,7 +680,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -680,7 +714,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -703,7 +739,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -733,7 +771,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -758,7 +798,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int NETWORK_TAGS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList networkTags_;
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -769,7 +810,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -791,7 +834,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -813,7 +858,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -836,7 +883,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -863,13 +912,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
+   *
    * This field only presents for the purpose of backward compatibility. Please
    * use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
+   *
    * To search against the `kms_key`:
+   *
    * * Use a field query. Example: `kmsKey:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -902,13 +954,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
+   *
    * This field only presents for the purpose of backward compatibility. Please
    * use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
+   *
    * To search against the `kms_key`:
+   *
    * * Use a field query. Example: `kmsKey:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -936,7 +991,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int KMS_KEYS_FIELD_NUMBER = 28;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList kmsKeys_;
+  private com.google.protobuf.LazyStringArrayList kmsKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -947,7 +1003,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -969,7 +1027,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -991,7 +1051,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -1014,7 +1076,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -1037,7 +1101,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -1060,7 +1126,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -1083,7 +1151,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -1108,7 +1178,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -1132,7 +1204,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -1156,7 +1230,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -1183,6 +1259,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * definitions that are mapped from various fields of different resource
    * types. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine,
    * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -1193,7 +1270,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   *
    * To search against the `state`:
+   *
    * * Use a field query. Example: `state:RUNNING`
    * * Use a free text query. Example: `RUNNING`
    * </pre>
@@ -1222,6 +1301,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * definitions that are mapped from various fields of different resource
    * types. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine,
    * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -1232,7 +1312,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   *
    * To search against the `state`:
+   *
    * * Use a field query. Example: `state:RUNNING`
    * * Use a free text query. Example: `RUNNING`
    * </pre>
@@ -1268,11 +1350,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -1298,11 +1383,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -1330,11 +1418,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -1359,6 +1450,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The full resource name of this resource's parent, if it has one.
    * To search against the `parent_full_resource_name`:
+   *
    * * Use a field query. Example:
    * `parentFullResourceName:"project-name"`
    * * Use a free text query. Example:
@@ -1387,6 +1479,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The full resource name of this resource's parent, if it has one.
    * To search against the `parent_full_resource_name`:
+   *
    * * Use a field query. Example:
    * `parentFullResourceName:"project-name"`
    * * Use a free text query. Example:
@@ -1421,6 +1514,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1439,6 +1533,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1458,6 +1553,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1476,6 +1572,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1494,6 +1591,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1518,6 +1616,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1536,6 +1635,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1555,6 +1655,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1573,6 +1674,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1591,6 +1693,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1739,17 +1842,20 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int TAG_KEYS_FIELD_NUMBER = 23;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tagKeys_;
+  private com.google.protobuf.LazyStringArrayList tagKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
@@ -1767,10 +1873,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
@@ -1788,10 +1896,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
@@ -1810,10 +1920,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
@@ -1830,7 +1942,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int TAG_VALUES_FIELD_NUMBER = 25;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tagValues_;
+  private com.google.protobuf.LazyStringArrayList tagValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1838,11 +1951,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
@@ -1861,11 +1976,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
@@ -1884,11 +2001,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
@@ -1908,11 +2027,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
@@ -1929,16 +2050,19 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int TAG_VALUE_IDS_FIELD_NUMBER = 26;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tagValueIds_;
+  private com.google.protobuf.LazyStringArrayList tagValueIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
    *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
@@ -1956,9 +2080,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
    *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
@@ -1976,9 +2102,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
    *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
@@ -1997,9 +2125,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
    *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
@@ -2022,7 +2152,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource's immediate parent, if there is one.
+   *
    * To search against the `parent_asset_type`:
+   *
    * * Use a field query. Example:
    * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
    * * Use a free text query. Example:
@@ -2050,7 +2182,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource's immediate parent, if there is one.
+   *
    * To search against the `parent_asset_type`:
+   *
    * * Use a field query. Example:
    * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
    * * Use a free text query. Example:
@@ -2588,18 +2722,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       name_ = "";
       assetType_ = "";
       project_ = "";
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       organization_ = "";
       displayName_ = "";
       description_ = "";
       location_ = "";
       internalGetMutableLabels().clear();
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kmsKey_ = "";
-      kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      kmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2632,12 +2763,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableRelationships().clear();
-      tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00100000);
-      tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00200000);
-      tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00400000);
+      tagKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tagValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       parentAssetType_ = "";
       return this;
     }
@@ -2675,21 +2803,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.asset.v1.ResourceSearchResult result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        folders_ = folders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.folders_ = folders_;
-      if (((bitField0_ & 0x00000200) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.networkTags_ = networkTags_;
-      if (((bitField0_ & 0x00000800) != 0)) {
-        kmsKeys_ = kmsKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.kmsKeys_ = kmsKeys_;
       if (versionedResourcesBuilder_ == null) {
         if (((bitField0_ & 0x00020000) != 0)) {
           versionedResources_ = java.util.Collections.unmodifiableList(versionedResources_);
@@ -2708,21 +2821,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       } else {
         result.attachedResources_ = attachedResourcesBuilder_.build();
       }
-      if (((bitField0_ & 0x00100000) != 0)) {
-        tagKeys_ = tagKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00100000);
-      }
-      result.tagKeys_ = tagKeys_;
-      if (((bitField0_ & 0x00200000) != 0)) {
-        tagValues_ = tagValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00200000);
-      }
-      result.tagValues_ = tagValues_;
-      if (((bitField0_ & 0x00400000) != 0)) {
-        tagValueIds_ = tagValueIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00400000);
-      }
-      result.tagValueIds_ = tagValueIds_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1.ResourceSearchResult result) {
@@ -2735,6 +2833,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        folders_.makeImmutable();
+        result.folders_ = folders_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.organization_ = organization_;
@@ -2752,8 +2854,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        kmsKeys_.makeImmutable();
+        result.kmsKeys_ = kmsKeys_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
@@ -2776,6 +2886,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.relationships_ = internalGetRelationships();
         result.relationships_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        tagKeys_.makeImmutable();
+        result.tagKeys_ = tagKeys_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        tagValues_.makeImmutable();
+        result.tagValues_ = tagValues_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        tagValueIds_.makeImmutable();
+        result.tagValueIds_ = tagValueIds_;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.parentAssetType_ = parentAssetType_;
@@ -2845,7 +2967,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.folders_.isEmpty()) {
         if (folders_.isEmpty()) {
           folders_ = other.folders_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureFoldersIsMutable();
           folders_.addAll(other.folders_);
@@ -2877,7 +2999,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -2892,7 +3014,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.kmsKeys_.isEmpty()) {
         if (kmsKeys_.isEmpty()) {
           kmsKeys_ = other.kmsKeys_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ |= 0x00000800;
         } else {
           ensureKmsKeysIsMutable();
           kmsKeys_.addAll(other.kmsKeys_);
@@ -2977,7 +3099,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagKeys_.isEmpty()) {
         if (tagKeys_.isEmpty()) {
           tagKeys_ = other.tagKeys_;
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ |= 0x00100000;
         } else {
           ensureTagKeysIsMutable();
           tagKeys_.addAll(other.tagKeys_);
@@ -2987,7 +3109,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagValues_.isEmpty()) {
         if (tagValues_.isEmpty()) {
           tagValues_ = other.tagValues_;
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ |= 0x00200000;
         } else {
           ensureTagValuesIsMutable();
           tagValues_.addAll(other.tagValues_);
@@ -2997,7 +3119,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagValueIds_.isEmpty()) {
         if (tagValueIds_.isEmpty()) {
           tagValueIds_ = other.tagValueIds_;
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ |= 0x00400000;
         } else {
           ensureTagValueIdsIsMutable();
           tagValueIds_.addAll(other.tagValueIds_);
@@ -3243,7 +3365,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3272,7 +3396,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3301,7 +3427,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3329,7 +3457,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3353,7 +3483,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3380,7 +3512,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3404,7 +3538,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3428,7 +3564,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3451,7 +3589,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3470,7 +3610,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3498,7 +3640,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3526,7 +3670,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3554,7 +3700,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3581,7 +3729,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3604,7 +3754,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3626,14 +3778,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList folders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList folders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFoldersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!folders_.isModifiable()) {
         folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -3642,7 +3794,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3653,7 +3807,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the folders.
      */
     public com.google.protobuf.ProtocolStringList getFoldersList() {
-      return folders_.getUnmodifiableView();
+      folders_.makeImmutable();
+      return folders_;
     }
     /**
      *
@@ -3662,7 +3817,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3682,7 +3839,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3703,7 +3862,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3724,7 +3885,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3742,6 +3905,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureFoldersIsMutable();
       folders_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3752,7 +3916,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3769,6 +3935,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3779,7 +3946,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3793,6 +3962,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllFolders(java.lang.Iterable<java.lang.String> values) {
       ensureFoldersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3803,7 +3973,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3814,8 +3986,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFolders() {
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -3826,7 +3999,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3844,6 +4019,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3856,7 +4032,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3884,7 +4062,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3912,7 +4092,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3939,7 +4121,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3962,7 +4146,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3991,7 +4177,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4017,7 +4205,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4043,7 +4233,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4068,7 +4260,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4089,7 +4283,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4118,7 +4314,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4145,7 +4343,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4172,7 +4372,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4198,7 +4400,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4220,7 +4424,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4249,7 +4455,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4276,7 +4484,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4303,7 +4513,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4329,7 +4541,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4351,7 +4565,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4406,7 +4622,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4438,7 +4656,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4461,7 +4681,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4491,7 +4713,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4527,7 +4751,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4559,7 +4785,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4589,7 +4817,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4605,14 +4835,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList networkTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -4624,7 +4854,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4634,7 +4866,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the networkTags.
      */
     public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
-      return networkTags_.getUnmodifiableView();
+      networkTags_.makeImmutable();
+      return networkTags_;
     }
     /**
      *
@@ -4646,7 +4879,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4668,7 +4903,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4691,7 +4928,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4714,7 +4953,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4731,6 +4972,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4744,7 +4986,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4760,6 +5004,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4773,7 +5018,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4786,6 +5033,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4799,7 +5047,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4809,8 +5059,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetworkTags() {
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -4824,7 +5075,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4841,6 +5094,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4855,13 +5109,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4893,13 +5150,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4931,13 +5191,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4968,13 +5231,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5001,13 +5267,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5031,14 +5300,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList kmsKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList kmsKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureKmsKeysIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!kmsKeys_.isModifiable()) {
         kmsKeys_ = new com.google.protobuf.LazyStringArrayList(kmsKeys_);
-        bitField0_ |= 0x00000800;
       }
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -5050,7 +5319,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5060,7 +5331,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the kmsKeys.
      */
     public com.google.protobuf.ProtocolStringList getKmsKeysList() {
-      return kmsKeys_.getUnmodifiableView();
+      kmsKeys_.makeImmutable();
+      return kmsKeys_;
     }
     /**
      *
@@ -5072,7 +5344,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5094,7 +5368,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5117,7 +5393,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5140,7 +5418,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5157,6 +5437,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureKmsKeysIsMutable();
       kmsKeys_.set(index, value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5170,7 +5451,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5186,6 +5469,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureKmsKeysIsMutable();
       kmsKeys_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5199,7 +5483,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5212,6 +5498,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllKmsKeys(java.lang.Iterable<java.lang.String> values) {
       ensureKmsKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kmsKeys_);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5225,7 +5512,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5235,8 +5524,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKmsKeys() {
-      kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000800);
+      ;
       onChanged();
       return this;
     }
@@ -5250,7 +5540,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5267,6 +5559,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureKmsKeysIsMutable();
       kmsKeys_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5284,7 +5577,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5306,7 +5601,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5334,7 +5631,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5364,7 +5663,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5391,7 +5692,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5424,7 +5727,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5451,7 +5756,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5473,7 +5780,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5499,7 +5808,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5540,7 +5851,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5563,7 +5876,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5592,7 +5907,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5623,7 +5940,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5651,7 +5970,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5685,7 +6006,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5713,7 +6036,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5736,7 +6061,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5763,7 +6090,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5799,6 +6128,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5809,7 +6139,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5837,6 +6169,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5847,7 +6180,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5875,6 +6210,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5885,7 +6221,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5912,6 +6250,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5922,7 +6261,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5945,6 +6286,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5955,7 +6297,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5994,11 +6338,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6023,11 +6370,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6058,11 +6408,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6095,11 +6448,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6129,11 +6485,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6169,11 +6528,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6203,11 +6565,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6232,11 +6597,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6265,11 +6633,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6301,6 +6672,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6328,6 +6700,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6355,6 +6728,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6381,6 +6755,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6403,6 +6778,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6450,6 +6826,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6471,6 +6848,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6492,6 +6870,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6513,6 +6892,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6541,6 +6921,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6566,6 +6947,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6593,6 +6975,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6621,6 +7004,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6646,6 +7030,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6671,6 +7056,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6696,6 +7082,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6720,6 +7107,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6744,6 +7132,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6762,6 +7151,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6784,6 +7174,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6806,6 +7197,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6824,6 +7216,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6843,6 +7236,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6899,6 +7293,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6920,6 +7315,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6941,6 +7337,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6962,6 +7359,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6990,6 +7388,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7015,6 +7414,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7042,6 +7442,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7070,6 +7471,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7095,6 +7497,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7120,6 +7523,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7145,6 +7549,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7169,6 +7574,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7193,6 +7599,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7211,6 +7618,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7233,6 +7641,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7255,6 +7664,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7273,6 +7683,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7292,6 +7703,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7537,14 +7949,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tagKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tagKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagKeysIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!tagKeys_.isModifiable()) {
         tagKeys_ = new com.google.protobuf.LazyStringArrayList(tagKeys_);
-        bitField0_ |= 0x00100000;
       }
+      bitField0_ |= 0x00100000;
     }
     /**
      *
@@ -7552,10 +7964,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7565,7 +7979,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the tagKeys.
      */
     public com.google.protobuf.ProtocolStringList getTagKeysList() {
-      return tagKeys_.getUnmodifiableView();
+      tagKeys_.makeImmutable();
+      return tagKeys_;
     }
     /**
      *
@@ -7573,10 +7988,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7594,10 +8011,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7616,10 +8035,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7638,10 +8059,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7658,6 +8081,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureTagKeysIsMutable();
       tagKeys_.set(index, value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7667,10 +8091,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7686,6 +8112,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureTagKeysIsMutable();
       tagKeys_.add(value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7695,10 +8122,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7711,6 +8140,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllTagKeys(java.lang.Iterable<java.lang.String> values) {
       ensureTagKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagKeys_);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7720,10 +8150,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7733,8 +8165,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTagKeys() {
-      tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tagKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00100000);
+      ;
       onChanged();
       return this;
     }
@@ -7744,10 +8177,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
@@ -7764,18 +8199,19 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagKeysIsMutable();
       tagKeys_.add(value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tagValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tagValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagValuesIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!tagValues_.isModifiable()) {
         tagValues_ = new com.google.protobuf.LazyStringArrayList(tagValues_);
-        bitField0_ |= 0x00200000;
       }
+      bitField0_ |= 0x00200000;
     }
     /**
      *
@@ -7784,11 +8220,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7798,7 +8236,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the tagValues.
      */
     public com.google.protobuf.ProtocolStringList getTagValuesList() {
-      return tagValues_.getUnmodifiableView();
+      tagValues_.makeImmutable();
+      return tagValues_;
     }
     /**
      *
@@ -7807,11 +8246,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7830,11 +8271,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7854,11 +8297,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7878,11 +8323,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7899,6 +8346,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureTagValuesIsMutable();
       tagValues_.set(index, value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7909,11 +8357,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7929,6 +8379,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureTagValuesIsMutable();
       tagValues_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7939,11 +8390,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7956,6 +8409,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllTagValues(java.lang.Iterable<java.lang.String> values) {
       ensureTagValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagValues_);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7966,11 +8420,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -7980,8 +8436,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTagValues() {
-      tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tagValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00200000);
+      ;
       onChanged();
       return this;
     }
@@ -7992,11 +8449,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
@@ -8013,18 +8472,19 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagValuesIsMutable();
       tagValues_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tagValueIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tagValueIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagValueIdsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!tagValueIds_.isModifiable()) {
         tagValueIds_ = new com.google.protobuf.LazyStringArrayList(tagValueIds_);
-        bitField0_ |= 0x00400000;
       }
+      bitField0_ |= 0x00400000;
     }
     /**
      *
@@ -8032,9 +8492,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8044,7 +8506,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the tagValueIds.
      */
     public com.google.protobuf.ProtocolStringList getTagValueIdsList() {
-      return tagValueIds_.getUnmodifiableView();
+      tagValueIds_.makeImmutable();
+      return tagValueIds_;
     }
     /**
      *
@@ -8052,9 +8515,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8072,9 +8537,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8093,9 +8560,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8114,9 +8583,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8133,6 +8604,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureTagValueIdsIsMutable();
       tagValueIds_.set(index, value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8142,9 +8614,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8160,6 +8634,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureTagValueIdsIsMutable();
       tagValueIds_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8169,9 +8644,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8184,6 +8661,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllTagValueIds(java.lang.Iterable<java.lang.String> values) {
       ensureTagValueIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagValueIds_);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8193,9 +8671,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8205,8 +8685,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTagValueIds() {
-      tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00400000);
+      ;
       onChanged();
       return this;
     }
@@ -8216,9 +8697,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
      *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
@@ -8235,6 +8718,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagValueIdsIsMutable();
       tagValueIds_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8245,7 +8729,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8272,7 +8758,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8299,7 +8787,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8325,7 +8815,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8347,7 +8839,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:

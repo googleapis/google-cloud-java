@@ -50,11 +50,6 @@ public final class ListAuthorizedCertificatesRequest extends com.google.protobuf
     return new ListAuthorizedCertificatesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AppengineProto
         .internal_static_google_appengine_v1_ListAuthorizedCertificatesRequest_descriptor;

@@ -48,11 +48,6 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
     return new ListSearchAds360LinksRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_ListSearchAds360LinksRequest_descriptor;
@@ -153,6 +148,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
    * <pre>
    * A page token, received from a previous `ListSearchAds360Links`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListSearchAds360Links` must match the call that provided the
    * page token.
@@ -180,6 +176,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
    * <pre>
    * A page token, received from a previous `ListSearchAds360Links`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListSearchAds360Links` must match the call that provided the
    * page token.
@@ -777,6 +774,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
      * <pre>
      * A page token, received from a previous `ListSearchAds360Links`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListSearchAds360Links` must match the call that provided the
      * page token.
@@ -803,6 +801,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
      * <pre>
      * A page token, received from a previous `ListSearchAds360Links`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListSearchAds360Links` must match the call that provided the
      * page token.
@@ -829,6 +828,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
      * <pre>
      * A page token, received from a previous `ListSearchAds360Links`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListSearchAds360Links` must match the call that provided the
      * page token.
@@ -854,6 +854,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
      * <pre>
      * A page token, received from a previous `ListSearchAds360Links`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListSearchAds360Links` must match the call that provided the
      * page token.
@@ -875,6 +876,7 @@ public final class ListSearchAds360LinksRequest extends com.google.protobuf.Gene
      * <pre>
      * A page token, received from a previous `ListSearchAds360Links`
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListSearchAds360Links` must match the call that provided the
      * page token.

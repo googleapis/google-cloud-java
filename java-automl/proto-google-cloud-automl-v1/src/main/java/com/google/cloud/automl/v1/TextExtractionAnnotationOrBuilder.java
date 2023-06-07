@@ -75,5 +75,5 @@ public interface TextExtractionAnnotationOrBuilder
    */
   float getScore();
 
-  public com.google.cloud.automl.v1.TextExtractionAnnotation.AnnotationCase getAnnotationCase();
+  com.google.cloud.automl.v1.TextExtractionAnnotation.AnnotationCase getAnnotationCase();
 }

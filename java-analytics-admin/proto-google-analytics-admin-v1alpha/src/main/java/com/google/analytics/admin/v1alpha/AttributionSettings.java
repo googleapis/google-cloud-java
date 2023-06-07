@@ -51,11 +51,6 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
     return new AttributionSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_AttributionSettings_descriptor;
@@ -881,6 +876,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -902,6 +898,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -1720,6 +1717,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1741,6 +1739,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1765,6 +1764,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1793,6 +1793,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.
@@ -1821,6 +1822,7 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The reporting attribution model used to calculate conversion
      * credit in this property's reports.
+     *
      * Changing the attribution model will apply to both historical and future
      * data. These changes will be reflected in reports with conversion and
      * revenue data. User and session data will be unaffected.

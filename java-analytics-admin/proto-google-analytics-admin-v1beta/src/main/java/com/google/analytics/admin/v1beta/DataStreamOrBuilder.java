@@ -211,7 +211,9 @@ public interface DataStreamOrBuilder
    *
    * <pre>
    * Human-readable display name for the Data Stream.
+   *
    * Required for web data streams.
+   *
    * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
@@ -225,7 +227,9 @@ public interface DataStreamOrBuilder
    *
    * <pre>
    * Human-readable display name for the Data Stream.
+   *
    * Required for web data streams.
+   *
    * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
@@ -311,5 +315,5 @@ public interface DataStreamOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.analytics.admin.v1beta.DataStream.StreamDataCase getStreamDataCase();
+  com.google.analytics.admin.v1beta.DataStream.StreamDataCase getStreamDataCase();
 }

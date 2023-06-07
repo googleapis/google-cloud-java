@@ -48,11 +48,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     return new Image();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.DataItems
         .internal_static_google_cloud_automl_v1_Image_descriptor;
@@ -68,6 +63,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object data_;
 
   public enum DataCase

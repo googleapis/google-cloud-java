@@ -165,5 +165,5 @@ public interface SegmentOrBuilder
    */
   com.google.analytics.data.v1alpha.EventSegmentOrBuilder getEventSegmentOrBuilder();
 
-  public com.google.analytics.data.v1alpha.Segment.OneSegmentScopeCase getOneSegmentScopeCase();
+  com.google.analytics.data.v1alpha.Segment.OneSegmentScopeCase getOneSegmentScopeCase();
 }

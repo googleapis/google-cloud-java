@@ -48,11 +48,6 @@ public final class PD extends com.google.protobuf.GeneratedMessageV3
     return new PD();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.VolumeProto
         .internal_static_google_cloud_batch_v1alpha_PD_descriptor;

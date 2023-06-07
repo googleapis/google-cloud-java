@@ -114,6 +114,7 @@ public interface AutomaticScalingOrBuilder
    * <pre>
    * Number of concurrent requests an automatic scaling instance can accept
    * before the scheduler spawns a new instance.
+   *
    * Defaults to a runtime-specific value.
    * </pre>
    *

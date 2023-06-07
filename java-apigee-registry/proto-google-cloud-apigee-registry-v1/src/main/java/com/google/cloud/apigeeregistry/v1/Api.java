@@ -53,11 +53,6 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     return new Api();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryModelsProto
         .internal_static_google_cloud_apigeeregistry_v1_Api_descriptor;
@@ -530,11 +525,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores, and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -561,11 +558,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores, and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -583,11 +582,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores, and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -612,11 +613,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels attach identifying metadata to resources. Identifying metadata can
    * be used to filter list operations.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores, and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one resource (System
    * labels are excluded).
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
    * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -668,6 +671,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -693,6 +697,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -709,6 +714,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -732,6 +738,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Annotations attach non-identifying metadata to resources.
+   *
    * Annotation keys and values are less restricted than those of labels, but
    * should be generally used for small values of broad interest. Larger, topic-
    * specific metadata should be stored in Artifacts.
@@ -2459,11 +2466,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2490,11 +2499,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2512,11 +2523,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2541,11 +2554,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2576,11 +2591,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2607,11 +2624,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2636,11 +2655,13 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels attach identifying metadata to resources. Identifying metadata can
      * be used to filter list operations.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores, and dashes. International characters are allowed.
      * No more than 64 user labels can be associated with one resource (System
      * labels are excluded).
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * System reserved label keys are prefixed with
      * `apigeeregistry.googleapis.com/` and cannot be changed.
@@ -2687,6 +2708,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.
@@ -2712,6 +2734,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.
@@ -2728,6 +2751,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.
@@ -2751,6 +2775,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.
@@ -2780,6 +2805,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.
@@ -2805,6 +2831,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.
@@ -2828,6 +2855,7 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Annotations attach non-identifying metadata to resources.
+     *
      * Annotation keys and values are less restricted than those of labels, but
      * should be generally used for small values of broad interest. Larger, topic-
      * specific metadata should be stored in Artifacts.

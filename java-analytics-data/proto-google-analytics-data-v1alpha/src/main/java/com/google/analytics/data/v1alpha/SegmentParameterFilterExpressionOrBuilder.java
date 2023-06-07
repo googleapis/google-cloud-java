@@ -179,5 +179,5 @@ public interface SegmentParameterFilterExpressionOrBuilder
   com.google.analytics.data.v1alpha.SegmentParameterFilterOrBuilder
       getSegmentParameterFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.SegmentParameterFilterExpression.ExprCase getExprCase();
+  com.google.analytics.data.v1alpha.SegmentParameterFilterExpression.ExprCase getExprCase();
 }

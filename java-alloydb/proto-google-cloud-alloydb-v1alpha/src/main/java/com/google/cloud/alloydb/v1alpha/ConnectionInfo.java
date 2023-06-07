@@ -41,7 +41,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   private ConnectionInfo() {
     name_ = "";
     ipAddress_ = "";
-    pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
     instanceUid_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConnectionInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -182,7 +177,8 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int PEM_CERTIFICATE_CHAIN_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList pemCertificateChain_;
+  private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -536,8 +532,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       ipAddress_ = "";
-      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       instanceUid_ = "";
       return this;
     }
@@ -566,21 +561,11 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.alloydb.v1alpha.ConnectionInfo buildPartial() {
       com.google.cloud.alloydb.v1alpha.ConnectionInfo result =
           new com.google.cloud.alloydb.v1alpha.ConnectionInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.alloydb.v1alpha.ConnectionInfo result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        pemCertificateChain_ = pemCertificateChain_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.pemCertificateChain_ = pemCertificateChain_;
     }
 
     private void buildPartial0(com.google.cloud.alloydb.v1alpha.ConnectionInfo result) {
@@ -590,6 +575,10 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        pemCertificateChain_.makeImmutable();
+        result.pemCertificateChain_ = pemCertificateChain_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.instanceUid_ = instanceUid_;
@@ -655,7 +644,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.pemCertificateChain_.isEmpty()) {
         if (pemCertificateChain_.isEmpty()) {
           pemCertificateChain_ = other.pemCertificateChain_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensurePemCertificateChainIsMutable();
           pemCertificateChain_.addAll(other.pemCertificateChain_);
@@ -964,14 +953,14 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList pemCertificateChain_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePemCertificateChainIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!pemCertificateChain_.isModifiable()) {
         pemCertificateChain_ = new com.google.protobuf.LazyStringArrayList(pemCertificateChain_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -987,7 +976,8 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the pemCertificateChain.
      */
     public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
-      return pemCertificateChain_.getUnmodifiableView();
+      pemCertificateChain_.makeImmutable();
+      return pemCertificateChain_;
     }
     /**
      *
@@ -1060,6 +1050,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1083,6 +1074,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,6 +1095,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPemCertificateChain(java.lang.Iterable<java.lang.String> values) {
       ensurePemCertificateChainIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCertificateChain_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1120,8 +1113,9 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPemCertificateChain() {
-      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1146,6 +1140,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

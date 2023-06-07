@@ -29,6 +29,7 @@ public interface ListAccessLevelsRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy to list [Access Levels]
    * [google.identity.accesscontextmanager.v1.AccessLevel] from.
+   *
    * Format:
    * `accessPolicies/{policy_id}`
    * </pre>
@@ -46,6 +47,7 @@ public interface ListAccessLevelsRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy to list [Access Levels]
    * [google.identity.accesscontextmanager.v1.AccessLevel] from.
+   *
    * Format:
    * `accessPolicies/{policy_id}`
    * </pre>

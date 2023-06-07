@@ -125,5 +125,5 @@ public interface AudienceFilterClauseOrBuilder
    */
   com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType getClauseType();
 
-  public com.google.analytics.admin.v1alpha.AudienceFilterClause.FilterCase getFilterCase();
+  com.google.analytics.admin.v1alpha.AudienceFilterClause.FilterCase getFilterCase();
 }

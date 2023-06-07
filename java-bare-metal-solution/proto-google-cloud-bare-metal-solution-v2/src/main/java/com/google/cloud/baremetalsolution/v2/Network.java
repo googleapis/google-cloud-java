@@ -42,7 +42,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     type_ = 0;
     ipAddress_ = "";
-    macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    macAddress_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = 0;
     vlanId_ = "";
     cidr_ = "";
@@ -54,11 +54,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Network();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -602,7 +597,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public static final int MAC_ADDRESS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList macAddress_;
+  private com.google.protobuf.LazyStringArrayList macAddress_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1436,8 +1432,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       id_ = "";
       type_ = 0;
       ipAddress_ = "";
-      macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      macAddress_ = com.google.protobuf.LazyStringArrayList.emptyList();
       state_ = 0;
       vlanId_ = "";
       cidr_ = "";
@@ -1491,11 +1486,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.baremetalsolution.v2.Network result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        macAddress_ = macAddress_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.macAddress_ = macAddress_;
       if (reservationsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
@@ -1520,6 +1510,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        macAddress_.makeImmutable();
+        result.macAddress_ = macAddress_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
@@ -1608,7 +1602,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (!other.macAddress_.isEmpty()) {
         if (macAddress_.isEmpty()) {
           macAddress_ = other.macAddress_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureMacAddressIsMutable();
           macAddress_.addAll(other.macAddress_);
@@ -2227,14 +2221,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList macAddress_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList macAddress_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMacAddressIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!macAddress_.isModifiable()) {
         macAddress_ = new com.google.protobuf.LazyStringArrayList(macAddress_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2248,7 +2242,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the macAddress.
      */
     public com.google.protobuf.ProtocolStringList getMacAddressList() {
-      return macAddress_.getUnmodifiableView();
+      macAddress_.makeImmutable();
+      return macAddress_;
     }
     /**
      *
@@ -2313,6 +2308,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMacAddressIsMutable();
       macAddress_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2334,6 +2330,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMacAddressIsMutable();
       macAddress_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2352,6 +2349,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMacAddress(java.lang.Iterable<java.lang.String> values) {
       ensureMacAddressIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, macAddress_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2367,8 +2365,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-      macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      macAddress_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2391,6 +2390,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMacAddressIsMutable();
       macAddress_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

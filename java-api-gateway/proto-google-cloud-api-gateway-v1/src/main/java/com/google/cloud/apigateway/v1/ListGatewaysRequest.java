@@ -50,11 +50,6 @@ public final class ListGatewaysRequest extends com.google.protobuf.GeneratedMess
     return new ListGatewaysRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigateway.v1.Apigateway
         .internal_static_google_cloud_apigateway_v1_ListGatewaysRequest_descriptor;

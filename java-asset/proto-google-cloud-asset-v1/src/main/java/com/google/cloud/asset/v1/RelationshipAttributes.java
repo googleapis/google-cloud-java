@@ -55,11 +55,6 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     return new RelationshipAttributes();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetProto
         .internal_static_google_cloud_asset_v1_RelationshipAttributes_descriptor;

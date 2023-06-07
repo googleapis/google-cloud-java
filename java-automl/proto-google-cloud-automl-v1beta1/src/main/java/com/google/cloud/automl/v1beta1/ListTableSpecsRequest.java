@@ -49,11 +49,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     return new ListTableSpecsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.AutoMlProto
         .internal_static_google_cloud_automl_v1beta1_ListTableSpecsRequest_descriptor;

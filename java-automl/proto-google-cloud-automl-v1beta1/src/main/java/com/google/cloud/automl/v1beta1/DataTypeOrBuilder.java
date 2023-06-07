@@ -205,5 +205,5 @@ public interface DataTypeOrBuilder
    */
   boolean getNullable();
 
-  public com.google.cloud.automl.v1beta1.DataType.DetailsCase getDetailsCase();
+  com.google.cloud.automl.v1beta1.DataType.DetailsCase getDetailsCase();
 }

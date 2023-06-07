@@ -29,6 +29,7 @@ public interface SessionSegmentExclusionOrBuilder
    * <pre>
    * Specifies how long an exclusion will last if a session matches the
    * `sessionExclusionCriteria`.
+   *
    * Optional. If unspecified, a `sessionExclusionDuration` of
    * `SESSION_EXCLUSION_TEMPORARY` is used.
    * </pre>
@@ -45,6 +46,7 @@ public interface SessionSegmentExclusionOrBuilder
    * <pre>
    * Specifies how long an exclusion will last if a session matches the
    * `sessionExclusionCriteria`.
+   *
    * Optional. If unspecified, a `sessionExclusionDuration` of
    * `SESSION_EXCLUSION_TEMPORARY` is used.
    * </pre>

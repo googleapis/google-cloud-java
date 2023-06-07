@@ -48,11 +48,6 @@ public final class CreateRowRequest extends com.google.protobuf.GeneratedMessage
     return new CreateRowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.area120.tables.v1alpha1.TablesProto
         .internal_static_google_area120_tables_v1alpha1_CreateRowRequest_descriptor;

@@ -107,6 +107,7 @@ public interface PropertySummaryOrBuilder
    *
    * <pre>
    * Resource name of this property's logical parent.
+   *
    * Note: The Property-Moving UI can be used to change the parent.
    * Format: accounts/{account}, properties/{property}
    * Example: "accounts/100", "properties/200"
@@ -122,6 +123,7 @@ public interface PropertySummaryOrBuilder
    *
    * <pre>
    * Resource name of this property's logical parent.
+   *
    * Note: The Property-Moving UI can be used to change the parent.
    * Format: accounts/{account}, properties/{property}
    * Example: "accounts/100", "properties/200"

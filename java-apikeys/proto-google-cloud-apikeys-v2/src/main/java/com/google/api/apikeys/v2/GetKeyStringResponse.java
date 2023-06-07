@@ -47,11 +47,6 @@ public final class GetKeyStringResponse extends com.google.protobuf.GeneratedMes
     return new GetKeyStringResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.apikeys.v2.ApiKeysProto
         .internal_static_google_api_apikeys_v2_GetKeyStringResponse_descriptor;

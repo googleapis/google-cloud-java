@@ -47,11 +47,6 @@ public final class LookupKeyRequest extends com.google.protobuf.GeneratedMessage
     return new LookupKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.apikeys.v2.ApiKeysProto
         .internal_static_google_api_apikeys_v2_LookupKeyRequest_descriptor;

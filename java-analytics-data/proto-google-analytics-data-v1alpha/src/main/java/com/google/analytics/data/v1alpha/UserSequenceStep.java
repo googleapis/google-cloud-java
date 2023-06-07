@@ -48,11 +48,6 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
     return new UserSequenceStep();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_UserSequenceStep_descriptor;
@@ -102,6 +97,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
    * session for the user to match the sequence. `stepScoping =
    * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
    * ACROSS_ALL_SESSIONS`.
+   *
    * Optional. If unspecified, `stepScoping` uses the same
    * `UserCriteriaScoping` as the `sequenceScoping`.
    * </pre>
@@ -124,6 +120,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
    * session for the user to match the sequence. `stepScoping =
    * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
    * ACROSS_ALL_SESSIONS`.
+   *
    * Optional. If unspecified, `stepScoping` uses the same
    * `UserCriteriaScoping` as the `sequenceScoping`.
    * </pre>
@@ -680,6 +677,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * session for the user to match the sequence. `stepScoping =
      * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
      * ACROSS_ALL_SESSIONS`.
+     *
      * Optional. If unspecified, `stepScoping` uses the same
      * `UserCriteriaScoping` as the `sequenceScoping`.
      * </pre>
@@ -702,6 +700,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * session for the user to match the sequence. `stepScoping =
      * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
      * ACROSS_ALL_SESSIONS`.
+     *
      * Optional. If unspecified, `stepScoping` uses the same
      * `UserCriteriaScoping` as the `sequenceScoping`.
      * </pre>
@@ -727,6 +726,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * session for the user to match the sequence. `stepScoping =
      * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
      * ACROSS_ALL_SESSIONS`.
+     *
      * Optional. If unspecified, `stepScoping` uses the same
      * `UserCriteriaScoping` as the `sequenceScoping`.
      * </pre>
@@ -753,6 +753,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * session for the user to match the sequence. `stepScoping =
      * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
      * ACROSS_ALL_SESSIONS`.
+     *
      * Optional. If unspecified, `stepScoping` uses the same
      * `UserCriteriaScoping` as the `sequenceScoping`.
      * </pre>
@@ -781,6 +782,7 @@ public final class UserSequenceStep extends com.google.protobuf.GeneratedMessage
      * session for the user to match the sequence. `stepScoping =
      * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
      * ACROSS_ALL_SESSIONS`.
+     *
      * Optional. If unspecified, `stepScoping` uses the same
      * `UserCriteriaScoping` as the `sequenceScoping`.
      * </pre>

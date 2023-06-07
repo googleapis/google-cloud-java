@@ -30,6 +30,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * Output only. The resource name for this
    * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+   *
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * Output only. The resource name for this
    * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+   *
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *

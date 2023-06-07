@@ -50,11 +50,6 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
     return new FileInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DeployProto
         .internal_static_google_appengine_v1_FileInfo_descriptor;
@@ -184,6 +179,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The MIME type of the file.
+   *
    * Defaults to the value from Google Cloud Storage.
    * </pre>
    *
@@ -208,6 +204,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The MIME type of the file.
+   *
    * Defaults to the value from Google Cloud Storage.
    * </pre>
    *
@@ -843,6 +840,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the file.
+     *
      * Defaults to the value from Google Cloud Storage.
      * </pre>
      *
@@ -866,6 +864,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the file.
+     *
      * Defaults to the value from Google Cloud Storage.
      * </pre>
      *
@@ -889,6 +888,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the file.
+     *
      * Defaults to the value from Google Cloud Storage.
      * </pre>
      *
@@ -911,6 +911,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the file.
+     *
      * Defaults to the value from Google Cloud Storage.
      * </pre>
      *
@@ -929,6 +930,7 @@ public final class FileInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The MIME type of the file.
+     *
      * Defaults to the value from Google Cloud Storage.
      * </pre>
      *

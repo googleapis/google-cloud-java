@@ -51,11 +51,6 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
     return new CustomDimension();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.ResourcesProto
         .internal_static_google_analytics_admin_v1beta_CustomDimension_descriptor;
@@ -292,9 +287,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. Immutable. Tagging parameter name for this custom dimension.
+   *
    * If this is a user-scoped dimension, then this is the user property name.
    * If this is an event-scoped dimension, then this is the event parameter
    * name.
+   *
    * May only contain alphanumeric and underscore characters, starting with a
    * letter. Max length of 24 characters for user-scoped dimensions, 40
    * characters for event-scoped dimensions.
@@ -323,9 +320,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. Immutable. Tagging parameter name for this custom dimension.
+   *
    * If this is a user-scoped dimension, then this is the user property name.
    * If this is an event-scoped dimension, then this is the event parameter
    * name.
+   *
    * May only contain alphanumeric and underscore characters, starting with a
    * letter. Max length of 24 characters for user-scoped dimensions, 40
    * characters for event-scoped dimensions.
@@ -511,6 +510,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. If set to true, sets this dimension as NPA and excludes it from
    * ads personalization.
+   *
    * This is currently only supported by user-scoped custom dimensions.
    * </pre>
    *
@@ -1104,9 +1104,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Immutable. Tagging parameter name for this custom dimension.
+     *
      * If this is a user-scoped dimension, then this is the user property name.
      * If this is an event-scoped dimension, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore characters, starting with a
      * letter. Max length of 24 characters for user-scoped dimensions, 40
      * characters for event-scoped dimensions.
@@ -1134,9 +1136,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Immutable. Tagging parameter name for this custom dimension.
+     *
      * If this is a user-scoped dimension, then this is the user property name.
      * If this is an event-scoped dimension, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore characters, starting with a
      * letter. Max length of 24 characters for user-scoped dimensions, 40
      * characters for event-scoped dimensions.
@@ -1164,9 +1168,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Immutable. Tagging parameter name for this custom dimension.
+     *
      * If this is a user-scoped dimension, then this is the user property name.
      * If this is an event-scoped dimension, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore characters, starting with a
      * letter. Max length of 24 characters for user-scoped dimensions, 40
      * characters for event-scoped dimensions.
@@ -1193,9 +1199,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Immutable. Tagging parameter name for this custom dimension.
+     *
      * If this is a user-scoped dimension, then this is the user property name.
      * If this is an event-scoped dimension, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore characters, starting with a
      * letter. Max length of 24 characters for user-scoped dimensions, 40
      * characters for event-scoped dimensions.
@@ -1218,9 +1226,11 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Immutable. Tagging parameter name for this custom dimension.
+     *
      * If this is a user-scoped dimension, then this is the user property name.
      * If this is an event-scoped dimension, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore characters, starting with a
      * letter. Max length of 24 characters for user-scoped dimensions, 40
      * characters for event-scoped dimensions.
@@ -1591,6 +1601,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. If set to true, sets this dimension as NPA and excludes it from
      * ads personalization.
+     *
      * This is currently only supported by user-scoped custom dimensions.
      * </pre>
      *
@@ -1608,6 +1619,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. If set to true, sets this dimension as NPA and excludes it from
      * ads personalization.
+     *
      * This is currently only supported by user-scoped custom dimensions.
      * </pre>
      *
@@ -1629,6 +1641,7 @@ public final class CustomDimension extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. If set to true, sets this dimension as NPA and excludes it from
      * ads personalization.
+     *
      * This is currently only supported by user-scoped custom dimensions.
      * </pre>
      *

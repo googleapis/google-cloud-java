@@ -28,6 +28,7 @@ public interface GetSavedQueryRequestOrBuilder
    *
    * <pre>
    * Required. The name of the saved query and it must be in the format of:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -45,6 +46,7 @@ public interface GetSavedQueryRequestOrBuilder
    *
    * <pre>
    * Required. The name of the saved query and it must be in the format of:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id

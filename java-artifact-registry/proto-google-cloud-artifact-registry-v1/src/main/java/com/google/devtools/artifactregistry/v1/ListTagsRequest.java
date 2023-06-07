@@ -49,11 +49,6 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
     return new ListTagsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.TagProto
         .internal_static_google_devtools_artifactregistry_v1_ListTagsRequest_descriptor;
@@ -130,8 +125,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `version`
+   *
    *  An example of using a filter:
+   *
    *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
    *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
    * </pre>
@@ -158,8 +156,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `version`
+   *
    *  An example of using a filter:
+   *
    *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
    *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
    * </pre>
@@ -776,8 +777,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -803,8 +807,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -830,8 +837,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -856,8 +866,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>
@@ -878,8 +891,11 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `version`
+     *
      *  An example of using a filter:
+     *
      *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
      *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
      * </pre>

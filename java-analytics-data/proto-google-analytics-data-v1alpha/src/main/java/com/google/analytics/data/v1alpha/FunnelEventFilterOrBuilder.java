@@ -69,6 +69,7 @@ public interface FunnelEventFilterOrBuilder
    * <pre>
    * If specified, this filter matches events that match both the single event
    * name and the parameter filter expressions.
+   *
    * Inside the parameter filter expression, only parameter filters are
    * available.
    * </pre>
@@ -86,6 +87,7 @@ public interface FunnelEventFilterOrBuilder
    * <pre>
    * If specified, this filter matches events that match both the single event
    * name and the parameter filter expressions.
+   *
    * Inside the parameter filter expression, only parameter filters are
    * available.
    * </pre>
@@ -104,6 +106,7 @@ public interface FunnelEventFilterOrBuilder
    * <pre>
    * If specified, this filter matches events that match both the single event
    * name and the parameter filter expressions.
+   *
    * Inside the parameter filter expression, only parameter filters are
    * available.
    * </pre>

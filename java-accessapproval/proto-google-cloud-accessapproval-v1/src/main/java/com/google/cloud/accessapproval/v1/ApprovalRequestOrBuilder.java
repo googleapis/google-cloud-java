@@ -339,5 +339,5 @@ public interface ApprovalRequestOrBuilder
    */
   com.google.cloud.accessapproval.v1.DismissDecisionOrBuilder getDismissOrBuilder();
 
-  public com.google.cloud.accessapproval.v1.ApprovalRequest.DecisionCase getDecisionCase();
+  com.google.cloud.accessapproval.v1.ApprovalRequest.DecisionCase getDecisionCase();
 }

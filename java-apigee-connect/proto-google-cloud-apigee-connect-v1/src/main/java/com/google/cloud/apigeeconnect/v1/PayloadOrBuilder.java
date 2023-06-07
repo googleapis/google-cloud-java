@@ -130,5 +130,5 @@ public interface PayloadOrBuilder
    */
   com.google.cloud.apigeeconnect.v1.Action getAction();
 
-  public com.google.cloud.apigeeconnect.v1.Payload.KindCase getKindCase();
+  com.google.cloud.apigeeconnect.v1.Payload.KindCase getKindCase();
 }

@@ -272,5 +272,5 @@ public interface DataStatsOrBuilder
    */
   long getValidValueCount();
 
-  public com.google.cloud.automl.v1beta1.DataStats.StatsCase getStatsCase();
+  com.google.cloud.automl.v1beta1.DataStats.StatsCase getStatsCase();
 }

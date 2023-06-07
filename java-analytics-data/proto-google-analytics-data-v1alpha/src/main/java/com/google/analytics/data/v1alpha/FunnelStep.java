@@ -49,11 +49,6 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
     return new FunnelStep();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_FunnelStep_descriptor;
@@ -160,6 +155,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
    * of the endpoint at the microsecond granularity. For example a duration of
    * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
    * microsecond.
+   *
    * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
    * be separated by any time duration.
    * </pre>
@@ -181,6 +177,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
    * of the endpoint at the microsecond granularity. For example a duration of
    * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
    * microsecond.
+   *
    * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
    * be separated by any time duration.
    * </pre>
@@ -204,6 +201,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
    * of the endpoint at the microsecond granularity. For example a duration of
    * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
    * microsecond.
+   *
    * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
    * be separated by any time duration.
    * </pre>
@@ -920,6 +918,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -940,6 +939,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -966,6 +966,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -994,6 +995,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -1020,6 +1022,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -1051,6 +1054,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -1076,6 +1080,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -1096,6 +1101,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>
@@ -1120,6 +1126,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * of the endpoint at the microsecond granularity. For example a duration of
      * 5 seconds can be completed at 4.9 or 5.0 seconds, but not 5 seconds and 1
      * microsecond.
+     *
      * `withinDurationFromPriorStep` is optional, and if unspecified, steps may
      * be separated by any time duration.
      * </pre>

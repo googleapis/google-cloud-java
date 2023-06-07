@@ -47,11 +47,6 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
     return new GCS();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1.VolumeProto
         .internal_static_google_cloud_batch_v1_GCS_descriptor;

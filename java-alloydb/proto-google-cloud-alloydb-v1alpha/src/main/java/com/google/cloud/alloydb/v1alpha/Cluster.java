@@ -56,11 +56,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return new Cluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1alpha.ResourcesProto
         .internal_static_google_cloud_alloydb_v1alpha_Cluster_descriptor;
@@ -635,11 +630,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SecondaryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1323,18 +1313,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private PrimaryConfig() {
-      secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PrimaryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1355,7 +1340,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public static final int SECONDARY_CLUSTER_NAMES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList secondaryClusterNames_;
+    private com.google.protobuf.LazyStringArrayList secondaryClusterNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1639,8 +1625,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1668,7 +1653,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfig buildPartial() {
         com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfig result =
             new com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfig(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1676,17 +1660,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfig result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          secondaryClusterNames_ = secondaryClusterNames_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.secondaryClusterNames_ = secondaryClusterNames_;
-      }
-
       private void buildPartial0(com.google.cloud.alloydb.v1alpha.Cluster.PrimaryConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          secondaryClusterNames_.makeImmutable();
+          result.secondaryClusterNames_ = secondaryClusterNames_;
+        }
       }
 
       @java.lang.Override
@@ -1740,7 +1719,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (!other.secondaryClusterNames_.isEmpty()) {
           if (secondaryClusterNames_.isEmpty()) {
             secondaryClusterNames_ = other.secondaryClusterNames_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureSecondaryClusterNamesIsMutable();
             secondaryClusterNames_.addAll(other.secondaryClusterNames_);
@@ -1799,15 +1778,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList secondaryClusterNames_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList secondaryClusterNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureSecondaryClusterNamesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!secondaryClusterNames_.isModifiable()) {
           secondaryClusterNames_ =
               new com.google.protobuf.LazyStringArrayList(secondaryClusterNames_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1824,7 +1803,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the secondaryClusterNames.
        */
       public com.google.protobuf.ProtocolStringList getSecondaryClusterNamesList() {
-        return secondaryClusterNames_.getUnmodifiableView();
+        secondaryClusterNames_.makeImmutable();
+        return secondaryClusterNames_;
       }
       /**
        *
@@ -1901,6 +1881,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSecondaryClusterNamesIsMutable();
         secondaryClusterNames_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1925,6 +1906,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         ensureSecondaryClusterNamesIsMutable();
         secondaryClusterNames_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1946,6 +1928,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllSecondaryClusterNames(java.lang.Iterable<java.lang.String> values) {
         ensureSecondaryClusterNamesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryClusterNames_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1964,8 +1947,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSecondaryClusterNames() {
-        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        secondaryClusterNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1991,6 +1975,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureSecondaryClusterNamesIsMutable();
         secondaryClusterNames_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2060,6 +2045,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -3076,6 +3063,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -3096,6 +3084,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -3118,6 +3107,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The automated backup policy for this cluster.
+   *
    * If no policy is provided then the default policy will be used. If backups
    * are supported for the cluster, the default policy takes one backup a day,
    * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7261,6 +7251,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7281,6 +7272,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7307,6 +7299,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7336,6 +7329,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7362,6 +7356,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7395,6 +7390,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7420,6 +7416,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7441,6 +7438,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.
@@ -7466,6 +7464,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The automated backup policy for this cluster.
+     *
      * If no policy is provided then the default policy will be used. If backups
      * are supported for the cluster, the default policy takes one backup a day,
      * has a backup window of 1 hour, and retains backups for 14 days.

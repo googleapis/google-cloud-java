@@ -50,11 +50,6 @@ public final class ChannelGroup extends com.google.protobuf.GeneratedMessageV3
     return new ChannelGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ChannelGroupProto
         .internal_static_google_analytics_admin_v1alpha_ChannelGroup_descriptor;

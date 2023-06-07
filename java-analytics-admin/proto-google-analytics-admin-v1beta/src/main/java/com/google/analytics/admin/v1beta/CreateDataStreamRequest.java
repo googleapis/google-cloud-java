@@ -47,11 +47,6 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
     return new CreateDataStreamRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1beta_CreateDataStreamRequest_descriptor;

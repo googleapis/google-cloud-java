@@ -28,7 +28,9 @@ public interface AttachedResourceOrBuilder
    *
    * <pre>
    * The type of this attached resource.
+   *
    * Example: `osconfig.googleapis.com/Inventory`
+   *
    * You can find the supported attached asset types of each resource in this
    * table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
@@ -44,7 +46,9 @@ public interface AttachedResourceOrBuilder
    *
    * <pre>
    * The type of this attached resource.
+   *
    * Example: `osconfig.googleapis.com/Inventory`
+   *
    * You can find the supported attached asset types of each resource in this
    * table:
    * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`

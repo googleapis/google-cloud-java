@@ -37,6 +37,7 @@ public interface UserSegmentConditionGroupOrBuilder
    * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
    * event, and then, the condition group is determined to be matched or not for
    * this user.
+   *
    * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
    * used.
    * </pre>
@@ -60,6 +61,7 @@ public interface UserSegmentConditionGroupOrBuilder
    * USER_CRITERIA_WITHIN_SAME_EVENT`, the expression is evaluated on a single
    * event, and then, the condition group is determined to be matched or not for
    * this user.
+   *
    * Optional. If unspecified, `conditionScoping = ACROSS_ALL_SESSIONS` is
    * used.
    * </pre>

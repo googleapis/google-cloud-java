@@ -48,11 +48,6 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
     return new ListGoogleAdsLinksRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_ListGoogleAdsLinksRequest_descriptor;
@@ -153,6 +148,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
    * <pre>
    * A page token, received from a previous `ListGoogleAdsLinks` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
    * match the call that provided the page token.
    * </pre>
@@ -179,6 +175,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
    * <pre>
    * A page token, received from a previous `ListGoogleAdsLinks` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
    * match the call that provided the page token.
    * </pre>
@@ -774,6 +771,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
      * <pre>
      * A page token, received from a previous `ListGoogleAdsLinks` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
      * match the call that provided the page token.
      * </pre>
@@ -799,6 +797,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
      * <pre>
      * A page token, received from a previous `ListGoogleAdsLinks` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
      * match the call that provided the page token.
      * </pre>
@@ -824,6 +823,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
      * <pre>
      * A page token, received from a previous `ListGoogleAdsLinks` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
      * match the call that provided the page token.
      * </pre>
@@ -848,6 +848,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
      * <pre>
      * A page token, received from a previous `ListGoogleAdsLinks` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
      * match the call that provided the page token.
      * </pre>
@@ -868,6 +869,7 @@ public final class ListGoogleAdsLinksRequest extends com.google.protobuf.Generat
      * <pre>
      * A page token, received from a previous `ListGoogleAdsLinks` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListGoogleAdsLinks` must
      * match the call that provided the page token.
      * </pre>

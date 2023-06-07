@@ -45,11 +45,6 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
     return new MetricValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_MetricValue_descriptor;
@@ -66,6 +61,8 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneValueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneValue_;
 
   public enum OneValueCase

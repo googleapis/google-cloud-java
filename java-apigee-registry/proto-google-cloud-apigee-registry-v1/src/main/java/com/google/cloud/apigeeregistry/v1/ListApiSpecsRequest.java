@@ -49,11 +49,6 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
     return new ListApiSpecsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_ListApiSpecsRequest_descriptor;
@@ -157,6 +152,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous `ListApiSpecs` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListApiSpecs` must match
    * the call that provided the page token.
    * </pre>
@@ -183,6 +179,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous `ListApiSpecs` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListApiSpecs` must match
    * the call that provided the page token.
    * </pre>
@@ -860,6 +857,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListApiSpecs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiSpecs` must match
      * the call that provided the page token.
      * </pre>
@@ -885,6 +883,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListApiSpecs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiSpecs` must match
      * the call that provided the page token.
      * </pre>
@@ -910,6 +909,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListApiSpecs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiSpecs` must match
      * the call that provided the page token.
      * </pre>
@@ -934,6 +934,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListApiSpecs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiSpecs` must match
      * the call that provided the page token.
      * </pre>
@@ -954,6 +955,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListApiSpecs` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListApiSpecs` must match
      * the call that provided the page token.
      * </pre>

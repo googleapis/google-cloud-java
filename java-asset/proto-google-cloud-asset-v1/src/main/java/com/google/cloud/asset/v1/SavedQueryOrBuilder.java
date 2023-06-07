@@ -28,6 +28,7 @@ public interface SavedQueryOrBuilder
    *
    * <pre>
    * The resource name of the saved query. The format must be:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -43,6 +44,7 @@ public interface SavedQueryOrBuilder
    *
    * <pre>
    * The resource name of the saved query. The format must be:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id

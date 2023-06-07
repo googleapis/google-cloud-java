@@ -48,11 +48,6 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
     return new SearchAllResourcesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_SearchAllResourcesResponse_descriptor;

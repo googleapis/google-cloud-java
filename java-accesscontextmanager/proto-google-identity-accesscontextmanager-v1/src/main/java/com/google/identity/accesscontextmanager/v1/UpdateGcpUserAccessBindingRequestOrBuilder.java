@@ -74,6 +74,7 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -91,6 +92,7 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -108,6 +110,7 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }

@@ -32,6 +32,7 @@ public interface AccessLocationsOrBuilder
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -56,6 +57,7 @@ public interface AccessLocationsOrBuilder
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -81,6 +83,7 @@ public interface AccessLocationsOrBuilder
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -105,6 +108,7 @@ public interface AccessLocationsOrBuilder
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania

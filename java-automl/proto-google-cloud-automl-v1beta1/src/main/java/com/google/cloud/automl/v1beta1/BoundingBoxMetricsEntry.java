@@ -48,11 +48,6 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     return new BoundingBoxMetricsEntry();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Detection
         .internal_static_google_cloud_automl_v1beta1_BoundingBoxMetricsEntry_descriptor;
@@ -151,11 +146,6 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConfidenceMetricsEntry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

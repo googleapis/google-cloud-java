@@ -45,11 +45,6 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     return new StructType();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.DataTypes
         .internal_static_google_cloud_automl_v1beta1_StructType_descriptor;

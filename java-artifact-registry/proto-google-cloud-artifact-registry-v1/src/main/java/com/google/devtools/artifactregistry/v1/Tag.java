@@ -49,11 +49,6 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     return new Tag();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.TagProto
         .internal_static_google_devtools_artifactregistry_v1_Tag_descriptor;

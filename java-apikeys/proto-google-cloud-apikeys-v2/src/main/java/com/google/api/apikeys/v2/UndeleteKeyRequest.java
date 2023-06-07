@@ -47,11 +47,6 @@ public final class UndeleteKeyRequest extends com.google.protobuf.GeneratedMessa
     return new UndeleteKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.apikeys.v2.ApiKeysProto
         .internal_static_google_api_apikeys_v2_UndeleteKeyRequest_descriptor;

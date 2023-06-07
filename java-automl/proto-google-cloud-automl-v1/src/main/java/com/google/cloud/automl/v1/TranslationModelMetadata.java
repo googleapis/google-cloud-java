@@ -49,11 +49,6 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
     return new TranslationModelMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.TranslationProto
         .internal_static_google_cloud_automl_v1_TranslationModelMetadata_descriptor;

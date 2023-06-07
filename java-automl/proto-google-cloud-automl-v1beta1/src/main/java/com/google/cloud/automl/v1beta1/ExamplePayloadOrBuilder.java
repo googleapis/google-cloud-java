@@ -163,5 +163,5 @@ public interface ExamplePayloadOrBuilder
    */
   com.google.cloud.automl.v1beta1.RowOrBuilder getRowOrBuilder();
 
-  public com.google.cloud.automl.v1beta1.ExamplePayload.PayloadCase getPayloadCase();
+  com.google.cloud.automl.v1beta1.ExamplePayload.PayloadCase getPayloadCase();
 }

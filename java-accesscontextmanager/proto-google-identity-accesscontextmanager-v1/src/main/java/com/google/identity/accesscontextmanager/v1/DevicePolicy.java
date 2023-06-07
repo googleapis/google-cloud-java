@@ -57,11 +57,6 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     return new DevicePolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessLevelProto
         .internal_static_google_identity_accesscontextmanager_v1_DevicePolicy_descriptor;

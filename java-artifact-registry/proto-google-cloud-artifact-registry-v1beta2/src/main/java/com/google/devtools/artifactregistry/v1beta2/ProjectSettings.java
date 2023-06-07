@@ -48,11 +48,6 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
     return new ProjectSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.SettingsProto
         .internal_static_google_devtools_artifactregistry_v1beta2_ProjectSettings_descriptor;
@@ -260,8 +255,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The name of the project's settings.
+   *
    * Always of the form:
    * projects/{project-id}/projectSettings
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -287,8 +284,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The name of the project's settings.
+   *
    * Always of the form:
    * projects/{project-id}/projectSettings
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -733,8 +732,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the project's settings.
+     *
      * Always of the form:
      * projects/{project-id}/projectSettings
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -759,8 +760,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the project's settings.
+     *
      * Always of the form:
      * projects/{project-id}/projectSettings
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -785,8 +788,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the project's settings.
+     *
      * Always of the form:
      * projects/{project-id}/projectSettings
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -810,8 +815,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the project's settings.
+     *
      * Always of the form:
      * projects/{project-id}/projectSettings
+     *
      * In update request: never set
      * In response: always set
      * </pre>
@@ -831,8 +838,10 @@ public final class ProjectSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of the project's settings.
+     *
      * Always of the form:
      * projects/{project-id}/projectSettings
+     *
      * In update request: never set
      * In response: always set
      * </pre>

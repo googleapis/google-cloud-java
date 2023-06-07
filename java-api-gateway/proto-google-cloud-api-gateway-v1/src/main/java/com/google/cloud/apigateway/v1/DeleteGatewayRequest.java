@@ -47,11 +47,6 @@ public final class DeleteGatewayRequest extends com.google.protobuf.GeneratedMes
     return new DeleteGatewayRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigateway.v1.Apigateway
         .internal_static_google_cloud_apigateway_v1_DeleteGatewayRequest_descriptor;

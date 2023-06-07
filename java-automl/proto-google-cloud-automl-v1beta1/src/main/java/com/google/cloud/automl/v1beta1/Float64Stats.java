@@ -48,11 +48,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     return new Float64Stats();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.DataStatsOuterClass
         .internal_static_google_cloud_automl_v1beta1_Float64Stats_descriptor;
@@ -139,11 +134,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new HistogramBucket();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

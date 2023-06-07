@@ -48,11 +48,6 @@ public final class CertificateRawData extends com.google.protobuf.GeneratedMessa
     return new CertificateRawData();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.CertificateProto
         .internal_static_google_appengine_v1_CertificateRawData_descriptor;

@@ -28,6 +28,7 @@ public interface ReplaceArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The artifact to replace.
+   *
    * The `name` field is used to identify the artifact to replace.
    * Format: `{parent}/artifacts/&#42;`
    * </pre>
@@ -44,6 +45,7 @@ public interface ReplaceArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The artifact to replace.
+   *
    * The `name` field is used to identify the artifact to replace.
    * Format: `{parent}/artifacts/&#42;`
    * </pre>
@@ -60,6 +62,7 @@ public interface ReplaceArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The artifact to replace.
+   *
    * The `name` field is used to identify the artifact to replace.
    * Format: `{parent}/artifacts/&#42;`
    * </pre>

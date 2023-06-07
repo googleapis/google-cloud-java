@@ -142,6 +142,7 @@ public interface StaticFilesHandlerOrBuilder
    *
    * <pre>
    * MIME type used to serve all files served by this handler.
+   *
    * Defaults to file-specific MIME types, which are derived from each file's
    * filename extension.
    * </pre>
@@ -156,6 +157,7 @@ public interface StaticFilesHandlerOrBuilder
    *
    * <pre>
    * MIME type used to serve all files served by this handler.
+   *
    * Defaults to file-specific MIME types, which are derived from each file's
    * filename extension.
    * </pre>

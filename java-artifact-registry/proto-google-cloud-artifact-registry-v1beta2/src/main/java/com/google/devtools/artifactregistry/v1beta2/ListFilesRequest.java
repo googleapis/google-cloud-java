@@ -49,11 +49,6 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
     return new ListFilesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.FileProto
         .internal_static_google_devtools_artifactregistry_v1beta2_ListFilesRequest_descriptor;
@@ -132,9 +127,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `name`
    *   * `owner`
+   *
    *  An example of using a filter:
+   *
    *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
    *   ID starting with "a/b/".
    *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -163,9 +161,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
+   *
    *   * `name`
    *   * `owner`
+   *
    *  An example of using a filter:
+   *
    *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
    *   ID starting with "a/b/".
    *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -792,9 +793,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `name`
      *   * `owner`
+     *
      *  An example of using a filter:
+     *
      *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
      *   ID starting with "a/b/".
      *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -822,9 +826,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `name`
      *   * `owner`
+     *
      *  An example of using a filter:
+     *
      *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
      *   ID starting with "a/b/".
      *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -852,9 +859,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `name`
      *   * `owner`
+     *
      *  An example of using a filter:
+     *
      *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
      *   ID starting with "a/b/".
      *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -881,9 +891,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `name`
      *   * `owner`
+     *
      *  An example of using a filter:
+     *
      *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
      *   ID starting with "a/b/".
      *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;
@@ -906,9 +919,12 @@ public final class ListFilesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
+     *
      *   * `name`
      *   * `owner`
+     *
      *  An example of using a filter:
+     *
      *   * `name="projects/p1/locations/us-central1/repositories/repo1/files/a/b/&#42;"` --&gt; Files with an
      *   ID starting with "a/b/".
      *   * `owner="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"` --&gt;

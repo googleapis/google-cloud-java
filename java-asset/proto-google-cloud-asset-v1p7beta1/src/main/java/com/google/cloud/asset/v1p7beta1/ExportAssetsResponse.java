@@ -49,11 +49,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     return new ExportAssetsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1p7beta1.AssetServiceProto
         .internal_static_google_cloud_asset_v1p7beta1_ExportAssetsResponse_descriptor;

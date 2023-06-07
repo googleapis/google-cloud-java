@@ -45,11 +45,6 @@ public final class ImportYumArtifactsMetadata extends com.google.protobuf.Genera
     return new ImportYumArtifactsMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.YumArtifactProto
         .internal_static_google_devtools_artifactregistry_v1beta2_ImportYumArtifactsMetadata_descriptor;

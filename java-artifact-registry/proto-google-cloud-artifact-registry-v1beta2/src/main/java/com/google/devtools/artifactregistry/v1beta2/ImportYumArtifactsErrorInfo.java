@@ -45,11 +45,6 @@ public final class ImportYumArtifactsErrorInfo extends com.google.protobuf.Gener
     return new ImportYumArtifactsErrorInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.YumArtifactProto
         .internal_static_google_devtools_artifactregistry_v1beta2_ImportYumArtifactsErrorInfo_descriptor;
@@ -66,6 +61,8 @@ public final class ImportYumArtifactsErrorInfo extends com.google.protobuf.Gener
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

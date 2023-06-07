@@ -30,6 +30,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    * Required. Resource name for the access policy which owns these
    * [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -47,6 +48,7 @@ public interface ReplaceServicePerimetersRequestOrBuilder
    * Required. Resource name for the access policy which owns these
    * [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *

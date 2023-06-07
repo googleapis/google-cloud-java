@@ -188,5 +188,5 @@ public interface AccessFilterOrBuilder
    */
   com.google.protobuf.ByteString getFieldNameBytes();
 
-  public com.google.analytics.admin.v1alpha.AccessFilter.OneFilterCase getOneFilterCase();
+  com.google.analytics.admin.v1alpha.AccessFilter.OneFilterCase getOneFilterCase();
 }

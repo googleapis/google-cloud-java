@@ -48,11 +48,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
     return new BatchRunPivotReportsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_BatchRunPivotReportsResponse_descriptor;

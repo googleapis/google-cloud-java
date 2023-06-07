@@ -406,5 +406,5 @@ public interface ModelEvaluationOrBuilder
    */
   int getEvaluatedExampleCount();
 
-  public com.google.cloud.automl.v1.ModelEvaluation.MetricsCase getMetricsCase();
+  com.google.cloud.automl.v1.ModelEvaluation.MetricsCase getMetricsCase();
 }

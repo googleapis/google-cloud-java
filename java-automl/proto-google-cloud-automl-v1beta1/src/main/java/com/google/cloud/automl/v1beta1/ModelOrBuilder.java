@@ -578,5 +578,5 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.Model.DeploymentState getDeploymentState();
 
-  public com.google.cloud.automl.v1beta1.Model.ModelMetadataCase getModelMetadataCase();
+  com.google.cloud.automl.v1beta1.Model.ModelMetadataCase getModelMetadataCase();
 }

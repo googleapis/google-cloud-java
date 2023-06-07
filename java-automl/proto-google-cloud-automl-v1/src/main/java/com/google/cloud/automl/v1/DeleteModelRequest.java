@@ -47,11 +47,6 @@ public final class DeleteModelRequest extends com.google.protobuf.GeneratedMessa
     return new DeleteModelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.AutoMlProto
         .internal_static_google_cloud_automl_v1_DeleteModelRequest_descriptor;

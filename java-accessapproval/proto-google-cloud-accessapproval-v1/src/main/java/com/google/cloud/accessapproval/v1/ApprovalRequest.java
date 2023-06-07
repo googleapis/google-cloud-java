@@ -48,11 +48,6 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     return new ApprovalRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_ApprovalRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   private int decisionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object decision_;
 
   public enum DecisionCase

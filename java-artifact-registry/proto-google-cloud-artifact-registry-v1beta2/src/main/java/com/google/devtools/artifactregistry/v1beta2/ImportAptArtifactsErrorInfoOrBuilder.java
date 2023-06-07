@@ -97,6 +97,6 @@ public interface ImportAptArtifactsErrorInfoOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
-  public com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo.SourceCase
+  com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo.SourceCase
       getSourceCase();
 }

@@ -46,11 +46,6 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     return new NetworkUtilization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.VersionProto
         .internal_static_google_appengine_v1_NetworkUtilization_descriptor;

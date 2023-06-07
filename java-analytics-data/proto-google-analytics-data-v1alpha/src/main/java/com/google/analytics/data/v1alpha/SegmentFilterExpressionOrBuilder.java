@@ -207,5 +207,5 @@ public interface SegmentFilterExpressionOrBuilder
    */
   com.google.analytics.data.v1alpha.SegmentEventFilterOrBuilder getSegmentEventFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.SegmentFilterExpression.ExprCase getExprCase();
+  com.google.analytics.data.v1alpha.SegmentFilterExpression.ExprCase getExprCase();
 }

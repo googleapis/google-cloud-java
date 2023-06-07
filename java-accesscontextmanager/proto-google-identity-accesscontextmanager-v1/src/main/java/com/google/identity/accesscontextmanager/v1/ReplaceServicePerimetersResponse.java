@@ -49,11 +49,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
     return new ReplaceServicePerimetersResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessContextManagerProto
         .internal_static_google_identity_accesscontextmanager_v1_ReplaceServicePerimetersResponse_descriptor;

@@ -39,7 +39,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
 
   private ServerNetworkTemplate() {
     name_ = "";
-    applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     logicalInterfaces_ = java.util.Collections.emptyList();
   }
 
@@ -47,11 +47,6 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ServerNetworkTemplate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -178,11 +173,6 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LogicalInterface();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1322,7 +1312,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
   public static final int APPLICABLE_INSTANCE_TYPES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList applicableInstanceTypes_;
+  private com.google.protobuf.LazyStringArrayList applicableInstanceTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1701,8 +1692,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (logicalInterfacesBuilder_ == null) {
         logicalInterfaces_ = java.util.Collections.emptyList();
       } else {
@@ -1747,11 +1737,6 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
 
     private void buildPartialRepeatedFields(
         com.google.cloud.baremetalsolution.v2.ServerNetworkTemplate result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        applicableInstanceTypes_ = applicableInstanceTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.applicableInstanceTypes_ = applicableInstanceTypes_;
       if (logicalInterfacesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           logicalInterfaces_ = java.util.Collections.unmodifiableList(logicalInterfaces_);
@@ -1767,6 +1752,10 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        applicableInstanceTypes_.makeImmutable();
+        result.applicableInstanceTypes_ = applicableInstanceTypes_;
       }
     }
 
@@ -1824,7 +1813,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       if (!other.applicableInstanceTypes_.isEmpty()) {
         if (applicableInstanceTypes_.isEmpty()) {
           applicableInstanceTypes_ = other.applicableInstanceTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureApplicableInstanceTypesIsMutable();
           applicableInstanceTypes_.addAll(other.applicableInstanceTypes_);
@@ -2052,15 +2041,15 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList applicableInstanceTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList applicableInstanceTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureApplicableInstanceTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!applicableInstanceTypes_.isModifiable()) {
         applicableInstanceTypes_ =
             new com.google.protobuf.LazyStringArrayList(applicableInstanceTypes_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2074,7 +2063,8 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      * @return A list containing the applicableInstanceTypes.
      */
     public com.google.protobuf.ProtocolStringList getApplicableInstanceTypesList() {
-      return applicableInstanceTypes_.getUnmodifiableView();
+      applicableInstanceTypes_.makeImmutable();
+      return applicableInstanceTypes_;
     }
     /**
      *
@@ -2139,6 +2129,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       ensureApplicableInstanceTypesIsMutable();
       applicableInstanceTypes_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2160,6 +2151,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       }
       ensureApplicableInstanceTypesIsMutable();
       applicableInstanceTypes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2178,6 +2170,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
     public Builder addAllApplicableInstanceTypes(java.lang.Iterable<java.lang.String> values) {
       ensureApplicableInstanceTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, applicableInstanceTypes_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2193,8 +2186,9 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearApplicableInstanceTypes() {
-      applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      applicableInstanceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2217,6 +2211,7 @@ public final class ServerNetworkTemplate extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureApplicableInstanceTypesIsMutable();
       applicableInstanceTypes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

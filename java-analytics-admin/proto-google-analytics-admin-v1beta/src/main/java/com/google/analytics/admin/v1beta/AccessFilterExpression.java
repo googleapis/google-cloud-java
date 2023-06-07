@@ -46,11 +46,6 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
     return new AccessFilterExpression();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AccessReportProto
         .internal_static_google_analytics_admin_v1beta_AccessFilterExpression_descriptor;
@@ -67,6 +62,8 @@ public final class AccessFilterExpression extends com.google.protobuf.GeneratedM
   }
 
   private int oneExpressionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneExpression_;
 
   public enum OneExpressionCase

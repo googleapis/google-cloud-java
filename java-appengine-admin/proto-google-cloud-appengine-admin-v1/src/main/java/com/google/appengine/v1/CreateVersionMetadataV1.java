@@ -48,11 +48,6 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
     return new CreateVersionMetadataV1();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.OperationProto
         .internal_static_google_appengine_v1_CreateVersionMetadataV1_descriptor;

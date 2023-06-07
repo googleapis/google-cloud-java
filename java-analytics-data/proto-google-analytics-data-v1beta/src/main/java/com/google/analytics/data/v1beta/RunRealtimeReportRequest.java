@@ -52,11 +52,6 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     return new RunRealtimeReportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_RunRealtimeReportRequest_descriptor;
@@ -84,6 +79,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
    * Specified in the URL path and not the body. To learn more, see [where to
    * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -111,6 +107,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
    * Specified in the URL path and not the body. To learn more, see [where to
    * find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -385,6 +382,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
    * API returns a maximum of 100,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
+   *
    * The API can also return fewer rows than the requested `limit`, if there
    * aren't as many dimension values as the `limit`. For instance, there are
    * fewer than 300 possible values for the dimension `country`, so when
@@ -1484,6 +1482,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * Specified in the URL path and not the body. To learn more, see [where to
      * find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1510,6 +1509,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * Specified in the URL path and not the body. To learn more, see [where to
      * find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1536,6 +1536,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * Specified in the URL path and not the body. To learn more, see [where to
      * find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1561,6 +1562,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * Specified in the URL path and not the body. To learn more, see [where to
      * find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1582,6 +1584,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * Specified in the URL path and not the body. To learn more, see [where to
      * find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -2688,6 +2691,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
      * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
@@ -2710,6 +2714,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
      * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
@@ -2736,6 +2741,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
      * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when

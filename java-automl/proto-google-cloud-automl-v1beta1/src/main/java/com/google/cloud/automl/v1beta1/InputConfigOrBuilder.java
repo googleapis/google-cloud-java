@@ -106,6 +106,7 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -123,6 +124,7 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -143,6 +145,7 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -160,6 +163,7 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -181,6 +185,7 @@ public interface InputConfigOrBuilder
    * Additional domain-specific parameters describing the semantic of the
    * imported data, any string must be up to 25000
    * characters long.
+   *
    * *  For Tables:
    *    `schema_inference_version` - (integer) Required. The version of the
    *        algorithm that should be used for the initial inference of the
@@ -192,5 +197,5 @@ public interface InputConfigOrBuilder
    */
   java.lang.String getParamsOrThrow(java.lang.String key);
 
-  public com.google.cloud.automl.v1beta1.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.automl.v1beta1.InputConfig.SourceCase getSourceCase();
 }

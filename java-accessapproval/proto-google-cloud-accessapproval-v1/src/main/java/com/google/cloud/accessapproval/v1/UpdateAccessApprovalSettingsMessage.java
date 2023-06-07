@@ -47,11 +47,6 @@ public final class UpdateAccessApprovalSettingsMessage
     return new UpdateAccessApprovalSettingsMessage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_UpdateAccessApprovalSettingsMessage_descriptor;
@@ -128,6 +123,7 @@ public final class UpdateAccessApprovalSettingsMessage
    * supported. For each field, if it is included, the currently stored value
    * will be entirely overwritten with the value of the field passed in this
    * request.
+   *
    * For the `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If this field is left unset, only the notification_emails field will be
@@ -151,6 +147,7 @@ public final class UpdateAccessApprovalSettingsMessage
    * supported. For each field, if it is included, the currently stored value
    * will be entirely overwritten with the value of the field passed in this
    * request.
+   *
    * For the `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If this field is left unset, only the notification_emails field will be
@@ -174,6 +171,7 @@ public final class UpdateAccessApprovalSettingsMessage
    * supported. For each field, if it is included, the currently stored value
    * will be entirely overwritten with the value of the field passed in this
    * request.
+   *
    * For the `FieldMask` definition, see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If this field is left unset, only the notification_emails field will be
@@ -778,6 +776,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -800,6 +799,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -828,6 +828,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -858,6 +859,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -885,6 +887,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -918,6 +921,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -945,6 +949,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -967,6 +972,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be
@@ -993,6 +999,7 @@ public final class UpdateAccessApprovalSettingsMessage
      * supported. For each field, if it is included, the currently stored value
      * will be entirely overwritten with the value of the field passed in this
      * request.
+     *
      * For the `FieldMask` definition, see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * If this field is left unset, only the notification_emails field will be

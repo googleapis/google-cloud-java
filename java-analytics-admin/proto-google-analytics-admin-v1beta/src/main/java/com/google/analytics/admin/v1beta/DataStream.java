@@ -49,11 +49,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     return new DataStream();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.ResourcesProto
         .internal_static_google_analytics_admin_v1beta_DataStream_descriptor;
@@ -363,11 +358,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new WebStreamData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1429,11 +1419,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       return new AndroidAppStreamData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1beta.ResourcesProto
           .internal_static_google_analytics_admin_v1beta_DataStream_AndroidAppStreamData_descriptor;
@@ -2316,11 +2301,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       return new IosAppStreamData();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1beta.ResourcesProto
           .internal_static_google_analytics_admin_v1beta_DataStream_IosAppStreamData_descriptor;
@@ -3121,6 +3101,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int streamDataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object streamData_;
 
   public enum StreamDataCase
@@ -3450,7 +3432,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Human-readable display name for the Data Stream.
+   *
    * Required for web data streams.
+   *
    * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
@@ -3475,7 +3459,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Human-readable display name for the Data Stream.
+   *
    * Required for web data streams.
+   *
    * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
@@ -5117,7 +5103,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Human-readable display name for the Data Stream.
+     *
      * Required for web data streams.
+     *
      * The max allowed display name length is 255 UTF-16 code units.
      * </pre>
      *
@@ -5141,7 +5129,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Human-readable display name for the Data Stream.
+     *
      * Required for web data streams.
+     *
      * The max allowed display name length is 255 UTF-16 code units.
      * </pre>
      *
@@ -5165,7 +5155,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Human-readable display name for the Data Stream.
+     *
      * Required for web data streams.
+     *
      * The max allowed display name length is 255 UTF-16 code units.
      * </pre>
      *
@@ -5188,7 +5180,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Human-readable display name for the Data Stream.
+     *
      * Required for web data streams.
+     *
      * The max allowed display name length is 255 UTF-16 code units.
      * </pre>
      *
@@ -5207,7 +5201,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Human-readable display name for the Data Stream.
+     *
      * Required for web data streams.
+     *
      * The max allowed display name length is 255 UTF-16 code units.
      * </pre>
      *

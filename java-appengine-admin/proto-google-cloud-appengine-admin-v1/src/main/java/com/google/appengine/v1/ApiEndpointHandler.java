@@ -47,11 +47,6 @@ public final class ApiEndpointHandler extends com.google.protobuf.GeneratedMessa
     return new ApiEndpointHandler();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AppYamlProto
         .internal_static_google_appengine_v1_ApiEndpointHandler_descriptor;

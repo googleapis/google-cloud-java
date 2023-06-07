@@ -53,6 +53,7 @@ public interface QueryAssetsResponseOrBuilder
    *
    * <pre>
    * The query response, which can be either an `error` or a valid `response`.
+   *
    * If `done` == `false` and the query result is being saved in a output, the
    * output_config field will be set.
    * If `done` == `true`, exactly one of
@@ -173,5 +174,5 @@ public interface QueryAssetsResponseOrBuilder
    */
   com.google.cloud.asset.v1.QueryAssetsOutputConfigOrBuilder getOutputConfigOrBuilder();
 
-  public com.google.cloud.asset.v1.QueryAssetsResponse.ResponseCase getResponseCase();
+  com.google.cloud.asset.v1.QueryAssetsResponse.ResponseCase getResponseCase();
 }

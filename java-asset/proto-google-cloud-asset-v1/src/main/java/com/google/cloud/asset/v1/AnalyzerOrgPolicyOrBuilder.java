@@ -31,6 +31,7 @@ public interface AnalyzerOrgPolicyOrBuilder
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy is
    * set.
+   *
    * Notice that some type of constraints are defined with default policy. This
    * field will be empty for them.
    * </pre>
@@ -48,6 +49,7 @@ public interface AnalyzerOrgPolicyOrBuilder
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy is
    * set.
+   *
    * Notice that some type of constraints are defined with default policy. This
    * field will be empty for them.
    * </pre>
@@ -66,6 +68,7 @@ public interface AnalyzerOrgPolicyOrBuilder
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy
    * applies to.
+   *
    * For any user defined org policies, this field has the same value as
    * the [attached_resource] field. Only for default policy, this field has
    * the different value.
@@ -84,6 +87,7 @@ public interface AnalyzerOrgPolicyOrBuilder
    * (https://cloud.google.com/asset-inventory/docs/resource-name-format) of
    * an organization/folder/project resource where this organization policy
    * applies to.
+   *
    * For any user defined org policies, this field has the same value as
    * the [attached_resource] field. Only for default policy, this field has
    * the different value.

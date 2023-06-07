@@ -230,5 +230,5 @@ public interface RestrictionsOrBuilder
    */
   com.google.api.apikeys.v2.ApiTargetOrBuilder getApiTargetsOrBuilder(int index);
 
-  public com.google.api.apikeys.v2.Restrictions.ClientRestrictionsCase getClientRestrictionsCase();
+  com.google.api.apikeys.v2.Restrictions.ClientRestrictionsCase getClientRestrictionsCase();
 }

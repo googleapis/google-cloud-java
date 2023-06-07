@@ -47,11 +47,6 @@ public final class StreamInfo extends com.google.protobuf.GeneratedMessageV3
     return new StreamInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeconnect.v1.TetherProto
         .internal_static_google_cloud_apigeeconnect_v1_StreamInfo_descriptor;

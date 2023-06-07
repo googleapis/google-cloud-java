@@ -58,5 +58,5 @@ public interface OutputResultOrBuilder
    */
   com.google.cloud.asset.v1p7beta1.GcsOutputResultOrBuilder getGcsResultOrBuilder();
 
-  public com.google.cloud.asset.v1p7beta1.OutputResult.ResultCase getResultCase();
+  com.google.cloud.asset.v1p7beta1.OutputResult.ResultCase getResultCase();
 }

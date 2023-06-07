@@ -47,11 +47,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     return new BatchPredictResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.PredictionServiceProto
         .internal_static_google_cloud_automl_v1beta1_BatchPredictResult_descriptor;
@@ -109,9 +104,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -137,9 +134,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -156,9 +155,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -182,9 +183,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -611,9 +614,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.
@@ -639,9 +644,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.
@@ -658,9 +665,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.
@@ -684,9 +693,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.
@@ -716,9 +727,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.
@@ -744,9 +757,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.
@@ -770,9 +785,11 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * *  For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * *  For Video Object Tracking:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      frame could have been returned.

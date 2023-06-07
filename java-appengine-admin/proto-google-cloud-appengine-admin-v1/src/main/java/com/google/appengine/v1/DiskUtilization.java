@@ -46,11 +46,6 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     return new DiskUtilization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.VersionProto
         .internal_static_google_appengine_v1_DiskUtilization_descriptor;

@@ -28,6 +28,7 @@ public interface UpdateNetworkRequestOrBuilder
    *
    * <pre>
    * Required. The network to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/networks/{network}
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateNetworkRequestOrBuilder
    *
    * <pre>
    * Required. The network to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/networks/{network}
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateNetworkRequestOrBuilder
    *
    * <pre>
    * Required. The network to update.
+   *
    * The `name` field is used to identify the instance to update.
    * Format: projects/{project}/locations/{location}/networks/{network}
    * </pre>

@@ -28,8 +28,10 @@ public interface ProjectSettingsOrBuilder
    *
    * <pre>
    * The name of the project's settings.
+   *
    * Always of the form:
    * projects/{project-id}/projectSettings
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -44,8 +46,10 @@ public interface ProjectSettingsOrBuilder
    *
    * <pre>
    * The name of the project's settings.
+   *
    * Always of the form:
    * projects/{project-id}/projectSettings
+   *
    * In update request: never set
    * In response: always set
    * </pre>

@@ -159,7 +159,6 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    */
   com.google.protobuf.ByteString getTargetBytes();
 
-  public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest
-          .ProjectOrWorkloadResourceCase
+  com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest.ProjectOrWorkloadResourceCase
       getProjectOrWorkloadResourceCase();
 }

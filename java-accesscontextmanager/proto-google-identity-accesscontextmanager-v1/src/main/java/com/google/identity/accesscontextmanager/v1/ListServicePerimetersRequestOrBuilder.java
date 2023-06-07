@@ -29,6 +29,7 @@ public interface ListServicePerimetersRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy to list [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] from.
+   *
    * Format:
    * `accessPolicies/{policy_id}`
    * </pre>
@@ -46,6 +47,7 @@ public interface ListServicePerimetersRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy to list [Service Perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] from.
+   *
    * Format:
    * `accessPolicies/{policy_id}`
    * </pre>

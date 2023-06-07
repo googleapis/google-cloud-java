@@ -55,6 +55,7 @@ public interface BatchCreateRowsRequestOrBuilder
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -68,6 +69,7 @@ public interface BatchCreateRowsRequestOrBuilder
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -81,6 +83,7 @@ public interface BatchCreateRowsRequestOrBuilder
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -94,6 +97,7 @@ public interface BatchCreateRowsRequestOrBuilder
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -108,6 +112,7 @@ public interface BatchCreateRowsRequestOrBuilder
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *

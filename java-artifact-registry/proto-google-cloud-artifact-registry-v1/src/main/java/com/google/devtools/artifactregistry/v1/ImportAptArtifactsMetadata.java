@@ -45,11 +45,6 @@ public final class ImportAptArtifactsMetadata extends com.google.protobuf.Genera
     return new ImportAptArtifactsMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.AptArtifactProto
         .internal_static_google_devtools_artifactregistry_v1_ImportAptArtifactsMetadata_descriptor;

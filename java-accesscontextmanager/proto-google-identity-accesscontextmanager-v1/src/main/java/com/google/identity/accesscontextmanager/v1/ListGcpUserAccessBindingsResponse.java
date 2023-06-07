@@ -50,11 +50,6 @@ public final class ListGcpUserAccessBindingsResponse extends com.google.protobuf
     return new ListGcpUserAccessBindingsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessContextManagerProto
         .internal_static_google_identity_accesscontextmanager_v1_ListGcpUserAccessBindingsResponse_descriptor;

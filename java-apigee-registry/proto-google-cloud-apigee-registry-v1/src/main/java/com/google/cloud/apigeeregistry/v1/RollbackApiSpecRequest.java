@@ -48,11 +48,6 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
     return new RollbackApiSpecRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_RollbackApiSpecRequest_descriptor;
@@ -133,6 +128,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The revision ID to roll back to.
    * It must be a revision of the same spec.
+   *
    *   Example: `c7cfa2a8`
    * </pre>
    *
@@ -158,6 +154,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The revision ID to roll back to.
    * It must be a revision of the same spec.
+   *
    *   Example: `c7cfa2a8`
    * </pre>
    *
@@ -668,6 +665,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same spec.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -692,6 +690,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same spec.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -716,6 +715,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same spec.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -739,6 +739,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same spec.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *
@@ -758,6 +759,7 @@ public final class RollbackApiSpecRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The revision ID to roll back to.
      * It must be a revision of the same spec.
+     *
      *   Example: `c7cfa2a8`
      * </pre>
      *

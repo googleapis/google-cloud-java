@@ -28,7 +28,9 @@ public interface TextExtractionModelMetadataOrBuilder
    *
    * <pre>
    * Indicates the scope of model use case.
+   *
    * * `default`: Use to train a general text extraction model. Default value.
+   *
    * * `health_care`: Use to train a text extraction model that is tuned for
    *   healthcare applications.
    * </pre>
@@ -43,7 +45,9 @@ public interface TextExtractionModelMetadataOrBuilder
    *
    * <pre>
    * Indicates the scope of model use case.
+   *
    * * `default`: Use to train a general text extraction model. Default value.
+   *
    * * `health_care`: Use to train a text extraction model that is tuned for
    *   healthcare applications.
    * </pre>

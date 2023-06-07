@@ -116,6 +116,5 @@ public interface SignatureInfoOrBuilder
    */
   com.google.protobuf.ByteString getCustomerKmsKeyVersionBytes();
 
-  public com.google.cloud.accessapproval.v1.SignatureInfo.VerificationInfoCase
-      getVerificationInfoCase();
+  com.google.cloud.accessapproval.v1.SignatureInfo.VerificationInfoCase getVerificationInfoCase();
 }

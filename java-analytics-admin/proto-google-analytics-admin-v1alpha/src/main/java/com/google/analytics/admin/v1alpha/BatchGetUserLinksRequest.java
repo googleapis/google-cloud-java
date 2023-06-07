@@ -39,18 +39,13 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
 
   private BatchGetUserLinksRequest() {
     parent_ = "";
-    names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    names_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchGetUserLinksRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,7 +127,8 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
   public static final int NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList names_;
+  private com.google.protobuf.LazyStringArrayList names_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -424,8 +420,7 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      names_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -453,7 +448,6 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
     public com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest buildPartial() {
       com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest result =
           new com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -461,19 +455,14 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        names_ = names_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.names_ = names_;
-    }
-
     private void buildPartial0(com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        names_.makeImmutable();
+        result.names_ = names_;
       }
     }
 
@@ -531,7 +520,7 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       if (!other.names_.isEmpty()) {
         if (names_.isEmpty()) {
           names_ = other.names_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureNamesIsMutable();
           names_.addAll(other.names_);
@@ -727,14 +716,14 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.protobuf.LazyStringList names_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList names_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!names_.isModifiable()) {
         names_ = new com.google.protobuf.LazyStringArrayList(names_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -752,7 +741,8 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
      * @return A list containing the names.
      */
     public com.google.protobuf.ProtocolStringList getNamesList() {
-      return names_.getUnmodifiableView();
+      names_.makeImmutable();
+      return names_;
     }
     /**
      *
@@ -833,6 +823,7 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       }
       ensureNamesIsMutable();
       names_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -858,6 +849,7 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       }
       ensureNamesIsMutable();
       names_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -880,6 +872,7 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
     public Builder addAllNames(java.lang.Iterable<java.lang.String> values) {
       ensureNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, names_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -899,8 +892,9 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearNames() {
-      names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      names_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -927,6 +921,7 @@ public final class BatchGetUserLinksRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureNamesIsMutable();
       names_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

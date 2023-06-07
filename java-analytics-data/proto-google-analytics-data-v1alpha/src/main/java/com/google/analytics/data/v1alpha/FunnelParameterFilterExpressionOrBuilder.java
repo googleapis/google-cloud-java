@@ -173,5 +173,5 @@ public interface FunnelParameterFilterExpressionOrBuilder
   com.google.analytics.data.v1alpha.FunnelParameterFilterOrBuilder
       getFunnelParameterFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.FunnelParameterFilterExpression.ExprCase getExprCase();
+  com.google.analytics.data.v1alpha.FunnelParameterFilterExpression.ExprCase getExprCase();
 }

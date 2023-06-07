@@ -26,6 +26,7 @@ package com.google.analytics.data.v1alpha;
  * of users, one segment might be users from a particular country or city.
  * Another segment might be users who purchase a particular line of products or
  * who visit a specific part of your site or trigger certain events in your app.
+ *
  * To learn more, see [GA4 Segment
  * Builder](https://support.google.com/analytics/answer/9304353).
  * </pre>
@@ -52,11 +53,6 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
     return new Segment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_Segment_descriptor;
@@ -73,6 +69,8 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneSegmentScopeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneSegmentScope_;
 
   public enum OneSegmentScopeCase
@@ -559,6 +557,7 @@ public final class Segment extends com.google.protobuf.GeneratedMessageV3
    * of users, one segment might be users from a particular country or city.
    * Another segment might be users who purchase a particular line of products or
    * who visit a specific part of your site or trigger certain events in your app.
+   *
    * To learn more, see [GA4 Segment
    * Builder](https://support.google.com/analytics/answer/9304353).
    * </pre>

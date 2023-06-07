@@ -165,6 +165,7 @@ public interface RunnableOrBuilder
    * flag indicates that this Runnable must be run even if the Task has already
    * failed. This is useful for Runnables that copy output files off of the VM
    * or for debugging.
+   *
    * The always_run flag does not override the Task's overall max_run_duration.
    * If the max_run_duration has expired then no further Runnables will execute,
    * not even always_run Runnables.
@@ -307,5 +308,5 @@ public interface RunnableOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
-  public com.google.cloud.batch.v1alpha.Runnable.ExecutableCase getExecutableCase();
+  com.google.cloud.batch.v1alpha.Runnable.ExecutableCase getExecutableCase();
 }

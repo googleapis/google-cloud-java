@@ -560,5 +560,5 @@ public interface DatasetOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloud.automl.v1beta1.Dataset.DatasetMetadataCase getDatasetMetadataCase();
+  com.google.cloud.automl.v1beta1.Dataset.DatasetMetadataCase getDatasetMetadataCase();
 }

@@ -49,11 +49,6 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
     return new ListApprovalRequestsMessage();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_ListApprovalRequestsMessage_descriptor;
@@ -132,6 +127,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
+   *
    *   * [not set]: Requests that are pending or have active approvals.
    *   * ALL: All requests.
    *   * PENDING: Only pending requests.
@@ -165,6 +161,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
    * <pre>
    * A filter on the type of approval requests to retrieve. Must be one of the
    * following values:
+   *
    *   * [not set]: Requests that are pending or have active approvals.
    *   * ALL: All requests.
    *   * PENDING: Only pending requests.
@@ -796,6 +793,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
+     *
      *   * [not set]: Requests that are pending or have active approvals.
      *   * ALL: All requests.
      *   * PENDING: Only pending requests.
@@ -828,6 +826,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
+     *
      *   * [not set]: Requests that are pending or have active approvals.
      *   * ALL: All requests.
      *   * PENDING: Only pending requests.
@@ -860,6 +859,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
+     *
      *   * [not set]: Requests that are pending or have active approvals.
      *   * ALL: All requests.
      *   * PENDING: Only pending requests.
@@ -891,6 +891,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
+     *
      *   * [not set]: Requests that are pending or have active approvals.
      *   * ALL: All requests.
      *   * PENDING: Only pending requests.
@@ -918,6 +919,7 @@ public final class ListApprovalRequestsMessage extends com.google.protobuf.Gener
      * <pre>
      * A filter on the type of approval requests to retrieve. Must be one of the
      * following values:
+     *
      *   * [not set]: Requests that are pending or have active approvals.
      *   * ALL: All requests.
      *   * PENDING: Only pending requests.

@@ -47,11 +47,6 @@ public final class FunnelFilterExpressionList extends com.google.protobuf.Genera
     return new FunnelFilterExpressionList();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_FunnelFilterExpressionList_descriptor;

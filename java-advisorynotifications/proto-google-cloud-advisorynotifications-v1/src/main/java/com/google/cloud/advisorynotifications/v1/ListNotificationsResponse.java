@@ -48,11 +48,6 @@ public final class ListNotificationsResponse extends com.google.protobuf.Generat
     return new ListNotificationsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.advisorynotifications.v1.ServiceProto
         .internal_static_google_cloud_advisorynotifications_v1_ListNotificationsResponse_descriptor;

@@ -47,11 +47,6 @@ public final class UpdateDomainMappingRequest extends com.google.protobuf.Genera
     return new UpdateDomainMappingRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AppengineProto
         .internal_static_google_appengine_v1_UpdateDomainMappingRequest_descriptor;

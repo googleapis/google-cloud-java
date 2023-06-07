@@ -48,11 +48,6 @@ public final class CheckCompatibilityResponse extends com.google.protobuf.Genera
     return new CheckCompatibilityResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_CheckCompatibilityResponse_descriptor;

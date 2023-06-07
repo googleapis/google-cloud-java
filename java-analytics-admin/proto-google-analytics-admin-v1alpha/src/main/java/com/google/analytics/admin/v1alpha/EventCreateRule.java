@@ -25,8 +25,10 @@ package com.google.analytics.admin.v1alpha;
  * An Event Create Rule defines conditions that will trigger the creation
  * of an entirely new event based upon matched criteria of a source event.
  * Additional mutations of the parameters from the source event can be defined.
+ *
  * Unlike Event Edit rules, Event Creation Rules have no defined order.  They
  * will all be run independently.
+ *
  * Event Edit and Event Create rules can't be used to modify an event created
  * from an Event Create rule.
  * </pre>
@@ -54,11 +56,6 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EventCreateRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,6 +137,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The name of the new event to be created.
+   *
    * This value must:
    * * be less than 40 characters
    * * consist only of letters, digits or _ (underscores)
@@ -167,6 +165,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The name of the new event to be created.
+   *
    * This value must:
    * * be less than 40 characters
    * * consist only of letters, digits or _ (underscores)
@@ -594,8 +593,10 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
    * An Event Create Rule defines conditions that will trigger the creation
    * of an entirely new event based upon matched criteria of a source event.
    * Additional mutations of the parameters from the source event can be defined.
+   *
    * Unlike Event Edit rules, Event Creation Rules have no defined order.  They
    * will all be run independently.
+   *
    * Event Edit and Event Create rules can't be used to modify an event created
    * from an Event Create rule.
    * </pre>
@@ -1045,6 +1046,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the new event to be created.
+     *
      * This value must:
      * * be less than 40 characters
      * * consist only of letters, digits or _ (underscores)
@@ -1071,6 +1073,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the new event to be created.
+     *
      * This value must:
      * * be less than 40 characters
      * * consist only of letters, digits or _ (underscores)
@@ -1097,6 +1100,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the new event to be created.
+     *
      * This value must:
      * * be less than 40 characters
      * * consist only of letters, digits or _ (underscores)
@@ -1122,6 +1126,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the new event to be created.
+     *
      * This value must:
      * * be less than 40 characters
      * * consist only of letters, digits or _ (underscores)
@@ -1143,6 +1148,7 @@ public final class EventCreateRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The name of the new event to be created.
+     *
      * This value must:
      * * be less than 40 characters
      * * consist only of letters, digits or _ (underscores)

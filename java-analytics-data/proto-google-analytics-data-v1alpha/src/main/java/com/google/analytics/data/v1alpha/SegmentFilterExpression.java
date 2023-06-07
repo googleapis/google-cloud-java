@@ -45,11 +45,6 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
     return new SegmentFilterExpression();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_SegmentFilterExpression_descriptor;
@@ -66,6 +61,8 @@ public final class SegmentFilterExpression extends com.google.protobuf.Generated
   }
 
   private int exprCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object expr_;
 
   public enum ExprCase

@@ -51,11 +51,6 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
     return new AccessLevel();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessLevelProto
         .internal_static_google_identity_accesscontextmanager_v1_AccessLevel_descriptor;
@@ -72,6 +67,8 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int levelCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object level_;
 
   public enum LevelCase

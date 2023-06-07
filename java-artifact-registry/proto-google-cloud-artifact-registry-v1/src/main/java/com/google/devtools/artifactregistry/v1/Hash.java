@@ -48,11 +48,6 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
     return new Hash();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.FileProto
         .internal_static_google_devtools_artifactregistry_v1_Hash_descriptor;

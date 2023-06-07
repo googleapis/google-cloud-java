@@ -28,6 +28,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -42,6 +43,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -55,6 +57,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -68,6 +71,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *
@@ -83,6 +87,7 @@ public interface CategoryStatsOrBuilder
    *
    * <pre>
    * The statistics of the top 20 CATEGORY values, ordered by
+   *
    * [count][google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats.count].
    * </pre>
    *

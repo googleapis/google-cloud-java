@@ -48,11 +48,6 @@ public final class ListApprovalRequestsResponse extends com.google.protobuf.Gene
     return new ListApprovalRequestsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_ListApprovalRequestsResponse_descriptor;

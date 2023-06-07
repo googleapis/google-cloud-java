@@ -50,6 +50,7 @@ public interface UserSequenceStepOrBuilder
    * session for the user to match the sequence. `stepScoping =
    * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
    * ACROSS_ALL_SESSIONS`.
+   *
    * Optional. If unspecified, `stepScoping` uses the same
    * `UserCriteriaScoping` as the `sequenceScoping`.
    * </pre>
@@ -69,6 +70,7 @@ public interface UserSequenceStepOrBuilder
    * session for the user to match the sequence. `stepScoping =
    * ACROSS_ALL_SESSIONS` is only allowed if the `sequenceScoping =
    * ACROSS_ALL_SESSIONS`.
+   *
    * Optional. If unspecified, `stepScoping` uses the same
    * `UserCriteriaScoping` as the `sequenceScoping`.
    * </pre>

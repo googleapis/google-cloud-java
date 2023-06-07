@@ -97,6 +97,6 @@ public interface ImportYumArtifactsErrorInfoOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
-  public com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo.SourceCase
+  com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo.SourceCase
       getSourceCase();
 }

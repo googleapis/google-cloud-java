@@ -54,6 +54,7 @@ public interface ComputeResourceOrBuilder
    *
    * <pre>
    * The GPU count.
+   *
    * Not yet implemented.
    * </pre>
    *

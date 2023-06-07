@@ -45,11 +45,6 @@ public final class UpdateVPCSCConfigRequest extends com.google.protobuf.Generate
     return new UpdateVPCSCConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1.VPCSCConfigProto
         .internal_static_google_devtools_artifactregistry_v1_UpdateVPCSCConfigRequest_descriptor;

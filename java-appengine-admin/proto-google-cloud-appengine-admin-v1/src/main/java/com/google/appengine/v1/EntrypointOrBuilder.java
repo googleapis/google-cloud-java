@@ -60,5 +60,5 @@ public interface EntrypointOrBuilder
    */
   com.google.protobuf.ByteString getShellBytes();
 
-  public com.google.appengine.v1.Entrypoint.CommandCase getCommandCase();
+  com.google.appengine.v1.Entrypoint.CommandCase getCommandCase();
 }

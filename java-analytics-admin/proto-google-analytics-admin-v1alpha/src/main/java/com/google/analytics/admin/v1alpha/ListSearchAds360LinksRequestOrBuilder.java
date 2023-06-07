@@ -73,6 +73,7 @@ public interface ListSearchAds360LinksRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListSearchAds360Links`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListSearchAds360Links` must match the call that provided the
    * page token.
@@ -89,6 +90,7 @@ public interface ListSearchAds360LinksRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListSearchAds360Links`
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListSearchAds360Links` must match the call that provided the
    * page token.

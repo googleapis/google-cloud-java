@@ -47,11 +47,6 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     return new DestinationDataset();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
         .internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDataset_descriptor;

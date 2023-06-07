@@ -269,5 +269,5 @@ public interface SupportedDatabaseFlagOrBuilder
    */
   boolean getRequiresDbRestart();
 
-  public com.google.cloud.alloydb.v1.SupportedDatabaseFlag.RestrictionsCase getRestrictionsCase();
+  com.google.cloud.alloydb.v1.SupportedDatabaseFlag.RestrictionsCase getRestrictionsCase();
 }

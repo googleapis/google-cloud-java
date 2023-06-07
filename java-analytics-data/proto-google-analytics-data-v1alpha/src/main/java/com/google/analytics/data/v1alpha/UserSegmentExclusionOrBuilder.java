@@ -29,6 +29,7 @@ public interface UserSegmentExclusionOrBuilder
    * <pre>
    * Specifies how long an exclusion will last if a user matches the
    * `userExclusionCriteria`.
+   *
    * Optional. If unspecified, `userExclusionDuration` of
    * `USER_EXCLUSION_TEMPORARY` is used.
    * </pre>
@@ -44,6 +45,7 @@ public interface UserSegmentExclusionOrBuilder
    * <pre>
    * Specifies how long an exclusion will last if a user matches the
    * `userExclusionCriteria`.
+   *
    * Optional. If unspecified, `userExclusionDuration` of
    * `USER_EXCLUSION_TEMPORARY` is used.
    * </pre>

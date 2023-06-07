@@ -49,11 +49,6 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     return new ModelEvaluation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.ModelEvaluationOuterClass
         .internal_static_google_cloud_automl_v1_ModelEvaluation_descriptor;
@@ -70,6 +65,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   }
 
   private int metricsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metrics_;
 
   public enum MetricsCase

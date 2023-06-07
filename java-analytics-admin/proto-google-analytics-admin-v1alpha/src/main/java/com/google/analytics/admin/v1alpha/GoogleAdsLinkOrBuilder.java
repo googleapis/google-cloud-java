@@ -29,6 +29,7 @@ public interface GoogleAdsLinkOrBuilder
    * <pre>
    * Output only. Format:
    * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+   *
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GoogleAdsLinkOrBuilder
    * <pre>
    * Output only. Format:
    * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+   *
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *

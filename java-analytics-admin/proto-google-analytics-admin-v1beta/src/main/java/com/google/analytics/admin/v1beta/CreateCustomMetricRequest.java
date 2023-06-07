@@ -47,11 +47,6 @@ public final class CreateCustomMetricRequest extends com.google.protobuf.Generat
     return new CreateCustomMetricRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1beta_CreateCustomMetricRequest_descriptor;

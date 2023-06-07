@@ -47,11 +47,6 @@ public final class GetTagRequest extends com.google.protobuf.GeneratedMessageV3
     return new GetTagRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.TagProto
         .internal_static_google_devtools_artifactregistry_v1beta2_GetTagRequest_descriptor;

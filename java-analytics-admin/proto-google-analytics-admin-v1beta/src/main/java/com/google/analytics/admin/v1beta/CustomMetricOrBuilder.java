@@ -55,8 +55,10 @@ public interface CustomMetricOrBuilder
    *
    * <pre>
    * Required. Immutable. Tagging name for this custom metric.
+   *
    * If this is an event-scoped metric, then this is the event parameter
    * name.
+   *
    * May only contain alphanumeric and underscore charactes, starting with a
    * letter. Max length of 40 characters for event-scoped metrics.
    * </pre>
@@ -73,8 +75,10 @@ public interface CustomMetricOrBuilder
    *
    * <pre>
    * Required. Immutable. Tagging name for this custom metric.
+   *
    * If this is an event-scoped metric, then this is the event parameter
    * name.
+   *
    * May only contain alphanumeric and underscore charactes, starting with a
    * letter. Max length of 40 characters for event-scoped metrics.
    * </pre>

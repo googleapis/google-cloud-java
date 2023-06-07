@@ -73,5 +73,5 @@ public interface NumericValueOrBuilder
    */
   double getDoubleValue();
 
-  public com.google.analytics.admin.v1alpha.NumericValue.OneValueCase getOneValueCase();
+  com.google.analytics.admin.v1alpha.NumericValue.OneValueCase getOneValueCase();
 }

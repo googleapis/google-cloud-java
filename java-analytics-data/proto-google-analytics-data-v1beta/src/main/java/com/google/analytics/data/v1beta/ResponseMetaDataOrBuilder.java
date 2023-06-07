@@ -95,6 +95,7 @@ public interface ResponseMetaDataOrBuilder
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -115,6 +116,7 @@ public interface ResponseMetaDataOrBuilder
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see
@@ -135,6 +137,7 @@ public interface ResponseMetaDataOrBuilder
    * was specified in the request, this response parameter will echo the request
    * parameter; otherwise, this response parameter is the property's current
    * currency_code.
+   *
    * Currency codes are string encodings of currency types from the ISO 4217
    * standard (https://en.wikipedia.org/wiki/ISO_4217); for example "USD",
    * "EUR", "JPY". To learn more, see

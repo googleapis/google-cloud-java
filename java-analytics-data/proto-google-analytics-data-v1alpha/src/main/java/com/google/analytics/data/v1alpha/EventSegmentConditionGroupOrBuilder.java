@@ -28,6 +28,7 @@ public interface EventSegmentConditionGroupOrBuilder
    *
    * <pre>
    * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+   *
    * Optional. If unspecified, a `conditionScoping` of
    * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
    * </pre>
@@ -42,6 +43,7 @@ public interface EventSegmentConditionGroupOrBuilder
    *
    * <pre>
    * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+   *
    * Optional. If unspecified, a `conditionScoping` of
    * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
    * </pre>

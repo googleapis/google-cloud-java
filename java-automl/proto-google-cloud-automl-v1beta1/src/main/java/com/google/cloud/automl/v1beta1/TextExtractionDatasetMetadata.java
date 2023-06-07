@@ -45,11 +45,6 @@ public final class TextExtractionDatasetMetadata extends com.google.protobuf.Gen
     return new TextExtractionDatasetMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.TextProto
         .internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_descriptor;

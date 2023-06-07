@@ -107,6 +107,6 @@ public interface AnalyzerOrgPolicyConstraintOrBuilder
   com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraintOrBuilder
       getCustomConstraintOrBuilder();
 
-  public com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.ConstraintDefinitionCase
+  com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.ConstraintDefinitionCase
       getConstraintDefinitionCase();
 }

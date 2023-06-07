@@ -64,5 +64,5 @@ public interface BatchPredictInputConfigOrBuilder
    */
   com.google.cloud.automl.v1.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
-  public com.google.cloud.automl.v1.BatchPredictInputConfig.SourceCase getSourceCase();
+  com.google.cloud.automl.v1.BatchPredictInputConfig.SourceCase getSourceCase();
 }

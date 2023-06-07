@@ -47,11 +47,6 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     return new JobNotification();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.JobProto
         .internal_static_google_cloud_batch_v1alpha_JobNotification_descriptor;
@@ -335,11 +330,6 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Message();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -443,5 +443,5 @@ public interface ListingOrBuilder
    */
   com.google.protobuf.ByteString getRequestAccessBytes();
 
-  public com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
+  com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
 }

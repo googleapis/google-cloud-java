@@ -33,6 +33,7 @@ public interface ListPropertiesRequestOrBuilder
    * `ancestor:`(The resource name of the parent account) or
    * `firebase_project:`(The id or number of the linked firebase project).
    * Some examples of filters:
+   *
    * ```
    * | Filter                      | Description                               |
    * |-----------------------------|-------------------------------------------|
@@ -59,6 +60,7 @@ public interface ListPropertiesRequestOrBuilder
    * `ancestor:`(The resource name of the parent account) or
    * `firebase_project:`(The id or number of the linked firebase project).
    * Some examples of filters:
+   *
    * ```
    * | Filter                      | Description                               |
    * |-----------------------------|-------------------------------------------|

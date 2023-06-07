@@ -79,5 +79,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.automl.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
-  public com.google.cloud.automl.v1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.automl.v1.OutputConfig.DestinationCase getDestinationCase();
 }

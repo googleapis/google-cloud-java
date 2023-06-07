@@ -72,5 +72,5 @@ public interface GcsDestinationOrBuilder
    */
   com.google.protobuf.ByteString getUriBytes();
 
-  public com.google.cloud.asset.v1p2beta1.GcsDestination.ObjectUriCase getObjectUriCase();
+  com.google.cloud.asset.v1p2beta1.GcsDestination.ObjectUriCase getObjectUriCase();
 }

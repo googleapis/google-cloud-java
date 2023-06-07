@@ -273,5 +273,5 @@ public interface UrlMapOrBuilder
    */
   com.google.appengine.v1.UrlMap.RedirectHttpResponseCode getRedirectHttpResponseCode();
 
-  public com.google.appengine.v1.UrlMap.HandlerTypeCase getHandlerTypeCase();
+  com.google.appengine.v1.UrlMap.HandlerTypeCase getHandlerTypeCase();
 }

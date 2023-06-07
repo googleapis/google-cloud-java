@@ -57,11 +57,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return new Instance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.InstanceProto
         .internal_static_google_appengine_v1_Instance_descriptor;
@@ -214,11 +209,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Liveness();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1214,6 +1204,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time that this instance was started.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1231,6 +1222,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time that this instance was started.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -1248,6 +1240,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Time that this instance was started.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -3008,6 +3001,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3024,6 +3018,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3044,6 +3039,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3068,6 +3064,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3089,6 +3086,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3116,6 +3114,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3137,6 +3136,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3153,6 +3153,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -3171,6 +3172,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Time that this instance was started.
+     *
      * &#64;OutputOnly
      * </pre>
      *

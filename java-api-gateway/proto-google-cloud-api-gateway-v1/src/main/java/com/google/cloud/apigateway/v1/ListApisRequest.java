@@ -50,11 +50,6 @@ public final class ListApisRequest extends com.google.protobuf.GeneratedMessageV
     return new ListApisRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigateway.v1.Apigateway
         .internal_static_google_cloud_apigateway_v1_ListApisRequest_descriptor;

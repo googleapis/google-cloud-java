@@ -28,6 +28,7 @@ public interface UpdateNfsShareRequestOrBuilder
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateNfsShareRequestOrBuilder
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateNfsShareRequestOrBuilder
    *
    * <pre>
    * Required. The NFS share to update.
+   *
    * The `name` field is used to identify the NFS share to update.
    * Format: projects/{project}/locations/{location}/nfsShares/{nfs_share}
    * </pre>

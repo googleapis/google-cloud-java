@@ -83,5 +83,5 @@ public interface AttachmentOrBuilder
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
-  public com.google.cloud.advisorynotifications.v1.Attachment.DataCase getDataCase();
+  com.google.cloud.advisorynotifications.v1.Attachment.DataCase getDataCase();
 }

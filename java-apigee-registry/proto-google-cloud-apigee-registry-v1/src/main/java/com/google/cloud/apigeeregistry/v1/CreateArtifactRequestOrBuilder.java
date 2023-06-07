@@ -101,8 +101,10 @@ public interface CreateArtifactRequestOrBuilder
    * <pre>
    * Required. The ID to use for the artifact, which will become the final component of
    * the artifact's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *
@@ -117,8 +119,10 @@ public interface CreateArtifactRequestOrBuilder
    * <pre>
    * Required. The ID to use for the artifact, which will become the final component of
    * the artifact's resource name.
+   *
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
+   *
    * Following AIP-162, IDs must not have the form of a UUID.
    * </pre>
    *

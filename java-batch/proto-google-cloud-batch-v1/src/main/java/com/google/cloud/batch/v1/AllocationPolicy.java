@@ -48,11 +48,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     return new AllocationPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1.JobProto
         .internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor;
@@ -124,6 +119,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Preemptible VM (PVM).
+     *
      * Above SPOT VM is the preferable model for preemptible VM instances: the
      * old preemptible VM model (indicated by this field) is the older model,
      * and has been migrated to use the SPOT model as the underlying technology.
@@ -171,6 +167,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Preemptible VM (PVM).
+     *
      * Above SPOT VM is the preferable model for preemptible VM instances: the
      * old preemptible VM model (indicated by this field) is the older model,
      * and has been migrated to use the SPOT model as the underlying technology.
@@ -279,12 +276,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -302,12 +301,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -325,12 +326,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -349,12 +352,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -381,18 +386,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     private LocationPolicy() {
-      allowedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LocationPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -413,18 +413,21 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     public static final int ALLOWED_LOCATIONS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowedLocations_;
+    private com.google.protobuf.LazyStringArrayList allowedLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -444,12 +447,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -469,12 +474,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -495,12 +502,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs.
+     *
      * Each location can be a region or a zone.
      * Only one region or multiple zones in one region is supported now.
      * For example,
      * ["regions/us-central1"] allow VMs in any zones in region us-central1.
      * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
      * in zones us-central1-a and us-central1-c.
+     *
      * All locations end up in different regions would cause errors.
      * For example,
      * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -717,8 +726,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        allowedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        allowedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -746,7 +754,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy buildPartial() {
         com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy result =
             new com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -754,17 +761,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          allowedLocations_ = allowedLocations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.allowedLocations_ = allowedLocations_;
-      }
-
       private void buildPartial0(com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          allowedLocations_.makeImmutable();
+          result.allowedLocations_ = allowedLocations_;
+        }
       }
 
       @java.lang.Override
@@ -818,7 +820,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (!other.allowedLocations_.isEmpty()) {
           if (allowedLocations_.isEmpty()) {
             allowedLocations_ = other.allowedLocations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAllowedLocationsIsMutable();
             allowedLocations_.addAll(other.allowedLocations_);
@@ -877,26 +879,28 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList allowedLocations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowedLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowedLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!allowedLocations_.isModifiable()) {
           allowedLocations_ = new com.google.protobuf.LazyStringArrayList(allowedLocations_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -909,19 +913,22 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return A list containing the allowedLocations.
        */
       public com.google.protobuf.ProtocolStringList getAllowedLocationsList() {
-        return allowedLocations_.getUnmodifiableView();
+        allowedLocations_.makeImmutable();
+        return allowedLocations_;
       }
       /**
        *
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -941,12 +948,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -967,12 +976,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -993,12 +1004,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -1018,6 +1031,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         ensureAllowedLocationsIsMutable();
         allowedLocations_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1026,12 +1040,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -1050,6 +1066,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         ensureAllowedLocationsIsMutable();
         allowedLocations_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1058,12 +1075,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -1079,6 +1098,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder addAllAllowedLocations(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedLocationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedLocations_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1087,12 +1107,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -1105,8 +1127,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAllowedLocations() {
-        allowedLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1115,12 +1138,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs.
+       *
        * Each location can be a region or a zone.
        * Only one region or multiple zones in one region is supported now.
        * For example,
        * ["regions/us-central1"] allow VMs in any zones in region us-central1.
        * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
        * in zones us-central1-a and us-central1-c.
+       *
        * All locations end up in different regions would cause errors.
        * For example,
        * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
@@ -1140,6 +1165,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         ensureAllowedLocationsIsMutable();
         allowedLocations_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1219,12 +1245,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Name of a public or custom image used as the data source.
      * For example, the following are all valid URLs:
+     *
      * * Specify the image by its family name:
      * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
      * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
+     *
      * * "batch-debian": use Batch Debian images.
      * * "batch-centos": use Batch CentOS images.
      * * "batch-cos": use Batch Container-Optimized images.
@@ -1241,12 +1270,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Name of a public or custom image used as the data source.
      * For example, the following are all valid URLs:
+     *
      * * Specify the image by its family name:
      * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
      * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
+     *
      * * "batch-debian": use Batch Debian images.
      * * "batch-centos": use Batch CentOS images.
      * * "batch-cos": use Batch Container-Optimized images.
@@ -1263,12 +1295,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Name of a public or custom image used as the data source.
      * For example, the following are all valid URLs:
+     *
      * * Specify the image by its family name:
      * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
      * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
+     *
      * * "batch-debian": use Batch Debian images.
      * * "batch-centos": use Batch CentOS images.
      * * "batch-cos": use Batch Container-Optimized images.
@@ -1356,6 +1391,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk size in GB.
+     *
      * For persistent disk, this field is ignored if `data_source` is `image` or
      * `snapshot`.
      * For local SSD, size_gb should be a multiple of 375GB,
@@ -1401,7 +1437,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getDiskInterfaceBytes();
 
-    public com.google.cloud.batch.v1.AllocationPolicy.Disk.DataSourceCase getDataSourceCase();
+    com.google.cloud.batch.v1.AllocationPolicy.Disk.DataSourceCase getDataSourceCase();
   }
   /**
    *
@@ -1436,11 +1472,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return new Disk();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_Disk_descriptor;
@@ -1457,6 +1488,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     private int dataSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object dataSource_;
 
     public enum DataSourceCase
@@ -1510,12 +1543,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Name of a public or custom image used as the data source.
      * For example, the following are all valid URLs:
+     *
      * * Specify the image by its family name:
      * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
      * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
+     *
      * * "batch-debian": use Batch Debian images.
      * * "batch-centos": use Batch CentOS images.
      * * "batch-cos": use Batch Container-Optimized images.
@@ -1534,12 +1570,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Name of a public or custom image used as the data source.
      * For example, the following are all valid URLs:
+     *
      * * Specify the image by its family name:
      * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
      * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
+     *
      * * "batch-debian": use Batch Debian images.
      * * "batch-centos": use Batch CentOS images.
      * * "batch-cos": use Batch Container-Optimized images.
@@ -1571,12 +1610,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Name of a public or custom image used as the data source.
      * For example, the following are all valid URLs:
+     *
      * * Specify the image by its family name:
      * projects/{project}/global/images/family/{image_family}
      * * Specify the image version:
      * projects/{project}/global/images/{image_version}
+     *
      * You can also use Batch customized image in short names.
      * The following image values are supported for a boot disk:
+     *
      * * "batch-debian": use Batch Debian images.
      * * "batch-centos": use Batch CentOS images.
      * * "batch-cos": use Batch Container-Optimized images.
@@ -1740,6 +1782,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk size in GB.
+     *
      * For persistent disk, this field is ignored if `data_source` is `image` or
      * `snapshot`.
      * For local SSD, size_gb should be a multiple of 375GB,
@@ -2306,12 +2349,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Name of a public or custom image used as the data source.
        * For example, the following are all valid URLs:
+       *
        * * Specify the image by its family name:
        * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
        * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
+       *
        * * "batch-debian": use Batch Debian images.
        * * "batch-centos": use Batch CentOS images.
        * * "batch-cos": use Batch Container-Optimized images.
@@ -2331,12 +2377,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Name of a public or custom image used as the data source.
        * For example, the following are all valid URLs:
+       *
        * * Specify the image by its family name:
        * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
        * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
+       *
        * * "batch-debian": use Batch Debian images.
        * * "batch-centos": use Batch CentOS images.
        * * "batch-cos": use Batch Container-Optimized images.
@@ -2369,12 +2418,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Name of a public or custom image used as the data source.
        * For example, the following are all valid URLs:
+       *
        * * Specify the image by its family name:
        * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
        * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
+       *
        * * "batch-debian": use Batch Debian images.
        * * "batch-centos": use Batch CentOS images.
        * * "batch-cos": use Batch Container-Optimized images.
@@ -2407,12 +2459,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Name of a public or custom image used as the data source.
        * For example, the following are all valid URLs:
+       *
        * * Specify the image by its family name:
        * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
        * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
+       *
        * * "batch-debian": use Batch Debian images.
        * * "batch-centos": use Batch CentOS images.
        * * "batch-cos": use Batch Container-Optimized images.
@@ -2438,12 +2493,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Name of a public or custom image used as the data source.
        * For example, the following are all valid URLs:
+       *
        * * Specify the image by its family name:
        * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
        * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
+       *
        * * "batch-debian": use Batch Debian images.
        * * "batch-centos": use Batch CentOS images.
        * * "batch-cos": use Batch Container-Optimized images.
@@ -2467,12 +2525,15 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Name of a public or custom image used as the data source.
        * For example, the following are all valid URLs:
+       *
        * * Specify the image by its family name:
        * projects/{project}/global/images/family/{image_family}
        * * Specify the image version:
        * projects/{project}/global/images/{image_version}
+       *
        * You can also use Batch customized image in short names.
        * The following image values are supported for a boot disk:
+       *
        * * "batch-debian": use Batch Debian images.
        * * "batch-centos": use Batch CentOS images.
        * * "batch-cos": use Batch Container-Optimized images.
@@ -2761,6 +2822,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk size in GB.
+       *
        * For persistent disk, this field is ignored if `data_source` is `image` or
        * `snapshot`.
        * For local SSD, size_gb should be a multiple of 375GB,
@@ -2784,6 +2846,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk size in GB.
+       *
        * For persistent disk, this field is ignored if `data_source` is `image` or
        * `snapshot`.
        * For local SSD, size_gb should be a multiple of 375GB,
@@ -2811,6 +2874,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk size in GB.
+       *
        * For persistent disk, this field is ignored if `data_source` is `image` or
        * `snapshot`.
        * For local SSD, size_gb should be a multiple of 375GB,
@@ -3100,7 +3164,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getDeviceNameBytes();
 
-    public com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.AttachedCase getAttachedCase();
+    com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.AttachedCase getAttachedCase();
   }
   /**
    *
@@ -3132,11 +3196,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return new AttachedDisk();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_AttachedDisk_descriptor;
@@ -3153,6 +3212,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     private int attachedCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object attached_;
 
     public enum AttachedCase
@@ -4353,11 +4414,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return new Accelerator();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_Accelerator_descriptor;
@@ -5417,11 +5473,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InstancePolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7809,7 +7860,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     boolean getInstallGpuDrivers();
 
-    public com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.PolicyTemplateCase
+    com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.PolicyTemplateCase
         getPolicyTemplateCase();
   }
   /**
@@ -7839,11 +7890,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return new InstancePolicyOrTemplate();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_InstancePolicyOrTemplate_descriptor;
@@ -7860,6 +7906,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     private int policyTemplateCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object policyTemplate_;
 
     public enum PolicyTemplateCase
@@ -9004,7 +9052,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing network resource.
      * You can specify the network as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
      * * projects/{project}/global/networks/{network}
      * * global/networks/{network}
@@ -9021,7 +9071,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing network resource.
      * You can specify the network as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
      * * projects/{project}/global/networks/{network}
      * * global/networks/{network}
@@ -9039,7 +9091,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing subnetwork resource in the network.
      * You can specify the subnetwork as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * regions/{region}/subnetworks/{subnetwork}
@@ -9056,7 +9110,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing subnetwork resource in the network.
      * You can specify the subnetwork as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * regions/{region}/subnetworks/{subnetwork}
@@ -9117,11 +9173,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return new NetworkInterface();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_NetworkInterface_descriptor;
@@ -9147,7 +9198,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing network resource.
      * You can specify the network as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
      * * projects/{project}/global/networks/{network}
      * * global/networks/{network}
@@ -9175,7 +9228,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing network resource.
      * You can specify the network as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
      * * projects/{project}/global/networks/{network}
      * * global/networks/{network}
@@ -9208,7 +9263,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing subnetwork resource in the network.
      * You can specify the subnetwork as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * regions/{region}/subnetworks/{subnetwork}
@@ -9236,7 +9293,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The URL of an existing subnetwork resource in the network.
      * You can specify the subnetwork as a full or partial URL.
+     *
      * For example, the following are all valid URLs:
+     *
      * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * * regions/{region}/subnetworks/{subnetwork}
@@ -9686,7 +9745,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing network resource.
        * You can specify the network as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
        * * projects/{project}/global/networks/{network}
        * * global/networks/{network}
@@ -9713,7 +9774,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing network resource.
        * You can specify the network as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
        * * projects/{project}/global/networks/{network}
        * * global/networks/{network}
@@ -9740,7 +9803,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing network resource.
        * You can specify the network as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
        * * projects/{project}/global/networks/{network}
        * * global/networks/{network}
@@ -9766,7 +9831,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing network resource.
        * You can specify the network as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
        * * projects/{project}/global/networks/{network}
        * * global/networks/{network}
@@ -9788,7 +9855,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing network resource.
        * You can specify the network as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}
        * * projects/{project}/global/networks/{network}
        * * global/networks/{network}
@@ -9817,7 +9886,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing subnetwork resource in the network.
        * You can specify the subnetwork as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * regions/{region}/subnetworks/{subnetwork}
@@ -9844,7 +9915,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing subnetwork resource in the network.
        * You can specify the subnetwork as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * regions/{region}/subnetworks/{subnetwork}
@@ -9871,7 +9944,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing subnetwork resource in the network.
        * You can specify the subnetwork as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * regions/{region}/subnetworks/{subnetwork}
@@ -9897,7 +9972,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing subnetwork resource in the network.
        * You can specify the subnetwork as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * regions/{region}/subnetworks/{subnetwork}
@@ -9919,7 +9996,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The URL of an existing subnetwork resource in the network.
        * You can specify the subnetwork as a full or partial URL.
+       *
        * For example, the following are all valid URLs:
+       *
        * * https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * projects/{project}/regions/{region}/subnetworks/{subnetwork}
        * * regions/{region}/subnetworks/{subnetwork}
@@ -10173,11 +10252,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NetworkPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11230,11 +11304,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PlacementPolicy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -47,11 +47,6 @@ public final class DeleteApiRequest extends com.google.protobuf.GeneratedMessage
     return new DeleteApiRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_DeleteApiRequest_descriptor;

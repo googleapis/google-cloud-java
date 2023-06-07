@@ -48,11 +48,6 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     return new AudienceSimpleFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AudienceProto
         .internal_static_google_analytics_admin_v1alpha_AudienceSimpleFilter_descriptor;

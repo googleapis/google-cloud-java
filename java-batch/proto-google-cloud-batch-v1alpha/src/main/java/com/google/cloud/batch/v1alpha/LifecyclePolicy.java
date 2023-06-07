@@ -48,11 +48,6 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
     return new LifecyclePolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1alpha.TaskProto
         .internal_static_google_cloud_batch_v1alpha_LifecyclePolicy_descriptor;
@@ -304,11 +299,6 @@ public final class LifecyclePolicy extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ActionCondition();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

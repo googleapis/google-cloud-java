@@ -29,6 +29,7 @@ public interface SearchAds360LinkOrBuilder
    * <pre>
    * Output only. The resource name for this SearchAds360Link resource.
    * Format: properties/{propertyId}/searchAds360Links/{linkId}
+   *
    * Note: linkId is not the Search Ads 360 advertiser ID
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface SearchAds360LinkOrBuilder
    * <pre>
    * Output only. The resource name for this SearchAds360Link resource.
    * Format: properties/{propertyId}/searchAds360Links/{linkId}
+   *
    * Note: linkId is not the Search Ads 360 advertiser ID
    * </pre>
    *

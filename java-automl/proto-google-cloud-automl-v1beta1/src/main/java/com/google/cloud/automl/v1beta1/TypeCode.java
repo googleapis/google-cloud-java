@@ -78,6 +78,7 @@ public enum TypeCode implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoded as `list`, where the list elements are represented according to
+   *
    * [list_element_type][google.cloud.automl.v1beta1.DataType.list_element_type].
    * </pre>
    *
@@ -162,6 +163,7 @@ public enum TypeCode implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoded as `list`, where the list elements are represented according to
+   *
    * [list_element_type][google.cloud.automl.v1beta1.DataType.list_element_type].
    * </pre>
    *

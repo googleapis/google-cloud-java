@@ -48,11 +48,6 @@ public final class AccessStringFilter extends com.google.protobuf.GeneratedMessa
     return new AccessStringFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AccessReportProto
         .internal_static_google_analytics_admin_v1beta_AccessStringFilter_descriptor;

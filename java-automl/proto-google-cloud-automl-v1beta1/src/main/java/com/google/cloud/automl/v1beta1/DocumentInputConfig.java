@@ -45,11 +45,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     return new DocumentInputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Io
         .internal_static_google_cloud_automl_v1beta1_DocumentInputConfig_descriptor;

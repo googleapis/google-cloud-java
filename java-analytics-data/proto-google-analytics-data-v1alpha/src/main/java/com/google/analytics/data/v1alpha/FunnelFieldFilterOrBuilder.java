@@ -188,5 +188,5 @@ public interface FunnelFieldFilterOrBuilder
    */
   com.google.analytics.data.v1alpha.BetweenFilterOrBuilder getBetweenFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.FunnelFieldFilter.OneFilterCase getOneFilterCase();
+  com.google.analytics.data.v1alpha.FunnelFieldFilter.OneFilterCase getOneFilterCase();
 }

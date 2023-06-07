@@ -58,5 +58,5 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.asset.v1p2beta1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
-  public com.google.cloud.asset.v1p2beta1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.asset.v1p2beta1.OutputConfig.DestinationCase getDestinationCase();
 }

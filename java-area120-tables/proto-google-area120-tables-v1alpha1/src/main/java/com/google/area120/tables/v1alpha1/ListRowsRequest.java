@@ -50,11 +50,6 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
     return new ListRowsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.area120.tables.v1alpha1.TablesProto
         .internal_static_google_area120_tables_v1alpha1_ListRowsRequest_descriptor;
@@ -131,6 +126,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The maximum number of rows to return. The service may return fewer than
    * this value.
+   *
    * If unspecified, at most 50 rows are returned. The maximum value is 1,000;
    * values above 1,000 are coerced to 1,000.
    * </pre>
@@ -154,6 +150,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A page token, received from a previous `ListRows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRows` must match
    * the call that provided the page token.
    * </pre>
@@ -180,6 +177,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A page token, received from a previous `ListRows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRows` must match
    * the call that provided the page token.
    * </pre>
@@ -847,6 +845,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The maximum number of rows to return. The service may return fewer than
      * this value.
+     *
      * If unspecified, at most 50 rows are returned. The maximum value is 1,000;
      * values above 1,000 are coerced to 1,000.
      * </pre>
@@ -865,6 +864,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The maximum number of rows to return. The service may return fewer than
      * this value.
+     *
      * If unspecified, at most 50 rows are returned. The maximum value is 1,000;
      * values above 1,000 are coerced to 1,000.
      * </pre>
@@ -887,6 +887,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The maximum number of rows to return. The service may return fewer than
      * this value.
+     *
      * If unspecified, at most 50 rows are returned. The maximum value is 1,000;
      * values above 1,000 are coerced to 1,000.
      * </pre>
@@ -909,6 +910,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A page token, received from a previous `ListRows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRows` must match
      * the call that provided the page token.
      * </pre>
@@ -934,6 +936,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A page token, received from a previous `ListRows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRows` must match
      * the call that provided the page token.
      * </pre>
@@ -959,6 +962,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A page token, received from a previous `ListRows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRows` must match
      * the call that provided the page token.
      * </pre>
@@ -983,6 +987,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A page token, received from a previous `ListRows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRows` must match
      * the call that provided the page token.
      * </pre>
@@ -1003,6 +1008,7 @@ public final class ListRowsRequest extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A page token, received from a previous `ListRows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRows` must match
      * the call that provided the page token.
      * </pre>

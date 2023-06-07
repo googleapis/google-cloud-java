@@ -29,6 +29,7 @@ public interface CreateServicePerimeterRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy which owns this [Service
    * Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateServicePerimeterRequestOrBuilder
    * <pre>
    * Required. Resource name for the access policy which owns this [Service
    * Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter].
+   *
    * Format: `accessPolicies/{policy_id}`
    * </pre>
    *

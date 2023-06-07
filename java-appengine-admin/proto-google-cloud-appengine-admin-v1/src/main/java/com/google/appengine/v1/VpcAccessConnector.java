@@ -48,11 +48,6 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     return new VpcAccessConnector();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.VersionProto
         .internal_static_google_appengine_v1_VpcAccessConnector_descriptor;
@@ -73,6 +68,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Available egress settings.
+   *
    * This controls what traffic is diverted through the VPC Access Connector
    * resource. By default PRIVATE_IP_RANGES will be used.
    * </pre>

@@ -102,10 +102,13 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -128,10 +131,13 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -157,10 +163,13 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -183,10 +192,13 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -213,10 +225,13 @@ public interface PredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this

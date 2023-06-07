@@ -47,11 +47,6 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
     return new FunnelFieldFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor;
@@ -68,6 +63,8 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
   }
 
   private int oneFilterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneFilter_;
 
   public enum OneFilterCase

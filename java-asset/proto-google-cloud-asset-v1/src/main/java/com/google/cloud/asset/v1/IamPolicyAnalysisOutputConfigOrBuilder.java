@@ -105,6 +105,5 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
   com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder();
 
-  public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.DestinationCase
-      getDestinationCase();
+  com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.DestinationCase getDestinationCase();
 }

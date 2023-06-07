@@ -30,6 +30,7 @@ public interface AccessDimensionOrBuilder
    * The API name of the dimension. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of dimensions supported in this API.
+   *
    * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface AccessDimensionOrBuilder
    * The API name of the dimension. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of dimensions supported in this API.
+   *
    * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
    * </pre>
    *

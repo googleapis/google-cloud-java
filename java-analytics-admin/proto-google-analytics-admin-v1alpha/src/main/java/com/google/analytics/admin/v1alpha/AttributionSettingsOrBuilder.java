@@ -122,6 +122,7 @@ public interface AttributionSettingsOrBuilder
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.
@@ -140,6 +141,7 @@ public interface AttributionSettingsOrBuilder
    * <pre>
    * Required. The reporting attribution model used to calculate conversion
    * credit in this property's reports.
+   *
    * Changing the attribution model will apply to both historical and future
    * data. These changes will be reflected in reports with conversion and
    * revenue data. User and session data will be unaffected.

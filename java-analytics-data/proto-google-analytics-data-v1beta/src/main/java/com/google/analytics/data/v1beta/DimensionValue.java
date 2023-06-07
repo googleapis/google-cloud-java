@@ -45,11 +45,6 @@ public final class DimensionValue extends com.google.protobuf.GeneratedMessageV3
     return new DimensionValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_DimensionValue_descriptor;
@@ -66,6 +61,8 @@ public final class DimensionValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int oneValueCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneValue_;
 
   public enum OneValueCase

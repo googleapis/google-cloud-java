@@ -28,6 +28,7 @@ public interface LocationMetadataOrBuilder
    *
    * <pre>
    * App Engine standard environment is available in the given location.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -42,6 +43,7 @@ public interface LocationMetadataOrBuilder
    *
    * <pre>
    * App Engine flexible environment is available in the given location.
+   *
    * &#64;OutputOnly
    * </pre>
    *

@@ -48,11 +48,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     return new AudienceDimensionOrMetricFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AudienceProto
         .internal_static_google_analytics_admin_v1alpha_AudienceDimensionOrMetricFilter_descriptor;
@@ -171,11 +166,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StringFilter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1393,18 +1383,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     private InListFilter() {
-      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      values_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InListFilter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1426,7 +1411,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     public static final int VALUES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList values_;
+    private com.google.protobuf.LazyStringArrayList values_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1738,8 +1724,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
         caseSensitive_ = false;
         return this;
       }
@@ -1774,7 +1759,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter result =
             new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter(
                 this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1782,18 +1766,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          values_ = values_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.values_ = values_;
-      }
-
       private void buildPartial0(
           com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          result.values_ = values_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.caseSensitive_ = caseSensitive_;
         }
@@ -1856,7 +1835,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         if (!other.values_.isEmpty()) {
           if (values_.isEmpty()) {
             values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureValuesIsMutable();
             values_.addAll(other.values_);
@@ -1924,14 +1903,14 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList values_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!values_.isModifiable()) {
           values_ = new com.google.protobuf.LazyStringArrayList(values_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1946,7 +1925,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return A list containing the values.
        */
       public com.google.protobuf.ProtocolStringList getValuesList() {
-        return values_.getUnmodifiableView();
+        values_.makeImmutable();
+        return values_;
       }
       /**
        *
@@ -2015,6 +1995,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         }
         ensureValuesIsMutable();
         values_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2037,6 +2018,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         }
         ensureValuesIsMutable();
         values_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2056,6 +2038,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
         ensureValuesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2072,8 +2055,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearValues() {
-        values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        values_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -2097,6 +2081,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         checkByteStringIsUtf8(value);
         ensureValuesIsMutable();
         values_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2281,8 +2266,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      */
     double getDoubleValue();
 
-    public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
-            .OneValueCase
+    com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue.OneValueCase
         getOneValueCase();
   }
   /**
@@ -2313,11 +2297,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       return new NumericValue();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1alpha.AudienceProto
           .internal_static_google_analytics_admin_v1alpha_AudienceDimensionOrMetricFilter_NumericValue_descriptor;
@@ -2335,6 +2314,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     private int oneValueCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object oneValue_;
 
     public enum OneValueCase
@@ -3207,11 +3188,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NumericFilter();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4443,11 +4419,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       return new BetweenFilter();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.admin.v1alpha.AudienceProto
           .internal_static_google_analytics_admin_v1alpha_AudienceDimensionOrMetricFilter_BetweenFilter_descriptor;
@@ -5507,6 +5478,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
   }
 
   private int oneFilterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object oneFilter_;
 
   public enum OneFilterCase
@@ -5893,6 +5866,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    * evaluation). If unset or set to false, user evaluation for an Audience is
    * dynamic; users are added to an Audience when they meet the conditions and
    * then removed when they no longer meet them.
+   *
    * This can only be set when Audience scope is ACROSS_ALL_SESSIONS.
    * </pre>
    *
@@ -5914,9 +5888,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
    * Optional. If set, specifies the time window for which to evaluate data in
    * number of days. If not set, then audience data is evaluated against
    * lifetime data (For example, infinite time window).
+   *
    * For example, if set to 1 day, only the current day's data is evaluated. The
    * reference point is the current day when at_any_point_in_time is unset or
    * false.
+   *
    * It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be
    * greater than 60 days.
    * </pre>
@@ -7684,6 +7660,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * evaluation). If unset or set to false, user evaluation for an Audience is
      * dynamic; users are added to an Audience when they meet the conditions and
      * then removed when they no longer meet them.
+     *
      * This can only be set when Audience scope is ACROSS_ALL_SESSIONS.
      * </pre>
      *
@@ -7704,6 +7681,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * evaluation). If unset or set to false, user evaluation for an Audience is
      * dynamic; users are added to an Audience when they meet the conditions and
      * then removed when they no longer meet them.
+     *
      * This can only be set when Audience scope is ACROSS_ALL_SESSIONS.
      * </pre>
      *
@@ -7728,6 +7706,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * evaluation). If unset or set to false, user evaluation for an Audience is
      * dynamic; users are added to an Audience when they meet the conditions and
      * then removed when they no longer meet them.
+     *
      * This can only be set when Audience scope is ACROSS_ALL_SESSIONS.
      * </pre>
      *
@@ -7750,9 +7729,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * Optional. If set, specifies the time window for which to evaluate data in
      * number of days. If not set, then audience data is evaluated against
      * lifetime data (For example, infinite time window).
+     *
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
+     *
      * It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be
      * greater than 60 days.
      * </pre>
@@ -7772,9 +7753,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * Optional. If set, specifies the time window for which to evaluate data in
      * number of days. If not set, then audience data is evaluated against
      * lifetime data (For example, infinite time window).
+     *
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
+     *
      * It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be
      * greater than 60 days.
      * </pre>
@@ -7798,9 +7781,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * Optional. If set, specifies the time window for which to evaluate data in
      * number of days. If not set, then audience data is evaluated against
      * lifetime data (For example, infinite time window).
+     *
      * For example, if set to 1 day, only the current day's data is evaluated. The
      * reference point is the current day when at_any_point_in_time is unset or
      * false.
+     *
      * It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be
      * greater than 60 days.
      * </pre>
