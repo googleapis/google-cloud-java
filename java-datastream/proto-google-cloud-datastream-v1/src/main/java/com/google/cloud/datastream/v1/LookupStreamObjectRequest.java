@@ -48,11 +48,6 @@ public final class LookupStreamObjectRequest extends com.google.protobuf.Generat
     return new LookupStreamObjectRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamProto
         .internal_static_google_cloud_datastream_v1_LookupStreamObjectRequest_descriptor;

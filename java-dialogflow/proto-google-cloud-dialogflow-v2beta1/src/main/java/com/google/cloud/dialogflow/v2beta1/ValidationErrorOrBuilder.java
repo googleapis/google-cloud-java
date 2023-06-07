@@ -54,6 +54,7 @@ public interface ValidationErrorOrBuilder
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -78,6 +79,7 @@ public interface ValidationErrorOrBuilder
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -102,6 +104,7 @@ public interface ValidationErrorOrBuilder
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -127,6 +130,7 @@ public interface ValidationErrorOrBuilder
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is

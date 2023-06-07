@@ -64,11 +64,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return new Instance();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datafusion.v1.Datafusion
         .internal_static_google_cloud_datafusion_v1_Instance_descriptor;
@@ -2053,6 +2048,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-managed service account to set on Dataproc when Cloud Data Fusion
    * creates Dataproc to run data processing pipelines.
+   *
    * This allows users to have fine-grained access control on Dataproc's
    * accesses to cloud resources.
    * </pre>
@@ -2079,6 +2075,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User-managed service account to set on Dataproc when Cloud Data Fusion
    * creates Dataproc to run data processing pipelines.
+   *
    * This allows users to have fine-grained access control on Dataproc's
    * accesses to cloud resources.
    * </pre>
@@ -6827,6 +6824,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-managed service account to set on Dataproc when Cloud Data Fusion
      * creates Dataproc to run data processing pipelines.
+     *
      * This allows users to have fine-grained access control on Dataproc's
      * accesses to cloud resources.
      * </pre>
@@ -6852,6 +6850,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-managed service account to set on Dataproc when Cloud Data Fusion
      * creates Dataproc to run data processing pipelines.
+     *
      * This allows users to have fine-grained access control on Dataproc's
      * accesses to cloud resources.
      * </pre>
@@ -6877,6 +6876,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-managed service account to set on Dataproc when Cloud Data Fusion
      * creates Dataproc to run data processing pipelines.
+     *
      * This allows users to have fine-grained access control on Dataproc's
      * accesses to cloud resources.
      * </pre>
@@ -6901,6 +6901,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-managed service account to set on Dataproc when Cloud Data Fusion
      * creates Dataproc to run data processing pipelines.
+     *
      * This allows users to have fine-grained access control on Dataproc's
      * accesses to cloud resources.
      * </pre>
@@ -6921,6 +6922,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User-managed service account to set on Dataproc when Cloud Data Fusion
      * creates Dataproc to run data processing pipelines.
+     *
      * This allows users to have fine-grained access control on Dataproc's
      * accesses to cloud resources.
      * </pre>

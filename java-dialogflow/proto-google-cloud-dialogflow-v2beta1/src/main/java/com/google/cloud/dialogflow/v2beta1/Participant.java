@@ -49,11 +49,6 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     return new Participant();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_Participant_descriptor;
@@ -369,25 +364,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Obfuscated user id that should be associated with the created
    * participant.
+   *
    * You can specify a user id as follows:
+   *
    * 1. If you set this field in
    *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
    *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
+   *
    * 2. If you set this field in
    *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
    *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+   *
    * Dialogflow uses this user id for following purposes:
    * 1) Billing and measurement. If user with the same
    * obfuscated_external_user_id is created in a later conversation, dialogflow
    * will know it's the same user. 2) Agent assist suggestion personalization.
    * For example, Dialogflow can use it to provide personalized smart reply
    * suggestions for this user.
+   *
    * Note:
+   *
    * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
    *   id first.
    * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -417,25 +418,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Obfuscated user id that should be associated with the created
    * participant.
+   *
    * You can specify a user id as follows:
+   *
    * 1. If you set this field in
    *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
    *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
+   *
    * 2. If you set this field in
    *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
    *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+   *
    * Dialogflow uses this user id for following purposes:
    * 1) Billing and measurement. If user with the same
    * obfuscated_external_user_id is created in a later conversation, dialogflow
    * will know it's the same user. 2) Agent assist suggestion personalization.
    * For example, Dialogflow can use it to provide personalized smart reply
    * suggestions for this user.
+   *
    * Note:
+   *
    * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
    *   id first.
    * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -1325,25 +1332,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Obfuscated user id that should be associated with the created
      * participant.
+     *
      * You can specify a user id as follows:
+     *
      * 1. If you set this field in
      *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
      *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
+     *
      * 2. If you set this field in
      *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
      *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      *    Dialogflow will update
      *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
      * will know it's the same user. 2) Agent assist suggestion personalization.
      * For example, Dialogflow can use it to provide personalized smart reply
      * suggestions for this user.
+     *
      * Note:
+     *
      * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
      *   id first.
      * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -1373,25 +1386,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Obfuscated user id that should be associated with the created
      * participant.
+     *
      * You can specify a user id as follows:
+     *
      * 1. If you set this field in
      *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
      *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
+     *
      * 2. If you set this field in
      *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
      *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      *    Dialogflow will update
      *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
      * will know it's the same user. 2) Agent assist suggestion personalization.
      * For example, Dialogflow can use it to provide personalized smart reply
      * suggestions for this user.
+     *
      * Note:
+     *
      * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
      *   id first.
      * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -1421,25 +1440,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Obfuscated user id that should be associated with the created
      * participant.
+     *
      * You can specify a user id as follows:
+     *
      * 1. If you set this field in
      *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
      *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
+     *
      * 2. If you set this field in
      *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
      *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      *    Dialogflow will update
      *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
      * will know it's the same user. 2) Agent assist suggestion personalization.
      * For example, Dialogflow can use it to provide personalized smart reply
      * suggestions for this user.
+     *
      * Note:
+     *
      * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
      *   id first.
      * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -1468,25 +1493,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Obfuscated user id that should be associated with the created
      * participant.
+     *
      * You can specify a user id as follows:
+     *
      * 1. If you set this field in
      *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
      *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
+     *
      * 2. If you set this field in
      *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
      *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      *    Dialogflow will update
      *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
      * will know it's the same user. 2) Agent assist suggestion personalization.
      * For example, Dialogflow can use it to provide personalized smart reply
      * suggestions for this user.
+     *
      * Note:
+     *
      * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
      *   id first.
      * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -1511,25 +1542,31 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Obfuscated user id that should be associated with the created
      * participant.
+     *
      * You can specify a user id as follows:
+     *
      * 1. If you set this field in
      *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
      *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
+     *
      * 2. If you set this field in
      *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
      *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      *    Dialogflow will update
      *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
      * will know it's the same user. 2) Agent assist suggestion personalization.
      * For example, Dialogflow can use it to provide personalized smart reply
      * suggestions for this user.
+     *
      * Note:
+     *
      * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
      *   id first.
      * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a

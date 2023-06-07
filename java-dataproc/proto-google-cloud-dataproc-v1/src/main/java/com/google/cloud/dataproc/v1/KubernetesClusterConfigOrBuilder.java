@@ -140,5 +140,5 @@ public interface KubernetesClusterConfigOrBuilder
   com.google.cloud.dataproc.v1.KubernetesSoftwareConfigOrBuilder
       getKubernetesSoftwareConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.KubernetesClusterConfig.ConfigCase getConfigCase();
+  com.google.cloud.dataproc.v1.KubernetesClusterConfig.ConfigCase getConfigCase();
 }

@@ -43,7 +43,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
     dataType_ = "";
     charset_ = "";
     collation_ = "";
-    setValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    setValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
     comment_ = "";
     defaultValue_ = "";
   }
@@ -52,11 +52,6 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ColumnEntity();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -493,7 +488,8 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
   public static final int SET_VALUES_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList setValues_;
+  private com.google.protobuf.LazyStringArrayList setValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1060,8 +1056,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
         customFeaturesBuilder_.dispose();
         customFeaturesBuilder_ = null;
       }
-      setValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00004000);
+      setValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       comment_ = "";
       ordinalPosition_ = 0;
       defaultValue_ = "";
@@ -1092,20 +1087,11 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.ColumnEntity buildPartial() {
       com.google.cloud.clouddms.v1.ColumnEntity result =
           new com.google.cloud.clouddms.v1.ColumnEntity(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.clouddms.v1.ColumnEntity result) {
-      if (((bitField0_ & 0x00004000) != 0)) {
-        setValues_ = setValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00004000);
-      }
-      result.setValues_ = setValues_;
     }
 
     private void buildPartial0(com.google.cloud.clouddms.v1.ColumnEntity result) {
@@ -1152,6 +1138,10 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.customFeatures_ =
             customFeaturesBuilder_ == null ? customFeatures_ : customFeaturesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        setValues_.makeImmutable();
+        result.setValues_ = setValues_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.comment_ = comment_;
@@ -1262,7 +1252,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
       if (!other.setValues_.isEmpty()) {
         if (setValues_.isEmpty()) {
           setValues_ = other.setValues_;
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ |= 0x00004000;
         } else {
           ensureSetValuesIsMutable();
           setValues_.addAll(other.setValues_);
@@ -2520,14 +2510,14 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
       return customFeaturesBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList setValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList setValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSetValuesIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!setValues_.isModifiable()) {
         setValues_ = new com.google.protobuf.LazyStringArrayList(setValues_);
-        bitField0_ |= 0x00004000;
       }
+      bitField0_ |= 0x00004000;
     }
     /**
      *
@@ -2542,7 +2532,8 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the setValues.
      */
     public com.google.protobuf.ProtocolStringList getSetValuesList() {
-      return setValues_.getUnmodifiableView();
+      setValues_.makeImmutable();
+      return setValues_;
     }
     /**
      *
@@ -2611,6 +2602,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSetValuesIsMutable();
       setValues_.set(index, value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2633,6 +2625,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSetValuesIsMutable();
       setValues_.add(value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2652,6 +2645,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSetValues(java.lang.Iterable<java.lang.String> values) {
       ensureSetValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, setValues_);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2668,8 +2662,9 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSetValues() {
-      setValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      setValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00004000);
+      ;
       onChanged();
       return this;
     }
@@ -2693,6 +2688,7 @@ public final class ColumnEntity extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSetValuesIsMutable();
       setValues_.add(value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

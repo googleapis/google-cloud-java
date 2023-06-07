@@ -113,6 +113,7 @@ public interface WorkItemDetailsOrBuilder
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -127,6 +128,7 @@ public interface WorkItemDetailsOrBuilder
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -141,6 +143,7 @@ public interface WorkItemDetailsOrBuilder
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>

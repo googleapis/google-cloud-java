@@ -46,11 +46,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
     return new IAMPolicy();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datafusion.v1beta1.V1Beta1
         .internal_static_google_cloud_datafusion_v1beta1_IAMPolicy_descriptor;

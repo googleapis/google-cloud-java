@@ -47,11 +47,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return new NetworkConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_NetworkConfig_descriptor;
@@ -82,6 +77,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -102,6 +98,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -122,6 +119,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -160,8 +158,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEndpointUriBytes();
 
-    public com.google.cloud.metastore.v1alpha.NetworkConfig.Consumer.VpcResourceCase
-        getVpcResourceCase();
+    com.google.cloud.metastore.v1alpha.NetworkConfig.Consumer.VpcResourceCase getVpcResourceCase();
   }
   /**
    *
@@ -192,11 +189,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return new Consumer();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.metastore.v1alpha.MetastoreProto
           .internal_static_google_cloud_metastore_v1alpha_NetworkConfig_Consumer_descriptor;
@@ -213,6 +205,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vpcResourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object vpcResource_;
 
     public enum VpcResourceCase
@@ -267,6 +261,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -289,6 +284,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -324,6 +320,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -825,6 +822,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -848,6 +846,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -884,6 +883,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -920,6 +920,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -949,6 +950,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -976,6 +978,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *

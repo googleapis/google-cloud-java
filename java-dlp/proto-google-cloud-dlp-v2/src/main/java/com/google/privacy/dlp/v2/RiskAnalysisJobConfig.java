@@ -48,11 +48,6 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
     return new RiskAnalysisJobConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_RiskAnalysisJobConfig_descriptor;

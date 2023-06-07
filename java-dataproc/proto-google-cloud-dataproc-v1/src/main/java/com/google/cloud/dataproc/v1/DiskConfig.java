@@ -48,11 +48,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     return new DiskConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
@@ -157,6 +152,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * If one or more SSDs are attached, this runtime bulk
    * data is spread across them, and the boot disk contains only basic
    * config and installed binaries.
+   *
    * Note: Local SSD options may vary by machine type and number of vCPUs
    * selected.
    * </pre>
@@ -827,6 +823,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * If one or more SSDs are attached, this runtime bulk
      * data is spread across them, and the boot disk contains only basic
      * config and installed binaries.
+     *
      * Note: Local SSD options may vary by machine type and number of vCPUs
      * selected.
      * </pre>
@@ -849,6 +846,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * If one or more SSDs are attached, this runtime bulk
      * data is spread across them, and the boot disk contains only basic
      * config and installed binaries.
+     *
      * Note: Local SSD options may vary by machine type and number of vCPUs
      * selected.
      * </pre>
@@ -875,6 +873,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * If one or more SSDs are attached, this runtime bulk
      * data is spread across them, and the boot disk contains only basic
      * config and installed binaries.
+     *
      * Note: Local SSD options may vary by machine type and number of vCPUs
      * selected.
      * </pre>

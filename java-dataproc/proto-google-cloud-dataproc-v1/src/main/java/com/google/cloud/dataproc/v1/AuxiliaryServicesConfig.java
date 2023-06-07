@@ -45,11 +45,6 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     return new AuxiliaryServicesConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_AuxiliaryServicesConfig_descriptor;

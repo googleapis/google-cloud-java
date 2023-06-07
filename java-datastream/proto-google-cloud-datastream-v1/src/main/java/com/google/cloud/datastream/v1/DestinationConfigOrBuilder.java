@@ -128,6 +128,6 @@ public interface DestinationConfigOrBuilder
   com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder
       getBigqueryDestinationConfigOrBuilder();
 
-  public com.google.cloud.datastream.v1.DestinationConfig.DestinationStreamConfigCase
+  com.google.cloud.datastream.v1.DestinationConfig.DestinationStreamConfigCase
       getDestinationStreamConfigCase();
 }

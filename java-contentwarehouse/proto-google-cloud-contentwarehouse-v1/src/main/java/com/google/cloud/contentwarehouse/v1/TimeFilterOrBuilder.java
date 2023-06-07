@@ -43,6 +43,7 @@ public interface TimeFilterOrBuilder
    *
    * <pre>
    * Specifies which time field to filter documents on.
+   *
    * Defaults to [TimeField.UPLOAD_TIME][].
    * </pre>
    *
@@ -56,6 +57,7 @@ public interface TimeFilterOrBuilder
    *
    * <pre>
    * Specifies which time field to filter documents on.
+   *
    * Defaults to [TimeField.UPLOAD_TIME][].
    * </pre>
    *

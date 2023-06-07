@@ -49,11 +49,6 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
     return new RestoreAgentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.AgentProto
         .internal_static_google_cloud_dialogflow_cx_v3_RestoreAgentRequest_descriptor;
@@ -235,6 +230,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   private int agentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object agent_;
 
   public enum AgentCase
@@ -346,6 +343,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -367,6 +365,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -401,6 +400,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -1094,6 +1094,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1116,6 +1117,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1151,6 +1153,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1186,6 +1189,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1214,6 +1218,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1240,6 +1245,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to restore agent from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see

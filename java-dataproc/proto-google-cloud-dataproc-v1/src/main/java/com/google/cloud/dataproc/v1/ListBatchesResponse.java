@@ -48,11 +48,6 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
     return new ListBatchesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.BatchesProto
         .internal_static_google_cloud_dataproc_v1_ListBatchesResponse_descriptor;

@@ -28,7 +28,9 @@ public interface PeripheralsConfigOrBuilder
    *
    * <pre>
    * Optional. Resource name of an existing Dataproc Metastore service.
+   *
    * Example:
+   *
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface PeripheralsConfigOrBuilder
    *
    * <pre>
    * Optional. Resource name of an existing Dataproc Metastore service.
+   *
    * Example:
+   *
    * * `projects/[project_id]/locations/[region]/services/[service_id]`
    * </pre>
    *

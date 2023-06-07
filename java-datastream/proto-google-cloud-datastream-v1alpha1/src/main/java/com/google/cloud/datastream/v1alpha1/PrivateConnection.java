@@ -50,11 +50,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     return new PrivateConnection();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1alpha1.CloudDatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1alpha1_PrivateConnection_descriptor;

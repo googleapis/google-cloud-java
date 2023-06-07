@@ -50,11 +50,6 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     return new EnvironmentHistory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_descriptor;
@@ -188,11 +183,6 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Entry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1230,9 +1220,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The name of the environment this history is for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -1258,9 +1250,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The name of the environment this history is for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -1868,9 +1862,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1895,9 +1891,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1922,9 +1920,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1948,9 +1948,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *
@@ -1970,9 +1972,11 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The name of the environment this history is for.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     *
      * The environment ID for the default environment is `-`.
      * </pre>
      *

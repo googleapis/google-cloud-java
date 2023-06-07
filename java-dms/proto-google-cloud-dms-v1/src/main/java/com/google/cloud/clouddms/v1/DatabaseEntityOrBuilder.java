@@ -480,5 +480,5 @@ public interface DatabaseEntityOrBuilder
    */
   com.google.cloud.clouddms.v1.PackageEntityOrBuilder getDatabasePackageOrBuilder();
 
-  public com.google.cloud.clouddms.v1.DatabaseEntity.EntityBodyCase getEntityBodyCase();
+  com.google.cloud.clouddms.v1.DatabaseEntity.EntityBodyCase getEntityBodyCase();
 }

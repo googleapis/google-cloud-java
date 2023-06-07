@@ -498,7 +498,7 @@ public interface ConnectionProfileOrBuilder
    */
   com.google.cloud.datastream.v1.PrivateConnectivityOrBuilder getPrivateConnectivityOrBuilder();
 
-  public com.google.cloud.datastream.v1.ConnectionProfile.ProfileCase getProfileCase();
+  com.google.cloud.datastream.v1.ConnectionProfile.ProfileCase getProfileCase();
 
-  public com.google.cloud.datastream.v1.ConnectionProfile.ConnectivityCase getConnectivityCase();
+  com.google.cloud.datastream.v1.ConnectionProfile.ConnectivityCase getConnectivityCase();
 }

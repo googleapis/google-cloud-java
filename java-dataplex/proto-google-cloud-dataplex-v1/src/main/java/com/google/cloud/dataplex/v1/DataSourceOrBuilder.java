@@ -118,5 +118,5 @@ public interface DataSourceOrBuilder
    */
   com.google.protobuf.ByteString getResourceBytes();
 
-  public com.google.cloud.dataplex.v1.DataSource.SourceCase getSourceCase();
+  com.google.cloud.dataplex.v1.DataSource.SourceCase getSourceCase();
 }

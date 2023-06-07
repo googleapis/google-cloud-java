@@ -45,11 +45,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     return new PrivacyMetric();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
@@ -134,11 +129,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new NumericalStatsConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -893,11 +883,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CategoricalStatsConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1688,6 +1673,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
+     *
      * Important note: a maximum of 1000 rows can be associated to a single
      * entity ID. If more rows are associated with the same entity ID, some
      * might be ignored.
@@ -1708,6 +1694,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
+     *
      * Important note: a maximum of 1000 rows can be associated to a single
      * entity ID. If more rows are associated with the same entity ID, some
      * might be ignored.
@@ -1728,6 +1715,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
+     *
      * Important note: a maximum of 1000 rows can be associated to a single
      * entity ID. If more rows are associated with the same entity ID, some
      * might be ignored.
@@ -1764,11 +1752,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new KAnonymityConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1889,6 +1872,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
+     *
      * Important note: a maximum of 1000 rows can be associated to a single
      * entity ID. If more rows are associated with the same entity ID, some
      * might be ignored.
@@ -1912,6 +1896,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
+     *
      * Important note: a maximum of 1000 rows can be associated to a single
      * entity ID. If more rows are associated with the same entity ID, some
      * might be ignored.
@@ -1937,6 +1922,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
+     *
      * Important note: a maximum of 1000 rows can be associated to a single
      * entity ID. If more rows are associated with the same entity ID, some
      * might be ignored.
@@ -2813,6 +2799,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -2835,6 +2822,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -2863,6 +2851,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -2893,6 +2882,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -2920,6 +2910,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -2953,6 +2944,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -2980,6 +2972,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -3002,6 +2995,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -3028,6 +3022,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
+       *
        * Important note: a maximum of 1000 rows can be associated to a single
        * entity ID. If more rows are associated with the same entity ID, some
        * might be ignored.
@@ -3244,11 +3239,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LDiversityConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4679,11 +4669,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return new KMapEstimationConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
@@ -4870,8 +4855,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.EmptyOrBuilder getInferredOrBuilder();
 
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase
-          getTagCase();
+      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase getTagCase();
     }
     /**
      *
@@ -4900,11 +4884,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         return new TaggedField();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
@@ -4922,6 +4901,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int tagCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object tag_;
 
       public enum TagCase
@@ -6768,11 +6749,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         return new AuxiliaryTable();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
@@ -6883,11 +6859,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new QuasiIdField();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11455,11 +11426,6 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       return new DeltaPresenceEstimationConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
@@ -13181,6 +13147,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase

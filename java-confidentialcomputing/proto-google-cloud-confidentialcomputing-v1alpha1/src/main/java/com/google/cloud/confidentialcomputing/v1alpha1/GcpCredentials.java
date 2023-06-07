@@ -48,11 +48,6 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     return new GcpCredentials();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.confidentialcomputing.v1alpha1.ServiceProto
         .internal_static_google_cloud_confidentialcomputing_v1alpha1_GcpCredentials_descriptor;

@@ -52,11 +52,6 @@ public final class Federation extends com.google.protobuf.GeneratedMessageV3
     return new Federation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreFederationProto
         .internal_static_google_cloud_metastore_v1alpha_Federation_descriptor;

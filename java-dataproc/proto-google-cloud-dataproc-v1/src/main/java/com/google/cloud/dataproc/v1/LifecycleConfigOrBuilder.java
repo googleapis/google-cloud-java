@@ -217,5 +217,5 @@ public interface LifecycleConfigOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder();
 
-  public com.google.cloud.dataproc.v1.LifecycleConfig.TtlCase getTtlCase();
+  com.google.cloud.dataproc.v1.LifecycleConfig.TtlCase getTtlCase();
 }

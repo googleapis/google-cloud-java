@@ -48,11 +48,6 @@ public final class ListDataScanJobsRequest extends com.google.protobuf.Generated
     return new ListDataScanJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataScansProto
         .internal_static_google_cloud_dataplex_v1_ListDataScanJobsRequest_descriptor;

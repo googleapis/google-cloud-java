@@ -270,6 +270,6 @@ public interface CompilationResultActionOrBuilder
   com.google.cloud.dataform.v1beta1.CompilationResultAction.DeclarationOrBuilder
       getDeclarationOrBuilder();
 
-  public com.google.cloud.dataform.v1beta1.CompilationResultAction.CompiledObjectCase
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.CompiledObjectCase
       getCompiledObjectCase();
 }

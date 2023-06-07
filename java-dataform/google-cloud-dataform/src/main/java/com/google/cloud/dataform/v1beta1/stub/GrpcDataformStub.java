@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
@@ -93,7 +94,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -633,9 +633,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(listRepositoriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
@@ -643,9 +643,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(getRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateRepositoryRequest, Repository> createRepositoryTransportSettings =
@@ -653,9 +653,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(createRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
@@ -663,9 +663,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(updateRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("repository.name", String.valueOf(request.getRepository().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository.name", String.valueOf(request.getRepository().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRepositoryRequest, Empty> deleteRepositoryTransportSettings =
@@ -673,9 +673,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(deleteRepositoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
@@ -684,9 +684,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(fetchRemoteBranchesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
@@ -695,9 +695,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(listWorkspacesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceTransportSettings =
@@ -705,9 +705,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(getWorkspaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateWorkspaceRequest, Workspace> createWorkspaceTransportSettings =
@@ -715,9 +715,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(createWorkspaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
@@ -725,9 +725,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(deleteWorkspaceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
@@ -736,9 +736,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(installNpmPackagesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("workspace", String.valueOf(request.getWorkspace()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<PullGitCommitsRequest, Empty> pullGitCommitsTransportSettings =
@@ -746,9 +746,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(pullGitCommitsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PushGitCommitsRequest, Empty> pushGitCommitsTransportSettings =
@@ -756,9 +756,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(pushGitCommitsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
@@ -767,9 +767,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(fetchFileGitStatusesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
@@ -778,9 +778,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(fetchGitAheadBehindMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CommitWorkspaceChangesRequest, Empty> commitWorkspaceChangesTransportSettings =
@@ -788,9 +788,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(commitWorkspaceChangesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResetWorkspaceChangesRequest, Empty> resetWorkspaceChangesTransportSettings =
@@ -798,9 +798,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(resetWorkspaceChangesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchFileDiffRequest, FetchFileDiffResponse> fetchFileDiffTransportSettings =
@@ -808,9 +808,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(fetchFileDiffMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>
@@ -820,9 +820,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(queryDirectoryContentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("workspace", String.valueOf(request.getWorkspace()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<MakeDirectoryRequest, MakeDirectoryResponse> makeDirectoryTransportSettings =
@@ -830,9 +830,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(makeDirectoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RemoveDirectoryRequest, Empty> removeDirectoryTransportSettings =
@@ -840,9 +840,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(removeDirectoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MoveDirectoryRequest, MoveDirectoryResponse> moveDirectoryTransportSettings =
@@ -850,9 +850,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(moveDirectoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReadFileRequest, ReadFileResponse> readFileTransportSettings =
@@ -860,9 +860,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(readFileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RemoveFileRequest, Empty> removeFileTransportSettings =
@@ -870,9 +870,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(removeFileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<MoveFileRequest, MoveFileResponse> moveFileTransportSettings =
@@ -880,9 +880,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(moveFileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<WriteFileRequest, WriteFileResponse> writeFileTransportSettings =
@@ -890,9 +890,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(writeFileMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workspace", String.valueOf(request.getWorkspace()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCompilationResultsRequest, ListCompilationResultsResponse>
@@ -902,9 +902,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(listCompilationResultsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCompilationResultRequest, CompilationResult>
@@ -913,9 +913,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(getCompilationResultMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateCompilationResultRequest, CompilationResult>
@@ -924,9 +924,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(createCompilationResultMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
@@ -937,9 +937,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(queryCompilationResultActionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListWorkflowInvocationsRequest, ListWorkflowInvocationsResponse>
@@ -949,9 +949,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(listWorkflowInvocationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkflowInvocationRequest, WorkflowInvocation>
@@ -960,9 +960,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(getWorkflowInvocationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkflowInvocationRequest, WorkflowInvocation>
@@ -971,9 +971,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(createWorkflowInvocationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkflowInvocationRequest, Empty>
@@ -982,9 +982,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(deleteWorkflowInvocationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CancelWorkflowInvocationRequest, Empty>
@@ -993,9 +993,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(cancelWorkflowInvocationMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
@@ -1006,9 +1006,9 @@ public class GrpcDataformStub extends DataformStub {
                 .setMethodDescriptor(queryWorkflowInvocationActionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -1016,9 +1016,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -1026,9 +1026,9 @@ public class GrpcDataformStub extends DataformStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

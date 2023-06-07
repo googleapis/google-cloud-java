@@ -64,5 +64,5 @@ public interface ReplaceDictionaryConfigOrBuilder
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder getWordListOrBuilder();
 
-  public com.google.privacy.dlp.v2.ReplaceDictionaryConfig.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.ReplaceDictionaryConfig.TypeCase getTypeCase();
 }

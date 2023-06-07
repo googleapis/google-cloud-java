@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata;
@@ -731,52 +732,112 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
             HttpJsonCallSettings.<ListTestCasesRequest, ListTestCasesResponse>newBuilder()
                 .setMethodDescriptor(listTestCasesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchDeleteTestCasesRequest, Empty> batchDeleteTestCasesTransportSettings =
         HttpJsonCallSettings.<BatchDeleteTestCasesRequest, Empty>newBuilder()
             .setMethodDescriptor(batchDeleteTestCasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTestCaseRequest, TestCase> getTestCaseTransportSettings =
         HttpJsonCallSettings.<GetTestCaseRequest, TestCase>newBuilder()
             .setMethodDescriptor(getTestCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateTestCaseRequest, TestCase> createTestCaseTransportSettings =
         HttpJsonCallSettings.<CreateTestCaseRequest, TestCase>newBuilder()
             .setMethodDescriptor(createTestCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTestCaseRequest, TestCase> updateTestCaseTransportSettings =
         HttpJsonCallSettings.<UpdateTestCaseRequest, TestCase>newBuilder()
             .setMethodDescriptor(updateTestCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("test_case.name", String.valueOf(request.getTestCase().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RunTestCaseRequest, Operation> runTestCaseTransportSettings =
         HttpJsonCallSettings.<RunTestCaseRequest, Operation>newBuilder()
             .setMethodDescriptor(runTestCaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchRunTestCasesRequest, Operation> batchRunTestCasesTransportSettings =
         HttpJsonCallSettings.<BatchRunTestCasesRequest, Operation>newBuilder()
             .setMethodDescriptor(batchRunTestCasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CalculateCoverageRequest, CalculateCoverageResponse>
         calculateCoverageTransportSettings =
             HttpJsonCallSettings.<CalculateCoverageRequest, CalculateCoverageResponse>newBuilder()
                 .setMethodDescriptor(calculateCoverageMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("agent", String.valueOf(request.getAgent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportTestCasesRequest, Operation> importTestCasesTransportSettings =
         HttpJsonCallSettings.<ImportTestCasesRequest, Operation>newBuilder()
             .setMethodDescriptor(importTestCasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ExportTestCasesRequest, Operation> exportTestCasesTransportSettings =
         HttpJsonCallSettings.<ExportTestCasesRequest, Operation>newBuilder()
             .setMethodDescriptor(exportTestCasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
         listTestCaseResultsTransportSettings =
@@ -784,23 +845,47 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                 .<ListTestCaseResultsRequest, ListTestCaseResultsResponse>newBuilder()
                 .setMethodDescriptor(listTestCaseResultsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetTestCaseResultRequest, TestCaseResult>
         getTestCaseResultTransportSettings =
             HttpJsonCallSettings.<GetTestCaseResultRequest, TestCaseResult>newBuilder()
                 .setMethodDescriptor(getTestCaseResultMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listTestCasesCallable =

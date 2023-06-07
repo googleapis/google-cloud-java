@@ -49,11 +49,6 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
     return new ListContextsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ContextProto
         .internal_static_google_cloud_dialogflow_v2_ListContextsResponse_descriptor;

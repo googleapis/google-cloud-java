@@ -41,18 +41,13 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
   private IndexEntity() {
     name_ = "";
     type_ = "";
-    tableColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tableColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IndexEntity();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,7 +170,8 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
   public static final int TABLE_COLUMNS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tableColumns_;
+  private com.google.protobuf.LazyStringArrayList tableColumns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -555,8 +551,7 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       type_ = "";
-      tableColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      tableColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       unique_ = false;
       customFeatures_ = null;
       if (customFeaturesBuilder_ != null) {
@@ -590,20 +585,11 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.IndexEntity buildPartial() {
       com.google.cloud.clouddms.v1.IndexEntity result =
           new com.google.cloud.clouddms.v1.IndexEntity(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.clouddms.v1.IndexEntity result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        tableColumns_ = tableColumns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.tableColumns_ = tableColumns_;
     }
 
     private void buildPartial0(com.google.cloud.clouddms.v1.IndexEntity result) {
@@ -613,6 +599,10 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        tableColumns_.makeImmutable();
+        result.tableColumns_ = tableColumns_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.unique_ = unique_;
@@ -681,7 +671,7 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       if (!other.tableColumns_.isEmpty()) {
         if (tableColumns_.isEmpty()) {
           tableColumns_ = other.tableColumns_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTableColumnsIsMutable();
           tableColumns_.addAll(other.tableColumns_);
@@ -982,14 +972,14 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tableColumns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tableColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTableColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!tableColumns_.isModifiable()) {
         tableColumns_ = new com.google.protobuf.LazyStringArrayList(tableColumns_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1004,7 +994,8 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tableColumns.
      */
     public com.google.protobuf.ProtocolStringList getTableColumnsList() {
-      return tableColumns_.getUnmodifiableView();
+      tableColumns_.makeImmutable();
+      return tableColumns_;
     }
     /**
      *
@@ -1073,6 +1064,7 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTableColumnsIsMutable();
       tableColumns_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1095,6 +1087,7 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTableColumnsIsMutable();
       tableColumns_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1114,6 +1107,7 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTableColumns(java.lang.Iterable<java.lang.String> values) {
       ensureTableColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tableColumns_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1130,8 +1124,9 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTableColumns() {
-      tableColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tableColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1155,6 +1150,7 @@ public final class IndexEntity extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTableColumnsIsMutable();
       tableColumns_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

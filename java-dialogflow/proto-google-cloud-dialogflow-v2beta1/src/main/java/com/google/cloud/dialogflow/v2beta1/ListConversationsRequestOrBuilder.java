@@ -109,7 +109,9 @@ public interface ListConversationsRequestOrBuilder
    * &lt;/ul&gt;
    * Only `lifecycle_state` can be filtered on in this way. For example,
    * the following expression only returns `COMPLETED` conversations:
+   *
    * `lifecycle_state = "COMPLETED"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -135,7 +137,9 @@ public interface ListConversationsRequestOrBuilder
    * &lt;/ul&gt;
    * Only `lifecycle_state` can be filtered on in this way. For example,
    * the following expression only returns `COMPLETED` conversations:
+   *
    * `lifecycle_state = "COMPLETED"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

@@ -47,11 +47,6 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
     return new TelephonyDtmfEvents();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
         .internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_descriptor;

@@ -268,5 +268,5 @@ public interface WebhookResponseOrBuilder
    */
   com.google.protobuf.ByteString getTargetFlowBytes();
 
-  public com.google.cloud.dialogflow.cx.v3.WebhookResponse.TransitionCase getTransitionCase();
+  com.google.cloud.dialogflow.cx.v3.WebhookResponse.TransitionCase getTransitionCase();
 }

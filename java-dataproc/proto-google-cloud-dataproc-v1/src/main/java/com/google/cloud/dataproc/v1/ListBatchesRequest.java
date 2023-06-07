@@ -50,11 +50,6 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
     return new ListBatchesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.BatchesProto
         .internal_static_google_cloud_dataproc_v1_ListBatchesRequest_descriptor;
@@ -207,12 +202,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A filter for the batches to return in the response.
+   *
    * A filter is a logical expression constraining the values of various fields
    * in each batch resource. Filters are case sensitive, and may contain
    * multiple clauses combined with logical operators (AND/OR).
    * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+   *
    * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
    * filters for batches in state RUNNING that were created before 2023-01-01
+   *
    * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
    * description of the filter syntax and a list of supported comparisons.
    * </pre>
@@ -238,12 +236,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A filter for the batches to return in the response.
+   *
    * A filter is a logical expression constraining the values of various fields
    * in each batch resource. Filters are case sensitive, and may contain
    * multiple clauses combined with logical operators (AND/OR).
    * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+   *
    * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
    * filters for batches in state RUNNING that were created before 2023-01-01
+   *
    * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
    * description of the filter syntax and a list of supported comparisons.
    * </pre>
@@ -274,8 +275,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. Field(s) on which to sort the list of batches.
+   *
    * Currently the only supported sort orders are unspecified (empty) and
    * `create_time desc` to sort by most recently created batches first.
+   *
    * See https://google.aip.dev/132#ordering for more details.
    * </pre>
    *
@@ -300,8 +303,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. Field(s) on which to sort the list of batches.
+   *
    * Currently the only supported sort orders are unspecified (empty) and
    * `create_time desc` to sort by most recently created batches first.
+   *
    * See https://google.aip.dev/132#ordering for more details.
    * </pre>
    *
@@ -1050,12 +1055,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A filter for the batches to return in the response.
+     *
      * A filter is a logical expression constraining the values of various fields
      * in each batch resource. Filters are case sensitive, and may contain
      * multiple clauses combined with logical operators (AND/OR).
      * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     *
      * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
      * filters for batches in state RUNNING that were created before 2023-01-01
+     *
      * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
      * description of the filter syntax and a list of supported comparisons.
      * </pre>
@@ -1080,12 +1088,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A filter for the batches to return in the response.
+     *
      * A filter is a logical expression constraining the values of various fields
      * in each batch resource. Filters are case sensitive, and may contain
      * multiple clauses combined with logical operators (AND/OR).
      * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     *
      * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
      * filters for batches in state RUNNING that were created before 2023-01-01
+     *
      * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
      * description of the filter syntax and a list of supported comparisons.
      * </pre>
@@ -1110,12 +1121,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A filter for the batches to return in the response.
+     *
      * A filter is a logical expression constraining the values of various fields
      * in each batch resource. Filters are case sensitive, and may contain
      * multiple clauses combined with logical operators (AND/OR).
      * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     *
      * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
      * filters for batches in state RUNNING that were created before 2023-01-01
+     *
      * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
      * description of the filter syntax and a list of supported comparisons.
      * </pre>
@@ -1139,12 +1153,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A filter for the batches to return in the response.
+     *
      * A filter is a logical expression constraining the values of various fields
      * in each batch resource. Filters are case sensitive, and may contain
      * multiple clauses combined with logical operators (AND/OR).
      * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     *
      * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
      * filters for batches in state RUNNING that were created before 2023-01-01
+     *
      * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
      * description of the filter syntax and a list of supported comparisons.
      * </pre>
@@ -1164,12 +1181,15 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A filter for the batches to return in the response.
+     *
      * A filter is a logical expression constraining the values of various fields
      * in each batch resource. Filters are case sensitive, and may contain
      * multiple clauses combined with logical operators (AND/OR).
      * Supported fields are `batch_id`, `batch_uuid`, `state`, and `create_time`.
+     *
      * e.g. `state = RUNNING and create_time &lt; "2023-01-01T00:00:00Z"`
      * filters for batches in state RUNNING that were created before 2023-01-01
+     *
      * See https://google.aip.dev/assets/misc/ebnf-filtering.txt for a detailed
      * description of the filter syntax and a list of supported comparisons.
      * </pre>
@@ -1196,8 +1216,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Field(s) on which to sort the list of batches.
+     *
      * Currently the only supported sort orders are unspecified (empty) and
      * `create_time desc` to sort by most recently created batches first.
+     *
      * See https://google.aip.dev/132#ordering for more details.
      * </pre>
      *
@@ -1221,8 +1243,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Field(s) on which to sort the list of batches.
+     *
      * Currently the only supported sort orders are unspecified (empty) and
      * `create_time desc` to sort by most recently created batches first.
+     *
      * See https://google.aip.dev/132#ordering for more details.
      * </pre>
      *
@@ -1246,8 +1270,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Field(s) on which to sort the list of batches.
+     *
      * Currently the only supported sort orders are unspecified (empty) and
      * `create_time desc` to sort by most recently created batches first.
+     *
      * See https://google.aip.dev/132#ordering for more details.
      * </pre>
      *
@@ -1270,8 +1296,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Field(s) on which to sort the list of batches.
+     *
      * Currently the only supported sort orders are unspecified (empty) and
      * `create_time desc` to sort by most recently created batches first.
+     *
      * See https://google.aip.dev/132#ordering for more details.
      * </pre>
      *
@@ -1290,8 +1318,10 @@ public final class ListBatchesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Field(s) on which to sort the list of batches.
+     *
      * Currently the only supported sort orders are unspecified (empty) and
      * `create_time desc` to sort by most recently created batches first.
+     *
      * See https://google.aip.dev/132#ordering for more details.
      * </pre>
      *

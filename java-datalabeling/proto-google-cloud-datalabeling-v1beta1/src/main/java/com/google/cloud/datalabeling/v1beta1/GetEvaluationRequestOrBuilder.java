@@ -28,6 +28,7 @@ public interface GetEvaluationRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetEvaluationRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
    * </pre>
    *

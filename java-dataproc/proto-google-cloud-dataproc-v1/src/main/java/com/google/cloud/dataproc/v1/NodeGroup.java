@@ -51,11 +51,6 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     return new NodeGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_NodeGroup_descriptor;
@@ -464,6 +459,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -492,6 +488,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -511,6 +508,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -537,6 +535,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -1638,6 +1637,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from
@@ -1666,6 +1666,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from
@@ -1685,6 +1686,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from
@@ -1711,6 +1713,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from
@@ -1743,6 +1746,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from
@@ -1771,6 +1775,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from
@@ -1797,6 +1802,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Node group labels.
+     *
      * * Label **keys** must consist of from 1 to 63 characters and conform to
      *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * * Label **values** can be empty. If specified, they must consist of from

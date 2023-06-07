@@ -47,11 +47,6 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
     return new GetEnvironmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ServiceProto
         .internal_static_google_cloud_dataplex_v1_GetEnvironmentRequest_descriptor;

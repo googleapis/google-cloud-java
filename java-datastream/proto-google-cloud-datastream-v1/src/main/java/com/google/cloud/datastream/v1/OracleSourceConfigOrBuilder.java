@@ -202,6 +202,6 @@ public interface OracleSourceConfigOrBuilder
   com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjectsOrBuilder
       getStreamLargeObjectsOrBuilder();
 
-  public com.google.cloud.datastream.v1.OracleSourceConfig.LargeObjectsHandlingCase
+  com.google.cloud.datastream.v1.OracleSourceConfig.LargeObjectsHandlingCase
       getLargeObjectsHandlingCase();
 }

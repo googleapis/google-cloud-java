@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.CheckActiveJobsRequest;
 import com.google.dataflow.v1beta3.CheckActiveJobsResponse;
 import com.google.dataflow.v1beta3.CreateJobRequest;
@@ -173,10 +173,10 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
             .setMethodDescriptor(createJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("location", String.valueOf(request.getLocation()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
@@ -184,11 +184,11 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
             .setMethodDescriptor(getJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("location", String.valueOf(request.getLocation()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
@@ -196,11 +196,11 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
             .setMethodDescriptor(updateJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("location", String.valueOf(request.getLocation()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
@@ -208,10 +208,10 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("location", String.valueOf(request.getLocation()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> aggregatedListJobsTransportSettings =
@@ -219,9 +219,9 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
             .setMethodDescriptor(aggregatedListJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CheckActiveJobsRequest, CheckActiveJobsResponse>
@@ -234,11 +234,11 @@ public class GrpcJobsV1Beta3Stub extends JobsV1Beta3Stub {
             .setMethodDescriptor(snapshotJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("location", String.valueOf(request.getLocation()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
                 })
             .build();
 

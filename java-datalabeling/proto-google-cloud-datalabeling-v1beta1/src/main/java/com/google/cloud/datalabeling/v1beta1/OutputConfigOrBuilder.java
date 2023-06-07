@@ -103,5 +103,5 @@ public interface OutputConfigOrBuilder
   com.google.cloud.datalabeling.v1beta1.GcsFolderDestinationOrBuilder
       getGcsFolderDestinationOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.OutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.datalabeling.v1beta1.OutputConfig.DestinationCase getDestinationCase();
 }

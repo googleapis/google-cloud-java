@@ -64,5 +64,5 @@ public interface InputConfigOrBuilder
    */
   com.google.cloud.dialogflow.v2.GcsSourcesOrBuilder getGcsSourceOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.dialogflow.v2.InputConfig.SourceCase getSourceCase();
 }

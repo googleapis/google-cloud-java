@@ -46,11 +46,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
     return new DataProfileResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataProfileProto
         .internal_static_google_cloud_dataplex_v1_DataProfileResult_descriptor;
@@ -153,11 +148,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       return new Profile();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.DataProfileProto
           .internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_descriptor;
@@ -241,6 +231,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The mode of the field. Possible values include:
+       *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
@@ -256,6 +247,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The mode of the field. Possible values include:
+       *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
@@ -335,11 +327,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Field();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -606,8 +593,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
                 .DoubleFieldInfoOrBuilder
             getDoubleProfileOrBuilder();
 
-        public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
-                .FieldInfoCase
+        com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.FieldInfoCase
             getFieldInfoCase();
       }
       /**
@@ -637,11 +623,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new ProfileInfo();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -730,11 +711,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           @SuppressWarnings({"unused"})
           protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
             return new StringFieldInfo();
-          }
-
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
           }
 
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1650,11 +1626,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
           @SuppressWarnings({"unused"})
           protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
             return new IntegerFieldInfo();
-          }
-
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
           }
 
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3034,11 +3005,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             return new DoubleFieldInfo();
           }
 
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
-          }
-
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
             return com.google.cloud.dataplex.v1.DataProfileProto
                 .internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_Field_ProfileInfo_DoubleFieldInfo_descriptor;
@@ -4333,11 +4299,6 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
             return new TopNValue();
           }
 
-          @java.lang.Override
-          public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
-          }
-
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
             return com.google.cloud.dataplex.v1.DataProfileProto
                 .internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_Field_ProfileInfo_TopNValue_descriptor;
@@ -5080,6 +5041,8 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
         }
 
         private int fieldInfoCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object fieldInfo_;
 
         public enum FieldInfoCase
@@ -7706,6 +7669,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The mode of the field. Possible values include:
+       *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
@@ -7732,6 +7696,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The mode of the field. Possible values include:
+       *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
@@ -8478,6 +8443,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * The mode of the field. Possible values include:
+         *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
@@ -8503,6 +8469,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * The mode of the field. Possible values include:
+         *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
@@ -8528,6 +8495,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * The mode of the field. Possible values include:
+         *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
@@ -8552,6 +8520,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * The mode of the field. Possible values include:
+         *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
@@ -8572,6 +8541,7 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          * <pre>
          * The mode of the field. Possible values include:
+         *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.

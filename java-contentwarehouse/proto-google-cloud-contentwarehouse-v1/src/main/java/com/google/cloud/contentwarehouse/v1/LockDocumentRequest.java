@@ -48,11 +48,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
     return new LockDocumentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentServiceRequestProto
         .internal_static_google_cloud_contentwarehouse_v1_LockDocumentRequest_descriptor;

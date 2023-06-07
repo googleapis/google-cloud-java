@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest;
 import com.google.devtools.clouddebugger.v2.GetBreakpointRequest;
 import com.google.devtools.clouddebugger.v2.GetBreakpointResponse;
@@ -155,9 +155,9 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
             .setMethodDescriptor(setBreakpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBreakpointRequest, GetBreakpointResponse> getBreakpointTransportSettings =
@@ -165,10 +165,10 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
             .setMethodDescriptor(getBreakpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("breakpoint_id", String.valueOf(request.getBreakpointId()));
-                  params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("breakpoint_id", String.valueOf(request.getBreakpointId()));
+                  builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteBreakpointRequest, Empty> deleteBreakpointTransportSettings =
@@ -176,10 +176,10 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
             .setMethodDescriptor(deleteBreakpointMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("breakpoint_id", String.valueOf(request.getBreakpointId()));
-                  params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("breakpoint_id", String.valueOf(request.getBreakpointId()));
+                  builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBreakpointsRequest, ListBreakpointsResponse>
@@ -188,9 +188,9 @@ public class GrpcDebugger2Stub extends Debugger2Stub {
                 .setMethodDescriptor(listBreakpointsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListDebuggeesRequest, ListDebuggeesResponse> listDebuggeesTransportSettings =

@@ -47,11 +47,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     return new ProgressTimeseries();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.MetricsProto
         .internal_static_google_dataflow_v1beta3_ProgressTimeseries_descriptor;
@@ -145,11 +140,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Point();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -934,6 +924,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -948,6 +939,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -963,6 +955,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -977,6 +970,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -991,6 +985,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -1493,6 +1488,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1511,6 +1507,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1528,6 +1525,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1545,6 +1543,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1569,6 +1568,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1590,6 +1590,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1613,6 +1614,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1637,6 +1639,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1658,6 +1661,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1679,6 +1683,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1700,6 +1705,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1720,6 +1726,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1740,6 +1747,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1754,6 +1762,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1772,6 +1781,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1790,6 +1800,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1804,6 +1815,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *
@@ -1820,6 +1832,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * History of progress for the component.
+     *
      * Points are sorted by time.
      * </pre>
      *

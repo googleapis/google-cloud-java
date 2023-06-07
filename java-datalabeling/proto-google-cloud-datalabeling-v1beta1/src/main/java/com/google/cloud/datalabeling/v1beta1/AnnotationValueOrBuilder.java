@@ -414,5 +414,5 @@ public interface AnnotationValueOrBuilder
   com.google.cloud.datalabeling.v1beta1.VideoEventAnnotationOrBuilder
       getVideoEventAnnotationOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.AnnotationValue.ValueTypeCase getValueTypeCase();
+  com.google.cloud.datalabeling.v1beta1.AnnotationValue.ValueTypeCase getValueTypeCase();
 }

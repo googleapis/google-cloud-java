@@ -159,6 +159,6 @@ public interface CalculateCoverageResponseOrBuilder
   com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverageOrBuilder
       getRouteGroupCoverageOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse.CoverageTypeCase
+  com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse.CoverageTypeCase
       getCoverageTypeCase();
 }

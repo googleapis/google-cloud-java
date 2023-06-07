@@ -49,11 +49,6 @@ public final class DeleteBreakpointRequest extends com.google.protobuf.Generated
     return new DeleteBreakpointRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouddebugger.v2.DebuggerProto
         .internal_static_google_devtools_clouddebugger_v2_DeleteBreakpointRequest_descriptor;

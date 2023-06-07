@@ -45,11 +45,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     return new DataProfileSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataProfileProto
         .internal_static_google_cloud_dataplex_v1_DataProfileSpec_descriptor;

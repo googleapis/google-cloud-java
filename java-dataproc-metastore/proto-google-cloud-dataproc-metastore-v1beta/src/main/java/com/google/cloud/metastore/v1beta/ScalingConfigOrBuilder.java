@@ -90,5 +90,5 @@ public interface ScalingConfigOrBuilder
    */
   float getScalingFactor();
 
-  public com.google.cloud.metastore.v1beta.ScalingConfig.ScalingModelCase getScalingModelCase();
+  com.google.cloud.metastore.v1beta.ScalingConfig.ScalingModelCase getScalingModelCase();
 }

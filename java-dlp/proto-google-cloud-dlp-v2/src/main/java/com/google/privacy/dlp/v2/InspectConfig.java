@@ -53,11 +53,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     return new InspectConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_InspectConfig_descriptor;
@@ -181,6 +176,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned for inspection.
    * This is not used for de-identification or data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -208,11 +204,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FindingLimits();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -318,11 +309,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new InfoTypeLimit();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1454,6 +1440,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned for inspection.
      * This is not used for de-identification or data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -2327,9 +2314,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2348,9 +2337,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2370,9 +2361,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2391,9 +2384,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2412,9 +2407,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2474,6 +2471,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -2495,6 +2493,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -2518,6 +2517,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -3533,9 +3533,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3557,9 +3559,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3581,9 +3585,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3605,9 +3611,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3635,9 +3643,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3663,9 +3673,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3693,9 +3705,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3723,9 +3737,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3750,9 +3766,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3778,9 +3796,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3806,9 +3826,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3833,9 +3855,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3860,9 +3884,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3880,9 +3906,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3904,9 +3932,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3929,9 +3959,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3950,9 +3982,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3971,9 +4005,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
      * system may automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -4114,6 +4150,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4134,6 +4171,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4160,6 +4198,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4188,6 +4227,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4214,6 +4254,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4246,6 +4287,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4271,6 +4313,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4291,6 +4334,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -4315,6 +4359,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in

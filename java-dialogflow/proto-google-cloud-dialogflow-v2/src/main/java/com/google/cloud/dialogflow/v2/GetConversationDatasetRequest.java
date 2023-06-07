@@ -48,11 +48,6 @@ public final class GetConversationDatasetRequest extends com.google.protobuf.Gen
     return new GetConversationDatasetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ConversationDatasetProto
         .internal_static_google_cloud_dialogflow_v2_GetConversationDatasetRequest_descriptor;

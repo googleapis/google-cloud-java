@@ -94,6 +94,5 @@ public interface ObjectTrackingFrameOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame.BoundedAreaCase
-      getBoundedAreaCase();
+  com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame.BoundedAreaCase getBoundedAreaCase();
 }

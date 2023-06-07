@@ -253,5 +253,5 @@ public interface PrivacyMetricOrBuilder
   com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder
       getDeltaPresenceEstimationConfigOrBuilder();
 
-  public com.google.privacy.dlp.v2.PrivacyMetric.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.PrivacyMetric.TypeCase getTypeCase();
 }

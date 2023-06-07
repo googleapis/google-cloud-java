@@ -56,11 +56,6 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     return new MigrationJob();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_MigrationJob_descriptor;
@@ -995,11 +990,6 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       return new DumpFlag();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
           .internal_static_google_cloud_clouddms_v1_MigrationJob_DumpFlag_descriptor;
@@ -1847,11 +1837,6 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DumpFlags();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2760,6 +2745,8 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int connectivityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectivity_;
 
   public enum ConnectivityCase
@@ -3005,6 +2992,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -3030,6 +3018,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -3046,6 +3035,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -3069,6 +3059,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
    * The resource labels for migration job to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -5667,6 +5658,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -5692,6 +5684,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -5708,6 +5701,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -5731,6 +5725,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -5760,6 +5755,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -5785,6 +5781,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -5808,6 +5805,7 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
      * The resource labels for migration job to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *

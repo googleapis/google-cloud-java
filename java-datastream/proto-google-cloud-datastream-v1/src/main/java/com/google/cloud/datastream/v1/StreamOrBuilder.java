@@ -500,5 +500,5 @@ public interface StreamOrBuilder
    */
   com.google.protobuf.ByteString getCustomerManagedEncryptionKeyBytes();
 
-  public com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
+  com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
 }

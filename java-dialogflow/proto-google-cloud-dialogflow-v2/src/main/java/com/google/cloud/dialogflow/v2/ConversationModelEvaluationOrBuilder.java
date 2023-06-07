@@ -252,5 +252,5 @@ public interface ConversationModelEvaluationOrBuilder
    */
   com.google.protobuf.ByteString getRawHumanEvalTemplateCsvBytes();
 
-  public com.google.cloud.dialogflow.v2.ConversationModelEvaluation.MetricsCase getMetricsCase();
+  com.google.cloud.dialogflow.v2.ConversationModelEvaluation.MetricsCase getMetricsCase();
 }

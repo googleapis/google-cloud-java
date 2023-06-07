@@ -46,11 +46,6 @@ public final class DataCatalogConfig extends com.google.protobuf.GeneratedMessag
     return new DataCatalogConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1beta.MetastoreProto
         .internal_static_google_cloud_metastore_v1beta_DataCatalogConfig_descriptor;

@@ -75,6 +75,7 @@ public interface ListCompilationResultsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListCompilationResults` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListCompilationResults`
    * must match the call that provided the page token.
    * </pre>
@@ -90,6 +91,7 @@ public interface ListCompilationResultsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListCompilationResults` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListCompilationResults`
    * must match the call that provided the page token.
    * </pre>

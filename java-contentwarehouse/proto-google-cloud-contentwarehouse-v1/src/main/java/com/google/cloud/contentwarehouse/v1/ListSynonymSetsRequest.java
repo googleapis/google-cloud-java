@@ -49,11 +49,6 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
     return new ListSynonymSetsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.SynonymSetServiceRequestProto
         .internal_static_google_cloud_contentwarehouse_v1_ListSynonymSetsRequest_descriptor;
@@ -157,6 +152,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListSynonymSets` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListSynonymSets`
    * must match the call that provided the page token.
    * </pre>
@@ -183,6 +179,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A page token, received from a previous `ListSynonymSets` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListSynonymSets`
    * must match the call that provided the page token.
    * </pre>
@@ -784,6 +781,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListSynonymSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListSynonymSets`
      * must match the call that provided the page token.
      * </pre>
@@ -809,6 +807,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListSynonymSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListSynonymSets`
      * must match the call that provided the page token.
      * </pre>
@@ -834,6 +833,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListSynonymSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListSynonymSets`
      * must match the call that provided the page token.
      * </pre>
@@ -858,6 +858,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListSynonymSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListSynonymSets`
      * must match the call that provided the page token.
      * </pre>
@@ -878,6 +879,7 @@ public final class ListSynonymSetsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A page token, received from a previous `ListSynonymSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListSynonymSets`
      * must match the call that provided the page token.
      * </pre>

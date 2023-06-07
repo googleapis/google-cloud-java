@@ -116,6 +116,6 @@ public interface KnowledgeOperationMetadataOrBuilder
   com.google.cloud.dialogflow.v2beta1.ExportOperationMetadataOrBuilder
       getExportOperationMetadataOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.OperationMetadataCase
+  com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.OperationMetadataCase
       getOperationMetadataCase();
 }

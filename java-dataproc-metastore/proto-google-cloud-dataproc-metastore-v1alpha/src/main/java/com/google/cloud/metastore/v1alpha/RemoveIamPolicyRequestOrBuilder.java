@@ -29,6 +29,7 @@ public interface RemoveIamPolicyRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the dataplane resource to remove
    * IAM policy, in the following form:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}`
    * or
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}/tables/{table_id}`.
@@ -47,6 +48,7 @@ public interface RemoveIamPolicyRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the dataplane resource to remove
    * IAM policy, in the following form:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}`
    * or
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}/tables/{table_id}`.

@@ -50,11 +50,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     return new QueryResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_QueryResult_descriptor;
@@ -71,6 +66,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int queryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object query_;
 
   public enum QueryCase
@@ -549,9 +546,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -576,9 +575,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -603,9 +604,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The collected [session
    * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -1084,8 +1087,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -1113,8 +1118,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -1144,8 +1151,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The free-form diagnostic info. For example, this field could contain
    * webhook call latency. The fields of this data can change without notice,
    * so you should not write code that depends on its structure.
+   *
    * One of the fields is called "Alternative Matched Intents", which may
    * aid with debugging. The following describes these intent results:
+   *
    * - The list is empty if no intent was matched to end-user input.
    * - Only intents that are referenced in the currently active flow are
    *   included.
@@ -3113,9 +3122,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3139,9 +3150,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3169,9 +3182,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3203,9 +3218,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3234,9 +3251,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3271,9 +3290,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3302,9 +3323,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3328,9 +3351,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -3356,9 +3381,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The collected [session
      * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -5282,8 +5309,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5310,8 +5339,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5344,8 +5375,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5380,8 +5413,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5413,8 +5448,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5452,8 +5489,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5485,8 +5524,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5513,8 +5554,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.
@@ -5545,8 +5588,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The free-form diagnostic info. For example, this field could contain
      * webhook call latency. The fields of this data can change without notice,
      * so you should not write code that depends on its structure.
+     *
      * One of the fields is called "Alternative Matched Intents", which may
      * aid with debugging. The following describes these intent results:
+     *
      * - The list is empty if no intent was matched to end-user input.
      * - Only intents that are referenced in the currently active flow are
      *   included.

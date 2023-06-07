@@ -421,5 +421,5 @@ public interface JobTriggerOrBuilder
    */
   com.google.privacy.dlp.v2.JobTrigger.Status getStatus();
 
-  public com.google.privacy.dlp.v2.JobTrigger.JobCase getJobCase();
+  com.google.privacy.dlp.v2.JobTrigger.JobCase getJobCase();
 }

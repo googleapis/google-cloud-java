@@ -53,11 +53,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     return new ClearSuggestionFeatureConfigOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
         .internal_static_google_cloud_dialogflow_v2beta1_ClearSuggestionFeatureConfigOperationMetadata_descriptor;

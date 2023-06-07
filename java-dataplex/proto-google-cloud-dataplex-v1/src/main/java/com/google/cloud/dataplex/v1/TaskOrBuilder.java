@@ -487,5 +487,5 @@ public interface TaskOrBuilder
    */
   com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder getNotebookOrBuilder();
 
-  public com.google.cloud.dataplex.v1.Task.ConfigCase getConfigCase();
+  com.google.cloud.dataplex.v1.Task.ConfigCase getConfigCase();
 }

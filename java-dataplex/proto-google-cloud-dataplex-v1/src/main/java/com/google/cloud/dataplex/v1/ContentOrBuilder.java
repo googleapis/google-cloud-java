@@ -378,7 +378,7 @@ public interface ContentOrBuilder
    */
   com.google.cloud.dataplex.v1.Content.NotebookOrBuilder getNotebookOrBuilder();
 
-  public com.google.cloud.dataplex.v1.Content.DataCase getDataCase();
+  com.google.cloud.dataplex.v1.Content.DataCase getDataCase();
 
-  public com.google.cloud.dataplex.v1.Content.ContentCase getContentCase();
+  com.google.cloud.dataplex.v1.Content.ContentCase getContentCase();
 }

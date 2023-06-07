@@ -58,5 +58,5 @@ public interface QuoteInfoOrBuilder
    */
   com.google.privacy.dlp.v2.DateTimeOrBuilder getDateTimeOrBuilder();
 
-  public com.google.privacy.dlp.v2.QuoteInfo.ParsedQuoteCase getParsedQuoteCase();
+  com.google.privacy.dlp.v2.QuoteInfo.ParsedQuoteCase getParsedQuoteCase();
 }

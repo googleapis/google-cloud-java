@@ -172,5 +172,5 @@ public interface GcsDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.JsonFileFormatOrBuilder getJsonFileFormatOrBuilder();
 
-  public com.google.cloud.datastream.v1.GcsDestinationConfig.FileFormatCase getFileFormatCase();
+  com.google.cloud.datastream.v1.GcsDestinationConfig.FileFormatCase getFileFormatCase();
 }

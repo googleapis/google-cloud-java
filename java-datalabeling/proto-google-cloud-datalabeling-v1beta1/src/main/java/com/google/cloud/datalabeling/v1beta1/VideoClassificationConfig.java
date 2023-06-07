@@ -51,11 +51,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     return new VideoClassificationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_VideoClassificationConfig_descriptor;
@@ -143,11 +138,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AnnotationSpecSetConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -232,6 +232,7 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>
@@ -247,6 +248,7 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>
@@ -262,6 +264,7 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>
@@ -515,6 +518,7 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for Text-to-Speech synthesization.
+   *
    * Used by Phone Gateway to specify synthesization options. If agent defines
    * synthesization options as well, agent settings overrides the option here.
    * </pre>
@@ -529,6 +533,7 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for Text-to-Speech synthesization.
+   *
    * Used by Phone Gateway to specify synthesization options. If agent defines
    * synthesization options as well, agent settings overrides the option here.
    * </pre>
@@ -543,6 +548,7 @@ public interface ConversationProfileOrBuilder
    *
    * <pre>
    * Configuration for Text-to-Speech synthesization.
+   *
    * Used by Phone Gateway to specify synthesization options. If agent defines
    * synthesization options as well, agent settings overrides the option here.
    * </pre>

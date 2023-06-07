@@ -47,11 +47,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     return new ImageTransformations();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ImageTransformations_descriptor;
@@ -244,8 +239,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
      */
     com.google.privacy.dlp.v2.ColorOrBuilder getRedactionColorOrBuilder();
 
-    public com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.TargetCase
-        getTargetCase();
+    com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.TargetCase getTargetCase();
   }
   /**
    *
@@ -272,11 +266,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ImageTransformation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -394,11 +383,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SelectedInfoTypes();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1456,11 +1440,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return new AllInfoTypes();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_AllInfoTypes_descriptor;
@@ -1918,11 +1897,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return new AllText();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_AllText_descriptor;
@@ -2344,6 +2318,8 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     }
 
     private int targetCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object target_;
 
     public enum TargetCase

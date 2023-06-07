@@ -103,6 +103,7 @@ public interface StreamingRecognitionResultOrBuilder
    * A higher number indicates an estimated greater likelihood that the
    * recognized words are correct. The default of 0.0 is a sentinel value
    * indicating that confidence was not set.
+   *
    * This field is typically only provided if `is_final` is true and you should
    * not rely on it being accurate or even set.
    * </pre>

@@ -138,6 +138,7 @@ public interface SpeechWordInfoOrBuilder
    * indicates an estimated greater likelihood that the recognized word is
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
+   *
    * This field is not guaranteed to be fully stable over time for the same
    * audio input. Users should also not rely on it to always be provided.
    * </pre>

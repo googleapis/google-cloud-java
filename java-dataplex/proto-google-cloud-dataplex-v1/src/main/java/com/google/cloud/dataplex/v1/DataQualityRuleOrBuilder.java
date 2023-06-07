@@ -386,6 +386,7 @@ public interface DataQualityRuleOrBuilder
    * Optional. Rows with `null` values will automatically fail a rule, unless
    * `ignore_null` is `true`. In that case, such `null` rows are trivially
    * considered passing.
+   *
    * Only applicable to ColumnMap rules.
    * </pre>
    *
@@ -430,6 +431,7 @@ public interface DataQualityRuleOrBuilder
    * <pre>
    * Optional. The minimum ratio of **passing_rows / total_rows** required to
    * pass this rule, with a range of [0.0, 1.0].
+   *
    * 0 indicates default value (i.e. 1.0).
    * </pre>
    *
@@ -439,5 +441,5 @@ public interface DataQualityRuleOrBuilder
    */
   double getThreshold();
 
-  public com.google.cloud.dataplex.v1.DataQualityRule.RuleTypeCase getRuleTypeCase();
+  com.google.cloud.dataplex.v1.DataQualityRule.RuleTypeCase getRuleTypeCase();
 }

@@ -26,6 +26,7 @@ package com.google.cloud.dialogflow.cx.v3;
  * that can be matched and/or a data condition that can be evaluated during a
  * session. When a specified transition is matched, the following actions are
  * taken in order:
+ *
  * *   If there is a
  * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3.TransitionRoute.trigger_fulfillment]
  * associated with the transition, it will be called.
@@ -63,11 +64,6 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     return new TransitionRoute();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.PageProto
         .internal_static_google_cloud_dialogflow_cx_v3_TransitionRoute_descriptor;
@@ -84,6 +80,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
   }
 
   private int targetCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object target_;
 
   public enum TargetCase
@@ -257,6 +255,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
    * The condition to evaluate against [form
    * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
    * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
@@ -287,6 +286,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
    * The condition to evaluate against [form
    * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
    * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
    * See the [conditions
    * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
    * At least one of `intent` or `condition` must be specified. When both
@@ -753,6 +753,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
    * that can be matched and/or a data condition that can be evaluated during a
    * session. When a specified transition is matched, the following actions are
    * taken in order:
+   *
    * *   If there is a
    * [`trigger_fulfillment`][google.cloud.dialogflow.cx.v3.TransitionRoute.trigger_fulfillment]
    * associated with the transition, it will be called.
@@ -1304,6 +1305,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * The condition to evaluate against [form
      * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
      * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
      * See the [conditions
      * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
      * At least one of `intent` or `condition` must be specified. When both
@@ -1333,6 +1335,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * The condition to evaluate against [form
      * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
      * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
      * See the [conditions
      * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
      * At least one of `intent` or `condition` must be specified. When both
@@ -1362,6 +1365,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * The condition to evaluate against [form
      * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
      * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
      * See the [conditions
      * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
      * At least one of `intent` or `condition` must be specified. When both
@@ -1390,6 +1394,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * The condition to evaluate against [form
      * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
      * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
      * See the [conditions
      * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
      * At least one of `intent` or `condition` must be specified. When both
@@ -1414,6 +1419,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * The condition to evaluate against [form
      * parameters][google.cloud.dialogflow.cx.v3.Form.parameters] or [session
      * parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
      * See the [conditions
      * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
      * At least one of `intent` or `condition` must be specified. When both

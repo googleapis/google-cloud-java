@@ -297,6 +297,5 @@ public interface LabelImageRequestOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature();
 
-  public com.google.cloud.datalabeling.v1beta1.LabelImageRequest.RequestConfigCase
-      getRequestConfigCase();
+  com.google.cloud.datalabeling.v1beta1.LabelImageRequest.RequestConfigCase getRequestConfigCase();
 }

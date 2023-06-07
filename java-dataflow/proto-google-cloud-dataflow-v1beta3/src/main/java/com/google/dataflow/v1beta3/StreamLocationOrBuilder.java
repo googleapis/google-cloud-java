@@ -166,5 +166,5 @@ public interface StreamLocationOrBuilder
    */
   com.google.dataflow.v1beta3.CustomSourceLocationOrBuilder getCustomSourceLocationOrBuilder();
 
-  public com.google.dataflow.v1beta3.StreamLocation.LocationCase getLocationCase();
+  com.google.dataflow.v1beta3.StreamLocation.LocationCase getLocationCase();
 }

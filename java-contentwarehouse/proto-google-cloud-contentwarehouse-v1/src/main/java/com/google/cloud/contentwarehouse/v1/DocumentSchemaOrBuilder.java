@@ -30,6 +30,7 @@ public interface DocumentSchemaOrBuilder
    * The resource name of the document schema.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+   *
    * The name is ignored when creating a document schema.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DocumentSchemaOrBuilder
    * The resource name of the document schema.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
+   *
    * The name is ignored when creating a document schema.
    * </pre>
    *

@@ -163,5 +163,5 @@ public interface QueryInputOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder getDtmfOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.QueryInput.InputCase getInputCase();
+  com.google.cloud.dialogflow.v2beta1.QueryInput.InputCase getInputCase();
 }

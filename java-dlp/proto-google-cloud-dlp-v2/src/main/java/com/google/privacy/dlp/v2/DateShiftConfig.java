@@ -47,11 +47,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     return new DateShiftConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DateShiftConfig_descriptor;
@@ -68,6 +63,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int methodCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object method_;
 
   public enum MethodCase
@@ -120,6 +117,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    * Required. Range of shift in days. Actual shift will be selected at random within this
    * range (inclusive ends). Negative means shift to earlier in time. Must not
    * be more than 365250 days (1000 years) each direction.
+   *
    * For example, 3 means shift date to at most 3 days into the future.
    * </pre>
    *
@@ -730,6 +728,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * Required. Range of shift in days. Actual shift will be selected at random within this
      * range (inclusive ends). Negative means shift to earlier in time. Must not
      * be more than 365250 days (1000 years) each direction.
+     *
      * For example, 3 means shift date to at most 3 days into the future.
      * </pre>
      *
@@ -748,6 +747,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * Required. Range of shift in days. Actual shift will be selected at random within this
      * range (inclusive ends). Negative means shift to earlier in time. Must not
      * be more than 365250 days (1000 years) each direction.
+     *
      * For example, 3 means shift date to at most 3 days into the future.
      * </pre>
      *
@@ -770,6 +770,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      * Required. Range of shift in days. Actual shift will be selected at random within this
      * range (inclusive ends). Negative means shift to earlier in time. Must not
      * be more than 365250 days (1000 years) each direction.
+     *
      * For example, 3 means shift date to at most 3 days into the future.
      * </pre>
      *

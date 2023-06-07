@@ -29,6 +29,7 @@ public interface QueryMetadataRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore service to query
    * metadata, in the following format:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface QueryMetadataRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore service to query
    * metadata, in the following format:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *

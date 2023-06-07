@@ -29,6 +29,7 @@ public interface UpdateVersionRequestOrBuilder
    * <pre>
    * Required. The version to update.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -47,6 +48,7 @@ public interface UpdateVersionRequestOrBuilder
    * <pre>
    * Required. The version to update.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -65,6 +67,7 @@ public interface UpdateVersionRequestOrBuilder
    * <pre>
    * Required. The version to update.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`

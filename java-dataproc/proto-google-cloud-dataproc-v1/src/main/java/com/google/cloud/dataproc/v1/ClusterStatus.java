@@ -49,11 +49,6 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
     return new ClusterStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
@@ -104,6 +99,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
+     *
      * **Note:** The cluster state changes from "creating" to "running" status
      * after the master node(s), first two primary worker nodes (and the last
      * primary worker node if primary workers &gt; 2) are running.
@@ -211,6 +207,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
+     *
      * **Note:** The cluster state changes from "creating" to "running" status
      * after the master node(s), first two primary worker nodes (and the last
      * primary worker node if primary workers &gt; 2) are running.
@@ -415,6 +412,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * The cluster is known to be in an unhealthy state
      * (for example, critical daemons are not running or HDFS capacity is
      * exhausted).
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -427,6 +425,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The agent-reported status is out of date (may occur if
      * Dataproc loses communication with Agent).
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -453,6 +452,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * The cluster is known to be in an unhealthy state
      * (for example, critical daemons are not running or HDFS capacity is
      * exhausted).
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -465,6 +465,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The agent-reported status is out of date (may occur if
      * Dataproc loses communication with Agent).
+     *
      * Applies to RUNNING state.
      * </pre>
      *

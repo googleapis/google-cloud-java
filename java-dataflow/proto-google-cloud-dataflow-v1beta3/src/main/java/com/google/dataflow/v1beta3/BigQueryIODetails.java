@@ -50,11 +50,6 @@ public final class BigQueryIODetails extends com.google.protobuf.GeneratedMessag
     return new BigQueryIODetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.JobsProto
         .internal_static_google_dataflow_v1beta3_BigQueryIODetails_descriptor;

@@ -47,11 +47,6 @@ public final class StorageAccess extends com.google.protobuf.GeneratedMessageV3
     return new StorageAccess();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.MetadataProto
         .internal_static_google_cloud_dataplex_v1_StorageAccess_descriptor;

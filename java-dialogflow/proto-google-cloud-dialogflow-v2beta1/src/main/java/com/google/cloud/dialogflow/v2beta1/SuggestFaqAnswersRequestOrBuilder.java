@@ -62,6 +62,7 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * <pre>
    * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -79,6 +80,7 @@ public interface SuggestFaqAnswersRequestOrBuilder
    * <pre>
    * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>

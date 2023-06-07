@@ -47,11 +47,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
     return new PrivateConnectivity();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_PrivateConnectivity_descriptor;

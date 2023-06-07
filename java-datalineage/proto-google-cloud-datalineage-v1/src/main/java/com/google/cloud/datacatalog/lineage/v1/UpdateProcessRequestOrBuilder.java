@@ -28,6 +28,7 @@ public interface UpdateProcessRequestOrBuilder
    *
    * <pre>
    * Required. The lineage process to update.
+   *
    * The process's `name` field is used to identify the process to update.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface UpdateProcessRequestOrBuilder
    *
    * <pre>
    * Required. The lineage process to update.
+   *
    * The process's `name` field is used to identify the process to update.
    * </pre>
    *
@@ -58,6 +60,7 @@ public interface UpdateProcessRequestOrBuilder
    *
    * <pre>
    * Required. The lineage process to update.
+   *
    * The process's `name` field is used to identify the process to update.
    * </pre>
    *

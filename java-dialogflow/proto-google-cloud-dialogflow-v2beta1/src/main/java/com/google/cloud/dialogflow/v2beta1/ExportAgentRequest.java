@@ -49,11 +49,6 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     return new ExportAgentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AgentProto
         .internal_static_google_cloud_dialogflow_v2beta1_ExportAgentRequest_descriptor;
@@ -141,6 +136,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -173,6 +169,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -701,6 +698,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -732,6 +730,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -763,6 +762,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -793,6 +793,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -819,6 +820,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see

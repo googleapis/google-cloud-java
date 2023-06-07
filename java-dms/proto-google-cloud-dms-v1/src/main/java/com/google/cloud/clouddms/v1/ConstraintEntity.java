@@ -41,8 +41,8 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
   private ConstraintEntity() {
     name_ = "";
     type_ = "";
-    tableColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    referenceColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tableColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    referenceColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referenceTable_ = "";
     tableName_ = "";
   }
@@ -51,11 +51,6 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConstraintEntity();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -180,7 +175,8 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
   public static final int TABLE_COLUMNS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tableColumns_;
+  private com.google.protobuf.LazyStringArrayList tableColumns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -297,7 +293,8 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
   public static final int REFERENCE_COLUMNS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList referenceColumns_;
+  private com.google.protobuf.LazyStringArrayList referenceColumns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -751,15 +748,13 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       type_ = "";
-      tableColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      tableColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       customFeatures_ = null;
       if (customFeaturesBuilder_ != null) {
         customFeaturesBuilder_.dispose();
         customFeaturesBuilder_ = null;
       }
-      referenceColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      referenceColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       referenceTable_ = "";
       tableName_ = "";
       return this;
@@ -789,25 +784,11 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.clouddms.v1.ConstraintEntity buildPartial() {
       com.google.cloud.clouddms.v1.ConstraintEntity result =
           new com.google.cloud.clouddms.v1.ConstraintEntity(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.clouddms.v1.ConstraintEntity result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        tableColumns_ = tableColumns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.tableColumns_ = tableColumns_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        referenceColumns_ = referenceColumns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.referenceColumns_ = referenceColumns_;
     }
 
     private void buildPartial0(com.google.cloud.clouddms.v1.ConstraintEntity result) {
@@ -818,9 +799,17 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        tableColumns_.makeImmutable();
+        result.tableColumns_ = tableColumns_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.customFeatures_ =
             customFeaturesBuilder_ == null ? customFeatures_ : customFeaturesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        referenceColumns_.makeImmutable();
+        result.referenceColumns_ = referenceColumns_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.referenceTable_ = referenceTable_;
@@ -888,7 +877,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       if (!other.tableColumns_.isEmpty()) {
         if (tableColumns_.isEmpty()) {
           tableColumns_ = other.tableColumns_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureTableColumnsIsMutable();
           tableColumns_.addAll(other.tableColumns_);
@@ -901,7 +890,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       if (!other.referenceColumns_.isEmpty()) {
         if (referenceColumns_.isEmpty()) {
           referenceColumns_ = other.referenceColumns_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureReferenceColumnsIsMutable();
           referenceColumns_.addAll(other.referenceColumns_);
@@ -1224,14 +1213,14 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tableColumns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tableColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTableColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!tableColumns_.isModifiable()) {
         tableColumns_ = new com.google.protobuf.LazyStringArrayList(tableColumns_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1246,7 +1235,8 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
      * @return A list containing the tableColumns.
      */
     public com.google.protobuf.ProtocolStringList getTableColumnsList() {
-      return tableColumns_.getUnmodifiableView();
+      tableColumns_.makeImmutable();
+      return tableColumns_;
     }
     /**
      *
@@ -1315,6 +1305,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       }
       ensureTableColumnsIsMutable();
       tableColumns_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1337,6 +1328,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       }
       ensureTableColumnsIsMutable();
       tableColumns_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1356,6 +1348,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
     public Builder addAllTableColumns(java.lang.Iterable<java.lang.String> values) {
       ensureTableColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tableColumns_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1372,8 +1365,9 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTableColumns() {
-      tableColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tableColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1397,6 +1391,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTableColumnsIsMutable();
       tableColumns_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1584,14 +1579,14 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       return customFeaturesBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList referenceColumns_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList referenceColumns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureReferenceColumnsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!referenceColumns_.isModifiable()) {
         referenceColumns_ = new com.google.protobuf.LazyStringArrayList(referenceColumns_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1607,7 +1602,8 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
      * @return A list containing the referenceColumns.
      */
     public com.google.protobuf.ProtocolStringList getReferenceColumnsList() {
-      return referenceColumns_.getUnmodifiableView();
+      referenceColumns_.makeImmutable();
+      return referenceColumns_;
     }
     /**
      *
@@ -1680,6 +1676,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       }
       ensureReferenceColumnsIsMutable();
       referenceColumns_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1703,6 +1700,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       }
       ensureReferenceColumnsIsMutable();
       referenceColumns_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1723,6 +1721,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
     public Builder addAllReferenceColumns(java.lang.Iterable<java.lang.String> values) {
       ensureReferenceColumnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, referenceColumns_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1740,8 +1739,9 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReferenceColumns() {
-      referenceColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      referenceColumns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1766,6 +1766,7 @@ public final class ConstraintEntity extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureReferenceColumnsIsMutable();
       referenceColumns_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -51,11 +51,6 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     return new DataScanJob();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataScansProto
         .internal_static_google_cloud_dataplex_v1_DataScanJob_descriptor;
@@ -317,6 +312,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int specCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object spec_;
 
   public enum SpecCase
@@ -364,6 +361,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int resultCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object result_;
 
   public enum ResultCase

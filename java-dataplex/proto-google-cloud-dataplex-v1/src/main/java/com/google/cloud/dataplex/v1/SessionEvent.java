@@ -51,11 +51,6 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     return new SessionEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.LogsProto
         .internal_static_google_cloud_dataplex_v1_SessionEvent_descriptor;
@@ -444,11 +439,6 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new QueryDetail();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1972,6 +1962,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object detail_;
 
   public enum DetailCase

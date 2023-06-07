@@ -131,6 +131,7 @@ public interface PrivateConnectionOrBuilder
    * The resource labels for private connections to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -144,6 +145,7 @@ public interface PrivateConnectionOrBuilder
    * The resource labels for private connections to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -160,6 +162,7 @@ public interface PrivateConnectionOrBuilder
    * The resource labels for private connections to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -173,6 +176,7 @@ public interface PrivateConnectionOrBuilder
    * The resource labels for private connections to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -190,6 +194,7 @@ public interface PrivateConnectionOrBuilder
    * The resource labels for private connections to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -321,5 +326,5 @@ public interface PrivateConnectionOrBuilder
    */
   com.google.cloud.clouddms.v1.VpcPeeringConfigOrBuilder getVpcPeeringConfigOrBuilder();
 
-  public com.google.cloud.clouddms.v1.PrivateConnection.ConnectivityCase getConnectivityCase();
+  com.google.cloud.clouddms.v1.PrivateConnection.ConnectivityCase getConnectivityCase();
 }

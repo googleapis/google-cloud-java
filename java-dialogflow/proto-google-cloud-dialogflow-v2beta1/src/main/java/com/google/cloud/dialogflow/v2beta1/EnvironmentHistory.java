@@ -50,11 +50,6 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     return new EnvironmentHistory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.EnvironmentProto
         .internal_static_google_cloud_dialogflow_v2beta1_EnvironmentHistory_descriptor;
@@ -188,11 +183,6 @@ public final class EnvironmentHistory extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Entry();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

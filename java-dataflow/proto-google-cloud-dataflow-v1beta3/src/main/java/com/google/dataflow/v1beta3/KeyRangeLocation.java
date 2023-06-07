@@ -53,11 +53,6 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     return new KeyRangeLocation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.StreamingProto
         .internal_static_google_dataflow_v1beta3_KeyRangeLocation_descriptor;

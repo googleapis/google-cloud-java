@@ -151,6 +151,6 @@ public interface SourceObjectIdentifierOrBuilder
   com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierOrBuilder
       getPostgresqlIdentifierOrBuilder();
 
-  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
       getSourceIdentifierCase();
 }

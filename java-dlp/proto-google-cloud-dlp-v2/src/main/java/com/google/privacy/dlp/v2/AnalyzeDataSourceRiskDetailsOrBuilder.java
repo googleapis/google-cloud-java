@@ -392,5 +392,5 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.RequestedRiskAnalysisOptionsOrBuilder
       getRequestedOptionsOrBuilder();
 
-  public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.ResultCase getResultCase();
+  com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.ResultCase getResultCase();
 }

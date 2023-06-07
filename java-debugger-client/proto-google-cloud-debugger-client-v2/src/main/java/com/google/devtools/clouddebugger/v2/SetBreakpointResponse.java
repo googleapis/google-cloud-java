@@ -45,11 +45,6 @@ public final class SetBreakpointResponse extends com.google.protobuf.GeneratedMe
     return new SetBreakpointResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouddebugger.v2.DebuggerProto
         .internal_static_google_devtools_clouddebugger_v2_SetBreakpointResponse_descriptor;

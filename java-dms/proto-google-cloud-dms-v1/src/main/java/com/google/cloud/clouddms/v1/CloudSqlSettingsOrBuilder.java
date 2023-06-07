@@ -57,6 +57,7 @@ public interface CloudSqlSettingsOrBuilder
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -70,6 +71,7 @@ public interface CloudSqlSettingsOrBuilder
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -86,6 +88,7 @@ public interface CloudSqlSettingsOrBuilder
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -99,6 +102,7 @@ public interface CloudSqlSettingsOrBuilder
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -116,6 +120,7 @@ public interface CloudSqlSettingsOrBuilder
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -202,8 +207,10 @@ public interface CloudSqlSettingsOrBuilder
    * <pre>
    * The activation policy specifies when the instance is activated; it is
    * applicable only when the instance state is 'RUNNABLE'. Valid values:
+   *
    * 'ALWAYS': The instance is on, and remains so even in
    * the absence of connection requests.
+   *
    * `NEVER`: The instance is off; it is not activated, even if a
    * connection request arrives.
    * </pre>
@@ -220,8 +227,10 @@ public interface CloudSqlSettingsOrBuilder
    * <pre>
    * The activation policy specifies when the instance is activated; it is
    * applicable only when the instance state is 'RUNNABLE'. Valid values:
+   *
    * 'ALWAYS': The instance is on, and remains so even in
    * the absence of connection requests.
+   *
    * `NEVER`: The instance is off; it is not activated, even if a
    * connection request arrives.
    * </pre>

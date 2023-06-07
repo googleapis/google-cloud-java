@@ -57,11 +57,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     return new SentimentAnalysisResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.SessionProto
         .internal_static_google_cloud_dialogflow_v2_SentimentAnalysisResult_descriptor;

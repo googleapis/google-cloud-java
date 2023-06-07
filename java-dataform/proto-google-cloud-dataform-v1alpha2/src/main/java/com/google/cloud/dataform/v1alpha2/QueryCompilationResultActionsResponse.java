@@ -50,11 +50,6 @@ public final class QueryCompilationResultActionsResponse
     return new QueryCompilationResultActionsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1alpha2.DataformProto
         .internal_static_google_cloud_dataform_v1alpha2_QueryCompilationResultActionsResponse_descriptor;

@@ -50,11 +50,6 @@ public final class BatchSearchLinkProcessesResponse extends com.google.protobuf.
     return new BatchSearchLinkProcessesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
         .internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_descriptor;

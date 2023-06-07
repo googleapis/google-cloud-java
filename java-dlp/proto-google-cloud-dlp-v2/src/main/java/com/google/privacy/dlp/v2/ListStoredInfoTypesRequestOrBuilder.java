@@ -28,16 +28,20 @@ public interface ListStoredInfoTypesRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -53,16 +57,20 @@ public interface ListStoredInfoTypesRequestOrBuilder
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -123,8 +131,11 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
+   *
    * Example: `name asc, display_name, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the most recent version of the
    * resource was created.
    * - `state`: corresponds to the state of the resource.
@@ -145,8 +156,11 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
+   *
    * Example: `name asc, display_name, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the most recent version of the
    * resource was created.
    * - `state`: corresponds to the state of the resource.

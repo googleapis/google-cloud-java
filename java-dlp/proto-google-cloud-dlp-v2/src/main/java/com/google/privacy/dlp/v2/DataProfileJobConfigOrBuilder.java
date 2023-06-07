@@ -92,9 +92,11 @@ public interface DataProfileJobConfigOrBuilder
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -102,6 +104,7 @@ public interface DataProfileJobConfigOrBuilder
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
    * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
    * </pre>
@@ -116,9 +119,11 @@ public interface DataProfileJobConfigOrBuilder
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -126,6 +131,7 @@ public interface DataProfileJobConfigOrBuilder
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
    * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
    * </pre>
@@ -140,9 +146,11 @@ public interface DataProfileJobConfigOrBuilder
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -150,6 +158,7 @@ public interface DataProfileJobConfigOrBuilder
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
    * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
    * </pre>
@@ -165,9 +174,11 @@ public interface DataProfileJobConfigOrBuilder
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -175,6 +186,7 @@ public interface DataProfileJobConfigOrBuilder
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
    * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
    * </pre>

@@ -47,11 +47,6 @@ public final class DeleteRuleSetRequest extends com.google.protobuf.GeneratedMes
     return new DeleteRuleSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.RuleSetServiceRequestProto
         .internal_static_google_cloud_contentwarehouse_v1_DeleteRuleSetRequest_descriptor;

@@ -136,5 +136,5 @@ public interface ContentItemOrBuilder
    */
   com.google.privacy.dlp.v2.ByteContentItemOrBuilder getByteItemOrBuilder();
 
-  public com.google.privacy.dlp.v2.ContentItem.DataItemCase getDataItemCase();
+  com.google.privacy.dlp.v2.ContentItem.DataItemCase getDataItemCase();
 }

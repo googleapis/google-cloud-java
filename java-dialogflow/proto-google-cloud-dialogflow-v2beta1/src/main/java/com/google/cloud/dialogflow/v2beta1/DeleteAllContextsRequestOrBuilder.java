@@ -37,6 +37,7 @@ public interface DeleteAllContextsRequestOrBuilder
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified we assume default 'draft' environment. If
    * `User ID` is not specified, we assume default '-' user.
@@ -63,6 +64,7 @@ public interface DeleteAllContextsRequestOrBuilder
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified we assume default 'draft' environment. If
    * `User ID` is not specified, we assume default '-' user.

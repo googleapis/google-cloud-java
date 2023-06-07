@@ -379,7 +379,7 @@ public interface AutomatedAgentReplyOrBuilder
    */
   com.google.protobuf.ByteString getCxCurrentPageBytes();
 
-  public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.ResponseCase getResponseCase();
+  com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.ResponseCase getResponseCase();
 
-  public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.MatchCase getMatchCase();
+  com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.MatchCase getMatchCase();
 }

@@ -453,6 +453,5 @@ public interface PrimitiveTransformationOrBuilder
    */
   com.google.privacy.dlp.v2.ReplaceDictionaryConfigOrBuilder getReplaceDictionaryConfigOrBuilder();
 
-  public com.google.privacy.dlp.v2.PrimitiveTransformation.TransformationCase
-      getTransformationCase();
+  com.google.privacy.dlp.v2.PrimitiveTransformation.TransformationCase getTransformationCase();
 }

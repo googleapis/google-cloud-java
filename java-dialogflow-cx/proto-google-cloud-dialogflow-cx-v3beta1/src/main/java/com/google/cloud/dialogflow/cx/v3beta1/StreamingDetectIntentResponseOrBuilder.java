@@ -143,6 +143,6 @@ public interface StreamingDetectIntentResponseOrBuilder
   com.google.cloud.dialogflow.cx.v3beta1.CloudConversationDebuggingInfoOrBuilder
       getDebuggingInfoOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse.ResponseCase
+  com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse.ResponseCase
       getResponseCase();
 }

@@ -50,11 +50,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     return new ListAssetsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ServiceProto
         .internal_static_google_cloud_dataplex_v1_ListAssetsRequest_descriptor;

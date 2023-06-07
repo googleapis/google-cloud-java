@@ -49,11 +49,6 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
     return new GetIntentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.IntentProto
         .internal_static_google_cloud_dialogflow_cx_v3_GetIntentRequest_descriptor;
@@ -138,7 +133,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The language to retrieve the intent for. The following fields are language
    * dependent:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -168,7 +165,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The language to retrieve the intent for. The following fields are language
    * dependent:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -693,7 +692,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The language to retrieve the intent for. The following fields are language
      * dependent:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -722,7 +723,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The language to retrieve the intent for. The following fields are language
      * dependent:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -751,7 +754,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The language to retrieve the intent for. The following fields are language
      * dependent:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -779,7 +784,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The language to retrieve the intent for. The following fields are language
      * dependent:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -803,7 +810,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The language to retrieve the intent for. The following fields are language
      * dependent:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

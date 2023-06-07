@@ -64,6 +64,7 @@ public interface WorkflowTemplatePlacementOrBuilder
    * <pre>
    * Optional. A selector that chooses target cluster for jobs based
    * on metadata.
+   *
    * The selector is evaluated at the time each job is submitted.
    * </pre>
    *
@@ -78,6 +79,7 @@ public interface WorkflowTemplatePlacementOrBuilder
    * <pre>
    * Optional. A selector that chooses target cluster for jobs based
    * on metadata.
+   *
    * The selector is evaluated at the time each job is submitted.
    * </pre>
    *
@@ -92,6 +94,7 @@ public interface WorkflowTemplatePlacementOrBuilder
    * <pre>
    * Optional. A selector that chooses target cluster for jobs based
    * on metadata.
+   *
    * The selector is evaluated at the time each job is submitted.
    * </pre>
    *
@@ -99,5 +102,5 @@ public interface WorkflowTemplatePlacementOrBuilder
    */
   com.google.cloud.dataproc.v1.ClusterSelectorOrBuilder getClusterSelectorOrBuilder();
 
-  public com.google.cloud.dataproc.v1.WorkflowTemplatePlacement.PlacementCase getPlacementCase();
+  com.google.cloud.dataproc.v1.WorkflowTemplatePlacement.PlacementCase getPlacementCase();
 }

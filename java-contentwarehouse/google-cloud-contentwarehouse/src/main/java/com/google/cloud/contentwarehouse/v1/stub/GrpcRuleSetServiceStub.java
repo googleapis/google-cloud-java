@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest;
 import com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest;
 import com.google.cloud.contentwarehouse.v1.ListRuleSetsResponse;
 import com.google.cloud.contentwarehouse.v1.RuleSet;
 import com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -151,9 +151,9 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
             .setMethodDescriptor(createRuleSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetRuleSetRequest, RuleSet> getRuleSetTransportSettings =
@@ -161,9 +161,9 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
             .setMethodDescriptor(getRuleSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateRuleSetRequest, RuleSet> updateRuleSetTransportSettings =
@@ -171,9 +171,9 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
             .setMethodDescriptor(updateRuleSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRuleSetRequest, Empty> deleteRuleSetTransportSettings =
@@ -181,9 +181,9 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
             .setMethodDescriptor(deleteRuleSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRuleSetsRequest, ListRuleSetsResponse> listRuleSetsTransportSettings =
@@ -191,9 +191,9 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
             .setMethodDescriptor(listRuleSetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

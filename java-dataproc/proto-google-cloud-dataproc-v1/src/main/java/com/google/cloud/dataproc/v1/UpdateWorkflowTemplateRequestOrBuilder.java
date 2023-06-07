@@ -28,6 +28,7 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The updated workflow template.
+   *
    * The `template.version` field must match the current version.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The updated workflow template.
+   *
    * The `template.version` field must match the current version.
    * </pre>
    *
@@ -58,6 +60,7 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The updated workflow template.
+   *
    * The `template.version` field must match the current version.
    * </pre>
    *

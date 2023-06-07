@@ -91,5 +91,5 @@ public interface ExportAgentResponseOrBuilder
    */
   com.google.protobuf.ByteString getAgentContent();
 
-  public com.google.cloud.dialogflow.cx.v3.ExportAgentResponse.AgentCase getAgentCase();
+  com.google.cloud.dialogflow.cx.v3.ExportAgentResponse.AgentCase getAgentCase();
 }

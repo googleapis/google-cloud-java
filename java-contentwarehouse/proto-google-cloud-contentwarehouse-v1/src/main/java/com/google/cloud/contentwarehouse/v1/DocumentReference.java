@@ -49,11 +49,6 @@ public final class DocumentReference extends com.google.protobuf.GeneratedMessag
     return new DocumentReference();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentProto
         .internal_static_google_cloud_contentwarehouse_v1_DocumentReference_descriptor;

@@ -189,5 +189,5 @@ public interface QuasiIdOrBuilder
    */
   com.google.protobuf.EmptyOrBuilder getInferredOrBuilder();
 
-  public com.google.privacy.dlp.v2.QuasiId.TagCase getTagCase();
+  com.google.privacy.dlp.v2.QuasiId.TagCase getTagCase();
 }

@@ -49,11 +49,6 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
     return new DeleteTransitionRouteGroupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteTransitionRouteGroupRequest_descriptor;
@@ -140,6 +135,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
    * <pre>
    * This field has no effect for transition route group that no page is using.
    * If the transition route group is referenced by any page:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating pages that reference the transition route group.
    * *  If `force` is set to true, Dialogflow will remove the transition route
@@ -676,6 +672,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * <pre>
      * This field has no effect for transition route group that no page is using.
      * If the transition route group is referenced by any page:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating pages that reference the transition route group.
      * *  If `force` is set to true, Dialogflow will remove the transition route
@@ -696,6 +693,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * <pre>
      * This field has no effect for transition route group that no page is using.
      * If the transition route group is referenced by any page:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating pages that reference the transition route group.
      * *  If `force` is set to true, Dialogflow will remove the transition route
@@ -720,6 +718,7 @@ public final class DeleteTransitionRouteGroupRequest extends com.google.protobuf
      * <pre>
      * This field has no effect for transition route group that no page is using.
      * If the transition route group is referenced by any page:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating pages that reference the transition route group.
      * *  If `force` is set to true, Dialogflow will remove the transition route

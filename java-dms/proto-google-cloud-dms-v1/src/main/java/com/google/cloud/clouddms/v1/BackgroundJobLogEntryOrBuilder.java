@@ -374,5 +374,5 @@ public interface BackgroundJobLogEntryOrBuilder
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetailsOrBuilder
       getApplyJobDetailsOrBuilder();
 
-  public com.google.cloud.clouddms.v1.BackgroundJobLogEntry.JobDetailsCase getJobDetailsCase();
+  com.google.cloud.clouddms.v1.BackgroundJobLogEntry.JobDetailsCase getJobDetailsCase();
 }

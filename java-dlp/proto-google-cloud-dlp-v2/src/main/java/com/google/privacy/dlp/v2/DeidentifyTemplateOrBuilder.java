@@ -28,6 +28,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -43,6 +44,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`

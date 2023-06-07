@@ -62,6 +62,7 @@ public interface DeleteFlowRequestOrBuilder
    * <pre>
    * This field has no effect for flows with no incoming transitions.
    * For flows with incoming transitions:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the incoming transitions.
    * *  If `force` is set to true, Dialogflow will remove the flow, as well as

@@ -94,6 +94,6 @@ public interface ImageBoundingPolyAnnotationOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder getAnnotationSpecOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.BoundedAreaCase
+  com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.BoundedAreaCase
       getBoundedAreaCase();
 }

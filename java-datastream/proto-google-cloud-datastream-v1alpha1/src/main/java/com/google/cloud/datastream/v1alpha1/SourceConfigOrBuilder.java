@@ -120,6 +120,6 @@ public interface SourceConfigOrBuilder
    */
   com.google.cloud.datastream.v1alpha1.MysqlSourceConfigOrBuilder getMysqlSourceConfigOrBuilder();
 
-  public com.google.cloud.datastream.v1alpha1.SourceConfig.SourceStreamConfigCase
+  com.google.cloud.datastream.v1alpha1.SourceConfig.SourceStreamConfigCase
       getSourceStreamConfigCase();
 }

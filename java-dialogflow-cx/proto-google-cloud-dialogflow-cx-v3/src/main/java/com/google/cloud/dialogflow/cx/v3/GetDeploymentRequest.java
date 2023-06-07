@@ -48,11 +48,6 @@ public final class GetDeploymentRequest extends com.google.protobuf.GeneratedMes
     return new GetDeploymentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.DeploymentProto
         .internal_static_google_cloud_dialogflow_cx_v3_GetDeploymentRequest_descriptor;

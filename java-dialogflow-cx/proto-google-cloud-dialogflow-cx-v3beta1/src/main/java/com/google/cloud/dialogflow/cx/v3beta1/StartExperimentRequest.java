@@ -48,11 +48,6 @@ public final class StartExperimentRequest extends com.google.protobuf.GeneratedM
     return new StartExperimentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.ExperimentProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_StartExperimentRequest_descriptor;

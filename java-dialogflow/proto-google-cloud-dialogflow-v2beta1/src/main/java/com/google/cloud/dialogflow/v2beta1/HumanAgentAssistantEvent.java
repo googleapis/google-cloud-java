@@ -50,11 +50,6 @@ public final class HumanAgentAssistantEvent extends com.google.protobuf.Generate
     return new HumanAgentAssistantEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantEventProto
         .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantEvent_descriptor;

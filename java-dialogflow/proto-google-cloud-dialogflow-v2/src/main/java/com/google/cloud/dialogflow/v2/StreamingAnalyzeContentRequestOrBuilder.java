@@ -253,6 +253,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -267,6 +268,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -281,6 +283,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -366,6 +369,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -382,6 +386,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -398,6 +403,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -436,7 +442,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    */
   boolean getEnableDebuggingInfo();
 
-  public com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.ConfigCase getConfigCase();
+  com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.ConfigCase getConfigCase();
 
-  public com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.InputCase getInputCase();
+  com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.InputCase getInputCase();
 }

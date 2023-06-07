@@ -57,11 +57,6 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     return new CloudSqlSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_CloudSqlSettings_descriptor;
@@ -956,6 +951,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -981,6 +977,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -997,6 +994,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -1020,6 +1018,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -1159,8 +1158,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The activation policy specifies when the instance is activated; it is
    * applicable only when the instance state is 'RUNNABLE'. Valid values:
+   *
    * 'ALWAYS': The instance is on, and remains so even in
    * the absence of connection requests.
+   *
    * `NEVER`: The instance is off; it is not activated, even if a
    * connection request arrives.
    * </pre>
@@ -1180,8 +1181,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The activation policy specifies when the instance is activated; it is
    * applicable only when the instance state is 'RUNNABLE'. Valid values:
+   *
    * 'ALWAYS': The instance is on, and remains so even in
    * the absence of connection requests.
+   *
    * `NEVER`: The instance is off; it is not activated, even if a
    * connection request arrives.
    * </pre>
@@ -2888,6 +2891,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2913,6 +2917,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2929,6 +2934,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2952,6 +2958,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2981,6 +2988,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -3006,6 +3014,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -3029,6 +3038,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -3371,8 +3381,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3392,8 +3404,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3416,8 +3430,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3442,8 +3458,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3470,8 +3488,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>

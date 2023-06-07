@@ -58,11 +58,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return new Document();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentProto
         .internal_static_google_cloud_contentwarehouse_v1_Document_descriptor;
@@ -79,6 +74,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int structuredContentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object structuredContent_;
 
   public enum StructuredContentCase
@@ -126,6 +123,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int rawDocumentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object rawDocument_;
 
   public enum RawDocumentCase
@@ -183,6 +182,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * The resource name of the document.
    * Format:
    * projects/{project_number}/locations/{location}/documents/{document_id}.
+   *
    * The name is ignored when creating a document.
    * </pre>
    *
@@ -209,6 +209,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * The resource name of the document.
    * Format:
    * projects/{project_number}/locations/{location}/documents/{document_id}.
+   *
    * The name is ignored when creating a document.
    * </pre>
    *
@@ -2166,6 +2167,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document.
      * Format:
      * projects/{project_number}/locations/{location}/documents/{document_id}.
+     *
      * The name is ignored when creating a document.
      * </pre>
      *
@@ -2191,6 +2193,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document.
      * Format:
      * projects/{project_number}/locations/{location}/documents/{document_id}.
+     *
      * The name is ignored when creating a document.
      * </pre>
      *
@@ -2216,6 +2219,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document.
      * Format:
      * projects/{project_number}/locations/{location}/documents/{document_id}.
+     *
      * The name is ignored when creating a document.
      * </pre>
      *
@@ -2240,6 +2244,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document.
      * Format:
      * projects/{project_number}/locations/{location}/documents/{document_id}.
+     *
      * The name is ignored when creating a document.
      * </pre>
      *
@@ -2260,6 +2265,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The resource name of the document.
      * Format:
      * projects/{project_number}/locations/{location}/documents/{document_id}.
+     *
      * The name is ignored when creating a document.
      * </pre>
      *

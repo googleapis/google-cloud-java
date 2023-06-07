@@ -49,11 +49,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     return new WorkflowInvocation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_descriptor;
@@ -482,18 +477,13 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
     private InvocationConfig() {
       includedTargets_ = java.util.Collections.emptyList();
-      includedTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InvocationConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -596,7 +586,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     public static final int INCLUDED_TAGS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includedTags_;
+    private com.google.protobuf.LazyStringArrayList includedTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -988,8 +979,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           includedTargetsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        includedTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         transitiveDependenciesIncluded_ = false;
         transitiveDependentsIncluded_ = false;
         fullyRefreshIncrementalTablesEnabled_ = false;
@@ -1042,16 +1032,15 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         } else {
           result.includedTargets_ = includedTargetsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          includedTags_ = includedTags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.includedTags_ = includedTags_;
       }
 
       private void buildPartial0(
           com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          includedTags_.makeImmutable();
+          result.includedTags_ = includedTags_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.transitiveDependenciesIncluded_ = transitiveDependenciesIncluded_;
         }
@@ -1145,7 +1134,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         if (!other.includedTags_.isEmpty()) {
           if (includedTags_.isEmpty()) {
             includedTags_ = other.includedTags_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIncludedTagsIsMutable();
             includedTags_.addAll(other.includedTags_);
@@ -1635,14 +1624,14 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return includedTargetsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList includedTags_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includedTags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludedTagsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!includedTags_.isModifiable()) {
           includedTags_ = new com.google.protobuf.LazyStringArrayList(includedTags_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1656,7 +1645,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
        * @return A list containing the includedTags.
        */
       public com.google.protobuf.ProtocolStringList getIncludedTagsList() {
-        return includedTags_.getUnmodifiableView();
+        includedTags_.makeImmutable();
+        return includedTags_;
       }
       /**
        *
@@ -1721,6 +1711,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         ensureIncludedTagsIsMutable();
         includedTags_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1742,6 +1733,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         }
         ensureIncludedTagsIsMutable();
         includedTags_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1760,6 +1752,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       public Builder addAllIncludedTags(java.lang.Iterable<java.lang.String> values) {
         ensureIncludedTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedTags_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1775,8 +1768,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearIncludedTags() {
-        includedTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1799,6 +1793,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         ensureIncludedTagsIsMutable();
         includedTags_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

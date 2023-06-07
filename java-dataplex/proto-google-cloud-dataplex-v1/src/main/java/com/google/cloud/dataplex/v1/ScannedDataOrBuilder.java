@@ -58,5 +58,5 @@ public interface ScannedDataOrBuilder
    */
   com.google.cloud.dataplex.v1.ScannedData.IncrementalFieldOrBuilder getIncrementalFieldOrBuilder();
 
-  public com.google.cloud.dataplex.v1.ScannedData.DataRangeCase getDataRangeCase();
+  com.google.cloud.dataplex.v1.ScannedData.DataRangeCase getDataRangeCase();
 }

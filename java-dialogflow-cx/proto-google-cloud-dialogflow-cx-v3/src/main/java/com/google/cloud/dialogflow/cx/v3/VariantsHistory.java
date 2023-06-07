@@ -45,11 +45,6 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
     return new VariantsHistory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.ExperimentProto
         .internal_static_google_cloud_dialogflow_cx_v3_VariantsHistory_descriptor;
@@ -66,6 +61,8 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
   }
 
   private int variantsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object variants_;
 
   public enum VariantsCase

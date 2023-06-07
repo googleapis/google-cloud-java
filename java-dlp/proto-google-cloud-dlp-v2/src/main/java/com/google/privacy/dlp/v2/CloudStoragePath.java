@@ -47,11 +47,6 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
     return new CloudStoragePath();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpStorage
         .internal_static_google_privacy_dlp_v2_CloudStoragePath_descriptor;

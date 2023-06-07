@@ -48,11 +48,6 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
     return new GetKnowledgeBaseRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.KnowledgeBaseProto
         .internal_static_google_cloud_dialogflow_v2_GetKnowledgeBaseRequest_descriptor;

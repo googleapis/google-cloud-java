@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.dataflow.v1beta3.ListJobMessagesRequest;
 import com.google.dataflow.v1beta3.ListJobMessagesResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -110,11 +110,11 @@ public class GrpcMessagesV1Beta3Stub extends MessagesV1Beta3Stub {
                 .setMethodDescriptor(listJobMessagesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("job_id", String.valueOf(request.getJobId()));
-                      params.put("location", String.valueOf(request.getLocation()));
-                      params.put("project_id", String.valueOf(request.getProjectId()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_id", String.valueOf(request.getJobId()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
                     })
                 .build();
 

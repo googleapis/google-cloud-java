@@ -46,11 +46,6 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
     return new InfoTypeCategory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_InfoTypeCategory_descriptor;
@@ -1545,6 +1540,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
   }
 
   private int categoryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object category_;
 
   public enum CategoryCase

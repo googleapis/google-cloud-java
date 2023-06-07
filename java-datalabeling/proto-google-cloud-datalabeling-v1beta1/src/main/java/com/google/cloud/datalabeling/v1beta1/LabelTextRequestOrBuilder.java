@@ -220,6 +220,5 @@ public interface LabelTextRequestOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature();
 
-  public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.RequestConfigCase
-      getRequestConfigCase();
+  com.google.cloud.datalabeling.v1beta1.LabelTextRequest.RequestConfigCase getRequestConfigCase();
 }

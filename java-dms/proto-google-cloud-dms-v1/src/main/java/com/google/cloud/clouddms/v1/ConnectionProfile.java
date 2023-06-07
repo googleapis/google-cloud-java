@@ -50,11 +50,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     return new ConnectionProfile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_ConnectionProfile_descriptor;
@@ -349,6 +344,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   private int connectionProfileCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectionProfile_;
 
   public enum ConnectionProfileCase
@@ -600,6 +597,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -625,6 +623,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -641,6 +640,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -664,6 +664,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    * The resource labels for connection profile to use to annotate any related
    * underlying resources such as Compute Engine VMs. An object containing a
    * list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
    * </pre>
    *
@@ -2453,6 +2454,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2478,6 +2480,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2494,6 +2497,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2517,6 +2521,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2546,6 +2551,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2571,6 +2577,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *
@@ -2594,6 +2601,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      * The resource labels for connection profile to use to annotate any related
      * underlying resources such as Compute Engine VMs. An object containing a
      * list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
      * </pre>
      *

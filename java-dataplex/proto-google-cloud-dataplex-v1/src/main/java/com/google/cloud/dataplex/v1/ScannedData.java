@@ -45,11 +45,6 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     return new ScannedData();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ProcessingProto
         .internal_static_google_cloud_dataplex_v1_ScannedData_descriptor;
@@ -176,11 +171,6 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IncrementalField();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1136,6 +1126,8 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataRangeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object dataRange_;
 
   public enum DataRangeCase

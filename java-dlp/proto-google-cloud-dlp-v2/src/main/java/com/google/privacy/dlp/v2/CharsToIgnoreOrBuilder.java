@@ -103,5 +103,5 @@ public interface CharsToIgnoreOrBuilder
    */
   com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore();
 
-  public com.google.privacy.dlp.v2.CharsToIgnore.CharactersCase getCharactersCase();
+  com.google.privacy.dlp.v2.CharsToIgnore.CharactersCase getCharactersCase();
 }

@@ -46,11 +46,6 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
     return new ExportFlowResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.FlowProto
         .internal_static_google_cloud_dialogflow_cx_v3_ExportFlowResponse_descriptor;
@@ -67,6 +62,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
   }
 
   private int flowCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object flow_;
 
   public enum FlowCase

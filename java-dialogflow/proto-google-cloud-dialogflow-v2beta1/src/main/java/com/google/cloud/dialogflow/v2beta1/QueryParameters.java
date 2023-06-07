@@ -41,7 +41,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     timeZone_ = "";
     contexts_ = java.util.Collections.emptyList();
     sessionEntityTypes_ = java.util.Collections.emptyList();
-    knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     subAgents_ = java.util.Collections.emptyList();
   }
 
@@ -49,11 +49,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QueryParameters();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -429,7 +424,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public static final int KNOWLEDGE_BASE_NAMES_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList knowledgeBaseNames_;
+  private com.google.protobuf.LazyStringArrayList knowledgeBaseNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1149,8 +1145,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-      knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sentimentAnalysisRequestConfig_ = null;
       if (sentimentAnalysisRequestConfigBuilder_ != null) {
         sentimentAnalysisRequestConfigBuilder_.dispose();
@@ -1219,11 +1214,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         result.sessionEntityTypes_ = sessionEntityTypesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        knowledgeBaseNames_ = knowledgeBaseNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.knowledgeBaseNames_ = knowledgeBaseNames_;
       if (subAgentsBuilder_ == null) {
         if (((bitField0_ & 0x00000100) != 0)) {
           subAgents_ = java.util.Collections.unmodifiableList(subAgents_);
@@ -1249,6 +1239,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        knowledgeBaseNames_.makeImmutable();
+        result.knowledgeBaseNames_ = knowledgeBaseNames_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.sentimentAnalysisRequestConfig_ =
@@ -1379,7 +1373,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!other.knowledgeBaseNames_.isEmpty()) {
         if (knowledgeBaseNames_.isEmpty()) {
           knowledgeBaseNames_ = other.knowledgeBaseNames_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureKnowledgeBaseNamesIsMutable();
           knowledgeBaseNames_.addAll(other.knowledgeBaseNames_);
@@ -2908,14 +2902,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return payloadBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList knowledgeBaseNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList knowledgeBaseNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureKnowledgeBaseNamesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!knowledgeBaseNames_.isModifiable()) {
         knowledgeBaseNames_ = new com.google.protobuf.LazyStringArrayList(knowledgeBaseNames_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2931,7 +2925,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the knowledgeBaseNames.
      */
     public com.google.protobuf.ProtocolStringList getKnowledgeBaseNamesList() {
-      return knowledgeBaseNames_.getUnmodifiableView();
+      knowledgeBaseNames_.makeImmutable();
+      return knowledgeBaseNames_;
     }
     /**
      *
@@ -3004,6 +2999,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       ensureKnowledgeBaseNamesIsMutable();
       knowledgeBaseNames_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3027,6 +3023,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       ensureKnowledgeBaseNamesIsMutable();
       knowledgeBaseNames_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3047,6 +3044,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder addAllKnowledgeBaseNames(java.lang.Iterable<java.lang.String> values) {
       ensureKnowledgeBaseNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, knowledgeBaseNames_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3064,8 +3062,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKnowledgeBaseNames() {
-      knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      knowledgeBaseNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -3090,6 +3089,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureKnowledgeBaseNamesIsMutable();
       knowledgeBaseNames_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

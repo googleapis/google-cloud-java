@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
@@ -1544,47 +1545,95 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
             HttpJsonCallSettings.<InspectContentRequest, InspectContentResponse>newBuilder()
                 .setMethodDescriptor(inspectContentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RedactImageRequest, RedactImageResponse> redactImageTransportSettings =
         HttpJsonCallSettings.<RedactImageRequest, RedactImageResponse>newBuilder()
             .setMethodDescriptor(redactImageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeidentifyContentRequest, DeidentifyContentResponse>
         deidentifyContentTransportSettings =
             HttpJsonCallSettings.<DeidentifyContentRequest, DeidentifyContentResponse>newBuilder()
                 .setMethodDescriptor(deidentifyContentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ReidentifyContentRequest, ReidentifyContentResponse>
         reidentifyContentTransportSettings =
             HttpJsonCallSettings.<ReidentifyContentRequest, ReidentifyContentResponse>newBuilder()
                 .setMethodDescriptor(reidentifyContentMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListInfoTypesRequest, ListInfoTypesResponse>
         listInfoTypesTransportSettings =
             HttpJsonCallSettings.<ListInfoTypesRequest, ListInfoTypesResponse>newBuilder()
                 .setMethodDescriptor(listInfoTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateInspectTemplateRequest, InspectTemplate>
         createInspectTemplateTransportSettings =
             HttpJsonCallSettings.<CreateInspectTemplateRequest, InspectTemplate>newBuilder()
                 .setMethodDescriptor(createInspectTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateInspectTemplateRequest, InspectTemplate>
         updateInspectTemplateTransportSettings =
             HttpJsonCallSettings.<UpdateInspectTemplateRequest, InspectTemplate>newBuilder()
                 .setMethodDescriptor(updateInspectTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetInspectTemplateRequest, InspectTemplate>
         getInspectTemplateTransportSettings =
             HttpJsonCallSettings.<GetInspectTemplateRequest, InspectTemplate>newBuilder()
                 .setMethodDescriptor(getInspectTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
         listInspectTemplatesTransportSettings =
@@ -1592,30 +1641,60 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                 .<ListInspectTemplatesRequest, ListInspectTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listInspectTemplatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteInspectTemplateRequest, Empty>
         deleteInspectTemplateTransportSettings =
             HttpJsonCallSettings.<DeleteInspectTemplateRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteInspectTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
         createDeidentifyTemplateTransportSettings =
             HttpJsonCallSettings.<CreateDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
                 .setMethodDescriptor(createDeidentifyTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
         updateDeidentifyTemplateTransportSettings =
             HttpJsonCallSettings.<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
                 .setMethodDescriptor(updateDeidentifyTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDeidentifyTemplateRequest, DeidentifyTemplate>
         getDeidentifyTemplateTransportSettings =
             HttpJsonCallSettings.<GetDeidentifyTemplateRequest, DeidentifyTemplate>newBuilder()
                 .setMethodDescriptor(getDeidentifyTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
         listDeidentifyTemplatesTransportSettings =
@@ -1623,92 +1702,194 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                 .<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listDeidentifyTemplatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDeidentifyTemplateRequest, Empty>
         deleteDeidentifyTemplateTransportSettings =
             HttpJsonCallSettings.<DeleteDeidentifyTemplateRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteDeidentifyTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerTransportSettings =
         HttpJsonCallSettings.<CreateJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(createJobTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerTransportSettings =
         HttpJsonCallSettings.<UpdateJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(updateJobTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<HybridInspectJobTriggerRequest, HybridInspectResponse>
         hybridInspectJobTriggerTransportSettings =
             HttpJsonCallSettings.<HybridInspectJobTriggerRequest, HybridInspectResponse>newBuilder()
                 .setMethodDescriptor(hybridInspectJobTriggerMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetJobTriggerRequest, JobTrigger> getJobTriggerTransportSettings =
         HttpJsonCallSettings.<GetJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(getJobTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListJobTriggersRequest, ListJobTriggersResponse>
         listJobTriggersTransportSettings =
             HttpJsonCallSettings.<ListJobTriggersRequest, ListJobTriggersResponse>newBuilder()
                 .setMethodDescriptor(listJobTriggersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerTransportSettings =
         HttpJsonCallSettings.<DeleteJobTriggerRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteJobTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerTransportSettings =
         HttpJsonCallSettings.<ActivateJobTriggerRequest, DlpJob>newBuilder()
             .setMethodDescriptor(activateJobTriggerMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         HttpJsonCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(createDlpJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsTransportSettings =
         HttpJsonCallSettings.<ListDlpJobsRequest, ListDlpJobsResponse>newBuilder()
             .setMethodDescriptor(listDlpJobsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetDlpJobRequest, DlpJob> getDlpJobTransportSettings =
         HttpJsonCallSettings.<GetDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(getDlpJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteDlpJobRequest, Empty> deleteDlpJobTransportSettings =
         HttpJsonCallSettings.<DeleteDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDlpJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CancelDlpJobRequest, Empty> cancelDlpJobTransportSettings =
         HttpJsonCallSettings.<CancelDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelDlpJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
         createStoredInfoTypeTransportSettings =
             HttpJsonCallSettings.<CreateStoredInfoTypeRequest, StoredInfoType>newBuilder()
                 .setMethodDescriptor(createStoredInfoTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
         updateStoredInfoTypeTransportSettings =
             HttpJsonCallSettings.<UpdateStoredInfoTypeRequest, StoredInfoType>newBuilder()
                 .setMethodDescriptor(updateStoredInfoTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetStoredInfoTypeRequest, StoredInfoType>
         getStoredInfoTypeTransportSettings =
             HttpJsonCallSettings.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
                 .setMethodDescriptor(getStoredInfoTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
         listStoredInfoTypesTransportSettings =
@@ -1716,22 +1897,46 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                 .<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>newBuilder()
                 .setMethodDescriptor(listStoredInfoTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeTransportSettings =
         HttpJsonCallSettings.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteStoredInfoTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobTransportSettings =
             HttpJsonCallSettings.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
                 .setMethodDescriptor(hybridInspectDlpJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
         HttpJsonCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(finishDlpJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.inspectContentCallable =

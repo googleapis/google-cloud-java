@@ -49,11 +49,6 @@ public final class DiagnoseClusterRequest extends com.google.protobuf.GeneratedM
     return new DiagnoseClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_DiagnoseClusterRequest_descriptor;

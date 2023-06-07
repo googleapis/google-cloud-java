@@ -95,10 +95,12 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * <pre>
    * Optional. The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - The `reply_audio_config` field is specified in the request.
    *  - The automated agent, which this output comes from, responded with audio.
    *    In such case, the `reply_audio.config` field contains settings used to
    *    synthesize the speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -115,10 +117,12 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * <pre>
    * Optional. The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - The `reply_audio_config` field is specified in the request.
    *  - The automated agent, which this output comes from, responded with audio.
    *    In such case, the `reply_audio.config` field contains settings used to
    *    synthesize the speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -135,10 +139,12 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * <pre>
    * Optional. The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - The `reply_audio_config` field is specified in the request.
    *  - The automated agent, which this output comes from, responded with audio.
    *    In such case, the `reply_audio.config` field contains settings used to
    *    synthesize the speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.

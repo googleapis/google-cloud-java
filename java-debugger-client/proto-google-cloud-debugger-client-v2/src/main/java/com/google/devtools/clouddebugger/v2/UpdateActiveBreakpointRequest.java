@@ -47,11 +47,6 @@ public final class UpdateActiveBreakpointRequest extends com.google.protobuf.Gen
     return new UpdateActiveBreakpointRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouddebugger.v2.ControllerProto
         .internal_static_google_devtools_clouddebugger_v2_UpdateActiveBreakpointRequest_descriptor;

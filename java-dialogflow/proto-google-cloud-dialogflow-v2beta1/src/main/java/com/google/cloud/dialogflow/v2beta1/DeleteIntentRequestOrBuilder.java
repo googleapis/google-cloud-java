@@ -29,7 +29,9 @@ public interface DeleteIntentRequestOrBuilder
    * <pre>
    * Required. The name of the intent to delete. If this intent has direct or
    * indirect followup intents, we also delete them.
+   *
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>
@@ -47,7 +49,9 @@ public interface DeleteIntentRequestOrBuilder
    * <pre>
    * Required. The name of the intent to delete. If this intent has direct or
    * indirect followup intents, we also delete them.
+   *
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`
    * </pre>

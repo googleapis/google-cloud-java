@@ -45,11 +45,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     return new WebhookResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.WebhookProto
         .internal_static_google_cloud_dialogflow_cx_v3_WebhookResponse_descriptor;
@@ -180,11 +175,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FulfillmentResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1452,6 +1442,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   private int transitionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transition_;
 
   public enum TransitionCase

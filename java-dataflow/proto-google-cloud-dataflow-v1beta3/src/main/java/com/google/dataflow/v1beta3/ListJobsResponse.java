@@ -53,11 +53,6 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
     return new ListJobsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.JobsProto
         .internal_static_google_dataflow_v1beta3_ListJobsResponse_descriptor;

@@ -65,5 +65,5 @@ public interface EvaluationMetricsOrBuilder
   com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetricsOrBuilder
       getObjectDetectionMetricsOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.EvaluationMetrics.MetricsCase getMetricsCase();
+  com.google.cloud.datalabeling.v1beta1.EvaluationMetrics.MetricsCase getMetricsCase();
 }

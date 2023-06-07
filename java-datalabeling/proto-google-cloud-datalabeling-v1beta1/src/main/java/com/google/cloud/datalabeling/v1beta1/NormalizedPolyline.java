@@ -47,11 +47,6 @@ public final class NormalizedPolyline extends com.google.protobuf.GeneratedMessa
     return new NormalizedPolyline();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_NormalizedPolyline_descriptor;

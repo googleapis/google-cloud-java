@@ -210,6 +210,6 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest.EntityTypeBatchCase
+  com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest.EntityTypeBatchCase
       getEntityTypeBatchCase();
 }

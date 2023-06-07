@@ -28,6 +28,7 @@ public interface GetEvaluationJobRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation job. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetEvaluationJobRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation job. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.dataflow.v1beta3.GetJobExecutionDetailsRequest;
 import com.google.dataflow.v1beta3.GetJobMetricsRequest;
@@ -231,12 +232,28 @@ public class HttpJsonMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
         HttpJsonCallSettings.<GetJobMetricsRequest, JobMetrics>newBuilder()
             .setMethodDescriptor(getJobMetricsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetJobExecutionDetailsRequest, JobExecutionDetails>
         getJobExecutionDetailsTransportSettings =
             HttpJsonCallSettings.<GetJobExecutionDetailsRequest, JobExecutionDetails>newBuilder()
                 .setMethodDescriptor(getJobExecutionDetailsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_id", String.valueOf(request.getJobId()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetStageExecutionDetailsRequest, StageExecutionDetails>
         getStageExecutionDetailsTransportSettings =
@@ -244,6 +261,15 @@ public class HttpJsonMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                 .<GetStageExecutionDetailsRequest, StageExecutionDetails>newBuilder()
                 .setMethodDescriptor(getStageExecutionDetailsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("job_id", String.valueOf(request.getJobId()));
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      builder.add("project_id", String.valueOf(request.getProjectId()));
+                      builder.add("stage_id", String.valueOf(request.getStageId()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getJobMetricsCallable =

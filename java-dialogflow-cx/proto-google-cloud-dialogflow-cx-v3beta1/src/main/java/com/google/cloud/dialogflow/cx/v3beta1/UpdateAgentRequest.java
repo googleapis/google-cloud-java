@@ -46,11 +46,6 @@ public final class UpdateAgentRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateAgentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateAgentRequest_descriptor;

@@ -47,11 +47,6 @@ public final class RuleActionsPair extends com.google.protobuf.GeneratedMessageV
     return new RuleActionsPair();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.RuleEngineProto
         .internal_static_google_cloud_contentwarehouse_v1_RuleActionsPair_descriptor;

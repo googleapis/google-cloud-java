@@ -108,5 +108,5 @@ public interface ReloadDocumentRequestOrBuilder
    */
   boolean getImportGcsCustomMetadata();
 
-  public com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest.SourceCase getSourceCase();
+  com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest.SourceCase getSourceCase();
 }

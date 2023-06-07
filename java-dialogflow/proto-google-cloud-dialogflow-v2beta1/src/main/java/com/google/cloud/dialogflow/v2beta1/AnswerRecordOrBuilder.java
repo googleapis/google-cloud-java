@@ -133,5 +133,5 @@ public interface AnswerRecordOrBuilder
   com.google.cloud.dialogflow.v2beta1.AgentAssistantRecordOrBuilder
       getAgentAssistantRecordOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.AnswerRecord.RecordCase getRecordCase();
+  com.google.cloud.dialogflow.v2beta1.AnswerRecord.RecordCase getRecordCase();
 }

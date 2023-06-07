@@ -23,9 +23,12 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * <pre>
  * Represents the query input. It can contain either:
+ *
  * 1.  An audio config which
  *     instructs the speech recognizer how to process the speech audio.
+ *
  * 2.  A conversational query in the form of text.
+ *
  * 3.  An event that specifies which intent to trigger.
  * </pre>
  *
@@ -49,11 +52,6 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     return new QueryInput();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.SessionProto
         .internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
@@ -70,6 +68,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int inputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object input_;
 
   public enum InputCase
@@ -550,9 +550,12 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents the query input. It can contain either:
+   *
    * 1.  An audio config which
    *     instructs the speech recognizer how to process the speech audio.
+   *
    * 2.  A conversational query in the form of text.
+   *
    * 3.  An event that specifies which intent to trigger.
    * </pre>
    *

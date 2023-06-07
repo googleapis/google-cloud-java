@@ -73,6 +73,7 @@ public interface ListStreamsRequestOrBuilder
    * <pre>
    * Page token received from a previous `ListStreams` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListStreams`
    * must match the call that provided the page token.
    * </pre>
@@ -88,6 +89,7 @@ public interface ListStreamsRequestOrBuilder
    * <pre>
    * Page token received from a previous `ListStreams` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListStreams`
    * must match the call that provided the page token.
    * </pre>

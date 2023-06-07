@@ -48,11 +48,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     return new KnowledgeOperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.DocumentProto
         .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeOperationMetadata_descriptor;
@@ -250,6 +245,8 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
   }
 
   private int operationMetadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object operationMetadata_;
 
   public enum OperationMetadataCase

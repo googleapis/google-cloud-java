@@ -582,5 +582,5 @@ public interface WebhookRequestOrBuilder
   com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder
       getSentimentAnalysisResultOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.QueryCase getQueryCase();
+  com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.QueryCase getQueryCase();
 }

@@ -23,9 +23,11 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  * <pre>
  * A fulfillment can do one or more of the following actions at the same time:
+ *
  *   * Generate rich message responses.
  *   * Set parameter values.
  *   * Call the webhook.
+ *
  * Fulfillments can be called at various stages in the
  * [Page][google.cloud.dialogflow.cx.v3.Page] or
  * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a
@@ -61,11 +63,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Fulfillment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,11 +172,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SetParameterAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1127,11 +1119,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       return new ConditionalCases();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
           .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_descriptor;
@@ -1160,6 +1147,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -1177,6 +1165,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -1287,11 +1276,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return new Case();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
             .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_Case_descriptor;
@@ -1386,7 +1370,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCasesOrBuilder
             getAdditionalCasesOrBuilder();
 
-        public com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
                 .CasesOrMessageCase
             getCasesOrMessageCase();
       }
@@ -1418,11 +1402,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return new CaseContent();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
               .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_Case_CaseContent_descriptor;
@@ -1441,6 +1420,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int casesOrMessageCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object casesOrMessage_;
 
         public enum CasesOrMessageCase
@@ -2601,6 +2582,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -2629,6 +2611,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -3185,6 +3168,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3212,6 +3196,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3239,6 +3224,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3265,6 +3251,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3287,6 +3274,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -5356,9 +5344,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A fulfillment can do one or more of the following actions at the same time:
+   *
    *   * Generate rich message responses.
    *   * Set parameter values.
    *   * Call the webhook.
+   *
    * Fulfillments can be called at various stages in the
    * [Page][google.cloud.dialogflow.cx.v3.Page] or
    * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a

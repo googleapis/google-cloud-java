@@ -46,11 +46,6 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
     return new StreamLocation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.StreamingProto
         .internal_static_google_dataflow_v1beta3_StreamLocation_descriptor;
@@ -67,6 +62,8 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int locationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object location_;
 
   public enum LocationCase

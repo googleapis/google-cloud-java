@@ -153,6 +153,5 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getDataFreshnessOrBuilder();
 
-  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.DatasetConfigCase
-      getDatasetConfigCase();
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.DatasetConfigCase getDatasetConfigCase();
 }

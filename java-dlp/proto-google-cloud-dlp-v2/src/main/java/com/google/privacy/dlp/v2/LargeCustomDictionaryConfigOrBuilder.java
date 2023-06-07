@@ -137,5 +137,5 @@ public interface LargeCustomDictionaryConfigOrBuilder
    */
   com.google.privacy.dlp.v2.BigQueryFieldOrBuilder getBigQueryFieldOrBuilder();
 
-  public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.SourceCase getSourceCase();
+  com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.SourceCase getSourceCase();
 }

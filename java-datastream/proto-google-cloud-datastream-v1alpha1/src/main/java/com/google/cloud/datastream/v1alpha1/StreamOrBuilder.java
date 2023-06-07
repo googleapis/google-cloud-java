@@ -451,5 +451,5 @@ public interface StreamOrBuilder
    */
   com.google.cloud.datastream.v1alpha1.ErrorOrBuilder getErrorsOrBuilder(int index);
 
-  public com.google.cloud.datastream.v1alpha1.Stream.BackfillStrategyCase getBackfillStrategyCase();
+  com.google.cloud.datastream.v1alpha1.Stream.BackfillStrategyCase getBackfillStrategyCase();
 }

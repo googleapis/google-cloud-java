@@ -52,11 +52,6 @@ public final class ConversationDataset extends com.google.protobuf.GeneratedMess
     return new ConversationDataset();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ConversationDatasetProto
         .internal_static_google_cloud_dialogflow_v2_ConversationDataset_descriptor;

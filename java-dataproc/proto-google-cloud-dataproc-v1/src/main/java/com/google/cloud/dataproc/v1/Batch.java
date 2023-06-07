@@ -53,11 +53,6 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     return new Batch();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.BatchesProto
         .internal_static_google_cloud_dataproc_v1_Batch_descriptor;
@@ -457,11 +452,6 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StateHistory();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1498,6 +1488,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int batchConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object batchConfig_;
 
   public enum BatchConfigCase

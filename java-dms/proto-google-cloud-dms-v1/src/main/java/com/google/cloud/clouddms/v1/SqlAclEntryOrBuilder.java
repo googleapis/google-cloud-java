@@ -149,5 +149,5 @@ public interface SqlAclEntryOrBuilder
    */
   com.google.protobuf.ByteString getLabelBytes();
 
-  public com.google.cloud.clouddms.v1.SqlAclEntry.ExpirationCase getExpirationCase();
+  com.google.cloud.clouddms.v1.SqlAclEntry.ExpirationCase getExpirationCase();
 }

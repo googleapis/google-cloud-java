@@ -47,11 +47,6 @@ public final class GetVpnConnectionRequest extends com.google.protobuf.Generated
     return new GetVpnConnectionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.edgecontainer.v1.ServiceProto
         .internal_static_google_cloud_edgecontainer_v1_GetVpnConnectionRequest_descriptor;

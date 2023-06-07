@@ -50,11 +50,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     return new PropertyDefinition();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
         .internal_static_google_cloud_contentwarehouse_v1_PropertyDefinition_descriptor;
@@ -403,11 +398,6 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SchemaSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1187,6 +1177,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   }
 
   private int valueTypeOptionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object valueTypeOptions_;
 
   public enum ValueTypeOptionsCase

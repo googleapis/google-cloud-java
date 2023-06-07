@@ -49,11 +49,6 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
     return new SuggestFaqAnswersResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersResponse_descriptor;
@@ -150,6 +145,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
    * <pre>
    * The name of the latest conversation message used to compile
    * suggestion for.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -176,6 +172,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
    * <pre>
    * The name of the latest conversation message used to compile
    * suggestion for.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -1020,6 +1017,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1045,6 +1043,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1070,6 +1069,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1094,6 +1094,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -1114,6 +1115,7 @@ public final class SuggestFaqAnswersResponse extends com.google.protobuf.Generat
      * <pre>
      * The name of the latest conversation message used to compile
      * suggestion for.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>

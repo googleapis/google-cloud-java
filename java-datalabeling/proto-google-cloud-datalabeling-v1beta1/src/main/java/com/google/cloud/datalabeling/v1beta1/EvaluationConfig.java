@@ -46,11 +46,6 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
     return new EvaluationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_EvaluationConfig_descriptor;
@@ -67,6 +62,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int verticalOptionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object verticalOption_;
 
   public enum VerticalOptionCase

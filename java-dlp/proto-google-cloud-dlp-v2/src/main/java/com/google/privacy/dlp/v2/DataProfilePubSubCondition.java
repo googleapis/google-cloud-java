@@ -45,11 +45,6 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     return new DataProfilePubSubCondition();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_descriptor;
@@ -319,8 +314,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     com.google.privacy.dlp.v2.DataProfilePubSubCondition.ProfileScoreBucket
         getMinimumSensitivityScore();
 
-    public com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition.ValueCase
-        getValueCase();
+    com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubCondition.ValueCase getValueCase();
   }
   /**
    *
@@ -349,11 +343,6 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
       return new PubSubCondition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubCondition_descriptor;
@@ -370,6 +359,8 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     }
 
     private int valueCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object value_;
 
     public enum ValueCase
@@ -1420,11 +1411,6 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PubSubExpressions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -105,9 +105,11 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `TransitionRouteGroup`:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -125,9 +127,11 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `TransitionRouteGroup`:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

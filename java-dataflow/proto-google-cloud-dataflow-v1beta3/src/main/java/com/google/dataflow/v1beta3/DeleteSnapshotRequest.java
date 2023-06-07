@@ -49,11 +49,6 @@ public final class DeleteSnapshotRequest extends com.google.protobuf.GeneratedMe
     return new DeleteSnapshotRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.SnapshotsProto
         .internal_static_google_dataflow_v1beta3_DeleteSnapshotRequest_descriptor;

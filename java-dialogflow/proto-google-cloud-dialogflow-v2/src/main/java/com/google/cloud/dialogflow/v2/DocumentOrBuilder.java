@@ -184,8 +184,10 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The URI where the file content is located.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * NOTE: External URLs must correspond to public webpages, i.e., they must
    * be indexed by Google Search. In particular, URLs for showing documents in
    * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -202,8 +204,10 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The URI where the file content is located.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * NOTE: External URLs must correspond to public webpages, i.e., they must
    * be indexed by Google Search. In particular, URLs for showing documents in
    * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -220,8 +224,10 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The URI where the file content is located.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * NOTE: External URLs must correspond to public webpages, i.e., they must
    * be indexed by Google Search. In particular, URLs for showing documents in
    * Google Cloud Storage (i.e. the URL in your browser) are not supported.
@@ -268,10 +274,13 @@ public interface DocumentOrBuilder
    * Optional. If true, we try to automatically reload the document every day
    * (at a time picked by the system). If false or unspecified, we don't try
    * to automatically reload the document.
+   *
    * Currently you can only enable automatic reload for documents sourced from
    * a public url, see `source` field for the source types.
+   *
    * Reload status can be tracked in `latest_reload_status`. If a reload
    * fails, we will keep the document unchanged.
+   *
    * If a reload fails with internal errors, the system will try to reload the
    * document on the next day.
    * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
@@ -435,5 +444,5 @@ public interface DocumentOrBuilder
    */
   com.google.cloud.dialogflow.v2.Document.State getState();
 
-  public com.google.cloud.dialogflow.v2.Document.SourceCase getSourceCase();
+  com.google.cloud.dialogflow.v2.Document.SourceCase getSourceCase();
 }

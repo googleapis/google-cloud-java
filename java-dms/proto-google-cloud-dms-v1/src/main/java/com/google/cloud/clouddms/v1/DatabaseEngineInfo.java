@@ -48,11 +48,6 @@ public final class DatabaseEngineInfo extends com.google.protobuf.GeneratedMessa
     return new DatabaseEngineInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto
         .internal_static_google_cloud_clouddms_v1_DatabaseEngineInfo_descriptor;

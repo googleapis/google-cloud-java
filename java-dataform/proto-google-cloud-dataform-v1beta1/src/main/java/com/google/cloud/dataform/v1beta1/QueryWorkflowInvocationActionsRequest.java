@@ -50,11 +50,6 @@ public final class QueryWorkflowInvocationActionsRequest
     return new QueryWorkflowInvocationActionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_QueryWorkflowInvocationActionsRequest_descriptor;
@@ -155,6 +150,7 @@ public final class QueryWorkflowInvocationActionsRequest
    * <pre>
    * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryWorkflowInvocationActions` must match the call that provided the page
    * token.
@@ -182,6 +178,7 @@ public final class QueryWorkflowInvocationActionsRequest
    * <pre>
    * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryWorkflowInvocationActions` must match the call that provided the page
    * token.
@@ -786,6 +783,7 @@ public final class QueryWorkflowInvocationActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryWorkflowInvocationActions` must match the call that provided the page
      * token.
@@ -812,6 +810,7 @@ public final class QueryWorkflowInvocationActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryWorkflowInvocationActions` must match the call that provided the page
      * token.
@@ -838,6 +837,7 @@ public final class QueryWorkflowInvocationActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryWorkflowInvocationActions` must match the call that provided the page
      * token.
@@ -863,6 +863,7 @@ public final class QueryWorkflowInvocationActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryWorkflowInvocationActions` must match the call that provided the page
      * token.
@@ -884,6 +885,7 @@ public final class QueryWorkflowInvocationActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryWorkflowInvocationActions` must match the call that provided the page
      * token.

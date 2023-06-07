@@ -39,7 +39,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   private InstanceGroupConfig() {
-    instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     imageUri_ = "";
     machineTypeUri_ = "";
     preemptibility_ = 0;
@@ -51,11 +51,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InstanceGroupConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -99,6 +94,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Instances are non-preemptible.
+     *
      * This option is allowed for all instance groups and is the only valid
      * value for Master and Worker instance groups.
      * </pre>
@@ -112,6 +108,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Instances are [preemptible]
      * (https://cloud.google.com/compute/docs/instances/preemptible).
+     *
      * This option is allowed only for [secondary worker]
      * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
      * groups.
@@ -126,6 +123,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Instances are [Spot VMs]
      * (https://cloud.google.com/compute/docs/instances/spot).
+     *
      * This option is allowed only for [secondary worker]
      * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
      * groups. Spot VMs are the latest version of [preemptible VMs]
@@ -155,6 +153,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Instances are non-preemptible.
+     *
      * This option is allowed for all instance groups and is the only valid
      * value for Master and Worker instance groups.
      * </pre>
@@ -168,6 +167,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Instances are [preemptible]
      * (https://cloud.google.com/compute/docs/instances/preemptible).
+     *
      * This option is allowed only for [secondary worker]
      * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
      * groups.
@@ -182,6 +182,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Instances are [Spot VMs]
      * (https://cloud.google.com/compute/docs/instances/spot).
+     *
      * This option is allowed only for [secondary worker]
      * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
      * groups. Spot VMs are the latest version of [preemptible VMs]
@@ -304,7 +305,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public static final int INSTANCE_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instanceNames_;
+  private com.google.protobuf.LazyStringArrayList instanceNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -377,15 +379,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The Compute Engine image resource used for cluster instances.
+   *
    * The URI can represent an image or image family.
+   *
    * Image examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
    * * `projects/[project_id]/global/images/[image-id]`
    * * `image-id`
+   *
    * Image family examples. Dataproc will use the most recent
    * image from the family:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
    * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+   *
    * If the URI is unspecified, it will be inferred from
    * `SoftwareConfig.image_version` or the system default.
    * </pre>
@@ -411,15 +419,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The Compute Engine image resource used for cluster instances.
+   *
    * The URI can represent an image or image family.
+   *
    * Image examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
    * * `projects/[project_id]/global/images/[image-id]`
    * * `image-id`
+   *
    * Image family examples. Dataproc will use the most recent
    * image from the family:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
    * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+   *
    * If the URI is unspecified, it will be inferred from
    * `SoftwareConfig.image_version` or the system default.
    * </pre>
@@ -450,10 +464,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `n1-standard-2`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -482,10 +499,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
    * * `n1-standard-2`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -592,8 +612,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Specifies the preemptibility of the instance group.
+   *
    * The default value for master and worker groups is
    * `NON_PREEMPTIBLE`. This default cannot be changed.
+   *
    * The default value for secondary instances is
    * `PREEMPTIBLE`.
    * </pre>
@@ -613,8 +635,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. Specifies the preemptibility of the instance group.
+   *
    * The default value for master and worker groups is
    * `NON_PREEMPTIBLE`. This default cannot be changed.
+   *
    * The default value for secondary instances is
    * `PREEMPTIBLE`.
    * </pre>
@@ -1144,8 +1168,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       numInstances_ = 0;
-      instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      instanceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       imageUri_ = "";
       machineTypeUri_ = "";
       diskConfig_ = null;
@@ -1205,11 +1228,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
     private void buildPartialRepeatedFields(
         com.google.cloud.dataproc.v1.InstanceGroupConfig result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        instanceNames_ = instanceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.instanceNames_ = instanceNames_;
       if (acceleratorsBuilder_ == null) {
         if (((bitField0_ & 0x00000100) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
@@ -1225,6 +1243,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.numInstances_ = numInstances_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        instanceNames_.makeImmutable();
+        result.instanceNames_ = instanceNames_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.imageUri_ = imageUri_;
@@ -1304,7 +1326,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (!other.instanceNames_.isEmpty()) {
         if (instanceNames_.isEmpty()) {
           instanceNames_ = other.instanceNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureInstanceNamesIsMutable();
           instanceNames_.addAll(other.instanceNames_);
@@ -1547,14 +1569,14 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instanceNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstanceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!instanceNames_.isModifiable()) {
         instanceNames_ = new com.google.protobuf.LazyStringArrayList(instanceNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1569,7 +1591,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return A list containing the instanceNames.
      */
     public com.google.protobuf.ProtocolStringList getInstanceNamesList() {
-      return instanceNames_.getUnmodifiableView();
+      instanceNames_.makeImmutable();
+      return instanceNames_;
     }
     /**
      *
@@ -1638,6 +1661,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       ensureInstanceNamesIsMutable();
       instanceNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1660,6 +1684,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       ensureInstanceNamesIsMutable();
       instanceNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1679,6 +1704,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder addAllInstanceNames(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1695,8 +1721,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearInstanceNames() {
-      instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1720,6 +1747,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureInstanceNamesIsMutable();
       instanceNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1730,15 +1758,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine image resource used for cluster instances.
+     *
      * The URI can represent an image or image family.
+     *
      * Image examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
      * * `projects/[project_id]/global/images/[image-id]`
      * * `image-id`
+     *
      * Image family examples. Dataproc will use the most recent
      * image from the family:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
      * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+     *
      * If the URI is unspecified, it will be inferred from
      * `SoftwareConfig.image_version` or the system default.
      * </pre>
@@ -1763,15 +1797,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine image resource used for cluster instances.
+     *
      * The URI can represent an image or image family.
+     *
      * Image examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
      * * `projects/[project_id]/global/images/[image-id]`
      * * `image-id`
+     *
      * Image family examples. Dataproc will use the most recent
      * image from the family:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
      * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+     *
      * If the URI is unspecified, it will be inferred from
      * `SoftwareConfig.image_version` or the system default.
      * </pre>
@@ -1796,15 +1836,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine image resource used for cluster instances.
+     *
      * The URI can represent an image or image family.
+     *
      * Image examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
      * * `projects/[project_id]/global/images/[image-id]`
      * * `image-id`
+     *
      * Image family examples. Dataproc will use the most recent
      * image from the family:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
      * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+     *
      * If the URI is unspecified, it will be inferred from
      * `SoftwareConfig.image_version` or the system default.
      * </pre>
@@ -1828,15 +1874,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine image resource used for cluster instances.
+     *
      * The URI can represent an image or image family.
+     *
      * Image examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
      * * `projects/[project_id]/global/images/[image-id]`
      * * `image-id`
+     *
      * Image family examples. Dataproc will use the most recent
      * image from the family:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
      * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+     *
      * If the URI is unspecified, it will be inferred from
      * `SoftwareConfig.image_version` or the system default.
      * </pre>
@@ -1856,15 +1908,21 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine image resource used for cluster instances.
+     *
      * The URI can represent an image or image family.
+     *
      * Image examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id]`
      * * `projects/[project_id]/global/images/[image-id]`
      * * `image-id`
+     *
      * Image family examples. Dataproc will use the most recent
      * image from the family:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name]`
      * * `projects/[project_id]/global/images/family/[custom-image-family-name]`
+     *
      * If the URI is unspecified, it will be inferred from
      * `SoftwareConfig.image_version` or the system default.
      * </pre>
@@ -1891,10 +1949,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `n1-standard-2`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -1922,10 +1983,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `n1-standard-2`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -1953,10 +2017,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `n1-standard-2`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -1983,10 +2050,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `n1-standard-2`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -2009,10 +2079,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2`
      * * `n1-standard-2`
+     *
      * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -2299,8 +2372,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specifies the preemptibility of the instance group.
+     *
      * The default value for master and worker groups is
      * `NON_PREEMPTIBLE`. This default cannot be changed.
+     *
      * The default value for secondary instances is
      * `PREEMPTIBLE`.
      * </pre>
@@ -2320,8 +2395,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specifies the preemptibility of the instance group.
+     *
      * The default value for master and worker groups is
      * `NON_PREEMPTIBLE`. This default cannot be changed.
+     *
      * The default value for secondary instances is
      * `PREEMPTIBLE`.
      * </pre>
@@ -2344,8 +2421,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specifies the preemptibility of the instance group.
+     *
      * The default value for master and worker groups is
      * `NON_PREEMPTIBLE`. This default cannot be changed.
+     *
      * The default value for secondary instances is
      * `PREEMPTIBLE`.
      * </pre>
@@ -2370,8 +2449,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specifies the preemptibility of the instance group.
+     *
      * The default value for master and worker groups is
      * `NON_PREEMPTIBLE`. This default cannot be changed.
+     *
      * The default value for secondary instances is
      * `PREEMPTIBLE`.
      * </pre>
@@ -2398,8 +2479,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. Specifies the preemptibility of the instance group.
+     *
      * The default value for master and worker groups is
      * `NON_PREEMPTIBLE`. This default cannot be changed.
+     *
      * The default value for secondary instances is
      * `PREEMPTIBLE`.
      * </pre>

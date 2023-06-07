@@ -56,11 +56,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return new Service();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1.MetastoreProto
         .internal_static_google_cloud_metastore_v1_Service_descriptor;
@@ -844,6 +839,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int metastoreConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metastoreConfig_;
 
   public enum MetastoreConfigCase
@@ -952,6 +949,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The relative resource name of the metastore service, in the
    * following format:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -977,6 +975,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The relative resource name of the metastore service, in the
    * following format:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -1207,6 +1206,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the
    * instance can be accessed. It is specified in the following form:
+   *
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -1234,6 +1234,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the
    * instance can be accessed. It is specified in the following form:
+   *
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -3169,6 +3170,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the metastore service, in the
      * following format:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3193,6 +3195,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the metastore service, in the
      * following format:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3217,6 +3220,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the metastore service, in the
      * following format:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3240,6 +3244,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the metastore service, in the
      * following format:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3259,6 +3264,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the metastore service, in the
      * following format:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3850,6 +3856,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the
      * instance can be accessed. It is specified in the following form:
+     *
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3876,6 +3883,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the
      * instance can be accessed. It is specified in the following form:
+     *
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3902,6 +3910,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the
      * instance can be accessed. It is specified in the following form:
+     *
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3927,6 +3936,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the
      * instance can be accessed. It is specified in the following form:
+     *
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3948,6 +3958,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The relative resource name of the VPC network on which the
      * instance can be accessed. It is specified in the following form:
+     *
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *

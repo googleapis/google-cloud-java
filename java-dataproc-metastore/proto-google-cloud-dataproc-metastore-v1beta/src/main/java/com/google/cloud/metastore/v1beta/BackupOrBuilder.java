@@ -28,6 +28,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Immutable. The relative resource name of the backup, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface BackupOrBuilder
    *
    * <pre>
    * Immutable. The relative resource name of the backup, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *

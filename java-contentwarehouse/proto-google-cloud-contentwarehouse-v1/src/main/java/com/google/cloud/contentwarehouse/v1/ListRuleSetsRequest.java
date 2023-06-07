@@ -48,11 +48,6 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
     return new ListRuleSetsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.RuleSetServiceRequestProto
         .internal_static_google_cloud_contentwarehouse_v1_ListRuleSetsRequest_descriptor;
@@ -156,6 +151,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous `ListRuleSets` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRuleSets`
    * must match the call that provided the page token.
    * </pre>
@@ -182,6 +178,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous `ListRuleSets` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRuleSets`
    * must match the call that provided the page token.
    * </pre>
@@ -782,6 +779,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListRuleSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRuleSets`
      * must match the call that provided the page token.
      * </pre>
@@ -807,6 +805,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListRuleSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRuleSets`
      * must match the call that provided the page token.
      * </pre>
@@ -832,6 +831,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListRuleSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRuleSets`
      * must match the call that provided the page token.
      * </pre>
@@ -856,6 +856,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListRuleSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRuleSets`
      * must match the call that provided the page token.
      * </pre>
@@ -876,6 +877,7 @@ public final class ListRuleSetsRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous `ListRuleSets` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListRuleSets`
      * must match the call that provided the page token.
      * </pre>

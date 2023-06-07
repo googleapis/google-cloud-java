@@ -140,5 +140,5 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    */
   com.google.protobuf.ByteString getDestinationConnectionProfileBytes();
 
-  public com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest.SeedFromCase getSeedFromCase();
+  com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest.SeedFromCase getSeedFromCase();
 }

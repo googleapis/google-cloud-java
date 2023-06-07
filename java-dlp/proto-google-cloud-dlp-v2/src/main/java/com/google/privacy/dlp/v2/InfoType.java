@@ -48,11 +48,6 @@ public final class InfoType extends com.google.protobuf.GeneratedMessageV3
     return new InfoType();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpStorage
         .internal_static_google_privacy_dlp_v2_InfoType_descriptor;

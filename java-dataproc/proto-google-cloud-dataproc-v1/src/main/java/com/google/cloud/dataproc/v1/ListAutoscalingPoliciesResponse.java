@@ -49,11 +49,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
     return new ListAutoscalingPoliciesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto
         .internal_static_google_cloud_dataproc_v1_ListAutoscalingPoliciesResponse_descriptor;

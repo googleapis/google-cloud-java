@@ -49,11 +49,6 @@ public final class ListParticipantsResponse extends com.google.protobuf.Generate
     return new ListParticipantsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2_ListParticipantsResponse_descriptor;

@@ -50,11 +50,6 @@ public final class ListLakesRequest extends com.google.protobuf.GeneratedMessage
     return new ListLakesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ServiceProto
         .internal_static_google_cloud_dataplex_v1_ListLakesRequest_descriptor;

@@ -97,5 +97,5 @@ public interface DataProfileActionOrBuilder
   com.google.privacy.dlp.v2.DataProfileAction.PubSubNotificationOrBuilder
       getPubSubNotificationOrBuilder();
 
-  public com.google.privacy.dlp.v2.DataProfileAction.ActionCase getActionCase();
+  com.google.privacy.dlp.v2.DataProfileAction.ActionCase getActionCase();
 }

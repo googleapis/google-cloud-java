@@ -47,11 +47,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     return new TimeFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.FiltersProto
         .internal_static_google_cloud_contentwarehouse_v1_TimeFilter_descriptor;
@@ -257,6 +252,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies which time field to filter documents on.
+   *
    * Defaults to [TimeField.UPLOAD_TIME][].
    * </pre>
    *
@@ -273,6 +269,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies which time field to filter documents on.
+   *
    * Defaults to [TimeField.UPLOAD_TIME][].
    * </pre>
    *
@@ -781,6 +778,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which time field to filter documents on.
+     *
      * Defaults to [TimeField.UPLOAD_TIME][].
      * </pre>
      *
@@ -797,6 +795,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which time field to filter documents on.
+     *
      * Defaults to [TimeField.UPLOAD_TIME][].
      * </pre>
      *
@@ -816,6 +815,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which time field to filter documents on.
+     *
      * Defaults to [TimeField.UPLOAD_TIME][].
      * </pre>
      *
@@ -836,6 +836,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which time field to filter documents on.
+     *
      * Defaults to [TimeField.UPLOAD_TIME][].
      * </pre>
      *
@@ -858,6 +859,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies which time field to filter documents on.
+     *
      * Defaults to [TimeField.UPLOAD_TIME][].
      * </pre>
      *

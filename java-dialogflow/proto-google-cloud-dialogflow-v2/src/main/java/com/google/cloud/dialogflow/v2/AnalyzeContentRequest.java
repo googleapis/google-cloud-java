@@ -49,11 +49,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     return new AnalyzeContentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2_AnalyzeContentRequest_descriptor;
@@ -70,6 +65,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
   }
 
   private int inputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object input_;
 
   public enum InputCase
@@ -449,6 +446,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -468,6 +466,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -487,6 +486,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -2305,6 +2305,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2323,6 +2324,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2347,6 +2349,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2373,6 +2376,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2396,6 +2400,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2425,6 +2430,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2448,6 +2454,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2466,6 +2473,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2488,6 +2496,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>

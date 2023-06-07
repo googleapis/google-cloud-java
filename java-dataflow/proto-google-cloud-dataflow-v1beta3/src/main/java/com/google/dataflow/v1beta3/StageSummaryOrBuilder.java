@@ -113,6 +113,7 @@ public interface StageSummaryOrBuilder
    *
    * <pre>
    * End time of this stage.
+   *
    * If the work item is completed, this is the actual end time of the stage.
    * Otherwise, it is the predicted end time.
    * </pre>
@@ -127,6 +128,7 @@ public interface StageSummaryOrBuilder
    *
    * <pre>
    * End time of this stage.
+   *
    * If the work item is completed, this is the actual end time of the stage.
    * Otherwise, it is the predicted end time.
    * </pre>
@@ -141,6 +143,7 @@ public interface StageSummaryOrBuilder
    *
    * <pre>
    * End time of this stage.
+   *
    * If the work item is completed, this is the actual end time of the stage.
    * Otherwise, it is the predicted end time.
    * </pre>

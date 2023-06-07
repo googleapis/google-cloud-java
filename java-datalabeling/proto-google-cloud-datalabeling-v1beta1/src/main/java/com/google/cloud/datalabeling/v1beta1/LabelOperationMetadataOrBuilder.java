@@ -647,5 +647,5 @@ public interface LabelOperationMetadataOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata.DetailsCase getDetailsCase();
+  com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata.DetailsCase getDetailsCase();
 }

@@ -61,6 +61,7 @@ public interface ImportFlowRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -80,6 +81,7 @@ public interface ImportFlowRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -99,6 +101,7 @@ public interface ImportFlowRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -164,5 +167,5 @@ public interface ImportFlowRequestOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.ImportOption getImportOption();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.FlowCase getFlowCase();
+  com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.FlowCase getFlowCase();
 }

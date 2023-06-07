@@ -69,7 +69,9 @@ public interface UpdateIntentRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `intent`:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -87,7 +89,9 @@ public interface UpdateIntentRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `intent`:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

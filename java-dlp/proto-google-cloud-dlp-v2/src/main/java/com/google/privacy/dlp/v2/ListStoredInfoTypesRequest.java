@@ -50,11 +50,6 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
     return new ListStoredInfoTypesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ListStoredInfoTypesRequest_descriptor;
@@ -79,16 +74,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -115,16 +114,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -231,8 +234,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
+   *
    * Example: `name asc, display_name, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the most recent version of the
    * resource was created.
    * - `state`: corresponds to the state of the resource.
@@ -264,8 +270,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
    * default sorting order is ascending, redundant space characters are
    * insignificant.
+   *
    * Example: `name asc, display_name, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the most recent version of the
    * resource was created.
    * - `state`: corresponds to the state of the resource.
@@ -783,16 +792,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -818,16 +831,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -853,16 +870,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -887,16 +908,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -917,16 +942,20 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -1124,8 +1153,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, display_name, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the most recent version of the
      * resource was created.
      * - `state`: corresponds to the state of the resource.
@@ -1156,8 +1188,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, display_name, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the most recent version of the
      * resource was created.
      * - `state`: corresponds to the state of the resource.
@@ -1188,8 +1223,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, display_name, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the most recent version of the
      * resource was created.
      * - `state`: corresponds to the state of the resource.
@@ -1219,8 +1257,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, display_name, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the most recent version of the
      * resource was created.
      * - `state`: corresponds to the state of the resource.
@@ -1246,8 +1287,11 @@ public final class ListStoredInfoTypesRequest extends com.google.protobuf.Genera
      * followed by `asc` or `desc` postfix. This list is case-insensitive,
      * default sorting order is ascending, redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, display_name, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the most recent version of the
      * resource was created.
      * - `state`: corresponds to the state of the resource.

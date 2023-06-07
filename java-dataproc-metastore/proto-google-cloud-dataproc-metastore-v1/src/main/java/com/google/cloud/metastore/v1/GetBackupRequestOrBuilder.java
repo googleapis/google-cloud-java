@@ -29,6 +29,7 @@ public interface GetBackupRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the backup to retrieve, in the
    * following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface GetBackupRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the backup to retrieve, in the
    * following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *

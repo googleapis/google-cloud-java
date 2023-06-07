@@ -45,11 +45,6 @@ public final class TestCaseError extends com.google.protobuf.GeneratedMessageV3
     return new TestCaseError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3_TestCaseError_descriptor;

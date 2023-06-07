@@ -23,12 +23,14 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  * <pre>
  * Flows represents the conversation flows when you build your chatbot agent.
+ *
  * A flow consists of many pages connected by the transition routes.
  * Conversations always start with the built-in Start Flow (with an all-0 ID).
  * Transition routes can direct the conversation session from the current flow
  * (parent flow) to another flow (sub flow). When the sub flow is finished,
  * Dialogflow will bring the session back to the parent flow, where the sub flow
  * is started.
+ *
  * Usually, when a transition route is followed by a matched intent, the intent
  * will be "consumed". This means the intent won't activate more transition
  * routes. However, when the followed transition route moves the conversation
@@ -54,18 +56,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     transitionRoutes_ = java.util.Collections.emptyList();
     eventHandlers_ = java.util.Collections.emptyList();
-    transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Flow();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -251,6 +248,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -258,9 +256,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -276,6 +277,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -283,9 +285,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -301,6 +306,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -308,9 +314,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -325,6 +334,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -332,9 +342,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -349,6 +362,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -356,9 +370,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -379,12 +396,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -402,12 +421,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -426,12 +447,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -449,12 +472,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -472,12 +497,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -495,17 +522,20 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
   public static final int TRANSITION_ROUTE_GROUPS_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList transitionRouteGroups_;
+  private com.google.protobuf.LazyStringArrayList transitionRouteGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -523,11 +553,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -545,11 +577,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -568,11 +602,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -871,12 +907,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Flows represents the conversation flows when you build your chatbot agent.
+   *
    * A flow consists of many pages connected by the transition routes.
    * Conversations always start with the built-in Start Flow (with an all-0 ID).
    * Transition routes can direct the conversation session from the current flow
    * (parent flow) to another flow (sub flow). When the sub flow is finished,
    * Dialogflow will bring the session back to the parent flow, where the sub flow
    * is started.
+   *
    * Usually, when a transition route is followed by a matched intent, the intent
    * will be "consumed". This means the intent won't activate more transition
    * routes. However, when the followed transition route moves the conversation
@@ -933,8 +971,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         eventHandlersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nluSettings_ = null;
       if (nluSettingsBuilder_ != null) {
         nluSettingsBuilder_.dispose();
@@ -994,11 +1031,6 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.eventHandlers_ = eventHandlersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        transitionRouteGroups_ = transitionRouteGroups_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.transitionRouteGroups_ = transitionRouteGroups_;
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Flow result) {
@@ -1011,6 +1043,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        transitionRouteGroups_.makeImmutable();
+        result.transitionRouteGroups_ = transitionRouteGroups_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.nluSettings_ =
@@ -1135,7 +1171,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (!other.transitionRouteGroups_.isEmpty()) {
         if (transitionRouteGroups_.isEmpty()) {
           transitionRouteGroups_ = other.transitionRouteGroups_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureTransitionRouteGroupsIsMutable();
           transitionRouteGroups_.addAll(other.transitionRouteGroups_);
@@ -1604,6 +1640,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1611,9 +1648,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1632,6 +1672,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1639,9 +1680,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1659,6 +1703,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1666,9 +1711,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1686,6 +1734,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1693,9 +1742,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1720,6 +1772,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1727,9 +1780,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1751,6 +1807,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1758,9 +1815,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1784,6 +1844,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1791,9 +1852,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1818,6 +1882,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1825,9 +1890,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1849,6 +1917,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1856,9 +1925,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1880,6 +1952,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1887,9 +1960,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1911,6 +1987,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1918,9 +1995,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1941,6 +2021,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1948,9 +2029,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1971,6 +2055,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -1978,9 +2063,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -1995,6 +2083,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -2002,9 +2091,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -2023,6 +2115,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -2030,9 +2123,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -2051,6 +2147,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -2058,9 +2155,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -2075,6 +2175,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -2082,9 +2183,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -2101,6 +2205,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition routes serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
@@ -2108,9 +2213,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * saying "help" or "can I talk to a human?", which can be handled in a common
      * way regardless of the current page. Transition routes defined in the page
      * have higher priority than those defined in the flow.
+     *
      * TransitionRoutes are evalauted in the following order:
+     *
      * *   TransitionRoutes with intent specified.
      * *   TransitionRoutes with only condition specified.
+     *
      * TransitionRoutes with intent specified are inherited by pages in the flow.
      * </pre>
      *
@@ -2163,12 +2271,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2189,12 +2299,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2215,12 +2327,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2241,12 +2355,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2274,12 +2390,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2304,12 +2422,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2336,12 +2456,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2369,12 +2491,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2399,12 +2523,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2429,12 +2555,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2459,12 +2587,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2488,12 +2618,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2517,12 +2649,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2540,12 +2674,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2567,12 +2703,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2594,12 +2732,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2617,12 +2757,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2641,12 +2783,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's event handlers serve two purposes:
+     *
      * *   They are responsible for handling events (e.g. no match,
      * webhook errors) in the flow.
      * *   They are inherited by every page's [event
      * handlers][Page.event_handlers], which can be used to handle common events
      * regardless of the current page. Event handlers defined in the page
      * have higher priority than those defined in the flow.
+     *
      * Unlike
      * [transition_routes][google.cloud.dialogflow.cx.v3.Flow.transition_routes],
      * these handlers are evaluated on a first-match basis. The first one that
@@ -2680,26 +2824,28 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       return eventHandlersBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList transitionRouteGroups_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList transitionRouteGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTransitionRouteGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!transitionRouteGroups_.isModifiable()) {
         transitionRouteGroups_ =
             new com.google.protobuf.LazyStringArrayList(transitionRouteGroups_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2711,18 +2857,21 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the transitionRouteGroups.
      */
     public com.google.protobuf.ProtocolStringList getTransitionRouteGroupsList() {
-      return transitionRouteGroups_.getUnmodifiableView();
+      transitionRouteGroups_.makeImmutable();
+      return transitionRouteGroups_;
     }
     /**
      *
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2741,11 +2890,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2765,11 +2916,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2789,11 +2942,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2812,6 +2967,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTransitionRouteGroupsIsMutable();
       transitionRouteGroups_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2820,11 +2976,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2842,6 +3000,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTransitionRouteGroupsIsMutable();
       transitionRouteGroups_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2850,11 +3009,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2869,6 +3030,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTransitionRouteGroups(java.lang.Iterable<java.lang.String> values) {
       ensureTransitionRouteGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, transitionRouteGroups_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2877,11 +3039,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2893,8 +3057,9 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTransitionRouteGroups() {
-      transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2903,11 +3068,13 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A flow's transition route group serve two purposes:
+     *
      * *   They are responsible for matching the user's first utterances in the
      * flow.
      * *   They are inherited by every page's [transition
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
+     *
      * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
      * </pre>
@@ -2926,6 +3093,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTransitionRouteGroupsIsMutable();
       transitionRouteGroups_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

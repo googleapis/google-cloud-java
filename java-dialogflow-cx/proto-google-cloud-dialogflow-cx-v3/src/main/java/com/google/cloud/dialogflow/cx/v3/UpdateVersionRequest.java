@@ -46,11 +46,6 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
     return new UpdateVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.VersionProto
         .internal_static_google_cloud_dialogflow_cx_v3_UpdateVersionRequest_descriptor;

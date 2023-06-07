@@ -48,11 +48,6 @@ public final class GetDataScanRequest extends com.google.protobuf.GeneratedMessa
     return new GetDataScanRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataScansProto
         .internal_static_google_cloud_dataplex_v1_GetDataScanRequest_descriptor;

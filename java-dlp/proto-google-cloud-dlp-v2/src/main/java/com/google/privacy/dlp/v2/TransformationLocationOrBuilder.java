@@ -134,5 +134,5 @@ public interface TransformationLocationOrBuilder
    */
   com.google.privacy.dlp.v2.TransformationContainerType getContainerType();
 
-  public com.google.privacy.dlp.v2.TransformationLocation.LocationTypeCase getLocationTypeCase();
+  com.google.privacy.dlp.v2.TransformationLocation.LocationTypeCase getLocationTypeCase();
 }

@@ -48,11 +48,6 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
     return new LabelTextRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataLabelingServiceOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_LabelTextRequest_descriptor;
@@ -212,6 +207,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
   }
 
   private int requestConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object requestConfig_;
 
   public enum RequestConfigCase

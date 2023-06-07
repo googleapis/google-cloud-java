@@ -29,6 +29,7 @@ public interface ListVersionsRequestOrBuilder
    * <pre>
    * Required. The agent to list all versions from.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -46,6 +47,7 @@ public interface ListVersionsRequestOrBuilder
    * <pre>
    * Required. The agent to list all versions from.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>

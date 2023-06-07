@@ -49,11 +49,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     return new MetadataImport();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1.MetastoreProto
         .internal_static_google_cloud_metastore_v1_MetadataImport_descriptor;
@@ -400,11 +395,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DatabaseDump();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1507,6 +1497,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int metadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metadata_;
 
   public enum MetadataCase
@@ -1617,6 +1609,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -1641,6 +1634,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -2690,6 +2684,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2713,6 +2708,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2736,6 +2732,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2758,6 +2755,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2776,6 +2774,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *

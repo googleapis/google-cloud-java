@@ -81,6 +81,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -95,6 +96,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -112,6 +114,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -126,6 +129,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -144,6 +148,7 @@ public interface MetricStructuredNameOrBuilder
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.

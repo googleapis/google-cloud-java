@@ -50,11 +50,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     return new BackgroundJobLogEntry();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto
         .internal_static_google_cloud_clouddms_v1_BackgroundJobLogEntry_descriptor;
@@ -291,11 +286,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SeedJobDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -993,7 +983,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     }
 
     private ImportRulesJobDetails() {
-      files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      files_ = com.google.protobuf.LazyStringArrayList.emptyList();
       fileFormat_ = 0;
     }
 
@@ -1001,11 +991,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ImportRulesJobDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1027,7 +1012,8 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     public static final int FILES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList files_;
+    private com.google.protobuf.LazyStringArrayList files_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1354,8 +1340,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        files_ = com.google.protobuf.LazyStringArrayList.emptyList();
         fileFormat_ = 0;
         return this;
       }
@@ -1388,7 +1373,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
           buildPartial() {
         com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails result =
             new com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1396,18 +1380,13 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          files_ = files_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.files_ = files_;
-      }
-
       private void buildPartial0(
           com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          files_.makeImmutable();
+          result.files_ = files_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.fileFormat_ = fileFormat_;
         }
@@ -1468,7 +1447,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         if (!other.files_.isEmpty()) {
           if (files_.isEmpty()) {
             files_ = other.files_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureFilesIsMutable();
             files_.addAll(other.files_);
@@ -1536,14 +1515,14 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList files_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList files_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureFilesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!files_.isModifiable()) {
           files_ = new com.google.protobuf.LazyStringArrayList(files_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1557,7 +1536,8 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
        * @return A list containing the files.
        */
       public com.google.protobuf.ProtocolStringList getFilesList() {
-        return files_.getUnmodifiableView();
+        files_.makeImmutable();
+        return files_;
       }
       /**
        *
@@ -1622,6 +1602,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         }
         ensureFilesIsMutable();
         files_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1643,6 +1624,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         }
         ensureFilesIsMutable();
         files_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1661,6 +1643,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
       public Builder addAllFiles(java.lang.Iterable<java.lang.String> values) {
         ensureFilesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, files_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1676,8 +1659,9 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearFiles() {
-        files_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        files_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1700,6 +1684,7 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
         checkByteStringIsUtf8(value);
         ensureFilesIsMutable();
         files_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1921,11 +1906,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConvertJobDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2606,11 +2586,6 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ApplyJobDetails();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3389,6 +3364,8 @@ public final class BackgroundJobLogEntry extends com.google.protobuf.GeneratedMe
   }
 
   private int jobDetailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobDetails_;
 
   public enum JobDetailsCase

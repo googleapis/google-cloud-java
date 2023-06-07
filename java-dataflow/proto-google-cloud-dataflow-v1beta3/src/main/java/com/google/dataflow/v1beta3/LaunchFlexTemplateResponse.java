@@ -45,11 +45,6 @@ public final class LaunchFlexTemplateResponse extends com.google.protobuf.Genera
     return new LaunchFlexTemplateResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.TemplatesProto
         .internal_static_google_dataflow_v1beta3_LaunchFlexTemplateResponse_descriptor;

@@ -49,11 +49,6 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
     return new GetTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.TemplatesProto
         .internal_static_google_dataflow_v1beta3_GetTemplateRequest_descriptor;
@@ -185,6 +180,8 @@ public final class GetTemplateRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private int templateCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object template_;
 
   public enum TemplateCase

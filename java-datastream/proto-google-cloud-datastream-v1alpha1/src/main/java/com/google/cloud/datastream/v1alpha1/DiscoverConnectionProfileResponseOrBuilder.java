@@ -93,6 +93,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    */
   com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder getMysqlRdbmsOrBuilder();
 
-  public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse.DataObjectCase
+  com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();
 }

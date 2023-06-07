@@ -47,11 +47,6 @@ public final class PromoteMigrationJobRequest extends com.google.protobuf.Genera
     return new PromoteMigrationJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_PromoteMigrationJobRequest_descriptor;

@@ -51,11 +51,6 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
     return new ListSuggestionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsRequest_descriptor;
@@ -209,6 +204,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
    * `create_time` only support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
    * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -238,6 +234,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
    * `create_time` only support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
    * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -961,6 +958,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
      * `create_time` only support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -989,6 +987,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
      * `create_time` only support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1017,6 +1016,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
      * `create_time` only support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1044,6 +1044,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
      * `create_time` only support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
@@ -1067,6 +1068,7 @@ public final class ListSuggestionsRequest extends com.google.protobuf.GeneratedM
      * `create_time` only support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds &gt; 1551790877964485` or
      * `create_time &gt; "2017-01-15T01:30:15.01Z"`
+     *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>

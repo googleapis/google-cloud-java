@@ -45,11 +45,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     return new HumanAgentAssistantConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
         .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_descriptor;
@@ -123,11 +118,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SuggestionTriggerSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -825,6 +815,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * <pre>
      * Automatically iterates all participants and tries to compile
      * suggestions.
+     *
      * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
      * </pre>
      *
@@ -839,6 +830,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Settings of suggestion trigger.
+     *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
      * this field.
      * </pre>
@@ -855,6 +847,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Settings of suggestion trigger.
+     *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
      * this field.
      * </pre>
@@ -872,6 +865,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Settings of suggestion trigger.
+     *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
      * this field.
      * </pre>
@@ -1040,11 +1034,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return new SuggestionFeatureConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionFeatureConfig_descriptor;
@@ -1121,6 +1110,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * <pre>
      * Automatically iterates all participants and tries to compile
      * suggestions.
+     *
      * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
      * </pre>
      *
@@ -1141,6 +1131,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Settings of suggestion trigger.
+     *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
      * this field.
      * </pre>
@@ -1160,6 +1151,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Settings of suggestion trigger.
+     *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
      * this field.
      * </pre>
@@ -1183,6 +1175,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Settings of suggestion trigger.
+     *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
      * this field.
      * </pre>
@@ -2154,6 +2147,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * <pre>
        * Automatically iterates all participants and tries to compile
        * suggestions.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
        * </pre>
        *
@@ -2171,6 +2165,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * <pre>
        * Automatically iterates all participants and tries to compile
        * suggestions.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
        * </pre>
        *
@@ -2192,6 +2187,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * <pre>
        * Automatically iterates all participants and tries to compile
        * suggestions.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
        * </pre>
        *
@@ -2222,6 +2218,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2240,6 +2237,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2266,6 +2264,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2294,6 +2293,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2320,6 +2320,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2353,6 +2354,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2376,6 +2378,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2396,6 +2399,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -2421,6 +2425,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Settings of suggestion trigger.
+       *
        * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
        * this field.
        * </pre>
@@ -3290,6 +3295,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * as soon as we get new suggestion. Different type of suggestions based on
      * the same context will be in  separate Pub/Sub event or
      * `StreamingAnalyzeContentResponse`.
+     *
      * If `group_suggestion_responses` set to true. All the suggestions to the
      * same participant based on the same context will be grouped into a single
      * Pub/Sub event or StreamingAnalyzeContentResponse.
@@ -3329,11 +3335,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SuggestionConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3460,6 +3461,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * as soon as we get new suggestion. Different type of suggestions based on
      * the same context will be in  separate Pub/Sub event or
      * `StreamingAnalyzeContentResponse`.
+     *
      * If `group_suggestion_responses` set to true. All the suggestions to the
      * same participant based on the same context will be grouped into a single
      * Pub/Sub event or StreamingAnalyzeContentResponse.
@@ -4390,6 +4392,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * as soon as we get new suggestion. Different type of suggestions based on
        * the same context will be in  separate Pub/Sub event or
        * `StreamingAnalyzeContentResponse`.
+       *
        * If `group_suggestion_responses` set to true. All the suggestions to the
        * same participant based on the same context will be grouped into a single
        * Pub/Sub event or StreamingAnalyzeContentResponse.
@@ -4413,6 +4416,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * as soon as we get new suggestion. Different type of suggestions based on
        * the same context will be in  separate Pub/Sub event or
        * `StreamingAnalyzeContentResponse`.
+       *
        * If `group_suggestion_responses` set to true. All the suggestions to the
        * same participant based on the same context will be grouped into a single
        * Pub/Sub event or StreamingAnalyzeContentResponse.
@@ -4440,6 +4444,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * as soon as we get new suggestion. Different type of suggestions based on
        * the same context will be in  separate Pub/Sub event or
        * `StreamingAnalyzeContentResponse`.
+       *
        * If `group_suggestion_responses` set to true. All the suggestions to the
        * same participant based on the same context will be grouped into a single
        * Pub/Sub event or StreamingAnalyzeContentResponse.
@@ -4690,18 +4695,23 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Confidence threshold of query result.
+     *
      * Agent Assist gives each suggestion a score in the range [0.0, 1.0], based
      * on the relevance between the suggestion and the current conversation
      * context. A score of 0.0 has no relevance, while a score of 1.0 has high
      * relevance. Only suggestions with a score greater than or equal to the
      * value of this field are included in the results.
+     *
      * For a baseline model (the default), the recommended value is in the range
      * [0.05, 0.1].
+     *
      * For a custom model, there is no recommended value. Tune this value by
      * starting from a very low value and slowly increasing until you have
      * desired results.
+     *
      * If this field is not set, it is default to 0.0, which means that all
      * suggestions are returned.
+     *
      * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
      * </pre>
      *
@@ -4759,7 +4769,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             .ContextFilterSettingsOrBuilder
         getContextFilterSettingsOrBuilder();
 
-    public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+    com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .QuerySourceCase
         getQuerySourceCase();
   }
@@ -4789,11 +4799,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SuggestionQueryConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4894,6 +4899,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Knowledge base source settings.
+     *
      * Supported features: ARTICLE_SUGGESTION, FAQ.
      * </pre>
      *
@@ -4912,18 +4918,13 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private KnowledgeBaseQuerySource() {
-        knowledgeBases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        knowledgeBases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new KnowledgeBaseQuerySource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4946,7 +4947,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public static final int KNOWLEDGE_BASES_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList knowledgeBases_;
+      private com.google.protobuf.LazyStringArrayList knowledgeBases_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -5228,6 +5230,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Knowledge base source settings.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ.
        * </pre>
        *
@@ -5269,8 +5272,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          knowledgeBases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          knowledgeBases_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -5310,7 +5312,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               result =
                   new com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                       .SuggestionQueryConfig.KnowledgeBaseQuerySource(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -5318,22 +5319,15 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                    .KnowledgeBaseQuerySource
-                result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            knowledgeBases_ = knowledgeBases_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.knowledgeBases_ = knowledgeBases_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                     .KnowledgeBaseQuerySource
                 result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            knowledgeBases_.makeImmutable();
+            result.knowledgeBases_ = knowledgeBases_;
+          }
         }
 
         @java.lang.Override
@@ -5397,7 +5391,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           if (!other.knowledgeBases_.isEmpty()) {
             if (knowledgeBases_.isEmpty()) {
               knowledgeBases_ = other.knowledgeBases_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureKnowledgeBasesIsMutable();
               knowledgeBases_.addAll(other.knowledgeBases_);
@@ -5456,14 +5450,14 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList knowledgeBases_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList knowledgeBases_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureKnowledgeBasesIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!knowledgeBases_.isModifiable()) {
             knowledgeBases_ = new com.google.protobuf.LazyStringArrayList(knowledgeBases_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -5482,7 +5476,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * @return A list containing the knowledgeBases.
          */
         public com.google.protobuf.ProtocolStringList getKnowledgeBasesList() {
-          return knowledgeBases_.getUnmodifiableView();
+          knowledgeBases_.makeImmutable();
+          return knowledgeBases_;
         }
         /**
          *
@@ -5567,6 +5562,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           ensureKnowledgeBasesIsMutable();
           knowledgeBases_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5593,6 +5589,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           ensureKnowledgeBasesIsMutable();
           knowledgeBases_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5616,6 +5613,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public Builder addAllKnowledgeBases(java.lang.Iterable<java.lang.String> values) {
           ensureKnowledgeBasesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, knowledgeBases_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5636,8 +5634,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder clearKnowledgeBases() {
-          knowledgeBases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          knowledgeBases_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -5665,6 +5664,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           checkByteStringIsUtf8(value);
           ensureKnowledgeBasesIsMutable();
           knowledgeBases_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -5822,6 +5822,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Document source settings.
+     *
      * Supported features: SMART_REPLY, SMART_COMPOSE.
      * </pre>
      *
@@ -5839,18 +5840,13 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private DocumentQuerySource() {
-        documents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        documents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DocumentQuerySource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5873,7 +5869,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public static final int DOCUMENTS_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList documents_;
+      private com.google.protobuf.LazyStringArrayList documents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -6155,6 +6152,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Document source settings.
+       *
        * Supported features: SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
@@ -6196,8 +6194,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          documents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          documents_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -6237,7 +6234,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               result =
                   new com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                       .SuggestionQueryConfig.DocumentQuerySource(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -6245,22 +6241,15 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                    .DocumentQuerySource
-                result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            documents_ = documents_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.documents_ = documents_;
-        }
-
         private void buildPartial0(
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                     .DocumentQuerySource
                 result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            documents_.makeImmutable();
+            result.documents_ = documents_;
+          }
         }
 
         @java.lang.Override
@@ -6324,7 +6313,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           if (!other.documents_.isEmpty()) {
             if (documents_.isEmpty()) {
               documents_ = other.documents_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureDocumentsIsMutable();
               documents_.addAll(other.documents_);
@@ -6383,14 +6372,14 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList documents_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList documents_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureDocumentsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!documents_.isModifiable()) {
             documents_ = new com.google.protobuf.LazyStringArrayList(documents_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -6409,7 +6398,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * @return A list containing the documents.
          */
         public com.google.protobuf.ProtocolStringList getDocumentsList() {
-          return documents_.getUnmodifiableView();
+          documents_.makeImmutable();
+          return documents_;
         }
         /**
          *
@@ -6494,6 +6484,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           ensureDocumentsIsMutable();
           documents_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6520,6 +6511,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           ensureDocumentsIsMutable();
           documents_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6543,6 +6535,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public Builder addAllDocuments(java.lang.Iterable<java.lang.String> values) {
           ensureDocumentsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documents_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6563,8 +6556,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder clearDocuments() {
-          documents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          documents_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -6592,6 +6586,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           checkByteStringIsUtf8(value);
           ensureDocumentsIsMutable();
           documents_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -6713,6 +6708,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Dialogflow source setting.
+     *
      * Supported feature: DIALOGFLOW_ASSIST.
      * </pre>
      *
@@ -6737,11 +6733,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DialogflowQuerySource();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7017,6 +7008,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Dialogflow source setting.
+       *
        * Supported feature: DIALOGFLOW_ASSIST.
        * </pre>
        *
@@ -7504,11 +7496,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ContextFilterSettings();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8269,6 +8256,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     }
 
     private int querySourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object querySource_;
 
     public enum QuerySourceCase
@@ -8551,18 +8540,23 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Confidence threshold of query result.
+     *
      * Agent Assist gives each suggestion a score in the range [0.0, 1.0], based
      * on the relevance between the suggestion and the current conversation
      * context. A score of 0.0 has no relevance, while a score of 1.0 has high
      * relevance. Only suggestions with a score greater than or equal to the
      * value of this field are included in the results.
+     *
      * For a baseline model (the default), the recommended value is in the range
      * [0.05, 0.1].
+     *
      * For a custom model, there is no recommended value. Tune this value by
      * starting from a very low value and slowly increasing until you have
      * desired results.
+     *
      * If this field is not set, it is default to 0.0, which means that all
      * suggestions are returned.
+     *
      * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
      * </pre>
      *
@@ -10125,18 +10119,23 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Confidence threshold of query result.
+       *
        * Agent Assist gives each suggestion a score in the range [0.0, 1.0], based
        * on the relevance between the suggestion and the current conversation
        * context. A score of 0.0 has no relevance, while a score of 1.0 has high
        * relevance. Only suggestions with a score greater than or equal to the
        * value of this field are included in the results.
+       *
        * For a baseline model (the default), the recommended value is in the range
        * [0.05, 0.1].
+       *
        * For a custom model, there is no recommended value. Tune this value by
        * starting from a very low value and slowly increasing until you have
        * desired results.
+       *
        * If this field is not set, it is default to 0.0, which means that all
        * suggestions are returned.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
@@ -10153,18 +10152,23 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Confidence threshold of query result.
+       *
        * Agent Assist gives each suggestion a score in the range [0.0, 1.0], based
        * on the relevance between the suggestion and the current conversation
        * context. A score of 0.0 has no relevance, while a score of 1.0 has high
        * relevance. Only suggestions with a score greater than or equal to the
        * value of this field are included in the results.
+       *
        * For a baseline model (the default), the recommended value is in the range
        * [0.05, 0.1].
+       *
        * For a custom model, there is no recommended value. Tune this value by
        * starting from a very low value and slowly increasing until you have
        * desired results.
+       *
        * If this field is not set, it is default to 0.0, which means that all
        * suggestions are returned.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
@@ -10185,18 +10189,23 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        * <pre>
        * Confidence threshold of query result.
+       *
        * Agent Assist gives each suggestion a score in the range [0.0, 1.0], based
        * on the relevance between the suggestion and the current conversation
        * context. A score of 0.0 has no relevance, while a score of 1.0 has high
        * relevance. Only suggestions with a score greater than or equal to the
        * value of this field are included in the results.
+       *
        * For a baseline model (the default), the recommended value is in the range
        * [0.05, 0.1].
+       *
        * For a custom model, there is no recommended value. Tune this value by
        * starting from a very low value and slowly increasing until you have
        * desired results.
+       *
        * If this field is not set, it is default to 0.0, which means that all
        * suggestions are returned.
+       *
        * Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE.
        * </pre>
        *
@@ -10597,6 +10606,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Custom conversation models used in agent assist feature.
+   *
    * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
    * CONVERSATION_SUMMARIZATION.
    * </pre>
@@ -10623,11 +10633,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConversationModelConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10962,6 +10967,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Custom conversation models used in agent assist feature.
+     *
      * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
      * CONVERSATION_SUMMARIZATION.
      * </pre>
@@ -11552,11 +11558,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return new ConversationProcessConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_ConversationProcessConfig_descriptor;
@@ -12125,6 +12126,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Enable entity extraction in conversation messages on [agent assist
      * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
      * If unspecified, defaults to false.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -12195,11 +12197,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return new MessageAnalysisConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_MessageAnalysisConfig_descriptor;
@@ -12226,6 +12223,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Enable entity extraction in conversation messages on [agent assist
      * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
      * If unspecified, defaults to false.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -12692,6 +12690,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       *
        * Currently, this feature is not general available, please contact Google
        * to get access.
        * </pre>
@@ -12711,6 +12710,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       *
        * Currently, this feature is not general available, please contact Google
        * to get access.
        * </pre>
@@ -12734,6 +12734,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       *
        * Currently, this feature is not general available, please contact Google
        * to get access.
        * </pre>
@@ -13049,6 +13050,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>
@@ -13068,6 +13070,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>
@@ -13091,6 +13094,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   *
    * Currently, this feature is not general available, please contact Google
    * to get access.
    * </pre>
@@ -14053,6 +14057,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14071,6 +14076,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14097,6 +14103,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14124,6 +14131,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14149,6 +14157,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14181,6 +14190,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14204,6 +14214,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14223,6 +14234,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>
@@ -14247,6 +14259,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Configuration for agent assistance of end user participant.
+     *
      * Currently, this feature is not general available, please contact Google
      * to get access.
      * </pre>

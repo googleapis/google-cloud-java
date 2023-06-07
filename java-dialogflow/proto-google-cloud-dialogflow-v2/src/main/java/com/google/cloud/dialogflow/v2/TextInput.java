@@ -24,6 +24,7 @@ package com.google.cloud.dialogflow.v2;
  * <pre>
  * ============================================================================
  * Auxiliary proto messages.
+ *
  * Represents the natural language text to be processed.
  * </pre>
  *
@@ -48,11 +49,6 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TextInput();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,6 +349,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * ============================================================================
    * Auxiliary proto messages.
+   *
    * Represents the natural language text to be processed.
    * </pre>
    *

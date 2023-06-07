@@ -48,11 +48,6 @@ public final class AlloyDbConnectionProfile extends com.google.protobuf.Generate
     return new AlloyDbConnectionProfile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_AlloyDbConnectionProfile_descriptor;

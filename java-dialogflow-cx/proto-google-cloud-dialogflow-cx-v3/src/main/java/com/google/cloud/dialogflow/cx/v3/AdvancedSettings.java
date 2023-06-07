@@ -28,8 +28,10 @@ package com.google.cloud.dialogflow.cx.v3;
  * playback_interruption_settings at fulfillment level only overrides the
  * playback_interruption_settings at the agent level, leaving other settings
  * at the agent level unchanged.
+ *
  * DTMF settings does not override each other. DTMF settings set at different
  * levels define DTMF detections running in parallel.
+ *
  * Hierarchy: Agent-&gt;Flow-&gt;Page-&gt;Fulfillment/Parameter.
  * </pre>
  *
@@ -51,11 +53,6 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AdvancedSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,11 +126,6 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LoggingSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1055,8 +1047,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
    * playback_interruption_settings at fulfillment level only overrides the
    * playback_interruption_settings at the agent level, leaving other settings
    * at the agent level unchanged.
+   *
    * DTMF settings does not override each other. DTMF settings set at different
    * levels define DTMF detections running in parallel.
+   *
    * Hierarchy: Agent-&gt;Flow-&gt;Page-&gt;Fulfillment/Parameter.
    * </pre>
    *

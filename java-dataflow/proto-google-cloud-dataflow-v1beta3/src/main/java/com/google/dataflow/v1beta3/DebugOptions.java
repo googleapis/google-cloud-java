@@ -45,11 +45,6 @@ public final class DebugOptions extends com.google.protobuf.GeneratedMessageV3
     return new DebugOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.EnvironmentProto
         .internal_static_google_dataflow_v1beta3_DebugOptions_descriptor;

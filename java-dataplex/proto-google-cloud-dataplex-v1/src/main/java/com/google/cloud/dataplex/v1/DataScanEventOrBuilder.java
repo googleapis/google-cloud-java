@@ -363,5 +363,5 @@ public interface DataScanEventOrBuilder
    */
   com.google.cloud.dataplex.v1.DataScanEvent.DataQualityResultOrBuilder getDataQualityOrBuilder();
 
-  public com.google.cloud.dataplex.v1.DataScanEvent.ResultCase getResultCase();
+  com.google.cloud.dataplex.v1.DataScanEvent.ResultCase getResultCase();
 }

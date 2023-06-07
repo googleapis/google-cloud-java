@@ -694,5 +694,5 @@ public interface BatchOrBuilder
    */
   com.google.cloud.dataproc.v1.Batch.StateHistoryOrBuilder getStateHistoryOrBuilder(int index);
 
-  public com.google.cloud.dataproc.v1.Batch.BatchConfigCase getBatchConfigCase();
+  com.google.cloud.dataproc.v1.Batch.BatchConfigCase getBatchConfigCase();
 }

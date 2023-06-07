@@ -320,5 +320,5 @@ public interface ConversationModelOrBuilder
   com.google.cloud.dialogflow.v2.SmartReplyModelMetadataOrBuilder
       getSmartReplyModelMetadataOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.ConversationModel.ModelMetadataCase getModelMetadataCase();
+  com.google.cloud.dialogflow.v2.ConversationModel.ModelMetadataCase getModelMetadataCase();
 }

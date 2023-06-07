@@ -73,5 +73,5 @@ public interface DataProfileLocationOrBuilder
    */
   long getFolderId();
 
-  public com.google.privacy.dlp.v2.DataProfileLocation.LocationCase getLocationCase();
+  com.google.privacy.dlp.v2.DataProfileLocation.LocationCase getLocationCase();
 }

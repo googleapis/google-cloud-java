@@ -49,11 +49,6 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     return new StageSummary();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.MetricsProto
         .internal_static_google_dataflow_v1beta3_StageSummary_descriptor;
@@ -208,6 +203,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * End time of this stage.
+   *
    * If the work item is completed, this is the actual end time of the stage.
    * Otherwise, it is the predicted end time.
    * </pre>
@@ -225,6 +221,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * End time of this stage.
+   *
    * If the work item is completed, this is the actual end time of the stage.
    * Otherwise, it is the predicted end time.
    * </pre>
@@ -242,6 +239,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * End time of this stage.
+   *
    * If the work item is completed, this is the actual end time of the stage.
    * Otherwise, it is the predicted end time.
    * </pre>
@@ -1289,6 +1287,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1305,6 +1304,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1325,6 +1325,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1349,6 +1350,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1370,6 +1372,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1397,6 +1400,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1418,6 +1422,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1434,6 +1439,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>
@@ -1452,6 +1458,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * End time of this stage.
+     *
      * If the work item is completed, this is the actual end time of the stage.
      * Otherwise, it is the predicted end time.
      * </pre>

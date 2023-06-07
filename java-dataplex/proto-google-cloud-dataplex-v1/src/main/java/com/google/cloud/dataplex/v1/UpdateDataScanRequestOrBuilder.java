@@ -28,6 +28,7 @@ public interface UpdateDataScanRequestOrBuilder
    *
    * <pre>
    * Required. DataScan resource to be updated.
+   *
    * Only fields specified in `update_mask` are updated.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface UpdateDataScanRequestOrBuilder
    *
    * <pre>
    * Required. DataScan resource to be updated.
+   *
    * Only fields specified in `update_mask` are updated.
    * </pre>
    *
@@ -58,6 +60,7 @@ public interface UpdateDataScanRequestOrBuilder
    *
    * <pre>
    * Required. DataScan resource to be updated.
+   *
    * Only fields specified in `update_mask` are updated.
    * </pre>
    *

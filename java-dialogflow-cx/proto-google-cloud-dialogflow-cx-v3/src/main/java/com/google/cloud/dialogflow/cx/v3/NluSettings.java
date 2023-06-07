@@ -48,11 +48,6 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
     return new NluSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.FlowProto
         .internal_static_google_cloud_dialogflow_cx_v3_NluSettings_descriptor;

@@ -29,6 +29,7 @@ public interface CreateVersionRequestOrBuilder
    * <pre>
    * Required. The agent to create a version for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -46,6 +47,7 @@ public interface CreateVersionRequestOrBuilder
    * <pre>
    * Required. The agent to create a version for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>

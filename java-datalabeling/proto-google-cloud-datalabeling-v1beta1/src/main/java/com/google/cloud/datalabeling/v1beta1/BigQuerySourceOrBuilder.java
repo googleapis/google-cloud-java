@@ -34,8 +34,11 @@ public interface BigQuerySourceOrBuilder
    * it must have the
    * [correct
    * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+   *
    * Provide the table URI in the following format:
+   *
    * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+   *
    * [Learn
    * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
    * </pre>
@@ -56,8 +59,11 @@ public interface BigQuerySourceOrBuilder
    * it must have the
    * [correct
    * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+   *
    * Provide the table URI in the following format:
+   *
    * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+   *
    * [Learn
    * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
    * </pre>

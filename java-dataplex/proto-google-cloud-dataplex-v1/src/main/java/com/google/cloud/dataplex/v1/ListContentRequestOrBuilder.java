@@ -106,10 +106,12 @@ public interface ListContentRequestOrBuilder
    * <pre>
    * Optional. Filter request. Filters are case-sensitive.
    * The following formats are supported:
+   *
    * labels.key1 = "value1"
    * labels:key1
    * type = "NOTEBOOK"
    * type = "SQL_SCRIPT"
+   *
    * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
    * </pre>
    *
@@ -124,10 +126,12 @@ public interface ListContentRequestOrBuilder
    * <pre>
    * Optional. Filter request. Filters are case-sensitive.
    * The following formats are supported:
+   *
    * labels.key1 = "value1"
    * labels:key1
    * type = "NOTEBOOK"
    * type = "SQL_SCRIPT"
+   *
    * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
    * </pre>
    *

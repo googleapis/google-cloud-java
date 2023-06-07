@@ -49,11 +49,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     return new ImportFlowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.FlowProto
         .internal_static_google_cloud_dialogflow_cx_v3_ImportFlowRequest_descriptor;
@@ -237,6 +232,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   private int flowCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object flow_;
 
   public enum FlowCase
@@ -348,6 +345,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -369,6 +367,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -403,6 +402,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to import flow from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -1092,6 +1092,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1114,6 +1115,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1149,6 +1151,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1184,6 +1187,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1212,6 +1216,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see
@@ -1238,6 +1243,7 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
      * to import flow from. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     *
      * Dialogflow performs a read operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have read permissions for the object. For more information, see

@@ -160,6 +160,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    */
   com.google.protobuf.ByteString getPrivateKeyBytes();
 
-  public com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity.AuthenticationMethodCase
+  com.google.cloud.clouddms.v1.ForwardSshTunnelConnectivity.AuthenticationMethodCase
       getAuthenticationMethodCase();
 }

@@ -606,5 +606,5 @@ public interface ActionOrBuilder
   com.google.cloud.dataplex.v1.Action.InvalidDataOrganizationOrBuilder
       getInvalidDataOrganizationOrBuilder();
 
-  public com.google.cloud.dataplex.v1.Action.DetailsCase getDetailsCase();
+  com.google.cloud.dataplex.v1.Action.DetailsCase getDetailsCase();
 }

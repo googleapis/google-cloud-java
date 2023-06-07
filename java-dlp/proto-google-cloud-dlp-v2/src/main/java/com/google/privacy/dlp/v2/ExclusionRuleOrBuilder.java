@@ -191,5 +191,5 @@ public interface ExclusionRuleOrBuilder
    */
   com.google.privacy.dlp.v2.MatchingType getMatchingType();
 
-  public com.google.privacy.dlp.v2.ExclusionRule.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.ExclusionRule.TypeCase getTypeCase();
 }

@@ -75,6 +75,7 @@ public interface ListRepositoriesRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListRepositories` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRepositories`
    * must match the call that provided the page token.
    * </pre>
@@ -90,6 +91,7 @@ public interface ListRepositoriesRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListRepositories` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListRepositories`
    * must match the call that provided the page token.
    * </pre>

@@ -48,11 +48,6 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
     return new GetEnvironmentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.EnvironmentProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_GetEnvironmentRequest_descriptor;

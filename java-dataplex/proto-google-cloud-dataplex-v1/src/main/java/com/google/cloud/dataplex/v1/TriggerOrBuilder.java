@@ -93,5 +93,5 @@ public interface TriggerOrBuilder
    */
   com.google.cloud.dataplex.v1.Trigger.ScheduleOrBuilder getScheduleOrBuilder();
 
-  public com.google.cloud.dataplex.v1.Trigger.ModeCase getModeCase();
+  com.google.cloud.dataplex.v1.Trigger.ModeCase getModeCase();
 }

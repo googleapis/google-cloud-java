@@ -53,11 +53,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     return new JobTrigger();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
@@ -330,7 +325,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder();
 
-    public com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
+    com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
   }
   /**
    *
@@ -359,11 +354,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return new Trigger();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
@@ -380,6 +370,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int triggerCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object trigger_;
 
     public enum TriggerCase
@@ -1427,6 +1419,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object job_;
 
   public enum JobCase

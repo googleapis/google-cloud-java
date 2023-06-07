@@ -50,11 +50,6 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
     return new ListFederationsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1.MetastoreFederationProto
         .internal_static_google_cloud_metastore_v1_ListFederationsRequest_descriptor;
@@ -160,7 +155,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A page token, received from a previous ListFederationServices
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * ListFederationServices must match the call that provided the
    * page token.
@@ -188,7 +185,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. A page token, received from a previous ListFederationServices
    * call. Provide this token to retrieve the subsequent page.
+   *
    * To retrieve the first page, supply an empty page token.
+   *
    * When paginating, other parameters provided to
    * ListFederationServices must match the call that provided the
    * page token.
@@ -948,7 +947,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A page token, received from a previous ListFederationServices
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * ListFederationServices must match the call that provided the
      * page token.
@@ -975,7 +976,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A page token, received from a previous ListFederationServices
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * ListFederationServices must match the call that provided the
      * page token.
@@ -1002,7 +1005,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A page token, received from a previous ListFederationServices
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * ListFederationServices must match the call that provided the
      * page token.
@@ -1028,7 +1033,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A page token, received from a previous ListFederationServices
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * ListFederationServices must match the call that provided the
      * page token.
@@ -1050,7 +1057,9 @@ public final class ListFederationsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. A page token, received from a previous ListFederationServices
      * call. Provide this token to retrieve the subsequent page.
+     *
      * To retrieve the first page, supply an empty page token.
+     *
      * When paginating, other parameters provided to
      * ListFederationServices must match the call that provided the
      * page token.

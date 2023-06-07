@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest;
 import com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest;
@@ -666,67 +667,140 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
             HttpJsonCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
                 .setMethodDescriptor(listEntityTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         HttpJsonCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(getEntityTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeTransportSettings =
         HttpJsonCallSettings.<CreateEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(createEntityTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeTransportSettings =
         HttpJsonCallSettings.<UpdateEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(updateEntityTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "entity_type.name", String.valueOf(request.getEntityType().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeTransportSettings =
         HttpJsonCallSettings.<DeleteEntityTypeRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEntityTypeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchUpdateEntityTypesRequest, Operation>
         batchUpdateEntityTypesTransportSettings =
             HttpJsonCallSettings.<BatchUpdateEntityTypesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchUpdateEntityTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchDeleteEntityTypesRequest, Operation>
         batchDeleteEntityTypesTransportSettings =
             HttpJsonCallSettings.<BatchDeleteEntityTypesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchDeleteEntityTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchCreateEntitiesRequest, Operation>
         batchCreateEntitiesTransportSettings =
             HttpJsonCallSettings.<BatchCreateEntitiesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchCreateEntitiesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchUpdateEntitiesRequest, Operation>
         batchUpdateEntitiesTransportSettings =
             HttpJsonCallSettings.<BatchUpdateEntitiesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchUpdateEntitiesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<BatchDeleteEntitiesRequest, Operation>
         batchDeleteEntitiesTransportSettings =
             HttpJsonCallSettings.<BatchDeleteEntitiesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchDeleteEntitiesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listEntityTypesCallable =

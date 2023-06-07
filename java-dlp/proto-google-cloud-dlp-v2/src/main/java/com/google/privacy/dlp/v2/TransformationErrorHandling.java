@@ -52,11 +52,6 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     return new TransformationErrorHandling();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_TransformationErrorHandling_descriptor;
@@ -101,11 +96,6 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ThrowError();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -544,11 +534,6 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       return new LeaveUntransformed();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_TransformationErrorHandling_LeaveUntransformed_descriptor;
@@ -967,6 +952,8 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
   }
 
   private int modeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object mode_;
 
   public enum ModeCase

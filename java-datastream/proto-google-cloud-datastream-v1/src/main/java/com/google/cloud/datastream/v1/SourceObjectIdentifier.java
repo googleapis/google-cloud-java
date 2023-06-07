@@ -45,11 +45,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return new SourceObjectIdentifier();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_descriptor;
@@ -148,11 +143,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OracleObjectIdentifier();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1031,11 +1021,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PostgresqlObjectIdentifier();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1920,11 +1905,6 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       return new MysqlObjectIdentifier();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MysqlObjectIdentifier_descriptor;
@@ -2714,6 +2694,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   private int sourceIdentifierCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object sourceIdentifier_;
 
   public enum SourceIdentifierCase

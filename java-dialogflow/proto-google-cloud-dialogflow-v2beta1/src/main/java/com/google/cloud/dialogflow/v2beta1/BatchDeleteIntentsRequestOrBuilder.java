@@ -29,6 +29,7 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * <pre>
    * Required. The name of the agent to delete all entities types for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
@@ -46,6 +47,7 @@ public interface BatchDeleteIntentsRequestOrBuilder
    * <pre>
    * Required. The name of the agent to delete all entities types for.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>

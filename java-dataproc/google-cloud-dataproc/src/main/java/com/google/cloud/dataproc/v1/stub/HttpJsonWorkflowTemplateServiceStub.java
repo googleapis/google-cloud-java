@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest;
@@ -467,30 +468,60 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
             HttpJsonCallSettings.<CreateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
                 .setMethodDescriptor(createWorkflowTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetWorkflowTemplateRequest, WorkflowTemplate>
         getWorkflowTemplateTransportSettings =
             HttpJsonCallSettings.<GetWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
                 .setMethodDescriptor(getWorkflowTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InstantiateWorkflowTemplateRequest, Operation>
         instantiateWorkflowTemplateTransportSettings =
             HttpJsonCallSettings.<InstantiateWorkflowTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(instantiateWorkflowTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
         instantiateInlineWorkflowTemplateTransportSettings =
             HttpJsonCallSettings.<InstantiateInlineWorkflowTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(instantiateInlineWorkflowTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateTransportSettings =
             HttpJsonCallSettings.<UpdateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
                 .setMethodDescriptor(updateWorkflowTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("template.name", String.valueOf(request.getTemplate().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
         listWorkflowTemplatesTransportSettings =
@@ -498,12 +529,24 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                 .<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>newBuilder()
                 .setMethodDescriptor(listWorkflowTemplatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteWorkflowTemplateRequest, Empty>
         deleteWorkflowTemplateTransportSettings =
             HttpJsonCallSettings.<DeleteWorkflowTemplateRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteWorkflowTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createWorkflowTemplateCallable =

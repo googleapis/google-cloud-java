@@ -49,11 +49,6 @@ public final class EntityMappingLogEntry extends com.google.protobuf.GeneratedMe
     return new EntityMappingLogEntry();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto
         .internal_static_google_cloud_clouddms_v1_EntityMappingLogEntry_descriptor;

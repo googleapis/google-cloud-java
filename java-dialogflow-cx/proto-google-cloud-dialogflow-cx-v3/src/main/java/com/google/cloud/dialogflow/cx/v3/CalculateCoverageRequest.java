@@ -49,11 +49,6 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
     return new CalculateCoverageRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3_CalculateCoverageRequest_descriptor;

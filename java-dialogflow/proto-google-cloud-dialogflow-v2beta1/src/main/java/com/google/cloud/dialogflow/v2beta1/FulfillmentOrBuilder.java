@@ -29,8 +29,10 @@ public interface FulfillmentOrBuilder
    * <pre>
    * Required. The unique identifier of the fulfillment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/fulfillment`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -45,8 +47,10 @@ public interface FulfillmentOrBuilder
    * <pre>
    * Required. The unique identifier of the fulfillment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/fulfillment`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -61,6 +65,7 @@ public interface FulfillmentOrBuilder
    *
    * <pre>
    * The human-readable name of the fulfillment, unique within the agent.
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -74,6 +79,7 @@ public interface FulfillmentOrBuilder
    *
    * <pre>
    * The human-readable name of the fulfillment, unique within the agent.
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -187,5 +193,5 @@ public interface FulfillmentOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.Fulfillment.FeatureOrBuilder getFeaturesOrBuilder(int index);
 
-  public com.google.cloud.dialogflow.v2beta1.Fulfillment.FulfillmentCase getFulfillmentCase();
+  com.google.cloud.dialogflow.v2beta1.Fulfillment.FulfillmentCase getFulfillmentCase();
 }

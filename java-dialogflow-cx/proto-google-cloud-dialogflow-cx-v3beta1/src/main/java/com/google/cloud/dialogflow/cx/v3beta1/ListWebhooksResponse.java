@@ -49,11 +49,6 @@ public final class ListWebhooksResponse extends com.google.protobuf.GeneratedMes
     return new ListWebhooksResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_ListWebhooksResponse_descriptor;

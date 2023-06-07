@@ -49,11 +49,6 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
     return new MetricStructuredName();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.MetricsProto
         .internal_static_google_dataflow_v1beta3_MetricStructuredName_descriptor;
@@ -216,6 +211,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -242,6 +238,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -259,6 +256,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -283,6 +281,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
    * <pre>
    * Zero or more labeled fields which identify the part of the job this
    * metric is associated with, such as the name of a step or collection.
+   *
    * For example, built-in counters associated with steps will have
    * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
    * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -973,6 +972,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -999,6 +999,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -1016,6 +1017,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -1040,6 +1042,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -1070,6 +1073,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -1096,6 +1100,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.
@@ -1120,6 +1125,7 @@ public final class MetricStructuredName extends com.google.protobuf.GeneratedMes
      * <pre>
      * Zero or more labeled fields which identify the part of the job this
      * metric is associated with, such as the name of a step or collection.
+     *
      * For example, built-in counters associated with steps will have
      * context['step'] = &lt;step-name&gt;. Counters associated with PCollections
      * in the SDK will have context['pcollection'] = &lt;pcollection-name&gt;.

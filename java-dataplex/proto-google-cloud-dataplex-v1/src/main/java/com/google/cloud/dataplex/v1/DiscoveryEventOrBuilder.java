@@ -313,5 +313,5 @@ public interface DiscoveryEventOrBuilder
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetailsOrBuilder getActionOrBuilder();
 
-  public com.google.cloud.dataplex.v1.DiscoveryEvent.DetailsCase getDetailsCase();
+  com.google.cloud.dataplex.v1.DiscoveryEvent.DetailsCase getDetailsCase();
 }

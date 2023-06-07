@@ -277,5 +277,5 @@ public interface ValueOrBuilder
    */
   com.google.type.DayOfWeek getDayOfWeekValue();
 
-  public com.google.privacy.dlp.v2.Value.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.Value.TypeCase getTypeCase();
 }

@@ -222,5 +222,5 @@ public interface SessionEventOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getUnassignedDurationOrBuilder();
 
-  public com.google.cloud.dataplex.v1.SessionEvent.DetailCase getDetailCase();
+  com.google.cloud.dataplex.v1.SessionEvent.DetailCase getDetailCase();
 }

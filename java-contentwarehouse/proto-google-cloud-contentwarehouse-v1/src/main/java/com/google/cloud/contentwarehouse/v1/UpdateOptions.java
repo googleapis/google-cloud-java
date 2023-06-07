@@ -47,11 +47,6 @@ public final class UpdateOptions extends com.google.protobuf.GeneratedMessageV3
     return new UpdateOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.CommonProto
         .internal_static_google_cloud_contentwarehouse_v1_UpdateOptions_descriptor;

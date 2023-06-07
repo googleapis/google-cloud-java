@@ -47,11 +47,6 @@ public final class GetWorkflowInvocationRequest extends com.google.protobuf.Gene
     return new GetWorkflowInvocationRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_GetWorkflowInvocationRequest_descriptor;

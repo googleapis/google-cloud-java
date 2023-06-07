@@ -160,6 +160,5 @@ public interface SourceConfigOrBuilder
   com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder
       getPostgresqlSourceConfigOrBuilder();
 
-  public com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase
-      getSourceStreamConfigCase();
+  com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase getSourceStreamConfigCase();
 }

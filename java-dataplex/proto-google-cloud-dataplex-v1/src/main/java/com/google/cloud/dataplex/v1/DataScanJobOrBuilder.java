@@ -402,7 +402,7 @@ public interface DataScanJobOrBuilder
    */
   com.google.cloud.dataplex.v1.DataProfileResultOrBuilder getDataProfileResultOrBuilder();
 
-  public com.google.cloud.dataplex.v1.DataScanJob.SpecCase getSpecCase();
+  com.google.cloud.dataplex.v1.DataScanJob.SpecCase getSpecCase();
 
-  public com.google.cloud.dataplex.v1.DataScanJob.ResultCase getResultCase();
+  com.google.cloud.dataplex.v1.DataScanJob.ResultCase getResultCase();
 }

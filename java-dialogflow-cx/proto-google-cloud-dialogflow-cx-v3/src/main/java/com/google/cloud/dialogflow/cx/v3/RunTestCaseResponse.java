@@ -46,11 +46,6 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
     return new RunTestCaseResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3_RunTestCaseResponse_descriptor;

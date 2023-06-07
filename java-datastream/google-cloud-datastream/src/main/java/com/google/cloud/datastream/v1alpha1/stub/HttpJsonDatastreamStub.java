@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datastream.v1alpha1.ConnectionProfile;
 import com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest;
@@ -1078,30 +1079,62 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                 .<ListConnectionProfilesRequest, ListConnectionProfilesResponse>newBuilder()
                 .setMethodDescriptor(listConnectionProfilesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConnectionProfileRequest, ConnectionProfile>
         getConnectionProfileTransportSettings =
             HttpJsonCallSettings.<GetConnectionProfileRequest, ConnectionProfile>newBuilder()
                 .setMethodDescriptor(getConnectionProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConnectionProfileRequest, Operation>
         createConnectionProfileTransportSettings =
             HttpJsonCallSettings.<CreateConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConnectionProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateConnectionProfileRequest, Operation>
         updateConnectionProfileTransportSettings =
             HttpJsonCallSettings.<UpdateConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateConnectionProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "connection_profile.name",
+                          String.valueOf(request.getConnectionProfile().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteConnectionProfileRequest, Operation>
         deleteConnectionProfileTransportSettings =
             HttpJsonCallSettings.<DeleteConnectionProfileRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConnectionProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>
         discoverConnectionProfileTransportSettings =
@@ -1109,54 +1142,114 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                 .<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>newBuilder()
                 .setMethodDescriptor(discoverConnectionProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         HttpJsonCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
             .setMethodDescriptor(listStreamsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         HttpJsonCallSettings.<GetStreamRequest, Stream>newBuilder()
             .setMethodDescriptor(getStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         HttpJsonCallSettings.<CreateStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(createStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         HttpJsonCallSettings.<UpdateStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(updateStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("stream.name", String.valueOf(request.getStream().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteStreamRequest, Operation> deleteStreamTransportSettings =
         HttpJsonCallSettings.<DeleteStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchErrorsRequest, Operation> fetchErrorsTransportSettings =
         HttpJsonCallSettings.<FetchErrorsRequest, Operation>newBuilder()
             .setMethodDescriptor(fetchErrorsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("stream", String.valueOf(request.getStream()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
         fetchStaticIpsTransportSettings =
             HttpJsonCallSettings.<FetchStaticIpsRequest, FetchStaticIpsResponse>newBuilder()
                 .setMethodDescriptor(fetchStaticIpsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
             HttpJsonCallSettings.<CreatePrivateConnectionRequest, Operation>newBuilder()
                 .setMethodDescriptor(createPrivateConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
             HttpJsonCallSettings.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
                 .setMethodDescriptor(getPrivateConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -1164,32 +1257,68 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                 .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
                 .setMethodDescriptor(listPrivateConnectionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeletePrivateConnectionRequest, Operation>
         deletePrivateConnectionTransportSettings =
             HttpJsonCallSettings.<DeletePrivateConnectionRequest, Operation>newBuilder()
                 .setMethodDescriptor(deletePrivateConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateRouteRequest, Operation> createRouteTransportSettings =
         HttpJsonCallSettings.<CreateRouteRequest, Operation>newBuilder()
             .setMethodDescriptor(createRouteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRouteRequest, Route> getRouteTransportSettings =
         HttpJsonCallSettings.<GetRouteRequest, Route>newBuilder()
             .setMethodDescriptor(getRouteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRoutesRequest, ListRoutesResponse> listRoutesTransportSettings =
         HttpJsonCallSettings.<ListRoutesRequest, ListRoutesResponse>newBuilder()
             .setMethodDescriptor(listRoutesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRouteRequest, Operation> deleteRouteTransportSettings =
         HttpJsonCallSettings.<DeleteRouteRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteRouteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listConnectionProfilesCallable =

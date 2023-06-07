@@ -48,11 +48,6 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
     return new UpdateEntityTypeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.EntityTypeProto
         .internal_static_google_cloud_dialogflow_cx_v3_UpdateEntityTypeRequest_descriptor;
@@ -133,9 +128,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The language of the following fields in `entity_type`:
+   *
    * *   `EntityType.entities.value`
    * *   `EntityType.entities.synonyms`
    * *   `EntityType.excluded_phrases.value`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -164,9 +161,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The language of the following fields in `entity_type`:
+   *
    * *   `EntityType.entities.value`
    * *   `EntityType.entities.synonyms`
    * *   `EntityType.excluded_phrases.value`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -851,9 +850,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The language of the following fields in `entity_type`:
+     *
      * *   `EntityType.entities.value`
      * *   `EntityType.entities.synonyms`
      * *   `EntityType.excluded_phrases.value`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -881,9 +882,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The language of the following fields in `entity_type`:
+     *
      * *   `EntityType.entities.value`
      * *   `EntityType.entities.synonyms`
      * *   `EntityType.excluded_phrases.value`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -911,9 +914,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The language of the following fields in `entity_type`:
+     *
      * *   `EntityType.entities.value`
      * *   `EntityType.entities.synonyms`
      * *   `EntityType.excluded_phrases.value`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -940,9 +945,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The language of the following fields in `entity_type`:
+     *
      * *   `EntityType.entities.value`
      * *   `EntityType.entities.synonyms`
      * *   `EntityType.excluded_phrases.value`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -965,9 +972,11 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The language of the following fields in `entity_type`:
+     *
      * *   `EntityType.entities.value`
      * *   `EntityType.entities.synonyms`
      * *   `EntityType.excluded_phrases.value`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

@@ -48,11 +48,6 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
     return new UpdateIntentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.IntentProto
         .internal_static_google_cloud_dialogflow_cx_v3_UpdateIntentRequest_descriptor;
@@ -133,7 +128,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The language of the following fields in `intent`:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -162,7 +159,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The language of the following fields in `intent`:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -849,7 +848,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The language of the following fields in `intent`:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -877,7 +878,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The language of the following fields in `intent`:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -905,7 +908,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The language of the following fields in `intent`:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -932,7 +937,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The language of the following fields in `intent`:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -955,7 +962,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The language of the following fields in `intent`:
+     *
      * *   `Intent.training_phrases.parts.text`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

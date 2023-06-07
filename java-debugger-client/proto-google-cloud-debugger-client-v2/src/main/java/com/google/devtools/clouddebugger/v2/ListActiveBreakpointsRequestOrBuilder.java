@@ -86,6 +86,7 @@ public interface ListActiveBreakpointsRequestOrBuilder
    * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
    * sets the `wait_expired` response field to `true` when the server-selected
    * timeout has expired.
+   *
    * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
    * when the server-selected timeout has expired.
    * </pre>

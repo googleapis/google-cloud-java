@@ -48,11 +48,6 @@ public final class BatchRunTestCasesResponse extends com.google.protobuf.Generat
     return new BatchRunTestCasesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesResponse_descriptor;

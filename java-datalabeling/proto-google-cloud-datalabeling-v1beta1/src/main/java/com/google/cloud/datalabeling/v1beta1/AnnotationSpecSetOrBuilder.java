@@ -28,6 +28,7 @@ public interface AnnotationSpecSetOrBuilder
    *
    * <pre>
    * Output only. The AnnotationSpecSet resource name in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface AnnotationSpecSetOrBuilder
    *
    * <pre>
    * Output only. The AnnotationSpecSet resource name in the following format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/annotationSpecSets/&lt;var&gt;{annotation_spec_set_id}&lt;/var&gt;"
    * </pre>
    *

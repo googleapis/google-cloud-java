@@ -93,6 +93,5 @@ public interface ParameterValidationOrBuilder
    */
   com.google.cloud.dataproc.v1.ValueValidationOrBuilder getValuesOrBuilder();
 
-  public com.google.cloud.dataproc.v1.ParameterValidation.ValidationTypeCase
-      getValidationTypeCase();
+  com.google.cloud.dataproc.v1.ParameterValidation.ValidationTypeCase getValidationTypeCase();
 }

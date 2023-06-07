@@ -29,6 +29,7 @@ public interface GetServiceRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore service to retrieve,
    * in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface GetServiceRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore service to retrieve,
    * in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *

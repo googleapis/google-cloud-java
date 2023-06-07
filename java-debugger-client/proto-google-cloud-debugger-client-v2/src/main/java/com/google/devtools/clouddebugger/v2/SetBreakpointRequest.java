@@ -48,11 +48,6 @@ public final class SetBreakpointRequest extends com.google.protobuf.GeneratedMes
     return new SetBreakpointRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouddebugger.v2.DebuggerProto
         .internal_static_google_devtools_clouddebugger_v2_SetBreakpointRequest_descriptor;

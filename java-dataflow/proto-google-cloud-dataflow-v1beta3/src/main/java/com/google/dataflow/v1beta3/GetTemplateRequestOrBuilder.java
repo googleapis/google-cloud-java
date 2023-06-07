@@ -145,5 +145,5 @@ public interface GetTemplateRequestOrBuilder
    */
   com.google.protobuf.ByteString getLocationBytes();
 
-  public com.google.dataflow.v1beta3.GetTemplateRequest.TemplateCase getTemplateCase();
+  com.google.dataflow.v1beta3.GetTemplateRequest.TemplateCase getTemplateCase();
 }

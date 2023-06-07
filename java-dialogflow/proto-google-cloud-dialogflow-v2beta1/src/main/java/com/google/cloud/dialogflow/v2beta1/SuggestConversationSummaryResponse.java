@@ -49,11 +49,6 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     return new SuggestConversationSummaryResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ConversationProto
         .internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_descriptor;
@@ -223,11 +218,6 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Summary();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1458,6 +1448,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
    * <pre>
    * The name of the latest conversation message used as context for
    * compiling suggestion.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -1484,6 +1475,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
    * <pre>
    * The name of the latest conversation message used as context for
    * compiling suggestion.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -2152,6 +2144,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <pre>
      * The name of the latest conversation message used as context for
      * compiling suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -2177,6 +2170,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <pre>
      * The name of the latest conversation message used as context for
      * compiling suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -2202,6 +2196,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <pre>
      * The name of the latest conversation message used as context for
      * compiling suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -2226,6 +2221,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <pre>
      * The name of the latest conversation message used as context for
      * compiling suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -2246,6 +2242,7 @@ public final class SuggestConversationSummaryResponse extends com.google.protobu
      * <pre>
      * The name of the latest conversation message used as context for
      * compiling suggestion.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>

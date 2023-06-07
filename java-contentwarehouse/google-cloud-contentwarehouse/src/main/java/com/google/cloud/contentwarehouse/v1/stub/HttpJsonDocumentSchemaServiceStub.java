@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest;
 import com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest;
@@ -301,23 +302,47 @@ public class HttpJsonDocumentSchemaServiceStub extends DocumentSchemaServiceStub
             HttpJsonCallSettings.<CreateDocumentSchemaRequest, DocumentSchema>newBuilder()
                 .setMethodDescriptor(createDocumentSchemaMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDocumentSchemaRequest, DocumentSchema>
         updateDocumentSchemaTransportSettings =
             HttpJsonCallSettings.<UpdateDocumentSchemaRequest, DocumentSchema>newBuilder()
                 .setMethodDescriptor(updateDocumentSchemaMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDocumentSchemaRequest, DocumentSchema>
         getDocumentSchemaTransportSettings =
             HttpJsonCallSettings.<GetDocumentSchemaRequest, DocumentSchema>newBuilder()
                 .setMethodDescriptor(getDocumentSchemaMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDocumentSchemaRequest, Empty> deleteDocumentSchemaTransportSettings =
         HttpJsonCallSettings.<DeleteDocumentSchemaRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDocumentSchemaMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListDocumentSchemasRequest, ListDocumentSchemasResponse>
         listDocumentSchemasTransportSettings =
@@ -325,6 +350,12 @@ public class HttpJsonDocumentSchemaServiceStub extends DocumentSchemaServiceStub
                 .<ListDocumentSchemasRequest, ListDocumentSchemasResponse>newBuilder()
                 .setMethodDescriptor(listDocumentSchemasMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createDocumentSchemaCallable =

@@ -50,11 +50,6 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     return new VideoPayload();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataPayloads
         .internal_static_google_cloud_datalabeling_v1beta1_VideoPayload_descriptor;

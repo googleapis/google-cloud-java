@@ -50,11 +50,6 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
     return new ListEntitiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.MetadataProto
         .internal_static_google_cloud_dataplex_v1_ListEntitiesRequest_descriptor;
@@ -415,6 +410,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The following filter parameters can be added to the URL to limit
    * the entities returned by the API:
+   *
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
@@ -444,6 +440,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The following filter parameters can be added to the URL to limit
    * the entities returned by the API:
+   *
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
@@ -1319,6 +1316,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The following filter parameters can be added to the URL to limit
      * the entities returned by the API:
+     *
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
@@ -1347,6 +1345,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The following filter parameters can be added to the URL to limit
      * the entities returned by the API:
+     *
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
@@ -1375,6 +1374,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The following filter parameters can be added to the URL to limit
      * the entities returned by the API:
+     *
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
@@ -1402,6 +1402,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The following filter parameters can be added to the URL to limit
      * the entities returned by the API:
+     *
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
@@ -1425,6 +1426,7 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The following filter parameters can be added to the URL to limit
      * the entities returned by the API:
+     *
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"

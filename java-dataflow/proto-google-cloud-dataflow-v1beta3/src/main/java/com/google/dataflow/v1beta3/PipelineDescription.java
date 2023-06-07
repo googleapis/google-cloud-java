@@ -51,11 +51,6 @@ public final class PipelineDescription extends com.google.protobuf.GeneratedMess
     return new PipelineDescription();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.JobsProto
         .internal_static_google_dataflow_v1beta3_PipelineDescription_descriptor;

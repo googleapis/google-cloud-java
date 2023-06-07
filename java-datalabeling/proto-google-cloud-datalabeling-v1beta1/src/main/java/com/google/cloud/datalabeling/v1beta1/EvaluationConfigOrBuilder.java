@@ -72,6 +72,5 @@ public interface EvaluationConfigOrBuilder
   com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptionsOrBuilder
       getBoundingBoxEvaluationOptionsOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.EvaluationConfig.VerticalOptionCase
-      getVerticalOptionCase();
+  com.google.cloud.datalabeling.v1beta1.EvaluationConfig.VerticalOptionCase getVerticalOptionCase();
 }

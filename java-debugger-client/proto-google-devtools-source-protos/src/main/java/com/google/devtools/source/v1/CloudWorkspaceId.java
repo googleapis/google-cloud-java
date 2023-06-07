@@ -49,11 +49,6 @@ public final class CloudWorkspaceId extends com.google.protobuf.GeneratedMessage
     return new CloudWorkspaceId();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.source.v1.SourceContextProto
         .internal_static_google_devtools_source_v1_CloudWorkspaceId_descriptor;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.deploy.v1.AbandonReleaseRequest;
 import com.google.cloud.deploy.v1.AbandonReleaseResponse;
@@ -1463,167 +1464,355 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                 .<ListDeliveryPipelinesRequest, ListDeliveryPipelinesResponse>newBuilder()
                 .setMethodDescriptor(listDeliveryPipelinesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetDeliveryPipelineRequest, DeliveryPipeline>
         getDeliveryPipelineTransportSettings =
             HttpJsonCallSettings.<GetDeliveryPipelineRequest, DeliveryPipeline>newBuilder()
                 .setMethodDescriptor(getDeliveryPipelineMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateDeliveryPipelineRequest, Operation>
         createDeliveryPipelineTransportSettings =
             HttpJsonCallSettings.<CreateDeliveryPipelineRequest, Operation>newBuilder()
                 .setMethodDescriptor(createDeliveryPipelineMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDeliveryPipelineRequest, Operation>
         updateDeliveryPipelineTransportSettings =
             HttpJsonCallSettings.<UpdateDeliveryPipelineRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateDeliveryPipelineMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "delivery_pipeline.name",
+                          String.valueOf(request.getDeliveryPipeline().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDeliveryPipelineRequest, Operation>
         deleteDeliveryPipelineTransportSettings =
             HttpJsonCallSettings.<DeleteDeliveryPipelineRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteDeliveryPipelineMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListTargetsRequest, ListTargetsResponse> listTargetsTransportSettings =
         HttpJsonCallSettings.<ListTargetsRequest, ListTargetsResponse>newBuilder()
             .setMethodDescriptor(listTargetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTargetRequest, Target> getTargetTransportSettings =
         HttpJsonCallSettings.<GetTargetRequest, Target>newBuilder()
             .setMethodDescriptor(getTargetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateTargetRequest, Operation> createTargetTransportSettings =
         HttpJsonCallSettings.<CreateTargetRequest, Operation>newBuilder()
             .setMethodDescriptor(createTargetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTargetRequest, Operation> updateTargetTransportSettings =
         HttpJsonCallSettings.<UpdateTargetRequest, Operation>newBuilder()
             .setMethodDescriptor(updateTargetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("target.name", String.valueOf(request.getTarget().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTargetRequest, Operation> deleteTargetTransportSettings =
         HttpJsonCallSettings.<DeleteTargetRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteTargetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         HttpJsonCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
             .setMethodDescriptor(listReleasesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetReleaseRequest, Release> getReleaseTransportSettings =
         HttpJsonCallSettings.<GetReleaseRequest, Release>newBuilder()
             .setMethodDescriptor(getReleaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateReleaseRequest, Operation> createReleaseTransportSettings =
         HttpJsonCallSettings.<CreateReleaseRequest, Operation>newBuilder()
             .setMethodDescriptor(createReleaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
         abandonReleaseTransportSettings =
             HttpJsonCallSettings.<AbandonReleaseRequest, AbandonReleaseResponse>newBuilder()
                 .setMethodDescriptor(abandonReleaseMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             HttpJsonCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
                 .setMethodDescriptor(approveRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
         advanceRolloutTransportSettings =
             HttpJsonCallSettings.<AdvanceRolloutRequest, AdvanceRolloutResponse>newBuilder()
                 .setMethodDescriptor(advanceRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CancelRolloutRequest, CancelRolloutResponse>
         cancelRolloutTransportSettings =
             HttpJsonCallSettings.<CancelRolloutRequest, CancelRolloutResponse>newBuilder()
                 .setMethodDescriptor(cancelRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListRolloutsRequest, ListRolloutsResponse> listRolloutsTransportSettings =
         HttpJsonCallSettings.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
             .setMethodDescriptor(listRolloutsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRolloutRequest, Rollout> getRolloutTransportSettings =
         HttpJsonCallSettings.<GetRolloutRequest, Rollout>newBuilder()
             .setMethodDescriptor(getRolloutMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateRolloutRequest, Operation> createRolloutTransportSettings =
         HttpJsonCallSettings.<CreateRolloutRequest, Operation>newBuilder()
             .setMethodDescriptor(createRolloutMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobTransportSettings =
         HttpJsonCallSettings.<IgnoreJobRequest, IgnoreJobResponse>newBuilder()
             .setMethodDescriptor(ignoreJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rollout", String.valueOf(request.getRollout()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RetryJobRequest, RetryJobResponse> retryJobTransportSettings =
         HttpJsonCallSettings.<RetryJobRequest, RetryJobResponse>newBuilder()
             .setMethodDescriptor(retryJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rollout", String.valueOf(request.getRollout()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListJobRunsRequest, ListJobRunsResponse> listJobRunsTransportSettings =
         HttpJsonCallSettings.<ListJobRunsRequest, ListJobRunsResponse>newBuilder()
             .setMethodDescriptor(listJobRunsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetJobRunRequest, JobRun> getJobRunTransportSettings =
         HttpJsonCallSettings.<GetJobRunRequest, JobRun>newBuilder()
             .setMethodDescriptor(getJobRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
         terminateJobRunTransportSettings =
             HttpJsonCallSettings.<TerminateJobRunRequest, TerminateJobRunResponse>newBuilder()
                 .setMethodDescriptor(terminateJobRunMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
             .setMethodDescriptor(getConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listDeliveryPipelinesCallable =

@@ -328,5 +328,5 @@ public interface SparkBatchOrBuilder
    */
   com.google.protobuf.ByteString getArchiveUrisBytes(int index);
 
-  public com.google.cloud.dataproc.v1.SparkBatch.DriverCase getDriverCase();
+  com.google.cloud.dataproc.v1.SparkBatch.DriverCase getDriverCase();
 }

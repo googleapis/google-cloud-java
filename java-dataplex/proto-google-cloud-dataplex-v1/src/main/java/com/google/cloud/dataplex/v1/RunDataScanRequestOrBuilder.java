@@ -31,6 +31,7 @@ public interface RunDataScanRequestOrBuilder
    * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
+   *
    * Only **OnDemand** data scans are allowed.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface RunDataScanRequestOrBuilder
    * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
+   *
    * Only **OnDemand** data scans are allowed.
    * </pre>
    *

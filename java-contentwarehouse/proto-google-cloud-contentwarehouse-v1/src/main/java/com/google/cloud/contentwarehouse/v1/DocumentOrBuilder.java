@@ -30,6 +30,7 @@ public interface DocumentOrBuilder
    * The resource name of the document.
    * Format:
    * projects/{project_number}/locations/{location}/documents/{document_id}.
+   *
    * The name is ignored when creating a document.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DocumentOrBuilder
    * The resource name of the document.
    * Format:
    * projects/{project_number}/locations/{location}/documents/{document_id}.
+   *
    * The name is ignored when creating a document.
    * </pre>
    *
@@ -635,8 +637,7 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.ByteString getUpdaterBytes();
 
-  public com.google.cloud.contentwarehouse.v1.Document.StructuredContentCase
-      getStructuredContentCase();
+  com.google.cloud.contentwarehouse.v1.Document.StructuredContentCase getStructuredContentCase();
 
-  public com.google.cloud.contentwarehouse.v1.Document.RawDocumentCase getRawDocumentCase();
+  com.google.cloud.contentwarehouse.v1.Document.RawDocumentCase getRawDocumentCase();
 }

@@ -49,11 +49,6 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
     return new SuggestArticlesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesRequest_descriptor;
@@ -138,6 +133,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -166,6 +162,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The name of the latest conversation message to compile suggestion
    * for. If empty, it will be the latest message of the conversation.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -825,6 +822,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -852,6 +850,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -879,6 +878,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -905,6 +905,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>
@@ -927,6 +928,7 @@ public final class SuggestArticlesRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The name of the latest conversation message to compile suggestion
      * for. If empty, it will be the latest message of the conversation.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
      * </pre>

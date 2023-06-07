@@ -62,6 +62,7 @@ public interface ImportDocumentsRequestOrBuilder
    * <pre>
    * The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -78,6 +79,7 @@ public interface ImportDocumentsRequestOrBuilder
    * <pre>
    * The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -94,6 +96,7 @@ public interface ImportDocumentsRequestOrBuilder
    * <pre>
    * The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -159,5 +162,5 @@ public interface ImportDocumentsRequestOrBuilder
    */
   boolean getImportGcsCustomMetadata();
 
-  public com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest.SourceCase getSourceCase();
+  com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest.SourceCase getSourceCase();
 }

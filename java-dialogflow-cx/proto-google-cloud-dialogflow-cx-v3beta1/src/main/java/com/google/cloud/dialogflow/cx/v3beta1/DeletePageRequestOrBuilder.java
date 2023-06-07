@@ -62,6 +62,7 @@ public interface DeletePageRequestOrBuilder
    * <pre>
    * This field has no effect for pages with no incoming transitions.
    * For pages with incoming transitions:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the incoming transitions.
    * *  If `force` is set to true, Dialogflow will remove the page, as well as

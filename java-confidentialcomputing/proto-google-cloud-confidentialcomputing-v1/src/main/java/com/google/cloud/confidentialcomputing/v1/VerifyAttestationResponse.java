@@ -48,11 +48,6 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     return new VerifyAttestationResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.confidentialcomputing.v1.ServiceProto
         .internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor;

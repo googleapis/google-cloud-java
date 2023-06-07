@@ -49,11 +49,6 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     return new QueryDirectoryContentsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1alpha2.DataformProto
         .internal_static_google_cloud_dataform_v1alpha2_QueryDirectoryContentsResponse_descriptor;
@@ -148,8 +143,7 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
      */
     com.google.protobuf.ByteString getDirectoryBytes();
 
-    public com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry
-            .EntryCase
+    com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse.DirectoryEntry.EntryCase
         getEntryCase();
   }
   /**
@@ -180,11 +174,6 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
       return new DirectoryEntry();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataform.v1alpha2.DataformProto
           .internal_static_google_cloud_dataform_v1alpha2_QueryDirectoryContentsResponse_DirectoryEntry_descriptor;
@@ -203,6 +192,8 @@ public final class QueryDirectoryContentsResponse extends com.google.protobuf.Ge
     }
 
     private int entryCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object entry_;
 
     public enum EntryCase

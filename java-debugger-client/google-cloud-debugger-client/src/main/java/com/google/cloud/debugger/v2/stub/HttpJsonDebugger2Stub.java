@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest;
 import com.google.devtools.clouddebugger.v2.GetBreakpointRequest;
@@ -308,23 +309,49 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
             HttpJsonCallSettings.<SetBreakpointRequest, SetBreakpointResponse>newBuilder()
                 .setMethodDescriptor(setBreakpointMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetBreakpointRequest, GetBreakpointResponse>
         getBreakpointTransportSettings =
             HttpJsonCallSettings.<GetBreakpointRequest, GetBreakpointResponse>newBuilder()
                 .setMethodDescriptor(getBreakpointMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("breakpoint_id", String.valueOf(request.getBreakpointId()));
+                      builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteBreakpointRequest, Empty> deleteBreakpointTransportSettings =
         HttpJsonCallSettings.<DeleteBreakpointRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteBreakpointMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("breakpoint_id", String.valueOf(request.getBreakpointId()));
+                  builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListBreakpointsRequest, ListBreakpointsResponse>
         listBreakpointsTransportSettings =
             HttpJsonCallSettings.<ListBreakpointsRequest, ListBreakpointsResponse>newBuilder()
                 .setMethodDescriptor(listBreakpointsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListDebuggeesRequest, ListDebuggeesResponse>
         listDebuggeesTransportSettings =

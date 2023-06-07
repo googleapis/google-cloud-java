@@ -23,8 +23,10 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  * <pre>
  * Represents a response message that can be returned by a conversational agent.
+ *
  * Response messages are also used for output audio synthesis. The approach is
  * as follows:
+ *
  * * If at least one OutputAudioText response is present, then all
  *   OutputAudioText responses are linearly concatenated, and the result is used
  *   for output audio synthesis.
@@ -34,6 +36,7 @@ package com.google.cloud.dialogflow.cx.v3;
  *   either text or SSML consistently throughout the bot design.
  * * Otherwise, all Text responses are linearly concatenated, and the result is
  *   used for output audio synthesis.
+ *
  * This approach allows for more sophisticated user experience scenarios, where
  * the text displayed to the user may differ from what is heard.
  * </pre>
@@ -58,11 +61,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResponseMessage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -172,18 +170,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     private Text() {
-      text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      text_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Text();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -204,7 +197,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     public static final int TEXT_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList text_;
+    private com.google.protobuf.LazyStringArrayList text_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -503,8 +497,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        text_ = com.google.protobuf.LazyStringArrayList.emptyList();
         allowPlaybackInterruption_ = false;
         return this;
       }
@@ -533,7 +526,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.dialogflow.cx.v3.ResponseMessage.Text buildPartial() {
         com.google.cloud.dialogflow.cx.v3.ResponseMessage.Text result =
             new com.google.cloud.dialogflow.cx.v3.ResponseMessage.Text(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -541,17 +533,12 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dialogflow.cx.v3.ResponseMessage.Text result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          text_ = text_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.text_ = text_;
-      }
-
       private void buildPartial0(com.google.cloud.dialogflow.cx.v3.ResponseMessage.Text result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          text_.makeImmutable();
+          result.text_ = text_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.allowPlaybackInterruption_ = allowPlaybackInterruption_;
         }
@@ -608,7 +595,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         if (!other.text_.isEmpty()) {
           if (text_.isEmpty()) {
             text_ = other.text_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureTextIsMutable();
             text_.addAll(other.text_);
@@ -676,14 +663,14 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList text_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList text_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTextIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!text_.isModifiable()) {
           text_ = new com.google.protobuf.LazyStringArrayList(text_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -697,7 +684,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        * @return A list containing the text.
        */
       public com.google.protobuf.ProtocolStringList getTextList() {
-        return text_.getUnmodifiableView();
+        text_.makeImmutable();
+        return text_;
       }
       /**
        *
@@ -762,6 +750,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         }
         ensureTextIsMutable();
         text_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -783,6 +772,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         }
         ensureTextIsMutable();
         text_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -801,6 +791,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       public Builder addAllText(java.lang.Iterable<java.lang.String> values) {
         ensureTextIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, text_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -816,8 +807,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearText() {
-        text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        text_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -840,6 +832,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         checkByteStringIsUtf8(value);
         ensureTextIsMutable();
         text_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1018,9 +1011,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Indicates that the conversation should be handed off to a live agent.
+   *
    * Dialogflow only uses this to determine which conversations were handed off
    * to a human agent for measurement purposes. What else to do with this signal
    * is up to you and your handoff procedures.
+   *
    * You may set this, for example:
    * * In the
    * [entry_fulfillment][google.cloud.dialogflow.cx.v3.Page.entry_fulfillment]
@@ -1049,11 +1044,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LiveAgentHandoff();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1292,9 +1282,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Indicates that the conversation should be handed off to a live agent.
+     *
      * Dialogflow only uses this to determine which conversations were handed off
      * to a human agent for measurement purposes. What else to do with this signal
      * is up to you and your handoff procedures.
+     *
      * You may set this, for example:
      * * In the
      * [entry_fulfillment][google.cloud.dialogflow.cx.v3.Page.entry_fulfillment]
@@ -1794,11 +1786,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Indicates that the conversation succeeded, i.e., the bot handled the issue
    * that the customer talked to it about.
+   *
    * Dialogflow only uses this to determine which conversations should be
    * counted as successful and doesn't process the metadata in this message in
    * any way. Note that Dialogflow also considers conversations that get to the
    * conversation end page as successful even if they don't return
    * [ConversationSuccess][google.cloud.dialogflow.cx.v3.ResponseMessage.ConversationSuccess].
+   *
    * You may set this, for example:
    * * In the
    * [entry_fulfillment][google.cloud.dialogflow.cx.v3.Page.entry_fulfillment]
@@ -1826,11 +1820,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ConversationSuccess();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2067,11 +2056,13 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Indicates that the conversation succeeded, i.e., the bot handled the issue
      * that the customer talked to it about.
+     *
      * Dialogflow only uses this to determine which conversations should be
      * counted as successful and doesn't process the metadata in this message in
      * any way. Note that Dialogflow also considers conversations that get to the
      * conversation end page as successful even if they don't return
      * [ConversationSuccess][google.cloud.dialogflow.cx.v3.ResponseMessage.ConversationSuccess].
+     *
      * You may set this, for example:
      * * In the
      * [entry_fulfillment][google.cloud.dialogflow.cx.v3.Page.entry_fulfillment]
@@ -2617,8 +2608,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      */
     boolean getAllowPlaybackInterruption();
 
-    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.OutputAudioText.SourceCase
-        getSourceCase();
+    com.google.cloud.dialogflow.cx.v3.ResponseMessage.OutputAudioText.SourceCase getSourceCase();
   }
   /**
    *
@@ -2648,11 +2638,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return new OutputAudioText();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
           .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_OutputAudioText_descriptor;
@@ -2669,6 +2654,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object source_;
 
     public enum SourceCase
@@ -3762,11 +3749,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return new EndInteraction();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
           .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_descriptor;
@@ -4246,11 +4228,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PlayAudio();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5058,11 +5035,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return new MixedAudio();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
           .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_descriptor;
@@ -5166,7 +5138,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        */
       boolean getAllowPlaybackInterruption();
 
-      public com.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.Segment.ContentCase
+      com.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.Segment.ContentCase
           getContentCase();
     }
     /**
@@ -5196,11 +5168,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         return new Segment();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
             .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_Segment_descriptor;
@@ -5217,6 +5184,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
 
       private int contentCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object content_;
 
       public enum ContentCase
@@ -7207,7 +7176,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getPhoneNumberBytes();
 
-    public com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.EndpointCase
+    com.google.cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCall.EndpointCase
         getEndpointCase();
   }
   /**
@@ -7238,11 +7207,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return new TelephonyTransferCall();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.ResponseMessageProto
           .internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_TelephonyTransferCall_descriptor;
@@ -7260,6 +7224,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     private int endpointCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object endpoint_;
 
     public enum EndpointCase
@@ -7987,6 +7953,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
   }
 
   private int messageCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object message_;
 
   public enum MessageCase
@@ -8339,6 +8307,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * agent has ended. This message is generated by Dialogflow only when the
    * conversation reaches `END_SESSION` page. It is not supposed to be defined
    * by the user.
+   *
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -8360,6 +8329,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * agent has ended. This message is generated by Dialogflow only when the
    * conversation reaches `END_SESSION` page. It is not supposed to be defined
    * by the user.
+   *
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -8384,6 +8354,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * agent has ended. This message is generated by Dialogflow only when the
    * conversation reaches `END_SESSION` page. It is not supposed to be defined
    * by the user.
+   *
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -8971,8 +8942,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Represents a response message that can be returned by a conversational agent.
+   *
    * Response messages are also used for output audio synthesis. The approach is
    * as follows:
+   *
    * * If at least one OutputAudioText response is present, then all
    *   OutputAudioText responses are linearly concatenated, and the result is used
    *   for output audio synthesis.
@@ -8982,6 +8955,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *   either text or SSML consistently throughout the bot design.
    * * Otherwise, all Text responses are linearly concatenated, and the result is
    *   used for output audio synthesis.
+   *
    * This approach allows for more sophisticated user experience scenarios, where
    * the text displayed to the user may differ from what is heard.
    * </pre>
@@ -10492,6 +10466,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10513,6 +10488,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10546,6 +10522,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10575,6 +10552,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10601,6 +10579,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10642,6 +10621,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10673,6 +10653,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10692,6 +10673,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10720,6 +10702,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * agent has ended. This message is generated by Dialogflow only when the
      * conversation reaches `END_SESSION` page. It is not supposed to be defined
      * by the user.
+     *
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *

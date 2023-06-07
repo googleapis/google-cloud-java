@@ -37,11 +37,6 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
     return new EvaluationMetrics();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_EvaluationMetrics_descriptor;
@@ -58,6 +53,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
   }
 
   private int metricsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metrics_;
 
   public enum MetricsCase

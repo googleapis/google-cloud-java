@@ -46,11 +46,6 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     return new ExportTestCasesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesResponse_descriptor;
@@ -67,6 +62,8 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

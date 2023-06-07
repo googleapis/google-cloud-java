@@ -204,6 +204,7 @@ public interface InstructionOrBuilder
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -225,6 +226,7 @@ public interface InstructionOrBuilder
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>
@@ -246,6 +248,7 @@ public interface InstructionOrBuilder
    * Deprecated: this instruction format is not supported any more.
    * Instruction from a CSV file, such as for classification task.
    * The CSV file should have exact two columns, in the following format:
+   *
    * * The first column is labeled data, such as an image reference, text.
    * * The second column is comma separated labels associated with data.
    * </pre>

@@ -49,11 +49,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     return new SearchDocumentsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentServiceProto
         .internal_static_google_cloud_contentwarehouse_v1_SearchDocumentsResponse_descriptor;
@@ -123,6 +118,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -143,6 +139,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -222,11 +219,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MatchingDocument();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -313,6 +305,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -344,6 +337,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * closely match a search query's keywords, if available. All HTML tags in
      * the original fields are stripped when returned in this field, and
      * matching query keywords are enclosed in HTML bold tags.
+     *
      * If the question-answering feature is enabled, this field will instead
      * contain a snippet that answers the user's natural-language query. No HTML
      * bold tags will be present, and highlights in the answer snippet can be
@@ -1064,6 +1058,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1094,6 +1089,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1124,6 +1120,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1153,6 +1150,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be
@@ -1178,6 +1176,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
        * closely match a search query's keywords, if available. All HTML tags in
        * the original fields are stripped when returned in this field, and
        * matching query keywords are enclosed in HTML bold tags.
+       *
        * If the question-answering feature is enabled, this field will instead
        * contain a snippet that answers the user's natural-language query. No HTML
        * bold tags will be present, and highlights in the answer snippet can be

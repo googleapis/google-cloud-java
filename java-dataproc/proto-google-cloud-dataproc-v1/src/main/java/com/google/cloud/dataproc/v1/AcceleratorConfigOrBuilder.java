@@ -31,10 +31,13 @@ public interface AcceleratorConfigOrBuilder
    * expose to this instance. See
    * [Compute Engine
    * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+   *
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
@@ -55,10 +58,13 @@ public interface AcceleratorConfigOrBuilder
    * expose to this instance. See
    * [Compute Engine
    * AcceleratorTypes](https://cloud.google.com/compute/docs/reference/v1/acceleratorTypes).
+   *
    * Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-k80`
    * * `nvidia-tesla-k80`
+   *
    * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)

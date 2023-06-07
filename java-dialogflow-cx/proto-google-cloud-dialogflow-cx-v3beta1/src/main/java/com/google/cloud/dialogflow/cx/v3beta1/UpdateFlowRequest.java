@@ -48,11 +48,6 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
     return new UpdateFlowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateFlowRequest_descriptor;
@@ -178,10 +173,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The language of the following fields in `flow`:
+   *
    * *  `Flow.event_handlers.trigger_fulfillment.messages`
    * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
    * *  `Flow.transition_routes.trigger_fulfillment.messages`
    * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -210,10 +207,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The language of the following fields in `flow`:
+   *
    * *  `Flow.event_handlers.trigger_fulfillment.messages`
    * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
    * *  `Flow.transition_routes.trigger_fulfillment.messages`
    * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1043,10 +1042,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The language of the following fields in `flow`:
+     *
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
      * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
      * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1074,10 +1075,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The language of the following fields in `flow`:
+     *
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
      * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
      * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1105,10 +1108,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The language of the following fields in `flow`:
+     *
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
      * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
      * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1135,10 +1140,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The language of the following fields in `flow`:
+     *
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
      * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
      * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -1161,10 +1168,12 @@ public final class UpdateFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The language of the following fields in `flow`:
+     *
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
      * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
      * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

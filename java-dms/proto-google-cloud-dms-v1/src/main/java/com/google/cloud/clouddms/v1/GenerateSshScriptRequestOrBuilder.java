@@ -156,5 +156,5 @@ public interface GenerateSshScriptRequestOrBuilder
    */
   int getVmPort();
 
-  public com.google.cloud.clouddms.v1.GenerateSshScriptRequest.VmConfigCase getVmConfigCase();
+  com.google.cloud.clouddms.v1.GenerateSshScriptRequest.VmConfigCase getVmConfigCase();
 }

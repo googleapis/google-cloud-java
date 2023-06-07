@@ -302,5 +302,5 @@ public interface TrinoJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.TrinoJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.TrinoJob.QueriesCase getQueriesCase();
 }

@@ -48,11 +48,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
     return new UpdateConversionWorkspaceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_UpdateConversionWorkspaceRequest_descriptor;
@@ -187,7 +182,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
    * <pre>
    * A unique ID used to identify the request. If the server receives two
    * requests with the same ID, then the second request is ignored.
+   *
    * It is recommended to always set this value to a UUID.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -214,7 +211,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
    * <pre>
    * A unique ID used to identify the request. If the server receives two
    * requests with the same ID, then the second request is ignored.
+   *
    * It is recommended to always set this value to a UUID.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -1062,7 +1061,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
      * <pre>
      * A unique ID used to identify the request. If the server receives two
      * requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1088,7 +1089,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
      * <pre>
      * A unique ID used to identify the request. If the server receives two
      * requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1114,7 +1117,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
      * <pre>
      * A unique ID used to identify the request. If the server receives two
      * requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1139,7 +1144,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
      * <pre>
      * A unique ID used to identify the request. If the server receives two
      * requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1160,7 +1167,9 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
      * <pre>
      * A unique ID used to identify the request. If the server receives two
      * requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>

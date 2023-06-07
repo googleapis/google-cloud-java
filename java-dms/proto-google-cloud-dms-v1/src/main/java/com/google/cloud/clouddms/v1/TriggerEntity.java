@@ -40,7 +40,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
 
   private TriggerEntity() {
     name_ = "";
-    triggeringEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    triggeringEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
     triggerType_ = "";
     sqlCode_ = "";
   }
@@ -49,11 +49,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TriggerEntity();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,7 +120,8 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
   public static final int TRIGGERING_EVENTS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList triggeringEvents_;
+  private com.google.protobuf.LazyStringArrayList triggeringEvents_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -591,8 +587,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      triggeringEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      triggeringEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       triggerType_ = "";
       sqlCode_ = "";
       customFeatures_ = null;
@@ -627,7 +622,6 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.clouddms.v1.TriggerEntity buildPartial() {
       com.google.cloud.clouddms.v1.TriggerEntity result =
           new com.google.cloud.clouddms.v1.TriggerEntity(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -635,18 +629,14 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.clouddms.v1.TriggerEntity result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        triggeringEvents_ = triggeringEvents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.triggeringEvents_ = triggeringEvents_;
-    }
-
     private void buildPartial0(com.google.cloud.clouddms.v1.TriggerEntity result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        triggeringEvents_.makeImmutable();
+        result.triggeringEvents_ = triggeringEvents_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.triggerType_ = triggerType_;
@@ -713,7 +703,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       if (!other.triggeringEvents_.isEmpty()) {
         if (triggeringEvents_.isEmpty()) {
           triggeringEvents_ = other.triggeringEvents_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureTriggeringEventsIsMutable();
           triggeringEvents_.addAll(other.triggeringEvents_);
@@ -915,14 +905,14 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList triggeringEvents_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList triggeringEvents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTriggeringEventsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!triggeringEvents_.isModifiable()) {
         triggeringEvents_ = new com.google.protobuf.LazyStringArrayList(triggeringEvents_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -937,7 +927,8 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the triggeringEvents.
      */
     public com.google.protobuf.ProtocolStringList getTriggeringEventsList() {
-      return triggeringEvents_.getUnmodifiableView();
+      triggeringEvents_.makeImmutable();
+      return triggeringEvents_;
     }
     /**
      *
@@ -1006,6 +997,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTriggeringEventsIsMutable();
       triggeringEvents_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1028,6 +1020,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTriggeringEventsIsMutable();
       triggeringEvents_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1047,6 +1040,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTriggeringEvents(java.lang.Iterable<java.lang.String> values) {
       ensureTriggeringEventsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, triggeringEvents_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1063,8 +1057,9 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTriggeringEvents() {
-      triggeringEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      triggeringEvents_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1088,6 +1083,7 @@ public final class TriggerEntity extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTriggeringEventsIsMutable();
       triggeringEvents_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

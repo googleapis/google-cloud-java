@@ -58,5 +58,5 @@ public interface StoredInfoTypeStatsOrBuilder
    */
   com.google.privacy.dlp.v2.LargeCustomDictionaryStatsOrBuilder getLargeCustomDictionaryOrBuilder();
 
-  public com.google.privacy.dlp.v2.StoredInfoTypeStats.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.StoredInfoTypeStats.TypeCase getTypeCase();
 }

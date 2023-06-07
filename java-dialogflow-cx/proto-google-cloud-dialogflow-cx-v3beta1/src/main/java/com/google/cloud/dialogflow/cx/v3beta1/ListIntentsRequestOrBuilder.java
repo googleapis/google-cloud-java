@@ -60,7 +60,9 @@ public interface ListIntentsRequestOrBuilder
    * <pre>
    * The language to list intents for. The following fields are language
    * dependent:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -79,7 +81,9 @@ public interface ListIntentsRequestOrBuilder
    * <pre>
    * The language to list intents for. The following fields are language
    * dependent:
+   *
    * *   `Intent.training_phrases.parts.text`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

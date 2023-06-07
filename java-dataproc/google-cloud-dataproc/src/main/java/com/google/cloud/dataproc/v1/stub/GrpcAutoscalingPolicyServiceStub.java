@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.AutoscalingPolicy;
 import com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest;
 import com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest;
 import com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse;
 import com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -170,9 +170,9 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                 .setMethodDescriptor(createAutoscalingPolicyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -181,9 +181,9 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                 .setMethodDescriptor(updateAutoscalingPolicyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("policy.name", String.valueOf(request.getPolicy().getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("policy.name", String.valueOf(request.getPolicy().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -192,9 +192,9 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                 .setMethodDescriptor(getAutoscalingPolicyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
@@ -204,9 +204,9 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                 .setMethodDescriptor(listAutoscalingPoliciesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAutoscalingPolicyRequest, Empty>
@@ -215,9 +215,9 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                 .setMethodDescriptor(deleteAutoscalingPolicyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
 

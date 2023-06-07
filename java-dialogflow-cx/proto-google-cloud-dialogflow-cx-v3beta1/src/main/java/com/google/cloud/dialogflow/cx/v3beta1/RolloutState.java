@@ -47,11 +47,6 @@ public final class RolloutState extends com.google.protobuf.GeneratedMessageV3
     return new RolloutState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.ExperimentProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_RolloutState_descriptor;

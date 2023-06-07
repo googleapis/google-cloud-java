@@ -91,6 +91,5 @@ public interface ExportTestCasesResponseOrBuilder
    */
   com.google.protobuf.ByteString getContent();
 
-  public com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse.DestinationCase
-      getDestinationCase();
+  com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse.DestinationCase getDestinationCase();
 }

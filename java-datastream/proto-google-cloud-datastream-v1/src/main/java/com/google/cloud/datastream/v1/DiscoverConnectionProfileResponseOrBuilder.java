@@ -128,6 +128,6 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    */
   com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder();
 
-  public com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
+  com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();
 }

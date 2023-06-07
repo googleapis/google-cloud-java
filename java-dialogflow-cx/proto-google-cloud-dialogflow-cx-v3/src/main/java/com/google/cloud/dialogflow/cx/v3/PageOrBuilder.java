@@ -166,11 +166,14 @@ public interface PageOrBuilder
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
    * associated with the page. Transition route groups must be unique within a
    * page.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -189,11 +192,14 @@ public interface PageOrBuilder
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
    * associated with the page. Transition route groups must be unique within a
    * page.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -212,11 +218,14 @@ public interface PageOrBuilder
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
    * associated with the page. Transition route groups must be unique within a
    * page.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -236,11 +245,14 @@ public interface PageOrBuilder
    * [`TransitionRouteGroups`][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
    * associated with the page. Transition route groups must be unique within a
    * page.
+   *
    * *   If multiple transition routes within a page scope refer to the same
    *     intent, then the precedence order is: page's transition route -&gt; page's
    *     transition route group -&gt; flow's transition routes.
+   *
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
    * </pre>
@@ -260,8 +272,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -289,8 +303,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -318,8 +334,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -347,8 +365,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route
@@ -377,8 +397,10 @@ public interface PageOrBuilder
    * A list of transitions for the transition rules of this page.
    * They route the conversation to another page in the same flow, or another
    * flow.
+   *
    * When we are in a certain page, the TransitionRoutes are evalauted in the
    * following order:
+   *
    * *   TransitionRoutes defined in the page with intent specified.
    * *   TransitionRoutes defined in the
    *     [transition route

@@ -91,5 +91,5 @@ public interface ExportFlowResponseOrBuilder
    */
   com.google.protobuf.ByteString getFlowContent();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse.FlowCase getFlowCase();
+  com.google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse.FlowCase getFlowCase();
 }

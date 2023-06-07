@@ -369,5 +369,5 @@ public interface LaunchFlexTemplateParameterOrBuilder
    */
   java.lang.String getTransformNameMappingsOrThrow(java.lang.String key);
 
-  public com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.TemplateCase getTemplateCase();
+  com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.TemplateCase getTemplateCase();
 }

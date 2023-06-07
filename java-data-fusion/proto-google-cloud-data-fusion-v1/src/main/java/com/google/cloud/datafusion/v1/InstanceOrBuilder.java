@@ -802,6 +802,7 @@ public interface InstanceOrBuilder
    * <pre>
    * User-managed service account to set on Dataproc when Cloud Data Fusion
    * creates Dataproc to run data processing pipelines.
+   *
    * This allows users to have fine-grained access control on Dataproc's
    * accesses to cloud resources.
    * </pre>
@@ -817,6 +818,7 @@ public interface InstanceOrBuilder
    * <pre>
    * User-managed service account to set on Dataproc when Cloud Data Fusion
    * creates Dataproc to run data processing pipelines.
+   *
    * This allows users to have fine-grained access control on Dataproc's
    * accesses to cloud resources.
    * </pre>

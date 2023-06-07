@@ -248,12 +248,10 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    */
   com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder getMysqlRdbmsOrBuilder();
 
-  public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest.TargetCase
-      getTargetCase();
+  com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest.TargetCase getTargetCase();
 
-  public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest.DepthCase
-      getDepthCase();
+  com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest.DepthCase getDepthCase();
 
-  public com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest.DataObjectCase
+  com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest.DataObjectCase
       getDataObjectCase();
 }

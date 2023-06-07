@@ -217,5 +217,5 @@ public interface WebhookOrBuilder
    */
   boolean getDisabled();
 
-  public com.google.cloud.dialogflow.cx.v3.Webhook.WebhookCase getWebhookCase();
+  com.google.cloud.dialogflow.cx.v3.Webhook.WebhookCase getWebhookCase();
 }

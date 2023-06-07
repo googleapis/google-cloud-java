@@ -41,6 +41,7 @@ public interface ProgressTimeseriesOrBuilder
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -52,6 +53,7 @@ public interface ProgressTimeseriesOrBuilder
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -63,6 +65,7 @@ public interface ProgressTimeseriesOrBuilder
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -74,6 +77,7 @@ public interface ProgressTimeseriesOrBuilder
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *
@@ -86,6 +90,7 @@ public interface ProgressTimeseriesOrBuilder
    *
    * <pre>
    * History of progress for the component.
+   *
    * Points are sorted by time.
    * </pre>
    *

@@ -302,5 +302,5 @@ public interface PrestoJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.PrestoJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.PrestoJob.QueriesCase getQueriesCase();
 }

@@ -49,11 +49,6 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     return new ListVersionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.VersionProto
         .internal_static_google_cloud_dialogflow_v2beta1_ListVersionsRequest_descriptor;

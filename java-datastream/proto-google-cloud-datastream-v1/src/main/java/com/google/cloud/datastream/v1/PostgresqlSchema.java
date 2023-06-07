@@ -48,11 +48,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     return new PostgresqlSchema();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_PostgresqlSchema_descriptor;

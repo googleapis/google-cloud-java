@@ -47,11 +47,6 @@ public final class EnumValue extends com.google.protobuf.GeneratedMessageV3
     return new EnumValue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentProto
         .internal_static_google_cloud_contentwarehouse_v1_EnumValue_descriptor;

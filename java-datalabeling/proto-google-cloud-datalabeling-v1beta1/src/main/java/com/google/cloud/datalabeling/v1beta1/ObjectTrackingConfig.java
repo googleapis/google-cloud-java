@@ -47,11 +47,6 @@ public final class ObjectTrackingConfig extends com.google.protobuf.GeneratedMes
     return new ObjectTrackingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_ObjectTrackingConfig_descriptor;

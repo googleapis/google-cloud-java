@@ -49,11 +49,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
     return new ListChangelogsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.ChangelogProto
         .internal_static_google_cloud_dialogflow_cx_v3_ListChangelogsResponse_descriptor;

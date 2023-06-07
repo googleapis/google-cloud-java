@@ -28,7 +28,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -47,7 +49,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -67,7 +71,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -87,7 +93,9 @@ public interface AgentAssistantFeedbackOrBuilder
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."

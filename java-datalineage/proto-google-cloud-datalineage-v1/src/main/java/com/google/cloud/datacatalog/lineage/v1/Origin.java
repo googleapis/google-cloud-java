@@ -48,11 +48,6 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
     return new Origin();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
         .internal_static_google_cloud_datacatalog_lineage_v1_Origin_descriptor;
@@ -340,6 +335,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
    * resource name of the system, which reports lineage. The project and
    * location parts of the resource name must match the project and location of
    * the lineage resource being created. Examples:
+   *
    * - `{source_type: COMPOSER, name:
    *   "projects/foo/locations/us/environments/bar"}`
    * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`
@@ -370,6 +366,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
    * resource name of the system, which reports lineage. The project and
    * location parts of the resource name must match the project and location of
    * the lineage resource being created. Examples:
+   *
    * - `{source_type: COMPOSER, name:
    *   "projects/foo/locations/us/environments/bar"}`
    * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`
@@ -861,6 +858,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
+     *
      * - `{source_type: COMPOSER, name:
      *   "projects/foo/locations/us/environments/bar"}`
      * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`
@@ -890,6 +888,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
+     *
      * - `{source_type: COMPOSER, name:
      *   "projects/foo/locations/us/environments/bar"}`
      * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`
@@ -919,6 +918,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
+     *
      * - `{source_type: COMPOSER, name:
      *   "projects/foo/locations/us/environments/bar"}`
      * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`
@@ -947,6 +947,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
+     *
      * - `{source_type: COMPOSER, name:
      *   "projects/foo/locations/us/environments/bar"}`
      * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`
@@ -971,6 +972,7 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
+     *
      * - `{source_type: COMPOSER, name:
      *   "projects/foo/locations/us/environments/bar"}`
      * - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}`

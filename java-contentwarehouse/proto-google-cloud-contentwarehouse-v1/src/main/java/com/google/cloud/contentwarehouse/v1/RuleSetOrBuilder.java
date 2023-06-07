@@ -30,6 +30,7 @@ public interface RuleSetOrBuilder
    * The resource name of the rule set. Managed internally.
    * Format:
    * projects/{project_number}/locations/{location}/ruleSet/{rule_set_id}.
+   *
    * The name is ignored when creating a rule set.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface RuleSetOrBuilder
    * The resource name of the rule set. Managed internally.
    * Format:
    * projects/{project_number}/locations/{location}/ruleSet/{rule_set_id}.
+   *
    * The name is ignored when creating a rule set.
    * </pre>
    *

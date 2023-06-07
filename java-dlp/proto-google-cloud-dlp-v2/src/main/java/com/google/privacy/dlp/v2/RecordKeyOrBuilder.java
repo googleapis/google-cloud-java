@@ -108,5 +108,5 @@ public interface RecordKeyOrBuilder
    */
   com.google.protobuf.ByteString getIdValuesBytes(int index);
 
-  public com.google.privacy.dlp.v2.RecordKey.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.RecordKey.TypeCase getTypeCase();
 }

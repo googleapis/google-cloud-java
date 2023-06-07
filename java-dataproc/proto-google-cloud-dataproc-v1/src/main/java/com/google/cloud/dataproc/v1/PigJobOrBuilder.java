@@ -352,5 +352,5 @@ public interface PigJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.PigJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.PigJob.QueriesCase getQueriesCase();
 }

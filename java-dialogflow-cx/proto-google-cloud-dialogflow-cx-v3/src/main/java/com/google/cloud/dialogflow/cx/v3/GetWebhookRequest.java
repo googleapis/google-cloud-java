@@ -48,11 +48,6 @@ public final class GetWebhookRequest extends com.google.protobuf.GeneratedMessag
     return new GetWebhookRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.WebhookProto
         .internal_static_google_cloud_dialogflow_cx_v3_GetWebhookRequest_descriptor;

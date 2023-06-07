@@ -50,11 +50,6 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
     return new ListRoutesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1alpha1.CloudDatastreamServiceProto
         .internal_static_google_cloud_datastream_v1alpha1_ListRoutesRequest_descriptor;
@@ -156,6 +151,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Page token received from a previous `ListRoutes` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListRoutes` must match the call that provided the page
    * token.
@@ -183,6 +179,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Page token received from a previous `ListRoutes` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListRoutes` must match the call that provided the page
    * token.
@@ -929,6 +926,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Page token received from a previous `ListRoutes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRoutes` must match the call that provided the page
      * token.
@@ -955,6 +953,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Page token received from a previous `ListRoutes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRoutes` must match the call that provided the page
      * token.
@@ -981,6 +980,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Page token received from a previous `ListRoutes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRoutes` must match the call that provided the page
      * token.
@@ -1006,6 +1006,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Page token received from a previous `ListRoutes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRoutes` must match the call that provided the page
      * token.
@@ -1027,6 +1028,7 @@ public final class ListRoutesRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Page token received from a previous `ListRoutes` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListRoutes` must match the call that provided the page
      * token.

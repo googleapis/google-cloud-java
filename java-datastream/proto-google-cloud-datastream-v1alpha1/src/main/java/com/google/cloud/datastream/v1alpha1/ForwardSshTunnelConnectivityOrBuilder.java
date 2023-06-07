@@ -160,6 +160,6 @@ public interface ForwardSshTunnelConnectivityOrBuilder
    */
   com.google.protobuf.ByteString getPrivateKeyBytes();
 
-  public com.google.cloud.datastream.v1alpha1.ForwardSshTunnelConnectivity.AuthenticationMethodCase
+  com.google.cloud.datastream.v1alpha1.ForwardSshTunnelConnectivity.AuthenticationMethodCase
       getAuthenticationMethodCase();
 }

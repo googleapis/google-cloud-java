@@ -315,5 +315,5 @@ public interface HiveJobOrBuilder
    */
   com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
-  public com.google.cloud.dataproc.v1.HiveJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.HiveJob.QueriesCase getQueriesCase();
 }

@@ -48,11 +48,6 @@ public final class CsvInstruction extends com.google.protobuf.GeneratedMessageV3
     return new CsvInstruction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.InstructionOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_CsvInstruction_descriptor;

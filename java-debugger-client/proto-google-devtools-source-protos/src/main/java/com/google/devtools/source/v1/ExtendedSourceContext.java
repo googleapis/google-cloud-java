@@ -46,11 +46,6 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     return new ExtendedSourceContext();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.source.v1.SourceContextProto
         .internal_static_google_devtools_source_v1_ExtendedSourceContext_descriptor;

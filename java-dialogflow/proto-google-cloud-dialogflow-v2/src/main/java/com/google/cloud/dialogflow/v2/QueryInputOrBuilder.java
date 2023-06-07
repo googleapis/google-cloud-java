@@ -131,5 +131,5 @@ public interface QueryInputOrBuilder
    */
   com.google.cloud.dialogflow.v2.EventInputOrBuilder getEventOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.QueryInput.InputCase getInputCase();
+  com.google.cloud.dialogflow.v2.QueryInput.InputCase getInputCase();
 }

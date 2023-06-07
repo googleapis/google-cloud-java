@@ -229,5 +229,5 @@ public interface QueryInputOrBuilder
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
-  public com.google.cloud.dialogflow.cx.v3.QueryInput.InputCase getInputCase();
+  com.google.cloud.dialogflow.cx.v3.QueryInput.InputCase getInputCase();
 }

@@ -70,6 +70,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * <pre>
    * Optional. Duration between scaling events. A scaling period starts after
    * the update operation from the previous event has completed.
+   *
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
@@ -85,6 +86,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * <pre>
    * Optional. Duration between scaling events. A scaling period starts after
    * the update operation from the previous event has completed.
+   *
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
@@ -100,6 +102,7 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * <pre>
    * Optional. Duration between scaling events. A scaling period starts after
    * the update operation from the previous event has completed.
+   *
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
@@ -108,5 +111,5 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getCooldownPeriodOrBuilder();
 
-  public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.ConfigCase getConfigCase();
+  com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.ConfigCase getConfigCase();
 }

@@ -48,11 +48,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     return new LabelVideoRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataLabelingServiceOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_LabelVideoRequest_descriptor;
@@ -256,6 +251,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   private int requestConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object requestConfig_;
 
   public enum RequestConfigCase

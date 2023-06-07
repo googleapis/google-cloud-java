@@ -45,11 +45,6 @@ public final class AssetStatus extends com.google.protobuf.GeneratedMessageV3
     return new AssetStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ResourcesProto
         .internal_static_google_cloud_dataplex_v1_AssetStatus_descriptor;

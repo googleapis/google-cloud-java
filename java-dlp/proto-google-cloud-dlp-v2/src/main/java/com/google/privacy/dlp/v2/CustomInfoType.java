@@ -50,11 +50,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     return new CustomInfoType();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpStorage
         .internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
@@ -277,7 +272,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getCloudStoragePathOrBuilder();
 
-    public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.SourceCase getSourceCase();
+    com.google.privacy.dlp.v2.CustomInfoType.Dictionary.SourceCase getSourceCase();
   }
   /**
    *
@@ -286,6 +281,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * Custom information type based on a dictionary of words or phrases. This can
    * be used to match sensitive information specific to the data, such as a list
    * of employee IDs or job titles.
+   *
    * Dictionary words are case-insensitive and all characters other than letters
    * and digits in the unicode [Basic Multilingual
    * Plane](https://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane)
@@ -297,6 +293,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * digits next to non-digits. For example, the dictionary word "jen" will
    * match the first three letters of the text "jen123" but will return no
    * matches for "jennifer".
+   *
    * Dictionary words containing a large number of characters that are not
    * letters or digits may result in unexpected findings because such characters
    * are treated as whitespace. The
@@ -324,11 +321,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Dictionary();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -430,18 +422,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
 
       private WordList() {
-        words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        words_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new WordList();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -462,7 +449,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       public static final int WORDS_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList words_;
+      private com.google.protobuf.LazyStringArrayList words_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -738,8 +726,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          words_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -768,7 +755,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList buildPartial() {
           com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result =
               new com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
@@ -776,18 +762,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            words_ = words_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.words_ = words_;
-        }
-
         private void buildPartial0(
             com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result) {
           int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            words_.makeImmutable();
+            result.words_ = words_;
+          }
         }
 
         @java.lang.Override
@@ -843,7 +824,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           if (!other.words_.isEmpty()) {
             if (words_.isEmpty()) {
               words_ = other.words_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ |= 0x00000001;
             } else {
               ensureWordsIsMutable();
               words_.addAll(other.words_);
@@ -902,14 +883,14 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList words_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList words_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureWordsIsMutable() {
-          if (!((bitField0_ & 0x00000001) != 0)) {
+          if (!words_.isModifiable()) {
             words_ = new com.google.protobuf.LazyStringArrayList(words_);
-            bitField0_ |= 0x00000001;
           }
+          bitField0_ |= 0x00000001;
         }
         /**
          *
@@ -925,7 +906,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the words.
          */
         public com.google.protobuf.ProtocolStringList getWordsList() {
-          return words_.getUnmodifiableView();
+          words_.makeImmutable();
+          return words_;
         }
         /**
          *
@@ -998,6 +980,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           }
           ensureWordsIsMutable();
           words_.set(index, value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1021,6 +1004,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           }
           ensureWordsIsMutable();
           words_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1041,6 +1025,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllWords(java.lang.Iterable<java.lang.String> values) {
           ensureWordsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, words_);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1058,8 +1043,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearWords() {
-          words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          words_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          ;
           onChanged();
           return this;
         }
@@ -1084,6 +1070,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureWordsIsMutable();
           words_.add(value);
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1156,6 +1143,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object source_;
 
     public enum SourceCase
@@ -1507,6 +1496,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * Custom information type based on a dictionary of words or phrases. This can
      * be used to match sensitive information specific to the data, such as a list
      * of employee IDs or job titles.
+     *
      * Dictionary words are case-insensitive and all characters other than letters
      * and digits in the unicode [Basic Multilingual
      * Plane](https://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane)
@@ -1518,6 +1508,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * digits next to non-digits. For example, the dictionary word "jen" will
      * match the first three letters of the text "jen123" but will return no
      * matches for "jennifer".
+     *
      * Dictionary words containing a large number of characters that are not
      * letters or digits may result in unexpected findings because such characters
      * are treated as whitespace. The
@@ -2355,11 +2346,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Regex();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3250,11 +3236,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       return new SurrogateType();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpStorage
           .internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
@@ -3698,7 +3679,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
         getHotwordRuleOrBuilder();
 
-    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.TypeCase getTypeCase();
+    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.TypeCase getTypeCase();
   }
   /**
    *
@@ -3728,11 +3709,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DetectionRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3811,11 +3787,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Proximity();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4516,8 +4487,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        */
       int getRelativeLikelihood();
 
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
-              .AdjustmentCase
+      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.AdjustmentCase
           getAdjustmentCase();
     }
     /**
@@ -4548,11 +4518,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         return new LikelihoodAdjustment();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpStorage
             .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
@@ -4570,6 +4535,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int adjustmentCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object adjustment_;
 
       public enum AdjustmentCase
@@ -5487,6 +5454,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
        * area code of a company's office. In this case, use the hotword regex
        * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+       *
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
@@ -5510,6 +5478,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
        * area code of a company's office. In this case, use the hotword regex
        * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+       *
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
@@ -5533,6 +5502,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
        * area code of a company's office. In this case, use the hotword regex
        * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+       *
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
@@ -5615,11 +5585,6 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         return new HotwordRule();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpStorage
             .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
@@ -5699,6 +5664,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
        * area code of a company's office. In this case, use the hotword regex
        * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+       *
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
@@ -5725,6 +5691,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
        * area code of a company's office. In this case, use the hotword regex
        * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+       *
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
@@ -5753,6 +5720,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
        * area code of a company's office. In this case, use the hotword regex
        * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+       *
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
@@ -6468,6 +6436,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6493,6 +6462,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6525,6 +6495,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6559,6 +6530,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6591,6 +6563,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6630,6 +6603,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6660,6 +6634,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6686,6 +6661,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -6717,6 +6693,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" if the area code is known to be the
          * area code of a company's office. In this case, use the hotword regex
          * "&#92;(xxx&#92;)", where "xxx" is the area code in question.
+         *
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
@@ -7027,6 +7004,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
 
     public enum TypeCase
@@ -7819,6 +7798,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase

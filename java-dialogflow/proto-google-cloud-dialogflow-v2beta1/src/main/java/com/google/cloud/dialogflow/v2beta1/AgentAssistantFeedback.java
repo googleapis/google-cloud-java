@@ -49,11 +49,6 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     return new AgentAssistantFeedback();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AnswerRecordsProto
         .internal_static_google_cloud_dialogflow_v2beta1_AgentAssistantFeedback_descriptor;
@@ -683,11 +678,6 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SummarizationFeedback();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1845,7 +1835,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -1867,7 +1859,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -1898,7 +1892,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -1921,7 +1917,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -2506,7 +2504,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2528,7 +2528,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2553,7 +2555,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2581,7 +2585,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2610,7 +2616,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2636,7 +2644,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2659,7 +2669,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2685,7 +2697,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2715,7 +2729,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2745,7 +2761,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."

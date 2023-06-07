@@ -258,5 +258,5 @@ public interface ResponseMessageOrBuilder
   com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCallOrBuilder
       getTelephonyTransferCallOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.ResponseMessage.MessageCase getMessageCase();
+  com.google.cloud.dialogflow.v2beta1.ResponseMessage.MessageCase getMessageCase();
 }

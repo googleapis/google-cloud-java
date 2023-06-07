@@ -28,7 +28,9 @@ public interface UpdateRunRequestOrBuilder
    *
    * <pre>
    * Required. The lineage run to update.
+   *
    * The run's `name` field is used to identify the run to update.
+   *
    * Format:
    * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
    * </pre>
@@ -45,7 +47,9 @@ public interface UpdateRunRequestOrBuilder
    *
    * <pre>
    * Required. The lineage run to update.
+   *
    * The run's `name` field is used to identify the run to update.
+   *
    * Format:
    * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
    * </pre>
@@ -62,7 +66,9 @@ public interface UpdateRunRequestOrBuilder
    *
    * <pre>
    * Required. The lineage run to update.
+   *
    * The run's `name` field is used to identify the run to update.
+   *
    * Format:
    * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
    * </pre>

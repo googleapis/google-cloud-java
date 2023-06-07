@@ -45,11 +45,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     return new ObjectDetectionMetrics();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_ObjectDetectionMetrics_descriptor;

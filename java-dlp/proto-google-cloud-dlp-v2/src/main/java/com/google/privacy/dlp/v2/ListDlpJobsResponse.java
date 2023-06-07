@@ -48,11 +48,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     return new ListDlpJobsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ListDlpJobsResponse_descriptor;

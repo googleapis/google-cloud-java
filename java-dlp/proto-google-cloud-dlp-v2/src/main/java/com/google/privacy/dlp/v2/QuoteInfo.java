@@ -45,11 +45,6 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
     return new QuoteInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
@@ -66,6 +61,8 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int parsedQuoteCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object parsedQuote_;
 
   public enum ParsedQuoteCase

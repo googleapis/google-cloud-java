@@ -336,5 +336,5 @@ public interface PropertyOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.TimestampArrayOrBuilder getTimestampValuesOrBuilder();
 
-  public com.google.cloud.contentwarehouse.v1.Property.ValuesCase getValuesCase();
+  com.google.cloud.contentwarehouse.v1.Property.ValuesCase getValuesCase();
 }

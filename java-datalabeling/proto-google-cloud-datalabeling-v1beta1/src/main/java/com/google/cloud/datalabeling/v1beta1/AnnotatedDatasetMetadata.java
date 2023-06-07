@@ -45,11 +45,6 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
     return new AnnotatedDatasetMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_AnnotatedDatasetMetadata_descriptor;
@@ -66,6 +61,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
   }
 
   private int annotationRequestConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object annotationRequestConfig_;
 
   public enum AnnotationRequestConfigCase

@@ -45,11 +45,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     return new MergeFieldsOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.CommonProto
         .internal_static_google_cloud_contentwarehouse_v1_MergeFieldsOptions_descriptor;
@@ -119,6 +114,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
    * entries from the source repeated field to the destination repeated field.
    * If you instead want to keep only the entries from the source repeated
    * field, set this flag to true.
+   *
    * If you want to replace a repeated field within a message field on the
    * destination message, you must set both replace_repeated_fields and
    * replace_message_fields to true, otherwise the repeated fields will be
@@ -141,6 +137,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
    * entries from the source repeated field to the destination repeated field.
    * If you instead want to keep only the entries from the source repeated
    * field, set this flag to true.
+   *
    * If you want to replace a repeated field within a message field on the
    * destination message, you must set both replace_repeated_fields and
    * replace_message_fields to true, otherwise the repeated fields will be
@@ -630,6 +627,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
      * entries from the source repeated field to the destination repeated field.
      * If you instead want to keep only the entries from the source repeated
      * field, set this flag to true.
+     *
      * If you want to replace a repeated field within a message field on the
      * destination message, you must set both replace_repeated_fields and
      * replace_message_fields to true, otherwise the repeated fields will be
@@ -652,6 +650,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
      * entries from the source repeated field to the destination repeated field.
      * If you instead want to keep only the entries from the source repeated
      * field, set this flag to true.
+     *
      * If you want to replace a repeated field within a message field on the
      * destination message, you must set both replace_repeated_fields and
      * replace_message_fields to true, otherwise the repeated fields will be
@@ -674,6 +673,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
      * entries from the source repeated field to the destination repeated field.
      * If you instead want to keep only the entries from the source repeated
      * field, set this flag to true.
+     *
      * If you want to replace a repeated field within a message field on the
      * destination message, you must set both replace_repeated_fields and
      * replace_message_fields to true, otherwise the repeated fields will be
@@ -700,6 +700,7 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
      * entries from the source repeated field to the destination repeated field.
      * If you instead want to keep only the entries from the source repeated
      * field, set this flag to true.
+     *
      * If you want to replace a repeated field within a message field on the
      * destination message, you must set both replace_repeated_fields and
      * replace_message_fields to true, otherwise the repeated fields will be

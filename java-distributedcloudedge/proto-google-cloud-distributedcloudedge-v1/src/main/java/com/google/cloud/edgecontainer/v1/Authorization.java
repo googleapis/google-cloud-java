@@ -45,11 +45,6 @@ public final class Authorization extends com.google.protobuf.GeneratedMessageV3
     return new Authorization();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.edgecontainer.v1.ResourcesProto
         .internal_static_google_cloud_edgecontainer_v1_Authorization_descriptor;

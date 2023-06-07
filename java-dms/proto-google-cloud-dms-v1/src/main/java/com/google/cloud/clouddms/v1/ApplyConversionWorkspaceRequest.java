@@ -49,11 +49,6 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     return new ApplyConversionWorkspaceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_ApplyConversionWorkspaceRequest_descriptor;
@@ -70,6 +65,8 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

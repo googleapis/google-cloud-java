@@ -48,11 +48,6 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
     return new FetchStaticIpsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamProto
         .internal_static_google_cloud_datastream_v1_FetchStaticIpsRequest_descriptor;

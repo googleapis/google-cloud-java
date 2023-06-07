@@ -453,6 +453,6 @@ public interface AnnotatedDatasetMetadataOrBuilder
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getHumanAnnotationConfigOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.AnnotationRequestConfigCase
+  com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.AnnotationRequestConfigCase
       getAnnotationRequestConfigCase();
 }

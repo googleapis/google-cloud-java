@@ -49,11 +49,6 @@ public final class OracleColumn extends com.google.protobuf.GeneratedMessageV3
     return new OracleColumn();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_OracleColumn_descriptor;

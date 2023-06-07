@@ -47,11 +47,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     return new InvalidRule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.RuleEngineProto
         .internal_static_google_cloud_contentwarehouse_v1_InvalidRule_descriptor;

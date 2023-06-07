@@ -50,11 +50,6 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     return new WorkItemDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.MetricsProto
         .internal_static_google_dataflow_v1beta3_WorkItemDetails_descriptor;
@@ -225,6 +220,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -242,6 +238,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -259,6 +256,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * End time of this work item attempt.
+   *
    * If the work item is completed, this is the actual end time of the work
    * item.  Otherwise, it is the predicted end time.
    * </pre>
@@ -1379,6 +1377,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1395,6 +1394,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1415,6 +1415,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1439,6 +1440,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1460,6 +1462,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1487,6 +1490,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1508,6 +1512,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1524,6 +1529,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>
@@ -1542,6 +1548,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * End time of this work item attempt.
+     *
      * If the work item is completed, this is the actual end time of the work
      * item.  Otherwise, it is the predicted end time.
      * </pre>

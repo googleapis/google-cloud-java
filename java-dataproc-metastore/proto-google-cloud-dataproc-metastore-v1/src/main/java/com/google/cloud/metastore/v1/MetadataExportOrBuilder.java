@@ -203,5 +203,5 @@ public interface MetadataExportOrBuilder
    */
   com.google.cloud.metastore.v1.DatabaseDumpSpec.Type getDatabaseDumpType();
 
-  public com.google.cloud.metastore.v1.MetadataExport.DestinationCase getDestinationCase();
+  com.google.cloud.metastore.v1.MetadataExport.DestinationCase getDestinationCase();
 }

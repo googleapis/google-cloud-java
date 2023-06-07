@@ -179,5 +179,5 @@ public interface DeidentifyConfigOrBuilder
   com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder
       getTransformationErrorHandlingOrBuilder();
 
-  public com.google.privacy.dlp.v2.DeidentifyConfig.TransformationCase getTransformationCase();
+  com.google.privacy.dlp.v2.DeidentifyConfig.TransformationCase getTransformationCase();
 }

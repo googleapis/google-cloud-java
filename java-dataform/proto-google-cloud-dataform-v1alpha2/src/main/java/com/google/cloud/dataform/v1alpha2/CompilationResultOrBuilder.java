@@ -283,5 +283,5 @@ public interface CompilationResultOrBuilder
   com.google.cloud.dataform.v1alpha2.CompilationResult.CompilationErrorOrBuilder
       getCompilationErrorsOrBuilder(int index);
 
-  public com.google.cloud.dataform.v1alpha2.CompilationResult.SourceCase getSourceCase();
+  com.google.cloud.dataform.v1alpha2.CompilationResult.SourceCase getSourceCase();
 }

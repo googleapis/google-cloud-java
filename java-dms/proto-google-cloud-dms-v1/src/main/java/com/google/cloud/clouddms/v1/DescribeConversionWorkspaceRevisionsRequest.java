@@ -50,11 +50,6 @@ public final class DescribeConversionWorkspaceRevisionsRequest
     return new DescribeConversionWorkspaceRevisionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_DescribeConversionWorkspaceRevisionsRequest_descriptor;

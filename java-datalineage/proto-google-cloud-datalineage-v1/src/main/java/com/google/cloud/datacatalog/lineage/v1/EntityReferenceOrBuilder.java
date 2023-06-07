@@ -30,7 +30,9 @@ public interface EntityReferenceOrBuilder
    * Required. Fully Qualified Name of the entity. Useful for referencing
    * entities that aren't represented as GCP resources, for example, tables in
    * Dataproc Metastore API.
+   *
    * Examples:
+   *
    *   * `bigquery:dataset.project_id.dataset_id`
    *   * `bigquery:table.project_id.dataset_id.table_id`
    *   * `pubsub:project_id.topic_id`
@@ -49,7 +51,9 @@ public interface EntityReferenceOrBuilder
    * Required. Fully Qualified Name of the entity. Useful for referencing
    * entities that aren't represented as GCP resources, for example, tables in
    * Dataproc Metastore API.
+   *
    * Examples:
+   *
    *   * `bigquery:dataset.project_id.dataset_id`
    *   * `bigquery:table.project_id.dataset_id.table_id`
    *   * `pubsub:project_id.topic_id`

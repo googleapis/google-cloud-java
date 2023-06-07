@@ -52,11 +52,6 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     return new PostgreSqlConnectionProfile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_PostgreSqlConnectionProfile_descriptor;
@@ -73,6 +68,8 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
   }
 
   private int connectivityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectivity_;
 
   public enum ConnectivityCase

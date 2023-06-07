@@ -25,7 +25,9 @@ package com.google.cloud.dialogflow.v2beta1;
  * The top-level message sent by the client to the
  * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
  * method.
+ *
  * Multiple request messages should be sent in order:
+ *
  * 1.  The first message must contain
  *     [participant][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.participant],
  *     [config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.config]
@@ -35,6 +37,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *     [reply_audio_config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.reply_audio_config].
  *     The message must not contain
  *     [input][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.input].
+ *
  * 2.  If
  * [config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.config]
  * in the first message
@@ -46,10 +49,13 @@ package com.google.cloud.dialogflow.v2beta1;
  *     input after you already started Speech recognition, please send a message
  *     with
  *     [StreamingAnalyzeContentRequest.input_text][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.input_text].
+ *
  *     However, note that:
+ *
  *     * Dialogflow will bill you for the audio so far.
  *     * Dialogflow discards all Speech recognition results in favor of the
  *       text input.
+ *
  *  3. If
  *  [StreamingAnalyzeContentRequest.config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.config]
  *  in the first message was set
@@ -58,6 +64,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *    then the second message must contain only
  *    [input_text][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.input_text].
  *    Moreover, you must not send more than two messages.
+ *
  *  After you sent all input, you must half-close or abort the request stream.
  * </pre>
  *
@@ -85,11 +92,6 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return new StreamingAnalyzeContentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentRequest_descriptor;
@@ -106,6 +108,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   private int configCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object config_;
 
   public enum ConfigCase
@@ -153,6 +157,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
   }
 
   private int inputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object input_;
 
   public enum InputCase
@@ -550,6 +556,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -567,6 +574,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -587,6 +595,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * The DTMF digits used to invoke intent and fill in parameter value.
+   *
    * This input is ignored if the previous response indicated that DTMF input
    * is not accepted.
    * </pre>
@@ -711,6 +720,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -730,6 +740,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -749,6 +760,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -772,12 +784,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -806,12 +820,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -1220,7 +1236,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * The top-level message sent by the client to the
    * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent]
    * method.
+   *
    * Multiple request messages should be sent in order:
+   *
    * 1.  The first message must contain
    *     [participant][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.participant],
    *     [config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.config]
@@ -1230,6 +1248,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    *     [reply_audio_config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.reply_audio_config].
    *     The message must not contain
    *     [input][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.input].
+   *
    * 2.  If
    * [config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.config]
    * in the first message
@@ -1241,10 +1260,13 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    *     input after you already started Speech recognition, please send a message
    *     with
    *     [StreamingAnalyzeContentRequest.input_text][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.input_text].
+   *
    *     However, note that:
+   *
    *     * Dialogflow will bill you for the audio so far.
    *     * Dialogflow discards all Speech recognition results in favor of the
    *       text input.
+   *
    *  3. If
    *  [StreamingAnalyzeContentRequest.config][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.config]
    *  in the first message was set
@@ -1253,6 +1275,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    *    then the second message must contain only
    *    [input_text][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.input_text].
    *    Moreover, you must not send more than two messages.
+   *
    *  After you sent all input, you must half-close or abort the request stream.
    * </pre>
    *
@@ -2698,6 +2721,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2715,6 +2739,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2742,6 +2767,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2766,6 +2792,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2788,6 +2815,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2823,6 +2851,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2850,6 +2879,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2864,6 +2894,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -2887,6 +2918,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * The DTMF digits used to invoke intent and fill in parameter value.
+     *
      * This input is ignored if the previous response indicated that DTMF input
      * is not accepted.
      * </pre>
@@ -3304,6 +3336,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3322,6 +3355,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3346,6 +3380,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3372,6 +3407,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3395,6 +3431,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3424,6 +3461,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3447,6 +3485,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3465,6 +3504,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3487,6 +3527,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3519,12 +3560,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3552,12 +3595,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3585,12 +3630,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3617,12 +3664,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3645,12 +3694,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>

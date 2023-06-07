@@ -69,9 +69,11 @@ public interface UpdateEntityTypeRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `entity_type`:
+   *
    * *   `EntityType.entities.value`
    * *   `EntityType.entities.synonyms`
    * *   `EntityType.excluded_phrases.value`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -89,9 +91,11 @@ public interface UpdateEntityTypeRequestOrBuilder
    *
    * <pre>
    * The language of the following fields in `entity_type`:
+   *
    * *   `EntityType.entities.value`
    * *   `EntityType.entities.synonyms`
    * *   `EntityType.excluded_phrases.value`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

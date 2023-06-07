@@ -214,5 +214,5 @@ public interface ExampleOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder getAnnotationsOrBuilder(int index);
 
-  public com.google.cloud.datalabeling.v1beta1.Example.PayloadCase getPayloadCase();
+  com.google.cloud.datalabeling.v1beta1.Example.PayloadCase getPayloadCase();
 }

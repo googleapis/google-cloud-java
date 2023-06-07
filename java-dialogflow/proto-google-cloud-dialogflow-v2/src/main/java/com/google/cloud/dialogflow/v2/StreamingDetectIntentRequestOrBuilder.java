@@ -37,8 +37,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
+   *
    * For more information, see the [API interactions
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -65,8 +67,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    * `User Id`. They can be a random number or some type of user and session
    * identifiers (preferably hashed). The length of the `Session ID` and
    * `User ID` must not exceed 36 characters.
+   *
    * For more information, see the [API interactions
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -120,9 +124,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    * <pre>
    * Required. The input specification. It can be set to:
+   *
    * 1.  an audio config which instructs the speech recognizer how to process
    *     the speech audio,
+   *
    * 2.  a conversational query in the form of text, or
+   *
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
@@ -138,9 +145,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    * <pre>
    * Required. The input specification. It can be set to:
+   *
    * 1.  an audio config which instructs the speech recognizer how to process
    *     the speech audio,
+   *
    * 2.  a conversational query in the form of text, or
+   *
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
@@ -156,9 +166,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    *
    * <pre>
    * Required. The input specification. It can be set to:
+   *
    * 1.  an audio config which instructs the speech recognizer how to process
    *     the speech audio,
+   *
    * 2.  a conversational query in the form of text, or
+   *
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
@@ -241,6 +254,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config]
    * indicating which settings in this request-level config should override
    * speech synthesizer settings defined at agent-level.
+   *
    * If unspecified or empty,
    * [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config]
    * replaces the agent-level config in its entirety.
@@ -259,6 +273,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config]
    * indicating which settings in this request-level config should override
    * speech synthesizer settings defined at agent-level.
+   *
    * If unspecified or empty,
    * [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config]
    * replaces the agent-level config in its entirety.
@@ -277,6 +292,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config]
    * indicating which settings in this request-level config should override
    * speech synthesizer settings defined at agent-level.
+   *
    * If unspecified or empty,
    * [output_audio_config][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.output_audio_config]
    * replaces the agent-level config in its entirety.

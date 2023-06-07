@@ -101,5 +101,5 @@ public interface TransformationErrorHandlingOrBuilder
   com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformedOrBuilder
       getLeaveUntransformedOrBuilder();
 
-  public com.google.privacy.dlp.v2.TransformationErrorHandling.ModeCase getModeCase();
+  com.google.privacy.dlp.v2.TransformationErrorHandling.ModeCase getModeCase();
 }

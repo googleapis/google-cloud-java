@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CreateSessionEntityTypeRequest;
 import com.google.cloud.dialogflow.v2.DeleteSessionEntityTypeRequest;
@@ -409,41 +410,85 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                 .<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>newBuilder()
                 .setMethodDescriptor(listSessionEntityTypesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetSessionEntityTypeRequest, SessionEntityType>
         getSessionEntityTypeTransportSettings =
             HttpJsonCallSettings.<GetSessionEntityTypeRequest, SessionEntityType>newBuilder()
                 .setMethodDescriptor(getSessionEntityTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateSessionEntityTypeRequest, SessionEntityType>
         createSessionEntityTypeTransportSettings =
             HttpJsonCallSettings.<CreateSessionEntityTypeRequest, SessionEntityType>newBuilder()
                 .setMethodDescriptor(createSessionEntityTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateSessionEntityTypeRequest, SessionEntityType>
         updateSessionEntityTypeTransportSettings =
             HttpJsonCallSettings.<UpdateSessionEntityTypeRequest, SessionEntityType>newBuilder()
                 .setMethodDescriptor(updateSessionEntityTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "session_entity_type.name",
+                          String.valueOf(request.getSessionEntityType().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSessionEntityTypeRequest, Empty>
         deleteSessionEntityTypeTransportSettings =
             HttpJsonCallSettings.<DeleteSessionEntityTypeRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteSessionEntityTypeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listSessionEntityTypesCallable =

@@ -250,6 +250,7 @@ public interface AnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -266,6 +267,7 @@ public interface AnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -282,6 +284,7 @@ public interface AnalyzeContentRequestOrBuilder
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -319,5 +322,5 @@ public interface AnalyzeContentRequestOrBuilder
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 
-  public com.google.cloud.dialogflow.v2.AnalyzeContentRequest.InputCase getInputCase();
+  com.google.cloud.dialogflow.v2.AnalyzeContentRequest.InputCase getInputCase();
 }

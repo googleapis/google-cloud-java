@@ -53,11 +53,6 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     return new DatabaseEntity();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto
         .internal_static_google_cloud_clouddms_v1_DatabaseEntity_descriptor;
@@ -253,6 +248,8 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int entityBodyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object entityBody_;
 
   public enum EntityBodyCase

@@ -74,6 +74,7 @@ public interface ListRoutesRequestOrBuilder
    * <pre>
    * Page token received from a previous `ListRoutes` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListRoutes` must match the call that provided the page
    * token.
@@ -90,6 +91,7 @@ public interface ListRoutesRequestOrBuilder
    * <pre>
    * Page token received from a previous `ListRoutes` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListRoutes` must match the call that provided the page
    * token.

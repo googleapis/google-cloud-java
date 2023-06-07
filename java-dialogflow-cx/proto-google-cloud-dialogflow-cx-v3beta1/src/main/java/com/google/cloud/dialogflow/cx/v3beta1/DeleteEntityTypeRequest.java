@@ -48,11 +48,6 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
     return new DeleteEntityTypeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.EntityTypeProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteEntityTypeRequest_descriptor;
@@ -135,6 +130,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    * <pre>
    * This field has no effect for entity type not being used.
    * For entity types that are used by intents or pages:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the referencing resources.
    * *  If `force` is set to true, Dialogflow will remove the entity type, as
@@ -657,6 +653,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * This field has no effect for entity type not being used.
      * For entity types that are used by intents or pages:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referencing resources.
      * *  If `force` is set to true, Dialogflow will remove the entity type, as
@@ -682,6 +679,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * This field has no effect for entity type not being used.
      * For entity types that are used by intents or pages:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referencing resources.
      * *  If `force` is set to true, Dialogflow will remove the entity type, as
@@ -711,6 +709,7 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * This field has no effect for entity type not being used.
      * For entity types that are used by intents or pages:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referencing resources.
      * *  If `force` is set to true, Dialogflow will remove the entity type, as

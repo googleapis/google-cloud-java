@@ -73,6 +73,7 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryWorkflowInvocationActions` must match the call that provided the page
    * token.
@@ -89,6 +90,7 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryWorkflowInvocationActions` must match the call that provided the page
    * token.

@@ -47,11 +47,6 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     return new DataQualityRuleResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataQualityProto
         .internal_static_google_cloud_dataplex_v1_DataQualityRuleResult_descriptor;
@@ -143,7 +138,9 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    * <pre>
    * The number of rows a rule was evaluated against. This field is only valid
    * for ColumnMap type rules.
+   *
    * Evaluated count can be configured to either
+   *
    * * include all rows (default) - with `null` rows automatically failing rule
    * evaluation, or
    * * exclude `null` rows from the `evaluated_count`, by setting
@@ -998,7 +995,9 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The number of rows a rule was evaluated against. This field is only valid
      * for ColumnMap type rules.
+     *
      * Evaluated count can be configured to either
+     *
      * * include all rows (default) - with `null` rows automatically failing rule
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
@@ -1019,7 +1018,9 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The number of rows a rule was evaluated against. This field is only valid
      * for ColumnMap type rules.
+     *
      * Evaluated count can be configured to either
+     *
      * * include all rows (default) - with `null` rows automatically failing rule
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
@@ -1044,7 +1045,9 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The number of rows a rule was evaluated against. This field is only valid
      * for ColumnMap type rules.
+     *
      * Evaluated count can be configured to either
+     *
      * * include all rows (default) - with `null` rows automatically failing rule
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting

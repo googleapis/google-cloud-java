@@ -338,5 +338,5 @@ public interface CustomInfoTypeOrBuilder
    */
   com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType();
 
-  public com.google.privacy.dlp.v2.CustomInfoType.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.CustomInfoType.TypeCase getTypeCase();
 }

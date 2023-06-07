@@ -50,11 +50,6 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     return new TransformationDescription();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_TransformationDescription_descriptor;
@@ -173,6 +168,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
    * A human-readable string representation of the `RecordCondition`
    * corresponding to this transformation. Set if a `RecordCondition` was used
    * to determine whether or not to apply this transformation.
+   *
    * Examples:
    *     * (age_field &gt; 85)
    *     * (age_field &lt;= 18)
@@ -204,6 +200,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
    * A human-readable string representation of the `RecordCondition`
    * corresponding to this transformation. Set if a `RecordCondition` was used
    * to determine whether or not to apply this transformation.
+   *
    * Examples:
    *     * (age_field &gt; 85)
    *     * (age_field &lt;= 18)
@@ -918,6 +915,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * A human-readable string representation of the `RecordCondition`
      * corresponding to this transformation. Set if a `RecordCondition` was used
      * to determine whether or not to apply this transformation.
+     *
      * Examples:
      *     * (age_field &gt; 85)
      *     * (age_field &lt;= 18)
@@ -948,6 +946,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * A human-readable string representation of the `RecordCondition`
      * corresponding to this transformation. Set if a `RecordCondition` was used
      * to determine whether or not to apply this transformation.
+     *
      * Examples:
      *     * (age_field &gt; 85)
      *     * (age_field &lt;= 18)
@@ -978,6 +977,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * A human-readable string representation of the `RecordCondition`
      * corresponding to this transformation. Set if a `RecordCondition` was used
      * to determine whether or not to apply this transformation.
+     *
      * Examples:
      *     * (age_field &gt; 85)
      *     * (age_field &lt;= 18)
@@ -1007,6 +1007,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * A human-readable string representation of the `RecordCondition`
      * corresponding to this transformation. Set if a `RecordCondition` was used
      * to determine whether or not to apply this transformation.
+     *
      * Examples:
      *     * (age_field &gt; 85)
      *     * (age_field &lt;= 18)
@@ -1032,6 +1033,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
      * A human-readable string representation of the `RecordCondition`
      * corresponding to this transformation. Set if a `RecordCondition` was used
      * to determine whether or not to apply this transformation.
+     *
      * Examples:
      *     * (age_field &gt; 85)
      *     * (age_field &lt;= 18)

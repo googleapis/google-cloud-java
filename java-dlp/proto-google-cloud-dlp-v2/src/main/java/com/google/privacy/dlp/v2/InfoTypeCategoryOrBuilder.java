@@ -137,5 +137,5 @@ public interface InfoTypeCategoryOrBuilder
    */
   com.google.privacy.dlp.v2.InfoTypeCategory.TypeCategory getTypeCategory();
 
-  public com.google.privacy.dlp.v2.InfoTypeCategory.CategoryCase getCategoryCase();
+  com.google.privacy.dlp.v2.InfoTypeCategory.CategoryCase getCategoryCase();
 }

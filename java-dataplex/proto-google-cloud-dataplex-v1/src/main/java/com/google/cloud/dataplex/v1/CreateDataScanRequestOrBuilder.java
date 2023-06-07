@@ -104,6 +104,7 @@ public interface CreateDataScanRequestOrBuilder
    *
    * <pre>
    * Required. DataScan identifier.
+   *
    * * Must contain only lowercase letters, numbers and hyphens.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -121,6 +122,7 @@ public interface CreateDataScanRequestOrBuilder
    *
    * <pre>
    * Required. DataScan identifier.
+   *
    * * Must contain only lowercase letters, numbers and hyphens.
    * * Must start with a letter.
    * * Must end with a number or a letter.

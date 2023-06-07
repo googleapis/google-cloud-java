@@ -230,8 +230,7 @@ public interface InputConfigOrBuilder
   com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder
       getClassificationMetadataOrBuilder();
 
-  public com.google.cloud.datalabeling.v1beta1.InputConfig.DataTypeMetadataCase
-      getDataTypeMetadataCase();
+  com.google.cloud.datalabeling.v1beta1.InputConfig.DataTypeMetadataCase getDataTypeMetadataCase();
 
-  public com.google.cloud.datalabeling.v1beta1.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.datalabeling.v1beta1.InputConfig.SourceCase getSourceCase();
 }

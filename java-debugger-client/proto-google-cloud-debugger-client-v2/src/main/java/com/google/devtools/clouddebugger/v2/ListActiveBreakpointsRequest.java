@@ -48,11 +48,6 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
     return new ListActiveBreakpointsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouddebugger.v2.ControllerProto
         .internal_static_google_devtools_clouddebugger_v2_ListActiveBreakpointsRequest_descriptor;
@@ -185,6 +180,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
    * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
    * sets the `wait_expired` response field to `true` when the server-selected
    * timeout has expired.
+   *
    * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
    * when the server-selected timeout has expired.
    * </pre>
@@ -828,6 +824,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
      * sets the `wait_expired` response field to `true` when the server-selected
      * timeout has expired.
+     *
      * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
      * when the server-selected timeout has expired.
      * </pre>
@@ -847,6 +844,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
      * sets the `wait_expired` response field to `true` when the server-selected
      * timeout has expired.
+     *
      * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
      * when the server-selected timeout has expired.
      * </pre>
@@ -870,6 +868,7 @@ public final class ListActiveBreakpointsRequest extends com.google.protobuf.Gene
      * If set to `true` (recommended), returns `google.rpc.Code.OK` status and
      * sets the `wait_expired` response field to `true` when the server-selected
      * timeout has expired.
+     *
      * If set to `false` (deprecated), returns `google.rpc.Code.ABORTED` status
      * when the server-selected timeout has expired.
      * </pre>

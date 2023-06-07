@@ -48,11 +48,6 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
     return new ListCompilationResultsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_ListCompilationResultsRequest_descriptor;
@@ -155,6 +150,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Page token received from a previous `ListCompilationResults` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListCompilationResults`
    * must match the call that provided the page token.
    * </pre>
@@ -181,6 +177,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Page token received from a previous `ListCompilationResults` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListCompilationResults`
    * must match the call that provided the page token.
    * </pre>
@@ -782,6 +779,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `ListCompilationResults` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListCompilationResults`
      * must match the call that provided the page token.
      * </pre>
@@ -807,6 +805,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `ListCompilationResults` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListCompilationResults`
      * must match the call that provided the page token.
      * </pre>
@@ -832,6 +831,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `ListCompilationResults` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListCompilationResults`
      * must match the call that provided the page token.
      * </pre>
@@ -856,6 +856,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `ListCompilationResults` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListCompilationResults`
      * must match the call that provided the page token.
      * </pre>
@@ -876,6 +877,7 @@ public final class ListCompilationResultsRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Page token received from a previous `ListCompilationResults` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListCompilationResults`
      * must match the call that provided the page token.
      * </pre>

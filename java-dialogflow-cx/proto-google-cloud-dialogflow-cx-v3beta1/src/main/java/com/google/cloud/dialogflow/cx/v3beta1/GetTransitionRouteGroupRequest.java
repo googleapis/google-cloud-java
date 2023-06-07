@@ -50,11 +50,6 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
     return new GetTransitionRouteGroupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_GetTransitionRouteGroupRequest_descriptor;
@@ -141,9 +136,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
    * <pre>
    * The language to retrieve the transition route group for. The following
    * fields are language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -173,9 +170,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
    * <pre>
    * The language to retrieve the transition route group for. The following
    * fields are language dependent:
+   *
    * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
    * *
    * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -714,9 +713,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
      * <pre>
      * The language to retrieve the transition route group for. The following
      * fields are language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -745,9 +746,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
      * <pre>
      * The language to retrieve the transition route group for. The following
      * fields are language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -776,9 +779,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
      * <pre>
      * The language to retrieve the transition route group for. The following
      * fields are language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -806,9 +811,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
      * <pre>
      * The language to retrieve the transition route group for. The following
      * fields are language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -832,9 +839,11 @@ public final class GetTransitionRouteGroupRequest extends com.google.protobuf.Ge
      * <pre>
      * The language to retrieve the transition route group for. The following
      * fields are language dependent:
+     *
      * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
      * *
      * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

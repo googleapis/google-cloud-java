@@ -45,11 +45,6 @@ public final class FetchAclResponse extends com.google.protobuf.GeneratedMessage
     return new FetchAclResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentServiceProto
         .internal_static_google_cloud_contentwarehouse_v1_FetchAclResponse_descriptor;

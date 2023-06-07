@@ -49,11 +49,6 @@ public final class SpannerIODetails extends com.google.protobuf.GeneratedMessage
     return new SpannerIODetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.JobsProto
         .internal_static_google_dataflow_v1beta3_SpannerIODetails_descriptor;

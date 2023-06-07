@@ -351,5 +351,5 @@ public interface DlpJobOrBuilder
    */
   com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
 
-  public com.google.privacy.dlp.v2.DlpJob.DetailsCase getDetailsCase();
+  com.google.privacy.dlp.v2.DlpJob.DetailsCase getDetailsCase();
 }

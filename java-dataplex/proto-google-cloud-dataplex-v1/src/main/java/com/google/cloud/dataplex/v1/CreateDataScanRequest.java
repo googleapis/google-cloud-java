@@ -48,11 +48,6 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
     return new CreateDataScanRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataScansProto
         .internal_static_google_cloud_dataplex_v1_CreateDataScanRequest_descriptor;
@@ -194,6 +189,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. DataScan identifier.
+   *
    * * Must contain only lowercase letters, numbers and hyphens.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -222,6 +218,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. DataScan identifier.
+   *
    * * Must contain only lowercase letters, numbers and hyphens.
    * * Must start with a letter.
    * * Must end with a number or a letter.
@@ -1022,6 +1019,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. DataScan identifier.
+     *
      * * Must contain only lowercase letters, numbers and hyphens.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -1049,6 +1047,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. DataScan identifier.
+     *
      * * Must contain only lowercase letters, numbers and hyphens.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -1076,6 +1075,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. DataScan identifier.
+     *
      * * Must contain only lowercase letters, numbers and hyphens.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -1102,6 +1102,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. DataScan identifier.
+     *
      * * Must contain only lowercase letters, numbers and hyphens.
      * * Must start with a letter.
      * * Must end with a number or a letter.
@@ -1124,6 +1125,7 @@ public final class CreateDataScanRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. DataScan identifier.
+     *
      * * Must contain only lowercase letters, numbers and hyphens.
      * * Must start with a letter.
      * * Must end with a number or a letter.

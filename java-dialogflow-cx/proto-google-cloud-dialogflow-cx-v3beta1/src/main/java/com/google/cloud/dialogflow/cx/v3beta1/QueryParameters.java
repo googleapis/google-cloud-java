@@ -41,7 +41,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     timeZone_ = "";
     sessionEntityTypes_ = java.util.Collections.emptyList();
     currentPage_ = "";
-    flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     channel_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QueryParameters();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -366,11 +361,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * parameters][SessionInfo.parameters]. To remove a
    * parameter from the session, clients should explicitly set the parameter
    * value to null.
+   *
    * You can reference the session parameters in the agent with the following
    * format: $session.params.parameter-id.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -397,11 +395,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * parameters][SessionInfo.parameters]. To remove a
    * parameter from the session, clients should explicitly set the parameter
    * value to null.
+   *
    * You can reference the session parameters in the agent with the following
    * format: $session.params.parameter-id.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -428,11 +429,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * parameters][SessionInfo.parameters]. To remove a
    * parameter from the session, clients should explicitly set the parameter
    * value to null.
+   *
    * You can reference the session parameters in the agent with the following
    * format: $session.params.parameter-id.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * * MapKey type: string
    * * MapKey value: parameter name
    * * MapValue type: If parameter's entity type is a composite entity then use
@@ -463,6 +467,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * page][QueryResult.current_page] in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
@@ -499,6 +504,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * page][QueryResult.current_page] in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
@@ -699,7 +705,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public static final int FLOW_VERSIONS_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList flowVersions_;
+  private com.google.protobuf.LazyStringArrayList flowVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -707,6 +714,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * A list of flow versions to override for the request.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *
    * If version 1 of flow X is included in this list, the traffic of
    * flow X will go through version 1 regardless of the version configuration in
    * the environment. Each flow can have at most one version specified in this
@@ -727,6 +735,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * A list of flow versions to override for the request.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *
    * If version 1 of flow X is included in this list, the traffic of
    * flow X will go through version 1 regardless of the version configuration in
    * the environment. Each flow can have at most one version specified in this
@@ -747,6 +756,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * A list of flow versions to override for the request.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *
    * If version 1 of flow X is included in this list, the traffic of
    * flow X will go through version 1 regardless of the version configuration in
    * the environment. Each flow can have at most one version specified in this
@@ -768,6 +778,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * A list of flow versions to override for the request.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *
    * If version 1 of flow X is included in this list, the traffic of
    * flow X will go through version 1 regardless of the version configuration in
    * the environment. Each flow can have at most one version specified in this
@@ -792,6 +803,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The channel which this query is for.
+   *
    * If specified, only the
    * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
    * associated with the channel will be returned. If no
@@ -799,6 +811,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * associated with the channel, it falls back to the
    * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
    * unspecified channel.
+   *
    * If unspecified, the
    * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
    * unspecified channel will be returned.
@@ -825,6 +838,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The channel which this query is for.
+   *
    * If specified, only the
    * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
    * associated with the channel will be returned. If no
@@ -832,6 +846,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * associated with the channel, it falls back to the
    * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
    * unspecified channel.
+   *
    * If unspecified, the
    * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
    * unspecified channel will be returned.
@@ -1223,8 +1238,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       disableWebhook_ = false;
       analyzeQueryTextSentiment_ = false;
       internalGetMutableWebhookHeaders().clear();
-      flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       channel_ = "";
       return this;
     }
@@ -1272,11 +1286,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         result.sessionEntityTypes_ = sessionEntityTypesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        flowVersions_ = flowVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.flowVersions_ = flowVersions_;
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.QueryParameters result) {
@@ -1306,6 +1315,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.webhookHeaders_ = internalGetWebhookHeaders();
         result.webhookHeaders_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        flowVersions_.makeImmutable();
+        result.flowVersions_ = flowVersions_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.channel_ = channel_;
@@ -1415,7 +1428,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!other.flowVersions_.isEmpty()) {
         if (flowVersions_.isEmpty()) {
           flowVersions_ = other.flowVersions_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureFlowVersionsIsMutable();
           flowVersions_.addAll(other.flowVersions_);
@@ -2592,11 +2605,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2622,11 +2638,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2656,11 +2675,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2694,11 +2716,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2729,11 +2754,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2770,11 +2798,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2805,11 +2836,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2835,11 +2869,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2867,11 +2904,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     *
      * You can reference the session parameters in the agent with the following
      * format: $session.params.parameter-id.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * * MapKey type: string
      * * MapKey value: parameter name
      * * MapValue type: If parameter's entity type is a composite entity then use
@@ -2911,6 +2951,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
@@ -2946,6 +2987,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
@@ -2981,6 +3023,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
@@ -3015,6 +3058,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
@@ -3045,6 +3089,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
@@ -3396,14 +3441,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList flowVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList flowVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFlowVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!flowVersions_.isModifiable()) {
         flowVersions_ = new com.google.protobuf.LazyStringArrayList(flowVersions_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -3412,6 +3457,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3423,7 +3469,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the flowVersions.
      */
     public com.google.protobuf.ProtocolStringList getFlowVersionsList() {
-      return flowVersions_.getUnmodifiableView();
+      flowVersions_.makeImmutable();
+      return flowVersions_;
     }
     /**
      *
@@ -3432,6 +3479,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3452,6 +3500,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3473,6 +3522,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3494,6 +3544,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3512,6 +3563,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       ensureFlowVersionsIsMutable();
       flowVersions_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3522,6 +3574,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3539,6 +3592,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       ensureFlowVersionsIsMutable();
       flowVersions_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3549,6 +3603,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3563,6 +3618,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder addAllFlowVersions(java.lang.Iterable<java.lang.String> values) {
       ensureFlowVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, flowVersions_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3573,6 +3629,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3584,8 +3641,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFlowVersions() {
-      flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -3596,6 +3654,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * A list of flow versions to override for the request.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     *
      * If version 1 of flow X is included in this list, the traffic of
      * flow X will go through version 1 regardless of the version configuration in
      * the environment. Each flow can have at most one version specified in this
@@ -3614,6 +3673,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureFlowVersionsIsMutable();
       flowVersions_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3624,6 +3684,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The channel which this query is for.
+     *
      * If specified, only the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
      * associated with the channel will be returned. If no
@@ -3631,6 +3692,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the channel, it falls back to the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel.
+     *
      * If unspecified, the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel will be returned.
@@ -3656,6 +3718,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The channel which this query is for.
+     *
      * If specified, only the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
      * associated with the channel will be returned. If no
@@ -3663,6 +3726,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the channel, it falls back to the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel.
+     *
      * If unspecified, the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel will be returned.
@@ -3688,6 +3752,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The channel which this query is for.
+     *
      * If specified, only the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
      * associated with the channel will be returned. If no
@@ -3695,6 +3760,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the channel, it falls back to the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel.
+     *
      * If unspecified, the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel will be returned.
@@ -3719,6 +3785,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The channel which this query is for.
+     *
      * If specified, only the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
      * associated with the channel will be returned. If no
@@ -3726,6 +3793,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the channel, it falls back to the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel.
+     *
      * If unspecified, the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel will be returned.
@@ -3746,6 +3814,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The channel which this query is for.
+     *
      * If specified, only the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
      * associated with the channel will be returned. If no
@@ -3753,6 +3822,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * associated with the channel, it falls back to the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel.
+     *
      * If unspecified, the
      * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
      * unspecified channel will be returned.

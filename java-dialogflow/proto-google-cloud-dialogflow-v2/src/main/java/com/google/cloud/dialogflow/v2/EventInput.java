@@ -52,11 +52,6 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
     return new EventInput();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.SessionProto
         .internal_static_google_cloud_dialogflow_v2_EventInput_descriptor;
@@ -130,9 +125,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * -   MapKey type: string
    * -   MapKey value: parameter name
    * -   MapValue type:
@@ -158,9 +155,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * -   MapKey type: string
    * -   MapKey value: parameter name
    * -   MapValue type:
@@ -186,9 +185,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * -   MapKey type: string
    * -   MapKey value: parameter name
    * -   MapValue type:
@@ -220,6 +221,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   *
    * This field is ignored when used in the context of a
    * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
    * field, because the language was already defined in the originating detect
@@ -250,6 +252,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   *
    * This field is ignored when used in the context of a
    * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
    * field, because the language was already defined in the originating detect
@@ -790,9 +793,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -817,9 +822,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -848,9 +855,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -883,9 +892,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -915,9 +926,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -953,9 +966,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -985,9 +1000,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -1012,9 +1029,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -1041,9 +1060,11 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of parameters associated with the event.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
+     *
      * -   MapKey type: string
      * -   MapKey value: parameter name
      * -   MapValue type:
@@ -1084,6 +1105,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1113,6 +1135,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1142,6 +1165,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1170,6 +1194,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect
@@ -1194,6 +1219,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes. Note that queries in
      * the same session do not necessarily need to specify the same language.
+     *
      * This field is ignored when used in the context of a
      * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2.WebhookResponse.followup_event_input]
      * field, because the language was already defined in the originating detect

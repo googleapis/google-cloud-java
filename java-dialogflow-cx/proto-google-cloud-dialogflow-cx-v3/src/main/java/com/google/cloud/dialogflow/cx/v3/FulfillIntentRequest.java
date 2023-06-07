@@ -45,11 +45,6 @@ public final class FulfillIntentRequest extends com.google.protobuf.GeneratedMes
     return new FulfillIntentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3_FulfillIntentRequest_descriptor;

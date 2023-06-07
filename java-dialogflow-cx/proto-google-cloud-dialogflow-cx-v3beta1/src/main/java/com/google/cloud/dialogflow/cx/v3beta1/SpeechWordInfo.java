@@ -47,11 +47,6 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     return new SpeechWordInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.AudioConfigProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_SpeechWordInfo_descriptor;
@@ -232,6 +227,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    * indicates an estimated greater likelihood that the recognized word is
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
+   *
    * This field is not guaranteed to be fully stable over time for the same
    * audio input. Users should also not rely on it to always be provided.
    * </pre>
@@ -1187,6 +1183,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized word is
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be fully stable over time for the same
      * audio input. Users should also not rely on it to always be provided.
      * </pre>
@@ -1207,6 +1204,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized word is
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be fully stable over time for the same
      * audio input. Users should also not rely on it to always be provided.
      * </pre>
@@ -1231,6 +1229,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized word is
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be fully stable over time for the same
      * audio input. Users should also not rely on it to always be provided.
      * </pre>

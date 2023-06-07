@@ -48,11 +48,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return new MaintenanceWindow();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_MaintenanceWindow_descriptor;

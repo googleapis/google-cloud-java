@@ -387,5 +387,5 @@ public interface DisplayDataOrBuilder
    */
   com.google.protobuf.ByteString getLabelBytes();
 
-  public com.google.dataflow.v1beta3.DisplayData.ValueCase getValueCase();
+  com.google.dataflow.v1beta3.DisplayData.ValueCase getValueCase();
 }

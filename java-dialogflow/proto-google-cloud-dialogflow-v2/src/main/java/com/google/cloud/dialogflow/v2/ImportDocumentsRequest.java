@@ -48,11 +48,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     return new ImportDocumentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.DocumentProto
         .internal_static_google_cloud_dialogflow_v2_ImportDocumentsRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -178,6 +175,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -197,6 +195,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -219,6 +218,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -915,6 +915,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -934,6 +935,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -963,6 +965,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -989,6 +992,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -1012,6 +1016,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -1048,6 +1053,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -1077,6 +1083,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -1093,6 +1100,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
@@ -1117,6 +1125,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * The Google Cloud Storage location for the documents.
      * The path can include a wildcard.
+     *
      * These URIs may have the forms
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.

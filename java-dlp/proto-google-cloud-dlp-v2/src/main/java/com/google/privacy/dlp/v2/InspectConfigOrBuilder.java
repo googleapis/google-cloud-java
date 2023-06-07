@@ -30,9 +30,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -48,9 +50,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -66,9 +70,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -84,9 +90,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -102,9 +110,11 @@ public interface InspectConfigOrBuilder
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose what detectors to run. By default this may
    * be all types, but may change over time as detectors are updated.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -149,6 +159,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -167,6 +178,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -185,6 +197,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in

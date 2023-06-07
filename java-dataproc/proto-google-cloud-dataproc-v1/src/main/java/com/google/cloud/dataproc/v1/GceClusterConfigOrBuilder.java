@@ -30,7 +30,9 @@ public interface GceClusterConfigOrBuilder
    * Optional. The Compute Engine zone where the Dataproc cluster will be
    * located. If omitted, the service will pick a zone in the cluster's Compute
    * Engine region. On a get request, zone will always be present.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
    * * `projects/[project_id]/zones/[zone]`
    * * `[zone]`
@@ -48,7 +50,9 @@ public interface GceClusterConfigOrBuilder
    * Optional. The Compute Engine zone where the Dataproc cluster will be
    * located. If omitted, the service will pick a zone in the cluster's Compute
    * Engine region. On a get request, zone will always be present.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
    * * `projects/[project_id]/zones/[zone]`
    * * `[zone]`
@@ -70,7 +74,9 @@ public interface GceClusterConfigOrBuilder
    * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
    * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
    * more information).
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
    * * `default`
@@ -91,7 +97,9 @@ public interface GceClusterConfigOrBuilder
    * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
    * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
    * more information).
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
    * * `default`
@@ -109,7 +117,9 @@ public interface GceClusterConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `sub0`
@@ -126,7 +136,9 @@ public interface GceClusterConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `sub0`
@@ -213,6 +225,7 @@ public interface GceClusterConfigOrBuilder
    * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
    * services.
+   *
    * If not specified, the
    * [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -234,6 +247,7 @@ public interface GceClusterConfigOrBuilder
    * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
    * services.
+   *
    * If not specified, the
    * [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -253,10 +267,13 @@ public interface GceClusterConfigOrBuilder
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -276,10 +293,13 @@ public interface GceClusterConfigOrBuilder
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -299,10 +319,13 @@ public interface GceClusterConfigOrBuilder
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -323,10 +346,13 @@ public interface GceClusterConfigOrBuilder
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data

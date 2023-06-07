@@ -48,11 +48,6 @@ public final class MetadataExport extends com.google.protobuf.GeneratedMessageV3
     return new MetadataExport();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1beta.MetastoreProto
         .internal_static_google_cloud_metastore_v1beta_MetadataExport_descriptor;
@@ -270,6 +265,8 @@ public final class MetadataExport extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

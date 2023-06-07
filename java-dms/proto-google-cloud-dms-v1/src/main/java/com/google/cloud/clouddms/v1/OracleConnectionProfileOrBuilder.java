@@ -279,6 +279,5 @@ public interface OracleConnectionProfileOrBuilder
    */
   com.google.cloud.clouddms.v1.PrivateConnectivityOrBuilder getPrivateConnectivityOrBuilder();
 
-  public com.google.cloud.clouddms.v1.OracleConnectionProfile.ConnectivityCase
-      getConnectivityCase();
+  com.google.cloud.clouddms.v1.OracleConnectionProfile.ConnectivityCase getConnectivityCase();
 }

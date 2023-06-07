@@ -100,6 +100,7 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `QueryDirectoryContents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
    * token.
@@ -116,6 +117,7 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `QueryDirectoryContents` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
    * token.

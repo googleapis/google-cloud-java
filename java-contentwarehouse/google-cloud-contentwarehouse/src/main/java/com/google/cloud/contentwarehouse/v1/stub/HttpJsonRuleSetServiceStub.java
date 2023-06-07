@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest;
 import com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest;
@@ -289,26 +290,56 @@ public class HttpJsonRuleSetServiceStub extends RuleSetServiceStub {
         HttpJsonCallSettings.<CreateRuleSetRequest, RuleSet>newBuilder()
             .setMethodDescriptor(createRuleSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRuleSetRequest, RuleSet> getRuleSetTransportSettings =
         HttpJsonCallSettings.<GetRuleSetRequest, RuleSet>newBuilder()
             .setMethodDescriptor(getRuleSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRuleSetRequest, RuleSet> updateRuleSetTransportSettings =
         HttpJsonCallSettings.<UpdateRuleSetRequest, RuleSet>newBuilder()
             .setMethodDescriptor(updateRuleSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteRuleSetRequest, Empty> deleteRuleSetTransportSettings =
         HttpJsonCallSettings.<DeleteRuleSetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteRuleSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRuleSetsRequest, ListRuleSetsResponse> listRuleSetsTransportSettings =
         HttpJsonCallSettings.<ListRuleSetsRequest, ListRuleSetsResponse>newBuilder()
             .setMethodDescriptor(listRuleSetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.createRuleSetCallable =

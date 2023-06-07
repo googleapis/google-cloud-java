@@ -53,7 +53,9 @@ public interface PackageOrBuilder
    *
    * <pre>
    * The resource to read the package from. The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}
    *   bucket.storage.googleapis.com/
    * </pre>
@@ -68,7 +70,9 @@ public interface PackageOrBuilder
    *
    * <pre>
    * The resource to read the package from. The supported resource type is:
+   *
    * Google Cloud Storage:
+   *
    *   storage.googleapis.com/{bucket}
    *   bucket.storage.googleapis.com/
    * </pre>

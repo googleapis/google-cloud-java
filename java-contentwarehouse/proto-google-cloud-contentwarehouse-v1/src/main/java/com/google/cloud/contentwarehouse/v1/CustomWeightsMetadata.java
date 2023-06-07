@@ -47,11 +47,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
     return new CustomWeightsMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.FiltersProto
         .internal_static_google_cloud_contentwarehouse_v1_CustomWeightsMetadata_descriptor;

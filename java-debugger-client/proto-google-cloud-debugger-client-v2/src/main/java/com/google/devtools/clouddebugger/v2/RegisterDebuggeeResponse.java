@@ -45,11 +45,6 @@ public final class RegisterDebuggeeResponse extends com.google.protobuf.Generate
     return new RegisterDebuggeeResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouddebugger.v2.ControllerProto
         .internal_static_google_devtools_clouddebugger_v2_RegisterDebuggeeResponse_descriptor;

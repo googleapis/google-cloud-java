@@ -150,5 +150,5 @@ public interface ConversationEventOrBuilder
    */
   com.google.cloud.dialogflow.v2.MessageOrBuilder getNewMessagePayloadOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.ConversationEvent.PayloadCase getPayloadCase();
+  com.google.cloud.dialogflow.v2.ConversationEvent.PayloadCase getPayloadCase();
 }

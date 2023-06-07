@@ -128,5 +128,5 @@ public interface CryptoKeyOrBuilder
    */
   com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder();
 
-  public com.google.privacy.dlp.v2.CryptoKey.SourceCase getSourceCase();
+  com.google.privacy.dlp.v2.CryptoKey.SourceCase getSourceCase();
 }

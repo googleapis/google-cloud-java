@@ -120,6 +120,5 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    */
   com.google.protobuf.ByteString getConnectionProfileBytes();
 
-  public com.google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest.DestinationCase
-      getDestinationCase();
+  com.google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest.DestinationCase getDestinationCase();
 }

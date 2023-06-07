@@ -467,5 +467,5 @@ public interface HadoopJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.HadoopJob.DriverCase getDriverCase();
+  com.google.cloud.dataproc.v1.HadoopJob.DriverCase getDriverCase();
 }

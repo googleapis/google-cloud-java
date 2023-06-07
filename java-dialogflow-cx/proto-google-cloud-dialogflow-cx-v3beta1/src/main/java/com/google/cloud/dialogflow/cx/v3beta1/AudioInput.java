@@ -47,11 +47,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
     return new AudioInput();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_AudioInput_descriptor;
@@ -134,6 +129,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
    * The [transcribed
    * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
    * contain more than 256 bytes.
+   *
    * For non-streaming audio detect intent, both `config` and `audio` must be
    * provided.
    * For streaming audio detect intent, `config` must be provided in
@@ -733,6 +729,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
+     *
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -756,6 +753,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
+     *
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -785,6 +783,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
+     *
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in

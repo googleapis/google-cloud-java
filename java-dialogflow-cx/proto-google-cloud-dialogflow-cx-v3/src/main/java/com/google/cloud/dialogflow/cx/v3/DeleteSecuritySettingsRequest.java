@@ -47,11 +47,6 @@ public final class DeleteSecuritySettingsRequest extends com.google.protobuf.Gen
     return new DeleteSecuritySettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.SecuritySettingsProto
         .internal_static_google_cloud_dialogflow_cx_v3_DeleteSecuritySettingsRequest_descriptor;

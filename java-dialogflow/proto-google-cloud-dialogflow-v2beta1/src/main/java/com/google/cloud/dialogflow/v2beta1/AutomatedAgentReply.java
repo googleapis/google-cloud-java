@@ -49,11 +49,6 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     return new AutomatedAgentReply();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_AutomatedAgentReply_descriptor;
@@ -237,6 +232,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   private int responseCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object response_;
 
   public enum ResponseCase
@@ -281,6 +278,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   private int matchCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object match_;
 
   public enum MatchCase

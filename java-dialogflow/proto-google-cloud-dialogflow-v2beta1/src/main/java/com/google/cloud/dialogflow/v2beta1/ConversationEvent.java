@@ -49,11 +49,6 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
     return new ConversationEvent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ConversationEventProto
         .internal_static_google_cloud_dialogflow_v2beta1_ConversationEvent_descriptor;
@@ -139,10 +134,13 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Unrecoverable error during a telephone call.
+     *
      * In general non-recoverable errors only occur if something was
      * misconfigured in the ConversationProfile corresponding to the call. After
      * a non-recoverable error, Dialogflow may stop responding.
+     *
      * We don't fire this event:
+     *
      * * in an API call because we can directly return the error, or,
      * * when we can recover from an error.
      * </pre>
@@ -213,10 +211,13 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Unrecoverable error during a telephone call.
+     *
      * In general non-recoverable errors only occur if something was
      * misconfigured in the ConversationProfile corresponding to the call. After
      * a non-recoverable error, Dialogflow may stop responding.
+     *
      * We don't fire this event:
+     *
      * * in an API call because we can directly return the error, or,
      * * when we can recover from an error.
      * </pre>
@@ -317,6 +318,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
   }
 
   private int payloadCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object payload_;
 
   public enum PayloadCase

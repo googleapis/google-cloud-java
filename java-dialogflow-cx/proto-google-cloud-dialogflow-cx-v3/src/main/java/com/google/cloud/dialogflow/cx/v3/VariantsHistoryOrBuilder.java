@@ -93,5 +93,5 @@ public interface VariantsHistoryOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3.VariantsHistory.VariantsCase getVariantsCase();
+  com.google.cloud.dialogflow.cx.v3.VariantsHistory.VariantsCase getVariantsCase();
 }

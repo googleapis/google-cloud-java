@@ -53,9 +53,11 @@ public interface EventInputOrBuilder
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * -   MapKey type: string
    * -   MapKey value: parameter name
    * -   MapValue type:
@@ -78,9 +80,11 @@ public interface EventInputOrBuilder
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * -   MapKey type: string
    * -   MapKey value: parameter name
    * -   MapValue type:
@@ -103,9 +107,11 @@ public interface EventInputOrBuilder
    *
    * <pre>
    * The collection of parameters associated with the event.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
+   *
    * -   MapKey type: string
    * -   MapKey value: parameter name
    * -   MapValue type:
@@ -130,6 +136,7 @@ public interface EventInputOrBuilder
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   *
    * This field is ignored when used in the context of a
    * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
    * field, because the language was already defined in the originating detect
@@ -149,6 +156,7 @@ public interface EventInputOrBuilder
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   *
    * This field is ignored when used in the context of a
    * [WebhookResponse.followup_event_input][google.cloud.dialogflow.v2beta1.WebhookResponse.followup_event_input]
    * field, because the language was already defined in the originating detect

@@ -48,11 +48,6 @@ public final class ListAvailableVersionsRequest extends com.google.protobuf.Gene
     return new ListAvailableVersionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datafusion.v1.Datafusion
         .internal_static_google_cloud_datafusion_v1_ListAvailableVersionsRequest_descriptor;

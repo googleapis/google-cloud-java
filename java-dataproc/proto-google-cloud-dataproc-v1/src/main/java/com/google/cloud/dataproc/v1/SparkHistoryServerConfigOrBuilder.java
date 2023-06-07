@@ -29,7 +29,9 @@ public interface SparkHistoryServerConfigOrBuilder
    * <pre>
    * Optional. Resource name of an existing Dataproc Cluster to act as a Spark
    * History Server for the workload.
+   *
    * Example:
+   *
    * * `projects/[project_id]/regions/[region]/clusters/[cluster_name]`
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface SparkHistoryServerConfigOrBuilder
    * <pre>
    * Optional. Resource name of an existing Dataproc Cluster to act as a Spark
    * History Server for the workload.
+   *
    * Example:
+   *
    * * `projects/[project_id]/regions/[region]/clusters/[cluster_name]`
    * </pre>
    *

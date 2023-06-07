@@ -309,6 +309,5 @@ public interface PostgreSqlConnectionProfileOrBuilder
   com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder
       getPrivateServiceConnectConnectivityOrBuilder();
 
-  public com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile.ConnectivityCase
-      getConnectivityCase();
+  com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile.ConnectivityCase getConnectivityCase();
 }

@@ -53,11 +53,6 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     return new Container();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_Container_descriptor;
@@ -244,6 +239,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The root of the container.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the root is
    *  `dataset_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -272,6 +268,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The root of the container.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the root is
    *  `dataset_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -305,6 +302,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The rest of the path after the root.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
    *  `table_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -333,6 +331,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The rest of the path after the root.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
    *  `table_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -1299,6 +1298,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The root of the container.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the root is
      *  `dataset_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -1326,6 +1326,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The root of the container.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the root is
      *  `dataset_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -1353,6 +1354,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The root of the container.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the root is
      *  `dataset_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -1379,6 +1381,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The root of the container.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the root is
      *  `dataset_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -1401,6 +1404,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The root of the container.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the root is
      *  `dataset_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -1430,6 +1434,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The rest of the path after the root.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
      *  `table_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -1457,6 +1462,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The rest of the path after the root.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
      *  `table_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -1484,6 +1490,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The rest of the path after the root.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
      *  `table_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -1510,6 +1517,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The rest of the path after the root.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
      *  `table_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -1532,6 +1540,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The rest of the path after the root.
      * Examples:
+     *
      * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
      *  `table_id`
      * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative

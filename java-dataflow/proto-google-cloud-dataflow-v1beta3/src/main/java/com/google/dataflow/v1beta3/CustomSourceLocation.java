@@ -45,11 +45,6 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     return new CustomSourceLocation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.StreamingProto
         .internal_static_google_dataflow_v1beta3_CustomSourceLocation_descriptor;

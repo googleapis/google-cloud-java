@@ -119,5 +119,5 @@ public interface ExportDocumentRequestOrBuilder
    */
   boolean getSmartMessagingPartialUpdate();
 
-  public com.google.cloud.dialogflow.v2.ExportDocumentRequest.DestinationCase getDestinationCase();
+  com.google.cloud.dialogflow.v2.ExportDocumentRequest.DestinationCase getDestinationCase();
 }

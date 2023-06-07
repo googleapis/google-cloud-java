@@ -46,11 +46,6 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
     return new UpdateTestCaseRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.TestCaseProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateTestCaseRequest_descriptor;

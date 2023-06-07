@@ -283,5 +283,5 @@ public interface ActionOrBuilder
    */
   com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder getPublishToStackdriverOrBuilder();
 
-  public com.google.privacy.dlp.v2.Action.ActionCase getActionCase();
+  com.google.privacy.dlp.v2.Action.ActionCase getActionCase();
 }

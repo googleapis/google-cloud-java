@@ -155,6 +155,6 @@ public interface VirtualClusterConfigOrBuilder
   com.google.cloud.dataproc.v1.AuxiliaryServicesConfigOrBuilder
       getAuxiliaryServicesConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.VirtualClusterConfig.InfrastructureConfigCase
+  com.google.cloud.dataproc.v1.VirtualClusterConfig.InfrastructureConfigCase
       getInfrastructureConfigCase();
 }

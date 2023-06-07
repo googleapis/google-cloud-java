@@ -109,6 +109,6 @@ public interface HumanAgentHandoffConfigOrBuilder
   com.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig.SalesforceLiveAgentConfigOrBuilder
       getSalesforceLiveAgentConfigOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig.AgentServiceCase
+  com.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig.AgentServiceCase
       getAgentServiceCase();
 }

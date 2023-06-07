@@ -48,11 +48,6 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
     return new ListStreamObjectsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamProto
         .internal_static_google_cloud_datastream_v1_ListStreamObjectsRequest_descriptor;
@@ -152,6 +147,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
    * <pre>
    * Page token received from a previous `ListStreamObjectsRequest` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListStreamObjectsRequest` must match the call that provided the page
    * token.
@@ -179,6 +175,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
    * <pre>
    * Page token received from a previous `ListStreamObjectsRequest` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `ListStreamObjectsRequest` must match the call that provided the page
    * token.
@@ -769,6 +766,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
      * <pre>
      * Page token received from a previous `ListStreamObjectsRequest` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListStreamObjectsRequest` must match the call that provided the page
      * token.
@@ -795,6 +793,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
      * <pre>
      * Page token received from a previous `ListStreamObjectsRequest` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListStreamObjectsRequest` must match the call that provided the page
      * token.
@@ -821,6 +820,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
      * <pre>
      * Page token received from a previous `ListStreamObjectsRequest` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListStreamObjectsRequest` must match the call that provided the page
      * token.
@@ -846,6 +846,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
      * <pre>
      * Page token received from a previous `ListStreamObjectsRequest` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListStreamObjectsRequest` must match the call that provided the page
      * token.
@@ -867,6 +868,7 @@ public final class ListStreamObjectsRequest extends com.google.protobuf.Generate
      * <pre>
      * Page token received from a previous `ListStreamObjectsRequest` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `ListStreamObjectsRequest` must match the call that provided the page
      * token.

@@ -48,11 +48,6 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessageV3
     return new MysqlDatabase();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_MysqlDatabase_descriptor;

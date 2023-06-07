@@ -51,11 +51,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     return new Webhook();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_descriptor;
@@ -329,11 +324,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GenericWebService();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2146,11 +2136,6 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       return new ServiceDirectoryConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
           .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_ServiceDirectoryConfig_descriptor;
@@ -3101,6 +3086,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int webhookCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object webhook_;
 
   public enum WebhookCase

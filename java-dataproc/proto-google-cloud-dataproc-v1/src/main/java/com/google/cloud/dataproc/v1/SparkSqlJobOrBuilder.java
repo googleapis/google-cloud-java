@@ -328,5 +328,5 @@ public interface SparkSqlJobOrBuilder
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 
-  public com.google.cloud.dataproc.v1.SparkSqlJob.QueriesCase getQueriesCase();
+  com.google.cloud.dataproc.v1.SparkSqlJob.QueriesCase getQueriesCase();
 }

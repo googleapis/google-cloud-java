@@ -48,11 +48,6 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
     return new ListDocumentSchemasRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentSchemaServiceProto
         .internal_static_google_cloud_contentwarehouse_v1_ListDocumentSchemasRequest_descriptor;
@@ -156,6 +151,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
    * <pre>
    * A page token, received from a previous `ListDocumentSchemas` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDocumentSchemas`
    * must match the call that provided the page token.
    * </pre>
@@ -182,6 +178,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
    * <pre>
    * A page token, received from a previous `ListDocumentSchemas` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDocumentSchemas`
    * must match the call that provided the page token.
    * </pre>
@@ -786,6 +783,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `ListDocumentSchemas` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDocumentSchemas`
      * must match the call that provided the page token.
      * </pre>
@@ -811,6 +809,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `ListDocumentSchemas` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDocumentSchemas`
      * must match the call that provided the page token.
      * </pre>
@@ -836,6 +835,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `ListDocumentSchemas` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDocumentSchemas`
      * must match the call that provided the page token.
      * </pre>
@@ -860,6 +860,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `ListDocumentSchemas` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDocumentSchemas`
      * must match the call that provided the page token.
      * </pre>
@@ -880,6 +881,7 @@ public final class ListDocumentSchemasRequest extends com.google.protobuf.Genera
      * <pre>
      * A page token, received from a previous `ListDocumentSchemas` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListDocumentSchemas`
      * must match the call that provided the page token.
      * </pre>

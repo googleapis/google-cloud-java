@@ -94,5 +94,5 @@ public interface InspectionRuleOrBuilder
    */
   com.google.privacy.dlp.v2.ExclusionRuleOrBuilder getExclusionRuleOrBuilder();
 
-  public com.google.privacy.dlp.v2.InspectionRule.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.InspectionRule.TypeCase getTypeCase();
 }

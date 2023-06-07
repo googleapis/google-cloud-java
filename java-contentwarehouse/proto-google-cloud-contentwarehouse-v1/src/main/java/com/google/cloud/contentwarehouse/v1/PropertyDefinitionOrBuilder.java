@@ -537,6 +537,6 @@ public interface PropertyDefinitionOrBuilder
   com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder
       getSchemaSourcesOrBuilder(int index);
 
-  public com.google.cloud.contentwarehouse.v1.PropertyDefinition.ValueTypeOptionsCase
+  com.google.cloud.contentwarehouse.v1.PropertyDefinition.ValueTypeOptionsCase
       getValueTypeOptionsCase();
 }

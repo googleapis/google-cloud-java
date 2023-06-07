@@ -299,5 +299,5 @@ public interface ExecutionConfigOrBuilder
    */
   com.google.protobuf.ByteString getStagingBucketBytes();
 
-  public com.google.cloud.dataproc.v1.ExecutionConfig.NetworkCase getNetworkCase();
+  com.google.cloud.dataproc.v1.ExecutionConfig.NetworkCase getNetworkCase();
 }

@@ -76,6 +76,7 @@ public interface ListDocumentSchemasRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListDocumentSchemas` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDocumentSchemas`
    * must match the call that provided the page token.
    * </pre>
@@ -91,6 +92,7 @@ public interface ListDocumentSchemasRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListDocumentSchemas` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListDocumentSchemas`
    * must match the call that provided the page token.
    * </pre>

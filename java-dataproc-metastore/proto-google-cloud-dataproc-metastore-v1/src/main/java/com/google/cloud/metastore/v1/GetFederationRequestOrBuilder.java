@@ -29,6 +29,7 @@ public interface GetFederationRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore federation to
    * retrieve, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface GetFederationRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the metastore federation to
    * retrieve, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    *

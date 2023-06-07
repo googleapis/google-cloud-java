@@ -303,6 +303,5 @@ public interface LabelVideoRequestOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature getFeature();
 
-  public com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.RequestConfigCase
-      getRequestConfigCase();
+  com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.RequestConfigCase getRequestConfigCase();
 }

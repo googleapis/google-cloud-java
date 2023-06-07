@@ -49,11 +49,6 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
     return new JobStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.JobsProto
         .internal_static_google_cloud_dataproc_v1_JobStatus_descriptor;
@@ -177,6 +172,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Job attempt has failed. The detail field contains failure details for
      * this attempt.
+     *
      * Applies to restartable jobs only.
      * </pre>
      *
@@ -284,6 +280,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Job attempt has failed. The detail field contains failure details for
      * this attempt.
+     *
      * Applies to restartable jobs only.
      * </pre>
      *
@@ -413,6 +410,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Job is submitted to the agent.
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -426,6 +424,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * The Job has been received and is awaiting execution (it may be waiting
      * for a condition to be met). See the "details" field for the reason for
      * the delay.
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -439,6 +438,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * The agent-reported status is out of date, which may be caused by a
      * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -463,6 +463,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Job is submitted to the agent.
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -476,6 +477,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * The Job has been received and is awaiting execution (it may be waiting
      * for a condition to be met). See the "details" field for the reason for
      * the delay.
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -489,6 +491,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * The agent-reported status is out of date, which may be caused by a
      * loss of communication between the agent and Dataproc. If the
      * agent does not send a timely update, the job will fail.
+     *
      * Applies to RUNNING state.
      * </pre>
      *

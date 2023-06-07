@@ -232,6 +232,5 @@ public interface BatchUpdateIntentsRequestOrBuilder
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 
-  public com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest.IntentBatchCase
-      getIntentBatchCase();
+  com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest.IntentBatchCase getIntentBatchCase();
 }

@@ -49,11 +49,6 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     return new HiveMetastoreConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1beta.MetastoreProto
         .internal_static_google_cloud_metastore_v1beta_HiveMetastoreConfig_descriptor;

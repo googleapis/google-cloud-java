@@ -240,5 +240,5 @@ public interface ValueOrBuilder
    */
   boolean getBooleanValue();
 
-  public com.google.cloud.contentwarehouse.v1.Value.KindCase getKindCase();
+  com.google.cloud.contentwarehouse.v1.Value.KindCase getKindCase();
 }

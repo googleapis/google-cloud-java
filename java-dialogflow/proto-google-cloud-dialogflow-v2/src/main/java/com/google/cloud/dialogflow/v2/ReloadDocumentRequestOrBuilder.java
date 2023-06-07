@@ -62,6 +62,7 @@ public interface ReloadDocumentRequestOrBuilder
    * <pre>
    * Optional. The path of gcs source file for reloading document content. For
    * now, only gcs uri is supported.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * </pre>
@@ -77,6 +78,7 @@ public interface ReloadDocumentRequestOrBuilder
    * <pre>
    * Optional. The path of gcs source file for reloading document content. For
    * now, only gcs uri is supported.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * </pre>
@@ -92,6 +94,7 @@ public interface ReloadDocumentRequestOrBuilder
    * <pre>
    * Optional. The path of gcs source file for reloading document content. For
    * now, only gcs uri is supported.
+   *
    * For documents stored in Google Cloud Storage, these URIs must have
    * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * </pre>
@@ -130,5 +133,5 @@ public interface ReloadDocumentRequestOrBuilder
    */
   boolean getSmartMessagingPartialUpdate();
 
-  public com.google.cloud.dialogflow.v2.ReloadDocumentRequest.SourceCase getSourceCase();
+  com.google.cloud.dialogflow.v2.ReloadDocumentRequest.SourceCase getSourceCase();
 }

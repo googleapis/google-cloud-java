@@ -49,11 +49,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     return new SqlIpConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_SqlIpConfig_descriptor;

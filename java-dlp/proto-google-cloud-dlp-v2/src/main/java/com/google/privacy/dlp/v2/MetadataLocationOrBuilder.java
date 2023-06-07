@@ -83,5 +83,5 @@ public interface MetadataLocationOrBuilder
    */
   com.google.privacy.dlp.v2.StorageMetadataLabelOrBuilder getStorageLabelOrBuilder();
 
-  public com.google.privacy.dlp.v2.MetadataLocation.LabelCase getLabelCase();
+  com.google.privacy.dlp.v2.MetadataLocation.LabelCase getLabelCase();
 }

@@ -122,9 +122,11 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   *
    * This field is deprecated. Please use [speech_contexts]() instead. If you
    * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
    * treat the [phrase_hints]() as a single additional [SpeechContext]().
@@ -144,9 +146,11 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   *
    * This field is deprecated. Please use [speech_contexts]() instead. If you
    * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
    * treat the [phrase_hints]() as a single additional [SpeechContext]().
@@ -166,9 +170,11 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   *
    * This field is deprecated. Please use [speech_contexts]() instead. If you
    * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
    * treat the [phrase_hints]() as a single additional [SpeechContext]().
@@ -189,9 +195,11 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * A list of strings containing words and phrases that the speech
    * recognizer should recognize with higher likelihood.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
+   *
    * This field is deprecated. Please use [speech_contexts]() instead. If you
    * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
    * treat the [phrase_hints]() as a single additional [SpeechContext]().
@@ -212,6 +220,7 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -225,6 +234,7 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -238,6 +248,7 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -251,6 +262,7 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -265,6 +277,7 @@ public interface InputAudioConfigOrBuilder
    *
    * <pre>
    * Context information to assist speech recognition.
+   *
    * See [the Cloud Speech
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
@@ -291,6 +304,7 @@ public interface InputAudioConfigOrBuilder
    * for more details.
    * If you specify a model, the following models typically have the best
    * performance:
+   *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
    * - command_and_search (best for very short utterances and commands)
@@ -318,6 +332,7 @@ public interface InputAudioConfigOrBuilder
    * for more details.
    * If you specify a model, the following models typically have the best
    * performance:
+   *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
    * - command_and_search (best for very short utterances and commands)

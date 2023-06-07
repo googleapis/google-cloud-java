@@ -51,11 +51,6 @@ public final class QueryCompilationResultActionsRequest
     return new QueryCompilationResultActionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1alpha2.DataformProto
         .internal_static_google_cloud_dataform_v1alpha2_QueryCompilationResultActionsRequest_descriptor;
@@ -156,6 +151,7 @@ public final class QueryCompilationResultActionsRequest
    * <pre>
    * Optional. Page token received from a previous `QueryCompilationResultActions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryCompilationResultActions` must match the call that provided the page
    * token.
@@ -183,6 +179,7 @@ public final class QueryCompilationResultActionsRequest
    * <pre>
    * Optional. Page token received from a previous `QueryCompilationResultActions` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryCompilationResultActions` must match the call that provided the page
    * token.
@@ -864,6 +861,7 @@ public final class QueryCompilationResultActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryCompilationResultActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryCompilationResultActions` must match the call that provided the page
      * token.
@@ -890,6 +888,7 @@ public final class QueryCompilationResultActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryCompilationResultActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryCompilationResultActions` must match the call that provided the page
      * token.
@@ -916,6 +915,7 @@ public final class QueryCompilationResultActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryCompilationResultActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryCompilationResultActions` must match the call that provided the page
      * token.
@@ -941,6 +941,7 @@ public final class QueryCompilationResultActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryCompilationResultActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryCompilationResultActions` must match the call that provided the page
      * token.
@@ -962,6 +963,7 @@ public final class QueryCompilationResultActionsRequest
      * <pre>
      * Optional. Page token received from a previous `QueryCompilationResultActions` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * `QueryCompilationResultActions` must match the call that provided the page
      * token.

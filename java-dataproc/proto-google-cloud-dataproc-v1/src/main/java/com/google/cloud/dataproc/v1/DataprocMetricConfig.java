@@ -47,11 +47,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     return new DataprocMetricConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_DataprocMetricConfig_descriptor;
@@ -394,17 +389,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -429,17 +429,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -464,17 +469,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -500,17 +510,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -548,18 +563,13 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
 
     private Metric() {
       metricSource_ = 0;
-      metricOverrides_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      metricOverrides_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Metric();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -627,7 +637,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     public static final int METRIC_OVERRIDES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList metricOverrides_;
+    private com.google.protobuf.LazyStringArrayList metricOverrides_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -638,17 +649,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -675,17 +691,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -712,17 +733,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -750,17 +776,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * [Spark metric]
      * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
      * specified).
+     *
      * Provide metrics in the following format:
      * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
      * Use camelcase as appropriate.
+     *
      * Examples:
+     *
      * ```
      * yarn:ResourceManager:QueueMetrics:AppsCompleted
      * spark:driver:DAGScheduler:job.allJobs
      * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
      * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
      * ```
+     *
      * Notes:
+     *
      * * Only the specified overridden metrics will be collected for the
      *   metric source. For example, if one or more `spark:executive` metrics
      *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1003,8 +1034,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         super.clear();
         bitField0_ = 0;
         metricSource_ = 0;
-        metricOverrides_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        metricOverrides_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1032,7 +1062,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric buildPartial() {
         com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric result =
             new com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1040,19 +1069,14 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          metricOverrides_ = metricOverrides_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.metricOverrides_ = metricOverrides_;
-      }
-
       private void buildPartial0(com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.metricSource_ = metricSource_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          metricOverrides_.makeImmutable();
+          result.metricOverrides_ = metricOverrides_;
         }
       }
 
@@ -1110,7 +1134,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         if (!other.metricOverrides_.isEmpty()) {
           if (metricOverrides_.isEmpty()) {
             metricOverrides_ = other.metricOverrides_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureMetricOverridesIsMutable();
             metricOverrides_.addAll(other.metricOverrides_);
@@ -1293,14 +1317,14 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return this;
       }
 
-      private com.google.protobuf.LazyStringList metricOverrides_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList metricOverrides_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureMetricOverridesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!metricOverrides_.isModifiable()) {
           metricOverrides_ = new com.google.protobuf.LazyStringArrayList(metricOverrides_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1312,17 +1336,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1338,7 +1367,8 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * @return A list containing the metricOverrides.
        */
       public com.google.protobuf.ProtocolStringList getMetricOverridesList() {
-        return metricOverrides_.getUnmodifiableView();
+        metricOverrides_.makeImmutable();
+        return metricOverrides_;
       }
       /**
        *
@@ -1350,17 +1380,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1388,17 +1423,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1427,17 +1467,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1466,17 +1511,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1499,6 +1549,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         }
         ensureMetricOverridesIsMutable();
         metricOverrides_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1512,17 +1563,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1544,6 +1600,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         }
         ensureMetricOverridesIsMutable();
         metricOverrides_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1557,17 +1614,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1586,6 +1648,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public Builder addAllMetricOverrides(java.lang.Iterable<java.lang.String> values) {
         ensureMetricOverridesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metricOverrides_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1599,17 +1662,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1625,8 +1693,9 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearMetricOverrides() {
-        metricOverrides_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        metricOverrides_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1640,17 +1709,22 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
        * [Spark metric]
        * (https://spark.apache.org/docs/latest/monitoring.html#metrics) can be
        * specified).
+       *
        * Provide metrics in the following format:
        * &lt;code&gt;&lt;var&gt;METRIC_SOURCE&lt;/var&gt;:&lt;var&gt;INSTANCE&lt;/var&gt;:&lt;var&gt;GROUP&lt;/var&gt;:&lt;var&gt;METRIC&lt;/var&gt;&lt;/code&gt;
        * Use camelcase as appropriate.
+       *
        * Examples:
+       *
        * ```
        * yarn:ResourceManager:QueueMetrics:AppsCompleted
        * spark:driver:DAGScheduler:job.allJobs
        * sparkHistoryServer:JVM:Memory:NonHeapMemoryUsage.committed
        * hiveserver2:JVM:Memory:NonHeapMemoryUsage.used
        * ```
+       *
        * Notes:
+       *
        * * Only the specified overridden metrics will be collected for the
        *   metric source. For example, if one or more `spark:executive` metrics
        *   are listed as metric overrides, other `SPARK` metrics will not be
@@ -1673,6 +1747,7 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureMetricOverridesIsMutable();
         metricOverrides_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

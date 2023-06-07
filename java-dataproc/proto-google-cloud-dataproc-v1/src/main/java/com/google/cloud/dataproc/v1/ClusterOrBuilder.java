@@ -86,6 +86,7 @@ public interface ClusterOrBuilder
    * Optional. The cluster config for a cluster of Compute Engine Instances.
    * Note that Dataproc may set default values, and values may change
    * when clusters are updated.
+   *
    * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
    * </pre>
    *
@@ -103,6 +104,7 @@ public interface ClusterOrBuilder
    * Optional. The cluster config for a cluster of Compute Engine Instances.
    * Note that Dataproc may set default values, and values may change
    * when clusters are updated.
+   *
    * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
    * </pre>
    *
@@ -120,6 +122,7 @@ public interface ClusterOrBuilder
    * Optional. The cluster config for a cluster of Compute Engine Instances.
    * Note that Dataproc may set default values, and values may change
    * when clusters are updated.
+   *
    * Exactly one of ClusterConfig or VirtualClusterConfig must be specified.
    * </pre>
    *
@@ -417,6 +420,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
+   *
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -433,6 +437,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
+   *
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>
@@ -449,6 +454,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
+   *
    * **Beta Feature**: This report is available for testing purposes only. It
    * may be changed before final release.
    * </pre>

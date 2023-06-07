@@ -49,11 +49,6 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     return new GenerateStatelessSummaryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ConversationProto
         .internal_static_google_cloud_dialogflow_v2beta1_GenerateStatelessSummaryRequest_descriptor;
@@ -217,11 +212,6 @@ public final class GenerateStatelessSummaryRequest extends com.google.protobuf.G
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MinimalConversation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

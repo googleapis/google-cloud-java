@@ -45,11 +45,6 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     return new ScalingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_ScalingConfig_descriptor;
@@ -289,6 +284,8 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int scalingModelCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object scalingModel_;
 
   public enum ScalingModelCase

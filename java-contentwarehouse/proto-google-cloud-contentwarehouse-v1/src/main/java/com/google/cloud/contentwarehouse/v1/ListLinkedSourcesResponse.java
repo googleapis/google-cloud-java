@@ -48,11 +48,6 @@ public final class ListLinkedSourcesResponse extends com.google.protobuf.Generat
     return new ListLinkedSourcesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentLinkServiceProto
         .internal_static_google_cloud_contentwarehouse_v1_ListLinkedSourcesResponse_descriptor;

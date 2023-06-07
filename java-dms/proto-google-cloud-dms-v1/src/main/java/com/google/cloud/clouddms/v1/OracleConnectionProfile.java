@@ -51,11 +51,6 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
     return new OracleConnectionProfile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_OracleConnectionProfile_descriptor;
@@ -72,6 +67,8 @@ public final class OracleConnectionProfile extends com.google.protobuf.Generated
   }
 
   private int connectivityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectivity_;
 
   public enum ConnectivityCase

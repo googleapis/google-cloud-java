@@ -49,11 +49,6 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
     return new InspectionRuleSet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_InspectionRuleSet_descriptor;

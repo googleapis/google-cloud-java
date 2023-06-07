@@ -290,5 +290,5 @@ public interface MatchIntentResponseOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.PageOrBuilder getCurrentPageOrBuilder();
 
-  public com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse.QueryCase getQueryCase();
+  com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse.QueryCase getQueryCase();
 }

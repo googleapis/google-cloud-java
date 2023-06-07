@@ -64,6 +64,7 @@ public interface UpdateDocumentResponseOrBuilder
    * <pre>
    * Output from Rule Engine recording the rule evaluator and action executor's
    * output.
+   *
    * Refer format in: google/cloud/contentwarehouse/v1/rule_engine.proto
    * </pre>
    *
@@ -78,6 +79,7 @@ public interface UpdateDocumentResponseOrBuilder
    * <pre>
    * Output from Rule Engine recording the rule evaluator and action executor's
    * output.
+   *
    * Refer format in: google/cloud/contentwarehouse/v1/rule_engine.proto
    * </pre>
    *
@@ -92,6 +94,7 @@ public interface UpdateDocumentResponseOrBuilder
    * <pre>
    * Output from Rule Engine recording the rule evaluator and action executor's
    * output.
+   *
    * Refer format in: google/cloud/contentwarehouse/v1/rule_engine.proto
    * </pre>
    *

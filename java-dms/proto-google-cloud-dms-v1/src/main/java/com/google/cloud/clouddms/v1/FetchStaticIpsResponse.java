@@ -38,7 +38,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   }
 
   private FetchStaticIpsResponse() {
-    staticIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    staticIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FetchStaticIpsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
   public static final int STATIC_IPS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList staticIps_;
+  private com.google.protobuf.LazyStringArrayList staticIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -398,8 +394,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      staticIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      staticIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       nextPageToken_ = "";
       return this;
     }
@@ -428,7 +423,6 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.clouddms.v1.FetchStaticIpsResponse buildPartial() {
       com.google.cloud.clouddms.v1.FetchStaticIpsResponse result =
           new com.google.cloud.clouddms.v1.FetchStaticIpsResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -436,17 +430,12 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.clouddms.v1.FetchStaticIpsResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        staticIps_ = staticIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.staticIps_ = staticIps_;
-    }
-
     private void buildPartial0(com.google.cloud.clouddms.v1.FetchStaticIpsResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        staticIps_.makeImmutable();
+        result.staticIps_ = staticIps_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
       }
@@ -501,7 +490,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       if (!other.staticIps_.isEmpty()) {
         if (staticIps_.isEmpty()) {
           staticIps_ = other.staticIps_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureStaticIpsIsMutable();
           staticIps_.addAll(other.staticIps_);
@@ -571,14 +560,14 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList staticIps_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList staticIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStaticIpsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!staticIps_.isModifiable()) {
         staticIps_ = new com.google.protobuf.LazyStringArrayList(staticIps_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -592,7 +581,8 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
      * @return A list containing the staticIps.
      */
     public com.google.protobuf.ProtocolStringList getStaticIpsList() {
-      return staticIps_.getUnmodifiableView();
+      staticIps_.makeImmutable();
+      return staticIps_;
     }
     /**
      *
@@ -657,6 +647,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       }
       ensureStaticIpsIsMutable();
       staticIps_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -678,6 +669,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       }
       ensureStaticIpsIsMutable();
       staticIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,6 +688,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
     public Builder addAllStaticIps(java.lang.Iterable<java.lang.String> values) {
       ensureStaticIpsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, staticIps_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +704,9 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStaticIps() {
-      staticIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      staticIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -735,6 +729,7 @@ public final class FetchStaticIpsResponse extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureStaticIpsIsMutable();
       staticIps_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

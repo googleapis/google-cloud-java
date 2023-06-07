@@ -46,11 +46,6 @@ public final class UsageSnapshot extends com.google.protobuf.GeneratedMessageV3
     return new UsageSnapshot();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.SharedProto
         .internal_static_google_cloud_dataproc_v1_UsageSnapshot_descriptor;

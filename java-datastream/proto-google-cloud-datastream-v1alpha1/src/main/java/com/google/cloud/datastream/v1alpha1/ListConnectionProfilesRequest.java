@@ -42,11 +42,6 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
     return new ListConnectionProfilesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1alpha1.CloudDatastreamServiceProto
         .internal_static_google_cloud_datastream_v1alpha1_ListConnectionProfilesRequest_descriptor;
@@ -147,6 +142,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
    * <pre>
    * Page token received from a previous `ListConnectionProfiles` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * </pre>
@@ -173,6 +169,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
    * <pre>
    * Page token received from a previous `ListConnectionProfiles` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * </pre>
@@ -915,6 +912,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
      * <pre>
      * Page token received from a previous `ListConnectionProfiles` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListConnectionProfiles`
      * must match the call that provided the page token.
      * </pre>
@@ -940,6 +938,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
      * <pre>
      * Page token received from a previous `ListConnectionProfiles` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListConnectionProfiles`
      * must match the call that provided the page token.
      * </pre>
@@ -965,6 +964,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
      * <pre>
      * Page token received from a previous `ListConnectionProfiles` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListConnectionProfiles`
      * must match the call that provided the page token.
      * </pre>
@@ -989,6 +989,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
      * <pre>
      * Page token received from a previous `ListConnectionProfiles` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListConnectionProfiles`
      * must match the call that provided the page token.
      * </pre>
@@ -1009,6 +1010,7 @@ public final class ListConnectionProfilesRequest extends com.google.protobuf.Gen
      * <pre>
      * Page token received from a previous `ListConnectionProfiles` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListConnectionProfiles`
      * must match the call that provided the page token.
      * </pre>

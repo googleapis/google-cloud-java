@@ -155,5 +155,5 @@ public interface DataItemOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
-  public com.google.cloud.datalabeling.v1beta1.DataItem.PayloadCase getPayloadCase();
+  com.google.cloud.datalabeling.v1beta1.DataItem.PayloadCase getPayloadCase();
 }

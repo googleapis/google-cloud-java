@@ -45,11 +45,6 @@ public final class RunDataScanResponse extends com.google.protobuf.GeneratedMess
     return new RunDataScanResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataScansProto
         .internal_static_google_cloud_dataplex_v1_RunDataScanResponse_descriptor;

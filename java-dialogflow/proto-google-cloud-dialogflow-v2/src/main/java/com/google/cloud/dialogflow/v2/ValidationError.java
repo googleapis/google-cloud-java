@@ -39,7 +39,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
 
   private ValidationError() {
     severity_ = 0;
-    entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    entries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     errorMessage_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ValidationError();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -310,13 +305,15 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
   public static final int ENTRIES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList entries_;
+  private com.google.protobuf.LazyStringArrayList entries_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -343,6 +340,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -369,6 +367,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -396,6 +395,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The names of the entries that the error is associated with.
    * Format:
+   *
    * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
    * agent.
    * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -697,8 +697,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       severity_ = 0;
-      entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      entries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       errorMessage_ = "";
       return this;
     }
@@ -727,7 +726,6 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dialogflow.v2.ValidationError buildPartial() {
       com.google.cloud.dialogflow.v2.ValidationError result =
           new com.google.cloud.dialogflow.v2.ValidationError(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -735,18 +733,14 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.ValidationError result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        entries_ = entries_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.entries_ = entries_;
-    }
-
     private void buildPartial0(com.google.cloud.dialogflow.v2.ValidationError result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        entries_.makeImmutable();
+        result.entries_ = entries_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.errorMessage_ = errorMessage_;
@@ -804,7 +798,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       if (!other.entries_.isEmpty()) {
         if (entries_.isEmpty()) {
           entries_ = other.entries_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureEntriesIsMutable();
           entries_.addAll(other.entries_);
@@ -972,14 +966,14 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList entries_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList entries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!entries_.isModifiable()) {
         entries_ = new com.google.protobuf.LazyStringArrayList(entries_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -987,6 +981,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1005,7 +1000,8 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the entries.
      */
     public com.google.protobuf.ProtocolStringList getEntriesList() {
-      return entries_.getUnmodifiableView();
+      entries_.makeImmutable();
+      return entries_;
     }
     /**
      *
@@ -1013,6 +1009,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1039,6 +1036,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1066,6 +1064,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1093,6 +1092,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1118,6 +1118,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       }
       ensureEntriesIsMutable();
       entries_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1127,6 +1128,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1151,6 +1153,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       }
       ensureEntriesIsMutable();
       entries_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1160,6 +1163,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1181,6 +1185,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
     public Builder addAllEntries(java.lang.Iterable<java.lang.String> values) {
       ensureEntriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entries_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1190,6 +1195,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1208,8 +1214,9 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEntries() {
-      entries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      entries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1219,6 +1226,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The names of the entries that the error is associated with.
      * Format:
+     *
      * - "projects/&lt;Project ID&gt;/agent", if the error is associated with the entire
      * agent.
      * - "projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;", if the error is
@@ -1244,6 +1252,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureEntriesIsMutable();
       entries_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

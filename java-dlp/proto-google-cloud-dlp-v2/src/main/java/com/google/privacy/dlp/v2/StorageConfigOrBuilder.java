@@ -178,5 +178,5 @@ public interface StorageConfigOrBuilder
   /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder getTimespanConfigOrBuilder();
 
-  public com.google.privacy.dlp.v2.StorageConfig.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.StorageConfig.TypeCase getTypeCase();
 }

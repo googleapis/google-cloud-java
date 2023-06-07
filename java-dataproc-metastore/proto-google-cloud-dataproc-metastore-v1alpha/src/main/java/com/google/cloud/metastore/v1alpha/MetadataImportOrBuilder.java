@@ -70,6 +70,7 @@ public interface MetadataImportOrBuilder
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -83,6 +84,7 @@ public interface MetadataImportOrBuilder
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -260,5 +262,5 @@ public interface MetadataImportOrBuilder
    */
   com.google.cloud.metastore.v1alpha.MetadataImport.State getState();
 
-  public com.google.cloud.metastore.v1alpha.MetadataImport.MetadataCase getMetadataCase();
+  com.google.cloud.metastore.v1alpha.MetadataImport.MetadataCase getMetadataCase();
 }

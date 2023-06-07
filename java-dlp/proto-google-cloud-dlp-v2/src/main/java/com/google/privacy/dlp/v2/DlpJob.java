@@ -51,11 +51,6 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     return new DlpJob();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DlpJob_descriptor;
@@ -324,6 +319,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object details_;
 
   public enum DetailsCase

@@ -48,11 +48,6 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
     return new DeleteFlowRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.FlowProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_DeleteFlowRequest_descriptor;
@@ -135,6 +130,7 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * This field has no effect for flows with no incoming transitions.
    * For flows with incoming transitions:
+   *
    * *  If `force` is set to false, an error will be returned with message
    *    indicating the incoming transitions.
    * *  If `force` is set to true, Dialogflow will remove the flow, as well as
@@ -652,6 +648,7 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * This field has no effect for flows with no incoming transitions.
      * For flows with incoming transitions:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the flow, as well as
@@ -675,6 +672,7 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * This field has no effect for flows with no incoming transitions.
      * For flows with incoming transitions:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the flow, as well as
@@ -702,6 +700,7 @@ public final class DeleteFlowRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * This field has no effect for flows with no incoming transitions.
      * For flows with incoming transitions:
+     *
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the incoming transitions.
      * *  If `force` is set to true, Dialogflow will remove the flow, as well as

@@ -45,11 +45,6 @@ public final class UpdateContentRequest extends com.google.protobuf.GeneratedMes
     return new UpdateContentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ContentProto
         .internal_static_google_cloud_dataplex_v1_UpdateContentRequest_descriptor;

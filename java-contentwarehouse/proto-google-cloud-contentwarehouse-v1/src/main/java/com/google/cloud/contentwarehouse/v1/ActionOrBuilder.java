@@ -301,5 +301,5 @@ public interface ActionOrBuilder
   com.google.cloud.contentwarehouse.v1.DeleteDocumentActionOrBuilder
       getDeleteDocumentActionOrBuilder();
 
-  public com.google.cloud.contentwarehouse.v1.Action.ActionCase getActionCase();
+  com.google.cloud.contentwarehouse.v1.Action.ActionCase getActionCase();
 }

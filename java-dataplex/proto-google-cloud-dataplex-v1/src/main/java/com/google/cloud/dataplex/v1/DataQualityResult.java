@@ -48,11 +48,6 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     return new DataQualityResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataQualityProto
         .internal_static_google_cloud_dataplex_v1_DataQualityResult_descriptor;

@@ -63,6 +63,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * The name of the latest conversation message used as context for
    * compiling suggestion. If empty, the latest message of the conversation will
    * be used.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -79,6 +80,7 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * The name of the latest conversation message used as context for
    * compiling suggestion. If empty, the latest message of the conversation will
    * be used.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>

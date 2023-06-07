@@ -192,6 +192,5 @@ public interface AnswerFeedbackOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getDisplayTimeOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.AnswerFeedback.DetailFeedbackCase
-      getDetailFeedbackCase();
+  com.google.cloud.dialogflow.v2beta1.AnswerFeedback.DetailFeedbackCase getDetailFeedbackCase();
 }

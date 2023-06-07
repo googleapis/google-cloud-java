@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1.CancelJobRequest;
 import com.google.cloud.dataproc.v1.DeleteJobRequest;
@@ -34,7 +35,6 @@ import com.google.cloud.dataproc.v1.ListJobsRequest;
 import com.google.cloud.dataproc.v1.ListJobsResponse;
 import com.google.cloud.dataproc.v1.SubmitJobRequest;
 import com.google.cloud.dataproc.v1.UpdateJobRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -168,10 +168,10 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(submitJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SubmitJobRequest, Operation> submitJobAsOperationTransportSettings =
@@ -179,10 +179,10 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(submitJobAsOperationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
@@ -190,11 +190,11 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(getJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
@@ -202,10 +202,10 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
@@ -213,11 +213,11 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(updateJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelJobRequest, Job> cancelJobTransportSettings =
@@ -225,11 +225,11 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(cancelJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
@@ -237,11 +237,11 @@ public class GrpcJobControllerStub extends JobControllerStub {
             .setMethodDescriptor(deleteJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job_id", String.valueOf(request.getJobId()));
-                  params.put("project_id", String.valueOf(request.getProjectId()));
-                  params.put("region", String.valueOf(request.getRegion()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job_id", String.valueOf(request.getJobId()));
+                  builder.add("project_id", String.valueOf(request.getProjectId()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
                 })
             .build();
 

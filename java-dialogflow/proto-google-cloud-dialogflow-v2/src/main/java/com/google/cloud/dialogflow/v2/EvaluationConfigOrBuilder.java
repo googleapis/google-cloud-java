@@ -163,6 +163,6 @@ public interface EvaluationConfigOrBuilder
   com.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfigOrBuilder
       getSmartComposeConfigOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.EvaluationConfig.ModelSpecificConfigCase
+  com.google.cloud.dialogflow.v2.EvaluationConfig.ModelSpecificConfigCase
       getModelSpecificConfigCase();
 }

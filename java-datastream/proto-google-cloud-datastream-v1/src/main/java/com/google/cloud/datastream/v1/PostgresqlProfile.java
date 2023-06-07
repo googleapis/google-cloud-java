@@ -50,11 +50,6 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
     return new PostgresqlProfile();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_PostgresqlProfile_descriptor;

@@ -91,6 +91,7 @@ public interface StorageFormatOrBuilder
    * <pre>
    * Required. The mime type descriptor for the data. Must match the pattern
    * {type}/{subtype}. Supported values:
+   *
    * - application/x-parquet
    * - application/x-avro
    * - application/x-orc
@@ -118,6 +119,7 @@ public interface StorageFormatOrBuilder
    * <pre>
    * Required. The mime type descriptor for the data. Must match the pattern
    * {type}/{subtype}. Supported values:
+   *
    * - application/x-parquet
    * - application/x-avro
    * - application/x-orc
@@ -263,5 +265,5 @@ public interface StorageFormatOrBuilder
    */
   com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder getIcebergOrBuilder();
 
-  public com.google.cloud.dataplex.v1.StorageFormat.OptionsCase getOptionsCase();
+  com.google.cloud.dataplex.v1.StorageFormat.OptionsCase getOptionsCase();
 }

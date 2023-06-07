@@ -73,5 +73,5 @@ public interface TransformationDetailsStorageConfigOrBuilder
    */
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
-  public com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.TypeCase getTypeCase();
 }

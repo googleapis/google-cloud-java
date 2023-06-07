@@ -49,11 +49,6 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
     return new ListContentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.ContentProto
         .internal_static_google_cloud_dataplex_v1_ListContentRequest_descriptor;
@@ -213,10 +208,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Filter request. Filters are case-sensitive.
    * The following formats are supported:
+   *
    * labels.key1 = "value1"
    * labels:key1
    * type = "NOTEBOOK"
    * type = "SQL_SCRIPT"
+   *
    * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
    * </pre>
    *
@@ -242,10 +239,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Filter request. Filters are case-sensitive.
    * The following formats are supported:
+   *
    * labels.key1 = "value1"
    * labels:key1
    * type = "NOTEBOOK"
    * type = "SQL_SCRIPT"
+   *
    * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
    * </pre>
    *
@@ -986,10 +985,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Filter request. Filters are case-sensitive.
      * The following formats are supported:
+     *
      * labels.key1 = "value1"
      * labels:key1
      * type = "NOTEBOOK"
      * type = "SQL_SCRIPT"
+     *
      * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
      * </pre>
      *
@@ -1014,10 +1015,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Filter request. Filters are case-sensitive.
      * The following formats are supported:
+     *
      * labels.key1 = "value1"
      * labels:key1
      * type = "NOTEBOOK"
      * type = "SQL_SCRIPT"
+     *
      * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
      * </pre>
      *
@@ -1042,10 +1045,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Filter request. Filters are case-sensitive.
      * The following formats are supported:
+     *
      * labels.key1 = "value1"
      * labels:key1
      * type = "NOTEBOOK"
      * type = "SQL_SCRIPT"
+     *
      * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
      * </pre>
      *
@@ -1069,10 +1074,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Filter request. Filters are case-sensitive.
      * The following formats are supported:
+     *
      * labels.key1 = "value1"
      * labels:key1
      * type = "NOTEBOOK"
      * type = "SQL_SCRIPT"
+     *
      * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
      * </pre>
      *
@@ -1092,10 +1099,12 @@ public final class ListContentRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Filter request. Filters are case-sensitive.
      * The following formats are supported:
+     *
      * labels.key1 = "value1"
      * labels:key1
      * type = "NOTEBOOK"
      * type = "SQL_SCRIPT"
+     *
      * These restrictions can be coinjoined with AND, OR and NOT conjunctions.
      * </pre>
      *

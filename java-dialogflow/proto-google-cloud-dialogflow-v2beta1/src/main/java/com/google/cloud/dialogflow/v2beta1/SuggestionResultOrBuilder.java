@@ -181,6 +181,6 @@ public interface SuggestionResultOrBuilder
   com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponseOrBuilder
       getSuggestSmartRepliesResponseOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.SuggestionResult.SuggestionResponseCase
+  com.google.cloud.dialogflow.v2beta1.SuggestionResult.SuggestionResponseCase
       getSuggestionResponseCase();
 }

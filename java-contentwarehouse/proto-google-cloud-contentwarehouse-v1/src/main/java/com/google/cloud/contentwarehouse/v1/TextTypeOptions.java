@@ -45,11 +45,6 @@ public final class TextTypeOptions extends com.google.protobuf.GeneratedMessageV
     return new TextTypeOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
         .internal_static_google_cloud_contentwarehouse_v1_TextTypeOptions_descriptor;

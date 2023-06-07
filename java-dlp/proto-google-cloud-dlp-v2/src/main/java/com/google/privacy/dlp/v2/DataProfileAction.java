@@ -45,11 +45,6 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     return new DataProfileAction();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DataProfileAction_descriptor;
@@ -350,11 +345,6 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Export();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1210,11 +1200,6 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PubSubNotification();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2614,6 +2599,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   }
 
   private int actionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object action_;
 
   public enum ActionCase

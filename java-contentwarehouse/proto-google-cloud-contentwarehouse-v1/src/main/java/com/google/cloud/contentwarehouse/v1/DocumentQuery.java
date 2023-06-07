@@ -33,22 +33,17 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     query_ = "";
     customPropertyFilter_ = "";
     timeFilters_ = java.util.Collections.emptyList();
-    documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     propertyFilter_ = java.util.Collections.emptyList();
     folderNameFilter_ = "";
-    queryContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    queryContext_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DocumentQuery();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -76,21 +71,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   *
    * The query partially supports [Google AIP style
    * syntax](https://google.aip.dev/160). Specifically, the query supports
    * literals, logical operators, negation operators, comparison operators, and
    * functions.
+   *
    * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
    * matched against. It searches over the full text of the document and the
    * searchable properties.
+   *
    * Logical operators: "AND", "and", "OR", and "or" are binary logical
    * operators (example: "engineer OR developer").
+   *
    * Negation operators: "NOT" and "!" are negation operators (example: "NOT
    * software").
+   *
    * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
    * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
    * `~~` for string. It provides semantic search functionality by parsing,
    * stemming and doing synonyms expansion against the input query.
+   *
    * To specify a property in the query, the left hand side expression in the
    * comparison must be the property ID including the parent. The right hand
    * side must be literals. For example:
@@ -98,15 +99,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * "property_a" is less than 1 in project 123 and us location.
    * The literals and comparison expression can be connected in a single query
    * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   *
    * Functions: supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Support nested expressions connected using parenthesis and logical
    * operators. The default logical operators is `AND` if there is no operators
    * between expressions.
+   *
    * The query can be used with other filters e.g. `time_filters` and
    * `folder_name_filter`. They are connected with `AND` operator under the
    * hood.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -132,21 +137,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   *
    * The query partially supports [Google AIP style
    * syntax](https://google.aip.dev/160). Specifically, the query supports
    * literals, logical operators, negation operators, comparison operators, and
    * functions.
+   *
    * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
    * matched against. It searches over the full text of the document and the
    * searchable properties.
+   *
    * Logical operators: "AND", "and", "OR", and "or" are binary logical
    * operators (example: "engineer OR developer").
+   *
    * Negation operators: "NOT" and "!" are negation operators (example: "NOT
    * software").
+   *
    * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
    * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
    * `~~` for string. It provides semantic search functionality by parsing,
    * stemming and doing synonyms expansion against the input query.
+   *
    * To specify a property in the query, the left hand side expression in the
    * comparison must be the property ID including the parent. The right hand
    * side must be literals. For example:
@@ -154,15 +165,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * "property_a" is less than 1 in project 123 and us location.
    * The literals and comparison expression can be connected in a single query
    * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   *
    * Functions: supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Support nested expressions connected using parenthesis and logical
    * operators. The default logical operators is `AND` if there is no operators
    * between expressions.
+   *
    * The query can be used with other filters e.g. `time_filters` and
    * `folder_name_filter`. They are connected with `AND` operator under the
    * hood.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -218,16 +233,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * This filter specifies a structured syntax to match against the
    * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
    * this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
    * of the operator is a property name and the right of the operator is a
    * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
    * characters. Supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
    * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -259,16 +277,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * This filter specifies a structured syntax to match against the
    * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
    * this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
    * of the operator is a property name and the right of the operator is a
    * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
    * characters. Supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
    * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -374,7 +395,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public static final int DOCUMENT_SCHEMA_NAMES_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList documentSchemaNames_;
+  private com.google.protobuf.LazyStringArrayList documentSchemaNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -382,10 +404,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -403,10 +427,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -424,10 +450,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -446,10 +474,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * This filter specifies the exact document schema
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
    * schemas.
+   *
    * At most 20 document schema names are allowed.
    * </pre>
    *
@@ -555,6 +585,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * If FOLDER or FILE is specified, then only either folders or files will be
    * returned, respectively. If ALL is specified, both folders and files will be
    * returned.
+   *
    * If no value is specified, ALL files will be returned.
    * </pre>
    *
@@ -574,6 +605,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * If FOLDER or FILE is specified, then only either folders or files will be
    * returned, respectively. If ALL is specified, both folders and files will be
    * returned.
+   *
    * If no value is specified, ALL files will be returned.
    * </pre>
    *
@@ -595,6 +627,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * If FOLDER or FILE is specified, then only either folders or files will be
    * returned, respectively. If ALL is specified, both folders and files will be
    * returned.
+   *
    * If no value is specified, ALL files will be returned.
    * </pre>
    *
@@ -665,7 +698,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public static final int QUERY_CONTEXT_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList queryContext_;
+  private com.google.protobuf.LazyStringArrayList queryContext_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -752,12 +786,14 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
   public static final int DOCUMENT_CREATOR_FILTER_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList documentCreatorFilter_;
+  private com.google.protobuf.LazyStringArrayList documentCreatorFilter_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -776,6 +812,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -794,6 +831,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -813,6 +851,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The exact creator(s) of the documents to search against.
+   *
    * If a value isn't specified, documents within the search results are
    * associated with any creator. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -1221,8 +1260,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         timeFiltersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (propertyFilterBuilder_ == null) {
         propertyFilter_ = java.util.Collections.emptyList();
       } else {
@@ -1236,10 +1274,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         fileTypeFilterBuilder_ = null;
       }
       folderNameFilter_ = "";
-      queryContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
-      documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      queryContext_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
       customWeightsMetadata_ = null;
       if (customWeightsMetadataBuilder_ != null) {
         customWeightsMetadataBuilder_.dispose();
@@ -1291,11 +1327,6 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.timeFilters_ = timeFiltersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        documentSchemaNames_ = documentSchemaNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.documentSchemaNames_ = documentSchemaNames_;
       if (propertyFilterBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           propertyFilter_ = java.util.Collections.unmodifiableList(propertyFilter_);
@@ -1305,16 +1336,6 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.propertyFilter_ = propertyFilterBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        queryContext_ = queryContext_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.queryContext_ = queryContext_;
-      if (((bitField0_ & 0x00000200) != 0)) {
-        documentCreatorFilter_ = documentCreatorFilter_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.documentCreatorFilter_ = documentCreatorFilter_;
     }
 
     private void buildPartial0(com.google.cloud.contentwarehouse.v1.DocumentQuery result) {
@@ -1328,12 +1349,24 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.customPropertyFilter_ = customPropertyFilter_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        documentSchemaNames_.makeImmutable();
+        result.documentSchemaNames_ = documentSchemaNames_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.fileTypeFilter_ =
             fileTypeFilterBuilder_ == null ? fileTypeFilter_ : fileTypeFilterBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.folderNameFilter_ = folderNameFilter_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        queryContext_.makeImmutable();
+        result.queryContext_ = queryContext_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        documentCreatorFilter_.makeImmutable();
+        result.documentCreatorFilter_ = documentCreatorFilter_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.customWeightsMetadata_ =
@@ -1432,7 +1465,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.documentSchemaNames_.isEmpty()) {
         if (documentSchemaNames_.isEmpty()) {
           documentSchemaNames_ = other.documentSchemaNames_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureDocumentSchemaNamesIsMutable();
           documentSchemaNames_.addAll(other.documentSchemaNames_);
@@ -1477,7 +1510,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.queryContext_.isEmpty()) {
         if (queryContext_.isEmpty()) {
           queryContext_ = other.queryContext_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureQueryContextIsMutable();
           queryContext_.addAll(other.queryContext_);
@@ -1487,7 +1520,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.documentCreatorFilter_.isEmpty()) {
         if (documentCreatorFilter_.isEmpty()) {
           documentCreatorFilter_ = other.documentCreatorFilter_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureDocumentCreatorFilterIsMutable();
           documentCreatorFilter_.addAll(other.documentCreatorFilter_);
@@ -1635,21 +1668,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     *
      * The query partially supports [Google AIP style
      * syntax](https://google.aip.dev/160). Specifically, the query supports
      * literals, logical operators, negation operators, comparison operators, and
      * functions.
+     *
      * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
      * matched against. It searches over the full text of the document and the
      * searchable properties.
+     *
      * Logical operators: "AND", "and", "OR", and "or" are binary logical
      * operators (example: "engineer OR developer").
+     *
      * Negation operators: "NOT" and "!" are negation operators (example: "NOT
      * software").
+     *
      * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
      * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
      * `~~` for string. It provides semantic search functionality by parsing,
      * stemming and doing synonyms expansion against the input query.
+     *
      * To specify a property in the query, the left hand side expression in the
      * comparison must be the property ID including the parent. The right hand
      * side must be literals. For example:
@@ -1657,15 +1696,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * "property_a" is less than 1 in project 123 and us location.
      * The literals and comparison expression can be connected in a single query
      * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     *
      * Functions: supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Support nested expressions connected using parenthesis and logical
      * operators. The default logical operators is `AND` if there is no operators
      * between expressions.
+     *
      * The query can be used with other filters e.g. `time_filters` and
      * `folder_name_filter`. They are connected with `AND` operator under the
      * hood.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1690,21 +1733,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     *
      * The query partially supports [Google AIP style
      * syntax](https://google.aip.dev/160). Specifically, the query supports
      * literals, logical operators, negation operators, comparison operators, and
      * functions.
+     *
      * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
      * matched against. It searches over the full text of the document and the
      * searchable properties.
+     *
      * Logical operators: "AND", "and", "OR", and "or" are binary logical
      * operators (example: "engineer OR developer").
+     *
      * Negation operators: "NOT" and "!" are negation operators (example: "NOT
      * software").
+     *
      * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
      * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
      * `~~` for string. It provides semantic search functionality by parsing,
      * stemming and doing synonyms expansion against the input query.
+     *
      * To specify a property in the query, the left hand side expression in the
      * comparison must be the property ID including the parent. The right hand
      * side must be literals. For example:
@@ -1712,15 +1761,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * "property_a" is less than 1 in project 123 and us location.
      * The literals and comparison expression can be connected in a single query
      * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     *
      * Functions: supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Support nested expressions connected using parenthesis and logical
      * operators. The default logical operators is `AND` if there is no operators
      * between expressions.
+     *
      * The query can be used with other filters e.g. `time_filters` and
      * `folder_name_filter`. They are connected with `AND` operator under the
      * hood.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1745,21 +1798,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     *
      * The query partially supports [Google AIP style
      * syntax](https://google.aip.dev/160). Specifically, the query supports
      * literals, logical operators, negation operators, comparison operators, and
      * functions.
+     *
      * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
      * matched against. It searches over the full text of the document and the
      * searchable properties.
+     *
      * Logical operators: "AND", "and", "OR", and "or" are binary logical
      * operators (example: "engineer OR developer").
+     *
      * Negation operators: "NOT" and "!" are negation operators (example: "NOT
      * software").
+     *
      * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
      * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
      * `~~` for string. It provides semantic search functionality by parsing,
      * stemming and doing synonyms expansion against the input query.
+     *
      * To specify a property in the query, the left hand side expression in the
      * comparison must be the property ID including the parent. The right hand
      * side must be literals. For example:
@@ -1767,15 +1826,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * "property_a" is less than 1 in project 123 and us location.
      * The literals and comparison expression can be connected in a single query
      * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     *
      * Functions: supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Support nested expressions connected using parenthesis and logical
      * operators. The default logical operators is `AND` if there is no operators
      * between expressions.
+     *
      * The query can be used with other filters e.g. `time_filters` and
      * `folder_name_filter`. They are connected with `AND` operator under the
      * hood.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1799,21 +1862,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     *
      * The query partially supports [Google AIP style
      * syntax](https://google.aip.dev/160). Specifically, the query supports
      * literals, logical operators, negation operators, comparison operators, and
      * functions.
+     *
      * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
      * matched against. It searches over the full text of the document and the
      * searchable properties.
+     *
      * Logical operators: "AND", "and", "OR", and "or" are binary logical
      * operators (example: "engineer OR developer").
+     *
      * Negation operators: "NOT" and "!" are negation operators (example: "NOT
      * software").
+     *
      * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
      * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
      * `~~` for string. It provides semantic search functionality by parsing,
      * stemming and doing synonyms expansion against the input query.
+     *
      * To specify a property in the query, the left hand side expression in the
      * comparison must be the property ID including the parent. The right hand
      * side must be literals. For example:
@@ -1821,15 +1890,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * "property_a" is less than 1 in project 123 and us location.
      * The literals and comparison expression can be connected in a single query
      * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     *
      * Functions: supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Support nested expressions connected using parenthesis and logical
      * operators. The default logical operators is `AND` if there is no operators
      * between expressions.
+     *
      * The query can be used with other filters e.g. `time_filters` and
      * `folder_name_filter`. They are connected with `AND` operator under the
      * hood.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1849,21 +1922,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     *
      * The query partially supports [Google AIP style
      * syntax](https://google.aip.dev/160). Specifically, the query supports
      * literals, logical operators, negation operators, comparison operators, and
      * functions.
+     *
      * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
      * matched against. It searches over the full text of the document and the
      * searchable properties.
+     *
      * Logical operators: "AND", "and", "OR", and "or" are binary logical
      * operators (example: "engineer OR developer").
+     *
      * Negation operators: "NOT" and "!" are negation operators (example: "NOT
      * software").
+     *
      * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
      * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
      * `~~` for string. It provides semantic search functionality by parsing,
      * stemming and doing synonyms expansion against the input query.
+     *
      * To specify a property in the query, the left hand side expression in the
      * comparison must be the property ID including the parent. The right hand
      * side must be literals. For example:
@@ -1871,15 +1950,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * "property_a" is less than 1 in project 123 and us location.
      * The literals and comparison expression can be connected in a single query
      * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     *
      * Functions: supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Support nested expressions connected using parenthesis and logical
      * operators. The default logical operators is `AND` if there is no operators
      * between expressions.
+     *
      * The query can be used with other filters e.g. `time_filters` and
      * `folder_name_filter`. They are connected with `AND` operator under the
      * hood.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1978,16 +2061,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies a structured syntax to match against the
      * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
      * this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
      * of the operator is a property name and the right of the operator is a
      * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
      * characters. Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -2018,16 +2104,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies a structured syntax to match against the
      * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
      * this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
      * of the operator is a property name and the right of the operator is a
      * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
      * characters. Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -2058,16 +2147,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies a structured syntax to match against the
      * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
      * this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
      * of the operator is a property name and the right of the operator is a
      * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
      * characters. Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -2097,16 +2189,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies a structured syntax to match against the
      * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
      * this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
      * of the operator is a property name and the right of the operator is a
      * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
      * characters. Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -2132,16 +2227,19 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies a structured syntax to match against the
      * [PropertyDefinition].[is_filterable][] marked as `true`. The syntax for
      * this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
      * of the operator is a property name and the right of the operator is a
      * number or a quoted string. You must escape backslash (&#92;&#92;) and quote (&#92;")
      * characters. Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -2540,14 +2638,14 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return timeFiltersBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList documentSchemaNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList documentSchemaNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDocumentSchemaNamesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!documentSchemaNames_.isModifiable()) {
         documentSchemaNames_ = new com.google.protobuf.LazyStringArrayList(documentSchemaNames_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2556,10 +2654,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2568,7 +2668,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the documentSchemaNames.
      */
     public com.google.protobuf.ProtocolStringList getDocumentSchemaNamesList() {
-      return documentSchemaNames_.getUnmodifiableView();
+      documentSchemaNames_.makeImmutable();
+      return documentSchemaNames_;
     }
     /**
      *
@@ -2577,10 +2678,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2598,10 +2701,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2620,10 +2725,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2642,10 +2749,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2661,6 +2770,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDocumentSchemaNamesIsMutable();
       documentSchemaNames_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2671,10 +2781,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2689,6 +2801,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDocumentSchemaNamesIsMutable();
       documentSchemaNames_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2699,10 +2812,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2714,6 +2829,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDocumentSchemaNames(java.lang.Iterable<java.lang.String> values) {
       ensureDocumentSchemaNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documentSchemaNames_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2724,10 +2840,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2736,8 +2854,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDocumentSchemaNames() {
-      documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2748,10 +2867,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * This filter specifies the exact document schema
      * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
      * of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
      * schemas.
+     *
      * At most 20 document schema names are allowed.
      * </pre>
      *
@@ -2767,6 +2888,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDocumentSchemaNamesIsMutable();
       documentSchemaNames_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3183,6 +3305,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3201,6 +3324,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3225,6 +3349,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3251,6 +3376,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3275,6 +3401,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3305,6 +3432,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3328,6 +3456,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3346,6 +3475,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3369,6 +3499,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * If FOLDER or FILE is specified, then only either folders or files will be
      * returned, respectively. If ALL is specified, both folders and files will be
      * returned.
+     *
      * If no value is specified, ALL files will be returned.
      * </pre>
      *
@@ -3507,14 +3638,14 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList queryContext_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList queryContext_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureQueryContextIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!queryContext_.isModifiable()) {
         queryContext_ = new com.google.protobuf.LazyStringArrayList(queryContext_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -3534,7 +3665,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryContext.
      */
     public com.google.protobuf.ProtocolStringList getQueryContextList() {
-      return queryContext_.getUnmodifiableView();
+      queryContext_.makeImmutable();
+      return queryContext_;
     }
     /**
      *
@@ -3623,6 +3755,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryContextIsMutable();
       queryContext_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3650,6 +3783,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryContextIsMutable();
       queryContext_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3674,6 +3808,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllQueryContext(java.lang.Iterable<java.lang.String> values) {
       ensureQueryContextIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryContext_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3695,8 +3830,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQueryContext() {
-      queryContext_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryContext_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -3725,25 +3861,27 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureQueryContextIsMutable();
       queryContext_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList documentCreatorFilter_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList documentCreatorFilter_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDocumentCreatorFilterIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!documentCreatorFilter_.isModifiable()) {
         documentCreatorFilter_ =
             new com.google.protobuf.LazyStringArrayList(documentCreatorFilter_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3755,13 +3893,15 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the documentCreatorFilter.
      */
     public com.google.protobuf.ProtocolStringList getDocumentCreatorFilterList() {
-      return documentCreatorFilter_.getUnmodifiableView();
+      documentCreatorFilter_.makeImmutable();
+      return documentCreatorFilter_;
     }
     /**
      *
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3780,6 +3920,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3799,6 +3940,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3818,6 +3960,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3836,6 +3979,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDocumentCreatorFilterIsMutable();
       documentCreatorFilter_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3844,6 +3988,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3861,6 +4006,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDocumentCreatorFilterIsMutable();
       documentCreatorFilter_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3869,6 +4015,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3883,6 +4030,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDocumentCreatorFilter(java.lang.Iterable<java.lang.String> values) {
       ensureDocumentCreatorFilterIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documentCreatorFilter_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3891,6 +4039,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3902,8 +4051,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDocumentCreatorFilter() {
-      documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -3912,6 +4062,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The exact creator(s) of the documents to search against.
+     *
      * If a value isn't specified, documents within the search results are
      * associated with any creator. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -3930,6 +4081,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDocumentCreatorFilterIsMutable();
       documentCreatorFilter_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

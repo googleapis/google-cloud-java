@@ -29,6 +29,7 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. The unique identifier of this agent version.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -45,6 +46,7 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. The unique identifier of this agent version.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`

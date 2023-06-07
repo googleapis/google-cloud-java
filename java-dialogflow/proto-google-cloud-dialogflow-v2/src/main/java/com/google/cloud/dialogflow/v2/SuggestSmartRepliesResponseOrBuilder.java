@@ -101,6 +101,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * <pre>
    * The name of the latest conversation message used to compile
    * suggestion for.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>
@@ -116,6 +117,7 @@ public interface SuggestSmartRepliesResponseOrBuilder
    * <pre>
    * The name of the latest conversation message used to compile
    * suggestion for.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversations/&lt;Conversation ID&gt;/messages/&lt;Message ID&gt;`.
    * </pre>

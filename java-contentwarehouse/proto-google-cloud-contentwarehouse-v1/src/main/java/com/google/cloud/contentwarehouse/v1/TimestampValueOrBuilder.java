@@ -101,5 +101,5 @@ public interface TimestampValueOrBuilder
    */
   com.google.protobuf.ByteString getTextValueBytes();
 
-  public com.google.cloud.contentwarehouse.v1.TimestampValue.ValueCase getValueCase();
+  com.google.cloud.contentwarehouse.v1.TimestampValue.ValueCase getValueCase();
 }

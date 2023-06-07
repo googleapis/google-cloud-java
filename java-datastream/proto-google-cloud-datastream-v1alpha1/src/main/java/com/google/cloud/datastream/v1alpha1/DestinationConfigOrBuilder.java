@@ -71,6 +71,6 @@ public interface DestinationConfigOrBuilder
   com.google.cloud.datastream.v1alpha1.GcsDestinationConfigOrBuilder
       getGcsDestinationConfigOrBuilder();
 
-  public com.google.cloud.datastream.v1alpha1.DestinationConfig.DestinationStreamConfigCase
+  com.google.cloud.datastream.v1alpha1.DestinationConfig.DestinationStreamConfigCase
       getDestinationStreamConfigCase();
 }

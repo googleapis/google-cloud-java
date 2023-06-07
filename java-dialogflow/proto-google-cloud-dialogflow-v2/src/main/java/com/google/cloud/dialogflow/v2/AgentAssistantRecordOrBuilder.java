@@ -105,5 +105,5 @@ public interface AgentAssistantRecordOrBuilder
    */
   com.google.cloud.dialogflow.v2.FaqAnswerOrBuilder getFaqAnswerOrBuilder();
 
-  public com.google.cloud.dialogflow.v2.AgentAssistantRecord.AnswerCase getAnswerCase();
+  com.google.cloud.dialogflow.v2.AgentAssistantRecord.AnswerCase getAnswerCase();
 }

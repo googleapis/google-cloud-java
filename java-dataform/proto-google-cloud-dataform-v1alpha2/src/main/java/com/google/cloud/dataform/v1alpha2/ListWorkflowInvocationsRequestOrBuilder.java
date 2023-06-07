@@ -75,6 +75,7 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListWorkflowInvocations` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflowInvocations`
    * must match the call that provided the page token.
    * </pre>
@@ -90,6 +91,7 @@ public interface ListWorkflowInvocationsRequestOrBuilder
    * <pre>
    * Optional. Page token received from a previous `ListWorkflowInvocations` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflowInvocations`
    * must match the call that provided the page token.
    * </pre>

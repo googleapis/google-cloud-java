@@ -50,11 +50,6 @@ public final class GetJobExecutionDetailsRequest extends com.google.protobuf.Gen
     return new GetJobExecutionDetailsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.MetricsProto
         .internal_static_google_dataflow_v1beta3_GetJobExecutionDetailsRequest_descriptor;

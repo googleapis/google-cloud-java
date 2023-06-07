@@ -238,5 +238,5 @@ public interface CreateJobFromTemplateRequestOrBuilder
    */
   com.google.protobuf.ByteString getLocationBytes();
 
-  public com.google.dataflow.v1beta3.CreateJobFromTemplateRequest.TemplateCase getTemplateCase();
+  com.google.dataflow.v1beta3.CreateJobFromTemplateRequest.TemplateCase getTemplateCase();
 }

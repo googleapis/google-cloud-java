@@ -30,6 +30,7 @@ public interface ListIntentsRequestOrBuilder
    * Required. The agent to list all intents from.
    * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *
    * Alternatively, you can specify the environment to list intents for.
    * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * or `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -52,6 +53,7 @@ public interface ListIntentsRequestOrBuilder
    * Required. The agent to list all intents from.
    * Format: `projects/&lt;Project ID&gt;/agent` or `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agent`.
+   *
    * Alternatively, you can specify the environment to list intents for.
    * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * or `projects/&lt;Project ID&gt;/locations/&lt;Location

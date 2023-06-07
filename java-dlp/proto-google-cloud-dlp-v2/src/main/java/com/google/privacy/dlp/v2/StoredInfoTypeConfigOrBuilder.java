@@ -179,5 +179,5 @@ public interface StoredInfoTypeConfigOrBuilder
    */
   com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder();
 
-  public com.google.privacy.dlp.v2.StoredInfoTypeConfig.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.StoredInfoTypeConfig.TypeCase getTypeCase();
 }

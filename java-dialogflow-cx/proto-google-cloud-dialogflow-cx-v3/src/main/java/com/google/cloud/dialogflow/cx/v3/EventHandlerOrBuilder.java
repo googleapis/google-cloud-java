@@ -203,5 +203,5 @@ public interface EventHandlerOrBuilder
    */
   com.google.protobuf.ByteString getTargetFlowBytes();
 
-  public com.google.cloud.dialogflow.cx.v3.EventHandler.TargetCase getTargetCase();
+  com.google.cloud.dialogflow.cx.v3.EventHandler.TargetCase getTargetCase();
 }
