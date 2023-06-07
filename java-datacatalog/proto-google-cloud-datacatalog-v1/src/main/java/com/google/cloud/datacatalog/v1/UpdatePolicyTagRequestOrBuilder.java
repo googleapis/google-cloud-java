@@ -66,6 +66,7 @@ public interface UpdatePolicyTagRequestOrBuilder
    *
    * <pre>
    * Specifies the fields to update.
+   *
    * You can update only display name, description, and parent policy tag.
    * If not set, defaults to all updatable fields.
    * For more information, see [FieldMask]
@@ -82,6 +83,7 @@ public interface UpdatePolicyTagRequestOrBuilder
    *
    * <pre>
    * Specifies the fields to update.
+   *
    * You can update only display name, description, and parent policy tag.
    * If not set, defaults to all updatable fields.
    * For more information, see [FieldMask]
@@ -98,6 +100,7 @@ public interface UpdatePolicyTagRequestOrBuilder
    *
    * <pre>
    * Specifies the fields to update.
+   *
    * You can update only display name, description, and parent policy tag.
    * If not set, defaults to all updatable fields.
    * For more information, see [FieldMask]

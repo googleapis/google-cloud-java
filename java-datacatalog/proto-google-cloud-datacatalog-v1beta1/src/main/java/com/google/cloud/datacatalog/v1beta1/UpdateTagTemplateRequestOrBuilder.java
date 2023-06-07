@@ -69,8 +69,11 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    * <pre>
    * The field mask specifies the parts of the template to overwrite.
+   *
    * Allowed fields:
+   *
    *   * `display_name`
+   *
    * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
@@ -84,8 +87,11 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    * <pre>
    * The field mask specifies the parts of the template to overwrite.
+   *
    * Allowed fields:
+   *
    *   * `display_name`
+   *
    * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
@@ -99,8 +105,11 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    * <pre>
    * The field mask specifies the parts of the template to overwrite.
+   *
    * Allowed fields:
+   *
    *   * `display_name`
+   *
    * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *

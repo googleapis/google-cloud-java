@@ -29,6 +29,7 @@ public interface ListEntryGroupsRequestOrBuilder
    * <pre>
    * Required. The name of the location that contains the entry groups, which can be
    * provided in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface ListEntryGroupsRequestOrBuilder
    * <pre>
    * Required. The name of the location that contains the entry groups, which can be
    * provided in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}
    * </pre>
    *

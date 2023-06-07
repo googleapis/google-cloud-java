@@ -47,11 +47,6 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
     return new ViewSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1_ViewSpec_descriptor;

@@ -48,11 +48,6 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
     return new CreateTaxonomyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerProto
         .internal_static_google_cloud_datacatalog_v1beta1_CreateTaxonomyRequest_descriptor;

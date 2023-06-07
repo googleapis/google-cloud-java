@@ -59,6 +59,7 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the tag template to create.
+   *
    * The ID must contain only lowercase letters (a-z), numbers (0-9),
    * or underscores (_), and must start with a letter or underscore.
    * The maximum size is 64 bytes when encoded in UTF-8.
@@ -74,6 +75,7 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the tag template to create.
+   *
    * The ID must contain only lowercase letters (a-z), numbers (0-9),
    * or underscores (_), and must start with a letter or underscore.
    * The maximum size is 64 bytes when encoded in UTF-8.

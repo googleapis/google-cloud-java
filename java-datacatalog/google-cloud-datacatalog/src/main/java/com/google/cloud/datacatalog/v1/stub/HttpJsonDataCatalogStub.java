@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
@@ -491,6 +492,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                             fields, "fullyQualifiedName", request.getFullyQualifiedName());
                         serializer.putQueryParam(
                             fields, "linkedResource", request.getLinkedResource());
+                        serializer.putQueryParam(fields, "location", request.getLocation());
+                        serializer.putQueryParam(fields, "project", request.getProject());
                         serializer.putQueryParam(fields, "sqlResource", request.getSqlResource());
                         return fields;
                       })
@@ -1477,47 +1480,102 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
         HttpJsonCallSettings.<CreateEntryGroupRequest, EntryGroup>newBuilder()
             .setMethodDescriptor(createEntryGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
         HttpJsonCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
             .setMethodDescriptor(getEntryGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupTransportSettings =
         HttpJsonCallSettings.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
             .setMethodDescriptor(updateEntryGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "entry_group.name", String.valueOf(request.getEntryGroup().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupTransportSettings =
         HttpJsonCallSettings.<DeleteEntryGroupRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEntryGroupMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
         listEntryGroupsTransportSettings =
             HttpJsonCallSettings.<ListEntryGroupsRequest, ListEntryGroupsResponse>newBuilder()
                 .setMethodDescriptor(listEntryGroupsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
         HttpJsonCallSettings.<CreateEntryRequest, Entry>newBuilder()
             .setMethodDescriptor(createEntryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         HttpJsonCallSettings.<UpdateEntryRequest, Entry>newBuilder()
             .setMethodDescriptor(updateEntryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entry.name", String.valueOf(request.getEntry().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEntryRequest, Empty> deleteEntryTransportSettings =
         HttpJsonCallSettings.<DeleteEntryRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEntryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
         HttpJsonCallSettings.<GetEntryRequest, Entry>newBuilder()
             .setMethodDescriptor(getEntryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         HttpJsonCallSettings.<LookupEntryRequest, Entry>newBuilder()
@@ -1528,56 +1586,117 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
         HttpJsonCallSettings.<ListEntriesRequest, ListEntriesResponse>newBuilder()
             .setMethodDescriptor(listEntriesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ModifyEntryOverviewRequest, EntryOverview>
         modifyEntryOverviewTransportSettings =
             HttpJsonCallSettings.<ModifyEntryOverviewRequest, EntryOverview>newBuilder()
                 .setMethodDescriptor(modifyEntryOverviewMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ModifyEntryContactsRequest, Contacts>
         modifyEntryContactsTransportSettings =
             HttpJsonCallSettings.<ModifyEntryContactsRequest, Contacts>newBuilder()
                 .setMethodDescriptor(modifyEntryContactsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
         HttpJsonCallSettings.<CreateTagTemplateRequest, TagTemplate>newBuilder()
             .setMethodDescriptor(createTagTemplateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateTransportSettings =
         HttpJsonCallSettings.<GetTagTemplateRequest, TagTemplate>newBuilder()
             .setMethodDescriptor(getTagTemplateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateTransportSettings =
         HttpJsonCallSettings.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
             .setMethodDescriptor(updateTagTemplateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "tag_template.name", String.valueOf(request.getTagTemplate().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateTransportSettings =
         HttpJsonCallSettings.<DeleteTagTemplateRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTagTemplateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
         createTagTemplateFieldTransportSettings =
             HttpJsonCallSettings.<CreateTagTemplateFieldRequest, TagTemplateField>newBuilder()
                 .setMethodDescriptor(createTagTemplateFieldMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
         updateTagTemplateFieldTransportSettings =
             HttpJsonCallSettings.<UpdateTagTemplateFieldRequest, TagTemplateField>newBuilder()
                 .setMethodDescriptor(updateTagTemplateFieldMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldTransportSettings =
             HttpJsonCallSettings.<RenameTagTemplateFieldRequest, TagTemplateField>newBuilder()
                 .setMethodDescriptor(renameTagTemplateFieldMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
         renameTagTemplateFieldEnumValueTransportSettings =
@@ -1585,68 +1704,146 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                 .<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>newBuilder()
                 .setMethodDescriptor(renameTagTemplateFieldEnumValueMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTagTemplateFieldRequest, Empty>
         deleteTagTemplateFieldTransportSettings =
             HttpJsonCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteTagTemplateFieldMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
         HttpJsonCallSettings.<CreateTagRequest, Tag>newBuilder()
             .setMethodDescriptor(createTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
         HttpJsonCallSettings.<UpdateTagRequest, Tag>newBuilder()
             .setMethodDescriptor(updateTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("tag.name", String.valueOf(request.getTag().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
         HttpJsonCallSettings.<DeleteTagRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
         HttpJsonCallSettings.<ListTagsRequest, ListTagsResponse>newBuilder()
             .setMethodDescriptor(listTagsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ReconcileTagsRequest, Operation> reconcileTagsTransportSettings =
         HttpJsonCallSettings.<ReconcileTagsRequest, Operation>newBuilder()
             .setMethodDescriptor(reconcileTagsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StarEntryRequest, StarEntryResponse> starEntryTransportSettings =
         HttpJsonCallSettings.<StarEntryRequest, StarEntryResponse>newBuilder()
             .setMethodDescriptor(starEntryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntryTransportSettings =
         HttpJsonCallSettings.<UnstarEntryRequest, UnstarEntryResponse>newBuilder()
             .setMethodDescriptor(unstarEntryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportEntriesRequest, Operation> importEntriesTransportSettings =
         HttpJsonCallSettings.<ImportEntriesRequest, Operation>newBuilder()
             .setMethodDescriptor(importEntriesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.searchCatalogCallable =

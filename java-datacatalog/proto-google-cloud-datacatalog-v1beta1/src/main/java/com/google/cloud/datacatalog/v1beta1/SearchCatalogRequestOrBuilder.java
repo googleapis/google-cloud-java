@@ -78,10 +78,13 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Required. The query string in search query syntax. The query must be non-empty.
+   *
    * Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -98,10 +101,13 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Required. The query string in search query syntax. The query must be non-empty.
+   *
    * Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -169,9 +175,11 @@ public interface SearchCatalogRequestOrBuilder
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *
@@ -186,9 +194,11 @@ public interface SearchCatalogRequestOrBuilder
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *

@@ -24,6 +24,7 @@ package com.google.cloud.datacatalog.v1beta1;
  * <pre>
  * Tags are used to attach custom metadata to Data Catalog resources. Tags
  * conform to the specifications within their tag template.
+ *
  * See [Data Catalog
  * IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information
  * on the permissions needed to create or view tags.
@@ -53,11 +54,6 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     return new Tag();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Tags
         .internal_static_google_cloud_datacatalog_v1beta1_Tag_descriptor;
@@ -85,6 +81,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int scopeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object scope_;
 
   public enum ScopeCase
@@ -137,7 +135,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the tag in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   *
    * where `tag_id` is a system-generated identifier.
    * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
@@ -163,7 +163,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the tag in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   *
    * where `tag_id` is a system-generated identifier.
    * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
@@ -194,7 +196,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the tag template that this tag uses. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -219,7 +223,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the tag template that this tag uses. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -298,8 +304,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
+   *
    * For attaching a tag to a nested column, use `.` to separate the column
    * names. Example:
+   *
    * * `outer_column.inner_column`
    * </pre>
    *
@@ -316,8 +324,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
+   *
    * For attaching a tag to a nested column, use `.` to separate the column
    * names. Example:
+   *
    * * `outer_column.inner_column`
    * </pre>
    *
@@ -347,8 +357,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
+   *
    * For attaching a tag to a nested column, use `.` to separate the column
    * names. Example:
+   *
    * * `outer_column.inner_column`
    * </pre>
    *
@@ -725,6 +737,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Tags are used to attach custom metadata to Data Catalog resources. Tags
    * conform to the specifications within their tag template.
+   *
    * See [Data Catalog
    * IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information
    * on the permissions needed to create or view tags.
@@ -1024,7 +1037,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     *
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
@@ -1049,7 +1064,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     *
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
@@ -1074,7 +1091,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     *
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
@@ -1098,7 +1117,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     *
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
@@ -1118,7 +1139,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     *
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
@@ -1145,7 +1168,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     *
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1169,7 +1194,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     *
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1193,7 +1220,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     *
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1216,7 +1245,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     *
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1235,7 +1266,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the tag template that this tag uses. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     *
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1367,8 +1400,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
+     *
      * For attaching a tag to a nested column, use `.` to separate the column
      * names. Example:
+     *
      * * `outer_column.inner_column`
      * </pre>
      *
@@ -1386,8 +1421,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
+     *
      * For attaching a tag to a nested column, use `.` to separate the column
      * names. Example:
+     *
      * * `outer_column.inner_column`
      * </pre>
      *
@@ -1418,8 +1455,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
+     *
      * For attaching a tag to a nested column, use `.` to separate the column
      * names. Example:
+     *
      * * `outer_column.inner_column`
      * </pre>
      *
@@ -1450,8 +1489,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
+     *
      * For attaching a tag to a nested column, use `.` to separate the column
      * names. Example:
+     *
      * * `outer_column.inner_column`
      * </pre>
      *
@@ -1475,8 +1516,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
+     *
      * For attaching a tag to a nested column, use `.` to separate the column
      * names. Example:
+     *
      * * `outer_column.inner_column`
      * </pre>
      *
@@ -1498,8 +1541,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
+     *
      * For attaching a tag to a nested column, use `.` to separate the column
      * names. Example:
+     *
      * * `outer_column.inner_column`
      * </pre>
      *

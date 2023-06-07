@@ -52,11 +52,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     return new ColumnSchema();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.SchemaOuterClass
         .internal_static_google_cloud_datacatalog_v1beta1_ColumnSchema_descriptor;

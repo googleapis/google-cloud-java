@@ -46,11 +46,6 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
     return new UpdateTagRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_UpdateTagRequest_descriptor;

@@ -48,11 +48,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     return new DatabaseTableSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_DatabaseTableSpec_descriptor;
@@ -333,7 +328,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getSqlQueryBytes();
 
-    public com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.SourceDefinitionCase
+    com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.SourceDefinitionCase
         getSourceDefinitionCase();
   }
   /**
@@ -363,11 +358,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DatabaseViewSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -545,6 +535,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     }
 
     private int sourceDefinitionCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object sourceDefinition_;
 
     public enum SourceDefinitionCase

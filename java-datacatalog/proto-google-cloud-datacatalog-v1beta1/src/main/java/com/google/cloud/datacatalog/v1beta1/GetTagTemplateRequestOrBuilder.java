@@ -28,6 +28,7 @@ public interface GetTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *

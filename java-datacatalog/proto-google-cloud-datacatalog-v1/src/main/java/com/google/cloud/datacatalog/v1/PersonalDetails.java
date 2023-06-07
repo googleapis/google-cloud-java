@@ -45,11 +45,6 @@ public final class PersonalDetails extends com.google.protobuf.GeneratedMessageV
     return new PersonalDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Common
         .internal_static_google_cloud_datacatalog_v1_PersonalDetails_descriptor;

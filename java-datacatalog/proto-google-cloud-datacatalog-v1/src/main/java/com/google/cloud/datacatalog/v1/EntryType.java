@@ -55,6 +55,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Output only. The type of models.
+   *
    * For more information, see [Supported models in BigQuery ML]
    * (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).
    * </pre>
@@ -179,6 +180,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * A Looker Explore.
+   *
    * For more information, see [Looker Explore API]
    * (https://developers.looker.com/api/explorer/4.0/methods/LookmlModel/lookml_model_explore).
    * </pre>
@@ -191,6 +193,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * A Looker Look.
+   *
    * For more information, see [Looker Look API]
    * (https://developers.looker.com/api/explorer/4.0/methods/Look).
    * </pre>
@@ -227,6 +230,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Output only. The type of models.
+   *
    * For more information, see [Supported models in BigQuery ML]
    * (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).
    * </pre>
@@ -351,6 +355,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * A Looker Explore.
+   *
    * For more information, see [Looker Explore API]
    * (https://developers.looker.com/api/explorer/4.0/methods/LookmlModel/lookml_model_explore).
    * </pre>
@@ -363,6 +368,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * A Looker Look.
+   *
    * For more information, see [Looker Look API]
    * (https://developers.looker.com/api/explorer/4.0/methods/Look).
    * </pre>

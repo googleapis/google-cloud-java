@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,11 @@ public class AsyncLookupEntry {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-      LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+      LookupEntryRequest request =
+          LookupEntryRequest.newBuilder()
+              .setProject("project-309310695")
+              .setLocation("location1901043637")
+              .build();
       ApiFuture<Entry> future = dataCatalogClient.lookupEntryCallable().futureCall(request);
       // Do something.
       Entry response = future.get();

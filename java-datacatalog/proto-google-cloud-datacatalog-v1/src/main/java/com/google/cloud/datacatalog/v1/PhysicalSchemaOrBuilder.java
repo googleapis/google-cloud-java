@@ -233,5 +233,5 @@ public interface PhysicalSchemaOrBuilder
    */
   com.google.cloud.datacatalog.v1.PhysicalSchema.CsvSchemaOrBuilder getCsvOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.PhysicalSchema.SchemaCase getSchemaCase();
+  com.google.cloud.datacatalog.v1.PhysicalSchema.SchemaCase getSchemaCase();
 }

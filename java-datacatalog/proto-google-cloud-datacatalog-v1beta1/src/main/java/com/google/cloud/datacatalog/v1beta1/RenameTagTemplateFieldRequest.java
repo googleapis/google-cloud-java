@@ -49,11 +49,6 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
     return new RenameTagTemplateFieldRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_RenameTagTemplateFieldRequest_descriptor;
@@ -78,6 +73,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The name of the tag template. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The name of the tag template. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -559,6 +556,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the tag template. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
@@ -584,6 +582,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the tag template. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
@@ -609,6 +608,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the tag template. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
@@ -633,6 +633,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the tag template. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
@@ -653,6 +654,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the tag template. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *

@@ -48,11 +48,6 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
     return new UpdateTagTemplateFieldRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateFieldRequest_descriptor;
@@ -187,15 +182,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Names of fields whose values to overwrite on an individual field
    * of a tag template. The following fields are modifiable:
+   *
    * * `display_name`
    * * `type.enum_type`
    * * `is_required`
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the request
    * body, their values are emptied with one exception: when updating an enum
    * type, the provided values are merged with the existing values. Therefore,
    * enum values can only be added, existing enum values cannot be deleted or
    * renamed.
+   *
    * Additionally, updating a template field from optional to required is
    * *not* allowed.
    * </pre>
@@ -215,15 +213,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Names of fields whose values to overwrite on an individual field
    * of a tag template. The following fields are modifiable:
+   *
    * * `display_name`
    * * `type.enum_type`
    * * `is_required`
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the request
    * body, their values are emptied with one exception: when updating an enum
    * type, the provided values are merged with the existing values. Therefore,
    * enum values can only be added, existing enum values cannot be deleted or
    * renamed.
+   *
    * Additionally, updating a template field from optional to required is
    * *not* allowed.
    * </pre>
@@ -243,15 +244,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * <pre>
    * Optional. Names of fields whose values to overwrite on an individual field
    * of a tag template. The following fields are modifiable:
+   *
    * * `display_name`
    * * `type.enum_type`
    * * `is_required`
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the request
    * body, their values are emptied with one exception: when updating an enum
    * type, the provided values are merged with the existing values. Therefore,
    * enum values can only be added, existing enum values cannot be deleted or
    * renamed.
+   *
    * Additionally, updating a template field from optional to required is
    * *not* allowed.
    * </pre>
@@ -1007,15 +1011,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1034,15 +1041,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1067,15 +1077,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1102,15 +1115,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1134,15 +1150,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1172,15 +1191,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1204,15 +1226,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1231,15 +1256,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>
@@ -1262,15 +1290,18 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * <pre>
      * Optional. Names of fields whose values to overwrite on an individual field
      * of a tag template. The following fields are modifiable:
+     *
      * * `display_name`
      * * `type.enum_type`
      * * `is_required`
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
      * type, the provided values are merged with the existing values. Therefore,
      * enum values can only be added, existing enum values cannot be deleted or
      * renamed.
+     *
      * Additionally, updating a template field from optional to required is
      * *not* allowed.
      * </pre>

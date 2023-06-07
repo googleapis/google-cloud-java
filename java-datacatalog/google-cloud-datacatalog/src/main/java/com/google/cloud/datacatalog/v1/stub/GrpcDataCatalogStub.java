@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.Contacts;
 import com.google.cloud.datacatalog.v1.CreateEntryGroupRequest;
@@ -76,7 +77,6 @@ import com.google.cloud.datacatalog.v1.UpdateEntryRequest;
 import com.google.cloud.datacatalog.v1.UpdateTagRequest;
 import com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -528,9 +528,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(createEntryGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
@@ -538,9 +538,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(getEntryGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupTransportSettings =
@@ -548,9 +548,10 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(updateEntryGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entry_group.name", String.valueOf(request.getEntryGroup().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "entry_group.name", String.valueOf(request.getEntryGroup().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupTransportSettings =
@@ -558,9 +559,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(deleteEntryGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
@@ -569,9 +570,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(listEntryGroupsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
@@ -579,9 +580,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(createEntryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
@@ -589,9 +590,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(updateEntryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("entry.name", String.valueOf(request.getEntry().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entry.name", String.valueOf(request.getEntry().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteEntryRequest, Empty> deleteEntryTransportSettings =
@@ -599,9 +600,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(deleteEntryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
@@ -609,9 +610,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(getEntryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
@@ -623,9 +624,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(listEntriesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ModifyEntryOverviewRequest, EntryOverview>
@@ -634,9 +635,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(modifyEntryOverviewMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ModifyEntryContactsRequest, Contacts> modifyEntryContactsTransportSettings =
@@ -644,9 +645,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(modifyEntryContactsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
@@ -654,9 +655,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(createTagTemplateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateTransportSettings =
@@ -664,9 +665,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(getTagTemplateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateTransportSettings =
@@ -674,10 +675,10 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(updateTagTemplateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "tag_template.name", String.valueOf(request.getTagTemplate().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateTransportSettings =
@@ -685,9 +686,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(deleteTagTemplateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
@@ -696,9 +697,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(createTagTemplateFieldMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
@@ -707,9 +708,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(updateTagTemplateFieldMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
@@ -718,9 +719,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(renameTagTemplateFieldMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
@@ -729,9 +730,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(renameTagTemplateFieldEnumValueMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldTransportSettings =
@@ -739,9 +740,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(deleteTagTemplateFieldMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
@@ -749,9 +750,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(createTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
@@ -759,9 +760,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(updateTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("tag.name", String.valueOf(request.getTag().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("tag.name", String.valueOf(request.getTag().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
@@ -769,9 +770,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(deleteTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
@@ -779,9 +780,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(listTagsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReconcileTagsRequest, Operation> reconcileTagsTransportSettings =
@@ -789,9 +790,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(reconcileTagsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StarEntryRequest, StarEntryResponse> starEntryTransportSettings =
@@ -799,9 +800,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(starEntryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UnstarEntryRequest, UnstarEntryResponse> unstarEntryTransportSettings =
@@ -809,9 +810,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(unstarEntryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -819,9 +820,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -829,9 +830,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -840,9 +841,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ImportEntriesRequest, Operation> importEntriesTransportSettings =
@@ -850,9 +851,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             .setMethodDescriptor(importEntriesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

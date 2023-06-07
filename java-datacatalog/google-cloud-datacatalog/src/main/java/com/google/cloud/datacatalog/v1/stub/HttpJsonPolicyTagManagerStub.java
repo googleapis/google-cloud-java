@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.CreatePolicyTagRequest;
 import com.google.cloud.datacatalog.v1.CreateTaxonomyRequest;
@@ -601,69 +602,147 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
         HttpJsonCallSettings.<CreateTaxonomyRequest, Taxonomy>newBuilder()
             .setMethodDescriptor(createTaxonomyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteTaxonomyRequest, Empty> deleteTaxonomyTransportSettings =
         HttpJsonCallSettings.<DeleteTaxonomyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTaxonomyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateTaxonomyRequest, Taxonomy> updateTaxonomyTransportSettings =
         HttpJsonCallSettings.<UpdateTaxonomyRequest, Taxonomy>newBuilder()
             .setMethodDescriptor(updateTaxonomyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("taxonomy.name", String.valueOf(request.getTaxonomy().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListTaxonomiesRequest, ListTaxonomiesResponse>
         listTaxonomiesTransportSettings =
             HttpJsonCallSettings.<ListTaxonomiesRequest, ListTaxonomiesResponse>newBuilder()
                 .setMethodDescriptor(listTaxonomiesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetTaxonomyRequest, Taxonomy> getTaxonomyTransportSettings =
         HttpJsonCallSettings.<GetTaxonomyRequest, Taxonomy>newBuilder()
             .setMethodDescriptor(getTaxonomyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreatePolicyTagRequest, PolicyTag> createPolicyTagTransportSettings =
         HttpJsonCallSettings.<CreatePolicyTagRequest, PolicyTag>newBuilder()
             .setMethodDescriptor(createPolicyTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeletePolicyTagRequest, Empty> deletePolicyTagTransportSettings =
         HttpJsonCallSettings.<DeletePolicyTagRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePolicyTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagTransportSettings =
         HttpJsonCallSettings.<UpdatePolicyTagRequest, PolicyTag>newBuilder()
             .setMethodDescriptor(updatePolicyTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("policy_tag.name", String.valueOf(request.getPolicyTag().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPolicyTagsRequest, ListPolicyTagsResponse>
         listPolicyTagsTransportSettings =
             HttpJsonCallSettings.<ListPolicyTagsRequest, ListPolicyTagsResponse>newBuilder()
                 .setMethodDescriptor(listPolicyTagsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetPolicyTagRequest, PolicyTag> getPolicyTagTransportSettings =
         HttpJsonCallSettings.<GetPolicyTagRequest, PolicyTag>newBuilder()
             .setMethodDescriptor(getPolicyTagMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createTaxonomyCallable =

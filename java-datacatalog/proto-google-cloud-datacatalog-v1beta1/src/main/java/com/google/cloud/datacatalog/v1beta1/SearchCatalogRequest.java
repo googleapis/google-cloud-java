@@ -50,11 +50,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     return new SearchCatalogRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_SearchCatalogRequest_descriptor;
@@ -229,19 +224,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private Scope() {
-      includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Scope();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -262,7 +252,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int INCLUDE_ORG_IDS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includeOrgIds_;
+    private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -333,7 +324,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public static final int INCLUDE_PROJECT_IDS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList includeProjectIds_;
+    private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -657,10 +649,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         includeGcpPublicDatasets_ = false;
         return this;
       }
@@ -690,7 +680,6 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope buildPartial() {
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result =
             new com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -698,23 +687,17 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          includeOrgIds_ = includeOrgIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.includeOrgIds_ = includeOrgIds_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          includeProjectIds_ = includeProjectIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.includeProjectIds_ = includeProjectIds_;
-      }
-
       private void buildPartial0(
           com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          includeOrgIds_.makeImmutable();
+          result.includeOrgIds_ = includeOrgIds_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          includeProjectIds_.makeImmutable();
+          result.includeProjectIds_ = includeProjectIds_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.includeGcpPublicDatasets_ = includeGcpPublicDatasets_;
         }
@@ -773,7 +756,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.includeOrgIds_.isEmpty()) {
           if (includeOrgIds_.isEmpty()) {
             includeOrgIds_ = other.includeOrgIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureIncludeOrgIdsIsMutable();
             includeOrgIds_.addAll(other.includeOrgIds_);
@@ -783,7 +766,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         if (!other.includeProjectIds_.isEmpty()) {
           if (includeProjectIds_.isEmpty()) {
             includeProjectIds_ = other.includeProjectIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIncludeProjectIdsIsMutable();
             includeProjectIds_.addAll(other.includeProjectIds_);
@@ -858,14 +841,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList includeOrgIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludeOrgIdsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!includeOrgIds_.isModifiable()) {
           includeOrgIds_ = new com.google.protobuf.LazyStringArrayList(includeOrgIds_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -881,7 +864,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the includeOrgIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeOrgIdsList() {
-        return includeOrgIds_.getUnmodifiableView();
+        includeOrgIds_.makeImmutable();
+        return includeOrgIds_;
       }
       /**
        *
@@ -954,6 +938,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -977,6 +962,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -997,6 +983,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllIncludeOrgIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeOrgIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeOrgIds_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1014,8 +1001,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeOrgIds() {
-        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includeOrgIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1040,18 +1028,19 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureIncludeOrgIdsIsMutable();
         includeOrgIds_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList includeProjectIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIncludeProjectIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!includeProjectIds_.isModifiable()) {
           includeProjectIds_ = new com.google.protobuf.LazyStringArrayList(includeProjectIds_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1067,7 +1056,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return A list containing the includeProjectIds.
        */
       public com.google.protobuf.ProtocolStringList getIncludeProjectIdsList() {
-        return includeProjectIds_.getUnmodifiableView();
+        includeProjectIds_.makeImmutable();
+        return includeProjectIds_;
       }
       /**
        *
@@ -1140,6 +1130,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1163,6 +1154,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1183,6 +1175,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public Builder addAllIncludeProjectIds(java.lang.Iterable<java.lang.String> values) {
         ensureIncludeProjectIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeProjectIds_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1200,8 +1193,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearIncludeProjectIds() {
-        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        includeProjectIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1226,6 +1220,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureIncludeProjectIdsIsMutable();
         includeProjectIds_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1434,10 +1429,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The query string in search query syntax. The query must be non-empty.
+   *
    * Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -1465,10 +1463,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The query string in search query syntax. The query must be non-empty.
+   *
    * Query strings can be simple as "x" or more qualified as:
+   *
    * * name:x
    * * column:x
    * * description:y
+   *
    * Note: Query tokens need to have a minimum of 3 characters for substring
    * matching to work correctly. See [Data Catalog Search
    * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -1582,9 +1583,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *
@@ -1610,9 +1613,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
+   *
    *   * `relevance`, only supports descending
    *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
    *     specified
+   *
    * If not specified, defaults to `relevance` descending.
    * </pre>
    *
@@ -2318,10 +2323,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query string in search query syntax. The query must be non-empty.
+     *
      * Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -2348,10 +2356,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query string in search query syntax. The query must be non-empty.
+     *
      * Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -2378,10 +2389,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query string in search query syntax. The query must be non-empty.
+     *
      * Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -2407,10 +2421,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query string in search query syntax. The query must be non-empty.
+     *
      * Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -2432,10 +2449,13 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query string in search query syntax. The query must be non-empty.
+     *
      * Query strings can be simple as "x" or more qualified as:
+     *
      * * name:x
      * * column:x
      * * description:y
+     *
      * Note: Query tokens need to have a minimum of 3 characters for substring
      * matching to work correctly. See [Data Catalog Search
      * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
@@ -2652,9 +2672,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2679,9 +2701,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2706,9 +2730,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2732,9 +2758,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *
@@ -2754,9 +2782,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
+     *
      *   * `relevance`, only supports descending
      *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
      *     specified
+     *
      * If not specified, defaults to `relevance` descending.
      * </pre>
      *

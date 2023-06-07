@@ -67,6 +67,7 @@ public interface UpdateTaxonomyRequestOrBuilder
    * <pre>
    * Specifies fields to update. If not set, defaults to all fields you can
    * update.
+   *
    * For more information, see [FieldMask]
    * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
@@ -82,6 +83,7 @@ public interface UpdateTaxonomyRequestOrBuilder
    * <pre>
    * Specifies fields to update. If not set, defaults to all fields you can
    * update.
+   *
    * For more information, see [FieldMask]
    * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>
@@ -97,6 +99,7 @@ public interface UpdateTaxonomyRequestOrBuilder
    * <pre>
    * Specifies fields to update. If not set, defaults to all fields you can
    * update.
+   *
    * For more information, see [FieldMask]
    * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    * </pre>

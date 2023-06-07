@@ -51,11 +51,6 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     return new SearchCatalogResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Search
         .internal_static_google_cloud_datacatalog_v1beta1_SearchCatalogResult_descriptor;
@@ -177,6 +172,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -203,6 +199,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -235,6 +232,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -261,6 +259,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -925,6 +924,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -950,6 +950,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -975,6 +976,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -999,6 +1001,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -1019,6 +1022,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * <pre>
      * The relative resource name of the resource in URL format.
      * Examples:
+     *
      *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
      *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
      * </pre>
@@ -1047,6 +1051,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1072,6 +1077,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1097,6 +1103,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1121,6 +1128,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *
@@ -1141,6 +1149,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * The full name of the cloud resource the entry belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name.
      * Example:
+     *
      *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
      * </pre>
      *

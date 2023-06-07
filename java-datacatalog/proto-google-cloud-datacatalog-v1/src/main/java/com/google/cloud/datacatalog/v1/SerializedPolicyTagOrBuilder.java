@@ -28,6 +28,7 @@ public interface SerializedPolicyTagOrBuilder
    *
    * <pre>
    * Resource name of the policy tag.
+   *
    * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface SerializedPolicyTagOrBuilder
    *
    * <pre>
    * Resource name of the policy tag.
+   *
    * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *

@@ -128,5 +128,5 @@ public interface BigQueryTableSpecOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder();
 
-  public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec.TypeSpecCase getTypeSpecCase();
+  com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec.TypeSpecCase getTypeSpecCase();
 }

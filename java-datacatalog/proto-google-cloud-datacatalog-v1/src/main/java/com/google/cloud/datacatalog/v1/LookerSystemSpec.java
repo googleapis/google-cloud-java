@@ -54,11 +54,6 @@ public final class LookerSystemSpec extends com.google.protobuf.GeneratedMessage
     return new LookerSystemSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_LookerSystemSpec_descriptor;

@@ -48,11 +48,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     return new TagField();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Tags
         .internal_static_google_cloud_datacatalog_v1beta1_TagField_descriptor;
@@ -125,11 +120,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EnumValue();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -716,6 +706,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int kindCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object kind_;
 
   public enum KindCase

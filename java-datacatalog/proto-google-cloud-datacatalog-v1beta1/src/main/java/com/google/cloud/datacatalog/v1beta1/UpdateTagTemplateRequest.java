@@ -46,11 +46,6 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
     return new UpdateTagTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_UpdateTagTemplateRequest_descriptor;
@@ -129,8 +124,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The field mask specifies the parts of the template to overwrite.
+   *
    * Allowed fields:
+   *
    *   * `display_name`
+   *
    * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
@@ -147,8 +145,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The field mask specifies the parts of the template to overwrite.
+   *
    * Allowed fields:
+   *
    *   * `display_name`
+   *
    * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
@@ -165,8 +166,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The field mask specifies the parts of the template to overwrite.
+   *
    * Allowed fields:
+   *
    *   * `display_name`
+   *
    * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
@@ -777,8 +781,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -794,8 +801,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -817,8 +827,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -842,8 +855,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -864,8 +880,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -892,8 +911,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -914,8 +936,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -931,8 +956,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *
@@ -952,8 +980,11 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The field mask specifies the parts of the template to overwrite.
+     *
      * Allowed fields:
+     *
      *   * `display_name`
+     *
      * If absent or empty, all of the allowed fields above will be updated.
      * </pre>
      *

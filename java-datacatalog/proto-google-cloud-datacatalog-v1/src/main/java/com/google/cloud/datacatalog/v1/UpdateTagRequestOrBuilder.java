@@ -67,6 +67,7 @@ public interface UpdateTagRequestOrBuilder
    * <pre>
    * Names of fields whose values to overwrite on a tag. Currently, a tag has
    * the only modifiable field with the name `fields`.
+   *
    * In general, if this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -83,6 +84,7 @@ public interface UpdateTagRequestOrBuilder
    * <pre>
    * Names of fields whose values to overwrite on a tag. Currently, a tag has
    * the only modifiable field with the name `fields`.
+   *
    * In general, if this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -99,6 +101,7 @@ public interface UpdateTagRequestOrBuilder
    * <pre>
    * Names of fields whose values to overwrite on a tag. Currently, a tag has
    * the only modifiable field with the name `fields`.
+   *
    * In general, if this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.

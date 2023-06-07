@@ -28,6 +28,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template field. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template field. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -101,11 +103,14 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
+   *
    *   * `display_name`
    *   * `type.enum_type`
    *   * `is_required`
+   *
    * If `update_mask` is not set or empty, all of the allowed fields above will
    * be updated.
+   *
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed. Updating a template field from
@@ -124,11 +129,14 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
+   *
    *   * `display_name`
    *   * `type.enum_type`
    *   * `is_required`
+   *
    * If `update_mask` is not set or empty, all of the allowed fields above will
    * be updated.
+   *
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed. Updating a template field from
@@ -147,11 +155,14 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * <pre>
    * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
+   *
    *   * `display_name`
    *   * `type.enum_type`
    *   * `is_required`
+   *
    * If `update_mask` is not set or empty, all of the allowed fields above will
    * be updated.
+   *
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed. Updating a template field from

@@ -58,5 +58,5 @@ public interface DumpItemOrBuilder
    */
   com.google.cloud.datacatalog.v1.TaggedEntryOrBuilder getTaggedEntryOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.DumpItem.ItemCase getItemCase();
+  com.google.cloud.datacatalog.v1.DumpItem.ItemCase getItemCase();
 }

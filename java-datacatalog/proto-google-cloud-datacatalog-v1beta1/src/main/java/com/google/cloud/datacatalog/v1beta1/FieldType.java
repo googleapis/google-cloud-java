@@ -37,11 +37,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     return new FieldType();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Tags
         .internal_static_google_cloud_datacatalog_v1beta1_FieldType_descriptor;
@@ -366,11 +361,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return new EnumType();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datacatalog.v1beta1.Tags
           .internal_static_google_cloud_datacatalog_v1beta1_FieldType_EnumType_descriptor;
@@ -435,11 +425,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new EnumValue();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2099,6 +2084,8 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeDeclCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object typeDecl_;
 
   public enum TypeDeclCase

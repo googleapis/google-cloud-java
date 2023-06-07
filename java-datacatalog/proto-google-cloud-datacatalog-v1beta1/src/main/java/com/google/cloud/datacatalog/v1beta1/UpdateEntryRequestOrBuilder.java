@@ -70,6 +70,7 @@ public interface UpdateEntryRequestOrBuilder
    * <pre>
    * The fields to update on the entry. If absent or empty, all modifiable
    * fields are updated.
+   *
    * The following fields are modifiable:
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
@@ -100,6 +101,7 @@ public interface UpdateEntryRequestOrBuilder
    * <pre>
    * The fields to update on the entry. If absent or empty, all modifiable
    * fields are updated.
+   *
    * The following fields are modifiable:
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
@@ -130,6 +132,7 @@ public interface UpdateEntryRequestOrBuilder
    * <pre>
    * The fields to update on the entry. If absent or empty, all modifiable
    * fields are updated.
+   *
    * The following fields are modifiable:
    * * For entries with type `DATA_STREAM`:
    *    * `schema`

@@ -28,6 +28,7 @@ public interface EntryOverviewOrBuilder
    *
    * <pre>
    * Entry overview with support for rich text.
+   *
    * The overview must only contain Unicode characters, and should be
    * formatted using HTML.
    * The maximum length is 10 MiB as this value holds HTML descriptions
@@ -45,6 +46,7 @@ public interface EntryOverviewOrBuilder
    *
    * <pre>
    * Entry overview with support for rich text.
+   *
    * The overview must only contain Unicode characters, and should be
    * formatted using HTML.
    * The maximum length is 10 MiB as this value holds HTML descriptions

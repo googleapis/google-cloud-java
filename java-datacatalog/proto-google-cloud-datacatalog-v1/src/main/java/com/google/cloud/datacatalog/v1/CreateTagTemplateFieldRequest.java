@@ -49,11 +49,6 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
     return new CreateTagTemplateFieldRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_CreateTagTemplateFieldRequest_descriptor;
@@ -135,7 +130,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The ID of the tag template field to create.
+   *
    * Note: Adding a required field to an existing template is *not* allowed.
+   *
    * Field IDs can contain letters (both uppercase and lowercase), numbers
    * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
    * character long and at most 128 characters long. Field IDs must also be
@@ -163,7 +160,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The ID of the tag template field to create.
+   *
    * Note: Adding a required field to an existing template is *not* allowed.
+   *
    * Field IDs can contain letters (both uppercase and lowercase), numbers
    * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
    * character long and at most 128 characters long. Field IDs must also be
@@ -774,7 +773,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The ID of the tag template field to create.
+     *
      * Note: Adding a required field to an existing template is *not* allowed.
+     *
      * Field IDs can contain letters (both uppercase and lowercase), numbers
      * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
      * character long and at most 128 characters long. Field IDs must also be
@@ -801,7 +802,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The ID of the tag template field to create.
+     *
      * Note: Adding a required field to an existing template is *not* allowed.
+     *
      * Field IDs can contain letters (both uppercase and lowercase), numbers
      * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
      * character long and at most 128 characters long. Field IDs must also be
@@ -828,7 +831,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The ID of the tag template field to create.
+     *
      * Note: Adding a required field to an existing template is *not* allowed.
+     *
      * Field IDs can contain letters (both uppercase and lowercase), numbers
      * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
      * character long and at most 128 characters long. Field IDs must also be
@@ -854,7 +859,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The ID of the tag template field to create.
+     *
      * Note: Adding a required field to an existing template is *not* allowed.
+     *
      * Field IDs can contain letters (both uppercase and lowercase), numbers
      * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
      * character long and at most 128 characters long. Field IDs must also be
@@ -876,7 +883,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The ID of the tag template field to create.
+     *
      * Note: Adding a required field to an existing template is *not* allowed.
+     *
      * Field IDs can contain letters (both uppercase and lowercase), numbers
      * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
      * character long and at most 128 characters long. Field IDs must also be

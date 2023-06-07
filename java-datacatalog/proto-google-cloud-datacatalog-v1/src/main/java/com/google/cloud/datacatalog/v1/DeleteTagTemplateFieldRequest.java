@@ -48,11 +48,6 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
     return new DeleteTagTemplateFieldRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateFieldRequest_descriptor;
@@ -130,6 +125,7 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. If true, deletes this field from any tags that use it.
+   *
    * Currently, `true` is the only supported value.
    * </pre>
    *
@@ -633,6 +629,7 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. If true, deletes this field from any tags that use it.
+     *
      * Currently, `true` is the only supported value.
      * </pre>
      *
@@ -649,6 +646,7 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. If true, deletes this field from any tags that use it.
+     *
      * Currently, `true` is the only supported value.
      * </pre>
      *
@@ -669,6 +667,7 @@ public final class DeleteTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. If true, deletes this field from any tags that use it.
+     *
      * Currently, `true` is the only supported value.
      * </pre>
      *

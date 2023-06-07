@@ -48,11 +48,6 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     return new ImportTaxonomiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.PolicyTagManagerSerializationProto
         .internal_static_google_cloud_datacatalog_v1beta1_ImportTaxonomiesRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

@@ -124,5 +124,5 @@ public interface ImportTaxonomiesRequestOrBuilder
    */
   com.google.cloud.datacatalog.v1.CrossRegionalSourceOrBuilder getCrossRegionalSourceOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest.SourceCase getSourceCase();
+  com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest.SourceCase getSourceCase();
 }

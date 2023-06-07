@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1237,7 +1237,11 @@ public class DataCatalogClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+    LookupEntryRequest request =
+        LookupEntryRequest.newBuilder()
+            .setProject("project-309310695")
+            .setLocation("location1901043637")
+            .build();
 
     Entry actualResponse = client.lookupEntry(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1265,7 +1269,11 @@ public class DataCatalogClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+      LookupEntryRequest request =
+          LookupEntryRequest.newBuilder()
+              .setProject("project-309310695")
+              .setLocation("location1901043637")
+              .build();
       client.lookupEntry(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3452,6 +3460,7 @@ public class DataCatalogClientHttpJsonTest {
     ImportEntriesRequest request =
         ImportEntriesRequest.newBuilder()
             .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+            .setJobId("jobId101296568")
             .build();
 
     ImportEntriesResponse actualResponse = client.importEntriesAsync(request).get();
@@ -3483,6 +3492,7 @@ public class DataCatalogClientHttpJsonTest {
       ImportEntriesRequest request =
           ImportEntriesRequest.newBuilder()
               .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .setJobId("jobId101296568")
               .build();
       client.importEntriesAsync(request).get();
       Assert.fail("No exception raised");

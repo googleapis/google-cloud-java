@@ -48,11 +48,6 @@ public final class ExportTaxonomiesResponse extends com.google.protobuf.Generate
     return new ExportTaxonomiesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerSerializationProto
         .internal_static_google_cloud_datacatalog_v1_ExportTaxonomiesResponse_descriptor;

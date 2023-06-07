@@ -28,7 +28,9 @@ public interface TagOrBuilder
    *
    * <pre>
    * The resource name of the tag in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   *
    * where `tag_id` is a system-generated identifier.
    * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
@@ -43,7 +45,9 @@ public interface TagOrBuilder
    *
    * <pre>
    * The resource name of the tag in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   *
    * where `tag_id` is a system-generated identifier.
    * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
@@ -59,7 +63,9 @@ public interface TagOrBuilder
    *
    * <pre>
    * Required. The resource name of the tag template that this tag uses. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -73,7 +79,9 @@ public interface TagOrBuilder
    *
    * <pre>
    * Required. The resource name of the tag template that this tag uses. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -114,8 +122,10 @@ public interface TagOrBuilder
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
+   *
    * For attaching a tag to a nested column, use `.` to separate the column
    * names. Example:
+   *
    * * `outer_column.inner_column`
    * </pre>
    *
@@ -130,8 +140,10 @@ public interface TagOrBuilder
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
+   *
    * For attaching a tag to a nested column, use `.` to separate the column
    * names. Example:
+   *
    * * `outer_column.inner_column`
    * </pre>
    *
@@ -146,8 +158,10 @@ public interface TagOrBuilder
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
+   *
    * For attaching a tag to a nested column, use `.` to separate the column
    * names. Example:
+   *
    * * `outer_column.inner_column`
    * </pre>
    *
@@ -235,5 +249,5 @@ public interface TagOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrThrow(java.lang.String key);
 
-  public com.google.cloud.datacatalog.v1beta1.Tag.ScopeCase getScopeCase();
+  com.google.cloud.datacatalog.v1beta1.Tag.ScopeCase getScopeCase();
 }

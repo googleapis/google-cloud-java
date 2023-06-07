@@ -50,11 +50,6 @@ public final class CloudSqlBigQueryConnectionSpec extends com.google.protobuf.Ge
     return new CloudSqlBigQueryConnectionSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.BigQueryProto
         .internal_static_google_cloud_datacatalog_v1_CloudSqlBigQueryConnectionSpec_descriptor;

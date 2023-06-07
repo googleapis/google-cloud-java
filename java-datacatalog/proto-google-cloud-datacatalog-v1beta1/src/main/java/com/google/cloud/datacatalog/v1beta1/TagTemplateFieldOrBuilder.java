@@ -28,7 +28,9 @@ public interface TagTemplateFieldOrBuilder
    *
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -43,7 +45,9 @@ public interface TagTemplateFieldOrBuilder
    *
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>

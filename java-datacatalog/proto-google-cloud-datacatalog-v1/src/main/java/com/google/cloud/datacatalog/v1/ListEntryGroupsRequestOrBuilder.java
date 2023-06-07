@@ -28,6 +28,7 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the location that contains the entry groups to list.
+   *
    * Can be provided as a URL.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the location that contains the entry groups to list.
+   *
    * Can be provided as a URL.
    * </pre>
    *
@@ -59,6 +61,7 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    * <pre>
    * Optional. The maximum number of items to return.
+   *
    * Default is 10. Maximum limit is 1000.
    * Throws an invalid argument if `page_size` is greater than 1000.
    * </pre>

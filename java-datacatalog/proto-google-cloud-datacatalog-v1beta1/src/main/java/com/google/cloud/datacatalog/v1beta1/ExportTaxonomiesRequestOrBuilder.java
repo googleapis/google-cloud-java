@@ -138,6 +138,5 @@ public interface ExportTaxonomiesRequestOrBuilder
    */
   boolean getSerializedTaxonomies();
 
-  public com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest.DestinationCase
-      getDestinationCase();
+  com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest.DestinationCase getDestinationCase();
 }

@@ -28,7 +28,9 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The Data Catalog resource name of the entry in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
@@ -43,7 +45,9 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The Data Catalog resource name of the entry in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
@@ -59,11 +63,14 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The resource this metadata entry refers to.
+   *
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
+   *
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *
    * Output only when Entry is of type in the EntryType enum. For entries with
    * user_specified_type, this field is optional and defaults to an empty
    * string.
@@ -79,11 +86,14 @@ public interface EntryOrBuilder
    *
    * <pre>
    * The resource this metadata entry refers to.
+   *
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
+   *
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *
    * Output only when Entry is of type in the EntryType enum. For entries with
    * user_specified_type, this field is optional and defaults to an empty
    * string.
@@ -146,6 +156,7 @@ public interface EntryOrBuilder
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -166,6 +177,7 @@ public interface EntryOrBuilder
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -186,6 +198,7 @@ public interface EntryOrBuilder
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -557,9 +570,9 @@ public interface EntryOrBuilder
   com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
       getSourceSystemTimestampsOrBuilder();
 
-  public com.google.cloud.datacatalog.v1beta1.Entry.EntryTypeCase getEntryTypeCase();
+  com.google.cloud.datacatalog.v1beta1.Entry.EntryTypeCase getEntryTypeCase();
 
-  public com.google.cloud.datacatalog.v1beta1.Entry.SystemCase getSystemCase();
+  com.google.cloud.datacatalog.v1beta1.Entry.SystemCase getSystemCase();
 
-  public com.google.cloud.datacatalog.v1beta1.Entry.TypeSpecCase getTypeSpecCase();
+  com.google.cloud.datacatalog.v1beta1.Entry.TypeSpecCase getTypeSpecCase();
 }

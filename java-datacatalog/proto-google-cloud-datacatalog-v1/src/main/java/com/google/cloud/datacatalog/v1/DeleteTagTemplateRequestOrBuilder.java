@@ -57,6 +57,7 @@ public interface DeleteTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. If true, deletes all tags that use this template.
+   *
    * Currently, `true` is the only supported value.
    * </pre>
    *

@@ -82,6 +82,26 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
+   * Cloud Spanner
+   * </pre>
+   *
+   * <code>CLOUD_SPANNER = 6;</code>
+   */
+  CLOUD_SPANNER(6),
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable
+   * </pre>
+   *
+   * <code>CLOUD_BIGTABLE = 7;</code>
+   */
+  CLOUD_BIGTABLE(7),
+  /**
+   *
+   *
+   * <pre>
    * Cloud Sql
    * </pre>
    *
@@ -155,6 +175,26 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
+   * Cloud Spanner
+   * </pre>
+   *
+   * <code>CLOUD_SPANNER = 6;</code>
+   */
+  public static final int CLOUD_SPANNER_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable
+   * </pre>
+   *
+   * <code>CLOUD_BIGTABLE = 7;</code>
+   */
+  public static final int CLOUD_BIGTABLE_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
    * Cloud Sql
    * </pre>
    *
@@ -206,6 +246,10 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
         return DATAPROC_METASTORE;
       case 4:
         return DATAPLEX;
+      case 6:
+        return CLOUD_SPANNER;
+      case 7:
+        return CLOUD_BIGTABLE;
       case 8:
         return CLOUD_SQL;
       case 9:

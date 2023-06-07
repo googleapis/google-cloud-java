@@ -99,6 +99,5 @@ public interface BigQueryConnectionSpecOrBuilder
    */
   boolean getHasCredential();
 
-  public com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionSpecCase
-      getConnectionSpecCase();
+  com.google.cloud.datacatalog.v1.BigQueryConnectionSpec.ConnectionSpecCase getConnectionSpecCase();
 }

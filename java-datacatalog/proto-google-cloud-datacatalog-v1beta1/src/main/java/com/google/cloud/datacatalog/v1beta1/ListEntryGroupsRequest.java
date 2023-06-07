@@ -49,11 +49,6 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
     return new ListEntryGroupsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_ListEntryGroupsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The name of the location that contains the entry groups, which can be
    * provided in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -106,6 +102,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The name of the location that contains the entry groups, which can be
    * provided in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -597,6 +594,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the location that contains the entry groups, which can be
      * provided in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -623,6 +621,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the location that contains the entry groups, which can be
      * provided in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -649,6 +648,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the location that contains the entry groups, which can be
      * provided in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -674,6 +674,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the location that contains the entry groups, which can be
      * provided in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -695,6 +696,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the location that contains the entry groups, which can be
      * provided in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}
      * </pre>
      *

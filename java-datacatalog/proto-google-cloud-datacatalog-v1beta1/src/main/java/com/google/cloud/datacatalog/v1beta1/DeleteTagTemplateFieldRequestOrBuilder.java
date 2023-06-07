@@ -28,6 +28,7 @@ public interface DeleteTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template field to delete. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template field to delete. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *

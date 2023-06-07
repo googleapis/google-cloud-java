@@ -51,11 +51,6 @@ public final class SqlDatabaseSystemSpec extends com.google.protobuf.GeneratedMe
     return new SqlDatabaseSystemSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_descriptor;

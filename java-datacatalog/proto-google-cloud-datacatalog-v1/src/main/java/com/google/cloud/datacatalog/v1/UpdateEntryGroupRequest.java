@@ -46,11 +46,6 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
     return new UpdateEntryGroupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_UpdateEntryGroupRequest_descriptor;
@@ -129,6 +124,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry group.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -147,6 +143,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry group.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -165,6 +162,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry group.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
@@ -772,6 +770,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -789,6 +788,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -812,6 +812,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -837,6 +838,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -859,6 +861,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -887,6 +890,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -909,6 +913,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -926,6 +931,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
@@ -947,6 +953,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry group.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.

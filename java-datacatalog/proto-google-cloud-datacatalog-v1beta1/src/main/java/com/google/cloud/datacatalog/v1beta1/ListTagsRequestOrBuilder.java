@@ -30,7 +30,9 @@ public interface ListTagsRequestOrBuilder
    * Required. The name of the Data Catalog resource to list the tags of. The resource
    * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+   *
    * Examples:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
@@ -49,7 +51,9 @@ public interface ListTagsRequestOrBuilder
    * Required. The name of the Data Catalog resource to list the tags of. The resource
    * could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
    * [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+   *
    * Examples:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>

@@ -50,11 +50,6 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
     return new ListTaxonomiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerProto
         .internal_static_google_cloud_datacatalog_v1_ListTaxonomiesRequest_descriptor;
@@ -154,6 +149,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The pagination token of the next results page. If not set,
    * the first page is returned.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -179,6 +175,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The pagination token of the next results page. If not set,
    * the first page is returned.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -845,6 +842,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set,
      * the first page is returned.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -869,6 +867,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set,
      * the first page is returned.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -893,6 +892,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set,
      * the first page is returned.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -916,6 +916,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set,
      * the first page is returned.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -935,6 +936,7 @@ public final class ListTaxonomiesRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set,
      * the first page is returned.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *

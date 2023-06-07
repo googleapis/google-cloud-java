@@ -95,5 +95,5 @@ public interface FieldTypeOrBuilder
    */
   com.google.cloud.datacatalog.v1.FieldType.EnumTypeOrBuilder getEnumTypeOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.FieldType.TypeDeclCase getTypeDeclCase();
+  com.google.cloud.datacatalog.v1.FieldType.TypeDeclCase getTypeDeclCase();
 }

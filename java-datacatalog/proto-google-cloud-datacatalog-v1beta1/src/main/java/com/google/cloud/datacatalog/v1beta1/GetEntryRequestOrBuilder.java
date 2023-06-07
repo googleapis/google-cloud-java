@@ -28,6 +28,7 @@ public interface GetEntryRequestOrBuilder
    *
    * <pre>
    * Required. The name of the entry. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetEntryRequestOrBuilder
    *
    * <pre>
    * Required. The name of the entry. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * </pre>
    *

@@ -47,11 +47,6 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
     return new BigQueryConnectionSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.BigQueryProto
         .internal_static_google_cloud_datacatalog_v1_BigQueryConnectionSpec_descriptor;
@@ -205,6 +200,8 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
   }
 
   private int connectionSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object connectionSpec_;
 
   public enum ConnectionSpecCase

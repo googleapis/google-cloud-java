@@ -46,11 +46,6 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateEntryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_UpdateEntryRequest_descriptor;
@@ -122,19 +117,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   *
    * You can modify only the fields listed below.
+   *
    * For entries with type `DATA_STREAM`:
+   *
    * * `schema`
+   *
    * For entries with type `FILESET`:
+   *
    * * `schema`
    * * `display_name`
    * * `description`
    * * `gcs_fileset_spec`
    * * `gcs_fileset_spec.file_patterns`
+   *
    * For entries with `user_specified_type`:
+   *
    * * `schema`
    * * `display_name`
    * * `description`
@@ -157,19 +160,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   *
    * You can modify only the fields listed below.
+   *
    * For entries with type `DATA_STREAM`:
+   *
    * * `schema`
+   *
    * For entries with type `FILESET`:
+   *
    * * `schema`
    * * `display_name`
    * * `description`
    * * `gcs_fileset_spec`
    * * `gcs_fileset_spec.file_patterns`
+   *
    * For entries with `user_specified_type`:
+   *
    * * `schema`
    * * `display_name`
    * * `description`
@@ -192,19 +203,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Names of fields whose values to overwrite on an entry.
+   *
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
+   *
    * You can modify only the fields listed below.
+   *
    * For entries with type `DATA_STREAM`:
+   *
    * * `schema`
+   *
    * For entries with type `FILESET`:
+   *
    * * `schema`
    * * `display_name`
    * * `description`
    * * `gcs_fileset_spec`
    * * `gcs_fileset_spec.file_patterns`
+   *
    * For entries with `user_specified_type`:
+   *
    * * `schema`
    * * `display_name`
    * * `description`
@@ -801,19 +820,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -835,19 +862,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -875,19 +910,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -917,19 +960,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -956,19 +1007,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -1001,19 +1060,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -1040,19 +1107,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -1074,19 +1149,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
@@ -1112,19 +1195,27 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Names of fields whose values to overwrite on an entry.
+     *
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
+     *
      * You can modify only the fields listed below.
+     *
      * For entries with type `DATA_STREAM`:
+     *
      * * `schema`
+     *
      * For entries with type `FILESET`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`
      * * `gcs_fileset_spec`
      * * `gcs_fileset_spec.file_patterns`
+     *
      * For entries with `user_specified_type`:
+     *
      * * `schema`
      * * `display_name`
      * * `description`

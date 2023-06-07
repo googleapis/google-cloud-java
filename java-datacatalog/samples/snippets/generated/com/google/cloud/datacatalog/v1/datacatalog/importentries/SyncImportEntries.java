@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public class SyncImportEntries {
       ImportEntriesRequest request =
           ImportEntriesRequest.newBuilder()
               .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+              .setJobId("jobId101296568")
               .build();
       ImportEntriesResponse response = dataCatalogClient.importEntriesAsync(request).get();
     }

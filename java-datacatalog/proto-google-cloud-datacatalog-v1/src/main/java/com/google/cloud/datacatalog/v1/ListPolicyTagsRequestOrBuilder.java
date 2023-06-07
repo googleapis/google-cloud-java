@@ -73,6 +73,7 @@ public interface ListPolicyTagsRequestOrBuilder
    * <pre>
    * The pagination token of the next results page. If not set, returns the
    * first page.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -87,6 +88,7 @@ public interface ListPolicyTagsRequestOrBuilder
    * <pre>
    * The pagination token of the next results page. If not set, returns the
    * first page.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *

@@ -89,5 +89,5 @@ public interface ImportTaxonomiesRequestOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.InlineSourceOrBuilder getInlineSourceOrBuilder();
 
-  public com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest.SourceCase getSourceCase();
+  com.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest.SourceCase getSourceCase();
 }

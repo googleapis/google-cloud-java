@@ -72,6 +72,7 @@ public interface ListTaxonomiesRequestOrBuilder
    * <pre>
    * The pagination token of the next results page. If not set,
    * the first page is returned.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -86,6 +87,7 @@ public interface ListTaxonomiesRequestOrBuilder
    * <pre>
    * The pagination token of the next results page. If not set,
    * the first page is returned.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *

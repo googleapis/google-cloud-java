@@ -48,11 +48,6 @@ public final class CrossRegionalSource extends com.google.protobuf.GeneratedMess
     return new CrossRegionalSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerSerializationProto
         .internal_static_google_cloud_datacatalog_v1_CrossRegionalSource_descriptor;

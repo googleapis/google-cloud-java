@@ -28,6 +28,7 @@ public interface DeleteTaxonomyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the taxonomy to delete.
+   *
    * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteTaxonomyRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the taxonomy to delete.
+   *
    * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *

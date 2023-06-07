@@ -225,5 +225,5 @@ public interface TagFieldOrBuilder
    */
   int getOrder();
 
-  public com.google.cloud.datacatalog.v1beta1.TagField.KindCase getKindCase();
+  com.google.cloud.datacatalog.v1beta1.TagField.KindCase getKindCase();
 }

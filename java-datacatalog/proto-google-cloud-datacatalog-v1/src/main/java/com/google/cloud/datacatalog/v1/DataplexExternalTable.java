@@ -56,11 +56,6 @@ public final class DataplexExternalTable extends com.google.protobuf.GeneratedMe
     return new DataplexExternalTable();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.DataplexSpecProto
         .internal_static_google_cloud_datacatalog_v1_DataplexExternalTable_descriptor;

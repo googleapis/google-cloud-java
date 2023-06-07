@@ -49,11 +49,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     return new CreateTagTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_CreateTagTemplateRequest_descriptor;
@@ -135,6 +130,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The ID of the tag template to create.
+   *
    * The ID must contain only lowercase letters (a-z), numbers (0-9),
    * or underscores (_), and must start with a letter or underscore.
    * The maximum size is 64 bytes when encoded in UTF-8.
@@ -161,6 +157,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The ID of the tag template to create.
+   *
    * The ID must contain only lowercase letters (a-z), numbers (0-9),
    * or underscores (_), and must start with a letter or underscore.
    * The maximum size is 64 bytes when encoded in UTF-8.
@@ -766,6 +763,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The ID of the tag template to create.
+     *
      * The ID must contain only lowercase letters (a-z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -791,6 +789,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The ID of the tag template to create.
+     *
      * The ID must contain only lowercase letters (a-z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -816,6 +815,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The ID of the tag template to create.
+     *
      * The ID must contain only lowercase letters (a-z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -840,6 +840,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The ID of the tag template to create.
+     *
      * The ID must contain only lowercase letters (a-z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -860,6 +861,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The ID of the tag template to create.
+     *
      * The ID must contain only lowercase letters (a-z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
      * The maximum size is 64 bytes when encoded in UTF-8.

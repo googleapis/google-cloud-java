@@ -48,11 +48,6 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     return new TagTemplateField();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Tags
         .internal_static_google_cloud_datacatalog_v1beta1_TagTemplateField_descriptor;
@@ -77,7 +72,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -103,7 +100,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -719,7 +718,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -744,7 +745,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -769,7 +772,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -793,7 +798,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -813,7 +820,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>

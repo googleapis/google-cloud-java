@@ -46,11 +46,6 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateEntryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_UpdateEntryRequest_descriptor;
@@ -130,6 +125,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The fields to update on the entry. If absent or empty, all modifiable
    * fields are updated.
+   *
    * The following fields are modifiable:
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
@@ -163,6 +159,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The fields to update on the entry. If absent or empty, all modifiable
    * fields are updated.
+   *
    * The following fields are modifiable:
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
@@ -196,6 +193,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The fields to update on the entry. If absent or empty, all modifiable
    * fields are updated.
+   *
    * The following fields are modifiable:
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
@@ -817,6 +815,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -849,6 +848,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -887,6 +887,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -927,6 +928,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -964,6 +966,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -1007,6 +1010,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -1044,6 +1048,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -1076,6 +1081,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`
@@ -1112,6 +1118,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to update on the entry. If absent or empty, all modifiable
      * fields are updated.
+     *
      * The following fields are modifiable:
      * * For entries with type `DATA_STREAM`:
      *    * `schema`

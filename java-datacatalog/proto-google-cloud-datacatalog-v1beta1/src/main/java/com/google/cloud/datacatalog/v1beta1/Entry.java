@@ -28,6 +28,7 @@ package com.google.cloud.datacatalog.v1beta1;
  * outside of Google Cloud Platform. Clients can use the `linked_resource` field
  * in the Entry resource to refer to the original resource ID of the source
  * system.
+ *
  * An Entry resource contains resource details, such as its schema. An Entry can
  * also be used to attach flexible metadata, such as a
  * [Tag][google.cloud.datacatalog.v1beta1.Tag].
@@ -58,11 +59,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return new Entry();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1beta1_Entry_descriptor;
@@ -79,6 +75,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int entryTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object entryType_;
 
   public enum EntryTypeCase
@@ -126,6 +124,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int systemCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object system_;
 
   public enum SystemCase
@@ -173,6 +173,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object typeSpec_;
 
   public enum TypeSpecCase
@@ -231,7 +233,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Data Catalog resource name of the entry in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
@@ -257,7 +261,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Data Catalog resource name of the entry in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
@@ -288,11 +294,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource this metadata entry refers to.
+   *
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
+   *
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *
    * Output only when Entry is of type in the EntryType enum. For entries with
    * user_specified_type, this field is optional and defaults to an empty
    * string.
@@ -319,11 +328,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource this metadata entry refers to.
+   *
    * For Google Cloud Platform resources, `linked_resource` is the [full name of
    * the
    * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
+   *
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+   *
    * Output only when Entry is of type in the EntryType enum. For entries with
    * user_specified_type, this field is optional and defaults to an empty
    * string.
@@ -413,6 +425,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -435,6 +448,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -470,6 +484,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * `user_specified_type` strings must begin with a letter or underscore and
    * can only contain letters, numbers, and underscores; are case insensitive;
    * must be at least 1 character and at most 64 characters long.
+   *
    * Currently, only FILESET enum value is allowed. All other entries created
    * through Data Catalog must use `user_specified_type`.
    * </pre>
@@ -1391,6 +1406,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * outside of Google Cloud Platform. Clients can use the `linked_resource` field
    * in the Entry resource to refer to the original resource ID of the source
    * system.
+   *
    * An Entry resource contains resource details, such as its schema. An Entry can
    * also be used to attach flexible metadata, such as a
    * [Tag][google.cloud.datacatalog.v1beta1.Tag].
@@ -1841,7 +1857,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Data Catalog resource name of the entry in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
@@ -1866,7 +1884,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Data Catalog resource name of the entry in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
@@ -1891,7 +1911,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Data Catalog resource name of the entry in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
@@ -1915,7 +1937,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Data Catalog resource name of the entry in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
@@ -1935,7 +1959,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Data Catalog resource name of the entry in URL format. Example:
+     *
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *
      * Note that this Entry and its child resources may not actually be stored in
      * the location in this name.
      * </pre>
@@ -1962,11 +1988,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -1992,11 +2021,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2022,11 +2054,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2051,11 +2086,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2076,11 +2114,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource this metadata entry refers to.
+     *
      * For Google Cloud Platform resources, `linked_resource` is the [full name of
      * the
      * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
+     *
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
+     *
      * Output only when Entry is of type in the EntryType enum. For entries with
      * user_specified_type, this field is optional and defaults to an empty
      * string.
@@ -2234,6 +2275,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2257,6 +2299,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2293,6 +2336,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2329,6 +2373,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2358,6 +2403,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>
@@ -2385,6 +2431,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * `user_specified_type` strings must begin with a letter or underscore and
      * can only contain letters, numbers, and underscores; are case insensitive;
      * must be at least 1 character and at most 64 characters long.
+     *
      * Currently, only FILESET enum value is allowed. All other entries created
      * through Data Catalog must use `user_specified_type`.
      * </pre>

@@ -87,6 +87,7 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -102,6 +103,7 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
+   *
    *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
    *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
@@ -119,6 +121,7 @@ public interface SearchCatalogResultOrBuilder
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
@@ -134,6 +137,7 @@ public interface SearchCatalogResultOrBuilder
    * The full name of the cloud resource the entry belongs to. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
+   *
    *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *

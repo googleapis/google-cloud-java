@@ -45,11 +45,6 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
     return new SystemTimestamps();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1beta1.Timestamps
         .internal_static_google_cloud_datacatalog_v1beta1_SystemTimestamps_descriptor;

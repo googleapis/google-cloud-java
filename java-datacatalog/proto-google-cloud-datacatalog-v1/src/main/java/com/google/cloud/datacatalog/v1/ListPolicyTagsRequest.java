@@ -49,11 +49,6 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
     return new ListPolicyTagsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerProto
         .internal_static_google_cloud_datacatalog_v1_ListPolicyTagsRequest_descriptor;
@@ -154,6 +149,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The pagination token of the next results page. If not set, returns the
    * first page.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -179,6 +175,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The pagination token of the next results page. If not set, returns the
    * first page.
+   *
    * The token is returned in the response to a previous list request.
    * </pre>
    *
@@ -771,6 +768,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set, returns the
      * first page.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -795,6 +793,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set, returns the
      * first page.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -819,6 +818,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set, returns the
      * first page.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -842,6 +842,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set, returns the
      * first page.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *
@@ -861,6 +862,7 @@ public final class ListPolicyTagsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * The pagination token of the next results page. If not set, returns the
      * first page.
+     *
      * The token is returned in the response to a previous list request.
      * </pre>
      *

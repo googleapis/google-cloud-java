@@ -28,6 +28,7 @@ public interface DeleteTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template to delete. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template to delete. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *

@@ -53,6 +53,7 @@ public interface DataSourceOrBuilder
    *
    * <pre>
    * Full name of a resource as defined by the service. For example:
+   *
    * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    * </pre>
    *
@@ -66,6 +67,7 @@ public interface DataSourceOrBuilder
    *
    * <pre>
    * Full name of a resource as defined by the service. For example:
+   *
    * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    * </pre>
    *
@@ -135,5 +137,5 @@ public interface DataSourceOrBuilder
    */
   com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder getStoragePropertiesOrBuilder();
 
-  public com.google.cloud.datacatalog.v1.DataSource.PropertiesCase getPropertiesCase();
+  com.google.cloud.datacatalog.v1.DataSource.PropertiesCase getPropertiesCase();
 }

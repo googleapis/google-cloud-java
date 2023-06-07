@@ -49,11 +49,6 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
     return new RenameTagTemplateFieldRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldRequest_descriptor;
