@@ -24,6 +24,7 @@ fi
 GOOGLEAPIS_ROOT=${REPO_ROOT}/googleapis
 cd "${GOOGLEAPIS_ROOT}"
 git checkout 53a0be29c4a95a1d3b4c0d3a7a2ac8b52af2a3c0
+PROTO_FILES=$(ls google/monitoring/v3/*.proto)
 # pull proto files and protoc from protobuf repository
 # maven central doesn't have proto files
 cd "${REPO_ROOT}"
@@ -42,27 +43,7 @@ curl -LJ -o gapic-generator-java.jar https://repo1.maven.org/maven2/com/google/a
 # generate grpc-google-cloud-monitoring-v3-java-srcs_pkg.tar.gz
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
-"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" \
-"--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" \
-google/monitoring/v3/alert.proto \
-google/monitoring/v3/alert_service.proto \
-google/monitoring/v3/common.proto \
-google/monitoring/v3/dropped_labels.proto \
-google/monitoring/v3/group.proto \
-google/monitoring/v3/group_service.proto \
-google/monitoring/v3/metric.proto \
-google/monitoring/v3/metric_service.proto \
-google/monitoring/v3/mutation_record.proto \
-google/monitoring/v3/notification.proto \
-google/monitoring/v3/notification_service.proto \
-google/monitoring/v3/query_service.proto \
-google/monitoring/v3/service.proto \
-google/monitoring/v3/service_service.proto \
-google/monitoring/v3/snooze.proto \
-google/monitoring/v3/snooze_service.proto \
-google/monitoring/v3/span_context.proto \
-google/monitoring/v3/uptime.proto \
-google/monitoring/v3/uptime_service.proto
+"${PROTOC_ROOT}"/protoc "--plugin=protoc-gen-rpc-plugin=${LIBRARY_GEN_OUT}/protoc-gen-grpc-java" "--rpc-plugin_out=:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar" ${PROTO_FILES} \
 
 for src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_grpc-proto-gensrc.jar; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-java-srcs_pkg/grpc-google-cloud-monitoring-v3-java/src/main/java
@@ -89,26 +70,7 @@ mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/grpc-google-cloud-monitoring-v3-jav
 "--plugin=protoc-gen-java_gapic=${REPO_ROOT}/gapic-generator-java-wrapper" \
 "--java_gapic_out=metadata:${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar_raw.srcjar.zip" \
 "--java_gapic_opt=transport=grpc,rest-numeric-enums,grpc-service-config=google/monitoring/v3/monitoring_grpc_service_config.json,gapic-config=google/monitoring/v3/monitoring_gapic.yaml,api-service-config=google/monitoring/v3/monitoring.yaml" \
-google/monitoring/v3/alert.proto \
-google/monitoring/v3/alert_service.proto \
-google/monitoring/v3/common.proto \
-google/monitoring/v3/dropped_labels.proto \
-google/monitoring/v3/group.proto \
-google/monitoring/v3/group_service.proto \
-google/monitoring/v3/metric.proto \
-google/monitoring/v3/metric_service.proto \
-google/monitoring/v3/mutation_record.proto \
-google/monitoring/v3/notification.proto \
-google/monitoring/v3/notification_service.proto \
-google/monitoring/v3/query_service.proto \
-google/monitoring/v3/service.proto \
-google/monitoring/v3/service_service.proto \
-google/monitoring/v3/snooze.proto \
-google/monitoring/v3/snooze_service.proto \
-google/monitoring/v3/span_context.proto \
-google/monitoring/v3/uptime.proto \
-google/monitoring/v3/uptime_service.proto \
-google/cloud/common_resources.proto
+${PROTO_FILES} google/cloud/common_resources.proto
 
 unzip -o -q "${LIBRARY_GEN_OUT}"/google/monitoring/v3/monitoring_java_gapic_srcjar_raw.srcjar.zip -d "${LIBRARY_GEN_OUT}"/google/monitoring/v3/
 # Sync'\''d to the output file name in Writer.java.
@@ -191,26 +153,7 @@ mv "${LIBRARY_GEN_OUT}"/google/monitoring/v3/gapic-google-cloud-monitoring-v3-ja
 # generate proto-google-cloud-monitoring-v3-java-resources.tar.gz
 #####################################################
 cd "${GOOGLEAPIS_ROOT}"
-"${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" \
-google/monitoring/v3/alert.proto \
-google/monitoring/v3/alert_service.proto \
-google/monitoring/v3/common.proto \
-google/monitoring/v3/dropped_labels.proto \
-google/monitoring/v3/group.proto \
-google/monitoring/v3/group_service.proto \
-google/monitoring/v3/metric.proto \
-google/monitoring/v3/metric_service.proto \
-google/monitoring/v3/mutation_record.proto \
-google/monitoring/v3/notification.proto \
-google/monitoring/v3/notification_service.proto \
-google/monitoring/v3/query_service.proto \
-google/monitoring/v3/service.proto \
-google/monitoring/v3/service_service.proto \
-google/monitoring/v3/snooze.proto \
-google/monitoring/v3/snooze_service.proto \
-google/monitoring/v3/span_context.proto \
-google/monitoring/v3/uptime.proto \
-google/monitoring/v3/uptime_service.proto
+"${PROTOC_ROOT}"/protoc "--java_out=${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar" ${PROTO_FILES}
 
 for src in ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_java_gapic_srcjar-resource-name.srcjar ${LIBRARY_GEN_OUT}/google/monitoring/v3/monitoring_proto-speed-src.jar; do
     mkdir -p "${LIBRARY_GEN_OUT}"/google/monitoring/v3/proto-google-cloud-monitoring-v3-java-srcs_pkg/proto-google-cloud-monitoring-v3-java/src/main/java
