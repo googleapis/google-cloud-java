@@ -51,11 +51,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     return new Contact();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.essentialcontacts.v1.Service
         .internal_static_google_cloud_essentialcontacts_v1_Contact_descriptor;

@@ -48,11 +48,6 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     return new ResourceManifest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.MembershipProto
         .internal_static_google_cloud_gkehub_v1_ResourceManifest_descriptor;
@@ -127,6 +122,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Whether the resource provided in the manifest is `cluster_scoped`.
    * If unset, the manifest is assumed to be namespace scoped.
+   *
    * This field is used for REST mapping when applying the resource in a
    * cluster.
    * </pre>
@@ -617,6 +613,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Whether the resource provided in the manifest is `cluster_scoped`.
      * If unset, the manifest is assumed to be namespace scoped.
+     *
      * This field is used for REST mapping when applying the resource in a
      * cluster.
      * </pre>
@@ -635,6 +632,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Whether the resource provided in the manifest is `cluster_scoped`.
      * If unset, the manifest is assumed to be namespace scoped.
+     *
      * This field is used for REST mapping when applying the resource in a
      * cluster.
      * </pre>
@@ -657,6 +655,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Whether the resource provided in the manifest is `cluster_scoped`.
      * If unset, the manifest is assumed to be namespace scoped.
+     *
      * This field is used for REST mapping when applying the resource in a
      * cluster.
      * </pre>

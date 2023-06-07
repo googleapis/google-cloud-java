@@ -49,11 +49,6 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
     return new GameServerCluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerClusters
         .internal_static_google_cloud_gaming_v1beta_GameServerCluster_descriptor;
@@ -89,8 +84,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the game server cluster. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
@@ -115,8 +112,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the game server cluster. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
@@ -1043,8 +1042,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the game server cluster. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
@@ -1068,8 +1069,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the game server cluster. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
@@ -1093,8 +1096,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the game server cluster. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
@@ -1117,8 +1122,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the game server cluster. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *
@@ -1137,8 +1144,10 @@ public final class GameServerCluster extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the game server cluster. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
      * </pre>
      *

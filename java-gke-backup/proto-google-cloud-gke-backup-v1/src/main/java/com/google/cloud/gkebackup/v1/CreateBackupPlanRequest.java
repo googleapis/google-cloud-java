@@ -48,11 +48,6 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
     return new CreateBackupPlanRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_CreateBackupPlanRequest_descriptor;
@@ -191,6 +186,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The client-provided short name for the BackupPlan resource.
    * This name must:
+   *
    * - be between 1 and 63 characters long (inclusive)
    * - consist of only lower-case ASCII letters, numbers, and dashes
    * - start with a lower-case letter
@@ -220,6 +216,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The client-provided short name for the BackupPlan resource.
    * This name must:
+   *
    * - be between 1 and 63 characters long (inclusive)
    * - consist of only lower-case ASCII letters, numbers, and dashes
    * - start with a lower-case letter
@@ -971,6 +968,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The client-provided short name for the BackupPlan resource.
      * This name must:
+     *
      * - be between 1 and 63 characters long (inclusive)
      * - consist of only lower-case ASCII letters, numbers, and dashes
      * - start with a lower-case letter
@@ -999,6 +997,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The client-provided short name for the BackupPlan resource.
      * This name must:
+     *
      * - be between 1 and 63 characters long (inclusive)
      * - consist of only lower-case ASCII letters, numbers, and dashes
      * - start with a lower-case letter
@@ -1027,6 +1026,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The client-provided short name for the BackupPlan resource.
      * This name must:
+     *
      * - be between 1 and 63 characters long (inclusive)
      * - consist of only lower-case ASCII letters, numbers, and dashes
      * - start with a lower-case letter
@@ -1054,6 +1054,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The client-provided short name for the BackupPlan resource.
      * This name must:
+     *
      * - be between 1 and 63 characters long (inclusive)
      * - consist of only lower-case ASCII letters, numbers, and dashes
      * - start with a lower-case letter
@@ -1077,6 +1078,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The client-provided short name for the BackupPlan resource.
      * This name must:
+     *
      * - be between 1 and 63 characters long (inclusive)
      * - consist of only lower-case ASCII letters, numbers, and dashes
      * - start with a lower-case letter

@@ -52,11 +52,6 @@ public final class ListEntityReconciliationJobsResponse
     return new ListEntityReconciliationJobsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.enterpriseknowledgegraph.v1.ServiceProto
         .internal_static_google_cloud_enterpriseknowledgegraph_v1_ListEntityReconciliationJobsResponse_descriptor;

@@ -49,11 +49,6 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     return new BatchProcessMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1_BatchProcessMetadata_descriptor;
@@ -477,11 +472,6 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new IndividualProcessStatus();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -55,6 +55,7 @@ public interface AwsServicesAuthenticationOrBuilder
    *
    * <pre>
    * Optional. An identifier for the assumed role session.
+   *
    * When unspecified, it defaults to `multicloud-service-agent`.
    * </pre>
    *
@@ -68,6 +69,7 @@ public interface AwsServicesAuthenticationOrBuilder
    *
    * <pre>
    * Optional. An identifier for the assumed role session.
+   *
    * When unspecified, it defaults to `multicloud-service-agent`.
    * </pre>
    *

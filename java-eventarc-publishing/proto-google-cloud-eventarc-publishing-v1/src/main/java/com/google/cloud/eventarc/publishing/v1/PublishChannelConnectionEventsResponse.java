@@ -47,11 +47,6 @@ public final class PublishChannelConnectionEventsResponse
     return new PublishChannelConnectionEventsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.publishing.v1.PublisherProto
         .internal_static_google_cloud_eventarc_publishing_v1_PublishChannelConnectionEventsResponse_descriptor;

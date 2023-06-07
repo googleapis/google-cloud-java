@@ -49,11 +49,6 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
     return new GameServerDeployment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerDeployments
         .internal_static_google_cloud_gaming_v1beta_GameServerDeployment_descriptor;
@@ -89,8 +84,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The resource name of the game server deployment. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
    * </pre>
    *
@@ -115,8 +112,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The resource name of the game server deployment. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
    * </pre>
    *
@@ -957,8 +956,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
@@ -982,8 +983,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
@@ -1007,8 +1010,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
@@ -1031,8 +1036,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *
@@ -1051,8 +1058,10 @@ public final class GameServerDeployment extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The resource name of the game server deployment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment`.
      * </pre>
      *

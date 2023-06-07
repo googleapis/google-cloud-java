@@ -48,11 +48,6 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
     return new CreateShareRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1beta1_CreateShareRequest_descriptor;
@@ -135,6 +130,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The ID to use for the share.
    * The ID must be unique within the specified instance.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -161,6 +157,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The ID to use for the share.
    * The ID must be unique within the specified instance.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -760,6 +757,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The ID to use for the share.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -785,6 +783,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The ID to use for the share.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -810,6 +809,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The ID to use for the share.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -834,6 +834,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The ID to use for the share.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -854,6 +855,7 @@ public final class CreateShareRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The ID to use for the share.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>

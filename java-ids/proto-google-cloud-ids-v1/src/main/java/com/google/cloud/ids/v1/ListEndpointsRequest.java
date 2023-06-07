@@ -42,11 +42,6 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
     return new ListEndpointsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.ids.v1.IdsProto
         .internal_static_google_cloud_ids_v1_ListEndpointsRequest_descriptor;
@@ -146,6 +141,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A page token, received from a previous `ListEndpoints` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListEndpoints` must
    * match the call that provided the page token.
    * </pre>
@@ -172,6 +168,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A page token, received from a previous `ListEndpoints` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListEndpoints` must
    * match the call that provided the page token.
    * </pre>
@@ -905,6 +902,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A page token, received from a previous `ListEndpoints` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListEndpoints` must
      * match the call that provided the page token.
      * </pre>
@@ -930,6 +928,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A page token, received from a previous `ListEndpoints` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListEndpoints` must
      * match the call that provided the page token.
      * </pre>
@@ -955,6 +954,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A page token, received from a previous `ListEndpoints` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListEndpoints` must
      * match the call that provided the page token.
      * </pre>
@@ -979,6 +979,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A page token, received from a previous `ListEndpoints` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListEndpoints` must
      * match the call that provided the page token.
      * </pre>
@@ -999,6 +1000,7 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A page token, received from a previous `ListEndpoints` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListEndpoints` must
      * match the call that provided the page token.
      * </pre>

@@ -44,18 +44,13 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     category_ = "";
     availableLocations_ = java.util.Collections.emptyList();
     launchStage_ = 0;
-    sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProcessorType();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,11 +125,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LocationInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1012,7 +1002,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   public static final int SAMPLE_DOCUMENT_URIS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sampleDocumentUris_;
+  private com.google.protobuf.LazyStringArrayList sampleDocumentUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1347,8 +1338,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       allowCreation_ = false;
       launchStage_ = 0;
-      sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1394,11 +1384,6 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.availableLocations_ = availableLocationsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        sampleDocumentUris_ = sampleDocumentUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.sampleDocumentUris_ = sampleDocumentUris_;
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1.ProcessorType result) {
@@ -1417,6 +1402,10 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.launchStage_ = launchStage_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        sampleDocumentUris_.makeImmutable();
+        result.sampleDocumentUris_ = sampleDocumentUris_;
       }
     }
 
@@ -1516,7 +1505,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (!other.sampleDocumentUris_.isEmpty()) {
         if (sampleDocumentUris_.isEmpty()) {
           sampleDocumentUris_ = other.sampleDocumentUris_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureSampleDocumentUrisIsMutable();
           sampleDocumentUris_.addAll(other.sampleDocumentUris_);
@@ -2494,14 +2483,14 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList sampleDocumentUris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sampleDocumentUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSampleDocumentUrisIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!sampleDocumentUris_.isModifiable()) {
         sampleDocumentUris_ = new com.google.protobuf.LazyStringArrayList(sampleDocumentUris_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2515,7 +2504,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sampleDocumentUris.
      */
     public com.google.protobuf.ProtocolStringList getSampleDocumentUrisList() {
-      return sampleDocumentUris_.getUnmodifiableView();
+      sampleDocumentUris_.makeImmutable();
+      return sampleDocumentUris_;
     }
     /**
      *
@@ -2580,6 +2570,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSampleDocumentUrisIsMutable();
       sampleDocumentUris_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2601,6 +2592,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSampleDocumentUrisIsMutable();
       sampleDocumentUris_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2619,6 +2611,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSampleDocumentUris(java.lang.Iterable<java.lang.String> values) {
       ensureSampleDocumentUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampleDocumentUris_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2634,8 +2627,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSampleDocumentUris() {
-      sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2658,6 +2652,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSampleDocumentUrisIsMutable();
       sampleDocumentUris_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

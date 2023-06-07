@@ -47,11 +47,6 @@ public final class DocsExtensionPoint extends com.google.protobuf.GeneratedMessa
     return new DocsExtensionPoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.docs.DocsAddOnManifestProto
         .internal_static_google_apps_script_type_docs_DocsExtensionPoint_descriptor;

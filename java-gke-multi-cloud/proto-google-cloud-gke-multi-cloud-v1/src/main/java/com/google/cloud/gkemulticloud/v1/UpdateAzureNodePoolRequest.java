@@ -45,11 +45,6 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     return new UpdateAzureNodePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_UpdateAzureNodePoolRequest_descriptor;
@@ -151,6 +146,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+   *
    *  *.  `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -174,6 +170,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+   *
    *  *.  `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -197,6 +194,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+   *
    *  *.  `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -897,6 +895,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -919,6 +918,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -947,6 +947,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -977,6 +978,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1004,6 +1006,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1037,6 +1040,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1064,6 +1068,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1086,6 +1091,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1112,6 +1118,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+     *
      *  *.  `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.

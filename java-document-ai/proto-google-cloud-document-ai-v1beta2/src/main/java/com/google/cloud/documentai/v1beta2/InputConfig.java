@@ -47,11 +47,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return new InputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta2_InputConfig_descriptor;
@@ -68,6 +63,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -176,6 +173,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Content in bytes, represented as a stream of bytes.
    * Note: As with all `bytes` fields, proto buffer messages use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * This field only works for synchronous ProcessDocument method.
    * </pre>
    *
@@ -194,6 +192,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * Content in bytes, represented as a stream of bytes.
    * Note: As with all `bytes` fields, proto buffer messages use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * This field only works for synchronous ProcessDocument method.
    * </pre>
    *
@@ -930,6 +929,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Content in bytes, represented as a stream of bytes.
      * Note: As with all `bytes` fields, proto buffer messages use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * This field only works for synchronous ProcessDocument method.
      * </pre>
      *
@@ -947,6 +947,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Content in bytes, represented as a stream of bytes.
      * Note: As with all `bytes` fields, proto buffer messages use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * This field only works for synchronous ProcessDocument method.
      * </pre>
      *
@@ -967,6 +968,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Content in bytes, represented as a stream of bytes.
      * Note: As with all `bytes` fields, proto buffer messages use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * This field only works for synchronous ProcessDocument method.
      * </pre>
      *
@@ -991,6 +993,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * Content in bytes, represented as a stream of bytes.
      * Note: As with all `bytes` fields, proto buffer messages use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * This field only works for synchronous ProcessDocument method.
      * </pre>
      *

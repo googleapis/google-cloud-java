@@ -48,11 +48,6 @@ public final class KeyRing extends com.google.protobuf.GeneratedMessageV3
     return new KeyRing();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_KeyRing_descriptor;

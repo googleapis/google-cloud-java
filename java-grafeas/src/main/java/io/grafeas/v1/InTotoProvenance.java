@@ -31,18 +31,13 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   }
 
   private InTotoProvenance() {
-    materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    materials_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InTotoProvenance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -193,7 +188,8 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   public static final int MATERIALS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList materials_;
+  private com.google.protobuf.LazyStringArrayList materials_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -516,8 +512,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      materials_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -544,20 +539,11 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public io.grafeas.v1.InTotoProvenance buildPartial() {
       io.grafeas.v1.InTotoProvenance result = new io.grafeas.v1.InTotoProvenance(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(io.grafeas.v1.InTotoProvenance result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        materials_ = materials_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.materials_ = materials_;
     }
 
     private void buildPartial0(io.grafeas.v1.InTotoProvenance result) {
@@ -571,6 +557,10 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        materials_.makeImmutable();
+        result.materials_ = materials_;
       }
     }
 
@@ -631,7 +621,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       if (!other.materials_.isEmpty()) {
         if (materials_.isEmpty()) {
           materials_ = other.materials_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureMaterialsIsMutable();
           materials_.addAll(other.materials_);
@@ -1197,14 +1187,14 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       return metadataBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList materials_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList materials_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMaterialsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!materials_.isModifiable()) {
         materials_ = new com.google.protobuf.LazyStringArrayList(materials_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1221,7 +1211,8 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * @return A list containing the materials.
      */
     public com.google.protobuf.ProtocolStringList getMaterialsList() {
-      return materials_.getUnmodifiableView();
+      materials_.makeImmutable();
+      return materials_;
     }
     /**
      *
@@ -1298,6 +1289,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       ensureMaterialsIsMutable();
       materials_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1322,6 +1314,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       }
       ensureMaterialsIsMutable();
       materials_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1343,6 +1336,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public Builder addAllMaterials(java.lang.Iterable<java.lang.String> values) {
       ensureMaterialsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, materials_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1361,8 +1355,9 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaterials() {
-      materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      materials_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1388,6 +1383,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureMaterialsIsMutable();
       materials_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

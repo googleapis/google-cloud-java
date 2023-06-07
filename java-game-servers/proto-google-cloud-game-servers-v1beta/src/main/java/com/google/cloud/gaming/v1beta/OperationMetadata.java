@@ -42,18 +42,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     verb_ = "";
     statusMessage_ = "";
     apiVersion_ = "";
-    unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -408,7 +403,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public static final int UNREACHABLE_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unreachable_;
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -935,8 +931,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       statusMessage_ = "";
       requestedCancellation_ = false;
       apiVersion_ = "";
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableOperationStatus().clear();
       return this;
     }
@@ -965,21 +960,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gaming.v1beta.OperationMetadata buildPartial() {
       com.google.cloud.gaming.v1beta.OperationMetadata result =
           new com.google.cloud.gaming.v1beta.OperationMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gaming.v1beta.OperationMetadata result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
-        unreachable_ = unreachable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.unreachable_ = unreachable_;
     }
 
     private void buildPartial0(com.google.cloud.gaming.v1beta.OperationMetadata result) {
@@ -1004,6 +989,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiVersion_ = apiVersion_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.operationStatus_ = internalGetOperationStatus();
@@ -1089,7 +1078,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (!other.unreachable_.isEmpty()) {
         if (unreachable_.isEmpty()) {
           unreachable_ = other.unreachable_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureUnreachableIsMutable();
           unreachable_.addAll(other.unreachable_);
@@ -2081,14 +2070,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unreachable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnreachableIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!unreachable_.isModifiable()) {
         unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2102,7 +2091,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return A list containing the unreachable.
      */
     public com.google.protobuf.ProtocolStringList getUnreachableList() {
-      return unreachable_.getUnmodifiableView();
+      unreachable_.makeImmutable();
+      return unreachable_;
     }
     /**
      *
@@ -2167,6 +2157,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureUnreachableIsMutable();
       unreachable_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2188,6 +2179,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2206,6 +2198,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
       ensureUnreachableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2221,8 +2214,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUnreachable() {
-      unreachable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2245,6 +2239,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureUnreachableIsMutable();
       unreachable_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

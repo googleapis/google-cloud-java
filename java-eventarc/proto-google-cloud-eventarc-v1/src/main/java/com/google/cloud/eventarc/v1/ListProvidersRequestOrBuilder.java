@@ -71,6 +71,7 @@ public interface ListProvidersRequestOrBuilder
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListProviders` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListProviders` must
    * match the call that provided the page token.
    * </pre>
@@ -86,6 +87,7 @@ public interface ListProvidersRequestOrBuilder
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListProviders` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListProviders` must
    * match the call that provided the page token.
    * </pre>

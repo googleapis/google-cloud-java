@@ -101,5 +101,5 @@ public interface CommonFeatureSpecOrBuilder
   com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpecOrBuilder
       getCloudauditloggingOrBuilder();
 
-  public com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.FeatureSpecCase getFeatureSpecCase();
+  com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.FeatureSpecCase getFeatureSpecCase();
 }

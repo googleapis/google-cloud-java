@@ -23,6 +23,7 @@ package com.google.cloud.domains.v1;
  *
  * <pre>
  * Defines a set of possible contact privacy settings for a `Registration`.
+ *
  * [ICANN](https://icann.org/) maintains the WHOIS database, a publicly
  * accessible mapping from domain name to contact information, and requires that
  * each domain name have an entry. Choose from these options to control how much

@@ -28,8 +28,10 @@ public interface GameServerClusterOrBuilder
    *
    * <pre>
    * Required. The resource name of the game server cluster. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *
@@ -43,8 +45,10 @@ public interface GameServerClusterOrBuilder
    *
    * <pre>
    * Required. The resource name of the game server cluster. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
    * </pre>
    *

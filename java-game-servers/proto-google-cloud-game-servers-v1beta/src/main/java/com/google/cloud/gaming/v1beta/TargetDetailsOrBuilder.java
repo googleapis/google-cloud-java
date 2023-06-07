@@ -28,6 +28,7 @@ public interface TargetDetailsOrBuilder
    *
    * <pre>
    * The game server cluster name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface TargetDetailsOrBuilder
    *
    * <pre>
    * The game server cluster name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -55,6 +57,7 @@ public interface TargetDetailsOrBuilder
    *
    * <pre>
    * The game server deployment name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
    * </pre>
    *
@@ -68,6 +71,7 @@ public interface TargetDetailsOrBuilder
    *
    * <pre>
    * The game server deployment name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
    * </pre>
    *

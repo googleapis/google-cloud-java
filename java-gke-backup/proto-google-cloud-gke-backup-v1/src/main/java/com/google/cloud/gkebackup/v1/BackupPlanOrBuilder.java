@@ -188,6 +188,7 @@ public interface BackupPlanOrBuilder
    * Required. Immutable. The source cluster from which Backups will be created via
    * this BackupPlan.
    * Valid formats:
+   *
    * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -206,6 +207,7 @@ public interface BackupPlanOrBuilder
    * Required. Immutable. The source cluster from which Backups will be created via
    * this BackupPlan.
    * Valid formats:
+   *
    * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -394,6 +396,7 @@ public interface BackupPlanOrBuilder
    * updates will be allowed (except deletes), including the deactivated field
    * itself. It also prevents any new Backups from being created via this
    * BackupPlan (including scheduled Backups).
+   *
    * Default: False
    * </pre>
    *

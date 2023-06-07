@@ -47,11 +47,6 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
     return new CreateDeviceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.DeviceManagerProto
         .internal_static_google_cloud_iot_v1_CreateDeviceRequest_descriptor;

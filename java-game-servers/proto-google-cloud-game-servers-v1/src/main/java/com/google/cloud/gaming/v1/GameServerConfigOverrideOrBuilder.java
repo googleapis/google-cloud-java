@@ -95,7 +95,7 @@ public interface GameServerConfigOverrideOrBuilder
    */
   com.google.protobuf.ByteString getConfigVersionBytes();
 
-  public com.google.cloud.gaming.v1.GameServerConfigOverride.SelectorCase getSelectorCase();
+  com.google.cloud.gaming.v1.GameServerConfigOverride.SelectorCase getSelectorCase();
 
-  public com.google.cloud.gaming.v1.GameServerConfigOverride.ChangeCase getChangeCase();
+  com.google.cloud.gaming.v1.GameServerConfigOverride.ChangeCase getChangeCase();
 }

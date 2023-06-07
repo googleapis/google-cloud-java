@@ -28,6 +28,7 @@ public interface AzureDatabaseEncryptionOrBuilder
    *
    * <pre>
    * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+   *
    * For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
    * Encryption will always take the latest version of the key and hence
@@ -44,6 +45,7 @@ public interface AzureDatabaseEncryptionOrBuilder
    *
    * <pre>
    * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+   *
    * For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
    * Encryption will always take the latest version of the key and hence

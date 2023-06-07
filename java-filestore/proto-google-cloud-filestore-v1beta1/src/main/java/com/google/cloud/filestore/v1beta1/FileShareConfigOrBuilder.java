@@ -167,5 +167,5 @@ public interface FileShareConfigOrBuilder
   com.google.cloud.filestore.v1beta1.NfsExportOptionsOrBuilder getNfsExportOptionsOrBuilder(
       int index);
 
-  public com.google.cloud.filestore.v1beta1.FileShareConfig.SourceCase getSourceCase();
+  com.google.cloud.filestore.v1beta1.FileShareConfig.SourceCase getSourceCase();
 }

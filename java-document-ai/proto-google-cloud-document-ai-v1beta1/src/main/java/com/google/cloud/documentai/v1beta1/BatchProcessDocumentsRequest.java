@@ -48,11 +48,6 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
     return new BatchProcessDocumentsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta1.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta1_BatchProcessDocumentsRequest_descriptor;
@@ -161,7 +156,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -186,7 +183,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -1034,7 +1033,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -1058,7 +1059,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -1082,7 +1085,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -1105,7 +1110,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *
@@ -1124,7 +1131,9 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Target project and location to make a call.
+     *
      * Format: `projects/{project-id}/locations/{location-id}`.
+     *
      * If no location is specified, a region will be chosen automatically.
      * </pre>
      *

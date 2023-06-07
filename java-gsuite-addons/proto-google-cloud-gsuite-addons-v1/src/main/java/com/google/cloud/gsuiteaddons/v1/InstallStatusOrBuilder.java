@@ -28,6 +28,7 @@ public interface InstallStatusOrBuilder
    *
    * <pre>
    * The canonical full resource name of the deployment install status.
+   *
    * Example:  `projects/123/deployments/my_deployment/installStatus`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface InstallStatusOrBuilder
    *
    * <pre>
    * The canonical full resource name of the deployment install status.
+   *
    * Example:  `projects/123/deployments/my_deployment/installStatus`.
    * </pre>
    *

@@ -28,6 +28,7 @@ public interface GetDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the deployment to get.
+   *
    * Example:  `projects/my_project/deployments/my_deployment`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the deployment to get.
+   *
    * Example:  `projects/my_project/deployments/my_deployment`.
    * </pre>
    *

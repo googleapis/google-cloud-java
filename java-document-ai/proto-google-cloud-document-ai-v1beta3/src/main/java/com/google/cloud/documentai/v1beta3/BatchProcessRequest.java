@@ -48,11 +48,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     return new BatchProcessRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_descriptor;
@@ -157,11 +152,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BatchInputConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1024,11 +1014,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BatchOutputConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

@@ -124,6 +124,5 @@ public interface UniversalActionExtensionPointOrBuilder
    */
   com.google.protobuf.ByteString getRunFunctionBytes();
 
-  public com.google.apps.script.type.UniversalActionExtensionPoint.ActionTypeCase
-      getActionTypeCase();
+  com.google.apps.script.type.UniversalActionExtensionPoint.ActionTypeCase getActionTypeCase();
 }

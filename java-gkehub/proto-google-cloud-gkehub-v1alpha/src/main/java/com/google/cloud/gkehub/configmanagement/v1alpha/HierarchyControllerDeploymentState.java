@@ -50,11 +50,6 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     return new HierarchyControllerDeploymentState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.configmanagement.v1alpha.ConfigManagementProto
         .internal_static_google_cloud_gkehub_configmanagement_v1alpha_HierarchyControllerDeploymentState_descriptor;

@@ -47,11 +47,6 @@ public final class ListDeviceStatesRequest extends com.google.protobuf.Generated
     return new ListDeviceStatesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.DeviceManagerProto
         .internal_static_google_cloud_iot_v1_ListDeviceStatesRequest_descriptor;

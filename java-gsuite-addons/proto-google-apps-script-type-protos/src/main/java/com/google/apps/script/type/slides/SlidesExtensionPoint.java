@@ -47,11 +47,6 @@ public final class SlidesExtensionPoint extends com.google.protobuf.GeneratedMes
     return new SlidesExtensionPoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.slides.SlidesAddOnManifestProto
         .internal_static_google_apps_script_type_slides_SlidesExtensionPoint_descriptor;

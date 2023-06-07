@@ -87,6 +87,7 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+   *
    *  *.  `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -107,6 +108,7 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+   *
    *  *.  `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -127,6 +129,7 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
+   *
    *  *.  `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.

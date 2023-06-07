@@ -28,6 +28,7 @@ public interface CreateDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. Name of the project in which to create the deployment.
+   *
    * Example: `projects/my_project`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface CreateDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. Name of the project in which to create the deployment.
+   *
    * Example: `projects/my_project`.
    * </pre>
    *

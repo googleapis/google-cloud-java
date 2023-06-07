@@ -47,11 +47,6 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
     return new NamespacedNames();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.CommonProto
         .internal_static_google_cloud_gkebackup_v1_NamespacedNames_descriptor;

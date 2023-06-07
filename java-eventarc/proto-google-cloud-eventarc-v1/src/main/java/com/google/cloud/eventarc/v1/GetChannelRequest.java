@@ -47,11 +47,6 @@ public final class GetChannelRequest extends com.google.protobuf.GeneratedMessag
     return new GetChannelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.EventarcProto
         .internal_static_google_cloud_eventarc_v1_GetChannelRequest_descriptor;

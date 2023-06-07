@@ -48,11 +48,6 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     return new RawDocument();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1.DocumentIoProto
         .internal_static_google_cloud_documentai_v1_RawDocument_descriptor;

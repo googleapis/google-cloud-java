@@ -49,11 +49,6 @@ public final class Provider extends com.google.protobuf.GeneratedMessageV3
     return new Provider();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.DiscoveryProto
         .internal_static_google_cloud_eventarc_v1_Provider_descriptor;

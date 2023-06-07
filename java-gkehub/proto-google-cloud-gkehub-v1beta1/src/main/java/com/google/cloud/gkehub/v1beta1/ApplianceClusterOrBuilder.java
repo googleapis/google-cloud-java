@@ -29,6 +29,7 @@ public interface ApplianceClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the Appliance Cluster. For
    * example:
+   *
    * //transferappliance.googleapis.com/projects/my-project/locations/us-west1-a/appliances/my-appliance
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ApplianceClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the Appliance Cluster. For
    * example:
+   *
    * //transferappliance.googleapis.com/projects/my-project/locations/us-west1-a/appliances/my-appliance
    * </pre>
    *

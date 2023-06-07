@@ -47,11 +47,6 @@ public final class DeleteShareRequest extends com.google.protobuf.GeneratedMessa
     return new DeleteShareRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1beta1_DeleteShareRequest_descriptor;

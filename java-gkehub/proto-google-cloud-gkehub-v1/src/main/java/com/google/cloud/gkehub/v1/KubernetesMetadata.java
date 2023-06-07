@@ -49,11 +49,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     return new KubernetesMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.MembershipProto
         .internal_static_google_cloud_gkehub_v1_KubernetesMetadata_descriptor;

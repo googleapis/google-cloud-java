@@ -362,6 +362,6 @@ public interface RestoreConfigOrBuilder
   com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder
       getSubstitutionRulesOrBuilder(int index);
 
-  public com.google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreScopeCase
+  com.google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreScopeCase
       getNamespacedResourceRestoreScopeCase();
 }

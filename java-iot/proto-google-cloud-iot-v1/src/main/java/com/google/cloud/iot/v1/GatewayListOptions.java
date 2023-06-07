@@ -45,11 +45,6 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     return new GatewayListOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.DeviceManagerProto
         .internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
@@ -66,6 +61,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   }
 
   private int filterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object filter_;
 
   public enum FilterCase

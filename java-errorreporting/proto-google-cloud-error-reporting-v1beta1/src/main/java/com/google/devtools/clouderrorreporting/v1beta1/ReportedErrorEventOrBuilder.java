@@ -120,6 +120,7 @@ public interface ReportedErrorEventOrBuilder
    * languages and formats.
    * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
    * Supported stack trace formats are:
+   *
    * * **Java**: Must be the return value of
    * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
    * * **Python**: Must be the return value of
@@ -154,6 +155,7 @@ public interface ReportedErrorEventOrBuilder
    * languages and formats.
    * Supported languages are Java, Python, JavaScript, Ruby, C#, PHP, and Go.
    * Supported stack trace formats are:
+   *
    * * **Java**: Must be the return value of
    * [`Throwable.printStackTrace()`](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html#printStackTrace%28%29).
    * * **Python**: Must be the return value of

@@ -60,6 +60,7 @@ public interface GenerateConnectManifestRequestOrBuilder
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -76,6 +77,7 @@ public interface GenerateConnectManifestRequestOrBuilder
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.

@@ -50,11 +50,6 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
     return new MenuItemExtensionPoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.ExtensionPoint
         .internal_static_google_apps_script_type_MenuItemExtensionPoint_descriptor;
@@ -185,6 +180,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The URL for the logo image shown in the add-on toolbar.
+   *
    * If not set, defaults to the add-on's primary logo URL.
    * </pre>
    *
@@ -209,6 +205,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The URL for the logo image shown in the add-on toolbar.
+   *
    * If not set, defaults to the add-on's primary logo URL.
    * </pre>
    *
@@ -848,6 +845,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The URL for the logo image shown in the add-on toolbar.
+     *
      * If not set, defaults to the add-on's primary logo URL.
      * </pre>
      *
@@ -871,6 +869,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The URL for the logo image shown in the add-on toolbar.
+     *
      * If not set, defaults to the add-on's primary logo URL.
      * </pre>
      *
@@ -894,6 +893,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The URL for the logo image shown in the add-on toolbar.
+     *
      * If not set, defaults to the add-on's primary logo URL.
      * </pre>
      *
@@ -916,6 +916,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The URL for the logo image shown in the add-on toolbar.
+     *
      * If not set, defaults to the add-on's primary logo URL.
      * </pre>
      *
@@ -934,6 +935,7 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The URL for the logo image shown in the add-on toolbar.
+     *
      * If not set, defaults to the add-on's primary logo URL.
      * </pre>
      *

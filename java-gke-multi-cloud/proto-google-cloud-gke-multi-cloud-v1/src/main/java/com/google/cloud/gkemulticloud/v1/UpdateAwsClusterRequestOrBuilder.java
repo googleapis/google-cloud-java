@@ -87,6 +87,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `control_plane.version`.
@@ -125,6 +126,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `control_plane.version`.
@@ -163,6 +165,7 @@ public interface UpdateAwsClusterRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `control_plane.version`.

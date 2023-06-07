@@ -87,6 +87,6 @@ public interface GameServerClusterConnectionInfoOrBuilder
    */
   com.google.protobuf.ByteString getNamespaceBytes();
 
-  public com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo.ClusterReferenceCase
+  com.google.cloud.gaming.v1beta.GameServerClusterConnectionInfo.ClusterReferenceCase
       getClusterReferenceCase();
 }

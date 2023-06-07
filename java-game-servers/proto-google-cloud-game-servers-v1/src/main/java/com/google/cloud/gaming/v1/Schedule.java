@@ -27,6 +27,7 @@ package com.google.cloud.gaming.v1;
  * larger than the cron_spec + cron_job_duration, the event will be recurring.
  * If only cron_spec + cron_job_duration are specified, the event is effective
  * starting at the local time specified by cron_spec, and is recurring.
+ *
  * ```
  * start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
  * cron job: cron spec start time + duration
@@ -53,11 +54,6 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Schedule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -483,6 +479,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    * larger than the cron_spec + cron_job_duration, the event will be recurring.
    * If only cron_spec + cron_job_duration are specified, the event is effective
    * starting at the local time specified by cron_spec, and is recurring.
+   *
    * ```
    * start_time|-------[cron job]-------[cron job]-------[cron job]---|end_time
    * cron job: cron spec start time + duration

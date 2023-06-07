@@ -41,7 +41,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
   }
 
   private PreviewGameServerDeploymentRolloutResponse() {
-    unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unavailable_ = com.google.protobuf.LazyStringArrayList.emptyList();
     etag_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class PreviewGameServerDeploymentRolloutResponse
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PreviewGameServerDeploymentRolloutResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,7 +70,8 @@ public final class PreviewGameServerDeploymentRolloutResponse
   public static final int UNAVAILABLE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unavailable_;
+  private com.google.protobuf.LazyStringArrayList unavailable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -470,8 +466,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      unavailable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       etag_ = "";
       targetState_ = null;
       if (targetStateBuilder_ != null) {
@@ -509,7 +504,6 @@ public final class PreviewGameServerDeploymentRolloutResponse
         buildPartial() {
       com.google.cloud.gaming.v1beta.PreviewGameServerDeploymentRolloutResponse result =
           new com.google.cloud.gaming.v1beta.PreviewGameServerDeploymentRolloutResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -517,18 +511,13 @@ public final class PreviewGameServerDeploymentRolloutResponse
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gaming.v1beta.PreviewGameServerDeploymentRolloutResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        unavailable_ = unavailable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.unavailable_ = unavailable_;
-    }
-
     private void buildPartial0(
         com.google.cloud.gaming.v1beta.PreviewGameServerDeploymentRolloutResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        unavailable_.makeImmutable();
+        result.unavailable_ = unavailable_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.etag_ = etag_;
       }
@@ -591,7 +580,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
       if (!other.unavailable_.isEmpty()) {
         if (unavailable_.isEmpty()) {
           unavailable_ = other.unavailable_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureUnavailableIsMutable();
           unavailable_.addAll(other.unavailable_);
@@ -670,14 +659,14 @@ public final class PreviewGameServerDeploymentRolloutResponse
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList unavailable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unavailable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnavailableIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!unavailable_.isModifiable()) {
         unavailable_ = new com.google.protobuf.LazyStringArrayList(unavailable_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -691,7 +680,8 @@ public final class PreviewGameServerDeploymentRolloutResponse
      * @return A list containing the unavailable.
      */
     public com.google.protobuf.ProtocolStringList getUnavailableList() {
-      return unavailable_.getUnmodifiableView();
+      unavailable_.makeImmutable();
+      return unavailable_;
     }
     /**
      *
@@ -756,6 +746,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
       }
       ensureUnavailableIsMutable();
       unavailable_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,6 +768,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
       }
       ensureUnavailableIsMutable();
       unavailable_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,6 +787,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
     public Builder addAllUnavailable(java.lang.Iterable<java.lang.String> values) {
       ensureUnavailableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unavailable_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +803,9 @@ public final class PreviewGameServerDeploymentRolloutResponse
      * @return This builder for chaining.
      */
     public Builder clearUnavailable() {
-      unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unavailable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -834,6 +828,7 @@ public final class PreviewGameServerDeploymentRolloutResponse
       checkByteStringIsUtf8(value);
       ensureUnavailableIsMutable();
       unavailable_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

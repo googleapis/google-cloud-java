@@ -53,11 +53,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return new Backup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1_Backup_descriptor;

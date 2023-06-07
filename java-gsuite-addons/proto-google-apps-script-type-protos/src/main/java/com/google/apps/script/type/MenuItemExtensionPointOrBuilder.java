@@ -82,6 +82,7 @@ public interface MenuItemExtensionPointOrBuilder
    *
    * <pre>
    * The URL for the logo image shown in the add-on toolbar.
+   *
    * If not set, defaults to the add-on's primary logo URL.
    * </pre>
    *
@@ -95,6 +96,7 @@ public interface MenuItemExtensionPointOrBuilder
    *
    * <pre>
    * The URL for the logo image shown in the add-on toolbar.
+   *
    * If not set, defaults to the add-on's primary logo URL.
    * </pre>
    *

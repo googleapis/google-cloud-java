@@ -298,6 +298,7 @@ public interface DeviceRegistryOrBuilder
    *
    * <pre>
    * **Beta Feature**
+   *
    * The default logging verbosity for activity from devices in this registry.
    * The verbosity level can be overridden by Device.log_level.
    * </pre>
@@ -312,6 +313,7 @@ public interface DeviceRegistryOrBuilder
    *
    * <pre>
    * **Beta Feature**
+   *
    * The default logging verbosity for activity from devices in this registry.
    * The verbosity level can be overridden by Device.log_level.
    * </pre>
@@ -332,6 +334,7 @@ public interface DeviceRegistryOrBuilder
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -351,6 +354,7 @@ public interface DeviceRegistryOrBuilder
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -370,6 +374,7 @@ public interface DeviceRegistryOrBuilder
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -389,6 +394,7 @@ public interface DeviceRegistryOrBuilder
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -409,6 +415,7 @@ public interface DeviceRegistryOrBuilder
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if

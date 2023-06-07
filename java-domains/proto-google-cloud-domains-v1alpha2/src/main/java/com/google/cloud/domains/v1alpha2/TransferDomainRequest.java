@@ -48,11 +48,6 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
     return new TransferDomainRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1alpha2.DomainsProto
         .internal_static_google_cloud_domains_v1alpha2_TransferDomainRequest_descriptor;
@@ -132,6 +127,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The complete `Registration` resource to be created.
+   *
    * You can leave `registration.dns_settings` unset to import the
    * domain's current DNS configuration from its current registrar. Use this
    * option only if you are sure that the domain's current DNS service
@@ -154,6 +150,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The complete `Registration` resource to be created.
+   *
    * You can leave `registration.dns_settings` unset to import the
    * domain's current DNS configuration from its current registrar. Use this
    * option only if you are sure that the domain's current DNS service
@@ -178,6 +175,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The complete `Registration` resource to be created.
+   *
    * You can leave `registration.dns_settings` unset to import the
    * domain's current DNS configuration from its current registrar. Use this
    * option only if you are sure that the domain's current DNS service
@@ -1093,6 +1091,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1114,6 +1113,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1141,6 +1141,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1170,6 +1171,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1197,6 +1199,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1230,6 +1233,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1256,6 +1260,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1277,6 +1282,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service
@@ -1302,6 +1308,7 @@ public final class TransferDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The complete `Registration` resource to be created.
+     *
      * You can leave `registration.dns_settings` unset to import the
      * domain's current DNS configuration from its current registrar. Use this
      * option only if you are sure that the domain's current DNS service

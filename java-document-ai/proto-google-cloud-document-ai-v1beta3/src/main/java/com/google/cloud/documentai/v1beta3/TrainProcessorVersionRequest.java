@@ -48,11 +48,6 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     return new TrainProcessorVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_TrainProcessorVersionRequest_descriptor;
@@ -173,11 +168,6 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InputData();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

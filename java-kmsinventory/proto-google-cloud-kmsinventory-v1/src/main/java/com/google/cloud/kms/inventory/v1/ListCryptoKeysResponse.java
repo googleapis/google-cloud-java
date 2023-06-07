@@ -49,11 +49,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     return new ListCryptoKeysResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.inventory.v1.KeyDashboardServiceProto
         .internal_static_google_cloud_kms_inventory_v1_ListCryptoKeysResponse_descriptor;

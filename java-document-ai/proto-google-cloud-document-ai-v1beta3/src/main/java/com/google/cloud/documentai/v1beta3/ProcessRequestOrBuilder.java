@@ -272,5 +272,5 @@ public interface ProcessRequestOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder getProcessOptionsOrBuilder();
 
-  public com.google.cloud.documentai.v1beta3.ProcessRequest.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1beta3.ProcessRequest.SourceCase getSourceCase();
 }

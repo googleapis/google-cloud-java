@@ -225,6 +225,7 @@ public interface RestorePlanOrBuilder
    * will restore data. NOTE: the cluster's region must be the same as the
    * RestorePlan.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -244,6 +245,7 @@ public interface RestorePlanOrBuilder
    * will restore data. NOTE: the cluster's region must be the same as the
    * RestorePlan.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>

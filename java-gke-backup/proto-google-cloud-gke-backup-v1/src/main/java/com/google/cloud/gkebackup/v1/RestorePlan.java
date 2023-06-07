@@ -54,11 +54,6 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     return new RestorePlan();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.RestorePlanProto
         .internal_static_google_cloud_gkebackup_v1_RestorePlan_descriptor;
@@ -417,6 +412,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    * will restore data. NOTE: the cluster's region must be the same as the
    * RestorePlan.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -447,6 +443,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    * will restore data. NOTE: the cluster's region must be the same as the
    * RestorePlan.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -2189,6 +2186,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * will restore data. NOTE: the cluster's region must be the same as the
      * RestorePlan.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -2218,6 +2216,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * will restore data. NOTE: the cluster's region must be the same as the
      * RestorePlan.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -2247,6 +2246,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * will restore data. NOTE: the cluster's region must be the same as the
      * RestorePlan.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -2275,6 +2275,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * will restore data. NOTE: the cluster's region must be the same as the
      * RestorePlan.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -2299,6 +2300,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * will restore data. NOTE: the cluster's region must be the same as the
      * RestorePlan.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>

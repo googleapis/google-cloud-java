@@ -45,11 +45,6 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     return new Digest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_Digest_descriptor;
   }
@@ -64,6 +59,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int digestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object digest_;
 
   public enum DigestCase

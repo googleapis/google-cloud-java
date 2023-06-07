@@ -47,11 +47,6 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
     return new GetGameServerConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerConfigs
         .internal_static_google_cloud_gaming_v1beta_GetGameServerConfigRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the game server config to retrieve. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the game server config to retrieve. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * </pre>
    *
@@ -473,6 +470,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the game server config to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * </pre>
      *
@@ -498,6 +496,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the game server config to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * </pre>
      *
@@ -523,6 +522,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the game server config to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * </pre>
      *
@@ -547,6 +547,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the game server config to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * </pre>
      *
@@ -567,6 +568,7 @@ public final class GetGameServerConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the game server config to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * </pre>
      *

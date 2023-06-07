@@ -46,11 +46,6 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     return new MembershipFeatureState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1alpha.FeatureProto
         .internal_static_google_cloud_gkehub_v1alpha_MembershipFeatureState_descriptor;
@@ -67,6 +62,8 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
   }
 
   private int featureStateCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object featureState_;
 
   public enum FeatureStateCase

@@ -235,6 +235,7 @@ public interface BackupOrBuilder
    * automatic deletion) for the number of days provided (measured from the
    * creation time of the Backup).  MUST be an integer value between 0-90
    * (inclusive).
+   *
    * Defaults to parent BackupPlan's
    * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
    * setting and may only be increased
@@ -297,9 +298,12 @@ public interface BackupOrBuilder
    * <pre>
    * The age (in days) after which this Backup will be automatically deleted.
    * Must be an integer value &gt;= 0:
+   *
    * - If 0, no automatic deletion will occur for this Backup.
    * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+   *
    * Once a Backup is created, this value may only be increased.
+   *
    * Defaults to the parent BackupPlan's
    * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
    * </pre>
@@ -807,5 +811,5 @@ public interface BackupOrBuilder
    */
   long getConfigBackupSizeBytes();
 
-  public com.google.cloud.gkebackup.v1.Backup.BackupScopeCase getBackupScopeCase();
+  com.google.cloud.gkebackup.v1.Backup.BackupScopeCase getBackupScopeCase();
 }

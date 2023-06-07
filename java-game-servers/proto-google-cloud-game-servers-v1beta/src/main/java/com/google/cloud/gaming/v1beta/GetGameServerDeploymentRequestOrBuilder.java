@@ -29,6 +29,7 @@ public interface GetGameServerDeploymentRequestOrBuilder
    * <pre>
    * Required. The name of the game server delpoyment to retrieve. Uses the
    * form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface GetGameServerDeploymentRequestOrBuilder
    * <pre>
    * Required. The name of the game server delpoyment to retrieve. Uses the
    * form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *

@@ -49,11 +49,6 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     return new RevertInstanceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_descriptor;

@@ -51,11 +51,6 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
     return new GameServerDeploymentRollout();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerDeployments
         .internal_static_google_cloud_gaming_v1beta_GameServerDeploymentRollout_descriptor;
@@ -80,8 +75,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
    *
    * <pre>
    * The resource name of the game server deployment rollout. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
    * </pre>
    *
@@ -106,8 +103,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
    *
    * <pre>
    * The resource name of the game server deployment rollout. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
    * </pre>
    *
@@ -236,6 +235,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
    * <pre>
    * The default game server config is applied to all realms unless overridden
    * in the rollout. For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *
@@ -261,6 +261,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
    * <pre>
    * The default game server config is applied to all realms unless overridden
    * in the rollout. For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *
@@ -964,8 +965,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      *
      * <pre>
      * The resource name of the game server deployment rollout. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
      * </pre>
      *
@@ -989,8 +992,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      *
      * <pre>
      * The resource name of the game server deployment rollout. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
      * </pre>
      *
@@ -1014,8 +1019,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      *
      * <pre>
      * The resource name of the game server deployment rollout. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
      * </pre>
      *
@@ -1038,8 +1045,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      *
      * <pre>
      * The resource name of the game server deployment rollout. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
      * </pre>
      *
@@ -1058,8 +1067,10 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      *
      * <pre>
      * The resource name of the game server deployment rollout. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
+     *
      * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
      * </pre>
      *
@@ -1488,6 +1499,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * <pre>
      * The default game server config is applied to all realms unless overridden
      * in the rollout. For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1512,6 +1524,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * <pre>
      * The default game server config is applied to all realms unless overridden
      * in the rollout. For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1536,6 +1549,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * <pre>
      * The default game server config is applied to all realms unless overridden
      * in the rollout. For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1559,6 +1573,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * <pre>
      * The default game server config is applied to all realms unless overridden
      * in the rollout. For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1578,6 +1593,7 @@ public final class GameServerDeploymentRollout extends com.google.protobuf.Gener
      * <pre>
      * The default game server config is applied to all realms unless overridden
      * in the rollout. For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *

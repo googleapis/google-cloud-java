@@ -581,5 +581,5 @@ public interface DocumentOrBuilder
    */
   com.google.cloud.documentai.v1.Document.RevisionOrBuilder getRevisionsOrBuilder(int index);
 
-  public com.google.cloud.documentai.v1.Document.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1.Document.SourceCase getSourceCase();
 }

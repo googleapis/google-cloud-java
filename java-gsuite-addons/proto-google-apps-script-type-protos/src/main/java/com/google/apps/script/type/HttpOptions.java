@@ -47,11 +47,6 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     return new HttpOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.ScriptManifest
         .internal_static_google_apps_script_type_HttpOptions_descriptor;

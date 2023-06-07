@@ -48,11 +48,6 @@ public final class GetEkmConfigRequest extends com.google.protobuf.GeneratedMess
     return new GetEkmConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.EkmServiceProto
         .internal_static_google_cloud_kms_v1_GetEkmConfigRequest_descriptor;

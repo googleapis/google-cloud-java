@@ -48,11 +48,6 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
     return new BatchProcessDocumentsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta2_BatchProcessDocumentsResponse_descriptor;

@@ -55,11 +55,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     return new GenerateConnectManifestRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.ServiceProto
         .internal_static_google_cloud_gkehub_v1_GenerateConnectManifestRequest_descriptor;
@@ -142,6 +137,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -169,6 +165,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -968,6 +965,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -994,6 +992,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -1020,6 +1019,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -1045,6 +1045,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -1066,6 +1067,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.

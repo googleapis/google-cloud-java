@@ -57,11 +57,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return new Document();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentProto
         .internal_static_google_cloud_documentai_v1beta3_Document_descriptor;
@@ -150,11 +145,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ShardInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1139,11 +1129,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Style();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_Style_descriptor;
@@ -1229,11 +1214,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FontSize();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5061,11 +5041,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Page();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_Page_descriptor;
@@ -5164,11 +5139,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Dimension();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6046,11 +6016,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Image();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7007,11 +6972,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Matrix();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Page_Matrix_descriptor;
@@ -7959,11 +7919,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Layout();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9620,11 +9575,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Block();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11389,11 +11339,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Paragraph();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13165,11 +13110,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Line();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14981,11 +14921,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Token();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Page_Token_descriptor;
@@ -15061,11 +14996,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new DetectedBreak();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -17872,11 +17802,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Symbol();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Page_Symbol_descriptor;
@@ -19307,11 +19232,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new VisualElement();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -21076,11 +20996,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Table();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Page_Table_descriptor;
@@ -21189,11 +21104,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new TableRow();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22344,11 +22254,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new TableCell();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -26693,6 +26598,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
+       *
        * - blank (this indicates the `field_value` is normal text)
        * - `unfilled_checkbox`
        * - `filled_checkbox`
@@ -26709,6 +26615,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
+       *
        * - blank (this indicates the `field_value` is normal text)
        * - `unfilled_checkbox`
        * - `filled_checkbox`
@@ -26844,11 +26751,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FormField();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -27162,6 +27064,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
+       *
        * - blank (this indicates the `field_value` is normal text)
        * - `unfilled_checkbox`
        * - `filled_checkbox`
@@ -27189,6 +27092,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
+       *
        * - blank (this indicates the `field_value` is normal text)
        * - `unfilled_checkbox`
        * - `filled_checkbox`
@@ -29272,6 +29176,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
+         *
          * - blank (this indicates the `field_value` is normal text)
          * - `unfilled_checkbox`
          * - `filled_checkbox`
@@ -29298,6 +29203,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
+         *
          * - blank (this indicates the `field_value` is normal text)
          * - `unfilled_checkbox`
          * - `filled_checkbox`
@@ -29324,6 +29230,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
+         *
          * - blank (this indicates the `field_value` is normal text)
          * - `unfilled_checkbox`
          * - `filled_checkbox`
@@ -29349,6 +29256,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
+         *
          * - blank (this indicates the `field_value` is normal text)
          * - `unfilled_checkbox`
          * - `filled_checkbox`
@@ -29370,6 +29278,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
+         *
          * - blank (this indicates the `field_value` is normal text)
          * - `unfilled_checkbox`
          * - `filled_checkbox`
@@ -29986,11 +29895,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DetectedBarcode();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -31041,11 +30945,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new DetectedLanguage();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Page_DetectedLanguage_descriptor;
@@ -31866,11 +31765,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new ImageQualityScores();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_descriptor;
@@ -31896,6 +31790,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Name of the defect type. Supported values are:
+         *
          * - `quality/defect_blurry`
          * - `quality/defect_noisy`
          * - `quality/defect_dark`
@@ -31916,6 +31811,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Name of the defect type. Supported values are:
+         *
          * - `quality/defect_blurry`
          * - `quality/defect_noisy`
          * - `quality/defect_dark`
@@ -31976,11 +31872,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return new DetectedDefect();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.documentai.v1beta3.DocumentProto
               .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_DetectedDefect_descriptor;
@@ -32007,6 +31898,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Name of the defect type. Supported values are:
+         *
          * - `quality/defect_blurry`
          * - `quality/defect_noisy`
          * - `quality/defect_dark`
@@ -32038,6 +31930,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Name of the defect type. Supported values are:
+         *
          * - `quality/defect_blurry`
          * - `quality/defect_noisy`
          * - `quality/defect_dark`
@@ -32513,6 +32406,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Name of the defect type. Supported values are:
+           *
            * - `quality/defect_blurry`
            * - `quality/defect_noisy`
            * - `quality/defect_dark`
@@ -32543,6 +32437,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Name of the defect type. Supported values are:
+           *
            * - `quality/defect_blurry`
            * - `quality/defect_noisy`
            * - `quality/defect_dark`
@@ -32573,6 +32468,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Name of the defect type. Supported values are:
+           *
            * - `quality/defect_blurry`
            * - `quality/defect_noisy`
            * - `quality/defect_dark`
@@ -32602,6 +32498,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Name of the defect type. Supported values are:
+           *
            * - `quality/defect_blurry`
            * - `quality/defect_noisy`
            * - `quality/defect_dark`
@@ -32627,6 +32524,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Name of the defect type. Supported values are:
+           *
            * - `quality/defect_blurry`
            * - `quality/defect_noisy`
            * - `quality/defect_dark`
@@ -42257,11 +42155,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Entity();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_Entity_descriptor;
@@ -42520,7 +42413,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * also be populated. Also not all the types of `structured_value` will be
        * normalized. For example, some processors may not generate `float`
        * or `integer` normalized text by default.
+       *
        * Below are sample formats mapped to structured values.
+       *
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
        * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -42540,7 +42435,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * also be populated. Also not all the types of `structured_value` will be
        * normalized. For example, some processors may not generate `float`
        * or `integer` normalized text by default.
+       *
        * Below are sample formats mapped to structured values.
+       *
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
        * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -42552,7 +42449,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTextBytes();
 
-      public com.google.cloud.documentai.v1beta3.Document.Entity.NormalizedValue.StructuredValueCase
+      com.google.cloud.documentai.v1beta3.Document.Entity.NormalizedValue.StructuredValueCase
           getStructuredValueCase();
     }
     /**
@@ -42584,11 +42481,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new NormalizedValue();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta3.DocumentProto
             .internal_static_google_cloud_documentai_v1beta3_Document_Entity_NormalizedValue_descriptor;
@@ -42605,6 +42497,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int structuredValueCase_ = 0;
+
+      @SuppressWarnings("serial")
       private java.lang.Object structuredValue_;
 
       public enum StructuredValueCase
@@ -43002,7 +42896,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * also be populated. Also not all the types of `structured_value` will be
        * normalized. For example, some processors may not generate `float`
        * or `integer` normalized text by default.
+       *
        * Below are sample formats mapped to structured values.
+       *
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
        * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -43033,7 +42929,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * also be populated. Also not all the types of `structured_value` will be
        * normalized. For example, some processors may not generate `float`
        * or `integer` normalized text by default.
+       *
        * Below are sample formats mapped to structured values.
+       *
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
        * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -44741,7 +44639,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * also be populated. Also not all the types of `structured_value` will be
          * normalized. For example, some processors may not generate `float`
          * or `integer` normalized text by default.
+         *
          * Below are sample formats mapped to structured values.
+         *
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
          * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -44771,7 +44671,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * also be populated. Also not all the types of `structured_value` will be
          * normalized. For example, some processors may not generate `float`
          * or `integer` normalized text by default.
+         *
          * Below are sample formats mapped to structured values.
+         *
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
          * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -44801,7 +44703,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * also be populated. Also not all the types of `structured_value` will be
          * normalized. For example, some processors may not generate `float`
          * or `integer` normalized text by default.
+         *
          * Below are sample formats mapped to structured values.
+         *
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
          * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -44830,7 +44734,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * also be populated. Also not all the types of `structured_value` will be
          * normalized. For example, some processors may not generate `float`
          * or `integer` normalized text by default.
+         *
          * Below are sample formats mapped to structured values.
+         *
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
          * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -44855,7 +44761,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * also be populated. Also not all the types of `structured_value` will be
          * normalized. For example, some processors may not generate `float`
          * or `integer` normalized text by default.
+         *
          * Below are sample formats mapped to structured values.
+         *
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
          * - Datetime type (`datetime_value`) is in the ISO 8601 text format.
@@ -48202,11 +48110,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new EntityRelation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_EntityRelation_descriptor;
@@ -49292,11 +49195,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new TextAnchor();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_TextAnchor_descriptor;
@@ -49376,11 +49274,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TextSegment();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -51286,11 +51179,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new PageAnchor();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_PageAnchor_descriptor;
@@ -51483,11 +51371,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new PageRef();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -54212,11 +54095,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Provenance();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentProto
           .internal_static_google_cloud_documentai_v1beta3_Document_Provenance_descriptor;
@@ -54593,11 +54471,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Parent();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -56908,7 +56781,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.documentai.v1beta3.Document.Revision.HumanReviewOrBuilder
         getHumanReviewOrBuilder();
 
-    public com.google.cloud.documentai.v1beta3.Document.Revision.SourceCase getSourceCase();
+    com.google.cloud.documentai.v1beta3.Document.Revision.SourceCase getSourceCase();
   }
   /**
    *
@@ -56932,18 +56805,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private Revision() {
       id_ = "";
       parent_ = emptyIntList();
-      parentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      parentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Revision();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -57046,11 +56914,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new HumanReview();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -57837,6 +57700,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object source_;
 
     public enum SourceCase
@@ -58151,7 +58016,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public static final int PARENT_IDS_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList parentIds_;
+    private com.google.protobuf.LazyStringArrayList parentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -58627,8 +58493,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         id_ = "";
         parent_ = emptyIntList();
-        parentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        parentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         createTime_ = null;
         if (createTimeBuilder_ != null) {
           createTimeBuilder_.dispose();
@@ -58684,17 +58549,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.parent_ = parent_;
-        if (((bitField0_ & 0x00000010) != 0)) {
-          parentIds_ = parentIds_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.parentIds_ = parentIds_;
       }
 
       private void buildPartial0(com.google.cloud.documentai.v1beta3.Document.Revision result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          parentIds_.makeImmutable();
+          result.parentIds_ = parentIds_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.createTime_ =
@@ -58778,7 +58642,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.parentIds_.isEmpty()) {
           if (parentIds_.isEmpty()) {
             parentIds_ = other.parentIds_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureParentIdsIsMutable();
             parentIds_.addAll(other.parentIds_);
@@ -59481,14 +59345,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList parentIds_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList parentIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureParentIdsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!parentIds_.isModifiable()) {
           parentIds_ = new com.google.protobuf.LazyStringArrayList(parentIds_);
-          bitField0_ |= 0x00000010;
         }
+        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -59504,7 +59368,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the parentIds.
        */
       public com.google.protobuf.ProtocolStringList getParentIdsList() {
-        return parentIds_.getUnmodifiableView();
+        parentIds_.makeImmutable();
+        return parentIds_;
       }
       /**
        *
@@ -59577,6 +59442,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         ensureParentIdsIsMutable();
         parentIds_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -59600,6 +59466,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         ensureParentIdsIsMutable();
         parentIds_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -59620,6 +59487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllParentIds(java.lang.Iterable<java.lang.String> values) {
         ensureParentIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parentIds_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -59637,8 +59505,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearParentIds() {
-        parentIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        parentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        ;
         onChanged();
         return this;
       }
@@ -59663,6 +59532,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureParentIdsIsMutable();
         parentIds_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -60301,11 +60171,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TextChange();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -61805,6 +61670,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

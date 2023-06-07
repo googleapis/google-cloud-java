@@ -28,6 +28,7 @@ public interface GetInstallStatusRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the deployment.
+   *
    * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetInstallStatusRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the deployment.
+   *
    * Example:  `projects/my_project/deployments/my_deployment/installStatus`.
    * </pre>
    *

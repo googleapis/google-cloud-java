@@ -99,5 +99,5 @@ public interface CommonFeatureStateOrBuilder
    */
   com.google.cloud.gkehub.v1alpha.FeatureStateOrBuilder getStateOrBuilder();
 
-  public com.google.cloud.gkehub.v1alpha.CommonFeatureState.FeatureStateCase getFeatureStateCase();
+  com.google.cloud.gkehub.v1alpha.CommonFeatureState.FeatureStateCase getFeatureStateCase();
 }

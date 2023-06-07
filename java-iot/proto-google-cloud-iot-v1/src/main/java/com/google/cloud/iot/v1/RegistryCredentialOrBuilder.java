@@ -58,5 +58,5 @@ public interface RegistryCredentialOrBuilder
    */
   com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder getPublicKeyCertificateOrBuilder();
 
-  public com.google.cloud.iot.v1.RegistryCredential.CredentialCase getCredentialCase();
+  com.google.cloud.iot.v1.RegistryCredential.CredentialCase getCredentialCase();
 }

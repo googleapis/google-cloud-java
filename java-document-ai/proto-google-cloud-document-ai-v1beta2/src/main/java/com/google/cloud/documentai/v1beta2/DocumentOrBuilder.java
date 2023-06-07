@@ -500,5 +500,5 @@ public interface DocumentOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
-  public com.google.cloud.documentai.v1beta2.Document.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1beta2.Document.SourceCase getSourceCase();
 }

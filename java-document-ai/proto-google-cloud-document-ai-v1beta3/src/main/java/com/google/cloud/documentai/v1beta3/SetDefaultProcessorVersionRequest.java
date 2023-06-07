@@ -49,11 +49,6 @@ public final class SetDefaultProcessorVersionRequest extends com.google.protobuf
     return new SetDefaultProcessorVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_SetDefaultProcessorVersionRequest_descriptor;

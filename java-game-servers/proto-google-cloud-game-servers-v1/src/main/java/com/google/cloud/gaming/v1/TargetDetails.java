@@ -49,11 +49,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
     return new TargetDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.Common
         .internal_static_google_cloud_gaming_v1_TargetDetails_descriptor;
@@ -180,11 +175,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
       return new TargetFleetDetails();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gaming.v1.Common
           .internal_static_google_cloud_gaming_v1_TargetDetails_TargetFleetDetails_descriptor;
@@ -295,11 +285,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TargetFleet();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1284,11 +1269,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TargetFleetAutoscaler();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

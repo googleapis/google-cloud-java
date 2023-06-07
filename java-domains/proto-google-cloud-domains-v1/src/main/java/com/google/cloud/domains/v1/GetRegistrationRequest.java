@@ -47,11 +47,6 @@ public final class GetRegistrationRequest extends com.google.protobuf.GeneratedM
     return new GetRegistrationRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1.DomainsProto
         .internal_static_google_cloud_domains_v1_GetRegistrationRequest_descriptor;

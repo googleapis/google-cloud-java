@@ -48,11 +48,6 @@ public final class ConfigureManagementSettingsRequest extends com.google.protobu
     return new ConfigureManagementSettingsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1beta1.DomainsProto
         .internal_static_google_cloud_domains_v1beta1_ConfigureManagementSettingsRequest_descriptor;

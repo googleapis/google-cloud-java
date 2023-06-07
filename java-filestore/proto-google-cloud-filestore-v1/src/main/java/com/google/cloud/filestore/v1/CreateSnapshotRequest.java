@@ -48,11 +48,6 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
     return new CreateSnapshotRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1_CreateSnapshotRequest_descriptor;
@@ -135,6 +130,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ID to use for the snapshot.
    * The ID must be unique within the specified instance.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -161,6 +157,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The ID to use for the snapshot.
    * The ID must be unique within the specified instance.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -763,6 +760,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the snapshot.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -788,6 +786,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the snapshot.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -813,6 +812,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the snapshot.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -837,6 +837,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the snapshot.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
@@ -857,6 +858,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The ID to use for the snapshot.
      * The ID must be unique within the specified instance.
+     *
      * This value must start with a lowercase letter followed by up to 62
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>

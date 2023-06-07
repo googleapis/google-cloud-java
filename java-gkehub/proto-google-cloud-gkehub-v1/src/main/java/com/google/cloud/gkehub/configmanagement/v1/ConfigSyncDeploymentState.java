@@ -52,11 +52,6 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     return new ConfigSyncDeploymentState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.configmanagement.v1.ConfigManagementProto
         .internal_static_google_cloud_gkehub_configmanagement_v1_ConfigSyncDeploymentState_descriptor;

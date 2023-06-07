@@ -47,11 +47,6 @@ public final class AzureK8sVersionInfo extends com.google.protobuf.GeneratedMess
     return new AzureK8sVersionInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureK8sVersionInfo_descriptor;

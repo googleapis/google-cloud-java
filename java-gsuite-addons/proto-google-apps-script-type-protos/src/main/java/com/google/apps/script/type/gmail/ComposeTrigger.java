@@ -48,11 +48,6 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     return new ComposeTrigger();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.gmail.GmailAddOnManifestProto
         .internal_static_google_apps_script_type_gmail_ComposeTrigger_descriptor;

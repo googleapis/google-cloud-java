@@ -48,11 +48,6 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
     return new CreateRestoreRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_CreateRestoreRequest_descriptor;
@@ -184,6 +179,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The client-provided short name for the Restore resource.
    * This name must:
+   *
    *  - be between 1 and 63 characters long (inclusive)
    *  - consist of only lower-case ASCII letters, numbers, and dashes
    *  - start with a lower-case letter
@@ -213,6 +209,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The client-provided short name for the Restore resource.
    * This name must:
+   *
    *  - be between 1 and 63 characters long (inclusive)
    *  - consist of only lower-case ASCII letters, numbers, and dashes
    *  - start with a lower-case letter
@@ -963,6 +960,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The client-provided short name for the Restore resource.
      * This name must:
+     *
      *  - be between 1 and 63 characters long (inclusive)
      *  - consist of only lower-case ASCII letters, numbers, and dashes
      *  - start with a lower-case letter
@@ -991,6 +989,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The client-provided short name for the Restore resource.
      * This name must:
+     *
      *  - be between 1 and 63 characters long (inclusive)
      *  - consist of only lower-case ASCII letters, numbers, and dashes
      *  - start with a lower-case letter
@@ -1019,6 +1018,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The client-provided short name for the Restore resource.
      * This name must:
+     *
      *  - be between 1 and 63 characters long (inclusive)
      *  - consist of only lower-case ASCII letters, numbers, and dashes
      *  - start with a lower-case letter
@@ -1046,6 +1046,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The client-provided short name for the Restore resource.
      * This name must:
+     *
      *  - be between 1 and 63 characters long (inclusive)
      *  - consist of only lower-case ASCII letters, numbers, and dashes
      *  - start with a lower-case letter
@@ -1069,6 +1070,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The client-provided short name for the Restore resource.
      * This name must:
+     *
      *  - be between 1 and 63 characters long (inclusive)
      *  - consist of only lower-case ASCII letters, numbers, and dashes
      *  - start with a lower-case letter

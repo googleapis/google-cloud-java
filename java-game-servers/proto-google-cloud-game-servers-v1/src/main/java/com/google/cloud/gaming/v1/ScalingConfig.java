@@ -50,11 +50,6 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     return new ScalingConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.GameServerConfigs
         .internal_static_google_cloud_gaming_v1_ScalingConfig_descriptor;

@@ -26,8 +26,10 @@ package com.google.cloud.documentai.v1beta3;
  * This method requires Document AI Service Agent of the destination project in
  * the source project's IAM with [Document AI Editor
  * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles).
+ *
  * The destination project is specified as part of the `parent` field.
  * The source project is specified as part of `source` field.
+ *
  * The Service Agent for Document AI can be found in
  * https://cloud.google.com/iam/docs/service-agents.
  * </pre>
@@ -54,11 +56,6 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
     return new ImportProcessorVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_ImportProcessorVersionRequest_descriptor;
@@ -75,6 +72,8 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -438,8 +437,10 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    * This method requires Document AI Service Agent of the destination project in
    * the source project's IAM with [Document AI Editor
    * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles).
+   *
    * The destination project is specified as part of the `parent` field.
    * The source project is specified as part of `source` field.
+   *
    * The Service Agent for Document AI can be found in
    * https://cloud.google.com/iam/docs/service-agents.
    * </pre>

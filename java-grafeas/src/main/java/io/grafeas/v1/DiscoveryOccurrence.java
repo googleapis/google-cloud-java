@@ -51,11 +51,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     return new DiscoveryOccurrence();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Discovery.internal_static_grafeas_v1_DiscoveryOccurrence_descriptor;
   }
@@ -542,18 +537,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
 
     private AnalysisCompleted() {
-      analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      analysisType_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AnalysisCompleted();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -574,7 +564,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public static final int ANALYSIS_TYPE_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList analysisType_;
+    private com.google.protobuf.LazyStringArrayList analysisType_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      * <code>repeated string analysis_type = 1;</code>
      *
@@ -819,8 +810,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        analysisType_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -848,7 +838,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted buildPartial() {
         io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result =
             new io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -856,17 +845,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          analysisType_ = analysisType_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.analysisType_ = analysisType_;
-      }
-
       private void buildPartial0(io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          analysisType_.makeImmutable();
+          result.analysisType_ = analysisType_;
+        }
       }
 
       @java.lang.Override
@@ -920,7 +904,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         if (!other.analysisType_.isEmpty()) {
           if (analysisType_.isEmpty()) {
             analysisType_ = other.analysisType_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAnalysisTypeIsMutable();
             analysisType_.addAll(other.analysisType_);
@@ -979,14 +963,14 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList analysisType_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList analysisType_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAnalysisTypeIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!analysisType_.isModifiable()) {
           analysisType_ = new com.google.protobuf.LazyStringArrayList(analysisType_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        * <code>repeated string analysis_type = 1;</code>
@@ -994,7 +978,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
        * @return A list containing the analysisType.
        */
       public com.google.protobuf.ProtocolStringList getAnalysisTypeList() {
-        return analysisType_.getUnmodifiableView();
+        analysisType_.makeImmutable();
+        return analysisType_;
       }
       /**
        * <code>repeated string analysis_type = 1;</code>
@@ -1035,6 +1020,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         }
         ensureAnalysisTypeIsMutable();
         analysisType_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1050,6 +1036,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         }
         ensureAnalysisTypeIsMutable();
         analysisType_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1062,6 +1049,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public Builder addAllAnalysisType(java.lang.Iterable<java.lang.String> values) {
         ensureAnalysisTypeIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, analysisType_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1071,8 +1059,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearAnalysisType() {
-        analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        analysisType_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1089,6 +1078,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         checkByteStringIsUtf8(value);
         ensureAnalysisTypeIsMutable();
         analysisType_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }

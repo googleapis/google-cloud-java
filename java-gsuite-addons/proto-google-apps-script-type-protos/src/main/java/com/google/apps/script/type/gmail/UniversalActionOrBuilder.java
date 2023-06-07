@@ -130,5 +130,5 @@ public interface UniversalActionOrBuilder
    */
   com.google.protobuf.ByteString getRunFunctionBytes();
 
-  public com.google.apps.script.type.gmail.UniversalAction.ActionTypeCase getActionTypeCase();
+  com.google.apps.script.type.gmail.UniversalAction.ActionTypeCase getActionTypeCase();
 }

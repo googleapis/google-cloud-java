@@ -24,6 +24,7 @@ package com.google.cloud.kms.v1;
  * <pre>
  * A [CryptoKey][google.cloud.kms.v1.CryptoKey] represents a logical key that
  * can be used for cryptographic operations.
+ *
  * A [CryptoKey][google.cloud.kms.v1.CryptoKey] is made up of zero or more
  * [versions][google.cloud.kms.v1.CryptoKeyVersion], which represent the actual
  * key material used in cryptographic operations.
@@ -51,11 +52,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CryptoKey();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -314,6 +310,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int rotationScheduleCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object rotationSchedule_;
 
   public enum RotationScheduleCase
@@ -423,9 +421,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
    * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+   *
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
    * updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * may have a primary. For other keys, this field will be omitted.
@@ -450,9 +450,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
    * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+   *
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
    * updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * may have a primary. For other keys, this field will be omitted.
@@ -479,9 +481,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
    * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+   *
    * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
    * updated via
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * may have a primary. For other keys, this field will be omitted.
@@ -601,14 +605,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
    * the Key Management Service will automatically:
+   *
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * 2. Mark the new version as primary.
+   *
    * Key rotations performed manually via
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
    * and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -628,14 +635,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
    * the Key Management Service will automatically:
+   *
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * 2. Mark the new version as primary.
+   *
    * Key rotations performed manually via
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
    * and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -657,14 +667,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
    * the Key Management Service will automatically:
+   *
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * 2. Mark the new version as primary.
+   *
    * Key rotations performed manually via
    * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
    * and
    * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
    * do not affect
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -687,10 +700,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * will be advanced by this period when the service automatically rotates a
    * key. Must be at least 24 hours and at most 876,000 hours.
+   *
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
    * set,
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * must also be set.
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -711,10 +726,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * will be advanced by this period when the service automatically rotates a
    * key. Must be at least 24 hours and at most 876,000 hours.
+   *
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
    * set,
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * must also be set.
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -738,10 +755,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * will be advanced by this period when the service automatically rotates a
    * key. Must be at least 24 hours and at most 876,000 hours.
+   *
    * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
    * set,
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
    * must also be set.
+   *
    * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
    * support automatic rotation. For other keys, this field must be omitted.
@@ -1394,6 +1413,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] represents a logical key that
    * can be used for cryptographic operations.
+   *
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] is made up of zero or more
    * [versions][google.cloud.kms.v1.CryptoKeyVersion], which represent the actual
    * key material used in cryptographic operations.
@@ -1921,9 +1941,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -1947,9 +1969,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -1979,9 +2003,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2013,9 +2039,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2044,9 +2072,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2081,9 +2111,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2112,9 +2144,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2138,9 +2172,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2168,9 +2204,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] is given in
      * [EncryptRequest.name][google.cloud.kms.v1.EncryptRequest.name].
+     *
      * The [CryptoKey][google.cloud.kms.v1.CryptoKey]'s primary version can be
      * updated via
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * may have a primary. For other keys, this field will be omitted.
@@ -2526,14 +2564,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2552,14 +2593,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2584,14 +2628,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2618,14 +2665,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2649,14 +2699,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2686,14 +2739,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2717,14 +2773,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2743,14 +2802,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2773,14 +2835,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time],
      * the Key Management Service will automatically:
+     *
      * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * 2. Mark the new version as primary.
+     *
      * Key rotations performed manually via
      * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
      * and
      * [UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion]
      * do not affect
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time].
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2817,10 +2882,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2841,10 +2908,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2875,10 +2944,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2906,10 +2977,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2934,10 +3007,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -2975,10 +3050,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -3009,10 +3086,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -3030,10 +3109,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.
@@ -3059,10 +3140,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * will be advanced by this period when the service automatically rotates a
      * key. Must be at least 24 hours and at most 876,000 hours.
+     *
      * If [rotation_period][google.cloud.kms.v1.CryptoKey.rotation_period] is
      * set,
      * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time]
      * must also be set.
+     *
      * Keys with [purpose][google.cloud.kms.v1.CryptoKey.purpose]
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT]
      * support automatic rotation. For other keys, this field must be omitted.

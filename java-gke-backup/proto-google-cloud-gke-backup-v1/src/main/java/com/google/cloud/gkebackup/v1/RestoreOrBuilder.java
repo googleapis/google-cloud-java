@@ -222,8 +222,10 @@ public interface RestoreOrBuilder
    * <pre>
    * Output only. The target cluster into which this Restore will restore data.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   *
    * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
    * </pre>
    *
@@ -240,8 +242,10 @@ public interface RestoreOrBuilder
    * <pre>
    * Output only. The target cluster into which this Restore will restore data.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   *
    * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
    * </pre>
    *

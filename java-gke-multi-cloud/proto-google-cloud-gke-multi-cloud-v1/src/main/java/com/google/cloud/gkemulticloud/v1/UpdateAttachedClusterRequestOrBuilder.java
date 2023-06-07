@@ -91,6 +91,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -113,6 +114,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.
@@ -135,6 +137,7 @@ public interface UpdateAttachedClusterRequestOrBuilder
    * this field. The elements of the repeated paths field can only include these
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
+   *
    *  *   `description`.
    *  *   `annotations`.
    *  *   `platform_version`.

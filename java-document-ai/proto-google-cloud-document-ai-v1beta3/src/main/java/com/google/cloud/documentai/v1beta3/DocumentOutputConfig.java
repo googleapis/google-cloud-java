@@ -46,11 +46,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     return new DocumentOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentIoProto
         .internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_descriptor;
@@ -209,11 +204,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       return new GcsOutputConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentIoProto
           .internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_descriptor;
@@ -287,11 +277,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new ShardingConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2142,6 +2127,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase

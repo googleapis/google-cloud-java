@@ -47,11 +47,6 @@ public final class TargetState extends com.google.protobuf.GeneratedMessageV3
     return new TargetState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.Common
         .internal_static_google_cloud_gaming_v1beta_TargetState_descriptor;

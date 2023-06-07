@@ -105,6 +105,7 @@ public interface LintResultOrBuilder
    *
    * <pre>
    * The name of the field for which this lint result is about.
+   *
    * For nested messages `field_name` consists of names of the embedded fields
    * separated by period character. The top-level qualifier is the input object
    * to lint in the request. For example, the `field_name` value
@@ -122,6 +123,7 @@ public interface LintResultOrBuilder
    *
    * <pre>
    * The name of the field for which this lint result is about.
+   *
    * For nested messages `field_name` consists of names of the embedded fields
    * separated by period character. The top-level qualifier is the input object
    * to lint in the request. For example, the `field_name` value

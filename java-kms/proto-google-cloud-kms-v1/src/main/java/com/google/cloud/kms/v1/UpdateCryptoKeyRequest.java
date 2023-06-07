@@ -46,11 +46,6 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     return new UpdateCryptoKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_UpdateCryptoKeyRequest_descriptor;

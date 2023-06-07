@@ -48,11 +48,6 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
     return new DriveExtensionPoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.drive.DriveAddOnManifestProto
         .internal_static_google_apps_script_type_drive_DriveExtensionPoint_descriptor;

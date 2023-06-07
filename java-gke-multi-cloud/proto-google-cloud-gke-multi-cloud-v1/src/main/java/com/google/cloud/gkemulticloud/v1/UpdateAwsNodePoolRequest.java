@@ -45,11 +45,6 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     return new UpdateAwsNodePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_UpdateAwsNodePoolRequest_descriptor;
@@ -151,6 +146,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+   *
    *  *   `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -191,6 +187,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+   *
    *  *   `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -231,6 +228,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+   *
    *  *   `annotations`.
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
@@ -944,6 +942,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -983,6 +982,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1028,6 +1028,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1075,6 +1076,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1119,6 +1121,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1169,6 +1172,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1213,6 +1217,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1252,6 +1257,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.
@@ -1295,6 +1301,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. The elements of the repeated paths field can only include these
      * fields from [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]:
+     *
      *  *   `annotations`.
      *  *   `version`.
      *  *   `autoscaling.min_node_count`.

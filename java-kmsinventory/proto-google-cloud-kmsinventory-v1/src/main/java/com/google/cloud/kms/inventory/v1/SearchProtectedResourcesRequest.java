@@ -51,11 +51,6 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
     return new SearchProtectedResourcesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.inventory.v1.KeyTrackingServiceProto
         .internal_static_google_cloud_kms_inventory_v1_SearchProtectedResourcesRequest_descriptor;
@@ -217,6 +212,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
    * A page token, received from a previous
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * must match the call that provided the page token.
@@ -245,6 +241,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
    * A page token, received from a previous
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * must match the call that provided the page token.
@@ -999,6 +996,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1026,6 +1024,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1053,6 +1052,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1079,6 +1079,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.
@@ -1101,6 +1102,7 @@ public final class SearchProtectedResourcesRequest extends com.google.protobuf.G
      * A page token, received from a previous
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * call. Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to
      * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
      * must match the call that provided the page token.

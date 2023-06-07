@@ -52,11 +52,6 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
     return new GoogleChannelConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.GoogleChannelConfigProto
         .internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_descriptor;
@@ -184,6 +179,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
+   *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
@@ -212,6 +208,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
+   *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
@@ -955,6 +952,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -982,6 +980,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -1009,6 +1008,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -1035,6 +1035,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
@@ -1057,6 +1058,7 @@ public final class GoogleChannelConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt their event data.
+     *
      * It must match the pattern
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>

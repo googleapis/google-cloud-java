@@ -68,6 +68,7 @@ public interface InputConfigOrBuilder
    * Content in bytes, represented as a stream of bytes.
    * Note: As with all `bytes` fields, proto buffer messages use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * This field only works for synchronous ProcessDocument method.
    * </pre>
    *
@@ -83,6 +84,7 @@ public interface InputConfigOrBuilder
    * Content in bytes, represented as a stream of bytes.
    * Note: As with all `bytes` fields, proto buffer messages use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * This field only works for synchronous ProcessDocument method.
    * </pre>
    *
@@ -125,5 +127,5 @@ public interface InputConfigOrBuilder
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
-  public com.google.cloud.documentai.v1beta2.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1beta2.InputConfig.SourceCase getSourceCase();
 }

@@ -46,11 +46,6 @@ public final class DeployProcessorVersionMetadata extends com.google.protobuf.Ge
     return new DeployProcessorVersionMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_DeployProcessorVersionMetadata_descriptor;

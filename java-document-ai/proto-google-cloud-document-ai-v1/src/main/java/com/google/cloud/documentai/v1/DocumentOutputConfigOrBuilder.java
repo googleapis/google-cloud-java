@@ -62,5 +62,5 @@ public interface DocumentOutputConfigOrBuilder
   com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfigOrBuilder
       getGcsOutputConfigOrBuilder();
 
-  public com.google.cloud.documentai.v1.DocumentOutputConfig.DestinationCase getDestinationCase();
+  com.google.cloud.documentai.v1.DocumentOutputConfig.DestinationCase getDestinationCase();
 }

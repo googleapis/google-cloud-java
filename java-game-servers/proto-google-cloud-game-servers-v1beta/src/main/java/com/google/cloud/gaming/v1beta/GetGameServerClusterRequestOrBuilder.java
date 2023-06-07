@@ -28,6 +28,7 @@ public interface GetGameServerClusterRequestOrBuilder
    *
    * <pre>
    * Required. The name of the game server cluster to retrieve. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetGameServerClusterRequestOrBuilder
    *
    * <pre>
    * Required. The name of the game server cluster to retrieve. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * </pre>
    *

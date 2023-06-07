@@ -47,11 +47,6 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
     return new FetchDeploymentStateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerDeployments
         .internal_static_google_cloud_gaming_v1beta_FetchDeploymentStateRequest_descriptor;
@@ -76,6 +71,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the game server delpoyment. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -100,6 +96,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the game server delpoyment. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -469,6 +466,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server delpoyment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -492,6 +490,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server delpoyment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -515,6 +514,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server delpoyment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -537,6 +537,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server delpoyment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *
@@ -555,6 +556,7 @@ public final class FetchDeploymentStateRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server delpoyment. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * </pre>
      *

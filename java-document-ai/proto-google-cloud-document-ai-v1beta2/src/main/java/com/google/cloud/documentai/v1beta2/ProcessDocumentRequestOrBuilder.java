@@ -28,7 +28,9 @@ public interface ProcessDocumentRequestOrBuilder
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * This field is only populated when used in ProcessDocument method.
    * </pre>
@@ -43,7 +45,9 @@ public interface ProcessDocumentRequestOrBuilder
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * This field is only populated when used in ProcessDocument method.
    * </pre>

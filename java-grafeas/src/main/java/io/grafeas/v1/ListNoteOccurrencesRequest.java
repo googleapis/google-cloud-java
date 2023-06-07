@@ -50,11 +50,6 @@ public final class ListNoteOccurrencesRequest extends com.google.protobuf.Genera
     return new ListNoteOccurrencesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.GrafeasOuterClass
         .internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;

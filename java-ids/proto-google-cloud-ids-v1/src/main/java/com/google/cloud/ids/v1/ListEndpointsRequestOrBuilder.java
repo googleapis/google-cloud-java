@@ -72,6 +72,7 @@ public interface ListEndpointsRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListEndpoints` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListEndpoints` must
    * match the call that provided the page token.
    * </pre>
@@ -87,6 +88,7 @@ public interface ListEndpointsRequestOrBuilder
    * <pre>
    * Optional. A page token, received from a previous `ListEndpoints` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListEndpoints` must
    * match the call that provided the page token.
    * </pre>

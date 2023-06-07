@@ -45,11 +45,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
     return new SheetsAddOnManifest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.sheets.SheetsAddOnManifestProto
         .internal_static_google_apps_script_type_sheets_SheetsAddOnManifest_descriptor;

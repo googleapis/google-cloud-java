@@ -45,11 +45,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     return new CommonFeatureSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1alpha.FeatureProto
         .internal_static_google_cloud_gkehub_v1alpha_CommonFeatureSpec_descriptor;
@@ -66,6 +61,8 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
   }
 
   private int featureSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object featureSpec_;
 
   public enum FeatureSpecCase

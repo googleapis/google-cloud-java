@@ -49,11 +49,6 @@ public final class RestoreCryptoKeyVersionRequest extends com.google.protobuf.Ge
     return new RestoreCryptoKeyVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_RestoreCryptoKeyVersionRequest_descriptor;

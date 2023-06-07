@@ -49,11 +49,6 @@ public final class FilteringAttribute extends com.google.protobuf.GeneratedMessa
     return new FilteringAttribute();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.DiscoveryProto
         .internal_static_google_cloud_eventarc_v1_FilteringAttribute_descriptor;

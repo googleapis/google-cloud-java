@@ -77,5 +77,5 @@ public interface DSSEAttestationOccurrenceOrBuilder
   /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
   io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder();
 
-  public io.grafeas.v1.DSSEAttestationOccurrence.DecodedPayloadCase getDecodedPayloadCase();
+  io.grafeas.v1.DSSEAttestationOccurrence.DecodedPayloadCase getDecodedPayloadCase();
 }

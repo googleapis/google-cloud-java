@@ -52,11 +52,6 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
     return new Permission();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Permission_descriptor;
   }

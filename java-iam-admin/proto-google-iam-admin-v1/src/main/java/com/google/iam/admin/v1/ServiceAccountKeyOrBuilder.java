@@ -57,6 +57,7 @@ public interface ServiceAccountKeyOrBuilder
    * The output format for the private key.
    * Only provided in `CreateServiceAccountKey` responses, not
    * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+   *
    * Google never exposes system-managed private keys, and never retains
    * user-managed private keys.
    * </pre>
@@ -73,6 +74,7 @@ public interface ServiceAccountKeyOrBuilder
    * The output format for the private key.
    * Only provided in `CreateServiceAccountKey` responses, not
    * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+   *
    * Google never exposes system-managed private keys, and never retains
    * user-managed private keys.
    * </pre>

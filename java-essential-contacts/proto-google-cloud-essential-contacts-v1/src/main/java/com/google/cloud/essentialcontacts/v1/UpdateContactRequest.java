@@ -45,11 +45,6 @@ public final class UpdateContactRequest extends com.google.protobuf.GeneratedMes
     return new UpdateContactRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.essentialcontacts.v1.Service
         .internal_static_google_cloud_essentialcontacts_v1_UpdateContactRequest_descriptor;

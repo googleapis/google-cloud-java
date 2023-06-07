@@ -91,7 +91,9 @@ public interface BatchProcessDocumentsRequestOrBuilder
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *
@@ -105,7 +107,9 @@ public interface BatchProcessDocumentsRequestOrBuilder
    *
    * <pre>
    * Target project and location to make a call.
+   *
    * Format: `projects/{project-id}/locations/{location-id}`.
+   *
    * If no location is specified, a region will be chosen automatically.
    * </pre>
    *

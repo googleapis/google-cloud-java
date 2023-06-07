@@ -88,5 +88,5 @@ public interface InputConfigOrBuilder
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
-  public com.google.cloud.documentai.v1beta1.InputConfig.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1beta1.InputConfig.SourceCase getSourceCase();
 }

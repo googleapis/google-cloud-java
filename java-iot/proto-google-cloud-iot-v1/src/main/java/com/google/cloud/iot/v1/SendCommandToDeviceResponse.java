@@ -45,11 +45,6 @@ public final class SendCommandToDeviceResponse extends com.google.protobuf.Gener
     return new SendCommandToDeviceResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.DeviceManagerProto
         .internal_static_google_cloud_iot_v1_SendCommandToDeviceResponse_descriptor;

@@ -49,11 +49,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     return new AnalysisMessageBase();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.servicemesh.v1alpha.ServiceMeshProto
         .internal_static_google_cloud_gkehub_servicemesh_v1alpha_AnalysisMessageBase_descriptor;
@@ -347,11 +342,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Type();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

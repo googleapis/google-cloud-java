@@ -29,6 +29,7 @@ public interface EventFilterOrBuilder
    * <pre>
    * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
    * are supported for filtering.
+   *
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface EventFilterOrBuilder
    * <pre>
    * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
    * are supported for filtering.
+   *
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *

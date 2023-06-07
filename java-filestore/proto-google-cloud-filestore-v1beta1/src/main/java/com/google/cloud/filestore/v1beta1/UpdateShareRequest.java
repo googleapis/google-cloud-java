@@ -45,11 +45,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateShareRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
         .internal_static_google_cloud_filestore_v1beta1_UpdateShareRequest_descriptor;
@@ -129,6 +124,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
    * Required. Mask of fields to update. At least one path must be supplied in this
    * field.
    * The elements of the repeated paths field may only include these fields:
+   *
    * * "description"
    * * "capacity_gb"
    * * "labels"
@@ -151,6 +147,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
    * Required. Mask of fields to update. At least one path must be supplied in this
    * field.
    * The elements of the repeated paths field may only include these fields:
+   *
    * * "description"
    * * "capacity_gb"
    * * "labels"
@@ -173,6 +170,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
    * Required. Mask of fields to update. At least one path must be supplied in this
    * field.
    * The elements of the repeated paths field may only include these fields:
+   *
    * * "description"
    * * "capacity_gb"
    * * "labels"
@@ -791,6 +789,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -812,6 +811,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -839,6 +839,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -868,6 +869,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -894,6 +896,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -926,6 +929,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -952,6 +956,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -973,6 +978,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"
@@ -998,6 +1004,7 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
      * Required. Mask of fields to update. At least one path must be supplied in this
      * field.
      * The elements of the repeated paths field may only include these fields:
+     *
      * * "description"
      * * "capacity_gb"
      * * "labels"

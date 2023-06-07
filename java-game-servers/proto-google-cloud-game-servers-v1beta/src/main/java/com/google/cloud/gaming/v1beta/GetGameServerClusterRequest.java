@@ -47,11 +47,6 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
     return new GetGameServerClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerClusters
         .internal_static_google_cloud_gaming_v1beta_GetGameServerClusterRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the game server cluster to retrieve. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The name of the game server cluster to retrieve. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -473,6 +470,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server cluster to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -498,6 +496,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server cluster to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -523,6 +522,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server cluster to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -547,6 +547,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server cluster to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -567,6 +568,7 @@ public final class GetGameServerClusterRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The name of the game server cluster to retrieve. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
      * </pre>
      *

@@ -50,11 +50,6 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
     return new ListBackupPlansRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_ListBackupPlansRequest_descriptor;

@@ -48,11 +48,6 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
     return new LayoutProperties();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.ScriptManifest
         .internal_static_google_apps_script_type_LayoutProperties_descriptor;

@@ -73,6 +73,7 @@ public interface UpdateGameServerDeploymentRequestOrBuilder
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. For the `FieldMask` definition, see
+   *
    * https:
    * //developers.google.com/protocol-buffers
    * // /docs/reference/google.protobuf#fieldmask
@@ -90,6 +91,7 @@ public interface UpdateGameServerDeploymentRequestOrBuilder
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. For the `FieldMask` definition, see
+   *
    * https:
    * //developers.google.com/protocol-buffers
    * // /docs/reference/google.protobuf#fieldmask
@@ -107,6 +109,7 @@ public interface UpdateGameServerDeploymentRequestOrBuilder
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. For the `FieldMask` definition, see
+   *
    * https:
    * //developers.google.com/protocol-buffers
    * // /docs/reference/google.protobuf#fieldmask

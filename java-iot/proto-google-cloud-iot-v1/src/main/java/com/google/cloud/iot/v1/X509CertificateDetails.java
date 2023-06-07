@@ -50,11 +50,6 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     return new X509CertificateDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto
         .internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;

@@ -30,8 +30,10 @@ public interface GenerateAwsAccessTokenRequestOrBuilder
    * Required. The name of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource to
    * authenticate to.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -50,8 +52,10 @@ public interface GenerateAwsAccessTokenRequestOrBuilder
    * Required. The name of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource to
    * authenticate to.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>

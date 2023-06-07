@@ -47,11 +47,6 @@ public final class DeleteGameServerConfigRequest extends com.google.protobuf.Gen
     return new DeleteGameServerConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.GameServerConfigs
         .internal_static_google_cloud_gaming_v1_DeleteGameServerConfigRequest_descriptor;

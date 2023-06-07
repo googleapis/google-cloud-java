@@ -93,5 +93,5 @@ public interface BatchDocumentsInputConfigOrBuilder
    */
   com.google.cloud.documentai.v1.GcsDocumentsOrBuilder getGcsDocumentsOrBuilder();
 
-  public com.google.cloud.documentai.v1.BatchDocumentsInputConfig.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1.BatchDocumentsInputConfig.SourceCase getSourceCase();
 }

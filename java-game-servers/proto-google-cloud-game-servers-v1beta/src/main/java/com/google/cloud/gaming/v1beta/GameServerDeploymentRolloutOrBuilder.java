@@ -28,8 +28,10 @@ public interface GameServerDeploymentRolloutOrBuilder
    *
    * <pre>
    * The resource name of the game server deployment rollout. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
    * </pre>
    *
@@ -43,8 +45,10 @@ public interface GameServerDeploymentRolloutOrBuilder
    *
    * <pre>
    * The resource name of the game server deployment rollout. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
+   *
    * `projects/my-project/locations/{location}/gameServerDeployments/my-deployment/rollout`.
    * </pre>
    *
@@ -136,6 +140,7 @@ public interface GameServerDeploymentRolloutOrBuilder
    * <pre>
    * The default game server config is applied to all realms unless overridden
    * in the rollout. For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *
@@ -150,6 +155,7 @@ public interface GameServerDeploymentRolloutOrBuilder
    * <pre>
    * The default game server config is applied to all realms unless overridden
    * in the rollout. For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *

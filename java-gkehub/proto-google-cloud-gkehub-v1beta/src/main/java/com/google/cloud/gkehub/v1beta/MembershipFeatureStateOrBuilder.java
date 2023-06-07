@@ -132,6 +132,5 @@ public interface MembershipFeatureStateOrBuilder
    */
   com.google.cloud.gkehub.v1beta.FeatureStateOrBuilder getStateOrBuilder();
 
-  public com.google.cloud.gkehub.v1beta.MembershipFeatureState.FeatureStateCase
-      getFeatureStateCase();
+  com.google.cloud.gkehub.v1beta.MembershipFeatureState.FeatureStateCase getFeatureStateCase();
 }

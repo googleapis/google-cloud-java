@@ -59,6 +59,7 @@ public interface TransferDomainRequestOrBuilder
    *
    * <pre>
    * Required. The complete `Registration` resource to be created.
+   *
    * You can leave `registration.dns_settings` unset to import the
    * domain's current DNS configuration from its current registrar. Use this
    * option only if you are sure that the domain's current DNS service
@@ -78,6 +79,7 @@ public interface TransferDomainRequestOrBuilder
    *
    * <pre>
    * Required. The complete `Registration` resource to be created.
+   *
    * You can leave `registration.dns_settings` unset to import the
    * domain's current DNS configuration from its current registrar. Use this
    * option only if you are sure that the domain's current DNS service
@@ -97,6 +99,7 @@ public interface TransferDomainRequestOrBuilder
    *
    * <pre>
    * Required. The complete `Registration` resource to be created.
+   *
    * You can leave `registration.dns_settings` unset to import the
    * domain's current DNS configuration from its current registrar. Use this
    * option only if you are sure that the domain's current DNS service

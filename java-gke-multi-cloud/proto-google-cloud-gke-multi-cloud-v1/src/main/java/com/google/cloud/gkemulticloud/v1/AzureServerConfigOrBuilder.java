@@ -28,8 +28,10 @@ public interface AzureServerConfigOrBuilder
    *
    * <pre>
    * The `AzureServerConfig` resource name.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -44,8 +46,10 @@ public interface AzureServerConfigOrBuilder
    *
    * <pre>
    * The `AzureServerConfig` resource name.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>

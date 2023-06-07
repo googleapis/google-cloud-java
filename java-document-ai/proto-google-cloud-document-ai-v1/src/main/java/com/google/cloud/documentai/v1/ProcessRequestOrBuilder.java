@@ -195,5 +195,5 @@ public interface ProcessRequestOrBuilder
    */
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
-  public com.google.cloud.documentai.v1.ProcessRequest.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1.ProcessRequest.SourceCase getSourceCase();
 }

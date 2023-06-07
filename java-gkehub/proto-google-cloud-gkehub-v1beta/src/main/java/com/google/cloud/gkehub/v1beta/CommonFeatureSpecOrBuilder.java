@@ -62,5 +62,5 @@ public interface CommonFeatureSpecOrBuilder
   com.google.cloud.gkehub.multiclusteringress.v1beta.FeatureSpecOrBuilder
       getMulticlusteringressOrBuilder();
 
-  public com.google.cloud.gkehub.v1beta.CommonFeatureSpec.FeatureSpecCase getFeatureSpecCase();
+  com.google.cloud.gkehub.v1beta.CommonFeatureSpec.FeatureSpecCase getFeatureSpecCase();
 }

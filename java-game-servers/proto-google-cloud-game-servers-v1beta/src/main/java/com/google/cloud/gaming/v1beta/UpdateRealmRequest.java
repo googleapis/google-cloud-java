@@ -45,11 +45,6 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
     return new UpdateRealmRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.Realms
         .internal_static_google_cloud_gaming_v1beta_UpdateRealmRequest_descriptor;
@@ -125,6 +120,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The update mask applies to the resource. For the `FieldMask`
    * definition, see
+   *
    * https:
    * //developers.google.com/protocol-buffers
    * // /docs/reference/google.protobuf#fieldmask
@@ -145,6 +141,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The update mask applies to the resource. For the `FieldMask`
    * definition, see
+   *
    * https:
    * //developers.google.com/protocol-buffers
    * // /docs/reference/google.protobuf#fieldmask
@@ -165,6 +162,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The update mask applies to the resource. For the `FieldMask`
    * definition, see
+   *
    * https:
    * //developers.google.com/protocol-buffers
    * // /docs/reference/google.protobuf#fieldmask
@@ -767,6 +765,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -786,6 +785,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -811,6 +811,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -838,6 +839,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -862,6 +864,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -892,6 +895,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -916,6 +920,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -935,6 +940,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask
@@ -958,6 +964,7 @@ public final class UpdateRealmRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The update mask applies to the resource. For the `FieldMask`
      * definition, see
+     *
      * https:
      * //developers.google.com/protocol-buffers
      * // /docs/reference/google.protobuf#fieldmask

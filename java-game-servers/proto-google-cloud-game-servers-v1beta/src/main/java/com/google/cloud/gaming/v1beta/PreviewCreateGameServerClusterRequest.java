@@ -50,11 +50,6 @@ public final class PreviewCreateGameServerClusterRequest
     return new PreviewCreateGameServerClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerClusters
         .internal_static_google_cloud_gaming_v1beta_PreviewCreateGameServerClusterRequest_descriptor;

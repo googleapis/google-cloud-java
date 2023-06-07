@@ -50,11 +50,6 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
     return new GenerateExclusivityManifestRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1beta1.MembershipOuterClass
         .internal_static_google_cloud_gkehub_v1beta1_GenerateExclusivityManifestRequest_descriptor;

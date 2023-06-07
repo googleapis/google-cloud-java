@@ -48,11 +48,6 @@ public final class CreateChannelRequest extends com.google.protobuf.GeneratedMes
     return new CreateChannelRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.EventarcProto
         .internal_static_google_cloud_eventarc_v1_CreateChannelRequest_descriptor;

@@ -45,11 +45,6 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
     return new MaxPodsConstraint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.CommonResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_MaxPodsConstraint_descriptor;

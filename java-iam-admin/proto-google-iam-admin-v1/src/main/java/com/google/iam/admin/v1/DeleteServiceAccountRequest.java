@@ -47,11 +47,6 @@ public final class DeleteServiceAccountRequest extends com.google.protobuf.Gener
     return new DeleteServiceAccountRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_DeleteServiceAccountRequest_descriptor;

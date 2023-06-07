@@ -28,6 +28,7 @@ public interface ListGameServerConfigsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ListGameServerConfigsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
    * </pre>
    *

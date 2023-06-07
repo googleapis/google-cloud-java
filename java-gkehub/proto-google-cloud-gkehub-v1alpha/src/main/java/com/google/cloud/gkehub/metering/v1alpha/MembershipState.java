@@ -45,11 +45,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     return new MembershipState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.metering.v1alpha.MeteringProto
         .internal_static_google_cloud_gkehub_metering_v1alpha_MembershipState_descriptor;

@@ -185,5 +185,5 @@ public interface DestinationOrBuilder
    */
   com.google.protobuf.ByteString getWorkflowBytes();
 
-  public com.google.cloud.eventarc.v1.Destination.DescriptorCase getDescriptorCase();
+  com.google.cloud.eventarc.v1.Destination.DescriptorCase getDescriptorCase();
 }

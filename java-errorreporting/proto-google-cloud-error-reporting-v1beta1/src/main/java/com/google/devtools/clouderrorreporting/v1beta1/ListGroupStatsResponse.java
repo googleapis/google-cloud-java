@@ -48,11 +48,6 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
     return new ListGroupStatsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;

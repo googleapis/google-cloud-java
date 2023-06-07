@@ -28,6 +28,7 @@ public interface SpecSourceOrBuilder
    *
    * <pre>
    * The game server config resource. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}/configs/{config_id}`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface SpecSourceOrBuilder
    *
    * <pre>
    * The game server config resource. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}/configs/{config_id}`.
    * </pre>
    *

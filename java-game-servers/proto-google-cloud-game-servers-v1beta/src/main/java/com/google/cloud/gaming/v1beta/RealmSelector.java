@@ -38,18 +38,13 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
   }
 
   private RealmSelector() {
-    realms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    realms_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RealmSelector();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
   public static final int REALMS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList realms_;
+  private com.google.protobuf.LazyStringArrayList realms_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -335,8 +331,7 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      realms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      realms_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -364,7 +359,6 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gaming.v1beta.RealmSelector buildPartial() {
       com.google.cloud.gaming.v1beta.RealmSelector result =
           new com.google.cloud.gaming.v1beta.RealmSelector(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -372,16 +366,12 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.gaming.v1beta.RealmSelector result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        realms_ = realms_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.realms_ = realms_;
-    }
-
     private void buildPartial0(com.google.cloud.gaming.v1beta.RealmSelector result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        realms_.makeImmutable();
+        result.realms_ = realms_;
+      }
     }
 
     @java.lang.Override
@@ -432,7 +422,7 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
       if (!other.realms_.isEmpty()) {
         if (realms_.isEmpty()) {
           realms_ = other.realms_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureRealmsIsMutable();
           realms_.addAll(other.realms_);
@@ -491,14 +481,14 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList realms_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList realms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRealmsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!realms_.isModifiable()) {
         realms_ = new com.google.protobuf.LazyStringArrayList(realms_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -512,7 +502,8 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the realms.
      */
     public com.google.protobuf.ProtocolStringList getRealmsList() {
-      return realms_.getUnmodifiableView();
+      realms_.makeImmutable();
+      return realms_;
     }
     /**
      *
@@ -577,6 +568,7 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRealmsIsMutable();
       realms_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -598,6 +590,7 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRealmsIsMutable();
       realms_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,6 +609,7 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRealms(java.lang.Iterable<java.lang.String> values) {
       ensureRealmsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, realms_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +625,9 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRealms() {
-      realms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      realms_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -655,6 +650,7 @@ public final class RealmSelector extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRealmsIsMutable();
       realms_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -94,5 +94,5 @@ public interface MembershipFeatureStateOrBuilder
    */
   com.google.cloud.gkehub.v1.FeatureStateOrBuilder getStateOrBuilder();
 
-  public com.google.cloud.gkehub.v1.MembershipFeatureState.FeatureStateCase getFeatureStateCase();
+  com.google.cloud.gkehub.v1.MembershipFeatureState.FeatureStateCase getFeatureStateCase();
 }

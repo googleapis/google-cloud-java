@@ -49,11 +49,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
     return new TargetDetails();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.Common
         .internal_static_google_cloud_gaming_v1beta_TargetDetails_descriptor;
@@ -183,11 +178,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
       return new TargetFleetDetails();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gaming.v1beta.Common
           .internal_static_google_cloud_gaming_v1beta_TargetDetails_TargetFleetDetails_descriptor;
@@ -298,11 +288,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TargetFleet();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1292,11 +1277,6 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TargetFleetAutoscaler();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3234,6 +3214,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The game server cluster name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -3258,6 +3239,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The game server cluster name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -3287,6 +3269,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The game server deployment name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
    * </pre>
    *
@@ -3311,6 +3294,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The game server deployment name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
    * </pre>
    *
@@ -3856,6 +3840,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server cluster name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -3879,6 +3864,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server cluster name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -3902,6 +3888,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server cluster name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -3924,6 +3911,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server cluster name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -3942,6 +3930,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server cluster name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * </pre>
      *
@@ -3967,6 +3956,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server deployment name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
      * </pre>
      *
@@ -3990,6 +3980,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server deployment name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
      * </pre>
      *
@@ -4013,6 +4004,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server deployment name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
      * </pre>
      *
@@ -4035,6 +4027,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server deployment name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
      * </pre>
      *
@@ -4053,6 +4046,7 @@ public final class TargetDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The game server deployment name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment_id}`.
      * </pre>
      *

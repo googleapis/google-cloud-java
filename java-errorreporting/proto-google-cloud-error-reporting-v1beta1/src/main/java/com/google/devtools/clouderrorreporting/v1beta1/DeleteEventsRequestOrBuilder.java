@@ -31,6 +31,7 @@ public interface DeleteEventsRequestOrBuilder
    * as `projects/{projectID}`, where `{projectID}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: `projects/my-project-123`.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface DeleteEventsRequestOrBuilder
    * as `projects/{projectID}`, where `{projectID}` is the
    * [Google Cloud Platform project
    * ID](https://support.google.com/cloud/answer/6158840).
+   *
    * Example: `projects/my-project-123`.
    * </pre>
    *

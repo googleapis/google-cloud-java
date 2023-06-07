@@ -47,11 +47,6 @@ public final class AttachedPlatformVersionInfo extends com.google.protobuf.Gener
     return new AttachedPlatformVersionInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AttachedResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AttachedPlatformVersionInfo_descriptor;

@@ -47,11 +47,6 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
     return new CalendarExtensionPoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.calendar.CalendarAddOnManifestProto
         .internal_static_google_apps_script_type_calendar_CalendarExtensionPoint_descriptor;

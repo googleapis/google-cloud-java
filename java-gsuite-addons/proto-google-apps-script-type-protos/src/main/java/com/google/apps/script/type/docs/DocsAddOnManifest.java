@@ -45,11 +45,6 @@ public final class DocsAddOnManifest extends com.google.protobuf.GeneratedMessag
     return new DocsAddOnManifest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.docs.DocsAddOnManifestProto
         .internal_static_google_apps_script_type_docs_DocsAddOnManifest_descriptor;

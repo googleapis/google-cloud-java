@@ -28,6 +28,7 @@ public interface AutoMlParamsOrBuilder
    *
    * <pre>
    * Resource name of the AutoML model.
+   *
    * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface AutoMlParamsOrBuilder
    *
    * <pre>
    * Resource name of the AutoML model.
+   *
    * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
    * </pre>
    *

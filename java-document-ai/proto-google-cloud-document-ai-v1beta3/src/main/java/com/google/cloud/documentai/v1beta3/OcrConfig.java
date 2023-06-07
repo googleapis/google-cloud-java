@@ -38,18 +38,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private OcrConfig() {
-    advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OcrConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -163,18 +158,13 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Hints() {
-      languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Hints();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -195,7 +185,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList languageHints_;
+    private com.google.protobuf.LazyStringArrayList languageHints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -483,8 +474,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -512,7 +502,6 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.documentai.v1beta3.OcrConfig.Hints buildPartial() {
         com.google.cloud.documentai.v1beta3.OcrConfig.Hints result =
             new com.google.cloud.documentai.v1beta3.OcrConfig.Hints(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -520,17 +509,12 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.documentai.v1beta3.OcrConfig.Hints result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          languageHints_ = languageHints_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.languageHints_ = languageHints_;
-      }
-
       private void buildPartial0(com.google.cloud.documentai.v1beta3.OcrConfig.Hints result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          languageHints_.makeImmutable();
+          result.languageHints_ = languageHints_;
+        }
       }
 
       @java.lang.Override
@@ -584,7 +568,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.languageHints_.isEmpty()) {
           if (languageHints_.isEmpty()) {
             languageHints_ = other.languageHints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureLanguageHintsIsMutable();
             languageHints_.addAll(other.languageHints_);
@@ -643,14 +627,14 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList languageHints_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList languageHints_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureLanguageHintsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!languageHints_.isModifiable()) {
           languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -669,7 +653,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the languageHints.
        */
       public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
-        return languageHints_.getUnmodifiableView();
+        languageHints_.makeImmutable();
+        return languageHints_;
       }
       /**
        *
@@ -754,6 +739,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureLanguageHintsIsMutable();
         languageHints_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -780,6 +766,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureLanguageHintsIsMutable();
         languageHints_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -803,6 +790,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
         ensureLanguageHintsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageHints_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -823,8 +811,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLanguageHints() {
-        languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -852,6 +841,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureLanguageHintsIsMutable();
         languageHints_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1012,7 +1002,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int ADVANCED_OCR_OPTIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList advancedOcrOptions_;
+  private com.google.protobuf.LazyStringArrayList advancedOcrOptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1343,8 +1334,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       enableNativePdfParsing_ = false;
       enableImageQualityScores_ = false;
-      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       enableSymbol_ = false;
       return this;
     }
@@ -1373,20 +1363,11 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.OcrConfig buildPartial() {
       com.google.cloud.documentai.v1beta3.OcrConfig result =
           new com.google.cloud.documentai.v1beta3.OcrConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1beta3.OcrConfig result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        advancedOcrOptions_ = advancedOcrOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.advancedOcrOptions_ = advancedOcrOptions_;
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1beta3.OcrConfig result) {
@@ -1399,6 +1380,10 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.enableImageQualityScores_ = enableImageQualityScores_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        advancedOcrOptions_.makeImmutable();
+        result.advancedOcrOptions_ = advancedOcrOptions_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.enableSymbol_ = enableSymbol_;
@@ -1462,7 +1447,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.advancedOcrOptions_.isEmpty()) {
         if (advancedOcrOptions_.isEmpty()) {
           advancedOcrOptions_ = other.advancedOcrOptions_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureAdvancedOcrOptionsIsMutable();
           advancedOcrOptions_.addAll(other.advancedOcrOptions_);
@@ -1847,14 +1832,14 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList advancedOcrOptions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList advancedOcrOptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdvancedOcrOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!advancedOcrOptions_.isModifiable()) {
         advancedOcrOptions_ = new com.google.protobuf.LazyStringArrayList(advancedOcrOptions_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1868,7 +1853,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the advancedOcrOptions.
      */
     public com.google.protobuf.ProtocolStringList getAdvancedOcrOptionsList() {
-      return advancedOcrOptions_.getUnmodifiableView();
+      advancedOcrOptions_.makeImmutable();
+      return advancedOcrOptions_;
     }
     /**
      *
@@ -1933,6 +1919,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvancedOcrOptionsIsMutable();
       advancedOcrOptions_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1954,6 +1941,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvancedOcrOptionsIsMutable();
       advancedOcrOptions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1972,6 +1960,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAdvancedOcrOptions(java.lang.Iterable<java.lang.String> values) {
       ensureAdvancedOcrOptionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advancedOcrOptions_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1987,8 +1976,9 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdvancedOcrOptions() {
-      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      advancedOcrOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2011,6 +2001,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAdvancedOcrOptionsIsMutable();
       advancedOcrOptions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

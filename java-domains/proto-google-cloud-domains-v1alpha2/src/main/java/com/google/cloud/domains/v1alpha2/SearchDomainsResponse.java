@@ -47,11 +47,6 @@ public final class SearchDomainsResponse extends com.google.protobuf.GeneratedMe
     return new SearchDomainsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1alpha2.DomainsProto
         .internal_static_google_cloud_domains_v1alpha2_SearchDomainsResponse_descriptor;

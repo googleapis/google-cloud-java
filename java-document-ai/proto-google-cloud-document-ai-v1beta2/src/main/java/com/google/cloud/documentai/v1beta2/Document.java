@@ -57,11 +57,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return new Document();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentProto
         .internal_static_google_cloud_documentai_v1beta2_Document_descriptor;
@@ -149,11 +144,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ShardInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -854,6 +844,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Label is generated AutoML model. This field stores the full resource
      * name of the AutoML model.
+     *
      * Format:
      * `projects/{project-id}/locations/{location-id}/models/{model-id}`
      * </pre>
@@ -869,6 +860,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Label is generated AutoML model. This field stores the full resource
      * name of the AutoML model.
+     *
      * Format:
      * `projects/{project-id}/locations/{location-id}/models/{model-id}`
      * </pre>
@@ -884,6 +876,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Label is generated AutoML model. This field stores the full resource
      * name of the AutoML model.
+     *
      * Format:
      * `projects/{project-id}/locations/{location-id}/models/{model-id}`
      * </pre>
@@ -899,6 +892,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the label.
+     *
      * When the label is generated from AutoML Text Classification model, this
      * field represents the name of the category.
      * </pre>
@@ -913,6 +907,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the label.
+     *
      * When the label is generated from AutoML Text Classification model, this
      * field represents the name of the category.
      * </pre>
@@ -936,7 +931,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     float getConfidence();
 
-    public com.google.cloud.documentai.v1beta2.Document.Label.SourceCase getSourceCase();
+    com.google.cloud.documentai.v1beta2.Document.Label.SourceCase getSourceCase();
   }
   /**
    *
@@ -970,11 +965,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Label();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_Label_descriptor;
@@ -991,6 +981,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object source_;
 
     public enum SourceCase
@@ -1041,6 +1033,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Label is generated AutoML model. This field stores the full resource
      * name of the AutoML model.
+     *
      * Format:
      * `projects/{project-id}/locations/{location-id}/models/{model-id}`
      * </pre>
@@ -1058,6 +1051,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Label is generated AutoML model. This field stores the full resource
      * name of the AutoML model.
+     *
      * Format:
      * `projects/{project-id}/locations/{location-id}/models/{model-id}`
      * </pre>
@@ -1088,6 +1082,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Label is generated AutoML model. This field stores the full resource
      * name of the AutoML model.
+     *
      * Format:
      * `projects/{project-id}/locations/{location-id}/models/{model-id}`
      * </pre>
@@ -1122,6 +1117,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the label.
+     *
      * When the label is generated from AutoML Text Classification model, this
      * field represents the name of the category.
      * </pre>
@@ -1147,6 +1143,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the label.
+     *
      * When the label is generated from AutoML Text Classification model, this
      * field represents the name of the category.
      * </pre>
@@ -1628,6 +1625,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Label is generated AutoML model. This field stores the full resource
        * name of the AutoML model.
+       *
        * Format:
        * `projects/{project-id}/locations/{location-id}/models/{model-id}`
        * </pre>
@@ -1646,6 +1644,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Label is generated AutoML model. This field stores the full resource
        * name of the AutoML model.
+       *
        * Format:
        * `projects/{project-id}/locations/{location-id}/models/{model-id}`
        * </pre>
@@ -1677,6 +1676,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Label is generated AutoML model. This field stores the full resource
        * name of the AutoML model.
+       *
        * Format:
        * `projects/{project-id}/locations/{location-id}/models/{model-id}`
        * </pre>
@@ -1708,6 +1708,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Label is generated AutoML model. This field stores the full resource
        * name of the AutoML model.
+       *
        * Format:
        * `projects/{project-id}/locations/{location-id}/models/{model-id}`
        * </pre>
@@ -1732,6 +1733,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Label is generated AutoML model. This field stores the full resource
        * name of the AutoML model.
+       *
        * Format:
        * `projects/{project-id}/locations/{location-id}/models/{model-id}`
        * </pre>
@@ -1754,6 +1756,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Label is generated AutoML model. This field stores the full resource
        * name of the AutoML model.
+       *
        * Format:
        * `projects/{project-id}/locations/{location-id}/models/{model-id}`
        * </pre>
@@ -1780,6 +1783,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the label.
+       *
        * When the label is generated from AutoML Text Classification model, this
        * field represents the name of the category.
        * </pre>
@@ -1804,6 +1808,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the label.
+       *
        * When the label is generated from AutoML Text Classification model, this
        * field represents the name of the category.
        * </pre>
@@ -1828,6 +1833,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the label.
+       *
        * When the label is generated from AutoML Text Classification model, this
        * field represents the name of the category.
        * </pre>
@@ -1851,6 +1857,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the label.
+       *
        * When the label is generated from AutoML Text Classification model, this
        * field represents the name of the category.
        * </pre>
@@ -1870,6 +1877,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Name of the label.
+       *
        * When the label is generated from AutoML Text Classification model, this
        * field represents the name of the category.
        * </pre>
@@ -2267,11 +2275,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Style();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_Style_descriptor;
@@ -2357,11 +2360,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FontSize();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5668,11 +5666,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Page();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_Page_descriptor;
@@ -5771,11 +5764,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Dimension();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6726,11 +6714,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Layout();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8480,11 +8463,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Block();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta2.DocumentProto
             .internal_static_google_cloud_documentai_v1beta2_Document_Page_Block_descriptor;
@@ -9868,11 +9846,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Paragraph();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11265,11 +11238,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Line();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12699,11 +12667,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Token();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta2.DocumentProto
             .internal_static_google_cloud_documentai_v1beta2_Document_Page_Token_descriptor;
@@ -12778,11 +12741,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new DetectedBreak();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15272,11 +15230,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new VisualElement();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta2.DocumentProto
             .internal_static_google_cloud_documentai_v1beta2_Document_Page_VisualElement_descriptor;
@@ -16982,11 +16935,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new Table();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta2.DocumentProto
             .internal_static_google_cloud_documentai_v1beta2_Document_Page_Table_descriptor;
@@ -17095,11 +17043,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new TableRow();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18247,11 +18190,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new TableCell();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22400,11 +22338,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return new FormField();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta2.DocumentProto
             .internal_static_google_cloud_documentai_v1beta2_Document_Page_FormField_descriptor;
@@ -25171,11 +25104,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new DetectedLanguage();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -31484,11 +31412,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new Entity();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_Entity_descriptor;
@@ -33418,11 +33341,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new EntityRelation();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_EntityRelation_descriptor;
@@ -34499,11 +34417,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new TextAnchor();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_TextAnchor_descriptor;
@@ -34578,11 +34491,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TextSegment();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -36440,11 +36348,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return new PageAnchor();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta2.DocumentProto
           .internal_static_google_cloud_documentai_v1beta2_Document_PageAnchor_descriptor;
@@ -36566,11 +36469,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new PageRef();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -38661,6 +38559,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

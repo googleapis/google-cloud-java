@@ -47,11 +47,6 @@ public final class GetDeviceRegistryRequest extends com.google.protobuf.Generate
     return new GetDeviceRegistryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.DeviceManagerProto
         .internal_static_google_cloud_iot_v1_GetDeviceRegistryRequest_descriptor;

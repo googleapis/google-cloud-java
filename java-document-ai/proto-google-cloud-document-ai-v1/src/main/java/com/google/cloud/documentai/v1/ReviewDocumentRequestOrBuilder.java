@@ -162,5 +162,5 @@ public interface ReviewDocumentRequestOrBuilder
    */
   com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder();
 
-  public com.google.cloud.documentai.v1.ReviewDocumentRequest.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1.ReviewDocumentRequest.SourceCase getSourceCase();
 }

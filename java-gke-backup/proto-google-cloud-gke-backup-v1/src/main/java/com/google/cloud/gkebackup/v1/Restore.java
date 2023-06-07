@@ -56,11 +56,6 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
     return new Restore();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.RestoreProto
         .internal_static_google_cloud_gkebackup_v1_Restore_descriptor;
@@ -645,8 +640,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The target cluster into which this Restore will restore data.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   *
    * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
    * </pre>
    *
@@ -674,8 +671,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The target cluster into which this Restore will restore data.
    * Valid formats:
+   *
    *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   *
    * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
    * </pre>
    *
@@ -2797,8 +2796,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The target cluster into which this Restore will restore data.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
      * </pre>
      *
@@ -2825,8 +2826,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The target cluster into which this Restore will restore data.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
      * </pre>
      *
@@ -2853,8 +2856,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The target cluster into which this Restore will restore data.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
      * </pre>
      *
@@ -2880,8 +2885,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The target cluster into which this Restore will restore data.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
      * </pre>
      *
@@ -2903,8 +2910,10 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The target cluster into which this Restore will restore data.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * Inherited from parent RestorePlan's [cluster][google.cloud.gkebackup.v1.RestorePlan.cluster] value.
      * </pre>
      *

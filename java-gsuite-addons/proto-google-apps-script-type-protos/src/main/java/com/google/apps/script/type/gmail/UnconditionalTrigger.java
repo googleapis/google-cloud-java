@@ -45,11 +45,6 @@ public final class UnconditionalTrigger extends com.google.protobuf.GeneratedMes
     return new UnconditionalTrigger();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.gmail.GmailAddOnManifestProto
         .internal_static_google_apps_script_type_gmail_UnconditionalTrigger_descriptor;

@@ -158,5 +158,5 @@ public interface GatewayListOptionsOrBuilder
    */
   com.google.protobuf.ByteString getAssociationsDeviceIdBytes();
 
-  public com.google.cloud.iot.v1.GatewayListOptions.FilterCase getFilterCase();
+  com.google.cloud.iot.v1.GatewayListOptions.FilterCase getFilterCase();
 }

@@ -49,11 +49,6 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     return new GenerateConnectManifestResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1beta1.MembershipOuterClass
         .internal_static_google_cloud_gkehub_v1beta1_GenerateConnectManifestResponse_descriptor;

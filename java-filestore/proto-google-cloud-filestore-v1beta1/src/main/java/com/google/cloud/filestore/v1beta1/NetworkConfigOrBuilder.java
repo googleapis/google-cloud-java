@@ -126,10 +126,12 @@ public interface NetworkConfigOrBuilder
    * <pre>
    * Optional, reserved_ip_range can have one of the following two types of
    * values.
+   *
    * * CIDR range value when using DIRECT_PEERING connect mode.
    * * [Allocated IP address
    * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
    * when using PRIVATE_SERVICE_ACCESS connect mode.
+   *
    * When the name of an allocated IP address range is specified, it must be one
    * of the ranges associated with the private service access connection.
    * When specified as a direct CIDR value, it must be a /29 CIDR block for
@@ -154,10 +156,12 @@ public interface NetworkConfigOrBuilder
    * <pre>
    * Optional, reserved_ip_range can have one of the following two types of
    * values.
+   *
    * * CIDR range value when using DIRECT_PEERING connect mode.
    * * [Allocated IP address
    * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
    * when using PRIVATE_SERVICE_ACCESS connect mode.
+   *
    * When the name of an allocated IP address range is specified, it must be one
    * of the ranges associated with the private service access connection.
    * When specified as a direct CIDR value, it must be a /29 CIDR block for

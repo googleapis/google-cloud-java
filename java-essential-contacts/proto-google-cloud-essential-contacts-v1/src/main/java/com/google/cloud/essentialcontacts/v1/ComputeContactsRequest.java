@@ -49,11 +49,6 @@ public final class ComputeContactsRequest extends com.google.protobuf.GeneratedM
     return new ComputeContactsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.essentialcontacts.v1.Service
         .internal_static_google_cloud_essentialcontacts_v1_ComputeContactsRequest_descriptor;

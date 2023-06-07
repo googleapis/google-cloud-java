@@ -55,11 +55,6 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     return new ProcessorVersion();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessor
         .internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_descriptor;
@@ -438,11 +433,6 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DeprecationInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

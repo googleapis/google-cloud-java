@@ -30,8 +30,10 @@ public interface GetAzureClusterRequestOrBuilder
    * Required. The name of the
    * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource to
    * describe.
+   *
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -50,8 +52,10 @@ public interface GetAzureClusterRequestOrBuilder
    * Required. The name of the
    * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource to
    * describe.
+   *
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>

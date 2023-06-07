@@ -53,11 +53,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     return new CryptoKeyVersionTemplate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_CryptoKeyVersionTemplate_descriptor;
@@ -125,6 +120,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    * to use when creating a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
    * template.
+   *
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
    * this field is omitted and
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -150,6 +146,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    * to use when creating a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
    * template.
+   *
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
    * this field is omitted and
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -661,6 +658,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * to use when creating a
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
      * template.
+     *
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
      * this field is omitted and
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -686,6 +684,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * to use when creating a
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
      * template.
+     *
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
      * this field is omitted and
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -714,6 +713,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * to use when creating a
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
      * template.
+     *
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
      * this field is omitted and
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -743,6 +743,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * to use when creating a
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
      * template.
+     *
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
      * this field is omitted and
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -775,6 +776,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * to use when creating a
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
      * template.
+     *
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
      * this field is omitted and
      * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is

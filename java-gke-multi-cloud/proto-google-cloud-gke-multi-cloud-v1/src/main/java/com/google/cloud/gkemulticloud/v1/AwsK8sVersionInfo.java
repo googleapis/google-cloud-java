@@ -47,11 +47,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     return new AwsK8sVersionInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AwsK8sVersionInfo_descriptor;

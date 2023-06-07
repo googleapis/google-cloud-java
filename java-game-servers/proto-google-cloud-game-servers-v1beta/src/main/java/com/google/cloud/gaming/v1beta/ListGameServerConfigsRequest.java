@@ -50,11 +50,6 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
     return new ListGameServerConfigsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerConfigs
         .internal_static_google_cloud_gaming_v1beta_ListGameServerConfigsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The parent resource name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
    * </pre>
    *
@@ -105,6 +101,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The parent resource name. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
    * </pre>
    *
@@ -749,6 +746,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent resource name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
      * </pre>
      *
@@ -774,6 +772,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent resource name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
      * </pre>
      *
@@ -799,6 +798,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent resource name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
      * </pre>
      *
@@ -823,6 +823,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent resource name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
      * </pre>
      *
@@ -843,6 +844,7 @@ public final class ListGameServerConfigsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent resource name. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/&#42;`.
      * </pre>
      *

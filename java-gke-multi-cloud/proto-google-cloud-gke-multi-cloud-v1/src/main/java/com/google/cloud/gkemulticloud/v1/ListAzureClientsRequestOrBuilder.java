@@ -29,7 +29,9 @@ public interface ListAzureClientsRequestOrBuilder
    * <pre>
    * Required. The parent location which owns this collection of
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -47,7 +49,9 @@ public interface ListAzureClientsRequestOrBuilder
    * <pre>
    * Required. The parent location which owns this collection of
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -65,6 +69,7 @@ public interface ListAzureClientsRequestOrBuilder
    *
    * <pre>
    * The maximum number of items to return.
+   *
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the pageSize value, the response can include a partial list
    * and a caller should only rely on response's

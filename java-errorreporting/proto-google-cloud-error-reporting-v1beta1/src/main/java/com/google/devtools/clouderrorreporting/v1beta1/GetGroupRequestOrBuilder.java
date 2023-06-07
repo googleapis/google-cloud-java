@@ -31,6 +31,7 @@ public interface GetGroupRequestOrBuilder
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
+   *
    * Example: `projects/my-project-123/groups/my-group`
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface GetGroupRequestOrBuilder
    * `projects/{projectID}/groups/{group_name}`. Call
    * [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    * to return a list of groups belonging to this project.
+   *
    * Example: `projects/my-project-123/groups/my-group`
    * </pre>
    *

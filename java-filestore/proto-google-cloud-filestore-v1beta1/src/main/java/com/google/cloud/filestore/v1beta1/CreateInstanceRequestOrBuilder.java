@@ -62,6 +62,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The ID of the instance to create.
    * The ID must be unique within the specified project and location.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -77,6 +78,7 @@ public interface CreateInstanceRequestOrBuilder
    * <pre>
    * Required. The ID of the instance to create.
    * The ID must be unique within the specified project and location.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>

@@ -48,11 +48,6 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
     return new GenerateAwsAccessTokenResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenResponse_descriptor;

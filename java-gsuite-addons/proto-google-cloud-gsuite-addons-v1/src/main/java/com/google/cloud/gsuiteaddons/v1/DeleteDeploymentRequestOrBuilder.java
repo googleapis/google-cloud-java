@@ -28,6 +28,7 @@ public interface DeleteDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the deployment to delete.
+   *
    * Example:  `projects/my_project/deployments/my_deployment`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The full resource name of the deployment to delete.
+   *
    * Example:  `projects/my_project/deployments/my_deployment`.
    * </pre>
    *

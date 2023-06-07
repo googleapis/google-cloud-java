@@ -46,11 +46,6 @@ public final class UndeployProcessorVersionResponse extends com.google.protobuf.
     return new UndeployProcessorVersionResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1_UndeployProcessorVersionResponse_descriptor;

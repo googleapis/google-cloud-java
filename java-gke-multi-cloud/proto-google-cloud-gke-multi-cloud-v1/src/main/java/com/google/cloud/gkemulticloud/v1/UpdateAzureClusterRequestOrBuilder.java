@@ -87,6 +87,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+   *
    *  *   `description`.
    *  *   `azureClient`.
    *  *   `control_plane.version`.
@@ -118,6 +119,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+   *
    *  *   `description`.
    *  *   `azureClient`.
    *  *   `control_plane.version`.
@@ -149,6 +151,7 @@ public interface UpdateAzureClusterRequestOrBuilder
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field can only include these
    * fields from [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
+   *
    *  *   `description`.
    *  *   `azureClient`.
    *  *   `control_plane.version`.

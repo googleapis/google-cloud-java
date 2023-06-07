@@ -51,11 +51,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     return new BackupPlan();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.BackupPlanProto
         .internal_static_google_cloud_gkebackup_v1_BackupPlan_descriptor;
@@ -98,6 +93,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Updating this field of a BackupPlan does NOT affect existing Backups
      * under it. Backups created AFTER a successful update will inherit
      * the new value.
+     *
      * Default: 0 (no delete blocking)
      * </pre>
      *
@@ -122,6 +118,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * created AFTER a successful update will automatically pick up the new
      * value.
      * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+     *
      * Default: 0 (no automatic deletion)
      * </pre>
      *
@@ -138,6 +135,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This flag denotes whether the retention policy of this BackupPlan is
      * locked.  If set to True, no further update is allowed on this policy,
      * including the `locked` field itself.
+     *
      * Default: False
      * </pre>
      *
@@ -174,11 +172,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       return new RetentionPolicy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gkebackup.v1.BackupPlanProto
           .internal_static_google_cloud_gkebackup_v1_BackupPlan_RetentionPolicy_descriptor;
@@ -207,6 +200,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Updating this field of a BackupPlan does NOT affect existing Backups
      * under it. Backups created AFTER a successful update will inherit
      * the new value.
+     *
      * Default: 0 (no delete blocking)
      * </pre>
      *
@@ -236,6 +230,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * created AFTER a successful update will automatically pick up the new
      * value.
      * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+     *
      * Default: 0 (no automatic deletion)
      * </pre>
      *
@@ -257,6 +252,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This flag denotes whether the retention policy of this BackupPlan is
      * locked.  If set to True, no further update is allowed on this policy,
      * including the `locked` field itself.
+     *
      * Default: False
      * </pre>
      *
@@ -670,6 +666,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Updating this field of a BackupPlan does NOT affect existing Backups
        * under it. Backups created AFTER a successful update will inherit
        * the new value.
+       *
        * Default: 0 (no delete blocking)
        * </pre>
        *
@@ -692,6 +689,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Updating this field of a BackupPlan does NOT affect existing Backups
        * under it. Backups created AFTER a successful update will inherit
        * the new value.
+       *
        * Default: 0 (no delete blocking)
        * </pre>
        *
@@ -718,6 +716,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * Updating this field of a BackupPlan does NOT affect existing Backups
        * under it. Backups created AFTER a successful update will inherit
        * the new value.
+       *
        * Default: 0 (no delete blocking)
        * </pre>
        *
@@ -748,6 +747,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * created AFTER a successful update will automatically pick up the new
        * value.
        * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       *
        * Default: 0 (no automatic deletion)
        * </pre>
        *
@@ -774,6 +774,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * created AFTER a successful update will automatically pick up the new
        * value.
        * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       *
        * Default: 0 (no automatic deletion)
        * </pre>
        *
@@ -804,6 +805,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * created AFTER a successful update will automatically pick up the new
        * value.
        * NOTE: backup_retain_days must be &gt;= [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days].
+       *
        * Default: 0 (no automatic deletion)
        * </pre>
        *
@@ -826,6 +828,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This flag denotes whether the retention policy of this BackupPlan is
        * locked.  If set to True, no further update is allowed on this policy,
        * including the `locked` field itself.
+       *
        * Default: False
        * </pre>
        *
@@ -844,6 +847,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This flag denotes whether the retention policy of this BackupPlan is
        * locked.  If set to True, no further update is allowed on this policy,
        * including the `locked` field itself.
+       *
        * Default: False
        * </pre>
        *
@@ -866,6 +870,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This flag denotes whether the retention policy of this BackupPlan is
        * locked.  If set to True, no further update is allowed on this policy,
        * including the `locked` field itself.
+       *
        * Default: False
        * </pre>
        *
@@ -955,6 +960,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
      * repeating schedule for creating Backups via this BackupPlan.
+     *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
@@ -969,6 +975,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
      * repeating schedule for creating Backups via this BackupPlan.
+     *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
@@ -984,6 +991,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * This flag denotes whether automatic Backup creation is paused for this
      * BackupPlan.
+     *
      * Default: False
      * </pre>
      *
@@ -1023,11 +1031,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       return new Schedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gkebackup.v1.BackupPlanProto
           .internal_static_google_cloud_gkebackup_v1_BackupPlan_Schedule_descriptor;
@@ -1053,6 +1056,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
      * repeating schedule for creating Backups via this BackupPlan.
+     *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
@@ -1078,6 +1082,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
      * repeating schedule for creating Backups via this BackupPlan.
+     *
      * Default (empty): no automatic backup creation will occur.
      * </pre>
      *
@@ -1106,6 +1111,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * This flag denotes whether automatic Backup creation is paused for this
      * BackupPlan.
+     *
      * Default: False
      * </pre>
      *
@@ -1494,6 +1500,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
        * repeating schedule for creating Backups via this BackupPlan.
+       *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
@@ -1518,6 +1525,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
        * repeating schedule for creating Backups via this BackupPlan.
+       *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
@@ -1542,6 +1550,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
        * repeating schedule for creating Backups via this BackupPlan.
+       *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
@@ -1565,6 +1574,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
        * repeating schedule for creating Backups via this BackupPlan.
+       *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
@@ -1584,6 +1594,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A standard [cron](https://wikipedia.com/wiki/cron) string that defines a
        * repeating schedule for creating Backups via this BackupPlan.
+       *
        * Default (empty): no automatic backup creation will occur.
        * </pre>
        *
@@ -1610,6 +1621,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag denotes whether automatic Backup creation is paused for this
        * BackupPlan.
+       *
        * Default: False
        * </pre>
        *
@@ -1627,6 +1639,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag denotes whether automatic Backup creation is paused for this
        * BackupPlan.
+       *
        * Default: False
        * </pre>
        *
@@ -1648,6 +1661,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag denotes whether automatic Backup creation is paused for this
        * BackupPlan.
+       *
        * Default: False
        * </pre>
        *
@@ -1835,6 +1849,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * This flag specifies whether volume data should be backed up when
      * PVCs are included in the scope of a Backup.
+     *
      * Default: False
      * </pre>
      *
@@ -1850,6 +1865,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * This flag specifies whether Kubernetes Secret resources should be
      * included when they fall into the scope of Backups.
+     *
      * Default: False
      * </pre>
      *
@@ -1866,6 +1882,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This defines a customer managed encryption key that will be used to
      * encrypt the "config" portion (the Kubernetes resources) of Backups
      * created via this plan.
+     *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
@@ -1881,6 +1898,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This defines a customer managed encryption key that will be used to
      * encrypt the "config" portion (the Kubernetes resources) of Backups
      * created via this plan.
+     *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
@@ -1896,6 +1914,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This defines a customer managed encryption key that will be used to
      * encrypt the "config" portion (the Kubernetes resources) of Backups
      * created via this plan.
+     *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
@@ -1903,8 +1922,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder();
 
-    public com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.BackupScopeCase
-        getBackupScopeCase();
+    com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.BackupScopeCase getBackupScopeCase();
   }
   /**
    *
@@ -1934,11 +1952,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       return new BackupConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gkebackup.v1.BackupPlanProto
           .internal_static_google_cloud_gkebackup_v1_BackupPlan_BackupConfig_descriptor;
@@ -1955,6 +1968,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int backupScopeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object backupScope_;
 
     public enum BackupScopeCase
@@ -2153,6 +2168,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * This flag specifies whether volume data should be backed up when
      * PVCs are included in the scope of a Backup.
+     *
      * Default: False
      * </pre>
      *
@@ -2173,6 +2189,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * This flag specifies whether Kubernetes Secret resources should be
      * included when they fall into the scope of Backups.
+     *
      * Default: False
      * </pre>
      *
@@ -2194,6 +2211,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This defines a customer managed encryption key that will be used to
      * encrypt the "config" portion (the Kubernetes resources) of Backups
      * created via this plan.
+     *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
@@ -2212,6 +2230,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This defines a customer managed encryption key that will be used to
      * encrypt the "config" portion (the Kubernetes resources) of Backups
      * created via this plan.
+     *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
@@ -2232,6 +2251,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * This defines a customer managed encryption key that will be used to
      * encrypt the "config" portion (the Kubernetes resources) of Backups
      * created via this plan.
+     *
      * Default (empty): Config backup artifacts will not be encrypted.
      * </pre>
      *
@@ -3282,6 +3302,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag specifies whether volume data should be backed up when
        * PVCs are included in the scope of a Backup.
+       *
        * Default: False
        * </pre>
        *
@@ -3299,6 +3320,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag specifies whether volume data should be backed up when
        * PVCs are included in the scope of a Backup.
+       *
        * Default: False
        * </pre>
        *
@@ -3320,6 +3342,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag specifies whether volume data should be backed up when
        * PVCs are included in the scope of a Backup.
+       *
        * Default: False
        * </pre>
        *
@@ -3341,6 +3364,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag specifies whether Kubernetes Secret resources should be
        * included when they fall into the scope of Backups.
+       *
        * Default: False
        * </pre>
        *
@@ -3358,6 +3382,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag specifies whether Kubernetes Secret resources should be
        * included when they fall into the scope of Backups.
+       *
        * Default: False
        * </pre>
        *
@@ -3379,6 +3404,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This flag specifies whether Kubernetes Secret resources should be
        * included when they fall into the scope of Backups.
+       *
        * Default: False
        * </pre>
        *
@@ -3406,6 +3432,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3423,6 +3450,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3446,6 +3474,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3471,6 +3500,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3494,6 +3524,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3523,6 +3554,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3545,6 +3577,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3562,6 +3595,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3583,6 +3617,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
        * This defines a customer managed encryption key that will be used to
        * encrypt the "config" portion (the Kubernetes resources) of Backups
        * created via this plan.
+       *
        * Default (empty): Config backup artifacts will not be encrypted.
        * </pre>
        *
@@ -3938,6 +3973,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    * Required. Immutable. The source cluster from which Backups will be created via
    * this BackupPlan.
    * Valid formats:
+   *
    * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -3967,6 +4003,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    * Required. Immutable. The source cluster from which Backups will be created via
    * this BackupPlan.
    * Valid formats:
+   *
    * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
    * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
    * </pre>
@@ -4269,6 +4306,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
    * updates will be allowed (except deletes), including the deactivated field
    * itself. It also prevents any new Backups from being created via this
    * BackupPlan (including scheduled Backups).
+   *
    * Default: False
    * </pre>
    *
@@ -5791,6 +5829,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Required. Immutable. The source cluster from which Backups will be created via
      * this BackupPlan.
      * Valid formats:
+     *
      * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -5819,6 +5858,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Required. Immutable. The source cluster from which Backups will be created via
      * this BackupPlan.
      * Valid formats:
+     *
      * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -5847,6 +5887,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Required. Immutable. The source cluster from which Backups will be created via
      * this BackupPlan.
      * Valid formats:
+     *
      * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -5874,6 +5915,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Required. Immutable. The source cluster from which Backups will be created via
      * this BackupPlan.
      * Valid formats:
+     *
      * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -5897,6 +5939,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * Required. Immutable. The source cluster from which Backups will be created via
      * this BackupPlan.
      * Valid formats:
+     *
      * - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      * - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
      * </pre>
@@ -6607,6 +6650,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * updates will be allowed (except deletes), including the deactivated field
      * itself. It also prevents any new Backups from being created via this
      * BackupPlan (including scheduled Backups).
+     *
      * Default: False
      * </pre>
      *
@@ -6627,6 +6671,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * updates will be allowed (except deletes), including the deactivated field
      * itself. It also prevents any new Backups from being created via this
      * BackupPlan (including scheduled Backups).
+     *
      * Default: False
      * </pre>
      *
@@ -6651,6 +6696,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * updates will be allowed (except deletes), including the deactivated field
      * itself. It also prevents any new Backups from being created via this
      * BackupPlan (including scheduled Backups).
+     *
      * Default: False
      * </pre>
      *

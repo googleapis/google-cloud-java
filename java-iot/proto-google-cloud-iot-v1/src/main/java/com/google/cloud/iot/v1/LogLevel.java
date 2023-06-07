@@ -23,6 +23,7 @@ package com.google.cloud.iot.v1;
  *
  * <pre>
  * **Beta Feature**
+ *
  * The logging verbosity for device activity. Specifies which events should be
  * written to logs. For example, if the LogLevel is ERROR, only events that
  * terminate in errors will be logged. LogLevel is inclusive; enabling INFO

@@ -50,11 +50,6 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
     return new ListProvidersRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.EventarcProto
         .internal_static_google_cloud_eventarc_v1_ListProvidersRequest_descriptor;
@@ -153,6 +148,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListProviders` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListProviders` must
    * match the call that provided the page token.
    * </pre>
@@ -179,6 +175,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListProviders` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListProviders` must
    * match the call that provided the page token.
    * </pre>
@@ -920,6 +917,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListProviders` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListProviders` must
      * match the call that provided the page token.
      * </pre>
@@ -945,6 +943,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListProviders` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListProviders` must
      * match the call that provided the page token.
      * </pre>
@@ -970,6 +969,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListProviders` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListProviders` must
      * match the call that provided the page token.
      * </pre>
@@ -994,6 +994,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListProviders` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListProviders` must
      * match the call that provided the page token.
      * </pre>
@@ -1014,6 +1015,7 @@ public final class ListProvidersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListProviders` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListProviders` must
      * match the call that provided the page token.
      * </pre>

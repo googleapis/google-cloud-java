@@ -62,5 +62,5 @@ public interface MembershipFeatureSpecOrBuilder
   com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpecOrBuilder
       getConfigmanagementOrBuilder();
 
-  public com.google.cloud.gkehub.v1beta.MembershipFeatureSpec.FeatureSpecCase getFeatureSpecCase();
+  com.google.cloud.gkehub.v1beta.MembershipFeatureSpec.FeatureSpecCase getFeatureSpecCase();
 }

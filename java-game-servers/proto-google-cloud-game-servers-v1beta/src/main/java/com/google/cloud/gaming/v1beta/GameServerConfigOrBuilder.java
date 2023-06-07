@@ -28,8 +28,10 @@ public interface GameServerConfigOrBuilder
    *
    * <pre>
    * The resource name of the game server config. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *
@@ -43,8 +45,10 @@ public interface GameServerConfigOrBuilder
    *
    * <pre>
    * The resource name of the game server config. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *

@@ -47,11 +47,6 @@ public final class GetChannelConnectionRequest extends com.google.protobuf.Gener
     return new GetChannelConnectionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.EventarcProto
         .internal_static_google_cloud_eventarc_v1_GetChannelConnectionRequest_descriptor;

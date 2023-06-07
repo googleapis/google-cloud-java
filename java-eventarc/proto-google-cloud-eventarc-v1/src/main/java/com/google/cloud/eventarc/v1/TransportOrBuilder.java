@@ -61,5 +61,5 @@ public interface TransportOrBuilder
    */
   com.google.cloud.eventarc.v1.PubsubOrBuilder getPubsubOrBuilder();
 
-  public com.google.cloud.eventarc.v1.Transport.IntermediaryCase getIntermediaryCase();
+  com.google.cloud.eventarc.v1.Transport.IntermediaryCase getIntermediaryCase();
 }

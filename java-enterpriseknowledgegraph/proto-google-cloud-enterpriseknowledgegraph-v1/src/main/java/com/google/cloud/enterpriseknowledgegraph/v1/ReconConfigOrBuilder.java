@@ -183,6 +183,6 @@ public interface ReconConfigOrBuilder
   com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfigOrBuilder
       getModelConfigOrBuilder();
 
-  public com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ClusteringConfigCase
+  com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ClusteringConfigCase
       getClusteringConfigCase();
 }

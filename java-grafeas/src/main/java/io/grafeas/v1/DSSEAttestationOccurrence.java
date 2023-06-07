@@ -47,11 +47,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     return new DSSEAttestationOccurrence();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.DsseAttestation
         .internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
@@ -68,6 +63,8 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
   }
 
   private int decodedPayloadCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object decodedPayload_;
 
   public enum DecodedPayloadCase

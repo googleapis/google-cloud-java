@@ -47,11 +47,6 @@ public final class ExportRegistrationRequest extends com.google.protobuf.Generat
     return new ExportRegistrationRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1beta1.DomainsProto
         .internal_static_google_cloud_domains_v1beta1_ExportRegistrationRequest_descriptor;

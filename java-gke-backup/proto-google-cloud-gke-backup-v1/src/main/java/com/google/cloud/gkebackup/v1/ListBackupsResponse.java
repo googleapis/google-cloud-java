@@ -48,11 +48,6 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     return new ListBackupsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_ListBackupsResponse_descriptor;

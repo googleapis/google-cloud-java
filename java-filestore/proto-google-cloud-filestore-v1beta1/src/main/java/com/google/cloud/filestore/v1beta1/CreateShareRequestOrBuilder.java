@@ -60,6 +60,7 @@ public interface CreateShareRequestOrBuilder
    * <pre>
    * Required. The ID to use for the share.
    * The ID must be unique within the specified instance.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -75,6 +76,7 @@ public interface CreateShareRequestOrBuilder
    * <pre>
    * Required. The ID to use for the share.
    * The ID must be unique within the specified instance.
+   *
    * This value must start with a lowercase letter followed by up to 62
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>

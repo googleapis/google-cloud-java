@@ -63,6 +63,7 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * to use when creating a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
    * template.
+   *
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
    * this field is omitted and
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
@@ -85,6 +86,7 @@ public interface CryptoKeyVersionTemplateOrBuilder
    * to use when creating a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
    * template.
+   *
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
    * this field is omitted and
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is

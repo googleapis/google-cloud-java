@@ -48,11 +48,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return new OperationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta1.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta1_OperationMetadata_descriptor;

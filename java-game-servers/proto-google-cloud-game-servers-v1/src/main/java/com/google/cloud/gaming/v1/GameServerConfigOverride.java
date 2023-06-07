@@ -45,11 +45,6 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
     return new GameServerConfigOverride();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.GameServerDeployments
         .internal_static_google_cloud_gaming_v1_GameServerConfigOverride_descriptor;
@@ -66,6 +61,8 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
   }
 
   private int selectorCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object selector_;
 
   public enum SelectorCase
@@ -110,6 +107,8 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
   }
 
   private int changeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object change_;
 
   public enum ChangeCase

@@ -39,18 +39,13 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
 
   private FetchDeploymentStateResponse() {
     clusterState_ = java.util.Collections.emptyList();
-    unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unavailable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FetchDeploymentStateResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -183,11 +178,6 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DeployedClusterState();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1421,7 +1411,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
   public static final int UNAVAILABLE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unavailable_;
+  private com.google.protobuf.LazyStringArrayList unavailable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1705,8 +1696,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         clusterStateBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      unavailable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1753,15 +1743,14 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       } else {
         result.clusterState_ = clusterStateBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        unavailable_ = unavailable_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.unavailable_ = unavailable_;
     }
 
     private void buildPartial0(com.google.cloud.gaming.v1.FetchDeploymentStateResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        unavailable_.makeImmutable();
+        result.unavailable_ = unavailable_;
+      }
     }
 
     @java.lang.Override
@@ -1840,7 +1829,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       if (!other.unavailable_.isEmpty()) {
         if (unavailable_.isEmpty()) {
           unavailable_ = other.unavailable_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureUnavailableIsMutable();
           unavailable_.addAll(other.unavailable_);
@@ -2335,14 +2324,14 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       return clusterStateBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList unavailable_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unavailable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUnavailableIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!unavailable_.isModifiable()) {
         unavailable_ = new com.google.protobuf.LazyStringArrayList(unavailable_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2356,7 +2345,8 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
      * @return A list containing the unavailable.
      */
     public com.google.protobuf.ProtocolStringList getUnavailableList() {
-      return unavailable_.getUnmodifiableView();
+      unavailable_.makeImmutable();
+      return unavailable_;
     }
     /**
      *
@@ -2421,6 +2411,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       }
       ensureUnavailableIsMutable();
       unavailable_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2442,6 +2433,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       }
       ensureUnavailableIsMutable();
       unavailable_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2460,6 +2452,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     public Builder addAllUnavailable(java.lang.Iterable<java.lang.String> values) {
       ensureUnavailableIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unavailable_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2475,8 +2468,9 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearUnavailable() {
-      unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      unavailable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2499,6 +2493,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensureUnavailableIsMutable();
       unavailable_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

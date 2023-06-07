@@ -24,12 +24,15 @@ package com.google.cloud.domains.v1;
  * <pre>
  * The `Registration` resource facilitates managing and configuring domain name
  * registrations.
+ *
  * There are several ways to create a new `Registration` resource:
+ *
  * To create a new `Registration` resource, find a suitable domain name by
  * calling the `SearchDomains` method with a query to see available domain name
  * options. After choosing a name, call `RetrieveRegisterParameters` to
  * ensure availability and obtain information like pricing, which is needed to
  * build a call to `RegisterDomain`.
+ *
  * Another way to create a new `Registration` is to transfer an existing
  * domain from another registrar. First, go to the current registrar to unlock
  * the domain for transfer and retrieve the domain's transfer authorization
@@ -61,11 +64,6 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Registration();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1707,12 +1705,15 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The `Registration` resource facilitates managing and configuring domain name
    * registrations.
+   *
    * There are several ways to create a new `Registration` resource:
+   *
    * To create a new `Registration` resource, find a suitable domain name by
    * calling the `SearchDomains` method with a query to see available domain name
    * options. After choosing a name, call `RetrieveRegisterParameters` to
    * ensure availability and obtain information like pricing, which is needed to
    * build a call to `RegisterDomain`.
+   *
    * Another way to create a new `Registration` is to transfer an existing
    * domain from another registrar. First, go to the current registrar to unlock
    * the domain for transfer and retrieve the domain's transfer authorization

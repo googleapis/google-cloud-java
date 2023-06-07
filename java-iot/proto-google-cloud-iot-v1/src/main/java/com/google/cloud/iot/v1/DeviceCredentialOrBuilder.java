@@ -129,5 +129,5 @@ public interface DeviceCredentialOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getExpirationTimeOrBuilder();
 
-  public com.google.cloud.iot.v1.DeviceCredential.CredentialCase getCredentialCase();
+  com.google.cloud.iot.v1.DeviceCredential.CredentialCase getCredentialCase();
 }

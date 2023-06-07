@@ -47,11 +47,6 @@ public final class SheetsExtensionPoint extends com.google.protobuf.GeneratedMes
     return new SheetsExtensionPoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.sheets.SheetsAddOnManifestProto
         .internal_static_google_apps_script_type_sheets_SheetsExtensionPoint_descriptor;

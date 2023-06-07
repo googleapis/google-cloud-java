@@ -98,5 +98,5 @@ public interface DigestOrBuilder
    */
   com.google.protobuf.ByteString getSha512();
 
-  public com.google.cloud.kms.v1.Digest.DigestCase getDigestCase();
+  com.google.cloud.kms.v1.Digest.DigestCase getDigestCase();
 }

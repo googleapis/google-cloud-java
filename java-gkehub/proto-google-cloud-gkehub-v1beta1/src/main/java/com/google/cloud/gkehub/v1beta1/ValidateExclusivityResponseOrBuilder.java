@@ -28,6 +28,7 @@ public interface ValidateExclusivityResponseOrBuilder
    *
    * <pre>
    * The validation result.
+   *
    * * `OK` means that exclusivity is validated, assuming the manifest produced
    *    by GenerateExclusivityManifest is successfully applied.
    * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -44,6 +45,7 @@ public interface ValidateExclusivityResponseOrBuilder
    *
    * <pre>
    * The validation result.
+   *
    * * `OK` means that exclusivity is validated, assuming the manifest produced
    *    by GenerateExclusivityManifest is successfully applied.
    * * `ALREADY_EXISTS` means that the Membership CRD is already owned by
@@ -60,6 +62,7 @@ public interface ValidateExclusivityResponseOrBuilder
    *
    * <pre>
    * The validation result.
+   *
    * * `OK` means that exclusivity is validated, assuming the manifest produced
    *    by GenerateExclusivityManifest is successfully applied.
    * * `ALREADY_EXISTS` means that the Membership CRD is already owned by

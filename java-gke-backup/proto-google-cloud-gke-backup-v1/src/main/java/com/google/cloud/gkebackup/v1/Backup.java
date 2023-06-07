@@ -56,11 +56,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return new Backup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.BackupProto
         .internal_static_google_cloud_gkebackup_v1_Backup_descriptor;
@@ -327,8 +322,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -344,8 +341,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -513,7 +512,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAnthosVersionBytes();
 
-    public com.google.cloud.gkebackup.v1.Backup.ClusterMetadata.PlatformVersionCase
+    com.google.cloud.gkebackup.v1.Backup.ClusterMetadata.PlatformVersionCase
         getPlatformVersionCase();
   }
   /**
@@ -546,11 +545,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return new ClusterMetadata();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gkebackup.v1.BackupProto
           .internal_static_google_cloud_gkebackup_v1_Backup_ClusterMetadata_descriptor;
@@ -578,6 +572,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int platformVersionCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object platformVersion_;
 
     public enum PlatformVersionCase
@@ -634,8 +630,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -662,8 +660,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
+     *
      *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
      *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -1512,8 +1512,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
+       *
        *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
        *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1539,8 +1541,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
+       *
        *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
        *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1566,8 +1570,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
+       *
        *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
        *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1592,8 +1598,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
+       *
        *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
        *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1614,8 +1622,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
+       *
        *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
        *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -2245,6 +2255,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int backupScopeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object backupScope_;
 
   public enum BackupScopeCase
@@ -2631,6 +2643,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * automatic deletion) for the number of days provided (measured from the
    * creation time of the Backup).  MUST be an integer value between 0-90
    * (inclusive).
+   *
    * Defaults to parent BackupPlan's
    * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
    * setting and may only be increased
@@ -2713,9 +2726,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The age (in days) after which this Backup will be automatically deleted.
    * Must be an integer value &gt;= 0:
+   *
    * - If 0, no automatic deletion will occur for this Backup.
    * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+   *
    * Once a Backup is created, this value may only be increased.
+   *
    * Defaults to the parent BackupPlan's
    * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
    * </pre>
@@ -5400,6 +5416,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
+     *
      * Defaults to parent BackupPlan's
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
      * setting and may only be increased
@@ -5423,6 +5440,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
+     *
      * Defaults to parent BackupPlan's
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
      * setting and may only be increased
@@ -5450,6 +5468,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
+     *
      * Defaults to parent BackupPlan's
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
      * setting and may only be increased
@@ -5684,9 +5703,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The age (in days) after which this Backup will be automatically deleted.
      * Must be an integer value &gt;= 0:
+     *
      * - If 0, no automatic deletion will occur for this Backup.
      * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+     *
      * Once a Backup is created, this value may only be increased.
+     *
      * Defaults to the parent BackupPlan's
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
      * </pre>
@@ -5705,9 +5727,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The age (in days) after which this Backup will be automatically deleted.
      * Must be an integer value &gt;= 0:
+     *
      * - If 0, no automatic deletion will occur for this Backup.
      * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+     *
      * Once a Backup is created, this value may only be increased.
+     *
      * Defaults to the parent BackupPlan's
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
      * </pre>
@@ -5730,9 +5755,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The age (in days) after which this Backup will be automatically deleted.
      * Must be an integer value &gt;= 0:
+     *
      * - If 0, no automatic deletion will occur for this Backup.
      * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+     *
      * Once a Backup is created, this value may only be increased.
+     *
      * Defaults to the parent BackupPlan's
      * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
      * </pre>

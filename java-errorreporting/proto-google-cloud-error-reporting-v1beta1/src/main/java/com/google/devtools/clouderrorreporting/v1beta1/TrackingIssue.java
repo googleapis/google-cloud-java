@@ -47,11 +47,6 @@ public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
     return new TrackingIssue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;

@@ -29,6 +29,7 @@ public interface EdgeClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the Edge Cluster. For
    * example:
+   *
    * //edgecontainer.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface EdgeClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the Edge Cluster. For
    * example:
+   *
    * //edgecontainer.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * </pre>
    *

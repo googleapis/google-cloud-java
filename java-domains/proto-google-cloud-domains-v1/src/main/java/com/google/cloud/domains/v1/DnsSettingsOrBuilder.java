@@ -148,5 +148,5 @@ public interface DnsSettingsOrBuilder
    */
   com.google.cloud.domains.v1.DnsSettings.GlueRecordOrBuilder getGlueRecordsOrBuilder(int index);
 
-  public com.google.cloud.domains.v1.DnsSettings.DnsProviderCase getDnsProviderCase();
+  com.google.cloud.domains.v1.DnsSettings.DnsProviderCase getDnsProviderCase();
 }

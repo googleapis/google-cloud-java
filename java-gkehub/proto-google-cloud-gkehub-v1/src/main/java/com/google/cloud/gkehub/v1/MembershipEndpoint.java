@@ -46,11 +46,6 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     return new MembershipEndpoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.MembershipProto
         .internal_static_google_cloud_gkehub_v1_MembershipEndpoint_descriptor;
@@ -186,6 +181,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -209,6 +205,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -234,6 +231,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -1128,6 +1126,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1150,6 +1149,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1178,6 +1178,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1208,6 +1209,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1236,6 +1238,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1270,6 +1273,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1297,6 +1301,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1319,6 +1324,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1345,6 +1351,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership

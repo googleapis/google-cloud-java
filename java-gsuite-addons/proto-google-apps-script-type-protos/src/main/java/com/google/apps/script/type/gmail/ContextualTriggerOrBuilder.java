@@ -85,5 +85,5 @@ public interface ContextualTriggerOrBuilder
    */
   com.google.protobuf.ByteString getOnTriggerFunctionBytes();
 
-  public com.google.apps.script.type.gmail.ContextualTrigger.TriggerCase getTriggerCase();
+  com.google.apps.script.type.gmail.ContextualTrigger.TriggerCase getTriggerCase();
 }

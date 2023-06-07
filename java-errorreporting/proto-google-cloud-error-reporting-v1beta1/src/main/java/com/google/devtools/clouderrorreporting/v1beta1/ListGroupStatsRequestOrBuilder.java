@@ -31,6 +31,7 @@ public interface ListGroupStatsRequestOrBuilder
    * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
    * and `{projectNumber}` can be found in the
    * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+   *
    * Examples: `projects/my-project-123`, `projects/5551234`.
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface ListGroupStatsRequestOrBuilder
    * as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
    * and `{projectNumber}` can be found in the
    * [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+   *
    * Examples: `projects/my-project-123`, `projects/5551234`.
    * </pre>
    *

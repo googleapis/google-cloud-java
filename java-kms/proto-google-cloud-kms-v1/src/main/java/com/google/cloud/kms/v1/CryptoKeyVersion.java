@@ -24,9 +24,11 @@ package com.google.cloud.kms.v1;
  * <pre>
  * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an
  * individual cryptographic key, and the associated key material.
+ *
  * An
  * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
  * version can be used for cryptographic operations.
+ *
  * For security reasons, the raw cryptographic key material represented by a
  * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed
  * or exported. It can only be used to encrypt, decrypt, or sign data when an
@@ -62,11 +64,6 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     return new CryptoKeyVersion();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
@@ -89,35 +86,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * The algorithm of the
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating what
    * parameters must be used for each cryptographic operation.
+   *
    * The
    * [GOOGLE_SYMMETRIC_ENCRYPTION][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION]
    * algorithm is usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   *
    * Algorithms beginning with "RSA_SIGN_" are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
+   *
    * The fields in the name after "RSA_SIGN_" correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
+   *
    * For PSS, the salt length used is equal to the length of digest
    * algorithm. For example,
    * [RSA_SIGN_PSS_2048_SHA256][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256]
    * will use PSS with a salt length of 256 bits or 32 bytes.
+   *
    * Algorithms beginning with "RSA_DECRYPT_" are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
    * The fields in the name after "RSA_DECRYPT_" correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
+   *
    * Algorithms beginning with "EC_SIGN_" are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
+   *
    * The fields in the name after "EC_SIGN_" correspond to the following
    * parameters: elliptic curve, digest algorithm.
+   *
    * Algorithms beginning with "HMAC_" are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [MAC][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.MAC].
+   *
    * The suffix following "HMAC_" corresponds to the hash algorithm being used
    * (eg. SHA256).
+   *
    * For more information, see [Key purposes and algorithms]
    * (https://cloud.google.com/kms/docs/algorithms).
    * </pre>
@@ -2644,9 +2652,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an
    * individual cryptographic key, and the associated key material.
+   *
    * An
    * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
    * version can be used for cryptographic operations.
+   *
    * For security reasons, the raw cryptographic key material represented by a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed
    * or exported. It can only be used to encrypt, decrypt, or sign data when an

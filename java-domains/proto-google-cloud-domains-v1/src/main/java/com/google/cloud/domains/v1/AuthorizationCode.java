@@ -47,11 +47,6 @@ public final class AuthorizationCode extends com.google.protobuf.GeneratedMessag
     return new AuthorizationCode();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1.DomainsProto
         .internal_static_google_cloud_domains_v1_AuthorizationCode_descriptor;

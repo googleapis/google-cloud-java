@@ -28,6 +28,7 @@ public interface DeleteGameServerConfigRequestOrBuilder
    *
    * <pre>
    * Required. The name of the game server config to delete. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface DeleteGameServerConfigRequestOrBuilder
    *
    * <pre>
    * Required. The name of the game server config to delete. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * </pre>
    *

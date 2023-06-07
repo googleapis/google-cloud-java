@@ -54,11 +54,6 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     return new Endpoint();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.ids.v1.IdsProto.internal_static_google_cloud_ids_v1_Endpoint_descriptor;
   }

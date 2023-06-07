@@ -50,11 +50,6 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
     return new GameServerConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1beta.GameServerConfigs
         .internal_static_google_cloud_gaming_v1beta_GameServerConfig_descriptor;
@@ -90,8 +85,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The resource name of the game server config. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *
@@ -116,8 +113,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The resource name of the game server config. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * For example,
+   *
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
    * </pre>
    *
@@ -1170,8 +1169,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The resource name of the game server config. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1195,8 +1196,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The resource name of the game server config. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1220,8 +1223,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The resource name of the game server config. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1244,8 +1249,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The resource name of the game server config. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *
@@ -1264,8 +1271,10 @@ public final class GameServerConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The resource name of the game server config. Uses the form:
+     *
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
+     *
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
      * </pre>
      *

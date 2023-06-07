@@ -55,6 +55,7 @@ public interface AttachedOidcConfigOrBuilder
    * Optional. OIDC verification keys in JWKS format (RFC 7517).
    * It contains a list of OIDC verification keys that can be used to verify
    * OIDC JWTs.
+   *
    * This field is required for cluster that doesn't have a publicly available
    * discovery endpoint. When provided, it will be directly used
    * to verify the OIDC JWT asserted by the IDP.

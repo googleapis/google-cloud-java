@@ -51,11 +51,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     return new RestoreConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.RestoreProto
         .internal_static_google_cloud_gkebackup_v1_RestoreConfig_descriptor;
@@ -706,11 +701,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GroupKind();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1607,11 +1597,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ClusterResourceRestoreScope();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2930,7 +2915,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private SubstitutionRule() {
-      targetNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetGroupKinds_ = java.util.Collections.emptyList();
       targetJsonPath_ = "";
       originalValuePattern_ = "";
@@ -2941,11 +2926,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SubstitutionRule();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2966,7 +2946,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int TARGET_NAMESPACES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList targetNamespaces_;
+    private com.google.protobuf.LazyStringArrayList targetNamespaces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3582,8 +3563,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (targetGroupKindsBuilder_ == null) {
           targetGroupKinds_ = java.util.Collections.emptyList();
         } else {
@@ -3632,11 +3612,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          targetNamespaces_ = targetNamespaces_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.targetNamespaces_ = targetNamespaces_;
         if (targetGroupKindsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             targetGroupKinds_ = java.util.Collections.unmodifiableList(targetGroupKinds_);
@@ -3651,6 +3626,10 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          targetNamespaces_.makeImmutable();
+          result.targetNamespaces_ = targetNamespaces_;
+        }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.targetJsonPath_ = targetJsonPath_;
         }
@@ -3714,7 +3693,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.targetNamespaces_.isEmpty()) {
           if (targetNamespaces_.isEmpty()) {
             targetNamespaces_ = other.targetNamespaces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureTargetNamespacesIsMutable();
             targetNamespaces_.addAll(other.targetNamespaces_);
@@ -3847,14 +3826,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList targetNamespaces_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList targetNamespaces_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTargetNamespacesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!targetNamespaces_.isModifiable()) {
           targetNamespaces_ = new com.google.protobuf.LazyStringArrayList(targetNamespaces_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -3874,7 +3853,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the targetNamespaces.
        */
       public com.google.protobuf.ProtocolStringList getTargetNamespacesList() {
-        return targetNamespaces_.getUnmodifiableView();
+        targetNamespaces_.makeImmutable();
+        return targetNamespaces_;
       }
       /**
        *
@@ -3963,6 +3943,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTargetNamespacesIsMutable();
         targetNamespaces_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3990,6 +3971,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTargetNamespacesIsMutable();
         targetNamespaces_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4014,6 +3996,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllTargetNamespaces(java.lang.Iterable<java.lang.String> values) {
         ensureTargetNamespacesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetNamespaces_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4035,8 +4018,9 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTargetNamespaces() {
-        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        targetNamespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -4065,6 +4049,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureTargetNamespacesIsMutable();
         targetNamespaces_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -4993,6 +4978,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int namespacedResourceRestoreScopeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object namespacedResourceRestoreScope_;
 
   public enum NamespacedResourceRestoreScopeCase

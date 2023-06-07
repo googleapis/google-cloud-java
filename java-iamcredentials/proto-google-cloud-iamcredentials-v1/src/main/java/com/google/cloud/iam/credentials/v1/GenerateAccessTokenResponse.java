@@ -39,11 +39,6 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
     return new GenerateAccessTokenResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iam.credentials.v1.IAMCredentialsCommonProto
         .internal_static_google_iam_credentials_v1_GenerateAccessTokenResponse_descriptor;

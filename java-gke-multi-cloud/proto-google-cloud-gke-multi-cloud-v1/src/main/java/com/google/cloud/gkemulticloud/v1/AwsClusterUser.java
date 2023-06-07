@@ -47,11 +47,6 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
     return new AwsClusterUser();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AwsClusterUser_descriptor;

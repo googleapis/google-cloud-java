@@ -47,11 +47,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     return new ProcessRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_ProcessRequest_descriptor;
@@ -68,6 +63,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

@@ -93,6 +93,5 @@ public interface ImportProcessorVersionRequestOrBuilder
    */
   com.google.protobuf.ByteString getParentBytes();
 
-  public com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.SourceCase
-      getSourceCase();
+  com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.SourceCase getSourceCase();
 }

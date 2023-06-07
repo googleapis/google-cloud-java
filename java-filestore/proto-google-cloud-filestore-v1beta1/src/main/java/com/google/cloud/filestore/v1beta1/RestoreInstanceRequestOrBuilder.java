@@ -161,5 +161,5 @@ public interface RestoreInstanceRequestOrBuilder
    */
   com.google.protobuf.ByteString getSourceBackupBytes();
 
-  public com.google.cloud.filestore.v1beta1.RestoreInstanceRequest.SourceCase getSourceCase();
+  com.google.cloud.filestore.v1beta1.RestoreInstanceRequest.SourceCase getSourceCase();
 }

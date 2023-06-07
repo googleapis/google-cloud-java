@@ -28,6 +28,7 @@ public interface FetchDeploymentStateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the game server delpoyment. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -41,6 +42,7 @@ public interface FetchDeploymentStateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the game server delpoyment. Uses the form:
+   *
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *

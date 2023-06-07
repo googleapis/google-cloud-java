@@ -30,8 +30,10 @@ public interface GetAwsClusterRequestOrBuilder
    * Required. The name of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource to
    * describe.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -50,8 +52,10 @@ public interface GetAwsClusterRequestOrBuilder
    * Required. The name of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource to
    * describe.
+   *
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>

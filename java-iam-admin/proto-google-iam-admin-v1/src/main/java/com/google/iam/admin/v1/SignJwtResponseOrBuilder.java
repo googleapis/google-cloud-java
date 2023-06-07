@@ -29,6 +29,7 @@ public interface SignJwtResponseOrBuilder
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The id of the key used to sign the JWT.
    * </pre>
    *
@@ -46,6 +47,7 @@ public interface SignJwtResponseOrBuilder
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The id of the key used to sign the JWT.
    * </pre>
    *
@@ -64,6 +66,7 @@ public interface SignJwtResponseOrBuilder
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The signed JWT.
    * </pre>
    *
@@ -81,6 +84,7 @@ public interface SignJwtResponseOrBuilder
    * <pre>
    * Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The signed JWT.
    * </pre>
    *

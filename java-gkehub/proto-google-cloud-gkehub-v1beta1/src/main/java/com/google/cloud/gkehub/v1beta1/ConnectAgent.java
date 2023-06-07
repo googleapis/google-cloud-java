@@ -49,11 +49,6 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
     return new ConnectAgent();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1beta1.MembershipOuterClass
         .internal_static_google_cloud_gkehub_v1beta1_ConnectAgent_descriptor;
@@ -158,6 +153,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -185,6 +181,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Namespace for GKE Connect agent resources. Defaults to
    * `gke-connect`.
+   *
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -789,6 +786,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -815,6 +813,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -841,6 +840,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -866,6 +866,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.
@@ -887,6 +888,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Namespace for GKE Connect agent resources. Defaults to
      * `gke-connect`.
+     *
      * The Connect Agent is authorized automatically when run in the default
      * namespace. Otherwise, explicit authorization must be granted with an
      * additional IAM binding.

@@ -29,6 +29,7 @@ public interface OnPremClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
    * example:
+   *
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -44,6 +45,7 @@ public interface OnPremClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
    * example:
+   *
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>

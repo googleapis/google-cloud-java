@@ -47,11 +47,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     return new AddOnWidgetSet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.AddOnWidgetSetProto
         .internal_static_google_apps_script_type_AddOnWidgetSet_descriptor;
